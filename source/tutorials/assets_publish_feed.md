@@ -1,10 +1,8 @@
-### Contents:
+##How to test the publishing of price feeds
 
-- [Publishing a Feed](/source/tutorials/assets_publish_feed.md#publishing-a-feed)
 
-***
 
-## Publishing a Feed
+### Publishing a Feed
 
 A price feed operation takes the following form:
 

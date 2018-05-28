@@ -1,4 +1,4 @@
-## Proposing a Transaction
+## How to Propose a Transaction
 
 ### Contents:
 - [Proposing a Transaction](/source/tutorials/trn_propose_transaction.md#proposing-a-transaction-1)

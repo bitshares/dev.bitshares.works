@@ -1,4 +1,6 @@
-## Confidential Trandfer
+## How to use the CLI wallet to perform confidential transfers in BitShares
+
+**<Confidential Trandfer>**
 
 ### Contents:
 - Step 1: [Create a Blind Account](/source/tutorials/trn_confidential_transfer.md#step-1-create-a-blind-account)

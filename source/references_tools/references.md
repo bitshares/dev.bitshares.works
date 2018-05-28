@@ -1,14 +1,5 @@
 ## References
 
-### Releases
- 
-- [BitShares-Core Release](https://github.com/bitshares/bitshares-core/releases)
-- [BitShares-UI Release](https://github.com/bitshares/bitshares-ui/releases)
-
-### Python Library
-
-- http://pybitshares.com/
-
 ### Informative Repositories
 
 - [A HUG REST API for the Bitshares network -BTS-CM](https://github.com/BTS-CM/Bitshares-HUG-REST-API) 

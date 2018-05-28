@@ -2,7 +2,7 @@
 
 ### How to setup Private Testnet
 
-#### Contents
+#### Contents:
 
 1. [Prerequisites](#1-prerequisites)
 2. [Creating a Testnet folder](/source/testnets/private_testnet.md#2-creating-a-testnet-folder)

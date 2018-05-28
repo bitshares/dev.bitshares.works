@@ -1,4 +1,4 @@
-## BitShares Documentation for Developpers
+## BitShares Documentation Portal for Developers
 
 ***
 ***
@@ -6,7 +6,7 @@
 1. Bring a lean _doc.bitshares.org_ information
 2. Merge with _BitShares Core Wiki_ information
 3. Remove redundant information 
-4. Gather spreding a piece of good information 
+4. Gather spreading a piece of good information 
 5. Remove old information
 6. Restructuring &re-grouping the contents 
 7. Update by BitShares Core closed issues (tagged'Documentation')
@@ -84,8 +84,8 @@ _**above processes will go parallel_
       - API Logging
       - Websockets Scripting Support
    
-### 7. [Tutorials](/source/tutorials/Readme.md#7-tutorials)
-- [Questions and Answers](/source/tutorials/QA.md#questions)
+### 7. [Tutorials](/source/tutorials/Readme.md#tutorials)
+- [Questions and Answers](/source/tutorials/FAQ.md#questions)
 
 ### 8. [Testnets](/source/testnets#testnets)
 - Public Testnet Details

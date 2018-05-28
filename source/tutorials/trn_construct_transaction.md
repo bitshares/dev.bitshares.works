@@ -1,4 +1,4 @@
-## Construct Any Transaction - Manually
+## Hot to Construct Any Transaction - Manually
 
 ### Contents:
 - [General Procedure](/source/tutorials/trn_construct_transaction.md#general-procedure)

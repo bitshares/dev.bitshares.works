@@ -16,12 +16,12 @@
 You can create a Worker Proposal by using BitShares UI form. Go to *Voting* page. There are three tabs: "Witnesses", "Committee", and "Workers". In the "Worker" tab, you will find *CREATE A NEW WORKER* button. 
 
 <p align="center">
-  <img src="https://github.com/bitshares/how.bitshares.works/blob/master/source/imgs/ui-worker-create3.png" width="600" title="Voting Worker">
+  <img src="/source/imgs/ui-worker-create3.png" width="600" title="Voting Worker">
 </p>
 
 **a worker proposal form**
 <p align="center">
-  <img src="https://github.com/bitshares/how.bitshares.works/blob/master/source/imgs/ui-worker-create.png" width="550" title="Voting Worker">
+  <img src="/source/imgs/ui-worker-create.png" width="550" title="Voting Worker">
 </p>
 
 
@@ -73,7 +73,7 @@ To **actually** generate a worker proposal, replace the last `false` by `true`.
 You can check the Worker Proposals by BitShares UI form. Go to *Voting* page. There are three tabs: "Witnesses", "Committee", and "Workers". In the "Worker" tab, you will find all Worker Proposals list. 
 
 <p align="center">
-  <img src="https://github.com/bitshares/how.bitshares.works/blob/master/source/imgs/ui-voting-worker.png" width="660" title="Voting Worker">
+  <img src="/source/imgs/ui-voting-worker.png" width="660" title="Voting Worker">
 </p>
 
 
@@ -112,7 +112,7 @@ You also can inspect all the objects 1.4.*::
 Voting is important. You have the UI form for voting. It's very easy to use. Go to *Voting* page. There are three tabs: "Witnesses", "Committee", and "Workers". In the "Worker" tab, check a Toggle Vote check box and *SAVE*. You might be asked to login. Confirm the transaction. 
 
 <p align="center">
-  <img src="https://github.com/bitshares/how.bitshares.works/blob/master/source/imgs/ui-voting-worker-2.png" width="660" title="Voting Worker">
+  <img src="/source/imgs/ui-voting-worker-2.png" width="660" title="Voting Worker">
 </p>
 
 
@@ -132,6 +132,82 @@ you can also vote against or abstain (remove your vote for or against):
 
 ***
 
+### How Workers Get Paid
+
+Every hour the worker budget is processed and workers are paid in full order of the number of votes for minus the number of votes against. The last worker to get paid will be paid with whatever is left, so may receive partial payment. The daily budget can be estimated by inspecting the most recent budget object 2.13.* for example::
+
+    >>> get_object 2.13.361
+    get_object 2.13.361
+    [{
+        "id": "2.13.361",
+        "time": "2015-10-28T15:00:00",
+        "record": {
+          "time_since_last_budget": 3600,
+          "from_initial_reserve": "106736452914941",
+          "from_accumulated_fees": 15824269,
+          "from_unused_witness_budget": 2250000,
+          "requested_witness_budget": 180000000,
+          "total_budget": 1520913100,
+          "witness_budget": 180000000,
+          "worker_budget": 1340913100,
+          "leftover_worker_funds": 0,
+          "supply_delta": 1502838831
+        }
+      }
+    ]
+
+So the daily budget is:
+
+    worker_budget*24 = 1340913100 * 24 = 32181914400 (or 321,8191.44 BTS)
+
+There is currently a maximum daily worker pay of 500k BTS, and this can be found using the `get_global_properties` command in the cli_wallet.
+
+***
+
+### Technical Details
+
+Every second,
+
+    [ 17/(2^32) * reserve fund ]
+
+is allocated for witnesses and workers. The reserve fund is maximum number of BTS available less those currently in circulation ([source](https://github.com/cryptonomex/graphene/blob/f85dec1c23f6bf9259ad9f15311b2e4aac4f9d44/libraries/chain/include/graphene/chain/config.hpp))
+
+Every hour the total available reserve fund is calculated by finding how many BTS are available to be distributed and how many BTS will be returned to the reserve fund (i.e., “burnt”) during the next maintenance interval.
+
+First find how many BTS have not been distributed::
+
+    >>> from_initial_reserve = max_supply - current supply of BTS
+
+The max_supply can be obtained by:
+
+    >>> get_object 1.3.0
+
+and the current_supply is given in:
+
+    >>> get_object 2.3.0
+
+Modify it by adding the accumulated fees and witness budget remaining (i.e., 1.5 BTS per block is budgeted, so budget remaining is 1.5 BTS * (number of blocks left in maintenance period+blocks missed by witnesses)) in this maintenance cycle (they will be added to the “reserve fund” permanently at maintenance):
+
+    updated reserve fund = from_initial_reserve + from_accumulated_fees + from_unused_witness_budget
+
+variables all from: `get_object 2.13.*` (choose the most recent one, for example)
+
+Next calculate how much is available to be spent on workers and witnesses is::
+
+    total_budget = (updated reserve fund)*(time_since_last_budget)*17/(2^32)
+
+rounded up to the nearest integer
+
+Ok, now to find how much workers will get in this budget period (1 hour), you find the smaller of the available pay AFTER subtracting witness budget from the `total_budget` OR the `worker_budget_per_day/24` from `get_global_properties`:
+
+    worker_budget=min( total_budget - witness_budget , worker_budget_per_day / 24 )
+
+That is how much per hour allocated for all workers. NOW you rank each worker and pay them one hours worth of pay in order or # votes.
+
+***
+
+(ref)
+- http://docs.bitshares.org/tutorials/worker-create.html
 ### How Workers Get Paid
 
 Every hour the worker budget is processed and workers are paid in full order of the number of votes for minus the number of votes against. The last worker to get paid will be paid with whatever is left, so may receive partial payment. The daily budget can be estimated by inspecting the most recent budget object 2.13.* for example::

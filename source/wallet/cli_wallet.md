@@ -1,6 +1,6 @@
 ## Connecting a Wallet 
 
-#### Contents
+#### Contents:
 
 - [Overview](#overview)
 - [Cli-Tools for Windows (option)](#cli-tools-for-windows-option)

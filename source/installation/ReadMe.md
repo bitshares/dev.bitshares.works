@@ -8,7 +8,6 @@
 - [Windows - CLI Tools](/source/installation/windows_cli_tool.md#cli-wallet-on-windows-x64)
 - Q&A
 
-***
 
 #### Build and Run BitShares-Core in WSL (Installation Option)
 - Use Windows Subsystem for Linux

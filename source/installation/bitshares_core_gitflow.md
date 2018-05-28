@@ -1,7 +1,6 @@
 # BitShares Core - GitFlow
 
-
-### Contents:
+#### Contents:
 
 - [Purpose](/source/installation/bitshares_core_gitflow.md#purpose)
 - [Non-Consensus: Development / Release / Bugfix Workflows](/source/installation/bitshares_core_gitflow.md#non-consensus-development--release--bugfix-workflows)
@@ -30,7 +29,7 @@ For our purposes, the general concept behind gitflow has been extended to allow 
 ## Non-Consensus: Development / Release / Bugfix Workflows
 
 <p align="center">
-  <img src="https://github.com/bitshares/how.bitshares.works/blob/master/source/imgs/bts-non-concensus.png" width="800" title="BitShares Core GitFlow">
+  <img src="/source/imgs/bts-non-concensus.png" width="800" title="BitShares Core GitFlow">
 </p>
 
 ***
@@ -38,7 +37,7 @@ For our purposes, the general concept behind gitflow has been extended to allow 
 ## Consensus: Development / Release / Bugfix Workflows
 
 <p align="center">
-  <img src="https://github.com/bitshares/how.bitshares.works/blob/master/source/imgs/bts-concensus.png" width="800" title="BitShares Core GitFlow">
+  <img src="/source/imgs/bts-concensus.png" width="800" title="BitShares Core GitFlow">
 </p>
 
 ***

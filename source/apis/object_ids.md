@@ -1,6 +1,6 @@
 ## Objects and IDs
 
-### Contents:
+#### Contents:
 - [Objects Format](/source/apis/object_ids.md#bitshares-objects-format)
 - [List of Commonly used Objects](/source/apis/object_ids.md#list-of-commonly-used-objects)
    - [Examples](/source/apis/object_ids.md#examples)

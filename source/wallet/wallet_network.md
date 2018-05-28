@@ -1,7 +1,7 @@
 
 ## Network and Wallet Configuration
 
-#### Contents
+#### Contents:
 
 - [Components](#components)
    - P2P Network

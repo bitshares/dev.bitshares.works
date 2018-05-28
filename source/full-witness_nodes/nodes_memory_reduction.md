@@ -1,5 +1,6 @@
 ## Memory Reduction for Nodes
-### Contents:
+
+#### Contents:
 - [Four New Options to Reduce RAM](/source/full-witness_nodes/nodes_memory_reduction.md#four-new-options-to-reduce-ram)
    - [--plugins arg   ](/source/full-witness_nodes/nodes_memory_reduction.md#--plugins)
    - [--track-account arg ](/source/full-witness_nodes/nodes_memory_reduction.md#--track-account)

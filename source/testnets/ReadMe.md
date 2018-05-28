@@ -1,8 +1,15 @@
 # Testnets
 
-### 01. [Public Testnet Details](/source/testnets/public_testnet_details.md#the-open-public-testnet-information)
+***
 
-### 02. [Public Testnet Witness(Full) Nodes (block producing witness nodes) ](/source/testnets/public_testnet.md#how-to-deploy-your-own-public-network)
+### Consensus Changes 2018-06
+-  [BSIP38: Add target collateral ratio option to short positions](/developers/testnets/consensus-changes-2018-06.md#bsip38-add-target-collateral-ratio-option-to-short-positions) 
+
+***
+
+### [Public Testnet Details](/source/testnets/public_testnet_details.md#the-open-public-testnet-information)
+
+### [Public Testnet Witness(Full) Nodes (block producing witness nodes) ](/source/testnets/public_testnet.md#how-to-deploy-your-own-public-network)
 1. [Installation/Configuration of Witness](/source/testnets/public_testnet.md#1-installation_configuration-of-witness)
 2. [Genesis Configuration](/source/testnets/public_testnet.md#2-genesis-configuration)
 3. [Initializing Blockchain](/source/testnets/public_testnet.md#3-initializing-blockchain)
@@ -14,7 +21,7 @@
 9. [Instillation of Python Library](/source/testnets/public_testnet.md#9-instillation-of-python-library)
 10. [Create MPAs/UIAs](/source/testnets/public_testnet.md#10-create-mpasuias)
 
-### 03. [Private Testnet](/source/testnets/private_testnet.md#how-to-setup-private-testnet)
+### [Private Testnet](/source/testnets/private_testnet.md#how-to-setup-private-testnet)
 1. [Prerequisites](#1-prerequisites)
 2. [Creating a Testnet folder](/source/testnets/private_testnet.md#2-creating-a-testnet-folder)
 3. [Creating a Genesis File for a Private Testnet](/source/testnets/private_testnet.md#3-creating-a-genesis-file-for-a-private-testnet)
