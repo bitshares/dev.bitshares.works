@@ -1,6 +1,4 @@
 
-
-
 A (tentative) first sitemap is as follows:
 
 1. Dev Portal
