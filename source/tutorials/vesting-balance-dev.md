@@ -1,4 +1,4 @@
-## Vesting Balance
+## How to find Vesting Balance
 
 
 ### Claiming A Vesting Balance

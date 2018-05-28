@@ -5,9 +5,14 @@
 ### Consensus Changes 2018-06
 -  [BSIP38: Add target collateral ratio option to short positions](/developers/testnets/consensus-changes-2018-06.md#bsip38-add-target-collateral-ratio-option-to-short-positions) 
 
+
+
 ***
 
 ### [Public Testnet Details](/source/testnets/public_testnet_details.md#the-open-public-testnet-information)
+
+- [The Open Public Testnet information](/source/testnets/public_testnet_details.md#the-open-public-testnet-information)
+
 
 ### [Public Testnet Witness(Full) Nodes (block producing witness nodes) ](/source/testnets/public_testnet.md#how-to-deploy-your-own-public-network)
 1. [Installation/Configuration of Witness](/source/testnets/public_testnet.md#1-installation_configuration-of-witness)

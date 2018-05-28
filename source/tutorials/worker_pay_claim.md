@@ -1,6 +1,6 @@
-##How to find how much per hour allocated for all worker
+## How to find how much per hour allocated for all worker
 
-**<Claim Worker Pay>**
+**Claim Worker Pay**
 
 Every second, [ 17/(2^32) * reserve fund ] is allocated for witnesses and workers where reserve fund is how many BTS are currently not distributed (see the [source code](https://github.com/cryptonomex/graphene/blob/f85dec1c23f6bf9259ad9f15311b2e4aac4f9d44/libraries/chain/include/graphene/chain/config.hpp)).
 
@@ -25,7 +25,7 @@ in this maintenance cycle (they will be added to the “reserve fund” permanen
 
     ==> updated reserve fund = from_initial_reserve +  from_accumulated_fees + from_unused_witness_budget
 
-**Eexample**
+**Example**
 
     >>> get_object 2.13.361
     get_object 2.13.361

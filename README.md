@@ -1,42 +1,19 @@
-## BitShares Documentation Portal for Developers
+## BitShares Documentation Developers Portal 
 
-***
-***
-### Documentation Integration and update Processes
-1. Bring a lean _doc.bitshares.org_ information
-2. Merge with _BitShares Core Wiki_ information
-3. Remove redundant information 
-4. Gather spreading a piece of good information 
-5. Remove old information
-6. Restructuring &re-grouping the contents 
-7. Update by BitShares Core closed issues (tagged'Documentation')
-8. Add new contents
-9. Get review
-10. Improve & update
-
-_**above processes will go parallel_
-
-***
-***
 
 #### Contents:
 
 ### 1. [Environment & Installation ](/source/installation#1-environment--installation)
    - Installation
+   - Known Issues   
    - BitShares GitFlow    
 
 ### 2. [References & Tools](/source/references_tools#references--tools)
-   - References
-      - Releases
-      - Python Library
-      - Informative GitHub Repositories
-      - BirShares GitHub Code - Issues
-      - Articles
-      - Propose & ideas
-   - Tools
-      - ElasticSearch Plugin
-      - debug_node : what-if test tool
-      - Manage a running node in the background by using GNU screen
+   - Releases
+   - GitHub Repositories
+   - References: Programs / Tools
+   - Software
+   - References: Articles
    
 ### 3. [Accounts](/source/accounts#accounts)
    - Account
@@ -85,15 +62,35 @@ _**above processes will go parallel_
       - Websockets Scripting Support
    
 ### 7. [Tutorials](/source/tutorials/Readme.md#tutorials)
-- [Questions and Answers](/source/tutorials/FAQ.md#questions)
+  - [Frequently asked Questions](/source/tutorials/FAQ.md#frequently-asked-questions)
+  - [How Tos](/source/tutorials/Readme.md#how-tos)
 
 ### 8. [Testnets](/source/testnets#testnets)
-- Public Testnet Details
-- Public Testnet Witness(Full) Nodes (block producing witness nodes) 
-- Private Testnet
+  - Public Testnet Details
+  - Public Testnet Witness(Full) Nodes (block producing witness nodes) 
+  - Private Testnet
 
 ### 9. [Use Cases / Examples](/source/use_cases#use-cases--examples)
 
-   
+### 10. [Knowledge Base](/source/knowledge-base#knowledge-base)
+
+
+***
+***
+### Documentation Integration and update Processes
+1. Bring a lean _doc.bitshares.org_ information
+2. Merge with _BitShares Core Wiki_ information
+3. Remove redundant information 
+4. Gather spreading a piece of good information 
+5. Remove old information
+6. Restructuring &re-grouping the contents 
+7. Update by BitShares Core closed issues (tagged'Documentation')
+8. Add new contents
+9. Get review
+10. Improve & update
+
+_**above processes will go parallel_
+
+***
 ***
 

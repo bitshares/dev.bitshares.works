@@ -12,10 +12,7 @@
 
 ***
 
-- Discussion 
-   - Multi-Signature
-   - [(Flat) Multi-Signature](/source/accounts/accounts.md#flat-multi-signature)
-   - [(Flat) Flexible Multi-Signature](/source/accounts/accounts.md#flat-flexible-multi-signature)
-   - [Multi-Hierarchical Flexible Multi-Signature](/source/accounts/accounts.md#multi-hierarchical-flexible-multi-signature)
+- Knowledge Base
+   - [Multi-Signature](/source/knowledge-base/multi-signature.md#multi-signature)  
    
 ***
