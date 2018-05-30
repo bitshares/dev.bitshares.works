@@ -3,36 +3,36 @@
 ### Contents:
 
 
-**[General](/source/tutorials/QA.md#general)**
-- [What is the standard Bitshares address structure and format?](/source/tutorials/QA.md#q-what-is-the-standard-bitshares-address-structure-and-format
+**[General](/source/tutorials/FAQ.md#general)**
+- [What is the standard Bitshares address structure and format?](/source/tutorials/FAQ.md#q-what-is-the-standard-bitshares-address-structure-and-format
 )
-- [What is the format of the block header?](/source/tutorials/QA.md#q-what-is-the-format-of-the-block-header)
-- [What is the maximum bitshares block size?](/source/tutorials/QA.md#q-what-is-the-maximum-bitshares-block-size)
-- [Are there any sharding mechanics currently deployed?](/source/tutorials/QA.md#q-are-there-any-sharding-mechanics-currently-deployed)
-- [How are SPV clients handled?](/source/tutorials/QA.md#q-how-are-spv-clients-handled)
-- [How is time addressed in the blockchain? Is NTP used or some other protocol?](/source/tutorials/QA.md#q-how-is-time-addressed-in-the-blockchain-is-ntp-used-or-some-other-protocol)
-- [How do new clients bootstrap into the network?](/source/tutorials/QA.md#q-how-do-new-clients-bootstrap-into-the-network)
-- [What is the average block time?](/source/tutorials/QA.md#q-what-is-the-average-block-time)
-- [How is accounting addressed in Bitshares? Is it a Nxt style accounting model or like Bitcoin’s UTXO](/source/tutorials/QA.md#q-how-is-accounting-addressed-in-bitshares-is-it-a-nxt-style-accounting-model-or-like-bitcoins-utxo)
+- [What is the format of the block header?](/source/tutorials/FAQ.md#q-what-is-the-format-of-the-block-header)
+- [What is the maximum bitshares block size?](/source/tutorials/FAQ.md#q-what-is-the-maximum-bitshares-block-size)
+- [Are there any sharding mechanics currently deployed?](/source/tutorials/FAQ.md#q-are-there-any-sharding-mechanics-currently-deployed)
+- [How are SPV clients handled?](/source/tutorials/FAQ.md#q-how-are-spv-clients-handled)
+- [How is time addressed in the blockchain? Is NTP used or some other protocol?](/source/tutorials/FAQ.md#q-how-is-time-addressed-in-the-blockchain-is-ntp-used-or-some-other-protocol)
+- [How do new clients bootstrap into the network?](/source/tutorials/FAQ.md#q-how-do-new-clients-bootstrap-into-the-network)
+- [What is the average block time?](/source/tutorials/FAQ.md#q-what-is-the-average-block-time)
+- [How is accounting addressed in Bitshares? Is it a Nxt style accounting model or like Bitcoin’s UTXO](/source/tutorials/FAQ.md#q-how-is-accounting-addressed-in-bitshares-is-it-a-nxt-style-accounting-model-or-like-bitcoins-utxo)
 
-[**Protocol**](/source/tutorials/QA.md#protocol)
-- [Are there any special affordances made for privacy?](/source/tutorials/QA.md#q-are-there-any-special-affordances-made-for-privacy)
-- [Does the protocol provide mechanisms for overlay protocols to interact such as OR_RETURN?](/source/tutorials/QA.md#q-does-the-protocol-provide-mechanisms-for-overlay-protocols-to-interact-such-as-or_return)
-- [Is this done via a gossip protocol or through a federate relay?](/source/tutorials/QA.md#q-is-this-done-via-a-gossip-protocol-or-through-a-federate-relay)
+[**Protocol**](/source/tutorials/FAQ.md#protocol)
+- [Are there any special affordances made for privacy?](/source/tutorials/FAQ.md#q-are-there-any-special-affordances-made-for-privacy)
+- [Does the protocol provide mechanisms for overlay protocols to interact such as OR_RETURN?](/source/tutorials/FAQ.md#q-does-the-protocol-provide-mechanisms-for-overlay-protocols-to-interact-such-as-or_return)
+- [Is this done via a gossip protocol or through a federate relay?](/source/tutorials/FAQ.md#q-is-this-done-via-a-gossip-protocol-or-through-a-federate-relay)
 
-**[Data Structures](/source/tutorials/QA.md#data-structures)**
-- [What data structures are used in the blockchain?](/source/tutorials/QA.md#q-what-data-structures-are-used-in-the-blockchain)
+**[Data Structures](/source/tutorials/FAQ.md#data-structures)**
+- [What data structures are used in the blockchain?](/source/tutorials/FAQ.md#q-what-data-structures-are-used-in-the-blockchain)
 
-**[Public Key System](/source/tutorials/QA.md#public-key-system)**
-- [What public key system is used? If elliptic curve, then what is the curv?](/source/tutorials/QA.md#q-what-public-key-system-is-used-if-elliptic-curve-then-what-is-the-curve)
+**[Public Key System](/source/tutorials/FAQ.md#public-key-system)**
+- [What public key system is used? If elliptic curve, then what is the curv?](/source/tutorials/FAQ.md#q-what-public-key-system-is-used-if-elliptic-curve-then-what-is-the-curve)
 
-**[Scripting Language](/source/tutorials/QA.md#scripting-language)**
-- [Is there a specification for Bitshares scripting language? (assuming there is one)](/source/tutorials/QA.md#q-is-there-a-specification-for-bitshares-scripting-language-assuming-there-is-one)
-- [Is the scripting language turing complete?](/source/tutorials/QA.md#q-is-the-scripting-language-turing-complete)
+**[Scripting Language](/source/tutorials/FAQ.md#scripting-language)**
+- [Is there a specification for Bitshares scripting language? (assuming there is one)](/source/tutorials/FAQ.md#q-is-there-a-specification-for-bitshares-scripting-language-assuming-there-is-one)
+- [Is the scripting language turing complete?](/source/tutorials/FAQ.md#q-is-the-scripting-language-turing-complete)
 
 ***
-### [Accounts](/source/tutorials/QA.md#accounts)
-- [How can I create, register and upgrade an account to Lifetime Membership?](/source/tutorials/QA.md#q-how-can-i-create-register-and-upgrade-an-account-to-lifetime-membership)
+### [Accounts](/source/tutorials/FAQ.md#accounts)
+- [How can I create, register and upgrade an account to Lifetime Membership?](/source/tutorials/FAQ.md#q-how-can-i-create-register-and-upgrade-an-account-to-lifetime-membership)
 
 ***
 ### [APIs](#apis-1)
@@ -45,52 +45,52 @@
 
 ***
 
-### [Assets](/source/tutorials/QA.md#assets-1)
-- [What happens to the asset creation fee?](/source/tutorials/QA.md#q-what-happens-to-the-asset-creation-fee)
-- [Can I change x after creation of the asset?](/source/tutorials/QA.md#qcan-i-change-x-after-creation-of-the-asset)
-- [What about Parent and Child assets?](/source/tutorials/QA.md#q-what-about-parent-and-child-assets)
-- [Can I change the issuer?](/source/tutorials/QA.md#q-can-i-changing-the-issuer)
+### [Assets](/source/tutorials/FAQ.md#assets-1)
+- [What happens to the asset creation fee?](/source/tutorials/FAQ.md#q-what-happens-to-the-asset-creation-fee)
+- [Can I change x after creation of the asset?](/source/tutorials/FAQ.md#qcan-i-change-x-after-creation-of-the-asset)
+- [What about Parent and Child assets?](/source/tutorials/FAQ.md#q-what-about-parent-and-child-assets)
+- [Can I change the issuer?](/source/tutorials/FAQ.md#q-can-i-changing-the-issuer)
 
 **Fee Pool**
-- [What is the fee pool all about?](/source/tutorials/QA.md#q-what-is-the-fee-pool-all-about)
-- [What to do if the fee pool is empty?](/source/tutorials/QA.md#q-what-to-do-if-the-fee-pool-is-empty)
-- [What is Fee Pool Draining?](/source/tutorials/QA.md#q-what-is-fee-pool-draining)
+- [What is the fee pool all about?](/source/tutorials/FAQ.md#q-what-is-the-fee-pool-all-about)
+- [What to do if the fee pool is empty?](/source/tutorials/FAQ.md#q-what-to-do-if-the-fee-pool-is-empty)
+- [What is Fee Pool Draining?](/source/tutorials/FAQ.md#q-what-is-fee-pool-draining)
 
 **Market Fee**
-- [What happens if I enable Market fees?](/source/tutorials/QA.md#q-what-happens-if-i-enable-market-fees)
-- [How to claim accumulated fees?](/source/tutorials/QA.md#q-how-to-claim-accumulated-fees)
-- [What if two different market fees are involved in a trade?](/source/tutorials/QA.md#q-what-if-two-different-market-fees-are-involved-in-a-trade)
-- [What are Asset Flags and Permissions?](/source/tutorials/QA.md#q-what-are-asset-flags-and-permissions)
-- [What are the Permissions?](/source/tutorials/QA.md#q-what-are-the-permissions)
-- [What are the Flags?](/source/tutorials/QA.md#q-what-are-the-flags)
+- [What happens if I enable Market fees?](/source/tutorials/FAQ.md#q-what-happens-if-i-enable-market-fees)
+- [How to claim accumulated fees?](/source/tutorials/FAQ.md#q-how-to-claim-accumulated-fees)
+- [What if two different market fees are involved in a trade?](/source/tutorials/FAQ.md#q-what-if-two-different-market-fees-are-involved-in-a-trade)
+- [What are Asset Flags and Permissions?](/source/tutorials/FAQ.md#q-what-are-asset-flags-and-permissions)
+- [What are the Permissions?](/source/tutorials/FAQ.md#q-what-are-the-permissions)
+- [What are the Flags?](/source/tutorials/FAQ.md#q-what-are-the-flags)
 
 **Market Pegged Assets**
-- [Can I use the same flags/permissions as for UIAs?](/source/tutorials/QA.md#q-can-i-use-the-same-flagspermissions-as-for-uias)
-- [What are market-pegged-asset-specific parameters?](/source/tutorials/QA.md#q-what-are-market-pegged-asset-specific-parameters)
+- [Can I use the same flags/permissions as for UIAs?](/source/tutorials/FAQ.md#q-can-i-use-the-same-flagspermissions-as-for-uias)
+- [What are market-pegged-asset-specific parameters?](/source/tutorials/FAQ.md#q-what-are-market-pegged-asset-specific-parameters)
 
 
 ***
-### [Testnet](/source/tutorials/QA.md#testnet-1)
+### [Testnet](/source/tutorials/FAQ.md#testnet-1)
 
-- [Public & private testnet differences What is the difference between public and private testnet?](/source/tutorials/QA.md#q-public--private-testnet-differences-what-is-the-difference-between-public-and-private-testnet)
-
-***
-### [Wallet / CLI Wallet](/source/tutorials/QA.md#wallet--cli-wallet-1)
-- [How can I close the CLI client in a clean way?](/source/tutorials/QA.md#q-how-can-i-close-the-cli-client-in-a-clean-way)
-- [How can I import to my CLI client a wallet originally created in the web GUI?](/source/tutorials/QA.md#q-how-can-i-import-to-my-cli-client-a-wallet-originally-created-in-the-web-gui)
-- [How can I transfer a single account to a cli wallet?](/source/tutorials/QA.md#q-how-can-i-transfer-a-single-account-to-a-cli-wallet)
-- [Why does the CLI client crash immediately when I try to run it for the first time?](/source/tutorials/QA.md#q-why-does-the-cli-client-crash-immediately-when-i-try-to-run-it-for-the-first-time)
+- [Public & private testnet differences What is the difference between public and private testnet?](/source/tutorials/FAQ.md#q-public--private-testnet-differences-what-is-the-difference-between-public-and-private-testnet)
 
 ***
-### [Witness](/source/tutorials/QA.md#witness)
-- [Change the Signing Key of your Witness?](/source/tutorials/QA.md#q-change-the-signing-key-of-your-witness)
-- [How can I close the witness node in a clean way?](/source/tutorials/QA.md#q-how-can-i-close-the-witness-node-in-a-clean-way)
-- [How do I check whether the witness node is already synced?](/source/tutorials/QA.md#q-how-do-i-check-whether-the-witness-node-is-already-synced)
-- [If it seems to be unable to sync beyond a certain date?](/source/tutorials/QA.md#q-if-it-seems-to-be-unable-to-sync-beyond-a-certain-date)
-- [Is it safe to delete logs stored in witness_node_data_dirlogsp2p?](/source/tutorials/QA.md#q-is-it-safe-to-delete-logs-stored-in-witness_node_data_dirlogsp2p)
-- [What is the best way to interact with the witness node?](/source/tutorials/QA.md#q-what-is-the-best-way-to-interact-with-the-witness-node)
-- [What is the meaning of all those different text colors in the witness node console?](/source/tutorials/QA.md#q-what-is-the-meaning-of-all-those-different-text-colors-in-the-witness-node-console)
-- [Whose private key is [“BTS6MRyAjQ..”,”5KQwrPbwdL..”]? Why is it predefined ion the config.ini?](/source/tutorials/QA.md#q-whose-private-key-is-bts6mryajq5kqwrpbwdl-why-is-it-predefined-ion-the-configini)
+### [Wallet / CLI Wallet](/source/tutorials/FAQ.md#wallet--cli-wallet-1)
+- [How can I close the CLI client in a clean way?](/source/tutorials/FAQ.md#q-how-can-i-close-the-cli-client-in-a-clean-way)
+- [How can I import to my CLI client a wallet originally created in the web GUI?](/source/tutorials/FAQ.md#q-how-can-i-import-to-my-cli-client-a-wallet-originally-created-in-the-web-gui)
+- [How can I transfer a single account to a cli wallet?](/source/tutorials/FAQ.md#q-how-can-i-transfer-a-single-account-to-a-cli-wallet)
+- [Why does the CLI client crash immediately when I try to run it for the first time?](/source/tutorials/FAQ.md#q-why-does-the-cli-client-crash-immediately-when-i-try-to-run-it-for-the-first-time)
+
+***
+### [Witness](/source/tutorials/FAQ.md#witness)
+- [Change the Signing Key of your Witness?](/source/tutorials/FAQ.md#q-change-the-signing-key-of-your-witness)
+- [How can I close the witness node in a clean way?](/source/tutorials/FAQ.md#q-how-can-i-close-the-witness-node-in-a-clean-way)
+- [How do I check whether the witness node is already synced?](/source/tutorials/FAQ.md#q-how-do-i-check-whether-the-witness-node-is-already-synced)
+- [If it seems to be unable to sync beyond a certain date?](/source/tutorials/FAQ.md#q-if-it-seems-to-be-unable-to-sync-beyond-a-certain-date)
+- [Is it safe to delete logs stored in witness_node_data_dirlogsp2p?](/source/tutorials/FAQ.md#q-is-it-safe-to-delete-logs-stored-in-witness_node_data_dirlogsp2p)
+- [What is the best way to interact with the witness node?](/source/tutorials/FAQ.md#q-what-is-the-best-way-to-interact-with-the-witness-node)
+- [What is the meaning of all those different text colors in the witness node console?](/source/tutorials/FAQ.md#q-what-is-the-meaning-of-all-those-different-text-colors-in-the-witness-node-console)
+- [Whose private key is [“BTS6MRyAjQ..”,”5KQwrPbwdL..”]? Why is it predefined ion the config.ini?](/source/tutorials/FAQ.md#q-whose-private-key-is-bts6mryajq5kqwrpbwdl-why-is-it-predefined-ion-the-configini)
 
 
 ***
