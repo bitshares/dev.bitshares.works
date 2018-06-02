@@ -9,7 +9,7 @@ The user proposes a transaction, then signatory accounts use add or remove their
 The proposal system allows for arbitrarily complex or recursively nested authorities. If a recursive authority (i.e. an authority which requires approval of ‘nested’ authorities on other accounts) is required for a proposal, then a second proposal can be used to grant the nested authority’s approval. That is, a second proposal can be created which, when sufficiently approved, adds the approval of a nested authority to the first proposal. This multiple-proposal scheme can be used to acquire approval for an arbitrarily deep authority tree.
 
 <p align="center">
-  <img src="https://github.com/bitshares/how.bitshares.works/blob/master/source/imgs/trn-proposed1.png" width="600" title="Proposed Transaction">
+  <img src="/source/imgs/trn-proposed1.png" width="600" title="Proposed Transaction">
 </p>
 
 Note that each account in the figure can carry a **different weight**. [Read more information about Permissions/weights/Threshold.](/source/accounts/accounts.md#permissions)
