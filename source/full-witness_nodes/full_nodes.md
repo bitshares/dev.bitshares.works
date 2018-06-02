@@ -5,10 +5,10 @@
    - Non-Block producing
    - Block producing
 - [How to launch the full node](/source/full-witness_nodes/full_nodes.md#how-to-launch-the-full-node)
-- [Configuration](/source/full-witness_nodes/full_nodes.md#configuration)
+- [Configuration `config.ini`](/source/full-witness_nodes/full_nodes.md#configuration)
 - [Enabling Remote Procedure Calls (RPC)](/source/full-witness_nodes/full_nodes.md#enabling-remote-procedure-calls-rpc)
 - [Restarting the Witness Node](/source/full-witness_nodes/full_nodes.md#restarting-the-witness-node)
-
+- [Public Full Node information](/source/full-witness_nodes/full_nodes.md#public-full-node-information)
 
 ***
 
@@ -65,6 +65,10 @@ This will open the port 8090 for global queries only. Since the witness node onl
 ### Restarting the Witness Node
 
 When restarting the witness node, it may be required to append the `--replay-blockchain` parameter to regenerate the local (in-memory) blockchain state.
+
+### Public Full Node information 
+
+- Here is the latest list of [Public Full Node](https://github.com/bitshares/bitshares-ui/blob/staging/app/api/apiConfig.js#L67).
 
 
 ---

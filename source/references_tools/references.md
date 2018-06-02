@@ -2,6 +2,9 @@
 
 ### Informative Repositories
 
+
+- [BPAB - Bitshares Python Api Backend](https://github.com/oxarbitrage/bitshares-python-api-backend) - oxarbitrage
+- [systemd service startup configuration and description is added](https://github.com/Clementvale-LTD/blockchain-telecom.graphene-core/commit/35366d04f4529363e121366171edbebc846f9327)
 - [A HUG REST API for the Bitshares network -BTS-CM](https://github.com/BTS-CM/Bitshares-HUG-REST-API) 
 - [BitShares Delegate tools](https://github.com/wackou/bts_tools)
 - [Bitshares python API Backend](https://github.com/oxarbitrage/bitshares-python-api-backend)

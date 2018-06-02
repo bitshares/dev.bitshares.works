@@ -3,26 +3,26 @@
 
 #### Contents:
 
-### 1. [Environment & Installation ](/source/installation#1-environment--installation)
+## 1. [Environment & Installation ](/source/installation#1-environment--installation)
    - Installation
    - Known Issues   
    - BitShares GitFlow    
 
-### 2. [References & Tools](/source/references_tools#references--tools)
+## 2. [References & Tools](/source/references_tools#references--tools)
    - Releases
    - GitHub Repositories
    - References: Programs / Tools
    - Software
    - References: Articles
    
-### 3. [Accounts](/source/accounts#accounts)
+## 3. [Accounts](/source/accounts#accounts)
    - Account
    - Fees
    - Permissions
    - Authorities
    - Account Registration
 
-### 4. [Wallet](/source/wallet#wallet)
+## 4. [Wallet](/source/wallet#wallet)
    - Connecting a Wallet
    - Wallet Full Nodes & Witness Nodes
    - Network and Wallet Configuration
@@ -30,7 +30,7 @@
       - General Network and Wallet Configuration
       - Secure Network and Wallet Configuration
 
-### 5. [Full Nodes / Witness Nodes](/source/full-witness_nodes#full-node--witness-node)
+## 5. [Full Nodes / Witness Nodes](/source/full-witness_nodes#full-node--witness-node)
    - Full Nodes (Witness Nodes)
       - Type of Witness nodes
       - How to launch the full node
@@ -44,7 +44,7 @@
    - Memory Reduction for Nodes
       - Four New Options to Reduce RAM
       
-### 6. [APIs](/source/apis#apis)
+## 6. [APIs](/source/apis#apis)
    - API Documentation (doxygen documentation)
       - Wallet APIs
       - Blockchain APIs
@@ -61,18 +61,18 @@
       - API Logging
       - Websockets Scripting Support
    
-### 7. [Tutorials](/source/tutorials/Readme.md#tutorials)
+## 7. [Tutorials](/source/tutorials/Readme.md#tutorials)
   - [Frequently asked Questions](/source/tutorials/FAQ.md#frequently-asked-questions)
   - [How Tos](/source/tutorials/Readme.md#how-tos)
 
-### 8. [Testnets](/source/testnets#testnets)
+## 8. [Testnets](/source/testnets#testnets)
   - Public Testnet Details
   - Public Testnet Witness(Full) Nodes (block producing witness nodes) 
   - Private Testnet
 
-### 9. [Use Cases / Examples](/source/use_cases#use-cases--examples)
+## 9. [Use Cases / Examples](/source/use_cases#use-cases--examples)
 
-### 10. [Knowledge Base](/source/knowledge-base#knowledge-base)
+## 10. [Knowledge Base](/source/knowledge-base#knowledge-base)
 
 
 ***

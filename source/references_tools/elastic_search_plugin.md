@@ -232,7 +232,7 @@ If you only have command line available you can query the database directly thro
 
 360000 records are inserted at this point of the replay in ES, means it is working.
 
-**Important: Replay with ES plugin will be always slower than the "save to ram" account_history_plugin so expect to wait more to be in sync than usual.**
+**Important: Replay with ES plugin will be always slower than the "save to ram" `account_history_plugin` so expect to wait more to be in sync than usual.**
 
 A synchronized node will look like this(screen capture 20/12/2017):
 

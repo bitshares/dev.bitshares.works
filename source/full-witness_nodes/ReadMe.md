@@ -6,10 +6,10 @@
    - Non-Block producing
    - Block producing
 - [How to launch the full node](/source/full-witness_nodes/full_nodes.md#how-to-launch-the-full-node)
-- [Configuration](/source/full-witness_nodes/full_nodes.md#configuration)
+- [Configuration - `config.ini`](/source/full-witness_nodes/full_nodes.md#configuration)
 - [Enabling Remote Procedure Calls (RPC)](/source/full-witness_nodes/full_nodes.md#enabling-remote-procedure-calls-rpc)
 - [Restarting the Witness Node](/source/full-witness_nodes/full_nodes.md#restarting-the-witness-node)
-
+- [Public Full Node information](/source/full-witness_nodes/full_nodes.md#public-full-node-information)
 
 ### [Become an Active Witness](/source/full-witness_nodes/active_witness.md#become-an-active-witness)
 

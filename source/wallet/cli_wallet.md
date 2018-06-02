@@ -54,6 +54,8 @@ You will be prompted: `locked >>>`. You need to unlock the wallet. After the `un
 
 ----
 
+- Here is a latest list of [Public Full Node](https://github.com/bitshares/bitshares-ui/blob/staging/app/api/apiConfig.js#L67) information
+
 ## Case 1: Connecting a Cli-Wallet
 
 We use the public API node of OpenLedger `wss://bitshares.openledger.info/ws` and connect via secured websocket connection:

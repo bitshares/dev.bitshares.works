@@ -13,6 +13,8 @@
    - [register](/source/wallet/cli_wallet.md#register)   
 - [Transferring  Funds using the Cli-wallet](/source/wallet/cli_wallet.md#transferring-funds-using-the-cli-wallet)
 
+### [A Collection of command lines - Node, Wallet, and Witness](/source/wallet/node_wallet_witness.md#a-collection-of-command-lines---node-wallet-and-witness)
+
 ### [Wallet Full Nodes & Witness Nodes](/source/wallet/wallet_full_nodes_witness_nodes.md#wallet-full-nodes--witness-nodes)
 - Example - connect to the network and open up a node
   

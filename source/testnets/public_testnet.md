@@ -195,7 +195,7 @@ In order to create a wallet, you must specify the previously setup server. With 
 
 > Note: The parameter `-H` is required so that we can interface with the cli-wallet via RPC-HTTP-JSON, later while -r will open a port for the Ruby-based faucet.
 
-If you get the `set_password` prompt, it means your CLI has successfully conected to the testnet witness node.
+If you get the `set_password` prompt, it means your CLI wallet has successfully connected to the testnet witness node.
 
 **Set a password**
 
