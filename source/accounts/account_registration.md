@@ -59,15 +59,17 @@ If you want to create and register a new account on your own because you have th
     >>> create_account_with_brain_key "FILINGS THEREOF ENSILE JAW OVERBID RETINAL PILULAR RYPE CHITTY RAFFERY HANDGUN ERANIST UNPILE TWISTER BABYDOM CIBOL" mywallet myfunds anonymous true
 
 ### create_account_with_brain_key
-Creates a new account and registers it on the blockchain.
 
-|  parameter          |  note     |
+|                     |  `create_account_with_brain_key`  |
 | ------------------- |---------- |
-| [brain_key]         | "brain_priv_key" value - created by the `suggest_brain_key` command.  |                           
-| [account_name]      |   (e.g., mywallet)  |                            
-| [registrar_account] |   (e.g., myfunds)     |                           
-| [referrer_account]  |  (e.g., anonymous )     |                            
-| [broadcast]         | (e.g., true)     |
+|  **description**    |  Creates a new account and registers it on the blockchain.     |
+|                     |       |
+|  **parameter**          |  **note**     |
+| [brain_key]         | "brain_priv_key" value -  the brain key used for generating the account’s private keys  |                           
+| [account_name]      | the name of the account, must be unique on the blockchain. Shorter names are more expensive to register; the rules are still in flux, but in general names of more than 8 characters with at least one digit will be cheap.  (e.g., mywallet)  |                            
+| [registrar_account] |  the account which will pay the fee to register the user.   (e.g., myfunds)   |                           
+| [referrer_account]  | the account who is acting as a referrer, and may receive a portion of the user’s transaction fees.  (e.g., anonymous )    |                            
+| [broadcast]         | true to broadcast the transaction on the network. (e.g., true)      |
 
 
 ## 4. Register an Account
