@@ -90,17 +90,19 @@ In order to register an account, we need an other account that has enough funds 
     >>> register_account mywallet BTS7D8jpQ2UwaQxqKyGpuhFQ9LBugCNxDhE7UN2jqgjVQgzG7zo9n BTS7D8jpQ2UwaQxqKyGpuhFQ9LBugCNxDhE7UN2jqgjVQgzG7zo9n myfunds anonymous 100 true
 
 ### register_account
-Registers a third party’s account on the blockckain.
 
-|   parameter          |  note     |
+|                     |  `register_account`  |
 | ------------------- |---------- |
-| [name]         |  the name of the account, must be unique on the blockchain. (e.g., mywallet)   |                           
+|  **description**    |  *Registers a third party’s account on the blockckain.*  <br/>This function is used to register an account for which you do not own the private keys. When acting as a registrar, an end user will generate their own private keys and send you the public keys. The registrar will use this function to register the account on behalf of the end user.   |
+|                     |       |
+|  **parameter**          |  **note**     |
+| [name]         |  the name of the account, must be unique on the blockchain. Shorter names are more expensive to register; the rules are still in flux, but in general names of more than 8 characters with at least one digit will be cheap. (e.g., mywallet)   |                           
 | [owner_pubkey]      | the owner key for the new account (e.g., "pub_key" value - created by the `suggest_brain_key`)   |                            
 | [active_pubkey] | the active key for the new account  (e.g., "pub_key" value - created by the `suggest_brain_key`)|                           
 | [register_account]  | the account which will pay the fee to register the user.  (e.g., myfunds)   |                            
-| [referrer_account]  |  (e.g., anonymous) | 
-| [referrer_percentage]  |  (e.g., 100)      |                            
-| [broadcast]         |  (e.g., true)      |
+| [referrer_account]  | the account who is acting as a referrer, and may receive a portion of the user’s transaction fees. (e.g., anonymous) | 
+| [referrer_percentage]  | the percentage (0 - 100) of the new user’s transaction fees not claimed by the blockchain that will be distributed to the referrer. (e.g., 100)      |                            
+| [broadcast]         | true to broadcast the transaction on the network. (e.g., true)      |
 
 
 ***
