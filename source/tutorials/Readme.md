@@ -10,11 +10,13 @@
 This page “How To”  intended to collect more steps included information. 
 
 ### Accounts 
+- [How to change a password if using a Cloud Wallet](https://github.com/bitshares/bitshares-ui/wiki/Cloud-Wallet-Login-and-changing-password) : from BitShares UI wiki
 - [How to process Account Registration](/source/accounts/account_registration.md#account-registration)
 
 
 ### API
- - [How to enable RPC Logging](/source/apis/api_support.md#api-support)
+- [How an Exchange can integrate their services to the BitShares UI Wallet - Gateway Integration Requirements](https://github.com/bitshares/bitshares-ui/wiki/Gateway-Integration-Requirements) : from BitShares UI wiki
+- [How to enable RPC Logging](/source/apis/api_support.md#api-support)
 
 ### Assets
 - [How to Create a new UIA](/source/tutorials/assets_uia.md#how-to-create-a-new-uia)

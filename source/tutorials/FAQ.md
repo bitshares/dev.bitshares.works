@@ -31,12 +31,14 @@
 
 ***
 ### [Accounts](/source/tutorials/FAQ.md#accounts)
+- [How to change a password if using a Cloud Wallet](https://github.com/bitshares/bitshares-ui/wiki/Cloud-Wallet-Login-and-changing-password) : from BitShares UI wiki
 - [How can I create, register and upgrade an account to Lifetime Membership?](/source/tutorials/FAQ.md#q-how-can-i-create-register-and-upgrade-an-account-to-lifetime-membership)
 - [How to process Account Registration](/source/accounts/account_registration.md#account-registration)
 
 
 ***
 ### [APIs](#apis-1)
+- [How an Exchange can integrate their services to the BitShares UI Wallet - Gateway Integration Requirements](https://github.com/bitshares/bitshares-ui/wiki/Gateway-Integration-Requirements) : from BitShares UI wiki
 - [How do I get the network_add_nodes command to work? Why is it so complicated?](/source/tutorials/FAQ.md#q-how-do-i-get-the-network_add_nodes-command-to-work-why-is-it-so-complicated)
 - [Is there a way to access methods which require login over HTTP?](/source/tutorials/FAQ.md#q-is-there-a-way-to-access-methods-which-require-login-over-http)
 - [Is there a way to allow external program to drive cli_wallet via websocket, JSONRPC, or HTTP?](/source/tutorials/FAQ.md#q-is-there-a-way-to-allow-external-program-to-drive-cli_wallet-via-websocket-jsonrpc-or-http)
