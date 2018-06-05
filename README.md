@@ -27,16 +27,21 @@
    - Network and Wallet Configuration
       - Components
       - General Network and Wallet Configuration
+	    - Trusted Full Node
       - Secure Network and Wallet Configuration
+	    - Trusted Full Node
+		- Delayed Full Node
   - A Collection of command lines - Node, Wallet, and Witness
 
 ## 5. [Full Nodes / Witness Nodes](/source/full-witness_nodes#full-node--witness-node)
    - Full Nodes (Witness Nodes)
       - Type of Witness nodes
       - How to launch the full node
-      - Configuration
+      - Configuration - `config.ini`
       - Enabling Remote Procedure Calls (RPC)
       - Restarting the Witness Node
+	  - Public Full Node information
+	  
    - Become an Active Witness
       - A Block-Producing Witness
       - How to become a Block-Producing Witness

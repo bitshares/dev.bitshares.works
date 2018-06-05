@@ -9,7 +9,7 @@
 - Q&A
 
 
-#### Build and Run BitShares-Core in WSL (Installation Option)
+### Build and Run BitShares-Core in WSL (Installation Option)
 - Use Windows Subsystem for Linux
   - [Instruction how to prepare Ubuntu to Windows 10 OS](/source/installation/wsl.md#windows-subsystem-for-linux-wsl) 
 

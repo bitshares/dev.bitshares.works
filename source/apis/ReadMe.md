@@ -17,7 +17,6 @@
    - [Login In](/source/apis/api_restrictions.md#login-in)
 - [Object and IDs](/source/apis/object_ids.md#objects-and-ids)   
 - [Running a BitShares API Node](/source/apis/running-api-node.md#running-a-bitshares-api-node)   
-- [Q&A](/source/tutorials/QA.md#apis)
    
 ### Calls   
 - [Remote Procedure Calls](/source/apis/rpc.md#remote-procedure-calls)
