@@ -1,9 +1,10 @@
 ## References
 
-### Informative Repositories
+### Informative GitHub Repositories
 
 | Title | contributed by | |
 |-------|----------------|---|
+| [Bitshares Witness Monitor](https://github.com/clockworkgr/bitshares-witness-monitor) | clockworkgr | | 
 | [Configuration for HAproxy with BitShares Health Monitor ](https://github.com/blockchainbv/bitshares-infrastructure) | xeroc ||
 | [BPAB - Bitshares Python Api Backend](https://github.com/oxarbitrage/bitshares-python-api-backend) | oxarbitrage | |
 | [metaNODE = Bitshares_Trustless_Client()](https://github.com/litepresence/extinction-event/tree/master/metaNODE)  | litepresence | |

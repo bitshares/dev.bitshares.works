@@ -4,6 +4,8 @@ Post Format: **\- \[ title + (mm/yyyy)\]\( link \) by author name**
 
 ***
 
+
+- [DevWork Update: BitShares Witness Monitor (06/2018)](https://steemit.com/bitshares/@clockwork/devwork-update-bitshares-witness-monitor) : by  @cloclwork
 - [Bitshares ElasticSearch Wrapper and Swagger (05/2018)](https://steemit.com/bitshares/@oxarbitrage/bitshares-elasticsearch-wrapper-and-swagger)  by @oxarbitrage
 - [Slides How to create smart contracts in graphene blockchains (05/2018)](https://steemit.com/bitshares/@oxarbitrage/slides-how-to-create-smart-contracts-in-graphene-blockchains)  by @oxarbitrage
 - [BitShares smart-coins and the pricefeed (05/2018)](https://steemit.com/bitshares/@clockwork/bitshares-smart-coins-and-the-pricefeed) by @cloclwork
@@ -11,6 +13,7 @@ Post Format: **\- \[ title + (mm/yyyy)\]\( link \) by author name**
 
 ***
 
+- [How the issuer of an IOU/UIA can transfer assets back to himself (2016)](https://steemit.com/bitshares/@xeroc/how-the-issuer-of-an-iouuia-can-transfer-assets-back-to-himself) : by xeroc
 - [Howto: An Introduction to Python-BitShares (01/2018)](https://steemit.com/python/@full-steem-ahead/howto-an-introduction-to-python-bitshares) : by @full-steem-ahead
 - [Howto: Using Nginx to Load Balance Servers Part 2 (08/2017)](https://steemit.com/witness-category/@full-steem-ahead/howto-using-nginx-to-load-balance-servers-part-2) : by @full-steem-ahead
 - [Howto: Using Nginx to Load Balance Servers (08/2017)](https://steemit.com/witness-category/@full-steem-ahead/howto-using-nginx-to-load-balance-servers) : by @full-steem-ahead
