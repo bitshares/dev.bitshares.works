@@ -1,5 +1,7 @@
 # References & Tools
 
+- [BitShares Blockchain - website links](/source/references_tools/bitshares_blockchain.md#bitshares-blockchain)
+
 ### Releases
  
 - [BitShares-Core Release](https://github.com/bitshares/bitshares-core/releases)
@@ -22,21 +24,6 @@
 - [Manage a running node in the background by using GNU screen](/source/references_tools/manage_node_gun_screen.md#manage-a-running-node-in-the-background-by-using-gnu-screen)
 - [Monitoring Account Deposits: Python](/source/references_tools/monitoring_python.md#monitoring-account-deposits---python)
 - [Monitoring Balance History: NodeJS](/source/references_tools/monitoring_nodejs.md#monitoring-the-balance-history---nodejs)
-
-***
-
-### Software
-
-- Quickstart Docker Images
-- BitShares Core
-- REST API Server (TBD. see: https://github.com/bitshares/bitshares-core/issues/870)
-- Reference UI
-- SDKs
-   - JS SDK
-   - Python SDK
-   - JAVA SDK
-   - etc.
-- Other Related Software
 
 ***
 

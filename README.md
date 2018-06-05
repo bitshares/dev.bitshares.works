@@ -9,10 +9,10 @@
    - BitShares GitFlow    
 
 ## 2. [References & Tools](/source/references_tools#references--tools)
+   - BitShares Blockchain - website links
    - Releases
    - GitHub Repositories
    - References: Programs / Tools
-   - Software
    - References: Articles
    
 ## 3. [Accounts](/source/accounts#accounts)

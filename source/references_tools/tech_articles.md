@@ -2,11 +2,18 @@
 
 Post Format: **\- \[ title + (mm/yyyy)\]\( link \) by author name**
 
+***
+
+- [Bitshares ElasticSearch Wrapper and Swagger (05/2018)](https://steemit.com/bitshares/@oxarbitrage/bitshares-elasticsearch-wrapper-and-swagger)  by @oxarbitrage
+- [Slides How to create smart contracts in graphene blockchains (05/2018)](https://steemit.com/bitshares/@oxarbitrage/slides-how-to-create-smart-contracts-in-graphene-blockchains)  by @oxarbitrage
+- [BitShares smart-coins and the pricefeed (05/2018)](https://steemit.com/bitshares/@clockwork/bitshares-smart-coins-and-the-pricefeed) by @cloclwork
+- [Steem transaction signing in a nutshell (2016)](https://steemit.com/steem/@xeroc/steem-transaction-signing-in-a-nutshell) by @xeroc 
+
+***
+
 - [Howto: An Introduction to Python-BitShares (01/2018)](https://steemit.com/python/@full-steem-ahead/howto-an-introduction-to-python-bitshares) : by @full-steem-ahead
 - [Howto: Using Nginx to Load Balance Servers Part 2 (08/2017)](https://steemit.com/witness-category/@full-steem-ahead/howto-using-nginx-to-load-balance-servers-part-2) : by @full-steem-ahead
 - [Howto: Using Nginx to Load Balance Servers (08/2017)](https://steemit.com/witness-category/@full-steem-ahead/howto-using-nginx-to-load-balance-servers) : by @full-steem-ahead
-- [Slides How to create smart contracts in graphene blockchains (05/2018)](https://steemit.com/bitshares/@oxarbitrage/slides-how-to-create-smart-contracts-in-graphene-blockchains)  by @oxarbitrage
-- [Steem transaction signing in a nutshell (2016)](https://steemit.com/steem/@xeroc/steem-transaction-signing-in-a-nutshell) by @xeroc 
 - [Hertz Bounty! 750 bitUSD for implementing Hertz in the btsprice python price feed repo!! (01/2018)](https://steemit.com/bitshares/@cm-steem/hertz-bounty-750-bitusd-for-implementing-hertz-in-the-btsprice-python-price-feed-repo) : by cm-steem
 - [Back to Algorithm Based Assets & Targeting BTS as an MPA’s reference asset!](https://steemit.com/bitshares/@cm-steem/back-to-algorithm-based-assets-and-targeting-bts-as-an-mpa-s-reference-asset) : by cm-steem
 - [BitShares UI Improvements (13 New Features, 45 Bug Fixes)](https://steemit.com/beyondbitcoin/@sc-steemit/bitshares-ui-improvements-13-new-features-45-bug-fixes): by cm-steem
