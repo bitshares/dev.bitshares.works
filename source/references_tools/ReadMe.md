@@ -8,10 +8,11 @@
 ### GitHub Repositories
 
 - [Informative GitHub Repositories](/source/references_tools/references.md#informative-repositories)
-- [BirShares GitHub Repositories : cede-Issues](/source/references_tools/references.md#github-code--issues)
+- [BirShares GitHub Repositories : code-Issues](/source/references_tools/references.md#bitshares-github-code--issues-list)
 
 ### References: Programs / Tools
 
+- [Python-Bitshares - xeroc](https://github.com/xeroc/python-bitshares)
 - [Python Library](http://pybitshares.com/)
 - JSON/RPC API Reference
 - REST Server API reference (TBD. see: https://github.com/bitshares/bitshares-core/issues/870)

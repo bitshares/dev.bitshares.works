@@ -2,42 +2,47 @@
 
 ### Informative Repositories
 
+| Title | contributed by | |
+|-------|----------------|---|
+| [Configuration for HAproxy with BitShares Health Monitor ](https://github.com/blockchainbv/bitshares-infrastructure) | xeroc ||
+| [BPAB - Bitshares Python Api Backend](https://github.com/oxarbitrage/bitshares-python-api-backend) | oxarbitrage | |
+| [metaNODE = Bitshares_Trustless_Client()](https://github.com/litepresence/extinction-event/tree/master/metaNODE)  | litepresence | |
+| [Systemd Service Startup configuration and description](https://github.com/Clementvale-LTD/blockchain-telecom.graphene-core/commit/35366d04f4529363e121366171edbebc846f9327) | Clementvale-LTD | |
+|[Python-Bitshares - xeroc](https://github.com/xeroc/python-bitshares)  | xeroc | |
+|[uptic - xeroc](https://github.com/xeroc/uptick)  | xeroc | |
+| [A HUG REST API for the Bitshares network](https://github.com/BTS-CM/Bitshares-HUG-REST-API)  | BTS-CM | |
+| [BitShares Delegate tools](https://github.com/wackou/bts_tools) | wackou | |
+| [Bitshares python API Backend](https://github.com/oxarbitrage/bitshares-python-api-backend) | oxarbitrage | |
+| [ChainSquad GmbH](https://github.com/chainsquad) | chainsquad | |
+| [Gem to interact with Bitshares APIs. Porting to Graphene. API Guide - rnglabs/bitshares-ruby](https://github.com/rnglabs/bitshares-ruby) | rnglabs | |
+|  [LedgerHQ](https://github.com/LedgerHQ/blue-loader-python) : Python Loader for Ledger Blue and Nano S | LedgerHQ | |
+| [MatzFan](https://github.com/MatzFan/bitshares-ruby) |MatzFan  | |
+| [PBSA/peerplays - plugins](https://github.com/PBSA/peerplays/tree/master/libraries/plugins/) |PBSA  | |
+| [PBSA/peerplays - generate genesis](https://github.com/PBSA/peerplays/tree/master/libraries/plugins/generate_genesis) | PBSA | |
+| [python-bitshares 0.1 documentation](http://docs.pybitshares.com/en/latest/) : Welcome to pybitshares’s documentation |  | |
+| [satoshilabs](https://github.com/satoshilabs/slips/issues/49) : SLIP-0048 : Deterministic Key Hierarchy for Graphene-based Networks #49 | satoshilabs | |
+| [Simple Wrapper to Query BitShares Data Stored in Elasticsearch Database - oxarbitrage](https://github.com/oxarbitrage/bitshares-es-wrapper) | oxarbitrage | |
+| [BitShares - Basic Connections Layer](https://steemit.com/bitshares/@btswolf/bitshares-basic-connections-layer) : infographic - basic overview  |  BTSwolf| |
+|  |  | |
 
-- [BPAB - Bitshares Python Api Backend](https://github.com/oxarbitrage/bitshares-python-api-backend) - oxarbitrage
-- [systemd service startup configuration and description is added](https://github.com/Clementvale-LTD/blockchain-telecom.graphene-core/commit/35366d04f4529363e121366171edbebc846f9327)
-- [A HUG REST API for the Bitshares network -BTS-CM](https://github.com/BTS-CM/Bitshares-HUG-REST-API) 
-- [BitShares Delegate tools](https://github.com/wackou/bts_tools)
-- [Bitshares python API Backend](https://github.com/oxarbitrage/bitshares-python-api-backend)
-- [ChainSquad GmbH](https://github.com/chainsquad)
-- [Gem to interact with Bitshares APIs. Porting to Graphene. API Guide - rnglabs/bitshares-ruby](https://github.com/rnglabs/bitshares-ruby)
-- [Graphene Documentation](https://bitshares.org/doxygen/index.html)
-- [LedgerHQ](https://github.com/LedgerHQ/blue-loader-python) : Python Loader for Ledger Blue and Nano S
-- [MatzFan](https://github.com/MatzFan/bitshares-ruby)
-- [PBSA/peerplays - plugins](https://github.com/PBSA/peerplays/tree/master/libraries/plugins/)
-- [PBSA/peerplays - generate genesis](https://github.com/PBSA/peerplays/tree/master/libraries/plugins/generate_genesis)
-- [python-bitshares - xeroc](https://github.com/xeroc/python-bitshares)
-- [python-bitshares 0.1 documentation](http://docs.pybitshares.com/en/latest/) : Welcome to pybitshares’s documentation
-- [satoshilabs](https://github.com/satoshilabs/slips/issues/49) : SLIP-0048 : Deterministic Key Hierarchy for Graphene-based Networks #49
-- [Simple wrapper to query bitshares data stored in elasticsearch database - oxarbitrage](https://github.com/oxarbitrage/bitshares-es-wrapper)
-- [uptic - xeroc](https://github.com/xeroc/uptick)
-- [BitShares - Basic Connections Layer](https://steemit.com/bitshares/@btswolf/bitshares-basic-connections-layer) : infographic - basic overview - BTSwolf
+***
 
+### BitShares GitHub Code | Issues List
 
-### GitHub Code | Issues
-
-* [code](https://github.com/bitshares/bitshares-core) | [issue](https://github.com/bitshares/bitshares-core/issues)| **bitshares-core:** BitShares Core is the BitShares blockchain implementation and command-line interface
-* [code](https://github.com/bitshares/bitshares-ui) | [issue](https://github.com/bitshares/bitshares-ui/issues) | **bitshares-ui:** Graphical User Interface for Bitshares
+* [code](https://github.com/bitshares/bitshares-core) | [issue](https://github.com/bitshares/bitshares-core/issues) | **bitshares-core:** BitShares Core is the BitShares blockchain implementation and command-line interface
+* [code](https://github.com/bitshares/bitshares-ui) | [issue](https://github.com/bitshares/bitshares-ui/issues) | **bitshares-ui:** Fully featured Graphical User Interface / Reference Wallet for the BitShares Blockchain
 * [code](https://github.com/bitshares/bitshares.github.io) | [issue](https://github.com/bitshares/bitshares.github.io/issues)  | **bitshares.github.io:**
 * [code](https://github.com/bitshares/bsips) | [issue](https://github.com/bitshares/bsips/issues) |  **bsips:** BitShares Improvement Proposals and Protocols
-* [code](https://github.com/bitshares/bitshares-fc) | [issue](https://github.com/bitshares/bitshares-fc/issues>) | **bitshares-fc:** 
-* [code](https://github.com/bitshares/bitsharesjs) | [issue](https://github.com/bitshares/bitsharesjs/issues)  | **bitsharesjs:** 
+* [code](https://github.com/bitshares/bitshares-fc) | [issue](https://github.com/bitshares/bitshares-fc/issues>) | **bitshares-fc:** Fast-compiling C++ library 
+* [code](https://github.com/bitshares/bitsharesjs) | [issue](https://github.com/bitshares/bitsharesjs/issues)  | **bitsharesjs:** JavaScript tools for BitShares Encryption and Serialization
 * [code](https://github.com/bitshares/bitsharesjs-ws>) | [issue](https://github.com/bitshares/bitsharesjs-ws/issues) | **bitsharesjs-ws:** Javascript websocket interface for Bitshares  
 * [code](https://github.com/bitshares/bitshares-js) | [issue](https://github.com/bitshares/bitshares-js/issues) | **bitshares-js:** JavaScript tools for BitShares Encryption and Serialization  
 * [code](https://github.com/bitshares/bitshares-ui-api) | [issue](https://github.com/bitshares/bitshares-ui-api/issues) | **bitshares-ui-api:**   
+* [code](https://github.com/bitshares/websocketpp) | issue  | **websocketpp:** C++ websocket client/server library http://www.zaphoyd.com/websocketpp
 * [code](https://github.com/bitshares/reconnecting-websocket) | [issue](https://github.com/bitshares/reconnecting-websocket/issues)  | **reconnecting-websocket:** 
 * [code](https://github.com/bitshares/bitshares_wallet) | [issue](https://github.com/bitshares/bitshares_wallet/issues) | **bitshares_wallet:** The bitshares wallet app for Android devices
-* [code](https://github.com/bitshares/btsgo) | [issue](https://github.com/bitshares/btsgo/issues)| **btsgo:** 
-* [code](https://github.com/bitshares/faucet) | [issue](https://github.com/bitshares/faucet/issues) | **faucet:** 
+* [code](https://github.com/bitshares/btsgo) | [issue](https://github.com/bitshares/btsgo/issues) | **btsgo:** 
+* [code](https://github.com/bitshares/faucet) | [issue](https://github.com/bitshares/faucet/issues)  | **faucet:** 
 * [code](https://github.com/bitshares/perfect-scrollbar) | [issue](https://github.com/bitshares/perfect-scrollbar/issues) | **perfect-scrollbar:** Minimalistic but perfect custom scrollbar plugin 
 * [code](https://github.com/bitshares/bitshares1-core) | [issue](https://github.com/bitshares/bitshares1-core/issues) | **bitshares1-core:** Financial Smart Contract Platform  
 * [code](https://github.com/bitshares/bitshares1-qtwallet) | [issue](https://github.com/bitshares/bitshares1-qtwallet/issues) |  **bitshares1-qtwallet:** Qt Wallet for BitShares 

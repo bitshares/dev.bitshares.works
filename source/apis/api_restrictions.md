@@ -18,7 +18,7 @@
 We provide several different API's. Each API has its own ID. When running `witness_node`, initially two API's are available.
 
 - **API 0**: provides read-only access to the database. (e.g. state-less RPC-calls querying)
-- **API 1**: is used to login and gain access to additional, restricted API's. (e.g. authencitated interaction)
+- **API 1**: is used to login and gain access to additional, restricted API's. (e.g. authenticated interaction)
 
 > Note: To access the restricted API-1 we are required to use the websocket connection with callbacks to access API-1
 

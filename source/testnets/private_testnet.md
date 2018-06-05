@@ -158,7 +158,9 @@ This curl command will return a short JSON object including the `chain_id`.
 
 We are now ready to connect a new wallet to your Private testnet witness node. You must specify a chain ID and server. Keep your witness node running and in another _Command Prompt_ window run this command (a blank username and password will suffice):
 
-    cli_wallet --wallet-file my-wallet.json --chain-id cf307110d029cb882d126bf0488dc4864772f68d9888d86b458d16e6c36aa74b --server-rpc-endpoint ws://127.0.0.1:11011 -u '' -p ''
+    cli_wallet --wallet-file my-wallet.json 
+               --chain-id cf307110d029cb882d126bf0488dc4864772f68d9888d86b458d16e6c36aa74b 
+               --server-rpc-endpoint ws://127.0.0.1:11011 -u '' -p ''
 
 > Note: Make sure to replace the above chain ID (i.e., blockchain id) `cf307110d0...36aa74b` with **your own chain ID** reported by your witness_node. The chain-id passed to the CLI-wallet needs to match the id generated and used by the witness node.
 
@@ -225,7 +227,7 @@ We can now open a new wallet for alpha user:
     upgrade_account alpha true
     create_witness alpha "http://www.alpha" true
 
-The `get_private_key` command allows us to obtain the public key corresponding to the block signing key:
+The `get_private_key` command allows us to obtain the WIF private key corresponding to a public key. The private key must already be in the wallet:
 
     get_private_key BTS78CuY47Vds2nfw2t88ckjTaggPkw16tLhcmg4ReVx1WPr1zRL5
 

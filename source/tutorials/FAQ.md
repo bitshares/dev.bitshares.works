@@ -1,7 +1,6 @@
-## Frequently asked Questions
+## Frequently Asked Questions - List All
 
 ### Contents:
-
 
 **[General](/source/tutorials/FAQ.md#general)**
 - [What is the standard Bitshares address structure and format?](/source/tutorials/FAQ.md#q-what-is-the-standard-bitshares-address-structure-and-format
@@ -33,15 +32,19 @@
 ***
 ### [Accounts](/source/tutorials/FAQ.md#accounts)
 - [How can I create, register and upgrade an account to Lifetime Membership?](/source/tutorials/FAQ.md#q-how-can-i-create-register-and-upgrade-an-account-to-lifetime-membership)
+- [How to process Account Registration](/source/accounts/account_registration.md#account-registration)
+
 
 ***
 ### [APIs](#apis-1)
-- [How do I get the network_add_nodes command to work? Why is it so complicated?](#q-how-do-i-get-the-network_add_nodes-command-to-work-why-is-it-so-complicated)
-- [Is there a way to access methods which require login over HTTP?](#q-is-there-a-way-to-access-methods-which-require-login-over-http)
-- [Is there a way to allow external program to drive cli_wallet via websocket, JSONRPC, or HTTP?](#q-is-there-a-way-to-allow-external-program-to-drive-cli_wallet-via-websocket-jsonrpc-or-http)
-- [Is there a way to generate help with parameter names and method descriptions?](#q-is-there-a-way-to-generate-help-with-parameter-names-and-method-descriptions)
-- [What is the meaning of a.b.c numbers?](#q-what-is-the-meaning-of-abc-numbers)
-- [The answer to the previous question was really confusing. Can you make it clearer?](#q-the-answer-to-the-previous-question-was-really-confusing-can-you-make-it-clearer)
+- [How do I get the network_add_nodes command to work? Why is it so complicated?](/source/tutorials/FAQ.md#q-how-do-i-get-the-network_add_nodes-command-to-work-why-is-it-so-complicated)
+- [Is there a way to access methods which require login over HTTP?](/source/tutorials/FAQ.md#q-is-there-a-way-to-access-methods-which-require-login-over-http)
+- [Is there a way to allow external program to drive cli_wallet via websocket, JSONRPC, or HTTP?](/source/tutorials/FAQ.md#q-is-there-a-way-to-allow-external-program-to-drive-cli_wallet-via-websocket-jsonrpc-or-http)
+- [Is there a way to generate help with parameter names and method descriptions?](/source/tutorials/FAQ.md#q-is-there-a-way-to-generate-help-with-parameter-names-and-method-descriptions)
+- [What is the meaning of a.b.c numbers?](/source/tutorials/FAQ.md#q-what-is-the-meaning-of-abc-numbers)
+- [The answer to the previous question was really confusing. Can you make it clearer?](/source/tutorials/FAQ.md#q-the-answer-to-the-previous-question-was-really-confusing-can-you-make-it-clearer)
+- [How to process Account Registration](/source/accounts/account_registration.md#account-registration)
+
 
 ***
 
@@ -50,6 +53,15 @@
 - [Can I change x after creation of the asset?](/source/tutorials/FAQ.md#qcan-i-change-x-after-creation-of-the-asset)
 - [What about Parent and Child assets?](/source/tutorials/FAQ.md#q-what-about-parent-and-child-assets)
 - [Can I change the issuer?](/source/tutorials/FAQ.md#q-can-i-changing-the-issuer)
+- [How to Create a new UIA](/source/tutorials/assets_uia.md#how-to-create-a-new-uia)
+- [How to Update/Change an existing UIA](/source/tutorials/assets_uia.md#how-to-updatechange-an-existing-uia)
+- [How to Create a MPA](/source/tutorials/assets_mpa.md#how-to-create-a-mpa)
+- [How to Create a Prediction Market](/source/tutorials/assets_pm.md#how-to-create-a-prediction-market)
+- [How to Closing/Setting a Prediction Market](/source/tutorials/assets_pm.md#how-to-closingsetting-a-prediction-market
+)
+- [How to test the publishing of price feeds](/source/tutorials/assets_publish_feed.md#how-to-test-the-publishing-of-price-feeds)
+   - Python Script Example
+
 
 **Fee Pool**
 - [What is the fee pool all about?](/source/tutorials/FAQ.md#q-what-is-the-fee-pool-all-about)
@@ -68,19 +80,47 @@
 - [Can I use the same flags/permissions as for UIAs?](/source/tutorials/FAQ.md#q-can-i-use-the-same-flagspermissions-as-for-uias)
 - [What are market-pegged-asset-specific parameters?](/source/tutorials/FAQ.md#q-what-are-market-pegged-asset-specific-parameters)
 
+***
+### BitShares Decentralised Exchange (DEX)
+- [How to prepare Distributed Access to the BitShares Decentralised Exchange (DEX)](/source/tutorials/dex_distributed_access.md#distributed-access-to-the-bitshares-decentralised-exchange)
 
 ***
-### [Testnet](/source/tutorials/FAQ.md#testnet-1)
 
+### Committee
+- [How to Create a new Committee Member](/source/tutorials/committee_howto.md#how-to-creating-a-new-committee-member)
+- [How to Propose Committee Actions](/source/tutorials/committee_howto.md#how-to-propose-committee-actions)
+- [How to Approve/Disapprove a Committee Proposal](/source/tutorials/committee_howto.md#how-to-approvedisapprove-a-committee-proposal)
+- [How Committee Proposes a Change in Fee](/source/tutorials/committee_howto.md#how-committee-proposes-a-change-in-fee)
+
+***
+
+### [Testnet](/source/tutorials/FAQ.md#testnet-1)
 - [Public & private testnet differences What is the difference between public and private testnet?](/source/tutorials/FAQ.md#q-public--private-testnet-differences-what-is-the-difference-between-public-and-private-testnet)
 
 ***
+
+### Transfer / Transactions
+- [How to use the CLI wallet to perform confidential transfers in BitShares](/source/tutorials/trn_confidential_transfer.md#how-to-use-the-cli-wallet-to-perform-confidential-transfers-in-bitshares)
+- [Hot to Construct Any Transaction - Manually](/source/tutorials/trn_construct_transaction.md#how-to-construct-any-transaction---manually)
+- [How to Propose a Transaction](/source/tutorials/trn_propose_transaction.md#how-to-propose-a-transaction)
+- FAQs
+
+***
+
+### Vesting Balance 
+- [How to find Vesting Balance](/source/tutorials/vesting-balance-dev.md#how-to-find-vesting-balance)
+
+***
+
 ### [Wallet / CLI Wallet](/source/tutorials/FAQ.md#wallet--cli-wallet-1)
 - [How can I close the CLI client in a clean way?](/source/tutorials/FAQ.md#q-how-can-i-close-the-cli-client-in-a-clean-way)
-- [How can I import to my CLI client a wallet originally created in the web GUI?](/source/tutorials/FAQ.md#q-how-can-i-import-to-my-cli-client-a-wallet-originally-created-in-the-web-gui)
-- [How can I transfer a single account to a cli wallet?](/source/tutorials/FAQ.md#q-how-can-i-transfer-a-single-account-to-a-cli-wallet)
+- [How can I import my GUI-wallet account into CLI-wallet?](/source/tutorials/FAQ.md#q-how-can-i-import-my-gui-wallet-account-into-cli-wallet)
 - [Why does the CLI client crash immediately when I try to run it for the first time?](/source/tutorials/FAQ.md#q-why-does-the-cli-client-crash-immediately-when-i-try-to-run-it-for-the-first-time)
-
+- How to prepare a CLI wallet for trading
+- [How to setup Network and Wallet Configuration](/source/wallet/wallet_network.md#network-and-wallet-configuration)
+   - [General](/source/wallet/wallet_network.md#general-network-and-wallet-configuration)
+   - [Secure](/source/wallet/wallet_network.md#secure-network-and-wallet-configuration)
+   
 ***
 ### [Witness](/source/tutorials/FAQ.md#witness)
 - [Change the Signing Key of your Witness?](/source/tutorials/FAQ.md#q-change-the-signing-key-of-your-witness)
@@ -95,6 +135,11 @@
 
 ***
 ### Worker
+- [How to Create a Worker](/source/tutorials/worker_create.md#how-to-create-a-worker)
+- [How to see Proposals on the Chain](/source/tutorials/worker_create.md#how-to-see-proposals-on-the-chain)
+- [How to Vote for a Worker](/source/tutorials/worker_create.md#how-to-vote-for-a-worker)
+- [How Workers Get Paid](/source/tutorials/worker_create.md#how-workers-get-paid)
+- [How to find how much per hour allocated for all worker](/source/tutorials/worker_pay_claim.md#how-to-find-how-much-per-hour-allocated-for-all-worker)
 
 ***
 ***
@@ -418,15 +463,17 @@ When an asset is creatd, the issuer can set any combination of flags/permissions
 
 #### Q. What are the Flags?
 
-- charge_market_fee: an issuer-specified percentage of all market trades in this asset is paid to the issuer
-- white_list: accounts must be white-listed in order to hold this asset
-- override_authority: issuer may transfer asset back to himself
-- transfer_restricted: require the issuer to be one party to every transfer
-- disable_force_settle: disable force settling
-- global_settle: (only for bitassets) allows bitasset issuer to force a global settling - this may be set in permissions, but should not be set as flag unless, for instance, a prediction market has to be resolved. If this flag has been enabled, no further shares can be borrowed!
-- disable_confidential: allow the asset to be used with confidential transactions
-- witness_fed_asset: allow the asset to be fed by witnesses
-- committee_fed_asset: allow the asset to be fed by the committee
+| flag | |
+|---|---|
+| charge_market_fee | an issuer-specified percentage of all market trades in this asset is paid to the issuer|
+| white_list | accounts must be white-listed in order to hold this asset |
+| override_authority | issuer may transfer asset back to himself |
+| transfer_restricted | require the issuer to be one party to every transfer |
+| disable_force_settle | disable force settling |
+| global_settle | (only for bitassets) allows bitasset issuer to force a global settling - this may be set in permissions, but should not be set as flag unless, for instance, a prediction market has to be resolved. If this flag has been enabled, no further shares can be borrowed! |
+| disable_confidential | allow the asset to be used with confidential transactions |
+| witness_fed_asset | allow the asset to be fed by witnesses |
+| committee_fed_asset | allow the asset to be fed by the committee |
 
 #### Q. Can I use the same flags/permissions as for UIAs?
 
@@ -434,12 +481,15 @@ Yes!
 
 #### Q. What are market-pegged-asset-specific parameters?
 
-- feed_lifetime_sec: The lifetime of a feed. After this time (in seconds) a feed is no longer considered valid.
-- minimum_feeds: The number of feeds required for a market to become (and stay) active.
-- force_settlement_delay_sec: The delay between requesting a settlement and actual execution of settlement (in seconds)
-- force_settlement_offset_percent: A percentage offset from the price feed for settlement (100% = 10000)
-- maximum_force_settlement_volume: Maximum percentage of the supply that can be settled per day (100% = 10000)
-- short_backing_asset: The asset that has to be used to back this asset (when borrowing)
+| parameter| |
+|---|---|
+| feed_lifetime_sec | The lifetime of a feed. After this time (in seconds) a feed is no longer considered valid. |
+| minimum_feeds | The number of feeds required for a market to become (and stay) active. |
+| force_settlement_delay_sec | The delay between requesting a settlement and actual execution of settlement (in seconds) |
+| force_settlement_offset_percent | A percentage offset from the price feed for settlement (100% = 10000) |
+| maximum_force_settlement_volume | Maximum percentage of the supply that can be settled per day (100% = 10000) |
+| short_backing_asset | The asset that has to be used to back this asset (when borrowing) |
+
 
 ***
 ### Testnet
@@ -450,36 +500,64 @@ Not much. The biggest difference is that public testnet are intended for wider a
 
 ***
 ### Wallet / CLI Wallet
+
 #### Q. How can I close the CLI client in a clean way?
 
 In Windows closing the whole window produces a nasty exception. In Windows you can try ctrl-d which stops the process but stil produces a nasty exception.
 
-#### Q. How can I import to my CLI client a wallet originally created in the web GUI?
+#### Q. How can I import my GUI-wallet account into CLI-wallet?
 
-CLI and WEB wallet are two separated applications. They use separated ways to represent backups. You can currently only manually import keys from the GUI into the CLI.
+CLI and GUI wallet are two separated applications. They use separated ways to represent backups. You can currently only manually import keys from the GUI into the CLI.
 
-#### Q. How can I transfer a single account to a cli wallet?
+Your wallet private keys have extremely important roles. By importing your private keys to a new CLI-wallet, you can control your account funds from the CLI-wallet. 
 
-If you have a need to run just the cli wallet, you will likely want to transfer an existing account from the Web wallet or your light wallet into the cli. This guide assumes that you already have your web wallet working and properly connected to a full node. Something like this:
+First, find your privste keys in your GUI-wallet
+- Login to your GUI-wallet
+- Go to [Settings] – [Permissions]. There are Active, Owner, and Memo tabs. 
+- In the tab, click your public key (or the key image). It will open a form.
+- On the form, click [Show], save your private key information to use later.
 
-    ./cli-wallet -s wss://bitshares.openledger.info/ws
+Connect the CLI-wallet pointing it to a live node
+
+    ./programs/cli_wallet/cli_wallet --server-rpc-endpoint ws://localhost:8090
+    Or 
+    ./programs/cli_wallet//cli-wallet -s wss://bitshares.openledger.info/ws
 
 You should get a prompt
 
-    new >>>
+    new>>>
 
-Now set a password for the wallet
+Set a pwssword for your CLI-wallet and unlock.
 
-    new >>> set_password my_password
-    locked >>> unlock my_password
+**Note:** This password does not need to be the same with your GUI-wallet password. You will create a new wallet and it will be secured by the new password.
+
+    new >>> set_password mypass
+    set_password mypass
+    null
+    locked >>> unlock mypass
+    unlock mypass
+    null
     unlocked >>>
 
-Now you need to go to your bitshares 2.0 webwallet or lite client and select the account you wish to bring across. Click on permissions followed by the key icon within Active Permissions. This will reveal your private key. Copy it to the clipboard.
-development\tutorials\account-active-permissions.png
 
-Now let’s import the account into this wallet
+Import your private key you saved from your GUI-wallet into your new CLI-wallet.
 
-    new >>> import_key <accountname> THISISTHEKEYTHATYOUCOPIED
+    import_key your-account-name THISISTHEKEYTHATYOUCOPIED
+
+And you are done. No need to claim balance. Your account balances are in there. 
+
+Use `list_my_account`s to see your imported account.
+
+And to check balance:
+
+    unlocked >>> list_account_balances your-account-name
+    list_account_balances your-account-name
+    31016.69330 BTS
+    0 CNY
+    0 USD
+
+    unlocked >>>
+
 
 #### Q. Why does the CLI client crash immediately when I try to run it for the first time?
 
@@ -523,11 +601,14 @@ Yes, but
 The only way you can interact with the witness node is through the CLI client by using its API. You can also use the GUI (i.e. the light client). In the GUI, change Settings -> API connection, add ws://127.0.0.1:8090/ws (according to settings of your witness node) and select it.
 
 #### Q. What is the meaning of all those different text colors in the witness node console?
-- green - debug
-- white - info/default
-- yellow/brown - warning
-- red - error
-- blue - some kind of info, I don’t know
+
+| color | |
+|---|---|
+| green | debug |
+| white| info/default |
+| yellow/brown| warning |
+| red | error |
+| blue | some kind of info, I don’t know |
 
 Related source files are in libraries/fc/include/fc/log/ and libraries/fc/src/log/.
 

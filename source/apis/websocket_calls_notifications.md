@@ -2,15 +2,15 @@
 
 #### Contents:
 * [Call Format: Websocket](/source/apis/websocket_calls_notifications.md#call-format-websocket)
-* [API Access Procedure](/source/apis/websocket_calls_notifications.md#api-access-procedure) - Requesting Available APIs ASccess
+* [API Access Procedure](/source/apis/websocket_calls_notifications.md#api-access-procedure) - Requesting Available APIs Access
 * [Database Notifications](#database-notifications) - Available **Websocket Subscriptions**
-* [Example](/source/apis/websocket_calls_notifications.md#example---get-a-global-scubscription-callback-and-id) - Get a global scubscription callback and id
+* [Example](/source/apis/websocket_calls_notifications.md#example---get-a-global-subscription-callback-and-id) - Get a global subscription callback and id
 
 *** 
 
-## Prerequisits
+## Prerequisites
 
-In this page example, we assumes that you have a full node running and listening to port
+In this page example, we assume that you have a full node running and listening to port
 ``8090``, locally.
 
 >If you also want to run a wallet, please pick reasonable different
@@ -19,7 +19,7 @@ In this page example, we assumes that you have a full node running and listening
 
 ## Call Format: Websocket
 
-In Graphene, Websocket calls are stateful and accessible via regular JSON formated
+In Graphene, Websocket calls are stateful and accessible via regular JSON formatted
 websocket connection. The correct structure of the JSON call is
 
      {
@@ -53,7 +53,7 @@ A non-restricted call against a full-node would take the form:
 
 #### Successful Calls
 
-The API will return a properly JSON formated response carrying the same ``id``
+The API will return a properly JSON formatted response carrying the same ``id``
 as the request to distinguish subsequent calls.
 
     {
@@ -107,7 +107,7 @@ The first thing we need to do is to *login*::
     < {"id":2,"result":true}
 
 If you have ``restricted access`` then you may be required to put
-your ``username`` and ``pasword`` into the quotes, accordingly. Furthermore, you
+your ``username`` and ``password`` into the quotes, accordingly. Furthermore, you
 should verify, that the ``result`` give positive confirmation about your login.
 
 #### 2. Requesting Access to an API
@@ -158,11 +158,11 @@ We have the following subscriptions available:
 
 ***
 
-## Example - Get a global scubscription callback and id
+## Example - Get a global subscription callback and id
 
 - `set_subscribe_callback`
 
-First, let's get a global scubscription callback to disctinguish our notifications from regular RPC calls:
+First, let's get a global subscription callback to distinguish our notifications from regular RPC calls:
 
     > {"id":4,"method":"call","params":[DATABASE_API_ID,"set_subscribe_callback",[SUBSCRIPTION_ID, true]]}
 

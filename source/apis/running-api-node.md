@@ -47,7 +47,7 @@ A typical node start command can be something like:
 
 Above we limit the operations per account to 1000 to save RAM. This is the default behaviour for newest versions of witness_node as a full node needs more than 80 gigs of ram to run.
 
-We call full node to an api node that haves all the account history from all the accounts in the bitshares blockchain. As the amount of RAM needed is so big and increasing this kind of nodes are each time more rare.
+We call full node to an api node that have all the account history from all the accounts in the bitshares blockchain. As the amount of RAM needed is so big and increasing this kind of nodes are each time more rare.
 
 Look in the terminal for messages like:
 

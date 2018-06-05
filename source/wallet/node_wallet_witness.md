@@ -2,6 +2,17 @@
 
 This page is a collection of command lines to connect Node, Wallet, and Witness. You can compare their differences to understand the patterns and how they are used.
 
+#### contents:
+- [Launch the full node](/source/wallet/node_wallet_witness.md#launch-the-full-node)
+- [Run the witness as a node in the network (localhost):](/source/wallet/node_wallet_witness.md#run-the-witness-as-a-node-in-the-network-localhost)
+- [Run the witness as a node in the network](/source/wallet/node_wallet_witness.md#run-the-witness-as-a-node-in-the-network)
+- [Use the Public API node](/source/wallet/node_wallet_witness.md#use-the-public-api-node)
+- [Public Testnet - how to create/connect a cli_wallet](/source/wallet/node_wallet_witness.md#public-testnet---how-to-createconnect-a-cli_wallet)
+- [Private Testnet](/source/wallet/node_wallet_witness.md#private-testnet)
+- [General Network and Wallet Configuration](/source/wallet/node_wallet_witness.md#general-network-and-wallet-configuration)
+- [Secure Network and Wallet ](/source/wallet/node_wallet_witness.md#secure-network-and-wallet)
+
+
 *** 
 
 **Note:** The *CLI client* is unable to run on its own (i.e. without being connected to the witness node). So successfully to run the CLI client you need to do...
@@ -12,9 +23,10 @@ This page is a collection of command lines to connect Node, Wallet, and Witness.
 **Note:** After you start running the CLI client, you can issue any command avaiable to the cli-wallet (Wallet API) or construct your own transaction manually.
 
 ***
-<E.g. 1>
+<E.g. 1: [(source)](/source/full-witness_nodes/full_nodes.md#full-nodes-witness-nodes)>
 
 ### Launch the full node:  
+
 
     /programs/witness_node/witness_node
 
@@ -25,7 +37,7 @@ At this point, you can try queries to the blockchain. (i.e., Database APIs. *exc
 **Note:** A witness node is identical to a full node if no authorized block-signing private key is provided.
 
 ***
-<E.g. 2>
+<E.g. 2 [(source)](/source/full-witness_nodes/active_witness.md#2-create-a-cli-wallet)>
 ### Run the witness as a node in the network (localhost):
 
     /programs/witness_node/witness_node --rpc-endpoint 127.0.0.1:8090
@@ -47,7 +59,7 @@ This will open the port 8091 for HTTP-RPC requests and has the capabilities to h
 *It is not recommended to publicly expose your wallet.*
 
 ***
-<E.g. 3>
+<E.g. 3 [(source)](/source/full-witness_nodes/full_nodes.md#enabling-remote-procedure-calls-rpc)>
 ### Run the witness as a node in the network:
 
     /programs/witness_node/witness_node --rpc-endpoint="0.0.0.0:8090"
@@ -56,7 +68,7 @@ This will open port 8090 and make it available over the internet (unless you run
 If you want it to be open for your machine only, replace 0.0.0.0 by localhost.
 
 ***
-<E.g. 4>
+<E.g. 4 [(source)](/source/wallet/cli_wallet.md#case-1-connecting-a-cli-wallet)>
 ### Use the Public API node 
 
 - Here is the latest list of [Public Full Node](https://github.com/bitshares/bitshares-ui/blob/staging/app/api/apiConfig.js#L67) information
@@ -81,7 +93,7 @@ You can choose between Websocket RPC or RPC-HTTP requests. You can also set both
 - HTTP RPC via the `-H` parameter
 
 ***
-<E.g. 5>
+<E.g. 5 [(source)](/source/testnets/public_testnet.md#4-connecting-a-cli-wallet)>
 ### Public Testnet - how to create/connect a cli_wallet
 
 In order to create a wallet (on Public Testnet), you must specify the previously setup server (e.g., `-s ws://127.0.0.1:11011`) with the witness node’s default access control settings.
@@ -94,7 +106,7 @@ In order to create a wallet (on Public Testnet), you must specify the previously
 **Note:** The parameter `-H` is required so that we can interface with the cli-wallet via `RPC-HTTP-JSON`, later while `-r` will open a port for the websocket RPC.
 
 ***
-<E.g. 6>
+<E.g. 6 [(source)](/source/testnets/private_testnet.md#10-creating-a-new-wallet)>
 ### Private Testnet 
 
 This connects the cli client to your testnet witness node. Keep your witness node running and in another Command Prompt window run this command:
@@ -109,7 +121,7 @@ Depending on the actual chain that you want to connect to your may need to speci
 
 ***
 ***
-<E.g. 7>
+<E.g. 7 [(source)](/source/wallet/wallet_network.md#general-network-and-wallet-configuration)>
 ### General Network and Wallet Configuration 
 
 **settings** 
@@ -143,7 +155,7 @@ We open up a RPC-JSON-HTTP port to be able to interface with API requests. The w
 
 
 ***
-<E.g. 8>
+<E.g. 8 [(source)](/source/wallet/wallet_network.md#secure-network-and-wallet-configuration)>
 ### Secure Network and Wallet 
 
 **settings** 

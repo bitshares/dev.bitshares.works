@@ -23,12 +23,12 @@
    - Account Registration
 
 ## 4. [Wallet](/source/wallet#wallet)
-   - Connecting a Wallet
-   - Wallet Full Nodes & Witness Nodes
+   - Connecting a Wallet   
    - Network and Wallet Configuration
       - Components
       - General Network and Wallet Configuration
       - Secure Network and Wallet Configuration
+  - A Collection of command lines - Node, Wallet, and Witness
 
 ## 5. [Full Nodes / Witness Nodes](/source/full-witness_nodes#full-node--witness-node)
    - Full Nodes (Witness Nodes)
@@ -62,7 +62,7 @@
       - Websockets Scripting Support
    
 ## 7. [Tutorials](/source/tutorials/Readme.md#tutorials)
-  - [Frequently asked Questions](/source/tutorials/FAQ.md#frequently-asked-questions)
+  - [Frequently asked Questions (FAQ)](/source/tutorials/FAQ.md#frequently-asked-questions---list-all)
   - [How Tos](/source/tutorials/Readme.md#how-tos)
 
 ## 8. [Testnets](/source/testnets#testnets)

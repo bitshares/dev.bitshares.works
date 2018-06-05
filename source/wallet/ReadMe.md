@@ -13,11 +13,6 @@
    - [register](/source/wallet/cli_wallet.md#register)   
 - [Transferring  Funds using the Cli-wallet](/source/wallet/cli_wallet.md#transferring-funds-using-the-cli-wallet)
 
-### [A Collection of command lines - Node, Wallet, and Witness](/source/wallet/node_wallet_witness.md#a-collection-of-command-lines---node-wallet-and-witness)
-
-### [Wallet Full Nodes & Witness Nodes](/source/wallet/wallet_full_nodes_witness_nodes.md#wallet-full-nodes--witness-nodes)
-- Example - connect to the network and open up a node
-  
 ### [Network and Wallet Configuration](/source/wallet/wallet_network.md#network-and-wallet-configuration)
    - [Components](/source/wallet/wallet_network.md##components)
       - P2P Network
@@ -31,6 +26,17 @@
       - Trusted Full Node
       - Delayed Full Node
       - Wallet
+
+### [A Collection of command lines - Node, Wallet, and Witness](/source/wallet/node_wallet_witness.md#a-collection-of-command-lines---node-wallet-and-witness)
+
+- [Wallet Full Nodes & Witness Nodes](/source/wallet/wallet_full_nodes_witness_nodes.md#wallet-full-nodes--witness-nodes)
+   - Examples - connect to the network and open up a node
+  
+### [FAQ - Wallet](/source/tutorials/FAQ.md#wallet--cli-wallet)
+- [How can I close the CLI client in a clean way?](/source/tutorials/FAQ.md#q-how-can-i-close-the-cli-client-in-a-clean-way)
+- [How can I import my GUI-wallet account into CLI-wallet?](/source/tutorials/FAQ.md#q-how-can-i-import-my-gui-wallet-account-into-cli-wallet)
+- [Why does the CLI client crash immediately when I try to run it for the first time?](/source/tutorials/FAQ.md#q-why-does-the-cli-client-crash-immediately-when-i-try-to-run-it-for-the-first-time)
+
 
 ***
 

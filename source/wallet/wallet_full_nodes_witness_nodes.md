@@ -18,6 +18,7 @@ which will
 - open port `8091` for HTTP-RPC requests and 
 - has the capabilities to handle accounts while the `witness_node` can only answer queries to the blockchain.
 
+***
 
 ## Example
 
@@ -41,7 +42,7 @@ which will
             root@NC-PH-1346-07:~/bitshares/issue25/bitshares-core# 
 
 
-### Output - User Case (1) 
+### Output - User error Case (1) 
 
             1857968ms th_a main.cpp:172 main ] wdata.ws_server: ws://localhost:8090
             0 exception: unspecified
@@ -52,9 +53,9 @@ which will
             {"uri":"ws://localhost:8090"}
             th_a  websocket.cpp:678 connect
 
-**Point:**  Check if node running in localhost at port 8090.
+**Tip:**  Check if node running in localhost at port 8090.
 
-### Output - User Case (2)
+### Output - User error Case (2)
 
 - started the witness node using the command `./programs/witness_node/witness_node` and 
 - configured the `witness_node_data_dir/config.ini - rpc-endpoint = server-ip:8090` also 
@@ -76,7 +77,7 @@ which will
                 th_a  websocket.cpp:678 connect
 
 
-**Point:** 
+**Tip:** 
 
 `./cli_wallet -s ws://server-ip` was used. Port is missing.  
 If your node is running at port 8090, try this `./cli_wallet -s ws://server-ip:8090` (e.g. `./cli_wallet -s ws://127.0.0.1:8090`).

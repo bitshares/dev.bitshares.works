@@ -80,7 +80,7 @@ The BitShares blockchain users are requires to register each account with a uniq
 | Object ID | Translates to |
 |----------|----------------|
 | 2.6.80 | # implementation space / account-balance / id: 80 |
-| 2.7.800  | # implementation space / account-statistics / id: 80 |
+| 2.7.80  | # implementation space / account-statistics / id: 80 |
 | 2.10.80  |  # implementation space / account-transactions / id: 80 |
 | 2.8.80  | # implementation space / transactions / id: 80 | 
 | 2.9.80  | # implementation space / block-summary / id: 80 |
