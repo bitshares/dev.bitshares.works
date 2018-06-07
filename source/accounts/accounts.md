@@ -63,6 +63,14 @@ An authority consists of one or several pairs of an account name with a **weight
 
 In order to obtain a valid transaction, the sum of the weights from signing the parties has to exceed the threshold as defined in the permissions.
 
+## Hierarchical Corporate Accounts
+
+BitShares designs permissions around people, rather than around cryptography, making it easy to use. Every account can be controlled by any weighted combination of other accounts and private keys. This creates a hierarchical structure that reflects how permissions are organized in real life, and makes multi-user control over funds easier than ever. Multi-user control is the single biggest contributor to security, and, when used properly, it can virtually eliminate the risk of theft due to hacking.
+
+Read more about [Multi-Signature](/source/knowledge-base/multi-signature.md#multi-signature)
+
+
+
 -----
 
 
