@@ -9,6 +9,7 @@
 - [Basic Rules](/source/installation/bitshares_core_gitflow.md#basic-rules)
 - [How To Create a Release](/source/installation/bitshares_core_gitflow.md#how-to-create-a-release)
 - [How To Create an Emergency Fix](/source/installation/bitshares_core_gitflow.md#how-to-create-an-emergency-fix)
+- [Emergency Fix Workflows](/source/installation/bitshares_core_gitflow.md#emergency-fix-workflows)
 
 ***
 
@@ -29,7 +30,7 @@ For our purposes, the general concept behind gitflow has been extended to allow 
 ## Non-Consensus: Development / Release / Bugfix Workflows
 
 <p align="center">
-  <img src="/source/imgs/bts-non-concensus.png" width="800" title="BitShares Core GitFlow">
+  <img src="/source/imgs/bts-non-concensus.png" width="810" title="BitShares Core GitFlow">
 </p>
 
 ***
@@ -37,7 +38,7 @@ For our purposes, the general concept behind gitflow has been extended to allow 
 ## Consensus: Development / Release / Bugfix Workflows
 
 <p align="center">
-  <img src="/source/imgs/bts-concensus.png" width="800" title="BitShares Core GitFlow">
+  <img src="/source/imgs/bts-concensus.png" width="810" title="BitShares Core GitFlow">
 </p>
 
 ***
@@ -101,8 +102,10 @@ First of all, the problem must be analyzed and debugged. This happens, naturally
 
 Presumably the developer who creates the fix will work on his private master branch. That is OK. But for publishing the fix, the following steps should be taken:
 
+### Emergency Fix Workflows
+
 <p align="center">
-  <img src="/source/imgs/bts-emergency-fix.png" width="800" title="BitShares Core GitFlow">
+  <img src="/source/imgs/bts-emergency-fix.png" width="810" title="BitShares Core GitFlow">
 </p>
 
 1. The fix is applied to the version of the "release" branch that was merged into "master" when creating the broken release version.

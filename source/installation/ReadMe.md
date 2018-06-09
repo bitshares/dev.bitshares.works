@@ -30,6 +30,7 @@
 - [Basic Rules](/source/installation/bitshares_core_gitflow.md#basic-rules)
 - [How To Create a Release](/source/installation/bitshares_core_gitflow.md#how-to-create-a-release)
 - [How To Create an Emergency Fix](/source/installation/bitshares_core_gitflow.md#how-to-create-an-emergency-fix)
+- [Emergency Fix Workflows](/source/installation/bitshares_core_gitflow.md#emergency-fix-workflows)
 
 
 ***
