@@ -101,6 +101,10 @@ First of all, the problem must be analyzed and debugged. This happens, naturally
 
 Presumably the developer who creates the fix will work on his private master branch. That is OK. But for publishing the fix, the following steps should be taken:
 
+<p align="center">
+  <img src="/source/imgs/bts-emergency-fix.png" width="800" title="BitShares Core GitFlow">
+</p>
+
 1. The fix is applied to the version of the "release" branch that was merged into "master" when creating the broken release version.
 2. The "release" branch is merged into "master", and a version tag is created on "master".
 3. Witnesses update to the new version, and production continues.
