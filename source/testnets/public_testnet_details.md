@@ -5,12 +5,12 @@
 - Web wallet: [public testnet](http://testnet.bitshares.eu/)
 - Seed node: `testnet.bitshares.eu:11010`
 - Chain-id: `39f5e2ede1f8bc1a3a54a7914414e3779e33193f1f5693510e73cb7a87617447`
-- [Genesis Block](https://github.com/BitSharesEurope/graphene-testnet/blob/testnet/genesis.json)
+- [Genesis Block - for Testnet](https://github.com/bitshares/bitshares-core/blob/testnet/genesis.json)
 - Sources:
    - [Full Node](https://github.com/bitshares/bitshares-core) (branch testnet)
    - [Wallet](https://github.com/bitshares/bitshares-ui)
    - [Faucet](https://faucet.testnet.bitshares.eu/)
-   - [Python Scripts](https://github.com/BitSharesEurope/testnet-pythonscripts)
+   - [Testnet - Python Scripts](https://github.com/BitSharesEurope/testnet-pythonscripts)
 - Full nodes:
 
 In order to run a full node, get the [sources](https://github.com/BitShares/bitshares-core) (branch testnet) and compile. Then run the node with:
