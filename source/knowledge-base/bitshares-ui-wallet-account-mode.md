@@ -76,7 +76,7 @@ Before we create a wallet, let’s check which wallet you want to have as your B
 ***
 
 ## How to Create an Wallet 
-This example will vreate a **Cloud wallet**.
+This example will create a **Cloud wallet**.
 
 This is very important. Please create a strong password and **write down** or **save** it to a safe place!! Do not lose it. **ONLY you can open your wallet again. No one can help.**
 
