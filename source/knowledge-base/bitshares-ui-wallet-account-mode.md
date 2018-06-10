@@ -47,8 +47,8 @@ This document purpose: To explain BitShares UI wallet Client and wallet types an
 ***
 
 ## Frequently asked Questions
-- **Can I switch (change the Wallet Mode or import private keys) my Cloud wallet to a Local wallet?**
-  - No.
+- **Can I switch (by changing the Wallet Mode or importing private keys) my Cloud wallet to a Local wallet?**
+  - No. Your account won't switch, only the *interface* switches. 
 - **I have a Cloud wallet. Can I have a Local wallet?** 
   - Yes. But you will have to create new account for the Local wallet. 
 - **How can I move my funds from a Cloud wallet to a Local wallet?**
