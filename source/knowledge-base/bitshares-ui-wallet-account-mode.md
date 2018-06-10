@@ -35,7 +35,7 @@ This document purpose: To explain BitShares UI wallet Client and wallet types an
 - **The Cloud wallet has no brainkey.** The password is basically the equivalent of the brainkey, but it's only used for that one account.
   
 ### Local Wallet
-- **If you know you want to have a Local wallet, use an [advanced form] link on the Welcome to BitShares form and create a backup file.** 
+- **If you know you want to have a Local wallet, use an [advanced form] link on the Welcome to BitShares form and create a backup file. This is the way to get a Local wallet.** 
 - The Local wallet creates a correct pair of keys (a brainkey and private keys) and save the information to your browser.
 - The Local wallet creates a database with in your browser. This means that you can only access your funds from the same computer and web browser that you have used to register and create your account.  If you attempt to access your local wallet from any other computer, or any other browser, it will fail unless you actively import your backup file from the original browser backup file.
 - You have to create a backup files to manage the Cloud wallet account. 
