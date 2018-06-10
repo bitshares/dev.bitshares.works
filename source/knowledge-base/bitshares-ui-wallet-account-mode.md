@@ -30,8 +30,9 @@ This document purpose: To explain BitShares UI wallet Client and wallet types an
 - The Cloud wallet allows you to login from any web browser at any time to gain access to your account by using your credentials (username and password).
 - The Cloud wallet only allows for a single account to be accessed at a time. 
 - If you have a Cloud wallet, you don't need to worry about a backup. (*You don't have the functionality in the Cloud wallet*).
-- **You cannot just switch from a Cloud wallet to a Local wallet.** 
-  - Even you import Private keys (was in the Cloud wallet) to the Local wallet, you do not have a brain key to associate with the Private keys you imported. Therefor, a brainkey restore won't find those Private keys. (No meaning to do a brainkey backup and restore.)
+- **You can switch the *interface* by using the [Settings] - [General] - Login Mode, however your account won't switch, only the *interface* switches.** 
+- Even you import Private keys (was in the Cloud wallet) to the Local wallet, you do not have a brain key to associate with the Private keys you imported. Therefor, a brainkey restore won't find those Private keys. (No meaning to do a brainkey backup and restore.)
+- The Cloud wallet has no brainkey. The password is basically the equivalent of the brainkey, but it's only used for that one account.
   
 ### Local Wallet
 - **If you know you want to have a Local wallet, use an [advanced form] link on the Welcome to BitShares form and create a backup file.** 
@@ -52,6 +53,8 @@ This document purpose: To explain BitShares UI wallet Client and wallet types an
   - Yes. But you will have to create new account for the Local wallet. 
 - **How can I move my funds from a Cloud wallet to a Local wallet?**
   - We mentioned before. You have to create new account for the Local wallet. You can create the Local wallet by using an [**advanced form**] link on Welcome to BitShares form. After you created new Local wallet, send your funds from your old account (Cloud wallet) to new account (Local wallet). And create a backup!!
+- **I have a Cloud wallet. Do I have to save my private keys information somewhere?**
+  - Not necessary. Because the Could wallet always do it for extra security. Also lets you login without exposing your owner key, you can login using only the active key.
 - **Can I change a Cloud wallet password?** 
   - Yes. 
   - Go to [How to change a password if using a Cloud Wallet](https://github.com/bitshares/bitshares-ui/wiki/Cloud-Wallet-Login-and-changing-password) : from BitShares UI wiki
