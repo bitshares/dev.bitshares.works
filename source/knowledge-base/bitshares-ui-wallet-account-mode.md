@@ -42,7 +42,7 @@ This document purpose: To explain BitShares UI wallet Client and wallet types an
 - The Cloud wallet has Backup options. Go to [Settings] - [Backup] to find. 
   - **Create local wallet backup** : create a Binary File (.bin) backup.
   - **Create brainkey backup** : give you long random phrases. You need to write down and keep it in a safe place.
-  - The backup files can be used to move your local wallet to different computers or different browsers. In order to restore your local wallet you will need the backup file and your password! Therefor, it’s extremely important you create a backup and keep a safe place.
+- The backup files can be used to move your local wallet to different computers or different browsers. In order to restore your local wallet you will need the backup file and your password! Therefor, it’s extremely important you create a backup and keep a safe place.
   
 ***
 
