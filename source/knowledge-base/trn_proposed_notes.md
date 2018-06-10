@@ -1,6 +1,6 @@
 ## Proposed Transaction - Notes
 
-*This section shares some of Proposed Transaction issues we have known.*
+*This section shares some of Proposed Transaction issues we have taken.*
 
 #### Contents:
 - Proposal_delete_operation issues #75, #146 (closed)
@@ -59,8 +59,9 @@ In [this line](https://github.com/bitshares/bitshares-core/blob/master/libraries
 
 #### Findings/Result
 
+(working on progress..)
 
-## [#383] Fix a crash in which we tried to log a proposal object that may have been deleted. #739
+[#383] Fix a crash in which we tried to log a proposal object that may have been deleted. #739
 
 
 
