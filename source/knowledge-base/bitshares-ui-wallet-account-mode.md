@@ -125,9 +125,6 @@ This example will create a **Local wallet**.
 </p>
 
 - 1.Click [**advanced form]**
-
-
-
 - 2.Type in [**ACCOUNT NAME**]. You can create your unique BitShares account name.
 - 3.Set a password. Create own strong password.
 - 4.Type or paste your password to confirm.
