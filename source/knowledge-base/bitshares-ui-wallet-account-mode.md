@@ -30,9 +30,9 @@ This document purpose: To explain BitShares UI wallet Client and wallet types an
 - The Cloud wallet allows you to login from any web browser at any time to gain access to your account by using your credentials (username and password).
 - The Cloud wallet only allows for a single account to be accessed at a time. 
 - If you have a Cloud wallet, you don't need to worry about a backup. (*You don't have the functionality in the Cloud wallet*).
-- **You can switch the *interface* by using the [Settings] - [General] - Login Mode, however your account won't switch, only the *interface* switches.** 
-- Even you import Private keys (was in the Cloud wallet) to the Local wallet, you do not have a brain key to associate with the Private keys you imported. Therefor, a brainkey restore won't find those Private keys. (No meaning to do a brainkey backup and restore.)
-- The Cloud wallet has no brainkey. The password is basically the equivalent of the brainkey, but it's only used for that one account.
+- **You can switch the INTERFACE by using the [Settings] - [General] - [Login Mode], however your account won't switch, only the *interface* switches.** 
+- **Even you import Private keys (was in the Cloud wallet) to the Local wallet, you do not have a brain key to associate with the Private keys you imported. Therefor, a brainkey restore won't find those Private keys. (No meaning to do a brainkey backup and restore.)**
+- **The Cloud wallet has no brainkey.** The password is basically the equivalent of the brainkey, but it's only used for that one account.
   
 ### Local Wallet
 - **If you know you want to have a Local wallet, use an [advanced form] link on the Welcome to BitShares form and create a backup file.** 
