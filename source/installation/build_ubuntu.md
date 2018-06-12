@@ -9,9 +9,9 @@
 
 #### Boost
 
-- Boost: between 1.57 and 1.63
+- Boost: between 1.57 and 1.65
 
-Versions earlier than 1.57 or newer than 1.63 are NOT supported. If your system Boost version is newer, then you will need to manually build an older version of Boost and specify it to CMake using `-DBOOST_ROOT`. Example:
+Versions earlier than 1.57 or newer than 1.65 are NOT supported. If your system Boost version is newer, then you will need to manually build an older version of Boost and specify it to CMake using `-DBOOST_ROOT`. Example:
 
         cmake -DBOOST_ROOT=~/boost160 .
 
