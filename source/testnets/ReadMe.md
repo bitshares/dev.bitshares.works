@@ -3,9 +3,7 @@
 ***
 
 ### Consensus Changes 2018-06
--  [BSIP38: Add target collateral ratio option to short positions](/developers/testnets/consensus-changes-2018-06.md#bsip38-add-target-collateral-ratio-option-to-short-positions) 
-
-
+-  [BSIP38: Add target collateral ratio option to short positions](/source/testnets/consensus-changes-2018-06.md#bsip38-add-target-collateral-ratio-option-to-short-positions) 
 
 ***
 
