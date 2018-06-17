@@ -32,3 +32,4 @@ Versions earlier than 1.57 or newer than 1.65 are NOT supported. If your system 
 - fc::time_point_sec::to_iso_string is broken #597 (bitshares-core)
 - Upgrade to Boost 1.65 #36 (bitshares-fc)
 - Issue 727b - A second option #33 (bitshares-fc)
+- Update documentation about supported boost version #1045
