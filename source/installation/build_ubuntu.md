@@ -1,6 +1,13 @@
 # Building on Ubuntu
 
-### Available Versions
+#### Contents:
+- Available Versions
+- Ubuntu 14.04 LTS 
+- Ubuntu 16.04 LTS (64-bit)
+
+***
+
+## Available Versions
 
 #### Ubuntu
 
