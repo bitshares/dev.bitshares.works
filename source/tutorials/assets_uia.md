@@ -12,7 +12,7 @@
 
     >>> create_asset <issuer> <symbol> <precision> <options> {} false
 
-> note: A `false` at the end allows to check and verify the constructed transaction and does **not** broadcast it.  The           empty `{}` could be used to construct a :doc:`../user/mpa` and
+> note: A `false` at the end allows to check and verify the constructed transaction and does **not** broadcast it.  The           empty `{}` could be used to construct a [Market Pegged Assets](/source/tutorials/assets_mpa.md#mpa-specific-settings) and
           is subject of another tutorial.
 
 ### Parameters
@@ -21,7 +21,7 @@ The `precision` can any positive integer starting from `0`. As `options` we pass
 
     {
       "max_supply" : 10000,    # Integer in satoshi! (100 for precision 1 and max 10)
-      "market_fee_percent" : 0.3,
+      "market_fee_percent" : 3,
       "max_market_fee" : 1000, # in satoshi
       "issuer_permissions" : <permissions>,
       "flags" : <flags>,

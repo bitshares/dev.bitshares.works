@@ -1,11 +1,20 @@
 # Building on Ubuntu
 
-### Available Versions
+#### Contents:
+- [Available Versions](/source/installation/build_ubuntu.md#available-versions)
+- [Ubuntu 14.04 LTS ](/source/installation/build_ubuntu.md#ubuntu-1404-lts)
+- [Ubuntu 16.04 LTS (64-bit)](/source/installation/build_ubuntu.md#ubuntu-1604-lts-64-bit)
+
+***
+
+## Available Versions
 
 #### Ubuntu
 
-- Ubuntu 14.04 LTS (*See the instruction to build Newer version of Boost)
-- Ubuntu 16.04 LTS
+- Ubuntu 14.04 LTS (*See the instruction to build Newer version of Boost*)
+- Ubuntu 16.04 LTS (**64-bit**)
+ 
+> Install Ubuntu 16.04 LTS (64-bit). It will not work on 32-bit Ubuntu. 
 
 #### Boost
 
@@ -60,23 +69,22 @@ Download the Boost tarball for Boost 1.57.0. (*Ubuntu 14.04 ships old version of
 
 ***
 
-## Ubuntu 16.04 LTS
+## Ubuntu 16.04 LTS (64-bit)
 
 ### 1.Install Dependencies
-Ubuntu 16.04 LTS ships with Boost 1.58 libraries, so no need to build from source.
+We recommend building on Ubuntu 16.04 LTS (64-bit), and the build dependencies may be installed with:
 
-    sudo apt-get install libboost-all-dev
-
+    sudo apt-get update
+    sudo apt-get install autoconf cmake git libboost-all-dev libssl-dev g++ libcurl4-openssl-dev
 
 ### 2.Build BitShares Core
-(*These are the same steps Ubuntu 14.04.) 
 
-    cd ..
     git clone https://github.com/bitshares/bitshares-core.git
     cd bitshares-core
+    git checkout <LATEST_RELEASE_TAG>
     git submodule update --init --recursive
-    cmake -DBOOST_ROOT="$BOOST_ROOT" -DCMAKE_BUILD_TYPE=Release .
-    make 
+    cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo .
+    make
 
 ***
 
