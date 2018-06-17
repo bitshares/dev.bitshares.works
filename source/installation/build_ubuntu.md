@@ -1,9 +1,9 @@
 # Building on Ubuntu
 
 #### Contents:
-- Available Versions
-- Ubuntu 14.04 LTS 
-- Ubuntu 16.04 LTS (64-bit)
+- [Available Versions](/source/installation/build_ubuntu.md#available-versions)
+- [Ubuntu 14.04 LTS ](/source/installation/build_ubuntu.md#ubuntu-1404-lts)
+- [Ubuntu 16.04 LTS (64-bit)](/source/installation/build_ubuntu.md#ubuntu-1604-lts-64-bit)
 
 ***
 
