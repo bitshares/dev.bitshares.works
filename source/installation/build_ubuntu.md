@@ -2,7 +2,7 @@
 
 #### Contents:
 - [Available Versions](/source/installation/build_ubuntu.md#available-versions)
-- [Ubuntu 14.04 LTS ](/source/installation/build_ubuntu.md#ubuntu-1404-lts)
+- [Ubuntu 14.04 LTS (64-bit)](/source/installation/build_ubuntu.md#ubuntu-1404-lts-64-bit)
 - [Ubuntu 16.04 LTS (64-bit)](/source/installation/build_ubuntu.md#ubuntu-1604-lts-64-bit)
 
 ***
@@ -11,7 +11,7 @@
 
 #### Ubuntu
 
-- Ubuntu 14.04 LTS (*See the instruction to build Newer version of Boost*)
+- Ubuntu 14.04 LTS (**64-bit**) (*See the instruction to build Newer version of Boost*)
 - Ubuntu 16.04 LTS (**64-bit**)
  
 > Install Ubuntu 16.04 LTS (64-bit). It will not work on 32-bit Ubuntu. 
@@ -34,7 +34,7 @@ OpenSSL 1.1.0 and newer are NOT supported. If your system OpenSSL version is new
 
 ***
 
-## Ubuntu 14.04 LTS
+## Ubuntu 14.04 LTS (64-bit)
 
 ### 1.Install Dependencies
 This is necessary for clean installation.
