@@ -1,6 +1,6 @@
 ## Manage a running Node in the background by using GNU screen
 
-*This section will explain how tou manage your nodes by using gun screen and run the bode in the background.*
+*This section will explain how to manage your nodes by using gun screen and run the bode in the background.*
 
 When I started working in the bitshares-core one of the first problems I found after building a node was a proper way to run a node in the background.
 
