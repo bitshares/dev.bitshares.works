@@ -17,28 +17,6 @@
 - [Emergency Fix Workflows](/core/intro/bitshares_core_gitflow.md#emergency-fix-workflows)
 
 
-### BitShares Core Repository Folders
-
-|   item      |  description      |
-| ------------------- |---------- |
-| .github ISSUE_TEMPLATE  |       |                           
-| CMakeModules |          | 
-| docker     |            | 
-| libraries  |            | 
-| programs   |            | 
-| tests      | (developers test cases??)  | 
-| ---- | -----     | 
-| README-docker.md |   Docker Container documentation    | 
-| README.md        | BitShares Core Note      | 
-| genesis.json     | (example ??)         | 
-| gui_version      | (bitshares_ui latest version ??) | 
-| testnet-shared-accounts.txt |  (?)               | 
-| testnet-shared-balances.txt |  (?)               | 
-| testnet-shared-committee-members.txt | (?)       | 
-| testnet-shared-private-keys.txt |   (?)          | 
-| testnet-shared-vesting-balances.txt | (?)        | 
-| testnet-shared-witnesses.txt |     (?)           | 
-
 
 
 
