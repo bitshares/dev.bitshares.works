@@ -1,101 +1,51 @@
-## BitShares Documentation Developers Portal 
+# BitShares Developers Documentation Portal
 
+Welcome to the documentation portal for the BitShares Blockchain. The content on this page is managed by the BitShares community and is constantly improved.
 
-#### Contents:
+The purpose of this site is to provide in-depth documentation about the BitShares Blockchain and make it easier for users and developers to leverage the full power of the BitShares Blockchain.
 
-## 1. [Environment & Installation ](/source/installation#1-environment--installation)
-   - Installation
-   - Known Issues   
-   - BitShares GitFlow    
+***
 
-## 2. [References & Tools](/source/references_tools#references--tools)
-   - BitShares Blockchain - website links
-   - Releases
-   - GitHub Repositories
-   - References: Programs / Tools
-   - References: Articles
-   
-## 3. [Accounts](/source/accounts#accounts)
-   - Account
-   - Fees
-   - Permissions
-   - Authorities
-   - Account Registration
+### Releases
+- [BitShares-Core Release](https://github.com/bitshares/bitshares-core/releases)
+- [BitShares-UI Release](https://github.com/bitshares/bitshares-ui/releases)
 
-## 4. [Wallet](/source/wallet#wallet)
-   - Connecting a Wallet   
-   - Network and Wallet Configuration
-      - Components
-      - General Network and Wallet Configuration
-	    - Trusted Full Node
-      - Secure Network and Wallet Configuration
-	    - Trusted Full Node
-		- Delayed Full Node
-  - A Collection of command lines - Node, Wallet, and Witness
+***
 
-## 5. [Full Nodes / Witness Nodes](/source/full-witness_nodes#full-node--witness-node)
-   - Full Nodes (Witness Nodes)
-      - Type of Witness nodes
-      - How to launch the full node
-      - Configuration - `config.ini`
-      - Enabling Remote Procedure Calls (RPC)
-      - Restarting the Witness Node
-	  - Public Full Node information
-	  
-   - Become an Active Witness
-      - A Block-Producing Witness
-      - How to become a Block-Producing Witness
-      - Price Feeds
-   - Memory Reduction for Nodes
-      - Four New Options to Reduce RAM
-      
-## 6. [APIs](/source/apis#apis)
-   - API Documentation (doxygen documentation)
-      - Wallet APIs
-      - Blockchain APIs
-      - Namespaces
-   -  BitShares APIs
-      - APIs two categories
-      - API Access & Restrictions
-      - Object and IDs
-      - Running a BitShares API Node
-   - Calls
-      - Remote Procedure Calls
-      - Websocket Calls & Notifications
-   - Related Information
-      - API Logging
-      - Websockets Scripting Support
-   
-## 7. [Tutorials](/source/tutorials/Readme.md#tutorials)
-  - [Frequently asked Questions (FAQ)](/source/tutorials/FAQ.md#frequently-asked-questions---list-all)
-  - [How Tos](/source/tutorials/Readme.md#how-tos)
+## [BitShares Core](/core/README.md#bitshares-core)
+Documentation related to BitShares Core internals and development fundamentals. 
 
-## 8. [Testnets](/source/testnets#testnets)
-  - Public Testnet Details
-  - Public Testnet Witness(Full) Nodes (block producing witness nodes) 
-  - Private Testnet
+- [Introduction/Architectures](/core/intro/README.md#introduction--architectures)
+- [Install a Development Environment](/core/installation/README.md#install-a-development-environment)
+- [Accounts](/core/accounts/README.md#accounts)
+- [Full Node / Witness Nodes](/core/nodes_full_witness/README.md#full-node--witness-node)
+- [Wallet](/core/wallet/README.md#wallet)
+- [API - BitShares](/core/api#api)
+- [Testnets](/core/testnets/README.md#testnets)
+- [Knowledge Bases](/core/knowledge_base#knowledge-base)
+- [Tutorials](/core/tutorials#tutorials) / [FAQ](/core/tutorials/FAQ.md#frequently-asked-questions---list-all)
+- [Integration](/core/integration/README.md#integration)
+ 
+***
 
-## 9. [Use Cases / Examples](/source/use_cases#use-cases--examples)
+## [BitShares Blockchain](/core/bitshares_blockchain#bitshares-blockchain)
+- BitShares Blockchain Foundation, Bitshares Block Exploer, etc 
 
-## 10. [Knowledge Base](/source/knowledge-base#knowledge-base)
+***
+
+## [BitShares Developers Forge](/forge/README.md#bts-developers-forge)
+BitShares topic targeting technical information supported by the BitShares Community. 
+
+- [Repositories - Developers](/forge/shared_repo/repo_byname_list.md#developers-github-repositories)
+- [API Support & References - JSON-RPC, REST, etc ](/forge/api_support/README.md#api-support--references)
+- [Articles](/forge/articles/tech_articles_chronological.md#articles--references)
+- [Docker](/forge/docker/README.md#docker) 
+- [Plugins](/forge/plugins/README.md#plugins)
+- [Programs & Libraries](/forge/program_libraries/README.md#programs--libraries)
+- [SDK/Tools](/forge/sdk_tools/README.md#sdk--tools)
+- [Use Cases](/forge/use_cases/README.md#use-cases)
 
 
 ***
-***
-### Documentation Integration and update Processes
-1. Bring a lean _doc.bitshares.org_ information
-2. Merge with _BitShares Core Wiki_ information
-3. Remove redundant information 
-4. Gather spreading a piece of good information 
-5. Remove old information
-6. Restructuring &re-grouping the contents 
-7. Update by BitShares Core closed issues (tagged'Documentation')
-8. Add new contents
-9. Get review
-10. Improve & update
 
-_**above processes will go parallel_
-
-***
-***
-
+How to participate in the BitShares Developers Documentation. Check here.

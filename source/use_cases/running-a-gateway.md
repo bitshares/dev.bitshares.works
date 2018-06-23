@@ -1,9 +1,0 @@
-## Running a Gateway
-
-Contents:
-- 
-- 
-- 
-
-****
-
