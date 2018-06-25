@@ -5,7 +5,7 @@ Documentation related to BitShares Core internals and development fundamentals.
 - BitShares Core Workflow (Project / Issues) , BitShares Core Repository Gitflow
    
 ### [Install a Development Environment](/core/installation/README.md#install-a-development-environment)
-- Requirements(system requirements: OS, Hardware, CPU, storage, Memory, OS, CLI Tools, Core in WSL, Known issues
+- Requirements(OS, Hardware, CPU, storage, Memory, etc), CLI-windows Tools, Core in WSL, Known issues
  
 ### [Accounts](/core/accounts/README.md#accounts)
 - Accounts, Fees, Permissions, Authorities, Account Registration  

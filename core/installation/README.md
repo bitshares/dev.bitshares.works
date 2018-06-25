@@ -18,4 +18,216 @@
 - [Boost versions](/core/installation/boost_versions.md#boost-version)
 
 ***
+***
 
+
+## After the Installation
+
+You installed BitShares Core successfully!
+
+After you installed BitShares Core, you have `witness_node.exe` and `cli_wallet.exe` to run.  Both executables pass various parameters and set a configuration file (i.e., `config,ini` , `wallet.json`). 
+
+We will talk about each operation to understand the BitShares Core Overview operations.
+
+## Nodes
+First, we need to connect to the network to interact to the BitShares Blockchain. The Nodes have the role. The nodes in the network both verify all transactions and blocks against the current state of the overall network (i.e., broadcast messages across a network). 
+
+#### [Types of nodes](/core/nodes_full_witness/full_nodes.md#full-nodes-witness-nodes)
+
+First, you might've noticed, we use `witness node` and 'full node' terms almost exchangeable.  But there are some differences.  We distinguish the Nodes between full nodes (a.k.a. **non-block producing** witness nodes) and **block producing** witness nodes. 
+
+Both are implemented by the same executable but the additional parameters can define each node operation difference.  For example, a (block producing) witness node has been provided an authorized block-signing private key, on the other hand, a (non-block producing) full node is not.  But both "interact" with the decentralized network (blockchain). They should maintain their own full nodes secure and reliable.
+
+
+## Witness Node
+
+#### [Running a BitShares API node](/core/nodes_full_witness/running-api-node.md#running-a-bitshares-api-node)
+
+In your terminal, you can execute the witness_node (see the below command), the command will launch the witness node and automatically create a data directory including a [config.file](/core/nodes_full_witness/full_nodes.md#configuration). And the operation starts downloading the data to fully synchronize the blockchain if you start without any parameters. 
+
+      ./programs/witness_node/witness_node
+
+You might see downloading the data (i.e., a history of the blockchain data ) on your screen. It will take several hours to sync.  You might want to prepare a better  hardware before you run this process if you would like to receive the data. 
+
+If you want to avoid downloading the history of the BitShares blockchain data, you can set some plugins - [Memory Reduction for Nodes](/forge/plugins/nodes_memory_reduction.md#memory-reduction-for-nodes). 
+
+#### API node, config.ini, and plugins
+
+The witness_node takes parameters (see a [config.file](/core/nodes_full_witness/full_nodes.md#configuration) items list) and plugins in the command line. You can add parameter values into the config.ini also. Examine the default config.ini to know how you can customize it. 
+
+For example, you can add `--rpc-endpoint` parameter and  a value to run basic API Node. The below command starts a node to listen for api calls at port 8090 (localhost). The `--rpc-endpoint` value can be changed to another IP address or local network.
+
+	./programs/witness_node/witness_node --rpc-endpoint 127.0.0.1:8090
+
+
+Next example shows how to set plugins to reduce the synchronizing data size and how to specify a data directory (e.g., data/my-blockprod) by using a parameter `--data-dir`. 
+		
+	./programs/witness_node/witness_node --data-dir data/my-blockprod 
+	                                     --rpc-endpoint "127.0.0.1:8 
+					     --max-ops-per-account 1000         
+					     --partial-operations true
+					     
+					    
+Above plugins limit the operations per account 1000 to save RAM. For this operation, a full node needs  more than 80 gigs of RAM to run.
+
+#### public full node
+
+So far, we talked about the Nodes which connect to the network directory and checked the parameters in  the config.ini to customize your connection. This pattern requires IP address to set the endpoint. 
+
+If you do not have own node to run, you can use the public API server (public full node) to connect the BitShares blockchain. Here is a latest list of [Public Full Node](https://github.com/bitshares/bitshares-ui/blob/staging/app/api/apiConfig.js#L67) information.
+
+
+## Network Configuration
+
+The BitShares client uses a peer-to-peer(p2p) network to connect and broadcast transactions
+For businesses, BitShares offers two patterns of network nodes ([trusted full node](/core/wallet/wallet_network.md#general-network-and-wallet-configuration) and [delayed full node](/core/wallet/wallet_network.md#delayed-full-node) ).
+
+In this section, we will explain about the Network Configurations of BitShares.
+
+#### [Trusted full node](/core/wallet/wallet_network.md#general-network-and-wallet-configuration)
+
+We saw, in the previous section, the witness_nodes (full_nodes) accept parameters (e.g., `--rpc-endpoint`) and connect to the network directly. We call it trusted (Trusted Full Node) since it is supposed to be under our control.
+
+In the BitShares, there are two types of network configuration setups. For general purpose setups, we recommend a reduced complexity setup (i.e., General Setup). For high security, we provide a so called delayed full node which accepts the parameter trusted-node for an RPC endpoint of a trusted validating node (i.e., Secure Network Setup).
+
+In the both settings, the trusted full node is your entry point to the BitShares P2P network.  It will hold the blockchain, connect to other peers, and will receive new blocks in real-time.
+
+#### [Delayed full node](/core/wallet/wallet_network.md#delayed-full-node)
+
+The delayed full node is used for the Secure Network setup.  The delayed full node will provide us with a delayed and several times confirmed and verified blockchain.  How long is that's depending on the block interval and the number of witnesses, this may lead to a few minutes of delay. The delayed node will delay blocks until they are permanent.  Therefore,  all transactions that are confirmed by the delayed node are irreversible
+
+
+Any BitShares application (gateway, explorer, wallet, trading program, etc) interacts with the decentralized network (blockchain) are connecting to one or many API Nodes. If you plan to run a business on top of BitShares, you will probably want one or several API nodes of your property.  Also, if you are planning to create an exchange, that should only interface with the delayed full node for the security reasons.
+ 
+If you plan to run a business on top of BitShares, you will probably want one or several API nodes of your property.  Also, if you are planning to create an exchange, that should only interface with the delayed full node for the security reasons.
+
+***
+***
+
+
+
+Next, we will talk about wallet (cli-wallet). The Nodes are connected to the network and handle the transactions and block produces. The [wallet](/core/wallet/wallet_network.md#components) is used to initiate transfer and connects to the trusted full node. 
+
+
+## Wallet
+
+Once we know which witness_node (full_node) to use, we can use the full node to open up a cli_wallet. The running witness/full node might be BitShares Public Full Nodes, or run by businesses or individuals.
+
+The cli_wallet creates a local [`wallet.json`](/core/wallet/cli_wallet.md#overview) file that contains the encrypted private keys required to access the funds in your account and add new data to the blockchain. 
+
+**Example: wallet.json**
+
+      {
+        "chain_id": "4018d7844c78f6a6c41c6a552b898022310fc5dec06da4222222",
+        "my_accounts": [],
+        "cipher_keys": "4144454a976266ed15f736df4f5645e60bace86eb87cb5b59b0c8f48b75c6131167807c403a56060528b7dae993de667736d5ab9ef1f60fb340c4aa70437ec7a2534bbdab051b9d2d1871111111",
+        "extra_keys": [],
+        "pending_account_registrations": [],
+        "pending_witness_registrations": [],
+        "labeled_keys": [],
+        "blind_receipts": [],
+        "ws_server": "ws://localhost:8090",
+        "ws_user": "",
+        "ws_password": ""
+      }
+
+
+### Connecting  a Wallet 
+
+In the previous section, we talked about General and High Security Network configurations about the Nodes.  The next examples show after the wetness_node connected, how we can connect and open a cli_wallet by using the Node. 
+
+**Example 1 - [General Network Setup](https://github.com/cedar-book/core.dev/blob/master/core/wallet/wallet_network.md#general-network-and-wallet-configuration) <Trusted Full Node>**
+
+Let's look at this examples, first we start the witness_node with `--rpc-endpoint`. Next we use the `--rpc-endpoint` as a `--server-rpc-endpoint` in the cli_wallet command line and open up a RPC-JSON-HTTP port to be able to interface with API request. 
+
+**witness_node**
+
+	./programs/witness_node/witness_node --rpc-endpoint="192.168.0.100:8090"
+
+**cli_wallet**
+
+	./programs/cli_wallet/cli_wallet --server-rpc-endpoint="ws://192.168.0.100:8090" \
+                                     --rpc-http-endpoint="192.168.0.102:8092"
+
+
+If you open the cli-wallet successfully, you will receive `new >>>` prompt to set a password. The below are example output. Use a `set_password` to set a password. And after set the password, use a `unlock` command to unlock the wallet. 
+
+After unlock the cli-wallet, you can issue any command available to the cli-wallet ([Wallet APIs](https://bitshares.org/doxygen/classgraphene_1_1wallet_1_1wallet__api.html)) or [construct your own transaction manually](/core/tutorials/trn_construct_transaction.md#how-to-construct-any-transaction---manually).
+
+> The password is used to encrypt the private keys in the wallet.
+
+	new >>> set_password supersecret123
+	set_password supersecret123
+	null
+	locked >>> 
+										 
+	locked >>> unlock "supersecret123"
+	unlock "supersecret123"
+	null
+	unlocked >>>
+
+
+**Example 2- [Secure Network Setup](https://github.com/cedar-book/core.dev/blob/master/core/wallet/wallet_network.md#secure-network-and-wallet-configuration)  <Trusted Full Node + Delayed Full Node>**
+
+Let's close look at the next examples, first we start the witness_node with `--rpc-endpoint`. Next we use the `--rpc-endpoint` (in witness_node) as a `--trusted-node` and set the Delayed Full node as the `--rpc-endpoint` value in the cli_wallet command line.
+
+**witness_node**
+
+	./programs/witness_node/witness_node --rpc-endpoint="192.168.0.100:8090"
+
+	./programs/witness_node/witness_node --trusted-node="192.168.0.100:8090" \
+                                         --rpc-endpoint="192.168.0.101:8090"
+                                         -s "0.0.0.0:0" \
+                                         --p2p-endpoint="0.0.0.0:0" \
+                                         --seed-nodes "[]"
+**cli_wallet**
+
+	./programs/cli_wallet/cli_wallet --server-rpc-endpoint="ws://192.168.0.100:8090" \
+                                         --rpc-http-endpoint="192.168.0.102:8092"
+
+
+###  Websocket RPC / HTTP RPC 
+The cli-wallet can open a RPC port so that you can interface your application with it. You have the choices of websocket RPC via the `-r` parameter, and HTTP RPC via the `-H` parameter. 
+
+You can choose between [Websocket RPC](/core/api/websocket_calls_notifications.md#websocket-calls-notifications) or [RPC-HTTP](/core/api/rpc.md#remote-procedure-calls) requests, and also can set both ports together (below example).
+
+	./programs/cli_wallet/cli_wallet --wallet-file my-wallet.json 
+                               -s ws://127.0.0.1:11011 
+                               -H 127.0.0.1:8090 
+                               -r 127.0.0.1:8099	
+
+> **Note:** For security reasons, the wallet should only listen to localhost or the local network and should NEVER be exposed to the internet.	
+
+### Use a Public API Node
+
+We show you how you can use the Public API Node in your `cli_wallet` command line. 
+
+- You can find a latest list of [Public Full Node](https://github.com/bitshares/bitshares-ui/blob/staging/app/api/apiConfig.js#L67) information. 
+
+**Example:** The public API node of OpenLedger `wss://bitshares.openledger.info/ws` and connect via secured websocket connection:
+
+	./programs/cli_wallet/cli_wallet -s wss://bitshares.openledger.info/ws
+
+
+This will open the cli-wallet and unless you already have a local wallet, and will ask you to provide a password for your local wallet. Once a wallet has been created (default wallet file is wallet.json), you will receive,
+
+	>>> new
+
+We mentioned before, you can set a password and unlock the wallet. After unlocked the wallet, you can issue [`Wallet APIs`](https://bitshares.org/doxygen/classgraphene_1_1wallet_1_1wallet__api.html).
+
+The Wallet APIs include Wallet Calls, Account Calls, Transaction Calls, Asset Calls, Governance, Privacy Mode, Blockchain Inspection, and Transaction Builder. After unlocked the wallet, you can gain access to the wallet by importing keys, registering an account, and transferring  funds. [Here](/core/testnets/public_testnet.md#4-connecting-a-cli-wallet) is some exapmle steps and about an [Account Registration](/core/accounts/account_registration.md#account-registration).
+
+
+**Note:** To register an account, the registrar needs to be a **lifetime member (LTM)**. You can upgrade the account to Lifetime member (LTM) status. 
+
+
+***
+ 
+ 
+ 
+****
+(work in progress...)
+
+API
+
+****
