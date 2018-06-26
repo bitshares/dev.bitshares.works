@@ -8,11 +8,11 @@
    - [Case 1: Connecting a Cli-Wallet - the public API server node](/core/wallet/cli_wallet.md#case-1-connecting-a-cli-wallet---the-public-api-server-node)
    - [Case 2: Connecting a Cli-Wallet - a Node (IP address)](/core/wallet/cli_wallet.md#case-connecting-a-cli-wallet---a-node-ip-address)
 - [Unlock the wallet](/core/wallet/cli_wallet.md#unlock-the-wallet)
-- [Gaining a Access to Blockchain](/core/wallet/cli_wallet_2.md#gaining-access-to-blockchain)
-   - [import_key and import_balance](/core/wallet/cli_wallet_2.md#gaining-access-to-blockchain)
-- [Register_account](/core/wallet/cli_wallet_2.md#register)
+- [Gaining a Access to Blockchain](/core/wallet/cli_wallet.md#gaining-access-to-blockchain)
+   - [import_key and import_balance](/core/wallet/cli_wallet.md#gaining-access-to-blockchain)
+- [Register_account](/core/wallet/cli_wallet.md#register)
 - [Transferring  Funds using the Cli-wallet](#transferring-funds-using-the-cli-wallet)
-- [Obtain the private key](/core/wallet/cli_wallet_2.md#obtain-the-private-key)
+- [Obtain the private key](/core/wallet/cli_wallet.md#obtain-the-private-key)
 
 ******
 
@@ -58,7 +58,7 @@ We assume you have...
    - Successfully Build or compile (cli_wallet)
    
 
-In this dection, we show you two example patterns of the command lines. The first one, we use the public API server node to connect the cli_wallet and also open Websocket RPC or RPC-HTTP ports. The cli_wallet opens a RPC port for Wallet operations (i.e., spend, buy, sel...).  The second one, we use an IP address (localhost) and also open the port for HTTP-RPC. 
+In this section, we show you two example patterns of the command lines. The first one, we use the public API server node to connect the cli_wallet and also open Websocket RPC or RPC-HTTP ports. The cli_wallet opens a RPC port for Wallet operations (i.e., spend, buy, sel...).  The second one, we use an IP address (localhost) and also open the port for HTTP-RPC. 
 
 After connect to the wallet either way, you will get `>>> new`. Then, we can do the same steps to proceed this example.
 
@@ -96,7 +96,7 @@ This will open the port 8091 for HTTP-RPC requests and has the capabilities to h
 
 ***
 
-#### After coneccted the cli_wallet and opened the RPC port
+#### After connected the cli_wallet and opened the RPC port
 
 Unless you already have a local wallet, it will ask you to provide a password for your local wallet. Once a wallet has been created (default wallet file is *wallet.json*), you will receive,
 
