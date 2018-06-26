@@ -1,14 +1,18 @@
 ## API Support & References
 
-Discussion :
-- REST API discussion [#870](https://github.com/bitshares/bitshares-core/issues/870)
-- apidocs [#792](https://github.com/bitshares/bitshares-core/issues/792)
+### [Bitshares Blockchain Explorer and the Wrappers](/forge/api_support/explorer-wrappers.md#bitshares-blockchain-explorer-and-the-apis)
+For Mainnet and Tesenet
 
 ***
 
-### JSON/RPC API References
+#### JSON/RPC API References
 
-### REST Server API References
+#### REST Server API References
+
+***
+Discussion :
+- REST API discussion [#870](https://github.com/bitshares/bitshares-core/issues/870)
+- apidocs [#792](https://github.com/bitshares/bitshares-core/issues/792)
 
 
 ***
