@@ -1,5 +1,13 @@
 ## Install a Development Environment
 
+BitShares offers you to install BitShares-Core into different platforms; **Ubuntu (x64), OSx, and Windows**.  There are  dependencies to check when you download OpenSSL and  Boost. Please make sure which versions you downloaded. 
+
+Also, if you are a Windows user, you have other two choices to install BitShares Core to your Windows (x64) Operation System.  One is **CLI-Wallet tools for Windows (x64)**, another is **Windows SubSystem for Linux (WSL)**.  
+
+The CLI-wallet tools for Windows (x64) allows you to try several methods to get the data from BitShares blockchain without the BitShares Core installation. After you download the cli-wallet tools, you will find a cli_wallet executable to try Wallet API. 
+
+Another option, Windows SubSystem for Linux (WSL).  This is for a developer who uses a Windows 10 (x64) Operation System and wants to build BitShares Core on Ubuntu.  
+
 ## Installation 
 
 - [Ubuntu Linux](/core/installation/build_ubuntu.md#building-on-ubuntu)
@@ -17,17 +25,30 @@
 
 - [Boost versions](/core/installation/boost_versions.md#boost-version)
 
+
 ***
 ***
 
+# After the Installation
+#### Table of contents:
+- [Nodes](#nodes)
+- [Witness/Full Nodes](#witness-node)
+- [Network Configurations](#network-configuration)
+- [Wallet](#wallet)
+- [API](#api)
+- [Objects and IDs](#objects-and-ids)
+- [Accounts](#accounts)
+-
 
-## After the Installation
+***
 
 You installed BitShares Core successfully!
 
 After you installed BitShares Core, you have `witness_node.exe` and `cli_wallet.exe` to run.  Both executables pass various parameters and set a configuration file (i.e., `config,ini` , `wallet.json`). 
 
 We will talk about each operation to understand the BitShares Core Overview operations.
+
+***
 
 ## Nodes
 First, we need to connect to the network to interact to the BitShares Blockchain. The Nodes have the role. The nodes in the network both verify all transactions and blocks against the current state of the overall network (i.e., broadcast messages across a network). 
@@ -36,7 +57,7 @@ First, we need to connect to the network to interact to the BitShares Blockchain
 
 First, you might've noticed, we use `witness node` and 'full node' terms almost exchangeable.  But there are some differences.  We distinguish the Nodes between full nodes (a.k.a. **non-block producing** witness nodes) and **block producing** witness nodes. 
 
-Both are implemented by the same executable but the additional parameters can define each node operation difference.  For example, a (block producing) witness node has been provided an authorized block-signing private key, on the other hand, a (non-block producing) full node is not.  But both "interact" with the decentralized network (blockchain). They should maintain their own full nodes secure and reliable.
+Both are implemented by the same executable, but the additional parameters can define each node operation difference.  For example, a (block producing) witness node has been provided an authorized block-signing private key, on the other hand, a (non-block producing) full node is not.  But both "interact" with the decentralized network (blockchain). They should maintain their own full nodes secure and reliable.
 
 
 ## Witness Node
@@ -101,8 +122,12 @@ Any BitShares application (gateway, explorer, wallet, trading program, etc) inte
  
 If you plan to run a business on top of BitShares, you will probably want one or several API nodes of your property.  Also, if you are planning to create an exchange, that should only interface with the delayed full node for the security reasons.
 
-***
-***
+
+ 
+****
+
+
+****
 
 
 
@@ -111,9 +136,13 @@ Next, we will talk about wallet (cli-wallet). The Nodes are connected to the net
 
 ## Wallet
 
-Once we know which witness_node (full_node) to use, we can use the full node to open up a cli_wallet. The running witness/full node might be BitShares Public Full Nodes, or run by businesses or individuals.
+The Nodes are connected to the network and verify all transactions and block produces. The cli_wallet is used to initiate transfer and connects to the trusted full node..
 
-The cli_wallet creates a local [`wallet.json`](/core/wallet/cli_wallet.md#overview) file that contains the encrypted private keys required to access the funds in your account and add new data to the blockchain. 
+The cli_wallet creates a local [`wallet.json`](/core/wallet/cli_wallet.md#overview) file that contains the encrypted private keys.  The key is required to access the funds and add new data to the blockchain with a signature from a private key. 
+
+Connecting the cli_wallet requires a running full node (not necessarily locally) and connect to it. You might have own node to use. If you do not have it, you can select one of [BitShares Public Full Nodes](https://github.com/bitshares/bitshares-ui/blob/staging/app/api/apiConfig.js#L67), or nodes that run by _businesses_ or _individuals_.
+
+
 
 **Example: wallet.json**
 
@@ -132,9 +161,9 @@ The cli_wallet creates a local [`wallet.json`](/core/wallet/cli_wallet.md#overvi
       }
 
 
-### Connecting  a Wallet 
+### Connecting a Wallet 
 
-In the previous section, we talked about General and High Security Network configurations about the Nodes.  The next examples show after the wetness_node connected, how we can connect and open a cli_wallet by using the Node. 
+In the previous section, we talked about General and High Security Network configurations about the Nodes.  Our next examples show how we can connect and open a cli_wallet by using the Node after the wetness_node connected. 
 
 **Example 1 - [General Network Setup](https://github.com/cedar-book/core.dev/blob/master/core/wallet/wallet_network.md#general-network-and-wallet-configuration) <Trusted Full Node>**
 
@@ -186,7 +215,7 @@ Let's close look at the next examples, first we start the witness_node with `--r
                                          --rpc-http-endpoint="192.168.0.102:8092"
 
 
-###  Websocket RPC / HTTP RPC 
+###  [Websocket RPC / HTTP RPC](/core/wallet/cli_wallet.md#case-1-connecting-a-cli-wallet---the-public-api-server-node)
 The cli-wallet can open a RPC port so that you can interface your application with it. You have the choices of websocket RPC via the `-r` parameter, and HTTP RPC via the `-H` parameter. 
 
 You can choose between [Websocket RPC](/core/api/websocket_calls_notifications.md#websocket-calls-notifications) or [RPC-HTTP](/core/api/rpc.md#remote-procedure-calls) requests, and also can set both ports together (below example).
@@ -198,32 +227,32 @@ You can choose between [Websocket RPC](/core/api/websocket_calls_notifications.m
 
 > **Note:** For security reasons, the wallet should only listen to localhost or the local network and should NEVER be exposed to the internet.	
 
-### Use a Public API Node
+### [Use a Public API Node](/core/wallet/cli_wallet.md#case-2-connecting-a-cli-wallet---a-node-ip-address)
 
 We show you how you can use the Public API Node in your `cli_wallet` command line. 
 
 - You can find a latest list of [Public Full Node](https://github.com/bitshares/bitshares-ui/blob/staging/app/api/apiConfig.js#L67) information. 
 
-**Example:** The public API node of OpenLedger `wss://bitshares.openledger.info/ws` and connect via secured websocket connection:
+**Example:**  We use the public API node of OpenLedger `wss://bitshares.openledger.info/ws` and connect via secured websocket connection:
 
 	./programs/cli_wallet/cli_wallet -s wss://bitshares.openledger.info/ws
 
 
-This will open the cli-wallet and unless you already have a local wallet, and will ask you to provide a password for your local wallet. Once a wallet has been created (default wallet file is wallet.json), you will receive,
+This will open the cli-wallet and unless you already have a local wallet, it will ask you to provide a password for your local wallet. Once a wallet has been created (default wallet file is a wallet.json), you will receive,
 
 	>>> new
 
-We mentioned before, you can set a password and unlock the wallet. After unlocked the wallet, you can issue [`Wallet APIs`](https://bitshares.org/doxygen/classgraphene_1_1wallet_1_1wallet__api.html).
+We mentioned before, you can set a password and unlock the wallet. After unlocked the wallet, you can issue [`Wallet API calls`](https://bitshares.org/doxygen/classgraphene_1_1wallet_1_1wallet__api.html).
 
-The Wallet APIs include Wallet Calls, Account Calls, Transaction Calls, Asset Calls, Governance, Privacy Mode, Blockchain Inspection, and Transaction Builder. After unlocked the wallet, you can gain access to the wallet by importing keys, registering an account, and transferring  funds. [Here](/core/testnets/public_testnet.md#4-connecting-a-cli-wallet) is some exapmle steps and about an [Account Registration](/core/accounts/account_registration.md#account-registration).
+### About Wallet API Calls
 
+The Wallet APIs include Wallet Calls, Account Calls, Transaction Calls, Asset Calls, Governance, Privacy Mode, Blockchain Inspection, and Transaction Builder. After unlocked the wallet, you can gain access to the wallet by importing keys, registering an account, and transferring  funds. [Here](/core/wallet/cli_wallet.md#gaining-access-to-blockchain) is some example  steps to gain the access and about an [Account Registration](/core/accounts/account_registration.md#account-registration).
 
 **Note:** To register an account, the registrar needs to be a **lifetime member (LTM)**. You can upgrade the account to Lifetime member (LTM) status. 
 
 
 ***
- 
- 
+**** 
  
 ****
 (work in progress...)
