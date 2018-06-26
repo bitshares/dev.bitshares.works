@@ -47,7 +47,7 @@ Connecting the cli_wallet requires a running full node (not necessarily locally)
 
 ### Cli-Tools for Windows (option)
 
-You have an option to use `cli tools` for Windows to start the cli-wallet. You do not need to install BitShates Core project. If you are interested, check a BitShares release page ( https://github.com/bitshares/bitshares-core/releases) and download the BitShares-Core-*-x64-cli-tools.zip. Here is an instruction [link.](/source/1_installation/1-4_windows_cli_tools.md#contents)
+You have an option to use `cli tools` for Windows to start the cli-wallet. You do not need to install BitShates Core project. If you are interested, check a BitShares release page ( https://github.com/bitshares/bitshares-core/releases) and download the BitShares-Core-*-x64-cli-tools.zip. Here is an instruction [link.](/core/installation/windows_cli_tool.md#cli-wallet-on-windows-x64)
 
 ****
 
