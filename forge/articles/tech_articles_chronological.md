@@ -15,6 +15,7 @@
 - [Bitshares ElasticSearch Wrapper and Swagger (05/2018)](https://steemit.com/bitshares/@oxarbitrage/bitshares-elasticsearch-wrapper-and-swagger)  by @oxarbitrage
 - [Slides How to create smart contracts in graphene blockchains (05/2018)](https://steemit.com/bitshares/@oxarbitrage/slides-how-to-create-smart-contracts-in-graphene-blockchains)  by @oxarbitrage
 - [BitShares smart-coins and the pricefeed (05/2018)](https://steemit.com/bitshares/@clockwork/bitshares-smart-coins-and-the-pricefeed) by @cloclwork
+- [[pybitshares/uptick] How to add new on-chain features (02/2018)](https://steemit.com/bitshares/@xeroc/pybitshares-uptick-how-to-add-new-on-chain-features) by @xeroc
 - [Howto: An Introduction to Python-BitShares (01/2018)](https://steemit.com/python/@full-steem-ahead/howto-an-introduction-to-python-bitshares) : by @full-steem-ahead
 - [Hertz Bounty! 750 bitUSD for implementing Hertz in the btsprice python price feed repo!! (01/2018)](https://steemit.com/bitshares/@cm-steem/hertz-bounty-750-bitusd-for-implementing-hertz-in-the-btsprice-python-price-feed-repo) : by cm-steem
 - [Howto: Using Nginx to Load Balance Servers Part 2 (08/2017)](https://steemit.com/witness-category/@full-steem-ahead/howto-using-nginx-to-load-balance-servers-part-2) : by @full-steem-ahead

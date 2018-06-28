@@ -16,6 +16,7 @@
 
 **@xeroc**
 
+- [[pybitshares/uptick] How to add new on-chain features (02/2018)](https://steemit.com/bitshares/@xeroc/pybitshares-uptick-how-to-add-new-on-chain-features) by @xeroc
 - [Steem transaction signing in a nutshell (2016)](https://steemit.com/steem/@xeroc/steem-transaction-signing-in-a-nutshell) by @xeroc 
 - [How the issuer of an IOU/UIA can transfer assets back to himself (2016)](https://steemit.com/bitshares/@xeroc/how-the-issuer-of-an-iouuia-can-transfer-assets-back-to-himself) : by xeroc
 

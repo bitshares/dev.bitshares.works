@@ -22,6 +22,10 @@
 **ElasticSearch**
 - [Bitshares ElasticSearch Wrapper and Swagger (05/2018)](https://steemit.com/bitshares/@oxarbitrage/bitshares-elasticsearch-wrapper-and-swagger)  by @oxarbitrage
 
+
+**pybitshares and uptick**
+- [[pybitshares/uptick] How to add new on-chain features (02/2018)](https://steemit.com/bitshares/@xeroc/pybitshares-uptick-how-to-add-new-on-chain-features) by @xeroc
+
 **eos**
 - https://steemit.com/eos/@eosio/introducing-eos-io-application-stack : Introducing EOS.IO Application Stack by eos
 
