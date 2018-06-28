@@ -252,11 +252,82 @@ The Wallet APIs include Wallet Calls, Account Calls, Transaction Calls, Asset Ca
 
 
 ***
-**** 
- 
+
+## API
+
+Now, let's look into [BitShares APIs](/core/api/apis-about.md#apis-categories). APIs are separated into two categories; Blockchain API and Wallet API. 
+
+- **[Blockchain API](https://bitshares.org/doxygen/namespacegraphene_1_1app.html):** It's used to query blockchain data (account, assets, trading history, etc).
+- **[Wallet API](https://bitshares.org/doxygen/classgraphene_1_1wallet_1_1wallet__api.html):** It has your private keys loaded and is required when interacting with the blockchain with new transactions.
+
+The set of available calls depend on whether you connect to the full node (witness_node) or the wallet (cli_wallet). Both support [RPC-JSON](/core/api/rpc.md#remote-procedure-calls). The full node also supports the [websocket protocol](/core/api/websocket_calls_notifications.md#websocket-calls-notifications) with [notifications](/core/api/websocket_calls_notifications.md#database-notifications).  
+
+
+There are wallet specific commands, such as transfer and market orders. They are only available after connecting to the cli_wallet because only the wallet has the private keys and signing capabilities. And some of calls will execute if the wallet has been unlocked.
+
+
+### [API Access Restriction](/core/api/api_restrictions.md#api-access-and-restrictions)
+
+Access to some API calls are restricted by default (i.e. network_node_api) or have been restricted by configuration([config.ini](/core/nodes_full_witness/full_nodes.md#configuration)). The restricted API calls are not accessible via RPC because requires login, thus it is only accessible over the websocket RPC (i.e., [API Access Procedure](/core/api/websocket_calls_notifications.md#api-access-procedure) ).
+
+We provide several different API's. Each API has its own ID. When running witness_node, initially two API's are available.
+
+- **API 0 provides read-only access to the database. (e.g. state-less RPC-calls querying)**
+- **API 1 is used to login and gain access to additional, restricted API's. (e.g. authenticated interaction)**
+
+>Note: To access the restricted API-1; we are required to use the websocket connection with callbacks to access API-1
+
+For sensitive businesses that want to ensure that deposits are irreversible, we recommend the use of the High Security Setup. That contains a delayed node to pass only irreversible transactions to the API.
+
+
+### [Objects and IDs](/core/api/object_ids.md#objects-and-ids)
+
+We will use the Objects and IDs when we search the BitShares Blockchain. 
+
+BitShares 2.0 has a different model to represent the blockchain(space), its transactions(type) and accounts(unique ids). On the BitShares blockchains there are **no addresses**, but objects identified by a **unique id, an type and a space**.
+
+**BitShares Objects Format**
+
+		space.type.id
+
+- [List of Commonly used Objects](/core/api/object_ids.md#list-of-commonly-used-objects)
+
+In the protocol space, there are raw objects such as, accounts, assets, committee members as well as orders, proposals and balances. The implementation space is used to gain access to higher abstraction layers for instance content of the current database state (these include, current global blockchain properties, dynamic asset data, transaction histories as well as account statistics and budget records).
+
+**Examples1: account object (1.2.x)**
+
+		unlocked >>> get_account_id "user123"
+		get_account_id "user123"
+		"1.2.539269"
+		unlocked >>>
+
+
+**Examples2: asset object (1.3.x)**
+
+		unlocked >>> list_assets "BTS" "2"
+		list_assets "BTS" "2"
+		[{
+				"id": "1.3.0",
+				"symbol": "BTS",
+				"precision": 5,
+				"issuer": "1.2.3",
+
+			....
+				"dynamic_asset_data_id": "2.3.368"
+			}
+		]		
+
+		
+****		
 ****
+
 (work in progress...)
 
-API
+****
+
+
+## Accounts
+
+
 
 ****
