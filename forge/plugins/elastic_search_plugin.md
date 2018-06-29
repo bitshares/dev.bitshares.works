@@ -5,7 +5,7 @@
 The document explains motivations, technical challenges and sample use of a new plug-in created for bitshares to store account history data into an elasticsearch database.
 
 ***
-https://github.com/cedar-book/core.dev/blob/master/forge/plugins/elastic_search_plugin.md#motivation
+
 #### Contents:
 - [Motivation](/forge/plugins/elastic_search_plugin.md#motivation)
 - [The Database Selection](/forge/plugins/elastic_search_plugin.md#the-database-selection)
