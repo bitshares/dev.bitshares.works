@@ -433,7 +433,13 @@ Elasticsearch database will listen in localhost and the wrapper in the same mach
 
 ***
 
+#### Contributor:
+- @oxarbitrage
+    
+***
+
 (ref) 
 - https://github.com/bitshares/bitshares-core/wiki/ElasticSearch-Plugin
 
 
+*** 
