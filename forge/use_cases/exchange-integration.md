@@ -1,12 +1,18 @@
-(draft)
-
 ## Exchange Integration
 
 #### Table of Contents:
-- 
-- 
-- 
-
+- [Step-By-Step Instructions for Exchanges](#step-by-step-instructions-for-exchanges)
+  - [Installation](#installation)
+  - [Running Daemons and Wallet](#running-daemons-and-wallet)
+    - Trusted Full Node
+    - Delayed Node
+    - Wallet
+- [Query blockchain for required data](#query-blockchain-for-required-data)
+  - Existing BitShares 1 Account
+  - Claiming BitShares 1.0 funds
+- [Watching Deposits with Python](#watching-deposits-with-python)
+- [Executing Transfers for Withdrawals](#executing-transfers-for-withdrawals)
+    
 ****
 
 ## Step-By-Step Instructions for Exchanges
@@ -62,14 +68,13 @@ We will use this node for notifications of customer deposits.
 
 The wallet will be used to transfer assets to the customers. It connects to the trusted full node and has spending privileges for the hot wallet.
 
-.. code-block:: sh
 
     ./programs/cli_wallet/cli_wallet --server-rpc-endpoint="ws://127.0.0.1:8090" \
                                      --rpc-http-endpoint="127.0.0.1:8092"
 
 ***
 
-### Query Blockchain for Required Data
+## Query Blockchain for Required Data
 
 
 We now use the open ``cli_wallet`` to issue transfers and query the blockchain for more information. First of all, we create a new wallet and set a pass phrase:::
@@ -120,9 +125,9 @@ For **Coldstorage** and plain private keys, we recommend to use::
 
     >>> import_balance <accountname> <private_key> false
 
-to import all balances that are locked in the private key into the account named ``<accountname``. As long as the last argument is ``false`` the transaction will only be printed for audit and not be broadcasted or executed. **Only** after changing ``false`` to ``true`` will the balances be claimed!
+to import all balances that are locked in the private key into the account named ``<accountname>``. As long as the last argument is ``false`` the transaction will only be printed for audit and not be broadcasted or executed. **Only** after changing ``false`` to ``true`` will the balances be claimed!
 
-For your hot wallet (or any other active wallet running in the BitShares 1 client) we recommend to use the GUI to claim your funds from hot wallet as described :doc:`here </bitshares/migration/howto-importing-wallet>`.
+For your hot wallet (or any other active wallet running in the BitShares 1 client) we recommend to use the GUI to claim your funds.
 
 ***
 
