@@ -32,11 +32,11 @@
 - [Price Feeds](/core/nodes_full_witness/active_witness.md#price-feeds)
 
 
-### Committee - FAQ
+### FAQ - Committee 
 - [How to Create a new Committee Member](/core/tutorials/committee_howto.md#how-to-creating-a-new-committee-member)
 - [more... ](/core/tutorials/FAQ.md#committee)
 
-### Witness - FAQ
+### FAQ - Witness 
 - [How to Change the Signing Key of your Witness?](/core/tutorials/wt_change_signing_key.md#how-to-change-the-signing-key-of-a-witness)
 - [more...](/core/tutorials/FAQ.md#witness)
 

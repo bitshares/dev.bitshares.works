@@ -25,7 +25,7 @@
 - [Remote Procedure Calls](/core/api/rpc.md#remote-procedure-calls)
 - [Websocket Calls & Notifications](/core/api/websocket_calls_notifications.md#websocket-calls-notifications)
 
-### API - FAQ
+### FAQ - API 
 - [Check a list](/core/tutorials/FAQ.md#apis)
 
 ***

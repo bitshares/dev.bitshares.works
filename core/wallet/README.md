@@ -33,6 +33,11 @@
 - [Wallet Full Nodes & Witness Nodes](/core/wallet/wallet_full_nodes_witness_nodes.md#wallet-full-nodes--witness-nodes)
    - Examples - connect to the network and open up a node
   
+  
+### FAQ - Assets
+
+- [How to Create a new UIA](/core/tutorials/assets_uia.md#how-to-create-a-new-uia)
+- [more...](/core/tutorials/FAQ.md#assets)
 
 ### FAQ - Transfer / Transactions
 - [How to use the CLI wallet to perform confidential transfers in BitShares](/core/tutorials/trn_confidential_transfer.md#how-to-use-the-cli-wallet-to-perform-confidential-transfers-in-bitshares)
