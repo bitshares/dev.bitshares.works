@@ -121,6 +121,12 @@ Unless you already have a local wallet, it will ask you to provide a password fo
 > Note: After this point, you can issue any command available to the cli-wallet (Wallet APIs) or construct your own transaction manually.
 
 
+**gethelp**
+
+You can get more detailed information by issuing `gethelp`. Detailed explanations for most calls are available.
+
+      unlocked >> gethelp <command>
+
 ### Gaining Access to Blockchain
 
 In Graphene, balances are contained in accounts. To claim an account that exists in the Graphene genesis, use the `import_key` command.
@@ -172,6 +178,8 @@ In `transfer`, if the broadcast flag is `False`, the wallet will construct and s
     unlocked >> transfer alice bob 10 USD "a gift" true
 
 The wallet will return the actual signed transaction.
+
+> **Note**: Many calls have a obligatory `broadcast` -flag as last argument. If this flag is `False`, the wallet will construct and sign, but **not** broadcast the transaction. This can be very useful for a local storage setup or to verify transactions.
 
 ***
 

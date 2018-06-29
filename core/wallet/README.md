@@ -33,12 +33,15 @@
 - [Wallet Full Nodes & Witness Nodes](/core/wallet/wallet_full_nodes_witness_nodes.md#wallet-full-nodes--witness-nodes)
    - Examples - connect to the network and open up a node
   
-### [FAQ - Wallet](/core/tutorials/FAQ.md#wallet--cli-wallet)
+
+### FAQ - Transfer / Transactions
+- [How to use the CLI wallet to perform confidential transfers in BitShares](/core/tutorials/trn_confidential_transfer.md#how-to-use-the-cli-wallet-to-perform-confidential-transfers-in-bitshares)
+- [more...](/core/tutorials/FAQ.md#transfer--transactions)
+
+### FAQ - Wallet
 - [How can I close the CLI client in a clean way?](/core/tutorials/FAQ.md#q-how-can-i-close-the-cli-client-in-a-clean-way)
 - [How can I import my GUI-wallet account into CLI-wallet?](/core/tutorials/FAQ.md#q-how-can-i-import-my-gui-wallet-account-into-cli-wallet)
 - [Why does the CLI client crash immediately when I try to run it for the first time?](/core/tutorials/FAQ.md#q-why-does-the-cli-client-crash-immediately-when-i-try-to-run-it-for-the-first-time)
-
+- [more...](/core/tutorials/FAQ.md#wallet--cli-wallet)
 
 ***
-
-
