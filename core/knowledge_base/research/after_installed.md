@@ -1,4 +1,15 @@
 # After the Installation
+#### Table of contents:
+- [Nodes](#nodes)
+- [Witness/Full Nodes](#witness-node)
+- [Network Configurations](#network-configuration)
+- [Wallet](#wallet)
+- [API](#api)
+- [Objects and IDs](#objects-and-ids)
+- [Accounts](#accounts)
+-
+
+***
 
 You installed BitShares Core successfully!
 
@@ -6,14 +17,16 @@ After you installed BitShares Core, you have `witness_node.exe` and `cli_wallet.
 
 We will talk about each operation to understand the BitShares Core Overview operations.
 
+***
+
 ## Nodes
 First, we need to connect to the network to interact to the BitShares Blockchain. The Nodes have the role. The nodes in the network both verify all transactions and blocks against the current state of the overall network (i.e., broadcast messages across a network). 
 
 #### [Types of nodes](/core/nodes_full_witness/full_nodes.md#full-nodes-witness-nodes)
 
-First, you might've noticed, we use `witness node` and 'full node' terms almost exchangeable.  But there are some differences.  We distinguish the Nodes between full nodes (a.k.a. **non-block producing** witness nodes) and **block producing** witness nodes. 
+First, you might've noticed, we use `witness node` and `full node` terms almost exchangeable.  But there are some differences.  We distinguish the Nodes between full nodes (a.k.a. **non-block producing** witness nodes) and **block producing** witness nodes. 
 
-Both are implemented by the same executable but the additional parameters can define each node operation difference.  For example, a (block producing) witness node has been provided an authorized block-signing private key, on the other hand, a (non-block producing) full node is not.  But both "interact" with the decentralized network (blockchain). They should maintain their own full nodes secure and reliable.
+Both are implemented by the same executable, but the additional parameters can define each node operation differences.  For example, a (block producing) witness node has been provided an authorized block-signing private key, on the other hand, a (non-block producing) full node is not.  But both "interact" with the decentralized network (blockchain). They should maintain their own full nodes secure and reliable.
 
 
 ## Witness Node
@@ -92,9 +105,13 @@ Next, we will talk about wallet (cli-wallet). The Nodes are connected to the net
 
 ## Wallet
 
-Once we know which witness_node (full_node) to use, we can use the full node to open up a cli_wallet. The running witness/full node might be BitShares Public Full Nodes, or run by businesses or individuals.
+The Nodes are connected to the network and verify all transactions and block produces. The cli_wallet is used to initiate transfer and connects to the trusted full node..
 
-The cli_wallet creates a local [`wallet.json`](/core/wallet/cli_wallet.md#overview) file that contains the encrypted private keys required to access the funds in your account and add new data to the blockchain. 
+The cli_wallet creates a local [`wallet.json`](/core/wallet/cli_wallet.md#overview) file that contains the encrypted private keys.  The key is required to access the funds and add new data to the blockchain with a signature from a private key. 
+
+Connecting the cli_wallet requires a running full node (not necessarily locally) and connect to it. You might have own node to use. If you do not have it, you can select one of [BitShares Public Full Nodes](https://github.com/bitshares/bitshares-ui/blob/staging/app/api/apiConfig.js#L67), or nodes that run by _businesses_ or _individuals_.
+
+
 
 **Example: wallet.json**
 
@@ -113,9 +130,9 @@ The cli_wallet creates a local [`wallet.json`](/core/wallet/cli_wallet.md#overvi
       }
 
 
-### Connecting  a Wallet 
+### Connecting a Wallet 
 
-In the previous section, we talked about General and High Security Network configurations about the Nodes.  The next examples show after the wetness_node connected, how we can connect and open a cli_wallet by using the Node. 
+In the previous section, we talked about General and High Security Network configurations about the Nodes.  Our next examples show how we can connect and open a cli_wallet by using the Node after the wetness_node connected. 
 
 **Example 1 - [General Network Setup](https://github.com/cedar-book/core.dev/blob/master/core/wallet/wallet_network.md#general-network-and-wallet-configuration) <Trusted Full Node>**
 
@@ -167,7 +184,7 @@ Let's close look at the next examples, first we start the witness_node with `--r
                                          --rpc-http-endpoint="192.168.0.102:8092"
 
 
-###  Websocket RPC / HTTP RPC 
+###  [Websocket RPC / HTTP RPC](/core/wallet/cli_wallet.md#case-1-connecting-a-cli-wallet---the-public-api-server-node)
 The cli-wallet can open a RPC port so that you can interface your application with it. You have the choices of websocket RPC via the `-r` parameter, and HTTP RPC via the `-H` parameter. 
 
 You can choose between [Websocket RPC](/core/api/websocket_calls_notifications.md#websocket-calls-notifications) or [RPC-HTTP](/core/api/rpc.md#remote-procedure-calls) requests, and also can set both ports together (below example).
@@ -179,66 +196,156 @@ You can choose between [Websocket RPC](/core/api/websocket_calls_notifications.m
 
 > **Note:** For security reasons, the wallet should only listen to localhost or the local network and should NEVER be exposed to the internet.	
 
-### Use a Public API Node
+### [Use a Public API Node](/core/wallet/cli_wallet.md#case-2-connecting-a-cli-wallet---a-node-ip-address)
 
 We show you how you can use the Public API Node in your `cli_wallet` command line. 
 
 - You can find a latest list of [Public Full Node](https://github.com/bitshares/bitshares-ui/blob/staging/app/api/apiConfig.js#L67) information. 
 
-**Example:** The public API node of OpenLedger `wss://bitshares.openledger.info/ws` and connect via secured websocket connection:
+**Example:**  We use the public API node of OpenLedger `wss://bitshares.openledger.info/ws` and connect via secured websocket connection:
 
 	./programs/cli_wallet/cli_wallet -s wss://bitshares.openledger.info/ws
 
 
-This will open the cli-wallet and unless you already have a local wallet, and will ask you to provide a password for your local wallet. Once a wallet has been created (default wallet file is wallet.json), you will receive,
+This will open the cli-wallet and unless you already have a local wallet, it will ask you to provide a password for your local wallet. Once a wallet has been created (default wallet file is a wallet.json), you will receive,
 
 	>>> new
 
-We mentioned before, you can set a password and unlock the wallet. After unlocked the wallet, you can issue [`Wallet APIs`](https://bitshares.org/doxygen/classgraphene_1_1wallet_1_1wallet__api.html).
+We mentioned before, you can set a password and unlock the wallet. After unlocked the wallet, you can issue [`Wallet API calls`](https://bitshares.org/doxygen/classgraphene_1_1wallet_1_1wallet__api.html).
 
-The Wallet APIs include Wallet Calls, Account Calls, Transaction Calls, Asset Calls, Governance, Privacy Mode, Blockchain Inspection, and Transaction Builder. After unlocked the wallet, you can gain access to the wallet by importing keys, registering an account, and transferring  funds. [Here](/core/testnets/public_testnet.md#4-connecting-a-cli-wallet) is some exapmle steps and about an [Account Registration](/core/accounts/account_registration.md#account-registration).
+### About Wallet API Calls
 
+The Wallet APIs include Wallet Calls, Account Calls, Transaction Calls, Asset Calls, Governance, Privacy Mode, Blockchain Inspection, and Transaction Builder. After unlocked the wallet, you can gain access to the wallet by importing keys, registering an account, and transferring  funds. [Here](/core/wallet/cli_wallet.md#gaining-access-to-blockchain) is some example  steps to gain the access and about an [Account Registration](/core/accounts/account_registration.md#account-registration).
 
 **Note:** To register an account, the registrar needs to be a **lifetime member (LTM)**. You can upgrade the account to Lifetime member (LTM) status. 
 
-
 ***
- 
+
+## API
+
+Now, let's look into [BitShares APIs](/core/api/apis-about.md#apis-categories). APIs are separated into two categories; Blockchain API and Wallet API. 
+
+- **[Blockchain API](https://bitshares.org/doxygen/namespacegraphene_1_1app.html):** It's used to query blockchain data (account, assets, trading history, etc).
+- **[Wallet API](https://bitshares.org/doxygen/classgraphene_1_1wallet_1_1wallet__api.html):** It has your private keys loaded and is required when interacting with the blockchain with new transactions.
+
+The set of available calls depend on whether you connect to the full node (witness_node) or the wallet (cli_wallet). Both support [RPC-JSON](/core/api/rpc.md#remote-procedure-calls). The full node also supports the [websocket protocol](/core/api/websocket_calls_notifications.md#websocket-calls-notifications) with [notifications](/core/api/websocket_calls_notifications.md#database-notifications).  
+
+
+There are wallet specific commands, such as transfer and market orders. They are only available after connecting to the cli_wallet because only the wallet has the private keys and signing capabilities. And some of calls will execute if the wallet has been unlocked.
+
+
+### [API Access Restriction](/core/api/api_restrictions.md#api-access-and-restrictions)
+
+Access to some API calls are restricted by default (i.e. network_node_api) or have been restricted by configuration([config.ini](/core/nodes_full_witness/full_nodes.md#configuration)). The restricted API calls are not accessible via RPC because requires login, thus it is only accessible over the websocket RPC (i.e., [API Access Procedure](/core/api/websocket_calls_notifications.md#api-access-procedure) ).
+
+We provide several different API's. Each API has its own ID. When running witness_node, initially two API's are available.
+
+- **API 0 provides read-only access to the database. (e.g. state-less RPC-calls querying)**
+- **API 1 is used to login and gain access to additional, restricted API's. (e.g. authenticated interaction)**
+
+>Note: To access the restricted API-1; we are required to use the websocket connection with callbacks to access API-1
+
+For sensitive businesses that want to ensure that deposits are irreversible, we recommend the use of the High Security Setup. That contains a delayed node to pass only irreversible transactions to the API.
+
+
+### [Objects and IDs](/core/api/object_ids.md#objects-and-ids)
+
+We will use the Objects and IDs when we search the BitShares Blockchain. 
+
+BitShares 2.0 has a different model to represent the blockchain(space), its transactions(type) and accounts(unique ids). On the BitShares blockchains there are **no addresses**, but objects identified by a **unique id, an type and a space**.
+
+**BitShares Objects Format**
+
+		space.type.id
+
+- [List of Commonly used Objects](/core/api/object_ids.md#list-of-commonly-used-objects)
+
+In the protocol space, there are raw objects such as, accounts, assets, committee members as well as orders, proposals and balances. The implementation space is used to gain access to higher abstraction layers for instance content of the current database state (these include, current global blockchain properties, dynamic asset data, transaction histories as well as account statistics and budget records).
+
+**Examples1: account object (1.2.x)**
+
+		unlocked >>> get_account_id "user123"
+		get_account_id "user123"
+		"1.2.539269"
+		unlocked >>>
+
+
+**Examples2: asset object (1.3.x)**
+
+		unlocked >>> list_assets "BTS" "2"
+		list_assets "BTS" "2"
+		[{
+				"id": "1.3.0",
+				"symbol": "BTS",
+				"precision": 5,
+				"issuer": "1.2.3",
+
+			....
+				"dynamic_asset_data_id": "2.3.368"
+			}
+		]		
+
 ****
 (work in progress...)
 
 ****
 
- 
-**** 
+
+## Accounts
+
+
+- Membership
+- Fees
+- Permissions
+- Authorities
+- Hierarchical Corporate Accounts
+
+
+In order to use BitShares, you will need to register an account. All you need to provide is
+
+    an account name
+    a password
+
+Note that, in contrast to any other platform you have ever used: Creating an account at one of our partners will make your account available at all the other partners as well. Hence, your account name can be seen similar to a mail address in such that it is unique and every participant in the BitShares network can interact with you independent of the actual partner providing the wallet.
+
+
+BitShares 2.0 accounts have to be registered on the blockchain. Upon registration they are assigned an incrementing identifier (account id).
+
+This comes with many advantages: Besides improved scalability, we have separated the identity from the transaction authorizing signature. In practice, owning an account name is independent from being able to spend its funds. Furthermore, both rights (we call them permissions) can split among an arbitrary complex relation of people (we call them authorities) using weights and a required thresholds.
+
+Thanks to separating authorities from identities, BitShares 2.0 can be much faster in processing delay while having much smaller transaction sizes. Hence, all participants are forced to have a named account on the blockchain. Furthermore, most transactions are tied to an account name and can thus be linked to individuals (this includes transfers, trades, shorts, etc. but not stealthed transactions).
+
+
+
+
+
+#### Referral  Program
+
+BitShares has several different kinds of accounts: * Basic Account, and * Lifetime Member.
+
+Basic Accounts are free, but do not qualify for the referral program, nor any cash back on transaction fees.
+
+Lifetime Members pay an upgrade fee and earn 80% cash back on every fee they pay. They also qualify for 80% of the fees paid by Basic Accounts they refer to the network. These 80% can be split among the registrar, that actually registers the accounts, and an affiliate referrer, that brought in the new user.
+
+
+
+
+
+
 ****
+			
+(work in progress...)
 
-
-### API
-
-
-
-
-
-Wallet specific commands, such as transfer and market orders, are only available if connecting to cli_wallet because only the wallet has the private keys and signing capabilities and some calls will only execute if the wallet is unlocked.
-
-The full node offers a set of API(s), of which only the database calls are available via RPC. Calls that are restricted by default (i.e. network_node_api) or have been restricted by configuration are not accessible via RPC because a stateful protocol (websocket) is required for login.
-
-
-
-If you also want to run a wallet, please pick reasonable different ports and make sure you do not try to call methods at the wallet that are only available to the blockchain API.
-
-RPC calls are state-less and accessible via regular JSON formatted RPC-HTTP-calls
-
-Websocket calls are stateful and accessible via regular JSON formatted websocket connection.
-
-### API Access restriction
-
-
-objects and IDs
+***
+***
+	
 
 **** 
-****
+
+## Testnets
+
+
+
 
 #### genesis.json
 										 
@@ -247,24 +354,7 @@ If you are interested to use BitShares Testnets later, you will learn about a "g
 Here is more information about How to setup BitShares [Private Testnet](/core/testnets/private_testnet.md#3-creating-a-genesis-file-for-a-private-testnet) and BitShares [Public Testnet](/core/testnets/public_testnet.md#2-genesis-configuration). 
 
 
-So far, we are learning about the **node** which connect to the network directory and take the parameters. BitShare has two levels of network setups (trusted full node and delayed full node) for businesses. If you do not have own node to run, you can use the public api server (public full node). 
+So far, we are learning about the **node** which connect to the network directory and take the parameters. BitShares has two levels of network setups (trusted full node and delayed full node) for businesses. If you do not have own node to run, you can use the public api server (public full node). 
 
 ***
-***
-
-
-### Account
-
-
-
-****
-			
-
-
-***
-***
-	
-
-
-
 *****

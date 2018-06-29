@@ -99,5 +99,9 @@ At this point the user has successfully made a payment and the merchant has veri
 
     print(url)
 
+***
+
+(ref)
+- http://docs.bitshares.org/integration/merchants/merchant-protocol.html
 
 ***

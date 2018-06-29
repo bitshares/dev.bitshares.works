@@ -82,7 +82,12 @@ This can be achieved using the witness API call::
 The `verify_account_authority` call will return `true` if the provided keys have sufficient authority to authorize the account, otherwise it will return `false`.
 
 
+
 ***
 
+(ref)
+- http://docs.bitshares.org/integration/merchants/login-protocol.html
+
+***
 
 
