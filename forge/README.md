@@ -11,7 +11,7 @@ The goal is to provide the means to collaborate and learn from projects, process
 - BitShares Repositories list, developers repositories (by name, by topic)
 
 ### [API Support & References](/forge/api_support/README.md#api-support)
-- JSON, RPC, REST, etc
+- Explorer and the Wrappers, JSON, RPC, REST, etc
 
 ###  [Articles](/forge/articles/tech_articles_chronological.md#articles--references)
 - Technical(by topic), other

@@ -32,6 +32,14 @@
 - [Price Feeds](/core/nodes_full_witness/active_witness.md#price-feeds)
 
 
+### Committee - FAQ
+- [How to Create a new Committee Member](/core/tutorials/committee_howto.md#how-to-creating-a-new-committee-member)
+- [more... ](/core/tutorials/FAQ.md#committee)
+
+### Witness - FAQs
+- [How to Change the Signing Key of your Witness?](/core/tutorials/FAQ.md#q-how-to-change-the-signing-key-of-your-witness)
+- [more...](/core/tutorials/FAQ.md#witness)
+
 ### [Memory Reduction for Nodes](/forge/plugins/nodes_memory_reduction.md#memory-reduction-for-nodes)
 - [Four New Options to Reduce RAM](/forge/plugins/nodes_memory_reduction.md#four-new-options-to-reduce-ram)
    - [--plugins arg   ](/forge/plugins/nodes_memory_reduction.md#--plugins)
