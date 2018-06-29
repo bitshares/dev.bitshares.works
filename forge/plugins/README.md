@@ -7,10 +7,6 @@
   - Help to reduce RAM usage significantly by using witness_node executable options.
 - payments plugins
   - a short description
-- (Topic name)
-  - a short description
-
-
 
 
 ***

@@ -7,9 +7,6 @@
   - Ptython - websocket-client interact with the Core API
 - [API Logging](/forge/program_libraries/api_logging.md#api-logging)
   - How to enable RPC Logging in BitShares
-- (Topic name)
-  - a short description
-
 
 ***
 *Libraries*
