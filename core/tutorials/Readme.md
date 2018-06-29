@@ -60,9 +60,8 @@ This page “How To”  intended to collect more steps included information.
    - [General](/core/wallet/wallet_network.md#general-network-and-wallet-configuration)
    - [Secure](/core/wallet/wallet_network.md#secure-network-and-wallet-configuration)
 
-
 ### Witness
-
+- [How to Change The Signing Key of a Witness](/core/tutorials/wt_change_signing_key.md#how-to-change-the-signing-key-of-a-witness)
 
 ### Worker
 - [How to Create a Worker](/core/tutorials/worker_create.md#how-to-create-a-worker)

@@ -105,7 +105,6 @@
 - [How to use the CLI wallet to perform confidential transfers in BitShares](/core/tutorials/trn_confidential_transfer.md#how-to-use-the-cli-wallet-to-perform-confidential-transfers-in-bitshares)
 - [Hot to Construct Any Transaction - Manually](/core/tutorials/trn_construct_transaction.md#how-to-construct-any-transaction---manually)
 - [How to Propose a Transaction](/core/tutorials/trn_propose_transaction.md#how-to-propose-a-transaction)
-- FAQs
 
 ***
 
@@ -125,9 +124,9 @@
    
 ***
 ### [Witness](/core/tutorials/FAQ.md#witness)
-- [Change the Signing Key of your Witness?](/core/tutorials/FAQ.md#q-change-the-signing-key-of-your-witness)
 - [How can I close the witness node in a clean way?](/core/tutorials/FAQ.md#q-how-can-i-close-the-witness-node-in-a-clean-way)
 - [How do I check whether the witness node is already synced?](/core/tutorials/FAQ.md#q-how-do-i-check-whether-the-witness-node-is-already-synced)
+- [How to Change The Signing Key of a Witness](/core/tutorials/wt_change_signing_key.md#how-to-change-the-signing-key-of-a-witness)
 - [If it seems to be unable to sync beyond a certain date?](/core/tutorials/FAQ.md#q-if-it-seems-to-be-unable-to-sync-beyond-a-certain-date)
 - [Is it safe to delete logs stored in witness_node_data_dirlogsp2p?](/core/tutorials/FAQ.md#q-is-it-safe-to-delete-logs-stored-in-witness_node_data_dirlogsp2p)
 - [What is the best way to interact with the witness node?](/core/tutorials/FAQ.md#q-what-is-the-best-way-to-interact-with-the-witness-node)
@@ -570,17 +569,6 @@ The CLI client is unable to run on its own, i.e. without being connected to the 
 
 ***
 ### Witness
-#### Q. Change the Signing Key of your Witness?
-
-As a witness you may want to change your key occasionally or on a regular basis. You can do so by calling update_witness:
-
-    >>> update_witness <witness-name> <url> <new-publickey> false
-
-By replacing `false` with `true`, the signed transaction will be broadcast and executed otherwise it will only print the signed transaction for review.
-
-You can get a new public key by calling:
-
-    >>> suggest_brain_key
 
 #### Q. How can I close the witness node in a clean way?
 In windows use ctrl-c.
