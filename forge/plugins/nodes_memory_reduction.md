@@ -156,5 +156,9 @@ This will allow me to run the node with less than 5 gigs(4.820492G):
   
 #### Contributor:
 - @oxarbitrage
-    
+    	
+(ref) 
+- https://github.com/bitshares/bitshares-core/wiki/Memory-Reduction-for-Nodes
+	
+	
 ***
