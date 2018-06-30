@@ -36,8 +36,12 @@
 - [Wallet 2 Factor Authentication Protocol](/core/knowledge_base/protocols/wallet_2factor_auth_protocol.md#wallet-2-factor-authentication-protocol)
 - [Merchant - Wallet Login Protocol](/core/knowledge_base/protocols/merchant_login.md#merchant)
 - [Merchant - Wallet Privacy Protocol](/core/knowledge_base/protocols/merchant_privacy.md#merchant)
-   
+     
 
+***
+
+### Other 
+- [wiki legacy ](/core/knowledge_base/wiki_legacy)
 
 
 
