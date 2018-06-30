@@ -1,9 +1,8 @@
 ## Introduction & Architectures 
 
 ### BitShares Core Workflow
-- Project Board
-- Workflow
-- Contribution process
+- [Contribution Guide](/core/intro/contribution_guide.md#contribution-guide) [DRAFT]
+- [Contribution Guide Project](https://github.com/bitshares/bitshares-core/projects/6)
 
 ### GitFlow - Code Management
 
