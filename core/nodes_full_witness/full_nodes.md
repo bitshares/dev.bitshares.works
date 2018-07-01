@@ -1,6 +1,6 @@
 ## Full Nodes (Witness Nodes)
 
-#### Contents: 
+#### Table of Contents: 
 - [Type of Witness nodes](/core/nodes_full_witness/full_nodes.md#type-of-witness-nodes)
    - Non-Block producing
    - Block producing

@@ -108,6 +108,11 @@ then
 
 ***
 
+#### Contributor:
+- @oxarbitrage
+
+
+
 (ref)
 - https://github.com/oxarbitrage/worker-proposals/blob/master/bitshares_api_node.md
 - https://github.com/bitshares/bitshares-core/wiki/Manage-your-nodes-by-using-gnu-screen

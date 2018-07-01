@@ -2,7 +2,7 @@
 
 This page is a collection of command lines to connect Node, Wallet, and Witness. You can compare their differences to understand the patterns and how they are used.
 
-#### contents:
+#### Table of Contents:
 - [Launch the full node](/core/wallet/node_wallet_witness.md#launch-the-full-node)
 - [Run the witness as a node in the network (localhost):](/core/wallet/node_wallet_witness.md#run-the-witness-as-a-node-in-the-network-localhost)
 - [Run the witness as a node in the network](/core/wallet/node_wallet_witness.md#run-the-witness-as-a-node-in-the-network)

@@ -3,7 +3,7 @@
 In this section, we will show how to use a brain key and a public key while creating/registering an account. 
 
 
-#### Contents: 
+#### Table of Contents: 
 
 1. [Prerequisites](/core/accounts/account_registration.md#1-prerequisites)
 2. [Create a brain Key and derive a private/public key pair](/core/accounts/account_registration.md#2-create-a-brain-key-and-derive-a-privatepublic-key-pair)

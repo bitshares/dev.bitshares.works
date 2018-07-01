@@ -1,6 +1,6 @@
 # Accounts
 
-#### Contents:
+#### Table of Contents:
 
 - [Account](/core/accounts/accounts.md#account)
    - Memberships

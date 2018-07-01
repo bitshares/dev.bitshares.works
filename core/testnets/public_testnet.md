@@ -2,7 +2,7 @@
 
 ### How to deploy your own Public Network
 
-### Contents:
+#### Table Contents:
 
 1. [Installation/Configuration of Witness](#1-installation_configuration-of-witness)
 2. [Genesis Configuration](#2-genesis-configuration)

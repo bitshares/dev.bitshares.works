@@ -1,6 +1,6 @@
 ## Become an Active Witness
 
-#### Contents:
+#### Table of Contents:
 
 - [A Block-Producing Witness](/core/nodes_full_witness/active_witness.md#a-block-producing-witness)
    - Requirements
