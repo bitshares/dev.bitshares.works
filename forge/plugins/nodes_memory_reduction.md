@@ -1,6 +1,6 @@
 ## Memory Reduction for Nodes
 
-#### Contents:
+#### Table of Contents:
 - [Four New Options to Reduce RAM](/forge/plugins/nodes_memory_reduction.md#four-new-options-to-reduce-ram)
    - [--plugins arg   ](/forge/plugins/nodes_memory_reduction.md#--plugins)
    - [--track-account arg ](/forge/plugins/nodes_memory_reduction.md#--track-account)

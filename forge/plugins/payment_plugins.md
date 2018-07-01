@@ -1,6 +1,6 @@
 ## Payment plugins
 
-#### Contents:
+#### Table of Contents:
 - 
 - 
 - 
