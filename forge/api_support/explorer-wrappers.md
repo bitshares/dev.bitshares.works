@@ -24,5 +24,8 @@ APIs - the Teatnet Explorer uses to query the Testnet
 
 ***
 
-Many thanks to @oxarbitrage. 
+#### Contributor: 
+- @oxarbitrage
+
+
 
