@@ -1,6 +1,7 @@
 ## Memory Reduction for Nodes
 
 #### Table of Contents:
+- [System Requirements](#system-requirements)
 - [Four New Options to Reduce RAM](/forge/plugins/nodes_memory_reduction.md#four-new-options-to-reduce-ram)
    - [--plugins arg   ](/forge/plugins/nodes_memory_reduction.md#--plugins)
    - [--track-account arg ](/forge/plugins/nodes_memory_reduction.md#--track-account)
@@ -19,6 +20,7 @@ In order to run a full node with all the account history you need to remove `par
 | --- | --- | --- | ---|
 | 20G RAM | 120G RAM | 4G RAM | 200G SSD HD, 16G RAM|
 
+***
 
 
 ## Four New Options to Reduce RAM
