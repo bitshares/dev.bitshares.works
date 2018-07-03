@@ -7,6 +7,7 @@
 - [Type of Witness nodes](/core/nodes_full_witness/full_nodes.md#type-of-witness-nodes)
    - Non-Block producing
    - Block producing
+- [System Requirements](/core/nodes_full_witness/full_nodes.md#system-requirements)   
 - [How to launch the full node](/core/nodes_full_witness/full_nodes.md#how-to-launch-the-full-node)
 - [Configuration - `config.ini`](/core/nodes_full_witness/full_nodes.md#configuration)
 - [Enabling Remote Procedure Calls (RPC)](/core/nodes_full_witness/full_nodes.md#enabling-remote-procedure-calls-rpc)
