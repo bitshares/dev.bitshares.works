@@ -11,7 +11,7 @@ Documentation related to BitShares Core internals and development fundamentals.
 - Accounts, Fees, Permissions, Authorities, Account Registration  
 
 ### [Full Node / Witness Nodes](/core/nodes_full_witness/README.md#full-node--witness-node)
-- Running a BitShares API Node,Full/Witness Nodes(type, how to launch, config.ini, etc), Become an Active Witness(about, how to prepare, backup, price feeds, etc)
+- System Requirements, Running a BitShares API Node,Full/Witness Nodes(type, how to launch, config.ini, etc), Become an Active Witness(about, how to prepare, backup, price feeds, etc)
 
 ### [Wallet](/core/wallet/README.md#wallet)
 - CI, UI, General / Secure Network & Wallet Configuration
