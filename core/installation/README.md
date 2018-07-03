@@ -74,7 +74,7 @@ If you want to avoid downloading the history of the BitShares blockchain data, y
 
 #### API node, config.ini, and plugins
 
-The witness_node takes parameters (see a [config.file](/core/nodes_full_witness/full_nodes.md#configuration) items list) and plugins in the command line. You can add parameter values into the config.ini also. Examine the default config.ini to know how you can customize it. 
+The witness_node takes parameters (see a [config.ini](/core/nodes_full_witness/full_nodes.md#configuration) file items list) and plugins in the command line. You can add parameter values into the config.ini also. Examine the default config.ini to know how you can customize it. 
 
 For example, you can add `--rpc-endpoint` parameter and  a value to run basic API Node. The below command starts a node to listen for api calls at port 8090 (localhost). The `--rpc-endpoint` value can be changed to another IP address or local network.
 
