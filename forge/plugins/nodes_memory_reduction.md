@@ -10,7 +10,16 @@
 
 ***
 
-The BitShares blockchain is big and Graphene technology stores all the data into RAM at chain replay. Currently(2017-09-04) a full node requires 40GB of RAM. Most of the time a full node with everything loaded is not needed and expensive due to the amount of memory the machine need to have available. RAM usage can be reduced significantly by using `witness_node` executable options.
+### System Requirements
+
+By default the witness node will start in reduced memory ram mode by using some of the commands detailed in Memory reduction for nodes.
+In order to run a full node with all the account history you need to remove `partial-operations` and `max-ops-per-account` from your config file. Please note that currently(2018-07-02) a full node need more than 100GB of RAM to operate and required memory is growing fast. Consider the following table before running a node:
+
+| Default | Full | Minimal  | ElasticSearch |
+| --- | --- | --- | ---|
+| 20G RAM | 120G RAM | 4G RAM | 200G SSD HD, 16G RAM|
+
+
 
 ## Four New Options to Reduce RAM
 
