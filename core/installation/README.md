@@ -64,7 +64,7 @@ Both are implemented by the same executable, but the additional parameters can d
 
 #### [Running a BitShares API node](/core/nodes_full_witness/running-api-node.md#running-a-bitshares-api-node)
 
-In your terminal, you can execute the witness_node (see the below command), the command will launch the witness node and automatically create a data directory including a [config.file](/core/nodes_full_witness/full_nodes.md#configuration). And the operation starts downloading the data to fully synchronize the blockchain if you start without any parameters. 
+In your terminal, you can execute the witness_node (see the below command), the command will launch the witness node and automatically create a data directory including a [config.ini](/core/nodes_full_witness/full_nodes.md#configuration) file. And the operation starts downloading the data to fully synchronize the blockchain if you start without any parameters. 
 
       ./programs/witness_node/witness_node
 
