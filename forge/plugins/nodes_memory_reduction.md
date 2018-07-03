@@ -1,7 +1,6 @@
 ## Memory Reduction for Nodes
 
 #### Table of Contents:
-- [System Requirements](#system-requirements)
 - [Four New Options to Reduce RAM](/forge/plugins/nodes_memory_reduction.md#four-new-options-to-reduce-ram)
    - [--plugins arg   ](/forge/plugins/nodes_memory_reduction.md#--plugins)
    - [--track-account arg ](/forge/plugins/nodes_memory_reduction.md#--track-account)
@@ -11,14 +10,8 @@
 
 ***
 
-### System Requirements
+> Please check [System Requirements](/core/nodes_full_witness/full_nodes.md#system-requirements) to run a node (updated: 2018-07-02).
 
-By default the witness node will start in reduced memory ram mode by using some of the commands detailed in Memory reduction for nodes.
-In order to run a full node with all the account history you need to remove `partial-operations` and `max-ops-per-account` from your config file. Please note that currently(2018-07-02) a full node need more than 100GB of RAM to operate and required memory is growing fast. Consider the following table before running a node:
-
-| Default | Full | Minimal  | ElasticSearch |
-| --- | --- | --- | ---|
-| 20G RAM | 120G RAM | 4G RAM | 200G SSD HD, 16G RAM|
 
 ***
 
