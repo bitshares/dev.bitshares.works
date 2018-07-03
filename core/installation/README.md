@@ -190,8 +190,8 @@ After unlock the cli-wallet, you can issue any command available to the cli-wall
 	null
 	locked >>> 
 										 
-	locked >>> unlock "supersecret123"
-	unlock "supersecret123"
+	locked >>> unlock supersecret123
+	unlock supersecret123
 	null
 	unlocked >>>
 
