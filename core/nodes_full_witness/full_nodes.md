@@ -4,6 +4,7 @@
 - [Type of Witness nodes](/core/nodes_full_witness/full_nodes.md#type-of-witness-nodes)
    - Non-Block producing
    - Block producing
+- [System Requirements](/core/nodes_full_witness/full_nodes.md#system-requirements)
 - [How to launch the full node](/core/nodes_full_witness/full_nodes.md#how-to-launch-the-full-node)
 - [Configuration `config.ini`](/core/nodes_full_witness/full_nodes.md#configuration)
 - [Enabling Remote Procedure Calls (RPC)](/core/nodes_full_witness/full_nodes.md#enabling-remote-procedure-calls-rpc)
@@ -20,6 +21,18 @@
 We distinguish between full nodes (a.k.a. non-block producing witness nodes) and block producing witness nodes. Both are implemented by the same executable but the latter requires some additional parameters to be defined and the corresponding witness voted active by the BTS Holders.
 
 Both represent nodes in the network that verify all transactions and blocks against the current state of the overall network. Hence, we recommend all service providers to run and maintain their own full nodes for reliability and security reasons.
+
+
+### System Requirements
+
+By default the witness node will start in reduced memory ram mode by using some of the commands detailed in [Memory reduction for nodes](/forge/plugins/nodes_memory_reduction.md#memory-reduction-for-nodes).
+In order to run a full node with all the account history you need to remove `partial-operations` and `max-ops-per-account` from your config file. Please note that currently(2018-07-02) a full node need more than 100GB of RAM to operate and required memory is growing fast. Consider the following table before running a node:
+
+| Default | Full | Minimal  | ElasticSearch |
+| --- | --- | --- | ---|
+| 20G RAM | 120G RAM | 4G RAM | 200G SSD HD, 16G RAM|
+
+
 
 ### How to launch the full node
 
