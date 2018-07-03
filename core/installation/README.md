@@ -84,7 +84,7 @@ For example, you can add `--rpc-endpoint` parameter and  a value to run basic AP
 Next example shows how to set plugins to reduce the synchronizing data size and how to specify a data directory (e.g., data/my-blockprod) by using a parameter `--data-dir`. 
 		
 	./programs/witness_node/witness_node --data-dir data/my-blockprod 
-	                                     --rpc-endpoint "127.0.0.1:8 
+	                                     --rpc-endpoint "127.0.0.1:8090 
 					     --max-ops-per-account 1000         
 					     --partial-operations true
 					     
