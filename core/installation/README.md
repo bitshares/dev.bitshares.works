@@ -221,7 +221,7 @@ The cli-wallet can open a RPC port so that you can interface your application wi
 You can choose between [Websocket RPC](/core/api/websocket_calls_notifications.md#websocket-calls-notifications) or [RPC-HTTP](/core/api/rpc.md#remote-procedure-calls) requests, and also can set both ports together (below example).
 
 	./programs/cli_wallet/cli_wallet --wallet-file my-wallet.json 
-                               -s ws://127.0.0.1:11011 
+                               -s ws://127.0.0.1:8090 
                                -H 127.0.0.1:8090 
                                -r 127.0.0.1:8099	
 
