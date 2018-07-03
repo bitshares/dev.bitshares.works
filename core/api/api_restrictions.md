@@ -51,7 +51,7 @@ Since restricted APIs require login, they are **only** accessible over the webso
 You can restrict API’s to particular users by specifying an `api-access` file in [`config.ini`](/core/nodes_full_witness/full_nodes.md#configuration) or by using the `--api-access /full/path/to/api-access.json` startup node command. 
 
 #### Example: 
-`apiaccess` file which allows user `bytemaster` with password `supersecret` to access *four different API’s*, while allowing any other user to access the *three public API’s* necessary to use the wallet::
+`api-access.json` file which allows user `bytemaster` with password `supersecret` to access *four different API’s*, while allowing any other user to access the *three public API’s* necessary to use the wallet::
 
     {
        "permission_map" :
