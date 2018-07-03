@@ -32,9 +32,9 @@ Open a _Command Prompt_ window and switch the current directory to `[Testnet-Hom
 
 ## 3. Creating a Genesis File for a Private Testnet
 
-The genesis.json is the initial state of the network. We create a new genesis json file named `my-genesis.json` for a Private Testnet.
+The genesis.json is the initial state of the network. We create a new genesis json file named `my-genesis.json` for a Private Testnet in the same folder just created.
 
-    witness_node --create-genesis-json=my-genesis.json
+    ./witness_node --create-genesis-json=my-genesis.json
 
 The `my-genesis.json` file will be created in the `[Testnet-Home]` folder. Once this task is done, the witness node will terminate on its own. 
 
@@ -80,9 +80,9 @@ Embedded genesis is a feature designed to make life easier for consumers of pre-
 
 We create a new data directory for our witness.
 
-    witness_node --data-dir data/my-blockprod --genesis-json genesis/my-genesis.json --seed-nodes "[]"   # or
+    ./witness_node --data-dir data/my-blockprod --genesis-json genesis/my-genesis.json --seed-nodes "[]"   # or
     
-    witness_node --data-dir=data/my-blockprod --genesis-json=genesis/my-genesis.json --seed-nodes "[]"
+    ./witness_node --data-dir=data/my-blockprod --genesis-json=genesis/my-genesis.json --seed-nodes "[]"
 
 The `data/my-blockprod` directory does not exist, it will be created by the witness node.
 
@@ -129,7 +129,7 @@ The above list authorizes the `witness_node` to produce blocks on behalf of the 
 
 Now run witness_node again:
 
-    witness_node --data-dir data/my-blockprod --enable-stale-production --seed-nodes "[]"
+    ./witness_node --data-dir data/my-blockprod --enable-stale-production --seed-nodes "[]"
 
 Note:
 - We do not need to specify `genesis.json` on the command line, since we now specify it in the config file. 
@@ -158,11 +158,13 @@ This curl command will return a short JSON object including the `chain_id`.
 
 We are now ready to connect a new wallet to your Private testnet witness node. You must specify a chain ID and server. Keep your witness node running and in another _Command Prompt_ window run this command (a blank username and password will suffice):
 
-    cli_wallet --wallet-file my-wallet.json 
+    ./cli_wallet --wallet-file my-wallet.json 
                --chain-id cf307110d029cb882d126bf0488dc4864772f68d9888d86b458d16e6c36aa74b 
                --server-rpc-endpoint ws://127.0.0.1:11011 -u '' -p ''
 
 > Note: Make sure to replace the above chain ID (i.e., blockchain id) `cf307110d0...36aa74b` with **your own chain ID** reported by your witness_node. The chain-id passed to the CLI-wallet needs to match the id generated and used by the witness node.
+
+> Note: ` --server-rpc-endpoint ` - The port number is how you defined (opened) `--rpc-endpoint` for the witness_node.
 
 If you get the `set_password` prompt, it means your wallet has successfully connected to the testnet witness node.
 
@@ -213,7 +215,9 @@ And the resposne should be something similar to this:
 We can now register an account. The `register_account` command allows you to register an account using only a public key:
 
     register_account alpha BTS78CuY47Vds2nfw2t88ckjTaggPkw16tLhcmg4ReVx1WPr1zRL5 BTS78CuY47Vds2nfw2t88ckjTaggPkw16tLhcmg4ReVx1WPr1zRL5 nathan nathan 0 true
-   
+
+ > Use a public key `pub_key` which you just created by `suggest_brain_key`. 
+
 ### Transfer funds between accounts
 
     transfer nathan alpha 100000 CORE "here is the cash" true
@@ -227,10 +231,14 @@ We can now open a new wallet for alpha user:
     upgrade_account alpha true
     create_witness alpha "http://www.alpha" true
 
+
+ > Use a private key `wif_priv_key` which you just created by `suggest_brain_key`. 
+ 
 The `get_private_key` command allows us to obtain the WIF private key corresponding to a public key. The private key must already be in the wallet:
 
     get_private_key BTS78CuY47Vds2nfw2t88ckjTaggPkw16tLhcmg4ReVx1WPr1zRL5
 
+> You can try to make sure your `suggest_brain_key` outputs. You should get the same pair of keys set.
 
 ## 13. Creating Committee Members
 
@@ -282,6 +290,9 @@ The `get_private_key` command allows us to obtain the WIF private key correspond
 - http://docs.bitshares.org/testnet/private-testnet.html
 - https://github.com/bitshares/docs.bitshares.org/pull/52
 - https://github.com/bitshares/bitshares-core/issues/700
+
+
+
 
 
 

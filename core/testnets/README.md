@@ -1,21 +1,7 @@
 ## Testnets
 
-**Bitshares Blockchain Explorer for Testnet:** http://bitshares-testnet.xyz/ 
+> **Important: [System Requirements](/core/nodes_full_witness/full_nodes.md#system-requirements) to run a node (updated: 2018-07-02).**
 
-APIs - the Teatnet Explorer uses to query the Testnet
-- http://148.251.10.231:5000/apidocs/ -> ES Wrapper : Wrapper to expose **Elasticsearch** Bitshares node data to clients
-- http://148.251.10.231:5001/apidocs/ -> Node Wrapper
-- http://148.251.10.231:5003/apidocs/ ->  Tradingview **UDF** Wrapper for Bitshares
-
-***
-
-
-#### Consensus Changes 2018-06
--  [BSIP38: Add target collateral ratio option to short positions](/core/testnets/consensus-changes-2018-06.md#bsip38-add-target-collateral-ratio-option-to-short-positions) 
-
-
-
-***
 
 ### [Public Testnet Details](/core/testnets/public_testnet_details.md#the-open-public-testnet-information)
 
@@ -48,5 +34,20 @@ APIs - the Teatnet Explorer uses to query the Testnet
 12. [Creating Another Account](/core/testnets/private_testnet.md#12-creating-another-account)
 13. [Creating Committee Members](/core/testnets/private_testnet.md#13-creating-committee-members)
 
+***
+#### Tools
+**Bitshares Blockchain Explorer for Testnet:** http://bitshares-testnet.xyz/ 
+
+APIs - the Teatnet Explorer uses to query the Testnet
+- http://148.251.10.231:5000/apidocs/ -> ES Wrapper : Wrapper to expose **Elasticsearch** Bitshares node data to clients
+- http://148.251.10.231:5001/apidocs/ -> Node Wrapper
+- http://148.251.10.231:5003/apidocs/ ->  Tradingview **UDF** Wrapper for Bitshares
 
 ***
+
+#### Consensus Changes 2018-06
+-  [BSIP38: Add target collateral ratio option to short positions](/core/testnets/consensus-changes-2018-06.md#bsip38-add-target-collateral-ratio-option-to-short-positions) 
+
+***
+
+
