@@ -34,7 +34,7 @@ Open a _Command Prompt_ window and switch the current directory to `[Testnet-Hom
 
 The genesis.json is the initial state of the network. We create a new genesis json file named `my-genesis.json` for a Private Testnet in the same folder just created.
 
-    ./witness_node --create-genesis-json=genesis/my-genesis.json
+    ./witness_node --create-genesis-json=my-genesis.json
 
 The `my-genesis.json` file will be created in the `[Testnet-Home]` folder. Once this task is done, the witness node will terminate on its own. 
 
@@ -80,9 +80,9 @@ Embedded genesis is a feature designed to make life easier for consumers of pre-
 
 We create a new data directory for our witness.
 
-    ./witness_node --data-dir data/my-blockprod --genesis-json genesis/my-genesis.json --seed-nodes "[]"   # or
+    ./witness_node --data-dir data/my-blockprod --genesis-json my-genesis.json --seed-nodes "[]"   # or
     
-    ./witness_node --data-dir=data/my-blockprod --genesis-json=genesis/my-genesis.json --seed-nodes "[]"
+    ./witness_node --data-dir=data/my-blockprod --genesis-json=my-genesis.json --seed-nodes "[]"
 
 The `data/my-blockprod` directory does not exist, it will be created by the witness node.
 
