@@ -6,9 +6,7 @@ This location might be temporary for some of the documents. When we find a prope
 
 ***
 - [Add CLI startup option to only generate keys #1011 (6-18-2018)](/core/knowledge_base/documented_issues/1011_add_cli_startup.md)
-- [initial_chain_id field when creating example genesis #1069 (6-18-2018)](/core/knowledge_base/documented_issues/1069_initial_chain_id_field.md) 
-- title1 (date) 
-- title2 (date)
+- [initial_chain_id field when creating example genesis #1069 (6-18-2018)](/core/knowledge_base/documented_issues/1069_initial_chain_id.md) 
 - ...
 
 
@@ -16,6 +14,5 @@ This location might be temporary for some of the documents. When we find a prope
 ***
 ***
 
-- Topic title (cloded date or added date?)
-
+- Topic title (cloded date or added date)
 
