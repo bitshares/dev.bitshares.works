@@ -23,13 +23,13 @@ If the aplication gets in there, it will get `initial_state.initial_chain_id = f
 ### when start witness_node
 
 In the process, only uses `get_chain_id()` to show the value to a user. 
-- [Code flow (pdf)](/core/knowledge_base/shared_files/witness_node_ex-codeflows.pdf)
+- [Code flow (pdf: page8)](/core/knowledge_base/shared_files/witness_node_ex-codeflows.pdf)
 
 
 ### when start cli_wallet
 
 In the process, check a wallet_file existence and also check chain_database `chain_id`. If both get `false`, uses `graphene::egenesis::get_egenesis_chain_id()` to set  `wdata.chain_id`.
-- [Code flow (pdf)](/core/knowledge_base/shared_files/cli_wallet_exe-codeflow.pdf)
+- [Code flow (pdf: page3)](/core/knowledge_base/shared_files/cli_wallet_exe-codeflow.pdf)
 
 ***
 
