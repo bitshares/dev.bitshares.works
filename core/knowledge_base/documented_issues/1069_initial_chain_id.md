@@ -29,7 +29,7 @@ In the process, only uses `get_chain_id()` to show the value to a user.
 ### when start cli_wallet
 
 In the process, check a wallet_file existence and also check chain_database `chain_id`. If both get `false`, uses `graphene::egenesis::get_egenesis_chain_id()` to set  `wdata.chain_id`.
-- [Code flow (pdf: page3)](/core/knowledge_base/shared_files/cli_wallet_exe-codeflow.pdf)
+- [Code flow (pdf: page4)](/core/knowledge_base/shared_files/cli_wallet_exe-codeflow.pdf)
 
 ***
 
