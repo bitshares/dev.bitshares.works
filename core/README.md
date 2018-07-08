@@ -7,7 +7,7 @@ Documentation related to BitShares Core internals and development fundamentals.
 ### [Install a Development Environment](/core/installation/README.md#install-a-development-environment)
 - Requirements(OS, Hardware, CPU, storage, Memory, etc), CLI-windows Tools, Core in WSL, Known issues
  
-### [Accounts](/core/accounts/README.md#accounts)
+### [Accounts](/core/accounts/README.md#bitshares-accounts)
 - Accounts, Fees, Permissions, Authorities, Account Registration  
 
 ### [Full Node / Witness Nodes](/core/nodes_full_witness/README.md#full-node--witness-node)

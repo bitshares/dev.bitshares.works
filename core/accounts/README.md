@@ -1,15 +1,17 @@
-## Accounts
+## BitShares Accounts
 
-- [Account](/core/accounts/accounts.md#accounts)
-   - Memberships
-- [Fees](/core/accounts/accounts.md#fees)
-- [Permissions](/core/accounts/accounts.md#permissions)
-- [Authorities](/core/accounts/accounts.md#authorities)
+- [Accounts](/core/accounts/accounts/bts_account.md#bitshares-accounts)
+- [Memberships and Groups](/core/accounts/accounts/memberships.md#memberships-and-groups)
+- [Fees](/core/accounts/accounts/bts_fees.md#fees)
+- [Vesting Balances](/core/accounts/accounts/vesting-balance.md#vesting-balances)
+- [Permissions](/core/accounts/accounts/permissions.md#permissions)
+- [Referral Program](/core/accounts/accounts/referral-program.md#referral-program)
+- [Voting](//core/accounts/accounts/voting-bh.md#voting)
 
 ### [Account Registration](/core/accounts/account_registration.md#account-registration)
-   - Create a brain Key and derive a private/public key pair
-   - Create an Account
-   - Register an Account
+   - [Create a brain Key and derive a private/public key pair](/core/accounts/account_registration.md#2-create-a-brain-key-and-derive-a-privatepublic-key-pair)
+   - [Create an Account](/core/accounts/account_registration.md#3-create-an-account)
+   - [Register an Account](/core/accounts/account_registration.md#4-register-an-account)
 
 
 ### FAQ - Accounts
@@ -19,6 +21,6 @@
 ***
 
 - Knowledge Base
-   - [Multi-Signature](/core/knowledge-base/multi-signature.md#multi-signature)  
+   - [Multi-Signature](/core/knowledge_base/multi-signature.md#multi-signature)  
    
 ***
