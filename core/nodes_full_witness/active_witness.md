@@ -30,8 +30,8 @@
 - Lifetime Member (LTM) status
 
 ### Technical Specifications
-- Dedicated servers with minimum 16 GB (32 GB advised) Ram and
-- SSD disks advised
+
+- [System Requirements](/core/nodes_full_witness/full_nodes.md#system-requirements)    
 
 ### Active Witness Duties
 

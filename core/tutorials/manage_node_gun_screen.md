@@ -20,7 +20,7 @@ Hit enter. You are now in a new terminal.
 
 You can go back to the original terminal by the following combination of keys.
 
-Press "CTRL" key and while pressed press key "a". Release "CTRL" and press "d".
+Press `CTRL` key and while pressed press key `a`. Release "CTRL" and press `d`.
 
 You will see something like:
 
@@ -34,7 +34,7 @@ In order to gain control again to the screen window use:
 
 This will work as you only have one screen going.
 
-Now what we need to do is create a screen terminal, run the node inside it, deattach it and turn everything off if you want and go to sleep. Then came back the next day, log in to your server, run screen -r and see how the node will be still running.
+Now what we need to do is create a screen terminal, run the node inside it, deattach it and turn everything off if you want and go to sleep. Then came back the next day, log in to your server, run screen `-r` and see how the node will be still running.
 
 So, log in to your vps and then:
 
@@ -78,7 +78,7 @@ to get access to one of the terminals.
 
 To end a screen session just gain control over it and type `exit`.
 
-One last useful command i use when the connection drops while you are inside a screen session. When you came back, the screen command will tell you that the terminal is attached but you have no control over it.
+One last useful command I use when the connection drops while you are inside a screen session. When you came back, the screen command will tell you that the terminal is attached but you have no control over it.
 
 What you need to use in that case is something like:
 
@@ -87,6 +87,10 @@ What you need to use in that case is something like:
 to recover your screen session.
 
 ***
+
+#### Contributor:
+
+* @oxarbitrage
 
 (ref)
 - https://github.com/bitshares/bitshares-core/wiki/Manage-your-nodes-by-using-gnu-screen

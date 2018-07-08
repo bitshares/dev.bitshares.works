@@ -1,6 +1,6 @@
 ## Running a BitShares API Node
 
-#### Contents:
+#### Table of Contents:
 - [Introduction](/source/apis/running-api-node.md#introduction)
 - [Running a Basic API Node](/source/apis/running-api-node.md#running-a-basic-api-node)
 - [Running a Production API Node](/source/apis/running-api-node.md#running-a-production-api-node)
@@ -11,9 +11,9 @@
 
 ## Introduction
 
-A Bitshares API Node is a `witness_node` instance specially configured to serve applications with data endpoints. Any bitshares application(gateway, explorer, wallet, trading program, etc) interacts with the decentralized network(blockchain) by connecting to one or many api nodes.
+A Bitshares API Node is a `witness_node` instance specially configured to serve applications with data endpoints. Any bitshares application(gateway, explorer, wallet, trading program, etc) interacts with the decentralized network(blockchain) by connecting to one or many API nodes.
 
-If you plan to run a business on top of bitshares you will probably want one or several api nodes of your property. You can use public nodes but they are very busy and most of the time running old versions, the most api nodes around the better for the network and final users.
+If you plan to run a business on top of bitshares you will probably want one or several API nodes of your property. You can use public nodes but they are very busy and most of the time running old versions, the most API nodes around the better for the network and final users.
 
 This tutorial is for users that already have `witness_node` compiled successfully.
 
@@ -27,7 +27,7 @@ It is important to know what version you are using to know what to expect from a
 
     ./programs/witness_node/witness_node --version
 
-The basic api node will run by:
+The basic API node will run by:
 
     ./programs/witness_node/witness_node --rpc-endpoint "127.0.0.1:8090"
 
@@ -37,7 +37,7 @@ By default, the blockchain directory will be `witness_node_data_dir` unless you 
 
     ./programs/witness_node/witness_node --rpc-endpoint "127.0.0.1:8090" --data-dir data/my-blockprod
 
-Depending on your hardware and use purposes of your api node, you will start it with some custom parameters, enabling and disabling plugins. This will be explained as we go.
+Depending on your hardware and use purposes of your API node, you will start it with some custom parameters, enabling and disabling plugins. This will be explained as we go.
 
 Options to the witness_node binary can be added to the config file or passed by command line as we did above. Check the default `config.ini` created when started the node by the first time to make an idea on how you can customize it.
 
@@ -47,7 +47,7 @@ A typical node start command can be something like:
 
 Above we limit the operations per account to 1000 to save RAM. This is the default behaviour for newest versions of witness_node as a full node needs more than 80 gigs of ram to run.
 
-We call full node to an api node that have all the account history from all the accounts in the bitshares blockchain. As the amount of RAM needed is so big and increasing this kind of nodes are each time more rare.
+We call full node to an API node that have all the account history from all the accounts in the bitshares blockchain. As the amount of RAM needed is so big and increasing this kind of nodes are each time more rare.
 
 Look in the terminal for messages like:
 
@@ -110,7 +110,6 @@ then
 
 #### Contributor:
 - @oxarbitrage
-
 
 
 (ref)
