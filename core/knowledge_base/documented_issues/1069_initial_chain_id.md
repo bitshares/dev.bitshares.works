@@ -18,7 +18,8 @@ If the aplication gets in there, it will get `initial_state.initial_chain_id = f
 
 
 ***
-*Extended research*
+*Extended research:*
+To understand during those processes how `chain_id` has been handled. 
 
 ### when start witness_node
 
@@ -34,7 +35,7 @@ In the process, check a wallet_file existence and also check chain_database `cha
 ***
 
 
-## application code flows
+### application code flows
 
 #### application.cpp - namespaces, functions, and code flows
 
@@ -50,3 +51,25 @@ In the process, check a wallet_file existence and also check chain_database `cha
 
 
 ***
+
+### Additional information
+
+**doxygen documentation**
+
+*graphene::chain::genesis_state_type graphene::app::detail::[`crete_example_genusis()`](https://bitshares.org/doxygen/namespacegraphene_1_1app_1_1detail.html#a6ffeeab5458989981d9dd2acb364904e)*
+
+[` compute_chain_id()`](https://bitshares.org/doxygen/structgraphene_1_1chain_1_1genesis__state__type.html#a1212f7780e4dd0f749e59bcdf9149a96)
+
+[` initial_chain_id`](https://bitshares.org/doxygen/structgraphene_1_1chain_1_1genesis__state__type.html#acbf6798be37935a7c792b4fd7adba4c8)
+
+**/libraries/egenesis/embed_genesis.cpp**
+
+https://github.com/bitshares/bitshares-core/blob/master/libraries/egenesis/embed_genesis.cpp#L66
+
+    // hack:  import create_example_genesis() even though it's a way, way
+    // specific internal detail
+    namespace graphene { namespace app { namespace detail {
+    genesis_state_type create_example_genesis();
+    } } } // graphene::app::detail
+
+****
