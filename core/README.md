@@ -8,7 +8,7 @@ Documentation related to BitShares Core internals and development fundamentals.
 - Requirements(OS, Hardware, CPU, storage, Memory, etc), CLI-windows Tools, Core in WSL, Known issues
  
 ### [Accounts](/core/accounts/README.md#bitshares-accounts)
-- Accounts, Fees, Permissions, Authorities, Account Registration  
+- Accounts, Memberships, Fees, Permissions, Authorities, Referral Program,Voting, Account Registration 
 
 ### [Full Node / Witness Nodes](/core/nodes_full_witness/README.md#full-node--witness-node)
 - System Requirements, Running a BitShares API Node,Full/Witness Nodes(type, how to launch, config.ini, etc), Become an Active Witness(about, how to prepare, backup, price feeds, etc)
