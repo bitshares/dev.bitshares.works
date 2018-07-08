@@ -6,7 +6,7 @@
 - [Vesting Balances](/core/accounts/accounts/vesting-balance.md#vesting-balances)
 - [Permissions](/core/accounts/accounts/permissions.md#permissions)
 - [Referral Program](/core/accounts/accounts/referral-program.md#referral-program)
-- [Voting](//core/accounts/accounts/voting-bh.md#voting)
+- [Voting](/core/accounts/accounts/voting-bh.md#voting)
 
 ### [Account Registration](/core/accounts/account_registration.md#account-registration)
    - [Create a brain Key and derive a private/public key pair](/core/accounts/account_registration.md#2-create-a-brain-key-and-derive-a-privatepublic-key-pair)
