@@ -38,6 +38,8 @@ The genesis.json is the initial state of the network. We create a new genesis js
 
 The `my-genesis.json` file will be created in the `[Testnet-Home]` folder. Once this task is done, the witness node will terminate on its own. 
 
+> **Note:** `witness_node` startup will create a `witness_node_data_dir` as a default data directory (with config.ini). If you want to use a differnt folder name and directory for the data, you have to use `--data-dir` in a startup command line and set your data directory folder path. Otherwise, the `witness_node_data_dir` folder will be created and use a default config.ini file to start the witness_node.
+
 ## 4. Customization of the Genesis File
 
 If you want to customize the network's initial state, edit `my-genesis.json`. This allows you to control things such as:
@@ -84,12 +86,13 @@ We create a new data directory for our witness.
     
     ./witness_node --data-dir=data/my-blockprod --genesis-json=my-genesis.json --seed-nodes "[]"
 
-The `data/my-blockprod` directory does not exist, it will be created by the witness node.
 
-> Known issue: Missing `=` sign between input parameter and value. --> This is due to a bug of a boost 1.60. If you compile with boost 1.58, the `=` sign can be omitted.
 
-> Note: `seed-nodes = []` creates a list of empty seed nodes to avoid connecting to default hardcoded seeds.  
-    
+**Note:**
+- The `data/my-blockprod` directory does not exist, it will be created by the witness node.
+- `seed-nodes = []` creates a list of empty seed nodes to avoid connecting to default hardcoded seeds.  
+- **Known issue:** Missing `=` sign between input parameter and value. --> This is due to a bug of a boost 1.60. If you compile with boost 1.58, the `=` sign can be omitted.
+  
 The below message means the initialization is complete. It will complete nearly instantaneously with the tiny example genesis, unless you added a ton of balances. Use `ctrl-c` to close the witness node. 
 
     3501235ms th_a main.cpp:165 main] Started witness node on a chain with 0 blocks.
@@ -131,12 +134,13 @@ Now run witness_node again:
 
     ./witness_node --data-dir data/my-blockprod --enable-stale-production --seed-nodes "[]"
 
-Note:
+> **warning:** If you want to use a differnt folder name and directory for the data, you have to use `--data-dir` in a startup command line and set your data directory folder path. Otherwise, the `witness_node_data_dir` folder will be created and used a default config.ini file to start the witness_node!!
+
+**Note:**
 - We do not need to specify `genesis.json` on the command line, since we now specify it in the config file. 
 - The `--enable-stale-production` flag tells the `witness_node` to produce on a chain with zero blocks or very old blocks. We specify the `--enable-stale-production` parameter on the command line as we will not normally need it (although it can also be specified in the config file). 
 - The empty `--seed-nodes` is added to avoid connecting to the default seed nodes hardcoded for production.
-
-Subsequent runs which connect to an existing witness node over the p2p network, or which get blockchain state from an existing data directory, need not have the `--enable-stale-production` flag.
+-  Subsequent runs which connect to an existing witness node over the p2p network, or which get blockchain state from an existing data directory, need not have the `--enable-stale-production` flag.
 
 ## 9. Obtaining the Chain ID
 
@@ -146,7 +150,7 @@ The chain ID (i.g., blockchain id) is a hash of the genesis state. All transacti
 
 For testing purposes, the `--dbg-init-key` option will allow you to quickly create a new chain against any genesis file, by replacing the witnesses' block production keys.
 
-Each wallet is specifically associated with a single chain, specified by its chain ID. This is to protect the user from e.g. unintentionally using a testnet wallet on the real chain.
+**Each wallet is specifically associated with a single chain, specified by its chain ID. This is to protect the user from (e.g., unintentionally) using a testnet wallet on the real chain.**
 
 The chain ID is printed at witness node startup. It can also be obtained by using the API to query a running witness node with the `get_chain_properties` API call:
 
@@ -162,9 +166,10 @@ We are now ready to connect a new wallet to your Private testnet witness node. Y
                --chain-id cf307110d029cb882d126bf0488dc4864772f68d9888d86b458d16e6c36aa74b 
                --server-rpc-endpoint ws://127.0.0.1:11011 -u '' -p ''
 
-> Note: Make sure to replace the above chain ID (i.e., blockchain id) `cf307110d0...36aa74b` with **your own chain ID** reported by your witness_node. The chain-id passed to the CLI-wallet needs to match the id generated and used by the witness node.
+**Note:** 
 
-> Note: ` --server-rpc-endpoint ` - The port number is how you defined (opened) `--rpc-endpoint` for the witness_node.
+- Make sure to replace the above chain ID (i.e., blockchain id) `cf307110d0...36aa74b` with **your own chain ID** reported by your witness_node. The chain-id passed to the CLI-wallet needs to match the id generated and used by the witness node.
+- ` --server-rpc-endpoint ` - The port number is how you defined (opened) `--rpc-endpoint` for the witness_node.
 
 If you get the `set_password` prompt, it means your wallet has successfully connected to the testnet witness node.
 
@@ -238,7 +243,7 @@ The `get_private_key` command allows us to obtain the WIF private key correspond
 
     get_private_key BTS78CuY47Vds2nfw2t88ckjTaggPkw16tLhcmg4ReVx1WPr1zRL5
 
-> You can try to make sure your `suggest_brain_key` outputs. You should get the same pair of keys set.
+> You can try to make sure your `suggest_brain_key` outputs key pair. You should get the same pair of keys set.
 
 ## 13. Creating Committee Members
 
@@ -290,9 +295,6 @@ The `get_private_key` command allows us to obtain the WIF private key correspond
 - http://docs.bitshares.org/testnet/private-testnet.html
 - https://github.com/bitshares/docs.bitshares.org/pull/52
 - https://github.com/bitshares/bitshares-core/issues/700
-
-
-
 
 
 
