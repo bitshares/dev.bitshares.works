@@ -9,4 +9,8 @@ This is our first step. We would like to start using this step to collaborate wi
   <img src="/core/imgs/how-to-process-contribution.png" width="800" title="Contribution Process Flow">
 </p>
 
+
+- [Documentation GitFlow](/core/imgs/DocFlow.png)
+
+
 ***
