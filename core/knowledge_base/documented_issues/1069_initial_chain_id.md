@@ -2,18 +2,30 @@
 (No need to serialize `initial_chain_id` field when creating example genesis json? #1068)
 
 ***
-In dev.bitshares.works repo doc, it's not mentioning about `creating_example_genesis` directory. So, the below information are about them. 
+
+#### Request
+
+**User Story :** As a developer I want documentation detailing how the initial_chain_id is calculated for create_example_genesis so that I am aware of the inconsistent serialization pattern.
+
+**Additional Context (optional):** This is a short term documentation fix for the to-be-fixed-later #1068
+
+***
+*This document purpose: In dev.bitshares.works repo doc, it's not mentioning about `creating_example_genesis` directory. So, the below information shows when, how, where to handling the values.*
+
+***
 
 ### During the startup() - application.cpp
 
-In bitshares-core/libraries/app/application.cpp, [`void application_impl::startup()`](https://github.com/bitshares/bitshares-core/blob/35ec65b130f63c594afe2c9ab7f931b42be08cdc/libraries/app/application.cpp#L318) sets a `genesis.initial_chain.id` (i.e., ` genesis.initial_chain_id = fc::sha256::hash( genesis_str );`) value. In the startup(), there is a flag `modified_genesis`, if it gets `true`, use `genesis_str += "BOGUS";` and sets `genesis.initial_chain_id`.
+In bitshares-core/libraries/app/application.cpp, [`void application_impl::startup()`](https://github.com/bitshares/bitshares-core/blob/35ec65b130f63c594afe2c9ab7f931b42be08cdc/libraries/app/application.cpp#L318) sets a `genesis.initial_chain.id` (i.e., `genesis.initial_chain_id = fc::sha256::hash( genesis_str );`) value. In the startup(), there is a flag `modified_genesis`, if it gets `true`, use `genesis_str += "BOGUS";` and sets `genesis.initial_chain_id`.
 
+- `genesis.initial_chain_id = fc::sha256::hash( genesis_str );`
 
 ### namespace detail - application.cpp
 
 In the namespace has the function [`create_example_genesis()`](https://github.com/bitshares/bitshares-core/blob/35ec65b130f63c594afe2c9ab7f931b42be08cdc/libraries/app/application.cpp#L79).  
 If the aplication gets in there, it will get `initial_state.initial_chain_id = fc::sha256::hash( "BOGUS" );`
 
+- `initial_state.initial_chain_id = fc::sha256::hash( "BOGUS" );`
 
 ***
 *Extended research:*
@@ -33,7 +45,7 @@ In the process, check a wallet_file existence and also check chain_database `cha
 ***
 
 
-### application code flows
+### Coding flowcharts
 
 #### application.cpp - namespaces, functions, and code flows
 
@@ -54,6 +66,7 @@ In the process, check a wallet_file existence and also check chain_database `cha
 
 **doxygen documentation**
 
+
 *graphene::chain::genesis_state_type graphene::app::detail::[`crete_example_genusis()`](https://bitshares.org/doxygen/namespacegraphene_1_1app_1_1detail.html#a6ffeeab5458989981d9dd2acb364904e)*
 
 [` compute_chain_id()`](https://bitshares.org/doxygen/structgraphene_1_1chain_1_1genesis__state__type.html#a1212f7780e4dd0f749e59bcdf9149a96)
@@ -70,4 +83,7 @@ https://github.com/bitshares/bitshares-core/blob/master/libraries/egenesis/embed
     genesis_state_type create_example_genesis();
     } } } // graphene::app::detail
 
+
 ****
+
+(*created:7/7/2018*)

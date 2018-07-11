@@ -6,16 +6,17 @@ This location might be temporary for some of the documents. When we find a prope
 
 ***
 
-|  # |   |   | key words  |
-|---|---|---|---|
-|#1011 |[Add CLI startup option to only generate keys (6-18-2018)](/core/knowledge_base/documented_issues/1011_add_cli_startup.md) |  | cli,key |
-|#1069 | [initial_chain_id field when creating example genesis(6-18-2018)](/core/knowledge_base/documented_issues/1069_initial_chain_id.md)  |  | application.cpp(startup) |
-|#1118 | [Setup Private Testnet --create-genesis-json creates witness_node_data_dir](/core/knowledge_base/documented_issues/1118_data_dir.md)  |  | data dir|
-| #1123 | Consider removing crypto_api  |  |  |
-|#582 | Documentation of new market API  |  |  |
-| |  |  |  |
-
-
+|  # |   |   | key notes  |done|
+|---|---|---|---|---|
+|#1011 |[Add CLI startup option to only generate keys](/core/knowledge_base/documented_issues/1011_add_cli_startup.md) |  | cli,key |x|
+|#1068| [No need to serialize initial_chain_id field when creating example genesis json?](/core/knowledge_base/documented_issues/1068_no_need_to%20serialize_initial_chain_id.md#no-need-to-serialize-initial_chain_id-field-when-creating-example-genesis-json-1068)  |  |(later)   | |
+|#1069 | [initial_chain_id field when creating example genesis](/core/knowledge_base/documented_issues/1069_initial_chain_id.md)  |  | application.cpp(startup) |x|
+|#1118 | [Setup Private Testnet --create-genesis-json creates witness_node_data_dir](/core/knowledge_base/documented_issues/1118_data_dir.md)  |  | witness_node,data dir|x|
+| #1123 | Consider removing crypto_api  |  |  | |
+|#582 | Documentation of new market API  |  |  | |
+| |  |  |  | |
+| |  |  |  | |
+| |  |  |  | |
 
 
 ***
