@@ -1,6 +1,6 @@
 # Building on Ubuntu
 
-#### Contents:
+#### Table of Contents:
 - [Available Versions](/core/installation/build_ubuntu.md#available-versions)
 - [Ubuntu 16.04 LTS (64-bit)](/core/installation/build_ubuntu.md#ubuntu-1604-lts-64-bit)
 - [Ubuntu 14.04 LTS (64-bit)](/core/installation/build_ubuntu.md#ubuntu-1404-lts-64-bit)
@@ -10,11 +10,11 @@
 ## Available Versions
 
 #### Ubuntu
+We recommend building on Ubuntu 16.04 LTS (64-bit), and the build dependencies may be installed with:
 
-- Ubuntu 14.04 LTS (**64-bit**)(*See the instruction to build Newer version of Boost*)
 - Ubuntu 16.04 LTS (**64-bit**)
  
-> Install Ubuntu 16.04 LTS (64-bit). It will not work on 32-bit Ubuntu. 
+>  BitShares requires a 64-bit operating system to build, and will not build on a 32-bit OS.
 
 #### Boost
 
@@ -54,6 +54,8 @@ We recommend building on Ubuntu 16.04 LTS (64-bit), and the build dependencies m
 ***
 
 ## Ubuntu 14.04 LTS (64-bit)
+
+(*See the instruction to build Newer version of Boost separately*)
 
 ### 1.Install Dependencies
 This is necessary for clean installation.

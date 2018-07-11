@@ -9,6 +9,3 @@ WSL stands for **Windows SubSystem for Linux**. If you use Windows 10 OS, you ha
 
 
 ***
-
-- Documentation about building/running in WSL #738
-
