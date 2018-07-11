@@ -39,8 +39,6 @@ Another option, Windows SubSystem for Linux (WSL).  This is for a developer who 
 - [Wallet](#wallet)
 - [API](#api)
 - [Objects and IDs](#objects-and-ids)
-- [Accounts](#accounts)
--
 
 ***
 
@@ -319,18 +317,6 @@ In the protocol space, there are raw objects such as, accounts, assets, committe
 				"dynamic_asset_data_id": "2.3.368"
 			}
 		]		
-
-		
-****		
-****
-
-(work in progress...)
-
-****
-
-
-## Accounts
-
 
 
 ****
