@@ -1,4 +1,4 @@
-## How to prepare BitShares Exchange Docking Guide (Single Node Edition)
+## How to prepare BitShares Exchange Guide (Single Node Edition)
 
 The purpose of this article is to assist third-party exchanges to go online for BitShares transactions.
 
@@ -108,7 +108,7 @@ Install 64-bit Ubuntu 16.04 LTS (it will not work on 32-bit Ubuntu), or 64-bit U
 
 ### 3. Program Preparation
 
-   To dock to the BitShares system, you need to run these programs: normal node witness_node, command line wallet cli_wallet.
+   To start-off the BitShares system, you need to run these programs: normal node witness_node, command line wallet cli_wallet.
 
 #### 3.1 Architecture Description
 
@@ -758,7 +758,7 @@ Therefore, if a transaction broadcast appears but does not appear in the account
 
 This information originates [abitmore/bts-cn-docs](https://github.com/abitmore/bts-cn-docs/blob/master/BTS%E4%BA%A4%E6%98%93%E6%89%80%E5%AF%B9%E6%8E%A5%E6%8C%87%E5%8D%97%EF%BC%88%E5%8D%95%E8%8A%82%E7%82%B9%E7%89%88%EF%BC%89.txt) repository. 
 
-*(Translated by an application and adjusted by human.)*
+*(Translated by an application and adjusted by human. Some words might not be accurate.)*
 
 ***
 
