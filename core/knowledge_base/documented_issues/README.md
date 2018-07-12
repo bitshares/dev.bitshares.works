@@ -14,9 +14,10 @@ This location might be temporary for some of the documents. When we find a prope
 |#1118 | [Setup Private Testnet --create-genesis-json creates witness_node_data_dir](/core/knowledge_base/documented_issues/1118_data_dir.md)  |  | witness_node,data dir|x|
 | #1123 | Consider removing crypto_api  |  |  | |
 |#582 | Documentation of new market API  |  |  | |
+|#969 | [Update all account-related API's to support account name as parameter](/core/knowledge_base/documented_issues/969_api_support_acc_name_as_param.md#update-all-account-related-apis-to-support-account-name-as-parameter-969)  |  |api,param  | |
+|#1051 |Update all asset-related API's to support asset symbol as parameter   |  |api,asset,param  | |
 | |  |  |  | |
 | |  |  |  | |
 | |  |  |  | |
-
 
 ***
