@@ -84,6 +84,7 @@
 
 ***
 ### BitShares Decentralised Exchange (DEX)
+- [How to prepare BitShares Exchange Guide (Single Node Edition)](/core/knowledge_base/translated/exchange_single_node.md#how-to-prepare-bitshares-exchange-guide-single-node-edition)
 - [How to prepare Distributed Access to the BitShares Decentralised Exchange (DEX)](/core/tutorials/dex_distributed_access.md#distributed-access-to-the-bitshares-decentralised-exchange)
 
 ***
