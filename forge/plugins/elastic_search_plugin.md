@@ -6,12 +6,13 @@ The document explains motivations, technical challenges and sample use of a new 
 
 ***
 
-#### Table of Contents:
+#### Contents:
 - [Motivation](/forge/plugins/elastic_search_plugin.md#motivation)
 - [The Database Selection](/forge/plugins/elastic_search_plugin.md#the-database-selection)
 - [Technical](/forge/plugins/elastic_search_plugin.md#technical)
   - Replay and `_bulk`
   - Accessing data inside operations 
+- Hardware needed
 - [Installation](/forge/plugins/elastic_search_plugin.md#installation)
   - Install java
   - Install ES
@@ -20,8 +21,8 @@ The document explains motivations, technical challenges and sample use of a new 
   - Arguments
   - Starting Node
   - Checking if it is working
-- [Indexes](/forge/plugins/elastic_search_plugin.md#indexes)
-- [Pre-Define Settings](/forge/plugins/elastic_search_plugin.md#pre-define-settings)
+  - [Indexes](/forge/plugins/elastic_search_plugin.md#indexes)
+- [Pre-define settings](#pre-define-settings)
 - [Usage](/forge/plugins/elastic_search_plugin.md#usage)
   - Get operations by account, time and operation type
   - Filter based on block number or block range
@@ -94,6 +95,26 @@ Data inside operations is saved as a text fields into ES, this means that we can
 Still, a workaround the limitation is available. A `visitor` that can be turned on/off by the command line. As an example something in common all ops have is a fee field with asset_id and amount. In `elasticserch-plugin` v1 when visitor is `true` this 2 values will be saved meaning clients can know total chain fees collected in real time, total fees in asset, fees by op among other things.
 
 As a poc we also added amount and asset_id of transfer operations to illustrate how easy is to index more data for any competent graphene developer.
+
+## Hardware needed
+
+It is very recommended that you use SSD disks in your node if you are trying to synchronize bitshares blockchain. It will make the task a lot faster.
+
+You need 500 gigs of space to be safe for a while, 32 gigs or more of ram is recommended.
+
+After elasticsearch is installed increase heap size depending in your RAM:
+
+    elastic@alfredo-worker2:~/elasticsearch-5.6.3/config$ vi jvm.options
+
+
+    ..
+    # Xms represents the initial size of total heap space
+    # Xmx represents the maximum size of total heap space
+
+    -Xms12g
+    -Xmx12g
+    ...
+
 
 ## Installation
 
@@ -436,9 +457,10 @@ Elasticsearch database will listen in localhost and the wrapper in the same mach
 #### Contributor:
 - @oxarbitrage
     
+***
 
 (ref) 
 - https://github.com/bitshares/bitshares-core/wiki/ElasticSearch-Plugin
 
 
-*** 
+***    

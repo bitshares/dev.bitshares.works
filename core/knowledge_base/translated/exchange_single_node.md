@@ -51,11 +51,11 @@ The BitShares uses the DPOS consensus mechanism to vote for the block forge by t
    
    For the sake of fund safety, the exchange can use one account to deposit (charge) the money, and the another account can be used to withdraw money.
 
-2) User's deposit (recharge) is transferred from other accounts to the open account of the exchange.
+2) User's deposit is transferred from other accounts to the open account of the exchange.
 
    The account name is the payment address.
    
-   Each remittance can carry one memo (note). The exchange uses this remark to distinguish which user's deposit (recharge).
+   Each remittance can carry one memo (note). The exchange uses this remark to distinguish which user's deposit.
    
    The specific remarks are related to the exchange user's relationship, and the exchange must set it up.
    
@@ -85,7 +85,7 @@ The BitShares uses the DPOS consensus mechanism to vote for the block forge by t
 1) There are various assets in the BitShares system, of which the core asset is the BTS. The approach of the exchange to other assets in the BitShares system is similar to that of the BTS.
 2) Each account can have multiple assets at the same time.
 
-#### 1.4 Block Chain Structure
+#### 1.4 BlockChain Structure
 
 - Each block has an ID, block_id, which is the hash value of the block contents.
 - Each block contains the ID of the previous block, stored in the *previous* field, thus forming a chain;
@@ -119,7 +119,7 @@ Install 64-bit Ubuntu 16.04 LTS (it will not work on 32-bit Ubuntu), or 64-bit U
 - You can run multiple cli_wallet processes at the same time and connect to the witness_node to manage multiple wallet files at the same time.
 - Cli_wallet provides the transaction signature function, which is broadcast after being signed by the witness_node.
 - Cli_wallet provides APIs for other program calls (hereafter referred to as wallet APIs) via HTTP RPC.
-- The recommended exchange uses a cli_wallet to monitor user recharges and another cli_wallet to handle user withdrawal requests.
+- The recommended exchange uses a cli_wallet to monitor user deposit and another cli_wallet to handle user withdrawal requests.
 
 
 #### 3.2 Windows
@@ -244,7 +244,7 @@ For exchanges, some modifications to the `config.ini` configuration file are rec
      * You can also find an empty directory to generate a config.ini file and edit it again.
 
 4) The following parameters indicate how many history records are kept for each account. The default value is 1000.
-   For exchanges, if you have more recharge and withdrawal records, consider setting a larger value, such as
+   For exchanges, if you have more depossit and withdrawal records, consider setting a larger value, such as
 
 		max-ops-per-account = 1000
 
@@ -311,7 +311,7 @@ The above command uses the `-w` parameter to specify the wallet file, the `-s` p
 **Note:**
 - You can use `./cli_wallet --help` to see the command parameters.
 - The data communicated between the `cli_wallet` and the `witness_node` does not contain private data. Generally, no encryption is needed and no deliberate protection is required for the RPC port of the node (it is not necessary to add a layer of protection).
-- However, the communication between cli_wallet and the charging program is in plain text and may need to include the password. If the deployment is a multi-machine architecture, you need to pay attention to encryption and use SSH tunneling.
+- However, the communication between cli_wallet and the deposit program is in plain text and may need to include the password. If the deployment is a multi-machine architecture, you need to pay attention to encryption and use SSH tunneling.
 - In addition, when the cli_wallet is in the unlocked state, the funds in the wallet account can be transferred through the RPC port. Care must be taken to prevent unauthorized access, and it is strongly recommended that the wallet RPC directly open public network access.
 - The practice of configuring certificates or passwords for the cli_wallet's RPC has not been studied and is therefore not described.
 
@@ -349,7 +349,7 @@ Use the info command to view the current synchronization
 	  ...
 	}
 
-5.3 Run another cli_wallet to handle recharge
+5.3 Run another cli_wallet to handle deposit
 
 	./cli_wallet -w wallet_for_deposit.json -s ws://127.0.0.1:8090 -H 127.0.0.1:8093
 
@@ -361,7 +361,7 @@ Use the info command to view the current synchronization
 
 ### 6. Account Settings
 
-Considering security, you can use two accounts to handle the deposit and withdrawal respectively. Here assume that deposit-account is used for recharging, and withdrawal-account is used for withdrawal.
+Considering security, you can use two accounts to handle the deposit and withdrawal respectively. Here assume that deposit-account is used for depositing, and withdrawal-account is used for withdrawal.
 
 #### 6.1 Modifying the Remark Key of the Deposit Account
 
@@ -493,11 +493,11 @@ Use the command `get_dynamic_global_properties` in cli_wallet to get the `block 
 	  "last_irreversible_block_num": 21955709
 	}
 
-Among them, `head_block_number` is the latest block number, and `last_irreversible_block_num` is the block number that cannot be retired.
+Among them, `head_block_number` is the latest block number, and `last_irreversible_block_num` is the block number that cannot be rollback.
 
 #### 9.2 Querying Deposit Account History
 
-Use the `get_relative_account_history` command to query the history of the deposit account and check for new deposits (recharges). 
+Use the `get_relative_account_history` command to query the history of the deposit account and check for new deposits. 
 	
 Such as:
 
@@ -593,9 +593,9 @@ Let the result block be result , according to the above `trx_in_block`,
 - Take result["transactions"][trx_in_block]["signatures"] , which is a signature for the transaction. It is an array because multi-signature account transfers may contain multiple signatures.
 
 **Note:**
-1) The wallet must be unlocked before decrypting the note.
+1) The wallet must be unlocked before decrypting the memo.
 2) If it is detected that there are refills with incorrect remarks, or if the asset type is incorrect, be careful not to return it simply because it may have been transferred from other exchanges and it will be very troublesome for the other party to deal with it after repatriation.
-3) There may be more than one recharge in a block. The result is that block_num is the same. It may even be the same for trx_in_block and op_in_trx, but virtual_op is different.
+3) There may be more than one deposit in a block. The result is that block_num is the same. It may even be the same for trx_in_block and op_in_trx, but virtual_op is different.
   - It is certain that the combination of blocknum + trx_in_block + op_in_trx + vitrual_op is unique.
   - It is also worth noting here that the data of virtual_op currently has a BUG. If the parameters are not the same and replay every time you restart the device, and you check the historical data again, you will find that this value will be inconsistent.
 4) Due to the "Proposal" function, it is possible to postpone execution. When using get_block and then positioning with trx_in_block, the corresponding transaction may not be available, or the acquired transaction does not correspond to the recharge operation.
@@ -677,7 +677,8 @@ The command will sign and broadcast the transaction and return an array. The fir
 
 #### 10.5 Withdrawal Results Check
 
-Use the get_relative_account_history command to obtain withdrawal history of withdrawal-account. Refer to the recharge processing section. If new records are found,
+Use the get_relative_account_history command to obtain withdrawal history of withdrawal-account. Refer to the deposit processing section. If new records are found,
+
 And the transaction's block number is earlier than `last_irreversible_block_num`, indicating that the transaction has entered the block and cannot be rolled back;
 
 **Note:** When the transaction does not enter the block, it may still appear in `get_relative_account_history`, and the block number where it is located will always change, making it difficult to determine the status.
@@ -704,7 +705,7 @@ When the number of local deals is particularly high, the timeout period will inc
 
 If, after the network time reaches the timeout, the transaction is still not packed into the block, the transaction is discarded by all network nodes and is no longer likely to be packed.
 
-Therefore, if a transaction broadcast appears but does not appear in the account history, first check if the local system time lags.
+Therefore, if a transaction broadcast appears but does not appear in the account history, first check if the local system time logs.
 
 * If the block time corresponding to `last_irreversible_block_num` has passed the timeout of the transaction, retransmission is safe.
 * If the transaction has already appeared in history, check if the block number of the transaction is fixed, instead of always updating with the latest block number.
@@ -761,6 +762,9 @@ This information originates [abitmore/bts-cn-docs](https://github.com/abitmore/b
 *(Translated by an application and adjusted by human. Some words might not be accurate.)*
 
 ***
+
+
+
 
 
 
