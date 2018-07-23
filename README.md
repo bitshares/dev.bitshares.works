@@ -17,8 +17,8 @@ Documentation related to BitShares Core internals and development fundamentals.
 
 - [Introduction/Architectures](/core/intro/README.md#introduction--architectures)
 - [Install a Development Environment](/core/installation/README.md#install-a-development-environment)
-- [Accounts](/core/accounts/README.md#accounts)
-- [Full Node / Witness Nodes](/core/nodes_full_witness/README.md#full-node--witness-node)
+- [Accounts](/core/accounts/README.md#bitshares-accounts)
+- [BitShares Nodes](/core/nodes_full_witness/README.md#bitshares-nodes-and-p2p-network)
 - [Wallet](/core/wallet/README.md#wallet)
 - [API - BitShares](/core/api#api)
 - [Testnets](/core/testnets/README.md#testnets)
@@ -29,7 +29,7 @@ Documentation related to BitShares Core internals and development fundamentals.
 ***
 
 ## [BitShares Blockchain](/core/bitshares_blockchain#bitshares-blockchain)
-- BitShares Blockchain Foundation, Bitshares Block Exploer, [User Guide](https://github.com/bitshares/how.bitshares.works/tree/master/bbf/user_guide#user-guide), etc 
+- BitShares Blockchain Foundation, Bitshares Block Exploer, etc 
 
 ***
 

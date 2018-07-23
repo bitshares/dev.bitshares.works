@@ -1,7 +1,7 @@
 ## Knowledge Base
 
 - [BitShares UI - How to create and manage Cloud wallet and/or Local wallet Accounts](/core/knowledge_base/bitshares-ui-wallet-account-mode.md)
-- [Code Libraries Files and Methods Lists](/core/knowledge_base/files_methods_lists.md)
+- [Coding flows](/core/knowledge_base/files_methods_lists.md)
 - [Documented issues](/core/knowledge_base/documented_issues/README.md#documented-issues)
 - [BitShares Improvement Proposal(BSIP)](/core/knowledge_base/bsip_funding.md#businesses-developers-and-business-developers)
 
@@ -37,13 +37,12 @@
 - [Wallet 2 Factor Authentication Protocol](/core/knowledge_base/protocols/wallet_2factor_auth_protocol.md#wallet-2-factor-authentication-protocol)
 - [Merchant - Wallet Login Protocol](/core/knowledge_base/protocols/merchant_login.md#merchant)
 - [Merchant - Wallet Privacy Protocol](/core/knowledge_base/protocols/merchant_privacy.md#merchant)
-     
+   
 
 ***
 
 ### Other 
 - [wiki legacy ](/core/knowledge_base/wiki_legacy)
-
 
 
 ***

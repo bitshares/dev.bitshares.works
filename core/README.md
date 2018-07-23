@@ -5,13 +5,13 @@ Documentation related to BitShares Core internals and development fundamentals.
 - BitShares Core Workflow (Project / Issues) , BitShares Core Repository Gitflow
    
 ### [Install a Development Environment](/core/installation/README.md#install-a-development-environment)
-- Requirements(OS, Hardware, CPU, storage, Memory, etc), CLI-windows Tools, Core in WSL, Known issues
+- Requirements(OS, Hardware, CPU, storage, Memory,etc), CLI-windows Tools, Core in WSL, Known issues
  
-### [Accounts](/core/accounts/README.md#bitshares-accounts)
-- Accounts, Memberships, Fees, Permissions, Authorities, Referral Program,Voting, Account Registration 
+### [Accounts](/core/accounts/README.md#accounts)
+- Accounts, Memberships, Fees, Permissions, Authorities, Referral Program,Voting, Account Registration  
 
-### [Full Node / Witness Nodes](/core/nodes_full_witness/README.md#full-node--witness-node)
-- System Requirements, Running a BitShares API Node,Full/Witness Nodes(type, how to launch, config.ini, etc), Become an Active Witness(about, how to prepare, backup, price feeds, etc)
+### [BitShares Nodes](/core/nodes_full_witness/README.md#bitshares-nodes-and-p2p-network)
+- About Nodes, System Requirements, Running a BitShares API Node,Full/Witness Nodes(type, how to launch, config.ini, etc), Become an Active Witness(about, how to prepare, backup, price feeds, etc)
 
 ### [Wallet](/core/wallet/README.md#wallet)
 - CI, UI, General / Secure Network & Wallet Configuration

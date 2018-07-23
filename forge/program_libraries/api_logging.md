@@ -2,7 +2,7 @@
 
 #### Q. How to enable RPC Logging in BitShares
 
-You can enable it by appending the below lines into `config.ini`
+You can enable it by appending the below lines into [`config.ini`](/core/nodes_full_witness/full_nodes.md#configuration)
 
     # declare an appender named "rpc" that writes messages to rpc.log
     [log.file_appender.rpc]

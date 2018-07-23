@@ -1,6 +1,6 @@
 ## Frequently Asked Questions - List All
 
-### Table of Contents:
+### Contents:
 
 **[General](/core/tutorials/FAQ.md#general)**
 - [What is the standard Bitshares address structure and format?](/core/tutorials/FAQ.md#q-what-is-the-standard-bitshares-address-structure-and-format
@@ -30,7 +30,7 @@
 - [Is the scripting language turing complete?](/core/tutorials/FAQ.md#q-is-the-scripting-language-turing-complete)
 
 ***
-### [Accounts](/core/tutorials/FAQ.md#accounts)
+### [Accounts](/core/tutorials/FAQ.md#accounts-1)
 - [How to change a password if using a Cloud Wallet](https://github.com/bitshares/bitshares-ui/wiki/Cloud-Wallet-Login-and-changing-password) : from BitShares UI wiki
 - [How can I create, register and upgrade an account to Lifetime Membership?](/core/tutorials/FAQ.md#q-how-can-i-create-register-and-upgrade-an-account-to-lifetime-membership)
 - [How to process Account Registration](/core/accounts/account_registration.md#account-registration)
@@ -118,7 +118,6 @@
 - [How can I close the CLI client in a clean way?](/core/tutorials/FAQ.md#q-how-can-i-close-the-cli-client-in-a-clean-way)
 - [How can I import my GUI-wallet account into CLI-wallet?](/core/tutorials/FAQ.md#q-how-can-i-import-my-gui-wallet-account-into-cli-wallet)
 - [Why does the CLI client crash immediately when I try to run it for the first time?](/core/tutorials/FAQ.md#q-why-does-the-cli-client-crash-immediately-when-i-try-to-run-it-for-the-first-time)
-- How to prepare a CLI wallet for trading
 - [How to setup Network and Wallet Configuration](/core/wallet/wallet_network.md#network-and-wallet-configuration)
    - [General](/core/wallet/wallet_network.md#general-network-and-wallet-configuration)
    - [Secure](/core/wallet/wallet_network.md#secure-network-and-wallet-configuration)
@@ -589,7 +588,9 @@ Yes, but
 - if you don’t use them you should probably modify config.ini so they aren’t written to disk in the first place.
 
 #### Q. What is the best way to interact with the witness node?
-The only way you can interact with the witness node is through the CLI client by using its API. You can also use the GUI (i.e. the light client). In the GUI, change Settings -> API connection, add ws://127.0.0.1:8090/ws (according to settings of your witness node) and select it.
+The only way you can interact with the witness node is through the CLI client by using its API. You can also use the GUI (i.e. the light client). 
+
+In the GUI, open the Side Menu and go to [Settings] - [Nodes]. There are TABs (AVAILABLE, HIDDEN, and PERSONAL). Click **PERSONAL** and click [ADD NODE]. A form opens and type a Node name and an Address and Click [CONFIRM].
 
 #### Q. What is the meaning of all those different text colors in the witness node console?
 
