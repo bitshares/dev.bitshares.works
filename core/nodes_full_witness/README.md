@@ -3,6 +3,7 @@ After you installed BitShares Core successfully, you have `witness_node` and `cl
 
 #### What is the Nodes?
 What's a node? According to Wikipedia, in Computer Science, 
+
  > A node is a basic unit used in computer science. Nodes are devices or data points on a more extensive network. Devices such as a personal computer, cell phone, or printer are nodes. When defining nodes on the internet, a node is anything that has an IP address.  
 From <https://en.wikipedia.org/wiki/Node_(computer_science)> 
 
@@ -51,7 +52,7 @@ Besides the plugins, there is a [configuration file `config.ini`](/core/nodes_fu
 ### Voting and a Witness Node
 All BTS Holders can vote to witness(es) from the BitShares UI wallet. It's important to use your right to vote. However, if you would like to do so, you can cast your voting right to a proxy who represents your interests. 
 
-- Read more... Accounts - [Voting information](/core/accounts/accounts/voting-bh.md#voting)
+- Accounts - [Voting information](/core/accounts/accounts/voting-bh.md#voting)
 
 ### Open Public Testnet
 
