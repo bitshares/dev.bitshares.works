@@ -1,16 +1,5 @@
-After you installed BitShares Core successfully, you have `witness_node` and `cli_wallet`. In this section, we will look into about the Node.
+After you installed BitShares Core successfully, you have `witness_node` and `cli_wallet`. In this first section, we talk about the BitShaares Nodes and some expectations.
 
-#### Table of Contents:
-- [BitShares Nodes](/core/nodes_full_witness/README.md#bitshares-nodes-and-p2p-network)
-- [Full Node](/core/nodes_full_witness/full_nodes.md#full-nodes-witness-nodes)
-- [Witness Node](/core/nodes_full_witness/active_witness.md#become-an-active-witness)
-- FAQ
-  - [Committee](/core/tutorials/FAQ.md#committee)
-  - [Witness](/core/tutorials/FAQ.md#witness)
-
-***
-
-## BitShares Nodes and P2P network
 
 #### What is the Nodes?
 What's a node? According to Wikipedia, in Computer Science, 
@@ -34,7 +23,7 @@ If you do not have own node to run or connect, you can use one of the BitShares 
 
 - The latest list of [BitShares Public Full Nodes](https://github.com/bitshares/bitshares-ui/blob/staging/app/api/apiConfig.js#L67) information.
 
-## Witness Node's Roles and Duties
+### Witness Node's Roles and Duties
 
 The witness node has a copy of the full BitShares blockchain data (transaction history) on a computer or other hardware devices.  
 
@@ -48,7 +37,7 @@ These are some BitShares Active Witness Duties:
 - Maintain a public seednode
 - Publish accurately, frequently updated (check 1-2 times per hour), price feeds for the Smart Coins & Market Pegged Assets
 
-### Data and Memory Reduction for Nodes
+#### Data and Memory Reduction for Nodes
 As we discussed before, Nodes consume a significant amount of data. So, BitShares offers some plugins to manage the memory and the blockchain history data. You can launch a node with the witness plugin parameter(s).  
 
 - [ElasticSearch Plugin](/forge/plugins/elastic_search_plugin.md#elasticsearch-plugin)
@@ -59,12 +48,12 @@ As we discussed before, Nodes consume a significant amount of data. So, BitShare
 Besides the plugins, there is a [configuration file `config.ini`](/core/nodes_full_witness/full_nodes.md#configuration) in the data directory. You can set values to the parameters and adjust tracking history sizes or log file sizes.   In the default configuration file, most settings have been commented.  You might want to examine the configuration file parameters for your witness node. 
 
 
-## Voting and a Witness Node
+### Voting and a Witness Node
 All BTS Holders can vote to witness(es) from the BitShares UI wallet. It's important to use your right to vote. However, if you would like to do so, you can cast your voting right to a proxy who represents your interests. 
 
 - Read more... Accounts - [Voting information](/core/accounts/accounts/voting-bh.md#voting)
 
-## Open Public Testnet
+### Open Public Testnet
 
 #### Use TESTNET if you are interested in being a node
 
