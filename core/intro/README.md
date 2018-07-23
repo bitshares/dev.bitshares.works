@@ -1,5 +1,9 @@
 ## Introduction & Architectures 
 
+### BitShares Architecture  
+- [GitHub Repositories and Entities](/core/knowledge_base/shared_files/BitShares_Architecture-V2b.pdf) 
+
+
 ### BitShares Core Workflow
 - [Contribution Guide](/core/intro/contribution_guide.md#contribution-guide) [DRAFT]
 - [Contribution Guide Project](https://github.com/bitshares/bitshares-core/projects/6)
