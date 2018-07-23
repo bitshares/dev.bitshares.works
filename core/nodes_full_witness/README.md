@@ -1,4 +1,22 @@
+
+#### Table of Contents:
+- [BitShares Nodes](/core/nodes_full_witness/README.md#bitshares-nodes-and-p2p-network)
+- [Full Node](/core/nodes_full_witness/full_nodes.md#full-nodes-witness-nodes)
+- [Witness Node](/core/nodes_full_witness/active_witness.md#become-an-active-witness)
+- FAQ
+  - [Committee](/core/tutorials/FAQ.md#committee)
+  - [Witness](/core/tutorials/FAQ.md#witness)
+
+***
+
 After you installed BitShares Core successfully, you have `witness_node` and `cli_wallet`. In this first section, we talk about the BitShaares Nodes and some expectations.
+
+## BitShares Nodes and P2P network
+- BitShares Client and Node
+- Witness Node and Full Node
+- Witness Node's Roles and Duties
+- Voting and a Witness Node
+- Open Public Testnet
 
 
 #### What is the Nodes?
@@ -52,7 +70,7 @@ Besides the plugins, there is a [configuration file `config.ini`](/core/nodes_fu
 ### Voting and a Witness Node
 All BTS Holders can vote to witness(es) from the BitShares UI wallet. It's important to use your right to vote. However, if you would like to do so, you can cast your voting right to a proxy who represents your interests. 
 
-- Accounts - [Voting information](/core/accounts/accounts/voting-bh.md#voting)
+- Read more... Accounts - [Voting information](/core/accounts/accounts/voting-bh.md#voting)
 
 ### Open Public Testnet
 
