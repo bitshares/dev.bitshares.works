@@ -6,7 +6,7 @@ To opt-out of the referral program, an account can be upgraded to a so called **
 
 ***
 
-The purpose of the referral program is to incentivize people to bring in more people. It compares to a Multi-Level-Marketing (MLM) scheme with the difference of having only **1 level** where referred individuals can opt-out by upgrading their account to a [Life-Time Member (LTM)](/core/accounts/accounts/memberships.md#memberships-and-groups). Every life time member, can get a cut of the fees based on child accounts linked to ours via referral.
+The purpose of the referral program is to incentivize people to bring in more people. It compares to a Multi-Level-Marketing (MLM) scheme with the difference of having only **1 level** where referred individuals can opt-out by upgrading their account to a [Life-Time Member (LTM)](/core/accounts#memberships-and-groups). Every life time member, can get a cut of the fees based on child accounts linked to ours via referral.
 
 BitShares has several different kinds of accounts: 
 * Basic Account, and
@@ -64,7 +64,8 @@ If you have a life time member account and
 * already paid some fees, or
 * have referred people that paid some fees,
 
-you can withdraw them from a [**Vesting balances**](/core/accounts/accounts/vesting-balance.md#vesting-balances) page of your account.
+you can withdraw them from a [**Vesting balances**](/core/accounts#vesting-balances) page of your account.
+
 
 
 ***
