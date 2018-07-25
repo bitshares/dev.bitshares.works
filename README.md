@@ -20,7 +20,7 @@ Documentation related to BitShares Core internals and development fundamentals.
 - [BitShares Accounts](/core/accounts/README.md#bitshares-accounts)
 - [BitShares Nodes](/core/nodes_full_witness/README.md#bitshares-nodes-and-p2p-network)
 - [Wallet](/core/wallet/README.md#wallet)
-- [API - BitShares](/core/api#api)
+- [BitShares API](/core/api#api)
 - [Testnets](/core/testnets/README.md#testnets)
 - [Knowledge Bases](/core/knowledge_base#knowledge-base)
 - [Tutorials](/core/tutorials#tutorials) / [FAQ](/core/tutorials/FAQ.md#frequently-asked-questions---list-all)

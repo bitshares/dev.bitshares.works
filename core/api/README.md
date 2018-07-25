@@ -1,19 +1,21 @@
 ## API
 
+BitShares APIs are available by using [Remote Procedure Calls (RPC)](/core/api/rpc.md#remote-procedure-calls) and [WebSocket Calls & Notifications](/core/api/websocket_calls_notifications.md#websocket-calls-notifications).  All API calls are formatted in JSON and return JSON only.
+
+There are [API Access Restrictions](/core/api/api_restrictions.md#api-access-and-restrictions). ( API 0 : state-less RPC-calls querying.  API 1: authenticated interaction by WebSocket.)  And you can restrict API's to particular users by setting the information into an [`api-access.json` ](/core/api/api_restrictions.md#accessing-restricted-apis).  You create the api-access.json file and specify a path to the api-access.json file in [`config.ini`](/core/nodes_full_witness/full_nodes.md#configuration) in the data directory. 
+
+BitShares APIs can categorize two; [Blockchain API](https://bitshares.org/doxygen/namespacegraphene_1_1app.html) and [Wallet API](https://bitshares.org/doxygen/classgraphene_1_1wallet_1_1wallet__api.html). Blockchain API is used to query blockchain data  (account, assets, trading history, etc).  And Wallet API is used to interact with the blockchain operations (create an account, sign, transfer, market orders, etc). The wallet has the private keys and signing capabilities, so, Wallet specific commands are only available if the wallet is connecting to cli_wallet and is unlocked. 
+
+BitShares uses [Objects and IDs model](/core/api/object_ids.md#objects-and-ids) to represent the blockchain. The BitShares blockchains do not have the addresses that most cryptocurrency wallets have, instead each object is identified by a unique id, a type, and space. (i.e., BitShares Objects Format: space.type.id.  -- 1.1.x: base object, 1.2.x:account object, 1.3.x:asset object, etc)  
+
 ***
 
-### [API Doxygen Documentation](https://bitshares.org/doxygen/index.html)
+### [BitShares-Core API Documentation](https://bitshares.org/doxygen/hierarchy.html) - Doxygen Class Hierarchy
 
 ***
-
-- [Doxygen Class Hierarchy ](https://bitshares.org/doxygen/hierarchy.html)
 
 
 ### BitShares APIs
-- [APIs two categories](/core/api/apis-about.md#apis-categories)
-   - Blockchain API
-   - Wallet API
-- [Interfacing with Graphene](/core/api/apis-about.md#interfacing-with-graphene)
 - [API Access & Restrictions](/core/api/api_restrictions.md#api-access-and-restrictions)
    - [Using the API](/core/api/api_restrictions.md#using-the-api)
    - [Accessing Restricted API's ](/core/api/api_restrictions.md#accessing-restricted-apis)
@@ -25,13 +27,14 @@
 - [Remote Procedure Calls](/core/api/rpc.md#remote-procedure-calls)
 - [Websocket Calls & Notifications](/core/api/websocket_calls_notifications.md#websocket-calls-notifications)
 
-### FAQ - API 
-- [Check a list](/core/tutorials/FAQ.md#apis)
+### FAQ - API
+- [Go to FAQ list](/core/tutorials/FAQ.md#apis)
+
 
 ***
-## doxygen Documentation
+## Doxygen Documentation - API Group names 
 
-### [Wallet APIs](https://bitshares.org/doxygen/classgraphene_1_1wallet_1_1wallet__api.html)
+### [Wallet API](https://bitshares.org/doxygen/classgraphene_1_1wallet_1_1wallet__api.html)
 - General Calls
 - Wallet Calls
 - Account Calls

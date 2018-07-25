@@ -1,5 +1,6 @@
 ## BitShares Accounts
-In BitShares, you can create an account relatively easily by using the BitShares UI wallet.  After you created the BitShares account, you would notice that BitShares has offered many options.  Here, we collected topics for you to know as the first step. 
+In BitShares, you can create an account relatively easily by using the BitShares UI wallet.  It's important to know that **only** you know your password, and no one can recover it. 
+So, we recommend you to read through BitShares Accounts information. When you created BitShares account, you also create your account's public keys and private keys. There are three types of keys in your wallet. Please read a [Permissions](https://github.com/bitshares/dev.bitshares.works/blob/master/core/accounts/accounts/permissions.md#permissions) section to get more information. 
 
 ### [Account](/core/accounts#account-1)
 - [Memberships and Groups](/core/accounts#memberships-and-groups)

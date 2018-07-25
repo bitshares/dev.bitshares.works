@@ -1,7 +1,9 @@
 ## Introduction & Architectures 
 
+Welcome to BitShares! In this section, you will find the overview of BitShares Architecture (repositories and entities), and how the Core team processes the development work.  If you are interested in contributing to the Core team, you might want to check the Contribution Guide and the GitFlow to understand how BitShares-Core team handles the repository files and branches.  If you would like to know the Core team current project, issues, and the releases plans, check under the Issues and the Projects tabs.
+
 ### BitShares Architecture  
-- [GitHub Repositories and Entities](/core/knowledge_base/shared_files/BitShares_Architecture-V2b.pdf) 
+- [GitHub Repositories and Entities (pdf)](/core/knowledge_base/shared_files/BitShares_Architecture-V2b.pdf) 
 
 
 ### BitShares Core Workflow
@@ -36,18 +38,17 @@
 #### [Installation:](/core/installation/README.md#install-a-development-environment)
 BitShares offers you to install BitShares-Core into different platforms; Ubuntu (x64), OSx, and Windows. Check [this page](/core/installation/README.md#install-a-development-environment).
 
+#### [BitShares Nodes information:](/core/nodes_full_witness/README.md#bitshares-nodes-and-p2p-network)
+You should know before you start.
 
 #### [Testnets: ](/core/testnets/README.md#testnets)
 
-The above list is a guide. It would change what you would like to do and try. 
+The above table list is a guide. It would change what you would like to do and try. 
 
-**BitShares offer Public Testnet Web UI wallet.** You might want to try out our Public Testnet Web wallet. So, you could get ideas about how BitShares wallet works. 
+**BitShares offer Public Testnet Web UI wallet.** If you want to check BitShares UI wallet functions, you might want to try out our Public Testnet Web Wallet. So, you can get better ideas before you start looking into the codes.
 
 * [The Open Public Testnet information](/core/testnets/public_testnet_details.md#public-testnet-details) (include Public Testnet Web UI wallet link) 
-* [How to setup Public Testnet](/core/testnets/public_testnet.md#public-testnet-witnessfull-nodes-block-producing-witness-nodes) Witness(Full) Nodes (block producing witness nodes) 
-* [How to setup Private Testnet](/core/testnets/private_testnet.md#private-testnet)
+
 
 ***
-
-
 

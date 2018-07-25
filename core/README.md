@@ -16,7 +16,7 @@ Documentation related to BitShares Core internals and development fundamentals.
 ### [Wallet](/core/wallet/README.md#wallet)
 - CI, UI, General / Secure Network & Wallet Configuration
 
-### [API](/core/api#api) - BitShares
+### [BitShares API](/core/api#api) 
 - API Documentation (doxygen links), API(features, restrictions, configuration), Calls(RPC, Websocket), Objects and IDs
 
 ### [Testnets](/core/testnets/README.md#testnets)

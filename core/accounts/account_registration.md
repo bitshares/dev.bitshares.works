@@ -1,7 +1,6 @@
 # Account Registration
 
-In this section, we will show how to use a brain key and a public key while creating/registering an account. 
-
+This section is for developers who are interested in creating and registering BitShares account from commands. Also, we will talk about a brain key and how a private/public key pair is built.
 
 #### Table of Contents: 
 

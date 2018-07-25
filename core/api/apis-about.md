@@ -2,7 +2,7 @@
 
 #### Contents:
 - APIs Categories
-  - Blockchain API
+  - Blockchain APIs
   - Wallet API
 - Interfacing with Graphene
 
@@ -12,7 +12,7 @@
 
 ## APIs Categories
 
-* **Blockchain API** -- It is used to query blockchain data (account, assets, trading history, etc). Besides data stores in the blockchain itself (blocks, transactions, etc. ..), higher level objects (such as accounts, balances, etc. …) can be retrieved through the full node’s database.
+* **Blockchain APIs** -- It is used to query blockchain data (account, assets, trading history, etc). Besides data stores in the blockchain itself (blocks, transactions, etc. ..), higher level objects (such as accounts, balances, etc. …) can be retrieved through the full node’s database.
 * **Wallet API** -- It interact with the blockchain to operate. 
 The wallet (cli-wallet)  has your private keyss and signing capabilities.  It requires a running full node (witness node) (not necessarily locally) and connects to it. Because the wallet does not offer P2P or blockchain capabilities directly.
 
