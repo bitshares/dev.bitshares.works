@@ -3,7 +3,7 @@
 Welcome to BitShares! In this section, you will find the overview of BitShares Architecture (repositories and entities), and how the Core team processes the development work.  If you are interested in contributing to the Core team, you might want to check the Contribution Guide and the GitFlow to understand how BitShares-Core team handles the repository files and branches.  If you would like to know the Core team current project, issues, and the releases plans, check under the Issues and the Projects tabs.
 
 ### BitShares Architecture  
-- [GitHub Repositories and Entities (pdf)](/core/knowledge_base/shared_files/BitShares_Architecture-V2b.pdf) 
+- [GitHub Repositories and Entities (pdf)](/core/knowledge_base/shared_files/BitShares_Architecture-V4.pdf) 
 
 
 ### BitShares Core Workflow
