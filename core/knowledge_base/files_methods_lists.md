@@ -1,3 +1,18 @@
+
+## BitShares Architecture Maps
+- [GitHub Repositories and Entities (pdf)](/core/knowledge_base/shared_files/BitShares_Architecture-V4.pdf)
+- [CLI Wallet Clients and Nodes (pdf)](/core/knowledge_base/shared_files/BitShares_Architecture-Cli-v2.pdf)
+
+
+## BitShares-Core Liblaries All Folders and Files Lists
+
+- [BitShares-Core Liblaries All Folders and Files Lists](/core/knowledge_base/shared_files/BitShares-Core-Liblaries-List20180725.pdf)
+
+| dir | folders |  |  |
+|---|---|---|---|
+| bitshares-core/libraries/  | app, chain, db, deterministic_openssl_rand, egenesis, net, plugin, utilities, and wallet  |  |
+
+
 ## Code Libraries Files and Methods Lists
 
 |  | file name | release |  |
@@ -16,7 +31,7 @@
 |\libraries\app\application.cpp | [namespaces structures ](/core/knowledge_base/shared_files/application-cpp-namespaces.pdf) | 2.0.180612 |  
 | \libraries\app\application.cpp | [startup()](/core/knowledge_base/shared_files/application-cpp-startup.pdf) | 2.0.180612 |
 |\libraries\app\application.cpp | namespace detail {} - [create_example_genesis()](/core/knowledge_base/shared_files/application-cpp-ns-detail.pdf) | 2.0.180612 |
-| \libraries\app\application.cpp | [get_api_access_info()](/core/knowledge_base/shared_files/files_methods/application-cpp-20180721.pdf)  (*the below in this file*) | 2.0.180612 |
+| \libraries\app\application.cpp | [get_api_access_info()](/core/knowledge_base/shared_files/files_methods/application-cpp-20180721.pdf)  (***All below in this file***) | 2.0.180612 |
 | \libraries\app\application.cpp | has_item()  | 2.0.180612 |
 | \libraries\app\application.cpp | handle_block()  | 2.0.180612 |
 | \libraries\app\application.cpp | handle_transaction() | 2.0.180612 |
@@ -24,7 +39,7 @@
 | \libraries\app\application.cpp | get_block_ids()  | 2.0.180612 |
 | \libraries\app\application.cpp | get_blockchain_synopsis() | 2.0.180612 |
 |  |  |  |  |
-| \libraries\app\api.cpp |[login()](/core/knowledge_base/shared_files/files_methods/api-cpp-1-20180721.pdf) (*the below in this file*)  | 2.0.180612 |
+| \libraries\app\api.cpp |[login()](/core/knowledge_base/shared_files/files_methods/api-cpp-1-20180721.pdf) (***ALl below in this file***)  | 2.0.180612 |
 | \libraries\app\api.cpp | enable_api()  | 2.0.180612 |
 | \libraries\app\api.cpp | network_broadcast_api()  | 2.0.180612 |
 | \libraries\app\api.cpp |on_applied_block()    | 2.0.180612 |
