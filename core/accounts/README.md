@@ -1,15 +1,16 @@
-## BitShares Accounts
-In BitShares, you can create an account relatively easily by using the BitShares UI wallet.  It's important to know that **only** you know your password, and no one can recover it. 
-So, we recommend you to read through BitShares Accounts information. When you created BitShares account, you also create your account's public keys and private keys. There are three types of keys in your wallet. Please read a [Permissions](https://github.com/bitshares/dev.bitshares.works/blob/master/core/accounts/accounts/permissions.md#permissions) section to get more information. 
 
-### [Account](/core/accounts#account-1)
+## BitShares Accounts
+In BitShares, you can create an account relatively easily by using the BitShares UI wallet.  The account comes with the Private/public keys. You should keep the information safe. Also, BitShares account gives you some benefits (i.e., Lifetime Membership (LTM) and Referral Program) and important roles (i.e., voting).  We recommend you to read through BitShares Accounts information to learn more.
+
+- [Account](/core/accounts#account)
 - [Memberships and Groups](/core/accounts#memberships-and-groups)
 - [Fees](/core/accounts#fees)
 - [Vesting Balances](/core/accounts#vesting-balances)
 - [Permissions](/core/accounts/accounts/permissions.md#permissions)
 - [Referral Program](/core/accounts/accounts/referral-program.md#referral-program)
 - [Voting](/core/accounts/accounts/voting-bh.md#voting)
-
+  - Voting for… Witnesses, Committee, or/and Workers
+ 
 ### [Account Registration](/core/accounts/account_registration.md#account-registration)
    - [Create a brain Key and derive a private/public key pair](/core/accounts/account_registration.md#2-create-a-brain-key-and-derive-a-privatepublic-key-pair)
    - [Create an Account](/core/accounts/account_registration.md#3-create-an-account)
@@ -25,24 +26,25 @@ So, we recommend you to read through BitShares Accounts information. When you cr
 
 ## Account
 
-In BitShares, you can create an account relatively easily by using the BitShares UI wallet.  When you create a BitShares UI Wallet Account, it will ask you to provide a unique *Account name* and a *password*.  Although you should create a secure password, you can create readable and memorable BitShares account name.   You will not have a long random number as your account name(ID).  That would be helpful for sending and handling your account and funds.   
+In BitShares, you can create an account relatively easily by using the BitShares UI wallet. When you create a BitShares Account from the UI wallet, it will ask you to provide a unique Account name and a password. Although you should create a strong password, you can create readable and memorable BitShares account name. You do not need to write down a long random number as your account name. The BitShares account name would be helpful to identify other BitShares accounts.
 
-Each user has at least one account that can be used to interact with the blockchain. The account can be seen as a single banking account with an individual balance, transaction history, etc. Since these accounts are registered on the blockchain and are open to the public, we recommend picking a pseudonym to achieve some privacy.
+It's important to understand that **only** you know your password, and no one can recover it.  The account information is registered to the blockchain with private/public keys of the account. Only the account creator knows the password and finds out the private keys.  In BitShares, there are three types of keys (i.e., active, owner, and memo key) which you can find them in the UI Wallet Permissions page.  Read the [Permissions](/core/accounts/accounts/permissions.md#permissions) section to learn about each key roles and to get more information.     
 
 ### BitShares UI Wallet
 
 If you are a user who wants to create your account and a wallet, you can check [BitShares User Guide](https://github.com/bitshares/how.bitshares.works/tree/master/bbf/user_guide#user-guide) - [Create a BitShares Wallet](https://github.com/bitshares/how.bitshares.works/blob/master/bbf/user_guide/create_account.md#create-a-bitshares-wallet) section. 
 
 If you create an account at one of BitShares partners, the account name will be available among BitShares partners.  So, you will be able to use the BitShares account name to communicate (e.g., sending fund) with other BitShares account holders like sending an email. The advantage of using account name is you, and other people can identify the account holder. 
--  (*[How to send/fund your account](https://github.com/bitshares/how.bitshares.works/blob/master/bbf/user_guide/fund_account.md#fund-your-account)*)
+-  *[How to send/fund your account](https://github.com/bitshares/how.bitshares.works/blob/master/bbf/user_guide/fund_account.md#fund-your-account)*
 
 ### Identifier
 
-When you create a BitShares account, BitShares 2.0 registers the account name to the blockchain and also assigns an incrementing identifier (account id) during the registration.
+When you create a BitShares account, BitShares 2.0 registers the account name to the blockchain and also assigns an incrementing identifier (account id) during the registration. One way to find your account id is to go to a [cryptofresh](https://www.cryptofresh.com/) and search your account name. You will find your account id under your account name. 
 
 The identifier comes with many advantages: Besides improved scalability, we have separated the identity from the transaction authorizing signature. In practice, owning an account name is autonomous from being able to spend its funds. Furthermore, both rights (we call them permissions) can split among an arbitrary complex relation of people (we call them authorities) using weights and required thresholds.
 
 To separating authorities from identities, BitShares 2.0 can be much faster in processing delay while having much smaller transaction sizes. All participants are forced to have a named account on the blockchain. Also, most transactions are tied to the account name and can be linked to individuals (this includes transfers, trades, shorts, etc. but not stealthed transactions).
+
 
 ***
 ## Memberships and Groups
