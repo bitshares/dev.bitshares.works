@@ -1,12 +1,12 @@
 
 ## BitShares Architecture Maps
-- [GitHub Repositories and Entities (pdf)](/core/knowledge_base/shared_files/BitShares_Architecture-V4.pdf)
+- [GitHub Repositories and Entities (pdf)](/core/knowledge_base/shared_files/BitShares_Architecture-V3.pdf)
 - [CLI Wallet Clients and Nodes (pdf)](/core/knowledge_base/shared_files/BitShares_Architecture-Cli-v2.pdf)
 
 
-## BitShares-Core Liblaries All Folders and Files Lists
+## BitShares-Core Libraries All Folders and Files Lists
 
-- [BitShares-Core Liblaries All Folders and Files Lists](/core/knowledge_base/shared_files/BitShares-Core-Liblaries-List20180725.pdf)
+- [BitShares-Core Libraries All Folders and Files Lists](/core/knowledge_base/shared_files/BitShares-Core-Libraries-List20180725.pdf)
 
 | dir | folders |  |  |
 |---|---|---|---|

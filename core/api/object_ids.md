@@ -61,15 +61,18 @@ In contrast to most cryptocurrency wallets, the BitShares 2.0 has a different mo
 | Object ID | Translates to |
 |----------|----------------|
 | 1.2.0  | committee-account details |
-| 1.2.15  | # protocol space / account / id: 15
 | 1.3.0  | asset BTS, core asset details |
-| 1.3.1  | asset USD | 
-| 1.6.\<id\>  | 	block signer <id> |
-| 1.6.105 | # protocol space / witness / id: 105|   
-| 1.11.\<id\>  | 	operation with id <id> |   
-| 1.14.7 | # protocol space / worker / id: 7 |
+| 1.3.1  | asset USD |
 | 2.0.0  | global blockchain parameters |
 | 2.1.0  | current blockchain data |
+
+| Object ID | Translates to |
+|----------|----------------|
+| 1.11.\<id\>  | 	operation with id <id> |   
+| 1.14.7 | # protocol space / worker / id: 7 |
+| 1.2.15  | # protocol space / account / id: 15
+| 1.6.\<id\>  | 	block signer <id> |
+| 1.6.105 | # protocol space / witness / id: 105|   
 | 2.1.0 |  # implementation space / dynamic global properties |
 | 2.3.8 |  # implementation space / asset . id: 8 |
   
