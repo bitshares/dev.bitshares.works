@@ -10,10 +10,9 @@ BitShares uses [Objects and IDs model](/core/api/object_ids.md#objects-and-ids) 
 
 ***
 
-### [BitShares-Core API Documentation](https://bitshares.org/doxygen/hierarchy.html) - Doxygen Class Hierarchy
-
+### [BitShares-Core API References](/core/api/API_references.md#bitshares-core-api-references---doxygen-documentation) - Doxygen 
+Blockchain APIs, Wallet API Calls, Objecs IDs, and objects information
 ***
-
 
 ### BitShares APIs
 - [API Access & Restrictions](/core/api/api_restrictions.md#api-access-and-restrictions)
@@ -21,41 +20,17 @@ BitShares uses [Objects and IDs model](/core/api/object_ids.md#objects-and-ids) 
    - [Accessing Restricted API's ](/core/api/api_restrictions.md#accessing-restricted-apis)
    - [Accessing the Named API via HTTP](/core/api/api_restrictions.md#accessing-the-named-api-via-http)
    - [Login In](/core/api/api_restrictions.md#login-in)
-- [Object and IDs](/core/api/object_ids.md#objects-and-ids)   
-   
-### Calls   
-- [Remote Procedure Calls](/core/api/rpc.md#remote-procedure-calls)
+
+## Objects and IDs
+- [List of Commonly used Objects](/core/api/object_ids.md#objects-and-ids)   
+BitShares objects were identified by a unique id, an type and a space. You should know some of them.
+    
+## Available Calls   
+- [Remote Procedure Calls (RPC)](/core/api/rpc.md#remote-procedure-calls)
 - [Websocket Calls & Notifications](/core/api/websocket_calls_notifications.md#websocket-calls-notifications)
 
 ### FAQ - API
 - [Go to FAQ list](/core/tutorials/FAQ.md#apis)
 
-
-***
-## Doxygen Documentation - API Group names 
-
-### [Wallet API](https://bitshares.org/doxygen/classgraphene_1_1wallet_1_1wallet__api.html)
-- General Calls
-- Wallet Calls
-- Account Calls
-- Trading Calls
-- Asset Calls
-- Governance
-- Privacy Mode
-- Blockchain Inspection
-- Transaction Builder
-      
-### [Blockchain APIs](https://bitshares.org/doxygen/namespacegraphene_1_1app.html)
-- [Database API](https://bitshares.org/doxygen/classgraphene_1_1app_1_1database__api.html)
-- [Account History API](https://bitshares.org/doxygen/classgraphene_1_1app_1_1history__api.html)
-- [Crypto API](https://bitshares.org/doxygen/classgraphene_1_1app_1_1crypto__api.html)
-- [Network Broadcast API](https://bitshares.org/doxygen/classgraphene_1_1app_1_1network__broadcast__api.html)
-- [Network node API](https://bitshares.org/doxygen/classgraphene_1_1app_1_1network__node__api.html)
-
-      
-### [Namespaces](https://bitshares.org/doxygen/namespacegraphene.html) 
-- [Graphene::App](https://bitshares.org/doxygen/namespacegraphene_1_1app.html)
-- [Graphene::Chain](https://bitshares.org/doxygen/namespacegraphene_1_1chain.html)
-- [Graphene::Wallet](https://bitshares.org/doxygen/namespacegraphene_1_1wallet.html)
 
 ***

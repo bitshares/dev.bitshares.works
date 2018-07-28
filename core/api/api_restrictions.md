@@ -109,6 +109,7 @@ When you use WS, use like below to prevent unnecessary round trips (login, query
 
     wscat -c ws://bytemaster:supersecret@testgraphene:8090
 
+
 ***
 
 ## Login In

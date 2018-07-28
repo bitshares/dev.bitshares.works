@@ -28,6 +28,9 @@
 - [Witness Scheduler](/core/knowledge_base/witness-scheduler.md#witness-scheduler) -- from Wiki
 
 
+### Integration
+- [Integration](/core/integration/README.md#integration)
+
 ***
 
 ### Protocols 
@@ -42,6 +45,7 @@
 ### Other 
 - [BitShares Improvement Proposal(BSIP)](/core/knowledge_base/bsip_funding.md#businesses-developers-and-business-developers)
 - [wiki legacy ](/core/knowledge_base/wiki_legacy)
+
 
 
 ***

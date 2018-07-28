@@ -22,6 +22,7 @@
 | \libraries\app\ | application_impl.hxx | [2.0.180612](/core/knowledge_base/shared_files/files_methods/Core_Release_2-0-180612-app-impl-hxx.pdf) |  |
 |  |  |  |  |
 
+
 ***
 
 ## Coding Flowcharts
