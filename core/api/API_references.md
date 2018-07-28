@@ -26,6 +26,7 @@ BitShares objects were identified by a unique id, an type and a space. When you 
 
 ***
 
+
 ### graphene::chain Namespace: Class - Objects
 
 |  |  |
