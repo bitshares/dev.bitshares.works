@@ -12,11 +12,11 @@
 After you installed BitShares Core successfully, you have `witness_node` and `cli_wallet`. In this first section, we talk about the BitShaares Nodes and some expectations.
 
 ## BitShares Nodes and P2P network
-- BitShares Client and Node
-- Witness Node and Full Node
-- Witness Node's Roles and Duties
-- Voting and a Witness Node
-- Open Public Testnet
+- [BitShares Client and Node](#bitshares-client-and-node)
+- [Witness Node and Full Node](#witness-node-and-full-node)
+- [Witness Node's Roles and Duties](#witness-nodes-roles-and-duties)
+- [Voting and a Witness Node](#voting-and-a-witness-node)
+- [Open Public Testnet](#open-public-testnet)
 
 
 #### What is the Nodes?
