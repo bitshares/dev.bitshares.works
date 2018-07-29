@@ -1,36 +1,10 @@
 # Building on Ubuntu
 
 #### Table of Contents:
-- [Available Versions](/core/installation/build_ubuntu.md#available-versions)
+
 - [Ubuntu 16.04 LTS (64-bit)](/core/installation/build_ubuntu.md#ubuntu-1604-lts-64-bit)
 - [Ubuntu 14.04 LTS (64-bit)](/core/installation/build_ubuntu.md#ubuntu-1404-lts-64-bit)
-
-***
-
-## Available Versions
-
-#### Ubuntu
-We recommend building on Ubuntu 16.04 LTS (64-bit), and the build dependencies may be installed with:
-
-- Ubuntu 16.04 LTS (**64-bit**)
- 
->  BitShares requires a 64-bit operating system to build, and will not build on a 32-bit OS.
-
-#### Boost
-
-- Boost: between 1.57 and 1.65
-
-Versions earlier than 1.57 or newer than 1.65 are NOT supported. If your system Boost version is newer, then you will need to manually build an older version of Boost and specify it to CMake using `-DBOOST_ROOT`. Example:
-
-        cmake -DBOOST_ROOT=~/boost160 .
-
-#### OpenSSL
-
-- OpenSSL: 1.0.x series
-
-OpenSSL 1.1.0 and newer are NOT supported. If your system OpenSSL version is newer, then you will need to manually provide an older version of OpenSSL and specify it to CMake using `-DOPENSSL_INCLUDE_DIR`, `-DOPENSSL_SSL_LIBRARY`, and `-DOPENSSL_CRYPTO_LIBRARY`. Example:
-
-        cmake -DOPENSSL_INCLUDE_DIR=/usr/include/openssl-1.0 -DOPENSSL_SSL_LIBRARY=/usr/lib/openssl-1.0/libssl.so -DOPENSSL_CRYPTO_LIBRARY=/usr/lib/openssl-1.0/libcrypto.so .
+- [Available Versions](/core/installation/build_ubuntu.md#available-versions)
 
 ***
 
@@ -88,6 +62,33 @@ Download the Boost tarball for Boost 1.57.0. (*Ubuntu 14.04 ships old version of
     cmake -DBOOST_ROOT="$BOOST_ROOT" -DCMAKE_BUILD_TYPE=Release .
     make 
 
+
+***
+
+## Available Versions
+
+#### Ubuntu
+We recommend building on Ubuntu 16.04 LTS (64-bit), and the build dependencies may be installed with:
+
+- Ubuntu 16.04 LTS (**64-bit**)
+ 
+>  BitShares requires a 64-bit operating system to build, and will not build on a 32-bit OS.
+
+#### Boost
+
+- Boost: between 1.57 and 1.65
+
+Versions earlier than 1.57 or newer than 1.65 are NOT supported. If your system Boost version is newer, then you will need to manually build an older version of Boost and specify it to CMake using `-DBOOST_ROOT`. Example:
+
+        cmake -DBOOST_ROOT=~/boost160 .
+
+#### OpenSSL
+
+- OpenSSL: 1.0.x series
+
+OpenSSL 1.1.0 and newer are NOT supported. If your system OpenSSL version is newer, then you will need to manually provide an older version of OpenSSL and specify it to CMake using `-DOPENSSL_INCLUDE_DIR`, `-DOPENSSL_SSL_LIBRARY`, and `-DOPENSSL_CRYPTO_LIBRARY`. Example:
+
+        cmake -DOPENSSL_INCLUDE_DIR=/usr/include/openssl-1.0 -DOPENSSL_SSL_LIBRARY=/usr/lib/openssl-1.0/libssl.so -DOPENSSL_CRYPTO_LIBRARY=/usr/lib/openssl-1.0/libcrypto.so .
 ***
 
 ### Known issue: 

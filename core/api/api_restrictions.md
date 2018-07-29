@@ -1,6 +1,6 @@
 ## API Access and Restrictions
 
-#### Contents:
+#### Table of Contents:
 
 - [Using the API](/core/api/api_restrictions.md#using-the-api)
   - Examples
@@ -108,7 +108,6 @@ If the API is restricted, specify the credentials using standard HTTP Headers,
 When you use WS, use like below to prevent unnecessary round trips (login, query API number, call function)
 
     wscat -c ws://bytemaster:supersecret@testgraphene:8090
-
 
 ***
 

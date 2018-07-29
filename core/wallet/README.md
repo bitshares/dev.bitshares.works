@@ -1,4 +1,14 @@
-## Wallet
+## Cli_Wallet and the Connectivity
+
+
+### BitShares Architecture – CLI Client and Wallet
+- [CLI Client and Wallet (pdf)](/core/knowledge_base/shared_files/BitShares_Architecture-V3.pdf) 
+
+<p align="center">
+  <img src="/core/imgs/structure/bitshares-architecture-clinotop.png" width="830" title="BitShares Architecture ">
+</p>
+
+
 
 ### [Connecting a Wallet](/core/wallet/cli_wallet.md#connecting-a-wallet)
 

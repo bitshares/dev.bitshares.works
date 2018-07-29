@@ -19,13 +19,12 @@ Documentation related to BitShares Core internals and development fundamentals.
 - [Install a Development Environment](/core/installation/README.md#install-a-development-environment)
 - [BitShares Accounts](/core/accounts/README.md#bitshares-accounts)
 - [BitShares Nodes](/core/nodes_full_witness/README.md#bitshares-nodes-and-p2p-network)
-- [Wallet](/core/wallet/README.md#wallet)
-- [BitShares API](/core/api#api)
+- [Cli_Wallet and the Connectivity](/core/wallet/README.md#cli_wallet-and-the-connectivity)
+- [BitShares API](/core/api/README.md#bitshares-api) 
 - [Testnets](/core/testnets/README.md#testnets)
 - [Knowledge Bases](/core/knowledge_base#knowledge-base)
 - [Tutorials](/core/tutorials#tutorials) / [FAQ](/core/tutorials/FAQ.md#frequently-asked-questions---list-all)
-- [Integration](/core/integration/README.md#integration)
- 
+
 ***
 
 ## [BitShares Blockchain](/core/bitshares_blockchain#bitshares-blockchain)
@@ -48,4 +47,3 @@ BitShares topic targeting technical information supported by the BitShares Commu
 
 ***
 
-How to participate in the BitShares Developers Documentation. Check here.

@@ -1,10 +1,12 @@
 ## Objects and IDs
 
-#### Contents:
+#### Table of Contents:
 - [Objects Format](/core/api/object_ids.md#bitshares-objects-format)
 - [List of Commonly used Objects](/core/api/object_ids.md#list-of-commonly-used-objects)
    - [Examples](/core/api/object_ids.md#examples)
    - [Examples - Accounts](/core/api/object_ids.md#examples---accounts)
+   - [Example Call and a result: account object (1.2.x)](/core/api/object_ids.md#example-call-and-a-result-account-object-12x)
+   - [Example Call and a result: asset object (1.3.x) ](/core/api/object_ids.md#example-call-and-a-result-asset-object-13x)
 - [Defenitions](/core/api/object_ids.md#definitions)
    - [Protocol Space (1.x.x)](/core/api/object_ids.md#protocol-space-1xx)
       - enum graphene::chain::object_type
@@ -13,7 +15,7 @@
 
 ***
 
-In contrast to most cryptocurrency wallets, the BitShares 2.0 has a different model to represent the blockchain, transactions, and accounts. On the BitShares blockchains, there are **no addresses**. So, the objects are identified by **a unique id, a type and space.**
+In contrast to most cryptocurrency wallets, the BitShares-Core uses a different model to represent the blockchain, transactions, and accounts. On the BitShares blockchains, there are **no addresses**. So, the objects are identified by **a unique id, a type and space.**
 
 ### BitShares Objects Format
 
@@ -89,7 +91,33 @@ The BitShares blockchain users are requires to register each account with a uniq
 | 2.9.80  | # implementation space / block-summary / id: 80 |
 
    
-> A programmatic description of all fields can be found in the [sources](https://github.com/cryptonomex/graphene/blob/master/libraries/chain/include/graphene/chain/protocol/types.hpp).
+> A programmatic description of all fields can be found in the [sources](https://github.com/bitshares/bitshares-core/blob/master/libraries/chain/protocol/types.cpp).
+
+***
+   
+#### Example Call and a result: account object (1.2.x)
+
+		unlocked >>> get_account_id "user123"
+		get_account_id "user123"
+		"1.2.539269"
+		unlocked >>>
+
+
+#### Example Call and a result: asset object (1.3.x)
+
+		unlocked >>> list_assets "BTS" "2"
+		list_assets "BTS" "2"
+		[{
+				"id": "1.3.0",
+				"symbol": "BTS",
+				"precision": 5,
+				"issuer": "1.2.3",
+
+			....
+				"dynamic_asset_data_id": "2.3.368"
+			}
+		]		
+
 
 
 ***

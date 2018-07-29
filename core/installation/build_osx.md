@@ -1,35 +1,10 @@
 # Building on OS X
 
-### Available Versions
+#### Table of Contents:
 
-#### Boost
+- [BitShares OS X Build Instructions](#bitshares-os-x-build-instructions)
+- [Available Versions](#available-versions)
 
-- Boost: between 1.57 and 1.65
-
-You can check which version(s) of boost you have by asking brew:
-
-    brew search boost
-
-To install another version of Boost (such as 1.60):
-
-    brew install boost@1.60
-
-#### OpenSSL
-
-- OpenSSL: 1.0.x series
-
-You may have an older version of OpenSSL than is required. If so, have brew get the latest:
-
-    brew upgrade openssl
-
-Compiling with these new versions: We must now tell cmake where these libraries are. Instead of the "cmake ." mentioned above, we use:
-
-    cmake -DBOOST_ROOT=/usr/local/opt/boost@1.60 -DOPENSSL_ROOT_DIR=/usr/local/opt/openssl .
-
-and then proceed with the normal
-
-    make
-    
 ***
 
 ## BitShares OS X Build Instructions
@@ -73,4 +48,36 @@ In OS X 10.11 (El Capitan) and newer, you will be prompted to install developer 
 
 **Notes:** As mentioned elsewhere, Bitshares depends on the third-party libraries "Boost" and "OpenSSL". These libraries need to be in certain version ranges. At the moment, Boost needs to be **between 1.57 and 1.65**. OpenSSL needs to be in the **1.0.x range**.
 
+***
+
+### Available Versions
+
+#### Boost
+
+- Boost: between 1.57 and 1.65
+
+You can check which version(s) of boost you have by asking brew:
+
+    brew search boost
+
+To install another version of Boost (such as 1.60):
+
+    brew install boost@1.60
+
+#### OpenSSL
+
+- OpenSSL: 1.0.x series
+
+You may have an older version of OpenSSL than is required. If so, have brew get the latest:
+
+    brew upgrade openssl
+
+Compiling with these new versions: We must now tell cmake where these libraries are. Instead of the "cmake ." mentioned above, we use:
+
+    cmake -DBOOST_ROOT=/usr/local/opt/boost@1.60 -DOPENSSL_ROOT_DIR=/usr/local/opt/openssl .
+
+and then proceed with the normal
+
+    make
+    
 ***

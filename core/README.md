@@ -13,10 +13,10 @@ Documentation related to BitShares Core internals and development fundamentals.
 ### [BitShares Nodes](/core/nodes_full_witness/README.md#bitshares-nodes-and-p2p-network)
 - About Nodes, System Requirements, Running a BitShares API Node,Full/Witness Nodes(type, how to launch, config.ini, etc), Become an Active Witness(about, how to prepare, backup, price feeds, etc)
 
-### [Wallet](/core/wallet/README.md#wallet)
-- CI, UI, General / Secure Network & Wallet Configuration
+### [Cli_Wallet and the Connectivity](/core/wallet/README.md#cli_wallet-and-the-connectivity)
+- CLI wallet, wallet.json, General / Secure Network & Wallet Configuration
 
-### [BitShares API](/core/api#api) 
+### [BitShares API](/core/api/README.md#bitshares-api) 
 - API Documentation (doxygen links), API(features, restrictions, configuration), Calls(RPC, Websocket), Objects and IDs
 
 ### [Testnets](/core/testnets/README.md#testnets)
@@ -26,7 +26,7 @@ Documentation related to BitShares Core internals and development fundamentals.
 - Assets,Transactions, Witness, Protocals, etc
 
 ### [Tutorials](/core/tutorials#tutorials) / [FAQ](/core/tutorials/FAQ.md#frequently-asked-questions---list-all)
-- Tutorials (How to), FAQs (All Liting by topics)
+- Tutorials (How to), FAQs (All Listing by topics)
   
 ### [Integration](/core/integration/README.md#integration)
 - BitShares 1.0 to 2.0, etc 
