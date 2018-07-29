@@ -44,7 +44,7 @@ When you start the cli_wallet first time, it creates a local `wallet.json` file 
 
 ***
 
-### [Connecting a Wallet](/core/wallet/cli_wallet.md#connecting-a-wallet)
+### [Connecting a Cli Wallet](/core/wallet/cli_wallet.md#connecting-a-cli-wallet)
 1. [Installation and build](/core/wallet/cli_wallet.md#1installation-and-build)
 2. [Execute a cli_wallet](/core/wallet/cli_wallet.md#2-execute-a-cli_wallet)
 3. [Unlock the cli_wallet](/core/wallet/cli_wallet.md#3unlock-the-cli_wallet)
