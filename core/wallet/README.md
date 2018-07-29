@@ -2,7 +2,7 @@
 
 #### Table of Contents:
 - [BitShares Architecture – CLI Client and Wallet](/core/wallet/README.md#bitshares-architecture--cli-client-and-wallet)
-- [Connecting a Wallet](/core/wallet/cli_wallet.md#connecting-a-wallet)
+- [Connecting a Cli Wallet](/core/wallet/cli_wallet.md#connecting-a-cli-wallet)
 - [Network and Wallet Configuration](/core/wallet/wallet_network.md#network-and-wallet-configuration)
 - [A Collection of command lines - Node, Wallet, and Witness](/core/wallet/node_wallet_witness.md#a-collection-of-command-lines---node-wallet-and-witness)
 - FAQs: [Assets](/core/wallet/README.md#faq---assets), [Transfer/Transactions](/core/wallet/README.md#faq---transfer--transactions), [Wallet](/core/wallet/README.md#faq---wallet)
