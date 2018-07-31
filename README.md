@@ -35,6 +35,7 @@ Documentation related to BitShares Core internals and development fundamentals.
 ## [BitShares Developers Forge](/forge/README.md#bts-developers-forge)
 BitShares topic targeting technical information supported by the BitShares Community. 
 
+- [Index - Help](/forge/help/index.md#help)
 - [Repositories - Developers](/forge/shared_repo/repo_byname_list.md#developers-github-repositories)
 - [API Support & References - JSON-RPC, REST, etc ](/forge/api_support/README.md#api-support--references)
 - [Articles](/forge/articles/tech_articles_chronological.md#articles--references)
