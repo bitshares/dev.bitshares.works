@@ -7,6 +7,9 @@ The goal is to provide the means to collaborate and learn from projects, process
 
 ***
 
+### [Index - Help](/forge/help/index.md#help)
+- Sections and Contents list
+
 ### [Repositories - Developers](/forge/shared_repo/repo_byname_list.md#developers-github-repositories)
 - BitShares Repositories list, developers repositories (by name, by topic)
 

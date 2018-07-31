@@ -14,7 +14,7 @@ We offer the Open Public Testnet for developers who want to learn about BitShare
 
 ***
 
-If you are considering to prepare Public TestNet for a witness node, please check *System Requirements* and read through [BitShares Nodes](/core/nodes_full_witness/README.md#bitshares-nodes-and-p2p-network) section.
+If you are considering to prepare Public TestNet for a witness node, check **System Requirements** and read through [BitShares Nodes](/core/nodes_full_witness/README.md#bitshares-nodes-and-p2p-network) section.
 
 ### [Public Testnet Witness(Full) Nodes (block producing witness nodes) ](/core/testnets/public_testnet.md)
 1. [Installation/Configuration of Witness](/core/testnets/public_testnet.md#1-installation_configuration-of-witness)
@@ -23,10 +23,12 @@ If you are considering to prepare Public TestNet for a witness node, please chec
 4. [Connecting a CLI Wallet](/core/testnets/public_testnet.md#4-connecting-a-cli-wallet)
 5. [Establish a Committee](/core/testnets/public_testnet.md#5-establish-a-committee)
 6. [Web Wallet](/core/testnets/public_testnet.md#6-web-wallet)
-7. [Set up the Faucet](/core/testnets/public_testnet.md#7-set-up-the-faucet)
-8. [Set up Nignx Webserver](/core/testnets/public_testnet.md#8-nignx-webserver)
-9. [Instillation of Python Library](/core/testnets/public_testnet.md#9-instillation-of-python-library)
-10. [Create MPAs/UIAs](/core/testnets/public_testnet.md#10-create-mpasuias)
+
+### Other References
+- [How to Set up the Faucet](/core/testnets/setup_faucet.md#how-to-set-up-the-faucet)
+- [How to Set up Nignx Webserver](/core/testnets/setup_nignx.md#how-to-set-up-nignx-webserver)
+- [How to set up Python Library](/core/testnets/setup_python_lib.md#how-to-set-up-python-library)
+- [How to Create MPAs/UIAs on Testnet](/core/testnets/setup_python_lib.md#create-mpasuias)
 
 ### [Private Testnet](/core/testnets/private_testnet.md#how-to-setup-private-testnet)
 1. [Prerequisites](#1-prerequisites)

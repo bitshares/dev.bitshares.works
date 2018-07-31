@@ -6,7 +6,7 @@ The document explains motivations, technical challenges and sample use of a new 
 
 ***
 
-#### Contents:
+#### Table of Contents:
 - [Motivation](/forge/plugins/elastic_search_plugin.md#motivation)
 - [The Database Selection](/forge/plugins/elastic_search_plugin.md#the-database-selection)
 - [Technical](/forge/plugins/elastic_search_plugin.md#technical)

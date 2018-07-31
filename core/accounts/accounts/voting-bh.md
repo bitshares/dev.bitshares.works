@@ -2,13 +2,13 @@
 
 #### Table of Contents:
 - Vote for…
-  - [Witnesses](#witnesses)
-  - [Committee](#committee-members)
-  - [Workers](#workers)
-  - [Proxy](#proxy)
+  - [Witnesses](/core/accounts/accounts/voting-bh.md#witnesses)
+  - [Committee](/core/accounts/accounts/voting-bh.md#committee-members)
+  - [Workers](/core/accounts/accounts/voting-bh.md#workers)
+  - [Proxy](/core/accounts/accounts/voting-bh.md#proxy)
 - Voting by using BitShares UI
-  - [Setting a proxy](#setting-a-proxy)
-  - [Voting for Witness, Committee Member or Worker](#voting-for-witness-committee-member-or-worker)
+  - [Setting a proxy](/core/accounts/accounts/voting-bh.md#setting-a-proxy)
+  - [Voting for Witness, Committee Member or Worker](/core/accounts/accounts/voting-bh.md#voting-for-witness-committee-member-or-worker)
 
 ***
 

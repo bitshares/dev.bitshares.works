@@ -1,0 +1,88 @@
+## Help
+
+|  |  |  |
+|---|---|---|
+| **Architecture**  |  **Installation** |  **Account Registration - CLI** |   
+| - [GitHub Repositories and Entities](#bitshares-architecture--github-repositories-and-entities) <br/> - [GitFlow](#bitshares-core-code-management---gitflow) <br /> - [CLI Client and Wallet](/core/wallet/README.md#bitshares-architecture--cli-client-and-wallet)  <br /> <br /> | - [Ubuntu Linux](/core/installation/build_ubuntu.md#building-on-ubuntu) <br /> - [OS X](/core/installation/build_osx.md#building-on-os-x) <br /> - [Windows](/core/installation/build_windows.md#building-on-windows) <br /> - [Windows - CLI Tools](/core/installation/windows_cli_tool.md#cli-wallet-on-windows-x64) <br /> - [Use WSL](/core/installation/wsl.md#windows-subsystem-for-linux-wsl) | - [Create a brain Key](/core/accounts/account_registration.md#2-create-a-brain-key-and-derive-a-privatepublic-key-pair) <br/> [Derive a private/public key pair](/core/accounts/account_registration.md#2-create-a-brain-key-and-derive-a-privatepublic-key-pair) <br /> - [Create an Account](/core/accounts/account_registration.md#3-create-an-account) <br /> - [Register an Account ](/core/accounts/account_registration.md#4-register-an-account) <br /> <br />|
+|  |  |  |
+| **Accounts** | **Permissions - UI** | **Voting** |
+|- [Account](/core/accounts#account) <br/> - [Memberships](/core/accounts#memberships-and-groups) <br /> - [Fees](/core/accounts#fees) <br /> - [Vesting Balances](/core/accounts#vesting-balances) <br /> - [Referral Program](/core/accounts/accounts/referral-program.md#referral-program) | - [Owner Permission](/core/accounts/accounts/permissions.md#permissions) <br/> - [Active Permission]() <br /> - [Memo Kay](/core/accounts/accounts/permissions.md#permissions) <br/> - [Cloud Wallet password change](/core/accounts/accounts/permissions.md#how-to-change-cloud-wallet-password) <br/> - [Public Key](/core/accounts/accounts/permissions.md#public-key-and-private-key) <br /> - [Private Key](/core/accounts/accounts/permissions.md#public-key-and-private-key) | - [Witnesses](/core/accounts/accounts/voting-bh.md#witnesses) <br/> - [Committee](/core/accounts/accounts/voting-bh.md#committee-members) <br/> - [Workers](/core/accounts/accounts/voting-bh.md#workers) <br/> - [Proxy](/core/accounts/accounts/voting-bh.md#proxy) <br />  - [Voting by using UI](/core/accounts/accounts/voting-bh.md#voting-for-witness-committee-member-or-worker) <br/>  |  
+|  |  |  |
+| **Nodes**  |  **Node's Configuration** |  **Witness Node (Block-Producer)** |   
+| - [BitShares Client & Full Node](/core/nodes_full_witness/README.md#bitshares-nodes-and-p2p-network) <br />  - [Full Node / Witness Node](/core/nodes_full_witness/README.md#witness-node-and-full-node)  <br/> - [ BitShares Public Full Nodes](/core/nodes_full_witness/README.md#bitshares-public-full-nodes) <br /> - [Launch a full node](/core/nodes_full_witness/full_nodes.md#how-to-launch-the-full-node) <br /><br /> | - [System Requirements](/core/nodes_full_witness/full_nodes.md#system-requirements) <br /> - [`config.ini` Parameters](/core/nodes_full_witness/full_nodes.md#configuration) <br /> <br /> <br /><br /> | - [Roles and Duties](/core/nodes_full_witness/README.md#witness-nodes-roles-and-duties) <br /> - [Requirements](/core/nodes_full_witness/active_witness.md#requirements) <br /> - [Setup witness node](/core/nodes_full_witness/active_witness.md#how-to-become-a-block-producing-witness) <br /> - [Backup Server](/core/nodes_full_witness/active_witness.md#backup-server)  <br /> - [Price Feeds](/core/nodes_full_witness/active_witness.md#price-feeds)|
+|  |  |  |
+| **Cli Wallet**  | **Connecting a Cli Wallet** | **Network and Wallet Configuration**  |
+| - [CLI Client and Wallet](/core/wallet/README.md#bitshares-architecture--cli-client-and-wallet) <br /> - [`wallet.json`](/core/wallet/README.md#cli_wallet) <br/><br/><br/><br/><br/>| - [Installation and build](/core/wallet/cli_wallet.md#1installation-and-build) <br /> - [Execute a cli_wallet](/core/wallet/cli_wallet.md#2-execute-a-cli_wallet) <br/> - [Unlock the cli_wallet](/core/wallet/cli_wallet.md#3unlock-the-cli_wallet) <br /> -  [Gaining Access to Blockchain](/core/wallet/cli_wallet.md#4-gaining-access-to-blockchain) <br /> - [Creating Accounts](/core/wallet/cli_wallet.md#5-creating-accounts) <br/> - [Transferring Funds ](/core/wallet/cli_wallet.md#6-transferring-funds-using-the-cli-wallet) <br/> - [Obtain the private key](/core/wallet/cli_wallet.md#7-obtain-the-private-key) | - [Components](/core/wallet/wallet_network.md##components) <br /> - [General Network and Wallet Configuration](/core/wallet/wallet_network.md#general-network-and-wallet-configuration) <br /> - [Secure Network and Wallet Configuration](/core/wallet/wallet_network.md#secure-network-and-wallet-configuration) <br /> - [A Collection of command lines](/core/wallet/node_wallet_witness.md#a-collection-of-command-lines---node-wallet-and-witness) <br/><br/><br/>  |
+|  |  |  |
+| **Testnet** | **Libraries** |  |
+| - [Public Testnet: Start Guide](/core/testnets/public_testnet_details.md#public-testnet---quick-start-guide) <br /> - [UI Wallet on Public Testnet](/core/testnets/public_testnet_details.md#use-the-ui-wallet-on-public-testnet) <br /> - [CLI on Public Testnet](/core/testnets/public_testnet_details.md#use-the-cli-on-public-testnet) <br/> - [Public Testnet Witness Nodes](/core/testnets/public_testnet.md) <br /> - [Private Testnet set up](/core/testnets/private_testnet.md#how-to-setup-private-testnet) <br /> | - [BitShares-fc: Doxygen Documentation](http://open-explorer.io/doxygen/fc/) <br /> - [BitShares-fc: GitHub](https://github.com/bitshares/bitshares-fc#fc) <br /> - [Python Library for BitShares: GitHub](https://github.com/bitshares/python-bitshares#python-library-for-bitshares) <br /> - [Python-Bitshares 0.1 Documentation](http://docs.pybitshares.com/)   |  |
+
+
+## Help - API
+
+|  |  |  |
+|---|---|---|
+| **BitShares-Core API** | **Available Calls** | **API Access & Restrictions** |
+| - [BitShares-Core Doxygen (Main)](https://bitshares.org/doxygen/index.html) <br/> - [Class Hierarchy order](https://bitshares.org/doxygen/hierarchy.html) <br /><br /> | - [Remote Procedure Calls (RPC)](/core/api/rpc.md#remote-procedure-calls) <br/> - [Websocket Calls & Notifications](/core/api/websocket_calls_notifications.md#websocket-calls-notifications) <br /> - [Objects and IDs](/core/api/object_ids.md#objects-and-ids) <br /> | - [Using the API](/core/api/api_restrictions.md#using-the-api) <br/> - [Accessing Restricted API's ](/core/api/api_restrictions.md#accessing-restricted-apis) <br /> -[`api-access.json`](/core/api/api_restrictions.md#accessing-restricted-apis) <br /> - [Accessing the Named API via HTTP](/core/api/api_restrictions.md#accessing-the-named-api-via-http)  |
+|  |  |  |
+|[**Blockchain APIs**](https://bitshares.org/doxygen/namespacegraphene_1_1app.html)  |[**Wallet API**](https://bitshares.org/doxygen/classgraphene_1_1wallet_1_1wallet__api.html)   | [**Namespaces**](https://bitshares.org/doxygen/namespaces.html)   |
+|- [asset_api](https://bitshares.org/doxygen/classgraphene_1_1app_1_1asset__api.html) <br/> - [block_api](https://bitshares.org/doxygen/classgraphene_1_1app_1_1block__api.html) <br/> - [database api](https://bitshares.org/doxygen/classgraphene_1_1app_1_1database__api.html) <br/> - [history api](https://bitshares.org/doxygen/classgraphene_1_1app_1_1history__api.html) <br/> - [crypto api](https://bitshares.org/doxygen/classgraphene_1_1app_1_1crypto__api.html) <br/> - [login_api](https://bitshares.org/doxygen/classgraphene_1_1app_1_1login__api.html) <br/> - [network broadcast api](https://bitshares.org/doxygen/classgraphene_1_1app_1_1network__broadcast__api.html) <br/> - [network node api](https://bitshares.org/doxygen/classgraphene_1_1app_1_1network__node__api.html) <br/> - [orders_api](https://bitshares.org/doxygen/classgraphene_1_1app_1_1orders__api.html)   <br/>  <br/> | - [General Calls](/core/api/API_references.md#general-calls) <br/> - [Wallet Calls](/core/api/API_references.md#wallet-calls) <br/> - [Account Calls](/core/api/API_references.md#account-calls) <br/> - [Trading Calls](/core/api/API_references.md#trading-calls) <br/> - [Asset Calls](/core/api/API_references.md#asset-calls) <br/> - [Governance](/core/api/API_references.md#governance) <br/> - [Privacy Mode](/core/api/API_references.md#privacy-mode) <br/> - [Blockchain Inspection](/core/api/API_references.md#blockchain-inspection) <br/> - [Transaction Builder](/core/api/API_references.md#transaction-builder) <br/> ([*Grouped links list*](/core/api/API_references.md#wallet-api-calls)) | - [Graphene::App](https://bitshares.org/doxygen/namespacegraphene_1_1app.html) <br/>  - [Graphene::Chain](https://bitshares.org/doxygen/namespacegraphene_1_1chain.html) <br/>  - [Graphene::Wallet](https://bitshares.org/doxygen/namespacegraphene_1_1wallet.html) <br/> - [fc Namespace](https://bitshares.org/doxygen/namespacefc.html)   <br/> <br/>   <br/>  <br/>  <br/> <br/>  <br/>  |
+|  |  |  |
+| **API components** | **API supports**  |  |
+|- [Class - Objects](/core/api/API_references.md#graphenechain-namespace-class---objects) | - [Running a BitShares API Node](/core/nodes_full_witness/running-api-node.md#running-a-bitshares-api-node)    <br /> - [Bitshares Blockchain Explorer and the Wrappers](/forge/api_support/explorer-wrappers.md#bitshares-blockchain-explorer-and-the-apis) <br /> - [ Ptython - Websockets Scripting Support](/forge/program_libraries/websocket_scripting_support.md#websockets-scripting-support) |  |
+
+
+## Help - Tools
+
+|  |  |  |
+|---|---|---|
+| **plugins** |  |  |
+| -[Memory Reduction for Nodes](/forge/plugins/nodes_memory_reduction.md#memory-reduction-for-nodes) - Help to reduce RAM usage <br /> - [ElasticSearch](/forge/plugins/elastic_search_plugin.md#elasticsearch-plugin) - How to store account history data | - [Docker Container](https://github.com/bitshares/bitshares-core/blob/master/README-docker.md#docker-container) - Built-in Dockerfile to support docker containers | - [Monitoring Account Deposits - Python](/forge/sdk_tools/monitoring_python.md#monitoring-account-deposits---python) <br /> - [Monitoring the Balance History - NodeJs](/forge/sdk_tools/monitoring_nodejs.md#monitoring-the-balance-history---nodejs)  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+
+
+
+1. Dev 
+   1. Introduction
+      1. Architecture
+      2. Features
+      3. Governance
+      4. Voting
+   2. How Tos
+      1. Getting Started
+      2. Running a node
+      3. Interacting with a node
+      4. Reference UI
+      5. Testnet
+      6. Private Testnet
+      7. Tutorials
+         1. Specific small Task 1  (e.g. Issuing Assets)
+         2. Specific small Task 2
+         3. etc.
+   3. FAQ/ELI5
+   4. Use Cases
+      1. Running a Gateway
+      2. Exchange Integration
+      3. Accepting payments
+         1. Payment Plugins (e.g. woocommerce)
+   5. References
+      1. JSON/RPC API Reference
+      2. REST Server API reference (TBD. see: https://github.com/bitshares/bitshares-core/issues/870)
+      3. SDK References
+         1. JS SDK
+         2. JAVA SDK
+         3. Python SDK
+         4. etc.
+   6. Software
+      1. Quickstart Docker Images
+      2. BitShares Core
+      3. REST API Server (TBD. see: https://github.com/bitshares/bitshares-core/issues/870)
+      4. Reference UI
+      5. SDKs
+         1. JS SDK
+         2. Python SDK
+         3. JAVA SDK
+         4. etc.
+      6. Other Related Software
