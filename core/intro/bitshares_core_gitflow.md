@@ -29,17 +29,13 @@ For our purposes, the general concept behind gitflow has been extended to allow 
 
 ## Non-Consensus: Development / Release / Bugfix Workflows
 
-<p align="center">
-  <img src="/core/imgs/bts-non-concensus.png" width="830" title="BitShares Core GitFlow">
-</p>
+![BitShares Core GitFlow](../../core/imgs/bts-non-concensus.png)
 
 ***
 
 ## Consensus: Development / Release / Bugfix Workflows
 
-<p align="center">
-  <img src="/core/imgs/bts-concensus.png" width="830" title="BitShares Core GitFlow">
-</p>
+![BitShares Core GitFlow](../../core/imgs/bts-concensus.png)
 
 ***
 
@@ -104,7 +100,7 @@ Presumably the developer who creates the fix will work on his private master bra
 
 ### Emergency Fix Workflows
 
-![BitShares Core GitFlow](https://cedar-book.github.io/core.dev/core/imgs/bts-emergency-fix.png)
+![BitShares Core GitFlow](../../core/imgs/bts-emergency-fix.png)
 
 
 1. The fix is applied to the version of the "release" branch that was merged into "master" when creating the broken release version.

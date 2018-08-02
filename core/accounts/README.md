@@ -130,10 +130,10 @@ You can claim vesting balances by using BitShares User interface.
 Open the side dropdown menu and select **[Vesting Balances]**
 
 
-![Vesting Balances](https://cedar-book.github.io/core.dev/core/imgs/vesting2.png)
+![Vesting Balances](../../core/imgs/vesting2.png)
 
 
-![Vesting Balances](https://cedar-book.github.io/core.dev/core/imgs/vesting1.png)
+![Vesting Balances](../../core/imgs/vesting1.png)
 
 
 ***

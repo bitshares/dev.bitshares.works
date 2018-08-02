@@ -38,14 +38,10 @@ You can claim vesting balances by using BitShares User interface.
 
 Open the side dropdown menu and select **[Vesting Balances]**
 
-<p align="center">
-  <img src="https://github.com/bitshares/how.bitshares.works/blob/master/bbf/images/vesting2.png" width="200" title="Vesting Balances">
-</p>
-			
-<p align="center">
-  <img src="https://github.com/bitshares/how.bitshares.works/blob/master/bbf/images/vesting1.png" width="600" title="Vesting Balances">
-</p>
-		
+
+![BitShares Architecture1 ](../../core/imgs/vesting2.png)
+
+![BitShares Architecture1 ](../../core/imgs/vesting1.png)
 
 ***
 

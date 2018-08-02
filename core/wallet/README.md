@@ -13,7 +13,7 @@
 ### BitShares Architecture – CLI Client and Wallet
 - [CLI Client and Wallet (pdf)](../knowledge_base/shared_files/BitShares_Architecture-V3.pdf) 
 
-![BitShares Architecture1 ](https://cedar-book.github.io/core.dev/core/imgs/structure/bitshares-architecture-clinotop.png)
+![BitShares Architecture1 ](../../core/imgs/structure/bitshares-architecture-clinotop.png)
 
 ### cli_wallet
 

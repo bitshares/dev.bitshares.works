@@ -69,9 +69,7 @@ You can cast your vote or set your proxy by BitShares User interface.
 
 Open the side dropdown menu and select **[Voting]**
 
-<p align="center">
-  <img src="https://github.com/bitshares/how.bitshares.works/blob/master/bbf/images/voting1.png" width="200" title="Voting ">
-</p>
+![Voting](../../core/imgs/voting1.png)
 
 #### Setting a proxy
 
@@ -84,8 +82,7 @@ The picture below shows how to set your trusted proxy:
 
 
 ![voting](https://cedar-book.github.io/core.dev/core/imgs/voting7.png) 
-
-			
+		
 #### Voting for Witness, Committee Member or Worker
 
 If you have not set a proxy, you can cast your own vote for witnesses, committee members or workers.

@@ -41,7 +41,7 @@ Since we have a delayed full node that we can fully trust, we will interface wit
 ## General Network and Wallet Configuration
 For general purpose setups, we recommend a reduced complexity setup that looks as follows.
 
-![General Setup](https://github.com/cedar-book/btsdoc-portal/blob/master/source/general-setup.png)
+![General Setup](../../core/imgs/general-setup.png)
 
 **We will work with the following IPs and open the corresponding RPC ports:**
 
@@ -79,7 +79,7 @@ We open up a _RPC-JSON-HTTP_ port to be able to interface with API requests. The
 ## Secure Network and Wallet Configuration
 For high security, we provide a so called **delayed** full node which accepts the parameter `trusted-node` for an RPC endpoint of a trusted validating node. The trusted-node is a regular full node directly connected to the P2P network that works as a proxy. The delayed node will delay blocks until they are **irreversible**. Depending on the block interval and the number of witnesses, this may lead to a few minutes of delay.
 
-![Secure Setup](https://github.com/cedar-book/btsdoc-portal/blob/master/source/secure-setup.png)
+![Secure Setup](../../core/imgs/secure-setup.png)
 
 **The delayed full node should be in the same _local_ network as the trusted full node is in the same network and has internet access.** Hence we will work with the following IPs and open the corresponding RPC ports:
 

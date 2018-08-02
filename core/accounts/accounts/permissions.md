@@ -33,9 +33,7 @@ Read more about [Multi-Signature](https://github.com/bitshares/dev.bitshares.wor
 
 ## Permissions - in Wallet Settings
 
-<p align="center">
-  <img src="https://github.com/bitshares/how.bitshares.works/blob/master/bbf/images/permissions-active2.png" width="650" title="Permissions">
-</p>
+![Permissions](../../core/imgs/permissions-active2.png)
 
 #### Permissions Tabs
 
@@ -55,9 +53,7 @@ In this section, we will show you how to find your private key.  **Please check 
 
 You can find each **Public key** and **Private key** on the Permissions page.  
 
-<p align="center">
-  <img src="https://github.com/bitshares/how.bitshares.works/blob/master/bbf/images/permissions-active3.png" width="650" title="Permissions Keys">
-</p>
+![Permissions Keys](../../core/imgs/permissions-active3.png)
 
 ***
 
@@ -71,9 +67,7 @@ You can find each **Public key** and **Private key** on the Permissions page.
 - A Private key viewer form opens. You will find a Public Key and a [**SHOW**] button like below.
 - Click the [**SHOW**] button. You will find your Private key under the Public key. 
 
-<p align="center">
-  <img src="https://github.com/bitshares/how.bitshares.works/blob/master/bbf/images/permissions-active4b.png" width="500" title="Permissions popup">
-</p>
+![Permissions popup](../../core/imgs//permissions-active4b.png)
 
 #### Memo – Private keys
 - Go to [**Settings**] - [**Permissions**] - [**Memo key**] tab
@@ -91,9 +85,7 @@ Click **Cloud Wallet Tab**
 
 If you want to change your *Cloud Wallet* password, use this page. You will change your password and your keys during the process. 
 
-<p align="center">
-  <img src="https://github.com/bitshares/how.bitshares.works/blob/master/bbf/images/permissions-cloud2.png" width="650" title="cloud wallet pwd">
-</p>
+![cloud wallet pwd](../../core/imgs/permissions-cloud2.png)
 
 **Steps**
 		
@@ -124,10 +116,7 @@ In this example, we decided to keep old Memo keys.
 - (#5)Click [**SAVE**] 
 - Confirm the Transaction 
 
-
-<p align="center">
-  <img src="https://github.com/bitshares/how.bitshares.works/blob/master/bbf/images/permissions-cloud3.png" width="650" title="cloud wallet pwd">
-</p>
+![cloud wallet pwd ](../../core/imgs/permissions-cloud3.png)
 
 **4. Remove old keys**
 
@@ -143,17 +132,9 @@ You will see the two public keys. The light blue colored key is your new public 
 - (#7)Click [**SAVE**] -- *Do not forget to save!* 
 - Confirm the Transaction
 
+![cloud wallet pwd ](../../core/imgs/permissions-removekey1.png)
 
-<p align="center">
-  <img src="https://github.com/bitshares/how.bitshares.works/blob/master/bbf/images/permissions-removekey1.png" width="650" title="cloud wallet pwd">
-</p>
-
-
-<p align="center">
-  <img src="https://github.com/bitshares/how.bitshares.works/blob/master/bbf/images/permissions-removekey2.png" width="650" title="cloud wallet pwd">
-</p>
-
-
+![cloud wallet pwd](../../core/imgs/permissions-removekey2.png)
 
 
 ***

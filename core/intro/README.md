@@ -13,10 +13,7 @@ Welcome to BitShares! In this section, you will find the overview of BitShares A
 ### BitShares Architecture – GitHub Repositories and Entities
 - [GitHub Repositories and Entities with a guide (pdf)](../knowledge_base/shared_files/BitShares_Architecture-V3.pdf) 
 
-<p align="center">
-  <img src="../imgs/structure/bitshares-architecture-v3notop.png" width="830" title="BitShares Architecture ">
-</p>
-
+![BitShares Architecture](../../core/imgs/bitshares-architecture-v3notop.png)
 
 ### BitShares Core Projects Guide
 - [Contribution Guide](../intro/contribution_guide.md#contribution-guide) [DRAFT]
