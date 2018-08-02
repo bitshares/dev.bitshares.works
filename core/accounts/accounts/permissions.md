@@ -134,7 +134,7 @@ You will see the two public keys. The light blue colored key is your new public 
 
 ![cloud wallet pwd ](../core/imgs/permissions-removekey1.png)
 
-![cloud wallet pwd](../core/imgs/permissions-removekey2.png)
+![cloud wallet pwd](../../../core/imgs/permissions-removekey2.png)
 
 
 ***
