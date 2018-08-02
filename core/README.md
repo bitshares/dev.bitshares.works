@@ -31,5 +31,4 @@ Documentation related to BitShares Core internals and development fundamentals.
 ### [Index - Help](../core/help/index.md#help)
 - Index of All Contents and Items 
 
-***
- 
+
