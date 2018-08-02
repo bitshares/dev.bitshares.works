@@ -19,7 +19,7 @@ This page “How To”  intended to collect more steps included information.
 
 ### API
 - [How an Exchange can integrate their services to the BitShares UI Wallet - Gateway Integration Requirements](https://github.com/bitshares/bitshares-ui/wiki/Gateway-Integration-Requirements) : from BitShares UI wiki
-- [How to enable RPC Logging](../api/api_support.md#api-support)
+- [How to enable RPC Logging](../../core/program_libraries/api_logging.md#api-logging)
 
 ### Assets
 - [How to Create a new UIA](../tutorials/assets_uia.md#how-to-create-a-new-uia)
