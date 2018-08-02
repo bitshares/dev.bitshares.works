@@ -33,7 +33,7 @@ Read more about [Multi-Signature](https://github.com/bitshares/dev.bitshares.wor
 
 ## Permissions - in Wallet Settings
 
-![Permissions](../../core/imgs/permissions-active2.png)
+![Permissions](../../../core/imgs/permissions-active2.png)
 
 #### Permissions Tabs
 
@@ -53,7 +53,7 @@ In this section, we will show you how to find your private key.  **Please check 
 
 You can find each **Public key** and **Private key** on the Permissions page.  
 
-![Permissions Keys](../../core/imgs/permissions-active3.png)
+![Permissions Keys](../../../core/imgs/permissions-active3.png)
 
 ***
 
@@ -67,7 +67,7 @@ You can find each **Public key** and **Private key** on the Permissions page.
 - A Private key viewer form opens. You will find a Public Key and a [**SHOW**] button like below.
 - Click the [**SHOW**] button. You will find your Private key under the Public key. 
 
-![Permissions popup](../../core/imgs//permissions-active4b.png)
+![Permissions popup](../../../core/imgs//permissions-active4b.png)
 
 #### Memo – Private keys
 - Go to [**Settings**] - [**Permissions**] - [**Memo key**] tab
@@ -85,7 +85,7 @@ Click **Cloud Wallet Tab**
 
 If you want to change your *Cloud Wallet* password, use this page. You will change your password and your keys during the process. 
 
-![cloud wallet pwd](../../core/imgs/permissions-cloud2.png)
+![cloud wallet pwd](../../../core/imgs/permissions-cloud2.png)
 
 **Steps**
 		
@@ -116,7 +116,7 @@ In this example, we decided to keep old Memo keys.
 - (#5)Click [**SAVE**] 
 - Confirm the Transaction 
 
-![cloud wallet pwd ](../core/imgs/permissions-cloud3.png)
+![cloud wallet pwd ](../../../core/imgs/permissions-cloud3.png)
 
 **4. Remove old keys**
 
@@ -132,7 +132,7 @@ You will see the two public keys. The light blue colored key is your new public 
 - (#7)Click [**SAVE**] -- *Do not forget to save!* 
 - Confirm the Transaction
 
-![cloud wallet pwd ](../core/imgs/permissions-removekey1.png)
+![cloud wallet pwd ](../../../core/imgs/permissions-removekey1.png)
 
 ![cloud wallet pwd](../../../core/imgs/permissions-removekey2.png)
 
