@@ -2,9 +2,9 @@
 
 #### Table of Contents:
 
-- [Ubuntu 16.04 LTS (64-bit)](/core/installation/build_ubuntu.md#ubuntu-1604-lts-64-bit)
-- [Ubuntu 14.04 LTS (64-bit)](/core/installation/build_ubuntu.md#ubuntu-1404-lts-64-bit)
-- [Available Versions](/core/installation/build_ubuntu.md#available-versions)
+- [Ubuntu 16.04 LTS (64-bit)](#ubuntu-1604-lts-64-bit)
+- [Ubuntu 14.04 LTS (64-bit)](#ubuntu-1404-lts-64-bit)
+- [Available Versions](#available-versions)
 
 ***
 

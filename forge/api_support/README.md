@@ -1,7 +1,7 @@
 ## API Support & References
 
 
-#### [Bitshares Blockchain Explorer and the Wrappers](/forge/api_support/explorer-wrappers.md#bitshares-blockchain-explorer-and-the-apis)
+#### [Bitshares Blockchain Explorer and the Wrappers](../api_support/explorer-wrappers.md#bitshares-blockchain-explorer-and-the-apis)
 * For Mainnet and Tesenet: ES Wrapper, Node Wrapper, and Tradingview UDF Wrapper for Bitshares
 
 ***

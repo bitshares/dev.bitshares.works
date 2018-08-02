@@ -262,7 +262,7 @@ After the compilation is complete, an executable file is generated:
    It can also be solved by static linking or by installing redistributable. This article does not elaborate.
 
 * If you use `cli_wallet.exe` to connect to an API server that uses wss, you need to specify the PEM file that contains the server root certificate.
-  - Refer this page - [CLI-Wallet on Windows (x64)](/core/installation/windows_cli_tool.md#cli-wallet-on-windows-x64)
+  - Refer this page - [CLI-Wallet on Windows (x64)](../installation/windows_cli_tool.md#cli-wallet-on-windows-x64)
        
 ***
 

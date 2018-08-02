@@ -2,9 +2,9 @@
 
 ### Table of Contents:
 
-- [User Whitelists](core/knowledge_base/white_black_lists.md#user-whitelists)
-- [Asset User Whitelists](/core/knowledge_base/white_black_lists.md#asset-user-whitelists)
-- [Asset Market Whitelists](/core/knowledge_base/white_black_lists.md#asset-market-whitelists)
+- [User Whitelists](.../knowledge_base/white_black_lists.md#user-whitelists)
+- [Asset User Whitelists](../knowledge_base/white_black_lists.md#asset-user-whitelists)
+- [Asset Market Whitelists](../knowledge_base/white_black_lists.md#asset-market-whitelists)
 
 ***
 

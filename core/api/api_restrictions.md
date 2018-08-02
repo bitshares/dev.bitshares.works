@@ -2,13 +2,13 @@
 
 #### Table of Contents:
 
-- [Using the API](/core/api/api_restrictions.md#using-the-api)
+- [Using the API](../api/api_restrictions.md#using-the-api)
   - Examples
-- [Accessing Restricted API's ](/core/api/api_restrictions.md#accessing-restricted-apis)
+- [Accessing Restricted API's ](../api/api_restrictions.md#accessing-restricted-apis)
    - Example 
-- [Accessing the Named API via HTTP](/core/api/api_restrictions.md#accessing-the-named-api-via-http)
+- [Accessing the Named API via HTTP](../api/api_restrictions.md#accessing-the-named-api-via-http)
    - Example    
-- [Login In](/core/api/api_restrictions.md#login-in)
+- [Login In](../api/api_restrictions.md#login-in)
    - *class* graphene::app::login_api
    
 ***
@@ -48,7 +48,7 @@ Since restricted APIs require login, they are **only** accessible over the webso
 
 ## Accessing Restricted API's 
 
-You can restrict API’s to particular users by specifying an `api-access` file in [`config.ini`](/core/nodes_full_witness/full_nodes.md#configuration) or by using the `--api-access /full/path/to/api-access.json` startup node command. 
+You can restrict API’s to particular users by specifying an `api-access` file in [`config.ini`](../nodes_full_witness/full_nodes.md#configuration) or by using the `--api-access /full/path/to/api-access.json` startup node command. 
 
 #### Example: 
 `api-access.json` file which allows user `bytemaster` with password `supersecret` to access *four different API’s*, while allowing any other user to access the *three public API’s* necessary to use the wallet::

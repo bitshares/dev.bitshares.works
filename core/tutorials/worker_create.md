@@ -1,11 +1,11 @@
 ## How to Create a Worker
 
 #### Contents:
-- [How to create a Worker](/source/tutorials/worker_create.md#how-to-create-a-worker-1)
-- [How to see Proposals on the Chain](/source/tutorials/worker_create.md#how-to-see-proposals-on-the-chain)
-- [How to Vote for a Worker](/source/tutorials/worker_create.md#how-to-vote-for-a-worker)
-- [How Workers Get Paid](/source/tutorials/worker_create.md#how-workers-get-paid)
-- [Technical Details](/source/tutorials/worker_create.md#technical-details)
+- [How to create a Worker](#how-to-create-a-worker-1)
+- [How to see Proposals on the Chain](#how-to-see-proposals-on-the-chain)
+- [How to Vote for a Worker](#how-to-vote-for-a-worker)
+- [How Workers Get Paid](#how-workers-get-paid)
+- [Technical Details](#technical-details)
 
 ***
 

@@ -126,7 +126,7 @@ Install 64-bit Ubuntu 16.04 LTS (it will not work on 32-bit Ubuntu), or 64-bit U
 
 The compiled Windows executable is available for download on Github, at https://github.com/bitshares/bitshares-core/releases/latest ,
 
-The file is `BitShares-Core-2.0.xxxxxx-x64-cli-tools.zip` and it can be unzipped. It contains three exe files and two dll files. Here is the [installation guide](/core/installation/windows_cli_tool.md#cli-wallet-on-windows-x64)
+The file is `BitShares-Core-2.0.xxxxxx-x64-cli-tools.zip` and it can be unzipped. It contains three exe files and two dll files. Here is the [installation guide](../installation/windows_cli_tool.md#cli-wallet-on-windows-x64)
 
 
 #### 3.3 Linux
@@ -205,7 +205,7 @@ You can use `./witness_node --help` to see the command parameters.
 
 Then press `Ctrl+C` to end it.
 
-This will generate a data directory in the current directory, `witness_node_data_dir`, which contains the blockchain directory for the data store and a [`config.ini`](/core/nodes_full_witness/full_nodes.md#configuration) configuration file.
+This will generate a data directory in the current directory, `witness_node_data_dir`, which contains the blockchain directory for the data store and a [`config.ini`](../nodes_full_witness/full_nodes.md#configuration) configuration file.
 
 For exchanges, some modifications to the `config.ini` configuration file are recommended.
 

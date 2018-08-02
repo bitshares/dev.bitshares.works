@@ -50,7 +50,7 @@ The trusted full node is your entry point to the BitShares P2P network. It will 
 
 > **Note:** Unless the seed nodes are encoded into the binary, you may need to add a known seed node with ``-s xxx.xxx.xxx.xxx:yyy`` in order to initially connect to the P2P network. (See [Release Page](https://github.com/bitshares/bitshares-core/releases))
 
-> **Note:** To start a node with reduced RAM please see [Memory reduction for nodes](/forge/plugins/nodes_memory_reduction.md#memory-reduction-for-nodes).
+> **Note:** To start a node with reduced RAM please see [Memory reduction for nodes](../plugins/nodes_memory_reduction.md#memory-reduction-for-nodes).
 
 ### Delayed Node
 

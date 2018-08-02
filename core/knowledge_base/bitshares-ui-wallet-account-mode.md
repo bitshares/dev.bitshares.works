@@ -3,16 +3,16 @@
 This document purpose: To explain BitShares UI wallet Client and wallet types and answer some of frequently asked questions about Wallet and Account.  And also, show how to create a Cloud wallet and a Local wallet. 
 
 #### Contents:
-- [BitShares Client](/core/knowledge_base/bitshares-ui-wallet-account-mode.md#bitshares-client)
+- [BitShares Client](../knowledge_base/bitshares-ui-wallet-account-mode.md#bitshares-client)
   - Lite Client
   - Web Client
-- [BitShares Wallet Types and Login](/core/knowledge_base/bitshares-ui-wallet-account-mode.md#bitshares-wallet-types-and-login)
+- [BitShares Wallet Types and Login](../knowledge_base/bitshares-ui-wallet-account-mode.md#bitshares-wallet-types-and-login)
   - Cloud Wallet 
   - Local Wallet
-- [Frequently asked Questions](/core/knowledge_base/bitshares-ui-wallet-account-mode.md#frequently-asked-questions)
-- [Light wallet or Web wallet?](/core/knowledge_base/bitshares-ui-wallet-account-mode.md#light-wallet-or-web-wallet)
-- [How to Create an Wallet](/core/knowledge_base/bitshares-ui-wallet-account-mode.md#how-to-create-an-wallet) (Cloud wallet) 
-- [How to Create an Wallet](/core/knowledge_base/bitshares-ui-wallet-account-mode.md#how-to-create-an-wallet---advanced) - Advanced (Local wallet)
+- [Frequently asked Questions](../knowledge_base/bitshares-ui-wallet-account-mode.md#frequently-asked-questions)
+- [Light wallet or Web wallet?](../knowledge_base/bitshares-ui-wallet-account-mode.md#light-wallet-or-web-wallet)
+- [How to Create an Wallet](../knowledge_base/bitshares-ui-wallet-account-mode.md#how-to-create-an-wallet) (Cloud wallet) 
+- [How to Create an Wallet](../knowledge_base/bitshares-ui-wallet-account-mode.md#how-to-create-an-wallet---advanced) - Advanced (Local wallet)
 
 ***
 

@@ -2,8 +2,8 @@
 
 #### Contents:
 
-- [Call Format: RPC](/core/api/rpc.md#call-format-rpc)
-- [Remarks](/core/api/rpc.md#remarks)
+- [Call Format: RPC](../api/rpc.md#call-format-rpc)
+- [Remarks](../api/rpc.md#remarks)
 
 ***
 

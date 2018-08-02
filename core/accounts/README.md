@@ -2,25 +2,25 @@
 ## BitShares Accounts
 In BitShares, you can create an account relatively easily by using the BitShares UI wallet.  The account comes with the Private/public keys. You should keep the information safe. Also, BitShares account gives you some benefits (i.e., Lifetime Membership (LTM) and Referral Program) and important roles (i.e., voting).  We recommend you to read through BitShares Accounts information to learn more.
 
-- [Account](/core/accounts#account)
-- [Memberships and Groups](/core/accounts#memberships-and-groups)
-- [Fees](/core/accounts#fees)
-- [Vesting Balances](/core/accounts#vesting-balances)
-- [Permissions](/core/accounts/accounts/permissions.md#permissions)
-- [Referral Program](/core/accounts/accounts/referral-program.md#referral-program)
-- [Voting](/core/accounts/accounts/voting-bh.md#voting)
+- [Account](../accounts#account)
+- [Memberships and Groups](../accounts#memberships-and-groups)
+- [Fees](../accounts#fees)
+- [Vesting Balances](../accounts#vesting-balances)
+- [Permissions](../accounts/accounts/permissions.md#permissions)
+- [Referral Program](../accounts/accounts/referral-program.md#referral-program)
+- [Voting](../accounts/accounts/voting-bh.md#voting)
   - Voting for… Witnesses, Committee, or/and Workers
- 
-### [Account Registration](/core/accounts/account_registration.md#account-registration)
-   - [Create a brain Key and derive a private/public key pair](/core/accounts/account_registration.md#2-create-a-brain-key-and-derive-a-privatepublic-key-pair)
-   - [Create an Account](/core/accounts/account_registration.md#3-create-an-account)
-   - [Register an Account](/core/accounts/account_registration.md#4-register-an-account)
+  
+### [Account Registration](../accounts/account_registration.md#account-registration)
+   - [Create a brain Key and derive a private/public key pair](../accounts/account_registration.md#2-create-a-brain-key-and-derive-a-privatepublic-key-pair)
+   - [Create an Account](../accounts/account_registration.md#3-create-an-account)
+   - [Register an Account](../accounts/account_registration.md#4-register-an-account)
 
 
 ### FAQ - Accounts
 - [How to change a password if using a Cloud Wallet](https://github.com/bitshares/bitshares-ui/wiki/Cloud-Wallet-Login-and-changing-password) : from BitShares UI wiki
-- [more...](/core/tutorials/FAQ.md#accounts)
-- Knowledge Base: [Multi-Signature](/core/knowledge_base/multi-signature.md#multi-signature)  
+- [more...](../tutorials/FAQ.md#accounts)
+- Knowledge Base: [Multi-Signature](../knowledge_base/multi-signature.md#multi-signature)  
 
 ****
 
@@ -28,7 +28,7 @@ In BitShares, you can create an account relatively easily by using the BitShares
 
 In BitShares, you can create an account relatively easily by using the BitShares UI wallet. When you create a BitShares Account from the UI wallet, it will ask you to provide a unique Account name and a password. Although you should create a strong password, you can create readable and memorable BitShares account name. You do not need to write down a long random number as your account name. The BitShares account name would be helpful to identify other BitShares accounts.
 
-It's important to understand that **only** you know your password, and no one can recover it.  The account information is registered to the blockchain with private/public keys of the account. Only the account creator knows the password and finds out the private keys.  In BitShares, there are three types of keys (i.e., active, owner, and memo key) which you can find them in the UI Wallet Permissions page.  Read the [Permissions](/core/accounts/accounts/permissions.md#permissions) section to learn about each key roles and to get more information.     
+It's important to understand that **only** you know your password, and no one can recover it.  The account information is registered to the blockchain with private/public keys of the account. Only the account creator knows the password and finds out the private keys.  In BitShares, there are three types of keys (i.e., active, owner, and memo key) which you can find them in the UI Wallet Permissions page.  Read the [Permissions](../accounts/accounts/permissions.md#permissions) section to learn about each key roles and to get more information.     
 
 ### BitShares UI Wallet
 
@@ -44,7 +44,6 @@ When you create a BitShares account, BitShares 2.0 registers the account name to
 The identifier comes with many advantages: Besides improved scalability, we have separated the identity from the transaction authorizing signature. In practice, owning an account name is autonomous from being able to spend its funds. Furthermore, both rights (we call them permissions) can split among an arbitrary complex relation of people (we call them authorities) using weights and required thresholds.
 
 To separating authorities from identities, BitShares 2.0 can be much faster in processing delay while having much smaller transaction sizes. All participants are forced to have a named account on the blockchain. Also, most transactions are tied to the account name and can be linked to individuals (this includes transfers, trades, shorts, etc. but not stealthed transactions).
-
 
 ***
 ## Memberships and Groups
@@ -130,13 +129,11 @@ You can claim vesting balances by using BitShares User interface.
 
 Open the side dropdown menu and select **[Vesting Balances]**
 
-<p align="center">
-  <img src="https://github.com/bitshares/how.bitshares.works/blob/master/bbf/images/vesting2.png" width="200" title="Vesting Balances">
-</p>
-            
-<p align="center">
-  <img src="https://github.com/bitshares/how.bitshares.works/blob/master/bbf/images/vesting1.png" width="600" title="Vesting Balances">
-</p>
-        
+
+![Vesting Balances](https://cedar-book.github.io/core.dev/core/imgs/vesting2.png)
+
+
+![Vesting Balances](https://cedar-book.github.io/core.dev/core/imgs/vesting1.png)
+
 
 ***

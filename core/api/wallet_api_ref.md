@@ -2,15 +2,15 @@
 
 #### Table of Contents:
 
-- [General Calls](/core/api/wallet_api_ref.md#general-calls)
-- [Wallet Calls](/core/api/wallet_api_ref.md#wallet-calls)
-- [Account Calls](/core/api/wallet_api_ref.md#account-calls)
-- [Trading Calls](/core/api/wallet_api_ref.md#trading-calls)
-- [Asset Calls](/core/api/wallet_api_ref.md#asset-calls)
-- [Governance](/core/api/wallet_api_ref.md#governance)
-- [Privacy Mode](/core/api/wallet_api_ref.md#privacy-mode)
-- [Blockchain Inspection](/core/api/wallet_api_ref.md#blockchain-inspection)
-- [Transaction Builder](/core/api/wallet_api_ref.md#transaction-builder)
+- [General Calls](../api/wallet_api_ref.md#general-calls)
+- [Wallet Calls](../api/wallet_api_ref.md#wallet-calls)
+- [Account Calls](../api/wallet_api_ref.md#account-calls)
+- [Trading Calls](../api/wallet_api_ref.md#trading-calls)
+- [Asset Calls](../api/wallet_api_ref.md#asset-calls)
+- [Governance](../api/wallet_api_ref.md#governance)
+- [Privacy Mode](../api/wallet_api_ref.md#privacy-mode)
+- [Blockchain Inspection](../api/wallet_api_ref.md#blockchain-inspection)
+- [Transaction Builder](../api/wallet_api_ref.md#transaction-builder)
 
 ***
 

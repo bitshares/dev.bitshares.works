@@ -1,10 +1,10 @@
 ## Websocket Calls Notifications
 
 #### Contents:
-* [Call Format: Websocket](/core/api/websocket_calls_notifications.md#call-format-websocket)
-* [API Access Procedure](/core/api/websocket_calls_notifications.md#api-access-procedure) - Requesting Available APIs Access
+* [Call Format: Websocket](../api/websocket_calls_notifications.md#call-format-websocket)
+* [API Access Procedure](../api/websocket_calls_notifications.md#api-access-procedure) - Requesting Available APIs Access
 * [Database Notifications](#database-notifications) - Available **Websocket Subscriptions**
-* [Example](/core/api/websocket_calls_notifications.md#example---get-a-global-subscription-callback-and-id) - Get a global subscription callback and id
+* [Example](../api/websocket_calls_notifications.md#example---get-a-global-subscription-callback-and-id) - Get a global subscription callback and id
 
 *** 
 
@@ -83,7 +83,7 @@ a detailed description:
 
 ## API Access Procedure
  
-If you have not read [API Access and Restrictions](/core/api/api_restrictions.md#api-access-and-restrictions), please check this information first.
+If you have not read [API Access and Restrictions](../api/api_restrictions.md#api-access-and-restrictions), please check this information first.
 
 The Graphene full node offers a wide range of APIs that can be accessed via
 websockets. The procedure works as follows:

@@ -7,29 +7,29 @@ The document explains motivations, technical challenges and sample use of a new 
 ***
 
 #### Table of Contents:
-- [Motivation](/forge/plugins/elastic_search_plugin.md#motivation)
-- [The Database Selection](/forge/plugins/elastic_search_plugin.md#the-database-selection)
-- [Technical](/forge/plugins/elastic_search_plugin.md#technical)
+- [Motivation](../plugins/elastic_search_plugin.md#motivation)
+- [The Database Selection](../plugins/elastic_search_plugin.md#the-database-selection)
+- [Technical](../plugins/elastic_search_plugin.md#technical)
   - Replay and `_bulk`
   - Accessing data inside operations 
 - Hardware needed
-- [Installation](/forge/plugins/elastic_search_plugin.md#installation)
+- [Installation](../plugins/elastic_search_plugin.md#installation)
   - Install java
   - Install ES
   - Install curl
-- [Running](/forge/plugins/elastic_search_plugin.md#running)
+- [Running](../plugins/elastic_search_plugin.md#running)
   - Arguments
   - Starting Node
   - Checking if it is working
-  - [Indexes](/forge/plugins/elastic_search_plugin.md#indexes)
+  - [Indexes](../plugins/elastic_search_plugin.md#indexes)
 - [Pre-define settings](#pre-define-settings)
-- [Usage](/forge/plugins/elastic_search_plugin.md#usage)
+- [Usage](../plugins/elastic_search_plugin.md#usage)
   - Get operations by account, time and operation type
   - Filter based on block number or block range
   - Get operations by transaction hash
-- [Going Forward](/forge/plugins/elastic_search_plugin.md#going-forward)
-- [Note on Duplicates](/forge/plugins/elastic_search_plugin.md#note-on-duplicates)
-- [Wrapper](/forge/plugins/elastic_search_plugin.md#wrapper)
+- [Going Forward](../plugins/elastic_search_plugin.md#going-forward)
+- [Note on Duplicates](../plugins/elastic_search_plugin.md#note-on-duplicates)
+- [Wrapper](../plugins/elastic_search_plugin.md#wrapper)
 
 ***
 

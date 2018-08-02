@@ -1,6 +1,6 @@
 ### Contents:
 
-- [How to Create a MPA](/source/tutorials/assets_mpa.md#how-to-create-a-mpa)
+- [How to Create a MPA](#how-to-create-a-mpa)
 
 ***
 

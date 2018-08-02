@@ -1,9 +1,9 @@
 ## Public Testnet - Quick Start Guide
 
 #### Table of Contents:
-- [Use UI Wallet on Public Testnet](/core/testnets/public_testnet_details.md#use-the-ui-wallet-on-public-testnet)
-- [Use CLI on Public Testnet](/core/testnets/public_testnet_details.md#use-the-cli-on-public-testnet)
-- [Other References](/core/testnets/public_testnet_details.md#other-references)
+- [Use UI Wallet on Public Testnet](../testnets/public_testnet_details.md#use-the-ui-wallet-on-public-testnet)
+- [Use CLI on Public Testnet](../testnets/public_testnet_details.md#use-the-cli-on-public-testnet)
+- [Other References](../testnets/public_testnet_details.md#other-references)
 
 ***
 
@@ -29,7 +29,7 @@ BitShares has Public Testnet for UI Web Wallet and CLI. The following is the ins
 
 In this section, we show you how to set up on **Ubuntu 16.04 LTS(64 bit)** environment as an example.
 
-More options to see:[Installation Guide](/core/installation/README.md#installation)
+More options to see:[Installation Guide](../installation/README.md#installation)
 
 1. Install Dependencies
 

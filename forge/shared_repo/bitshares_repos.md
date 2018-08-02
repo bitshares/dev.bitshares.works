@@ -1,6 +1,6 @@
 ## BitShares GitHub Code | Issues List
 
-[BitShares Repos](/forge/shared_repo/bitshares_repos.md#bitshares-github-code--issues-list) | [Dev-Repos by name](/forge/shared_repo/repo_byname_list.md#developers-github-repositories)  | [Dev-Repos by topic](/forge/shared_repo/repo_bytopic_list.md#developers-github-repositories) 
+[BitShares Repos](../shared_repo/bitshares_repos.md#bitshares-github-code--issues-list) | [Dev-Repos by name](../shared_repo/repo_byname_list.md#developers-github-repositories)  | [Dev-Repos by topic](../shared_repo/repo_bytopic_list.md#developers-github-repositories) 
 
 ***
 

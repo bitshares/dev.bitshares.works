@@ -1,22 +1,22 @@
-# Account Registration
+## Account Registration
 
 This section is for developers who are interested in creating and registering BitShares account from commands. Also, we will talk about a brain key and how a private/public key pair is built.
 
 #### Table of Contents: 
 
-1. [Prerequisites](/core/accounts/account_registration.md#1-prerequisites)
-2. [Create a brain Key and derive a private/public key pair](/core/accounts/account_registration.md#2-create-a-brain-key-and-derive-a-privatepublic-key-pair)
-3. [Create an Account](/core/accounts/account_registration.md#3-create-an-account)
+1. [Prerequisites](../accounts/account_registration.md#1-prerequisites)
+2. [Create a brain Key and derive a private/public key pair](../accounts/account_registration.md#2-create-a-brain-key-and-derive-a-privatepublic-key-pair)
+3. [Create an Account](../accounts/account_registration.md#3-create-an-account)
    - If you want to create a new account and registers it on the blockchain.
-4. [Register an Account ](/core/accounts/account_registration.md#4-register-an-account)
+4. [Register an Account ](../accounts/account_registration.md#4-register-an-account)
    - If you want to register a third party’s account on the blockckain.
 
 *******
 
 ## 1. Prerequisites
 
-   - CLI Wallet _commond window_ ready at this point to type in a command.  
-   - .... server and connection Witness_node (Full node) 
+   - Connecting to witness_node (Full node or API Node)  
+   - CLI Wallet _commond window_ ready to use.  
 
 ## 2. Create a brain Key and derive a private/public key pair
 

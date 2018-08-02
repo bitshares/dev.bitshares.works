@@ -1,9 +1,9 @@
 ## How to Propose a Transaction
 
 ### Contents:
-- [Proposing a Transaction](/source/tutorials/trn_propose_transaction.md#proposing-a-transaction-1)
-- [Approving a Proposal](/source/tutorials/trn_propose_transaction.md#approving-a-proposal)
-- [Example: Setting Smartcoin Parameter](/source/tutorials/trn_propose_transaction.md#example-setting-smartcoin-parameter)
+- [Proposing a Transaction](#proposing-a-transaction-1)
+- [Approving a Proposal](#approving-a-proposal)
+- [Example: Setting Smartcoin Parameter](#example-setting-smartcoin-parameter)
 
 ***
 
@@ -13,7 +13,7 @@ Proposed transactions can be used everywhere multiple parties have to agree for 
 
 If is recommended that the reader first reads through the following tutorial:
 
-- [Construct Any Transaction - Manually](/source/tutorials/trn_construct_transaction.md#construct-any-transaction---manually)
+- [Construct Any Transaction - Manually](#construct-any-transaction---manually)
 
 ***
 

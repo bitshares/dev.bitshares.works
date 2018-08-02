@@ -1,16 +1,16 @@
 ## Objects and IDs
 
 #### Table of Contents:
-- [Objects Format](/core/api/object_ids.md#bitshares-objects-format)
-- [List of Commonly used Objects](/core/api/object_ids.md#list-of-commonly-used-objects)
-   - [Examples](/core/api/object_ids.md#examples)
-   - [Examples - Accounts](/core/api/object_ids.md#examples---accounts)
-   - [Example Call and a result: account object (1.2.x)](/core/api/object_ids.md#example-call-and-a-result-account-object-12x)
-   - [Example Call and a result: asset object (1.3.x) ](/core/api/object_ids.md#example-call-and-a-result-asset-object-13x)
-- [Defenitions](/core/api/object_ids.md#definitions)
-   - [Protocol Space (1.x.x)](/core/api/object_ids.md#protocol-space-1xx)
+- [Objects Format](../api/object_ids.md#bitshares-objects-format)
+- [List of Commonly used Objects](../api/object_ids.md#list-of-commonly-used-objects)
+   - [Examples](../api/object_ids.md#examples)
+   - [Examples - Accounts](../api/object_ids.md#examples---accounts)
+   - [Example Call and a result: account object (1.2.x)](../api/object_ids.md#example-call-and-a-result-account-object-12x)
+   - [Example Call and a result: asset object (1.3.x) ](../api/object_ids.md#example-call-and-a-result-asset-object-13x)
+- [Defenitions](../api/object_ids.md#definitions)
+   - [Protocol Space (1.x.x)](../api/object_ids.md#protocol-space-1xx)
       - enum graphene::chain::object_type
-   - [Implementattion Space (2.x.x)](/core/api/object_ids.md#implementattion-space-2xx)
+   - [Implementattion Space (2.x.x)](../api/object_ids.md#implementattion-space-2xx)
       - enum graphene::chain::object_type
 
 ***

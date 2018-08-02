@@ -4,7 +4,7 @@
 
 #### Issue:
 
-Testing setup [Private Testnet steps](https://github.com/bitshares/dev.bitshares.works/blob/master/core/testnets/private_testnet.md#how-to-setup-private-testnet)
+Testing setup [Private Testnet steps](../testnets/private_testnet.md#how-to-setup-private-testnet)
 
 (step 3) When I run `./witness_node --create-genesis-json=my-genesis.json`, creating a `my-genesis.json` and also `witness_node_data_dir` folder.
 
@@ -16,7 +16,7 @@ Testing setup [Private Testnet steps](https://github.com/bitshares/dev.bitshares
 ***
 
 #### Research:
-I checked a witness_node executable main() for a part of another issue and created a [coding flowchart](https://github.com/bitshares/dev.bitshares.works/blob/master/core/knowledge_base/shared_files/witness_node_ex-codeflows.pdf) (in page 8) to view the flow.
+I checked a witness_node executable main() for a part of another issue and created a [coding flowchart](../knowledge_base/shared_files/witness_node_ex-codeflows.pdf) (in page 8) to view the flow.
 
 #### Findings:
 You may or may not have own data directory that does not matter. If --data-dir is not set in a command line and when witness_node starts (and not find a config.ini), a witness_node_data_dir will be created (if not exists). So, if you create own data directory and forget to set the --data-dir when you start a witness_node, you get new default data directory and config.ini to start the witness_node.
@@ -28,7 +28,7 @@ in the documentation clearly mention (warn) to users; you have to define a data 
 
 The warnings were added...
 
-In [Private Testnets](/core/testnets#private-testnet)
+In [Private Testnets](../testnets#private-testnet)
 
 ## 3. Creating a Genesis File for a Private Testnet
 

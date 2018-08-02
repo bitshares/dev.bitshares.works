@@ -1,9 +1,9 @@
 ## Running a BitShares API Node
 
 #### Table of Contents:
-- [Introduction](/source/apis/running-api-node.md#introduction)
-- [Running a Basic API Node](/source/apis/running-api-node.md#running-a-basic-api-node)
-- [Running a Production API Node](/source/apis/running-api-node.md#running-a-production-api-node)
+- [Introduction](#introduction)
+- [Running a Basic API Node](#running-a-basic-api-node)
+- [Running a Production API Node](#running-a-production-api-node)
     - GNU screen
     - Docker
 
@@ -62,7 +62,7 @@ If you see this, the blockchain is synchronizing ok. Complete the sync is a long
 
 ### GNU screen
 
-This is the easier way, start a screen terminal and run your node on it. See: [Manage a running Node in the background by using GNU screen](/core/tutorials/manage_node_gun_screen.md#manage-a-running-node-in-the-background-by-using-gnu-screen)
+This is the easier way, start a screen terminal and run your node on it. See: [Manage a running Node in the background by using GNU screen](../tutorials/manage_node_gun_screen.md#manage-a-running-node-in-the-background-by-using-gnu-screen)
 
 This works but it is not the most recommended, in a reboot the node admin will need to run everything again.
 

@@ -1,10 +1,10 @@
 ## Committee - How to
 
 ### Contents:
-- [How to Create a new Committee Member](/source/tutorials/committee_howto.md#how-to-creating-a-new-committee-member)
-- [How to Propose Committee Actions](/source/tutorials/committee_howto.md#how-to-propose-committee-actions)
-- [How to Approve/Disapprove a Committee Proposal](/source/tutorials/committee_howto.md#how-to-approvedisapprove-a-committee-proposal)
-- [How Committee Proposes a Change in Fee](/source/tutorials/committee_howto.md#how-committee-proposes-a-change-in-fee)
+- [How to Create a new Committee Member](#how-to-creating-a-new-committee-member)
+- [How to Propose Committee Actions](#how-to-propose-committee-actions)
+- [How to Approve/Disapprove a Committee Proposal](#how-to-approvedisapprove-a-committee-proposal)
+- [How Committee Proposes a Change in Fee](#how-committee-proposes-a-change-in-fee)
 
 ***
 

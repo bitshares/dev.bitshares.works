@@ -1,7 +1,7 @@
 ### Contents:
  
-- [How to create a new UIA](/source/tutorials/assets_uia.md#how-to-create-a-new-uia)
-- [How to Update/Change an existing UIA](/source/tutorials/assets_uia.md#how-to-updatechange-an-existing-uia)
+- [How to create a new UIA](#how-to-create-a-new-uia)
+- [How to Update/Change an existing UIA](#how-to-updatechange-an-existing-uia)
 
 ***
 
@@ -12,7 +12,7 @@
 
     >>> create_asset <issuer> <symbol> <precision> <options> {} false
 
-> note: A `false` at the end allows to check and verify the constructed transaction and does **not** broadcast it.  The           empty `{}` could be used to construct a [Market Pegged Assets](/source/tutorials/assets_mpa.md#mpa-specific-settings) and
+> note: A `false` at the end allows to check and verify the constructed transaction and does **not** broadcast it.  The           empty `{}` could be used to construct a [Market Pegged Assets](../tutorials/assets_mpa.md#mpa-specific-settings) and
           is subject of another tutorial.
 
 ### Parameters

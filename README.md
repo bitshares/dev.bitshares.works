@@ -24,6 +24,7 @@ Documentation related to BitShares Core internals and development fundamentals.
 - [Testnets](/core/testnets/README.md#testnets)
 - [Knowledge Bases](/core/knowledge_base#knowledge-base)
 - [Tutorials](/core/tutorials#tutorials) / [FAQ](/core/tutorials/FAQ.md#frequently-asked-questions---list-all)
+- [Index - Help](/core/help/index.md#help)
 
 ***
 
@@ -35,16 +36,13 @@ Documentation related to BitShares Core internals and development fundamentals.
 ## [BitShares Developers Forge](/forge/README.md#bts-developers-forge)
 BitShares topic targeting technical information supported by the BitShares Community. 
 
-- [Index - Help](/forge/help/index.md#help)
-- [Repositories - Developers](/forge/shared_repo/repo_byname_list.md#developers-github-repositories)
 - [API Support & References - JSON-RPC, REST, etc ](/forge/api_support/README.md#api-support--references)
-- [Articles](/forge/articles/tech_articles_chronological.md#articles--references)
-- [Docker](/forge/docker/README.md#docker) 
 - [Plugins](/forge/plugins/README.md#plugins)
 - [Programs & Libraries](/forge/program_libraries/README.md#programs--libraries)
 - [SDK/Tools](/forge/sdk_tools/README.md#sdk--tools)
+- [Repositories - Developers](/forge/shared_repo/repo_byname_list.md#developers-github-repositories)
+- [Articles](/forge/articles/tech_articles_chronological.md#articles--references)
 - [Use Cases](/forge/use_cases/README.md#use-cases)
-
 
 ***
 

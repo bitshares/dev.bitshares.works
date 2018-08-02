@@ -10,23 +10,22 @@
 
 
 ## API Access & Restrictions
-- [Using the API](/core/api/api_restrictions.md#using-the-api)
-- [Accessing Restricted API's ](/core/api/api_restrictions.md#accessing-restricted-apis)
-- [Accessing the Named API via HTTP](/core/api/api_restrictions.md#accessing-the-named-api-via-http)
-- [Login In](/core/api/api_restrictions.md#login-in)
+- [Using the API](../api/api_restrictions.md#using-the-api)
+- [Accessing Restricted API's ](../api/api_restrictions.md#accessing-restricted-apis)
+- [Accessing the Named API via HTTP](../api/api_restrictions.md#accessing-the-named-api-via-http)
+- [Login In](../api/api_restrictions.md#login-in)
 
 
 ## Objects and IDs
-- [List of Commonly used Objects](/core/api/object_ids.md#objects-and-ids)   
+- [List of Commonly used Objects](../api/object_ids.md#objects-and-ids)   
 BitShares objects were identified by a unique id, an type and a space. When you use API calls, you would see these Object Ids.
 (e..g., `1.3.x`: asset object, `1.3.0`: asset BTS, core asset details, `1.3.1`: asset USD)
 
 ## Available Calls   
-- [Remote Procedure Calls (RPC)](/core/api/rpc.md#remote-procedure-calls)
-- [Websocket Calls & Notifications](/core/api/websocket_calls_notifications.md#websocket-calls-notifications)
+- [Remote Procedure Calls (RPC)](../api/rpc.md#remote-procedure-calls)
+- [Websocket Calls & Notifications](../api/websocket_calls_notifications.md#websocket-calls-notifications)
 
 ***
-
 
 ### graphene::chain Namespace: Class - Objects
 

@@ -2,145 +2,145 @@
 
 ### Contents:
 
-**[General](/core/tutorials/FAQ.md#general)**
-- [What is the standard Bitshares address structure and format?](/core/tutorials/FAQ.md#q-what-is-the-standard-bitshares-address-structure-and-format
+**[General](../tutorials/FAQ.md#general)**
+- [What is the standard Bitshares address structure and format?](../tutorials/FAQ.md#q-what-is-the-standard-bitshares-address-structure-and-format
 )
-- [What is the format of the block header?](/core/tutorials/FAQ.md#q-what-is-the-format-of-the-block-header)
-- [What is the maximum bitshares block size?](/core/tutorials/FAQ.md#q-what-is-the-maximum-bitshares-block-size)
-- [Are there any sharding mechanics currently deployed?](/core/tutorials/FAQ.md#q-are-there-any-sharding-mechanics-currently-deployed)
-- [How are SPV clients handled?](/core/tutorials/FAQ.md#q-how-are-spv-clients-handled)
-- [How is time addressed in the blockchain? Is NTP used or some other protocol?](/core/tutorials/FAQ.md#q-how-is-time-addressed-in-the-blockchain-is-ntp-used-or-some-other-protocol)
-- [How do new clients bootstrap into the network?](/core/tutorials/FAQ.md#q-how-do-new-clients-bootstrap-into-the-network)
-- [What is the average block time?](/core/tutorials/FAQ.md#q-what-is-the-average-block-time)
-- [How is accounting addressed in Bitshares? Is it a Nxt style accounting model or like Bitcoin’s UTXO](/core/tutorials/FAQ.md#q-how-is-accounting-addressed-in-bitshares-is-it-a-nxt-style-accounting-model-or-like-bitcoins-utxo)
+- [What is the format of the block header?](../tutorials/FAQ.md#q-what-is-the-format-of-the-block-header)
+- [What is the maximum bitshares block size?](../tutorials/FAQ.md#q-what-is-the-maximum-bitshares-block-size)
+- [Are there any sharding mechanics currently deployed?](../tutorials/FAQ.md#q-are-there-any-sharding-mechanics-currently-deployed)
+- [How are SPV clients handled?](../tutorials/FAQ.md#q-how-are-spv-clients-handled)
+- [How is time addressed in the blockchain? Is NTP used or some other protocol?](../tutorials/FAQ.md#q-how-is-time-addressed-in-the-blockchain-is-ntp-used-or-some-other-protocol)
+- [How do new clients bootstrap into the network?](../tutorials/FAQ.md#q-how-do-new-clients-bootstrap-into-the-network)
+- [What is the average block time?](../tutorials/FAQ.md#q-what-is-the-average-block-time)
+- [How is accounting addressed in Bitshares? Is it a Nxt style accounting model or like Bitcoin’s UTXO](../tutorials/FAQ.md#q-how-is-accounting-addressed-in-bitshares-is-it-a-nxt-style-accounting-model-or-like-bitcoins-utxo)
 
-[**Protocol**](/core/tutorials/FAQ.md#protocol)
-- [Are there any special affordances made for privacy?](/core/tutorials/FAQ.md#q-are-there-any-special-affordances-made-for-privacy)
-- [Does the protocol provide mechanisms for overlay protocols to interact such as OR_RETURN?](/core/tutorials/FAQ.md#q-does-the-protocol-provide-mechanisms-for-overlay-protocols-to-interact-such-as-or_return)
-- [Is this done via a gossip protocol or through a federate relay?](/core/tutorials/FAQ.md#q-is-this-done-via-a-gossip-protocol-or-through-a-federate-relay)
+[**Protocol**](../tutorials/FAQ.md#protocol)
+- [Are there any special affordances made for privacy?](../tutorials/FAQ.md#q-are-there-any-special-affordances-made-for-privacy)
+- [Does the protocol provide mechanisms for overlay protocols to interact such as OR_RETURN?](../tutorials/FAQ.md#q-does-the-protocol-provide-mechanisms-for-overlay-protocols-to-interact-such-as-or_return)
+- [Is this done via a gossip protocol or through a federate relay?](../tutorials/FAQ.md#q-is-this-done-via-a-gossip-protocol-or-through-a-federate-relay)
 
-**[Data Structures](/core/tutorials/FAQ.md#data-structures)**
-- [What data structures are used in the blockchain?](/core/tutorials/FAQ.md#q-what-data-structures-are-used-in-the-blockchain)
+**[Data Structures](../tutorials/FAQ.md#data-structures)**
+- [What data structures are used in the blockchain?](../tutorials/FAQ.md#q-what-data-structures-are-used-in-the-blockchain)
 
-**[Public Key System](/core/tutorials/FAQ.md#public-key-system)**
-- [What public key system is used? If elliptic curve, then what is the curv?](/core/tutorials/FAQ.md#q-what-public-key-system-is-used-if-elliptic-curve-then-what-is-the-curve)
+**[Public Key System](../tutorials/FAQ.md#public-key-system)**
+- [What public key system is used? If elliptic curve, then what is the curv?](../tutorials/FAQ.md#q-what-public-key-system-is-used-if-elliptic-curve-then-what-is-the-curve)
 
-**[Scripting Language](/core/tutorials/FAQ.md#scripting-language)**
-- [Is there a specification for Bitshares scripting language? (assuming there is one)](/core/tutorials/FAQ.md#q-is-there-a-specification-for-bitshares-scripting-language-assuming-there-is-one)
-- [Is the scripting language turing complete?](/core/tutorials/FAQ.md#q-is-the-scripting-language-turing-complete)
+**[Scripting Language](../tutorials/FAQ.md#scripting-language)**
+- [Is there a specification for Bitshares scripting language? (assuming there is one)](../tutorials/FAQ.md#q-is-there-a-specification-for-bitshares-scripting-language-assuming-there-is-one)
+- [Is the scripting language turing complete?](../tutorials/FAQ.md#q-is-the-scripting-language-turing-complete)
 
 ***
-### [Accounts](/core/tutorials/FAQ.md#accounts-1)
+### [Accounts](../tutorials/FAQ.md#accounts-1)
 - [How to change a password if using a Cloud Wallet](https://github.com/bitshares/bitshares-ui/wiki/Cloud-Wallet-Login-and-changing-password) : from BitShares UI wiki
-- [How can I create, register and upgrade an account to Lifetime Membership?](/core/tutorials/FAQ.md#q-how-can-i-create-register-and-upgrade-an-account-to-lifetime-membership)
-- [How to process Account Registration](/core/accounts/account_registration.md#account-registration)
+- [How can I create, register and upgrade an account to Lifetime Membership?](../tutorials/FAQ.md#q-how-can-i-create-register-and-upgrade-an-account-to-lifetime-membership)
+- [How to process Account Registration](../accounts/account_registration.md#account-registration)
 
 
 ***
 ### [APIs](#apis-1)
 - [How an Exchange can integrate their services to the BitShares UI Wallet - Gateway Integration Requirements](https://github.com/bitshares/bitshares-ui/wiki/Gateway-Integration-Requirements) : from BitShares UI wiki
-- [How do I get the network_add_nodes command to work? Why is it so complicated?](/core/tutorials/FAQ.md#q-how-do-i-get-the-network_add_nodes-command-to-work-why-is-it-so-complicated)
-- [Is there a way to access methods which require login over HTTP?](/core/tutorials/FAQ.md#q-is-there-a-way-to-access-methods-which-require-login-over-http)
-- [Is there a way to allow external program to drive cli_wallet via websocket, JSONRPC, or HTTP?](/core/tutorials/FAQ.md#q-is-there-a-way-to-allow-external-program-to-drive-cli_wallet-via-websocket-jsonrpc-or-http)
-- [Is there a way to generate help with parameter names and method descriptions?](/core/tutorials/FAQ.md#q-is-there-a-way-to-generate-help-with-parameter-names-and-method-descriptions)
-- [What is the meaning of a.b.c numbers?](/core/tutorials/FAQ.md#q-what-is-the-meaning-of-abc-numbers)
-- [The answer to the previous question was really confusing. Can you make it clearer?](/core/tutorials/FAQ.md#q-the-answer-to-the-previous-question-was-really-confusing-can-you-make-it-clearer)
-- [How to process Account Registration](/core/accounts/account_registration.md#account-registration)
+- [How do I get the network_add_nodes command to work? Why is it so complicated?](../tutorials/FAQ.md#q-how-do-i-get-the-network_add_nodes-command-to-work-why-is-it-so-complicated)
+- [Is there a way to access methods which require login over HTTP?](../tutorials/FAQ.md#q-is-there-a-way-to-access-methods-which-require-login-over-http)
+- [Is there a way to allow external program to drive cli_wallet via websocket, JSONRPC, or HTTP?](../tutorials/FAQ.md#q-is-there-a-way-to-allow-external-program-to-drive-cli_wallet-via-websocket-jsonrpc-or-http)
+- [Is there a way to generate help with parameter names and method descriptions?](../tutorials/FAQ.md#q-is-there-a-way-to-generate-help-with-parameter-names-and-method-descriptions)
+- [What is the meaning of a.b.c numbers?](../tutorials/FAQ.md#q-what-is-the-meaning-of-abc-numbers)
+- [The answer to the previous question was really confusing. Can you make it clearer?](../tutorials/FAQ.md#q-the-answer-to-the-previous-question-was-really-confusing-can-you-make-it-clearer)
+- [How to process Account Registration](../accounts/account_registration.md#account-registration)
 
 
 ***
 
-### [Assets](/core/tutorials/FAQ.md#assets-1)
-- [What happens to the asset creation fee?](/core/tutorials/FAQ.md#q-what-happens-to-the-asset-creation-fee)
-- [Can I change x after creation of the asset?](/core/tutorials/FAQ.md#qcan-i-change-x-after-creation-of-the-asset)
-- [What about Parent and Child assets?](/core/tutorials/FAQ.md#q-what-about-parent-and-child-assets)
-- [Can I change the issuer?](/core/tutorials/FAQ.md#q-can-i-changing-the-issuer)
-- [How to Create a new UIA](/core/tutorials/assets_uia.md#how-to-create-a-new-uia)
-- [How to Update/Change an existing UIA](/core/tutorials/assets_uia.md#how-to-updatechange-an-existing-uia)
-- [How to Create a MPA](/core/tutorials/assets_mpa.md#how-to-create-a-mpa)
-- [How to Create a Prediction Market](/core/tutorials/assets_pm.md#how-to-create-a-prediction-market)
-- [How to Closing/Setting a Prediction Market](/core/tutorials/assets_pm.md#how-to-closingsetting-a-prediction-market
+### [Assets](../tutorials/FAQ.md#assets-1)
+- [What happens to the asset creation fee?](../tutorials/FAQ.md#q-what-happens-to-the-asset-creation-fee)
+- [Can I change x after creation of the asset?](../tutorials/FAQ.md#qcan-i-change-x-after-creation-of-the-asset)
+- [What about Parent and Child assets?](../tutorials/FAQ.md#q-what-about-parent-and-child-assets)
+- [Can I change the issuer?](../tutorials/FAQ.md#q-can-i-changing-the-issuer)
+- [How to Create a new UIA](../tutorials/assets_uia.md#how-to-create-a-new-uia)
+- [How to Update/Change an existing UIA](../tutorials/assets_uia.md#how-to-updatechange-an-existing-uia)
+- [How to Create a MPA](../tutorials/assets_mpa.md#how-to-create-a-mpa)
+- [How to Create a Prediction Market](../tutorials/assets_pm.md#how-to-create-a-prediction-market)
+- [How to Closing/Setting a Prediction Market](../tutorials/assets_pm.md#how-to-closingsetting-a-prediction-market
 )
-- [How to test the publishing of price feeds](/core/tutorials/assets_publish_feed.md#how-to-test-the-publishing-of-price-feeds)
+- [How to test the publishing of price feeds](../tutorials/assets_publish_feed.md#how-to-test-the-publishing-of-price-feeds)
    - Python Script Example
 
 
 **Fee Pool**
-- [What is the fee pool all about?](/core/tutorials/FAQ.md#q-what-is-the-fee-pool-all-about)
-- [What to do if the fee pool is empty?](/core/tutorials/FAQ.md#q-what-to-do-if-the-fee-pool-is-empty)
-- [What is Fee Pool Draining?](/core/tutorials/FAQ.md#q-what-is-fee-pool-draining)
+- [What is the fee pool all about?](../tutorials/FAQ.md#q-what-is-the-fee-pool-all-about)
+- [What to do if the fee pool is empty?](../tutorials/FAQ.md#q-what-to-do-if-the-fee-pool-is-empty)
+- [What is Fee Pool Draining?](../tutorials/FAQ.md#q-what-is-fee-pool-draining)
 
 **Market Fee**
-- [What happens if I enable Market fees?](/core/tutorials/FAQ.md#q-what-happens-if-i-enable-market-fees)
-- [How to claim accumulated fees?](/core/tutorials/FAQ.md#q-how-to-claim-accumulated-fees)
-- [What if two different market fees are involved in a trade?](/core/tutorials/FAQ.md#q-what-if-two-different-market-fees-are-involved-in-a-trade)
-- [What are Asset Flags and Permissions?](/core/tutorials/FAQ.md#q-what-are-asset-flags-and-permissions)
-- [What are the Permissions?](/core/tutorials/FAQ.md#q-what-are-the-permissions)
-- [What are the Flags?](/core/tutorials/FAQ.md#q-what-are-the-flags)
+- [What happens if I enable Market fees?](../tutorials/FAQ.md#q-what-happens-if-i-enable-market-fees)
+- [How to claim accumulated fees?](../tutorials/FAQ.md#q-how-to-claim-accumulated-fees)
+- [What if two different market fees are involved in a trade?](../tutorials/FAQ.md#q-what-if-two-different-market-fees-are-involved-in-a-trade)
+- [What are Asset Flags and Permissions?](../tutorials/FAQ.md#q-what-are-asset-flags-and-permissions)
+- [What are the Permissions?](../tutorials/FAQ.md#q-what-are-the-permissions)
+- [What are the Flags?](../tutorials/FAQ.md#q-what-are-the-flags)
 
 **Market Pegged Assets**
-- [Can I use the same flags/permissions as for UIAs?](/core/tutorials/FAQ.md#q-can-i-use-the-same-flagspermissions-as-for-uias)
-- [What are market-pegged-asset-specific parameters?](/core/tutorials/FAQ.md#q-what-are-market-pegged-asset-specific-parameters)
+- [Can I use the same flags/permissions as for UIAs?](../tutorials/FAQ.md#q-can-i-use-the-same-flagspermissions-as-for-uias)
+- [What are market-pegged-asset-specific parameters?](../tutorials/FAQ.md#q-what-are-market-pegged-asset-specific-parameters)
 
 ***
 ### BitShares Decentralised Exchange (DEX)
-- [How to prepare BitShares Exchange Guide (Single Node Edition)](/core/knowledge_base/translated/exchange_single_node.md#how-to-prepare-bitshares-exchange-guide-single-node-edition)
-- [How to prepare Distributed Access to the BitShares Decentralised Exchange (DEX)](/core/tutorials/dex_distributed_access.md#distributed-access-to-the-bitshares-decentralised-exchange)
+- [How to prepare BitShares Exchange Guide (Single Node Edition)](../knowledge_base/translated/exchange_single_node.md#how-to-prepare-bitshares-exchange-guide-single-node-edition)
+- [How to prepare Distributed Access to the BitShares Decentralised Exchange (DEX)](../tutorials/dex_distributed_access.md#distributed-access-to-the-bitshares-decentralised-exchange)
 
 ***
 
 ### Committee
-- [How to Create a new Committee Member](/core/tutorials/committee_howto.md#how-to-creating-a-new-committee-member)
-- [How to Propose Committee Actions](/core/tutorials/committee_howto.md#how-to-propose-committee-actions)
-- [How to Approve/Disapprove a Committee Proposal](/core/tutorials/committee_howto.md#how-to-approvedisapprove-a-committee-proposal)
-- [How Committee Proposes a Change in Fee](/core/tutorials/committee_howto.md#how-committee-proposes-a-change-in-fee)
+- [How to Create a new Committee Member](../tutorials/committee_howto.md#how-to-creating-a-new-committee-member)
+- [How to Propose Committee Actions](../tutorials/committee_howto.md#how-to-propose-committee-actions)
+- [How to Approve/Disapprove a Committee Proposal](../tutorials/committee_howto.md#how-to-approvedisapprove-a-committee-proposal)
+- [How Committee Proposes a Change in Fee](../tutorials/committee_howto.md#how-committee-proposes-a-change-in-fee)
 
 ***
 
-### [Testnet](/core/tutorials/FAQ.md#testnet-1)
-- [Public & private testnet differences What is the difference between public and private testnet?](/core/tutorials/FAQ.md#q-public--private-testnet-differences-what-is-the-difference-between-public-and-private-testnet)
+### [Testnet](../tutorials/FAQ.md#testnet-1)
+- [Public & private testnet differences What is the difference between public and private testnet?](../tutorials/FAQ.md#q-public--private-testnet-differences-what-is-the-difference-between-public-and-private-testnet)
 
 ***
 
 ### Transfer / Transactions
-- [How to use the CLI wallet to perform confidential transfers in BitShares](/core/tutorials/trn_confidential_transfer.md#how-to-use-the-cli-wallet-to-perform-confidential-transfers-in-bitshares)
-- [Hot to Construct Any Transaction - Manually](/core/tutorials/trn_construct_transaction.md#how-to-construct-any-transaction---manually)
-- [How to Propose a Transaction](/core/tutorials/trn_propose_transaction.md#how-to-propose-a-transaction)
+- [How to use the CLI wallet to perform confidential transfers in BitShares](../tutorials/trn_confidential_transfer.md#how-to-use-the-cli-wallet-to-perform-confidential-transfers-in-bitshares)
+- [Hot to Construct Any Transaction - Manually](../tutorials/trn_construct_transaction.md#how-to-construct-any-transaction---manually)
+- [How to Propose a Transaction](../tutorials/trn_propose_transaction.md#how-to-propose-a-transaction)
 
 ***
 
 ### Vesting Balance 
-- [How to find Vesting Balance](/core/tutorials/vesting-balance-dev.md#how-to-find-vesting-balance)
+- [How to find Vesting Balance](../tutorials/vesting-balance-dev.md#how-to-find-vesting-balance)
 
 ***
 
-### [Wallet / CLI Wallet](/core/tutorials/FAQ.md#wallet--cli-wallet-1)
-- [How can I close the CLI client in a clean way?](/core/tutorials/FAQ.md#q-how-can-i-close-the-cli-client-in-a-clean-way)
-- [How can I import my GUI-wallet account into CLI-wallet?](/core/tutorials/FAQ.md#q-how-can-i-import-my-gui-wallet-account-into-cli-wallet)
-- [Why does the CLI client crash immediately when I try to run it for the first time?](/core/tutorials/FAQ.md#q-why-does-the-cli-client-crash-immediately-when-i-try-to-run-it-for-the-first-time)
-- [How to setup Network and Wallet Configuration](/core/wallet/wallet_network.md#network-and-wallet-configuration)
-   - [General](/core/wallet/wallet_network.md#general-network-and-wallet-configuration)
-   - [Secure](/core/wallet/wallet_network.md#secure-network-and-wallet-configuration)
+### [Wallet / CLI Wallet](../tutorials/FAQ.md#wallet--cli-wallet-1)
+- [How can I close the CLI client in a clean way?](../tutorials/FAQ.md#q-how-can-i-close-the-cli-client-in-a-clean-way)
+- [How can I import my GUI-wallet account into CLI-wallet?](../tutorials/FAQ.md#q-how-can-i-import-my-gui-wallet-account-into-cli-wallet)
+- [Why does the CLI client crash immediately when I try to run it for the first time?](../tutorials/FAQ.md#q-why-does-the-cli-client-crash-immediately-when-i-try-to-run-it-for-the-first-time)
+- [How to setup Network and Wallet Configuration](../wallet/wallet_network.md#network-and-wallet-configuration)
+   - [General](../wallet/wallet_network.md#general-network-and-wallet-configuration)
+   - [Secure](../wallet/wallet_network.md#secure-network-and-wallet-configuration)
    
 ***
-### [Witness](/core/tutorials/FAQ.md#witness)
-- [How can I close the witness node in a clean way?](/core/tutorials/FAQ.md#q-how-can-i-close-the-witness-node-in-a-clean-way)
-- [How do I check whether the witness node is already synced?](/core/tutorials/FAQ.md#q-how-do-i-check-whether-the-witness-node-is-already-synced)
-- [How to Change The Signing Key of a Witness](/core/tutorials/wt_change_signing_key.md#how-to-change-the-signing-key-of-a-witness)
-- [If it seems to be unable to sync beyond a certain date?](/core/tutorials/FAQ.md#q-if-it-seems-to-be-unable-to-sync-beyond-a-certain-date)
-- [Is it safe to delete logs stored in witness_node_data_dirlogsp2p?](/core/tutorials/FAQ.md#q-is-it-safe-to-delete-logs-stored-in-witness_node_data_dirlogsp2p)
-- [What is the best way to interact with the witness node?](/core/tutorials/FAQ.md#q-what-is-the-best-way-to-interact-with-the-witness-node)
-- [What is the meaning of all those different text colors in the witness node console?](/core/tutorials/FAQ.md#q-what-is-the-meaning-of-all-those-different-text-colors-in-the-witness-node-console)
-- [Whose private key is [“BTS6MRyAjQ..”,”5KQwrPbwdL..”]? Why is it predefined ion the config.ini?](/core/tutorials/FAQ.md#q-whose-private-key-is-bts6mryajq5kqwrpbwdl-why-is-it-predefined-ion-the-configini)
+### [Witness](../tutorials/FAQ.md#witness)
+- [How can I close the witness node in a clean way?](../tutorials/FAQ.md#q-how-can-i-close-the-witness-node-in-a-clean-way)
+- [How do I check whether the witness node is already synced?](../tutorials/FAQ.md#q-how-do-i-check-whether-the-witness-node-is-already-synced)
+- [How to Change The Signing Key of a Witness](../tutorials/wt_change_signing_key.md#how-to-change-the-signing-key-of-a-witness)
+- [If it seems to be unable to sync beyond a certain date?](../tutorials/FAQ.md#q-if-it-seems-to-be-unable-to-sync-beyond-a-certain-date)
+- [Is it safe to delete logs stored in witness_node_data_dirlogsp2p?](../tutorials/FAQ.md#q-is-it-safe-to-delete-logs-stored-in-witness_node_data_dirlogsp2p)
+- [What is the best way to interact with the witness node?](../tutorials/FAQ.md#q-what-is-the-best-way-to-interact-with-the-witness-node)
+- [What is the meaning of all those different text colors in the witness node console?](../tutorials/FAQ.md#q-what-is-the-meaning-of-all-those-different-text-colors-in-the-witness-node-console)
+- [Whose private key is [“BTS6MRyAjQ..”,”5KQwrPbwdL..”]? Why is it predefined ion the config.ini?](../tutorials/FAQ.md#q-whose-private-key-is-bts6mryajq5kqwrpbwdl-why-is-it-predefined-ion-the-configini)
 
 
 ***
 ### Worker
-- [How to Create a Worker](/core/tutorials/worker_create.md#how-to-create-a-worker)
-- [How to see Proposals on the Chain](/core/tutorials/worker_create.md#how-to-see-proposals-on-the-chain)
-- [How to Vote for a Worker](/core/tutorials/worker_create.md#how-to-vote-for-a-worker)
-- [How Workers Get Paid](/core/tutorials/worker_create.md#how-workers-get-paid)
-- [How to find how much per hour allocated for all worker](/core/tutorials/worker_pay_claim.md#how-to-find-how-much-per-hour-allocated-for-all-worker)
+- [How to Create a Worker](../tutorials/worker_create.md#how-to-create-a-worker)
+- [How to see Proposals on the Chain](../tutorials/worker_create.md#how-to-see-proposals-on-the-chain)
+- [How to Vote for a Worker](../tutorials/worker_create.md#how-to-vote-for-a-worker)
+- [How Workers Get Paid](../tutorials/worker_create.md#how-workers-get-paid)
+- [How to find how much per hour allocated for all worker](../tutorials/worker_pay_claim.md#how-to-find-how-much-per-hour-allocated-for-all-worker)
 
 ***
 ***

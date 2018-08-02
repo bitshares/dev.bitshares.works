@@ -2,14 +2,14 @@
 
 #### Contents:
 
-- [Purpose](/core/intro/bitshares_core_gitflow.md#purpose)
-- [Non-Consensus: Development / Release / Bugfix Workflows](/core/intro/bitshares_core_gitflow.md#non-consensus-development--release--bugfix-workflows)
-- [Consensus: Development / Release / Bugfix Workflows](/core/intro/bitshares_core_gitflow.md#consensus-development--release--bugfix-workflows)
-- [Goals To Achieve](/core/intro/bitshares_core_gitflow.md#goals-to-achieve)
-- [Basic Rules](/core/intro/bitshares_core_gitflow.md#basic-rules)
-- [How To Create a Release](/core/intro/bitshares_core_gitflow.md#how-to-create-a-release)
-- [How To Create an Emergency Fix](/core/intro/bitshares_core_gitflow.md#how-to-create-an-emergency-fix)
-- [Emergency Fix Workflows](/core/intro/bitshares_core_gitflow.md#emergency-fix-workflows)
+- [Purpose](../intro/bitshares_core_gitflow.md#purpose)
+- [Non-Consensus: Development / Release / Bugfix Workflows](../intro/bitshares_core_gitflow.md#non-consensus-development--release--bugfix-workflows)
+- [Consensus: Development / Release / Bugfix Workflows](../intro/bitshares_core_gitflow.md#consensus-development--release--bugfix-workflows)
+- [Goals To Achieve](../intro/bitshares_core_gitflow.md#goals-to-achieve)
+- [Basic Rules](../intro/bitshares_core_gitflow.md#basic-rules)
+- [How To Create a Release](../intro/bitshares_core_gitflow.md#how-to-create-a-release)
+- [How To Create an Emergency Fix](../intro/bitshares_core_gitflow.md#how-to-create-an-emergency-fix)
+- [Emergency Fix Workflows](../intro/bitshares_core_gitflow.md#emergency-fix-workflows)
 
 ***
 
@@ -104,9 +104,8 @@ Presumably the developer who creates the fix will work on his private master bra
 
 ### Emergency Fix Workflows
 
-<p align="center">
-  <img src="/core/imgs/bts-emergency-fix.png" width="830" title="BitShares Core GitFlow">
-</p>
+![BitShares Core GitFlow](https://cedar-book.github.io/core.dev/core/imgs/bts-emergency-fix.png)
+
 
 1. The fix is applied to the version of the "release" branch that was merged into "master" when creating the broken release version.
 2. The "release" branch is merged into "master", and a version tag is created on "master".

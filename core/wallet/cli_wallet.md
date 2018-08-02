@@ -1,21 +1,21 @@
 ## Connecting a Cli Wallet
 
 #### Table of Contents:
-1. [Installation and build](/core/wallet/cli_wallet.md#1installation-and-build)
-2. [Execute a cli_wallet](/core/wallet/cli_wallet.md#2-execute-a-cli_wallet)
-3. [Unlock the cli_wallet](/core/wallet/cli_wallet.md#3unlock-the-cli_wallet)
-4. [Gaining Access to Blockchain](/core/wallet/cli_wallet.md#4-gaining-access-to-blockchain)
-5. [Creating Accounts](/core/wallet/cli_wallet.md#5-creating-accounts)
-6. [Transferring Funds using the Cli-wallet](/core/wallet/cli_wallet.md#6-transferring-funds-using-the-cli-wallet)
-7. [Obtain the private key](/core/wallet/cli_wallet.md#7-obtain-the-private-key)
+1. [Installation and build](../wallet/cli_wallet.md#1installation-and-build)
+2. [Execute a cli_wallet](../wallet/cli_wallet.md#2-execute-a-cli_wallet)
+3. [Unlock the cli_wallet](../wallet/cli_wallet.md#3unlock-the-cli_wallet)
+4. [Gaining Access to Blockchain](../wallet/cli_wallet.md#4-gaining-access-to-blockchain)
+5. [Creating Accounts](../wallet/cli_wallet.md#5-creating-accounts)
+6. [Transferring Funds using the Cli-wallet](../wallet/cli_wallet.md#6-transferring-funds-using-the-cli-wallet)
+7. [Obtain the private key](../wallet/cli_wallet.md#7-obtain-the-private-key)
 
 ***
 
 ### 1.Installation and build 
 You have the option to obtain a `cli_wallet`.  
 - 1a) Install and build it from BitShares-Core
-  - BitShares offers you to install BitShares-Core into different platforms; Ubuntu (x64), OSx, and Windows.  Please refer [**Installation Guide **.](/core/installation/README.md#install-a-development-environment)
-- 1b) Use the [Cli-Tools for Windows (option)](/core/wallet/cli_wallet.md#cli-tools-for-windows-option)
+  - BitShares offers you to install BitShares-Core into different platforms; Ubuntu (x64), OSx, and Windows.  Please refer [**Installation Guide **.](../installation/README.md#install-a-development-environment)
+- 1b) Use the [Cli-Tools for Windows (option)](../wallet/cli_wallet.md#cli-tools-for-windows-option)
   - This option you do not need to install BitShates Core. To obtain the tool, go to a BitShares release page ( https://github.com/bitshares/bitshares-core/releases) and download the BitShares-Core-\*-x64-cli-tools.zip. 
 
 ### 2. Execute a cli_wallet

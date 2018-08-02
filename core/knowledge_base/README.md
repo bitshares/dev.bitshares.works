@@ -1,50 +1,50 @@
 ## Knowledge Base
 
-- [BitShares-Core Libraries files list and Coding flows](/core/knowledge_base/files_methods_lists.md)
-- [Documented issues](/core/knowledge_base/documented_issues/README.md#documented-issues)
+- [BitShares-Core Libraries files list and Coding flows](../knowledge_base/files_methods_lists.md)
+- [Documented issues](../knowledge_base/documented_issues/README.md#documented-issues)
 
 ***
 
 ### Accounts
-- [BitShares UI - How to create and manage Cloud wallet and/or Local wallet Accounts](/core/knowledge_base/bitshares-ui-wallet-account-mode.md)
-- [Multi-Signature](/core/knowledge_base/multi-signature.md#multi-signature)
+- [BitShares UI - How to create and manage Cloud wallet and/or Local wallet Accounts](../knowledge_base/bitshares-ui-wallet-account-mode.md)
+- [Multi-Signature](../knowledge_base/multi-signature.md#multi-signature)
 
 
 ### Assets
-- [Using White and Black Lists](/core/knowledge_base/white_black_lists.md#using-white-and-black-lists)
-- [Resolvable Bitassets](/core/knowledge_base/resolvable-bitassets.md#resolvable-bitassets) -- from Wiki
-- [Creating a New FBA](/core/knowledge_base/creating-a-new-fba.md#creating-a-new-fba) -- from Wiki
-- [DPOS Slot Tickets](/core/knowledge_base/dpos-slot-tickets.md#dpos-slot-tickets) -- from Wiki
+- [Using White and Black Lists](../knowledge_base/white_black_lists.md#using-white-and-black-lists)
+- [Resolvable Bitassets](../knowledge_base/resolvable-bitassets.md#resolvable-bitassets) -- from Wiki
+- [Creating a New FBA](../knowledge_base/creating-a-new-fba.md#creating-a-new-fba) -- from Wiki
+- [DPOS Slot Tickets](../knowledge_base/dpos-slot-tickets.md#dpos-slot-tickets) -- from Wiki
 
 
 ### Transactions
-- [Stealth Transfers](/core/knowledge_base/stealth-transfers.md#stealth-transfers) -- from Wiki
-- [Proposed Transactions](/core/knowledge_base/trn_proposed_transactions.md#proposed-transactions)
-- [Proposed Transaction - Notes](/core/knowledge_base/trn_proposed_notes.md#proposed-transaction---notes)
-- [Chain-Locked Transactions](/core/knowledge_base/chain-locked-tx.md#chain-locked-transactions) -- from Wiki
+- [Stealth Transfers](../knowledge_base/stealth-transfers.md#stealth-transfers) -- from Wiki
+- [Proposed Transactions](../knowledge_base/trn_proposed_transactions.md#proposed-transactions)
+- [Proposed Transaction - Notes](../knowledge_base/trn_proposed_notes.md#proposed-transaction---notes)
+- [Chain-Locked Transactions](../knowledge_base/chain-locked-tx.md#chain-locked-transactions) -- from Wiki
 
 ### Witness
-- [Witness Scheduler RNG](/core/knowledge_base/witness-rng.md#witness-scheduler-rng) -- from Wiki
-- [Witness Scheduler](/core/knowledge_base/witness-scheduler.md#witness-scheduler) -- from Wiki
+- [Witness Scheduler RNG](../knowledge_base/witness-rng.md#witness-scheduler-rng) -- from Wiki
+- [Witness Scheduler](../knowledge_base/witness-scheduler.md#witness-scheduler) -- from Wiki
 
 
 ### Integration
-- [Integration](/core/integration/README.md#integration)
+- [Integration](../integration/README.md#integration)
 
 ***
 
 ### Protocols 
 
-- [Wallet 2 Factor Authentication Protocol](/core/knowledge_base/protocols/wallet_2factor_auth_protocol.md#wallet-2-factor-authentication-protocol)
-- [Merchant - Wallet Login Protocol](/core/knowledge_base/protocols/merchant_login.md#merchant)
-- [Merchant - Wallet Privacy Protocol](/core/knowledge_base/protocols/merchant_privacy.md#merchant)
+- [Wallet 2 Factor Authentication Protocol](../knowledge_base/protocols/wallet_2factor_auth_protocol.md#wallet-2-factor-authentication-protocol)
+- [Merchant - Wallet Login Protocol](../knowledge_base/protocols/merchant_login.md#merchant)
+- [Merchant - Wallet Privacy Protocol](../knowledge_base/protocols/merchant_privacy.md#merchant)
    
 
 ***
 
 ### Other 
-- [BitShares Improvement Proposal(BSIP)](/core/knowledge_base/bsip_funding.md#businesses-developers-and-business-developers)
-- [wiki legacy ](/core/knowledge_base/wiki_legacy)
+- [BitShares Improvement Proposal(BSIP)](../knowledge_base/bsip_funding.md#businesses-developers-and-business-developers)
+- [wiki legacy ](../knowledge_base/wiki_legacy)
 
 
 

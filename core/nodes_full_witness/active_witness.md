@@ -2,21 +2,21 @@
 
 #### Table of Contents:
 
-- [A Block-Producing Witness](/core/nodes_full_witness/active_witness.md#a-block-producing-witness)
+- [A Block-Producing Witness](../nodes_full_witness/active_witness.md#a-block-producing-witness)
    - Requirements
    - Technical Specifications
    - Active Witness Duties
- - [How to become a Block-Producing Witness](/core/nodes_full_witness/active_witness.md#how-to-become-a-block-producing-witness)
-   - 1.[Run the Witness/Full Node on the Network](/core/nodes_full_witness/active_witness.md#1-run-the-witnessfull-node-on-the-network)
-   - 2.[Create a CLI Wallet](/core/nodes_full_witness/active_witness.md#2-create-a-cli-wallet)
-   - 3.[Import your Account (and funds) into CLI Wallet](/core/nodes_full_witness/active_witness.md#3-import-your-account-and-funds-into-cli-wallet)
-   - 4.[Upgrade your Account to a Lifetime Member](/core/nodes_full_witness/active_witness.md#4-upgrade-your-account-to-a-lifetime-member)
-   - 5.[Register a New Witness](/core/nodes_full_witness/active_witness.md#5-registering-a-new-witness)
-   - 6.[Upvote the Witnes](/core/nodes_full_witness/active_witness.md#6-upvote-the-witness)
-   - 7.[Configuration of the Witness Node](/core/nodes_full_witness/active_witness.md#7-configuration-of-the-witness-node)
-   - 8.[Verifying Block Production](/core/nodes_full_witness/active_witness.md#8-verifying-block-production)
-- [Backup Server](/core/nodes_full_witness/active_witness.md#backup-server)
-- [Price Feeds](/core/nodes_full_witness/active_witness.md#price-feeds)
+ - [How to become a Block-Producing Witness](../nodes_full_witness/active_witness.md#how-to-become-a-block-producing-witness)
+   - 1.[Run the Witness/Full Node on the Network](../nodes_full_witness/active_witness.md#1-run-the-witnessfull-node-on-the-network)
+   - 2.[Create a CLI Wallet](../nodes_full_witness/active_witness.md#2-create-a-cli-wallet)
+   - 3.[Import your Account (and funds) into CLI Wallet](../nodes_full_witness/active_witness.md#3-import-your-account-and-funds-into-cli-wallet)
+   - 4.[Upgrade your Account to a Lifetime Member](../nodes_full_witness/active_witness.md#4-upgrade-your-account-to-a-lifetime-member)
+   - 5.[Register a New Witness](../nodes_full_witness/active_witness.md#5-registering-a-new-witness)
+   - 6.[Upvote the Witnes](../nodes_full_witness/active_witness.md#6-upvote-the-witness)
+   - 7.[Configuration of the Witness Node](../nodes_full_witness/active_witness.md#7-configuration-of-the-witness-node)
+   - 8.[Verifying Block Production](../nodes_full_witness/active_witness.md#8-verifying-block-production)
+- [Backup Server](../nodes_full_witness/active_witness.md#backup-server)
+- [Price Feeds](../nodes_full_witness/active_witness.md#price-feeds)
 
 
 ****
@@ -31,7 +31,7 @@
 
 ### Technical Specifications
 
-- [System Requirements](/core/nodes_full_witness/full_nodes.md#system-requirements)    
+- [System Requirements](../nodes_full_witness/full_nodes.md#system-requirements)    
 
 ### Active Witness Duties
 

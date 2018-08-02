@@ -1,11 +1,10 @@
 ### Contents:
 
-- [How to create a Prediction Market](/source/tutorials/assets_pm.md#how-to-create-a-prediction-market)
+- [How to create a Prediction Market](#how-to-create-a-prediction-market)
    - Settings
    - Settlement Authorities
    - Python Script Example
-- [How to closing/setting a Prediction Market](/source/tutorials/assets_pm.md#how-to-closingsetting-a-prediction-market
-)
+- [How to closing/setting a Prediction Market](#how-to-closingsetting-a-prediction-market)
    - Python Script Example
 
 ***

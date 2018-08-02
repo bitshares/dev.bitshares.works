@@ -1,12 +1,12 @@
 ## Memory Reduction for Nodes
 
 #### Table of Contents:
-- [Four New Options to Reduce RAM](/forge/plugins/nodes_memory_reduction.md#four-new-options-to-reduce-ram)
-   - [--plugins arg   ](/forge/plugins/nodes_memory_reduction.md#--plugins)
-   - [--track-account arg ](/forge/plugins/nodes_memory_reduction.md#--track-account)
-   - [--max-ops-per-account arg](/forge/plugins/nodes_memory_reduction.md#--max-ops-per-account)
-   - [--partial-operations arg](/forge/plugins/nodes_memory_reduction.md#--partial-operations)
-- [Combinations](/forge/plugins/nodes_memory_reduction.md#combinations)
+- [Four New Options to Reduce RAM](../plugins/nodes_memory_reduction.md#four-new-options-to-reduce-ram)
+   - [--plugins arg   ](../plugins/nodes_memory_reduction.md#--plugins)
+   - [--track-account arg ](../plugins/nodes_memory_reduction.md#--track-account)
+   - [--max-ops-per-account arg](../plugins/nodes_memory_reduction.md#--max-ops-per-account)
+   - [--partial-operations arg](../plugins/nodes_memory_reduction.md#--partial-operations)
+- [Combinations](../plugins/nodes_memory_reduction.md#combinations)
 
 ***
 
@@ -22,15 +22,15 @@
 
 |||
 |---|---|
-|  [--plugins arg   ](/forge/plugins/nodes_memory_reduction.md#--plugins) |  Space-separated list of plugins to activate |
+|  [--plugins arg   ](../plugins/nodes_memory_reduction.md#--plugins) |  Space-separated list of plugins to activate |
 
 ### Options for plugin accout_history
 
 |||
 |---|---|
-|  [--track-account arg ](/forge/plugins/nodes_memory_reduction.md#--track-account) | Account ID to track history for (may specify multiple times) |
-| [--max-ops-per-account arg](/forge/plugins/nodes_memory_reduction.md#--max-ops-per-account) | Maximum number of operations per account will be kept in memory |
-| [--partial-operations arg](/forge/plugins/nodes_memory_reduction.md#--partial-operations)  | Keep only those operations in memory that are related to account history tracking |
+|  [--track-account arg ](../plugins/nodes_memory_reduction.md#--track-account) | Account ID to track history for (may specify multiple times) |
+| [--max-ops-per-account arg](../plugins/nodes_memory_reduction.md#--max-ops-per-account) | Maximum number of operations per account will be kept in memory |
+| [--partial-operations arg](../plugins/nodes_memory_reduction.md#--partial-operations)  | Keep only those operations in memory that are related to account history tracking |
 
 ***
 

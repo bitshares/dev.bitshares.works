@@ -1,15 +1,15 @@
 ## Full Nodes (Witness Nodes)
 
 #### Table of Contents: 
-- [Type of Witness nodes](/core/nodes_full_witness/full_nodes.md#type-of-witness-nodes)
+- [Type of Witness nodes](../nodes_full_witness/full_nodes.md#type-of-witness-nodes)
    - Non-Block producing
    - Block producing
-- [System Requirements](/core/nodes_full_witness/full_nodes.md#system-requirements)
-- [How to launch the full node](/core/nodes_full_witness/full_nodes.md#how-to-launch-the-full-node)
-- [Configuration `config.ini`](/core/nodes_full_witness/full_nodes.md#configuration)
-- [Enabling Remote Procedure Calls (RPC)](/core/nodes_full_witness/full_nodes.md#enabling-remote-procedure-calls-rpc)
-- [Restarting the Witness Node](/core/nodes_full_witness/full_nodes.md#restarting-the-witness-node)
-- [Public Full Node information](/core/nodes_full_witness/full_nodes.md#public-full-node-information)
+- [System Requirements](../nodes_full_witness/full_nodes.md#system-requirements)
+- [How to launch the full node](../nodes_full_witness/full_nodes.md#how-to-launch-the-full-node)
+- [Configuration `config.ini`](../nodes_full_witness/full_nodes.md#configuration)
+- [Enabling Remote Procedure Calls (RPC)](../nodes_full_witness/full_nodes.md#enabling-remote-procedure-calls-rpc)
+- [Restarting the Witness Node](../nodes_full_witness/full_nodes.md#restarting-the-witness-node)
+- [Public Full Node information](../nodes_full_witness/full_nodes.md#public-full-node-information)
 
 ***
 

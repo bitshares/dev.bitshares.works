@@ -34,13 +34,13 @@ To understand during those processes how `chain_id` has been handled.
 ### when start witness_node
 
 In the process, only uses `get_chain_id()` to show the value to a user. 
-- [Code flow (pdf: page8)](/core/knowledge_base/shared_files/witness_node_ex-codeflows.pdf)
+- [Code flow (pdf: page8)](../knowledge_base/shared_files/witness_node_ex-codeflows.pdf)
 
 
 ### when start cli_wallet
 
 In the process, check a wallet_file existence and also check chain_database `chain_id`. If both get `false`, uses `graphene::egenesis::get_egenesis_chain_id()` to set  `wdata.chain_id`.
-- [Code flow (pdf: page4)](/core/knowledge_base/shared_files/cli_wallet_exe-codeflow.pdf)
+- [Code flow (pdf: page4)](../knowledge_base/shared_files/cli_wallet_exe-codeflow.pdf)
 
 ***
 
@@ -49,13 +49,13 @@ In the process, check a wallet_file existence and also check chain_database `cha
 
 #### application.cpp - namespaces, functions, and code flows
 
-- [namespaces structures and function names list (pdf)](/core/knowledge_base/shared_files/application-cpp-namespaces.pdf)
-- namespace graphene { namespace app { namespace detail {}} - [startup() Code flow (pdf)](/core/knowledge_base/shared_files/application-cpp-startup.pdf)
-- namespace detail {} - [create_example_genesis() Code flow (pdf)](/core/knowledge_base/shared_files/application-cpp-ns-detail.pdf)
+- [namespaces structures and function names list (pdf)](../knowledge_base/shared_files/application-cpp-namespaces.pdf)
+- namespace graphene { namespace app { namespace detail {}} - [startup() Code flow (pdf)](../knowledge_base/shared_files/application-cpp-startup.pdf)
+- namespace detail {} - [create_example_genesis() Code flow (pdf)](../knowledge_base/shared_files/application-cpp-ns-detail.pdf)
 
 #### witness_node and cli_wallet start
-- [witness_node: Code flow (pdf) ](/core/knowledge_base/shared_files/witness_node_ex-codeflows.pdf)
-- [cli_wallet: Code flow (pdf) ](/core/knowledge_base/shared_files/cli_wallet_exe-codeflow.pdf)
+- [witness_node: Code flow (pdf) ](../knowledge_base/shared_files/witness_node_ex-codeflows.pdf)
+- [cli_wallet: Code flow (pdf) ](../knowledge_base/shared_files/cli_wallet_exe-codeflow.pdf)
 
 *The above documents are just information. If someone wants to know how the logic has been structured, it might be interested to check the **code** flows.*
 
