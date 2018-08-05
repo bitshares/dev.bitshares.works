@@ -1,6 +1,6 @@
-## Private Testnet
+#### Private Testnet
 
-### How to setup Private Testnet
+## How to Set up Private Testnet
 
 #### Table of Contents:
 
@@ -22,7 +22,7 @@
 
 ## 1. Prerequisites 
 
-We assume that you have both `witness_node` and `cli_wallet` already compiled (or downloaded from [the offical respository](https://github.com/bitshares/bitshares-core/releases).
+If you have not installed BitShares-Core and built yet. Please see [BitShares-Core Installation Guide](../../core/installation/README.md#install-a-development-environment). And make sure you have both `witness_node` and `cli_wallet` already compiled successfully.
 
 ## 2. Creating a Testnet Folder
 

@@ -1,3 +1,5 @@
+#### Public Testnet
+
 ## How to Set up Public Open Testnet 
 
 #### Table of Contents:
@@ -20,23 +22,24 @@
     cd bitshares-core-testnet/
     git checkout testnet
 
+
 ### 1.2 Configuration
 
 
 **Blockchain Parameters**
 
 The blockchain parameters can be modified in the
-[libraries/chain/include/graphene/chain/config.hpp](https://github.com/cryptonomex/graphene/blob/master/libraries/chain/include/graphene/chain/config.hpp) file:
+[libraries/chain/include/graphene/chain/config.hpp](https://github.com/bitshares/bitshares-core/blob/master/libraries/chain/include/graphene/chain/config.hpp) file:
 
     vim libraries/chain/include/graphene/chain/config.hpp
 
 **Default Seed Node List**
 
-We can add a default list of seed nodes that the witness is supposed to try to connect to in ][libraries/app/application.cpp](https://github.com/bitshares/bitshares-core/blob/master/libraries/app/application.cpp) and will add the IP/Address and port of the machine we are going to setup later already:
+We can add a default list of seed nodes that the witness is supposed to try to connect to in [libraries/app/application.cpp](https://github.com/bitshares/bitshares-core/blob/master/libraries/app/application.cpp) and will add the IP/Address and port of the machine we are going to setup later already:
 
     testnet.bitshares.eu:11010
 
-The full changeset can be seen in the corresponding [git commit](https://github.com/BitSharesEurope/graphene-testnet/commit/94f0a95be6f80cb5a7926ba6cc920dd795eb3a19)
+The full change set can be seen in the corresponding [git commit](https://github.com/BitSharesEurope/graphene-testnet/commit/94f0a95be6f80cb5a7926ba6cc920dd795eb3a19)
 
 ### 1.3 Initial Compilation
 

@@ -16,7 +16,7 @@ The purpose of this site is to provide in-depth documentation about the BitShare
 Documentation related to BitShares Core internals and development fundamentals. 
 
 - [Introduction/Architectures](/core/intro/README.md#introduction--architectures)
-- [Install a Development Environment](/core/installation/README.md#install-a-development-environment)
+- [Development Environment & Getting Started](/core/installation/README.md#development-environment--getting-started)
 - [BitShares Accounts](/core/accounts/README.md#bitshares-accounts)
 - [BitShares Nodes](/core/nodes_full_witness/README.md#bitshares-nodes-and-p2p-network)
 - [Cli_Wallet and the Connectivity](/core/wallet/README.md#cli_wallet-and-the-connectivity)

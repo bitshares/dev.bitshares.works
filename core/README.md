@@ -4,8 +4,8 @@ Documentation related to BitShares Core internals and development fundamentals.
 ### [Introduction/Architectures](../core/intro/README.md#introduction--architectures)
 - BitShares Core Workflow (Project / Issues) , BitShares Core Repository Gitflow
    
-### [Install a Development Environment](../core/installation/README.md#install-a-development-environment)
-- Requirements(OS, Hardware, CPU, storage, Memory,etc), CLI-windows Tools, Core in WSL, Known issues
+### [Development Environment & Getting Started](../core/installation/README.md#development-environment--getting-started)
+- Getting Started, Requirements(OS, Hardware, CPU, storage, Memory,etc), CLI-windows Tools, Core in WSL, Known issues
  
 ### [BitShares Accounts](../core/accounts/README.md#accounts)
 - Accounts, Memberships, Fees, Permissions, Authorities, Referral Program,Voting, Account Registration  
