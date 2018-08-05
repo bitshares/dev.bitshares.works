@@ -37,7 +37,7 @@
 |---|---|---|
 | **plugins** |  |  |
 | -[Memory Reduction for Nodes](../../forge/plugins/nodes_memory_reduction.md#memory-reduction-for-nodes) - Help to reduce RAM usage <br /> - [ElasticSearch](../../forge/plugins/elastic_search_plugin.md#elasticsearch-plugin) - How to store account history data | - [Docker Container](https://github.com/bitshares/bitshares-core/blob/master/README-docker.md#docker-container) - Built-in Dockerfile to support docker containers | - [Monitoring Account Deposits - Python](../../forge/sdk_tools/monitoring_python.md#monitoring-account-deposits---python) <br /> - [Monitoring the Balance History - NodeJs](../../forge/sdk_tools/monitoring_nodejs.md#monitoring-the-balance-history---nodejs)  |
-|  |  |  |
+| -[Glossary-Terms](../help/glossary.md#glossary) |  |  |
 |  |  |  |
 |  |  |  |
 
