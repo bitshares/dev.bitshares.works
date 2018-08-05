@@ -1,53 +1,78 @@
 
 #### Table of Contents:
-- [BitShares Nodes](../nodes_full_witness/README.md#bitshares-nodes-and-p2p-network)
-- [Full Node](../nodes_full_witness/full_nodes.md#full-nodes-witness-nodes)
-- [Witness Node](../nodes_full_witness/active_witness.md#become-an-active-witness)
-- FAQ
-  - [Committee](../tutorials/FAQ.md#committee)
-  - [Witness](../tutorials/FAQ.md#witness)
+
+**TODO: Update these links, I'm not sure the proper syntax**
+- [BitShares Network Components](TBD)
+  - [Peer-to-Peer Network](TBD)
+  - [Validation Nodes](TBD)
+    - [Seed Node](TBD)
+    - [API Node](TBD)
+    - [Full Node](TBD)
+    - [Local Node](TBD)
+    - [Block Producing Node](TBD)
+  - [Client Wallets](TBD)
+    - [CLI Wallet](TBD)
+    - [Web Wallet](TBD)
+    - [Light Wallet](TBD)
+- [BitShares Roles](TBD)
+  - [Seed Node Operators](TBD)
+  - [Public API Node Operators](TBD)
+  - [Block Producers](TBD)
+
+**TODO: Perhaps we want place these topics in a different section? It seems maybe the Roles section above is separate from the Components.**
+- [Block Producer Roles and Duties](TBD)
+- [Block Producer Voting](TBD)
+- [Open Public Testnet](#open-public-testnet)
 
 ***
 
-After you installed BitShares Core successfully, you have `witness_node` and `cli_wallet`. In this first section, we talk about the BitShaares Nodes and some expectations.
+**TODO: deprecate the use of the term "witness" as I feel "block producer" is a better term going forward. It's a battle I may not win in the short term, but long term I feel it's a good goal.**
 
-## BitShares Nodes and P2P network
-- [BitShares Client and Node](#bitshares-client-and-node)
-- [Witness Node and Full Node](#witness-node-and-full-node)
-- [Witness Node's Roles and Duties](#witness-nodes-roles-and-duties)
-- [Voting and a Witness Node](#voting-and-a-witness-node)
-- [Open Public Testnet](#open-public-testnet)
-
-
-#### What is the Nodes?
+**TODO: Consider removing this block, as it may not be needed in this context**
+#### What is a Node?
 What's a node? According to Wikipedia, in Computer Science, 
 
  > A node is a basic unit used in computer science. Nodes are devices or data points on a more extensive network. Devices such as a personal computer, cell phone, or printer are nodes. When defining nodes on the internet, a node is anything that has an IP address.  
 From <https://en.wikipedia.org/wiki/Node_(computer_science)> 
 
-### BitShares Client and Node
+### BitShares Network Cocmponents
 
-The BitShares client uses a peer-to-peer network. Each client connects to the BitShares Full Node to interact with the network to query the data and broadcast messages/transactions directly. If you are using a command prompt screen, you might try some API calls to query BitShares Blockchain data after you connect to a full node. 
+The BitShares Network is comprosed of three components: a peer-to-peer network, client wallets and validation nodes. As an end user, your interface to the blockchain is thru a client wallet. However, the client must connect to a server to interact with the blockchain. BitShares-Core provides a command line interface `cli_wallet` and BitShares-UI provides a graphical user interface wallet either thru a web browser [wallet.bitshares.org](https://wallet.bitshares.org) or desktop light wallet. These client wallets connect to a special type of validation node called an API server, which respond to client requests such as broadcasting a transaction or querying blockchain data. Transactions are broadcast by the API servers to other validation nodes using a peer-to-peer network, allowing each to observe, validate and store the same data locally. Another special type of validation node is the block producing node. These are operated by the active block producers and have the authority to include valid transactions into new blocks. 
 
-### Witness Node and Full Node  
+### Peer-to-Peer Network
+**TODO: Introduce the concepts of netowrking, nodes, connections, peer-to-peer, message exchange, etc.**
 
+### Validation Nodes
+**TODO: Explain that all nodes are validation nodes on the P2P network. The differencec is in what data they retain and make available to connected peers or clients.**
 When we talk about the BitShares Nodes, we use **witness node** and **full node** terms almost interchangeably.  However, there are some different roles between them. The "witness node" works as a **block producer**. The "full node" works as a **non-block producer** and mainly provides an API service which interacts with BitShares clients and applications and queries the BitShares Blockchain data. 
 
 - [Types of nodes](../nodes_full_witness/full_nodes.md#full-nodes-witness-nodes)
 
 Both are implemented by the executable (*witness_node*), but in the command lines extra parameters can represent differences each node operation.  For example, a (block producing) witness node has been provided an authorized block-signing private key, on the other hand, a (non-block producing) full node is not.  However, both *interact* with the decentralized network (blockchain). 
 
-#### BitShares Public Full Nodes
-If you do not have own node to run or connect, you can use one of the BitShares Public API services (public full nodes) to interact with the BitShares blockchain. 
+#### Seed Node
+**TODO: First node a new node on the P2P connects to. This is a full node of historical data, but need not retain market history or user data beyond validation. Clients do not connect to these, only other nodes**
 
-- The latest list of [BitShares Public Full Nodes](https://github.com/bitshares/bitshares-ui/blob/staging/app/api/apiConfig.js#L67) information.
+#### API Node
+**TODO: Expand on overview above. These must have market history and user history for the client to make use of.**
+You can use one of the BitShares Public API Nodes to interact with the BitShares blockchain. 
 
-### Witness Node's Roles and Duties
+- The latest list of [BitShares Public API Nodes](https://github.com/bitshares/bitshares-ui/blob/staging/app/api/apiConfig.js#L67) information.
 
-The witness node has a copy of the full BitShares blockchain data (transaction history) on a computer or other hardware devices.  
+#### Full Node
+**TODO: Talk about full nodes in context of what they contain**
 
-Anyone who wishes to have own copy of the blockchain data can do so. However, that would take hours (days) to download and sync the data and require many memories to run the blockchain (*Check here [BitShares updated System Requirements](../nodes_full_witness/full_nodes.md#system-requirements)*). Therefore, anyone who is interested in being a node or wants to have the blockchain data has to be prepared the right types of equipment and knowledge to handle all of the data. 
+#### Local Node
+**TODO: Talk about an end user configuring their own personal node to connect a client to locally. They may configure it to track only their account to save memory resources.**
 
+#### Block Producing Node
+**TODO: Expand on overview. These need not maintain market history nor user history as no client will connect to them. They are not exposed to the Internet directly and relay through trusted peers for security** 
+
+### Block Producer Role and Duties
+
+Each validation node has a replica of the full BitShares blockchain data (transaction history) on their server or other hardware device. Anyone who wishes to maintain a replica of the blockchain data may do so by runing the `witness_node` software and allowing it to syncronize over the peer-to-peer network. However, this may take several hours to download the data and requires storage and memory capacities beyond a typical desktop workstation (*Check here [BitShares updated System Requirements](../nodes_full_witness/full_nodes.md#system-requirements)*). Therefore, anyone who is interested in running a node or wants to have the blockchain data has to be prepared with the correct type of equipment and knowledge to handle all of the data. 
+
+**TODO: Continue edits from here on**
 The witness nodes maintain the integrity of the BitShares Blockchain. Moreover, Active witness node validates BitShares transactions and produce "blocks" for the BitShares Blockchain.  "Blocks" are groups of transactions that have been validated. Also, each transaction is formed of many operations. Without a witness node, we do not have any "blocks" and "chains".
 
 These are some BitShares Active Witness Duties:
