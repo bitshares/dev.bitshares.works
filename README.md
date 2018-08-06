@@ -22,8 +22,8 @@ Documentation related to BitShares Core internals and development fundamentals.
 - [Cli_Wallet and the Connectivity](/core/wallet/README.md#cli_wallet-and-the-connectivity)
 - [BitShares API](/core/api/README.md#bitshares-api) 
 - [Testnets](/core/testnets/README.md#testnets)
-- [Knowledge Bases](/core/README.md#knowledge-base)
-- [Tutorials](/core/Readme.md#tutorials) / [FAQ](/core/tutorials/FAQ.md#frequently-asked-questions---list-all)
+- [Knowledge Bases](/core/knowledge_base/README.md#knowledge-base)
+- [Tutorials](/core/tutorials/Readme.md#tutorials) / [FAQ](/core/tutorials/FAQ.md#frequently-asked-questions---list-all)
 - [Index - Help](/core/help/index.md#help)
 
 ***
