@@ -2,7 +2,7 @@
 
 ### Contents:
 
-[**General**](../tutorials/FAQ.md#general)**
+[**General**](../tutorials/FAQ.md#general)
 - [What is the standard Bitshares address structure and format?](../tutorials/FAQ.md#q-what-is-the-standard-bitshares-address-structure-and-format
 )
 - [What is the format of the block header?](../tutorials/FAQ.md#q-what-is-the-format-of-the-block-header)
@@ -19,13 +19,13 @@
 - [Does the protocol provide mechanisms for overlay protocols to interact such as OR_RETURN?](../tutorials/FAQ.md#q-does-the-protocol-provide-mechanisms-for-overlay-protocols-to-interact-such-as-or_return)
 - [Is this done via a gossip protocol or through a federate relay?](../tutorials/FAQ.md#q-is-this-done-via-a-gossip-protocol-or-through-a-federate-relay)
 
-[**Data Structures**](../tutorials/FAQ.md#data-structures)**
+[**Data Structures**](../tutorials/FAQ.md#data-structures)
 - [What data structures are used in the blockchain?](../tutorials/FAQ.md#q-what-data-structures-are-used-in-the-blockchain)
 
-[**Public Key System**](../tutorials/FAQ.md#public-key-system)**
+[**Public Key System**](../tutorials/FAQ.md#public-key-system)
 - [What public key system is used? If elliptic curve, then what is the curv?](../tutorials/FAQ.md#q-what-public-key-system-is-used-if-elliptic-curve-then-what-is-the-curve)
 
-[**Scripting Language**](../tutorials/FAQ.md#scripting-language)**
+[**Scripting Language**](../tutorials/FAQ.md#scripting-language)
 - [Is there a specification for Bitshares scripting language? (assuming there is one)](../tutorials/FAQ.md#q-is-there-a-specification-for-bitshares-scripting-language-assuming-there-is-one)
 - [Is the scripting language turing complete?](../tutorials/FAQ.md#q-is-the-scripting-language-turing-complete)
 
