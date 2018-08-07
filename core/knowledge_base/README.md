@@ -27,10 +27,6 @@
 - [Witness Scheduler RNG](../knowledge_base/witness-rng.md#witness-scheduler-rng) -- from Wiki
 - [Witness Scheduler](../knowledge_base/witness-scheduler.md#witness-scheduler) -- from Wiki
 
-
-### Integration
-- [Integration](../integration/README.md#integration)
-
 ***
 
 ### Protocols 
