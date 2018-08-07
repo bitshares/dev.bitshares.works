@@ -3,7 +3,10 @@
 - [BitShares-Core Libraries files list and Coding flows](../knowledge_base/files_methods_lists.md)
 - [Documented issues](../knowledge_base/documented_issues/README.md#documented-issues)
 
-***
+### BSIP
+- [BitShares Improvement Proposal(BSIP)](../knowledge_base/bsip_funding.md#businesses-developers-and-business-developers)
+- [BSIP Repository](https://github.com/bitshares/bsips)
+
 
 ### Accounts
 - [BitShares UI - How to create and manage Cloud wallet and/or Local wallet Accounts](../knowledge_base/bitshares-ui-wallet-account-mode.md)
@@ -27,10 +30,6 @@
 - [Witness Scheduler RNG](../knowledge_base/witness-rng.md#witness-scheduler-rng) -- from Wiki
 - [Witness Scheduler](../knowledge_base/witness-scheduler.md#witness-scheduler) -- from Wiki
 
-
-### Integration
-- [Integration](../integration/README.md#integration)
-
 ***
 
 ### Protocols 
@@ -44,7 +43,7 @@
 
 ### Other 
 - [BitShares Improvement Proposal(BSIP)](../knowledge_base/bsip_funding.md#businesses-developers-and-business-developers)
-- [wiki legacy ](../knowledge_base/wiki_legacy)
+- [wiki legacy ](../knowledge_base/wiki_legacy/README.md#wiki-legacy)
 
 
 

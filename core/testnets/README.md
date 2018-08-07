@@ -6,7 +6,7 @@ We offer the Open Public Testnet for developers who want to learn about BitShare
 - [Use UI Wallet on Public Testnet](../testnets/public_testnet_details.md#use-the-ui-wallet-on-public-testnet)
 - [Use CLI on Public Testnet](../testnets/public_testnet_details.md#use-the-cli-on-public-testnet)
 - [Other References](../testnets/public_testnet_details.md#other-references)
-
+- [Code Covering Testing](../testnets/testing_wiki.md#testing)
 
 ***
 
