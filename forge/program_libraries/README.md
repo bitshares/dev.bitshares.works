@@ -5,8 +5,6 @@
 
 - [Websockets Scripting Support](../program_libraries/websocket_scripting_support.md#websockets-scripting-support)
   - Ptython - websocket-client interact with the Core API
-- [API Logging](../program_libraries/api_logging.md#api-logging)
-  - How to enable RPC Logging in BitShares
 
 ***
 
@@ -20,5 +18,4 @@
 
 ***
 
-
-(i.e., most SDK contain sample code, which provides developers with samples programs & libraries)
+*(SDK is a set of tools that can be used to develop software applications targeting specific.)*
