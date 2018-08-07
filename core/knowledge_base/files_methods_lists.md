@@ -5,6 +5,7 @@
 
 ## Structures
 - [Block Structure](../knowledge_base/shared_files/structures/BitShares-Block-Structurev1.pdf)
+
 *****
 
 ## BitShares-Core Libraries All Folders and Files Lists
