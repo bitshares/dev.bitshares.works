@@ -18,5 +18,4 @@
 
 ***
 
-
-(i.e., most SDK contain sample code, which provides developers with samples programs & libraries)
+*(SDK is a set of tools that can be used to develop software applications targeting specific.)*
