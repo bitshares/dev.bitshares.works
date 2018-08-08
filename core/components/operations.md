@@ -59,54 +59,54 @@ Learning BitShares-Core Available Operations.
 
 ***
 
-### Detailed Descriptions
+## Detailed Descriptions
 
-#### account_create_operation
+### account_create_operation
 
-		  struct account_create_operation : public base_operation
-		  {
-		  struct ext
-		  {
-		  optional< void_t > null_ext;
-		  optional< special_authority > owner_special_authority;
-		  optional< special_authority > active_special_authority;
-		  optional< buyback_account_options > buyback_options;
-		  };
-		 
-		  struct fee_parameters_type
-		  {
-		  uint64_t basic_fee = 5*GRAPHENE_BLOCKCHAIN_PRECISION; 
-		  uint64_t premium_fee = 2000*GRAPHENE_BLOCKCHAIN_PRECISION; 
-		  uint32_t price_per_kbyte = GRAPHENE_BLOCKCHAIN_PRECISION;
-		  }; 
+	  struct account_create_operation : public base_operation
+	  {
+	  struct ext
+	  {
+	  optional< void_t > null_ext;
+	  optional< special_authority > owner_special_authority;
+	  optional< special_authority > active_special_authority;
+	  optional< buyback_account_options > buyback_options;
+	  };
 
-		  asset fee;
-		  account_id_type registrar;
-		 
-		  account_id_type referrer;
-		  uint16_t referrer_percent = 0;
-		 
-		  string name;
-		  authority owner;
-		  authority active;
-		 
-		  account_options options;
-		  extension< ext > extensions;
-		 
-		  account_id_type fee_payer()const { return registrar; }
-		  void validate()const;
-		  share_type calculate_fee(const fee_parameters_type& )const;
-		 
-		  void get_required_active_authorities( flat_set<account_id_type>& a )const
-		  {
-		  // registrar should be required anyway as it is the fee_payer(), but we insert it here just to be sure
-		  a.insert( registrar );
-		  if( extensions.value.buyback_options.valid() )
-		  a.insert( extensions.value.buyback_options->asset_to_buy_issuer );
-		  }
-		  };
+	  struct fee_parameters_type
+	  {
+	  uint64_t basic_fee = 5*GRAPHENE_BLOCKCHAIN_PRECISION; 
+	  uint64_t premium_fee = 2000*GRAPHENE_BLOCKCHAIN_PRECISION; 
+	  uint32_t price_per_kbyte = GRAPHENE_BLOCKCHAIN_PRECISION;
+	  }; 
 
-#### account_transfer_operation
+	  asset fee;
+	  account_id_type registrar;
+
+	  account_id_type referrer;
+	  uint16_t referrer_percent = 0;
+
+	  string name;
+	  authority owner;
+	  authority active;
+
+	  account_options options;
+	  extension< ext > extensions;
+
+	  account_id_type fee_payer()const { return registrar; }
+	  void validate()const;
+	  share_type calculate_fee(const fee_parameters_type& )const;
+
+	  void get_required_active_authorities( flat_set<account_id_type>& a )const
+	  {
+	  // registrar should be required anyway as it is the fee_payer(), but we insert it here just to be sure
+	  a.insert( registrar );
+	  if( extensions.value.buyback_options.valid() )
+	  a.insert( extensions.value.buyback_options->asset_to_buy_issuer );
+	  }
+	  };
+
+### account_transfer_operation
 - Transfers the account to another account while clearing the white list. 
 - In theory an account can be transferred by simply updating the authorities, but that kind of transfer lacks semantic meaning and is more often done to rotate keys without transferring ownership. This operation is used to indicate the legal transfer of title to this account and a break in the operation history. 
 - The account_id's owner/active/voting/memo authority should be set to new_owner
@@ -126,7 +126,7 @@ Learning BitShares-Core Available Operations.
 	  void validate()const;
 	  };
 
-#### account_update_operation
+### account_update_operation
 - Update an existing account.
 - This operation is used to update an existing account. It can be used to update the authorities, or adjust the options on the account. See `account_object::options_type` for the options which may be updated. 
 
