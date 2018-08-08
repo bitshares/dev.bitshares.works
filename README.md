@@ -17,7 +17,7 @@ Documentation related to BitShares Core internals and development fundamentals.
 
 - [Introduction/Architectures](/core/intro/README.md#introduction--architectures)
 - [Development Environment & Getting Started](/core/installation/README.md#development-environment--getting-started)
-- [Components Structures and Descriptios](/core/components#components-structures-and-detailed-descriptions)
+- [Components Structures and Descriptios](/core/components/README.md#components-structures-and-descriptions)
 - [BitShares Accounts](/core/accounts/README.md#bitshares-accounts)
 - [BitShares Nodes](/core/nodes_full_witness/README.md#bitshares-nodes-and-p2p-network)
 - [Cli_Wallet and the Connectivity](/core/wallet/README.md#cli_wallet-and-the-connectivity)
