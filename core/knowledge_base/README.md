@@ -42,7 +42,6 @@
 ***
 
 ### Other 
-- [BitShares Improvement Proposal(BSIP)](../knowledge_base/bsip_funding.md#businesses-developers-and-business-developers)
 - [wiki legacy ](../knowledge_base/wiki_legacy/README.md#wiki-legacy)
 
 

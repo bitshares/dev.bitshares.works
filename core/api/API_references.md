@@ -25,7 +25,6 @@ BitShares objects were identified by a unique id, an type and a space. When you 
 - [Remote Procedure Calls (RPC)](../api/rpc.md#remote-procedure-calls)
 - [Websocket Calls & Notifications](../api/websocket_calls_notifications.md#websocket-calls-notifications)
 
-
 ***
 
 ## Wallet API Calls

@@ -2,7 +2,11 @@
 
 We offer the Open Public Testnet for developers who want to learn about BitShares-Core and BitShares-UI wallet. You can create BitShares UI Wallet on Public Testnet to understand the functionalities. 
 
-### [Public Testnet - Quick Start Guide](../testnets/public_testnet_details.md#public-testnet---quick-start-guide)
+> **Important: [System Requirements](../nodes_full_witness/full_nodes.md#system-requirements) to run a node (updated: 2018-07-02).**
+
+If you are considering to prepare Public TestNet for a witness node, check **System Requirements** and read through [BitShares Nodes](../nodes_full_witness/README.md#bitshares-nodes-and-p2p-network) section.
+
+## [Public Testnet - Quick Start Guide](../testnets/public_testnet_details.md#public-testnet---quick-start-guide)
 - [Use UI Wallet on Public Testnet](../testnets/public_testnet_details.md#use-the-ui-wallet-on-public-testnet)
 - [Use CLI on Public Testnet](../testnets/public_testnet_details.md#use-the-cli-on-public-testnet)
 - [Other References](../testnets/public_testnet_details.md#other-references)
@@ -10,13 +14,7 @@ We offer the Open Public Testnet for developers who want to learn about BitShare
 
 ***
 
-> **Important: [System Requirements](../nodes_full_witness/full_nodes.md#system-requirements) to run a node (updated: 2018-07-02).**
-
-***
-
-If you are considering to prepare Public TestNet for a witness node, check **System Requirements** and read through [BitShares Nodes](../nodes_full_witness/README.md#bitshares-nodes-and-p2p-network) section.
-
-### [Public Testnet Witness(Full) Nodes (block producing witness nodes) ](../testnets/public_testnet.md)
+## [Public Testnet Witness Nodes](../testnets/public_testnet.md)
 1. [Installation/Configuration of Witness](../testnets/public_testnet.md#1-installation_configuration-of-witness)
 2. [Genesis Configuration](../testnets/public_testnet.md#2-genesis-configuration)
 3. [Initializing Blockchain](../testnets/public_testnet.md#3-initializing-blockchain)
@@ -24,13 +22,13 @@ If you are considering to prepare Public TestNet for a witness node, check **Sys
 5. [Establish a Committee](../testnets/public_testnet.md#5-establish-a-committee)
 6. [Web Wallet](../testnets/public_testnet.md#6-web-wallet)
 
-### Other References
+## Other References
 - [How to Set up the Faucet](../testnets/setup_faucet.md#how-to-set-up-the-faucet)
 - [How to Set up Nignx Webserver](../testnets/setup_nignx.md#how-to-set-up-nignx-webserver)
 - [How to set up Python Library](../testnets/setup_python_lib.md#how-to-set-up-python-library)
 - [How to Create MPAs/UIAs on Testnet](../testnets/setup_python_lib.md#create-mpasuias)
 
-### [Private Testnet](../testnets/private_testnet.md#how-to-setup-private-testnet)
+## [Private Testnet](../testnets/private_testnet.md#how-to-setup-private-testnet)
 1. [Prerequisites](#1-prerequisites)
 2. [Creating a Testnet folder](../testnets/private_testnet.md#2-creating-a-testnet-folder)
 3. [Creating a Genesis File for a Private Testnet](../testnets/private_testnet.md#3-creating-a-genesis-file-for-a-private-testnet)
@@ -46,7 +44,7 @@ If you are considering to prepare Public TestNet for a witness node, check **Sys
 13. [Creating Committee Members](../testnets/private_testnet.md#13-creating-committee-members)
 
 ***
-#### Tools
+### Tools
 **Bitshares Blockchain Explorer for Testnet:** http://bitshares-testnet.xyz/ 
 
 APIs - the Teatnet Explorer uses to query the Testnet
