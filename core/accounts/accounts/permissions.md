@@ -1,4 +1,4 @@
-## Permissions
+# Permissions
 #### Table of Contents:
 
 - [Permissions - in Wallet Settings](#permissions---in-wallet-settings)

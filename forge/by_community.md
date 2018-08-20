@@ -7,7 +7,7 @@
 
 ***
 
-## BitShares Developers' Contributions 
+# BitShares Developers' Contributions 
 
 - [BPAB - Bitshares Python Api Backend](https://github.com/oxarbitrage/bitshares-python-api-backend) :oxarbitrage 
 - [Bitshares python API Backend](https://github.com/oxarbitrage/bitshares-python-api-backend) : oxarbitrage 
@@ -33,7 +33,7 @@
 
 ***
 
-## BitShares Articles & References 
+# BitShares Articles & References 
 
 *by chronological*
 

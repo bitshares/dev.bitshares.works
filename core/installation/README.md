@@ -1,4 +1,4 @@
-## Getting Started
+# Getting Started
 
 #### Table of Contents:
 - [Installation and Build](README.md#installation-and-build)
@@ -27,7 +27,7 @@ Visit [BitShares.org](https://bitshares.org/) to learn about BitShares and join 
 
 ***
 
-## Installation and Build
+# Installation and Build
 Select an operation system and install and build.
 
 - [Ubuntu Linux](../installation/build_ubuntu.md#building-on-ubuntu)
@@ -45,7 +45,7 @@ Select an operation system and install and build.
 
 ***
 
-## Next Step Guide
+# Next Step Guide
 
 *If you want to...*
 
@@ -94,5 +94,5 @@ Select an operation system and install and build.
 - Check the [BSIP Repository](https://github.com/bitshares/bsips)
 
 
-###
+
 

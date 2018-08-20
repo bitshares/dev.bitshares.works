@@ -1,4 +1,4 @@
-## Components Structures and Descriptions
+# Components Structures and Descriptions
 
 #### Table of Contents:
 - **Block**

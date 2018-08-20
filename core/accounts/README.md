@@ -1,5 +1,5 @@
 
-## BitShares Accounts
+# BitShares Accounts
 In BitShares, you can create an account relatively easily by using the BitShares UI wallet.  The account comes with the Private/public keys. You should keep the information safe. Also, BitShares account gives you some benefits (i.e., Lifetime Membership (LTM) and Referral Program) and important roles (i.e., voting).  We recommend you to read through BitShares Accounts information to learn more.
 
 - [Account](../accounts#account)
@@ -13,6 +13,7 @@ In BitShares, you can create an account relatively easily by using the BitShares
   
 ### FAQ - Accounts
 
+- [Import a GUI-wallet account into CLI-wallet](../wallet/import_account.md#how-to-import-a-gui-wallet-account-into-cli-wallet) : How to, Often used Commands 
 - [Account Registration](../accounts/account_registration.md#account-registration)
   : Create a CLI account
 - [How to change a password if using a Cloud Wallet](https://github.com/bitshares/bitshares-ui/wiki/Cloud-Wallet-Login-and-changing-password) : from BitShares UI wiki
@@ -21,7 +22,7 @@ In BitShares, you can create an account relatively easily by using the BitShares
 
 ****
 
-## Account
+# Account
 
 In BitShares, you can create an account relatively easily by using the BitShares UI wallet. When you create a BitShares Account from the UI wallet, it will ask you to provide a unique Account name and a password. Although you should create a strong password, you can create readable and memorable BitShares account name. You do not need to write down a long random number as your account name. The BitShares account name would be helpful to identify other BitShares accounts.
 
@@ -47,7 +48,8 @@ The identifier comes with many advantages: Besides improved scalability, we have
 To separating authorities from identities, BitShares 2.0 can be much faster in processing delay while having much smaller transaction sizes. All participants are forced to have a named account on the blockchain. Also, most transactions are tied to the account name and can be linked to individuals (this includes transfers, trades, shorts, etc. but not stealthed transactions).
 
 ***
-## Memberships and Groups
+
+# Memberships and Groups
 
 ### Memberships
 If you just created a new BitShares account, the account would be a **Basic member** account as a default.  
@@ -72,7 +74,7 @@ To see your vesting balances, open the side dropdown menu and select **Vesting b
 > Warning: Due to some discrepancies, the annual membership has been disabled in most web wallets and will be re-enabled after a proper update eventually.
  
 ***
-## Fees
+# Fees
 
 ### Fee Division
 
@@ -90,7 +92,7 @@ The registrar is the account that paid the transaction fee to register the accou
 
 ***
 
-## Vesting Balances
+# Vesting Balances
 
 #### Table of Contents: 
 - Strategies

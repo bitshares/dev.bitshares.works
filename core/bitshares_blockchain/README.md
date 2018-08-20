@@ -13,16 +13,16 @@
 
 ### Bitshares Block Exploer
 
-- [Bitshares Block Exploer - cryptofresh](https://www.cryptofresh.com/)
-- [Bitshares Block Exploer - Expl0ere](http://bitshares-explorer.io/#/dashboard)
-- [Bitshares.Exploer - bts.ai](https://bts.ai/)
+- [Cryptofresh](https://www.cryptofresh.com/)
+- [Open Explorer](http://open-explorer.io/)
+- [bts.ai](https://bts.ai/)
 
 #### Blockchain Activity
 - http://blocktivity.info/
 
 ***
 
-## BitShares Communities
+# BitShares Communities
 
 - [Forum - BitSharesTalk](https://bitsharestalk.org/)
 - [Telagram - BitSharesDEX](https://t.me/BitSharesDEX)
@@ -33,8 +33,6 @@
 - [Reddit](https://www.reddit.com/r/BitShares/)
 - [BitSharesTalk.io](https://bitsharestalk.io/forums)
 - (*will be added more*)
-
-***
 
 ## Beyond Bitcoin - Bitshares
 
