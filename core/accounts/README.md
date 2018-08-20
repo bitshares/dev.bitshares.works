@@ -11,13 +11,10 @@ In BitShares, you can create an account relatively easily by using the BitShares
 - [Voting](../accounts/accounts/voting-bh.md#voting)
   - Voting for… Witnesses, Committee, or/and Workers
   
-### [Account Registration](../accounts/account_registration.md#account-registration)
-   - [Create a brain Key and derive a private/public key pair](../accounts/account_registration.md#2-create-a-brain-key-and-derive-a-privatepublic-key-pair)
-   - [Create an Account](../accounts/account_registration.md#3-create-an-account)
-   - [Register an Account](../accounts/account_registration.md#4-register-an-account)
-
-
 ### FAQ - Accounts
+
+- [Account Registration](../accounts/account_registration.md#account-registration)
+  : Create a CLI account
 - [How to change a password if using a Cloud Wallet](https://github.com/bitshares/bitshares-ui/wiki/Cloud-Wallet-Login-and-changing-password) : from BitShares UI wiki
 - [more...](../tutorials/FAQ.md#accounts)
 - Knowledge Base: [Multi-Signature](../knowledge_base/multi-signature.md#multi-signature)  
@@ -33,6 +30,10 @@ It's important to understand that **only** you know your password, and no one ca
 ### BitShares UI Wallet
 
 If you are a user who wants to create your account and a wallet, you can check [BitShares User Guide](https://github.com/bitshares/how.bitshares.works/tree/master/bbf/user_guide#user-guide) - [Create a BitShares Wallet](https://github.com/bitshares/how.bitshares.works/blob/master/bbf/user_guide/create_account.md#create-a-bitshares-wallet) section. 
+
+The below shows simple steps to create a BitShares user account.
+
+![BitShares Architecture](../imgs/create_account_gui_n1.png)
 
 If you create an account at one of BitShares partners, the account name will be available among BitShares partners.  So, you will be able to use the BitShares account name to communicate (e.g., sending fund) with other BitShares account holders like sending an email. The advantage of using account name is you, and other people can identify the account holder. 
 -  *[How to send/fund your account](https://github.com/bitshares/how.bitshares.works/blob/master/bbf/user_guide/fund_account.md#fund-your-account)*

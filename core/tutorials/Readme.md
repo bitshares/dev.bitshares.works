@@ -13,6 +13,10 @@ This page “How To”  intended to collect more steps included information.
 - [BitShares UI - How to create and manage Cloud wallet and/or Local wallet Accounts](../knowledge_base/bitshares-ui-wallet-account-mode.md)
 
 ### Accounts 
+- [Account Registration](../accounts/account_registration.md#account-registration)
+  - [Create a brain Key and derive a private/public key pair](../accounts/account_registration.md#2-create-a-brain-key-and-derive-a-privatepublic-key-pair)
+  - [Create an Account](../accounts/account_registration.md#3-create-an-account)
+  - [Register an Account](../accounts/account_registration.md#4-register-an-account)
 - [How to change a password if using a Cloud Wallet](https://github.com/bitshares/bitshares-ui/wiki/Cloud-Wallet-Login-and-changing-password) : from BitShares UI wiki
 - [How to process Account Registration](../accounts/account_registration.md#account-registration)
 

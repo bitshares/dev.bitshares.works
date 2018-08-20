@@ -2,48 +2,52 @@
 
 Welcome to the documentation portal for the BitShares Blockchain. The content on this page is managed by the BitShares community and is constantly improved.
 
-The purpose of this site is to provide in-depth documentation about the BitShares Blockchain and make it easier for users and developers to leverage the full power of the BitShares Blockchain.
-
-***
-
 ### Releases
 - [BitShares-Core Release](https://github.com/bitshares/bitshares-core/releases)
 - [BitShares-UI Release](https://github.com/bitshares/bitshares-ui/releases)
 
 ***
 
-## [BitShares Core](/core/README.md#bitshares-core)
+## BitShares Core
 Documentation related to BitShares Core internals and development fundamentals. 
 
-- [Introduction/Architectures](/core/intro/README.md#introduction--architectures)
-- [Development Environment & Getting Started](/core/installation/README.md#development-environment--getting-started)
-- [Components Structures and Descriptions](/core/components/README.md#components-structures-and-descriptions)
-- [BitShares Accounts](/core/accounts/README.md#bitshares-accounts)
-- [BitShares Nodes](/core/nodes_full_witness/README.md#bitshares-nodes-and-p2p-network)
-- [Cli_Wallet and the Connectivity](/core/wallet/README.md#cli_wallet-and-the-connectivity)
-- [BitShares API](/core/api/README.md#bitshares-api) 
+- [**Introduction/Architectures**](/core/intro/README.md#introduction--architectures)
+  : BitShares Core Workflow (Project / Issues) , BitShares Core Repository Gitflow, Development Environment
+- [**Getting Started**](/core/installation/README.md#development-environment--getting-started)
+  : Installations,Requirements(OS, Hardware, CPU, storage, Memory,etc), CLI-windows Tools, Core in WSL, Known issues, Next Step Guide
+- [**BitShares Accounts**](/core/accounts/README.md#bitshares-accounts)
+  : Accounts, Memberships, Fees, Permissions, Authorities, Referral Program,Voting 
+- [**BitShares Nodes**](/core/nodes_full_witness/README.md#bitshares-nodes)
+  : About Nodes, System Requirements, Running a BitShares API Node,Full/Witness Nodes
+- [**Cli_Wallet**](/core/wallet/README.md#cli_wallet-and-the-connectivity)
+  : CLI wallet, wallet.json, General / Secure Network & Wallet Configuration
+- [**BitShares API**](/core/api/README.md#bitshares-api) 
+  : API Documentation (doxygen links), API(features, restrictions, configuration), Calls(RPC, Websocket), Objects and IDs
+- [**System Components Structures and Descriptions**](/core/components/README.md#components-structures-and-descriptions)
+  : Block structure, operations, evaluators, objects
+- [**Knowledge Bases**](/core/knowledge_base/README.md#knowledge-base)
+- [**Index**- Help](/core/help/index.md#help)
+
+## BitShares Developers Forge
+BitShares topic targeting technical information guide and for best practices.
+
+- [Tutorials](/core/tutorials/Readme.md#tutorials) 
+- [FAQ](/core/tutorials/FAQ.md#frequently-asked-questions---list-all)
 - [Testnets](/core/testnets/README.md#testnets)
-- [Knowledge Bases](/core/knowledge_base/README.md#knowledge-base)
-- [Tutorials](/core/tutorials/Readme.md#tutorials) / [FAQ](/core/tutorials/FAQ.md#frequently-asked-questions---list-all)
-- [Index - Help](/core/help/index.md#help)
+  : Public Testnet and Private Testnet setup guide
+- [Support and Optimizations](/forge/supports.md#support-and-optimizations) 
+  : API Support & References, Libraries, SDKs,Tools, Plugins, and Programs  
+- [Use Cases/Integrations Guide](/forge/use_cases/README.md#use-cases-and-integrations-guide)
+- [BitShares Articles & References](/forge/by_community.md#bitshares-articles--references) 
+- [BitShares Developers' Contributions ](/forge/by_community.md#bitshares-developers-contributions)
+  : Developers GitHub Repositories for Support
 
-***
+## BitShares Blockchain
+- [BitShares Blockchain Foundation](/core/bitshares_blockchain/README.md#bitshares-blockchain)
+- [Bitshares Block Explorer](/core/bitshares_blockchain/README.md#bitshares-block-exploer)
+- [UI User Guide](https://github.com/bitshares/how.bitshares.works/tree/master/bbf/user_guide#user-guide)
+- [BitShares Communities](/core/bitshares_blockchain/README.md#bitshares-communities)
 
-## [BitShares Blockchain](/core/bitshares_blockchain/README.md#bitshares-blockchain)
-- BitShares Blockchain Foundation, Bitshares Block Exploer, [User Guide](https://github.com/bitshares/how.bitshares.works/tree/master/bbf/user_guide#user-guide), etc 
-
-***
-
-## [BitShares Developers Forge](/forge/README.md#bts-developers-forge)
-BitShares topic targeting technical information supported by the BitShares Community. 
-
-- [API Support & References - JSON-RPC, REST, etc ](/forge/api_support/README.md#api-support--references)
-- [Plugins](/forge/plugins/README.md#plugins)
-- [Programs & Libraries](/forge/program_libraries/README.md#programs--libraries)
-- [SDK/Tools](/forge/sdk_tools/README.md#sdk--tools)
-- [Repositories - Developers](/forge/shared_repo/repo_byname_list.md#developers-github-repositories)
-- [Articles](/forge/articles/tech_articles_chronological.md#articles--references)
-- [Use Cases](/forge/use_cases/README.md#use-cases)
 
 ***
 

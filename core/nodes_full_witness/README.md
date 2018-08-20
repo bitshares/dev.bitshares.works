@@ -1,22 +1,20 @@
+## BitShares Nodes 
+
 #### Table of Contents:
-- [BitShares Nodes](../nodes_full_witness/README.md#bitshares-nodes-and-p2p-network)
-- [Full Node](../nodes_full_witness/full_nodes.md#full-nodes-witness-nodes)
-- [Witness Node](../nodes_full_witness/active_witness.md#become-an-active-witness)
+- [BitShares Nodes and P2P](../nodes_full_witness/README.md#bitshares-nodes-and-p2p-network)
+- [Full Node (Witness Nodes)](../nodes_full_witness/full_nodes.md#full-nodes-witness-nodes)
+  : Type of Witness nodes, System Requirements, How to launch, Configuration 
+- [Running a BitShares API Node](../nodes_full_witness/running-api-node.md#running-a-bitshares-api-node)   
+- [Become an Active Witness](../nodes_full_witness/active_witness.md#become-an-active-witness)
+ : A Block-Producing Witness set up, Backup Server, Price Feeds
 - FAQ
   - [Committee](../tutorials/FAQ.md#committee)
   - [Witness](../tutorials/FAQ.md#witness)
 
+
 ***
 
-After you installed BitShares Core successfully, you have `witness_node` and `cli_wallet`. In this first section, we talk about the BitShaares Nodes and some expectations.
-
 ## BitShares Nodes and P2P network
-- BitShares Client and Node
-- Witness Node and Full Node
-- Witness Node's Roles and Duties
-- Voting and a Witness Node
-- Open Public Testnet
-
 
 #### What is the Nodes?
 According to Wikipedia, in Computer Science, 
@@ -81,53 +79,3 @@ If you are interested in being a node (block producing witness node), Testnet mi
 ***
 
 
-## Full Node
-
-- [Running a BitShares API Node](../nodes_full_witness/running-api-node.md#running-a-bitshares-api-node)   
-
-
-### [Full Nodes (Witness Nodes)](../nodes_full_witness/full_nodes.md#full-nodes-witness-nodes)
-- [Type of Witness nodes](../nodes_full_witness/full_nodes.md#type-of-witness-nodes)
-   - Non-Block producing
-   - Block producing
-- [System Requirements](../nodes_full_witness/full_nodes.md#system-requirements)      
-- [How to launch the full node](../nodes_full_witness/full_nodes.md#how-to-launch-the-full-node)
-- [Configuration - `config.ini`](../nodes_full_witness/full_nodes.md#configuration)
-- [Enabling Remote Procedure Calls (RPC)](../nodes_full_witness/full_nodes.md#enabling-remote-procedure-calls-rpc)
-- [Restarting the Witness Node](../nodes_full_witness/full_nodes.md#restarting-the-witness-node)
-- [Public Full Node information](../nodes_full_witness/full_nodes.md#public-full-node-information)
-
-***
-
-## Witness Node
-
-### [Become an Active Witness](../nodes_full_witness/active_witness.md#become-an-active-witness)
-
-- [A Block-Producing Witness](../nodes_full_witness/active_witness.md#a-block-producing-witness)
-   - Requirements
-   - Technical Specifications
-   - Active Witness Duties
- - [How to become a Block-Producing Witness](../nodes_full_witness/active_witness.md#how-to-become-a-block-producing-witness)
-   - 1.[Run the Witness/Full Node on the Network](../nodes_full_witness/active_witness.md#1-run-the-witnessfull-node-on-the-network)
-   - 2.[Create a CLI Wallet](../nodes_full_witness/active_witness.md#2-create-a-cli-wallet)
-   - 3.[Import your Account (and funds) into CLI Wallet](../nodes_full_witness/active_witness.md#3-import-your-account-and-funds-into-cli-wallet)
-   - 4.[Upgrade your Account to a Lifetime Member](../nodes_full_witness/active_witness.md#4-upgrade-your-account-to-a-lifetime-member)
-   - 5.[Register a New Witness](../nodes_full_witness/active_witness.md#5-registering-a-new-witness)
-   - 6.[Upvote the Witnes](../nodes_full_witness/active_witness.md#6-upvote-the-witness)
-   - 7.[Configuration of the Witness Node](../nodes_full_witness/active_witness.md#7-configuration-of-the-witness-node)
-   - 8.[Verifying Block Production](../nodes_full_witness/active_witness.md#8-verifying-block-production)
-- [Backup Server](../nodes_full_witness/active_witness.md#backup-server)
-- [Price Feeds](../nodes_full_witness/active_witness.md#price-feeds)
-
-***
-
-### FAQ - Committee
-
-- [How to Create a new Committee Member](../tutorials/committee_howto.md#how-to-creating-a-new-committee-member)
-- [more... ](../tutorials/FAQ.md#committee)
-
-### FAQ - Witness 
-- [How to Change the Signing Key of your Witness?](../tutorials/FAQ.md#q-how-to-change-the-signing-key-of-your-witness)
-- [more...](../tutorials/FAQ.md#witness)
-
-***

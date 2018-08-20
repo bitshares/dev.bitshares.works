@@ -1,6 +1,6 @@
 ## Wallet Full Nodes & Witness Nodes
 
-*This page shows example command lines a client to connect to the network and open up a node.*
+*This page shows example command lines a client to connect to the network and open up a node.(-from wiki)*
 
 
 ***

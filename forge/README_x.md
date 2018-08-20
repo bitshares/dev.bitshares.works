@@ -3,8 +3,6 @@
 
 BitShares Developers Forge is a collaboration place supported by the BitShares Community to allow the developers to take advantage the leading tools in the project and development.
 
-The goal is to provide the means to collaborate and learn from projects, processes, code, concepts, and ideas across the BitShares Community. As more individuals, teams and organizations use the services, everyone benefits. This returns even greater value to the BitShares Community.
-
 ***
 
 ### [API Support & References](../forge/api_support/README.md#api-support)
