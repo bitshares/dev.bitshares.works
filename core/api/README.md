@@ -1,4 +1,4 @@
-## BitShares API
+# BitShares API
 
 #### Table of Contents: 
 - [BitShares-Core API References](../api/API_references.md#bitshares-core-api-references---doxygen-documentation-quick-links)
@@ -19,7 +19,7 @@
   - [Remote Procedure Calls (RPC)](../api/rpc.md#remote-procedure-calls)
   - [Websocket Calls & Notifications](../api/websocket_calls_notifications.md#websocket-calls-notifications)
 - [Often Used API Calls](../api/often_used_call.md#often-used-api-calls)
-- [FAQ - API](../api/README.md#faq---api)
+- [FAQ - API](../tutorials/FAQ.md#apis)
 
 ***
 

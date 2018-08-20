@@ -1,4 +1,4 @@
-## Websocket Calls Notifications
+# Websocket Calls Notifications
 
 #### Contents:
 * [Call Format: Websocket](../api/websocket_calls_notifications.md#call-format-websocket)

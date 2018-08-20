@@ -1,4 +1,4 @@
-## Support and Optimizations
+# Support and Optimizations
 
 #### Table of Contents:
 - API Support & References

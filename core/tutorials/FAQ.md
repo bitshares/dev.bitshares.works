@@ -1,6 +1,6 @@
-## Frequently Asked Questions - List All
+# Frequently Asked Questions - List All
 
-### Contents:
+#### Table of Contents:
 
 [**General**](../tutorials/FAQ.md#general)
 - [What is the standard Bitshares address structure and format?](../tutorials/FAQ.md#q-what-is-the-standard-bitshares-address-structure-and-format

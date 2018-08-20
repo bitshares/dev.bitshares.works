@@ -1,4 +1,4 @@
-## Connecting a Cli Wallet
+# Connecting a Cli Wallet
 
 #### Table of Contents:
 1. [Installation and build](../wallet/cli_wallet.md#1installation-and-build)

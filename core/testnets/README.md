@@ -1,4 +1,4 @@
-## Testnets
+# Testnets
 
 We offer the Open Public Testnet for developers who want to learn about BitShares-Core and BitShares-UI wallet. You can create BitShares UI Wallet on Public Testnet to understand the functionalities. 
 

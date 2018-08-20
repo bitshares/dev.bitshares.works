@@ -1,5 +1,5 @@
 
-## Network and Wallet Configuration
+# Network and Wallet Configuration
 
 #### Table of Contents:
 
