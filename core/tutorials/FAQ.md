@@ -115,12 +115,17 @@
 ***
 
 ### [Wallet / CLI Wallet](../tutorials/FAQ.md#wallet--cli-wallet-1)
+- [Running a Local Test Network (- wiki)](../wallet/cli_wallet-wiki.md#graphene-cli-wallet-wiki)
+- [Wallet Full Nodes & Witness Nodes(- wiki)](../wallet/wallet_full_nodes_witness_nodes.md#wallet-full-nodes--witness-nodes)
+- [Connect to a Public API Node service](../wallet/node_wallet_witness.md#use-the-public-api-node)
 - [How can I close the CLI client in a clean way?](../tutorials/FAQ.md#q-how-can-i-close-the-cli-client-in-a-clean-way)
-- [How can I import my GUI-wallet account into CLI-wallet?](../tutorials/FAQ.md#q-how-can-i-import-my-gui-wallet-account-into-cli-wallet)
+- [How to import a GUI-wallet account into CLI-wallet](../wallet/import_account.md#how-to-import-a-gui-wallet-account-into-cli-wallet)
 - [Why does the CLI client crash immediately when I try to run it for the first time?](../tutorials/FAQ.md#q-why-does-the-cli-client-crash-immediately-when-i-try-to-run-it-for-the-first-time)
 - [How to setup Network and Wallet Configuration](../wallet/wallet_network.md#network-and-wallet-configuration)
    - [General](../wallet/wallet_network.md#general-network-and-wallet-configuration)
    - [Secure](../wallet/wallet_network.md#secure-network-and-wallet-configuration)
+- [Wallet Full Nodes & Witness Nodes (-wiki)](../wallet/wallet_full_nodes_witness_nodes.md#wallet-full-nodes--witness-nodes)
+   - Examples - connect to the network and open up a node   
    
 ***
 ### [Witness](../tutorials/FAQ.md#witness)
@@ -505,60 +510,6 @@ Not much. The biggest difference is that public testnet are intended for wider a
 #### Q. How can I close the CLI client in a clean way?
 
 In Windows closing the whole window produces a nasty exception. In Windows you can try ctrl-d which stops the process but stil produces a nasty exception.
-
-#### Q. How can I import my GUI-wallet account into CLI-wallet?
-
-CLI and GUI wallet are two separated applications. They use separated ways to represent backups. You can currently only manually import keys from the GUI into the CLI.
-
-Your wallet private keys have extremely important roles. By importing your private keys to a new CLI-wallet, you can control your account funds from the CLI-wallet. 
-
-First, find your private keys in your GUI-wallet
-- Login to your GUI-wallet
-- Go to [Settings] – [Permissions]. There are Active, Owner, and Memo tabs. 
-- In the tab, click your public key (or the key image). It will open a form.
-- On the form, click [Show], save your private key information to use later.
-
-Connect the CLI-wallet pointing it to a live node
-
-    ./programs/cli_wallet/cli_wallet --server-rpc-endpoint ws://localhost:8090
-    Or 
-    ./programs/cli_wallet//cli-wallet -s wss://bitshares.openledger.info/ws
-
-You should get a prompt
-
-    new>>>
-
-Set a password for your CLI-wallet and unlock.
-
-**Note:** This password does not need to be the same with your GUI-wallet password. You will create a *new wallet* and it will be secured by the new password.
-
-    new >>> set_password mypass
-    set_password mypass
-    null
-    locked >>> unlock mypass
-    unlock mypass
-    null
-    unlocked >>>
-
-
-Import your each private key you saved from your GUI-wallet into your new CLI-wallet.
-
-    import_key your-account-name THISISTHEKEYTHATYOUCOPIED
-
-And you are done. No need to claim balance. Your account balances are in there. 
-
-Use `list_my_account`s to see your imported account.
-
-And to check balance:
-
-    unlocked >>> list_account_balances your-account-name
-    list_account_balances your-account-name
-    31016.69330 BTS
-    0 CNY
-    0 USD
-
-    unlocked >>>
-
 
 #### Q. Why does the CLI client crash immediately when I try to run it for the first time?
 

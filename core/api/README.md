@@ -2,9 +2,23 @@
 
 #### Table of Contents: 
 - [BitShares-Core API References](../api/API_references.md#bitshares-core-api-references---doxygen-documentation-quick-links)
+  - Blockchain APIs: [list](../api/API_references.md#bitshares-core-api-references---doxygen-documentation-quick-links) - [open doxygen](https://bitshares.org/doxygen/namespacegraphene_1_1app.html) 
+  - Wallet API: [list](../api/API_references.md#bitshares-core-api-references---doxygen-documentation-quick-links) - [open doxygen](https://bitshares.org/doxygen/classgraphene_1_1wallet_1_1wallet__api.html) 
 - [API Access & Restrictions](../api/api_restrictions.md#api-access-and-restrictions)
-- [Objects and IDs](../api/README.md#objects-and-ids)
+- [Objects and IDs](../api/object_ids.md#objects-and-ids)  
+  - [Objects Format](../api/object_ids.md#bitshares-objects-format)
+  - [List of Commonly used Objects](../api/object_ids.md#list-of-commonly-used-objects)
+    - [Examples](../api/object_ids.md#examples)
+    - [Examples - Accounts](../api/object_ids.md#examples---accounts)
+    - [Example Call and a result: account object (1.2.x)](../api/object_ids.md#example-call-and-a-result-account-object-id-12x)
+    - [Example Call and a result: asset object (1.3.x) ](../api/object_ids.md#example-call-and-a-result-asset-object-id-13x)
+  - [Defenitions](../api/object_ids.md#definitions)
+    - [Protocol Space (1.x.x)](../api/object_ids.md#protocol-space-1xx)
+    - [Implementattion Space (2.x.x)](../api/object_ids.md#implementattion-space-2xx)
 - [Available Calls](../api/README.md#available-calls) 
+  - [Remote Procedure Calls (RPC)](../api/rpc.md#remote-procedure-calls)
+  - [Websocket Calls & Notifications](../api/websocket_calls_notifications.md#websocket-calls-notifications)
+- [Often Used API Calls](../api/often_used_call.md#often-used-api-calls)
 - [FAQ - API](../api/README.md#faq---api)
 
 ***
@@ -40,17 +54,19 @@ BitShares-Core uses a different model to represent the blockchain(space), its tr
 BitShares objects were identified by a unique id, an type and a space. You should know some of them.
    
    
-**Example Call and a result: account object (1.2.x)**
+**Example Call and a result: account object (id: 1.2.x)**
 
 		unlocked >>> get_account_id "user123"
+		
 		get_account_id "user123"
 		"1.2.539269"
 		unlocked >>>
 
 
-**Example Call and a result: asset object (1.3.x)**
+**Example Call and a result: asset object (id: 1.3.x)**
 
 		unlocked >>> list_assets "BTS" "2"
+		
 		list_assets "BTS" "2"
 		[{
 				"id": "1.3.0",

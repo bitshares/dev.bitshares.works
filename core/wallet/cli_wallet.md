@@ -14,11 +14,15 @@
 ### 1.Installation and build 
 You have the option to obtain a `cli_wallet`.  
 - 1a) Install and build it from BitShares-Core
-  - BitShares offers you to install BitShares-Core into different platforms; Ubuntu (x64), OSx, and Windows.  Please refer [**Installation Guide **.](../installation/README.md#install-a-development-environment)
-- 1b) Use the [Cli-Tools for Windows (option)](../wallet/cli_wallet.md#cli-tools-for-windows-option)
-  - This option you do not need to install BitShates Core. To obtain the tool, go to a BitShares release page ( https://github.com/bitshares/bitshares-core/releases) and download the BitShares-Core-\*-x64-cli-tools.zip. 
+  - BitShares offers you to install BitShares-Core into different platforms; Ubuntu (x64), OSx, and Windows.  Please refer [**Installation Guide **.](../installation/README.md#getting-started)
+- 1b) Use the [**CLI-Wallet tools for Windows (x64)**](../installation/windows_cli_tool.md#cli-wallet-on-windows-x64)
+  - This option you do not need to install BitShates Core. To obtain the tool, go to a [BitShares release page]( https://github.com/bitshares/bitshares-core/releases) and download the BitShares-Core-\*-x64-cli-tools.zip. 
 
 ### 2. Execute a cli_wallet
+
+- \<Example1\> Connecting a Cli-Wallet by using the public API server node
+- \<Example1\> Connecting a Cli-Wallet by an IP address (localhost)
+
 
 In this section, we show you two example patterns hoe to lunch the cli_wallet. The first one, we use the public API server node to connect the cli_wallet and also open WebSocket RPC or RPC-HTTP ports. The cli_wallet opens an RPC port for Wallet operations (i.e., spend, buy, sell...). The second one, we use an IP address (localhost) and also open the port for HTTP-RPC.
 
@@ -47,45 +51,41 @@ If you do not have a local wallet (`wallet.json` is a default file) yet, it will
 
 ### 3.Unlock the cli_wallet
 
-If you open the cli-wallet successfully, you will receive new >>> prompt. Set a password and unlock the cli-wallte.
+If you open the cli-wallet successfully, you will receive `new >>>` prompt. Set a password and unlock the cli-wallte.
 
     new >>>
 
-**set_password**
+#### `set_password` and `unlock`
 
 (e.g.) we used `supersecretpassphrase` as a password. This password is used to encrypt the private keys in the wallet.
 
     new >>> set_password supersecretpassphrase
     set_password supersecretpassphrase
     null
-    locked >>>
-
-**unlock**
-
     locked >>> unlock "supersecretpassphrase"   
     unlocked >>>
 
 > Note: After this point, you can issue any command available to the cli-wallet (Wallet APIs) or construct your own transaction manually.
 
 
-**gethelp**
+#### `gethelp`
 
-You can get more detailed information by issuing `gethelp`. Detailed explanations for most calls are available.
+You can get more detailed information by issuing `gethelp`. Detailed explanations for most calls are available. For example, 
 
-      unlocked >> gethelp <command>
+      unlocked >> gethelp "list_account_balances"
 
 
 ### 4. Gaining Access to Blockchain
 
-In Graphene, balances are contained in accounts. To claim an account that exists in the Graphene genesis, imports the private key for an existing account. The private key must match either an owner key or an active key for the named account.
+In Graphene, balances are contained in accounts. To claim an account that exists in the Graphene genesis, **imports the private key for an existing account**. The private key must match either an owner key or an active key for the named account.
 
-**import_key**
+#### `import_key`
 
     >>> import_key <name> "<wifkey>"
 
 Funds are stored in genesis balance objects. These funds can be claimed, with no fee, by using the `import_balance` command. This call will construct transaction(s) that will claim all balances controled by wif_keys and deposit them into the given account.
 
-**import_balance**
+#### `import_balance`
 
     >>> import_balance <name> ["*"] true
 
@@ -98,7 +98,7 @@ Funds are stored in genesis balance objects. These funds can be claimed, with no
  
     >>> upgrade_account faucet true
 
-**register_account**
+#### `register_account`
 
     >>> register_account <name> <owner-public_key> <active-public_key> <registrar_account> <referrer_account> <referrer_percent> <broadcast>
 
@@ -112,7 +112,7 @@ This command allows you to register an account using only a **public key**.
 
 In `transfer`, if the broadcast flag is `False`, the wallet will construct and sign, but **not**, broadcast the transaction. 
 
-**transfer**
+#### `transfer`
 
     unlocked >> transfer <from> <to> <amount> <asset> <memo> <broadcast>
    
@@ -143,6 +143,5 @@ The `get_private_key` command allows us to obtain the **private key** correspond
    
 
     >>> get_private_key GPH6viEhYCQr8xKP3Vj8wfHh6WfZeJK7H9uhLPDYWLGCRSj5kHQZM
-
 
 ***
