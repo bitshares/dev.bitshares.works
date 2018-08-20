@@ -13,9 +13,9 @@
 
 ### Bitshares Block Exploer
 
-- [Bitshares Block Exploer - cryptofresh](https://www.cryptofresh.com/)
-- [Bitshares Block Exploer - Expl0ere](http://bitshares-explorer.io/#/dashboard)
-- [Bitshares.Exploer - bts.ai](https://bts.ai/)
+- [Cryptofresh](https://www.cryptofresh.com/)
+- [Open Explorer](http://open-explorer.io/)
+- [bts.ai](https://bts.ai/)
 
 #### Blockchain Activity
 - http://blocktivity.info/
