@@ -1,4 +1,4 @@
-## Introduction & Architectures 
+# Introduction & Architectures 
 
 #### Table of Contents:
 - [BitShares Members](#bitshares-members)
@@ -33,7 +33,7 @@ BitShares offers you to install BitShares-Core into different platforms; [**Linu
 
 Also, if you are a Windows user, you have other two choices to install BitShares Core to your Windows (x64) Operation System.  One is [**CLI-Wallet tools for Windows (x64)**](../installation/windows_cli_tool.md#cli-wallet-on-windows-x64), another is [**Windows SubSystem for Linux (WSL)**](../installation/wsl.md#windows-subsystem-for-linux-wsl) .  
 
-The CLI-wallet tools for Windows (x64) allows you to try several methods to get the data from BitShares blockchain without the BitShares Core installation. After you download the cli-wallet tools, you will find a cli_wallet executable to try Wallet API. 
+The CLI-wallet tools for Windows (x64) allows you to have CLI wallet without the BitShares Core installation. After you download the cli-wallet tools (zip file) and unzip it, you will find all files you need to run CLI wallet.  
 
 Another option, Windows SubSystem for Linux (WSL).  This is for a developer who uses a Windows 10 (x64) Operation System and wants to build BitShares Core on Ubuntu. 
 
@@ -105,18 +105,20 @@ BitShares Explorer shows BitShares Blockchain information. You can observe BitSh
 
 If you would like to see more detailed information, the BitShares Open Explorer offers other information tabs (i.e., Operations, Proxies, Markets, SmartCoins, UIAs, and Holders) to view.
 
-- [Bitshares Block Exploer - cryptofresh](https://www.cryptofresh.com/)
-- [Bitshares Open Exploer - Exploere](http://bitshares-explorer.io/#/dashboard)
-- [Bitshares.Exploer - bts.ai](https://bts.ai/)
+- [Cryptofresh](https://www.cryptofresh.com/)
+- [Open Explorer](http://open-explorer.io/)
+- [bts.ai](https://bts.ai/)
 
 #### Blockchain Activity
 Blockchain Activity Matrix shows different tokens (assets) *Activity*, *Value*, and *Index*. It's interesting to check the CUI index is Capacity Utilization Index (a rate of blockchain daily activity to total blockchain capacity) to see how much numbers BitShares has.
 
 - http://blocktivity.info/
   
-## BitShares Core Projects Guide
+***
 
-### Project Guide
+# BitShares Core Projects Guide
+
+## Project Guide
 - [Contribution Guide](../intro/contribution_guide.md#contribution-guide) [DRAFT]
 - [Contribution Guide Project](https://github.com/bitshares/bitshares-core/projects/6)
 
@@ -129,7 +131,7 @@ This is a team of developers who manage BitShares-Core code updates and handle t
     - making Project plans for the future release
     - creating/ announcing  Release 
     
-### BitShares Core Code Management - GitFlow
+## BitShares Core Code Management - GitFlow
 This section describes and defines how changes flow into our code and through the various stages of development until it finally goes into production.
 
 - [Purpose](../intro/bitshares_core_gitflow.md)

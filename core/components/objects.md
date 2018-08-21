@@ -1,6 +1,6 @@
 #### BitShares Core - graphene::chain
 
-## Object Names and Detailed Descriptions
+# Object Names and Detailed Descriptions
 *graphene::chain Namespace: Class - Objects*
 
 |  | Detailed Description |

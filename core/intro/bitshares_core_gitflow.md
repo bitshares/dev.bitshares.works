@@ -1,18 +1,39 @@
-# BitShares Core - GitFlow
+## BitShares Core Projects Guide
 
-#### Contents:
-
-- [Purpose](../intro/bitshares_core_gitflow.md#purpose)
-- [Non-Consensus: Development / Release / Bugfix Workflows](../intro/bitshares_core_gitflow.md#non-consensus-development--release--bugfix-workflows)
-- [Consensus: Development / Release / Bugfix Workflows](../intro/bitshares_core_gitflow.md#consensus-development--release--bugfix-workflows)
-- [Goals To Achieve](../intro/bitshares_core_gitflow.md#goals-to-achieve)
-- [Basic Rules](../intro/bitshares_core_gitflow.md#basic-rules)
-- [How To Create a Release](../intro/bitshares_core_gitflow.md#how-to-create-a-release)
-- [How To Create an Emergency Fix](../intro/bitshares_core_gitflow.md#how-to-create-an-emergency-fix)
-- [Emergency Fix Workflows](../intro/bitshares_core_gitflow.md#emergency-fix-workflows)
+#### Table of Contents:
+- Project Guide
+  - Contribution Guide
+  - Contribution Guide Project  
+- BitShares Core - GitFlow
+  - [Purpose](../intro/bitshares_core_gitflow.md#purpose)
+  - [Non-Consensus: Development / Release / Bugfix Workflows](../intro/bitshares_core_gitflow.md#non-consensus-development--release--bugfix-workflows)
+  - [Consensus: Development / Release / Bugfix Workflows](../intro/bitshares_core_gitflow.md#consensus-development--release--bugfix-workflows)
+  - [Goals To Achieve](../intro/bitshares_core_gitflow.md#goals-to-achieve)
+  - [Basic Rules](../intro/bitshares_core_gitflow.md#basic-rules)
+  - [How To Create a Release](../intro/bitshares_core_gitflow.md#how-to-create-a-release)
+  - [How To Create an Emergency Fix](../intro/bitshares_core_gitflow.md#how-to-create-an-emergency-fix)
+  - [Emergency Fix Workflows](../intro/bitshares_core_gitflow.md#emergency-fix-workflows)
 
 ***
 
+
+# Project Guide
+- [Contribution Guide](../intro/contribution_guide.md#contribution-guide) [DRAFT]
+- [Contribution Guide Project](https://github.com/bitshares/bitshares-core/projects/6)
+
+**BitShares-Core (Team) :**
+This is a team of developers who manage BitShares-Core code updates and handle the issues that are submitted by developers. The team creates a project plan of next release and delivers to the Bitshares community about the Project information. 
+  - **Roles** 
+    - improving
+    - maintaining
+    - upgrading protocol if needed
+    - making Project plans for the future release
+    - creating/ announcing  Release 
+    
+    
+
+
+# BitShares Core - GitFlow
 
 ## Purpose
 
@@ -25,19 +46,13 @@ For our purposes, the general concept behind gitflow has been extended to allow 
 1. We have two different types of releases, mainnet and testnet, with a master-like branch for each one.
 2. We have to distinguish Consensus Impacting Changes (aka hardforks) from Non-Consensus Impacting Changes.
 
-***
-
 ## Non-Consensus: Development / Release / Bugfix Workflows
 
 ![BitShares Core GitFlow](../../core/imgs/bts-non-concensus.png)
 
-***
-
 ## Consensus: Development / Release / Bugfix Workflows
 
 ![BitShares Core GitFlow](../../core/imgs/bts-concensus.png)
-
-***
 
 ## Goals To Achieve
 
@@ -57,8 +72,6 @@ For our purposes, the general concept behind gitflow has been extended to allow 
     5. Merges are always done as real merges, not as fast-forwards, and not squashed.
 3. Core devs coordinate regular merges from "develop" into "hardfork".
 4. Both "develop" and "hardfork" should always remain compatible with mainnet, i. e. a full replay must be possible.
-
-***
 
 ## How To Create a Release
 
@@ -87,8 +100,6 @@ For a release,
 **Note 4:** ~~the tag commit can be changed.~~ Don't change tags on github. This is a source of confusion, and of irreproducible bug reports. Make new one is better (ex: test-2.0.180321b or wait 1 day).
 
 **Note 5:** Do not mark releases as "pre release" unless there is a real new version coming immediately after. Never upgrade "pre release" to "release" as new emails to subscribers will not be sent when doing so.
-
-***
 
 ## How To Create an Emergency Fix
 

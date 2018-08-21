@@ -1,4 +1,4 @@
-## How to import a GUI-wallet account into CLI-wallet
+# How to import a GUI-wallet account into CLI-wallet
 
 #### Table of Contents:
   1. [Find your private keys in your GUI-wallet](../wallet/import_account.md#1-find-your-private-keys-in-your-gui-wallet)

@@ -1,4 +1,4 @@
-## Cli_Wallet and the Connectivity
+# Cli_Wallet and the Connectivity
 
 #### Table of Contents:
 - [BitShares Architecture – CLI Client and Wallet](#bitshares-architecture--cli-client-and-wallet)
@@ -15,12 +15,12 @@
 
 ***
 
-### BitShares Architecture – CLI Client and Wallet
+## BitShares Architecture – CLI Client and Wallet
 - [CLI Client and Wallet (pdf)](../knowledge_base/shared_files/BitShares_Architecture-V3.pdf) 
 
 ![BitShares Architecture1 ](../../core/imgs/structure/bitshares-architecture-clinotop.png)
 
-### cli_wallet
+## cli_wallet
 
 The Nodes are connected to the network and verify all transactions and block produces. The cli_wallet does not offer P2P or blockchain capabilities.  
 

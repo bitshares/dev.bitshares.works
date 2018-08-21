@@ -1,4 +1,4 @@
-## Objects and IDs
+# Objects and IDs
 
 #### Table of Contents:
 - [Objects Format](../api/object_ids.md#bitshares-objects-format)
@@ -17,12 +17,12 @@
 
 In contrast to most cryptocurrency wallets, the BitShares-Core uses a different model to represent the blockchain, transactions, and accounts. On the BitShares blockchains, there are **no addresses**. So, the objects are identified by **a unique id, a type and space.**
 
-### BitShares Objects Format
+## BitShares Objects Format
 
     space.type.id
     
     
-### List of Commonly used Objects
+## List of Commonly used Objects
 
 |	ID  | Object Type |
 |----|---------------|
@@ -132,7 +132,7 @@ For advanced users that want to deal with the C++ code of graphene, we here list
 List all object types from all namespaces here so they can be easily reflected and displayed in debug output. If a 3rd party wants to extend the core code then they will have to change the `packed_object::type` field from `enum_type to uint16` to avoid warnings when converting packed_objects to/from json.
 
 |  *enum* graphene::chain::object_type |
-|----------------------------------------------|
+|:----------------------------------------------|
 | ---Values--- |
 | null_object_type |
 | base_object_type |
@@ -158,7 +158,7 @@ Sentry value which contains the number of different object types.
 ### Implementattion Space (2.x.x)
 
 | *enum* graphene::chain::impl_object_type |
-|----------------------------------------|
+|:----------------------------------------|
 |  ---Values---  |
 | impl_global_property_object_type |
 |  impl_dynamic_global_property_object_type |

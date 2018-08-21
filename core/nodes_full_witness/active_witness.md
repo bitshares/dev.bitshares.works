@@ -1,4 +1,4 @@
-## Become an Active Witness
+# Become an Active Witness
 
 #### Table of Contents:
 

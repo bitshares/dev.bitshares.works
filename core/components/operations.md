@@ -1,7 +1,7 @@
 #### BitShares Core - graphene::chain
 
 
-## Operations and Detailed Descriptions
+# Operations and Detailed Descriptions
 *graphene::chain::base_operation*
 
 Learning BitShares-Core Available Operations.

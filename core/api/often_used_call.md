@@ -1,4 +1,4 @@
-## Often Used API Calls
+# Often Used API Calls
 
 #### Table of Contents:
 - [`ist_account_balances <account>`](#list_account_balances-account)
