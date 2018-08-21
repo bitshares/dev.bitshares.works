@@ -3,8 +3,7 @@
 #### Table of Contents:
 
 [**General**](../tutorials/FAQ.md#general)
-- [What is the standard Bitshares address structure and format?](../tutorials/FAQ.md#q-what-is-the-standard-bitshares-address-structure-and-format
-)
+- [What is the standard Bitshares address structure and format?](../tutorials/FAQ.md#q-what-is-the-standard-bitshares-address-structure-and-format)
 - [What is the format of the block header?](../tutorials/FAQ.md#q-what-is-the-format-of-the-block-header)
 - [What is the maximum bitshares block size?](../tutorials/FAQ.md#q-what-is-the-maximum-bitshares-block-size)
 - [Are there any sharding mechanics currently deployed?](../tutorials/FAQ.md#q-are-there-any-sharding-mechanics-currently-deployed)
@@ -30,14 +29,40 @@
 - [Is the scripting language turing complete?](../tutorials/FAQ.md#q-is-the-scripting-language-turing-complete)
 
 ***
+
+### System Components
+- [How's a block structured?](../components/README.md#block)
+- [What types of Operations are available in BitShares? And want to read Detailed Descriptions?](../components/operations.md#bitshares-core---graphenechain) 
+- [What BitShares Objects names and the descriptions? ](../components/objects.md#object-names-and-detailed-descriptions)
+
 ### [Accounts](../tutorials/FAQ.md#accounts-1)
+- [Account Registration](../accounts/account_registration.md#account-registration)
+  - [Create a brain Key and derive a private/public key pair](../accounts/account_registration.md#2-create-a-brain-key-and-derive-a-privatepublic-key-pair)
+  - [Create an Account](../accounts/account_registration.md#3-create-an-account)
+  - [Register an Account](../accounts/account_registration.md#4-register-an-account)
 - [How to change a password if using a Cloud Wallet](https://github.com/bitshares/bitshares-ui/wiki/Cloud-Wallet-Login-and-changing-password) : from BitShares UI wiki
-- [How can I create, register and upgrade an account to Lifetime Membership?](../tutorials/FAQ.md#q-how-can-i-create-register-and-upgrade-an-account-to-lifetime-membership)
-- [How to process Account Registration](../accounts/account_registration.md#account-registration)
+- [How to create, register and upgrade an account to Lifetime Membership](../tutorials/account_create_to_ltm.md#how-to-create-register-and-upgrade-an-account-to-lifetime-membership)
 
 
-***
+### Installation 
+- Use [Ubuntu Linux](../installation/build_ubuntu.md#building-on-ubuntu)
+- Use [OS X](../installation/build_osx.md#building-on-os-x)
+- Use [Windows](../installation/build_windows.md#building-on-windows)
+- Use [Windows - CLI Tools](../installation/windows_cli_tool.md#cli-wallet-on-windows-x64)
+- Use **Windows Subsystem for Linux**
+  - [Instruction how to prepare Ubuntu to Windows 10 OS](../installation/wsl.md#windows-subsystem-for-linux-wsl) 
+- [System Requirements](../nodes_full_witness/full_nodes.md#system-requirements) 
+
 ### [APIs](#apis-1)
+- [Using the API](../api/api_restrictions.md#using-the-api)
+- [Access Restricted APIs](../api/api_restrictions.md#accessing-restricted-apis)
+- [Access the Named API via HTTP](../api/api_restrictions.md#accessing-the-named-api-via-http)
+- Available Calls
+  - [Remote Procedure Calls (RPC)](../api/rpc.md#remote-procedure-calls)
+  - [Websocket Calls & Notifications](../api/websocket_calls_notifications.md#websocket-calls-notifications)
+- [Often Used API Calls](../api/often_used_call.md#often-used-api-calls)
+- [Where to find BitShares APIs list in oxygen documentation](../api/API_references.md#bitshares-core-api-references---doxygen-documentation-quick-links)
+- [What kinds of Object IDs and the types BitShares has?](../api/object_ids.md#objects-and-ids)  
 - [How an Exchange can integrate their services to the BitShares UI Wallet - Gateway Integration Requirements](https://github.com/bitshares/bitshares-ui/wiki/Gateway-Integration-Requirements) : from BitShares UI wiki
 - [How do I get the network_add_nodes command to work? Why is it so complicated?](../tutorials/FAQ.md#q-how-do-i-get-the-network_add_nodes-command-to-work-why-is-it-so-complicated)
 - [Is there a way to access methods which require login over HTTP?](../tutorials/FAQ.md#q-is-there-a-way-to-access-methods-which-require-login-over-http)
@@ -45,7 +70,6 @@
 - [Is there a way to generate help with parameter names and method descriptions?](../tutorials/FAQ.md#q-is-there-a-way-to-generate-help-with-parameter-names-and-method-descriptions)
 - [What is the meaning of a.b.c numbers?](../tutorials/FAQ.md#q-what-is-the-meaning-of-abc-numbers)
 - [The answer to the previous question was really confusing. Can you make it clearer?](../tutorials/FAQ.md#q-the-answer-to-the-previous-question-was-really-confusing-can-you-make-it-clearer)
-- [How to process Account Registration](../accounts/account_registration.md#account-registration)
 
 
 ***
@@ -69,6 +93,7 @@
 - [What is the fee pool all about?](../tutorials/FAQ.md#q-what-is-the-fee-pool-all-about)
 - [What to do if the fee pool is empty?](../tutorials/FAQ.md#q-what-to-do-if-the-fee-pool-is-empty)
 - [What is Fee Pool Draining?](../tutorials/FAQ.md#q-what-is-fee-pool-draining)
+
 
 **Market Fee**
 - [What happens if I enable Market fees?](../tutorials/FAQ.md#q-what-happens-if-i-enable-market-fees)
@@ -103,6 +128,7 @@
 ***
 
 ### Transfer / Transactions
+- [How 'Multi-sugunature' works](../knowledge_base/multi-signature.md#multi-signature)
 - [How to use the CLI wallet to perform confidential transfers in BitShares](../tutorials/trn_confidential_transfer.md#how-to-use-the-cli-wallet-to-perform-confidential-transfers-in-bitshares)
 - [Hot to Construct Any Transaction - Manually](../tutorials/trn_construct_transaction.md#how-to-construct-any-transaction---manually)
 - [How to Propose a Transaction](../tutorials/trn_propose_transaction.md#how-to-propose-a-transaction)
@@ -324,20 +350,6 @@ No scripting
 ***
 
 ### Accounts
-
-#### Q. How can I create, register and upgrade an account to Lifetime Membership?
-
-Without already having an account, or knowing someone that has an account, it is not possible. You can’t create accounts out of nowhere.
-
-But you can work around it by importing an active key of a **Lifetime Member** account that has funds:
-
-1. In the gui, go to the permissions tab of an account that is funded and has a LTM status.
-1. Click on the BTS public key on the ACTIVE tab and copy the private key.
-1. In the cli-wallet run: import_key <account_name> <private_key>
-1. Then run: suggest_brain_key and copy the brain key. (You might want to make a backup of your brain key somewhere.)
-1. Create a new account with this command: create_account_with_brain_key <brainkey> <new_account_name> <imported_name> <imported_name> true
-
-This will create a new account called <new_account_name> and set the registrar and referrer to <imported_name>. The brainkey can be used to regenerate the account (even in the GUI wallet). You can manually delete the other active key from the wallet.json file.
 
 ***
 

@@ -16,30 +16,30 @@
 
 Welcome to BitShares! In this section, you will find the overview of BitShares Architecture (repositories and entities), and how the Core team processes the development work.  If you are interested in contributing to the Core team, you might want to check the Contribution Guide and the GitFlow to understand how BitShares-Core team handles the repository files and branches.  If you would like to know the Core team current project, issues, and the releases plans, check under the Issues and the Projects tabs.
 
-# BitShares Members 
+## BitShares Members 
 If you have an BitShares account, you are a BTS Holder and you have a voting power to make decisions in the BitShares Community.
 
 ![BitShares Architecture](../imgs/structure/btsholders-v1.png)
 
-# BitShares Architecture – GitHub Repositories and Entities
+## BitShares Architecture – GitHub Repositories and Entities
 - [GitHub Repositories and Entities with a guide (pdf)](../knowledge_base/shared_files/BitShares_Architecture-V3.pdf) 
 
 ![BitShares Architecture](../imgs/structure/bitshares-architecture-v3notop.png)
 
 
-# Development Environments and Requirements
+## Development Environments and Requirements
 
 BitShares offers you to install BitShares-Core into different platforms; [**Linux:Ubuntu (x64)**](../installation/build_ubuntu.md#building-on-ubuntu), [**OS X**](../installation/build_osx.md#building-on-os-x), and [**Windows**](../installation/build_windows.md#building-on-windows)**.  There are  dependencies to check when you download OpenSSL and  Boost. Please make sure which versions you downloaded. 
 
 Also, if you are a Windows user, you have other two choices to install BitShares Core to your Windows (x64) Operation System.  One is [**CLI-Wallet tools for Windows (x64)**](../installation/windows_cli_tool.md#cli-wallet-on-windows-x64), another is [**Windows SubSystem for Linux (WSL)**](../installation/wsl.md#windows-subsystem-for-linux-wsl) .  
 
-The CLI-wallet tools for Windows (x64) allows you to try several methods to get the data from BitShares blockchain without the BitShares Core installation. After you download the cli-wallet tools, you will find a cli_wallet executable to try Wallet API. 
+The CLI-wallet tools for Windows (x64) allows you to have CLI wallet without the BitShares Core installation. After you download the cli-wallet tools (zip file) and unzip it, you will find all files you need to run CLI wallet.  
 
 Another option, Windows SubSystem for Linux (WSL).  This is for a developer who uses a Windows 10 (x64) Operation System and wants to build BitShares Core on Ubuntu. 
 
 > See [System Requirements](../nodes_full_witness/full_nodes.md#system-requirements) if you are interested to run a node (updated: 2018-07-02).
 
-# BitShares Code and Files 
+## BitShares Code and Files 
 
 - Open Source program
 - Language uses (mainly): BitShares-Core(C++), python
@@ -53,7 +53,7 @@ Another option, Windows SubSystem for Linux (WSL).  This is for a developer who 
   - **BitSharesjs-ws** - Javascript websocket interface for Bitshares 
   - more
 
-# BitShares key Design Concepts and the Features
+## BitShares key Design Concepts and the Features
 
 BitShares is a Finance Smart contract platform supported by Graphene technology - Blockchain.  
 BitShares is designed from the ground up to process more transactions every second than VISA and MasterCard combined.
@@ -98,7 +98,7 @@ BitShares can be made to function as a software, a network, a ledger, a bank, an
  - Referral Program
  - Vesting valance
 
-# Observe BitShares Blockchain Transactions and Performance
+## Observe BitShares Blockchain Transactions and Performance
 
 #### Bitshares Block Explorer
 BitShares Explorer shows BitShares Blockchain information. You can observe BitShares Blockchain *Health* Status (head_block_num, head_block_age, chain_id, etc.), how transactions processing, assets volume, and members.
@@ -114,9 +114,11 @@ Blockchain Activity Matrix shows different tokens (assets) *Activity*, *Value*, 
 
 - http://blocktivity.info/
   
+***
+
 # BitShares Core Projects Guide
 
-### Project Guide
+## Project Guide
 - [Contribution Guide](../intro/contribution_guide.md#contribution-guide) [DRAFT]
 - [Contribution Guide Project](https://github.com/bitshares/bitshares-core/projects/6)
 
@@ -129,7 +131,7 @@ This is a team of developers who manage BitShares-Core code updates and handle t
     - making Project plans for the future release
     - creating/ announcing  Release 
     
-### BitShares Core Code Management - GitFlow
+## BitShares Core Code Management - GitFlow
 This section describes and defines how changes flow into our code and through the various stages of development until it finally goes into production.
 
 - [Purpose](../intro/bitshares_core_gitflow.md)
