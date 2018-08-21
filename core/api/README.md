@@ -15,7 +15,7 @@
   - [Defenitions](../api/object_ids.md#definitions)
     - [Protocol Space (1.x.x)](../api/object_ids.md#protocol-space-1xx)
     - [Implementattion Space (2.x.x)](../api/object_ids.md#implementattion-space-2xx)
-- [Available Calls](../api/README.md#available-calls) 
+- Available Calls
   - [Remote Procedure Calls (RPC)](../api/rpc.md#remote-procedure-calls)
   - [Websocket Calls & Notifications](../api/websocket_calls_notifications.md#websocket-calls-notifications)
 - [Often Used API Calls](../api/often_used_call.md#often-used-api-calls)

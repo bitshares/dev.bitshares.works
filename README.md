@@ -31,8 +31,7 @@ Documentation related to BitShares Core internals and development fundamentals.
 ## BitShares Developers Forge
 BitShares topic targeting technical information guide and for best practices.
 
-- [Tutorials](/core/tutorials/Readme.md#tutorials) 
-- [FAQ](/core/tutorials/FAQ.md#frequently-asked-questions---list-all)
+- [FAQ](/core/tutorials/FAQ.md#frequently-asked-questions---list-all) / [Tutorials](/core/tutorials/Readme.md#tutorials) 
 - [Testnets](/core/testnets/README.md#testnets)
   : Public Testnet and Private Testnet setup guide
 - [Support and Optimizations](/forge/supports.md#support-and-optimizations) 

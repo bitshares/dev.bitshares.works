@@ -69,7 +69,7 @@ Select an operation system and install and build.
 #### Run a witness node
 - Understand [BitShares Account](../accounts/README.md#bitshares-accounts)
 - Understand about a [BitShares Node](../nodes_full_witness/README.md#bitshares-nodes-and-p2p-network) 
-- KNow the [Node configuration and System Requirements](../nodes_full_witness/full_nodes.md#full-nodes-witness-nodes)
+- Know the [Node configuration and System Requirements](../nodes_full_witness/full_nodes.md#full-nodes-witness-nodes)
 - Learn [Running a BitShares API Node](../nodes_full_witness/running-api-node.md#running-a-bitshares-api-node) steps 
 - Learn [how to become an Active Witness](../nodes_full_witness/active_witness.md#become-an-active-witness)
 - Try [BitShares Public TestNet](../testnets/README.md#testnets)

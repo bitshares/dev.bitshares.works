@@ -18,8 +18,7 @@ This page “How To”  intended to collect more steps included information.
   - [Create an Account](../accounts/account_registration.md#3-create-an-account)
   - [Register an Account](../accounts/account_registration.md#4-register-an-account)
 - [How to change a password if using a Cloud Wallet](https://github.com/bitshares/bitshares-ui/wiki/Cloud-Wallet-Login-and-changing-password) : from BitShares UI wiki
-- [How to process Account Registration](../accounts/account_registration.md#account-registration)
-
+- [How to create, register and upgrade an account to Lifetime Membership](../tutorials/account_create_to_ltm.md#how-to-create-register-and-upgrade-an-account-to-lifetime-membership)
 
 ### API
 - [How an Exchange can integrate their services to the BitShares UI Wallet - Gateway Integration Requirements](https://github.com/bitshares/bitshares-ui/wiki/Gateway-Integration-Requirements) : from BitShares UI wiki
