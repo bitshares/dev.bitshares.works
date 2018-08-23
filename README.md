@@ -42,10 +42,11 @@ BitShares topic targeting technical information guide and for best practices.
   : Developers GitHub Repositories for Support
 
 ## BitShares Blockchain
-- [BitShares Blockchain Foundation](/core/bitshares_blockchain/README.md#bitshares-blockchain)
-- [Bitshares Block Explorer](/core/bitshares_blockchain/README.md#bitshares-block-exploer)
-- [UI User Guide](https://github.com/bitshares/how.bitshares.works/tree/master/bbf/user_guide#user-guide)
+- [BitShares Whitepaper (PDF)](http://www.bitshares.foundation/papers/BitSharesBlockchain.pdf)
 - [BitShares Communities](/core/bitshares_blockchain/README.md#bitshares-communities)
+- [BitShares Blockchain Foundation](/core/bitshares_blockchain/README.md#bitshares-blockchain)
+- [UI User Guide](https://github.com/bitshares/how.bitshares.works/tree/master/bbf/user_guide#user-guide)
+- [Bitshares Block Explorer](/core/bitshares_blockchain/README.md#bitshares-block-exploer)
 
 
 ***
