@@ -24,7 +24,7 @@ Documentation related to BitShares Core internals and development fundamentals.
 - [**BitShares API**](/core/api/README.md#bitshares-api) 
   : API Documentation (doxygen links), API(features, restrictions, configuration), Calls(RPC, Websocket), Objects and IDs
 - [**System Components Structures and Descriptions**](/core/components/README.md#components-structures-and-descriptions)
-  : Block structure, operations, evaluators, objects
+  : Block structure, protocols, operations, evaluators, objects
 - [**Knowledge Bases**](/core/knowledge_base/README.md#knowledge-base)
 - [**Index**- Help](/core/help/index.md#help)
 
