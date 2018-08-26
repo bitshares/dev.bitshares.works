@@ -55,7 +55,7 @@ These are a collection of the BitShares Protocols information. They are deep in 
 *[Operation(s)](../components/operations.md#operations-and-detailed-descriptions)*
 
 |  |   |
-|---|---|
+|---|:---|
 |  |  (operation name) |
 
 ***
@@ -91,7 +91,7 @@ struct account_options
 *The description of `account_options` elements*
 
 | Parameter  |   | Description |
-|---|---|---|
+|:---|:---|:---|
 |public_key_type  | memo_key |- The memo key is the key this account will typically use to encrypt/sign transaction memos and other non-validated account activities. This field is here to prevent confusion if the active authority has zero or multiple keys in it.  |
 | account_id_type | voting_account = GRAPHENE_PROXY_TO_SELF_ACCOUNT; | - If this field is set to an account ID other than GRAPHENE_PROXY_TO_SELF_ACCOUNT, then this account's votes will be ignored; its stake will be counted as voting for the referenced account's selected votes instead.  |
 | uint16_t | num_witness = 0; | - The number of active witnesses this account votes the blockchain should appoint Must not exceed the actual number of witnesses voted for in @ref votes |
@@ -215,7 +215,7 @@ typedef static_variant<
 *[Operation](../components/operations.md#operations-and-detailed-descriptions)*
 
 |  |   |
-|---|---|
+|:---|:---|
 |  |-  assert_operation  |
 
 
@@ -425,7 +425,7 @@ struct asset_options {
 *The descriptions of `asset_options` elements*
 
 |  |  |  |
-|---|---|---|
+|:---|:---|:---|
 | share_type | max_supply = GRAPHENE_MAX_SHARE_SUPPLY; | The maximum supply of this asset which may exist at any given time. This can be as large as GRAPHENE_MAX_SHARE_SUPPLY |
 | uint16_t | market_fee_percent = 0; | When this asset is traded on the markets, this percentage of the total traded will be exacted and paid to the issuer. This is a fixed point value, representing hundredths of a percent, i.e. a value of 100 in this field means a 1% fee is charged on market trades of this asset. |
 | share_type | max_market_fee = GRAPHENE_MAX_SHARE_SUPPLY; | Market fees calculated as @ref market_fee_percent of the traded volume are capped to this value |
@@ -461,7 +461,7 @@ struct bitasset_options {
 *The descriptions of `bitasset_options` elements*
 
 |  |  |  |
-|---|---|---|
+|:---|:---|:---|
 | uint32_t | feed_lifetime_sec = GRAPHENE_DEFAULT_PRICE_FEED_LIFETIME | Time before a price feed expires |
 |uint8_t  | minimum_feeds = 1; | Minimum number of unexpired feeds required to extract a median feed from |
 | uint32_t | force_settlement_delay_sec = GRAPHENE_DEFAULT_FORCE_SETTLEMENT_DELAY; | This is the delay between the time a long requests settlement and the chain evaluates the settlement |
@@ -474,7 +474,7 @@ struct bitasset_options {
 *[Operation(s)](../components/operations.md#operations-and-detailed-descriptions)*
 
 |   |   |
-|---|---|
+|:---|:---|
 |  | - balance_claim_operation <br /> - asset_create_operation <br /> - asset_global_settle_operation <br /> - asset_settle_operation <br />- asset_settle_cancel_operation <br /> - asset_fund_fee_pool_operation <br /> - asset_update_operation <br /> - asset_update_bitasset_operation <br /> - asset_update_feed_producers_operation <br /> - asset_publish_feed_operation <br /> - asset_issue_operation <br /> - asset_reserve_operation <br /> - asset_claim_fees_operation <br /> - asset_update_issuer_operation <br /> - asset_claim_pool_operation |
 
 
@@ -591,7 +591,7 @@ void add_authority_accounts(
 *[Operation(s)](../components/operations.md#operations-and-detailed-descriptions)*
 
 |  |   |
-|---|---|
+|:---|:---|
 |  | - balance_claim_operation  |
 
 
@@ -674,7 +674,7 @@ struct buyback_account_options
 *The descriptions of `buyback` elements*
 
 |  |   | descriptions |
-|---|---|---|
+|:---|:---|:---|
 | asset_id_type | asset_to_buy | The asset to buy. |
 | account_id_type | asset_to_buy_issuer | Issuer of the asset.  Must sign the transaction, must match issuer of specified asset. |
 | flat_set< asset_id_type > | markets | What assets the account is willing to buy with. <br />  Other assets will just sit there since the account has null authority. |
@@ -729,7 +729,7 @@ void validate()const;
 *The descriptions of valuables*
 
 |   | descriptions |
-|---|---|
+|:---|:---|
 | GRAPHENE_DEFAULT_BLOCK_INTERVAL |interval in seconds between blocks |  
 |GRAPHENE_DEFAULT_MAINTENANCE_INTERVAL  | interval in sections between blockchain maintenance events |
 | GRAPHENE_DEFAULT_MAINTENANCE_SKIP_SLOTS | number of block_intervals to skip at maintenance time |
@@ -767,7 +767,7 @@ void validate()const;
 *[Operation(s)](../components/operations.md#operations-and-detailed-descriptions)*
 
 |  |   |
-|---|---|
+|:---|:---|
 |  | - committee_member_create_operation <br /> - committee_member_update_operation <br /> - committee_member_update_global_parameters_operation  |
 
 ## confidential 
@@ -857,7 +857,7 @@ struct blind_output
 *[Operation(s)](../components/operations.md#operations-and-detailed-descriptions)*
 
 |  |   |
-|---|---|
+|:---|:---|
 |  | - transfer_to_blind_operation <br /> - transfer_from_blind_operation <br /> - blind_transfer_operation |
 
 
@@ -870,7 +870,7 @@ struct blind_output
 *[Operation(s)](../components/operations.md#operations-and-detailed-descriptions)*
 
 |   |   |
-|---|---|
+|:---|:---|
 |  | - custom_operation  |
 
 ## ext 
@@ -956,7 +956,7 @@ void unpack( Stream& s, graphene::chain::extension<T>& value, uint32_t _max_dept
 *[Operation(s)](../components/operations.md#operations-and-detailed-descriptions)*
 
 |  |   |
-|---|---|
+|:---|:---|
 |  | - fba_distribute_operation |
 
 
@@ -1020,7 +1020,7 @@ typedef fee_schedule fee_schedule_type;
 *[Operation(s)](../components/operations.md#operations-and-detailed-descriptions)*
 
 |   |   |
-|---|---|
+|:---|:---|
 |  | - limit_order_create_operation <br /> - limit_order_cancel_operation <br /> - call_order_update_operation <br /> - fill_order_operation <br /> - bid_collateral_operation <br /> - execute_bid_operation  |
 
 
@@ -1178,7 +1178,7 @@ struct op_wrapper;
 *[Operation(s)](../components/operations.md#operations-and-detailed-descriptions)*
 
 |   |   |
-|---|---|
+|:---|:---|
 |  | - proposal_create_operation <br />  - proposal_update_operation <br /> - proposal_delete_operation |      
   
 	
@@ -1355,7 +1355,7 @@ struct processed_transaction : public signed_transaction
 *[Operation(s)](../components/operations.md#operations-and-detailed-descriptions)*
 
 |   |   |
-|---|---|
+|:---|:---|
 |  | - transfer_operation <br /> - override_transfer_operation |
 
 
@@ -1657,7 +1657,7 @@ typedef fc::static_variant<linear_vesting_policy_initializer, cdd_vesting_policy
 *[Operation(s)](../components/operations.md#operations-and-detailed-descriptions)*
 
 |   |   |
-|---|---|
+|:---|:---|
 |  | - vesting_balance_create_operation <br /> - vesting_balance_withdraw_operation|
 
 
@@ -1778,7 +1778,7 @@ void from_variant( const fc::variant& var, graphene::chain::vote_id_type& vo, ui
 *[Operation(s)](../components/operations.md#operations-and-detailed-descriptions)*
 
 |   |   |
-|---|---|
+|:---|:---|
 |  | - withdraw_permission_create_operation <br /> - withdraw_permission_update_operation <br /> - withdraw_permission_claim_operation <br /> - withdraw_permission_delete_operation |
 
 ## witness 
@@ -1790,7 +1790,7 @@ void from_variant( const fc::variant& var, graphene::chain::vote_id_type& vo, ui
 *[Operation(s)](../components/operations.md#operations-and-detailed-descriptions)*
 
 |   |   |
-|---|---|
+|:---|:---|
 |  | - witness_create_operation <br /> - witness_update_operation |
 	
 	
@@ -1825,7 +1825,7 @@ typedef static_variant<
 *[Operation(s)](../components/operations.md#operations-and-detailed-descriptions)*
 
 |   |   |
-|---|---|
+|:---|:---|
 |  | - worker_create_operation | 
 
  
