@@ -14,7 +14,7 @@ Learning BitShares-Core Available Operations.
   - [account_whitelist_operation](../components/operations.md#account_whitelist_operation)
 - Asset
   - [asset_operation](../components/operations.md#asset_operation)
-  - [asset_clain_fees_operation](../components/operations.md#asset_clain_fees_operation)
+  - [asset_clain_fees_operation](../components/operations.md#asset_claim_fees_operation)
   - [asset_claim_pool_operation](../components/operations.md#asset_claim_pool_operation)
   - [asset_create_operation](../components/operations.md#asset_create_operation)
   - [asset_fund_fee_pool_operation](../components/operations.md#asset_fund_fee_pool_operation)
@@ -30,18 +30,18 @@ Learning BitShares-Core Available Operations.
   - [asset_update_operation](../components/operations.md#asset_update_operation)
 - Balance Claim
   - [balance_claim_operation](../components/operations.md#balance_claim_operation)
-- Bit collateral
+- Bit collateral (*market*)
   - [bit_collateral_operation](../components/operations.md#bit_collateral_operation)
--Committee
+- Committee
   - [committee_member_create_operation](../components/operations.md#committee_member_create_operation)
   - [committee_member_update_global_parameters_operation](../components/operations.md#committee_member_update_global_parameters_operation)
   - [committee_member_update_operation](../components/operations.md#committee_member_update_operation)
-- Custom 
+- Custom  (*market*)
   - [custom_operation](../components/operations.md#custom_operation)
   - [execute_bit_operation](../components/operations.md#execute_bit_operation)
 - FBA
   - [fba_distribute_operation](../components/operations.md#fba_distribute_operation)
-- Order
+- Order (*market*)
   - [call_order_update_operation](../components/operations.md#call_order_update_operation)
   - [fill_order_operation](../components/operations.md#fill_order_operation)
   - [limit_order_cancel_operation](../components/operations.md#limit_order_cancel_operation)
@@ -584,18 +584,23 @@ Learning BitShares-Core Available Operations.
 - All assets in a blind transfer must be of the same type: fee.asset_id The fee_payer is the temp account and can be funded from the blinded values.
 - Using this operation you can transfer from an account and/or blinded balances to an account and/or blinded balances.
 
-**Stealth Transfers:**
-
-- Assuming Receiver has key pair R,r and has shared public key R with Sender Assuming Sender has key pair S,s Generate one time key pair O,o as s.child(nonce) where nonce can be inferred from transaction Calculate secret V = o*R blinding_factor = sha256(V) memo is encrypted via aes of V owner = R.child(sha256(blinding_factor))
-- Sender gives Receiver output ID to complete the payment.
+- **Stealth Transfers:**
+	- Assuming Receiver has key pair `R,r` and has shared public key `R` with Sender 
+	- Assuming Sender has key pair `S,s` 
+	- Generate one time key pair `O,o` as `s.child(nonce)` where nonce can be inferred from transaction 
+	- Calculate secret `V = o*R` 
+	- blinding_factor = `sha256(V)` 
+	- memo is encrypted via aes of `V `
+	- owner = `R.child(sha256(blinding_factor))`
+  - Sender gives Receiver output ID to complete the payment.
 - This process can also be used to send money to a cold wallet without having to pre-register any accounts.
 - Outputs are assigned the same IDs as the inputs until no more input IDs are available, in which case a the return value will be the first ID allocated for an output. Additional output IDs are allocated sequentially thereafter. If there are fewer outputs than inputs then the input IDs are freed and never used again. 
 
 		struct blind_transfer_operation : public base_operation
 		{
-		struct fee_parameters_type { 
-		uint64_t fee = 5*GRAPHENE_BLOCKCHAIN_PRECISION; 
-		uint32_t price_per_output = 5*GRAPHENE_BLOCKCHAIN_PRECISION;
+		  struct fee_parameters_type { 
+		  uint64_t fee = 5*GRAPHENE_BLOCKCHAIN_PRECISION; 
+		  uint32_t price_per_output = 5*GRAPHENE_BLOCKCHAIN_PRECISION;
 		};
 
 		asset fee;
@@ -608,8 +613,8 @@ Learning BitShares-Core Available Operations.
 
 		void get_required_authorities( vector<authority>& a )const
 		{
-		for( const auto& in : inputs )
-		a.push_back( in.owner ); 
+		  for( const auto& in : inputs )
+		  a.push_back( in.owner ); 
 		}
 		};
 
@@ -865,7 +870,10 @@ Learning BitShares-Core Available Operations.
 ### proposal_create_operation
 - The `proposal_create_operation` creates a transaction proposal, for use in multi-sig scenarios
 - Creates a transaction proposal. The operations which compose the transaction are listed in order in proposed_ops, and expiration_time specifies the time by which the proposal must be accepted or it will fail permanently. The expiration_time cannot be farther in the future than the maximum expiration time set in the global properties object. 
-
+- Constructs a proposal_create_operation suitable for committee proposals, with expiration time and review period set
+        * appropriately.  No proposed_ops are added.  When used to create a proposal to change chain parameters, this method expects to receive the currently effective parameters, not the proposed parameters.  (The proposed parameters will go in proposed_ops, and proposed_ops is untouched by this function.)
+	
+	
 		struct proposal_create_operation : public base_operation
 		{
 		struct fee_parameters_type { 
