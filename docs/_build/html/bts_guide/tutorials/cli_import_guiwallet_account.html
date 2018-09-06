@@ -1,0 +1,360 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How to import a GUI-wallet account into CLI-wallet &mdash; BItShares Developers Portal  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BItShares Developers Portal
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/architectures.html">Introduction &amp; Architectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/environments.html">Development Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../components/components.html">System Components Elements</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../development/installation.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development/integration.html">Integration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development/interaction.html">Blockchain Interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development/testnets.html">Testnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development/bsip.html">BitShares Improvement Proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../supports_dev/supports.html">Support and Optimizations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/restrictions.html">1. API Access and Restrictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/calls.html">2. Available Calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/blockchain_api.html">3. Blockchain API(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/wallet_api.html">4. Wallet API - Calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/objects_ids.html">5. Objects and IDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/namespaces.html">6. Graphene - Namespaces</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Developer Guide (Tutorials)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_faq.html">Frequently Asked Questions (FAQ)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../references/info_comunities.html">BitShares Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references/info_comunities.html#bitshares-blockchain">BitShares Blockchain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references/tech_articles.html">Articles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references/githubrepo.html">BitShares Repositories</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BItShares Developers Portal</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>How to import a GUI-wallet account into CLI-wallet</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="how-to-import-a-gui-wallet-account-into-cli-wallet">
+<span id="howto-import-gui-wallet-account-cli"></span><h1>How to import a GUI-wallet account into CLI-wallet<a class="headerlink" href="#how-to-import-a-gui-wallet-account-into-cli-wallet" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title first">Table of Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#find-your-private-keys-in-your-gui-wallet" id="id11">1. Find your private keys in your GUI-wallet</a></li>
+<li><a class="reference internal" href="#connect-to-a-cli-wallet-pointing-it-to-a-live-node" id="id12">2. Connect to a CLI-wallet pointing it to a live node</a></li>
+<li><a class="reference internal" href="#set-a-password-and-unlock" id="id13">3. Set a password and unlock</a></li>
+<li><a class="reference internal" href="#import-key-s" id="id14">4. import key(s)</a></li>
+<li><a class="reference internal" href="#check-your-account" id="id15">5. Check your account</a></li>
+<li><a class="reference internal" href="#often-used-commands" id="id16">Often Used Commands</a></li>
+</ul>
+</div>
+<hr class="docutils" />
+<p>CLI and GUI wallet are two separated applications. They use separated ways to represent backups. You can manually import keys from the GUI into the CLI to have a CLI-wallet.</p>
+<p>Your wallet private keys have extremely important roles. By importing your private keys to a new CLI-wallet, you can control your account funds from the CLI-wallet.</p>
+<div class="section" id="find-your-private-keys-in-your-gui-wallet">
+<h2><a class="toc-backref" href="#id11">1. Find your private keys in your GUI-wallet</a><a class="headerlink" href="#find-your-private-keys-in-your-gui-wallet" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Login to your GUI-wallet</li>
+<li>Go to [Settings] – [Permissions]. There are Active, Owner, and Memo tabs.</li>
+<li>In the each tab, click your public key (or the key image). It will open a private key viewer.</li>
+<li>On the form, click [Show], (it might ask you to login) save your each private key and public key information to use later.</li>
+</ol>
+</div></blockquote>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Keep the private keys information to a safe place.</p>
+</div>
+</div>
+<div class="section" id="connect-to-a-cli-wallet-pointing-it-to-a-live-node">
+<h2><a class="toc-backref" href="#id12">2. Connect to a CLI-wallet pointing it to a live node</a><a class="headerlink" href="#connect-to-a-cli-wallet-pointing-it-to-a-live-node" title="Permalink to this headline">¶</a></h2>
+<p><strong>Example:</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">programs</span><span class="o">/</span><span class="n">cli_wallet</span><span class="o">/</span><span class="n">cli_wallet</span> <span class="o">--</span><span class="n">server</span><span class="o">-</span><span class="n">rpc</span><span class="o">-</span><span class="n">endpoint</span> <span class="n">ws</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">8090</span>
+<span class="n">Or</span>
+<span class="o">./</span><span class="n">programs</span><span class="o">/</span><span class="n">cli_wallet</span><span class="o">//</span><span class="n">cli</span><span class="o">-</span><span class="n">wallet</span> <span class="o">-</span><span class="n">s</span> <span class="n">wss</span><span class="p">:</span><span class="o">//</span><span class="n">bitshares</span><span class="o">.</span><span class="n">openledger</span><span class="o">.</span><span class="n">info</span><span class="o">/</span><span class="n">ws</span>
+</pre></div>
+</div>
+<p>You should get a prompt:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">new</span><span class="o">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="set-a-password-and-unlock">
+<h2><a class="toc-backref" href="#id13">3. Set a password and unlock</a><a class="headerlink" href="#set-a-password-and-unlock" title="Permalink to this headline">¶</a></h2>
+<p>Set a password for your CLI-wallet and unlock.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This password does not need to be the same with your GUI-wallet password. You will create a <em>new wallet</em> and it will be secured by the new password.</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">new</span> <span class="o">&gt;&gt;&gt;</span> <span class="n">set_password</span> <span class="n">mypass123</span>
+<span class="n">set_password</span> <span class="n">mypass123</span>
+<span class="n">null</span>
+
+<span class="n">locked</span> <span class="o">&gt;&gt;&gt;</span> <span class="n">unlock</span> <span class="n">mypass123</span>
+<span class="n">unlock</span> <span class="n">mypass123</span>
+<span class="n">null</span>
+<span class="n">unlocked</span> <span class="o">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="import-key-s">
+<h2><a class="toc-backref" href="#id14">4. import key(s)</a><a class="headerlink" href="#import-key-s" title="Permalink to this headline">¶</a></h2>
+<p>Import your each private key you saved from your GUI-wallet into your new CLI-wallet.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">import_key</span> <span class="n">your</span><span class="o">-</span><span class="n">account</span><span class="o">-</span><span class="n">name</span> <span class="n">ThisIsThePrivateKeyYouSaved</span>
+</pre></div>
+</div>
+<p>And you are done. No need to claim balance. Your account balances are in there.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you use the wallet to transfer funds, you just need to import the active private key. However, if you have different Active and Memo keys and use a Memo when you transfer, import the memo private key also.</p>
+</div>
+</div>
+<div class="section" id="check-your-account">
+<h2><a class="toc-backref" href="#id15">5. Check your account</a><a class="headerlink" href="#check-your-account" title="Permalink to this headline">¶</a></h2>
+<p>Use <a href="#id1"><span class="problematic" id="id2">``</span></a>list_my_account``s to see your imported account.</p>
+<p>And to check balance:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unlocked</span> <span class="o">&gt;&gt;&gt;</span> <span class="n">list_account_balances</span> <span class="n">your</span><span class="o">-</span><span class="n">account</span><span class="o">-</span><span class="n">name</span>
+<span class="n">list_account_balances</span> <span class="n">your</span><span class="o">-</span><span class="n">account</span><span class="o">-</span><span class="n">name</span>
+<span class="mf">31016.69330</span> <span class="n">BTS</span>
+<span class="mi">0</span> <span class="n">CNY</span>
+<span class="mi">0</span> <span class="n">USD</span>
+
+<span class="n">unlocked</span> <span class="o">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="often-used-commands">
+<h2><a class="toc-backref" href="#id16">Often Used Commands</a><a class="headerlink" href="#often-used-commands" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">| | |</div>
+</div>
+<p><a href="#id7"><span class="problematic" id="id8">|---|</span></a>—<a href="#id9"><span class="problematic" id="id10">|---|</span></a>
+| <cite>set_password</cite> |  | Sets a new password on the wallet. &lt;br/&gt; The wallet must be either ‘new’ or ‘unlocked’ to execute this command.   |
+| <cite>unlock</cite> |  | Unlocks the wallet.  |
+| <cite>gethelp</cite> |  (e.g., gethelp “list_accounts”)  |  Returns detailed help on a single API command.|
+| <cite>info</cite> | to view the current synchronization |  |
+| <cite>about</cite> | | Returns info such as client version, git version of graphene/fc, version of boost, openssl. |
+| <cite>import_key</cite> | <cite>import_key &lt;name&gt; “&lt;wifkey&gt;”</cite> |  Imports the private key for an existing account. &lt;br/&gt; The private key must match either an owner key or an active key for the named account. |
+| <cite>list_my_accounts</cite> | to view the current synchronization | Lists all accounts controlled by this wallet. This returns a list of the full account objects for all accounts whose private keys we possess. |
+| <cite>list_account_balances</cite> |  a list of the given account’s balances | List the balances of an account. Each account can have multiple balances, one for each type of asset owned by that account. The returned list will only contain assets for which the account has a nonzero balance |
+| <cite>get_account</cite> |   | Returns information about the given account. |
+| <cite>import_balance</cite> | import_balance &lt;name&gt; [“*”] true | This call will construct transaction(s) that will claim all balances controled by wif_keys and deposit them into the given account|
+| <cite>suggest_brain_key</cite> |   | Suggests a safe brain key to use for creating your account. create_account_with_brain_key() requires you to specify a ‘brain key’, |</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">create_account_with_brain_key| the signed transaction registering the account  | Creates a new account and registers it on the blockchain. |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line"><cite>dump_private_keys</cite> |   | Dumps all private keys owned by the wallet. &lt;br/&gt; The keys are printed in WIF format. You can import these keys into another wallet using import_key() |</div>
+<div class="line"><cite>upgrade_account</cite> | upgrade_account faucet true  | Upgrades an account to prime status. This makes the account holder a ‘lifetime member’. |</div>
+<div class="line"><cite>register_account</cite> | <cite>register_account &lt;name&gt; &lt;owner-public_key&gt; &lt;active-public_key&gt; &lt;registrar_account&gt;  &lt;referrer_account&gt; &lt;referrer_percent&gt; &lt;broadcast&gt;</cite> | Registers a third party’s account on the blockckain. |</div>
+<div class="line"><cite>transfer</cite> | <cite>transfer &lt;from&gt; &lt;to&gt; &lt;amount&gt; &lt;asset&gt; &lt;memo&gt; &lt;broadcast&gt;</cite> | Transfer an amount from one account to another. |</div>
+<div class="line"><cite>transfer2</cite> | <cite>transfer2 &lt;from&gt; &lt;to&gt; &lt;amount&gt; &lt;asset&gt; &lt;memo&gt; &lt;broadcast&gt;</cite>  | This method works just like transfer, except it always broadcasts and returns the transaction ID along with the signed transaction. |</div>
+<div class="line"><cite>get_account_history</cite> | e.g., get_account_history “name” “5” | Returns the most recent operations on the named account. |</div>
+<div class="line"><cite>get_privatre_key</cite> |  get_privatre_key &lt;public key&gt;  | Get the WIF private key corresponding to a public key. The private key must already be in the wallet. |</div>
+</div>
+<p><a href="#id3"><span class="problematic" id="id4">**</span></a><a href="#id5"><span class="problematic" id="id6">*</span></a></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<hr class="docutils" />
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright BitShares Blockchain Foundation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

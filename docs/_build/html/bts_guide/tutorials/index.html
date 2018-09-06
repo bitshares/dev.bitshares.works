@@ -1,0 +1,391 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Developer Guide (Tutorials) &mdash; BItShares Developers Portal  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Frequently Asked Questions (FAQ)" href="../index_faq.html" />
+    <link rel="prev" title="6.3. Graphene::Wallet" href="../../api/namespaces/wallet.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BItShares Developers Portal
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/architectures.html">Introduction &amp; Architectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/environments.html">Development Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../components/components.html">System Components Elements</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../development/installation.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development/integration.html">Integration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development/interaction.html">Blockchain Interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development/testnets.html">Testnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development/bsip.html">BitShares Improvement Proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../supports_dev/supports.html">Support and Optimizations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/restrictions.html">1. API Access and Restrictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/calls.html">2. Available Calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/blockchain_api.html">3. Blockchain API(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/wallet_api.html">4. Wallet API - Calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/objects_ids.html">5. Objects and IDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/namespaces.html">6. Graphene - Namespaces</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Guides</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Developer Guide (Tutorials)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#accounts">Accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#api">API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#assets">Assets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prediction-market">Prediction Market</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#committee-guide">Committee Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#general">General</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#testnets">Testnets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#transfer-transactions">Transfer / Transactions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vesting-balance">Vesting Balance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#wallet-cli">Wallet / CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#witness-guide">Witness Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#worker-guide">Worker Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../index_faq.html">Frequently Asked Questions (FAQ)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../references/info_comunities.html">BitShares Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references/info_comunities.html#bitshares-blockchain">BitShares Blockchain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references/tech_articles.html">Articles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references/githubrepo.html">BitShares Repositories</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BItShares Developers Portal</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Developer Guide (Tutorials)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="developer-guide-tutorials">
+<span id="dev-guides"></span><h1>Developer Guide (Tutorials)<a class="headerlink" href="#developer-guide-tutorials" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<div class="section" id="accounts">
+<h2>Accounts<a class="headerlink" href="#accounts" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="cli_import_guiwallet_account.html#howto-import-gui-wallet-account-cli"><span class="std std-ref">How to import a GUI-wallet account into CLI-wallet</span></a></li>
+<li><a class="reference internal" href="../accounts/bts_account.html#bts-accounts"><span class="std std-ref">BitShares Account</span></a></li>
+<li><a class="reference internal" href="../accounts/account-create.html#create-account-dev-cli"><span class="std std-ref">Account Registration (developer)</span></a></li>
+<li><a class="reference internal" href="../accounts/account_import-to-cli.html#account-import-to-cli"><span class="std std-ref">How to import a GUI-wallet account into CLI-wallet</span></a></li>
+<li><a class="reference external" href="https://github.com/bitshares/bitshares-ui/wiki/Cloud-Wallet-Login-and-changing-password">How to change a password if using a Cloud Wallet</a>  : from BitShares UI wiki</li>
+<li>How to create, register and upgrade an account to Lifetime Membership</li>
+</ul>
+<p><strong>Vesting Balance</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="vesting-list.html#list-vesting-balances"><span class="std std-ref">List Vesting Balances</span></a></li>
+<li><a class="reference internal" href="vesting-claim.html#claiming-vesting-balance"><span class="std std-ref">Claiming A Vesting Balance</span></a></li>
+</ul>
+</div>
+<div class="section" id="api">
+<h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/bitshares/bitshares-ui/wiki/Gateway-Integration-Requirements">How an Exchange can integrate their services to the BitShares UI Wallet - Gateway Integration Requirements</a> : from BitShares UI wiki</li>
+<li>How to enable RPC Logging</li>
+</ul>
+</div>
+<div class="section" id="assets">
+<h2>Assets<a class="headerlink" href="#assets" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="uia-create-gui.html#creating-new-uia1"><span class="std std-ref">Creating a new UIA</span></a></li>
+<li><a class="reference internal" href="uia-create-manual.html#uia-create-manual"><span class="std std-ref">Creating a UIA manually</span></a></li>
+<li><a class="reference internal" href="mpa-create-manual.html#mpa-create-manual"><span class="std std-ref">Creating a MPA manually</span></a></li>
+<li><a class="reference internal" href="uia-create-manual.html#uia-create-manual"><span class="std std-ref">Update/Change an existing UIA</span></a></li>
+<li><a class="reference internal" href="publish-feed.html#publish-feed"><span class="std std-ref">Publishing a Feed</span></a></li>
+</ul>
+</div>
+<div class="section" id="prediction-market">
+<h2>Prediction Market<a class="headerlink" href="#prediction-market" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="../tokens/pm.html#pm"><span class="std std-ref">Prediction Markets</span></a></li>
+<li><a class="reference internal" href="pm-create-manual.html#pm-create-manual"><span class="std std-ref">Creating a Prediction Market</span></a></li>
+<li><a class="reference internal" href="pm-close-manual.html#pm-close-manual"><span class="std std-ref">Closing/Settling a Prediction Market</span></a></li>
+</ul>
+<p><strong>BitShares Decentralized Exchange (DEX)</strong></p>
+<ul class="simple">
+<li>How to prepare BitShares Exchange Guide (Single Node Edition)</li>
+<li><a class="reference internal" href="distributed-access-hosting.html#distributed-access-to-dex"><span class="std std-ref">Distributed Access to the BitShares Decentralized Exchange (DEX)</span></a></li>
+</ul>
+</div>
+<div class="section" id="committee-guide">
+<h2>Committee Guide<a class="headerlink" href="#committee-guide" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="committee-member-create.html#committee-create"><span class="std std-ref">Creating a New Committee Member</span></a></li>
+<li><a class="reference internal" href="committee-how-to.html#committee-fee-change"><span class="std std-ref">How Committee Proposes a Change in Fee</span></a></li>
+<li><a class="reference internal" href="committee-how-to.html#committee-approve-proposal"><span class="std std-ref">How to Approve/Disapprove a Committee Proposal</span></a></li>
+<li><a class="reference internal" href="committee-propose-action.html#committee-propose-action"><span class="std std-ref">How to Propose Committee Actions</span></a></li>
+</ul>
+</div>
+<div class="section" id="general">
+<h2>General<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="python-monitor.html#monitoring-account-deposits-python"><span class="std std-ref">Monitoring Account Deposits - Python</span></a></li>
+<li><a class="reference internal" href="nodejs-monitor.html#nodejs-example"><span class="std std-ref">Monitoring Balance History of an Account  - NodeJS</span></a></li>
+</ul>
+<p><strong>Migration (from BitShares1.0)</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="../migration/howto-exporting-wallet.html#howto-exporting-wallet"><span class="std std-ref">Exporting Your Wallet</span></a></li>
+<li><a class="reference internal" href="../migration/howto-importing-wallet.html#howto-importing-wallet"><span class="std std-ref">Importing Your Wallet</span></a></li>
+<li><a class="reference internal" href="howto-importing-wallet-remarks.html#migration-remarks"><span class="std std-ref">Migration Remarks</span></a></li>
+</ul>
+</div>
+<div class="section" id="testnets">
+<h2>Testnets<a class="headerlink" href="#testnets" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="../../development/testnets/public_testnet_details.html#public-testnet-details"><span class="std std-ref">Public Testnet - Quick Start Guide</span></a></li>
+<li><a class="reference internal" href="../../development/testnets/setup_python_lib.html#how-to-setup-python-lib"><span class="std std-ref">Set up Python Library</span></a></li>
+<li><a class="reference internal" href="../../development/testnets/testing_wiki.html#how-to-testing-bts"><span class="std std-ref">Testing</span></a></li>
+<li><a class="reference internal" href="../../development/testnets/setup_faucet.html#how-to-setup-faucet"><span class="std std-ref">Set up Faucet</span></a></li>
+<li><a class="reference internal" href="../../development/testnets/setup_nignx.html#how-to-setup-nignx"><span class="std std-ref">Set up Nignx</span></a></li>
+</ul>
+</div>
+<div class="section" id="transfer-transactions">
+<h2>Transfer / Transactions<a class="headerlink" href="#transfer-transactions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="confidential-transactions.html#confidential-transactions-guide"><span class="std std-ref">Confidential Transfers</span></a></li>
+<li><a class="reference internal" href="construct-transaction.html#manually-construct-transaction"><span class="std std-ref">Manually Construct Any Transaction</span></a></li>
+<li><a class="reference internal" href="propose-transaction.html#proposing-transaction"><span class="std std-ref">Proposing a Transaction</span></a>
+- Crafting, proposing, and approving</li>
+</ul>
+</div>
+<div class="section" id="vesting-balance">
+<h2>Vesting Balance<a class="headerlink" href="#vesting-balance" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="vesting-claim.html#claiming-vesting-balance"><span class="std std-ref">Claim Vesting Balance</span></a></li>
+<li><a class="reference internal" href="vesting-list.html#list-vesting-balances"><span class="std std-ref">List Vesting Balance</span></a></li>
+</ul>
+</div>
+<div class="section" id="wallet-cli">
+<h2>Wallet / CLI<a class="headerlink" href="#wallet-cli" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="../../development/apps/cli_wallet.html#run-cli-wallet-steps"><span class="std std-ref">How to connect and use the CLI-Wallet</span></a></li>
+<li><a class="reference internal" href="../../development/apps/network.html#network-setups"><span class="std std-ref">How to setup Network and Wallet Configuration</span></a></li>
+<li><a class="reference internal" href="../../development/apps/cli_wallet.html#transfering-funds-cli-wallet"><span class="std std-ref">Transferring Funds using the CLI-Wallet</span></a></li>
+<li><a class="reference internal" href="cli_import_guiwallet_account.html#howto-import-gui-wallet-account-cli"><span class="std std-ref">How to import a GUI-wallet account into CLI-wallet</span></a></li>
+</ul>
+</div>
+<div class="section" id="witness-guide">
+<h2>Witness Guide<a class="headerlink" href="#witness-guide" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="witness-change-key.html#change-witness-key"><span class="std std-ref">Change the Signing Key of your Witness</span></a></li>
+<li><a class="reference internal" href="../../development/apps/node.html#system-requirements-node"><span class="std std-ref">System Requirements</span></a>  (updated: 2018-07-02)</li>
+<li><a class="reference internal" href="../../development/apps/node_howto_run.html#how-to-run-full-node2"><span class="std std-ref">How to Run and Use a Full Node</span></a></li>
+<li><a class="reference internal" href="witness_node.html#howto-become-active-witness"><span class="std std-ref">How to Become an Active Witness</span></a></li>
+<li><a class="reference internal" href="manage_node_gun_screen.html#manage-gun-screen"><span class="std std-ref">Manage a running Node in the background by using GNU screen</span></a></li>
+<li><a class="reference internal" href="running_api_node.html#run-api-node-guide"><span class="std std-ref">Running a BitShares API Node</span></a></li>
+<li><a class="reference internal" href="witness_block_produce.html#veryfy-block-production"><span class="std std-ref">Verifying Block Production</span></a></li>
+<li><a class="reference internal" href="witness_backup_server.html#witness-backup-server"><span class="std std-ref">Backup a server</span></a></li>
+<li><a class="reference internal" href="witness_price_feeds.html#witness-price-feeds"><span class="std std-ref">Price Feeds</span></a></li>
+</ul>
+</div>
+<div class="section" id="worker-guide">
+<h2>Worker Guide<a class="headerlink" href="#worker-guide" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="worker-create.html#worker-create"><span class="std std-ref">How to Create a Worker</span></a></li>
+<li><a class="reference internal" href="worker-budget.html#worker-budget"><span class="std std-ref">Claim Worker Pay</span></a></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<hr class="docutils" />
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../index_faq.html" class="btn btn-neutral float-right" title="Frequently Asked Questions (FAQ)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../../api/namespaces/wallet.html" class="btn btn-neutral" title="6.3. Graphene::Wallet" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright BitShares Blockchain Foundation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

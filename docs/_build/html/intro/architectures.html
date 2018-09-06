@@ -1,0 +1,384 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Introduction &amp; Architectures &mdash; BItShares Developers Portal  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Development Environments" href="environments.html" />
+    <link rel="prev" title="BitShares Developer Portal" href="../index.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> BItShares Developers Portal
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction &amp; Architectures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#bitshares-members">BitShares Members</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bitshares-architecture">BitShares Architecture</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#github-repositories-and-entities">GitHub Repositories and Entities</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#key-design-concepts-and-the-features">Key Design Concepts and the Features</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#key-points-and-fundamentals-for-the-design">Key points and fundamentals for the design:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bitshares-available-features">BitShares Available Features</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#transactions-and-performance">Transactions and Performance</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#bitshares-block-explorer">Bitshares Block Explorer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#blockchain-activity">Blockchain Activity</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="environments.html">Development Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../components/components.html">System Components Elements</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/installation.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/integration.html">Integration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/interaction.html">Blockchain Interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/testnets.html">Testnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/bsip.html">BitShares Improvement Proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supports_dev/supports.html">Support and Optimizations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/restrictions.html">1. API Access and Restrictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/calls.html">2. Available Calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/blockchain_api.html">3. Blockchain API(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/wallet_api.html">4. Wallet API - Calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/objects_ids.html">5. Objects and IDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/namespaces.html">6. Graphene - Namespaces</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../bts_guide/tutorials/index.html">Developer Guide (Tutorials)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bts_guide/index_faq.html">Frequently Asked Questions (FAQ)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references/info_comunities.html">BitShares Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/info_comunities.html#bitshares-blockchain">BitShares Blockchain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/tech_articles.html">Articles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/githubrepo.html">BitShares Repositories</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">BItShares Developers Portal</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Introduction &amp; Architectures</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="introduction-architectures">
+<h1>Introduction &amp; Architectures<a class="headerlink" href="#introduction-architectures" title="Permalink to this headline">¶</a></h1>
+<p>Welcome to BitShares! In this section, you will find the overview of BitShares Architecture (repositories and entities), and how the Core team processes the development work.  If you are interested in contributing to the Core team, you might want to check the Contribution Guide and the GitFlow to understand how BitShares-Core team handles the repository files and branches.  If you would like to know the Core team current project, issues, and the releases plans, check under the Issues and the Projects tabs.</p>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title first">Table of Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#bitshares-members" id="id1">BitShares Members</a></li>
+<li><a class="reference internal" href="#bitshares-architecture" id="id2">BitShares Architecture</a><ul>
+<li><a class="reference internal" href="#github-repositories-and-entities" id="id3">GitHub Repositories and Entities</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#key-design-concepts-and-the-features" id="id4">Key Design Concepts and the Features</a><ul>
+<li><a class="reference internal" href="#key-points-and-fundamentals-for-the-design" id="id5">Key points and fundamentals for the design:</a></li>
+<li><a class="reference internal" href="#bitshares-available-features" id="id6">BitShares Available Features</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#transactions-and-performance" id="id7">Transactions and Performance</a><ul>
+<li><a class="reference internal" href="#bitshares-block-explorer" id="id8">Bitshares Block Explorer</a></li>
+<li><a class="reference internal" href="#blockchain-activity" id="id9">Blockchain Activity</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="bitshares-members">
+<h2><a class="toc-backref" href="#id1">BitShares Members</a><a class="headerlink" href="#bitshares-members" title="Permalink to this headline">¶</a></h2>
+<p>If you have an BitShares account, you are a BTS Holder and you have a voting power to make decisions in the BitShares Community.</p>
+<a class="reference internal image-reference" href="intro\../../_images/structures/btsholders-v1.png"><img alt="BitShares Architecture" class="align-center" src="intro\../../_images/structures/btsholders-v1.png" style="width: 700px;" /></a>
+</div>
+<hr class="docutils" />
+<div class="section" id="bitshares-architecture">
+<h2><a class="toc-backref" href="#id2">BitShares Architecture</a><a class="headerlink" href="#bitshares-architecture" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="github-repositories-and-entities">
+<h3><a class="toc-backref" href="#id3">GitHub Repositories and Entities</a><a class="headerlink" href="#github-repositories-and-entities" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="intro\../../_images/structures/bitshares-architecture-v3notop.png"><img alt="BitShares Architecture" class="align-center" src="intro\../../_images/structures/bitshares-architecture-v3notop.png" style="width: 650px;" /></a>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="key-design-concepts-and-the-features">
+<h2><a class="toc-backref" href="#id4">Key Design Concepts and the Features</a><a class="headerlink" href="#key-design-concepts-and-the-features" title="Permalink to this headline">¶</a></h2>
+<p>BitShares is a Finance Smart contract platform supported by Graphene technology - Blockchain.
+BitShares is designed from the ground up to process more transactions every second than VISA and MasterCard combined.</p>
+<div class="section" id="key-points-and-fundamentals-for-the-design">
+<h3><a class="toc-backref" href="#id5">Key points and fundamentals for the design:</a><a class="headerlink" href="#key-points-and-fundamentals-for-the-design" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Keep everything in memory.</li>
+<li>Keep the core business logic in a single thread.</li>
+<li>Keep cryptographic operations (hashes and signatures) out of the core business logic.</li>
+<li>Divide validation into state-dependent and state-independent checks.</li>
+<li>Use an object-oriented data model.</li>
+<li>Avoid synchronization primitives (locks, atomic operations)</li>
+<li>Minimize unnecessary computation in the business logic processor.</li>
+</ul>
+<p>BitShares is built to aim high-performance blockchain and has been done to remove all calculations that are not part of the critical, order-dependent, evaluation from the core business logic, and to design a protocol the facilitates these kinds of optimizations.</p>
+</div>
+<div class="section" id="bitshares-available-features">
+<h3><a class="toc-backref" href="#id6">BitShares Available Features</a><a class="headerlink" href="#bitshares-available-features" title="Permalink to this headline">¶</a></h3>
+<p>BitShares can be made to function as a software, a network, a ledger, a bank, an exchange, and a currency all at once. (e.g., It can fulfill the role of a bank by maintaining a distributed ledger that tracks debt collateralized by other assets. You can find out that BitShares offers numerous features that are not available on other popular blockchain platforms.</p>
+<ul class="simple">
+<li><strong>SmartCoins</strong> are fungible, divisible and free from any restrictions. A SmartCoin is a cryptocurrency whose value is pegged to that of another asset, such as the US Dollar or gold. SmartCoins implement the concept of a collateralized loan and offer it on the blockchain.</li>
+<li><strong>Decentralized Exchange</strong> - BitShares provides a high-performance decentralized exchange, with all the features you would expect in a trading platform.<ul>
+<li>Secure: All of the reserves are kept as BTS held on the blockchain, and they cannot be stolen, because there are no private keys that can be compromised to steal the reserves.</li>
+</ul>
+</li>
+<li>Trading / Financial Services</li>
+<li>Transferable Named Account (human-friendly account name)</li>
+<li>Globally unique account name and ID.</li>
+<li>Dynamic Account Permissions</li>
+<li>Multi-user control for account</li>
+<li>Two authorities: owner and active keys</li>
+<li>Transaction + multi-signature authority</li>
+<li><strong>Proposed transaction infrastructure</strong><ul>
+<li>witch tracks partially approved transactions.</li>
+<li>It can be used for a scheduled payment</li>
+</ul>
+</li>
+<li>Fees calculation<ul>
+<li>Transaction fee</li>
+<li>Fee Schedules</li>
+</ul>
+</li>
+<li>Assets
+- <strong>User Issues Asset (UIA)</strong> - to help facilitate profitable business models for certain types of services.
+- <em>Use Cases</em> (Event tickets, Reward points, privatized SmartCoins, Predictions Market, more)
+- How to profit? -&gt; Fee pools</li>
+<li>BitAsset - BitUSD,</li>
+<li><strong>Delegated Proof of State Consensus (DPOS)</strong> - Under DPOS, BTS Holder has influence…
+- A robust and flexible consensus protocol.</li>
+<li>Block Production by Elected witnesses</li>
+<li>Referral Program</li>
+<li>Vesting valance</li>
+</ul>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="transactions-and-performance">
+<h2><a class="toc-backref" href="#id7">Transactions and Performance</a><a class="headerlink" href="#transactions-and-performance" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="bitshares-block-explorer">
+<h3><a class="toc-backref" href="#id8">Bitshares Block Explorer</a><a class="headerlink" href="#bitshares-block-explorer" title="Permalink to this headline">¶</a></h3>
+<p>BitShares Explorer shows BitShares Blockchain information. You can observe BitShares Blockchain <em>Health</em> Status (head_block_num, head_block_age, chain_id, etc.), how transactions processing, assets volume, and members.</p>
+<p>If you would like to see more detailed information, the BitShares Open Explorer offers other information tabs (i.e., Operations, Proxies, Markets, SmartCoins, UIAs, and Holders) to view.</p>
+<ul class="simple">
+<li><a class="reference external" href="https://www.cryptofresh.com/">Cryptofresh</a></li>
+<li><a class="reference external" href="http://open-explorer.io/">Open Explorer</a></li>
+<li><a class="reference external" href="https://bts.ai/">bts.ai</a></li>
+</ul>
+</div>
+<div class="section" id="blockchain-activity">
+<h3><a class="toc-backref" href="#id9">Blockchain Activity</a><a class="headerlink" href="#blockchain-activity" title="Permalink to this headline">¶</a></h3>
+<p>Blockchain Activity Matrix shows different tokens (assets) <em>Activity</em>, <em>Value</em>, and <em>Index</em>. It’s interesting to check the CUI index is Capacity Utilization Index (a rate of blockchain daily activity to total blockchain capacity) to see how much numbers BitShares has.</p>
+<ul class="simple">
+<li><a class="reference external" href="http://blocktivity.info/">Block’tivity</a></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="environments.html" class="btn btn-neutral float-right" title="Development Environments" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral" title="BitShares Developer Portal" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright BitShares Blockchain Foundation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
