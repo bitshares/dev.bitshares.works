@@ -1,0 +1,1734 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Object Elements &mdash; BItShares Developers Portal  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Getting Started" href="../development/installation.html" />
+    <link rel="prev" title="Evaluators" href="lib_evalustors.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> BItShares Developers Portal
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/architectures.html">Introduction &amp; Architectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/environments.html">Development Environments</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="components.html">System Components Elements</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="lib_database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib_block.html">Block</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib_protocols.html">Protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib_operations.html">Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib_evalustors.html">Evaluators</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Object Elements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#object-types">Object Types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#enumerator">Enumerator</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#object-names-and-detailed-descriptions">Object Names and Detailed Descriptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#account">Account</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">account_balance_object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">account_object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">account_statistics_object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">withdraw_permission_object</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#authority">Authority</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id5">special_authority_object</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#asset">Asset</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id6">asset_dynamic_data_object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">asset_object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">budget_record_object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">buyback_object</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#bitasset">BitAsset</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id10">asset_bitasset_data_object</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#balance">Balance</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id11">blinded_balance_object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id12">balance_object</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#block">Block</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id13">block_summary_object</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#chain">Chain</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id14">chain_property_object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id15">dynamic_global_property_object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id16">global_property_object</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#committee">Committee</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id17">committee_member_object</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#fba">FBA</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id18">fba_accumulator_object</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#history">History</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id19">operation_history_object</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#order-market">Order (<em>market</em>)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id20">call_order_object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id21">collateral_bid_object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id22">force_settlement_object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id23">limit_order_object</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#proposal">Proposal</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id24">proposal_object</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#transaction">Transaction</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id25">account_transaction_history_object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id26">node_property_object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id27">transaction_object</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#vesting-balance">Vesting Balance</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id28">vesting_balance_object</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#witness">Witness</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id29">witness_object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id30">witness_schedule_object</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#worker">Worker</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id31">worker_object</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/installation.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/integration.html">Integration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/interaction.html">Blockchain Interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/testnets.html">Testnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/bsip.html">BitShares Improvement Proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supports_dev/supports.html">Support and Optimizations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/restrictions.html">1. API Access and Restrictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/calls.html">2. Available Calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/blockchain_api.html">3. Blockchain API(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/wallet_api.html">4. Wallet API - Calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/objects_ids.html">5. Objects and IDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/namespaces.html">6. Graphene - Namespaces</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../bts_guide/tutorials/index.html">Developer Guide (Tutorials)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bts_guide/index_faq.html">Frequently Asked Questions (FAQ)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references/info_comunities.html">BitShares Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/info_comunities.html#bitshares-blockchain">BitShares Blockchain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/tech_articles.html">Articles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/githubrepo.html">BitShares Repositories</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">BItShares Developers Portal</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="components.html">System Components Elements</a> &raquo;</li>
+        
+      <li>Object Elements</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="object-elements">
+<span id="lib-objects"></span><h1>Object Elements<a class="headerlink" href="#object-elements" title="Permalink to this headline">¶</a></h1>
+<p><em>BitShares Core - graphene::chain</em></p>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title first">Table of Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#object-types" id="id32">Object Types</a><ul>
+<li><a class="reference internal" href="#enumerator" id="id33">Enumerator</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#object-names-and-detailed-descriptions" id="id34">Object Names and Detailed Descriptions</a></li>
+<li><a class="reference internal" href="#account" id="id35">Account</a><ul>
+<li><a class="reference internal" href="#id1" id="id36">account_balance_object</a></li>
+<li><a class="reference internal" href="#id2" id="id37">account_object</a></li>
+<li><a class="reference internal" href="#id3" id="id38">account_statistics_object</a></li>
+<li><a class="reference internal" href="#id4" id="id39">withdraw_permission_object</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#authority" id="id40">Authority</a><ul>
+<li><a class="reference internal" href="#id5" id="id41">special_authority_object</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#asset" id="id42">Asset</a><ul>
+<li><a class="reference internal" href="#id6" id="id43">asset_dynamic_data_object</a></li>
+<li><a class="reference internal" href="#id7" id="id44">asset_object</a></li>
+<li><a class="reference internal" href="#id8" id="id45">budget_record_object</a></li>
+<li><a class="reference internal" href="#id9" id="id46">buyback_object</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bitasset" id="id47">BitAsset</a><ul>
+<li><a class="reference internal" href="#id10" id="id48">asset_bitasset_data_object</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#balance" id="id49">Balance</a><ul>
+<li><a class="reference internal" href="#id11" id="id50">blinded_balance_object</a></li>
+<li><a class="reference internal" href="#id12" id="id51">balance_object</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#block" id="id52">Block</a><ul>
+<li><a class="reference internal" href="#id13" id="id53">block_summary_object</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#chain" id="id54">Chain</a><ul>
+<li><a class="reference internal" href="#id14" id="id55">chain_property_object</a></li>
+<li><a class="reference internal" href="#id15" id="id56">dynamic_global_property_object</a></li>
+<li><a class="reference internal" href="#id16" id="id57">global_property_object</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#committee" id="id58">Committee</a><ul>
+<li><a class="reference internal" href="#id17" id="id59">committee_member_object</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#fba" id="id60">FBA</a><ul>
+<li><a class="reference internal" href="#id18" id="id61">fba_accumulator_object</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#history" id="id62">History</a><ul>
+<li><a class="reference internal" href="#id19" id="id63">operation_history_object</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#order-market" id="id64">Order (<em>market</em>)</a><ul>
+<li><a class="reference internal" href="#id20" id="id65">call_order_object</a></li>
+<li><a class="reference internal" href="#id21" id="id66">collateral_bid_object</a></li>
+<li><a class="reference internal" href="#id22" id="id67">force_settlement_object</a></li>
+<li><a class="reference internal" href="#id23" id="id68">limit_order_object</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#proposal" id="id69">Proposal</a><ul>
+<li><a class="reference internal" href="#id24" id="id70">proposal_object</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#transaction" id="id71">Transaction</a><ul>
+<li><a class="reference internal" href="#id25" id="id72">account_transaction_history_object</a></li>
+<li><a class="reference internal" href="#id26" id="id73">node_property_object</a></li>
+<li><a class="reference internal" href="#id27" id="id74">transaction_object</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#vesting-balance" id="id75">Vesting Balance</a><ul>
+<li><a class="reference internal" href="#id28" id="id76">vesting_balance_object</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#witness" id="id77">Witness</a><ul>
+<li><a class="reference internal" href="#id29" id="id78">witness_object</a></li>
+<li><a class="reference internal" href="#id30" id="id79">witness_schedule_object</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#worker" id="id80">Worker</a><ul>
+<li><a class="reference internal" href="#id31" id="id81">worker_object</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="object-types">
+<h2><a class="toc-backref" href="#id32">Object Types</a><a class="headerlink" href="#object-types" title="Permalink to this headline">¶</a></h2>
+<p><em>enum graphene::chain::object_type</em></p>
+<p>(../libraries/chain/protocol/types.hpp)</p>
+<p>List all object types from all namespaces here so they can be easily reflected and displayed in debug output. If a 3rd party wants to extend the core code then they will have to change the packed_object::type field from enum_type to uint16 to avoid warnings when converting packed_objects to/from json.</p>
+<div class="section" id="enumerator">
+<h3><a class="toc-backref" href="#id33">Enumerator</a><a class="headerlink" href="#enumerator" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>null_object_type</li>
+<li>base_object_type</li>
+<li>account_object_type</li>
+<li>asset_object_type</li>
+<li>force_settlement_object_type</li>
+<li>committee_member_object_type</li>
+<li>witness_object_type</li>
+<li>limit_order_object_type</li>
+<li>call_order_object_type</li>
+<li>custom_object_type</li>
+<li>proposal_object_type</li>
+<li>operation_history_object_type</li>
+<li>withdraw_permission_object_type</li>
+<li>vesting_balance_object_typev</li>
+<li>worker_object_type</li>
+<li>balance_object_type</li>
+<li>OBJECT_TYPE_COUNT: Sentry value which contains the number of different object types.</li>
+</ul>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="object-names-and-detailed-descriptions">
+<h2><a class="toc-backref" href="#id34">Object Names and Detailed Descriptions</a><a class="headerlink" href="#object-names-and-detailed-descriptions" title="Permalink to this headline">¶</a></h2>
+<p><em>graphene::chain Namespace: Class - Objects</em></p>
+<p>(../libraries/chain/include/graphene/chain/)</p>
+<p><strong>Detailed Descriptions</strong></p>
+</div>
+<div class="section" id="account">
+<h2><a class="toc-backref" href="#id35">Account</a><a class="headerlink" href="#account" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3><a class="reference external" href="https://bitshares.org/doxygen/classgraphene_1_1chain_1_1account__balance__object.html">account_balance_object</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Tracks the balance of a single account/asset pair</li>
+<li>This object is indexed on owner and asset_type so that black swan events in asset_type can be processed quickly</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">account_balance_object</span> <span class="p">:</span> <span class="n">public</span> <span class="n">abstract_object</span><span class="o">&lt;</span><span class="n">account_balance_object</span><span class="o">&gt;</span>
+<span class="p">{</span>
+   <span class="n">public</span><span class="p">:</span>
+      <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">space_id</span> <span class="o">=</span> <span class="n">implementation_ids</span><span class="p">;</span>
+      <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">type_id</span>  <span class="o">=</span> <span class="n">impl_account_balance_object_type</span><span class="p">;</span>
+
+      <span class="n">account_id_type</span>   <span class="n">owner</span><span class="p">;</span>
+      <span class="n">asset_id_type</span>     <span class="n">asset_type</span><span class="p">;</span>
+      <span class="n">share_type</span>        <span class="n">balance</span><span class="p">;</span>
+      <span class="nb">bool</span>              <span class="n">maintenance_flag</span> <span class="o">=</span> <span class="n">false</span><span class="p">;</span> <span class="o">///&lt;</span> <span class="n">Whether</span> <span class="n">need</span> <span class="n">to</span> <span class="n">process</span> <span class="n">this</span> <span class="n">balance</span> <span class="nb">object</span> <span class="ow">in</span> <span class="n">maintenance</span> <span class="n">interval</span>
+
+      <span class="n">asset</span> <span class="n">get_balance</span><span class="p">()</span><span class="n">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">asset</span><span class="p">(</span><span class="n">balance</span><span class="p">,</span> <span class="n">asset_type</span><span class="p">);</span> <span class="p">}</span>
+      <span class="n">void</span>  <span class="n">adjust_balance</span><span class="p">(</span><span class="n">const</span> <span class="n">asset</span><span class="o">&amp;</span> <span class="n">delta</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3><a class="reference external" href="https://bitshares.org/doxygen/classgraphene_1_1chain_1_1account__object.html">account_object</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>This class represents an account on the object graphAccounts are the primary unit of authority on the graphene system. Users must have an account in order to use assets, trade in the markets, vote for committee_members, etc</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>class account_object : public graphene::db::abstract_object&lt;account_object&gt;
+{
+   public:
+      static const uint8_t space_id = protocol_ids;
+      static const uint8_t type_id  = account_object_type;
+
+      /**
+       * The time at which this account&#39;s membership expires.
+       * If set to any time in the past, the account is a basic account.
+       * If set to time_point_sec::maximum(), the account is a lifetime member.
+       * If set to any time not in the past less than time_point_sec::maximum(), the account is an annual member.
+       *
+       * See @ref is_lifetime_member, @ref is_basic_account, @ref is_annual_member, and @ref is_member
+       */
+      time_point_sec membership_expiration_date;
+
+      ///The account that paid the fee to register this account. Receives a percentage of referral rewards.
+      account_id_type registrar;
+      /// The account credited as referring this account. Receives a percentage of referral rewards.
+      account_id_type referrer;
+      /// The lifetime member at the top of the referral tree. Receives a percentage of referral rewards.
+      account_id_type lifetime_referrer;
+
+      /// Percentage of fee which should go to network.
+      uint16_t network_fee_percentage = GRAPHENE_DEFAULT_NETWORK_PERCENT_OF_FEE;
+      /// Percentage of fee which should go to lifetime referrer.
+      uint16_t lifetime_referrer_fee_percentage = 0;
+      /// Percentage of referral rewards (leftover fee after paying network and lifetime referrer) which should go
+      /// to referrer. The remainder of referral rewards goes to the registrar.
+      uint16_t referrer_rewards_percentage = 0;
+
+      /// The account&#39;s name. This name must be unique among all account names on the graph. May not be empty.
+      string name;
+
+      /**
+       * The owner authority represents absolute control over the account. Usually the keys in this authority will
+       * be kept in cold storage, as they should not be needed very often and compromise of these keys constitutes
+       * complete and irrevocable loss of the account. Generally the only time the owner authority is required is to
+       * update the active authority.
+       */
+      authority owner;
+      /// The owner authority contains the hot keys of the account. This authority has control over nearly all
+      /// operations the account may perform.
+      authority active;
+
+      typedef account_options  options_type;
+      account_options options;
+
+      /// The reference implementation records the account&#39;s statistics in a separate object. This field contains the
+      /// ID of that object.
+      account_statistics_id_type statistics;
+
+      /**
+       * This is a set of all accounts which have &#39;whitelisted&#39; this account. Whitelisting is only used in core
+       * validation for the purpose of authorizing accounts to hold and transact in whitelisted assets. This
+       * account cannot update this set, except by transferring ownership of the account, which will clear it. Other
+       * accounts may add or remove their IDs from this set.
+       */
+      flat_set&lt;account_id_type&gt; whitelisting_accounts;
+
+      /**
+       * Optionally track all of the accounts this account has whitelisted or blacklisted, these should
+       * be made Immutable so that when the account object is cloned no deep copy is required.  This state is
+       * tracked for GUI display purposes.
+       *
+       * TODO: move white list tracking to its own multi-index container rather than having 4 fields on an
+       * account.   This will scale better because under the current design if you whitelist 2000 accounts,
+       * then every time someone fetches this account object they will get the full list of 2000 accounts.
+       */
+      ///@{
+      set&lt;account_id_type&gt; whitelisted_accounts;
+      set&lt;account_id_type&gt; blacklisted_accounts;
+      ///@}
+
+
+      /**
+       * This is a set of all accounts which have &#39;blacklisted&#39; this account. Blacklisting is only used in core
+       * validation for the purpose of forbidding accounts from holding and transacting in whitelisted assets. This
+       * account cannot update this set, and it will be preserved even if the account is transferred. Other accounts
+       * may add or remove their IDs from this set.
+       */
+      flat_set&lt;account_id_type&gt; blacklisting_accounts;
+
+      /**
+       * Vesting balance which receives cashback_reward deposits.
+       */
+      optional&lt;vesting_balance_id_type&gt; cashback_vb;
+
+      special_authority owner_special_authority = no_special_authority();
+      special_authority active_special_authority = no_special_authority();
+
+      /**
+       * This flag is set when the top_n logic sets both authorities,
+       * and gets reset when authority or special_authority is set.
+       */
+      uint8_t top_n_control_flags = 0;
+      static const uint8_t top_n_control_owner  = 1;
+      static const uint8_t top_n_control_active = 2;
+
+      /**
+       * This is a set of assets which the account is allowed to have.
+       * This is utilized to restrict buyback accounts to the assets that trade in their markets.
+       * In the future we may expand this to allow accounts to e.g. voluntarily restrict incoming transfers.
+       */
+      optional&lt; flat_set&lt;asset_id_type&gt; &gt; allowed_assets;
+
+      bool has_special_authority()const
+      {
+         return (owner_special_authority.which() != special_authority::tag&lt; no_special_authority &gt;::value)
+             || (active_special_authority.which() != special_authority::tag&lt; no_special_authority &gt;::value);
+      }
+
+      template&lt;typename DB&gt;
+      const vesting_balance_object&amp; cashback_balance(const DB&amp; db)const
+      {
+         FC_ASSERT(cashback_vb);
+         return db.get(*cashback_vb);
+      }
+
+      /// @return true if this is a lifetime member account; false otherwise.
+      bool is_lifetime_member()const
+      {
+         return membership_expiration_date == time_point_sec::maximum();
+      }
+      /// @return true if this is a basic account; false otherwise.
+      bool is_basic_account(time_point_sec now)const
+      {
+         return now &gt; membership_expiration_date;
+      }
+      /// @return true if the account is an unexpired annual member; false otherwise.
+      /// @note This method will return false for lifetime members.
+      bool is_annual_member(time_point_sec now)const
+      {
+         return !is_lifetime_member() &amp;&amp; !is_basic_account(now);
+      }
+      /// @return true if the account is an annual or lifetime member; false otherwise.
+      bool is_member(time_point_sec now)const
+      {
+         return !is_basic_account(now);
+      }
+
+      account_id_type get_id()const { return id; }
+};
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3><a class="reference external" href="https://bitshares.org/doxygen/classgraphene_1_1chain_1_1account__statistics__object.html">account_statistics_object</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>This object contains regularly updated statistical data about an account. It is provided for the purpose of separating the account data that changes frequently from the account data that is mostly static, which will minimize the amount of data that must be backed up as part of the undo history everytime a transfer is made.</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">account_statistics_object</span> <span class="p">:</span> <span class="n">public</span> <span class="n">graphene</span><span class="p">::</span><span class="n">db</span><span class="p">::</span><span class="n">abstract_object</span><span class="o">&lt;</span><span class="n">account_statistics_object</span><span class="o">&gt;</span>
+<span class="p">{</span>
+   <span class="n">public</span><span class="p">:</span>
+      <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">space_id</span> <span class="o">=</span> <span class="n">implementation_ids</span><span class="p">;</span>
+      <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">type_id</span>  <span class="o">=</span> <span class="n">impl_account_statistics_object_type</span><span class="p">;</span>
+
+      <span class="n">account_id_type</span>  <span class="n">owner</span><span class="p">;</span>
+
+      <span class="n">string</span>           <span class="n">name</span><span class="p">;</span> <span class="o">///&lt;</span> <span class="n">redundantly</span> <span class="n">store</span> <span class="n">account</span> <span class="n">name</span> <span class="n">here</span> <span class="k">for</span> <span class="n">better</span> <span class="n">maintenance</span> <span class="n">performance</span>
+
+      <span class="o">/**</span>
+       <span class="o">*</span> <span class="n">Keep</span> <span class="n">the</span> <span class="n">most</span> <span class="n">recent</span> <span class="n">operation</span> <span class="k">as</span> <span class="n">a</span> <span class="n">root</span> <span class="n">pointer</span> <span class="n">to</span> <span class="n">a</span> <span class="n">linked</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">the</span> <span class="n">transaction</span> <span class="n">history</span><span class="o">.</span>
+       <span class="o">*/</span>
+      <span class="n">account_transaction_history_id_type</span> <span class="n">most_recent_op</span><span class="p">;</span>
+      <span class="o">/**</span> <span class="n">Total</span> <span class="n">operations</span> <span class="n">related</span> <span class="n">to</span> <span class="n">this</span> <span class="n">account</span><span class="o">.</span> <span class="o">*/</span>
+      <span class="n">uint32_t</span>                            <span class="n">total_ops</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="o">/**</span> <span class="n">Total</span> <span class="n">operations</span> <span class="n">related</span> <span class="n">to</span> <span class="n">this</span> <span class="n">account</span> <span class="n">that</span> <span class="n">has</span> <span class="n">been</span> <span class="n">removed</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">database</span><span class="o">.</span> <span class="o">*/</span>
+      <span class="n">uint32_t</span>                            <span class="n">removed_ops</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+      <span class="o">/**</span>
+       <span class="o">*</span> <span class="n">When</span> <span class="n">calculating</span> <span class="n">votes</span> <span class="n">it</span> <span class="ow">is</span> <span class="n">necessary</span> <span class="n">to</span> <span class="n">know</span> <span class="n">how</span> <span class="n">much</span> <span class="ow">is</span> <span class="n">stored</span> <span class="ow">in</span> <span class="n">orders</span> <span class="p">(</span><span class="ow">and</span> <span class="n">thus</span> <span class="n">unavailable</span> <span class="k">for</span>
+       <span class="o">*</span> <span class="n">transfers</span><span class="p">)</span><span class="o">.</span> <span class="n">Rather</span> <span class="n">than</span> <span class="n">maintaining</span> <span class="n">an</span> <span class="n">index</span> <span class="n">of</span> <span class="p">[</span><span class="n">asset</span><span class="p">,</span><span class="n">owner</span><span class="p">,</span><span class="n">order_id</span><span class="p">]</span> <span class="n">we</span> <span class="n">will</span> <span class="n">simply</span> <span class="n">maintain</span> <span class="n">the</span> <span class="n">running</span>
+       <span class="o">*</span> <span class="n">total</span> <span class="n">here</span> <span class="ow">and</span> <span class="n">update</span> <span class="n">it</span> <span class="n">every</span> <span class="n">time</span> <span class="n">an</span> <span class="n">order</span> <span class="ow">is</span> <span class="n">created</span> <span class="ow">or</span> <span class="n">modified</span><span class="o">.</span>
+       <span class="o">*/</span>
+      <span class="n">share_type</span> <span class="n">total_core_in_orders</span><span class="p">;</span>
+
+      <span class="n">share_type</span> <span class="n">core_in_balance</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="o">///&lt;</span> <span class="n">redundantly</span> <span class="n">store</span> <span class="n">core</span> <span class="n">balance</span> <span class="n">here</span> <span class="k">for</span> <span class="n">better</span> <span class="n">maintenance</span> <span class="n">performance</span>
+
+      <span class="nb">bool</span> <span class="n">has_cashback_vb</span> <span class="o">=</span> <span class="n">false</span><span class="p">;</span> <span class="o">///&lt;</span> <span class="n">redundantly</span> <span class="n">store</span> <span class="n">this</span> <span class="k">for</span> <span class="n">better</span> <span class="n">maintenance</span> <span class="n">performance</span>
+
+      <span class="nb">bool</span> <span class="n">is_voting</span> <span class="o">=</span> <span class="n">false</span><span class="p">;</span> <span class="o">///&lt;</span> <span class="n">redundately</span> <span class="n">store</span> <span class="n">whether</span> <span class="n">this</span> <span class="n">account</span> <span class="ow">is</span> <span class="n">voting</span> <span class="k">for</span> <span class="n">better</span> <span class="n">maintenance</span> <span class="n">performance</span>
+
+      <span class="o">///</span> <span class="n">Whether</span> <span class="n">this</span> <span class="n">account</span> <span class="n">owns</span> <span class="n">some</span> <span class="n">CORE</span> <span class="n">asset</span> <span class="ow">and</span> <span class="ow">is</span> <span class="n">voting</span>
+      <span class="n">inline</span> <span class="nb">bool</span> <span class="n">has_some_core_voting</span><span class="p">()</span> <span class="n">const</span>
+      <span class="p">{</span>
+         <span class="k">return</span> <span class="n">is_voting</span> <span class="o">&amp;&amp;</span> <span class="p">(</span> <span class="n">total_core_in_orders</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">core_in_balance</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">has_cashback_vb</span> <span class="p">);</span>
+      <span class="p">}</span>
+
+      <span class="o">/**</span>
+       <span class="o">*</span> <span class="n">Tracks</span> <span class="n">the</span> <span class="n">total</span> <span class="n">fees</span> <span class="n">paid</span> <span class="n">by</span> <span class="n">this</span> <span class="n">account</span> <span class="k">for</span> <span class="n">the</span> <span class="n">purpose</span> <span class="n">of</span> <span class="n">calculating</span> <span class="n">bulk</span> <span class="n">discounts</span><span class="o">.</span>
+       <span class="o">*/</span>
+      <span class="n">share_type</span> <span class="n">lifetime_fees_paid</span><span class="p">;</span>
+
+      <span class="o">/**</span>
+       <span class="o">*</span> <span class="n">Tracks</span> <span class="n">the</span> <span class="n">fees</span> <span class="n">paid</span> <span class="n">by</span> <span class="n">this</span> <span class="n">account</span> <span class="n">which</span> <span class="n">have</span> <span class="ow">not</span> <span class="n">been</span> <span class="n">disseminated</span> <span class="n">to</span> <span class="n">the</span> <span class="n">various</span> <span class="n">parties</span> <span class="n">that</span> <span class="n">receive</span>
+       <span class="o">*</span> <span class="n">them</span> <span class="n">yet</span> <span class="p">(</span><span class="n">registrar</span><span class="p">,</span> <span class="n">referrer</span><span class="p">,</span> <span class="n">lifetime</span> <span class="n">referrer</span><span class="p">,</span> <span class="n">network</span><span class="p">,</span> <span class="n">etc</span><span class="p">)</span><span class="o">.</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">used</span> <span class="k">as</span> <span class="n">an</span> <span class="n">optimization</span> <span class="n">to</span> <span class="n">avoid</span>
+       <span class="o">*</span> <span class="n">doing</span> <span class="n">massive</span> <span class="n">amounts</span> <span class="n">of</span> <span class="n">uint128</span> <span class="n">arithmetic</span> <span class="n">on</span> <span class="n">each</span> <span class="ow">and</span> <span class="n">every</span> <span class="n">operation</span><span class="o">.</span>
+       <span class="o">*</span>
+       <span class="o">*</span> <span class="n">These</span> <span class="n">fees</span> <span class="n">will</span> <span class="n">be</span> <span class="n">paid</span> <span class="n">out</span> <span class="k">as</span> <span class="n">vesting</span> <span class="n">cash</span><span class="o">-</span><span class="n">back</span><span class="p">,</span> <span class="ow">and</span> <span class="n">this</span> <span class="n">counter</span> <span class="n">will</span> <span class="n">reset</span> <span class="n">during</span> <span class="n">the</span> <span class="n">maintenance</span>
+       <span class="o">*</span> <span class="n">interval</span><span class="o">.</span>
+       <span class="o">*/</span>
+      <span class="n">share_type</span> <span class="n">pending_fees</span><span class="p">;</span>
+      <span class="o">/**</span>
+       <span class="o">*</span> <span class="n">Same</span> <span class="k">as</span> <span class="nd">@ref</span> <span class="n">pending_fees</span><span class="p">,</span> <span class="k">except</span> <span class="n">these</span> <span class="n">fees</span> <span class="n">will</span> <span class="n">be</span> <span class="n">paid</span> <span class="n">out</span> <span class="k">as</span> <span class="n">pre</span><span class="o">-</span><span class="n">vested</span> <span class="n">cash</span><span class="o">-</span><span class="n">back</span> <span class="p">(</span><span class="n">immediately</span>
+       <span class="o">*</span> <span class="n">available</span> <span class="k">for</span> <span class="n">withdrawal</span><span class="p">)</span> <span class="n">rather</span> <span class="n">than</span> <span class="n">requiring</span> <span class="n">the</span> <span class="n">normal</span> <span class="n">vesting</span> <span class="n">period</span><span class="o">.</span>
+       <span class="o">*/</span>
+      <span class="n">share_type</span> <span class="n">pending_vested_fees</span><span class="p">;</span>
+
+      <span class="o">///</span> <span class="n">Whether</span> <span class="n">this</span> <span class="n">account</span> <span class="n">has</span> <span class="n">pending</span> <span class="n">fees</span><span class="p">,</span> <span class="n">no</span> <span class="n">matter</span> <span class="n">vested</span> <span class="ow">or</span> <span class="ow">not</span>
+      <span class="n">inline</span> <span class="nb">bool</span> <span class="n">has_pending_fees</span><span class="p">()</span> <span class="n">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">pending_fees</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">pending_vested_fees</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="p">}</span>
+
+      <span class="o">///</span> <span class="n">Whether</span> <span class="n">need</span> <span class="n">to</span> <span class="n">process</span> <span class="n">this</span> <span class="n">account</span> <span class="n">during</span> <span class="n">the</span> <span class="n">maintenance</span> <span class="n">interval</span>
+      <span class="n">inline</span> <span class="nb">bool</span> <span class="n">need_maintenance</span><span class="p">()</span> <span class="n">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">has_some_core_voting</span><span class="p">()</span> <span class="o">||</span> <span class="n">has_pending_fees</span><span class="p">();</span> <span class="p">}</span>
+
+      <span class="o">///</span> <span class="nd">@brief</span> <span class="n">Split</span> <span class="n">up</span> <span class="ow">and</span> <span class="n">pay</span> <span class="n">out</span> <span class="nd">@ref</span> <span class="n">pending_fees</span> <span class="ow">and</span> <span class="nd">@ref</span> <span class="n">pending_vested_fees</span>
+      <span class="n">void</span> <span class="n">process_fees</span><span class="p">(</span><span class="n">const</span> <span class="n">account_object</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">,</span> <span class="n">database</span><span class="o">&amp;</span> <span class="n">d</span><span class="p">)</span> <span class="n">const</span><span class="p">;</span>
+
+      <span class="o">/**</span>
+       <span class="o">*</span> <span class="n">Core</span> <span class="n">fees</span> <span class="n">are</span> <span class="n">paid</span> <span class="n">into</span> <span class="n">the</span> <span class="n">account_statistics_object</span> <span class="n">by</span> <span class="n">this</span> <span class="n">method</span>
+       <span class="o">*/</span>
+      <span class="n">void</span> <span class="n">pay_fee</span><span class="p">(</span> <span class="n">share_type</span> <span class="n">core_fee</span><span class="p">,</span> <span class="n">share_type</span> <span class="n">cashback_vesting_threshold</span> <span class="p">);</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3><a class="reference external" href="https://bitshares.org/doxygen/classgraphene_1_1chain_1_1withdraw__permission__object.html">withdraw_permission_object</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Grants another account authority to withdraw a limited amount of funds per interval</li>
+<li>The primary purpose of this object is to enable recurring payments on the blockchain. An account which wishes to process a recurring payment may use a <code class="docutils literal notranslate"><span class="pre">withdraw_permission_claim_operation</span></code> to reference an object of this type and withdraw up to <code class="docutils literal notranslate"><span class="pre">withdrawal_limit</span></code> from <code class="docutils literal notranslate"><span class="pre">withdraw_from_account</span></code>. Only <code class="docutils literal notranslate"><span class="pre">authorized_account</span></code> may do this. Any number of withdrawals may be made so long as the total amount withdrawn per period does not exceed the limit for any given period.</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>class withdraw_permission_object : public graphene::db::abstract_object&lt;withdraw_permission_object&gt;
+{
+   public:
+      static const uint8_t space_id = protocol_ids;
+      static const uint8_t type_id  = withdraw_permission_object_type;
+
+      /// The account authorizing @ref authorized_account to withdraw from it
+      account_id_type    withdraw_from_account;
+      /// The account authorized to make withdrawals from @ref withdraw_from_account
+      account_id_type    authorized_account;
+      /// The maximum amount which may be withdrawn per period. All withdrawals must be of this asset type
+      asset              withdrawal_limit;
+      /// The duration of a withdrawal period in seconds
+      uint32_t           withdrawal_period_sec = 0;
+     /***
+      * The beginning of the next withdrawal period
+      * WARNING: Due to caching, this value does not always represent the start of the next or current period (because it is only updated after a withdrawal operation such as claim).  For the latest current period, use current_period().
+      */
+      time_point_sec     period_start_time;
+      /// The time at which this withdraw permission expires
+      time_point_sec     expiration;
+
+     /***
+      * Tracks the total amount
+      * WARNING: Due to caching, this value does not always represent the total amount claimed during the current period; it may represent what was claimed during the last claimed period (because it is only updated after a withdrawal operation such as claim).  For the latest current period, use current_period().
+      */
+      share_type         claimed_this_period;
+
+     /***
+      * Determine how much is still available to be claimed during the period that contains a time of interest.  This object and function is mainly intended to be used with the &quot;current&quot; time as a parameter.  The current time can be obtained from the time of the current head of the blockchain.
+      */
+      asset              available_this_period( fc::time_point_sec current_time )const
+      {
+         if( current_time &gt;= period_start_time + withdrawal_period_sec )
+            return withdrawal_limit;
+         return asset(
+            ( withdrawal_limit.amount &gt; claimed_this_period )
+            ? withdrawal_limit.amount - claimed_this_period
+            : 0, withdrawal_limit.asset_id );
+      }
+ };
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="authority">
+<h2><a class="toc-backref" href="#id40">Authority</a><a class="headerlink" href="#authority" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h3><a class="reference external" href="https://bitshares.org/doxygen/classgraphene_1_1chain_1_1special__authority__object.html">special_authority_object</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">special_authority_object</span></code> only exists to help with a specific indexing problem. We want to be able to iterate over all accounts that contain a special authority. However, accounts which have a special_authority are very rare. So rather than indexing <code class="docutils literal notranslate"><span class="pre">ccount_object</span></code> by the special_authority fields (requiring additional bookkeeping for every account), we instead maintain a <code class="docutils literal notranslate"><span class="pre">special_authority_object</span></code> pointing to each account which has <code class="docutils literal notranslate"><span class="pre">special_authority</span></code> (requiring additional bookkeeping only for every account which has special_authority).</li>
+<li>This class is an implementation detail.</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">special_authority_object</span> <span class="p">:</span> <span class="n">public</span> <span class="n">graphene</span><span class="p">::</span><span class="n">db</span><span class="p">::</span><span class="n">abstract_object</span><span class="o">&lt;</span><span class="n">special_authority_object</span><span class="o">&gt;</span>
+<span class="p">{</span>
+   <span class="n">public</span><span class="p">:</span>
+          <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">space_id</span> <span class="o">=</span> <span class="n">implementation_ids</span><span class="p">;</span>
+          <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">type_id</span> <span class="o">=</span> <span class="n">impl_special_authority_object_type</span><span class="p">;</span>
+
+          <span class="n">account_id_type</span> <span class="n">account</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="asset">
+<h2><a class="toc-backref" href="#id42">Asset</a><a class="headerlink" href="#asset" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h3><a class="reference external" href="https://bitshares.org/doxygen/classgraphene_1_1chain_1_1asset__dynamic__data__object.html">asset_dynamic_data_object</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>tracks the asset information that changes frequently</li>
+<li>Because the <code class="docutils literal notranslate"><span class="pre">asset_object</span></code> is very large it doesn’t make sense to save an undo state for all of the parameters that never change. This object factors out the parameters of an asset that change in almost every transaction that involves the asset.</li>
+<li>This object exists as an implementation detail and its ID should never be referenced by a blockchain operation</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">asset_dynamic_data_object</span> <span class="p">:</span> <span class="n">public</span> <span class="n">abstract_object</span><span class="o">&lt;</span><span class="n">asset_dynamic_data_object</span><span class="o">&gt;</span>
+<span class="p">{</span>
+   <span class="n">public</span><span class="p">:</span>
+      <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">space_id</span> <span class="o">=</span> <span class="n">implementation_ids</span><span class="p">;</span>
+      <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">type_id</span>  <span class="o">=</span> <span class="n">impl_asset_dynamic_data_type</span><span class="p">;</span>
+
+      <span class="o">///</span> <span class="n">The</span> <span class="n">number</span> <span class="n">of</span> <span class="n">shares</span> <span class="n">currently</span> <span class="ow">in</span> <span class="n">existence</span>
+      <span class="n">share_type</span> <span class="n">current_supply</span><span class="p">;</span>
+      <span class="n">share_type</span> <span class="n">confidential_supply</span><span class="p">;</span> <span class="o">///&lt;</span> <span class="n">total</span> <span class="n">asset</span> <span class="n">held</span> <span class="ow">in</span> <span class="n">confidential</span> <span class="n">balances</span>
+      <span class="n">share_type</span> <span class="n">accumulated_fees</span><span class="p">;</span> <span class="o">///&lt;</span> <span class="n">fees</span> <span class="n">accumulate</span> <span class="n">to</span> <span class="n">be</span> <span class="n">paid</span> <span class="n">out</span> <span class="n">over</span> <span class="n">time</span>
+      <span class="n">share_type</span> <span class="n">fee_pool</span><span class="p">;</span>         <span class="o">///&lt;</span> <span class="ow">in</span> <span class="n">core</span> <span class="n">asset</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h3><a class="reference external" href="https://bitshares.org/doxygen/classgraphene_1_1chain_1_1asset__object.html">asset_object</a><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>tracks the parameters of an asset</li>
+<li>All assets have a globally unique symbol name that controls how they are traded and an issuer who has authority over the parameters of the asset.</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>class asset_object : public graphene::db::abstract_object&lt;asset_object&gt;
+{
+   public:
+      static const uint8_t space_id = protocol_ids;
+      static const uint8_t type_id  = asset_object_type;
+
+      /// This function does not check if any registered asset has this symbol or not; it simply checks whether the
+      /// symbol would be valid.
+      /// @return true if symbol is a valid ticker symbol; false otherwise.
+      static bool is_valid_symbol( const string&amp; symbol );
+
+      /// @return true if this is a market-issued asset; false otherwise.
+      bool is_market_issued()const { return bitasset_data_id.valid(); }
+      /// @return true if users may request force-settlement of this market-issued asset; false otherwise
+      bool can_force_settle()const { return !(options.flags &amp; disable_force_settle); }
+      /// @return true if the issuer of this market-issued asset may globally settle the asset; false otherwise
+      bool can_global_settle()const { return options.issuer_permissions &amp; global_settle; }
+      /// @return true if this asset charges a fee for the issuer on market operations; false otherwise
+      bool charges_market_fees()const { return options.flags &amp; charge_market_fee; }
+      /// @return true if this asset may only be transferred to/from the issuer or market orders
+      bool is_transfer_restricted()const { return options.flags &amp; transfer_restricted; }
+      bool can_override()const { return options.flags &amp; override_authority; }
+      bool allow_confidential()const { return !(options.flags &amp; asset_issuer_permission_flags::disable_confidential); }
+
+      /// Helper function to get an asset object with the given amount in this asset&#39;s type
+      asset amount(share_type a)const { return asset(a, id); }
+      /// Convert a string amount (i.e. &quot;123.45&quot;) to an asset object with this asset&#39;s type
+      /// The string may have a decimal and/or a negative sign.
+      asset amount_from_string(string amount_string)const;
+      /// Convert an asset to a textual representation, i.e. &quot;123.45&quot;
+      string amount_to_string(share_type amount)const;
+      /// Convert an asset to a textual representation, i.e. &quot;123.45&quot;
+      string amount_to_string(const asset&amp; amount)const
+      { FC_ASSERT(amount.asset_id == id); return amount_to_string(amount.amount); }
+      /// Convert an asset to a textual representation with symbol, i.e. &quot;123.45 USD&quot;
+      string amount_to_pretty_string(share_type amount)const
+      { return amount_to_string(amount) + &quot; &quot; + symbol; }
+      /// Convert an asset to a textual representation with symbol, i.e. &quot;123.45 USD&quot;
+      string amount_to_pretty_string(const asset &amp;amount)const
+      { FC_ASSERT(amount.asset_id == id); return amount_to_pretty_string(amount.amount); }
+
+      /// Ticker symbol for this asset, i.e. &quot;USD&quot;
+      string symbol;
+      /// Maximum number of digits after the decimal point (must be &lt;= 12)
+      uint8_t precision = 0;
+      /// ID of the account which issued this asset.
+      account_id_type issuer;
+
+      asset_options options;
+
+
+      /// Current supply, fee pool, and collected fees are stored in a separate object as they change frequently.
+      asset_dynamic_data_id_type  dynamic_asset_data_id;
+      /// Extra data associated with BitAssets. This field is non-null if and only if is_market_issued() returns true
+      optional&lt;asset_bitasset_data_id_type&gt; bitasset_data_id;
+
+      optional&lt;account_id_type&gt; buyback_account;
+
+      asset_id_type get_id()const { return id; }
+
+      void validate()const
+      {
+         // UIAs may not be prediction markets, have force settlement, or global settlements
+         if( !is_market_issued() )
+         {
+            FC_ASSERT(!(options.flags &amp; disable_force_settle || options.flags &amp; global_settle));
+            FC_ASSERT(!(options.issuer_permissions &amp; disable_force_settle || options.issuer_permissions &amp; global_settle));
+         }
+      }
+
+      template&lt;class DB&gt;
+      const asset_bitasset_data_object&amp; bitasset_data(const DB&amp; db)const
+      {
+         FC_ASSERT( bitasset_data_id.valid(),
+                    &quot;Asset ${a} (${id}) is not a market issued asset.&quot;,
+                    (&quot;a&quot;,this-&gt;symbol)(&quot;id&quot;,this-&gt;id) );
+         return db.get( *bitasset_data_id );
+      }
+
+      template&lt;class DB&gt;
+      const asset_dynamic_data_object&amp; dynamic_data(const DB&amp; db)const
+      { return db.get(dynamic_asset_data_id); }
+
+      /**
+       *  The total amount of an asset that is reserved for future issuance.
+       */
+      template&lt;class DB&gt;
+      share_type reserved( const DB&amp; db )const
+      { return options.max_supply - dynamic_data(db).current_supply; }
+};
+</pre></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h3><a class="reference external" href="https://bitshares.org/doxygen/classgraphene_1_1chain_1_1budget__record__object.html">budget_record_object</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">struct</span> <span class="n">budget_record</span>
+<span class="p">{</span>
+   <span class="n">uint64_t</span> <span class="n">time_since_last_budget</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+   <span class="o">//</span> <span class="n">sources</span> <span class="n">of</span> <span class="n">budget</span>
+   <span class="n">share_type</span> <span class="n">from_initial_reserve</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+   <span class="n">share_type</span> <span class="n">from_accumulated_fees</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+   <span class="n">share_type</span> <span class="n">from_unused_witness_budget</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+   <span class="o">//</span> <span class="n">witness</span> <span class="n">budget</span> <span class="n">requested</span> <span class="n">by</span> <span class="n">the</span> <span class="n">committee</span>
+   <span class="n">share_type</span> <span class="n">requested_witness_budget</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+   <span class="o">//</span> <span class="n">funds</span> <span class="n">that</span> <span class="n">can</span> <span class="n">be</span> <span class="n">released</span> <span class="kn">from</span> <span class="nn">reserve</span> <span class="n">at</span> <span class="n">maximum</span> <span class="n">rate</span>
+   <span class="n">share_type</span> <span class="n">total_budget</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+   <span class="o">//</span> <span class="n">sinks</span> <span class="n">of</span> <span class="n">budget</span><span class="p">,</span> <span class="n">should</span> <span class="nb">sum</span> <span class="n">up</span> <span class="n">to</span> <span class="n">total_budget</span>
+   <span class="n">share_type</span> <span class="n">witness_budget</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+   <span class="n">share_type</span> <span class="n">worker_budget</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+   <span class="o">//</span> <span class="n">unused</span> <span class="n">budget</span>
+   <span class="n">share_type</span> <span class="n">leftover_worker_funds</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+   <span class="o">//</span> <span class="n">change</span> <span class="ow">in</span> <span class="n">supply</span> <span class="n">due</span> <span class="n">to</span> <span class="n">budget</span> <span class="n">operations</span>
+   <span class="n">share_type</span> <span class="n">supply_delta</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">budget_record_object</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">budget_record_object</span> <span class="p">:</span> <span class="n">public</span> <span class="n">graphene</span><span class="p">::</span><span class="n">db</span><span class="p">::</span><span class="n">abstract_object</span><span class="o">&lt;</span><span class="n">budget_record_object</span><span class="o">&gt;</span>
+<span class="p">{</span>
+   <span class="n">public</span><span class="p">:</span>
+          <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">space_id</span> <span class="o">=</span> <span class="n">implementation_ids</span><span class="p">;</span>
+          <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">type_id</span> <span class="o">=</span> <span class="n">impl_budget_record_object_type</span><span class="p">;</span>
+
+          <span class="n">fc</span><span class="p">::</span><span class="n">time_point_sec</span> <span class="n">time</span><span class="p">;</span>
+          <span class="n">budget_record</span> <span class="n">record</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h3><a class="reference external" href="https://bitshares.org/doxygen/classgraphene_1_1chain_1_1buyback__object.html">buyback_object</a><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">buyback_authority_object</span></code> only exists to help with a specific indexing problem. We want to be able to iterate over all assets that have a buyback program. However, assets which have a buyback program are very rare. So rather than indexing <code class="docutils literal notranslate"><span class="pre">asset_object</span></code> by the buyback field (requiring additional bookkeeping for every asset), we instead maintain a <code class="docutils literal notranslate"><span class="pre">buyback_object</span></code> pointing to each asset which has buyback (requiring additional bookkeeping only for every asset which has buyback).</li>
+<li>This class is an implementation detail.</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">buyback_object</span> <span class="p">:</span> <span class="n">public</span> <span class="n">graphene</span><span class="p">::</span><span class="n">db</span><span class="p">::</span><span class="n">abstract_object</span><span class="o">&lt;</span> <span class="n">buyback_object</span> <span class="o">&gt;</span>
+<span class="p">{</span>
+   <span class="n">public</span><span class="p">:</span>
+          <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">space_id</span> <span class="o">=</span> <span class="n">implementation_ids</span><span class="p">;</span>
+          <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">type_id</span> <span class="o">=</span> <span class="n">impl_buyback_object_type</span><span class="p">;</span>
+
+          <span class="n">asset_id_type</span> <span class="n">asset_to_buy</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="bitasset">
+<h2><a class="toc-backref" href="#id47">BitAsset</a><a class="headerlink" href="#bitasset" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id10">
+<h3><a class="reference external" href="https://bitshares.org/doxygen/classgraphene_1_1chain_1_1asset__bitasset__data__object.html">asset_bitasset_data_object</a><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>contains properties that only apply to bitassets (market issued assets)</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>class asset_bitasset_data_object : public abstract_object&lt;asset_bitasset_data_object&gt;
+{
+   public:
+      static const uint8_t space_id = implementation_ids;
+      static const uint8_t type_id  = impl_asset_bitasset_data_type;
+
+      /// The asset this object belong to
+      asset_id_type asset_id;
+
+      /// The tunable options for BitAssets are stored in this field.
+      bitasset_options options;
+
+      /// Feeds published for this asset. If issuer is not committee, the keys in this map are the feed publishing
+      /// accounts; otherwise, the feed publishers are the currently active committee_members and witnesses and this map
+      /// should be treated as an implementation detail. The timestamp on each feed is the time it was published.
+      flat_map&lt;account_id_type, pair&lt;time_point_sec,price_feed&gt;&gt; feeds;
+      /// This is the currently active price feed, calculated as the median of values from the currently active
+      /// feeds.
+      price_feed current_feed;
+      /// This is the publication time of the oldest feed which was factored into current_feed.
+      time_point_sec current_feed_publication_time;
+
+      /// True if this asset implements a @ref prediction_market
+      bool is_prediction_market = false;
+
+      /// This is the volume of this asset which has been force-settled this maintanence interval
+      share_type force_settled_volume;
+      /// Calculate the maximum force settlement volume per maintenance interval, given the current share supply
+      share_type max_force_settlement_volume(share_type current_supply)const;
+
+      /** return true if there has been a black swan, false otherwise */
+      bool has_settlement()const { return !settlement_price.is_null(); }
+
+      /**
+       *  In the event of a black swan, the swan price is saved in the settlement price, and all margin positions
+       *  are settled at the same price with the siezed collateral being moved into the settlement fund. From this
+       *  point on no further updates to the asset are permitted (no feeds, etc) and forced settlement occurs
+       *  immediately when requested, using the settlement price and fund.
+       */
+      ///@{
+      /// Price at which force settlements of a black swanned asset will occur
+      price settlement_price;
+      /// Amount of collateral which is available for force settlement
+      share_type settlement_fund;
+      ///@}
+
+      /// Track whether core_exchange_rate in corresponding asset_object has updated
+      bool asset_cer_updated = false;
+
+      /// Track whether core exchange rate in current feed has updated
+      bool feed_cer_updated = false;
+
+      /// Whether need to update core_exchange_rate in asset_object
+      bool need_to_update_cer() const
+      {
+         return ( ( feed_cer_updated || asset_cer_updated ) &amp;&amp; !current_feed.core_exchange_rate.is_null() );
+      }
+
+      /// The time when @ref current_feed would expire
+      time_point_sec feed_expiration_time()const
+      {
+         uint32_t current_feed_seconds = current_feed_publication_time.sec_since_epoch();
+         if( std::numeric_limits&lt;uint32_t&gt;::max() - current_feed_seconds &lt;= options.feed_lifetime_sec )
+            return time_point_sec::maximum();
+         else
+            return current_feed_publication_time + options.feed_lifetime_sec;
+      }
+      bool feed_is_expired_before_hardfork_615(time_point_sec current_time)const
+      { return feed_expiration_time() &gt;= current_time; }
+      bool feed_is_expired(time_point_sec current_time)const
+      { return feed_expiration_time() &lt;= current_time; }
+      void update_median_feeds(time_point_sec current_time);
+};
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="balance">
+<h2><a class="toc-backref" href="#id49">Balance</a><a class="headerlink" href="#balance" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id11">
+<h3><a class="reference external" href="https://bitshares.org/doxygen/classgraphene_1_1chain_1_1blinded__balance__object.html">blinded_balance_object</a><a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>tracks a blinded balance commitment</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">blinded_balance_object</span> <span class="p">:</span> <span class="n">public</span> <span class="n">graphene</span><span class="p">::</span><span class="n">db</span><span class="p">::</span><span class="n">abstract_object</span><span class="o">&lt;</span><span class="n">blinded_balance_object</span><span class="o">&gt;</span>
+<span class="p">{</span>
+   <span class="n">public</span><span class="p">:</span>
+          <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">space_id</span> <span class="o">=</span> <span class="n">implementation_ids</span><span class="p">;</span>
+          <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">type_id</span>  <span class="o">=</span> <span class="n">impl_blinded_balance_object_type</span><span class="p">;</span>
+
+          <span class="n">fc</span><span class="p">::</span><span class="n">ecc</span><span class="p">::</span><span class="n">commitment_type</span>                <span class="n">commitment</span><span class="p">;</span>
+          <span class="n">asset_id_type</span>                           <span class="n">asset_id</span><span class="p">;</span>
+          <span class="n">authority</span>                               <span class="n">owner</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id12">
+<h3><a class="reference external" href="https://bitshares.org/doxygen/classgraphene_1_1chain_1_1balance__object.html">balance_object</a><a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>class balance_object : public abstract_object&lt;balance_object&gt;
+{
+   public:
+      static const uint8_t space_id = protocol_ids;
+      static const uint8_t type_id  = balance_object_type;
+
+      bool is_vesting_balance()const
+      { return vesting_policy.valid(); }
+      asset available(fc::time_point_sec now)const
+      {
+         return is_vesting_balance()? vesting_policy-&gt;get_allowed_withdraw({balance, now, {}})
+                                    : balance;
+      }
+
+      address owner;
+      asset   balance;
+      optional&lt;linear_vesting_policy&gt; vesting_policy;
+      time_point_sec last_claim_date;
+      asset_id_type asset_type()const { return balance.asset_id; }
+};
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="block">
+<h2><a class="toc-backref" href="#id52">Block</a><a class="headerlink" href="#block" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id13">
+<h3><a class="reference external" href="https://bitshares.org/doxygen/classgraphene_1_1chain_1_1block__summary__object.html">block_summary_object</a><a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>tracks minimal information about past blocks to implement TaPOS</li>
+<li>When attempting to calculate the validity of a transaction we need to lookup a past block and check its block hash and the time it occurred so we can calculate whether the current transaction is valid and at what time it should expire.</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">block_summary_object</span> <span class="p">:</span> <span class="n">public</span> <span class="n">abstract_object</span><span class="o">&lt;</span><span class="n">block_summary_object</span><span class="o">&gt;</span>
+<span class="p">{</span>
+   <span class="n">public</span><span class="p">:</span>
+      <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">space_id</span> <span class="o">=</span> <span class="n">implementation_ids</span><span class="p">;</span>
+      <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">type_id</span>  <span class="o">=</span> <span class="n">impl_block_summary_object_type</span><span class="p">;</span>
+
+      <span class="n">block_id_type</span>      <span class="n">block_id</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="chain">
+<h2><a class="toc-backref" href="#id54">Chain</a><a class="headerlink" href="#chain" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id14">
+<h3><a class="reference external" href="https://bitshares.org/doxygen/classgraphene_1_1chain_1_1chain__property__object.html">chain_property_object</a><a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Contains invariants which are set at genesis and never changed.</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">chain_property_object</span> <span class="p">:</span> <span class="n">public</span> <span class="n">abstract_object</span><span class="o">&lt;</span><span class="n">chain_property_object</span><span class="o">&gt;</span>
+<span class="p">{</span>
+   <span class="n">public</span><span class="p">:</span>
+          <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">space_id</span> <span class="o">=</span> <span class="n">implementation_ids</span><span class="p">;</span>
+          <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">type_id</span>  <span class="o">=</span> <span class="n">impl_chain_property_object_type</span><span class="p">;</span>
+
+          <span class="n">chain_id_type</span> <span class="n">chain_id</span><span class="p">;</span>
+          <span class="n">immutable_chain_parameters</span> <span class="n">immutable_parameters</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id15">
+<h3><a class="reference external" href="https://bitshares.org/doxygen/classgraphene_1_1chain_1_1dynamic__global__property__object.html">dynamic_global_property_object</a><a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Maintains global state information (committee_member list, current fees)</li>
+<li>This is an implementation detail. The values here are calculated during normal chain operations and reflect the current values of global blockchain properties.</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>class dynamic_global_property_object : public abstract_object&lt;dynamic_global_property_object&gt;
+{
+   public:
+      static const uint8_t space_id = implementation_ids;
+      static const uint8_t type_id  = impl_dynamic_global_property_object_type;
+
+      uint32_t          head_block_number = 0;
+      block_id_type     head_block_id;
+      time_point_sec    time;
+      witness_id_type   current_witness;
+      time_point_sec    next_maintenance_time;
+      time_point_sec    last_budget_time;
+      share_type        witness_budget;
+      uint32_t          accounts_registered_this_interval = 0;
+      /**
+       *  Every time a block is missed this increases by
+       *  RECENTLY_MISSED_COUNT_INCREMENT,
+       *  every time a block is found it decreases by
+       *  RECENTLY_MISSED_COUNT_DECREMENT.  It is
+       *  never less than 0.
+       *
+       *  If the recently_missed_count hits 2*UNDO_HISTORY then no new blocks may be pushed.
+       */
+      uint32_t          recently_missed_count = 0;
+
+      /**
+       * The current absolute slot number.  Equal to the total
+       * number of slots since genesis.  Also equal to the total
+       * number of missed slots plus head_block_number.
+       */
+      uint64_t                current_aslot = 0;
+
+      /**
+       * used to compute witness participation.
+       */
+      fc::uint128_t recent_slots_filled;
+
+      /**
+       * dynamic_flags specifies chain state properties that can be
+       * expressed in one bit.
+       */
+      uint32_t dynamic_flags = 0;
+
+      uint32_t last_irreversible_block_num = 0;
+
+      enum dynamic_flag_bits
+      {
+         /**
+          * If maintenance_flag is set, then the head block is a
+          * maintenance block.  This means
+          * get_time_slot(1) - head_block_time() will have a gap
+          * due to maintenance duration.
+          *
+          * This flag answers the question, &quot;Was maintenance
+          * performed in the last call to apply_block()?&quot;
+          */
+         maintenance_flag = 0x01
+      };
+};
+</pre></div>
+</div>
+</div>
+<div class="section" id="id16">
+<h3><a class="reference external" href="https://bitshares.org/doxygen/classgraphene_1_1chain_1_1global__property__object.html">global_property_object</a><a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Maintains global state information (committee_member list, current fees)</li>
+<li>This is an implementation detail. The values here are set by committee_members to tune the blockchain parameters.</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">global_property_object</span> <span class="p">:</span> <span class="n">public</span> <span class="n">graphene</span><span class="p">::</span><span class="n">db</span><span class="p">::</span><span class="n">abstract_object</span><span class="o">&lt;</span><span class="n">global_property_object</span><span class="o">&gt;</span>
+<span class="p">{</span>
+   <span class="n">public</span><span class="p">:</span>
+      <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">space_id</span> <span class="o">=</span> <span class="n">implementation_ids</span><span class="p">;</span>
+      <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">type_id</span>  <span class="o">=</span> <span class="n">impl_global_property_object_type</span><span class="p">;</span>
+
+      <span class="n">chain_parameters</span>           <span class="n">parameters</span><span class="p">;</span>
+      <span class="n">optional</span><span class="o">&lt;</span><span class="n">chain_parameters</span><span class="o">&gt;</span> <span class="n">pending_parameters</span><span class="p">;</span>
+
+      <span class="n">uint32_t</span>                           <span class="n">next_available_vote_id</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="n">vector</span><span class="o">&lt;</span><span class="n">committee_member_id_type</span><span class="o">&gt;</span>   <span class="n">active_committee_members</span><span class="p">;</span> <span class="o">//</span> <span class="n">updated</span> <span class="n">once</span> <span class="n">per</span> <span class="n">maintenance</span> <span class="n">interval</span>
+      <span class="n">flat_set</span><span class="o">&lt;</span><span class="n">witness_id_type</span><span class="o">&gt;</span>          <span class="n">active_witnesses</span><span class="p">;</span> <span class="o">//</span> <span class="n">updated</span> <span class="n">once</span> <span class="n">per</span> <span class="n">maintenance</span> <span class="n">interval</span>
+      <span class="o">//</span> <span class="n">n</span><span class="o">.</span><span class="n">b</span><span class="o">.</span> <span class="n">witness</span> <span class="n">scheduling</span> <span class="ow">is</span> <span class="n">done</span> <span class="n">by</span> <span class="n">witness_schedule</span> <span class="nb">object</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="committee">
+<h2><a class="toc-backref" href="#id58">Committee</a><a class="headerlink" href="#committee" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id17">
+<h3><a class="reference external" href="https://bitshares.org/doxygen/classgraphene_1_1chain_1_1committee__member__object.html">committee_member_object</a><a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>tracks information about a committee_member account.</li>
+<li>A committee_member is responsible for setting blockchain parameters and has dynamic multi-sig control over the committee account. The current set of active committee_members has control.</li>
+<li>committee_members were separated into a separate object to make iterating over the set of committee_member easy.</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="n">public</span><span class="p">:</span>
+      <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">space_id</span> <span class="o">=</span> <span class="n">protocol_ids</span><span class="p">;</span>
+      <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">type_id</span>  <span class="o">=</span> <span class="n">committee_member_object_type</span><span class="p">;</span>
+
+      <span class="n">account_id_type</span>  <span class="n">committee_member_account</span><span class="p">;</span>
+      <span class="n">vote_id_type</span>     <span class="n">vote_id</span><span class="p">;</span>
+      <span class="n">uint64_t</span>         <span class="n">total_votes</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="n">string</span>           <span class="n">url</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="fba">
+<h2><a class="toc-backref" href="#id60">FBA</a><a class="headerlink" href="#fba" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id18">
+<h3><a class="reference external" href="https://bitshares.org/doxygen/classgraphene_1_1chain_1_1fba__accumulator__object.html">fba_accumulator_object</a><a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>fba_accumulator_object accumulates fees to be paid out via buyback or other FBA mechanism.</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">fba_accumulator_object</span> <span class="p">:</span> <span class="n">public</span> <span class="n">graphene</span><span class="p">::</span><span class="n">db</span><span class="p">::</span><span class="n">abstract_object</span><span class="o">&lt;</span> <span class="n">fba_accumulator_object</span> <span class="o">&gt;</span>
+<span class="p">{</span>
+   <span class="n">public</span><span class="p">:</span>
+          <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">space_id</span> <span class="o">=</span> <span class="n">implementation_ids</span><span class="p">;</span>
+          <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">type_id</span> <span class="o">=</span> <span class="n">impl_fba_accumulator_object_type</span><span class="p">;</span>
+
+          <span class="n">share_type</span> <span class="n">accumulated_fba_fees</span><span class="p">;</span>
+          <span class="n">optional</span><span class="o">&lt;</span> <span class="n">asset_id_type</span> <span class="o">&gt;</span> <span class="n">designated_asset</span><span class="p">;</span>
+
+          <span class="nb">bool</span> <span class="n">is_configured</span><span class="p">(</span> <span class="n">const</span> <span class="n">database</span><span class="o">&amp;</span> <span class="n">db</span> <span class="p">)</span><span class="n">const</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>An object will be created at genesis for each of these FBA accumulators.</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">enum</span> <span class="n">graphene_fba_accumulator_id_enum</span>
+<span class="p">{</span>
+   <span class="n">fba_accumulator_id_transfer_to_blind</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="n">fba_accumulator_id_blind_transfer</span><span class="p">,</span>
+   <span class="n">fba_accumulator_id_transfer_from_blind</span><span class="p">,</span>
+   <span class="n">fba_accumulator_id_count</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="history">
+<h2><a class="toc-backref" href="#id62">History</a><a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id19">
+<h3><a class="reference external" href="https://bitshares.org/doxygen/classgraphene_1_1chain_1_1operation__history__object.html">operation_history_object</a><a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>tracks the history of all logical operations on blockchain state</li>
+<li>All operations and virtual operations result in the creation of an operation_history_object that is maintained on disk as a stack. Each real or virtual operation is assigned a unique ID / sequence number that it can be referenced by.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">by default these objects are not tracked, the account_history_plugin must be loaded fore these objects to be maintained.
+this object is READ ONLY it can never be modified</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">operation_history_object</span> <span class="p">:</span> <span class="n">public</span> <span class="n">abstract_object</span><span class="o">&lt;</span><span class="n">operation_history_object</span><span class="o">&gt;</span>
+<span class="p">{</span>
+   <span class="n">public</span><span class="p">:</span>
+      <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">space_id</span> <span class="o">=</span> <span class="n">protocol_ids</span><span class="p">;</span>
+      <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">type_id</span>  <span class="o">=</span> <span class="n">operation_history_object_type</span><span class="p">;</span>
+
+      <span class="n">operation_history_object</span><span class="p">(</span> <span class="n">const</span> <span class="n">operation</span><span class="o">&amp;</span> <span class="n">o</span> <span class="p">):</span><span class="n">op</span><span class="p">(</span><span class="n">o</span><span class="p">){}</span>
+      <span class="n">operation_history_object</span><span class="p">(){}</span>
+
+      <span class="n">operation</span>         <span class="n">op</span><span class="p">;</span>
+      <span class="n">operation_result</span>  <span class="n">result</span><span class="p">;</span>
+      <span class="o">/**</span> <span class="n">the</span> <span class="n">block</span> <span class="n">that</span> <span class="n">caused</span> <span class="n">this</span> <span class="n">operation</span> <span class="o">*/</span>
+      <span class="n">uint32_t</span>          <span class="n">block_num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="o">/**</span> <span class="n">the</span> <span class="n">transaction</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">block</span> <span class="o">*/</span>
+      <span class="n">uint16_t</span>          <span class="n">trx_in_block</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="o">/**</span> <span class="n">the</span> <span class="n">operation</span> <span class="n">within</span> <span class="n">the</span> <span class="n">transaction</span> <span class="o">*/</span>
+      <span class="n">uint16_t</span>          <span class="n">op_in_trx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="o">/**</span> <span class="nb">any</span> <span class="n">virtual</span> <span class="n">operations</span> <span class="n">implied</span> <span class="n">by</span> <span class="n">operation</span> <span class="ow">in</span> <span class="n">block</span> <span class="o">*/</span>
+      <span class="n">uint16_t</span>          <span class="n">virtual_op</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="order-market">
+<h2><a class="toc-backref" href="#id64">Order (<em>market</em>)</a><a class="headerlink" href="#order-market" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id20">
+<h3><a class="reference external" href="https://bitshares.org/doxygen/classgraphene_1_1chain_1_1call__order__object.html">call_order_object</a><a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>tracks debt and call price information</li>
+<li>There should only be one call_order_object per asset pair per account and they will all have the same call price.</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">call_order_object</span> <span class="p">:</span> <span class="n">public</span> <span class="n">abstract_object</span><span class="o">&lt;</span><span class="n">call_order_object</span><span class="o">&gt;</span>
+<span class="p">{</span>
+   <span class="n">public</span><span class="p">:</span>
+          <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">space_id</span> <span class="o">=</span> <span class="n">protocol_ids</span><span class="p">;</span>
+          <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">type_id</span>  <span class="o">=</span> <span class="n">call_order_object_type</span><span class="p">;</span>
+
+          <span class="n">asset</span> <span class="n">get_collateral</span><span class="p">()</span><span class="n">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">asset</span><span class="p">(</span> <span class="n">collateral</span><span class="p">,</span> <span class="n">call_price</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">asset_id</span> <span class="p">);</span> <span class="p">}</span>
+          <span class="n">asset</span> <span class="n">get_debt</span><span class="p">()</span><span class="n">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">asset</span><span class="p">(</span> <span class="n">debt</span><span class="p">,</span> <span class="n">debt_type</span><span class="p">()</span> <span class="p">);</span> <span class="p">}</span>
+          <span class="n">asset</span> <span class="n">amount_to_receive</span><span class="p">()</span><span class="n">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">get_debt</span><span class="p">();</span> <span class="p">}</span>
+          <span class="n">asset_id_type</span> <span class="n">debt_type</span><span class="p">()</span><span class="n">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">call_price</span><span class="o">.</span><span class="n">quote</span><span class="o">.</span><span class="n">asset_id</span><span class="p">;</span> <span class="p">}</span>
+          <span class="n">asset_id_type</span> <span class="n">collateral_type</span><span class="p">()</span><span class="n">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">call_price</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">asset_id</span><span class="p">;</span> <span class="p">}</span>
+          <span class="n">price</span> <span class="n">collateralization</span><span class="p">()</span><span class="n">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">get_collateral</span><span class="p">()</span> <span class="o">/</span> <span class="n">get_debt</span><span class="p">();</span> <span class="p">}</span>
+
+          <span class="n">account_id_type</span>  <span class="n">borrower</span><span class="p">;</span>
+          <span class="n">share_type</span>       <span class="n">collateral</span><span class="p">;</span>  <span class="o">///&lt;</span> <span class="n">call_price</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">asset_id</span><span class="p">,</span> <span class="n">access</span> <span class="n">via</span> <span class="n">get_collateral</span>
+          <span class="n">share_type</span>       <span class="n">debt</span><span class="p">;</span>        <span class="o">///&lt;</span> <span class="n">call_price</span><span class="o">.</span><span class="n">quote</span><span class="o">.</span><span class="n">asset_id</span><span class="p">,</span> <span class="n">access</span> <span class="n">via</span> <span class="n">get_debt</span>
+          <span class="n">price</span>            <span class="n">call_price</span><span class="p">;</span>  <span class="o">///&lt;</span> <span class="n">Collateral</span> <span class="o">/</span> <span class="n">Debt</span>
+
+          <span class="n">optional</span><span class="o">&lt;</span><span class="n">uint16_t</span><span class="o">&gt;</span> <span class="n">target_collateral_ratio</span><span class="p">;</span> <span class="o">///&lt;</span> <span class="n">maximum</span> <span class="n">CR</span> <span class="n">to</span> <span class="n">maintain</span> <span class="n">when</span> <span class="n">selling</span> <span class="n">collateral</span> <span class="n">on</span> <span class="n">margin</span> <span class="n">call</span>
+
+          <span class="n">pair</span><span class="o">&lt;</span><span class="n">asset_id_type</span><span class="p">,</span><span class="n">asset_id_type</span><span class="o">&gt;</span> <span class="n">get_market</span><span class="p">()</span><span class="n">const</span>
+          <span class="p">{</span>
+                 <span class="n">auto</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">std</span><span class="p">::</span><span class="n">make_pair</span><span class="p">(</span> <span class="n">call_price</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">asset_id</span><span class="p">,</span> <span class="n">call_price</span><span class="o">.</span><span class="n">quote</span><span class="o">.</span><span class="n">asset_id</span> <span class="p">);</span>
+                 <span class="k">if</span><span class="p">(</span> <span class="n">tmp</span><span class="o">.</span><span class="n">first</span> <span class="o">&gt;</span> <span class="n">tmp</span><span class="o">.</span><span class="n">second</span> <span class="p">)</span> <span class="n">std</span><span class="p">::</span><span class="n">swap</span><span class="p">(</span> <span class="n">tmp</span><span class="o">.</span><span class="n">first</span><span class="p">,</span> <span class="n">tmp</span><span class="o">.</span><span class="n">second</span> <span class="p">);</span>
+                 <span class="k">return</span> <span class="n">tmp</span><span class="p">;</span>
+          <span class="p">}</span>
+
+          <span class="o">///</span> <span class="n">Calculate</span> <span class="n">maximum</span> <span class="n">quantity</span> <span class="n">of</span> <span class="n">debt</span> <span class="n">to</span> <span class="n">cover</span> <span class="n">to</span> <span class="n">satisfy</span> <span class="nd">@ref</span> <span class="n">target_collateral_ratio</span><span class="o">.</span>
+          <span class="n">share_type</span> <span class="n">get_max_debt_to_cover</span><span class="p">(</span> <span class="n">price</span> <span class="n">match_price</span><span class="p">,</span> <span class="n">price</span> <span class="n">feed_price</span><span class="p">,</span> <span class="n">const</span> <span class="n">uint16_t</span> <span class="n">maintenance_collateral_ratio</span> <span class="p">)</span><span class="n">const</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id21">
+<h3><a class="reference external" href="https://bitshares.org/doxygen/classgraphene_1_1chain_1_1collateral__bid__object.html">collateral_bid_object</a><a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>bids of collateral for debt after a black swan</li>
+<li>There should only be one collateral_bid_object per asset per account, and only for smartcoin assets that have a global settlement_price.</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">collateral_bid_object</span> <span class="p">:</span> <span class="n">public</span> <span class="n">abstract_object</span><span class="o">&lt;</span><span class="n">collateral_bid_object</span><span class="o">&gt;</span>
+<span class="p">{</span>
+   <span class="n">public</span><span class="p">:</span>
+          <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">space_id</span> <span class="o">=</span> <span class="n">implementation_ids</span><span class="p">;</span>
+          <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">type_id</span>  <span class="o">=</span> <span class="n">impl_collateral_bid_object_type</span><span class="p">;</span>
+
+          <span class="n">asset</span> <span class="n">get_additional_collateral</span><span class="p">()</span><span class="n">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">inv_swan_price</span><span class="o">.</span><span class="n">base</span><span class="p">;</span> <span class="p">}</span>
+          <span class="n">asset</span> <span class="n">get_debt_covered</span><span class="p">()</span><span class="n">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">inv_swan_price</span><span class="o">.</span><span class="n">quote</span><span class="p">;</span> <span class="p">}</span>
+          <span class="n">asset_id_type</span> <span class="n">debt_type</span><span class="p">()</span><span class="n">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">inv_swan_price</span><span class="o">.</span><span class="n">quote</span><span class="o">.</span><span class="n">asset_id</span><span class="p">;</span> <span class="p">}</span>
+
+          <span class="n">account_id_type</span>  <span class="n">bidder</span><span class="p">;</span>
+          <span class="n">price</span>            <span class="n">inv_swan_price</span><span class="p">;</span>  <span class="o">//</span> <span class="n">Collateral</span> <span class="o">/</span> <span class="n">Debt</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id22">
+<h3><a class="reference external" href="https://bitshares.org/doxygen/classgraphene_1_1chain_1_1force__settlement__object.html">force_settlement_object</a><a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>tracks bitassets scheduled for force settlement at some point in the future.</li>
+<li>On the settlement_date the balance will be converted to the collateral asset and paid to owner and then this object will be deleted.</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">force_settlement_object</span> <span class="p">:</span> <span class="n">public</span> <span class="n">abstract_object</span><span class="o">&lt;</span><span class="n">force_settlement_object</span><span class="o">&gt;</span>
+<span class="p">{</span>
+   <span class="n">public</span><span class="p">:</span>
+          <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">space_id</span> <span class="o">=</span> <span class="n">protocol_ids</span><span class="p">;</span>
+          <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">type_id</span>  <span class="o">=</span> <span class="n">force_settlement_object_type</span><span class="p">;</span>
+
+          <span class="n">account_id_type</span>   <span class="n">owner</span><span class="p">;</span>
+          <span class="n">asset</span>             <span class="n">balance</span><span class="p">;</span>
+          <span class="n">time_point_sec</span>    <span class="n">settlement_date</span><span class="p">;</span>
+
+          <span class="n">asset_id_type</span> <span class="n">settlement_asset_id</span><span class="p">()</span><span class="n">const</span>
+          <span class="p">{</span> <span class="k">return</span> <span class="n">balance</span><span class="o">.</span><span class="n">asset_id</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id23">
+<h3><a class="reference external" href="https://bitshares.org/doxygen/classgraphene_1_1chain_1_1limit__order__object.html">limit_order_object</a><a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>an offer to sell a amount of a asset at a specified exchange rate by a certain time</li>
+<li>This limit_order_objects are indexed by expiration and is automatically deleted on the first block after expiration</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">limit_order_object</span> <span class="p">:</span> <span class="n">public</span> <span class="n">abstract_object</span><span class="o">&lt;</span><span class="n">limit_order_object</span><span class="o">&gt;</span>
+<span class="p">{</span>
+   <span class="n">public</span><span class="p">:</span>
+          <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">space_id</span> <span class="o">=</span> <span class="n">protocol_ids</span><span class="p">;</span>
+          <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">type_id</span>  <span class="o">=</span> <span class="n">limit_order_object_type</span><span class="p">;</span>
+
+          <span class="n">time_point_sec</span>   <span class="n">expiration</span><span class="p">;</span>
+          <span class="n">account_id_type</span>  <span class="n">seller</span><span class="p">;</span>
+          <span class="n">share_type</span>       <span class="n">for_sale</span><span class="p">;</span> <span class="o">///&lt;</span> <span class="n">asset</span> <span class="nb">id</span> <span class="ow">is</span> <span class="n">sell_price</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">asset_id</span>
+          <span class="n">price</span>            <span class="n">sell_price</span><span class="p">;</span>
+          <span class="n">share_type</span>       <span class="n">deferred_fee</span><span class="p">;</span> <span class="o">///&lt;</span> <span class="n">fee</span> <span class="n">converted</span> <span class="n">to</span> <span class="n">CORE</span>
+          <span class="n">asset</span>            <span class="n">deferred_paid_fee</span><span class="p">;</span> <span class="o">///&lt;</span> <span class="n">originally</span> <span class="n">paid</span> <span class="n">fee</span>
+
+          <span class="n">pair</span><span class="o">&lt;</span><span class="n">asset_id_type</span><span class="p">,</span><span class="n">asset_id_type</span><span class="o">&gt;</span> <span class="n">get_market</span><span class="p">()</span><span class="n">const</span>
+          <span class="p">{</span>
+                 <span class="n">auto</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">std</span><span class="p">::</span><span class="n">make_pair</span><span class="p">(</span> <span class="n">sell_price</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">asset_id</span><span class="p">,</span> <span class="n">sell_price</span><span class="o">.</span><span class="n">quote</span><span class="o">.</span><span class="n">asset_id</span> <span class="p">);</span>
+                 <span class="k">if</span><span class="p">(</span> <span class="n">tmp</span><span class="o">.</span><span class="n">first</span> <span class="o">&gt;</span> <span class="n">tmp</span><span class="o">.</span><span class="n">second</span> <span class="p">)</span> <span class="n">std</span><span class="p">::</span><span class="n">swap</span><span class="p">(</span> <span class="n">tmp</span><span class="o">.</span><span class="n">first</span><span class="p">,</span> <span class="n">tmp</span><span class="o">.</span><span class="n">second</span> <span class="p">);</span>
+                 <span class="k">return</span> <span class="n">tmp</span><span class="p">;</span>
+          <span class="p">}</span>
+
+          <span class="n">asset</span> <span class="n">amount_for_sale</span><span class="p">()</span><span class="n">const</span>   <span class="p">{</span> <span class="k">return</span> <span class="n">asset</span><span class="p">(</span> <span class="n">for_sale</span><span class="p">,</span> <span class="n">sell_price</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">asset_id</span> <span class="p">);</span> <span class="p">}</span>
+          <span class="n">asset</span> <span class="n">amount_to_receive</span><span class="p">()</span><span class="n">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">amount_for_sale</span><span class="p">()</span> <span class="o">*</span> <span class="n">sell_price</span><span class="p">;</span> <span class="p">}</span>
+          <span class="n">asset_id_type</span> <span class="n">sell_asset_id</span><span class="p">()</span><span class="n">const</span>    <span class="p">{</span> <span class="k">return</span> <span class="n">sell_price</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">asset_id</span><span class="p">;</span>  <span class="p">}</span>
+          <span class="n">asset_id_type</span> <span class="n">receive_asset_id</span><span class="p">()</span><span class="n">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">sell_price</span><span class="o">.</span><span class="n">quote</span><span class="o">.</span><span class="n">asset_id</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="proposal">
+<h2><a class="toc-backref" href="#id69">Proposal</a><a class="headerlink" href="#proposal" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id24">
+<h3><a class="reference external" href="https://bitshares.org/doxygen/classgraphene_1_1chain_1_1proposal__object.html">proposal_object</a><a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>tracks the approval of a partially approved transaction</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">proposal_object</span> <span class="p">:</span> <span class="n">public</span> <span class="n">abstract_object</span><span class="o">&lt;</span><span class="n">proposal_object</span><span class="o">&gt;</span>
+<span class="p">{</span>
+   <span class="n">public</span><span class="p">:</span>
+          <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">space_id</span> <span class="o">=</span> <span class="n">protocol_ids</span><span class="p">;</span>
+          <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">type_id</span> <span class="o">=</span> <span class="n">proposal_object_type</span><span class="p">;</span>
+
+          <span class="n">time_point_sec</span>                <span class="n">expiration_time</span><span class="p">;</span>
+          <span class="n">optional</span><span class="o">&lt;</span><span class="n">time_point_sec</span><span class="o">&gt;</span>      <span class="n">review_period_time</span><span class="p">;</span>
+          <span class="n">transaction</span>                   <span class="n">proposed_transaction</span><span class="p">;</span>
+          <span class="n">flat_set</span><span class="o">&lt;</span><span class="n">account_id_type</span><span class="o">&gt;</span>     <span class="n">required_active_approvals</span><span class="p">;</span>
+          <span class="n">flat_set</span><span class="o">&lt;</span><span class="n">account_id_type</span><span class="o">&gt;</span>     <span class="n">available_active_approvals</span><span class="p">;</span>
+          <span class="n">flat_set</span><span class="o">&lt;</span><span class="n">account_id_type</span><span class="o">&gt;</span>     <span class="n">required_owner_approvals</span><span class="p">;</span>
+          <span class="n">flat_set</span><span class="o">&lt;</span><span class="n">account_id_type</span><span class="o">&gt;</span>     <span class="n">available_owner_approvals</span><span class="p">;</span>
+          <span class="n">flat_set</span><span class="o">&lt;</span><span class="n">public_key_type</span><span class="o">&gt;</span>     <span class="n">available_key_approvals</span><span class="p">;</span>
+          <span class="n">account_id_type</span>               <span class="n">proposer</span><span class="p">;</span>
+          <span class="n">std</span><span class="p">::</span><span class="n">string</span>                   <span class="n">fail_reason</span><span class="p">;</span>
+
+          <span class="nb">bool</span> <span class="n">is_authorized_to_execute</span><span class="p">(</span><span class="n">database</span><span class="o">&amp;</span> <span class="n">db</span><span class="p">)</span> <span class="n">const</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="transaction">
+<h2><a class="toc-backref" href="#id71">Transaction</a><a class="headerlink" href="#transaction" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id25">
+<h3><a class="reference external" href="https://bitshares.org/doxygen/classgraphene_1_1chain_1_1account__transaction__history__object.html">account_transaction_history_object</a><a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>a node in a linked list of operation_history_objects</li>
+<li>Account history is important for users and wallets even though it is not part of “core validation”. Account history is maintained as a linked list stored on disk in a stack. Each account will point to the most recent account history object by ID. When a new operation relativent to that account is processed a new account history object is allocated at the end of the stack and initialized to point to the prior object.</li>
+<li>This data is never accessed as part of chain validation and therefore can be kept on disk as a memory mapped file. Using a memory mapped file will help the operating system better manage / cache / page files and also accelerates load time.</li>
+<li>When the transaction history for a particular account is requested the linked list can be traversed with relatively efficient disk access because of the use of a memory mapped stack.</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">operation_history_object</span> <span class="p">:</span> <span class="n">public</span> <span class="n">abstract_object</span><span class="o">&lt;</span><span class="n">operation_history_object</span><span class="o">&gt;</span>
+<span class="p">{</span>
+   <span class="n">public</span><span class="p">:</span>
+      <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">space_id</span> <span class="o">=</span> <span class="n">protocol_ids</span><span class="p">;</span>
+      <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">type_id</span>  <span class="o">=</span> <span class="n">operation_history_object_type</span><span class="p">;</span>
+
+      <span class="n">operation_history_object</span><span class="p">(</span> <span class="n">const</span> <span class="n">operation</span><span class="o">&amp;</span> <span class="n">o</span> <span class="p">):</span><span class="n">op</span><span class="p">(</span><span class="n">o</span><span class="p">){}</span>
+      <span class="n">operation_history_object</span><span class="p">(){}</span>
+
+      <span class="n">operation</span>         <span class="n">op</span><span class="p">;</span>
+      <span class="n">operation_result</span>  <span class="n">result</span><span class="p">;</span>
+      <span class="o">/**</span> <span class="n">the</span> <span class="n">block</span> <span class="n">that</span> <span class="n">caused</span> <span class="n">this</span> <span class="n">operation</span> <span class="o">*/</span>
+      <span class="n">uint32_t</span>          <span class="n">block_num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="o">/**</span> <span class="n">the</span> <span class="n">transaction</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">block</span> <span class="o">*/</span>
+      <span class="n">uint16_t</span>          <span class="n">trx_in_block</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="o">/**</span> <span class="n">the</span> <span class="n">operation</span> <span class="n">within</span> <span class="n">the</span> <span class="n">transaction</span> <span class="o">*/</span>
+      <span class="n">uint16_t</span>          <span class="n">op_in_trx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="o">/**</span> <span class="nb">any</span> <span class="n">virtual</span> <span class="n">operations</span> <span class="n">implied</span> <span class="n">by</span> <span class="n">operation</span> <span class="ow">in</span> <span class="n">block</span> <span class="o">*/</span>
+      <span class="n">uint16_t</span>          <span class="n">virtual_op</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id26">
+<h3><a class="reference external" href="https://bitshares.org/doxygen/classgraphene_1_1chain_1_1node__property__object.html">node_property_object</a><a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Contains per-node database configuration.</li>
+<li>Transactions are evaluated differently based on per-node state. Settings here may change based on whether the node is syncing or up-to-date. Or whether the node is a witness node. Or if we’re processing a transaction in a witness-signed block vs. a fresh transaction from the p2p network. Or configuration-specified tradeoffs of performance/hardfork resilience vs. paranoia.</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">node_property_object</span>
+<span class="p">{</span>
+   <span class="n">public</span><span class="p">:</span>
+      <span class="n">node_property_object</span><span class="p">(){}</span>
+      <span class="o">~</span><span class="n">node_property_object</span><span class="p">(){}</span>
+
+      <span class="n">uint32_t</span> <span class="n">skip_flags</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="n">std</span><span class="p">::</span><span class="nb">map</span><span class="o">&lt;</span> <span class="n">block_id_type</span><span class="p">,</span> <span class="n">std</span><span class="p">::</span><span class="n">vector</span><span class="o">&lt;</span> <span class="n">fc</span><span class="p">::</span><span class="n">variant_object</span> <span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">debug_updates</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id27">
+<h3><a class="reference external" href="https://bitshares.org/doxygen/classgraphene_1_1chain_1_1transaction__object.html">transaction_object</a><a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The purpose of this object is to enable the detection of duplicate transactions. When a transaction is included in a block a transaction_object is added. At the end of block processing all transaction_objects that have expired can be removed from the index.</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">namespace</span> <span class="n">graphene</span> <span class="p">{</span> <span class="n">namespace</span> <span class="n">chain</span> <span class="p">{</span>
+   <span class="n">using</span> <span class="n">namespace</span> <span class="n">graphene</span><span class="p">::</span><span class="n">db</span><span class="p">;</span>
+   <span class="n">using</span> <span class="n">boost</span><span class="p">::</span><span class="n">multi_index_container</span><span class="p">;</span>
+   <span class="n">using</span> <span class="n">namespace</span> <span class="n">boost</span><span class="p">::</span><span class="n">multi_index</span><span class="p">;</span>
+   <span class="o">/**</span>
+        <span class="o">*</span> <span class="n">The</span> <span class="n">purpose</span> <span class="n">of</span> <span class="n">this</span> <span class="nb">object</span> <span class="ow">is</span> <span class="n">to</span> <span class="n">enable</span> <span class="n">the</span> <span class="n">detection</span> <span class="n">of</span> <span class="n">duplicate</span> <span class="n">transactions</span><span class="o">.</span> <span class="n">When</span> <span class="n">a</span> <span class="n">transaction</span> <span class="ow">is</span> <span class="n">included</span>
+        <span class="o">*</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">block</span> <span class="n">a</span> <span class="n">transaction_object</span> <span class="ow">is</span> <span class="n">added</span><span class="o">.</span> <span class="n">At</span> <span class="n">the</span> <span class="n">end</span> <span class="n">of</span> <span class="n">block</span> <span class="n">processing</span> <span class="nb">all</span> <span class="n">transaction_objects</span> <span class="n">that</span> <span class="n">have</span>
+        <span class="o">*</span> <span class="n">expired</span> <span class="n">can</span> <span class="n">be</span> <span class="n">removed</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">index</span><span class="o">.</span>
+        <span class="o">*/</span>
+   <span class="k">class</span> <span class="nc">transaction_object</span> <span class="p">:</span> <span class="n">public</span> <span class="n">abstract_object</span><span class="o">&lt;</span><span class="n">transaction_object</span><span class="o">&gt;</span>
+   <span class="p">{</span>
+          <span class="n">public</span><span class="p">:</span>
+                 <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">space_id</span> <span class="o">=</span> <span class="n">implementation_ids</span><span class="p">;</span>
+                 <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">type_id</span>  <span class="o">=</span> <span class="n">impl_transaction_object_type</span><span class="p">;</span>
+
+                 <span class="n">signed_transaction</span>  <span class="n">trx</span><span class="p">;</span>
+                 <span class="n">transaction_id_type</span> <span class="n">trx_id</span><span class="p">;</span>
+
+                 <span class="n">time_point_sec</span> <span class="n">get_expiration</span><span class="p">()</span><span class="n">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">trx</span><span class="o">.</span><span class="n">expiration</span><span class="p">;</span> <span class="p">}</span>
+   <span class="p">};</span>
+
+   <span class="n">struct</span> <span class="n">by_expiration</span><span class="p">;</span>
+   <span class="n">struct</span> <span class="n">by_id</span><span class="p">;</span>
+   <span class="n">struct</span> <span class="n">by_trx_id</span><span class="p">;</span>
+   <span class="n">typedef</span> <span class="n">multi_index_container</span><span class="o">&lt;</span>
+          <span class="n">transaction_object</span><span class="p">,</span>
+          <span class="n">indexed_by</span><span class="o">&lt;</span>
+                 <span class="n">ordered_unique</span><span class="o">&lt;</span> <span class="n">tag</span><span class="o">&lt;</span><span class="n">by_id</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">member</span><span class="o">&lt;</span> <span class="nb">object</span><span class="p">,</span> <span class="n">object_id_type</span><span class="p">,</span> <span class="o">&amp;</span><span class="nb">object</span><span class="p">::</span><span class="nb">id</span> <span class="o">&gt;</span> <span class="o">&gt;</span><span class="p">,</span>
+                 <span class="n">hashed_unique</span><span class="o">&lt;</span> <span class="n">tag</span><span class="o">&lt;</span><span class="n">by_trx_id</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">BOOST_MULTI_INDEX_MEMBER</span><span class="p">(</span><span class="n">transaction_object</span><span class="p">,</span> <span class="n">transaction_id_type</span><span class="p">,</span> <span class="n">trx_id</span><span class="p">),</span> <span class="n">std</span><span class="p">::</span><span class="nb">hash</span><span class="o">&lt;</span><span class="n">transaction_id_type</span><span class="o">&gt;</span> <span class="o">&gt;</span><span class="p">,</span>
+                 <span class="n">ordered_non_unique</span><span class="o">&lt;</span> <span class="n">tag</span><span class="o">&lt;</span><span class="n">by_expiration</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">const_mem_fun</span><span class="o">&lt;</span><span class="n">transaction_object</span><span class="p">,</span> <span class="n">time_point_sec</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">transaction_object</span><span class="p">::</span><span class="n">get_expiration</span> <span class="o">&gt;</span> <span class="o">&gt;</span>
+          <span class="o">&gt;</span>
+   <span class="o">&gt;</span> <span class="n">transaction_multi_index_type</span><span class="p">;</span>
+
+   <span class="n">typedef</span> <span class="n">generic_index</span><span class="o">&lt;</span><span class="n">transaction_object</span><span class="p">,</span> <span class="n">transaction_multi_index_type</span><span class="o">&gt;</span> <span class="n">transaction_index</span><span class="p">;</span>
+<span class="p">}</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="vesting-balance">
+<h2><a class="toc-backref" href="#id75">Vesting Balance</a><a class="headerlink" href="#vesting-balance" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id28">
+<h3><a class="reference external" href="https://bitshares.org/doxygen/classgraphene_1_1chain_1_1vesting__balance__object.html">vesting_balance_object</a><a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Vesting balance object is a balance that is locked by the blockchain for a period of time.</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">vesting_balance_object</span> <span class="p">:</span> <span class="n">public</span> <span class="n">abstract_object</span><span class="o">&lt;</span><span class="n">vesting_balance_object</span><span class="o">&gt;</span>
+<span class="p">{</span>
+   <span class="n">public</span><span class="p">:</span>
+      <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">space_id</span> <span class="o">=</span> <span class="n">protocol_ids</span><span class="p">;</span>
+      <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">type_id</span> <span class="o">=</span> <span class="n">vesting_balance_object_type</span><span class="p">;</span>
+
+      <span class="o">///</span> <span class="n">Account</span> <span class="n">which</span> <span class="n">owns</span> <span class="ow">and</span> <span class="n">may</span> <span class="n">withdraw</span> <span class="kn">from</span> <span class="nn">this</span> <span class="n">vesting</span> <span class="n">balance</span>
+      <span class="n">account_id_type</span> <span class="n">owner</span><span class="p">;</span>
+      <span class="o">///</span> <span class="n">Total</span> <span class="n">amount</span> <span class="n">remaining</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">vesting</span> <span class="n">balance</span>
+      <span class="o">///</span> <span class="n">Includes</span> <span class="n">the</span> <span class="n">unvested</span> <span class="n">funds</span><span class="p">,</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">vested</span> <span class="n">funds</span> <span class="n">which</span> <span class="n">have</span> <span class="ow">not</span> <span class="n">yet</span> <span class="n">been</span> <span class="n">withdrawn</span>
+      <span class="n">asset</span> <span class="n">balance</span><span class="p">;</span>
+      <span class="o">///</span> <span class="n">The</span> <span class="n">vesting</span> <span class="n">policy</span> <span class="n">stores</span> <span class="n">details</span> <span class="n">on</span> <span class="n">when</span> <span class="n">funds</span> <span class="n">vest</span><span class="p">,</span> <span class="ow">and</span> <span class="n">controls</span> <span class="n">when</span> <span class="n">they</span> <span class="n">may</span> <span class="n">be</span> <span class="n">withdrawn</span>
+      <span class="n">vesting_policy</span> <span class="n">policy</span><span class="p">;</span>
+
+      <span class="n">vesting_balance_object</span><span class="p">()</span> <span class="p">{}</span>
+
+      <span class="o">///</span><span class="nd">@brief</span> <span class="n">Deposit</span> <span class="n">amount</span> <span class="n">into</span> <span class="n">vesting</span> <span class="n">balance</span><span class="p">,</span> <span class="n">requiring</span> <span class="n">it</span> <span class="n">to</span> <span class="n">vest</span> <span class="n">before</span> <span class="n">withdrawal</span>
+      <span class="n">void</span> <span class="n">deposit</span><span class="p">(</span><span class="n">const</span> <span class="n">fc</span><span class="p">::</span><span class="n">time_point_sec</span><span class="o">&amp;</span> <span class="n">now</span><span class="p">,</span> <span class="n">const</span> <span class="n">asset</span><span class="o">&amp;</span> <span class="n">amount</span><span class="p">);</span>
+      <span class="nb">bool</span> <span class="n">is_deposit_allowed</span><span class="p">(</span><span class="n">const</span> <span class="n">fc</span><span class="p">::</span><span class="n">time_point_sec</span><span class="o">&amp;</span> <span class="n">now</span><span class="p">,</span> <span class="n">const</span> <span class="n">asset</span><span class="o">&amp;</span> <span class="n">amount</span><span class="p">)</span><span class="n">const</span><span class="p">;</span>
+
+      <span class="o">///</span> <span class="nd">@brief</span> <span class="n">Deposit</span> <span class="n">amount</span> <span class="n">into</span> <span class="n">vesting</span> <span class="n">balance</span><span class="p">,</span> <span class="n">making</span> <span class="n">the</span> <span class="n">new</span> <span class="n">funds</span> <span class="n">vest</span> <span class="n">immediately</span>
+      <span class="n">void</span> <span class="n">deposit_vested</span><span class="p">(</span><span class="n">const</span> <span class="n">fc</span><span class="p">::</span><span class="n">time_point_sec</span><span class="o">&amp;</span> <span class="n">now</span><span class="p">,</span> <span class="n">const</span> <span class="n">asset</span><span class="o">&amp;</span> <span class="n">amount</span><span class="p">);</span>
+      <span class="nb">bool</span> <span class="n">is_deposit_vested_allowed</span><span class="p">(</span><span class="n">const</span> <span class="n">fc</span><span class="p">::</span><span class="n">time_point_sec</span><span class="o">&amp;</span> <span class="n">now</span><span class="p">,</span> <span class="n">const</span> <span class="n">asset</span><span class="o">&amp;</span> <span class="n">amount</span><span class="p">)</span><span class="n">const</span><span class="p">;</span>
+
+      <span class="o">/**</span>
+       <span class="o">*</span> <span class="n">Used</span> <span class="n">to</span> <span class="n">remove</span> <span class="n">a</span> <span class="n">vesting</span> <span class="n">balance</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">VBO</span><span class="o">.</span> <span class="n">As</span> <span class="n">well</span> <span class="k">as</span> <span class="n">the</span>
+       <span class="o">*</span> <span class="n">balance</span> <span class="n">field</span><span class="p">,</span> <span class="n">coin_seconds_earned</span> <span class="ow">and</span>
+       <span class="o">*</span> <span class="n">coin_seconds_earned_last_update</span> <span class="n">fields</span> <span class="n">are</span> <span class="n">updated</span><span class="o">.</span>
+       <span class="o">*</span>
+       <span class="o">*</span> <span class="n">The</span> <span class="n">money</span> <span class="n">doesn</span><span class="s1">&#39;t &quot;go&quot; anywhere; the caller is responsible for</span>
+       <span class="o">*</span> <span class="n">crediting</span> <span class="n">it</span> <span class="n">to</span> <span class="n">the</span> <span class="n">proper</span> <span class="n">account</span><span class="o">.</span>
+       <span class="o">*/</span>
+      <span class="n">void</span> <span class="n">withdraw</span><span class="p">(</span><span class="n">const</span> <span class="n">fc</span><span class="p">::</span><span class="n">time_point_sec</span><span class="o">&amp;</span> <span class="n">now</span><span class="p">,</span> <span class="n">const</span> <span class="n">asset</span><span class="o">&amp;</span> <span class="n">amount</span><span class="p">);</span>
+      <span class="nb">bool</span> <span class="n">is_withdraw_allowed</span><span class="p">(</span><span class="n">const</span> <span class="n">fc</span><span class="p">::</span><span class="n">time_point_sec</span><span class="o">&amp;</span> <span class="n">now</span><span class="p">,</span> <span class="n">const</span> <span class="n">asset</span><span class="o">&amp;</span> <span class="n">amount</span><span class="p">)</span><span class="n">const</span><span class="p">;</span>
+
+      <span class="o">/**</span>
+       <span class="o">*</span> <span class="n">Get</span> <span class="n">amount</span> <span class="n">of</span> <span class="n">allowed</span> <span class="n">withdrawal</span><span class="o">.</span>
+       <span class="o">*/</span>
+      <span class="n">asset</span> <span class="n">get_allowed_withdraw</span><span class="p">(</span><span class="n">const</span> <span class="n">time_point_sec</span><span class="o">&amp;</span> <span class="n">now</span><span class="p">)</span><span class="n">const</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="witness">
+<h2><a class="toc-backref" href="#id77">Witness</a><a class="headerlink" href="#witness" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id29">
+<h3><a class="reference external" href="https://bitshares.org/doxygen/classgraphene_1_1chain_1_1witness__object.html">witness_object</a><a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">witness_object</span> <span class="p">:</span> <span class="n">public</span> <span class="n">abstract_object</span><span class="o">&lt;</span><span class="n">witness_object</span><span class="o">&gt;</span>
+<span class="p">{</span>
+   <span class="n">public</span><span class="p">:</span>
+      <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">space_id</span> <span class="o">=</span> <span class="n">protocol_ids</span><span class="p">;</span>
+      <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">type_id</span> <span class="o">=</span> <span class="n">witness_object_type</span><span class="p">;</span>
+
+      <span class="n">account_id_type</span>  <span class="n">witness_account</span><span class="p">;</span>
+      <span class="n">uint64_t</span>         <span class="n">last_aslot</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="n">public_key_type</span>  <span class="n">signing_key</span><span class="p">;</span>
+      <span class="n">optional</span><span class="o">&lt;</span> <span class="n">vesting_balance_id_type</span> <span class="o">&gt;</span> <span class="n">pay_vb</span><span class="p">;</span>
+      <span class="n">vote_id_type</span>     <span class="n">vote_id</span><span class="p">;</span>
+      <span class="n">uint64_t</span>         <span class="n">total_votes</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="n">string</span>           <span class="n">url</span><span class="p">;</span>
+      <span class="n">int64_t</span>          <span class="n">total_missed</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="n">uint32_t</span>         <span class="n">last_confirmed_block_num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+      <span class="n">witness_object</span><span class="p">()</span> <span class="p">:</span> <span class="n">vote_id</span><span class="p">(</span><span class="n">vote_id_type</span><span class="p">::</span><span class="n">witness</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id30">
+<h3><a class="reference external" href="https://bitshares.org/doxygen/classgraphene_1_1chain_1_1witness__schedule__object.html">witness_schedule_object</a><a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">witness_schedule_object</span> <span class="p">:</span> <span class="n">public</span> <span class="n">graphene</span><span class="p">::</span><span class="n">db</span><span class="p">::</span><span class="n">abstract_object</span><span class="o">&lt;</span><span class="n">witness_schedule_object</span><span class="o">&gt;</span>
+<span class="p">{</span>
+   <span class="n">public</span><span class="p">:</span>
+          <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">space_id</span> <span class="o">=</span> <span class="n">implementation_ids</span><span class="p">;</span>
+          <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">type_id</span> <span class="o">=</span> <span class="n">impl_witness_schedule_object_type</span><span class="p">;</span>
+
+          <span class="n">vector</span><span class="o">&lt;</span> <span class="n">witness_id_type</span> <span class="o">&gt;</span> <span class="n">current_shuffled_witnesses</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="worker">
+<h2><a class="toc-backref" href="#id80">Worker</a><a class="headerlink" href="#worker" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id31">
+<h3><a class="reference external" href="https://bitshares.org/doxygen/classgraphene_1_1chain_1_1worker__object.html">worker_object</a><a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Worker object contains the details of a blockchain worker. See <a class="reference external" href="https://bitshares.org/doxygen/group__workers.html">The Blockchain Worker System</a> for details.</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">worker_object</span> <span class="p">:</span> <span class="n">public</span> <span class="n">abstract_object</span><span class="o">&lt;</span><span class="n">worker_object</span><span class="o">&gt;</span>
+<span class="p">{</span>
+   <span class="n">public</span><span class="p">:</span>
+          <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">space_id</span> <span class="o">=</span> <span class="n">protocol_ids</span><span class="p">;</span>
+          <span class="n">static</span> <span class="n">const</span> <span class="n">uint8_t</span> <span class="n">type_id</span> <span class="o">=</span>  <span class="n">worker_object_type</span><span class="p">;</span>
+
+          <span class="o">///</span> <span class="n">ID</span> <span class="n">of</span> <span class="n">the</span> <span class="n">account</span> <span class="n">which</span> <span class="n">owns</span> <span class="n">this</span> <span class="n">worker</span>
+          <span class="n">account_id_type</span> <span class="n">worker_account</span><span class="p">;</span>
+          <span class="o">///</span> <span class="n">Time</span> <span class="n">at</span> <span class="n">which</span> <span class="n">this</span> <span class="n">worker</span> <span class="n">begins</span> <span class="n">receiving</span> <span class="n">pay</span><span class="p">,</span> <span class="k">if</span> <span class="n">elected</span>
+          <span class="n">time_point_sec</span> <span class="n">work_begin_date</span><span class="p">;</span>
+          <span class="o">///</span> <span class="n">Time</span> <span class="n">at</span> <span class="n">which</span> <span class="n">this</span> <span class="n">worker</span> <span class="n">will</span> <span class="n">cease</span> <span class="n">to</span> <span class="n">receive</span> <span class="n">pay</span><span class="o">.</span> <span class="n">Worker</span> <span class="n">will</span> <span class="n">be</span> <span class="n">deleted</span> <span class="n">at</span> <span class="n">this</span> <span class="n">time</span>
+          <span class="n">time_point_sec</span> <span class="n">work_end_date</span><span class="p">;</span>
+          <span class="o">///</span> <span class="n">Amount</span> <span class="ow">in</span> <span class="n">CORE</span> <span class="n">this</span> <span class="n">worker</span> <span class="n">will</span> <span class="n">be</span> <span class="n">paid</span> <span class="n">each</span> <span class="n">day</span>
+          <span class="n">share_type</span> <span class="n">daily_pay</span><span class="p">;</span>
+          <span class="o">///</span> <span class="n">ID</span> <span class="n">of</span> <span class="n">this</span> <span class="n">worker</span><span class="s1">&#39;s pay balance</span>
+          <span class="n">worker_type</span> <span class="n">worker</span><span class="p">;</span>
+          <span class="o">///</span> <span class="n">Human</span><span class="o">-</span><span class="n">readable</span> <span class="n">name</span> <span class="k">for</span> <span class="n">the</span> <span class="n">worker</span>
+          <span class="n">string</span> <span class="n">name</span><span class="p">;</span>
+          <span class="o">///</span> <span class="n">URL</span> <span class="n">to</span> <span class="n">a</span> <span class="n">web</span> <span class="n">page</span> <span class="n">representing</span> <span class="n">this</span> <span class="n">worker</span>
+          <span class="n">string</span> <span class="n">url</span><span class="p">;</span>
+
+          <span class="o">///</span> <span class="n">Voting</span> <span class="n">ID</span> <span class="n">which</span> <span class="n">represents</span> <span class="n">approval</span> <span class="n">of</span> <span class="n">this</span> <span class="n">worker</span>
+          <span class="n">vote_id_type</span> <span class="n">vote_for</span><span class="p">;</span>
+          <span class="o">///</span> <span class="n">Voting</span> <span class="n">ID</span> <span class="n">which</span> <span class="n">represents</span> <span class="n">disapproval</span> <span class="n">of</span> <span class="n">this</span> <span class="n">worker</span>
+          <span class="n">vote_id_type</span> <span class="n">vote_against</span><span class="p">;</span>
+
+          <span class="n">uint64_t</span> <span class="n">total_votes_for</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+          <span class="n">uint64_t</span> <span class="n">total_votes_against</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+          <span class="nb">bool</span> <span class="n">is_active</span><span class="p">(</span><span class="n">fc</span><span class="p">::</span><span class="n">time_point_sec</span> <span class="n">now</span><span class="p">)</span><span class="n">const</span> <span class="p">{</span>
+                 <span class="k">return</span> <span class="n">now</span> <span class="o">&gt;=</span> <span class="n">work_begin_date</span> <span class="o">&amp;&amp;</span> <span class="n">now</span> <span class="o">&lt;=</span> <span class="n">work_end_date</span><span class="p">;</span>
+          <span class="p">}</span>
+
+          <span class="n">share_type</span> <span class="n">approving_stake</span><span class="p">()</span><span class="n">const</span> <span class="p">{</span>
+                 <span class="k">return</span> <span class="n">int64_t</span><span class="p">(</span> <span class="n">total_votes_for</span> <span class="p">)</span> <span class="o">-</span> <span class="n">int64_t</span><span class="p">(</span> <span class="n">total_votes_against</span> <span class="p">);</span>
+          <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../development/installation.html" class="btn btn-neutral float-right" title="Getting Started" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="lib_evalustors.html" class="btn btn-neutral" title="Evaluators" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright BitShares Blockchain Foundation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

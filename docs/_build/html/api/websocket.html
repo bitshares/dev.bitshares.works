@@ -1,0 +1,474 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2.2. Websocket Calls &amp; Notifications &mdash; BItShares Developers Portal  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2.3. Often used API Calls" href="often-used-calls.html" />
+    <link rel="prev" title="2.1. Remote Procedure Calls" href="rpc.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> BItShares Developers Portal
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/architectures.html">Introduction &amp; Architectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/environments.html">Development Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../components/components.html">System Components Elements</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/installation.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/integration.html">Integration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/interaction.html">Blockchain Interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/testnets.html">Testnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/bsip.html">BitShares Improvement Proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supports_dev/supports.html">Support and Optimizations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="restrictions.html">1. API Access and Restrictions</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="calls.html">2. Available Calls</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="rpc.html">2.1. Remote Procedure Calls</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.2. Websocket Calls &amp; Notifications</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#prerequisites">2.2.1. Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#call-format">2.2.2. Call Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#requesting-api-access">2.2.3. Requesting API access</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#database-notifications">2.2.3.1. Database Notifications</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="often-used-calls.html">2.3. Often used API Calls</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="blockchain_api.html">3. Blockchain API(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wallet_api.html">4. Wallet API - Calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objects_ids.html">5. Objects and IDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="namespaces.html">6. Graphene - Namespaces</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../bts_guide/tutorials/index.html">Developer Guide (Tutorials)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bts_guide/index_faq.html">Frequently Asked Questions (FAQ)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references/info_comunities.html">BitShares Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/info_comunities.html#bitshares-blockchain">BitShares Blockchain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/tech_articles.html">Articles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/githubrepo.html">BitShares Repositories</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">BItShares Developers Portal</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="calls.html">2. Available Calls</a> &raquo;</li>
+        
+      <li>2.2. Websocket Calls &amp; Notifications</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="websocket-calls-notifications">
+<span id="websocket-calls"></span><h1>2.2. Websocket Calls &amp; Notifications<a class="headerlink" href="#websocket-calls-notifications" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title first">Table of Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#prerequisites" id="id1">Prerequisites</a></li>
+<li><a class="reference internal" href="#call-format" id="id2">Call Format</a></li>
+<li><a class="reference internal" href="#requesting-api-access" id="id3">Requesting API access</a><ul>
+<li><a class="reference internal" href="#database-notifications" id="id4">Database Notifications</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="prerequisites">
+<h2><a class="toc-backref" href="#id1">2.2.1. Prerequisites</a><a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<p>This page assumes that you have a full node running and listening to port
+<code class="docutils literal notranslate"><span class="pre">8090</span></code>, locally.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you also want to run a wallet, please pick reasonable different ports and make sure you do not try to call methods at the wallet that are only available to the blockchain API.</p>
+</div>
+</div>
+<div class="section" id="call-format">
+<h2><a class="toc-backref" href="#id2">2.2.2. Call Format</a><a class="headerlink" href="#call-format" title="Permalink to this headline">¶</a></h2>
+<p>In Graphene, Websocket calls are stateful and accessible via regular JSON formated websocket connection. The correct structure of the JSON call is</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+ <span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span>
+ <span class="s2">&quot;method&quot;</span><span class="o">:</span><span class="s2">&quot;call&quot;</span><span class="p">,</span>
+ <span class="s2">&quot;params&quot;</span><span class="o">:</span><span class="p">[</span>
+           <span class="mi">0</span><span class="p">,</span>
+           <span class="s2">&quot;get_accounts&quot;</span><span class="p">,</span>
+           <span class="p">[[</span><span class="s2">&quot;1.2.0&quot;</span><span class="p">]]</span>
+          <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The parameters <code class="docutils literal notranslate"><span class="pre">params</span></code> have the following structure:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="nx">API</span><span class="o">-</span><span class="nx">identifier</span><span class="p">,</span> <span class="nx">Method</span><span class="o">-</span><span class="nx">to</span><span class="o">-</span><span class="nx">Call</span><span class="p">,</span> <span class="nx">Call</span><span class="o">-</span><span class="nx">Parameters</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>In the example above, we query the <code class="docutils literal notranslate"><span class="pre">database</span></code> API which carries the identifier <code class="docutils literal notranslate"><span class="pre">0</span></code> in our example (see more details below).</p>
+<dl class="docutils">
+<dt><strong>Example Call with `wscat`</strong></dt>
+<dd>The following will show the usage of websocket connections. We make use of the</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">wscat</span></code> application available via <code class="docutils literal notranslate"><span class="pre">npm</span></code>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>npm install -g wscat
+</pre></div>
+</div>
+<p>A non-restricted call against a full-node would take the form:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>wscat -c ws://127.0.0.1:8090
+&gt; <span class="o">{</span><span class="s2">&quot;id&quot;</span>:1, <span class="s2">&quot;method&quot;</span>:<span class="s2">&quot;call&quot;</span>, <span class="s2">&quot;params&quot;</span>:<span class="o">[</span><span class="m">0</span>,<span class="s2">&quot;get_accounts&quot;</span>,<span class="o">[[</span><span class="s2">&quot;1.2.0&quot;</span><span class="o">]]]}</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt><strong>Successful Calls</strong></dt>
+<dd>The API will return a properly JSON formated response carrying the same <code class="docutils literal notranslate"><span class="pre">id</span></code> as the request to distinguish subsequent calls.</dd>
+</dl>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+ <span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span>
+ <span class="s2">&quot;result&quot;</span><span class="o">:</span>  <span class="p">..</span><span class="nx">data</span><span class="p">..</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt><strong>Errors</strong></dt>
+<dd>In case of an error, the resulting answer will carry an <code class="docutils literal notranslate"><span class="pre">error</span></code> attribute and a detailed description:</dd>
+</dl>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="mi">0</span>
+  <span class="s2">&quot;error&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;data&quot;</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;code&quot;</span><span class="o">:</span> <span class="nx">error</span><span class="o">-</span><span class="nx">code</span><span class="p">,</span>
+      <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot; .. name of exception ..&quot;</span>
+      <span class="s2">&quot;message&quot;</span><span class="o">:</span> <span class="s2">&quot; .. message of exception ..&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;stack&quot;</span><span class="o">:</span> <span class="p">[</span> <span class="p">..</span> <span class="nx">stack</span> <span class="nx">trace</span> <span class="p">..</span> <span class="p">],</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;code&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="p">},</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="requesting-api-access">
+<span id="requestingapiaccess"></span><h2><a class="toc-backref" href="#id3">2.2.3. Requesting API access</a><a class="headerlink" href="#requesting-api-access" title="Permalink to this headline">¶</a></h2>
+<p>The Graphene full node offers a wide range of APIs that can be accessed via websockets. The procedure works as follows:</p>
+<ol class="arabic simple">
+<li>Login to the Full Node</li>
+<li>Request access to an API</li>
+<li>Obtain the API identifier</li>
+<li>Call methods of a specific API by providing the identifier</li>
+</ol>
+<p>Find more available APIs: <a class="reference internal" href="blockchain_api.html#blockchain-api"><span class="std std-ref">Blockchain API(s)</span></a></p>
+<ol class="arabic simple">
+<li>Login</li>
+</ol>
+<blockquote>
+<div><p>The first thing we need to do is to <em>login</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;method&quot;</span><span class="p">:</span><span class="s2">&quot;call&quot;</span><span class="p">,</span><span class="s2">&quot;params&quot;</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;login&quot;</span><span class="p">,[</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">]]}</span>
+<span class="o">&lt;</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;result&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>If you have <span class="xref std std-doc">restricted access</span> then you may be required to put your <code class="docutils literal notranslate"><span class="pre">username</span></code> and <code class="docutils literal notranslate"><span class="pre">pasword</span></code> into the quotes, accordingly. Furthermore, you should verify, that the <code class="docutils literal notranslate"><span class="pre">result</span></code> give positive confirmation about your login.</p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>Requesting Access to an API</li>
+</ol>
+<blockquote>
+<div><p>Most data can be queried from the <span class="xref std std-doc">database</span>-API to which we <em>register</em> with the following call:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;method&quot;</span><span class="p">:</span><span class="s2">&quot;call&quot;</span><span class="p">,</span><span class="s2">&quot;params&quot;</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;database&quot;</span><span class="p">,[]]}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li>Obtain the API identifier</li>
+</ol>
+<blockquote>
+<div><p>After requesting access, the full node will either deny access or return an identifier to be used in future calls:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;result&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">result</span></code> will be our identifier for the database API, in the following called <code class="docutils literal notranslate"><span class="pre">DATABASE_API_ID</span></code>!</p>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li>Call methods of a specific API by providing the identifier</li>
+</ol>
+<blockquote>
+<div><p>Now we can call any methods available to the <code class="docutils literal notranslate"><span class="pre">database</span></code> API via:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;method&quot;</span><span class="p">:</span><span class="s2">&quot;call&quot;</span><span class="p">,</span> <span class="s2">&quot;params&quot;</span><span class="p">:[</span><span class="n">DATABASE_API_ID</span><span class="p">,</span><span class="s2">&quot;get_accounts&quot;</span><span class="p">,[[</span><span class="s2">&quot;1.2.0&quot;</span><span class="p">]]]}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<div class="section" id="database-notifications">
+<h3><a class="toc-backref" href="#id4">2.2.3.1. Database Notifications</a><a class="headerlink" href="#database-notifications" title="Permalink to this headline">¶</a></h3>
+<p>In Graphene, the websocket connection is used for notifications when objects in the database change or a particular event (such as filled orders) occur.</p>
+<p>We have the following subscriptions available:</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">set_subscribe_callback(</span> <span class="pre">int</span> <span class="pre">identifier,</span> <span class="pre">bool</span> <span class="pre">clear_filter</span> <span class="pre">)</span></code>:</dt>
+<dd>To simplify development a global subscription callback can be registered.
+Every notification initiated by the full node will carry a particular
+<code class="docutils literal notranslate"><span class="pre">id</span></code> as defined by the user with the <code class="docutils literal notranslate"><span class="pre">identifier</span></code> parameter.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">set_pending_transaction_callback(int</span> <span class="pre">identifier)</span></code>:</dt>
+<dd>Notifications for incoming <em>unconfirmed</em> transactions.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">set_block_applied_callback(blockid)</span></code>:</dt>
+<dd>Gives a notification whenever the block <code class="docutils literal notranslate"><span class="pre">blockid</span></code> is applied to the
+blockchain.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">subscribe_to_market(int</span> <span class="pre">identifier,</span> <span class="pre">asset_id</span> <span class="pre">a,</span> <span class="pre">asset_id</span> <span class="pre">b))</span></code>:</dt>
+<dd>Subscribes to market changes in market <code class="docutils literal notranslate"><span class="pre">a:b</span></code> and sends notifications with
+id <code class="docutils literal notranslate"><span class="pre">identifier</span></code>.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">get_full_accounts(array</span> <span class="pre">account_ids,</span> <span class="pre">bool</span> <span class="pre">subscribe)</span></code>:</dt>
+<dd>Returns the full account object for the accounts in array <code class="docutils literal notranslate"><span class="pre">account_ids</span></code>
+and subscribes to changed to that account if <code class="docutils literal notranslate"><span class="pre">subscribe</span></code> is set to
+<code class="docutils literal notranslate"><span class="pre">True</span></code>.</dd>
+</dl>
+</li>
+</ul>
+<p>Let’s first get a global scubscription callback to disctinguish our notifications from regular RPC calls:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="s2">&quot;method&quot;</span><span class="p">:</span><span class="s2">&quot;call&quot;</span><span class="p">,</span><span class="s2">&quot;params&quot;</span><span class="p">:[</span><span class="n">DATABASE_API_ID</span><span class="p">,</span><span class="s2">&quot;set_subscribe_callback&quot;</span><span class="p">,[</span><span class="n">SUBSCRIPTION_ID</span><span class="p">,</span> <span class="n">true</span><span class="p">]]}</span>
+</pre></div>
+</div>
+<p>This call above will register <code class="docutils literal notranslate"><span class="pre">SUBSCRIPTION_ID</span></code> as id for notifications.</p>
+<p>Now, whenever you get an object from the witness (e.g. via <code class="docutils literal notranslate"><span class="pre">get_objects</span></code>) you will automatically subscribe to any future changes of that object.</p>
+<p>After calling <code class="docutils literal notranslate"><span class="pre">set_subscribe_callback</span></code> the witness will start to send notices every time the object changes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="p">{</span>
+    <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;notice&quot;</span>
+    <span class="s2">&quot;params&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="n">SUBSCRIPTION_ID</span><span class="p">,</span>
+        <span class="p">[[</span>
+            <span class="p">{</span> <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;2.1.0&quot;</span><span class="p">,</span> <span class="o">...</span>  <span class="p">},</span>
+            <span class="p">{</span> <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="o">...</span>  <span class="p">},</span>
+            <span class="p">{</span> <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="o">...</span>  <span class="p">},</span>
+            <span class="p">{</span> <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="o">...</span>  <span class="p">}</span>
+        <span class="p">]]</span>
+    <span class="p">],</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Example Session</strong></p>
+<p>Here is an example of a full session::</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="p">{</span><span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;call&quot;</span><span class="p">,</span> <span class="s2">&quot;params&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;login&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">]],</span> <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="o">&lt;</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;result&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">}</span>
+<span class="o">&gt;</span> <span class="p">{</span><span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;call&quot;</span><span class="p">,</span> <span class="s2">&quot;params&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;database&quot;</span><span class="p">,</span> <span class="p">[]],</span> <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+<span class="o">&lt;</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="s2">&quot;result&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">}</span>
+<span class="o">&gt;</span> <span class="p">{</span><span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;call&quot;</span><span class="p">,</span> <span class="s2">&quot;params&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;history&quot;</span><span class="p">,</span> <span class="p">[]],</span> <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
+<span class="o">&lt;</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="s2">&quot;result&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+<span class="o">&gt;</span> <span class="p">{</span><span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;call&quot;</span><span class="p">,</span> <span class="s2">&quot;params&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;set_subscribe_callback&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="n">false</span><span class="p">]],</span> <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">}</span>
+<span class="o">&lt;</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span><span class="s2">&quot;result&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">}</span>
+<span class="o">&gt;</span> <span class="p">{</span><span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;call&quot;</span><span class="p">,</span> <span class="s2">&quot;params&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;get_objects&quot;</span><span class="p">,</span> <span class="p">[[</span><span class="s2">&quot;2.1.0&quot;</span><span class="p">]]],</span> <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">7</span><span class="p">}</span>
+<span class="p">(</span><span class="n">plenty</span> <span class="n">of</span> <span class="n">data</span> <span class="n">coming</span> <span class="ow">in</span> <span class="kn">from</span> <span class="nn">this</span> <span class="n">point</span> <span class="n">on</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="often-used-calls.html" class="btn btn-neutral float-right" title="2.3. Often used API Calls" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="rpc.html" class="btn btn-neutral" title="2.1. Remote Procedure Calls" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright BitShares Blockchain Foundation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
