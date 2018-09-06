@@ -1,6 +1,7 @@
 # BitShares Nodes 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 #### Table of Contents:
 - [BitShares Nodes](../nodes_full_witness/README.md#bitshares-nodes-and-p2p-network)
@@ -39,6 +40,24 @@ After you installed BitShares Core successfully, you have `witness_node` and `cl
 ## BitShares Nodes and P2P network
 >>>>>>> 988a021e8be5cb6f5778b1c1d62b1b80ea0bab5c
 
+=======
+#### Table of Contents:
+- [BitShares Nodes and P2P](../nodes_full_witness/README.md#bitshares-nodes-and-p2p-network)
+- [Full Node (Witness Nodes)](../nodes_full_witness/full_nodes.md#full-nodes-witness-nodes)
+  : Type of Witness nodes, System Requirements, How to launch, Configuration 
+- [Running a BitShares API Node](../nodes_full_witness/running-api-node.md#running-a-bitshares-api-node)   
+- [Become an Active Witness](../nodes_full_witness/active_witness.md#become-an-active-witness)
+ : A Block-Producing Witness set up, Backup Server, Price Feeds
+- FAQ
+  - [Committee](../tutorials/FAQ.md#committee)
+  - [Witness](../tutorials/FAQ.md#witness)
+
+
+***
+
+## BitShares Nodes and P2P network
+
+>>>>>>> 988a021e8be5cb6f5778b1c1d62b1b80ea0bab5c
 #### What is the Nodes?
 According to Wikipedia, in Computer Science, 
  > A node is a basic unit used in computer science. Nodes are devices or data points on a more extensive network. Devices such as a personal computer, cell phone, or printer are nodes. When defining nodes on the internet, a node is anything that has an IP address.  
@@ -58,6 +77,7 @@ Both are implemented by the executable (*witness_node*), but in the command line
 
 #### BitShares Public Full Nodes
 If you do not have own node to run or connect, you can use one of the BitShares Public API services (public full nodes) to interact with the BitShares blockchain. 
+<<<<<<< HEAD
 
 - The latest list of [BitShares Public Full Nodes](https://github.com/bitshares/bitshares-ui/blob/staging/app/api/apiConfig.js#L67) information.
 
@@ -67,6 +87,17 @@ The witness node has a copy of the full BitShares blockchain data (transaction h
 
 Anyone who wishes to have own copy of the blockchain data can do so. However, that would take hours (days) to download and sync the data and require many memories to run the blockchain (*Check here [BitShares updated System Requirements](../nodes_full_witness/full_nodes.md#system-requirements)*). Therefore, anyone who is interested in being a node or wants to have the blockchain data has to be prepared the right types of equipment and knowledge to handle all of the data. 
 
+=======
+
+- The latest list of [BitShares Public Full Nodes](https://github.com/bitshares/bitshares-ui/blob/staging/app/api/apiConfig.js#L67) information.
+
+### Witness Node's Roles and Duties
+
+The witness node has a copy of the full BitShares blockchain data (transaction history) on a computer or other hardware devices.  
+
+Anyone who wishes to have own copy of the blockchain data can do so. However, that would take hours (days) to download and sync the data and require many memories to run the blockchain (*Check here [BitShares updated System Requirements](../nodes_full_witness/full_nodes.md#system-requirements)*). Therefore, anyone who is interested in being a node or wants to have the blockchain data has to be prepared the right types of equipment and knowledge to handle all of the data. 
+
+>>>>>>> 988a021e8be5cb6f5778b1c1d62b1b80ea0bab5c
 The witness nodes maintain the integrity of the BitShares Blockchain. Moreover, Active witness node validates BitShares transactions and produce "blocks" for the BitShares Blockchain.  "Blocks" are groups of transactions that have been validated. Also, each transaction is formed of many operations. Without a witness node, we do not have any "blocks" and "chains".
 
 These are some BitShares Active Witness Duties:
