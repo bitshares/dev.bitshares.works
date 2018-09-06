@@ -1,0 +1,2095 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>6.3. Graphene::Wallet &mdash; BItShares Developers Portal  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Developer Guide (Tutorials)" href="../../bts_guide/tutorials/index.html" />
+    <link rel="prev" title="6.2. Graphene::Chain" href="chain.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BItShares Developers Portal
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/architectures.html">Introduction &amp; Architectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/environments.html">Development Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../components/components.html">System Components Elements</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../development/installation.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development/integration.html">Integration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development/interaction.html">Blockchain Interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development/testnets.html">Testnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development/bsip.html">BitShares Improvement Proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../supports_dev/supports.html">Support and Optimizations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../restrictions.html">1. API Access and Restrictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../calls.html">2. Available Calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../blockchain_api.html">3. Blockchain API(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wallet_api.html">4. Wallet API - Calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../objects_ids.html">5. Objects and IDs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../namespaces.html">6. Graphene - Namespaces</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="app.html">6.1. Graphene::App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chain.html">6.2. Graphene::Chain</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.3. Graphene::Wallet</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../bts_guide/tutorials/index.html">Developer Guide (Tutorials)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bts_guide/index_faq.html">Frequently Asked Questions (FAQ)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../references/info_comunities.html">BitShares Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references/info_comunities.html#bitshares-blockchain">BitShares Blockchain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references/tech_articles.html">Articles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references/githubrepo.html">BitShares Repositories</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BItShares Developers Portal</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../namespaces.html">6. Graphene - Namespaces</a> &raquo;</li>
+        
+      <li>6.3. Graphene::Wallet</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="graphene-wallet">
+<h1>6.3. Graphene::Wallet<a class="headerlink" href="#graphene-wallet" title="Permalink to this headline">¶</a></h1>
+<dl class="type">
+<dt id="_CPPv3N8graphene6walletE">
+<span id="_CPPv2N8graphene6walletE"></span><span id="graphene::wallet"></span><span class="target" id="namespacegraphene_1_1wallet"></span><em class="property">namespace </em><code class="descname">wallet</code><a class="headerlink" href="#_CPPv3N8graphene6walletE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Typedefs</p>
+<dl class="type">
+<dt id="_CPPv3N8graphene6wallet23transaction_handle_typeE">
+<span id="_CPPv2N8graphene6wallet23transaction_handle_typeE"></span><span id="graphene::wallet::transaction_handle_type"></span><span class="target" id="namespacegraphene_1_1wallet_1a385c5434f1c4e271cf812627f9ee759a"></span><em class="property">typedef </em>uint16_t <code class="descname">transaction_handle_type</code><a class="headerlink" href="#_CPPv3N8graphene6wallet23transaction_handle_typeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="type">
+<dt id="_CPPv3N8graphene6wallet24blind_receipt_index_typeE">
+<span id="_CPPv2N8graphene6wallet24blind_receipt_index_typeE"></span><span id="graphene::wallet::blind_receipt_index_type"></span><span class="target" id="namespacegraphene_1_1wallet_1ad9716b5e512a47a21832967fc0ced842"></span><em class="property">typedef </em>multi_index_container&lt;blind_receipt, indexed_by&lt;ordered_unique&lt;tag&lt;by_commitment&gt;, const_mem_fun&lt;blind_receipt, <em class="property">const</em> commitment_type&amp;, &amp;blind_receipt::commitment&gt;&gt;, ordered_unique&lt;tag&lt;by_to&gt;, const_mem_fun&lt;blind_receipt, std::pair&lt;public_key_type, fc::time_point&gt;, &amp;blind_receipt::to_date&gt;&gt;, ordered_non_unique&lt;tag&lt;by_to_asset_used&gt;, const_mem_fun&lt;blind_receipt, std::tuple&lt;public_key_type, asset_id_type, bool&gt;, &amp;blind_receipt::to_asset_used&gt;&gt;, ordered_unique&lt;tag&lt;by_from&gt;, const_mem_fun&lt;blind_receipt, std::pair&lt;public_key_type, fc::time_point&gt;, &amp;blind_receipt::from_date&gt;&gt;&gt;&gt; <code class="descname">blind_receipt_index_type</code><a class="headerlink" href="#_CPPv3N8graphene6wallet24blind_receipt_index_typeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="type">
+<dt id="_CPPv3N8graphene6wallet20key_label_index_typeE">
+<span id="_CPPv2N8graphene6wallet20key_label_index_typeE"></span><span id="graphene::wallet::key_label_index_type"></span><span class="target" id="namespacegraphene_1_1wallet_1a00d96f68df9fc0364b97a1fdb077045c"></span><em class="property">typedef </em>multi_index_container&lt;key_label, indexed_by&lt;ordered_unique&lt;tag&lt;by_label&gt;, member&lt;key_label, string, &amp;key_label::label&gt;&gt;, ordered_unique&lt;tag&lt;by_key&gt;, member&lt;key_label, public_key_type, &amp;key_label::key&gt;&gt;&gt;&gt; <code class="descname">key_label_index_type</code><a class="headerlink" href="#_CPPv3N8graphene6wallet20key_label_index_typeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet18from_which_variantEiRK7variant8uint32_t">
+<span id="_CPPv2N8graphene6wallet18from_which_variantEiRK7variant8uint32_t"></span><span id="graphene::wallet::from_which_variant__i.variantCR.uint32_t"></span><em class="property">template </em>&lt;<em class="property">typename</em> T&gt;<br /><span class="target" id="namespacegraphene_1_1wallet_1a49b1aae48272e82a27fbe5ba5f8de10a"></span>T <code class="descname">from_which_variant</code><span class="sig-paren">(</span>int <em>which</em>, <em class="property">const</em> variant &amp;<em>v</em>, uint32_t <em>max_depth</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet18from_which_variantEiRK7variant8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet25create_static_variant_mapEv">
+<span id="_CPPv2N8graphene6wallet25create_static_variant_mapEv"></span><span id="graphene::wallet::create_static_variant_map"></span><em class="property">template </em>&lt;<em class="property">typename</em> T&gt;<br /><span class="target" id="namespacegraphene_1_1wallet_1a94323616e1c511ee95bfc69f073b397d"></span>static_variant_map <code class="descname">create_static_variant_map</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet25create_static_variant_mapEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet13create_objectERK7variant">
+<span id="_CPPv2N8graphene6wallet13create_objectERK7variant"></span><span id="graphene::wallet::create_object__variantCR"></span><span class="target" id="namespacegraphene_1_1wallet_1a123885efb87d8e7b83b3ffc383368b54"></span>object *<code class="descname">create_object</code><span class="sig-paren">(</span><em class="property">const</em> variant &amp;<em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet13create_objectERK7variant" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This class takes a variant and turns it into an object of the given type, with the new operator. </p>
+</dd></dl>
+
+</div>
+<dl class="class">
+<dt id="_CPPv3N8graphene6wallet13blind_balanceE">
+<span id="_CPPv2N8graphene6wallet13blind_balanceE"></span><span id="graphene::wallet::blind_balance"></span><span class="target" id="structgraphene_1_1wallet_1_1blind__balance"></span><em class="property">struct </em><code class="descname">blind_balance</code><a class="headerlink" href="#_CPPv3N8graphene6wallet13blind_balanceE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><em>#include &lt;wallet.hpp&gt;</em><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv3N8graphene6wallet13blind_balance4fromE">
+<span id="_CPPv2N8graphene6wallet13blind_balance4fromE"></span><span id="graphene::wallet::blind_balance::from__public_key_type"></span><span class="target" id="structgraphene_1_1wallet_1_1blind__balance_1a6a1ece9cb59e5f101ab746a079604305"></span>public_key_type <code class="descname">from</code><a class="headerlink" href="#_CPPv3N8graphene6wallet13blind_balance4fromE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>the account this balance came from </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N8graphene6wallet13blind_balance2toE">
+<span id="_CPPv2N8graphene6wallet13blind_balance2toE"></span><span id="graphene::wallet::blind_balance::to__public_key_type"></span><span class="target" id="structgraphene_1_1wallet_1_1blind__balance_1af10396210141d59f52f08fb1a97de16b"></span>public_key_type <code class="descname">to</code><a class="headerlink" href="#_CPPv3N8graphene6wallet13blind_balance2toE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>the account this balance is logically associated with </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N8graphene6wallet13blind_balance12one_time_keyE">
+<span id="_CPPv2N8graphene6wallet13blind_balance12one_time_keyE"></span><span id="graphene::wallet::blind_balance::one_time_key__public_key_type"></span><span class="target" id="structgraphene_1_1wallet_1_1blind__balance_1ab458667120916d668dbf28fda180be64"></span>public_key_type <code class="descname">one_time_key</code><a class="headerlink" href="#_CPPv3N8graphene6wallet13blind_balance12one_time_keyE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>used to derive the authority key and blinding factor </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N8graphene6wallet18blind_confirmationE">
+<span id="_CPPv2N8graphene6wallet18blind_confirmationE"></span><span id="graphene::wallet::blind_confirmation"></span><span class="target" id="structgraphene_1_1wallet_1_1blind__confirmation"></span><em class="property">struct </em><code class="descname">blind_confirmation</code><a class="headerlink" href="#_CPPv3N8graphene6wallet18blind_confirmationE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><em>#include &lt;wallet.hpp&gt;</em><p>Contains the confirmation receipt the sender must give the receiver and the meta data about the receipt that helps the sender identify which receipt is for the receiver and which is for the change address. </p>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N8graphene6wallet7utilityE">
+<span id="_CPPv2N8graphene6wallet7utilityE"></span><span id="graphene::wallet::utility"></span><span class="target" id="classgraphene_1_1wallet_1_1utility"></span><em class="property">class </em><code class="descname">utility</code><a class="headerlink" href="#_CPPv3N8graphene6wallet7utilityE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><em>#include &lt;wallet.hpp&gt;</em><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Static Functions</p>
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet7utility32derive_owner_keys_from_brain_keyE6stringi">
+<span id="_CPPv2N8graphene6wallet7utility32derive_owner_keys_from_brain_keyE6stringi"></span><span id="graphene::wallet::utility::derive_owner_keys_from_brain_key__string.i"></span><span class="target" id="classgraphene_1_1wallet_1_1utility_1a2c55d056c89bbd5945489c5185cea814"></span>vector&lt;brain_key_info&gt; <code class="descname">derive_owner_keys_from_brain_key</code><span class="sig-paren">(</span>string <em>brain_key</em>, int <em>number_of_desired_keys</em> = 1<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet7utility32derive_owner_keys_from_brain_keyE6stringi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Derive any number of <em>possible</em> owner keys from a given brain key.</p>
+<p>NOTE: These keys may or may not match with the owner keys of any account. This function is merely intended to assist with account or key recovery.</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#classgraphene_1_1wallet_1_1utility_1a2c813fc0587d67ed483372ff38bb5273"><span class="std std-ref">suggest_brain_key()</span></a></dd>
+<dt><strong>Return</strong></dt>
+<dd>A list of keys that are deterministically derived from the brainkey </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">brain_key</span></code>: Brain key </li>
+<li><code class="docutils literal notranslate"><span class="pre">number_of_desired_keys</span></code>: Number of desired keys </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet7utility17suggest_brain_keyEv">
+<span id="_CPPv2N8graphene6wallet7utility17suggest_brain_keyEv"></span><span id="graphene::wallet::utility::suggest_brain_key"></span><span class="target" id="classgraphene_1_1wallet_1_1utility_1a2c813fc0587d67ed483372ff38bb5273"></span>brain_key_info <code class="descname">suggest_brain_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet7utility17suggest_brain_keyEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Suggests a safe brain key to use for creating your account. <code class="docutils literal notranslate"><span class="pre">create_account_with_brain_key()</span></code> requires you to specify a ‘brain key’, a long passphrase that provides enough entropy to generate cyrptographic keys. This function will suggest a suitably random string that should be easy to write down (and, with effort, memorize). <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>a suggested brain_key </dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N8graphene6wallet32vesting_balance_object_with_infoE">
+<span id="_CPPv2N8graphene6wallet32vesting_balance_object_with_infoE"></span><span id="graphene::wallet::vesting_balance_object_with_info"></span><span class="target" id="structgraphene_1_1wallet_1_1vesting__balance__object__with__info"></span><em class="property">struct </em><code class="descname">vesting_balance_object_with_info</code> : <em class="property">public</em> graphene::<a class="reference internal" href="chain.html#_CPPv3N8graphene5chainE" title="graphene::chain">chain</a>::<a class="reference internal" href="chain.html#_CPPv3N8graphene5chain22vesting_balance_objectE" title="graphene::chain::vesting_balance_object">vesting_balance_object</a><a class="headerlink" href="#_CPPv3N8graphene6wallet32vesting_balance_object_with_infoE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><em>#include &lt;wallet.hpp&gt;</em><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv3N8graphene6wallet32vesting_balance_object_with_info16allowed_withdrawE">
+<span id="_CPPv2N8graphene6wallet32vesting_balance_object_with_info16allowed_withdrawE"></span><span id="graphene::wallet::vesting_balance_object_with_info::allowed_withdraw__asset"></span><span class="target" id="structgraphene_1_1wallet_1_1vesting__balance__object__with__info_1ae173df1cdc0a25fbaf31c371c3c08386"></span>asset <code class="descname">allowed_withdraw</code><a class="headerlink" href="#_CPPv3N8graphene6wallet32vesting_balance_object_with_info16allowed_withdrawE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>How much is allowed to be withdrawn. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N8graphene6wallet32vesting_balance_object_with_info21allowed_withdraw_timeE">
+<span id="_CPPv2N8graphene6wallet32vesting_balance_object_with_info21allowed_withdraw_timeE"></span><span id="graphene::wallet::vesting_balance_object_with_info::allowed_withdraw_time__fc::time_point_sec"></span><span class="target" id="structgraphene_1_1wallet_1_1vesting__balance__object__with__info_1a857d1f08924a5e942316308bd8e994a5"></span>fc::time_point_sec <code class="descname">allowed_withdraw_time</code><a class="headerlink" href="#_CPPv3N8graphene6wallet32vesting_balance_object_with_info21allowed_withdraw_timeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The time at which allowed_withdrawal was calculated. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N8graphene6wallet10wallet_apiE">
+<span id="_CPPv2N8graphene6wallet10wallet_apiE"></span><span id="graphene::wallet::wallet_api"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api"></span><em class="property">class </em><code class="descname">wallet_api</code><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_apiE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><em>#include &lt;wallet.hpp&gt;</em><p>This wallet assumes it is connected to the database server with a high-bandwidth, low-latency connection and performs minimal caching. This API could be provided locally to be used by a web interface. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Unnamed Group</p>
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api13set_key_labelE15public_key_type6string">
+<span id="_CPPv2N8graphene6wallet10wallet_api13set_key_labelE15public_key_type6string"></span><span id="graphene::wallet::wallet_api::set_key_label__public_key_type.string"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1af23b7d760f581179282c5113945ec725"></span>bool <code class="descname">set_key_label</code><span class="sig-paren">(</span>public_key_type <em>key</em>, string <em>label</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api13set_key_labelE15public_key_type6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>These methods are used for stealth transfers This method can be used to set the label for a public key</p>
+<p><dl class="docutils">
+<dt><strong>Note</strong></dt>
+<dd>No two keys can have the same label.</dd>
+<dt><strong>Return</strong></dt>
+<dd>true if the label was set, otherwise false </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api20create_blind_accountE6string6string">
+<span id="_CPPv2N8graphene6wallet10wallet_api20create_blind_accountE6string6string"></span><span id="graphene::wallet::wallet_api::create_blind_account__string.string"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a85d711119140bbe2ff73599baee48866"></span>public_key_type <code class="descname">create_blind_account</code><span class="sig-paren">(</span>string <em>label</em>, string <em>brain_key</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api20create_blind_accountE6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Generates a new blind account for the given brain key and assigns it the given label. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api18get_blind_balancesE6string">
+<span id="_CPPv2N8graphene6wallet10wallet_api18get_blind_balancesE6string"></span><span id="graphene::wallet::wallet_api::get_blind_balances__string"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a3d11320f5123684b2855685021372d08"></span>vector&lt;asset&gt; <code class="descname">get_blind_balances</code><span class="sig-paren">(</span>string <em>key_or_label</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api18get_blind_balancesE6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the total balance of all blinded commitments that can be claimed by the given account key or label </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK8graphene6wallet10wallet_api18get_blind_accountsEv">
+<span id="_CPPv2NK8graphene6wallet10wallet_api18get_blind_accountsEv"></span><span id="graphene::wallet::wallet_api::get_blind_accountsC"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a725e456a4ca23ae210a22092dd5fe972"></span>map&lt;string, public_key_type&gt; <code class="descname">get_blind_accounts</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK8graphene6wallet10wallet_api18get_blind_accountsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>all blind accounts </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK8graphene6wallet10wallet_api21get_my_blind_accountsEv">
+<span id="_CPPv2NK8graphene6wallet10wallet_api21get_my_blind_accountsEv"></span><span id="graphene::wallet::wallet_api::get_my_blind_accountsC"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a2d4ef36783314e156e6747379faebd3f"></span>map&lt;string, public_key_type&gt; <code class="descname">get_my_blind_accounts</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK8graphene6wallet10wallet_api21get_my_blind_accountsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>all blind accounts for which this wallet has the private key </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK8graphene6wallet10wallet_api14get_public_keyE6string">
+<span id="_CPPv2NK8graphene6wallet10wallet_api14get_public_keyE6string"></span><span id="graphene::wallet::wallet_api::get_public_key__stringC"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a5a19ea70c6ed3ca720c4b335f0f2c1a5"></span>public_key_type <code class="descname">get_public_key</code><span class="sig-paren">(</span>string <em>label</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK8graphene6wallet10wallet_api14get_public_keyE6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the public key associated with the given label </dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3NK8graphene6wallet10wallet_api5aboutEv">
+<span id="_CPPv2NK8graphene6wallet10wallet_api5aboutEv"></span><span id="graphene::wallet::wallet_api::aboutC"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1aab0ebcb387c74f6d733c32bc5e17131e"></span>variant_object <code class="descname">about</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK8graphene6wallet10wallet_api5aboutEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns info such as client version, git version of graphene/fc, version of boost, openssl. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>compile time info and client and dependencies versions </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK8graphene6wallet10wallet_api17get_account_countEv">
+<span id="_CPPv2NK8graphene6wallet10wallet_api17get_account_countEv"></span><span id="graphene::wallet::wallet_api::get_account_countC"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1ae921c3738042e2720652b8e037f1eac4"></span>uint64_t <code class="descname">get_account_count</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK8graphene6wallet10wallet_api17get_account_countEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the number of accounts registered on the blockchain <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the number of registered accounts </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api16list_my_accountsEv">
+<span id="_CPPv2N8graphene6wallet10wallet_api16list_my_accountsEv"></span><span id="graphene::wallet::wallet_api::list_my_accounts"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1acc5f625ee9aa8ba0685eb2a52b330b27"></span>vector&lt;account_object&gt; <code class="descname">list_my_accounts</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api16list_my_accountsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Lists all accounts controlled by this wallet. This returns a list of the full account objects for all accounts whose private keys we possess. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>a list of account objects </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api13list_accountsERK6string8uint32_t">
+<span id="_CPPv2N8graphene6wallet10wallet_api13list_accountsERK6string8uint32_t"></span><span id="graphene::wallet::wallet_api::list_accounts__stringCR.uint32_t"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1ade01cfbd19d3aa965d96ce4931880e40"></span>map&lt;string, account_id_type&gt; <code class="descname">list_accounts</code><span class="sig-paren">(</span><em class="property">const</em> string &amp;<em>lowerbound</em>, uint32_t <em>limit</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api13list_accountsERK6string8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Lists all accounts registered in the blockchain. This returns a list of all account names and their account ids, sorted by account name.</p>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">lowerbound</span></code> and limit parameters to page through the list. To retrieve all accounts, start by setting <code class="docutils literal notranslate"><span class="pre">lowerbound</span></code> to the empty string <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>, and then each iteration, pass the last account name returned as the <code class="docutils literal notranslate"><span class="pre">lowerbound</span></code> for the next <code class="docutils literal notranslate"><a class="reference internal" href="../wallet_api.html#classgraphene_1_1wallet_1_1wallet__api_1ade01cfbd19d3aa965d96ce4931880e40"><span class="std std-ref"><span class="pre">list_accounts()</span></span></a></code> call.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>a list of accounts mapping account names to account ids </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">lowerbound</span></code>: the name of the first account to return. If the named account does not exist, the list will start at the account that comes after <code class="docutils literal notranslate"><span class="pre">lowerbound</span></code> </li>
+<li><code class="docutils literal notranslate"><span class="pre">limit</span></code>: the maximum number of accounts to return (max: 1000) </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api21list_account_balancesERK6string">
+<span id="_CPPv2N8graphene6wallet10wallet_api21list_account_balancesERK6string"></span><span id="graphene::wallet::wallet_api::list_account_balances__stringCR"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a36320ec4d8646bf2149bb4e383b291b5"></span>vector&lt;asset&gt; <code class="descname">list_account_balances</code><span class="sig-paren">(</span><em class="property">const</em> string &amp;<em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api21list_account_balancesERK6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>List the balances of an account. Each account can have multiple balances, one for each type of asset owned by that account. The returned list will only contain assets for which the account has a nonzero balance <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>a list of the given account’s balances </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">id</span></code>: the name or id of the account whose balances you want </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK8graphene6wallet10wallet_api11list_assetsERK6string8uint32_t">
+<span id="_CPPv2NK8graphene6wallet10wallet_api11list_assetsERK6string8uint32_t"></span><span id="graphene::wallet::wallet_api::list_assets__stringCR.uint32_tC"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a574f376a064ec059c0482ad07723b298"></span>vector&lt;asset_object&gt; <code class="descname">list_assets</code><span class="sig-paren">(</span><em class="property">const</em> string &amp;<em>lowerbound</em>, uint32_t <em>limit</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK8graphene6wallet10wallet_api11list_assetsERK6string8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Lists all assets registered on the blockchain.</p>
+<p>To list all assets, pass the empty string <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> for the lowerbound to start at the beginning of the list, and iterate as necessary.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the list of asset objects, ordered by symbol </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">lowerbound</span></code>: the symbol of the first asset to include in the list. </li>
+<li><code class="docutils literal notranslate"><span class="pre">limit</span></code>: the maximum number of assets to return (max: 100) </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK8graphene6wallet10wallet_api15get_asset_countEv">
+<span id="_CPPv2NK8graphene6wallet10wallet_api15get_asset_countEv"></span><span id="graphene::wallet::wallet_api::get_asset_countC"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a2ae5f1198a857330f1571504102eaed9"></span>uint64_t <code class="descname">get_asset_count</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK8graphene6wallet10wallet_api15get_asset_countEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns assets count registered on the blockchain.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>assets count </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK8graphene6wallet10wallet_api19get_account_historyE6stringi">
+<span id="_CPPv2NK8graphene6wallet10wallet_api19get_account_historyE6stringi"></span><span id="graphene::wallet::wallet_api::get_account_history__string.iC"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a30435c40b79d7a7cad036d3486902db3"></span>vector&lt;operation_detail&gt; <code class="descname">get_account_history</code><span class="sig-paren">(</span>string <em>name</em>, int <em>limit</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK8graphene6wallet10wallet_api19get_account_historyE6stringi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the most recent operations on the named account.</p>
+<p>This returns a list of operation history objects, which describe activity on the account.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>a list of <code class="docutils literal notranslate"><span class="pre">operation_history_objects</span></code> </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">name</span></code>: the name or id of the account </li>
+<li><code class="docutils literal notranslate"><span class="pre">limit</span></code>: the number of entries to return (starting from the most recent) </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK8graphene6wallet10wallet_api28get_relative_account_historyE6string8uint32_ti8uint32_t">
+<span id="_CPPv2NK8graphene6wallet10wallet_api28get_relative_account_historyE6string8uint32_ti8uint32_t"></span><span id="graphene::wallet::wallet_api::get_relative_account_history__string.uint32_t.i.uint32_tC"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a6866fa4434a9f09c46f6575adc259542"></span>vector&lt;operation_detail&gt; <code class="descname">get_relative_account_history</code><span class="sig-paren">(</span>string <em>name</em>, uint32_t <em>stop</em>, int <em>limit</em>, uint32_t <em>start</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK8graphene6wallet10wallet_api28get_relative_account_historyE6string8uint32_ti8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the relative operations on the named account from start number.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>a list of <code class="docutils literal notranslate"><span class="pre">operation_history_objects</span></code> </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">name</span></code>: the name or id of the account </li>
+<li><code class="docutils literal notranslate"><span class="pre">stop</span></code>: Sequence number of earliest operation. </li>
+<li><code class="docutils literal notranslate"><span class="pre">limit</span></code>: the number of entries to return </li>
+<li><code class="docutils literal notranslate"><span class="pre">start</span></code>: the sequence number where to start looping back throw the history </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api16get_full_accountERK6string">
+<span id="_CPPv2N8graphene6wallet10wallet_api16get_full_accountERK6string"></span><span id="graphene::wallet::wallet_api::get_full_account__stringCR"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a6148caf19e01e31f805d62c56ba30cbb"></span>full_account <code class="descname">get_full_account</code><span class="sig-paren">(</span><em class="property">const</em> string &amp;<em>name_or_id</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api16get_full_accountERK6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Fetch all objects relevant to the specified account. </p>
+<p><p>This function fetches all relevant objects for the given account. If the string of </p>
+<code class="docutils literal notranslate"><span class="pre">name_or_id</span></code> cannot be tied to an account, that input will be ignored. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>All info about the specified account</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">name_or_id</span></code>: Must be the name or ID of an account to retrieve </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api24get_account_limit_ordersERK6stringRK6stringRK6string8uint32_t8optionalI19limit_order_id_typeE8optionalI5priceE">
+<span id="_CPPv2N8graphene6wallet10wallet_api24get_account_limit_ordersERK6stringRK6stringRK6string8uint32_t8optionalI19limit_order_id_typeE8optionalI5priceE"></span><span id="graphene::wallet::wallet_api::get_account_limit_orders__stringCR.stringCR.stringCR.uint32_t.optional:limit_order_id_type:.optional:price:"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1af026816d789c452b9e38012bc0b4646f"></span>vector&lt;limit_order_object&gt; <code class="descname">get_account_limit_orders</code><span class="sig-paren">(</span><em class="property">const</em> string &amp;<em>name_or_id</em>, <em class="property">const</em> string &amp;<em>base</em>, <em class="property">const</em> string &amp;<em>quote</em>, uint32_t <em>limit</em> = 101, optional&lt;limit_order_id_type&gt; <em>ostart_id</em> = optional&lt;limit_order_id_type&gt;(), optional&lt;price&gt; <em>ostart_price</em> = optional&lt;price&gt;()<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api24get_account_limit_ordersERK6stringRK6stringRK6string8uint32_t8optionalI19limit_order_id_typeE8optionalI5priceE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Fetch all orders relevant to the specified account sorted descendingly by price. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>List of orders from <code class="docutils literal notranslate"><span class="pre">name_or_id</span></code> to the corresponding account</dd>
+<dt><strong>Note</strong></dt>
+<dd><ol class="arabic simple">
+<li>if <code class="docutils literal notranslate"><span class="pre">name_or_id</span></code> cannot be tied to an account, empty result will be returned</li>
+<li><code class="docutils literal notranslate"><span class="pre">ostart_id</span></code> and <code class="docutils literal notranslate"><span class="pre">ostart_price</span></code> can be <code class="docutils literal notranslate"><span class="pre">null</span></code>, if so the api will return the “first page” of orders; if <code class="docutils literal notranslate"><span class="pre">ostart_id</span></code> is specified and valid, its price will be used to do page query preferentially, otherwise the <code class="docutils literal notranslate"><span class="pre">ostart_price</span></code> will be used </li>
+</ol>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">name_or_id</span></code>: The name or ID of an account to retrieve </li>
+<li><code class="docutils literal notranslate"><span class="pre">base</span></code>: Base asset </li>
+<li><code class="docutils literal notranslate"><span class="pre">quote</span></code>: Quote asset </li>
+<li><code class="docutils literal notranslate"><span class="pre">limit</span></code>: The limitation of items each query can fetch (max: 101) </li>
+<li><code class="docutils literal notranslate"><span class="pre">ostart_id</span></code>: Start order id, fetch orders which price are lower than or equal to this order </li>
+<li><code class="docutils literal notranslate"><span class="pre">ostart_price</span></code>: Fetch orders with price lower than or equal to this price</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK8graphene6wallet10wallet_api19get_collateral_bidsE6string8uint32_t8uint32_t">
+<span id="_CPPv2NK8graphene6wallet10wallet_api19get_collateral_bidsE6string8uint32_t8uint32_t"></span><span id="graphene::wallet::wallet_api::get_collateral_bids__string.uint32_t.uint32_tC"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1aea65645fc8ae366d9d510a01e32db5a8"></span>vector&lt;collateral_bid_object&gt; <code class="descname">get_collateral_bids</code><span class="sig-paren">(</span>string <em>asset</em>, uint32_t <em>limit</em> = 100, uint32_t <em>start</em> = 0<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK8graphene6wallet10wallet_api19get_collateral_bidsE6string8uint32_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the collateral_bid object for the given MPA</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>a list of <code class="docutils literal notranslate"><span class="pre">collateral_bid_objects</span></code> </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">asset</span></code>: the name or id of the asset </li>
+<li><code class="docutils literal notranslate"><span class="pre">limit</span></code>: the number of entries to return </li>
+<li><code class="docutils literal notranslate"><span class="pre">start</span></code>: the sequence number where to start looping back throw the history </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK8graphene6wallet10wallet_api21get_global_propertiesEv">
+<span id="_CPPv2NK8graphene6wallet10wallet_api21get_global_propertiesEv"></span><span id="graphene::wallet::wallet_api::get_global_propertiesC"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a9f44d453c99ffc99bbd99caa9e065a95"></span>global_property_object <code class="descname">get_global_properties</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK8graphene6wallet10wallet_api21get_global_propertiesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the block chain’s slowly-changing settings. This object contains all of the properties of the blockchain that are fixed or that change only once per maintenance interval (daily) such as the current list of witnesses, committee_members, block interval, etc. <dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><code class="docutils literal notranslate"><a class="reference internal" href="../wallet_api.html#classgraphene_1_1wallet_1_1wallet__api_1aaa8f1ab2e2e5fe7a414ada5375e14566"><span class="std std-ref"><span class="pre">get_dynamic_global_properties()</span></span></a></code> for frequently changing properties </dd>
+<dt><strong>Return</strong></dt>
+<dd>the global properties </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api33get_account_history_by_operationsE6string6vectorI8uint16_tE8uint32_ti">
+<span id="_CPPv2N8graphene6wallet10wallet_api33get_account_history_by_operationsE6string6vectorI8uint16_tE8uint32_ti"></span><span id="graphene::wallet::wallet_api::get_account_history_by_operations__string.vector:uint16_t:.uint32_t.i"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1aabfeafa8ee475b34585664283f275a51"></span>account_history_operation_detail <code class="descname">get_account_history_by_operations</code><span class="sig-paren">(</span>string <em>name</em>, vector&lt;uint16_t&gt; <em>operation_types</em>, uint32_t <em>start</em>, int <em>limit</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api33get_account_history_by_operationsE6string6vectorI8uint16_tE8uint32_ti" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get operations relevant to the specified account filtering by operation type, with transaction id</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>account_history_operation_detail </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">name</span></code>: the name or id of the account, whose history shoulde be queried </li>
+<li><code class="docutils literal notranslate"><span class="pre">operation_types</span></code>: The IDs of the operation we want to get operations in the account( 0 = transfer , 1 = limit order create, …) </li>
+<li><code class="docutils literal notranslate"><span class="pre">start</span></code>: the sequence number where to start looping back throw the history </li>
+<li><code class="docutils literal notranslate"><span class="pre">limit</span></code>: the max number of entries to return (from start number) </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK8graphene6wallet10wallet_api29get_dynamic_global_propertiesEv">
+<span id="_CPPv2NK8graphene6wallet10wallet_api29get_dynamic_global_propertiesEv"></span><span id="graphene::wallet::wallet_api::get_dynamic_global_propertiesC"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1aaa8f1ab2e2e5fe7a414ada5375e14566"></span>dynamic_global_property_object <code class="descname">get_dynamic_global_properties</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK8graphene6wallet10wallet_api29get_dynamic_global_propertiesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the block chain’s rapidly-changing properties. The returned object contains information that changes every block interval such as the head block number, the next witness, etc. <dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><code class="docutils literal notranslate"><a class="reference internal" href="../wallet_api.html#classgraphene_1_1wallet_1_1wallet__api_1a9f44d453c99ffc99bbd99caa9e065a95"><span class="std std-ref"><span class="pre">get_global_properties()</span></span></a></code> for less-frequently changing properties </dd>
+<dt><strong>Return</strong></dt>
+<dd>the dynamic global properties </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK8graphene6wallet10wallet_api11get_accountE6string">
+<span id="_CPPv2NK8graphene6wallet10wallet_api11get_accountE6string"></span><span id="graphene::wallet::wallet_api::get_account__stringC"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1ae4133a2fe8f63695385c20d327a88ff9"></span>account_object <code class="descname">get_account</code><span class="sig-paren">(</span>string <em>account_name_or_id</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK8graphene6wallet10wallet_api11get_accountE6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns information about the given account.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the public account data stored in the blockchain </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">account_name_or_id</span></code>: the name or id of the account to provide information about </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK8graphene6wallet10wallet_api9get_assetE6string">
+<span id="_CPPv2NK8graphene6wallet10wallet_api9get_assetE6string"></span><span id="graphene::wallet::wallet_api::get_asset__stringC"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a12dcc7308bd4277d83f62ebcdbe51596"></span>asset_object <code class="descname">get_asset</code><span class="sig-paren">(</span>string <em>asset_name_or_id</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK8graphene6wallet10wallet_api9get_assetE6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns information about the given asset. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the information about the asset stored in the block chain </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">asset_name_or_id</span></code>: the symbol or id of the asset in question </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK8graphene6wallet10wallet_api17get_bitasset_dataE6string">
+<span id="_CPPv2NK8graphene6wallet10wallet_api17get_bitasset_dataE6string"></span><span id="graphene::wallet::wallet_api::get_bitasset_data__stringC"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a8e08fddb57e5eff66e703d4cf376bb15"></span>asset_bitasset_data_object <code class="descname">get_bitasset_data</code><span class="sig-paren">(</span>string <em>asset_name_or_id</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK8graphene6wallet10wallet_api17get_bitasset_dataE6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the BitAsset-specific data for a given asset. Market-issued assets’s behavior are determined both by their “BitAsset Data” and their basic asset data, as returned by <code class="docutils literal notranslate"><a class="reference internal" href="../wallet_api.html#classgraphene_1_1wallet_1_1wallet__api_1a12dcc7308bd4277d83f62ebcdbe51596"><span class="std std-ref"><span class="pre">get_asset()</span></span></a></code>. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the BitAsset-specific data for this asset </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">asset_name_or_id</span></code>: the symbol or id of the BitAsset in question </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK8graphene6wallet10wallet_api14get_account_idE6string">
+<span id="_CPPv2NK8graphene6wallet10wallet_api14get_account_idE6string"></span><span id="graphene::wallet::wallet_api::get_account_id__stringC"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a4fced527782bb38f02f763e3163d7989"></span>account_id_type <code class="descname">get_account_id</code><span class="sig-paren">(</span>string <em>account_name_or_id</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK8graphene6wallet10wallet_api14get_account_idE6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Lookup the id of a named account. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the id of the named account </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">account_name_or_id</span></code>: the name of the account to look up </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK8graphene6wallet10wallet_api12get_asset_idE6string">
+<span id="_CPPv2NK8graphene6wallet10wallet_api12get_asset_idE6string"></span><span id="graphene::wallet::wallet_api::get_asset_id__stringC"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1aa43d99dca95af419b01bc6aa9e22e7b4"></span>asset_id_type <code class="descname">get_asset_id</code><span class="sig-paren">(</span>string <em>asset_name_or_id</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK8graphene6wallet10wallet_api12get_asset_idE6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Lookup the id of a named asset. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the id of the given asset </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">asset_name_or_id</span></code>: the symbol of an asset to look up </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK8graphene6wallet10wallet_api10get_objectE14object_id_type">
+<span id="_CPPv2NK8graphene6wallet10wallet_api10get_objectE14object_id_type"></span><span id="graphene::wallet::wallet_api::get_object__object_id_typeC"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a12d4903dfb4f111e7aff4ca03c1c526d"></span>variant <code class="descname">get_object</code><span class="sig-paren">(</span>object_id_type <em>id</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK8graphene6wallet10wallet_api10get_objectE14object_id_type" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the blockchain object corresponding to the given id.</p>
+<p>This generic function can be used to retrieve any object from the blockchain that is assigned an ID. Certain types of objects have specialized convenience functions to return their objects  e.g., assets have <code class="docutils literal notranslate"><a class="reference internal" href="../wallet_api.html#classgraphene_1_1wallet_1_1wallet__api_1a12dcc7308bd4277d83f62ebcdbe51596"><span class="std std-ref"><span class="pre">get_asset()</span></span></a></code>, accounts have <code class="docutils literal notranslate"><a class="reference internal" href="../wallet_api.html#classgraphene_1_1wallet_1_1wallet__api_1ae4133a2fe8f63695385c20d327a88ff9"><span class="std std-ref"><span class="pre">get_account()</span></span></a></code>, but this function will work for any object.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the requested object </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">id</span></code>: the id of the object to return </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK8graphene6wallet10wallet_api19get_wallet_filenameEv">
+<span id="_CPPv2NK8graphene6wallet10wallet_api19get_wallet_filenameEv"></span><span id="graphene::wallet::wallet_api::get_wallet_filenameC"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1ae6b8783ff52950852f3985dc4f121348"></span>string <code class="descname">get_wallet_filename</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK8graphene6wallet10wallet_api19get_wallet_filenameEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the current wallet filename.</p>
+<p>This is the filename that will be used when automatically saving the wallet.</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#classgraphene_1_1wallet_1_1wallet__api_1aa5804e1ee29ff8f2c3bcc668ad2bfbcd"><span class="std std-ref">set_wallet_filename()</span></a> </dd>
+<dt><strong>Return</strong></dt>
+<dd>the wallet filename </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK8graphene6wallet10wallet_api15get_private_keyE15public_key_type">
+<span id="_CPPv2NK8graphene6wallet10wallet_api15get_private_keyE15public_key_type"></span><span id="graphene::wallet::wallet_api::get_private_key__public_key_typeC"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1aaaf57550fa86bee57eddfd033d633081"></span>string <code class="descname">get_private_key</code><span class="sig-paren">(</span>public_key_type <em>pubkey</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK8graphene6wallet10wallet_api15get_private_keyE15public_key_type" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the WIF private key corresponding to a public key. The private key must already be in the wallet. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api21broadcast_transactionE18signed_transaction">
+<span id="_CPPv2N8graphene6wallet10wallet_api21broadcast_transactionE18signed_transaction"></span><span id="graphene::wallet::wallet_api::broadcast_transaction__signed_transaction"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a5ec9190af98a7f7bb62ac94cd29f6ab4"></span>pair&lt;transaction_id_type, signed_transaction&gt; <code class="descname">broadcast_transaction</code><span class="sig-paren">(</span>signed_transaction <em>tx</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api21broadcast_transactionE18signed_transaction" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Broadcast signed transaction <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the transaction ID along with the signed transaction. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">tx</span></code>: signed transaction </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK8graphene6wallet10wallet_api6is_newEv">
+<span id="_CPPv2NK8graphene6wallet10wallet_api6is_newEv"></span><span id="graphene::wallet::wallet_api::is_newC"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a50b7db1472e871aaed673b730fa4f375"></span>bool <code class="descname">is_new</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK8graphene6wallet10wallet_api6is_newEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Checks whether the wallet has just been created and has not yet had a password set.</p>
+<p>Calling <code class="docutils literal notranslate"><span class="pre">set_password</span></code> will transition the wallet to the locked state. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>true if the wallet is new </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK8graphene6wallet10wallet_api9is_lockedEv">
+<span id="_CPPv2NK8graphene6wallet10wallet_api9is_lockedEv"></span><span id="graphene::wallet::wallet_api::is_lockedC"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a128159228d6bad2a2243f05e960ceeaf"></span>bool <code class="descname">is_locked</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK8graphene6wallet10wallet_api9is_lockedEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Checks whether the wallet is locked (is unable to use its private keys).</p>
+<p>This state can be changed by calling <code class="docutils literal notranslate"><a class="reference internal" href="../wallet_api.html#classgraphene_1_1wallet_1_1wallet__api_1a5e7950c9039f0c59e1266d6732d94e09"><span class="std std-ref"><span class="pre">lock()</span></span></a></code> or <code class="docutils literal notranslate"><a class="reference internal" href="../wallet_api.html#classgraphene_1_1wallet_1_1wallet__api_1ae16994a63cfdef1616b6b968117fd29d"><span class="std std-ref"><span class="pre">unlock()</span></span></a></code>. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>true if the wallet is locked </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api4lockEv">
+<span id="_CPPv2N8graphene6wallet10wallet_api4lockEv"></span><span id="graphene::wallet::wallet_api::lock"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a5e7950c9039f0c59e1266d6732d94e09"></span>void <code class="descname">lock</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api4lockEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Locks the wallet immediately. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api6unlockE6string">
+<span id="_CPPv2N8graphene6wallet10wallet_api6unlockE6string"></span><span id="graphene::wallet::wallet_api::unlock__string"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1ae16994a63cfdef1616b6b968117fd29d"></span>void <code class="descname">unlock</code><span class="sig-paren">(</span>string <em>password</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api6unlockE6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Unlocks the wallet.</p>
+<p>The wallet remain unlocked until the <code class="docutils literal notranslate"><span class="pre">lock</span></code> is called or the program exits. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">password</span></code>: the password previously set with <code class="docutils literal notranslate"><a class="reference internal" href="../wallet_api.html#classgraphene_1_1wallet_1_1wallet__api_1a2a5d174ec4fde8633b8e962fabc00804"><span class="std std-ref"><span class="pre">set_password()</span></span></a></code> </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api12set_passwordE6string">
+<span id="_CPPv2N8graphene6wallet10wallet_api12set_passwordE6string"></span><span id="graphene::wallet::wallet_api::set_password__string"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a2a5d174ec4fde8633b8e962fabc00804"></span>void <code class="descname">set_password</code><span class="sig-paren">(</span>string <em>password</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api12set_passwordE6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets a new password on the wallet.</p>
+<p>The wallet must be either ‘new’ or ‘unlocked’ to execute this command. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api17dump_private_keysEv">
+<span id="_CPPv2N8graphene6wallet10wallet_api17dump_private_keysEv"></span><span id="graphene::wallet::wallet_api::dump_private_keys"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a98369ea6e10699066c7beb181996a219"></span>map&lt;public_key_type, string&gt; <code class="descname">dump_private_keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api17dump_private_keysEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Dumps all private keys owned by the wallet.</p>
+<p>The keys are printed in WIF format. You can import these keys into another wallet using <code class="docutils literal notranslate"><a class="reference internal" href="../wallet_api.html#classgraphene_1_1wallet_1_1wallet__api_1a45e93f4a83143cb8ec6a09b67f91f4bb"><span class="std std-ref"><span class="pre">import_key()</span></span></a></code> <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>a map containing the private keys, indexed by their public key </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK8graphene6wallet10wallet_api4helpEv">
+<span id="_CPPv2NK8graphene6wallet10wallet_api4helpEv"></span><span id="graphene::wallet::wallet_api::helpC"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a77ef88d6647e7021189b6b259ef66014"></span>string <code class="descname">help</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK8graphene6wallet10wallet_api4helpEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns a list of all commands supported by the wallet API.</p>
+<p>This lists each command, along with its arguments and return types. For more detailed help on a single command, use <code class="docutils literal notranslate"><span class="pre">get_help()</span></code> </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>a multi-line string suitable for displaying on a terminal </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK8graphene6wallet10wallet_api7gethelpERK6string">
+<span id="_CPPv2NK8graphene6wallet10wallet_api7gethelpERK6string"></span><span id="graphene::wallet::wallet_api::gethelp__stringCRC"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a21d6b9297891d2a7317bfc3be9e6a917"></span>string <code class="descname">gethelp</code><span class="sig-paren">(</span><em class="property">const</em> string &amp;<em>method</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK8graphene6wallet10wallet_api7gethelpERK6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns detailed help on a single API command. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>a multi-line string suitable for displaying on a terminal </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">method</span></code>: the name of the API command you want help with </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api16load_wallet_fileE6string">
+<span id="_CPPv2N8graphene6wallet10wallet_api16load_wallet_fileE6string"></span><span id="graphene::wallet::wallet_api::load_wallet_file__string"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1ae07628816935423a1fed072fc28b54f5"></span>bool <code class="descname">load_wallet_file</code><span class="sig-paren">(</span>string <em>wallet_filename</em> = &quot;&quot;<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api16load_wallet_fileE6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Loads a specified Graphene wallet.</p>
+<p>The current wallet is closed before the new wallet is loaded.</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd>This does not change the filename that will be used for future wallet writes, so this may cause you to overwrite your original wallet unless you also call <code class="docutils literal notranslate"><a class="reference internal" href="#classgraphene_1_1wallet_1_1wallet__api_1aa5804e1ee29ff8f2c3bcc668ad2bfbcd"><span class="std std-ref"><span class="pre">set_wallet_filename()</span></span></a></code> </dd>
+<dt><strong>Return</strong></dt>
+<dd>true if the specified wallet is loaded </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">wallet_filename</span></code>: the filename of the wallet JSON file to load. If <code class="docutils literal notranslate"><span class="pre">wallet_filename</span></code> is empty, it reloads the existing wallet file </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api4quitEv">
+<span id="_CPPv2N8graphene6wallet10wallet_api4quitEv"></span><span id="graphene::wallet::wallet_api::quit"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a98aa6fd434297e5bdaf294bc08893eca"></span>void <code class="descname">quit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api4quitEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Quitting from BitShares wallet.</p>
+<p>The current wallet will be closed. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api16save_wallet_fileE6string">
+<span id="_CPPv2N8graphene6wallet10wallet_api16save_wallet_fileE6string"></span><span id="graphene::wallet::wallet_api::save_wallet_file__string"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1addf3cfcb96bd878e6c850d3a961de9e6"></span>void <code class="descname">save_wallet_file</code><span class="sig-paren">(</span>string <em>wallet_filename</em> = &quot;&quot;<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api16save_wallet_fileE6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Saves the current wallet to the given filename.</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd>This does not change the wallet filename that will be used for future writes, so think of this function as ‘Save a Copy As…’ instead of ‘Save As…’. Use <code class="docutils literal notranslate"><a class="reference internal" href="#classgraphene_1_1wallet_1_1wallet__api_1aa5804e1ee29ff8f2c3bcc668ad2bfbcd"><span class="std std-ref"><span class="pre">set_wallet_filename()</span></span></a></code> to make the filename persist. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">wallet_filename</span></code>: the filename of the new wallet JSON file to create or overwrite. If <code class="docutils literal notranslate"><span class="pre">wallet_filename</span></code> is empty, save to the current filename. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api19set_wallet_filenameE6string">
+<span id="_CPPv2N8graphene6wallet10wallet_api19set_wallet_filenameE6string"></span><span id="graphene::wallet::wallet_api::set_wallet_filename__string"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1aa5804e1ee29ff8f2c3bcc668ad2bfbcd"></span>void <code class="descname">set_wallet_filename</code><span class="sig-paren">(</span>string <em>wallet_filename</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api19set_wallet_filenameE6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the wallet filename used for future writes.</p>
+<p>This does not trigger a save, it only changes the default filename that will be used the next time a save is triggered.</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">wallet_filename</span></code>: the new filename to use for future saves </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK8graphene6wallet10wallet_api17suggest_brain_keyEv">
+<span id="_CPPv2NK8graphene6wallet10wallet_api17suggest_brain_keyEv"></span><span id="graphene::wallet::wallet_api::suggest_brain_keyC"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1ab936e7a26d41b35cbfaf44d369d60e1d"></span>brain_key_info <code class="descname">suggest_brain_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK8graphene6wallet10wallet_api17suggest_brain_keyEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Suggests a safe brain key to use for creating your account. <code class="docutils literal notranslate"><a class="reference internal" href="../wallet_api.html#classgraphene_1_1wallet_1_1wallet__api_1ac27928f7ca6db74e0ec4aee3ff0c545e"><span class="std std-ref"><span class="pre">create_account_with_brain_key()</span></span></a></code> requires you to specify a ‘brain key’, a long passphrase that provides enough entropy to generate cyrptographic keys. This function will suggest a suitably random string that should be easy to write down (and, with effort, memorize). <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>a suggested brain_key </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK8graphene6wallet10wallet_api32derive_owner_keys_from_brain_keyE6stringi">
+<span id="_CPPv2NK8graphene6wallet10wallet_api32derive_owner_keys_from_brain_keyE6stringi"></span><span id="graphene::wallet::wallet_api::derive_owner_keys_from_brain_key__string.iC"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1ab8c347b7bdb21eb8890dc98300e1368d"></span>vector&lt;brain_key_info&gt; <code class="descname">derive_owner_keys_from_brain_key</code><span class="sig-paren">(</span>string <em>brain_key</em>, int <em>number_of_desired_keys</em> = 1<span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK8graphene6wallet10wallet_api32derive_owner_keys_from_brain_keyE6stringi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Derive any number of <em>possible</em> owner keys from a given brain key.</p>
+<p>NOTE: These keys may or may not match with the owner keys of any account. This function is merely intended to assist with account or key recovery.</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="../wallet_api.html#classgraphene_1_1wallet_1_1wallet__api_1ab936e7a26d41b35cbfaf44d369d60e1d"><span class="std std-ref">suggest_brain_key()</span></a></dd>
+<dt><strong>Return</strong></dt>
+<dd>A list of keys that are deterministically derived from the brainkey </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">brain_key</span></code>: Brain key </li>
+<li><code class="docutils literal notranslate"><span class="pre">number_of_desired_keys</span></code>: Number of desired keys </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK8graphene6wallet10wallet_api24is_public_key_registeredE6string">
+<span id="_CPPv2NK8graphene6wallet10wallet_api24is_public_key_registeredE6string"></span><span id="graphene::wallet::wallet_api::is_public_key_registered__stringC"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1ad701e3f936076bd6f9d5a439d0dd2376"></span>bool <code class="descname">is_public_key_registered</code><span class="sig-paren">(</span>string <em>public_key</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK8graphene6wallet10wallet_api24is_public_key_registeredE6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Determine whether a textual representation of a public key (in Base-58 format) is <em>currently</em> linked to any <em>registered</em> (i.e. non-stealth) account on the blockchain <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>Whether a public key is known </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">public_key</span></code>: Public key </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK8graphene6wallet10wallet_api21serialize_transactionE18signed_transaction">
+<span id="_CPPv2NK8graphene6wallet10wallet_api21serialize_transactionE18signed_transaction"></span><span id="graphene::wallet::wallet_api::serialize_transaction__signed_transactionC"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1aa63666820114bf95165324cf5d22782f"></span>string <code class="descname">serialize_transaction</code><span class="sig-paren">(</span>signed_transaction <em>tx</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK8graphene6wallet10wallet_api21serialize_transactionE18signed_transaction" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Converts a signed_transaction in JSON form to its binary representation.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the binary form of the transaction. It will not be hex encoded, this returns a raw string that may have null characters embedded in it </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">tx</span></code>: the transaction to serialize </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api10import_keyE6string6string">
+<span id="_CPPv2N8graphene6wallet10wallet_api10import_keyE6string6string"></span><span id="graphene::wallet::wallet_api::import_key__string.string"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a45e93f4a83143cb8ec6a09b67f91f4bb"></span>bool <code class="descname">import_key</code><span class="sig-paren">(</span>string <em>account_name_or_id</em>, string <em>wif_key</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api10import_keyE6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Imports the private key for an existing account.</p>
+<p>The private key must match either an owner key or an active key for the named account.</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="../wallet_api.html#classgraphene_1_1wallet_1_1wallet__api_1a98369ea6e10699066c7beb181996a219"><span class="std std-ref">dump_private_keys()</span></a></dd>
+<dt><strong>Return</strong></dt>
+<dd>true if the key was imported </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">account_name_or_id</span></code>: the account owning the key </li>
+<li><code class="docutils literal notranslate"><span class="pre">wif_key</span></code>: the private key in WIF format </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api14import_balanceE6stringRK6vectorI6stringEb">
+<span id="_CPPv2N8graphene6wallet10wallet_api14import_balanceE6stringRK6vectorI6stringEb"></span><span id="graphene::wallet::wallet_api::import_balance__string.vector:string:CR.b"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1ac70989a765d5f84ff3d8d6444a398512"></span>vector&lt;signed_transaction&gt; <code class="descname">import_balance</code><span class="sig-paren">(</span>string <em>account_name_or_id</em>, <em class="property">const</em> vector&lt;string&gt; &amp;<em>wif_keys</em>, bool <em>broadcast</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api14import_balanceE6stringRK6vectorI6stringEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This call will construct transaction(s) that will claim all balances controled by wif_keys and deposit them into the given account. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK8graphene6wallet10wallet_api19normalize_brain_keyE6string">
+<span id="_CPPv2NK8graphene6wallet10wallet_api19normalize_brain_keyE6string"></span><span id="graphene::wallet::wallet_api::normalize_brain_key__stringC"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a22a64652613c2e0b7bacf0bd0a031bc1"></span>string <code class="descname">normalize_brain_key</code><span class="sig-paren">(</span>string <em>s</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK8graphene6wallet10wallet_api19normalize_brain_keyE6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Transforms a brain key to reduce the chance of errors when re-entering the key from memory.</p>
+<p>This takes a user-supplied brain key and normalizes it into the form used for generating private keys. In particular, this upper-cases all ASCII characters and collapses multiple spaces into one. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the brain key in its normalized form </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">s</span></code>: the brain key as supplied by the user </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api16register_accountE6string15public_key_type15public_key_type6string6string8uint32_tb">
+<span id="_CPPv2N8graphene6wallet10wallet_api16register_accountE6string15public_key_type15public_key_type6string6string8uint32_tb"></span><span id="graphene::wallet::wallet_api::register_account__string.public_key_type.public_key_type.string.string.uint32_t.b"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1aba1c5e3025f44273fb19e264c2b3ec2f"></span>signed_transaction <code class="descname">register_account</code><span class="sig-paren">(</span>string <em>name</em>, public_key_type <em>owner</em>, public_key_type <em>active</em>, string <em>registrar_account</em>, string <em>referrer_account</em>, uint32_t <em>referrer_percent</em>, bool <em>broadcast</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api16register_accountE6string15public_key_type15public_key_type6string6string8uint32_tb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Registers a third party’s account on the blockckain.</p>
+<p>This function is used to register an account for which you do not own the private keys. When acting as a registrar, an end user will generate their own private keys and send you the public keys. The registrar will use this function to register the account on behalf of the end user.</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="../wallet_api.html#classgraphene_1_1wallet_1_1wallet__api_1ac27928f7ca6db74e0ec4aee3ff0c545e"><span class="std std-ref">create_account_with_brain_key()</span></a></dd>
+<dt><strong>Return</strong></dt>
+<dd>the signed transaction registering the account </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">name</span></code>: the name of the account, must be unique on the blockchain. Shorter names are more expensive to register; the rules are still in flux, but in general names of more than 8 characters with at least one digit will be cheap. </li>
+<li><code class="docutils literal notranslate"><span class="pre">owner</span></code>: the owner key for the new account </li>
+<li><code class="docutils literal notranslate"><span class="pre">active</span></code>: the active key for the new account </li>
+<li><code class="docutils literal notranslate"><span class="pre">registrar_account</span></code>: the account which will pay the fee to register the user </li>
+<li><code class="docutils literal notranslate"><span class="pre">referrer_account</span></code>: the account who is acting as a referrer, and may receive a portion of the user’s transaction fees. This can be the same as the registrar_account if there is no referrer. </li>
+<li><code class="docutils literal notranslate"><span class="pre">referrer_percent</span></code>: the percentage (0 - 100) of the new user’s transaction fees not claimed by the blockchain that will be distributed to the referrer; the rest will be sent to the registrar. Will be multiplied by GRAPHENE_1_PERCENT when constructing the transaction. </li>
+<li><code class="docutils literal notranslate"><span class="pre">broadcast</span></code>: true to broadcast the transaction on the network </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api15upgrade_accountE6stringb">
+<span id="_CPPv2N8graphene6wallet10wallet_api15upgrade_accountE6stringb"></span><span id="graphene::wallet::wallet_api::upgrade_account__string.b"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1af2145755728919d7e4aaf0f02d7c4e82"></span>signed_transaction <code class="descname">upgrade_account</code><span class="sig-paren">(</span>string <em>name</em>, bool <em>broadcast</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api15upgrade_accountE6stringb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Upgrades an account to prime status. This makes the account holder a ‘lifetime member’.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the signed transaction upgrading the account </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">name</span></code>: the name or id of the account to upgrade </li>
+<li><code class="docutils literal notranslate"><span class="pre">broadcast</span></code>: true to broadcast the transaction on the network </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api29create_account_with_brain_keyE6string6string6string6stringb">
+<span id="_CPPv2N8graphene6wallet10wallet_api29create_account_with_brain_keyE6string6string6string6stringb"></span><span id="graphene::wallet::wallet_api::create_account_with_brain_key__string.string.string.string.b"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1ac27928f7ca6db74e0ec4aee3ff0c545e"></span>signed_transaction <code class="descname">create_account_with_brain_key</code><span class="sig-paren">(</span>string <em>brain_key</em>, string <em>account_name</em>, string <em>registrar_account</em>, string <em>referrer_account</em>, bool <em>broadcast</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api29create_account_with_brain_keyE6string6string6string6stringb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates a new account and registers it on the blockchain.</p>
+<p></p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="../wallet_api.html#classgraphene_1_1wallet_1_1wallet__api_1ab936e7a26d41b35cbfaf44d369d60e1d"><span class="std std-ref">suggest_brain_key()</span></a> </dd>
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="../wallet_api.html#classgraphene_1_1wallet_1_1wallet__api_1aba1c5e3025f44273fb19e264c2b3ec2f"><span class="std std-ref">register_account()</span></a></dd>
+<dt><strong>Return</strong></dt>
+<dd>the signed transaction registering the account </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">brain_key</span></code>: the brain key used for generating the account’s private keys </li>
+<li><code class="docutils literal notranslate"><span class="pre">account_name</span></code>: the name of the account, must be unique on the blockchain. Shorter names are more expensive to register; the rules are still in flux, but in general names of more than 8 characters with at least one digit will be cheap. </li>
+<li><code class="docutils literal notranslate"><span class="pre">registrar_account</span></code>: the account which will pay the fee to register the user </li>
+<li><code class="docutils literal notranslate"><span class="pre">referrer_account</span></code>: the account who is acting as a referrer, and may receive a portion of the user’s transaction fees. This can be the same as the registrar_account if there is no referrer. </li>
+<li><code class="docutils literal notranslate"><span class="pre">broadcast</span></code>: true to broadcast the transaction on the network </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api8transferE6string6string6string6string6stringb">
+<span id="_CPPv2N8graphene6wallet10wallet_api8transferE6string6string6string6string6stringb"></span><span id="graphene::wallet::wallet_api::transfer__string.string.string.string.string.b"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a338fc74bb723d9c649f161b5279e41f0"></span>signed_transaction <code class="descname">transfer</code><span class="sig-paren">(</span>string <em>from</em>, string <em>to</em>, string <em>amount</em>, string <em>asset_symbol</em>, string <em>memo</em>, bool <em>broadcast</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api8transferE6string6string6string6string6stringb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Transfer an amount from one account to another. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the signed transaction transferring funds </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">from</span></code>: the name or id of the account sending the funds </li>
+<li><code class="docutils literal notranslate"><span class="pre">to</span></code>: the name or id of the account receiving the funds </li>
+<li><code class="docutils literal notranslate"><span class="pre">amount</span></code>: the amount to send (in nominal units  to send half of a BTS, specify 0.5) </li>
+<li><code class="docutils literal notranslate"><span class="pre">asset_symbol</span></code>: the symbol or id of the asset to send </li>
+<li><code class="docutils literal notranslate"><span class="pre">memo</span></code>: a memo to attach to the transaction. The memo will be encrypted in the transaction and readable for the receiver. There is no length limit other than the limit imposed by maximum transaction size, but transaction increase with transaction size </li>
+<li><code class="docutils literal notranslate"><span class="pre">broadcast</span></code>: true to broadcast the transaction on the network </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api9transfer2E6string6string6string6string6string">
+<span id="_CPPv2N8graphene6wallet10wallet_api9transfer2E6string6string6string6string6string"></span><span id="graphene::wallet::wallet_api::transfer2__string.string.string.string.string"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a52bd06d61575ff4cfc208d887db3d8ff"></span>pair&lt;transaction_id_type, signed_transaction&gt; <code class="descname">transfer2</code><span class="sig-paren">(</span>string <em>from</em>, string <em>to</em>, string <em>amount</em>, string <em>asset_symbol</em>, string <em>memo</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api9transfer2E6string6string6string6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This method works just like transfer, except it always broadcasts and returns the transaction ID along with the signed transaction. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK8graphene6wallet10wallet_api18get_transaction_idERK18signed_transaction">
+<span id="_CPPv2NK8graphene6wallet10wallet_api18get_transaction_idERK18signed_transaction"></span><span id="graphene::wallet::wallet_api::get_transaction_id__signed_transactionCRC"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a1aa926a58bec526fa357dda9d3ea1833"></span>transaction_id_type <code class="descname">get_transaction_id</code><span class="sig-paren">(</span><em class="property">const</em> signed_transaction &amp;<em>trx</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK8graphene6wallet10wallet_api18get_transaction_idERK18signed_transaction" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This method is used to convert a JSON transaction to its transactin ID. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api9sign_memoE6string6string6string">
+<span id="_CPPv2N8graphene6wallet10wallet_api9sign_memoE6string6string6string"></span><span id="graphene::wallet::wallet_api::sign_memo__string.string.string"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1ab7b2304c5b2f57444e02a7d28b27da5d"></span>memo_data <code class="descname">sign_memo</code><span class="sig-paren">(</span>string <em>from</em>, string <em>to</em>, string <em>memo</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api9sign_memoE6string6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sign a memo message.</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">from</span></code>: the name or id of signing account; or a public key. </li>
+<li><code class="docutils literal notranslate"><span class="pre">to</span></code>: the name or id of receiving account; or a public key. </li>
+<li><code class="docutils literal notranslate"><span class="pre">memo</span></code>: text to sign. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api9read_memoERK9memo_data">
+<span id="_CPPv2N8graphene6wallet10wallet_api9read_memoERK9memo_data"></span><span id="graphene::wallet::wallet_api::read_memo__memo_dataCR"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a146f9779a48184ea2b64036f2c6838d3"></span>string <code class="descname">read_memo</code><span class="sig-paren">(</span><em class="property">const</em> memo_data &amp;<em>memo</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api9read_memoERK9memo_data" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Read a memo.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>string with decrypted message.. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">memo</span></code>: JSON-enconded memo. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api13blind_historyE6string">
+<span id="_CPPv2N8graphene6wallet10wallet_api13blind_historyE6string"></span><span id="graphene::wallet::wallet_api::blind_history__string"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a5ff47c6fd55fb231cf5b5a5fe36354b2"></span>vector&lt;blind_receipt&gt; <code class="descname">blind_history</code><span class="sig-paren">(</span>string <em>key_or_account</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api13blind_historyE6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>all blind receipts to/form a particular account </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api22receive_blind_transferE6string6string6string">
+<span id="_CPPv2N8graphene6wallet10wallet_api22receive_blind_transferE6string6string6string"></span><span id="graphene::wallet::wallet_api::receive_blind_transfer__string.string.string"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1aed63fa0d4cbf06a4810e436482f5d5ea"></span>blind_receipt <code class="descname">receive_blind_transfer</code><span class="sig-paren">(</span>string <em>confirmation_receipt</em>, string <em>opt_from</em>, string <em>opt_memo</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api22receive_blind_transferE6string6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Given a confirmation receipt, this method will parse it for a blinded balance and confirm that it exists in the blockchain. If it exists then it will report the amount received and who sent it.</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">opt_from</span></code>: if not empty and the sender is a unknown public key, then the unknown public key will be given the label <code class="docutils literal notranslate"><span class="pre">opt_from</span></code> </li>
+<li><code class="docutils literal notranslate"><span class="pre">confirmation_receipt</span></code>: a base58 encoded stealth confirmation </li>
+<li><code class="docutils literal notranslate"><span class="pre">opt_memo</span></code>: a self-defined label for this transfer to be saved in local wallet file </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api17transfer_to_blindE6string6string6vectorI4pairI6string6stringEEb">
+<span id="_CPPv2N8graphene6wallet10wallet_api17transfer_to_blindE6string6string6vectorI4pairI6string6stringEEb"></span><span id="graphene::wallet::wallet_api::transfer_to_blind__string.string.vector:pair:string.string::.b"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a6209fb37844e23c339c959a7afe996df"></span><a class="reference internal" href="#_CPPv3N8graphene6wallet18blind_confirmationE" title="graphene::wallet::blind_confirmation">blind_confirmation</a> <code class="descname">transfer_to_blind</code><span class="sig-paren">(</span>string <em>from_account_id_or_name</em>, string <em>asset_symbol</em>, vector&lt;pair&lt;string, string&gt;&gt; <em>to_amounts</em>, bool <em>broadcast</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api17transfer_to_blindE6string6string6vectorI4pairI6string6stringEEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">to_amounts</span></code>: map from key or label to amount </li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>Transfers a public balance from <code class="docutils literal notranslate"><span class="pre">from_account_id_or_name</span></code> to one or more blinded balances using a stealth transfer.</p>
+<p>Transfers a public balance from  to one or more blinded balances using a stealth transfer. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api19transfer_from_blindE6string6string6string6stringb">
+<span id="_CPPv2N8graphene6wallet10wallet_api19transfer_from_blindE6string6string6string6stringb"></span><span id="graphene::wallet::wallet_api::transfer_from_blind__string.string.string.string.b"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a8b38899a509b43720d344172323d2069"></span><a class="reference internal" href="#_CPPv3N8graphene6wallet18blind_confirmationE" title="graphene::wallet::blind_confirmation">blind_confirmation</a> <code class="descname">transfer_from_blind</code><span class="sig-paren">(</span>string <em>from_blind_account_key_or_label</em>, string <em>to_account_id_or_name</em>, string <em>amount</em>, string <em>asset_symbol</em>, bool <em>broadcast</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api19transfer_from_blindE6string6string6string6stringb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Transfers funds from a set of blinded balances to a public account balance. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api14blind_transferE6string6string6string6stringb">
+<span id="_CPPv2N8graphene6wallet10wallet_api14blind_transferE6string6string6string6stringb"></span><span id="graphene::wallet::wallet_api::blind_transfer__string.string.string.string.b"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a85e46a0471d5f9ae0ea122a70a7ce335"></span><a class="reference internal" href="#_CPPv3N8graphene6wallet18blind_confirmationE" title="graphene::wallet::blind_confirmation">blind_confirmation</a> <code class="descname">blind_transfer</code><span class="sig-paren">(</span>string <em>from_key_or_label</em>, string <em>to_key_or_label</em>, string <em>amount</em>, string <em>symbol</em>, bool <em>broadcast</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api14blind_transferE6string6string6string6stringb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Used to transfer from one set of blinded balances to another </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api10sell_assetE6string6string6string6string6string8uint32_tbb">
+<span id="_CPPv2N8graphene6wallet10wallet_api10sell_assetE6string6string6string6string6string8uint32_tbb"></span><span id="graphene::wallet::wallet_api::sell_asset__string.string.string.string.string.uint32_t.b.b"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1aeb0d71a0ed4c6d05a003e48c3a0cb6d3"></span>signed_transaction <code class="descname">sell_asset</code><span class="sig-paren">(</span>string <em>seller_account</em>, string <em>amount_to_sell</em>, string <em>symbol_to_sell</em>, string <em>min_to_receive</em>, string <em>symbol_to_receive</em>, uint32_t <em>timeout_sec</em> = 0, bool <em>fill_or_kill</em> = false, bool <em>broadcast</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api10sell_assetE6string6string6string6string6string8uint32_tbb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Place a limit order attempting to sell one asset for another.</p>
+<p>Buying and selling are the same operation on Graphene; if you want to buy BTS with USD, you should sell USD for BTS.</p>
+<p>The blockchain will attempt to sell the <code class="docutils literal notranslate"><span class="pre">symbol_to_sell</span></code> for as much <code class="docutils literal notranslate"><span class="pre">symbol_to_receive</span></code> as possible, as long as the price is at least <code class="docutils literal notranslate"><span class="pre">min_to_receive</span></code> / <code class="docutils literal notranslate"><span class="pre">amount_to_sell</span></code>.</p>
+<p>In addition to the transaction fees, market fees will apply as specified by the issuer of both the selling asset and the receiving asset as a percentage of the amount exchanged.</p>
+<p>If either the selling asset or the receiving asset is whitelist restricted, the order will only be created if the seller is on the whitelist of the restricted asset type.</p>
+<p>Market orders are matched in the order they are included in the block chain.</p>
+<p></p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the signed transaction selling the funds </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">seller_account</span></code>: the account providing the asset being sold, and which will receive the proceeds of the sale. </li>
+<li><code class="docutils literal notranslate"><span class="pre">amount_to_sell</span></code>: the amount of the asset being sold to sell (in nominal units) </li>
+<li><code class="docutils literal notranslate"><span class="pre">symbol_to_sell</span></code>: the name or id of the asset to sell </li>
+<li><code class="docutils literal notranslate"><span class="pre">min_to_receive</span></code>: the minimum amount you are willing to receive in return for selling the entire amount_to_sell </li>
+<li><code class="docutils literal notranslate"><span class="pre">symbol_to_receive</span></code>: the name or id of the asset you wish to receive </li>
+<li><code class="docutils literal notranslate"><span class="pre">timeout_sec</span></code>: if the order does not fill immediately, this is the length of time the order will remain on the order books before it is cancelled and the un-spent funds are returned to the seller’s account </li>
+<li><code class="docutils literal notranslate"><span class="pre">fill_or_kill</span></code>: if true, the order will only be included in the blockchain if it is filled immediately; if false, an open order will be left on the books to fill any amount that cannot be filled immediately. </li>
+<li><code class="docutils literal notranslate"><span class="pre">broadcast</span></code>: true to broadcast the transaction on the network </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api12borrow_assetE6string6string6string6stringb">
+<span id="_CPPv2N8graphene6wallet10wallet_api12borrow_assetE6string6string6string6stringb"></span><span id="graphene::wallet::wallet_api::borrow_asset__string.string.string.string.b"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a289195f6aa33668056993ee3caeceb39"></span>signed_transaction <code class="descname">borrow_asset</code><span class="sig-paren">(</span>string <em>borrower_name</em>, string <em>amount_to_borrow</em>, string <em>asset_symbol</em>, string <em>amount_of_collateral</em>, bool <em>broadcast</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api12borrow_assetE6string6string6string6stringb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Borrow an asset or update the debt/collateral ratio for the loan.</p>
+<p>This is the first step in shorting an asset. Call <code class="docutils literal notranslate"><a class="reference internal" href="../wallet_api.html#classgraphene_1_1wallet_1_1wallet__api_1aeb0d71a0ed4c6d05a003e48c3a0cb6d3"><span class="std std-ref"><span class="pre">sell_asset()</span></span></a></code> to complete the short.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the signed transaction borrowing the asset </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">borrower_name</span></code>: the name or id of the account associated with the transaction. </li>
+<li><code class="docutils literal notranslate"><span class="pre">amount_to_borrow</span></code>: the amount of the asset being borrowed. Make this value negative to pay back debt. </li>
+<li><code class="docutils literal notranslate"><span class="pre">asset_symbol</span></code>: the symbol or id of the asset being borrowed. </li>
+<li><code class="docutils literal notranslate"><span class="pre">amount_of_collateral</span></code>: the amount of the backing asset to add to your collateral position. Make this negative to claim back some of your collateral. The backing asset is defined in the <code class="docutils literal notranslate"><span class="pre">bitasset_options</span></code> for the asset being borrowed. </li>
+<li><code class="docutils literal notranslate"><span class="pre">broadcast</span></code>: true to broadcast the transaction on the network </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api16borrow_asset_extE6string6string6string6stringN27call_order_update_operation15extensions_typeEb">
+<span id="_CPPv2N8graphene6wallet10wallet_api16borrow_asset_extE6string6string6string6stringN27call_order_update_operation15extensions_typeEb"></span><span id="graphene::wallet::wallet_api::borrow_asset_ext__string.string.string.string.call_order_update_operation::extensions_type.b"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1aada6ee16924870d86f662ccbad9f475a"></span>signed_transaction <code class="descname">borrow_asset_ext</code><span class="sig-paren">(</span>string <em>borrower_name</em>, string <em>amount_to_borrow</em>, string <em>asset_symbol</em>, string <em>amount_of_collateral</em>, call_order_update_operation::extensions_type <em>extensions</em>, bool <em>broadcast</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api16borrow_asset_extE6string6string6string6stringN27call_order_update_operation15extensions_typeEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Borrow an asset or update the debt/collateral ratio for the loan, with additional options.</p>
+<p>This is the first step in shorting an asset. Call <code class="docutils literal notranslate"><a class="reference internal" href="../wallet_api.html#classgraphene_1_1wallet_1_1wallet__api_1aeb0d71a0ed4c6d05a003e48c3a0cb6d3"><span class="std std-ref"><span class="pre">sell_asset()</span></span></a></code> to complete the short.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the signed transaction borrowing the asset </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">borrower_name</span></code>: the name or id of the account associated with the transaction. </li>
+<li><code class="docutils literal notranslate"><span class="pre">amount_to_borrow</span></code>: the amount of the asset being borrowed. Make this value negative to pay back debt. </li>
+<li><code class="docutils literal notranslate"><span class="pre">asset_symbol</span></code>: the symbol or id of the asset being borrowed. </li>
+<li><code class="docutils literal notranslate"><span class="pre">amount_of_collateral</span></code>: the amount of the backing asset to add to your collateral position. Make this negative to claim back some of your collateral. The backing asset is defined in the <code class="docutils literal notranslate"><span class="pre">bitasset_options</span></code> for the asset being borrowed. </li>
+<li><code class="docutils literal notranslate"><span class="pre">extensions</span></code>: additional options </li>
+<li><code class="docutils literal notranslate"><span class="pre">broadcast</span></code>: true to broadcast the transaction on the network </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api12cancel_orderE14object_id_typeb">
+<span id="_CPPv2N8graphene6wallet10wallet_api12cancel_orderE14object_id_typeb"></span><span id="graphene::wallet::wallet_api::cancel_order__object_id_type.b"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1ab525bedb82547d7eafb77106fd26e251"></span>signed_transaction <code class="descname">cancel_order</code><span class="sig-paren">(</span>object_id_type <em>order_id</em>, bool <em>broadcast</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api12cancel_orderE14object_id_typeb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Cancel an existing order</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the signed transaction canceling the order </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">order_id</span></code>: the id of order to be cancelled </li>
+<li><code class="docutils literal notranslate"><span class="pre">broadcast</span></code>: true to broadcast the transaction on the network </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api12create_assetE6string6string7uint8_t13asset_optionsN2fc8optionalI16bitasset_optionsEEb">
+<span id="_CPPv2N8graphene6wallet10wallet_api12create_assetE6string6string7uint8_t13asset_optionsN2fc8optionalI16bitasset_optionsEEb"></span><span id="graphene::wallet::wallet_api::create_asset__string.string.uint8_t.asset_options.fc::optional:bitasset_options:.b"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1ae3028048916580695639fee8e9d815be"></span>signed_transaction <code class="descname">create_asset</code><span class="sig-paren">(</span>string <em>issuer</em>, string <em>symbol</em>, uint8_t <em>precision</em>, asset_options <em>common</em>, fc::optional&lt;bitasset_options&gt; <em>bitasset_opts</em>, bool <em>broadcast</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api12create_assetE6string6string7uint8_t13asset_optionsN2fc8optionalI16bitasset_optionsEEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates a new user-issued or market-issued asset.</p>
+<p>Many options can be changed later using <code class="docutils literal notranslate"><a class="reference internal" href="../wallet_api.html#classgraphene_1_1wallet_1_1wallet__api_1a6c2a57593b39390b286efeecca2702d6"><span class="std std-ref"><span class="pre">update_asset()</span></span></a></code> </p>
+<p>Right now this function is difficult to use because you must provide raw JSON data structures for the options objects, and those include prices and asset ids.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the signed transaction creating a new asset </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">issuer</span></code>: the name or id of the account who will pay the fee and become the issuer of the new asset. This can be updated later </li>
+<li><code class="docutils literal notranslate"><span class="pre">symbol</span></code>: the ticker symbol of the new asset </li>
+<li><code class="docutils literal notranslate"><span class="pre">precision</span></code>: the number of digits of precision to the right of the decimal point, must be less than or equal to 12 </li>
+<li><code class="docutils literal notranslate"><span class="pre">common</span></code>: asset options required for all new assets. Note that core_exchange_rate technically needs to store the asset ID of this new asset. Since this ID is not known at the time this operation is created, create this price as though the new asset has instance ID 1, and the chain will overwrite it with the new asset’s ID. </li>
+<li><code class="docutils literal notranslate"><span class="pre">bitasset_opts</span></code>: options specific to BitAssets. This may be null unless the <code class="docutils literal notranslate"><span class="pre">market_issued</span></code> flag is set in common.flags </li>
+<li><code class="docutils literal notranslate"><span class="pre">broadcast</span></code>: true to broadcast the transaction on the network </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api11issue_assetE6string6string6string6stringb">
+<span id="_CPPv2N8graphene6wallet10wallet_api11issue_assetE6string6string6string6stringb"></span><span id="graphene::wallet::wallet_api::issue_asset__string.string.string.string.b"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1ac4ff8075641a7469265122ff9a66e30e"></span>signed_transaction <code class="descname">issue_asset</code><span class="sig-paren">(</span>string <em>to_account</em>, string <em>amount</em>, string <em>symbol</em>, string <em>memo</em>, bool <em>broadcast</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api11issue_assetE6string6string6string6stringb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Issue new shares of an asset.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the signed transaction issuing the new shares </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">to_account</span></code>: the name or id of the account to receive the new shares </li>
+<li><code class="docutils literal notranslate"><span class="pre">amount</span></code>: the amount to issue, in nominal units </li>
+<li><code class="docutils literal notranslate"><span class="pre">symbol</span></code>: the ticker symbol of the asset to issue </li>
+<li><code class="docutils literal notranslate"><span class="pre">memo</span></code>: a memo to include in the transaction, readable by the recipient </li>
+<li><code class="docutils literal notranslate"><span class="pre">broadcast</span></code>: true to broadcast the transaction on the network </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api12update_assetE6string8optionalI6stringE13asset_optionsb">
+<span id="_CPPv2N8graphene6wallet10wallet_api12update_assetE6string8optionalI6stringE13asset_optionsb"></span><span id="graphene::wallet::wallet_api::update_asset__string.optional:string:.asset_options.b"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a6c2a57593b39390b286efeecca2702d6"></span>signed_transaction <code class="descname">update_asset</code><span class="sig-paren">(</span>string <em>symbol</em>, optional&lt;string&gt; <em>new_issuer</em>, asset_options <em>new_options</em>, bool <em>broadcast</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api12update_assetE6string8optionalI6stringE13asset_optionsb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Update the core options on an asset. There are a number of options which all assets in the network use. These options are enumerated in the asset_object::asset_options struct. This command is used to update these options for an existing asset.</p>
+<p><dl class="docutils">
+<dt><strong>Note</strong></dt>
+<dd>This operation cannot be used to update BitAsset-specific options. For these options, <code class="docutils literal notranslate"><a class="reference internal" href="../wallet_api.html#classgraphene_1_1wallet_1_1wallet__api_1aebe4459f45a748739595939d60b95b6b"><span class="std std-ref"><span class="pre">update_bitasset()</span></span></a></code> instead.</dd>
+<dt><strong>Return</strong></dt>
+<dd>the signed transaction updating the asset </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">symbol</span></code>: the name or id of the asset to update </li>
+<li><code class="docutils literal notranslate"><span class="pre">new_issuer</span></code>: if changing the asset’s issuer, the name or id of the new issuer. null if you wish to remain the issuer of the asset </li>
+<li><code class="docutils literal notranslate"><span class="pre">new_options</span></code>: the new asset_options object, which will entirely replace the existing options. </li>
+<li><code class="docutils literal notranslate"><span class="pre">broadcast</span></code>: true to broadcast the transaction on the network </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api19update_asset_issuerE6string6stringb">
+<span id="_CPPv2N8graphene6wallet10wallet_api19update_asset_issuerE6string6stringb"></span><span id="graphene::wallet::wallet_api::update_asset_issuer__string.string.b"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1aa42085004d8575c031d2694aad17971f"></span>signed_transaction <code class="descname">update_asset_issuer</code><span class="sig-paren">(</span>string <em>symbol</em>, string <em>new_issuer</em>, bool <em>broadcast</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api19update_asset_issuerE6string6stringb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Update the issuer of an asset Since this call requires the owner authority of the current issuer to sign the transaction, a separated operation is used to change the issuer. This call simplifies the use of this action.</p>
+<p><dl class="docutils">
+<dt><strong>Note</strong></dt>
+<dd>This operation requires the owner key to be available in the wallet.</dd>
+<dt><strong>Return</strong></dt>
+<dd>the signed transaction updating the asset </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">symbol</span></code>: the name or id of the asset to update </li>
+<li><code class="docutils literal notranslate"><span class="pre">new_issuer</span></code>: if changing the asset’s issuer, the name or id of the new issuer. </li>
+<li><code class="docutils literal notranslate"><span class="pre">broadcast</span></code>: true to broadcast the transaction on the network </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api15update_bitassetE6string16bitasset_optionsb">
+<span id="_CPPv2N8graphene6wallet10wallet_api15update_bitassetE6string16bitasset_optionsb"></span><span id="graphene::wallet::wallet_api::update_bitasset__string.bitasset_options.b"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1aebe4459f45a748739595939d60b95b6b"></span>signed_transaction <code class="descname">update_bitasset</code><span class="sig-paren">(</span>string <em>symbol</em>, bitasset_options <em>new_options</em>, bool <em>broadcast</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api15update_bitassetE6string16bitasset_optionsb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Update the options specific to a BitAsset.</p>
+<p>BitAssets have some options which are not relevant to other asset types. This operation is used to update those options an an existing BitAsset.</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="../wallet_api.html#classgraphene_1_1wallet_1_1wallet__api_1a6c2a57593b39390b286efeecca2702d6"><span class="std std-ref">update_asset()</span></a></dd>
+<dt><strong>Return</strong></dt>
+<dd>the signed transaction updating the bitasset </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">symbol</span></code>: the name or id of the asset to update, which must be a market-issued asset </li>
+<li><code class="docutils literal notranslate"><span class="pre">new_options</span></code>: the new bitasset_options object, which will entirely replace the existing options. </li>
+<li><code class="docutils literal notranslate"><span class="pre">broadcast</span></code>: true to broadcast the transaction on the network </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api27update_asset_feed_producersE6string8flat_setI6stringEb">
+<span id="_CPPv2N8graphene6wallet10wallet_api27update_asset_feed_producersE6string8flat_setI6stringEb"></span><span id="graphene::wallet::wallet_api::update_asset_feed_producers__string.flat_set:string:.b"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a0ce4b8d15724a5f0d2e94a83288945cd"></span>signed_transaction <code class="descname">update_asset_feed_producers</code><span class="sig-paren">(</span>string <em>symbol</em>, flat_set&lt;string&gt; <em>new_feed_producers</em>, bool <em>broadcast</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api27update_asset_feed_producersE6string8flat_setI6stringEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Update the set of feed-producing accounts for a BitAsset.</p>
+<p>BitAssets have price feeds selected by taking the median values of recommendations from a set of feed producers. This command is used to specify which accounts may produce feeds for a given BitAsset. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the signed transaction updating the bitasset’s feed producers </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">symbol</span></code>: the name or id of the asset to update </li>
+<li><code class="docutils literal notranslate"><span class="pre">new_feed_producers</span></code>: a list of account names or ids which are authorized to produce feeds for the asset. this list will completely replace the existing list </li>
+<li><code class="docutils literal notranslate"><span class="pre">broadcast</span></code>: true to broadcast the transaction on the network </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api18publish_asset_feedE6string6string10price_feedb">
+<span id="_CPPv2N8graphene6wallet10wallet_api18publish_asset_feedE6string6string10price_feedb"></span><span id="graphene::wallet::wallet_api::publish_asset_feed__string.string.price_feed.b"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1ad7f049ecc3f83a80c6f27ec4f1a47beb"></span>signed_transaction <code class="descname">publish_asset_feed</code><span class="sig-paren">(</span>string <em>publishing_account</em>, string <em>symbol</em>, price_feed <em>feed</em>, bool <em>broadcast</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api18publish_asset_feedE6string6string10price_feedb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Publishes a price feed for the named asset.</p>
+<p>Price feed providers use this command to publish their price feeds for market-issued assets. A price feed is used to tune the market for a particular market-issued asset. For each value in the feed, the median across all committee_member feeds for that asset is calculated and the market for the asset is configured with the median of that value.</p>
+<p>The feed object in this command contains three prices: a call price limit, a short price limit, and a settlement price. The call limit price is structured as (collateral asset) / (debt asset) and the short limit price is structured as (asset for sale) / (collateral asset). Note that the asset IDs are opposite to eachother, so if we’re publishing a feed for USD, the call limit price will be CORE/USD and the short limit price will be USD/CORE. The settlement price may be flipped either direction, as long as it is a ratio between the market-issued asset and its collateral.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the signed transaction updating the price feed for the given asset </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">publishing_account</span></code>: the account publishing the price feed </li>
+<li><code class="docutils literal notranslate"><span class="pre">symbol</span></code>: the name or id of the asset whose feed we’re publishing </li>
+<li><code class="docutils literal notranslate"><span class="pre">feed</span></code>: the price_feed object containing the three prices making up the feed </li>
+<li><code class="docutils literal notranslate"><span class="pre">broadcast</span></code>: true to broadcast the transaction on the network </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api19fund_asset_fee_poolE6string6string6stringb">
+<span id="_CPPv2N8graphene6wallet10wallet_api19fund_asset_fee_poolE6string6string6stringb"></span><span id="graphene::wallet::wallet_api::fund_asset_fee_pool__string.string.string.b"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a207a4b4afe0cac8c7f797025eb08854e"></span>signed_transaction <code class="descname">fund_asset_fee_pool</code><span class="sig-paren">(</span>string <em>from</em>, string <em>symbol</em>, string <em>amount</em>, bool <em>broadcast</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api19fund_asset_fee_poolE6string6string6stringb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Pay into the fee pool for the given asset.</p>
+<p>User-issued assets can optionally have a pool of the core asset which is automatically used to pay transaction fees for any transaction using that asset (using the asset’s core exchange rate).</p>
+<p>This command allows anyone to deposit the core asset into this fee pool.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the signed transaction funding the fee pool </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">from</span></code>: the name or id of the account sending the core asset </li>
+<li><code class="docutils literal notranslate"><span class="pre">symbol</span></code>: the name or id of the asset whose fee pool you wish to fund </li>
+<li><code class="docutils literal notranslate"><span class="pre">amount</span></code>: the amount of the core asset to deposit </li>
+<li><code class="docutils literal notranslate"><span class="pre">broadcast</span></code>: true to broadcast the transaction on the network </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api20claim_asset_fee_poolE6string6stringb">
+<span id="_CPPv2N8graphene6wallet10wallet_api20claim_asset_fee_poolE6string6stringb"></span><span id="graphene::wallet::wallet_api::claim_asset_fee_pool__string.string.b"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a4dbbe1852eb4ca83a68c798f988c9fb6"></span>signed_transaction <code class="descname">claim_asset_fee_pool</code><span class="sig-paren">(</span>string <em>symbol</em>, string <em>amount</em>, bool <em>broadcast</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api20claim_asset_fee_poolE6string6stringb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Claim funds from the fee pool for the given asset.</p>
+<p>User-issued assets can optionally have a pool of the core asset which is automatically used to pay transaction fees for any transaction using that asset (using the asset’s core exchange rate).</p>
+<p>This command allows the issuer to withdraw those funds from the fee pool.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the signed transaction claiming from the fee pool </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">symbol</span></code>: the name or id of the asset whose fee pool you wish to claim </li>
+<li><code class="docutils literal notranslate"><span class="pre">amount</span></code>: the amount of the core asset to withdraw </li>
+<li><code class="docutils literal notranslate"><span class="pre">broadcast</span></code>: true to broadcast the transaction on the network </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api13reserve_assetE6string6string6stringb">
+<span id="_CPPv2N8graphene6wallet10wallet_api13reserve_assetE6string6string6stringb"></span><span id="graphene::wallet::wallet_api::reserve_asset__string.string.string.b"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a6c6316f69afc3b8b78b669381fd96159"></span>signed_transaction <code class="descname">reserve_asset</code><span class="sig-paren">(</span>string <em>from</em>, string <em>amount</em>, string <em>symbol</em>, bool <em>broadcast</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api13reserve_assetE6string6string6stringb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Burns the given user-issued asset.</p>
+<p>This command burns the user-issued asset to reduce the amount in circulation. <dl class="docutils">
+<dt><strong>Note</strong></dt>
+<dd>you cannot burn market-issued assets. </dd>
+<dt><strong>Return</strong></dt>
+<dd>the signed transaction burning the asset </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">from</span></code>: the account containing the asset you wish to burn </li>
+<li><code class="docutils literal notranslate"><span class="pre">amount</span></code>: the amount to burn, in nominal units </li>
+<li><code class="docutils literal notranslate"><span class="pre">symbol</span></code>: the name or id of the asset to burn </li>
+<li><code class="docutils literal notranslate"><span class="pre">broadcast</span></code>: true to broadcast the transaction on the network </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api19global_settle_assetE6string5priceb">
+<span id="_CPPv2N8graphene6wallet10wallet_api19global_settle_assetE6string5priceb"></span><span id="graphene::wallet::wallet_api::global_settle_asset__string.price.b"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1ad35610a05a5f4cf0d70fd4d6e8f99937"></span>signed_transaction <code class="descname">global_settle_asset</code><span class="sig-paren">(</span>string <em>symbol</em>, price <em>settle_price</em>, bool <em>broadcast</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api19global_settle_assetE6string5priceb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Forces a global settling of the given asset (black swan or prediction markets).</p>
+<p>In order to use this operation, asset_to_settle must have the global_settle flag set</p>
+<p>When this operation is executed all balances are converted into the backing asset at the settle_price and all open margin positions are called at the settle price. If this asset is used as backing for other bitassets, those bitassets will be force settled at their current feed price.</p>
+<p><dl class="docutils">
+<dt><strong>Note</strong></dt>
+<dd>this operation is used only by the asset issuer, <code class="docutils literal notranslate"><a class="reference internal" href="../wallet_api.html#classgraphene_1_1wallet_1_1wallet__api_1a95a3baa4b0c83c1fce14827acbbddd62"><span class="std std-ref"><span class="pre">settle_asset()</span></span></a></code> may be used by any user owning the asset</dd>
+<dt><strong>Return</strong></dt>
+<dd>the signed transaction settling the named asset </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">symbol</span></code>: the name or id of the asset to force settlement on </li>
+<li><code class="docutils literal notranslate"><span class="pre">settle_price</span></code>: the price at which to settle </li>
+<li><code class="docutils literal notranslate"><span class="pre">broadcast</span></code>: true to broadcast the transaction on the network </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api12settle_assetE6string6string6stringb">
+<span id="_CPPv2N8graphene6wallet10wallet_api12settle_assetE6string6string6stringb"></span><span id="graphene::wallet::wallet_api::settle_asset__string.string.string.b"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a95a3baa4b0c83c1fce14827acbbddd62"></span>signed_transaction <code class="descname">settle_asset</code><span class="sig-paren">(</span>string <em>account_to_settle</em>, string <em>amount_to_settle</em>, string <em>symbol</em>, bool <em>broadcast</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api12settle_assetE6string6string6stringb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Schedules a market-issued asset for automatic settlement.</p>
+<p>Holders of market-issued assests may request a forced settlement for some amount of their asset. This means that the specified sum will be locked by the chain and held for the settlement period, after which time the chain will choose a margin posision holder and buy the settled asset using the margin’s collateral. The price of this sale will be based on the feed price for the market-issued asset being settled. The exact settlement price will be the feed price at the time of settlement with an offset in favor of the margin position, where the offset is a blockchain parameter set in the global_property_object.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the signed transaction settling the named asset </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">account_to_settle</span></code>: the name or id of the account owning the asset </li>
+<li><code class="docutils literal notranslate"><span class="pre">amount_to_settle</span></code>: the amount of the named asset to schedule for settlement </li>
+<li><code class="docutils literal notranslate"><span class="pre">symbol</span></code>: the name or id of the asset to settlement on </li>
+<li><code class="docutils literal notranslate"><span class="pre">broadcast</span></code>: true to broadcast the transaction on the network </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api14bid_collateralE6string6string6string6stringb">
+<span id="_CPPv2N8graphene6wallet10wallet_api14bid_collateralE6string6string6string6stringb"></span><span id="graphene::wallet::wallet_api::bid_collateral__string.string.string.string.b"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1ad12176791288314a59387df5d1492b25"></span>signed_transaction <code class="descname">bid_collateral</code><span class="sig-paren">(</span>string <em>bidder_name</em>, string <em>debt_amount</em>, string <em>debt_symbol</em>, string <em>additional_collateral</em>, bool <em>broadcast</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api14bid_collateralE6string6string6string6stringb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates or updates a bid on an MPA after global settlement.</p>
+<p>In order to revive a market-pegged asset after global settlement (aka black swan), investors can bid collateral in order to take over part of the debt and the settlement fund, see BSIP-0018. Updating an existing bid to cover 0 debt will delete the bid.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the signed transaction creating/updating the bid </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">bidder_name</span></code>: the name or id of the account making the bid </li>
+<li><code class="docutils literal notranslate"><span class="pre">debt_amount</span></code>: the amount of debt of the named asset to bid for </li>
+<li><code class="docutils literal notranslate"><span class="pre">debt_symbol</span></code>: the name or id of the MPA to bid for </li>
+<li><code class="docutils literal notranslate"><span class="pre">additional_collateral</span></code>: the amount of additional collateral to bid for taking over debt_amount. The asset type of this amount is determined automatically from debt_symbol. </li>
+<li><code class="docutils literal notranslate"><span class="pre">broadcast</span></code>: true to broadcast the transaction on the network </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api17whitelist_accountE6string6stringN27account_whitelist_operation15account_listingEb">
+<span id="_CPPv2N8graphene6wallet10wallet_api17whitelist_accountE6string6stringN27account_whitelist_operation15account_listingEb"></span><span id="graphene::wallet::wallet_api::whitelist_account__string.string.account_whitelist_operation::account_listing.b"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1aa6483d143fecb817fad3c08ee982bda0"></span>signed_transaction <code class="descname">whitelist_account</code><span class="sig-paren">(</span>string <em>authorizing_account</em>, string <em>account_to_list</em>, account_whitelist_operation::account_listing <em>new_listing_status</em>, bool <em>broadcast</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api17whitelist_accountE6string6stringN27account_whitelist_operation15account_listingEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Whitelist and blacklist accounts, primarily for transacting in whitelisted assets.</p>
+<p>Accounts can freely specify opinions about other accounts, in the form of either whitelisting or blacklisting them. This information is used in chain validation only to determine whether an account is authorized to transact in an asset type which enforces a whitelist, but third parties can use this information for other uses as well, as long as it does not conflict with the use of whitelisted assets.</p>
+<p>An asset which enforces a whitelist specifies a list of accounts to maintain its whitelist, and a list of accounts to maintain its blacklist. In order for a given account A to hold and transact in a whitelisted asset S, A must be whitelisted by at least one of S’s whitelist_authorities and blacklisted by none of S’s blacklist_authorities. If A receives a balance of S, and is later removed from the whitelist(s) which allowed it to hold S, or added to any blacklist S specifies as authoritative, A’s balance of S will be frozen until A’s authorization is reinstated.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the signed transaction changing the whitelisting status </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">authorizing_account</span></code>: the account who is doing the whitelisting </li>
+<li><code class="docutils literal notranslate"><span class="pre">account_to_list</span></code>: the account being whitelisted </li>
+<li><code class="docutils literal notranslate"><span class="pre">new_listing_status</span></code>: the new whitelisting status </li>
+<li><code class="docutils literal notranslate"><span class="pre">broadcast</span></code>: true to broadcast the transaction on the network </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api23create_committee_memberE6string6stringb">
+<span id="_CPPv2N8graphene6wallet10wallet_api23create_committee_memberE6string6stringb"></span><span id="graphene::wallet::wallet_api::create_committee_member__string.string.b"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1ad0c4d2890ab300fc2388bbe26bf15559"></span>signed_transaction <code class="descname">create_committee_member</code><span class="sig-paren">(</span>string <em>owner_account</em>, string <em>url</em>, bool <em>broadcast</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api23create_committee_memberE6string6stringb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates a committee_member object owned by the given account.</p>
+<p>An account can have at most one committee_member object.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the signed transaction registering a committee_member </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">owner_account</span></code>: the name or id of the account which is creating the committee_member </li>
+<li><code class="docutils literal notranslate"><span class="pre">url</span></code>: a URL to include in the committee_member record in the blockchain. Clients may display this when showing a list of committee_members. May be blank. </li>
+<li><code class="docutils literal notranslate"><span class="pre">broadcast</span></code>: true to broadcast the transaction on the network </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api14list_witnessesERK6string8uint32_t">
+<span id="_CPPv2N8graphene6wallet10wallet_api14list_witnessesERK6string8uint32_t"></span><span id="graphene::wallet::wallet_api::list_witnesses__stringCR.uint32_t"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1ae0cb01b3d7db811587ee51fa1e6c7e51"></span>map&lt;string, witness_id_type&gt; <code class="descname">list_witnesses</code><span class="sig-paren">(</span><em class="property">const</em> string &amp;<em>lowerbound</em>, uint32_t <em>limit</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api14list_witnessesERK6string8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Lists all witnesses registered in the blockchain. This returns a list of all account names that own witnesses, and the associated witness id, sorted by name. This lists witnesses whether they are currently voted in or not.</p>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">lowerbound</span></code> and limit parameters to page through the list. To retrieve all witnesss, start by setting <code class="docutils literal notranslate"><span class="pre">lowerbound</span></code> to the empty string <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>, and then each iteration, pass the last witness name returned as the <code class="docutils literal notranslate"><span class="pre">lowerbound</span></code> for the next <code class="docutils literal notranslate"><span class="pre">list_witnesss()</span></code> call.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>a list of witnesss mapping witness names to witness ids </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">lowerbound</span></code>: the name of the first witness to return. If the named witness does not exist, the list will start at the witness that comes after <code class="docutils literal notranslate"><span class="pre">lowerbound</span></code> </li>
+<li><code class="docutils literal notranslate"><span class="pre">limit</span></code>: the maximum number of witnesss to return (max: 1000) </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api22list_committee_membersERK6string8uint32_t">
+<span id="_CPPv2N8graphene6wallet10wallet_api22list_committee_membersERK6string8uint32_t"></span><span id="graphene::wallet::wallet_api::list_committee_members__stringCR.uint32_t"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1ab08449f00d6b4147787b23afa7aa6af6"></span>map&lt;string, committee_member_id_type&gt; <code class="descname">list_committee_members</code><span class="sig-paren">(</span><em class="property">const</em> string &amp;<em>lowerbound</em>, uint32_t <em>limit</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api22list_committee_membersERK6string8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Lists all committee_members registered in the blockchain. This returns a list of all account names that own committee_members, and the associated committee_member id, sorted by name. This lists committee_members whether they are currently voted in or not.</p>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">lowerbound</span></code> and limit parameters to page through the list. To retrieve all committee_members, start by setting <code class="docutils literal notranslate"><span class="pre">lowerbound</span></code> to the empty string <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>, and then each iteration, pass the last committee_member name returned as the <code class="docutils literal notranslate"><span class="pre">lowerbound</span></code> for the next <code class="docutils literal notranslate"><a class="reference internal" href="../wallet_api.html#classgraphene_1_1wallet_1_1wallet__api_1ab08449f00d6b4147787b23afa7aa6af6"><span class="std std-ref"><span class="pre">list_committee_members()</span></span></a></code> call.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>a list of committee_members mapping committee_member names to committee_member ids </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">lowerbound</span></code>: the name of the first committee_member to return. If the named committee_member does not exist, the list will start at the committee_member that comes after <code class="docutils literal notranslate"><span class="pre">lowerbound</span></code> </li>
+<li><code class="docutils literal notranslate"><span class="pre">limit</span></code>: the maximum number of committee_members to return (max: 1000) </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api11get_witnessE6string">
+<span id="_CPPv2N8graphene6wallet10wallet_api11get_witnessE6string"></span><span id="graphene::wallet::wallet_api::get_witness__string"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a28f755aa12dca82f6e2e948cac014dcb"></span>witness_object <code class="descname">get_witness</code><span class="sig-paren">(</span>string <em>owner_account</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api11get_witnessE6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns information about the given witness. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the information about the witness stored in the block chain </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">owner_account</span></code>: the name or id of the witness account owner, or the id of the witness </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api20get_committee_memberE6string">
+<span id="_CPPv2N8graphene6wallet10wallet_api20get_committee_memberE6string"></span><span id="graphene::wallet::wallet_api::get_committee_member__string"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1af7db75896d9b2b2f4c4585172eb7d4e4"></span>committee_member_object <code class="descname">get_committee_member</code><span class="sig-paren">(</span>string <em>owner_account</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api20get_committee_memberE6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns information about the given committee_member. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the information about the committee_member stored in the block chain </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">owner_account</span></code>: the name or id of the committee_member account owner, or the id of the committee_member </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api14create_witnessE6string6stringb">
+<span id="_CPPv2N8graphene6wallet10wallet_api14create_witnessE6string6stringb"></span><span id="graphene::wallet::wallet_api::create_witness__string.string.b"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a73d443a0961938c685d29277a0e4830f"></span>signed_transaction <code class="descname">create_witness</code><span class="sig-paren">(</span>string <em>owner_account</em>, string <em>url</em>, bool <em>broadcast</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api14create_witnessE6string6stringb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates a witness object owned by the given account.</p>
+<p>An account can have at most one witness object.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the signed transaction registering a witness </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">owner_account</span></code>: the name or id of the account which is creating the witness </li>
+<li><code class="docutils literal notranslate"><span class="pre">url</span></code>: a URL to include in the witness record in the blockchain. Clients may display this when showing a list of witnesses. May be blank. </li>
+<li><code class="docutils literal notranslate"><span class="pre">broadcast</span></code>: true to broadcast the transaction on the network </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api14update_witnessE6string6string6stringb">
+<span id="_CPPv2N8graphene6wallet10wallet_api14update_witnessE6string6string6stringb"></span><span id="graphene::wallet::wallet_api::update_witness__string.string.string.b"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a8246cdc35c58a9776a011505684d66b8"></span>signed_transaction <code class="descname">update_witness</code><span class="sig-paren">(</span>string <em>witness_name</em>, string <em>url</em>, string <em>block_signing_key</em>, bool <em>broadcast</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api14update_witnessE6string6string6stringb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Update a witness object owned by the given account.</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">witness_name</span></code>: The name of the witness’s owner account. Also accepts the ID of the owner account or the ID of the witness. </li>
+<li><code class="docutils literal notranslate"><span class="pre">url</span></code>: Same as for create_witness. The empty string makes it remain the same. </li>
+<li><code class="docutils literal notranslate"><span class="pre">block_signing_key</span></code>: The new block signing public key. The empty string makes it remain the same. </li>
+<li><code class="docutils literal notranslate"><span class="pre">broadcast</span></code>: true if you wish to broadcast the transaction. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api13create_workerE6string14time_point_sec14time_point_sec10share_type6string6string7variantb">
+<span id="_CPPv2N8graphene6wallet10wallet_api13create_workerE6string14time_point_sec14time_point_sec10share_type6string6string7variantb"></span><span id="graphene::wallet::wallet_api::create_worker__string.time_point_sec.time_point_sec.share_type.string.string.variant.b"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a85d25eaf8c6f749420e93fad46bc79cb"></span>signed_transaction <code class="descname">create_worker</code><span class="sig-paren">(</span>string <em>owner_account</em>, time_point_sec <em>work_begin_date</em>, time_point_sec <em>work_end_date</em>, share_type <em>daily_pay</em>, string <em>name</em>, string <em>url</em>, variant <em>worker_settings</em>, bool <em>broadcast</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api13create_workerE6string14time_point_sec14time_point_sec10share_type6string6string7variantb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Create a worker object.</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">owner_account</span></code>: The account which owns the worker and will be paid </li>
+<li><code class="docutils literal notranslate"><span class="pre">work_begin_date</span></code>: When the work begins </li>
+<li><code class="docutils literal notranslate"><span class="pre">work_end_date</span></code>: When the work ends </li>
+<li><code class="docutils literal notranslate"><span class="pre">daily_pay</span></code>: Amount of pay per day (NOT per maint interval) </li>
+<li><code class="docutils literal notranslate"><span class="pre">name</span></code>: Any text </li>
+<li><code class="docutils literal notranslate"><span class="pre">url</span></code>: Any text </li>
+<li><code class="docutils literal notranslate"><span class="pre">worker_settings</span></code>: {“type” : “burn”|”refund”|”vesting”, “pay_vesting_period_days” : x} </li>
+<li><code class="docutils literal notranslate"><span class="pre">broadcast</span></code>: true if you wish to broadcast the transaction. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api19update_worker_votesE6string17worker_vote_deltab">
+<span id="_CPPv2N8graphene6wallet10wallet_api19update_worker_votesE6string17worker_vote_deltab"></span><span id="graphene::wallet::wallet_api::update_worker_votes__string.worker_vote_delta.b"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a4af1e9b3a5d70e1b7c5fde6a519cbd24"></span>signed_transaction <code class="descname">update_worker_votes</code><span class="sig-paren">(</span>string <em>account</em>, worker_vote_delta <em>delta</em>, bool <em>broadcast</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api19update_worker_votesE6string17worker_vote_deltab" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Update your votes for a worker</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">account</span></code>: The account which will pay the fee and update votes. </li>
+<li><code class="docutils literal notranslate"><span class="pre">delta</span></code>: {“vote_for” : […], “vote_against” : […], “vote_abstain” : […]} </li>
+<li><code class="docutils literal notranslate"><span class="pre">broadcast</span></code>: true if you wish to broadcast the transaction. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api20get_vesting_balancesE6string">
+<span id="_CPPv2N8graphene6wallet10wallet_api20get_vesting_balancesE6string"></span><span id="graphene::wallet::wallet_api::get_vesting_balances__string"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1abce0e5c4ae7fa1b93719a5865e3abb61"></span>vector&lt;<a class="reference internal" href="#_CPPv3N8graphene6wallet32vesting_balance_object_with_infoE" title="graphene::wallet::vesting_balance_object_with_info">vesting_balance_object_with_info</a>&gt; <code class="descname">get_vesting_balances</code><span class="sig-paren">(</span>string <em>account_name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api20get_vesting_balancesE6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get information about a vesting balance object.</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">account_name</span></code>: An account name, account ID, or vesting balance object ID. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api16withdraw_vestingE6string6string6stringb">
+<span id="_CPPv2N8graphene6wallet10wallet_api16withdraw_vestingE6string6string6stringb"></span><span id="graphene::wallet::wallet_api::withdraw_vesting__string.string.string.b"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a72d9316ead7ac6825fbcd62be81e235a"></span>signed_transaction <code class="descname">withdraw_vesting</code><span class="sig-paren">(</span>string <em>witness_name</em>, string <em>amount</em>, string <em>asset_symbol</em>, bool <em>broadcast</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api16withdraw_vestingE6string6string6stringb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Withdraw a vesting balance.</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">witness_name</span></code>: The account name of the witness, also accepts account ID or vesting balance ID type. </li>
+<li><code class="docutils literal notranslate"><span class="pre">amount</span></code>: The amount to withdraw. </li>
+<li><code class="docutils literal notranslate"><span class="pre">asset_symbol</span></code>: The symbol of the asset to withdraw. </li>
+<li><code class="docutils literal notranslate"><span class="pre">broadcast</span></code>: true if you wish to broadcast the transaction </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api25vote_for_committee_memberE6string6stringbb">
+<span id="_CPPv2N8graphene6wallet10wallet_api25vote_for_committee_memberE6string6stringbb"></span><span id="graphene::wallet::wallet_api::vote_for_committee_member__string.string.b.b"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a9c2be055bd282ff68da3f3ce0f6b95fb"></span>signed_transaction <code class="descname">vote_for_committee_member</code><span class="sig-paren">(</span>string <em>voting_account</em>, string <em>committee_member</em>, bool <em>approve</em>, bool <em>broadcast</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api25vote_for_committee_memberE6string6stringbb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Vote for a given committee_member.</p>
+<p>An account can publish a list of all committee_memberes they approve of. This command allows you to add or remove committee_memberes from this list. Each account’s vote is weighted according to the number of shares of the core asset owned by that account at the time the votes are tallied.</p>
+<p><dl class="docutils">
+<dt><strong>Note</strong></dt>
+<dd>you cannot vote against a committee_member, you can only vote for the committee_member or not vote for the committee_member.</dd>
+<dt><strong>Return</strong></dt>
+<dd>the signed transaction changing your vote for the given committee_member </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">voting_account</span></code>: the name or id of the account who is voting with their shares </li>
+<li><code class="docutils literal notranslate"><span class="pre">committee_member</span></code>: the name or id of the committee_member’ owner account </li>
+<li><code class="docutils literal notranslate"><span class="pre">approve</span></code>: true if you wish to vote in favor of that committee_member, false to remove your vote in favor of that committee_member </li>
+<li><code class="docutils literal notranslate"><span class="pre">broadcast</span></code>: true if you wish to broadcast the transaction </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api16vote_for_witnessE6string6stringbb">
+<span id="_CPPv2N8graphene6wallet10wallet_api16vote_for_witnessE6string6stringbb"></span><span id="graphene::wallet::wallet_api::vote_for_witness__string.string.b.b"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a00370237863a234e2418f191ce006d0c"></span>signed_transaction <code class="descname">vote_for_witness</code><span class="sig-paren">(</span>string <em>voting_account</em>, string <em>witness</em>, bool <em>approve</em>, bool <em>broadcast</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api16vote_for_witnessE6string6stringbb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Vote for a given witness.</p>
+<p>An account can publish a list of all witnesses they approve of. This command allows you to add or remove witnesses from this list. Each account’s vote is weighted according to the number of shares of the core asset owned by that account at the time the votes are tallied.</p>
+<p><dl class="docutils">
+<dt><strong>Note</strong></dt>
+<dd>you cannot vote against a witness, you can only vote for the witness or not vote for the witness.</dd>
+<dt><strong>Return</strong></dt>
+<dd>the signed transaction changing your vote for the given witness </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">voting_account</span></code>: the name or id of the account who is voting with their shares </li>
+<li><code class="docutils literal notranslate"><span class="pre">witness</span></code>: the name or id of the witness’ owner account </li>
+<li><code class="docutils literal notranslate"><span class="pre">approve</span></code>: true if you wish to vote in favor of that witness, false to remove your vote in favor of that witness </li>
+<li><code class="docutils literal notranslate"><span class="pre">broadcast</span></code>: true if you wish to broadcast the transaction </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api16set_voting_proxyE6string8optionalI6stringEb">
+<span id="_CPPv2N8graphene6wallet10wallet_api16set_voting_proxyE6string8optionalI6stringEb"></span><span id="graphene::wallet::wallet_api::set_voting_proxy__string.optional:string:.b"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a444fd5cc7709e481be463393f78a2253"></span>signed_transaction <code class="descname">set_voting_proxy</code><span class="sig-paren">(</span>string <em>account_to_modify</em>, optional&lt;string&gt; <em>voting_account</em>, bool <em>broadcast</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api16set_voting_proxyE6string8optionalI6stringEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the voting proxy for an account.</p>
+<p>If a user does not wish to take an active part in voting, they can choose to allow another account to vote their stake.</p>
+<p>Setting a vote proxy does not remove your previous votes from the blockchain, they remain there but are ignored. If you later null out your vote proxy, your previous votes will take effect again.</p>
+<p>This setting can be changed at any time.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the signed transaction changing your vote proxy settings </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">account_to_modify</span></code>: the name or id of the account to update </li>
+<li><code class="docutils literal notranslate"><span class="pre">voting_account</span></code>: the name or id of an account authorized to vote account_to_modify’s shares, or null to vote your own shares</li>
+<li><code class="docutils literal notranslate"><span class="pre">broadcast</span></code>: true if you wish to broadcast the transaction </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api46set_desired_witness_and_committee_member_countE6string8uint16_t8uint16_tb">
+<span id="_CPPv2N8graphene6wallet10wallet_api46set_desired_witness_and_committee_member_countE6string8uint16_t8uint16_tb"></span><span id="graphene::wallet::wallet_api::set_desired_witness_and_committee_member_count__string.uint16_t.uint16_t.b"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a2d6765231f3bf9180ad64c5be085ba60"></span>signed_transaction <code class="descname">set_desired_witness_and_committee_member_count</code><span class="sig-paren">(</span>string <em>account_to_modify</em>, uint16_t <em>desired_number_of_witnesses</em>, uint16_t <em>desired_number_of_committee_members</em>, bool <em>broadcast</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api46set_desired_witness_and_committee_member_countE6string8uint16_t8uint16_tb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set your vote for the number of witnesses and committee_members in the system.</p>
+<p>Each account can voice their opinion on how many committee_members and how many witnesses there should be in the active committee_member/active witness list. These are independent of each other. You must vote your approval of at least as many committee_members or witnesses as you claim there should be (you can’t say that there should be 20 committee_members but only vote for 10).</p>
+<p>There are maximum values for each set in the blockchain parameters (currently defaulting to 1001).</p>
+<p>This setting can be changed at any time. If your account has a voting proxy set, your preferences will be ignored.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the signed transaction changing your vote proxy settings </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">account_to_modify</span></code>: the name or id of the account to update </li>
+<li><code class="docutils literal notranslate"><span class="pre">desired_number_of_witnesses</span></code>: desired number of active witnesses </li>
+<li><code class="docutils literal notranslate"><span class="pre">desired_number_of_committee_members</span></code>: desired number of active committee members</li>
+<li><code class="docutils literal notranslate"><span class="pre">broadcast</span></code>: true if you wish to broadcast the transaction </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api16sign_transactionE18signed_transactionb">
+<span id="_CPPv2N8graphene6wallet10wallet_api16sign_transactionE18signed_transactionb"></span><span id="graphene::wallet::wallet_api::sign_transaction__signed_transaction.b"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a4c2cfac7553688e32fa64b6f4464142a"></span>signed_transaction <code class="descname">sign_transaction</code><span class="sig-paren">(</span>signed_transaction <em>tx</em>, bool <em>broadcast</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api16sign_transactionE18signed_transactionb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Signs a transaction.</p>
+<p>Given a fully-formed transaction that is only lacking signatures, this signs the transaction with the necessary keys and optionally broadcasts the transaction <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the signed version of the transaction </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">tx</span></code>: the unsigned transaction </li>
+<li><code class="docutils literal notranslate"><span class="pre">broadcast</span></code>: true if you wish to broadcast the transaction </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api23get_prototype_operationE6string">
+<span id="_CPPv2N8graphene6wallet10wallet_api23get_prototype_operationE6string"></span><span id="graphene::wallet::wallet_api::get_prototype_operation__string"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1af52e5370f7895cb69d5f38427a11dbaf"></span>operation <code class="descname">get_prototype_operation</code><span class="sig-paren">(</span>string <em>operation_type</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api23get_prototype_operationE6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns an uninitialized object representing a given blockchain operation.</p>
+<p>This returns a default-initialized object of the given type; it can be used during early development of the wallet when we don’t yet have custom commands for creating all of the operations the blockchain supports.</p>
+<p>Any operation the blockchain supports can be created using the transaction builder’s <code class="docutils literal notranslate"><a class="reference internal" href="../wallet_api.html#classgraphene_1_1wallet_1_1wallet__api_1ab5cd568be3fd1c283e0ed2c1fd3c5469"><span class="std std-ref"><span class="pre">add_operation_to_builder_transaction()</span></span></a></code> , but to do that from the CLI you need to know what the JSON form of the operation looks like. This will give you a template you can fill in. It’s better than nothing.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>a default-constructed operation of the given type </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">operation_type</span></code>: the type of operation to return, must be one of the operations defined in <code class="docutils literal notranslate"><span class="pre">graphene/chain/operations.hpp</span></code> (e.g., “global_parameters_update_operation”) </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api24propose_parameter_changeERK6stringN2fc14time_point_secERK14variant_objectb">
+<span id="_CPPv2N8graphene6wallet10wallet_api24propose_parameter_changeERK6stringN2fc14time_point_secERK14variant_objectb"></span><span id="graphene::wallet::wallet_api::propose_parameter_change__stringCR.fc::time_point_sec.variant_objectCR.b"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a2238d380c7d5f2361533f31d996964b2"></span>signed_transaction <code class="descname">propose_parameter_change</code><span class="sig-paren">(</span><em class="property">const</em> string &amp;<em>proposing_account</em>, fc::time_point_sec <em>expiration_time</em>, <em class="property">const</em> variant_object &amp;<em>changed_values</em>, bool <em>broadcast</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api24propose_parameter_changeERK6stringN2fc14time_point_secERK14variant_objectb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates a transaction to propose a parameter change.</p>
+<p>Multiple parameters can be specified if an atomic change is desired.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the signed version of the transaction </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">proposing_account</span></code>: The account paying the fee to propose the tx </li>
+<li><code class="docutils literal notranslate"><span class="pre">expiration_time</span></code>: Timestamp specifying when the proposal will either take effect or expire. </li>
+<li><code class="docutils literal notranslate"><span class="pre">changed_values</span></code>: The values to change; all other chain parameters are filled in with default values </li>
+<li><code class="docutils literal notranslate"><span class="pre">broadcast</span></code>: true if you wish to broadcast the transaction </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api18propose_fee_changeERK6stringN2fc14time_point_secERK14variant_objectb">
+<span id="_CPPv2N8graphene6wallet10wallet_api18propose_fee_changeERK6stringN2fc14time_point_secERK14variant_objectb"></span><span id="graphene::wallet::wallet_api::propose_fee_change__stringCR.fc::time_point_sec.variant_objectCR.b"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a9716675c16f6bc9c35371e8f2b28ada4"></span>signed_transaction <code class="descname">propose_fee_change</code><span class="sig-paren">(</span><em class="property">const</em> string &amp;<em>proposing_account</em>, fc::time_point_sec <em>expiration_time</em>, <em class="property">const</em> variant_object &amp;<em>changed_values</em>, bool <em>broadcast</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api18propose_fee_changeERK6stringN2fc14time_point_secERK14variant_objectb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Propose a fee change.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the signed version of the transaction </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">proposing_account</span></code>: The account paying the fee to propose the tx </li>
+<li><code class="docutils literal notranslate"><span class="pre">expiration_time</span></code>: Timestamp specifying when the proposal will either take effect or expire. </li>
+<li><code class="docutils literal notranslate"><span class="pre">changed_values</span></code>: Map of operation type to new fee. Operations may be specified by name or ID. The “scale” key changes the scale. All other operations will maintain current values. </li>
+<li><code class="docutils literal notranslate"><span class="pre">broadcast</span></code>: true if you wish to broadcast the transaction </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api16approve_proposalERK6stringRK6stringRK14approval_deltab">
+<span id="_CPPv2N8graphene6wallet10wallet_api16approve_proposalERK6stringRK6stringRK14approval_deltab"></span><span id="graphene::wallet::wallet_api::approve_proposal__stringCR.stringCR.approval_deltaCR.b"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1a4d550262671c5d2a3ca8ea76b41722ca"></span>signed_transaction <code class="descname">approve_proposal</code><span class="sig-paren">(</span><em class="property">const</em> string &amp;<em>fee_paying_account</em>, <em class="property">const</em> string &amp;<em>proposal_id</em>, <em class="property">const</em> approval_delta &amp;<em>delta</em>, bool <em>broadcast</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api16approve_proposalERK6stringRK6stringRK14approval_deltab" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Approve or disapprove a proposal.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the signed version of the transaction </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">fee_paying_account</span></code>: The account paying the fee for the op. </li>
+<li><code class="docutils literal notranslate"><span class="pre">proposal_id</span></code>: The proposal to modify. </li>
+<li><code class="docutils literal notranslate"><span class="pre">delta</span></code>: Members contain approvals to create or remove. In JSON you can leave empty members undefined. </li>
+<li><code class="docutils literal notranslate"><span class="pre">broadcast</span></code>: true if you wish to broadcast the transaction </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet10wallet_api19blind_transfer_helpE6string6string6string6stringbb">
+<span id="_CPPv2N8graphene6wallet10wallet_api19blind_transfer_helpE6string6string6string6stringbb"></span><span id="graphene::wallet::wallet_api::blind_transfer_help__string.string.string.string.b.b"></span><span class="target" id="classgraphene_1_1wallet_1_1wallet__api_1afef588f960e80bfdc628a870206fbb7f"></span><a class="reference internal" href="#_CPPv3N8graphene6wallet18blind_confirmationE" title="graphene::wallet::blind_confirmation">blind_confirmation</a> <code class="descname">blind_transfer_help</code><span class="sig-paren">(</span>string <em>from_key_or_label</em>, string <em>to_key_or_label</em>, string <em>amount</em>, string <em>symbol</em>, bool <em>broadcast</em> = false, bool <em>to_temp</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet10wallet_api19blind_transfer_helpE6string6string6string6stringbb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Used to transfer from one set of blinded balances to another </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N8graphene6wallet11wallet_dataE">
+<span id="_CPPv2N8graphene6wallet11wallet_dataE"></span><span id="graphene::wallet::wallet_data"></span><span class="target" id="structgraphene_1_1wallet_1_1wallet__data"></span><em class="property">struct </em><code class="descname">wallet_data</code><a class="headerlink" href="#_CPPv3N8graphene6wallet11wallet_dataE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><em>#include &lt;wallet.hpp&gt;</em><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3NK8graphene6wallet11wallet_data14my_account_idsEv">
+<span id="_CPPv2NK8graphene6wallet11wallet_data14my_account_idsEv"></span><span id="graphene::wallet::wallet_data::my_account_idsC"></span><span class="target" id="structgraphene_1_1wallet_1_1wallet__data_1aa0cbf509666baf6dbda3a99a3f85bbb1"></span>vector&lt;object_id_type&gt; <code class="descname">my_account_ids</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK8graphene6wallet11wallet_data14my_account_idsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>IDs of all accounts in my_accounts </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet11wallet_data14update_accountERK14account_object">
+<span id="_CPPv2N8graphene6wallet11wallet_data14update_accountERK14account_object"></span><span id="graphene::wallet::wallet_data::update_account__account_objectCR"></span><span class="target" id="structgraphene_1_1wallet_1_1wallet__data_1a7e45dcef220b45e13f0918b1036cbf41"></span>bool <code class="descname">update_account</code><span class="sig-paren">(</span><em class="property">const</em> account_object &amp;<em>acct</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet11wallet_data14update_accountERK14account_object" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Add acct to my_accounts, or update it if it is already in my_accounts <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>true if the account was newly inserted; false if it was only updated </dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv3N8graphene6wallet11wallet_data8chain_idE">
+<span id="_CPPv2N8graphene6wallet11wallet_data8chain_idE"></span><span id="graphene::wallet::wallet_data::chain_id__chain_id_type"></span><span class="target" id="structgraphene_1_1wallet_1_1wallet__data_1a80262d508a2dba26f3229c779cff834a"></span>chain_id_type <code class="descname">chain_id</code><a class="headerlink" href="#_CPPv3N8graphene6wallet11wallet_data8chain_idE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Chain ID this wallet is used with </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N8graphene6wallet11wallet_data11cipher_keysE">
+<span id="_CPPv2N8graphene6wallet11wallet_data11cipher_keysE"></span><span id="graphene::wallet::wallet_data::cipher_keys__vector:c:"></span><span class="target" id="structgraphene_1_1wallet_1_1wallet__data_1aaf249a86a71ea8834adef4f556755f52"></span>vector&lt;char&gt; <code class="descname">cipher_keys</code><a class="headerlink" href="#_CPPv3N8graphene6wallet11wallet_data11cipher_keysE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>encrypted keys </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N8graphene6wallet11wallet_data10extra_keysE">
+<span id="_CPPv2N8graphene6wallet11wallet_data10extra_keysE"></span><span id="graphene::wallet::wallet_data::extra_keys__map:account_id_type.set:public_key_type::"></span><span class="target" id="structgraphene_1_1wallet_1_1wallet__data_1a5283ce0f34df2e4b30252645eefc9627"></span>map&lt;account_id_type, set&lt;public_key_type&gt;&gt; <code class="descname">extra_keys</code><a class="headerlink" href="#_CPPv3N8graphene6wallet11wallet_data10extra_keysE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>map an account to a set of extra keys that have been imported for that account </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="type">
+<dt id="_CPPv3N8graphene6wallet6detailE">
+<span id="_CPPv2N8graphene6wallet6detailE"></span><span id="graphene::wallet::detail"></span><span class="target" id="namespacegraphene_1_1wallet_1_1detail"></span><em class="property">namespace </em><code class="descname">detail</code><a class="headerlink" href="#_CPPv3N8graphene6wallet6detailE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet6detail8maybe_idERK6string">
+<span id="_CPPv2N8graphene6wallet6detail8maybe_idERK6string"></span><span id="graphene::wallet::detail::maybe_id__stringCR"></span><em class="property">template </em>&lt;<em class="property">class</em> T&gt;<br /><span class="target" id="namespacegraphene_1_1wallet_1_1detail_1a979ab353f66ec2473b4aa22897c4cfd7"></span>optional&lt;T&gt; <code class="descname">maybe_id</code><span class="sig-paren">(</span><em class="property">const</em> string &amp;<em>name_or_id</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet6detail8maybe_idERK6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet6detail20address_to_shorthashERK7address">
+<span id="_CPPv2N8graphene6wallet6detail20address_to_shorthashERK7address"></span><span id="graphene::wallet::detail::address_to_shorthash__addressCR"></span><span class="target" id="namespacegraphene_1_1wallet_1_1detail_1ab1919254d982c593f07ba455857a1cfc"></span>string <code class="descname">address_to_shorthash</code><span class="sig-paren">(</span><em class="property">const</em> address &amp;<em>addr</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet6detail20address_to_shorthashERK7address" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet6detail18derive_private_keyERKNSt6stringEi">
+<span id="_CPPv2N8graphene6wallet6detail18derive_private_keyERKNSt6stringEi"></span><span id="graphene::wallet::detail::derive_private_key__ssCR.i"></span><span class="target" id="namespacegraphene_1_1wallet_1_1detail_1a4a5667631b1d056590750526a0912fc6"></span>fc::ecc::private_key <code class="descname">derive_private_key</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>prefix_string</em>, int <em>sequence_number</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet6detail18derive_private_keyERKNSt6stringEi" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet6detail19normalize_brain_keyE6string">
+<span id="_CPPv2N8graphene6wallet6detail19normalize_brain_keyE6string"></span><span id="graphene::wallet::detail::normalize_brain_key__string"></span><span class="target" id="namespacegraphene_1_1wallet_1_1detail_1ab0dc05ce8662a76f8608d0a7adca5013"></span>string <code class="descname">normalize_brain_key</code><span class="sig-paren">(</span>string <em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet6detail19normalize_brain_keyE6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="type">
+<dt id="_CPPv3N8graphene6wallet4implE">
+<span id="_CPPv2N8graphene6wallet4implE"></span><span id="graphene::wallet::impl"></span><span class="target" id="namespacegraphene_1_1wallet_1_1impl"></span><em class="property">namespace </em><code class="descname">impl</code><a class="headerlink" href="#_CPPv3N8graphene6wallet4implE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="function">
+<dt id="_CPPv3N8graphene6wallet4impl10clean_nameERKNSt6stringE">
+<span id="_CPPv2N8graphene6wallet4impl10clean_nameERKNSt6stringE"></span><span id="graphene::wallet::impl::clean_name__ssCR"></span><span class="target" id="namespacegraphene_1_1wallet_1_1impl_1aec83796865d745f152820e2de0f82209"></span>std::string <code class="descname">clean_name</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8graphene6wallet4impl10clean_nameERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../bts_guide/tutorials/index.html" class="btn btn-neutral float-right" title="Developer Guide (Tutorials)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="chain.html" class="btn btn-neutral" title="6.2. Graphene::Chain" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright BitShares Blockchain Foundation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

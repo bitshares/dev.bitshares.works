@@ -1,0 +1,452 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Development Environments &mdash; BItShares Developers Portal  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="System Components Elements" href="../components/components.html" />
+    <link rel="prev" title="Introduction &amp; Architectures" href="architectures.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> BItShares Developers Portal
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="architectures.html">Introduction &amp; Architectures</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Development Environments</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#bitshares-code-and-files">BitShares Code and Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bitshares-core-projects-guide">BitShares Core: Projects Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#project-guide">Project Guide</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#bitshares-core-team">BitShares-Core (Team)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#bitshares-core-gitflow">BitShares Core: GitFlow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#purpose">Purpose</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#non-consensus-development-release-bugfix-workflows">Non-Consensus: Development / Release / Bugfix Workflows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#consensus-development-release-bugfix-workflows">Consensus: Development / Release / Bugfix Workflows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#goals-to-achieve">Goals To Achieve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#basic-rules">Basic Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-create-a-release">How To Create a Release</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-create-an-emergency-fix">How To Create an Emergency Fix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#emergency-fix-workflows">Emergency Fix Workflows</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../components/components.html">System Components Elements</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/installation.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/integration.html">Integration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/interaction.html">Blockchain Interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/testnets.html">Testnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/bsip.html">BitShares Improvement Proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supports_dev/supports.html">Support and Optimizations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/restrictions.html">1. API Access and Restrictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/calls.html">2. Available Calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/blockchain_api.html">3. Blockchain API(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/wallet_api.html">4. Wallet API - Calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/objects_ids.html">5. Objects and IDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/namespaces.html">6. Graphene - Namespaces</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../bts_guide/tutorials/index.html">Developer Guide (Tutorials)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bts_guide/index_faq.html">Frequently Asked Questions (FAQ)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references/info_comunities.html">BitShares Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/info_comunities.html#bitshares-blockchain">BitShares Blockchain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/tech_articles.html">Articles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/githubrepo.html">BitShares Repositories</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">BItShares Developers Portal</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Development Environments</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="development-environments">
+<h1>Development Environments<a class="headerlink" href="#development-environments" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title first">Table of Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#bitshares-code-and-files" id="id1">BitShares Code and Files</a></li>
+<li><a class="reference internal" href="#bitshares-core-projects-guide" id="id2">BitShares Core: Projects Guide</a><ul>
+<li><a class="reference internal" href="#project-guide" id="id3">Project Guide</a><ul>
+<li><a class="reference internal" href="#bitshares-core-team" id="id4">BitShares-Core (Team)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bitshares-core-gitflow" id="id5">BitShares Core: GitFlow</a><ul>
+<li><a class="reference internal" href="#purpose" id="id6">Purpose</a></li>
+<li><a class="reference internal" href="#non-consensus-development-release-bugfix-workflows" id="id7">Non-Consensus: Development / Release / Bugfix Workflows</a></li>
+<li><a class="reference internal" href="#consensus-development-release-bugfix-workflows" id="id8">Consensus: Development / Release / Bugfix Workflows</a></li>
+<li><a class="reference internal" href="#goals-to-achieve" id="id9">Goals To Achieve</a></li>
+<li><a class="reference internal" href="#basic-rules" id="id10">Basic Rules</a></li>
+<li><a class="reference internal" href="#how-to-create-a-release" id="id11">How To Create a Release</a></li>
+<li><a class="reference internal" href="#how-to-create-an-emergency-fix" id="id12">How To Create an Emergency Fix</a></li>
+<li><a class="reference internal" href="#emergency-fix-workflows" id="id13">Emergency Fix Workflows</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<hr class="docutils" />
+<p>BitShares offers you to install BitShares-Core into different platforms; <a class="reference internal" href="../development/installation/build_ubuntu.html#build-ubuntu"><span class="std std-ref">Linux:Ubuntu (x64)</span></a> , <a class="reference internal" href="../development/installation/build_osx.html#build-osx"><span class="std std-ref">OS X</span></a> , and <a class="reference internal" href="../development/installation/build_windows.html#build-windows"><span class="std std-ref">Windows</span></a>.  There are  dependencies to check when you download OpenSSL and  Boost. Please make sure which versions you downloaded.</p>
+<p>Also, if you are a Windows user, you have other two choices to install BitShares Core to your Windows (x64) Operation System.  One is <a class="reference internal" href="../development/installation/windows_cli_tool.html#cli-tool"><span class="std std-ref">CLI-Wallet tools for Windows (x64)</span></a> , another one is <a class="reference internal" href="../development/installation/wsl.html#build-wsl"><span class="std std-ref">Windows SubSystem for Linux (WSL)</span></a> .</p>
+<p>The CLI-wallet tools for Windows (x64) allows you to have CLI wallet without the BitShares Core installation. After you download the cli-wallet tools (zip file) and unzip it, you will find all files you need to run CLI wallet.</p>
+<p>Another option, Windows SubSystem for Linux (WSL).  This is for a developer who uses a Windows 10 (x64) Operation System and wants to build BitShares Core on Ubuntu.</p>
+<p>&gt; See <a class="reference internal" href="../development/apps/node.html#system-requirements-node"><span class="std std-ref">System Requirements</span></a> : (updated: 2018-07-02).</p>
+<hr class="docutils" />
+<div class="section" id="bitshares-code-and-files">
+<h2><a class="toc-backref" href="#id1">BitShares Code and Files</a><a class="headerlink" href="#bitshares-code-and-files" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Open Source program</li>
+<li>Language uses (mainly): BitShares-Core(C++), python</li>
+<li><dl class="first docutils">
+<dt><a class="reference external" href="https://github.com/bitshares">BitShares GitHub</a></dt>
+<dd><ul class="first last">
+<li><strong>BitShares-Core (C++)</strong> - BitShares Blockchain implementation and command-line interface.</li>
+<li><strong>Bitshares-FC</strong> - Fast-compiling C++ library</li>
+<li><strong>BitShares python</strong> - Fully featured client-side library for the BitShares Blockchain - written entirely in python.</li>
+<li><strong>BitShares-UI</strong> - Fully featured Graphical User Interface / Reference Wallet for the BitShares Blockchain.</li>
+<li><strong>BSIPs</strong> - BitShares Improvement Proposals and Protocols. These technical documents describe the process of updating and improving the BitShares blockchain and technical ecosystem.</li>
+<li><strong>BitSharesjs</strong> - JavaScript tools for BitShares Encryption and Serialization.</li>
+<li><strong>BitSharesjs-ws</strong> - Javascript websocket interface for Bitshares</li>
+<li>(more…)</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="bitshares-core-projects-guide">
+<h2><a class="toc-backref" href="#id2">BitShares Core: Projects Guide</a><a class="headerlink" href="#bitshares-core-projects-guide" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="project-guide">
+<h3><a class="toc-backref" href="#id3">Project Guide</a><a class="headerlink" href="#project-guide" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/bitshares/bitshares-core/wiki/Contribution-Guide">Contribution Guide [DRAFT]</a></li>
+<li><a class="reference external" href="https://github.com/bitshares/bitshares-core/projects/6">Contribution Guide Project</a></li>
+</ul>
+<div class="section" id="bitshares-core-team">
+<h4><a class="toc-backref" href="#id4">BitShares-Core (Team)</a><a class="headerlink" href="#bitshares-core-team" title="Permalink to this headline">¶</a></h4>
+<p>This is a team of developers who manage BitShares-Core code updates and handle the issues that are submitted by developers. The team creates a project plan of next release and delivers to the Bitshares community about the Project information.</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Roles</dt>
+<dd><ul class="first last">
+<li>improving</li>
+<li>maintaining</li>
+<li>upgrading protocol if needed</li>
+<li>making Project plans for the future release</li>
+<li>creating/ announcing  Release</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="bitshares-core-gitflow">
+<h2><a class="toc-backref" href="#id5">BitShares Core: GitFlow</a><a class="headerlink" href="#bitshares-core-gitflow" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="purpose">
+<h3><a class="toc-backref" href="#id6">Purpose</a><a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The purpose of this document is to describe and define how changes flow into our code and through the various stages of development until it finally goes into production.</li>
+<li>The general idea is based on <a class="reference external" href="https://datasift.github.io/gitflow/IntroducingGitFlow.html">git-flow</a></li>
+<li>For our purposes, the general concept behind gitflow has been extended to allow for these additional needs:</li>
+</ul>
+<ol class="arabic simple">
+<li>We have two different types of releases, mainnet and testnet, with a master-like branch for each one.</li>
+<li>We have to distinguish Consensus Impacting Changes (aka hardforks) from Non-Consensus Impacting Changes.</li>
+</ol>
+</div>
+<div class="section" id="non-consensus-development-release-bugfix-workflows">
+<h3><a class="toc-backref" href="#id7">Non-Consensus: Development / Release / Bugfix Workflows</a><a class="headerlink" href="#non-consensus-development-release-bugfix-workflows" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="intro\../../_images/bts-non-concensus.png"><img alt="BitShares" class="align-center" src="intro\../../_images/bts-non-concensus.png" style="width: 750px;" /></a>
+</div>
+<div class="section" id="consensus-development-release-bugfix-workflows">
+<h3><a class="toc-backref" href="#id8">Consensus: Development / Release / Bugfix Workflows</a><a class="headerlink" href="#consensus-development-release-bugfix-workflows" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="intro\../../_images/bts-concensus.png"><img alt="BitShares" class="align-center" src="intro\../../_images/bts-concensus.png" style="width: 750px;" /></a>
+</div>
+<div class="section" id="goals-to-achieve">
+<h3><a class="toc-backref" href="#id9">Goals To Achieve</a><a class="headerlink" href="#goals-to-achieve" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Maintain two independent release versions, testnet and mainnet.</li>
+<li>Decouple development from releases, i. e. maintain the ability to create emergency bugfixes for current release without bringing incomplete new features into production.</li>
+<li>Separate consensus-related changes from non-consensus-related changes.</li>
+<li>Keep development branches compatible with mainnet.</li>
+</ol>
+</div>
+<div class="section" id="basic-rules">
+<h3><a class="toc-backref" href="#id10">Basic Rules</a><a class="headerlink" href="#basic-rules" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Development always happens in private feature-branches. The only exception is a change that must be distinguished in the destination branch (typical example: hardfork date in testnet).</li>
+<li>Features are merged after they are reasonably complete, i. e. they come with unit tests that provide reasonable coverage and do not report any errors.</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>“Completed” features that are not consensus-related are merged into “develop”.</li>
+<li>“Completed” features that are consensus-related are merged into the “hardfork” branch, with a hardfork date in the far future.</li>
+<li>All merges into “develop” or “hardfork” are performed via github PR’s and require review and approval from core source (if the PR is created by a core dev at least one other core dev must review and approve).</li>
+<li>To maintain a clean history and make reviewing and merging easier, feature branches must be rebased onto current “develop” (or “hardfork”) before creating a PR.</li>
+<li>Merges are always done as real merges, not as fast-forwards, and not squashed.</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li>Core devs coordinate regular merges from “develop” into “hardfork”.</li>
+<li>Both “develop” and “hardfork” should always remain compatible with mainnet, i. e. a full replay must be possible.</li>
+</ol>
+</div>
+<div class="section" id="how-to-create-a-release">
+<h3><a class="toc-backref" href="#id11">How To Create a Release</a><a class="headerlink" href="#how-to-create-a-release" title="Permalink to this headline">¶</a></h3>
+<p>For a release,</p>
+<ol class="arabic simple" start="0">
+<li>Check whether need to bump DB_VERSION to force a replay after upgraded: if there is a data schema change, or logic change that affects historical data, the answer is yes. FC version usually has been bumped already during development, but it doesn’t harm if check again.</li>
+<li>A “release” branch is created based on “develop” or “hardfork”.</li>
+<li>The “release” branch is merged into “testnet”.</li>
+<li>For a hardfork release, the hardfork date is adapted directly on the testnet branch.</li>
+<li>The “testnet” branch is tagged as test-version.</li>
+<li>Bugfixes for the release are created on the “release” branch and merged into “testnet”. Additional test-versions are tagged as needed.</li>
+<li>After sufficient testing, the release must be approved. In the case of a hardfork release, witness approval is required.</li>
+<li>After approval, the mainnet hardfork date is decided and set in the “release” branch.</li>
+<li>The “release” branch is merged into “master”, and a version tag is created on “master”.</li>
+<li>The “release” branch is merged back into “develop” and “hardfork”.</li>
+<li>The “release” branch is merged into “testnet”. This will produce a merge conflict for the hardfork dates, which must be resolved without changing the testnet hardfork date.</li>
+<li>Update <cite>Doxyfile</cite> with the last version tag. Update online code documentation by using updated <cite>Doxyfile</cite> as config file in the master branch. Send pull request to <a class="reference external" href="https://github.com/bitshares/bitshares.github.io">https://github.com/bitshares/bitshares.github.io</a> with new content in html format.</li>
+<li>Update <a class="reference external" href="https://github.com/bitshares/bitshares.github.io/blob/master/_includes/download.html">download page of bitshares.org site</a></li>
+</ol>
+<p><strong>Note:</strong> Solving conflicts by github(web) will merge branches in unintended directions. Avoid solving this way, merge and resolve conflicts manually through the git command line. Conflicts generally occur when merging release to testnet.</p>
+<p><strong>Note 2:</strong> Follow command line github suggestion to resolve conflicts but at the end of the process you will not have permission to merge directly to <cite>testnet</cite>, never push the fix to <cite>release</cite>. Create a new branch and push there, then create a new pull request between <cite>testnet</cite> and <cite>new_branch</cite>, merge <cite>new_branch</cite> to <cite>testnet</cite> and <cite>release</cite> will be automatically added to the merge.</p>
+<p><strong>Note 3:</strong> When creating tag for testnet do it from the command line with <cite>git tag</cite>. Github don’t have the option to create a tag without a release.</p>
+<p><strong>Note 4:</strong> ~~the tag commit can be changed.~~ Don’t change tags on github. This is a source of confusion, and of irreproducible bug reports. Make new one is better (ex: test-2.0.180321b or wait 1 day).</p>
+<p><strong>Note 5:</strong> Do not mark releases as “pre release” unless there is a real new version coming immediately after. Never upgrade “pre release” to “release” as new emails to subscribers will not be sent when doing so.</p>
+</div>
+<div class="section" id="how-to-create-an-emergency-fix">
+<h3><a class="toc-backref" href="#id12">How To Create an Emergency Fix</a><a class="headerlink" href="#how-to-create-an-emergency-fix" title="Permalink to this headline">¶</a></h3>
+<p>An emergency fix may become necessary when a serious problem in mainnet is discovered. The goal here is to fix the problem as soon as possible, while keeping the risk for creating additional problems as low as possible.</p>
+<p>First of all, the problem must be analyzed and debugged. This happens, naturally, directly on the release version.</p>
+<p>Presumably the developer who creates the fix will work on his private master branch. That is OK. But for publishing the fix, the following steps should be taken:</p>
+</div>
+<div class="section" id="emergency-fix-workflows">
+<h3><a class="toc-backref" href="#id13">Emergency Fix Workflows</a><a class="headerlink" href="#emergency-fix-workflows" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="intro\../../_images/bts-emergency-fix.png"><img alt="BitShares" class="align-center" src="intro\../../_images/bts-emergency-fix.png" style="width: 750px;" /></a>
+<ol class="arabic simple">
+<li>The fix is applied to the version of the “release” branch that was merged into “master” when creating the broken release version.</li>
+<li>The “release” branch is merged into “master”, and a version tag is created on “master”.</li>
+<li>Witnesses update to the new version, and production continues.</li>
+<li>A unit test is created on “develop” that reproduces the problem.</li>
+<li>The “release” branch is merged into “develop”, and it is verified that the fix resolves the problem, by running the unit test.</li>
+<li>The “release” branch is merged into “hardfork” and “testnet”.</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../components/components.html" class="btn btn-neutral float-right" title="System Components Elements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="architectures.html" class="btn btn-neutral" title="Introduction &amp; Architectures" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright BitShares Blockchain Foundation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classgraphene_1_1app_1_1orders__api" kind="class" language="C++" prot="public">
+    <compoundname>graphene::app::orders_api</compoundname>
+    <includes refid="api_8hpp" local="no">api.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classgraphene_1_1app_1_1orders__api_1a6c967505a58b0d56ea6ac2ee28328d7f" prot="private" static="no" mutable="no">
+        <type><ref refid="classgraphene_1_1app_1_1application" kindref="compound">application</ref> &amp;</type>
+        <definition>application&amp; graphene::app::orders_api::_app</definition>
+        <argsstring></argsstring>
+        <name>_app</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="386" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="386" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgraphene_1_1app_1_1orders__api_1a1c1a0920781506af3b59128c6f8912aa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>graphene::app::orders_api::orders_api</definition>
+        <argsstring>(application &amp;app)</argsstring>
+        <name>orders_api</name>
+        <param>
+          <type><ref refid="classgraphene_1_1app_1_1application" kindref="compound">application</ref> &amp;</type>
+          <declname>app</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="360" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="360" bodyend="360"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1app_1_1orders__api_1ac03c7b822ceec55577ff9470b6a4ce3c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>flat_set&lt; uint16_t &gt;</type>
+        <definition>flat_set&lt; uint16_t &gt; graphene::app::orders_api::get_tracked_groups</definition>
+        <argsstring>() const</argsstring>
+        <name>get_tracked_groups</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get tracked groups configured by the server. <simplesect kind="return"><para>A list of numbers which indicate configured groups, of those, 1 means 0.01% diff on price. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="367" column="1" bodyfile="libraries/app/api.cpp" bodystart="602" bodyend="607"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1app_1_1orders__api_1a31bfe6b880c2598bdbcab2712e68d64b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>vector&lt; <ref refid="structgraphene_1_1app_1_1limit__order__group" kindref="compound">limit_order_group</ref> &gt;</type>
+        <definition>vector&lt; limit_order_group &gt; graphene::app::orders_api::get_grouped_limit_orders</definition>
+        <argsstring>(asset_id_type base_asset_id, asset_id_type quote_asset_id, uint16_t group, optional&lt; price &gt; start, uint32_t limit) const</argsstring>
+        <name>get_grouped_limit_orders</name>
+        <param>
+          <type><ref refid="namespacegraphene_1_1chain_1a8719a403aa47e9d369890c01d60d0bb2" kindref="member">asset_id_type</ref></type>
+          <declname>base_asset_id</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacegraphene_1_1chain_1a8719a403aa47e9d369890c01d60d0bb2" kindref="member">asset_id_type</ref></type>
+          <declname>quote_asset_id</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>group</declname>
+        </param>
+        <param>
+          <type>optional&lt; <ref refid="structgraphene_1_1chain_1_1price" kindref="compound">price</ref> &gt;</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>limit</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get grouped limit orders in given market.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>base_asset_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ID of asset being sold </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>quote_asset_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ID of asset being purchased </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>group</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maximum price diff within each order group, have to be one of configured values </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Optional price to indicate the first order group to retrieve </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>limit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maximum number of order groups to retrieve (must not exceed 101) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The grouped limit orders, ordered from best offered price to worst </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="379" column="1" bodyfile="libraries/app/api.cpp" bodystart="609" bodyend="635"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>the <ref refid="classgraphene_1_1app_1_1orders__api" kindref="compound">orders_api</ref> class exposes access to data processed with grouped orders plugin. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="libraries/app/include/graphene/app/api.hpp" line="358" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="357" bodyend="387"/>
+    <listofallmembers>
+      <member refid="classgraphene_1_1app_1_1orders__api_1a6c967505a58b0d56ea6ac2ee28328d7f" prot="private" virt="non-virtual"><scope>graphene::app::orders_api</scope><name>_app</name></member>
+      <member refid="classgraphene_1_1app_1_1orders__api_1a31bfe6b880c2598bdbcab2712e68d64b" prot="public" virt="non-virtual"><scope>graphene::app::orders_api</scope><name>get_grouped_limit_orders</name></member>
+      <member refid="classgraphene_1_1app_1_1orders__api_1ac03c7b822ceec55577ff9470b6a4ce3c" prot="public" virt="non-virtual"><scope>graphene::app::orders_api</scope><name>get_tracked_groups</name></member>
+      <member refid="classgraphene_1_1app_1_1orders__api_1a1c1a0920781506af3b59128c6f8912aa" prot="public" virt="non-virtual"><scope>graphene::app::orders_api</scope><name>orders_api</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

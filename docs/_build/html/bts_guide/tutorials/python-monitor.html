@@ -1,0 +1,306 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Monitoring Account Deposits with Python &mdash; BItShares Developers Portal  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BItShares Developers Portal
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/architectures.html">Introduction &amp; Architectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/environments.html">Development Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../components/components.html">System Components Elements</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../development/installation.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development/integration.html">Integration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development/interaction.html">Blockchain Interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development/testnets.html">Testnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development/bsip.html">BitShares Improvement Proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../supports_dev/supports.html">Support and Optimizations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/restrictions.html">1. API Access and Restrictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/calls.html">2. Available Calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/blockchain_api.html">3. Blockchain API(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/wallet_api.html">4. Wallet API - Calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/objects_ids.html">5. Objects and IDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/namespaces.html">6. Graphene - Namespaces</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Developer Guide (Tutorials)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_faq.html">Frequently Asked Questions (FAQ)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../references/info_comunities.html">BitShares Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references/info_comunities.html#bitshares-blockchain">BitShares Blockchain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references/tech_articles.html">Articles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references/githubrepo.html">BitShares Repositories</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BItShares Developers Portal</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Monitoring Account Deposits with Python</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="monitoring-account-deposits-with-python">
+<span id="monitoring-account-deposits-python"></span><h1>Monitoring Account Deposits with Python<a class="headerlink" href="#monitoring-account-deposits-with-python" title="Permalink to this headline">¶</a></h1>
+<p>This python library assists interfacing with a graphene-based network such as BitShares 2.0.</p>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title first">Table of Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#installation" id="id1">Installation</a></li>
+<li><a class="reference internal" href="#configuration" id="id2">Configuration</a></li>
+<li><a class="reference internal" href="#running" id="id3">Running</a></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="installation">
+<h2><a class="toc-backref" href="#id1">Installation</a><a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>A graphene Python 3.0 library can be installed by issuing</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git clone http://github.com/xeroc/python-graphenelib
+<span class="nb">cd</span> python-graphenelib
+easy_install-3.4 install autobahn
+python3 setup.py install --user
+</pre></div>
+</div>
+<p>As you can see, this library requires Python3 and will <strong>not</strong> work properly
+with Python2.</p>
+</div>
+<div class="section" id="configuration">
+<h2><a class="toc-backref" href="#id2">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<p>To make use of this library, we can instruct any full-node to send
+notifications for all incoming transactions for any account. Let’s discuss the
+following example script in more details:</p>
+<p>We first prepare our variables and import all required modules</p>
+<p>Define the <cite>accountID</cite> and the <cite>memo_wif_key</cite> in <cite>examples/monitor.py</cite>.
+The accountID can be obtained from the GUI wallet, or by issuing::</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_account</span> <span class="o">&lt;</span><span class="n">accountname</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>If the script exists abnormally, you can continue operations by setting
+<cite>last_op</cite> to the last operation id that you have captured before the
+abnormal exit.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The current implementation has a maxium history size of 100
+transaction. If you have missed more than 100 transaction with the
+current implementation, manual fixing is required.</p>
+</div>
+<p>Furthermore, in Graphene, memos are usually encrypted using a distinct memo
+key. That way, exposing the memo private key will only expose transaction memos
+(for that key) and not compromise any funds. It is thus safe to store the memo
+private key in 3rd party services and scripts. The memo public key can be
+obtained from the account settings or via command line::</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_account</span> <span class="o">&lt;</span><span class="n">myaccount</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>in the cli wallet. The corresponding private key can be obtain from::</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dump_private_keys</span>
+</pre></div>
+</div>
+<p>Note that the latter command exposes all private keys in clear-text wif.</p>
+</div>
+<div class="section" id="running">
+<h2><a class="toc-backref" href="#id3">Running</a><a class="headerlink" href="#running" title="Permalink to this headline">¶</a></h2>
+<p>The monitoring script can be executed via</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3 monitor.py
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright BitShares Blockchain Foundation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

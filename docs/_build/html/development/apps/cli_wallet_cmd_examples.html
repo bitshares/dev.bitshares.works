@@ -1,0 +1,435 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>A Collection of command lines - Node, Wallet, and Witness &mdash; BItShares Developers Portal  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BItShares Developers Portal
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/architectures.html">Introduction &amp; Architectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/environments.html">Development Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../components/components.html">System Components Elements</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integration.html">Integration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interaction.html">Blockchain Interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testnets.html">Testnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bsip.html">BitShares Improvement Proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../supports_dev/supports.html">Support and Optimizations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/restrictions.html">1. API Access and Restrictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/calls.html">2. Available Calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/blockchain_api.html">3. Blockchain API(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/wallet_api.html">4. Wallet API - Calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/objects_ids.html">5. Objects and IDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/namespaces.html">6. Graphene - Namespaces</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../bts_guide/tutorials/index.html">Developer Guide (Tutorials)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bts_guide/index_faq.html">Frequently Asked Questions (FAQ)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../references/info_comunities.html">BitShares Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references/info_comunities.html#bitshares-blockchain">BitShares Blockchain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references/tech_articles.html">Articles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references/githubrepo.html">BitShares Repositories</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BItShares Developers Portal</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>A Collection of command lines - Node, Wallet, and Witness</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="a-collection-of-command-lines-node-wallet-and-witness">
+<span id="cli-wallet-cmd-examples"></span><h1>A Collection of command lines - Node, Wallet, and Witness<a class="headerlink" href="#a-collection-of-command-lines-node-wallet-and-witness" title="Permalink to this headline">¶</a></h1>
+<p>This page is a collection of command lines to connect Node, Wallet, and Witness. You can compare their differences to understand the patterns and how they are used.</p>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title first">Table of Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#launch-the-full-node" id="id3">Launch the full node:</a></li>
+<li><a class="reference internal" href="#run-the-witness-as-a-node-in-the-network-localhost" id="id4">Run the witness as a node in the network (localhost):</a></li>
+<li><a class="reference internal" href="#run-the-witness-as-a-node-in-the-network" id="id5">Run the witness as a node in the network:</a></li>
+<li><a class="reference internal" href="#use-the-public-api-node" id="id6">Use the Public API node</a></li>
+<li><a class="reference internal" href="#public-testnet-how-to-create-connect-a-cli-wallet" id="id7">Public Testnet - how to create/connect a cli_wallet</a></li>
+<li><a class="reference internal" href="#private-testnet" id="id8">Private Testnet</a></li>
+<li><a class="reference internal" href="#general-network-and-wallet-configuration" id="id9">General Network and Wallet Configuration</a></li>
+<li><a class="reference internal" href="#secure-network-and-wallet" id="id10">Secure Network and Wallet</a></li>
+</ul>
+</div>
+<hr class="docutils" />
+<p><strong>Note:</strong> The <em>CLI client</em> is unable to run on its own (i.e. without being connected to the witness node). Successfully to run the CLI client…</p>
+<ul class="simple">
+<li>make sure you have uncommented this entry <cite>rpc-endpoint = 127.0.0.1:8090</cite> in the <cite>witness_node_data_dir/config.ini</cite> file.</li>
+<li>before you start the CLI client, you need to start the witness node (and wait a while till it’s up and running).</li>
+</ul>
+<p><strong>Note:</strong> After you start running the CLI client, you can issue any command available to the cli-wallet (Wallet API) or construct your own transaction manually.</p>
+<p><a href="#id1"><span class="problematic" id="id2">**</span></a>*
+&lt;E.g. 1: [(source)](../nodes_full_witness/full_nodes.md#full-nodes-witness-nodes)&gt;</p>
+<div class="section" id="launch-the-full-node">
+<h2><a class="toc-backref" href="#id3">Launch the full node:</a><a class="headerlink" href="#launch-the-full-node" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">programs</span><span class="o">/</span><span class="n">witness_node</span><span class="o">/</span><span class="n">witness_node</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Read about [witness_node: <strong>config.ini</strong> settings](../nodes_full_witness/full_nodes.md#how-to-launch-the-full-node).</li>
+</ul>
+<p>At this point, you can try queries to the blockchain. (i.e., Database APIs. <em>exclude wallet APIs</em>)</p>
+<p><strong>Note:</strong> A witness node is identical to a full node if no authorized block-signing private key is provided.</p>
+<hr class="docutils" />
+<p>&lt;E.g. 2 [(source)](../nodes_full_witness/active_witness.md#2-create-a-cli-wallet)&gt;</p>
+</div>
+<div class="section" id="run-the-witness-as-a-node-in-the-network-localhost">
+<h2><a class="toc-backref" href="#id4">Run the witness as a node in the network (localhost):</a><a class="headerlink" href="#run-the-witness-as-a-node-in-the-network-localhost" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">programs</span><span class="o">/</span><span class="n">witness_node</span><span class="o">/</span><span class="n">witness_node</span> <span class="o">--</span><span class="n">rpc</span><span class="o">-</span><span class="n">endpoint</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">8090</span>
+</pre></div>
+</div>
+<p><strong>Create a Wallet (2a)</strong>:</p>
+<p>This will open the port 8090 for local queries only.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">programs</span><span class="o">/</span><span class="n">cli_wallet</span><span class="o">/</span><span class="n">cli_wallet</span> <span class="o">-</span><span class="n">s</span> <span class="n">ws</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">8090</span>
+</pre></div>
+</div>
+<p><strong>Create a Wallet (2b)</strong>:</p>
+<p>This will open the port 8091 for HTTP-RPC requests and has the capabilities to handle accounts while the witness_node can only answer queries to the blockchain.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">programs</span><span class="o">/</span><span class="n">cli_wallet</span><span class="o">/</span><span class="n">cli_wallet</span> <span class="o">-</span><span class="n">s</span> <span class="n">ws</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">8090</span>
+                                <span class="o">-</span><span class="n">H</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">8091</span>
+</pre></div>
+</div>
+<p><strong>It is not recommended to publicly expose your wallet.</strong></p>
+<hr class="docutils" />
+<p>&lt;E.g. 3 [(source)](../nodes_full_witness/full_nodes.md#enabling-remote-procedure-calls-rpc)&gt;</p>
+</div>
+<div class="section" id="run-the-witness-as-a-node-in-the-network">
+<h2><a class="toc-backref" href="#id5">Run the witness as a node in the network:</a><a class="headerlink" href="#run-the-witness-as-a-node-in-the-network" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">programs</span><span class="o">/</span><span class="n">witness_node</span><span class="o">/</span><span class="n">witness_node</span> <span class="o">--</span><span class="n">rpc</span><span class="o">-</span><span class="n">endpoint</span><span class="o">=</span><span class="s2">&quot;0.0.0.0:8090&quot;</span>
+</pre></div>
+</div>
+<p>This will open port 8090 and make it available over the internet (unless you run behind a router/firewall).
+If you want it to be open for your machine only, replace 0.0.0.0 by localhost.</p>
+<hr class="docutils" />
+<p>&lt;E.g. 4&gt;</p>
+</div>
+<div class="section" id="use-the-public-api-node">
+<h2><a class="toc-backref" href="#id6">Use the Public API node</a><a class="headerlink" href="#use-the-public-api-node" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Here is the latest list of [Public Full Node](<a class="reference external" href="https://github.com/bitshares/bitshares-ui/blob/staging/app/api/apiConfig.js#L67">https://github.com/bitshares/bitshares-ui/blob/staging/app/api/apiConfig.js#L67</a>) information</li>
+</ul>
+<p><strong>Create a Wallet (4a)</strong>:</p>
+<p>This pattern uses the Public API node of <em>OpenLedger</em> and connect via secured websocket(wss) connection. Open the cli-wallet,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">programs</span><span class="o">/</span><span class="n">cli_wallet</span><span class="o">/</span><span class="n">cli_wallet</span> <span class="o">-</span><span class="n">s</span> <span class="n">wss</span><span class="p">:</span><span class="o">//</span><span class="n">bitshares</span><span class="o">.</span><span class="n">openledger</span><span class="o">.</span><span class="n">info</span><span class="o">/</span><span class="n">ws</span>
+</pre></div>
+</div>
+<p><strong>Create a Wallet (4b)</strong>:</p>
+<p>Cli-wallet Open a Remote Procedure Call (RPC) Port for Wallet Operation (spend, buy, sell…).</p>
+<p>You can choose between Websocket RPC or RPC-HTTP requests. You can also set both ports together (<em>below example</em>) and interface your application with it.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">programs</span><span class="o">/</span><span class="n">cli_wallet</span><span class="o">/</span><span class="n">cli_wallet</span> <span class="o">-</span><span class="n">s</span> <span class="n">wss</span><span class="p">:</span><span class="o">//</span><span class="n">bitshares</span><span class="o">.</span><span class="n">openledger</span><span class="o">.</span><span class="n">info</span><span class="o">/</span><span class="n">ws</span>
+                                 <span class="o">-</span><span class="n">H</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">8092</span>
+                                 <span class="o">-</span><span class="n">r</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">8093</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Websocket RPC via the <cite>-r</cite> parameter, and</li>
+<li>HTTP RPC via the <cite>-H</cite> parameter</li>
+</ul>
+<hr class="docutils" />
+<p>&lt;E.g. 5 [(source)](../testnets/public_testnet.md#4-connecting-a-cli-wallet)&gt;</p>
+</div>
+<div class="section" id="public-testnet-how-to-create-connect-a-cli-wallet">
+<h2><a class="toc-backref" href="#id7">Public Testnet - how to create/connect a cli_wallet</a><a class="headerlink" href="#public-testnet-how-to-create-connect-a-cli-wallet" title="Permalink to this headline">¶</a></h2>
+<p>In order to create a wallet (on Public Testnet), you must specify the previously setup server (e.g., <cite>-s ws://127.0.0.1:11011</cite>) with the witness node’s default access control settings.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">programs</span><span class="o">/</span><span class="n">cli_wallet</span><span class="o">/</span><span class="n">cli_wallet</span> <span class="o">--</span><span class="n">wallet</span><span class="o">-</span><span class="n">file</span> <span class="n">my</span><span class="o">-</span><span class="n">wallet</span><span class="o">.</span><span class="n">json</span>
+                                <span class="o">-</span><span class="n">s</span> <span class="n">ws</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">11011</span>
+                                <span class="o">-</span><span class="n">H</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">8090</span>
+                                <span class="o">-</span><span class="n">r</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">8099</span>
+</pre></div>
+</div>
+<p><strong>Note:</strong> The parameter <cite>-H</cite> is required so that we can interface with the cli-wallet via <cite>RPC-HTTP-JSON</cite>, later while <cite>-r</cite> will open a port for the websocket RPC.</p>
+<hr class="docutils" />
+<p>&lt;E.g. 6 [(source)](../testnets/private_testnet.md#10-creating-a-new-wallet)&gt;</p>
+</div>
+<div class="section" id="private-testnet">
+<h2><a class="toc-backref" href="#id8">Private Testnet</a><a class="headerlink" href="#private-testnet" title="Permalink to this headline">¶</a></h2>
+<p>This connects the cli client to your testnet witness node. Keep your witness node running and in another Command Prompt window run this command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">programs</span><span class="o">/</span><span class="n">cli_wallet</span><span class="o">/</span><span class="n">cli_wallet</span> <span class="o">--</span><span class="n">wallet</span><span class="o">-</span><span class="n">file</span><span class="o">=</span><span class="n">my</span><span class="o">-</span><span class="n">wallet</span><span class="o">.</span><span class="n">json</span>
+                    <span class="o">--</span><span class="n">chain</span><span class="o">-</span><span class="nb">id</span><span class="o">=</span><span class="mi">8</span><span class="n">b7bd36a146a03d0e5d0a971e286098f41230b209d96f92465cd62bd64294824</span>
+                <span class="o">--</span><span class="n">server</span><span class="o">-</span><span class="n">rpc</span><span class="o">-</span><span class="n">endpoint</span><span class="o">=</span><span class="n">ws</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">8090</span>
+</pre></div>
+</div>
+<p>Depending on the actual chain that you want to connect to your may need to specifiy –chain-id.</p>
+<p>(ref) [Creating a New Wallet](../testnets/private_testnet.md#10-creating-a-new-wallet) on Private Testnet</p>
+<hr class="docutils" />
+<p>&lt;E.g. 7 [(source)](../wallet/wallet_network.md#general-network-and-wallet-configuration)&gt;</p>
+</div>
+<div class="section" id="general-network-and-wallet-configuration">
+<h2><a class="toc-backref" href="#id9">General Network and Wallet Configuration</a><a class="headerlink" href="#general-network-and-wallet-configuration" title="Permalink to this headline">¶</a></h2>
+<p><strong>settings</strong></p>
+<ul class="simple">
+<li>Trusted Full Node:
+- extern: internet access <strong>required</strong>
+- intern: 192.168.0.100
+- port: 8090</li>
+<li>Wallet:
+- extern: <strong>no</strong> internet access required
+- intern: 192.168.0.102
+- port: 8092</li>
+</ul>
+<p><strong>Trusted Full Node</strong></p>
+<p>For the trusted full node, the default settings can be used. For later, we will need to open the RPC port and listen to an IP address to connect the wallet to.</p>
+<blockquote>
+<div>./programs/witness_node/witness_node –rpc-endpoint=”192.168.0.100:8090”</div></blockquote>
+<p><strong>Note:</strong> A witness node is identical to a full node if no authorized block-signing private key is provided.</p>
+<p><strong>Wallet</strong></p>
+<p>We open up a RPC-JSON-HTTP port to be able to interface with API requests. The wallet can be connected to the trusted node and listens for RPC requests on port <cite>8092</cite> with:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>./programs/cli_wallet/cli_wallet –server-rpc-endpoint=”ws://192.168.0.100:8090” </dt>
+<dd>–rpc-http-endpoint=”192.168.0.102:8092”</dd>
+</dl>
+</div></blockquote>
+<p><strong>Note:</strong> For customer withdrawals, we will interface to the wallet’s API using 192.168.0.102:8092.</p>
+<hr class="docutils" />
+<p>&lt;E.g. 8 [(source)](../wallet/wallet_network.md#secure-network-and-wallet-configuration)&gt;</p>
+</div>
+<div class="section" id="secure-network-and-wallet">
+<h2><a class="toc-backref" href="#id10">Secure Network and Wallet</a><a class="headerlink" href="#secure-network-and-wallet" title="Permalink to this headline">¶</a></h2>
+<p><strong>settings</strong></p>
+<ul class="simple">
+<li>Trusted Full Node:
+- extern: internet access <strong>required</strong>
+- intern: 192.168.0.100
+- port: 8090</li>
+<li>Delayed Full Node:
+- extern: <strong>no</strong> internet access required
+- intern: 192.168.0.101
+- port: 8090</li>
+<li>Wallet:
+- extern: <strong>no</strong> internet access required
+- intern: 192.168.0.102
+- port: 8092</li>
+</ul>
+<p><strong>Trusted Full Node</strong></p>
+<p>For the trusted full node, the default settings can be used. For later, we will need to open the RPC port and listen to an IP address to connect the delayed full node to.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">programs</span><span class="o">/</span><span class="n">witness_node</span><span class="o">/</span><span class="n">witness_node</span> <span class="o">--</span><span class="n">rpc</span><span class="o">-</span><span class="n">endpoint</span><span class="o">=</span><span class="s2">&quot;192.168.0.100:8090&quot;</span>
+</pre></div>
+</div>
+<p><strong>Delayed Full Node</strong></p>
+<p>The delayed full node will need the IP address and port of the p2p-endpoint from the trusted full node and the number of blocks that should be delayed. We also need to open the RPC/Websocket port (to the local network!) so that we can interface using RPC-JSON calls.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">programs</span><span class="o">/</span><span class="n">witness_node</span><span class="o">/</span><span class="n">witness_node</span> <span class="o">--</span><span class="n">trusted</span><span class="o">-</span><span class="n">node</span><span class="o">=</span><span class="s2">&quot;192.168.0.100:8090&quot;</span> \
+                                    <span class="o">--</span><span class="n">rpc</span><span class="o">-</span><span class="n">endpoint</span><span class="o">=</span><span class="s2">&quot;192.168.0.101:8090&quot;</span>
+                                    <span class="o">-</span><span class="n">s</span> <span class="s2">&quot;0.0.0.0:0&quot;</span> \
+                                    <span class="o">--</span><span class="n">p2p</span><span class="o">-</span><span class="n">endpoint</span><span class="o">=</span><span class="s2">&quot;0.0.0.0:0&quot;</span> \
+                                    <span class="o">--</span><span class="n">seed</span><span class="o">-</span><span class="n">nodes</span> <span class="s2">&quot;[]&quot;</span>
+</pre></div>
+</div>
+<p>We could now connect via RPC:</p>
+<ul class="simple">
+<li><cite>192.168.0.100:8090</cite> : The trusted full node exposed to the internet</li>
+<li><cite>192.168.0.101:8090</cite> : The delayed full node <strong>not</strong> exposed to the internet</li>
+</ul>
+<p><strong>Note:</strong> For security reasons, an exchange should only interface with the delayed full node.</p>
+<p>For obvious reasons, the trusted full node should be running before attempting to start the delayed full node.
+For customer deposits, we will interface to the delayed node’s API using 192.168.0.101:8090.</p>
+<p><strong>Wallet</strong></p>
+<p>We open up a RPC-JSON-HTTP port to be able to interface with API requests. The wallet can be connected to the trusted node and listens for RPC requests on port <cite>8092</cite> with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">programs</span><span class="o">/</span><span class="n">cli_wallet</span><span class="o">/</span><span class="n">cli_wallet</span> <span class="o">--</span><span class="n">server</span><span class="o">-</span><span class="n">rpc</span><span class="o">-</span><span class="n">endpoint</span><span class="o">=</span><span class="s2">&quot;ws://192.168.0.100:8090&quot;</span> \
+                                <span class="o">--</span><span class="n">rpc</span><span class="o">-</span><span class="n">http</span><span class="o">-</span><span class="n">endpoint</span><span class="o">=</span><span class="s2">&quot;192.168.0.102:8092&quot;</span>
+</pre></div>
+</div>
+<p><strong>Note:</strong> For security reasons, the wallet should only listen to localhost or the local network and should NEVER be exposed to the internet.</p>
+<p>For customer withdrawals, we will interface to the wallet’s API using 192.168.0.102:8092</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright BitShares Blockchain Foundation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

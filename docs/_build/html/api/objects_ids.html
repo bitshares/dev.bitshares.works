@@ -1,0 +1,670 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>5. Objects and IDs &mdash; BItShares Developers Portal  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="6. Graphene - Namespaces" href="namespaces.html" />
+    <link rel="prev" title="4. Wallet API - Calls" href="wallet_api.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> BItShares Developers Portal
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/architectures.html">Introduction &amp; Architectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/environments.html">Development Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../components/components.html">System Components Elements</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/installation.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/integration.html">Integration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/interaction.html">Blockchain Interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/testnets.html">Testnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/bsip.html">BitShares Improvement Proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supports_dev/supports.html">Support and Optimizations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="restrictions.html">1. API Access and Restrictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calls.html">2. Available Calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blockchain_api.html">3. Blockchain API(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wallet_api.html">4. Wallet API - Calls</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">5. Objects and IDs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#objects">5.1. Objects</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#list-of-commonly-used-objects">5.1.1. List of commonly used objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#examples">5.1.2. Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#examples-accounts">5.1.3. Examples - Accounts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#definitions">5.2. Definitions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#protocol-space-1-x-x">5.2.1. Protocol Space (1.x.x)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#implementation-space-2-x-x">5.2.2. Implementation Space (2.x.x)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="namespaces.html">6. Graphene - Namespaces</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../bts_guide/tutorials/index.html">Developer Guide (Tutorials)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bts_guide/index_faq.html">Frequently Asked Questions (FAQ)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references/info_comunities.html">BitShares Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/info_comunities.html#bitshares-blockchain">BitShares Blockchain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/tech_articles.html">Articles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/githubrepo.html">BitShares Repositories</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">BItShares Developers Portal</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>5. Objects and IDs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="objects-and-ids">
+<span id="objects-ids"></span><h1>5. Objects and IDs<a class="headerlink" href="#objects-and-ids" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title first">Table of Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#objects" id="id1">Objects</a><ul>
+<li><a class="reference internal" href="#list-of-commonly-used-objects" id="id2">List of commonly used objects</a></li>
+<li><a class="reference internal" href="#examples" id="id3">Examples</a></li>
+<li><a class="reference internal" href="#examples-accounts" id="id4">Examples - Accounts</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#definitions" id="id5">Definitions</a><ul>
+<li><a class="reference internal" href="#protocol-space-1-x-x" id="id6">Protocol Space (1.x.x)</a></li>
+<li><a class="reference internal" href="#implementation-space-2-x-x" id="id7">Implementation Space (2.x.x)</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<hr class="docutils" />
+<p>In contrast to most cryptocurrency wallets, the BitShares 2.0 has a different
+model to represent the blockchain, its transactions and accounts. This chapter
+wants to given an introduction to the concepts of <em>objects</em> as they are used by
+the BitShares 2.0 client. Furthermore, we will briefly introduce the API and
+show how to subscribe to object changes (such as new blocks or incoming
+deposits). Afterwards, we will show how exchange may monitor their accounts and
+credit incoming funds to their corresponding users.</p>
+<div class="section" id="objects">
+<h2><a class="toc-backref" href="#id1">5.1. Objects</a><a class="headerlink" href="#objects" title="Permalink to this headline">¶</a></h2>
+<p>On the BitShares blockchains there are no addresses, but objects identified by a
+unique <em>id</em>, an <em>type</em> and a <em>space</em> in the form::</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">space</span><span class="o">.</span><span class="n">type</span><span class="o">.</span><span class="n">id</span>
+</pre></div>
+</div>
+<div class="section" id="list-of-commonly-used-objects">
+<h3><a class="toc-backref" href="#id2">5.1.1. List of commonly used objects</a><a class="headerlink" href="#list-of-commonly-used-objects" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">ID</th>
+<th class="head">Object Type</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1.1.x</td>
+<td>base object</td>
+</tr>
+<tr class="row-odd"><td>1.2.x</td>
+<td>account object</td>
+</tr>
+<tr class="row-even"><td>1.3.x</td>
+<td>asset object</td>
+</tr>
+<tr class="row-odd"><td>1.4.x</td>
+<td>force settlement object</td>
+</tr>
+<tr class="row-even"><td>1.5.x</td>
+<td>committee member object</td>
+</tr>
+<tr class="row-odd"><td>1.6.x</td>
+<td>witness object</td>
+</tr>
+<tr class="row-even"><td>1.7.x</td>
+<td>limit order object</td>
+</tr>
+<tr class="row-odd"><td>1.8.x</td>
+<td>call order object</td>
+</tr>
+<tr class="row-even"><td>1.9.x</td>
+<td>custom object</td>
+</tr>
+<tr class="row-odd"><td>1.10.x</td>
+<td>proposal object</td>
+</tr>
+<tr class="row-even"><td>1.11.x</td>
+<td>operation history object</td>
+</tr>
+<tr class="row-odd"><td>1.12.x</td>
+<td>withdraw permission object</td>
+</tr>
+<tr class="row-even"><td>1.13.x</td>
+<td>vesting balance object</td>
+</tr>
+<tr class="row-odd"><td>1.14.x</td>
+<td>worker object</td>
+</tr>
+<tr class="row-even"><td>1.15.x</td>
+<td>balance object</td>
+</tr>
+<tr class="row-odd"><td>2.0.x</td>
+<td>global_property_object</td>
+</tr>
+<tr class="row-even"><td>2.1.x</td>
+<td>dynamic_global_property_object</td>
+</tr>
+<tr class="row-odd"><td>2.3.x</td>
+<td>asset_dynamic_data</td>
+</tr>
+<tr class="row-even"><td>2.4.x</td>
+<td>asset_bitasset_data</td>
+</tr>
+<tr class="row-odd"><td>2.5.x</td>
+<td>account_balance_object</td>
+</tr>
+<tr class="row-even"><td>2.6.x</td>
+<td>account_statistics_object</td>
+</tr>
+<tr class="row-odd"><td>2.7.x</td>
+<td>transaction_object</td>
+</tr>
+<tr class="row-even"><td>2.8.x</td>
+<td>block_summary_object</td>
+</tr>
+<tr class="row-odd"><td>2.9.x</td>
+<td>account_transaction_history_object</td>
+</tr>
+<tr class="row-even"><td>2.10.x</td>
+<td>blinded_balance_object</td>
+</tr>
+<tr class="row-odd"><td>2.11.x</td>
+<td>chain_property_object</td>
+</tr>
+<tr class="row-even"><td>2.12.x</td>
+<td>witness_schedule_object</td>
+</tr>
+<tr class="row-odd"><td>2.13.x</td>
+<td>budget_record_object</td>
+</tr>
+<tr class="row-even"><td>2.14.x</td>
+<td>special_authority_object</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="examples">
+<h3><a class="toc-backref" href="#id3">5.1.2. Examples</a><a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
+<p>To get a feeling about what these objects do, we recommend to obtain these
+exemplary objects.</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">2.0.0</span></code> (global blockchain parameters)</li>
+<li><code class="docutils literal notranslate"><span class="pre">2.1.0</span></code> (current blockchain data)</li>
+<li><code class="docutils literal notranslate"><span class="pre">1.2.0</span></code> (committee-account details)</li>
+<li><code class="docutils literal notranslate"><span class="pre">1.3.0</span></code> (core asset details)</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="examples-accounts">
+<h3><a class="toc-backref" href="#id4">5.1.3. Examples - Accounts</a><a class="headerlink" href="#examples-accounts" title="Permalink to this headline">¶</a></h3>
+<p>The BitShares blockchain users are requires to register each account with a unique username and a public key on the blockchain. The blockchain assigns an incremental user id and offers to resolve the name-to-id pair.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="81%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Object ID</th>
+<th class="head">Translates to</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>2.6.80</td>
+<td># implementation space / account-balance / id: 80</td>
+</tr>
+<tr class="row-odd"><td>2.7.80</td>
+<td># implementation space / account-statistics / id: 80</td>
+</tr>
+<tr class="row-even"><td>2.10.80</td>
+<td># implementation space / account-transactions / id: 80</td>
+</tr>
+<tr class="row-odd"><td>2.8.80</td>
+<td># implementation space / transactions / id: 80</td>
+</tr>
+<tr class="row-even"><td>2.9.80</td>
+<td># implementation space / block-summary / id: 80</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>A programmatic description of all fields can be found in the <a class="reference external" href="https://github.com/bitshares/bitshares-core/blob/master/libraries/chain/protocol/types.cpp">sources</a></li>
+</ul>
+<hr class="docutils" />
+<p><strong>Example Call and a result: account object (id: 1.2.x)</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unlocked</span> <span class="o">&gt;&gt;&gt;</span> <span class="n">get_account_id</span> <span class="s2">&quot;user123&quot;</span>
+
+<span class="n">get_account_id</span> <span class="s2">&quot;user123&quot;</span>
+<span class="s2">&quot;1.2.539269&quot;</span>
+<span class="n">unlocked</span> <span class="o">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p><strong>Example Call and a result: asset object (id: 1.3.x)</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unlocked</span> <span class="o">&gt;&gt;&gt;</span> <span class="n">list_assets</span> <span class="s2">&quot;BTS&quot;</span> <span class="s2">&quot;2&quot;</span>
+
+<span class="n">list_assets</span> <span class="s2">&quot;BTS&quot;</span> <span class="s2">&quot;2&quot;</span>
+<span class="p">[{</span>
+                <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1.3.0&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;symbol&quot;</span><span class="p">:</span> <span class="s2">&quot;BTS&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;precision&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+                <span class="s2">&quot;issuer&quot;</span><span class="p">:</span> <span class="s2">&quot;1.2.3&quot;</span><span class="p">,</span>
+
+        <span class="o">....</span>
+                <span class="s2">&quot;dynamic_asset_data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;2.3.368&quot;</span>
+        <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="definitions">
+<h2><a class="toc-backref" href="#id5">5.2. Definitions</a><a class="headerlink" href="#definitions" title="Permalink to this headline">¶</a></h2>
+<p>For advanced users that want to deal with the C++ code of graphene, we here
+list the definition of <code class="docutils literal notranslate"><span class="pre">object_type</span></code> and <code class="docutils literal notranslate"><span class="pre">impl_object_type</span></code>:</p>
+<div class="section" id="protocol-space-1-x-x">
+<h3><a class="toc-backref" href="#id6">5.2.1. Protocol Space (1.x.x)</a><a class="headerlink" href="#protocol-space-1-x-x" title="Permalink to this headline">¶</a></h3>
+<dl class="type">
+<dt id="_CPPv3N8graphene5chain11object_typeE">
+<span id="_CPPv2N8graphene5chain11object_typeE"></span><span id="graphene::chain::object_type"></span><span class="target" id="namespacegraphene_1_1chain_1aa6e32c79e2b22c998deddedcb696633d"></span><em class="property">enum </em><code class="descclassname">graphene::<a class="reference internal" href="namespaces/chain.html#_CPPv3N8graphene5chainE" title="graphene::chain">chain</a><code class="descclassname">::</code></code><code class="descname">object_type</code><br /></dt>
+<dd><p>List all object types from all namespaces here so they can be easily reflected and displayed in debug output. If a 3rd party wants to extend the core code then they will have to change the packed_object::type field from enum_type to uint16 to avoid warnings when converting packed_objects to/from json. </p>
+<p><em>Values:</em></p>
+<dl class="enumerator">
+<dt id="_CPPv3N8graphene5chain16null_object_typeE">
+<span id="_CPPv2N8graphene5chain16null_object_typeE"></span><span class="target" id="namespacegraphene_1_1chain_1aa6e32c79e2b22c998deddedcb696633da6cf1a67aee814a4f80eeb903cbddeec1"></span><code class="descname">null_object_type</code><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N8graphene5chain16base_object_typeE">
+<span id="_CPPv2N8graphene5chain16base_object_typeE"></span><span class="target" id="namespacegraphene_1_1chain_1aa6e32c79e2b22c998deddedcb696633da218bdd07cd77f2b0715276fa6af58e49"></span><code class="descname">base_object_type</code><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N8graphene5chain19account_object_typeE">
+<span id="_CPPv2N8graphene5chain19account_object_typeE"></span><span class="target" id="namespacegraphene_1_1chain_1aa6e32c79e2b22c998deddedcb696633da9a9e8ad687ba16618f0c4cd89fd3e3de"></span><code class="descname">account_object_type</code><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N8graphene5chain17asset_object_typeE">
+<span id="_CPPv2N8graphene5chain17asset_object_typeE"></span><span class="target" id="namespacegraphene_1_1chain_1aa6e32c79e2b22c998deddedcb696633daa3ebbda158af342607bd72ee57e81788"></span><code class="descname">asset_object_type</code><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N8graphene5chain28force_settlement_object_typeE">
+<span id="_CPPv2N8graphene5chain28force_settlement_object_typeE"></span><span class="target" id="namespacegraphene_1_1chain_1aa6e32c79e2b22c998deddedcb696633da7a6833972e5e0e7ef4607a5d31b58c47"></span><code class="descname">force_settlement_object_type</code><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N8graphene5chain28committee_member_object_typeE">
+<span id="_CPPv2N8graphene5chain28committee_member_object_typeE"></span><span class="target" id="namespacegraphene_1_1chain_1aa6e32c79e2b22c998deddedcb696633da98d1de42a5d75aecbbad0b4af247da0c"></span><code class="descname">committee_member_object_type</code><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N8graphene5chain19witness_object_typeE">
+<span id="_CPPv2N8graphene5chain19witness_object_typeE"></span><span class="target" id="namespacegraphene_1_1chain_1aa6e32c79e2b22c998deddedcb696633da890c9fa15df9768e291236294ade6862"></span><code class="descname">witness_object_type</code><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N8graphene5chain23limit_order_object_typeE">
+<span id="_CPPv2N8graphene5chain23limit_order_object_typeE"></span><span class="target" id="namespacegraphene_1_1chain_1aa6e32c79e2b22c998deddedcb696633da3e9e54544b9f7e7b5343f6a7d95ea593"></span><code class="descname">limit_order_object_type</code><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N8graphene5chain22call_order_object_typeE">
+<span id="_CPPv2N8graphene5chain22call_order_object_typeE"></span><span class="target" id="namespacegraphene_1_1chain_1aa6e32c79e2b22c998deddedcb696633da57ab9805df6108570f8928ea9b366a28"></span><code class="descname">call_order_object_type</code><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N8graphene5chain18custom_object_typeE">
+<span id="_CPPv2N8graphene5chain18custom_object_typeE"></span><span class="target" id="namespacegraphene_1_1chain_1aa6e32c79e2b22c998deddedcb696633da99446062de32f7157a2dddcac9bca654"></span><code class="descname">custom_object_type</code><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N8graphene5chain20proposal_object_typeE">
+<span id="_CPPv2N8graphene5chain20proposal_object_typeE"></span><span class="target" id="namespacegraphene_1_1chain_1aa6e32c79e2b22c998deddedcb696633da73d5f9d5fe8289ffcf39020fe2eb60b1"></span><code class="descname">proposal_object_type</code><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N8graphene5chain29operation_history_object_typeE">
+<span id="_CPPv2N8graphene5chain29operation_history_object_typeE"></span><span class="target" id="namespacegraphene_1_1chain_1aa6e32c79e2b22c998deddedcb696633da43893adce4b622dcc95bcd89485c5600"></span><code class="descname">operation_history_object_type</code><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N8graphene5chain31withdraw_permission_object_typeE">
+<span id="_CPPv2N8graphene5chain31withdraw_permission_object_typeE"></span><span class="target" id="namespacegraphene_1_1chain_1aa6e32c79e2b22c998deddedcb696633da3016c2ee306ae07ba695f2ba94c23a1d"></span><code class="descname">withdraw_permission_object_type</code><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N8graphene5chain27vesting_balance_object_typeE">
+<span id="_CPPv2N8graphene5chain27vesting_balance_object_typeE"></span><span class="target" id="namespacegraphene_1_1chain_1aa6e32c79e2b22c998deddedcb696633da910ef1b8a52e0047fb3692cdaee9f9ee"></span><code class="descname">vesting_balance_object_type</code><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N8graphene5chain18worker_object_typeE">
+<span id="_CPPv2N8graphene5chain18worker_object_typeE"></span><span class="target" id="namespacegraphene_1_1chain_1aa6e32c79e2b22c998deddedcb696633da139435e4b7046de50fa6d55bc73676d6"></span><code class="descname">worker_object_type</code><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N8graphene5chain19balance_object_typeE">
+<span id="_CPPv2N8graphene5chain19balance_object_typeE"></span><span class="target" id="namespacegraphene_1_1chain_1aa6e32c79e2b22c998deddedcb696633da87cfe643d795d2b468fbc0bbf7b5d4ec"></span><code class="descname">balance_object_type</code><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N8graphene5chain17OBJECT_TYPE_COUNTE">
+<span id="_CPPv2N8graphene5chain17OBJECT_TYPE_COUNTE"></span><span class="target" id="namespacegraphene_1_1chain_1aa6e32c79e2b22c998deddedcb696633da53c3457bf181b82f4ce82b2cffe2a192"></span><code class="descname">OBJECT_TYPE_COUNT</code><br /></dt>
+<dd><p>Sentry value which contains the number of different object types. </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="implementation-space-2-x-x">
+<h3><a class="toc-backref" href="#id7">5.2.2. Implementation Space (2.x.x)</a><a class="headerlink" href="#implementation-space-2-x-x" title="Permalink to this headline">¶</a></h3>
+<dl class="type">
+<dt id="_CPPv3N8graphene5chain16impl_object_typeE">
+<span id="_CPPv2N8graphene5chain16impl_object_typeE"></span><span id="graphene::chain::impl_object_type"></span><span class="target" id="namespacegraphene_1_1chain_1ad3bef2f100b722a6c30fada38f6dcd73"></span><em class="property">enum </em><code class="descclassname">graphene::<a class="reference internal" href="namespaces/chain.html#_CPPv3N8graphene5chainE" title="graphene::chain">chain</a><code class="descclassname">::</code></code><code class="descname">impl_object_type</code><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="enumerator">
+<dt id="_CPPv3N8graphene5chain32impl_global_property_object_typeE">
+<span id="_CPPv2N8graphene5chain32impl_global_property_object_typeE"></span><span class="target" id="namespacegraphene_1_1chain_1ad3bef2f100b722a6c30fada38f6dcd73aa45da32677590afcdc9bb25ba6d6e51b"></span><code class="descname">impl_global_property_object_type</code><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N8graphene5chain40impl_dynamic_global_property_object_typeE">
+<span id="_CPPv2N8graphene5chain40impl_dynamic_global_property_object_typeE"></span><span class="target" id="namespacegraphene_1_1chain_1ad3bef2f100b722a6c30fada38f6dcd73a837a7ebbc012e3b81e667171e7c9b5a8"></span><code class="descname">impl_dynamic_global_property_object_type</code><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N8graphene5chain26impl_reserved0_object_typeE">
+<span id="_CPPv2N8graphene5chain26impl_reserved0_object_typeE"></span><span class="target" id="namespacegraphene_1_1chain_1ad3bef2f100b722a6c30fada38f6dcd73acbc380eaf3696f2d4b0808d12b8e4cb1"></span><code class="descname">impl_reserved0_object_type</code><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N8graphene5chain28impl_asset_dynamic_data_typeE">
+<span id="_CPPv2N8graphene5chain28impl_asset_dynamic_data_typeE"></span><span class="target" id="namespacegraphene_1_1chain_1ad3bef2f100b722a6c30fada38f6dcd73aad5e8a5f2ecdd9e3efe626fa48c549fb"></span><code class="descname">impl_asset_dynamic_data_type</code><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N8graphene5chain29impl_asset_bitasset_data_typeE">
+<span id="_CPPv2N8graphene5chain29impl_asset_bitasset_data_typeE"></span><span class="target" id="namespacegraphene_1_1chain_1ad3bef2f100b722a6c30fada38f6dcd73ac0f8ddafa1862266e201e2fb7e6759d1"></span><code class="descname">impl_asset_bitasset_data_type</code><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N8graphene5chain32impl_account_balance_object_typeE">
+<span id="_CPPv2N8graphene5chain32impl_account_balance_object_typeE"></span><span class="target" id="namespacegraphene_1_1chain_1ad3bef2f100b722a6c30fada38f6dcd73a2bc50158441fc95b231f9d1d2f9b6c89"></span><code class="descname">impl_account_balance_object_type</code><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N8graphene5chain35impl_account_statistics_object_typeE">
+<span id="_CPPv2N8graphene5chain35impl_account_statistics_object_typeE"></span><span class="target" id="namespacegraphene_1_1chain_1ad3bef2f100b722a6c30fada38f6dcd73aac0cb1b1784f0ee58ae34a1c2b3f3df1"></span><code class="descname">impl_account_statistics_object_type</code><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N8graphene5chain28impl_transaction_object_typeE">
+<span id="_CPPv2N8graphene5chain28impl_transaction_object_typeE"></span><span class="target" id="namespacegraphene_1_1chain_1ad3bef2f100b722a6c30fada38f6dcd73a368561f04146a9649902faa8b016b5aa"></span><code class="descname">impl_transaction_object_type</code><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N8graphene5chain30impl_block_summary_object_typeE">
+<span id="_CPPv2N8graphene5chain30impl_block_summary_object_typeE"></span><span class="target" id="namespacegraphene_1_1chain_1ad3bef2f100b722a6c30fada38f6dcd73a650137ba77eb1c6a7bd45de1f8d34bc1"></span><code class="descname">impl_block_summary_object_type</code><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N8graphene5chain44impl_account_transaction_history_object_typeE">
+<span id="_CPPv2N8graphene5chain44impl_account_transaction_history_object_typeE"></span><span class="target" id="namespacegraphene_1_1chain_1ad3bef2f100b722a6c30fada38f6dcd73a273d6d1dd112904e2a6a24e4a8772b12"></span><code class="descname">impl_account_transaction_history_object_type</code><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N8graphene5chain32impl_blinded_balance_object_typeE">
+<span id="_CPPv2N8graphene5chain32impl_blinded_balance_object_typeE"></span><span class="target" id="namespacegraphene_1_1chain_1ad3bef2f100b722a6c30fada38f6dcd73a2277aa0cdb0fda1e3f2c7e6d1cafb7c0"></span><code class="descname">impl_blinded_balance_object_type</code><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N8graphene5chain31impl_chain_property_object_typeE">
+<span id="_CPPv2N8graphene5chain31impl_chain_property_object_typeE"></span><span class="target" id="namespacegraphene_1_1chain_1ad3bef2f100b722a6c30fada38f6dcd73a06c5be035f391ce73d06d976c6881027"></span><code class="descname">impl_chain_property_object_type</code><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N8graphene5chain33impl_witness_schedule_object_typeE">
+<span id="_CPPv2N8graphene5chain33impl_witness_schedule_object_typeE"></span><span class="target" id="namespacegraphene_1_1chain_1ad3bef2f100b722a6c30fada38f6dcd73a344ace874a02d31a31651328e080e91a"></span><code class="descname">impl_witness_schedule_object_type</code><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N8graphene5chain30impl_budget_record_object_typeE">
+<span id="_CPPv2N8graphene5chain30impl_budget_record_object_typeE"></span><span class="target" id="namespacegraphene_1_1chain_1ad3bef2f100b722a6c30fada38f6dcd73a8b4ffc45235b1f894dd7cb703cfde831"></span><code class="descname">impl_budget_record_object_type</code><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N8graphene5chain34impl_special_authority_object_typeE">
+<span id="_CPPv2N8graphene5chain34impl_special_authority_object_typeE"></span><span class="target" id="namespacegraphene_1_1chain_1ad3bef2f100b722a6c30fada38f6dcd73a9d63a3647a2db0610d19742509c51e32"></span><code class="descname">impl_special_authority_object_type</code><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N8graphene5chain24impl_buyback_object_typeE">
+<span id="_CPPv2N8graphene5chain24impl_buyback_object_typeE"></span><span class="target" id="namespacegraphene_1_1chain_1ad3bef2f100b722a6c30fada38f6dcd73a7a94b2d29fe39e6d30d5b3c5eb7ec42b"></span><code class="descname">impl_buyback_object_type</code><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N8graphene5chain32impl_fba_accumulator_object_typeE">
+<span id="_CPPv2N8graphene5chain32impl_fba_accumulator_object_typeE"></span><span class="target" id="namespacegraphene_1_1chain_1ad3bef2f100b722a6c30fada38f6dcd73a7734519967f0d47d3613ccfccb4ab0d7"></span><code class="descname">impl_fba_accumulator_object_type</code><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N8graphene5chain31impl_collateral_bid_object_typeE">
+<span id="_CPPv2N8graphene5chain31impl_collateral_bid_object_typeE"></span><span class="target" id="namespacegraphene_1_1chain_1ad3bef2f100b722a6c30fada38f6dcd73a24af034d43bc0c1931699dee9b8b3194"></span><code class="descname">impl_collateral_bid_object_type</code><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="namespaces.html" class="btn btn-neutral float-right" title="6. Graphene - Namespaces" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="wallet_api.html" class="btn btn-neutral" title="4. Wallet API - Calls" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright BitShares Blockchain Foundation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
