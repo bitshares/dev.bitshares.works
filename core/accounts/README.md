@@ -1,5 +1,5 @@
 
-## BitShares Accounts
+# BitShares Accounts
 In BitShares, you can create an account relatively easily by using the BitShares UI wallet.  The account comes with the Private/public keys. You should keep the information safe. Also, BitShares account gives you some benefits (i.e., Lifetime Membership (LTM) and Referral Program) and important roles (i.e., voting).  We recommend you to read through BitShares Accounts information to learn more.
 
 - [Account](../accounts#account)
@@ -11,20 +11,18 @@ In BitShares, you can create an account relatively easily by using the BitShares
 - [Voting](../accounts/accounts/voting-bh.md#voting)
   - Voting for… Witnesses, Committee, or/and Workers
   
-### [Account Registration](../accounts/account_registration.md#account-registration)
-   - [Create a brain Key and derive a private/public key pair](../accounts/account_registration.md#2-create-a-brain-key-and-derive-a-privatepublic-key-pair)
-   - [Create an Account](../accounts/account_registration.md#3-create-an-account)
-   - [Register an Account](../accounts/account_registration.md#4-register-an-account)
-
-
 ### FAQ - Accounts
+
+- [Import a GUI-wallet account into CLI-wallet](../wallet/import_account.md#how-to-import-a-gui-wallet-account-into-cli-wallet) : How to, Often used Commands 
+- [Account Registration](../accounts/account_registration.md#account-registration)
+  : Create a CLI account
 - [How to change a password if using a Cloud Wallet](https://github.com/bitshares/bitshares-ui/wiki/Cloud-Wallet-Login-and-changing-password) : from BitShares UI wiki
 - [more...](../tutorials/FAQ.md#accounts)
 - Knowledge Base: [Multi-Signature](../knowledge_base/multi-signature.md#multi-signature)  
 
 ****
 
-## Account
+# Account
 
 In BitShares, you can create an account relatively easily by using the BitShares UI wallet. When you create a BitShares Account from the UI wallet, it will ask you to provide a unique Account name and a password. Although you should create a strong password, you can create readable and memorable BitShares account name. You do not need to write down a long random number as your account name. The BitShares account name would be helpful to identify other BitShares accounts.
 
@@ -33,6 +31,10 @@ It's important to understand that **only** you know your password, and no one ca
 ### BitShares UI Wallet
 
 If you are a user who wants to create your account and a wallet, you can check [BitShares User Guide](https://github.com/bitshares/how.bitshares.works/tree/master/bbf/user_guide#user-guide) - [Create a BitShares Wallet](https://github.com/bitshares/how.bitshares.works/blob/master/bbf/user_guide/create_account.md#create-a-bitshares-wallet) section. 
+
+The below shows simple steps to create a BitShares user account.
+
+![BitShares Architecture](../imgs/create_account_gui_n1.png)
 
 If you create an account at one of BitShares partners, the account name will be available among BitShares partners.  So, you will be able to use the BitShares account name to communicate (e.g., sending fund) with other BitShares account holders like sending an email. The advantage of using account name is you, and other people can identify the account holder. 
 -  *[How to send/fund your account](https://github.com/bitshares/how.bitshares.works/blob/master/bbf/user_guide/fund_account.md#fund-your-account)*
@@ -46,7 +48,8 @@ The identifier comes with many advantages: Besides improved scalability, we have
 To separating authorities from identities, BitShares 2.0 can be much faster in processing delay while having much smaller transaction sizes. All participants are forced to have a named account on the blockchain. Also, most transactions are tied to the account name and can be linked to individuals (this includes transfers, trades, shorts, etc. but not stealthed transactions).
 
 ***
-## Memberships and Groups
+
+# Memberships and Groups
 
 ### Memberships
 If you just created a new BitShares account, the account would be a **Basic member** account as a default.  
@@ -71,7 +74,7 @@ To see your vesting balances, open the side dropdown menu and select **Vesting b
 > Warning: Due to some discrepancies, the annual membership has been disabled in most web wallets and will be re-enabled after a proper update eventually.
  
 ***
-## Fees
+# Fees
 
 ### Fee Division
 
@@ -89,7 +92,7 @@ The registrar is the account that paid the transaction fee to register the accou
 
 ***
 
-## Vesting Balances
+# Vesting Balances
 
 #### Table of Contents: 
 - Strategies

@@ -1,12 +1,12 @@
-## Objects and IDs
+# Objects and IDs
 
 #### Table of Contents:
 - [Objects Format](../api/object_ids.md#bitshares-objects-format)
 - [List of Commonly used Objects](../api/object_ids.md#list-of-commonly-used-objects)
    - [Examples](../api/object_ids.md#examples)
    - [Examples - Accounts](../api/object_ids.md#examples---accounts)
-   - [Example Call and a result: account object (1.2.x)](../api/object_ids.md#example-call-and-a-result-account-object-12x)
-   - [Example Call and a result: asset object (1.3.x) ](../api/object_ids.md#example-call-and-a-result-asset-object-13x)
+   - [Example Call and a result: account object (1.2.x)](../api/object_ids.md#example-call-and-a-result-account-object-id-12x)
+   - [Example Call and a result: asset object (1.3.x) ](../api/object_ids.md#example-call-and-a-result-asset-object-id-13x)
 - [Defenitions](../api/object_ids.md#definitions)
    - [Protocol Space (1.x.x)](../api/object_ids.md#protocol-space-1xx)
       - enum graphene::chain::object_type
@@ -17,12 +17,12 @@
 
 In contrast to most cryptocurrency wallets, the BitShares-Core uses a different model to represent the blockchain, transactions, and accounts. On the BitShares blockchains, there are **no addresses**. So, the objects are identified by **a unique id, a type and space.**
 
-### BitShares Objects Format
+## BitShares Objects Format
 
     space.type.id
     
     
-### List of Commonly used Objects
+## List of Commonly used Objects
 
 |	ID  | Object Type |
 |----|---------------|
@@ -95,17 +95,19 @@ The BitShares blockchain users are requires to register each account with a uniq
 
 ***
    
-#### Example Call and a result: account object (1.2.x)
+#### Example Call and a result: account object (id: 1.2.x)
 
 		unlocked >>> get_account_id "user123"
+		
 		get_account_id "user123"
 		"1.2.539269"
 		unlocked >>>
 
 
-#### Example Call and a result: asset object (1.3.x)
+#### Example Call and a result: asset object (id: 1.3.x)
 
 		unlocked >>> list_assets "BTS" "2"
+		
 		list_assets "BTS" "2"
 		[{
 				"id": "1.3.0",
@@ -130,7 +132,7 @@ For advanced users that want to deal with the C++ code of graphene, we here list
 List all object types from all namespaces here so they can be easily reflected and displayed in debug output. If a 3rd party wants to extend the core code then they will have to change the `packed_object::type` field from `enum_type to uint16` to avoid warnings when converting packed_objects to/from json.
 
 |  *enum* graphene::chain::object_type |
-|----------------------------------------------|
+|:----------------------------------------------|
 | ---Values--- |
 | null_object_type |
 | base_object_type |
@@ -156,7 +158,7 @@ Sentry value which contains the number of different object types.
 ### Implementattion Space (2.x.x)
 
 | *enum* graphene::chain::impl_object_type |
-|----------------------------------------|
+|:----------------------------------------|
 |  ---Values---  |
 | impl_global_property_object_type |
 |  impl_dynamic_global_property_object_type |

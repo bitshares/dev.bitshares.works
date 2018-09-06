@@ -1,4 +1,4 @@
-## Websocket Calls Notifications
+# Websocket Calls Notifications
 
 #### Contents:
 * [Call Format: Websocket](../api/websocket_calls_notifications.md#call-format-websocket)
@@ -26,9 +26,9 @@ websocket connection. The correct structure of the JSON call is
       "id":1,
       "method":"call",
       "params":[
-                0,
-                "get_accounts",
-                [["1.2.0"]]
+                0,                   // API-identifier
+                "get_accounts",      // Method-to-Call
+                [["1.2.0"]]          // Call-Parameters
                ]
      }
 

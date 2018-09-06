@@ -11,16 +11,16 @@ BitShares has Public Testnet for UI Web Wallet and CLI. The following is the ins
 
 ### Use the UI Wallet on Public Testnet
 
-1. Go to a Web Wallet - Public testnet: (http://testnet.bitshares.eu/) 
-2. Create an account
-   - [CREATE ACCOUNT] button is for a CLOUD Wallet 
-   - [advanced form] button is for a LOCAL Wallet
-3. Receive Testnet Cote asset *TEST*.
-   - You will have `10k TEST` in your account for free upon registration.
-4. Set a Faucet address
+- Go to a Web Wallet - Public testnet: (http://testnet.bitshares.eu/) 
+- If you need to create an account, set the testnet faucet address
    - Faucet: (https://faucet.testnet.bitshares.eu/)
    - Go to [Setting] menu - [Faucet] and set the above Faucet address 
-  
+- Create an account
+   - [CREATE ACCOUNT] button is for a CLOUD Wallet 
+   - [advanced form] button is for a LOCAL Wallet
+- Receive Testnet Cote asset *TEST*.
+   - You will have `10k TEST` in your account for free upon registration.
+
 > Faucet role: The faucet address is used to pay the registration fee for new users.
 
 *** 

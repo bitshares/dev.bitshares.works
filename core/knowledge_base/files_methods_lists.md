@@ -3,6 +3,10 @@
 - [GitHub Repositories and Entities (pdf)](../knowledge_base/shared_files/BitShares_Architecture-V3.pdf)
 - [CLI Wallet Clients and Nodes (pdf)](../knowledge_base/shared_files/BitShares_Architecture-Cli-v2.pdf)
 
+## Structures
+- [Block Structure](../knowledge_base/shared_files/structures/BitShares-Block-Structurev1.pdf)
+
+*****
 
 ## BitShares-Core Libraries All Folders and Files Lists
 

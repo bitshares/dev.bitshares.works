@@ -1,10 +1,9 @@
-## Frequently Asked Questions - List All
+# Frequently Asked Questions - List All
 
-### Contents:
+#### Table of Contents:
 
-**[General](../tutorials/FAQ.md#general)**
-- [What is the standard Bitshares address structure and format?](../tutorials/FAQ.md#q-what-is-the-standard-bitshares-address-structure-and-format
-)
+[**General**](../tutorials/FAQ.md#general)
+- [What is the standard Bitshares address structure and format?](../tutorials/FAQ.md#q-what-is-the-standard-bitshares-address-structure-and-format)
 - [What is the format of the block header?](../tutorials/FAQ.md#q-what-is-the-format-of-the-block-header)
 - [What is the maximum bitshares block size?](../tutorials/FAQ.md#q-what-is-the-maximum-bitshares-block-size)
 - [Are there any sharding mechanics currently deployed?](../tutorials/FAQ.md#q-are-there-any-sharding-mechanics-currently-deployed)
@@ -19,25 +18,51 @@
 - [Does the protocol provide mechanisms for overlay protocols to interact such as OR_RETURN?](../tutorials/FAQ.md#q-does-the-protocol-provide-mechanisms-for-overlay-protocols-to-interact-such-as-or_return)
 - [Is this done via a gossip protocol or through a federate relay?](../tutorials/FAQ.md#q-is-this-done-via-a-gossip-protocol-or-through-a-federate-relay)
 
-**[Data Structures](../tutorials/FAQ.md#data-structures)**
+[**Data Structures**](../tutorials/FAQ.md#data-structures)
 - [What data structures are used in the blockchain?](../tutorials/FAQ.md#q-what-data-structures-are-used-in-the-blockchain)
 
-**[Public Key System](../tutorials/FAQ.md#public-key-system)**
+[**Public Key System**](../tutorials/FAQ.md#public-key-system)
 - [What public key system is used? If elliptic curve, then what is the curv?](../tutorials/FAQ.md#q-what-public-key-system-is-used-if-elliptic-curve-then-what-is-the-curve)
 
-**[Scripting Language](../tutorials/FAQ.md#scripting-language)**
+[**Scripting Language**](../tutorials/FAQ.md#scripting-language)
 - [Is there a specification for Bitshares scripting language? (assuming there is one)](../tutorials/FAQ.md#q-is-there-a-specification-for-bitshares-scripting-language-assuming-there-is-one)
 - [Is the scripting language turing complete?](../tutorials/FAQ.md#q-is-the-scripting-language-turing-complete)
 
 ***
+
+### System Components
+- [How's a block structured?](../components/README.md#block)
+- [What types of Operations are available in BitShares? And want to read Detailed Descriptions?](../components/operations.md#bitshares-core---graphenechain) 
+- [What BitShares Objects names and the descriptions? ](../components/objects.md#object-names-and-detailed-descriptions)
+
 ### [Accounts](../tutorials/FAQ.md#accounts-1)
+- [Account Registration](../accounts/account_registration.md#account-registration)
+  - [Create a brain Key and derive a private/public key pair](../accounts/account_registration.md#2-create-a-brain-key-and-derive-a-privatepublic-key-pair)
+  - [Create an Account](../accounts/account_registration.md#3-create-an-account)
+  - [Register an Account](../accounts/account_registration.md#4-register-an-account)
 - [How to change a password if using a Cloud Wallet](https://github.com/bitshares/bitshares-ui/wiki/Cloud-Wallet-Login-and-changing-password) : from BitShares UI wiki
-- [How can I create, register and upgrade an account to Lifetime Membership?](../tutorials/FAQ.md#q-how-can-i-create-register-and-upgrade-an-account-to-lifetime-membership)
-- [How to process Account Registration](../accounts/account_registration.md#account-registration)
+- [How to create, register and upgrade an account to Lifetime Membership](../tutorials/account_create_to_ltm.md#how-to-create-register-and-upgrade-an-account-to-lifetime-membership)
 
 
-***
+### Installation 
+- Use [Ubuntu Linux](../installation/build_ubuntu.md#building-on-ubuntu)
+- Use [OS X](../installation/build_osx.md#building-on-os-x)
+- Use [Windows](../installation/build_windows.md#building-on-windows)
+- Use [Windows - CLI Tools](../installation/windows_cli_tool.md#cli-wallet-on-windows-x64)
+- Use **Windows Subsystem for Linux**
+  - [Instruction how to prepare Ubuntu to Windows 10 OS](../installation/wsl.md#windows-subsystem-for-linux-wsl) 
+- [System Requirements](../nodes_full_witness/full_nodes.md#system-requirements) 
+
 ### [APIs](#apis-1)
+- [Using the API](../api/api_restrictions.md#using-the-api)
+- [Access Restricted APIs](../api/api_restrictions.md#accessing-restricted-apis)
+- [Access the Named API via HTTP](../api/api_restrictions.md#accessing-the-named-api-via-http)
+- Available Calls
+  - [Remote Procedure Calls (RPC)](../api/rpc.md#remote-procedure-calls)
+  - [Websocket Calls & Notifications](../api/websocket_calls_notifications.md#websocket-calls-notifications)
+- [Often Used API Calls](../api/often_used_call.md#often-used-api-calls)
+- [Where to find BitShares APIs list in oxygen documentation](../api/API_references.md#bitshares-core-api-references---doxygen-documentation-quick-links)
+- [What kinds of Object IDs and the types BitShares has?](../api/object_ids.md#objects-and-ids)  
 - [How an Exchange can integrate their services to the BitShares UI Wallet - Gateway Integration Requirements](https://github.com/bitshares/bitshares-ui/wiki/Gateway-Integration-Requirements) : from BitShares UI wiki
 - [How do I get the network_add_nodes command to work? Why is it so complicated?](../tutorials/FAQ.md#q-how-do-i-get-the-network_add_nodes-command-to-work-why-is-it-so-complicated)
 - [Is there a way to access methods which require login over HTTP?](../tutorials/FAQ.md#q-is-there-a-way-to-access-methods-which-require-login-over-http)
@@ -45,7 +70,6 @@
 - [Is there a way to generate help with parameter names and method descriptions?](../tutorials/FAQ.md#q-is-there-a-way-to-generate-help-with-parameter-names-and-method-descriptions)
 - [What is the meaning of a.b.c numbers?](../tutorials/FAQ.md#q-what-is-the-meaning-of-abc-numbers)
 - [The answer to the previous question was really confusing. Can you make it clearer?](../tutorials/FAQ.md#q-the-answer-to-the-previous-question-was-really-confusing-can-you-make-it-clearer)
-- [How to process Account Registration](../accounts/account_registration.md#account-registration)
 
 
 ***
@@ -69,6 +93,7 @@
 - [What is the fee pool all about?](../tutorials/FAQ.md#q-what-is-the-fee-pool-all-about)
 - [What to do if the fee pool is empty?](../tutorials/FAQ.md#q-what-to-do-if-the-fee-pool-is-empty)
 - [What is Fee Pool Draining?](../tutorials/FAQ.md#q-what-is-fee-pool-draining)
+
 
 **Market Fee**
 - [What happens if I enable Market fees?](../tutorials/FAQ.md#q-what-happens-if-i-enable-market-fees)
@@ -103,6 +128,7 @@
 ***
 
 ### Transfer / Transactions
+- [How 'Multi-sugunature' works](../knowledge_base/multi-signature.md#multi-signature)
 - [How to use the CLI wallet to perform confidential transfers in BitShares](../tutorials/trn_confidential_transfer.md#how-to-use-the-cli-wallet-to-perform-confidential-transfers-in-bitshares)
 - [Hot to Construct Any Transaction - Manually](../tutorials/trn_construct_transaction.md#how-to-construct-any-transaction---manually)
 - [How to Propose a Transaction](../tutorials/trn_propose_transaction.md#how-to-propose-a-transaction)
@@ -115,12 +141,17 @@
 ***
 
 ### [Wallet / CLI Wallet](../tutorials/FAQ.md#wallet--cli-wallet-1)
+- [Running a Local Test Network (- wiki)](../wallet/cli_wallet-wiki.md#graphene-cli-wallet-wiki)
+- [Wallet Full Nodes & Witness Nodes(- wiki)](../wallet/wallet_full_nodes_witness_nodes.md#wallet-full-nodes--witness-nodes)
+- [Connect to a Public API Node service](../wallet/node_wallet_witness.md#use-the-public-api-node)
 - [How can I close the CLI client in a clean way?](../tutorials/FAQ.md#q-how-can-i-close-the-cli-client-in-a-clean-way)
-- [How can I import my GUI-wallet account into CLI-wallet?](../tutorials/FAQ.md#q-how-can-i-import-my-gui-wallet-account-into-cli-wallet)
+- [How to import a GUI-wallet account into CLI-wallet](../wallet/import_account.md#how-to-import-a-gui-wallet-account-into-cli-wallet)
 - [Why does the CLI client crash immediately when I try to run it for the first time?](../tutorials/FAQ.md#q-why-does-the-cli-client-crash-immediately-when-i-try-to-run-it-for-the-first-time)
 - [How to setup Network and Wallet Configuration](../wallet/wallet_network.md#network-and-wallet-configuration)
    - [General](../wallet/wallet_network.md#general-network-and-wallet-configuration)
    - [Secure](../wallet/wallet_network.md#secure-network-and-wallet-configuration)
+- [Wallet Full Nodes & Witness Nodes (-wiki)](../wallet/wallet_full_nodes_witness_nodes.md#wallet-full-nodes--witness-nodes)
+   - Examples - connect to the network and open up a node   
    
 ***
 ### [Witness](../tutorials/FAQ.md#witness)
@@ -320,20 +351,6 @@ No scripting
 
 ### Accounts
 
-#### Q. How can I create, register and upgrade an account to Lifetime Membership?
-
-Without already having an account, or knowing someone that has an account, it is not possible. You can’t create accounts out of nowhere.
-
-But you can work around it by importing an active key of a **Lifetime Member** account that has funds:
-
-1. In the gui, go to the permissions tab of an account that is funded and has a LTM status.
-1. Click on the BTS public key on the ACTIVE tab and copy the private key.
-1. In the cli-wallet run: import_key <account_name> <private_key>
-1. Then run: suggest_brain_key and copy the brain key. (You might want to make a backup of your brain key somewhere.)
-1. Create a new account with this command: create_account_with_brain_key <brainkey> <new_account_name> <imported_name> <imported_name> true
-
-This will create a new account called <new_account_name> and set the registrar and referrer to <imported_name>. The brainkey can be used to regenerate the account (even in the GUI wallet). You can manually delete the other active key from the wallet.json file.
-
 ***
 
 ### APIs
@@ -505,60 +522,6 @@ Not much. The biggest difference is that public testnet are intended for wider a
 #### Q. How can I close the CLI client in a clean way?
 
 In Windows closing the whole window produces a nasty exception. In Windows you can try ctrl-d which stops the process but stil produces a nasty exception.
-
-#### Q. How can I import my GUI-wallet account into CLI-wallet?
-
-CLI and GUI wallet are two separated applications. They use separated ways to represent backups. You can currently only manually import keys from the GUI into the CLI.
-
-Your wallet private keys have extremely important roles. By importing your private keys to a new CLI-wallet, you can control your account funds from the CLI-wallet. 
-
-First, find your private keys in your GUI-wallet
-- Login to your GUI-wallet
-- Go to [Settings] – [Permissions]. There are Active, Owner, and Memo tabs. 
-- In the tab, click your public key (or the key image). It will open a form.
-- On the form, click [Show], save your private key information to use later.
-
-Connect the CLI-wallet pointing it to a live node
-
-    ./programs/cli_wallet/cli_wallet --server-rpc-endpoint ws://localhost:8090
-    Or 
-    ./programs/cli_wallet//cli-wallet -s wss://bitshares.openledger.info/ws
-
-You should get a prompt
-
-    new>>>
-
-Set a password for your CLI-wallet and unlock.
-
-**Note:** This password does not need to be the same with your GUI-wallet password. You will create a *new wallet* and it will be secured by the new password.
-
-    new >>> set_password mypass
-    set_password mypass
-    null
-    locked >>> unlock mypass
-    unlock mypass
-    null
-    unlocked >>>
-
-
-Import your each private key you saved from your GUI-wallet into your new CLI-wallet.
-
-    import_key your-account-name THISISTHEKEYTHATYOUCOPIED
-
-And you are done. No need to claim balance. Your account balances are in there. 
-
-Use `list_my_account`s to see your imported account.
-
-And to check balance:
-
-    unlocked >>> list_account_balances your-account-name
-    list_account_balances your-account-name
-    31016.69330 BTS
-    0 CNY
-    0 USD
-
-    unlocked >>>
-
 
 #### Q. Why does the CLI client crash immediately when I try to run it for the first time?
 

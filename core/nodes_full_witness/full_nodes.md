@@ -1,4 +1,4 @@
-## Full Nodes (Witness Nodes)
+# Full Nodes (Witness Nodes)
 
 #### Table of Contents: 
 - [Type of Witness nodes](../nodes_full_witness/full_nodes.md#type-of-witness-nodes)
@@ -13,7 +13,7 @@
 
 ***
 
-### Type of Witness nodes:
+## Type of Witness nodes:
 
 * **Non-block producing** witness nodes
 * **Block producing** witness nodes (more requirements and duties)
@@ -23,7 +23,7 @@ We distinguish between full nodes (a.k.a. non-block producing witness nodes) and
 Both represent nodes in the network that verify all transactions and blocks against the current state of the overall network. Hence, we recommend all service providers to run and maintain their own full nodes for reliability and security reasons.
 
 
-### System Requirements
+## System Requirements
 
 By default the witness node will start in reduced memory ram mode by using some of the commands detailed in [Memory reduction for nodes](/forge/plugins/nodes_memory_reduction.md#memory-reduction-for-nodes).
 In order to run a full node with all the account history you need to remove `partial-operations` and `max-ops-per-account` from your config file. Please note that currently(2018-07-02) a full node need more than 100GB of RAM to operate and required memory is growing fast. Consider the following table before running a node:
@@ -33,14 +33,13 @@ In order to run a full node with all the account history you need to remove `par
 | 20G RAM | 120G RAM | 4G RAM | 200G SSD HD, 16G RAM|
 
 
-
-### How to launch the full node
+## How to launch the full node
 
     ./programs/witness_node/witness_node
 
 It takes an optional –data-dir parameter to define a working and data directory to store the configuration, blockchain and local databases (defaults to `witness_node_data_dir`). Those will be automatically created with default settings if they don’t exist locally set.
 
-### Configuration
+## Configuration
 
 The configuration file `config.ini` in your data directory is commented and contains the following essential settings:
 
@@ -132,7 +131,7 @@ The configuration file `config.ini` in your data directory is commented and cont
 
 ***
 
-### Enabling Remote Procedure Calls (RPC)
+## Enabling Remote Procedure Calls (RPC)
 
 In order to allow RPC calls for blockchain operations you need to modify the following entry in the configuration file::
 
@@ -140,11 +139,11 @@ In order to allow RPC calls for blockchain operations you need to modify the fol
 
 This will open the port 8090 for global queries only. Since the witness node only maintains the blockchain and (unless you are an actively block producing witness) no private keys are involved, it is safe to expose your witness to the internet.
 
-### Restarting the Witness Node
+## Restarting the Witness Node
 
 When restarting the witness node, it may be required to append the `--replay-blockchain` parameter to regenerate the local (in-memory) blockchain state.
 
-### Public Full Node information 
+## Public Full Node information 
 
 - Here is the latest list of [Public Full Node](https://github.com/bitshares/bitshares-ui/blob/staging/app/api/apiConfig.js#L67).
 
