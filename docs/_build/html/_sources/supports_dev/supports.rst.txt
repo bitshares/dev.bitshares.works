@@ -3,6 +3,8 @@
 Support and Optimizations 
 ***************************
 
+This section purpose is to collect and provide useful information for the BitShares developments. We would like to add other tools, libraries, and support information as we proceed. 
+ 
 
 .. contents:: Table of Contents
    :local:
@@ -14,7 +16,7 @@ API Support & References
 ===================================
 
 - :ref:`explorer-wrappers`
-  - For Mainnet and Tesenet: ES Wrapper to query the Bitshares data
+  - For Mainnet and Tesenet: ES Wrapper to query the Bitshares data. Check the BitShares blockchain health.
 
 Libraries
 ======================

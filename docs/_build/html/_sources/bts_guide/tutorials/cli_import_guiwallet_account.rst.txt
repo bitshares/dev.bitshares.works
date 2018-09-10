@@ -87,34 +87,28 @@ And to check balance::
 Often Used Commands 
 ---------------------------
 
-
-| | | |
-|---|---|---|
-| `set_password` |  | Sets a new password on the wallet. <br/> The wallet must be either ‘new’ or ‘unlocked’ to execute this command.   |
-| `unlock` |  | Unlocks the wallet.  |
-| `gethelp` |  (e.g., gethelp "list_accounts")  |  Returns detailed help on a single API command.|
-| `info` | to view the current synchronization |  |
-| `about` | | Returns info such as client version, git version of graphene/fc, version of boost, openssl. |
-| `import_key` | `import_key <name> "<wifkey>"` |  Imports the private key for an existing account. <br/> The private key must match either an owner key or an active key for the named account. |
-| `list_my_accounts` | to view the current synchronization | Lists all accounts controlled by this wallet. This returns a list of the full account objects for all accounts whose private keys we possess. |
-| `list_account_balances` |  a list of the given account’s balances | List the balances of an account. Each account can have multiple balances, one for each type of asset owned by that account. The returned list will only contain assets for which the account has a nonzero balance |
-| `get_account` |   | Returns information about the given account. |
-| `import_balance` | import_balance <name> ["*"] true | This call will construct transaction(s) that will claim all balances controled by wif_keys and deposit them into the given account|
-| `suggest_brain_key` |   | Suggests a safe brain key to use for creating your account. create_account_with_brain_key() requires you to specify a ‘brain key’, |  
-  | create_account_with_brain_key| the signed transaction registering the account  | Creates a new account and registers it on the blockchain. |
-| `dump_private_keys` |   | Dumps all private keys owned by the wallet. <br/> The keys are printed in WIF format. You can import these keys into another wallet using import_key() |       
-| `upgrade_account` | upgrade_account faucet true  | Upgrades an account to prime status. This makes the account holder a ‘lifetime member’. |
-| `register_account` | `register_account <name> <owner-public_key> <active-public_key> <registrar_account>  <referrer_account> <referrer_percent> <broadcast>` | Registers a third party’s account on the blockckain. |
-| `transfer` | `transfer <from> <to> <amount> <asset> <memo> <broadcast>` | Transfer an amount from one account to another. |
-| `transfer2` | `transfer2 <from> <to> <amount> <asset> <memo> <broadcast>`  | This method works just like transfer, except it always broadcasts and returns the transaction ID along with the signed transaction. |
-| `get_account_history` | e.g., get_account_history "name" "5" | Returns the most recent operations on the named account. |     
-| `get_privatre_key` |  get_privatre_key <public key>  | Get the WIF private key corresponding to a public key. The private key must already be in the wallet. |
-  
-***
-
-
-
+:``set_password``:  Sets a new password on the wallet.| The wallet must be either `new’ or ‘unlocked’ to execute this command.   
+:``unlock``:   Unlocks the wallet.  
+:``gethelp``:   (e.g., gethelp "list_accounts")  |  Returns detailed help on a single API command.
+:``info``:   to view the current synchronization 
+:``about``: Returns info such as client version, git version of graphene/fc, version of boost, openssl. 
+:``import_key``: `import_key <name> "<wifkey>"` |  Imports the private key for an existing account. | The private key must match either an owner key or an active key for the named account. 
+:``list_my_accounts``:  to view the current synchronization | Lists all accounts controlled by this wallet. This returns a list of the full account objects for all accounts whose private keys we possess.
+:``list_account_balances``:   a list of the given account’s balances | List the balances of an account. Each account can have multiple balances, one for each type of asset owned by that account. The returned list will only contain assets for which the account has a nonzero balance 
+:``get_account``:   Returns information about the given account.
+:``import_balance``:   import_balance <name> ["*"] true | This call will construct transaction(s) that will claim all balances controled by wif_keys and deposit them into the given account
+:``suggest_brain_key``:  Suggests a safe brain key to use for creating your account. create_account_with_brain_key() requires you to specify a ‘brain key’,  
+  | create_account_with_brain_key| the signed transaction registering the account  | Creates a new account and registers it on the blockchain. 
+:``dump_private_keys``:  Dumps all private keys owned by the wallet. | The keys are printed in WIF format. You can import these keys into another wallet using import_key()       
+:``upgrade_account``:   upgrade_account faucet true  | Upgrades an account to prime status. This makes the account holder a ‘lifetime member’. 
+:``register_account``:    `register_account <name> <owner-public_key> <active-public_key> <registrar_account>  <referrer_account> <referrer_percent> <broadcast>` | Registers a third party’s account on the blockckain. 
+:``transfer``:    `transfer <from> <to> <amount> <asset> <memo> <broadcast>` | Transfer an amount from one account to another. 
+:``transfer2``:    `transfer2 <from> <to> <amount> <asset> <memo> <broadcast>`  | This method works just like transfer, except it always broadcasts and returns the transaction ID along with the signed transaction. 
+:``get_account_history``:    e.g., get_account_history "name" "5" | Returns the most recent operations on the named account.     
+:``get_privatre_key``:     get_privatre_key <public key>  | Get the WIF private key corresponding to a public key. The private key must already be in the wallet. 
 
 |
 
---------------------
+|
+
+

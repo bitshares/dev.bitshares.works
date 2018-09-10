@@ -1,8 +1,8 @@
 
 .. _how-to-setup-python-lib:
 
-How to Set up Python Library
-===================================
+How to Set up Python Library for the Public Testnet
+===========================================================
 
 
 .. contents:: Table of Contents
@@ -38,8 +38,8 @@ The usage of this library is well documented on
 ----------------------
 
 
-Create MPAs/UIAs
----------------------
+Create MPAs/UIAs with Python
+---------------------------------
 
 We now create some Market Pegged assets and construct the price feed.
 

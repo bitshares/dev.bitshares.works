@@ -4,7 +4,9 @@ Introduction & Architectures
 ******************************
 
 
-Welcome to BitShares! In this section, you will find the overview of BitShares Architecture (repositories and entities), and how the Core team processes the development work.  If you are interested in contributing to the Core team, you might want to check the Contribution Guide and the GitFlow to understand how BitShares-Core team handles the repository files and branches.  If you would like to know the Core team current project, issues, and the releases plans, check under the Issues and the Projects tabs.
+Welcome to BitShares! In this section, we are looking into the BitShares Architecture overview (entities and structures), and how the Core team processes the development work.
+
+If developers who are interested in contributing to the Core team, they might want to check the Contribution Guide and the GitFlow to understand how BitShares-Core team handles the repository files and branches.  The Core team current project, issues, and releases plans are located in the BitShares Core repository under the Issues and the Projects tabs.m. 
 
 .. contents:: Table of Contents
    :local:
@@ -16,7 +18,7 @@ Welcome to BitShares! In this section, you will find the overview of BitShares A
 BitShares Members
 ===================
 
-If you have an BitShares account, you are a BTS Holder and you have a voting power to make decisions in the BitShares Community.
+If you have a BitShares account, you are a BTS Holder, and you have a voting power to make decisions in the BitShares Community. (Read more: :ref:`BitShares Accounts <bts-accounts>` )
 
 
 
@@ -33,7 +35,7 @@ BitShares Architecture
 GitHub Repositories and Entities
 ------------------------------------
 
- 
+This is an overview of BitShares Architecture image. The purpose of this image is to bring the main elements together and share what types of resources you might find in the BitShares Github repositories. 
 
 .. image:: ../../_images/structures/bitshares-architecture-v3notop.png
         :alt: BitShares Architecture
@@ -45,8 +47,7 @@ GitHub Repositories and Entities
 Key Design Concepts and the Features
 =========================================
 
-BitShares is a Finance Smart contract platform supported by Graphene technology - Blockchain.  
-BitShares is designed from the ground up to process more transactions every second than VISA and MasterCard combined.
+The below image is an overview of BitShares Architecture. The purpose of this image is to bring the main elements together and share what types of resources you might find in the BitShares Github repositories. 
 
 Key points and fundamentals for the design:
 ---------------------------------------------
@@ -89,16 +90,20 @@ BitShares can be made to function as a software, a network, a ledger, a bank, an
   - Transaction fee
   - Fee Schedules 
    
-* Assets
-  - **User Issues Asset (UIA)** - to help facilitate profitable business models for certain types of services.
-  - *Use Cases* (Event tickets, Reward points, privatized SmartCoins, Predictions Market, more)
-  - How to profit? -> Fee pools	
+* Assets - **User Issues Asset (UIA)** 
+
+  - to help facilitate profitable business models for certain types of services.
+  - *Use Cases* (Event tickets, Reward points, privatized SmartCoins, Predictions Market, more).
+  - How to profit (i.e.,Fee pools)
 	 
-* BitAsset - BitUSD,       
-* **Delegated Proof of State Consensus (DPOS)** - Under DPOS, BTS Holder has influence...
-  - A robust and flexible consensus protocol.   
+* BitAsset - bitUSD, bitEUR, bitCNY, and others.       
+* **Delegated Proof of State Consensus (DPOS)** 
+  
+  - Under DPOS, BTS Holder has influence.
+  - A robust and flexible consensus protocol.  
+  
 * Block Production by Elected witnesses
-* Referral Program
+* **Referral Program** - to incentivize people to bring in more people.
 * Vesting valance
 
 ----------------
@@ -111,7 +116,7 @@ Bitshares Block Explorer
 
 BitShares Explorer shows BitShares Blockchain information. You can observe BitShares Blockchain *Health* Status (head_block_num, head_block_age, chain_id, etc.), how transactions processing, assets volume, and members.
 
-If you would like to see more detailed information, the BitShares Open Explorer offers other information tabs (i.e., Operations, Proxies, Markets, SmartCoins, UIAs, and Holders) to view.
+If you would like to see more detailed information, the Open Explorer offers other information tabs (i.e., Operations, Proxies, Markets, SmartCoins, UIAs, and Holders) to view.
 
 - `Cryptofresh  <https://www.cryptofresh.com/>`_
 - `Open Explorer <http://open-explorer.io/>`_

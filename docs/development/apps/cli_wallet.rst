@@ -3,14 +3,18 @@
 .. _run-cli-wallet-steps:
 
 ***********************
-Connect a Cli Wallet 
+Launch a Cli Wallet 
 ***********************
+
+The following will explain about the installation and how to use the console wallet (not GUI).
 
 
 .. contents:: Table of Contents
    :local:
    
 -------
+
+
 
 Steps
 =======
@@ -35,16 +39,27 @@ instead of::
 
 
   
-2. Execute a cli_wallet
+2. Launching a cli_wallet
 ----------------------------
+
+The cli_wallet creates a local wallet.json file that contains the encrypted private keys required to access the funds in your account. It **requires** a running witness node (not necessarily locally) and connects to it on launch. 
+
+::
+
+	programs/cli_wallet/cli_wallet -s ws://127.0.0.1:8090
+
+Depending on the actual chain that you want to connect to your may need to specify –chain-id.
+
+Examples
+^^^^^^^^^
+
+The below section shows two example patterns how to launch the cli_wallet. The first example, we use the public API server node to connect the cli_wallet and also open WebSocket RPC or RPC-HTTP ports. The cli_wallet opens an RPC port for Wallet operations (i.e., spend, buy, sell...). The second example, we use an IP address (localhost) and also open the port for HTTP-RPC.
 
 - \<Examples\> 
   
   - 1.Connecting a Cli-Wallet by using the public API server node
   - 2.Connecting a Cli-Wallet by an IP address (localhost)
 
-
-In this section, we show you two example patterns how to execute the cli_wallet. The first example, we use the public API server node to connect the cli_wallet and also open WebSocket RPC or RPC-HTTP ports. The cli_wallet opens an RPC port for Wallet operations (i.e., spend, buy, sell...). The second example, we use an IP address (localhost) and also open the port for HTTP-RPC.
 
 **\<Example 1\> Connecting a Cli-Wallet by using the public API server node**
 

@@ -6,10 +6,10 @@ Database
 
 (/libraries/chain/include/graphene/chain/database.hpp)
 
-* `database <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1database.html>`_ 
+* `database (in doxygen) <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1database.html>`_ 
 - tracks the blockchain state in an extensible manner  
 
-::
+.. code-block:: cpp 
 
    class database : public db::object_database
    {

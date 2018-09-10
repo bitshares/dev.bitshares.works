@@ -14,13 +14,13 @@ Building on Ubuntu
 Ubuntu 16.04 LTS (64-bit)
 =============================
 
-1.Install Dependencies
+1. Install Dependencies
   We recommend building on Ubuntu 16.04 LTS (64-bit), and the build dependencies may be installed with::
 
     sudo apt-get update
     sudo apt-get install autoconf cmake make automake libtool git libboost-all-dev libssl-dev g++ libcurl4-openssl-dev
 
-2.Build BitShares Core::
+2. Build BitShares Core::
 
     git clone https://github.com/bitshares/bitshares-core.git
     cd bitshares-core

@@ -4,10 +4,6 @@
 Witness - FAQ
 ===============
 
-   
-General
--------
-  
 .. _witness-faq-1:  
   
 How can I close the witness node in a clean way?

@@ -13,10 +13,11 @@
 ---------	
 
 .. toctree::
-    :caption: Development 
+    :caption: Development
     :maxdepth: 2
 
     development/installation
+    bts_guide/accounts/bts_account
     development/integration
     development/interaction
     development/testnets
@@ -30,6 +31,7 @@
     :numbered:
     :caption: API
 
+    api/api_about
     api/restrictions	
     api/calls
     api/blockchain_api

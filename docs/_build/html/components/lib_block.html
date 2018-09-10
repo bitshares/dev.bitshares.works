@@ -93,7 +93,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#signed-block-with-info">signed_block_with_info</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#block-detail">Block (Detail)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#block-detaied-image">Block (Detaied image)</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="lib_protocols.html">Protocols</a></li>
@@ -106,6 +106,7 @@
 <p class="caption"><span class="caption-text">Development</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../development/installation.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bts_guide/accounts/bts_account.html">BitShares Accounts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../development/integration.html">Integration Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../development/interaction.html">Blockchain Interaction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../development/testnets.html">Testnets</a></li>
@@ -114,12 +115,13 @@
 </ul>
 <p class="caption"><span class="caption-text">API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../api/restrictions.html">1. API Access and Restrictions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/calls.html">2. Available Calls</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/blockchain_api.html">3. Blockchain API(s)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/wallet_api.html">4. Wallet API - Calls</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/objects_ids.html">5. Objects and IDs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/namespaces.html">6. Graphene - Namespaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/api_about.html">1. API Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/restrictions.html">2. API Access and Restrictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/calls.html">3. Available Calls, Object, and IDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/blockchain_api.html">4. Blockchain API(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/wallet_api.html">5. Wallet API - Calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/objects_ids.html">6. Objects and IDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/namespaces.html">7. Graphene - Namespaces</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Guides</span></p>
 <ul>
@@ -130,7 +132,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../references/info_comunities.html">BitShares Community</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/info_comunities.html#bitshares-blockchain">BitShares Blockchain</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/tech_articles.html">Articles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/tech_articles.html">BitShares Developers’ Contributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/tech_articles.html#articles">Articles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/githubrepo.html">BitShares Repositories</a></li>
 </ul>
 
@@ -198,6 +201,7 @@
             
   <div class="section" id="block">
 <span id="lib-block"></span><h1>Block<a class="headerlink" href="#block" title="Permalink to this headline">¶</a></h1>
+<p>This section shows how each block is constructed and what kinds of elements are creating the block.</p>
 <div class="contents local topic" id="table-of-contents">
 <p class="topic-title first">Table of Contents</p>
 <ul class="simple">
@@ -209,7 +213,7 @@
 <li><a class="reference internal" href="#signed-block-with-info" id="id7">signed_block_with_info</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#block-detail" id="id8">Block (Detail)</a></li>
+<li><a class="reference internal" href="#block-detaied-image" id="id8">Block (Detaied image)</a></li>
 </ul>
 </div>
 <hr class="docutils" />
@@ -227,39 +231,40 @@
 <h2><a class="toc-backref" href="#id3">Block Header - inheritance</a><a class="headerlink" href="#block-header-inheritance" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="block-header">
 <h3><a class="toc-backref" href="#id4">block_header</a><a class="headerlink" href="#block-header" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="o">*</span><span class="n">Block</span> <span class="n">Header</span> <span class="n">Inheritance</span><span class="o">*</span> <span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">e</span><span class="o">.</span><span class="p">)</span> <span class="mf">1.0</span><span class="o">.</span><span class="mf">0.0</span>
-<span class="o">//</span> <span class="n">graphene</span><span class="p">::</span><span class="n">chain</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// *Block Header Inheritance* (i.e.) 1.0.0.0</span>
+<span class="c1">// graphene::chain</span>
 
-<span class="n">struct</span> <span class="n">block_header</span>
+<span class="k">struct</span> <span class="n">block_header</span>
 <span class="p">{</span>
-        <span class="n">digest_type</span>         <span class="n">digest</span><span class="p">()</span><span class="n">const</span><span class="p">;</span>
+        <span class="n">digest_type</span>         <span class="n">digest</span><span class="p">()</span><span class="k">const</span><span class="p">;</span>
         <span class="n">block_id_type</span>       <span class="n">previous</span><span class="p">;</span>
-        <span class="n">uint32_t</span>            <span class="n">block_num</span><span class="p">()</span><span class="n">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">num_from_id</span><span class="p">(</span><span class="n">previous</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="p">}</span>
-        <span class="n">fc</span><span class="p">::</span><span class="n">time_point_sec</span>  <span class="n">timestamp</span><span class="p">;</span>
+        <span class="kt">uint32_t</span>            <span class="nf">block_num</span><span class="p">()</span><span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">num_from_id</span><span class="p">(</span><span class="n">previous</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="p">}</span>
+        <span class="n">fc</span><span class="o">::</span><span class="n">time_point_sec</span>  <span class="n">timestamp</span><span class="p">;</span>
         <span class="n">witness_id_type</span>     <span class="n">witness</span><span class="p">;</span>
         <span class="n">checksum_type</span>       <span class="n">transaction_merkle_root</span><span class="p">;</span>
         <span class="n">extensions_type</span>     <span class="n">extensions</span><span class="p">;</span>
 
-        <span class="n">static</span> <span class="n">uint32_t</span>     <span class="n">num_from_id</span><span class="p">(</span><span class="n">const</span> <span class="n">block_id_type</span><span class="o">&amp;</span> <span class="nb">id</span><span class="p">);</span>
+        <span class="k">static</span> <span class="kt">uint32_t</span>     <span class="nf">num_from_id</span><span class="p">(</span><span class="k">const</span> <span class="n">block_id_type</span><span class="o">&amp;</span> <span class="n">id</span><span class="p">);</span>
 <span class="p">};</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li>Note: when we need to add data to <cite>extensions</cite>, remember to review <cite>database::_generate_block()</cite>.
-- More info in <a class="reference external" href="https://github.com/bitshares/bitshares-core/issues/1136">https://github.com/bitshares/bitshares-core/issues/1136</a></li>
-</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">when we need to add data to <cite>extensions</cite>, remember to review <code class="docutils literal notranslate"><span class="pre">database::_generate_block()</span></code>.
+- More info in <a class="reference external" href="https://github.com/bitshares/bitshares-core/issues/1136">https://github.com/bitshares/bitshares-core/issues/1136</a></p>
+</div>
 </div>
 <div class="section" id="signed-block-header">
 <h3><a class="toc-backref" href="#id5">signed_block_header</a><a class="headerlink" href="#signed-block-header" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="o">*</span><span class="n">Block</span> <span class="n">Header</span> <span class="n">Inheritance</span><span class="o">*</span> <span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">e</span><span class="o">.</span><span class="p">)</span> <span class="mf">1.1</span><span class="o">.</span><span class="mf">0.0</span>
-<span class="o">//</span> <span class="n">graphene</span><span class="p">::</span><span class="n">chain</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// *Block Header Inheritance* (i.e.) 1.1.0.0</span>
+<span class="c1">// graphene::chain</span>
 
-<span class="n">struct</span> <span class="n">signed_block_header</span> <span class="p">:</span> <span class="n">public</span> <span class="n">block_header</span>
+<span class="k">struct</span> <span class="nl">signed_block_header</span> <span class="p">:</span> <span class="k">public</span> <span class="n">block_header</span>
 <span class="p">{</span>
-        <span class="n">block_id_type</span>        <span class="nb">id</span><span class="p">()</span><span class="n">const</span><span class="p">;</span>
-        <span class="n">fc</span><span class="p">::</span><span class="n">ecc</span><span class="p">::</span><span class="n">public_key</span>  <span class="n">signee</span><span class="p">()</span><span class="n">const</span><span class="p">;</span>
-        <span class="n">void</span>                 <span class="n">sign</span><span class="p">(</span> <span class="n">const</span> <span class="n">fc</span><span class="p">::</span><span class="n">ecc</span><span class="p">::</span><span class="n">private_key</span><span class="o">&amp;</span> <span class="n">signer</span> <span class="p">);</span>
-        <span class="nb">bool</span>                 <span class="n">validate_signee</span><span class="p">(</span> <span class="n">const</span> <span class="n">fc</span><span class="p">::</span><span class="n">ecc</span><span class="p">::</span><span class="n">public_key</span><span class="o">&amp;</span> <span class="n">expected_signee</span> <span class="p">)</span><span class="n">const</span><span class="p">;</span>
+        <span class="n">block_id_type</span>        <span class="n">id</span><span class="p">()</span><span class="k">const</span><span class="p">;</span>
+        <span class="n">fc</span><span class="o">::</span><span class="n">ecc</span><span class="o">::</span><span class="n">public_key</span>  <span class="n">signee</span><span class="p">()</span><span class="k">const</span><span class="p">;</span>
+        <span class="kt">void</span>                 <span class="nf">sign</span><span class="p">(</span> <span class="k">const</span> <span class="n">fc</span><span class="o">::</span><span class="n">ecc</span><span class="o">::</span><span class="n">private_key</span><span class="o">&amp;</span> <span class="n">signer</span> <span class="p">);</span>
+        <span class="kt">bool</span>                 <span class="nf">validate_signee</span><span class="p">(</span> <span class="k">const</span> <span class="n">fc</span><span class="o">::</span><span class="n">ecc</span><span class="o">::</span><span class="n">public_key</span><span class="o">&amp;</span> <span class="n">expected_signee</span> <span class="p">)</span><span class="k">const</span><span class="p">;</span>
 
         <span class="n">signature_type</span>       <span class="n">witness_signature</span><span class="p">;</span>
 <span class="p">};</span>
@@ -268,12 +273,12 @@
 </div>
 <div class="section" id="signed-block">
 <h3><a class="toc-backref" href="#id6">signed_block</a><a class="headerlink" href="#signed-block" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="o">*</span><span class="n">Block</span> <span class="n">Header</span> <span class="n">Inheritance</span><span class="o">*</span> <span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">e</span><span class="o">.</span><span class="p">)</span> <span class="mf">1.1</span><span class="o">.</span><span class="mf">1.0</span>
-<span class="o">//</span> <span class="n">graphene</span><span class="p">::</span><span class="n">chain</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// *Block Header Inheritance* (i.e.) 1.1.1.0</span>
+<span class="c1">// graphene::chain</span>
 
-<span class="n">struct</span> <span class="n">signed_block</span> <span class="p">:</span> <span class="n">public</span> <span class="n">signed_block_header</span>
+<span class="k">struct</span> <span class="nl">signed_block</span> <span class="p">:</span> <span class="k">public</span> <span class="n">signed_block_header</span>
 <span class="p">{</span>
-        <span class="n">checksum_type</span>                 <span class="n">calculate_merkle_root</span><span class="p">()</span><span class="n">const</span><span class="p">;</span>
+        <span class="n">checksum_type</span>                 <span class="n">calculate_merkle_root</span><span class="p">()</span><span class="k">const</span><span class="p">;</span>
         <span class="n">vector</span><span class="o">&lt;</span><span class="n">processed_transaction</span><span class="o">&gt;</span> <span class="n">transactions</span><span class="p">;</span>
 <span class="p">};</span>
 </pre></div>
@@ -281,13 +286,13 @@
 </div>
 <div class="section" id="signed-block-with-info">
 <h3><a class="toc-backref" href="#id7">signed_block_with_info</a><a class="headerlink" href="#signed-block-with-info" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="o">*</span><span class="n">Block</span> <span class="n">Header</span> <span class="n">Inheritance</span><span class="o">*</span> <span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">e</span><span class="o">.</span><span class="p">)</span> <span class="mf">1.1</span><span class="o">.</span><span class="mf">1.1</span>
-<span class="o">//</span> <span class="n">graphene</span><span class="p">::</span><span class="n">wallet</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// *Block Header Inheritance* (i.e.) 1.1.1.1</span>
+<span class="c1">// graphene::wallet</span>
 
-<span class="n">struct</span> <span class="n">signed_block_with_info</span> <span class="p">:</span> <span class="n">public</span> <span class="n">signed_block</span>
+<span class="k">struct</span> <span class="nl">signed_block_with_info</span> <span class="p">:</span> <span class="k">public</span> <span class="n">signed_block</span>
 <span class="p">{</span>
-        <span class="n">signed_block_with_info</span><span class="p">(</span> <span class="n">const</span> <span class="n">signed_block</span><span class="o">&amp;</span> <span class="n">block</span> <span class="p">);</span>
-        <span class="n">signed_block_with_info</span><span class="p">(</span> <span class="n">const</span> <span class="n">signed_block_with_info</span><span class="o">&amp;</span> <span class="n">block</span> <span class="p">)</span> <span class="o">=</span> <span class="n">default</span><span class="p">;</span>
+        <span class="n">signed_block_with_info</span><span class="p">(</span> <span class="k">const</span> <span class="n">signed_block</span><span class="o">&amp;</span> <span class="n">block</span> <span class="p">);</span>
+        <span class="n">signed_block_with_info</span><span class="p">(</span> <span class="k">const</span> <span class="n">signed_block_with_info</span><span class="o">&amp;</span> <span class="n">block</span> <span class="p">)</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
 
         <span class="n">block_id_type</span>                  <span class="n">block_id</span><span class="p">;</span>
         <span class="n">public_key_type</span>                <span class="n">signing_key</span><span class="p">;</span>
@@ -298,8 +303,8 @@
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="block-detail">
-<h2><a class="toc-backref" href="#id8">Block (Detail)</a><a class="headerlink" href="#block-detail" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="block-detaied-image">
+<h2><a class="toc-backref" href="#id8">Block (Detaied image)</a><a class="headerlink" href="#block-detaied-image" title="Permalink to this headline">¶</a></h2>
 <a class="reference internal image-reference" href="components\../../_images/structures/block_structure_sv1.png"><img alt="BitShares Architecture" class="align-center" src="components\../../_images/structures/block_structure_sv1.png" style="width: 700px;" /></a>
 <div class="line-block">
 <div class="line"><br /></div>

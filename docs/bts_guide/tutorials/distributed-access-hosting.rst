@@ -3,11 +3,15 @@
 
 Distributed Access to the BitShares Decentralized  Exchange (DEX)
 =================================================================
-
    
 I hope to encourage and promote more access points and backup WebSocket (wss) gateways for BitShares. This is the logical progression from `Run your own decentralized
 exchange <https://steemit.com/bitshares/@ihashfury/run-your-own-decentralised-exchange>`__
 post.
+
+.. contents:: Table of Contents
+   :local:
+   
+-------
 
 BitShares node setup
 -------------------------------

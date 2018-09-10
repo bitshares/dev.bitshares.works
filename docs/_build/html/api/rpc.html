@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2.1. Remote Procedure Calls &mdash; BItShares Developers Portal  documentation</title>
+  <title>3.1. Remote Procedure Calls &mdash; BItShares Developers Portal  documentation</title>
   
 
   
@@ -28,8 +28,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.2. Websocket Calls &amp; Notifications" href="websocket.html" />
-    <link rel="prev" title="2. Available Calls" href="calls.html" /> 
+    <link rel="next" title="3.2. Websocket Calls &amp; Notifications" href="websocket.html" />
+    <link rel="prev" title="3. Available Calls, Object, and IDs" href="calls.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -87,6 +87,7 @@
 <p class="caption"><span class="caption-text">Development</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../development/installation.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bts_guide/accounts/bts_account.html">BitShares Accounts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../development/integration.html">Integration Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../development/interaction.html">Blockchain Interaction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../development/testnets.html">Testnets</a></li>
@@ -95,22 +96,23 @@
 </ul>
 <p class="caption"><span class="caption-text">API</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="restrictions.html">1. API Access and Restrictions</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="calls.html">2. Available Calls</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2.1. Remote Procedure Calls</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#prerequisites">2.1.1. Prerequisites</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#call-format">2.1.2. Call Format</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#remarks">2.1.3. Remarks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_about.html">1. API Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="restrictions.html">2. API Access and Restrictions</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="calls.html">3. Available Calls, Object, and IDs</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.1. Remote Procedure Calls</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#prerequisites">3.1.1. Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#call-format">3.1.2. Call Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#remarks">3.1.3. Remarks</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="websocket.html">2.2. Websocket Calls &amp; Notifications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="often-used-calls.html">2.3. Often used API Calls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="websocket.html">3.2. Websocket Calls &amp; Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="often-used-calls.html">3.3. Often used API Calls</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="blockchain_api.html">3. Blockchain API(s)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="wallet_api.html">4. Wallet API - Calls</a></li>
-<li class="toctree-l1"><a class="reference internal" href="objects_ids.html">5. Objects and IDs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="namespaces.html">6. Graphene - Namespaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blockchain_api.html">4. Blockchain API(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wallet_api.html">5. Wallet API - Calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objects_ids.html">6. Objects and IDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="namespaces.html">7. Graphene - Namespaces</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Guides</span></p>
 <ul>
@@ -121,7 +123,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../references/info_comunities.html">BitShares Community</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/info_comunities.html#bitshares-blockchain">BitShares Blockchain</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/tech_articles.html">Articles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/tech_articles.html">BitShares Developers’ Contributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/tech_articles.html#articles">Articles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/githubrepo.html">BitShares Repositories</a></li>
 </ul>
 
@@ -168,9 +171,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="calls.html">2. Available Calls</a> &raquo;</li>
+          <li><a href="calls.html">3. Available Calls, Object, and IDs</a> &raquo;</li>
         
-      <li>2.1. Remote Procedure Calls</li>
+      <li>3.1. Remote Procedure Calls</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -188,7 +191,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="remote-procedure-calls">
-<span id="rpc"></span><h1>2.1. Remote Procedure Calls<a class="headerlink" href="#remote-procedure-calls" title="Permalink to this headline">¶</a></h1>
+<span id="rpc"></span><h1>3.1. Remote Procedure Calls<a class="headerlink" href="#remote-procedure-calls" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="table-of-contents">
 <p class="topic-title first">Table of Contents</p>
 <ul class="simple">
@@ -199,7 +202,7 @@
 </div>
 <hr class="docutils" />
 <div class="section" id="prerequisites">
-<h2><a class="toc-backref" href="#id1">2.1.1. Prerequisites</a><a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id1">3.1.1. Prerequisites</a><a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <p>This page assumes that you either have a full node or a wallet running and
 listening to port <code class="docutils literal notranslate"><span class="pre">8090</span></code>, locally.</p>
 <div class="admonition note">
@@ -208,7 +211,7 @@ listening to port <code class="docutils literal notranslate"><span class="pre">8
 </div>
 </div>
 <div class="section" id="call-format">
-<h2><a class="toc-backref" href="#id2">2.1.2. Call Format</a><a class="headerlink" href="#call-format" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id2">3.1.2. Call Format</a><a class="headerlink" href="#call-format" title="Permalink to this headline">¶</a></h2>
 <p>In Graphene, RPC calls are state-less and accessible via regular JSON formated
 RPC-HTTP-calls. The correct structure of the JSON call is</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -260,7 +263,7 @@ takes only one argument which is an array of account ids (here: <code class="doc
 </div>
 </div>
 <div class="section" id="remarks">
-<h2><a class="toc-backref" href="#id3">2.1.3. Remarks</a><a class="headerlink" href="#remarks" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id3">3.1.3. Remarks</a><a class="headerlink" href="#remarks" title="Permalink to this headline">¶</a></h2>
 <p>Wallet specific commands, such as <code class="docutils literal notranslate"><span class="pre">transfer</span></code> and market orders, are only
 available if connecting to <code class="docutils literal notranslate"><span class="pre">cli_wallet</span></code> because only the wallet has the
 private keys and signing capabilities and some calls will only execute of the
@@ -287,10 +290,10 @@ login.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="websocket.html" class="btn btn-neutral float-right" title="2.2. Websocket Calls &amp; Notifications" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="websocket.html" class="btn btn-neutral float-right" title="3.2. Websocket Calls &amp; Notifications" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="calls.html" class="btn btn-neutral" title="2. Available Calls" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="calls.html" class="btn btn-neutral" title="3. Available Calls, Object, and IDs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

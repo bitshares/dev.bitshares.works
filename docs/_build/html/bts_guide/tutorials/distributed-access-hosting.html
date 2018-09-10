@@ -85,6 +85,7 @@
 <p class="caption"><span class="caption-text">Development</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../development/installation.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../accounts/bts_account.html">BitShares Accounts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../development/integration.html">Integration Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../development/interaction.html">Blockchain Interaction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../development/testnets.html">Testnets</a></li>
@@ -93,12 +94,13 @@
 </ul>
 <p class="caption"><span class="caption-text">API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../api/restrictions.html">1. API Access and Restrictions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/calls.html">2. Available Calls</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/blockchain_api.html">3. Blockchain API(s)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/wallet_api.html">4. Wallet API - Calls</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/objects_ids.html">5. Objects and IDs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/namespaces.html">6. Graphene - Namespaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/api_about.html">1. API Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/restrictions.html">2. API Access and Restrictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/calls.html">3. Available Calls, Object, and IDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/blockchain_api.html">4. Blockchain API(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/wallet_api.html">5. Wallet API - Calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/objects_ids.html">6. Objects and IDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/namespaces.html">7. Graphene - Namespaces</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Guides</span></p>
 <ul>
@@ -109,7 +111,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../references/info_comunities.html">BitShares Community</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../references/info_comunities.html#bitshares-blockchain">BitShares Blockchain</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../references/tech_articles.html">Articles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references/tech_articles.html">BitShares Developers’ Contributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references/tech_articles.html#articles">Articles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../references/githubrepo.html">BitShares Repositories</a></li>
 </ul>
 
@@ -178,8 +181,47 @@
 <p>I hope to encourage and promote more access points and backup WebSocket (wss) gateways for BitShares. This is the logical progression from <a class="reference external" href="https://steemit.com/bitshares/&#64;ihashfury/run-your-own-decentralised-exchange">Run your own decentralized
 exchange</a>
 post.</p>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title first">Table of Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#bitshares-node-setup" id="id2">BitShares node setup</a></li>
+<li><a class="reference internal" href="#create-a-new-user" id="id3">Create a New User</a></li>
+<li><a class="reference internal" href="#install-nginx" id="id4">Install Nginx</a><ul>
+<li><a class="reference internal" href="#configure-nginx" id="id5">Configure Nginx</a></li>
+<li><a class="reference internal" href="#create-your-web-folder" id="id6">Create your web folder</a></li>
+<li><a class="reference internal" href="#id1" id="id7">Configure Nginx</a></li>
+<li><a class="reference internal" href="#update-virtual-host-file" id="id8">Update Virtual Host File</a></li>
+<li><a class="reference internal" href="#activate-sim-link-and-disable-default-web-server" id="id9">Activate sim link and disable default web server</a></li>
+<li><a class="reference internal" href="#link-local-folder-to-www-root-and-add-a-simple-index-html" id="id10">Link local folder to www root and add a simple index.html</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#install-letsencrypt" id="id11">Install letsencrypt</a><ul>
+<li><a class="reference internal" href="#obtain-your-ssl-certificate" id="id12">Obtain your SSL certificate</a></li>
+<li><a class="reference internal" href="#check-your-certificate" id="id13">Check your certificate</a></li>
+<li><a class="reference internal" href="#setup-a-renew-cronjob-for-your-new-ssl-certificate" id="id14">Setup a renew cronjob for your new SSL certificate</a></li>
+<li><a class="reference internal" href="#generate-strong-diffie-hellman-group-cert" id="id15">Generate Strong Diffie-Hellman Group cert</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#add-ssl-to-nginx-settings" id="id16">Add SSL to Nginx settings</a><ul>
+<li><a class="reference internal" href="#edit-altcap-io" id="id17">Edit altcap.io</a></li>
+<li><a class="reference internal" href="#restart-nginx" id="id18">Restart Nginx</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#install-bitshares-web-gui" id="id19">Install BitShares web gui</a><ul>
+<li><a class="reference internal" href="#install-nvm-node-version-manager" id="id20">Install NVM (Node Version Manager)</a><ul>
+<li><a class="reference internal" href="#download-bitshares-gui" id="id21">Download BitShares gui</a></li>
+<li><a class="reference internal" href="#setup-light-wallet" id="id22">Setup light wallet</a></li>
+<li><a class="reference internal" href="#build-light-wallet" id="id23">Build light wallet</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ssl-test" id="id24">SSL test</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<hr class="docutils" />
 <div class="section" id="bitshares-node-setup">
-<h2>BitShares node setup<a class="headerlink" href="#bitshares-node-setup" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id2">BitShares node setup</a><a class="headerlink" href="#bitshares-node-setup" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://steemit.com/bitshares/&#64;ihashfury/run-your-own-decentralised-exchange">Run your own decentralized exchange</a></p>
 <p>Once you have a full node setup, you can allow BitShares shareholders
 secure access to your server to trade and check their accounts by
@@ -192,7 +234,7 @@ alias in the examples below.</p>
 <p>[TOC]</p>
 </div>
 <div class="section" id="create-a-new-user">
-<h2>Create a New User<a class="headerlink" href="#create-a-new-user" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id3">Create a New User</a><a class="headerlink" href="#create-a-new-user" title="Permalink to this headline">¶</a></h2>
 <p>I recommend creating a new user on your server to run the Bitshares gui
 and give the user sudo access. &gt;You can use any name - I have used
 bitshares in this example</p>
@@ -203,7 +245,7 @@ bitshares in this example</p>
 </div>
 </div>
 <div class="section" id="install-nginx">
-<h2>Install Nginx<a class="headerlink" href="#install-nginx" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id4">Install Nginx</a><a class="headerlink" href="#install-nginx" title="Permalink to this headline">¶</a></h2>
 <p>Install Nginx web server</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># ssh into your new user bitshares</span>
 <span class="n">ssh</span> <span class="n">bitshares</span><span class="nd">@altcap</span><span class="o">.</span><span class="n">io</span>
@@ -220,13 +262,13 @@ bitshares in this example</p>
 address of your server in a web browser or your alias
 <a class="reference external" href="http://altcap.io">altcap.io</a></p>
 <div class="section" id="configure-nginx">
-<h3>Configure Nginx<a class="headerlink" href="#configure-nginx" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id5">Configure Nginx</a><a class="headerlink" href="#configure-nginx" title="Permalink to this headline">¶</a></h3>
 <p>To configure the web server, edit the default site and save as new DNS
 alias name using http port 80 only until you setup
 <a class="reference external" href="https://letsencrypt.org/">letsencrypt.org</a> SSL Certificate.</p>
 </div>
 <div class="section" id="create-your-web-folder">
-<h3>Create your web folder<a class="headerlink" href="#create-your-web-folder" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id6">Create your web folder</a><a class="headerlink" href="#create-your-web-folder" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">altcap</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">public_html</span>
 <span class="n">sudo</span> <span class="n">chown</span> <span class="o">-</span><span class="n">R</span> <span class="n">bitshares</span><span class="p">:</span><span class="n">bitshares</span> <span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">altcap</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">public_html</span>
 <span class="n">sudo</span> <span class="n">chmod</span> <span class="mi">755</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span>
@@ -234,7 +276,7 @@ alias name using http port 80 only until you setup
 </div>
 </div>
 <div class="section" id="id1">
-<h3>Configure Nginx<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id7">Configure Nginx</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># edit default setup and save as altcap.io</span>
 <span class="n">sudo</span> <span class="n">nano</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">sites</span><span class="o">-</span><span class="n">available</span><span class="o">/</span><span class="n">default</span>
 </pre></div>
@@ -263,20 +305,20 @@ CTRL+O to save as altcap.io (^O Write Out)
 </div>
 </div>
 <div class="section" id="update-virtual-host-file">
-<h3>Update Virtual Host File<a class="headerlink" href="#update-virtual-host-file" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id8">Update Virtual Host File</a><a class="headerlink" href="#update-virtual-host-file" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">cp</span> <span class="n">altcap</span><span class="o">.</span><span class="n">io</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">sites</span><span class="o">-</span><span class="n">available</span><span class="o">/</span><span class="n">altcap</span><span class="o">.</span><span class="n">io</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="activate-sim-link-and-disable-default-web-server">
-<h3>Activate sim link and disable default web server<a class="headerlink" href="#activate-sim-link-and-disable-default-web-server" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id9">Activate sim link and disable default web server</a><a class="headerlink" href="#activate-sim-link-and-disable-default-web-server" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">sites</span><span class="o">-</span><span class="n">available</span><span class="o">/</span><span class="n">altcap</span><span class="o">.</span><span class="n">io</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">sites</span><span class="o">-</span><span class="n">enabled</span><span class="o">/</span><span class="n">altcap</span><span class="o">.</span><span class="n">io</span>
 <span class="n">sudo</span> <span class="n">rm</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">sites</span><span class="o">-</span><span class="n">enabled</span><span class="o">/</span><span class="n">default</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="link-local-folder-to-www-root-and-add-a-simple-index-html">
-<h3>Link local folder to www root and add a simple index.html<a class="headerlink" href="#link-local-folder-to-www-root-and-add-a-simple-index-html" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id10">Link local folder to www root and add a simple index.html</a><a class="headerlink" href="#link-local-folder-to-www-root-and-add-a-simple-index-html" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">altcap</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">public_html</span> <span class="o">~/</span><span class="n">public_html</span>
 <span class="n">nano</span> <span class="o">~/</span><span class="n">public_html</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span>
 </pre></div>
@@ -303,19 +345,19 @@ for more information on Virtual Host setup.</p>
 </div>
 </div>
 <div class="section" id="install-letsencrypt">
-<h2>Install letsencrypt<a class="headerlink" href="#install-letsencrypt" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id11">Install letsencrypt</a><a class="headerlink" href="#install-letsencrypt" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">letsencrypt</span>
 </pre></div>
 </div>
 <div class="section" id="obtain-your-ssl-certificate">
-<h3>Obtain your SSL certificate<a class="headerlink" href="#obtain-your-ssl-certificate" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id12">Obtain your SSL certificate</a><a class="headerlink" href="#obtain-your-ssl-certificate" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">letsencrypt</span> <span class="n">certonly</span> <span class="o">--</span><span class="n">webroot</span> <span class="o">-</span><span class="n">w</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">altcap</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">public_html</span> <span class="o">-</span><span class="n">d</span> <span class="n">altcap</span><span class="o">.</span><span class="n">io</span>
 </pre></div>
 </div>
 <p>Follow the instructions and add an email address</p>
 </div>
 <div class="section" id="check-your-certificate">
-<h3>Check your certificate<a class="headerlink" href="#check-your-certificate" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id13">Check your certificate</a><a class="headerlink" href="#check-your-certificate" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">ls</span> <span class="o">-</span><span class="n">l</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">letsencrypt</span><span class="o">/</span><span class="n">live</span><span class="o">/</span><span class="n">altcap</span><span class="o">.</span><span class="n">io</span>
 <span class="c1"># and check it will update</span>
 <span class="n">sudo</span> <span class="n">letsencrypt</span> <span class="n">renew</span> <span class="o">--</span><span class="n">dry</span><span class="o">-</span><span class="n">run</span> <span class="o">--</span><span class="n">agree</span><span class="o">-</span><span class="n">tos</span>
@@ -324,7 +366,7 @@ for more information on Virtual Host setup.</p>
 </div>
 </div>
 <div class="section" id="setup-a-renew-cronjob-for-your-new-ssl-certificate">
-<h3>Setup a renew cronjob for your new SSL certificate<a class="headerlink" href="#setup-a-renew-cronjob-for-your-new-ssl-certificate" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id14">Setup a renew cronjob for your new SSL certificate</a><a class="headerlink" href="#setup-a-renew-cronjob-for-your-new-ssl-certificate" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">crontab</span> <span class="o">-</span><span class="n">e</span>
 </pre></div>
 </div>
@@ -340,20 +382,20 @@ for more information on Virtual Host setup.</p>
 </div>
 </div>
 <div class="section" id="generate-strong-diffie-hellman-group-cert">
-<h3>Generate Strong Diffie-Hellman Group cert<a class="headerlink" href="#generate-strong-diffie-hellman-group-cert" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id15">Generate Strong Diffie-Hellman Group cert</a><a class="headerlink" href="#generate-strong-diffie-hellman-group-cert" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">openssl</span> <span class="n">dhparam</span> <span class="o">-</span><span class="n">out</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">ssl</span><span class="o">/</span><span class="n">certs</span><span class="o">/</span><span class="n">dhparam</span><span class="o">.</span><span class="n">pem</span> <span class="mi">2048</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="section" id="add-ssl-to-nginx-settings">
-<h2>Add SSL to Nginx settings<a class="headerlink" href="#add-ssl-to-nginx-settings" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id16">Add SSL to Nginx settings</a><a class="headerlink" href="#add-ssl-to-nginx-settings" title="Permalink to this headline">¶</a></h2>
 <p>Make a copy of altcap.io just in case.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="n">altcap</span><span class="o">.</span><span class="n">io</span> <span class="n">alcap</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">no</span><span class="o">.</span><span class="n">ssl</span>
 </pre></div>
 </div>
 <div class="section" id="edit-altcap-io">
-<h3>Edit altcap.io<a class="headerlink" href="#edit-altcap-io" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id17">Edit altcap.io</a><a class="headerlink" href="#edit-altcap-io" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nano</span> <span class="n">altcap</span><span class="o">.</span><span class="n">io</span>
 </pre></div>
 </div>
@@ -449,7 +491,7 @@ for more information) ###Update altcap.io www virtual host</p>
 </div>
 </div>
 <div class="section" id="restart-nginx">
-<h3>Restart Nginx<a class="headerlink" href="#restart-nginx" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id18">Restart Nginx</a><a class="headerlink" href="#restart-nginx" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">service</span> <span class="n">nginx</span> <span class="n">restart</span>
 </pre></div>
 </div>
@@ -461,9 +503,9 @@ SSL</a>
 </div>
 </div>
 <div class="section" id="install-bitshares-web-gui">
-<h2>Install BitShares web gui<a class="headerlink" href="#install-bitshares-web-gui" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id19">Install BitShares web gui</a><a class="headerlink" href="#install-bitshares-web-gui" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="install-nvm-node-version-manager">
-<h3>Install NVM (Node Version Manager)<a class="headerlink" href="#install-nvm-node-version-manager" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id20">Install NVM (Node Version Manager)</a><a class="headerlink" href="#install-nvm-node-version-manager" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">o</span><span class="o">-</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">creationix</span><span class="o">/</span><span class="n">nvm</span><span class="o">/</span><span class="n">v0</span><span class="o">.</span><span class="mf">30.2</span><span class="o">/</span><span class="n">install</span><span class="o">.</span><span class="n">sh</span> <span class="o">|</span> <span class="n">bash</span>
 </pre></div>
 </div>
@@ -474,20 +516,20 @@ SSL</a>
 </pre></div>
 </div>
 <div class="section" id="download-bitshares-gui">
-<h4>Download BitShares gui<a class="headerlink" href="#download-bitshares-gui" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id21">Download BitShares gui</a><a class="headerlink" href="#download-bitshares-gui" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><a class="reference external" href="https://github.com/bitshares/bitshares-ui/releases">https://github.com/bitshares/bitshares-ui/releases</a></li>
 </ul>
 </div>
 <div class="section" id="setup-light-wallet">
-<h4>Setup light wallet<a class="headerlink" href="#setup-light-wallet" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id22">Setup light wallet</a><a class="headerlink" href="#setup-light-wallet" title="Permalink to this headline">¶</a></h4>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Please refer bitshares-ui installation guide.</p>
 </div>
 </div>
 <div class="section" id="build-light-wallet">
-<h4>Build light wallet<a class="headerlink" href="#build-light-wallet" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id23">Build light wallet</a><a class="headerlink" href="#build-light-wallet" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">npm</span> <span class="n">run</span> <span class="n">build</span>
 </pre></div>
 </div>
@@ -499,7 +541,7 @@ tutorials for more help.</p>
 </div>
 </div>
 <div class="section" id="ssl-test">
-<h3>SSL test<a class="headerlink" href="#ssl-test" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id24">SSL test</a><a class="headerlink" href="#ssl-test" title="Permalink to this headline">¶</a></h3>
 <p>You can also check how secure your new web server is compared to your bank. Add this link to a web browser and wait for the results.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://www.ssllabs.com/ssltest/analyze.html?d=altcap.io
 </pre></div>

@@ -3,6 +3,11 @@
 General Network and Wallet Configuration 
 =============================================
 
+.. contents:: Table of Contents
+   :local:
+   
+-------
+
 For general purpose setups, we recommend a reduced complexity setup that looks as follows.
 
 Set up

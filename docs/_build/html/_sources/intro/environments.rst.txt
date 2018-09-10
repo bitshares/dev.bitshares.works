@@ -9,13 +9,13 @@ Development Environments
 -------
 
 
-BitShares offers you to install BitShares-Core into different platforms; :ref:`Linux:Ubuntu (x64) <build-ubuntu>` , :ref:`OS X <build-osx>` , and :ref:`Windows <build-windows>`.  There are  dependencies to check when you download OpenSSL and  Boost. Please make sure which versions you downloaded. 
+BitShares offers you to install BitShares-Core into different platforms; :ref:`Linux:Ubuntu (x64) <build-ubuntu>` , :ref:`OS X <build-osx>` , and :ref:`Windows <build-windows>`.   There are dependencies to check when you download OpenSSL and  Boost. Please make sure which versions you downloaded. 
 
 Also, if you are a Windows user, you have other two choices to install BitShares Core to your Windows (x64) Operation System.  One is :ref:`CLI-Wallet tools for Windows (x64) <cli-tool>` , another one is :ref:`Windows SubSystem for Linux (WSL) <build-wsl>` .
 
-The CLI-wallet tools for Windows (x64) allows you to have CLI wallet without the BitShares Core installation. After you download the cli-wallet tools (zip file) and unzip it, you will find all files you need to run CLI wallet.  
+The CLI-wallet tools for Windows (x64) allow you to have CLI wallet without the BitShares Core installation. After you download the cli-wallet tools (zip file) and unzip it, you will find all files you need to run CLI wallet.  
 
-Another option, Windows SubSystem for Linux (WSL).  This is for a developer who uses a Windows 10 (x64) Operation System and wants to build BitShares Core on Ubuntu. 
+Another option, Windows SubSystem for Linux (WSL).  The WSL is for a developer who uses a Windows 10 (x64) Operation System and wants to build BitShares Core on Ubuntu. 
 
 > See :ref:`System Requirements <system-requirements-node>` : (updated: 2018-07-02).
 
@@ -53,15 +53,17 @@ Project Guide
 BitShares-Core (Team) 
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-This is a team of developers who manage BitShares-Core code updates and handle the issues that are submitted by developers. The team creates a project plan of next release and delivers to the Bitshares community about the Project information. 
+The BitShares-Core team is a team of developers who manage the BitShares-Core code and handle the issues that are submitted by other developers. The team creates project plans for next release(s) and delivers the result to the Bitshares community. 
 
 * Roles
-   - improving
-   - maintaining
-   - upgrading protocol if needed
-   - making Project plans for the future release
-   - creating/ announcing  Release 
-    
+
+  - improving
+  - maintaining
+  - upgrading protocol if needed
+  - making Project plans for the future release
+  - creating/ announcing  Release 
+  - supporting the BitShares community/ answering questions
+  
 	
 ------------------	
 	

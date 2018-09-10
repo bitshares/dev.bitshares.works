@@ -38,18 +38,8 @@ Since we have a delayed full node that we can fully trust, we will interface wit
 
 .. include:: network_general.rst 
 
-.. include:: network_secure.rst  
 
-
-
-
-
-
-
-
-
-
-
+.. include:: network_secure.rst 
 
 
 
