@@ -1,7 +1,14 @@
 
+.. _secure-network-configuration:
 
 Secure Network and Wallet Configuration 
 ===============================================
+
+
+.. contents:: Table of Contents
+   :local:
+   
+-------
 
 For high security, we provide a so called **delayed** full node which accepts the parameter `trusted-node` for an RPC endpoint of a trusted validating node. The trusted-node is a regular full node directly connected to the P2P network that works as a proxy. The delayed node will delay blocks until they are **irreversible**. Depending on the block interval and the number of witnesses, this may lead to a few minutes of delay.
 

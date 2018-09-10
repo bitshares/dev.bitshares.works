@@ -9,7 +9,7 @@ Protocols
 
 This document purpose: to bring BitShares Protocols information (files) close to users.
 
-These are a collection of the BitShares Protocols information. They are deep in the library, often hard to notice. The original files locate: (..\\libraries\\chain\\include\\graphene\\chain\\protocol\\xxx.hpp)
+These are a collection of the BitShares Protocols information. Sometimes it's difficult to find and read through all of them.  The original files locate: (..\\libraries\\chain\\include\\graphene\\chain\\protocol\\xxx.hpp)
 
 ----------------
 
@@ -24,7 +24,7 @@ Components and Descriptions
 *graphene::chain::*
 
 
-**Note**: Operations have the :ref:`lib-operations` section to list all operations. Therefore, if a protocol includes any operations, check the :ref:`lib-operations` page.
+.. Note:: Operations have the :ref:`lib-operations` page to list all operations. Therefore, if a protocol includes any operations, only listed the operation's name. Please check the :ref:`lib-operations` page.
 
 
 ---------------------------
@@ -66,7 +66,7 @@ Each operation shall contain enough information to know which accounts must auth
 
 Each operation contains enough information to enumerate all accounts for which the operation should apear in its account history.  This principle enables us to easily define and enforce the @balance_calculation. This is superset of the @ref defined_authority
 
-::
+.. code-block:: cpp 
 
 	struct void_result{};
 	typedef fc::static_variant<void_result,object_id_type,asset> operation_result;
@@ -105,9 +105,9 @@ Each operation contains enough information to enumerate all accounts for which t
 block
 --------------------- 
 
-*See listed [`block`information section](../components#block-header---inheritance).
+*See listed :ref:`block`information section <lib-block>`
 
-::
+.. code-block:: cpp 
 
 	struct block_header{  };
 	struct signed_block_header : public block_header{  }
@@ -118,7 +118,7 @@ block
 address 
 ---------------
 
-::
+.. code-block:: cpp
 
 	namespace fc { namespace ecc {
 	  class  public_key; 
@@ -138,7 +138,7 @@ address
 - When converted to a string, checksum calculated as the first 4 bytes ripemd160( address ) is appended to the binary address before converting to base58.
 
 
-::
+.. code-block:: cpp
 
 	class address
 	{
@@ -168,7 +168,7 @@ address
 	inline bool operator <  ( const address& a, const address& b ) { return a.addr <  b.addr; }
 
 
-::
+.. code-block:: cpp
 
 	namespace fc
 	{
@@ -196,7 +196,8 @@ authority
 - class authority
 - Identifies a weighted set of keys and accounts that must approve operations.
 
-::
+
+.. code-block:: cpp
 
 	struct authority
 	{
@@ -286,13 +287,13 @@ authority
 		flat_map<public_key_type,weight_type> key_auths;
 		/** needed for backward compatibility only */
 		flat_map<address,weight_type>         address_auths;
-	};
+	 };
 
  
 	
 - Add all account members of the given authority to the given flat_set.
 
-::
+.. code-block:: cpp
 	 
 	void add_authority_accounts(
 	   flat_set<account_id_type>& result,
@@ -303,7 +304,7 @@ authority
 special_authority 
 --------------------- 
 
-::
+.. code-block:: cpp
 
 	struct no_special_authority {};
 
@@ -320,12 +321,13 @@ special_authority
 
 	void validate_special_authority( const special_authority& auth );
 	
-
+	
+.. _protocol-chain-param: 
 
 chain_parameters 
 --------------------- 
 
-::
+.. code-block:: cpp
 
 	struct fee_schedule;
 
@@ -404,7 +406,7 @@ chain_parameters
 types 
 --------------------- 
 
-::
+.. code-block:: cpp
 
 	using namespace graphene::db;
 
@@ -475,7 +477,7 @@ types
 
 - List all object types from all namespaces here so they can be easily reflected and displayed in debug output.  If a 3rd party  wants to extend the core code then they will have to change the packed_object::type field from enum_type to uint16 to avoid warnings when converting packed_objects to/from json.
 
-::
+.. code-block:: cpp
 
 	enum object_type
 	{
@@ -667,7 +669,7 @@ types
 	};
 
 
-::
+.. code-block:: cpp
 
 	namespace fc
 	{
@@ -687,7 +689,7 @@ operations
 - operations
 - Defines the set of valid operations as a discriminated union type.
 
-::
+.. code-block:: cpp
 
 	typedef fc::static_variant<
 		transfer_operation,
@@ -745,7 +747,7 @@ operations
 - Appends required authorities to the result vector.  The authorities appended are not the same as those returned by get_required_auth 
 - Return a set of required authorities for @ref op. 
 	
-::
+.. code-block:: cpp
 
 	void operation_get_required_authorities( const operation& op, 
 		 flat_set<account_id_type>& active,
@@ -757,7 +759,7 @@ operations
 
 - necessary to support nested operations inside the `proposal_create_operation`
 
-::
+.. code-block:: cpp
 
 	struct op_wrapper
 	{
@@ -775,7 +777,7 @@ Account
 account 
 ---------------
 
-::
+.. code-block:: cpp
 
 	bool is_valid_name( const string& s );
 	bool is_cheap_name( const string& n );
@@ -783,7 +785,7 @@ account
 
 - These are the fields which can be updated by the active authority.
 
-::
+.. code-block:: cpp
 
 	struct account_options
 	{
@@ -827,7 +829,7 @@ account
 
 (**2:  voting_account = GRAPHENE_PROXY_TO_SELF_ACCOUNT; )
 
-::
+.. code-block:: cpp
 
 	struct account_create_operation : public base_operation
 
@@ -844,7 +846,7 @@ memo
 *  If @ref from == @ref to and @ref from == 0 then no encryption is used, the memo is public.
 *  If @ref from == @ref to and @ref from != 0 then invalid memo data
 
-::
+.. code-block:: cpp
 
 	struct memo_data
 	{
@@ -877,7 +879,7 @@ memo
 - defines a message and checksum to enable validation of successful decryption
 - When encrypting/decrypting a checksum is required to determine whether or not decryption was successful.
  
-::
+.. code-block:: cpp
 
 	struct memo_message
 	{
@@ -918,7 +920,7 @@ transfer
 confidential 
 --------------------- 
 
-::
+.. code-block:: cpp
 
 	using fc::ecc::blind_factor_type;
 
@@ -926,9 +928,11 @@ confidential
 - stealth Stealth Transfer
 - Operations related to stealth transfer of value
 - Stealth Transfers enable users to maintain their finanical privacy against even though all transactions are public.  Every account has three balances:
+
   - 1. Public Balance - everyone can see the balance changes and the parties involved
   - 2. Blinded Balance - everyone can see who is transacting but not the amounts involved
   - 3. Stealth Balance - both the amounts and parties involved are obscured
+  
 - Account owners may set a flag that allows their account to receive(or not) transfers of these kinds. Asset issuers can enable or disable the use of each of these types of accounts.  
 - Using the "temp account" which has no permissions required, users can transfer a stealth balance to the temp account and then use the temp account to register a new account.  In this way users can use stealth funds to create anonymous accounts with which they can perform other actions that are not compatible with blinded balances (such as market orders)
 
@@ -946,7 +950,7 @@ Stealth transfers can have an arbitrarylly large size and therefore the transact
 - This data is encrypted and stored in the encrypted memo portion of the blind output.
 - set to the first 4 bytes of the shared secret used to encrypt the memo.  Used to verify that decryption was successful.
 
-::
+.. code-block:: cpp
 
 	struct blind_memo
 	{
@@ -960,7 +964,7 @@ Stealth transfers can have an arbitrarylly large size and therefore the transact
 - stealth
 - provided to maintain the invariant that all authority required by an operation is explicit in the operation.  Must match blinded_balance_id->owner
 
-::
+.. code-block:: cpp
 
 	struct blind_input
 	{
@@ -971,7 +975,7 @@ Stealth transfers can have an arbitrarylly large size and therefore the transact
 
 -  When sending a stealth tranfer we assume users are unable to scan the full blockchain; therefore, payments require confirmation data to be passed out of band.   We assume this out-of-band channel is not secure and therefore the contents of the confirmation must be encrypted
 
-::
+.. code-block:: cpp
 
 	struct stealth_confirmation
 	{
@@ -1000,7 +1004,7 @@ Stealth transfers can have an arbitrarylly large size and therefore the transact
 - stealth
 - The blinded output that must be proven to be greater than 0
 
-::
+.. code-block:: cpp
 
 	struct blind_output
 	{
@@ -1044,7 +1048,7 @@ assert
 - Used to verify that account_id->name is equal to the given string literal.
 - Perform state-independent checks.  Verify account_name is a valid account name.
 
-::
+.. code-block:: cpp
 
 	struct account_name_eq_lit_predicate
 	{
@@ -1057,7 +1061,7 @@ assert
 - Used to verify that asset_id->symbol is equal to the given string literal.
 - Perform state independent checks.  Verify symbol is a valid asset symbol.
 
-::
+.. code-block:: cpp
 
 	struct asset_symbol_eq_lit_predicate
 	{
@@ -1070,7 +1074,7 @@ assert
 - Used to verify that a specific block is part of the blockchain history.  This helps protect some high-value transactions to newly created IDs.
 - The block ID must be within the last 2^16 blocks.
 
-::
+.. code-block:: cpp
 
 	struct block_id_predicate
 	{
@@ -1081,7 +1085,7 @@ assert
 - When defining predicates do not make the protocol dependent upon implementation details.
 
 
-::
+.. code-block:: cpp
 
 	typedef static_variant<
 		account_name_eq_lit_predicate,
@@ -1100,7 +1104,7 @@ assert
 asset 
 ---------------
 
-::
+.. code-block:: cpp
 
 
 	extern const int64_t scaled_precision_lut[];
@@ -1180,7 +1184,7 @@ asset
 - A price is defined as a ratio between two assets, and represents a possible exchange rate between those two assets. prices are generally not stored in any simplified form, i.e. a price of (1000 CORE)/(20 USD) is perfectly normal.
 - The assets within a price are labeled base and quote. Throughout the Graphene code base, the convention used is that the base asset is the asset being sold, and the quote asset is the asset being purchased, where the price is represented as base/quote, so in the example price above the seller is looking to sell CORE asset and get USD in return.
 
-::
+.. code-block:: cpp
 
 	struct price
 	{
@@ -1234,7 +1238,7 @@ asset
 -  Default requirement is $1.75 of collateral per $1 of debt       
 -  BlackSwan ---> SQR ---> MCR ----> SP 
 
-::
+.. code-block:: cpp
 
 	struct price_feed
 	{
@@ -1278,7 +1282,7 @@ asset
 asset_ops 
 ---------------
 
-::
+.. code-block:: cpp
 
 	bool is_valid_symbol( const string& symbol );
 
@@ -1286,7 +1290,7 @@ asset_ops
 - The asset_options struct contains options available on all assets in the network
 - **Note**: Changes to this struct will break protocol compatibility
 
-::
+.. code-block:: cpp
 
 	struct asset_options {
 		share_type  max_supply = GRAPHENE_MAX_SHARE_SUPPLY;
@@ -1331,7 +1335,7 @@ asset_ops
 - The bitasset_options struct contains configurable options available only to BitAssets.
 - **Note** Changes to th is struct will break protocol compatibility
 
-::
+.. code-block:: cpp
 
 	struct bitasset_options {
 		uint32_t      feed_lifetime_sec = GRAPHENE_DEFAULT_PRICE_FEED_LIFETIME;
@@ -1353,7 +1357,7 @@ asset_ops
 :force_settlement_delay_sec = GRAPHENE_DEFAULT_FORCE_SETTLEMENT_DELAY;:    This is the delay between the time a long requests settlement and the chain evaluates the settlement 
 :force_settlement_offset_percent = GRAPHENE_DEFAULT_FORCE_SETTLEMENT_OFFSET;:   This is the percent to adjust the feed price in the short's favor in the event of a forced settlement 
 :maximum_force_settlement_volume = GRAPHENE_DEFAULT_FORCE_SETTLEMENT_MAX_VOLUME;:    Force settlement volume can be limited such that only a certain percentage of the total existing supply of the asset may be force-settled within any given chain maintenance interval. This field stores the percentage of the current supply which may be force settled within the current maintenance interval. If force settlements come due in an interval in which the maximum volume has already been settled, the new settlements will be enqueued and processed at the beginning of the next maintenance interval. 
-:short_backing_asset;:    This speicifies which asset type is used to collateralize short sales. This field may only be updated if the current supply of the asset is zero 
+:short_backing_asset;:    This specifies which asset type is used to collateralize short sales. This field may only be updated if the current supply of the asset is zero 
 :extensions;:   
 :validate()const;:   Perform internal consistency checks. @throws fc::exception if any check fails 
 
@@ -1409,7 +1413,7 @@ fba
 buyback 
 --------------------- 
 
-::
+.. code-block:: cpp
 
 	struct buyback_account_options
 	{
@@ -1469,7 +1473,7 @@ proposal
   
 * op_wrapper is used to get around the circular definition of operation and proposals that contain them.
 
-::
+.. code-block:: cpp
 
 	struct op_wrapper;
 
@@ -1493,13 +1497,16 @@ transaction
 - Rather than specify a full block number, we only specify the lower 16 bits of the block number which means you can reference any block within the last 65,536 blocks which is 3.5 days with a 5 second block interval or 18 hours with a 1 second interval.
 - All transactions must expire so that the network does not have to maintain a permanent record of all transactions ever published.  A transaction may not have an expiration date too far in the future because this would require keeping too much transaction history in memory.
 -  The block prefix is the first 4 bytes of the block hash of the reference block number, which is the second 4 bytes of the @ref block_id_type (the first 4 bytes of the block ID are the block number)
-- **Note**: A transaction which selects a reference block cannot be migrated between forks outside the period of ref_block_num.time to (ref_block_num.time + rel_exp * interval). This fact can be used to protect market orders which should specify a relatively short re-org window of perhaps less than 1 minute. Normal payments should probably have a longer re-org window to ensure their transaction can still go through in the event of a momentary disruption in service.
-- **Note**: It is not recommended to set the @ref ref_block_num, @ref ref_block_prefix, and @ref expiration fields manually. Call the appropriate overload of @ref set_expiration instead.
+
+.. Note:: A transaction which selects a reference block cannot be migrated between forks outside the period of ref_block_num.time to (ref_block_num.time + rel_exp * interval). This fact can be used to protect market orders which should specify a relatively short re-org window of perhaps less than 1 minute. Normal payments should probably have a longer re-org window to ensure their transaction can still go through in the event of a momentary disruption in service.
+
+
+.. Note:: It is not recommended to set the @ref ref_block_num, @ref ref_block_prefix, and @ref expiration fields manually. Call the appropriate overload of @ref set_expiration instead.
    
 
 **groups operations that should be applied atomically**
 
-::
+.. code-block:: cpp
 
 	struct transaction
 	{
@@ -1557,7 +1564,7 @@ transaction
 
 **adds a signature to a transaction**
 
-::
+.. code-block:: cpp
 
 	struct signed_transaction : public transaction
 	{
@@ -1614,7 +1621,7 @@ transaction
 	  void clear() { operations.clear(); signatures.clear(); }
 	};
 
-::
+.. code-block:: cpp
 
 	void verify_authority( const vector<operation>& ops, const flat_set<public_key_type>& sigs,
 						  const std::function<const authority*(account_id_type)>& get_active,
@@ -1629,7 +1636,7 @@ transaction
 - When processing a transaction some operations generate new object IDs and these IDs cannot be known until the transaction is actually included into a block.  When a block is produced these new ids are captured and included with every transaction.  The index in operation_results should correspond to the same index in operations.
 - If an operation did not create any new object IDs then 0 should be returned.
 
-::
+.. code-block:: cpp
 
 	struct processed_transaction : public signed_transaction
 	{
@@ -1675,7 +1682,7 @@ fee_schedule
 
 > See: ..\libraries\chain\include\graphene\chain\protocol\fee_schedule.hpp
 
-::
+.. code-block:: cpp
 
 	template<typename T> struct transform_to_fee_parameters;
 	template<typename ...T>
@@ -1693,7 +1700,7 @@ fee_schedule
  
 *contains all of the parameters necessary to calculate the fee for any operation*
 
-::
+.. code-block:: cpp
 
 	struct fee_schedule
 	{
@@ -1738,7 +1745,7 @@ Vote
 vesting 
 --------------------- 
 
-::
+.. code-block:: cpp
 
 	struct linear_vesting_policy_initializer
 	{
@@ -1777,7 +1784,7 @@ vote
 - In JSON, a vote_id_type is represented as a string "type:instance", i.e. "1:5" would be type 1 and instance 5. 
 - **Note**: In the Graphene protocol, vote_id_type instances are unique across types; that is to say, if an object of type 1 has instance 4, an object of type 0 may not also have instance 4. In other words, the type is not a namespace for instances; it is only an informational field.
 
-::
+.. code-block:: cpp
 
 	struct vote_id_type
 	{
@@ -1857,14 +1864,14 @@ vote
 	};
 	
 
-::
+.. code-block:: cpp
 
 	class global_property_object;
 
 	vote_id_type get_next_vote_id( global_property_object& gpo, vote_id_type::vote_type type );
 	
 
-::
+.. code-block:: cpp
 
 	namespace fc
 	{
@@ -1922,7 +1929,7 @@ worker
 - Payment is not prorated based on percentage of the interval the worker was approved. If the chain attempts to pay a worker, but the budget is insufficient to cover its entire pay, the worker is paid the remaining budget funds, even though this does not fulfill his total pay. The worker will not receive extra pay to make up the difference later. Worker pay is placed in a vesting balance and vests over the number of days specified at the worker's creation.
 -  Once created, a worker is immutable and will be kept by the blockchain forever.
 
-::
+.. code-block:: cpp
 
 	struct vesting_balance_worker_initializer
 	{
@@ -1961,7 +1968,7 @@ config
 ext 
 --------------------- 
 
-::
+.. code-block:: cpp
 
 	amespace graphene { namespace chain {
 
@@ -1986,7 +1993,7 @@ ext
 	}};
 	
 
-::
+.. code-block:: cpp
 
 	namespace fc {
 
@@ -2007,7 +2014,7 @@ ext
 	void to_variant( const graphene::chain::extension<T>& value, fc::variant& var, uint32_t max_depth ){  };
 	
 
-::
+.. code-block:: cpp
 
 	namespace raw {
 

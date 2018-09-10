@@ -108,6 +108,7 @@
 <p class="caption"><span class="caption-text">Development</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../development/installation.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bts_guide/accounts/bts_account.html">BitShares Accounts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../development/integration.html">Integration Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../development/interaction.html">Blockchain Interaction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../development/testnets.html">Testnets</a></li>
@@ -116,12 +117,13 @@
 </ul>
 <p class="caption"><span class="caption-text">API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../api/restrictions.html">1. API Access and Restrictions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/calls.html">2. Available Calls</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/blockchain_api.html">3. Blockchain API(s)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/wallet_api.html">4. Wallet API - Calls</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/objects_ids.html">5. Objects and IDs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/namespaces.html">6. Graphene - Namespaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/api_about.html">1. API Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/restrictions.html">2. API Access and Restrictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/calls.html">3. Available Calls, Object, and IDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/blockchain_api.html">4. Blockchain API(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/wallet_api.html">5. Wallet API - Calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/objects_ids.html">6. Objects and IDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/namespaces.html">7. Graphene - Namespaces</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Guides</span></p>
 <ul>
@@ -132,7 +134,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../references/info_comunities.html">BitShares Community</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/info_comunities.html#bitshares-blockchain">BitShares Blockchain</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/tech_articles.html">Articles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/tech_articles.html">BitShares Developers’ Contributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/tech_articles.html#articles">Articles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/githubrepo.html">BitShares Repositories</a></li>
 </ul>
 
@@ -223,10 +226,10 @@
 </ul>
 </div>
 <hr class="docutils" />
-<p>BitShares offers you to install BitShares-Core into different platforms; <a class="reference internal" href="../development/installation/build_ubuntu.html#build-ubuntu"><span class="std std-ref">Linux:Ubuntu (x64)</span></a> , <a class="reference internal" href="../development/installation/build_osx.html#build-osx"><span class="std std-ref">OS X</span></a> , and <a class="reference internal" href="../development/installation/build_windows.html#build-windows"><span class="std std-ref">Windows</span></a>.  There are  dependencies to check when you download OpenSSL and  Boost. Please make sure which versions you downloaded.</p>
+<p>BitShares offers you to install BitShares-Core into different platforms; <a class="reference internal" href="../development/installation/build_ubuntu.html#build-ubuntu"><span class="std std-ref">Linux:Ubuntu (x64)</span></a> , <a class="reference internal" href="../development/installation/build_osx.html#build-osx"><span class="std std-ref">OS X</span></a> , and <a class="reference internal" href="../development/installation/build_windows.html#build-windows"><span class="std std-ref">Windows</span></a>.   There are dependencies to check when you download OpenSSL and  Boost. Please make sure which versions you downloaded.</p>
 <p>Also, if you are a Windows user, you have other two choices to install BitShares Core to your Windows (x64) Operation System.  One is <a class="reference internal" href="../development/installation/windows_cli_tool.html#cli-tool"><span class="std std-ref">CLI-Wallet tools for Windows (x64)</span></a> , another one is <a class="reference internal" href="../development/installation/wsl.html#build-wsl"><span class="std std-ref">Windows SubSystem for Linux (WSL)</span></a> .</p>
-<p>The CLI-wallet tools for Windows (x64) allows you to have CLI wallet without the BitShares Core installation. After you download the cli-wallet tools (zip file) and unzip it, you will find all files you need to run CLI wallet.</p>
-<p>Another option, Windows SubSystem for Linux (WSL).  This is for a developer who uses a Windows 10 (x64) Operation System and wants to build BitShares Core on Ubuntu.</p>
+<p>The CLI-wallet tools for Windows (x64) allow you to have CLI wallet without the BitShares Core installation. After you download the cli-wallet tools (zip file) and unzip it, you will find all files you need to run CLI wallet.</p>
+<p>Another option, Windows SubSystem for Linux (WSL).  The WSL is for a developer who uses a Windows 10 (x64) Operation System and wants to build BitShares Core on Ubuntu.</p>
 <p>&gt; See <a class="reference internal" href="../development/apps/node.html#system-requirements-node"><span class="std std-ref">System Requirements</span></a> : (updated: 2018-07-02).</p>
 <hr class="docutils" />
 <div class="section" id="bitshares-code-and-files">
@@ -262,19 +265,16 @@
 </ul>
 <div class="section" id="bitshares-core-team">
 <h4><a class="toc-backref" href="#id4">BitShares-Core (Team)</a><a class="headerlink" href="#bitshares-core-team" title="Permalink to this headline">¶</a></h4>
-<p>This is a team of developers who manage BitShares-Core code updates and handle the issues that are submitted by developers. The team creates a project plan of next release and delivers to the Bitshares community about the Project information.</p>
+<p>The BitShares-Core team is a team of developers who manage the BitShares-Core code and handle the issues that are submitted by other developers. The team creates project plans for next release(s) and delivers the result to the Bitshares community.</p>
 <ul class="simple">
-<li><dl class="first docutils">
-<dt>Roles</dt>
-<dd><ul class="first last">
+<li>Roles<ul>
 <li>improving</li>
 <li>maintaining</li>
 <li>upgrading protocol if needed</li>
 <li>making Project plans for the future release</li>
 <li>creating/ announcing  Release</li>
+<li>supporting the BitShares community/ answering questions</li>
 </ul>
-</dd>
-</dl>
 </li>
 </ul>
 </div>

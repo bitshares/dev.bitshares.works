@@ -29,7 +29,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Exchanges, Bridges, and Gateways" href="use_cases/uc_exchange_integration.html" />
-    <link rel="prev" title="Boost Versions" href="installation/boost_versions.html" /> 
+    <link rel="prev" title="BitShares Accounts" href="../bts_guide/accounts/bts_account.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -87,7 +87,9 @@
 <p class="caption"><span class="caption-text">Development</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bts_guide/accounts/bts_account.html">BitShares Accounts</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Integration Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#basic-knowledge">Basic Knowledge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#use-cases">Use Cases</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="use_cases/uc_exchange_integration.html">Exchanges, Bridges, and Gateways</a></li>
 <li class="toctree-l3"><a class="reference internal" href="use_cases/uc_merchant.html">Merchants</a></li>
@@ -105,12 +107,13 @@
 </ul>
 <p class="caption"><span class="caption-text">API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../api/restrictions.html">1. API Access and Restrictions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/calls.html">2. Available Calls</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/blockchain_api.html">3. Blockchain API(s)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/wallet_api.html">4. Wallet API - Calls</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/objects_ids.html">5. Objects and IDs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/namespaces.html">6. Graphene - Namespaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/api_about.html">1. API Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/restrictions.html">2. API Access and Restrictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/calls.html">3. Available Calls, Object, and IDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/blockchain_api.html">4. Blockchain API(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/wallet_api.html">5. Wallet API - Calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/objects_ids.html">6. Objects and IDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/namespaces.html">7. Graphene - Namespaces</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Guides</span></p>
 <ul>
@@ -121,7 +124,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../references/info_comunities.html">BitShares Community</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/info_comunities.html#bitshares-blockchain">BitShares Blockchain</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/tech_articles.html">Articles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/tech_articles.html">BitShares Developers’ Contributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/tech_articles.html#articles">Articles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/githubrepo.html">BitShares Repositories</a></li>
 </ul>
 
@@ -187,13 +191,24 @@
             
   <div class="section" id="integration-guide">
 <h1>Integration Guide<a class="headerlink" href="#integration-guide" title="Permalink to this headline">¶</a></h1>
-<p>Banks, exchanges and merchants are integrating with the Graphene technology already to power instant cross-border remittance, corporate payments, voting, and decentralized trading. This page serves as a technical documentation for integrating any Graphene based technology to profiting from</p>
+<p>Banks, exchanges and merchants are integrating with the Graphene technology already to power instant cross-border remittance, corporate payments, voting, and decentralized trading. This section provides technical information for integrating any Graphene based technology to profiting from:</p>
 <ul class="simple">
 <li>its real-time blockchain technology,</li>
 <li>existing user base,</li>
 <li>its network effect, and</li>
 <li>existing ecosystem.</li>
 </ul>
+<div class="section" id="basic-knowledge">
+<h2>Basic Knowledge<a class="headerlink" href="#basic-knowledge" title="Permalink to this headline">¶</a></h2>
+<p>If you have not read <a class="reference external" href="http://how.bitshares.works/en/latest">BitShares Documentation for all users</a> (<a class="reference external" href="http://how.bitshares.works/en/latest">http://how.bitshares.works/en/latest</a>), we suggest you to read through as your basic knowledge of BitShares.</p>
+<p>We provide here the necessary information to securely operate as a merchant, trader, exchange, or fiat-gateway. The below-listed contents should be known to all of them before starting to integrate.</p>
+<ul class="simple">
+<li><a class="reference external" href="http://how.bitshares.works/en/latest/technology/difference_bitshares.html">What is different BitShares</a> (<a class="reference external" href="http://how.bitshares.works/en/latest">http://how.bitshares.works/en/latest</a>)</li>
+<li><a class="reference internal" href="interaction.html#blockchain-interaction-top"><span class="std std-ref">Blockchain Interaction</span></a></li>
+<li><a class="reference internal" href="apps/network.html#network-setups"><span class="std std-ref">Network and Wallet Configuration</span></a></li>
+<li><a class="reference internal" href="../api/often-used-calls.html#often-used-calls"><span class="std std-ref">Often used API Calls</span></a></li>
+</ul>
+</div>
 <div class="section" id="use-cases">
 <h2>Use Cases<a class="headerlink" href="#use-cases" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
@@ -252,7 +267,7 @@
         <a href="use_cases/uc_exchange_integration.html" class="btn btn-neutral float-right" title="Exchanges, Bridges, and Gateways" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="installation/boost_versions.html" class="btn btn-neutral" title="Boost Versions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../bts_guide/accounts/bts_account.html" class="btn btn-neutral" title="BitShares Accounts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -34,13 +34,13 @@ Claiming A Vesting Balance
 
  Open the side dropdown menu and select **[Vesting Balances]**
 
-.. image:: ../images/vesting2.png
+.. image:: vesting2.png
         :alt: Vesting Balances
         :width: 200px
         :align: center
 		
 		
-.. image:: ../images/vesting1.png
+.. image:: vesting1.png
         :alt: Vesting Balances
         :width: 600px
         :align: center

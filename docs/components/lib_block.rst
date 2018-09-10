@@ -5,6 +5,8 @@
 Block
 *******************************************
 
+This section shows how each block is constructed and what kinds of elements are creating the block.
+
 .. contents:: Table of Contents
    :local:
    
@@ -34,7 +36,7 @@ Block Header - inheritance
 block_header
 ----------------------
 
-:: 
+.. code-block:: cpp 
 
 	// *Block Header Inheritance* (i.e.) 1.0.0.0 
 	// graphene::chain
@@ -53,13 +55,13 @@ block_header
 	};
 
 
-- Note: when we need to add data to `extensions`, remember to review `database::_generate_block()`.
+.. Note:: when we need to add data to `extensions`, remember to review ``database::_generate_block()``.
   - More info in https://github.com/bitshares/bitshares-core/issues/1136
       
 signed_block_header
 ---------------------
 
-::
+.. code-block:: cpp
 
 	// *Block Header Inheritance* (i.e.) 1.1.0.0
 	// graphene::chain
@@ -79,7 +81,7 @@ signed_block_header
 signed_block
 --------------
 
-::
+.. code-block:: cpp
 
 	// *Block Header Inheritance* (i.e.) 1.1.1.0
 	// graphene::chain
@@ -94,7 +96,7 @@ signed_block
 signed_block_with_info
 -----------------------
 
-::  
+.. code-block:: cpp  
 
 	// *Block Header Inheritance* (i.e.) 1.1.1.1
 	// graphene::wallet
@@ -112,8 +114,8 @@ signed_block_with_info
 ----------------------------
 
 
-Block (Detail)
-===============
+Block (Detaied image)
+===========================
 
 .. image:: ../../_images/structures/block_structure_sv1.png
         :alt: BitShares Architecture
