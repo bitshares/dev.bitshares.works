@@ -87,6 +87,7 @@
 <p class="caption"><span class="caption-text">Development</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../development/installation.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accounts/bts_account.html">BitShares Accounts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../development/integration.html">Integration Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../development/interaction.html">Blockchain Interaction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../development/testnets.html">Testnets</a></li>
@@ -95,60 +96,41 @@
 </ul>
 <p class="caption"><span class="caption-text">API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../api/restrictions.html">1. API Access and Restrictions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/calls.html">2. Available Calls</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/blockchain_api.html">3. Blockchain API(s)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/wallet_api.html">4. Wallet API - Calls</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/objects_ids.html">5. Objects and IDs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/namespaces.html">6. Graphene - Namespaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/api_about.html">1. API Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/restrictions.html">2. API Access and Restrictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/calls.html">3. Available Calls, Object, and IDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/blockchain_api.html">4. Blockchain API(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/wallet_api.html">5. Wallet API - Calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/objects_ids.html">6. Objects and IDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/namespaces.html">7. Graphene - Namespaces</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Guides</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="tutorials/index.html">Developer Guide (Tutorials)</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Frequently Asked Questions (FAQ)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#assets-faq">Assets - FAQ</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#general">General</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#system-components">System Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#accounts">Accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#apis">APIs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#assets">Assets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#assets-faq">Assets - FAQ</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#can-i-change-x-after-creation-of-the-asset">Can I change <cite>x</cite> after creation of the asset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#changing-the-issuer">Changing the issuer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#can-i-change-the-issuer">Can I change the issuer?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#what-about-parent-and-child-assets">What about Parent and Child assets?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#what-happens-to-the-asset-creation-fee">What happens to the asset creation fee?</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#fee-pool">Fee Pool</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#what-is-fee-pool-draining">What is Fee Pool Draining?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#what-is-the-fee-pool-all-about">What is the fee pool all about?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#what-to-do-if-the-fee-pool-is-empty">What to do if the fee pool is empty?</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#market-fees">Market Fees</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#how-to-claim-accumulated-fees">How to claim accumulated fees?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#what-are-asset-flags-and-permissions">What are Asset Flags and Permissions?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#what-are-the-flags">What are the Flags?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#what-are-the-permissions">What are the Permissions?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#what-happens-if-i-enable-market-fees">What happens if I enable Market fees?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#what-if-two-different-market-fees-are-involved-in-a-trade">What if two different market fees are involved in a trade?</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#market-pegged-assets">Market Pegged Assets</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#can-i-use-the-same-flags-permissions-as-for-uias">Can I use the same flags/permissions as for UIAs?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#what-are-market-pegged-asset-specific-parameters">What are market-pegged-asset-specific parameters?</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#cli-wallet-faq">CLI Wallet - FAQ</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">General</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#fee-pool">Fee Pool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#market-fees">Market Fees</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#market-pegged-assets">Market Pegged Assets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cli-wallet-faq">CLI Wallet - FAQ</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#how-can-i-close-the-cli-client-in-a-clean-way">How can I close the CLI client in a clean way?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#how-can-i-create-register-and-upgrade-an-account-to-lifetime-membership">How can I create, register and upgrade an account to Lifetime Membership?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#how-can-i-import-to-my-cli-client-a-wallet-originally-created-in-the-web-gui">How can I import to my CLI client a wallet originally created in the web GUI?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#how-can-i-transfer-a-single-account-to-a-cli-wallet">How can I transfer a single account to a cli wallet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#why-does-the-cli-client-crash-immediately-when-i-try-to-run-it-for-the-first-time">Why does the CLI client crash immediately when I try to run it for the first time?</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#witness-faq">Witness - FAQ</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id3">General</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#witness-faq">Witness - FAQ</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#how-can-i-close-the-witness-node-in-a-clean-way">How can I close the witness node in a clean way?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#how-do-i-check-whether-the-witness-node-is-already-synceed">How do I check whether the witness node is already synceed?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#if-it-seems-to-be-unable-to-sync-beyond-a-certain-date">If it seems to be unable to sync beyond a certain date</a></li>
@@ -159,10 +141,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#whose-private-key-is-bts6mryajq-5kqwrpbwdl-why-is-it-predefined-ion-the-config-ini">Whose private key is <cite>[“BTS6MRyAjQ..”,”5KQwrPbwdL..”]</cite>? Why is it predefined ion the <cite>config.ini</cite>?</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#developers-faq">Developers - FAQ</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id4">General</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#developers-faq">Developers - FAQ</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#are-there-any-sharding-mechanics-currently-deployed">Are there any sharding mechanics currently deployed?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#are-there-any-special-affordances-made-for-privacy">Are there any special affordances made for privacy?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#does-the-protocol-provide-mechanisms-for-overlay-protocols-to-interact-such-as-or-return">Does the protocol provide mechanisms for overlay protocols to interact such as OR_RETURN?</a></li>
@@ -177,8 +156,6 @@
 <li class="toctree-l4"><a class="reference internal" href="#what-data-structures-are-used-in-the-blockchain">What data structures are used in the blockchain?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#what-is-the-average-block-time">What is the average block time?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#what-is-the-average-size-in-bytes-of-a-bitshares-transaction">What is the average size in Bytes of a Bitshares transaction?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#what-is-the-format-of-the-block-header">What is the format of the block header?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#what-is-the-maximum-bitshares-block-size">What is the maximum bitshares block size?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#what-is-the-standard-bitshares-address-structure-and-format">What is the standard Bitshares address structure and format?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#what-public-key-system-is-used-if-elliptic-curve-then-what-is-the-curve">What public key system is used? If elliptic curve, then what is the curve?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#what-transaction-types-are-natively-supported">What transaction types are natively supported?</a></li>
@@ -193,7 +170,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../references/info_comunities.html">BitShares Community</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/info_comunities.html#bitshares-blockchain">BitShares Blockchain</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/tech_articles.html">Articles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/tech_articles.html">BitShares Developers’ Contributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/tech_articles.html#articles">Articles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/githubrepo.html">BitShares Repositories</a></li>
 </ul>
 
@@ -261,43 +239,118 @@
 <span id="faq-top"></span><h1>Frequently Asked Questions (FAQ)<a class="headerlink" href="#frequently-asked-questions-faq" title="Permalink to this headline">¶</a></h1>
 <p>Questions and Answers for <strong>End Users</strong> and <strong>Developers</strong>.</p>
 <hr class="docutils" />
-<p><strong>End Users - Assets Questions</strong></p>
-<p><em>General</em></p>
+<p><strong>Assets Questions</strong></p>
+<p><strong>General</strong></p>
 <ul class="simple">
-<li><a class="reference internal" href="#asset-faq1"><span class="std std-ref">Can I change x after creation of the asset</span></a></li>
-<li><a class="reference internal" href="#asset-faq2"><span class="std std-ref">Changing the issuer</span></a></li>
-<li><a class="reference internal" href="#asset-faq3"><span class="std std-ref">What about Parent and Child assets?</span></a></li>
+<li><a class="reference internal" href="#dev-faq17"><span class="std std-ref">What is the standard Bitshares address structure and format?</span></a></li>
+<li><a class="reference internal" href="../components/lib_block.html#lib-block"><span class="std std-ref">What is the format of the block header?</span></a></li>
+<li><a class="reference internal" href="../components/lib_protocols.html#protocol-chain-param"><span class="std std-ref">What is the maximum bitshares block size?</span></a> - Configurable by chain parameters</li>
+<li><a class="reference internal" href="#dev-faq1"><span class="std std-ref">Are there any sharding mechanics currently deployed?</span></a></li>
+<li><a class="reference internal" href="#dev-faq4"><span class="std std-ref">How are SPV clients handled?</span></a></li>
+<li><a class="reference internal" href="#dev-faq8"><span class="std std-ref">How is time addressed in the blockchain? Is NTP used or some other protocol?</span></a></li>
+<li><a class="reference internal" href="#dev-faq13"><span class="std std-ref">What is the average block time?</span></a></li>
+<li><a class="reference internal" href="#dev-faq7"><span class="std std-ref">How is accounting addressed in Bitshares? Is it a Nxt style accounting model or like Bitcoin’s UTXO</span></a></li>
+<li><a class="reference internal" href="#dev-faq5"><span class="std std-ref">How are transactions validated?</span></a></li>
+<li><a class="reference internal" href="#dev-faq14"><span class="std std-ref">What is the average size in Bytes of a Bitshares transaction?</span></a></li>
+<li><a class="reference internal" href="#dev-faq19"><span class="std std-ref">What transaction types are natively supported?</span></a></li>
+</ul>
+<p><strong>Protocol</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#dev-faq2"><span class="std std-ref">Are there any special affordances made for privacy?</span></a></li>
+<li><a class="reference internal" href="#dev-faq3"><span class="std std-ref">Does the protocol provide mechanisms for overlay protocols to interact such as OR_RETURN?</span></a></li>
+<li><a class="reference internal" href="#dev-faq11"><span class="std std-ref">Is this done via a gossip protocol or through a federate relay?</span></a></li>
+</ul>
+<p><strong>Data Structures</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#dev-faq12"><span class="std std-ref">What data structures are used in the blockchain?</span></a></li>
+</ul>
+<p><strong>Public Key System</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#dev-faq18"><span class="std std-ref">What public key system is used? If elliptic curve, then what is the curve?</span></a></li>
+</ul>
+<p><strong>Scripting Language</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#dev-faq9"><span class="std std-ref">Is the scripting language turing complete?</span></a></li>
+<li><a class="reference internal" href="#dev-faq10"><span class="std std-ref">Is there a specification for Bitshares scripting language? (assuming there is one)</span></a></li>
+</ul>
+<hr class="docutils" />
+<div class="section" id="system-components">
+<h2>System Components<a class="headerlink" href="#system-components" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="../components/lib_block.html#lib-block"><span class="std std-ref">How Block structured?</span></a></li>
+<li><a class="reference internal" href="../components/lib_protocols.html#lib-protocols"><span class="std std-ref">Where can I find the Protocol information?</span></a></li>
+<li><a class="reference internal" href="../components/lib_operations.html#lib-operations"><span class="std std-ref">What types of Operations are available in BitShares-Core?</span></a></li>
+<li><a class="reference internal" href="../components/lib_objects.html#lib-objects"><span class="std std-ref">What types of Objects and elements are available in BitShares-Core?</span></a></li>
+</ul>
+</div>
+<div class="section" id="accounts">
+<h2>Accounts<a class="headerlink" href="#accounts" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="accounts/bts_account.html#bts-accounts"><span class="std std-ref">BitShares Account</span></a></li>
+</ul>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Use <a class="reference internal" href="../development/installation/build_ubuntu.html#build-ubuntu"><span class="std std-ref">Ubuntu Linux</span></a></li>
+<li>Use <a class="reference internal" href="../development/installation/build_osx.html#build-osx"><span class="std std-ref">OS X</span></a></li>
+<li>Use <a class="reference internal" href="../development/installation/build_windows.html#build-windows"><span class="std std-ref">Windows</span></a></li>
+<li>Use <a class="reference internal" href="../development/installation/windows_cli_tool.html#cli-tool"><span class="std std-ref">Windows - CLI Tools</span></a></li>
+<li>Use <a class="reference internal" href="../development/installation/wsl.html#build-wsl"><span class="std std-ref">Windows Subsystem for Linux</span></a></li>
+<li><a class="reference internal" href="../development/apps/node.html#system-requirements-node"><span class="std std-ref">What is the System Requirements?</span></a></li>
+</ul>
+</div>
+<div class="section" id="apis">
+<h2>APIs<a class="headerlink" href="#apis" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="../api/restrictions.html#api-access-json"><span class="std std-ref">API Restrictions</span></a></li>
+<li><a class="reference internal" href="../api/restrictions.html#api-access-via-http"><span class="std std-ref">How to access the API via HTTP</span></a></li>
+<li><a class="reference internal" href="../api/rpc.html#rpc"><span class="std std-ref">Use Remote Procedure Calls (RPC)</span></a></li>
+<li><a class="reference internal" href="../api/websocket.html#websocket-calls"><span class="std std-ref">Use Websocket Call</span></a></li>
+<li><a class="reference external" href="https://bitshares.org/doxygen/index.html">Where to find the doxygen documentation</a></li>
+<li><a class="reference internal" href="../api/objects_ids.html#objects-ids"><span class="std std-ref">How defined BitShares Objects and IDs</span></a></li>
+<li><a class="reference internal" href="apis-faq.html#api-core-faq-1"><span class="std std-ref">How do I get the network_add_nodes command to work? Why is it so complicated?</span></a></li>
+<li><a class="reference internal" href="apis-faq.html#api-core-faq-2"><span class="std std-ref">Is there a way to access methods which require login over HTTP?</span></a></li>
+<li><a class="reference internal" href="apis-faq.html#api-core-faq-3"><span class="std std-ref">Is there a way to allow external program to drive cli_wallet via websocket, JSONRPC, or HTTP?</span></a></li>
+<li><a class="reference internal" href="apis-faq.html#api-core-faq-4"><span class="std std-ref">Is there a way to generate help with parameter names and method descriptions?</span></a></li>
+<li><a class="reference internal" href="apis-faq.html#api-core-faq-5"><span class="std std-ref">What is the meaning of a.b.c numbers?</span></a></li>
+<li><a class="reference internal" href="apis-faq.html#api-core-faq-6"><span class="std std-ref">The answer to the previous question was really confusing. Can you make it clearer?</span></a></li>
+</ul>
+</div>
+<div class="section" id="assets">
+<h2>Assets<a class="headerlink" href="#assets" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
 <li><a class="reference internal" href="#asset-faq4"><span class="std std-ref">What happens to the asset creation fee?</span></a></li>
+<li><a class="reference internal" href="#asset-faq1"><span class="std std-ref">Can I change x after creation of the asset</span></a></li>
+<li><a class="reference internal" href="#asset-faq3"><span class="std std-ref">What about Parent and Child assets?</span></a></li>
+<li><a class="reference internal" href="#asset-faq2"><span class="std std-ref">Can I change the issuer?</span></a></li>
 </ul>
 <p><em>Fee Pool</em></p>
 <ul class="simple">
-<li><a class="reference internal" href="#asset-faq5"><span class="std std-ref">What is Fee Pool Draining?</span></a></li>
-<li><a class="reference internal" href="#asset-faq6"><span class="std std-ref">What is the fee pool all about?</span></a></li>
-<li><a class="reference internal" href="#asset-faq7"><span class="std std-ref">What to do if the fee pool is empty?</span></a></li>
+<li><a class="reference internal" href="assets-faq.html#asset-faq5"><span class="std std-ref">What is Fee Pool Draining?</span></a></li>
+<li><a class="reference internal" href="assets-faq.html#asset-faq6"><span class="std std-ref">What is the fee pool all about?</span></a></li>
+<li><a class="reference internal" href="assets-faq.html#asset-faq7"><span class="std std-ref">What to do if the fee pool is empty?</span></a></li>
 </ul>
 <p><em>Market Fees</em></p>
 <ul class="simple">
-<li><a class="reference internal" href="#asset-faq8"><span class="std std-ref">How to claim accumulated fees?</span></a></li>
-<li><a class="reference internal" href="#asset-faq9"><span class="std std-ref">What are Asset Flags and Permissions?</span></a></li>
-<li><a class="reference internal" href="#asset-faq10"><span class="std std-ref">What are the Flags?</span></a></li>
-<li><a class="reference internal" href="#asset-faq11"><span class="std std-ref">What are the Permissions?</span></a></li>
-<li><a class="reference internal" href="#asset-faq12"><span class="std std-ref">What happens if I enable Market fees?</span></a></li>
-<li><a class="reference internal" href="#asset-faq13"><span class="std std-ref">What if two different market fees are involved in a trade?</span></a></li>
+<li><a class="reference internal" href="assets-faq.html#asset-faq8"><span class="std std-ref">How to claim accumulated fees?</span></a></li>
+<li><a class="reference internal" href="assets-faq.html#asset-faq9"><span class="std std-ref">What are Asset Flags and Permissions?</span></a></li>
+<li><a class="reference internal" href="assets-faq.html#asset-faq10"><span class="std std-ref">What are the Flags?</span></a></li>
+<li><a class="reference internal" href="assets-faq.html#asset-faq11"><span class="std std-ref">What are the Permissions?</span></a></li>
+<li><a class="reference internal" href="assets-faq.html#asset-faq12"><span class="std std-ref">What happens if I enable Market fees?</span></a></li>
+<li><a class="reference internal" href="assets-faq.html#asset-faq13"><span class="std std-ref">What if two different market fees are involved in a trade?</span></a></li>
 </ul>
 <p><em>Market Pegged Assets</em></p>
 <ul class="simple">
-<li><a class="reference internal" href="#asset-faq14"><span class="std std-ref">Can I use the same flags/permissions as for UIAs?</span></a></li>
-<li><a class="reference internal" href="#asset-faq15"><span class="std std-ref">What are market-pegged-asset-specific parameters?</span></a></li>
+<li><a class="reference internal" href="assets-faq.html#asset-faq14"><span class="std std-ref">Can I use the same flags/permissions as for UIAs?</span></a></li>
+<li><a class="reference internal" href="assets-faq.html#asset-faq15"><span class="std std-ref">What are market-pegged-asset-specific parameters?</span></a></li>
 </ul>
-<p><strong>End Users - CLI Wallet Questions</strong></p>
+<p id="cli-faq-list"><strong>CLI Wallet Questions</strong></p>
 <ul class="simple">
 <li><a class="reference internal" href="#cli-faq1"><span class="std std-ref">How can I close the CLI client in a clean way?</span></a></li>
-<li><a class="reference internal" href="#cli-faq2"><span class="std std-ref">How can I create, register and upgrade an account to Lifetime Membership?</span></a></li>
-<li><a class="reference internal" href="#cli-faq3"><span class="std std-ref">How can I import to my CLI client a wallet originally created in the web GUI?</span></a></li>
-<li><a class="reference internal" href="#cli-faq4"><span class="std std-ref">How can I transfer a single account to a cli wallet</span></a></li>
 <li><a class="reference internal" href="#cli-faq5"><span class="std std-ref">Why does the CLI client crash immediately when I try to run it for the first time?</span></a></li>
 </ul>
-<p><strong>End Users - Witness Questions</strong></p>
+<p><strong>Witness Questions</strong></p>
 <ul class="simple">
 <li><a class="reference internal" href="witness-faq.html#witness-faq-1"><span class="std std-ref">How can I close the witness node in a clean way?</span></a></li>
 <li><a class="reference internal" href="witness-faq.html#witness-faq-2"><span class="std std-ref">How do I check whether the witness node is already synceed?</span></a></li>
@@ -309,32 +362,12 @@
 <li><a class="reference internal" href="witness-faq.html#witness-faq-8"><span class="std std-ref">Whose private key is [“BTS6MRyAjQ..”,”5KQwrPbwdL..”]? Why is it predefined ion the config.ini?</span></a></li>
 </ul>
 <hr class="docutils" />
-<p><strong>Developers Questtions</strong></p>
-<ul class="simple">
-<li><a class="reference internal" href="#dev-faq1"><span class="std std-ref">Are there any sharding mechanics currently deployed?</span></a></li>
-<li><a class="reference internal" href="#dev-faq2"><span class="std std-ref">Are there any special affordances made for privacy?</span></a></li>
-<li><a class="reference internal" href="#dev-faq3"><span class="std std-ref">Does the protocol provide mechanisms for overlay protocols to interact such as OR_RETURN?</span></a></li>
-<li><a class="reference internal" href="#dev-faq4"><span class="std std-ref">How are SPV clients handled?</span></a></li>
-<li><a class="reference internal" href="#dev-faq5"><span class="std std-ref">How are transactions validated?</span></a></li>
-<li><a class="reference internal" href="#dev-faq6"><span class="std std-ref">How do new clients bootstrap into the network?</span></a></li>
-<li><a class="reference internal" href="#dev-faq7"><span class="std std-ref">How is accounting addressed in Bitshares? Is it a Nxt style accounting model or like Bitcoin’s UTXO</span></a></li>
-<li><a class="reference internal" href="#dev-faq8"><span class="std std-ref">How is time addressed in the blockchain? Is NTP used or some other protocol?</span></a></li>
-<li><a class="reference internal" href="#dev-faq9"><span class="std std-ref">Is the scripting language turing complete?</span></a></li>
-<li><a class="reference internal" href="#dev-faq10"><span class="std std-ref">Is there a specification for Bitshares scripting language? (assuming there is one)</span></a></li>
-<li><a class="reference internal" href="#dev-faq11"><span class="std std-ref">Is this done via a gossip protocol or through a federate relay?</span></a></li>
-<li><a class="reference internal" href="#dev-faq12"><span class="std std-ref">What data structures are used in the blockchain?</span></a></li>
-<li><a class="reference internal" href="#dev-faq13"><span class="std std-ref">What is the average block time?</span></a></li>
-<li><a class="reference internal" href="#dev-faq14"><span class="std std-ref">What is the average size in Bytes of a Bitshares transaction?</span></a></li>
-<li><a class="reference internal" href="#dev-faq15"><span class="std std-ref">What is the format of the block header?</span></a></li>
-<li><a class="reference internal" href="#dev-faq16"><span class="std std-ref">What is the maximum bitshares block size?</span></a></li>
-<li><a class="reference internal" href="#dev-faq17"><span class="std std-ref">What is the standard Bitshares address structure and format?</span></a></li>
-<li><a class="reference internal" href="#dev-faq18"><span class="std std-ref">What public key system is used? If elliptic curve, then what is the curve?</span></a></li>
-<li><a class="reference internal" href="#dev-faq19"><span class="std std-ref">What transaction types are natively supported?</span></a></li>
-</ul>
+<hr class="docutils" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 <div class="section" id="assets-faq">
-<span id="asset-faq"></span><h2>Assets - FAQ<a class="headerlink" href="#assets-faq" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="general">
-<h3>General<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h3>
+<span id="asset-faq"></span><h3>Assets - FAQ<a class="headerlink" href="#assets-faq" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="can-i-change-x-after-creation-of-the-asset">
 <span id="asset-faq1"></span><h4>Can I change <cite>x</cite> after creation of the asset<a class="headerlink" href="#can-i-change-x-after-creation-of-the-asset" title="Permalink to this headline">¶</a></h4>
 <p>The following parameters can be changed after creation:</p>
@@ -372,8 +405,8 @@
 </ul>
 <p>A guide can be found <a class="reference internal" href="tutorials/uia-update-manual.html#uia-update-manual"><span class="std std-ref">here</span></a>.</p>
 </div>
-<div class="section" id="changing-the-issuer">
-<span id="asset-faq2"></span><h4>Changing the issuer<a class="headerlink" href="#changing-the-issuer" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="can-i-change-the-issuer">
+<span id="asset-faq2"></span><h4>Can I change the issuer?<a class="headerlink" href="#can-i-change-the-issuer" title="Permalink to this headline">¶</a></h4>
 <p>The current issue of an asset may transfer ownership of the asset to
 someone else by changing the issuer in the asset’s settings.</p>
 </div>
@@ -395,11 +428,10 @@ program. This means, that if you are a life-time member, you get back
 days).</p>
 </div>
 </div>
+</div>
 <hr class="docutils" />
 <div class="section" id="fee-pool">
-<h3>Fee Pool<a class="headerlink" href="#fee-pool" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="what-is-fee-pool-draining">
-<span id="asset-faq5"></span><h4>What is Fee Pool Draining?<a class="headerlink" href="#what-is-fee-pool-draining" title="Permalink to this headline">¶</a></h4>
+<h2>Fee Pool<a class="headerlink" href="#fee-pool" title="Permalink to this headline">¶</a></h2>
 <p>If an order is created and paid in a non-BTS asset, the fee is
 implicitly exchange into BTS to pay the network fee. However, if the
 order is canceled, 90% of the fee will be returned as BTS. The result
@@ -411,9 +443,6 @@ the fee pool and leave the issuer with his tokens at a slight loss
 recommend to use a core exchange that is slightly higher than the market
 price of your asset. As a consequence, paying fees in BTS should always
 be cheaper.</p>
-</div>
-<div class="section" id="what-is-the-fee-pool-all-about">
-<span id="asset-faq6"></span><h4>What is the fee pool all about?<a class="headerlink" href="#what-is-the-fee-pool-all-about" title="Permalink to this headline">¶</a></h4>
 <p>The fee pool allows participants in the network to deal with assets and
 pay for the transaction fees without the need to hold BTS. Any
 transaction fee can be paid by paying any asset that has a core exchange
@@ -436,32 +465,20 @@ and drain your fee pool via implicit abitrage.</p>
 <p>It is the task of the issuer to keep the fee pool funded and the core
 exchange rate updated unless he wants the owner of his asset to be
 required to hold BTS for the fee.</p>
-</div>
-<div class="section" id="what-to-do-if-the-fee-pool-is-empty">
-<span id="asset-faq7"></span><h4>What to do if the fee pool is empty?<a class="headerlink" href="#what-to-do-if-the-fee-pool-is-empty" title="Permalink to this headline">¶</a></h4>
 <p>Open up the issuer’s account, click the assets tab and open up the
 dialog to change the asset. There will be a fee pool tab that allows you
 to fund the fee pool and claim the accumulated fees!</p>
-</div>
 </div>
 <hr class="docutils" />
 <div class="section" id="market-fees">
-<h3>Market Fees<a class="headerlink" href="#market-fees" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="how-to-claim-accumulated-fees">
-<span id="asset-faq8"></span><h4>How to claim accumulated fees?<a class="headerlink" href="#how-to-claim-accumulated-fees" title="Permalink to this headline">¶</a></h4>
+<h2>Market Fees<a class="headerlink" href="#market-fees" title="Permalink to this headline">¶</a></h2>
 <p>Open up the issuer’s account, click the assets tab and open up the
 dialog to change the asset. There will be a fee pool tab that allows you
 to fund the fee pool and claim the accumulated fees!</p>
-</div>
-<div class="section" id="what-are-asset-flags-and-permissions">
-<span id="asset-faq9"></span><h4>What are Asset Flags and Permissions?<a class="headerlink" href="#what-are-asset-flags-and-permissions" title="Permalink to this headline">¶</a></h4>
 <p>When an asset is creatd, the issuer can set any combination of
 flags/permissions. <strong>Flags</strong> are set in stone unless there is
 <strong>permission</strong> to edit. Once a permission to edit is revoked, flags are
 permanent, and can never be modified again.</p>
-</div>
-<div class="section" id="what-are-the-flags">
-<span id="asset-faq10"></span><h4>What are the Flags?<a class="headerlink" href="#what-are-the-flags" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">charge_market_fee</span></code>:
 an issuer-specified percentage of all market trades in this asset is
@@ -488,9 +505,6 @@ allow the asset to be fed by the committee</li>
 </ul>
 <blockquote>
 <div></div></blockquote>
-</div>
-<div class="section" id="what-are-the-permissions">
-<span id="asset-faq11"></span><h4>What are the Permissions?<a class="headerlink" href="#what-are-the-permissions" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Enable market fee</li>
 <li>Require holders to be white-listed</li>
@@ -498,9 +512,6 @@ allow the asset to be fed by the committee</li>
 <li>Issuer must approve all transfers</li>
 <li>Disable confidential transactions</li>
 </ul>
-</div>
-<div class="section" id="what-happens-if-i-enable-market-fees">
-<span id="asset-faq12"></span><h4>What happens if I enable Market fees?<a class="headerlink" href="#what-happens-if-i-enable-market-fees" title="Permalink to this headline">¶</a></h4>
 <p>If <em>Market Fees</em> of a UIA are turned on, fees have to be payed for each
 <strong>market transaction</strong>. This means, that market fees only apply to
 <strong>filled orders</strong>!</p>
@@ -510,24 +521,15 @@ for each asset only to be claimed by the issuer.</p>
 <p>If the Market Fee is set to 1%, the issuer will earn 1% of market volume
 as profit. These profits are accumulated for each UIA and can be
 withdrawn by the issuer.</p>
-</div>
-<div class="section" id="what-if-two-different-market-fees-are-involved-in-a-trade">
-<span id="asset-faq13"></span><h4>What if two different market fees are involved in a trade?<a class="headerlink" href="#what-if-two-different-market-fees-are-involved-in-a-trade" title="Permalink to this headline">¶</a></h4>
 <p>Suppose, I set the market fee for MyUIA market at 0.1%.
 and the market fee for YourUIA market at 0.3%.</p>
 <p>In BitShares, You pay the fee upon <strong>receiving an asset</strong>. Hence, one
 side will pay 0.3% the other will pay 0.1%.</p>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="market-pegged-assets">
-<h3>Market Pegged Assets<a class="headerlink" href="#market-pegged-assets" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="can-i-use-the-same-flags-permissions-as-for-uias">
-<span id="asset-faq14"></span><h4>Can I use the same flags/permissions as for UIAs?<a class="headerlink" href="#can-i-use-the-same-flags-permissions-as-for-uias" title="Permalink to this headline">¶</a></h4>
+<h2>Market Pegged Assets<a class="headerlink" href="#market-pegged-assets" title="Permalink to this headline">¶</a></h2>
 <p>Yes!</p>
-</div>
-<div class="section" id="what-are-market-pegged-asset-specific-parameters">
-<span id="asset-faq15"></span><h4>What are market-pegged-asset-specific parameters?<a class="headerlink" href="#what-are-market-pegged-asset-specific-parameters" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">feed_lifetime_sec</span></code>:
 The lifetime of a feed. After this time (in seconds) a feed is no
@@ -549,78 +551,13 @@ The asset that has to be used to <em>back</em> this asset (when borrowing)</li>
 <div class="line"><br /></div>
 </div>
 <hr class="docutils" />
-</div>
-</div>
-</div>
 <div class="section" id="cli-wallet-faq">
-<span id="cli-faq"></span><h2>CLI Wallet - FAQ<a class="headerlink" href="#cli-wallet-faq" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id1">
-<h3>General<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<span id="cli-faq"></span><h3>CLI Wallet - FAQ<a class="headerlink" href="#cli-wallet-faq" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="how-can-i-close-the-cli-client-in-a-clean-way">
 <span id="cli-faq1"></span><h4>How can I close the CLI client in a clean way?<a class="headerlink" href="#how-can-i-close-the-cli-client-in-a-clean-way" title="Permalink to this headline">¶</a></h4>
 <p>In Windows closing the whole window produces a nasty exception. In
 Windows you can try <cite>ctrl-d</cite> which stops the process but stil produces a
 nasty exception.</p>
-</div>
-<div class="section" id="how-can-i-create-register-and-upgrade-an-account-to-lifetime-membership">
-<span id="cli-faq2"></span><h4>How can I create, register and upgrade an account to Lifetime Membership?<a class="headerlink" href="#how-can-i-create-register-and-upgrade-an-account-to-lifetime-membership" title="Permalink to this headline">¶</a></h4>
-<p>Without already having an account, or knowing someone that has an
-account, it is not possible. You can’t create accounts out of nowhere.</p>
-<p>But you can work around it by importing an active key of a <strong>Lifetime
-Member</strong> account that has funds:</p>
-<ol class="arabic simple">
-<li>In the gui, go to the permissions tab of an account that is funded
-and has a LTM status.</li>
-<li>Click on the BTS public key on the ACTIVE tab and copy the private
-key.</li>
-<li>In the cli-wallet run:
-<cite>import_key &lt;account_name&gt; &lt;private_key&gt;</cite></li>
-<li>Then run:
-<cite>suggest_brain_key</cite>
-and copy the brain key. (You might want to make a backup of your
-brain key somewhere.)</li>
-<li>Create a new account with this command:
-<cite>create_account_with_brain_key &lt;brainkey&gt; &lt;new_account_name&gt; &lt;imported_name&gt; &lt;imported_name&gt; true</cite></li>
-</ol>
-<p>This will create a new account called <cite>&lt;new_account_name&gt;</cite> and set the
-registrar and referrer to <cite>&lt;imported_name&gt;</cite>.  The brainkey can be used
-to regenerate the account (even in the GUI wallet).  You can manually
-delete the other active key from the <cite>wallet.json</cite> file.</p>
-</div>
-<div class="section" id="how-can-i-import-to-my-cli-client-a-wallet-originally-created-in-the-web-gui">
-<span id="cli-faq3"></span><h4>How can I import to my CLI client a wallet originally created in the web GUI?<a class="headerlink" href="#how-can-i-import-to-my-cli-client-a-wallet-originally-created-in-the-web-gui" title="Permalink to this headline">¶</a></h4>
-<p>CLI and WEB wallet are two separated applications. They use separated
-ways to represent backups. You can currently only manually import keys
-from the GUI into the CLI.</p>
-</div>
-<div class="section" id="how-can-i-transfer-a-single-account-to-a-cli-wallet">
-<span id="cli-faq4"></span><h4>How can I transfer a single account to a cli wallet<a class="headerlink" href="#how-can-i-transfer-a-single-account-to-a-cli-wallet" title="Permalink to this headline">¶</a></h4>
-<p>If you have a need to run just the cli wallet, you will likely want to
-transfer an existing account from the Web wallet or your light wallet
-into the cli. This guide assumes that you already have your web wallet
-working and properly connected to a full node. Something like this:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./cli-wallet -s wss://bitshares.openledger.info/ws
-</pre></div>
-</div>
-<p>You should get a prompt</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>new &gt;&gt;&gt;
-</pre></div>
-</div>
-<p>Now set a password for the wallet</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>new &gt;&gt;&gt; set_password my_password
-locked &gt;&gt;&gt; unlock my_password
-unlocked &gt;&gt;&gt;
-</pre></div>
-</div>
-<p>Now you need to go to your bitshares 2.0 webwallet or lite client and
-select the account you wish to bring across. Click on permissions followed
-by the key icon within Active Permissions. This will reveal your private key.
-Copy it to the clipboard.</p>
-<img alt="../_images/account-active-permissions.png" src="../_images/account-active-permissions.png" />
-<p>Now let’s import the account into this wallet</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>new &gt;&gt;&gt; import_key &lt;accountname&gt; THISISTHEKEYTHATYOUCOPIED
-</pre></div>
-</div>
 </div>
 <div class="section" id="why-does-the-cli-client-crash-immediately-when-i-try-to-run-it-for-the-first-time">
 <span id="cli-faq5"></span><h4>Why does the CLI client crash immediately when I try to run it for the first time?<a class="headerlink" href="#why-does-the-cli-client-crash-immediately-when-i-try-to-run-it-for-the-first-time" title="Permalink to this headline">¶</a></h4>
@@ -634,6 +571,10 @@ run the CLI client you need to do this:</p>
 <li>before you start the CLI client, you need to start the witness node
 (and wait a while till it’s up and running)</li>
 </ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Find more “How to” guide in a Tutorials section.</p>
+</div>
 <hr class="docutils" />
 <div class="line-block">
 <div class="line"><br /></div>
@@ -641,11 +582,8 @@ run the CLI client you need to do this:</p>
 <hr class="docutils" />
 </div>
 </div>
-</div>
 <div class="section" id="witness-faq">
-<span id="id2"></span><h2>Witness - FAQ<a class="headerlink" href="#witness-faq" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id3">
-<h3>General<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<span id="id1"></span><h3>Witness - FAQ<a class="headerlink" href="#witness-faq" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="how-can-i-close-the-witness-node-in-a-clean-way">
 <span id="witness-faq-1"></span><h4>How can I close the witness node in a clean way?<a class="headerlink" href="#how-can-i-close-the-witness-node-in-a-clean-way" title="Permalink to this headline">¶</a></h4>
 <p>In windows use <cite>ctrl-c</cite>.</p>
@@ -709,11 +647,8 @@ by the code of witness_node.</p>
 <p><strong>Developers - Questions</strong></p>
 </div>
 </div>
-</div>
 <div class="section" id="developers-faq">
-<span id="dev-faq"></span><h2>Developers - FAQ<a class="headerlink" href="#developers-faq" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id4">
-<h3>General<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<span id="dev-faq"></span><h3>Developers - FAQ<a class="headerlink" href="#developers-faq" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="are-there-any-sharding-mechanics-currently-deployed">
 <span id="dev-faq1"></span><h4>Are there any sharding mechanics currently deployed?<a class="headerlink" href="#are-there-any-sharding-mechanics-currently-deployed" title="Permalink to this headline">¶</a></h4>
 <p>No</p>
@@ -833,66 +768,6 @@ Example objects::</p>
 <p>Average wire size of operations is ~30 bytes.
 Average mem size of operations is ~100 bytes.
 <a class="reference external" href="https://github.com/cryptonomex/graphene/blob/master/programs/size_checker/main.cpp">https://github.com/cryptonomex/graphene/blob/master/programs/size_checker/main.cpp</a></p>
-</div>
-<div class="section" id="what-is-the-format-of-the-block-header">
-<span id="dev-faq15"></span><h4>What is the format of the block header?<a class="headerlink" href="#what-is-the-format-of-the-block-header" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">block_header</span>
-   <span class="p">{</span>
-      <span class="n">digest_type</span>                   <span class="n">digest</span><span class="p">()</span><span class="k">const</span><span class="p">;</span>
-      <span class="n">block_id_type</span>                 <span class="n">previous</span><span class="p">;</span>
-      <span class="kt">uint32_t</span>                      <span class="nf">block_num</span><span class="p">()</span><span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">num_from_id</span><span class="p">(</span><span class="n">previous</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="p">}</span>
-      <span class="n">fc</span><span class="o">::</span><span class="n">time_point_sec</span>            <span class="n">timestamp</span><span class="p">;</span>
-      <span class="n">witness_id_type</span>               <span class="n">witness</span><span class="p">;</span>
-      <span class="n">checksum_type</span>                 <span class="n">transaction_merkle_root</span><span class="p">;</span>
-      <span class="n">extensions_type</span>               <span class="n">extensions</span><span class="p">;</span>
-
-      <span class="k">static</span> <span class="kt">uint32_t</span> <span class="nf">num_from_id</span><span class="p">(</span><span class="k">const</span> <span class="n">block_id_type</span><span class="o">&amp;</span> <span class="n">id</span><span class="p">);</span>
-   <span class="p">};</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="what-is-the-maximum-bitshares-block-size">
-<span id="dev-faq16"></span><h4>What is the maximum bitshares block size?<a class="headerlink" href="#what-is-the-maximum-bitshares-block-size" title="Permalink to this headline">¶</a></h4>
-<p>Configurable by chain parameters.</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">chain_parameters</span>
-<span class="p">{</span>
-   <span class="cm">/** using a smart ref breaks the circular dependency created between operations and the fee schedule */</span>
-   <span class="n">smart_ref</span><span class="o">&lt;</span><span class="n">fee_schedule</span><span class="o">&gt;</span> <span class="n">current_fees</span><span class="p">;</span>                       <span class="c1">///&lt; current schedule of fees</span>
-   <span class="kt">uint8_t</span>                 <span class="n">block_interval</span>                      <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_BLOCK_INTERVAL</span><span class="p">;</span> <span class="c1">///&lt; interval in seconds between blocks</span>
-   <span class="kt">uint32_t</span>                <span class="n">maintenance_interval</span>                <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_MAINTENANCE_INTERVAL</span><span class="p">;</span> <span class="c1">///&lt; interval in sections between blockchain maintenance events</span>
-   <span class="kt">uint8_t</span>                 <span class="n">maintenance_skip_slots</span>              <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_MAINTENANCE_SKIP_SLOTS</span><span class="p">;</span> <span class="c1">///&lt; number of block_intervals to skip at maintenance time</span>
-   <span class="kt">uint32_t</span>                <span class="n">committee_proposal_review_period</span>    <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_COMMITTEE_PROPOSAL_REVIEW_PERIOD_SEC</span><span class="p">;</span> <span class="c1">///&lt; minimum time in seconds that a proposed transaction requiring committee authority may not be signed, prior to expiration</span>
-   <span class="kt">uint32_t</span>                <span class="n">maximum_transaction_size</span>            <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_MAX_TRANSACTION_SIZE</span><span class="p">;</span> <span class="c1">///&lt; maximum allowable size in bytes for a transaction</span>
-   <span class="kt">uint32_t</span>                <span class="n">maximum_block_size</span>                  <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_MAX_BLOCK_SIZE</span><span class="p">;</span> <span class="c1">///&lt; maximum allowable size in bytes for a block</span>
-   <span class="kt">uint32_t</span>                <span class="n">maximum_time_until_expiration</span>       <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_MAX_TIME_UNTIL_EXPIRATION</span><span class="p">;</span> <span class="c1">///&lt; maximum lifetime in seconds for transactions to be valid, before expiring</span>
-   <span class="kt">uint32_t</span>                <span class="n">maximum_proposal_lifetime</span>           <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_MAX_PROPOSAL_LIFETIME_SEC</span><span class="p">;</span> <span class="c1">///&lt; maximum lifetime in seconds for proposed transactions to be kept, before expiring</span>
-   <span class="kt">uint8_t</span>                 <span class="n">maximum_asset_whitelist_authorities</span> <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_MAX_ASSET_WHITELIST_AUTHORITIES</span><span class="p">;</span> <span class="c1">///&lt; maximum number of accounts which an asset may list as authorities for its whitelist OR blacklist</span>
-   <span class="kt">uint8_t</span>                 <span class="n">maximum_asset_feed_publishers</span>       <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_MAX_ASSET_FEED_PUBLISHERS</span><span class="p">;</span> <span class="c1">///&lt; the maximum number of feed publishers for a given asset</span>
-   <span class="kt">uint16_t</span>                <span class="n">maximum_witness_count</span>               <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_MAX_WITNESSES</span><span class="p">;</span> <span class="c1">///&lt; maximum number of active witnesses</span>
-   <span class="kt">uint16_t</span>                <span class="n">maximum_committee_count</span>             <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_MAX_COMMITTEE</span><span class="p">;</span> <span class="c1">///&lt; maximum number of active committee_members</span>
-   <span class="kt">uint16_t</span>                <span class="n">maximum_authority_membership</span>        <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_MAX_AUTHORITY_MEMBERSHIP</span><span class="p">;</span> <span class="c1">///&lt; largest number of keys/accounts an authority can have</span>
-   <span class="kt">uint16_t</span>                <span class="n">reserve_percent_of_fee</span>              <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_BURN_PERCENT_OF_FEE</span><span class="p">;</span> <span class="c1">///&lt; the percentage of the network&#39;s allocation of a fee that is taken out of circulation</span>
-   <span class="kt">uint16_t</span>                <span class="n">network_percent_of_fee</span>              <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_NETWORK_PERCENT_OF_FEE</span><span class="p">;</span> <span class="c1">///&lt; percent of transaction fees paid to network</span>
-   <span class="kt">uint16_t</span>                <span class="n">lifetime_referrer_percent_of_fee</span>    <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_LIFETIME_REFERRER_PERCENT_OF_FEE</span><span class="p">;</span> <span class="c1">///&lt; percent of transaction fees paid to network</span>
-   <span class="kt">uint32_t</span>                <span class="n">cashback_vesting_period_seconds</span>     <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_CASHBACK_VESTING_PERIOD_SEC</span><span class="p">;</span> <span class="c1">///&lt; time after cashback rewards are accrued before they become liquid</span>
-   <span class="n">share_type</span>              <span class="n">cashback_vesting_threshold</span>          <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_CASHBACK_VESTING_THRESHOLD</span><span class="p">;</span> <span class="c1">///&lt; the maximum cashback that can be received without vesting</span>
-   <span class="kt">bool</span>                    <span class="n">count_non_member_votes</span>              <span class="o">=</span> <span class="nb">true</span><span class="p">;</span> <span class="c1">///&lt; set to false to restrict voting privlegages to member accounts</span>
-   <span class="kt">bool</span>                    <span class="n">allow_non_member_whitelists</span>         <span class="o">=</span> <span class="nb">false</span><span class="p">;</span> <span class="c1">///&lt; true if non-member accounts may set whitelists and blacklists; false otherwise</span>
-   <span class="n">share_type</span>              <span class="n">witness_pay_per_block</span>               <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_WITNESS_PAY_PER_BLOCK</span><span class="p">;</span> <span class="c1">///&lt; CORE to be allocated to witnesses (per block)</span>
-   <span class="kt">uint32_t</span>                <span class="n">witness_pay_vesting_seconds</span>         <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_WITNESS_PAY_VESTING_SECONDS</span><span class="p">;</span> <span class="c1">///&lt; vesting_seconds parameter for witness VBO&#39;s</span>
-   <span class="n">share_type</span>              <span class="n">worker_budget_per_day</span>               <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_WORKER_BUDGET_PER_DAY</span><span class="p">;</span> <span class="c1">///&lt; CORE to be allocated to workers (per day)</span>
-   <span class="kt">uint16_t</span>                <span class="n">max_predicate_opcode</span>                <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_MAX_ASSERT_OPCODE</span><span class="p">;</span> <span class="c1">///&lt; predicate_opcode must be less than this number</span>
-   <span class="n">share_type</span>              <span class="n">fee_liquidation_threshold</span>           <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_FEE_LIQUIDATION_THRESHOLD</span><span class="p">;</span> <span class="c1">///&lt; value in CORE at which accumulated fees in blockchain-issued market assets should be liquidated</span>
-   <span class="kt">uint16_t</span>                <span class="n">accounts_per_fee_scale</span>              <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_ACCOUNTS_PER_FEE_SCALE</span><span class="p">;</span> <span class="c1">///&lt; number of accounts between fee scalings</span>
-   <span class="kt">uint8_t</span>                 <span class="n">account_fee_scale_bitshifts</span>         <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_ACCOUNT_FEE_SCALE_BITSHIFTS</span><span class="p">;</span> <span class="c1">///&lt; number of times to left bitshift account registration fee at each scaling</span>
-   <span class="kt">uint8_t</span>                 <span class="n">max_authority_depth</span>                 <span class="o">=</span> <span class="n">GRAPHENE_MAX_SIG_CHECK_DEPTH</span><span class="p">;</span>
-   <span class="n">extensions_type</span>         <span class="n">extensions</span><span class="p">;</span>
-
-   <span class="cm">/** defined in fee_schedule.cpp */</span>
-   <span class="kt">void</span> <span class="nf">validate</span><span class="p">()</span><span class="k">const</span><span class="p">;</span>
-<span class="p">};</span>
-</pre></div>
-</div>
 </div>
 <div class="section" id="what-is-the-standard-bitshares-address-structure-and-format">
 <span id="dev-faq17"></span><h4>What is the standard Bitshares address structure and format?<a class="headerlink" href="#what-is-the-standard-bitshares-address-structure-and-format" title="Permalink to this headline">¶</a></h4>

@@ -2,15 +2,16 @@
 .. _public-testnet-details:
 
 *************************************
-Public Testnet - Quick Start Guide
+Quick Start Guide - Public Testnet
 *************************************
+
+The BitShares Open Public Testnets has been deployed and is fully functional for anyone to use and is shared among developers. All developers take the opportunity to construct a tutorial.
+
 
 .. contents:: Table of Contents
    :local:
    
 -------
-
-BitShares has Public Testnet for UI Web Wallet and CLI. The following is the instructions. 
 
 Use the UI Wallet on Public Testnet
 =======================================

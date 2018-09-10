@@ -1,14 +1,16 @@
 
+.. _private-testnet-guide:
+
 ************************
 Private Testnet
 ************************
+
+Some developers may want to deploy their own graphene blockchain locally for governance, and speed reasons. This section explains how to prepare the private testnet environment and what steps to take to be a block producing node (witness node). 
 
 .. contents:: Table of Contents
    :local:
    
 -------
-
-
 
 How to Set up Private Testnet
 ===================================
@@ -132,9 +134,9 @@ Open the ``[Testnet-Home]/data/my-blockprod/config.ini`` file and set the follow
     witness-id = "1.6.10"
     witness-id = "1.6.11"
 
-The above list authorizes the ``witness_node`` to produce blocks on behalf of the listed ``witness-id``s and specifies the private key needed to sign those blocks. Normally each witness would be on a different node, but for the purpose of this **private testnet**, we will start out with all witnesses signing blocks on a single node. 
+The above list authorizes the ``witness_node`` to produce blocks on behalf of the listed ``witness-id`s`` and specifies the private key needed to sign those blocks. Normally each witness would be on a different node, but for the purpose of this **private testnet**, we will start out with all witnesses signing blocks on a single node. 
 
-8. Starti Block Production
+8. Start Block Production
 -------------------------------------------
 
 Now run witness_node again::
@@ -145,7 +147,7 @@ Now run witness_node again::
 
 **Note:**
 
-- We do not need to specify ``genesis.json`` on the command line, since we now specify it in the config file. 
+- Since this is a testnet, we do not need to specify ``genesis.json`` on the command line. We now specify it in the ``config file``. 
 - The ``--enable-stale-production`` flag tells the ``witness_node`` to produce on a chain with zero blocks or very old blocks. We specify the ``--enable-stale-production`` parameter on the command line as we will not normally need it (although it can also be specified in the config file). 
 - The empty ``--seed-nodes`` is added to avoid connecting to the default seed nodes hardcoded for production.
 -  Subsequent runs which connect to an existing witness node over the p2p network, or which get blockchain state from an existing data directory, need not have the ``--enable-stale-production`` flag.

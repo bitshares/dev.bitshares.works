@@ -29,7 +29,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Frequently Asked Questions (FAQ)" href="../index_faq.html" />
-    <link rel="prev" title="6.3. Graphene::Wallet" href="../../api/namespaces/wallet.html" /> 
+    <link rel="prev" title="7.3. Graphene::Wallet" href="../../api/namespaces/wallet.html" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -87,6 +87,7 @@
 <p class="caption"><span class="caption-text">Development</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../development/installation.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../accounts/bts_account.html">BitShares Accounts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../development/integration.html">Integration Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../development/interaction.html">Blockchain Interaction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../development/testnets.html">Testnets</a></li>
@@ -95,12 +96,13 @@
 </ul>
 <p class="caption"><span class="caption-text">API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../api/restrictions.html">1. API Access and Restrictions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/calls.html">2. Available Calls</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/blockchain_api.html">3. Blockchain API(s)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/wallet_api.html">4. Wallet API - Calls</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/objects_ids.html">5. Objects and IDs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/namespaces.html">6. Graphene - Namespaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/api_about.html">1. API Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/restrictions.html">2. API Access and Restrictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/calls.html">3. Available Calls, Object, and IDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/blockchain_api.html">4. Blockchain API(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/wallet_api.html">5. Wallet API - Calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/objects_ids.html">6. Objects and IDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/namespaces.html">7. Graphene - Namespaces</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Guides</span></p>
 <ul class="current">
@@ -110,13 +112,14 @@
 <li class="toctree-l2"><a class="reference internal" href="#assets">Assets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prediction-market">Prediction Market</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#committee-guide">Committee Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#general">General</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#monitoring">Monitoring</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#testnets">Testnets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#transfer-transactions">Transfer / Transactions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#vesting-balance">Vesting Balance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#wallet-cli">Wallet / CLI</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#witness-guide">Witness Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#worker-guide">Worker Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#migration-from-bitshares1-0">Migration (from BitShares1.0)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../index_faq.html">Frequently Asked Questions (FAQ)</a></li>
@@ -125,7 +128,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../references/info_comunities.html">BitShares Community</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../references/info_comunities.html#bitshares-blockchain">BitShares Blockchain</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../references/tech_articles.html">Articles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references/tech_articles.html">BitShares Developers’ Contributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references/tech_articles.html#articles">Articles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../references/githubrepo.html">BitShares Repositories</a></li>
 </ul>
 
@@ -191,79 +195,73 @@
             
   <div class="section" id="developer-guide-tutorials">
 <span id="dev-guides"></span><h1>Developer Guide (Tutorials)<a class="headerlink" href="#developer-guide-tutorials" title="Permalink to this headline">¶</a></h1>
+<p>This section intended to collect “How To” steps information to show some examples to perform a process.</p>
 <hr class="docutils" />
 <div class="section" id="accounts">
 <h2>Accounts<a class="headerlink" href="#accounts" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference internal" href="cli_import_guiwallet_account.html#howto-import-gui-wallet-account-cli"><span class="std std-ref">How to import a GUI-wallet account into CLI-wallet</span></a></li>
-<li><a class="reference internal" href="../accounts/bts_account.html#bts-accounts"><span class="std std-ref">BitShares Account</span></a></li>
 <li><a class="reference internal" href="../accounts/account-create.html#create-account-dev-cli"><span class="std std-ref">Account Registration (developer)</span></a></li>
-<li><a class="reference internal" href="../accounts/account_import-to-cli.html#account-import-to-cli"><span class="std std-ref">How to import a GUI-wallet account into CLI-wallet</span></a></li>
-<li><a class="reference external" href="https://github.com/bitshares/bitshares-ui/wiki/Cloud-Wallet-Login-and-changing-password">How to change a password if using a Cloud Wallet</a>  : from BitShares UI wiki</li>
-<li>How to create, register and upgrade an account to Lifetime Membership</li>
+<li><a class="reference external" href="ttps://github.com/bitshares/bitshares-ui/wiki/Cloud-Wallet-Login-and-changing-password">How to change a password if using a Cloud Wallet</a> : from BitShares UI wiki</li>
+<li><a class="reference internal" href="cli_import_guiwallet_account.html#howto-import-gui-wallet-account-cli"><span class="std std-ref">How to import a GUI-wallet account into CLI-wallet</span></a></li>
 </ul>
 <p><strong>Vesting Balance</strong></p>
 <ul class="simple">
 <li><a class="reference internal" href="vesting-list.html#list-vesting-balances"><span class="std std-ref">List Vesting Balances</span></a></li>
-<li><a class="reference internal" href="vesting-claim.html#claiming-vesting-balance"><span class="std std-ref">Claiming A Vesting Balance</span></a></li>
+<li><a class="reference internal" href="vesting-claim.html#claiming-vesting-balance"><span class="std std-ref">Claim A Vesting Balance</span></a></li>
 </ul>
 </div>
 <div class="section" id="api">
 <h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><a class="reference external" href="https://github.com/bitshares/bitshares-ui/wiki/Gateway-Integration-Requirements">How an Exchange can integrate their services to the BitShares UI Wallet - Gateway Integration Requirements</a> : from BitShares UI wiki</li>
-<li>How to enable RPC Logging</li>
+<li><a class="reference internal" href="rpc_logging.html#rpc-logging"><span class="std std-ref">How to enable RPC Logging</span></a></li>
 </ul>
 </div>
 <div class="section" id="assets">
 <h2>Assets<a class="headerlink" href="#assets" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference internal" href="uia-create-gui.html#creating-new-uia1"><span class="std std-ref">Creating a new UIA</span></a></li>
-<li><a class="reference internal" href="uia-create-manual.html#uia-create-manual"><span class="std std-ref">Creating a UIA manually</span></a></li>
-<li><a class="reference internal" href="mpa-create-manual.html#mpa-create-manual"><span class="std std-ref">Creating a MPA manually</span></a></li>
+<li><a class="reference internal" href="uia-create-gui.html#creating-new-uia1"><span class="std std-ref">Create a new UIA</span></a></li>
+<li><a class="reference internal" href="uia-create-manual.html#uia-create-manual"><span class="std std-ref">Create a UIA manually</span></a></li>
+<li><a class="reference internal" href="mpa-create-manual.html#mpa-create-manual"><span class="std std-ref">Create a MPA manually</span></a></li>
 <li><a class="reference internal" href="uia-create-manual.html#uia-create-manual"><span class="std std-ref">Update/Change an existing UIA</span></a></li>
-<li><a class="reference internal" href="publish-feed.html#publish-feed"><span class="std std-ref">Publishing a Feed</span></a></li>
+<li><a class="reference internal" href="publish-feed.html#publish-feed"><span class="std std-ref">Publish a Feed</span></a></li>
 </ul>
 </div>
 <div class="section" id="prediction-market">
 <h2>Prediction Market<a class="headerlink" href="#prediction-market" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><a class="reference internal" href="../tokens/pm.html#pm"><span class="std std-ref">Prediction Markets</span></a></li>
-<li><a class="reference internal" href="pm-create-manual.html#pm-create-manual"><span class="std std-ref">Creating a Prediction Market</span></a></li>
-<li><a class="reference internal" href="pm-close-manual.html#pm-close-manual"><span class="std std-ref">Closing/Settling a Prediction Market</span></a></li>
+<li><a class="reference internal" href="pm-create-manual.html#pm-create-manual"><span class="std std-ref">Create a Prediction Market</span></a></li>
+<li><a class="reference internal" href="pm-close-manual.html#pm-close-manual"><span class="std std-ref">Close/Set a Prediction Market</span></a></li>
 </ul>
 <p><strong>BitShares Decentralized Exchange (DEX)</strong></p>
 <ul class="simple">
-<li>How to prepare BitShares Exchange Guide (Single Node Edition)</li>
 <li><a class="reference internal" href="distributed-access-hosting.html#distributed-access-to-dex"><span class="std std-ref">Distributed Access to the BitShares Decentralized Exchange (DEX)</span></a></li>
+<li><a class="reference internal" href="exchange_single_node.html#exchange-single-node"><span class="std std-ref">How to prepare BitShares Exchange Guide (Single Node Edition)</span></a></li>
 </ul>
 </div>
 <div class="section" id="committee-guide">
 <h2>Committee Guide<a class="headerlink" href="#committee-guide" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference internal" href="committee-member-create.html#committee-create"><span class="std std-ref">Creating a New Committee Member</span></a></li>
+<li><a class="reference internal" href="committee-member-create.html#committee-create"><span class="std std-ref">Create a New Committee Member</span></a></li>
 <li><a class="reference internal" href="committee-how-to.html#committee-fee-change"><span class="std std-ref">How Committee Proposes a Change in Fee</span></a></li>
 <li><a class="reference internal" href="committee-how-to.html#committee-approve-proposal"><span class="std std-ref">How to Approve/Disapprove a Committee Proposal</span></a></li>
 <li><a class="reference internal" href="committee-propose-action.html#committee-propose-action"><span class="std std-ref">How to Propose Committee Actions</span></a></li>
 </ul>
 </div>
-<div class="section" id="general">
-<h2>General<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="monitoring">
+<span id="monitoring-support"></span><h2>Monitoring<a class="headerlink" href="#monitoring" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference internal" href="python-monitor.html#monitoring-account-deposits-python"><span class="std std-ref">Monitoring Account Deposits - Python</span></a></li>
-<li><a class="reference internal" href="nodejs-monitor.html#nodejs-example"><span class="std std-ref">Monitoring Balance History of an Account  - NodeJS</span></a></li>
-</ul>
-<p><strong>Migration (from BitShares1.0)</strong></p>
-<ul class="simple">
-<li><a class="reference internal" href="../migration/howto-exporting-wallet.html#howto-exporting-wallet"><span class="std std-ref">Exporting Your Wallet</span></a></li>
-<li><a class="reference internal" href="../migration/howto-importing-wallet.html#howto-importing-wallet"><span class="std std-ref">Importing Your Wallet</span></a></li>
-<li><a class="reference internal" href="howto-importing-wallet-remarks.html#migration-remarks"><span class="std std-ref">Migration Remarks</span></a></li>
+<li><a class="reference internal" href="python-monitor.html#monitoring-account-deposits-python"><span class="std std-ref">Monitor Account Deposits - Python</span></a></li>
+<li><a class="reference internal" href="nodejs-monitor.html#nodejs-example"><span class="std std-ref">Monitor Balance History of an Account  - NodeJS</span></a></li>
 </ul>
 </div>
 <div class="section" id="testnets">
 <h2>Testnets<a class="headerlink" href="#testnets" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference internal" href="../../development/testnets/public_testnet_details.html#public-testnet-details"><span class="std std-ref">Public Testnet - Quick Start Guide</span></a></li>
+<li><a class="reference internal" href="../../development/testnets/public_testnet_details.html#public-testnet-details"><span class="std std-ref">Prepare a Public Testnet - Quick Start Guide</span></a></li>
+<li><a class="reference internal" href="../../development/testnets/private_testnet.html#private-testnet-guide"><span class="std std-ref">Deploy a Private Testnet</span></a></li>
+<li><a class="reference internal" href="../../development/testnets/public_testnet.html#public-testnet-guide"><span class="std std-ref">Deploy a Public Testnet</span></a></li>
 <li><a class="reference internal" href="../../development/testnets/setup_python_lib.html#how-to-setup-python-lib"><span class="std std-ref">Set up Python Library</span></a></li>
 <li><a class="reference internal" href="../../development/testnets/testing_wiki.html#how-to-testing-bts"><span class="std std-ref">Testing</span></a></li>
 <li><a class="reference internal" href="../../development/testnets/setup_faucet.html#how-to-setup-faucet"><span class="std std-ref">Set up Faucet</span></a></li>
@@ -273,9 +271,12 @@
 <div class="section" id="transfer-transactions">
 <h2>Transfer / Transactions<a class="headerlink" href="#transfer-transactions" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference internal" href="confidential-transactions.html#confidential-transactions-guide"><span class="std std-ref">Confidential Transfers</span></a></li>
-<li><a class="reference internal" href="construct-transaction.html#manually-construct-transaction"><span class="std std-ref">Manually Construct Any Transaction</span></a></li>
-<li><a class="reference internal" href="propose-transaction.html#proposing-transaction"><span class="std std-ref">Proposing a Transaction</span></a>
+<li><a class="reference internal" href="../index_faq.html#dev-faq14"><span class="std std-ref">What is the average size in Bytes of a Bitshares transaction?</span></a></li>
+<li><a class="reference internal" href="../index_faq.html#dev-faq19"><span class="std std-ref">What transaction types are natively supported?</span></a></li>
+<li><a class="reference internal" href="../accounts/bts_multi-sign.html#bts-multi-sign"><span class="std std-ref">How Multi-signature’ works</span></a></li>
+<li><a class="reference internal" href="confidential-transactions.html#confidential-transactions-guide"><span class="std std-ref">How to use the CLI wallet to perform confidential transfers in BitShares</span></a></li>
+<li><a class="reference internal" href="construct-transaction.html#manually-construct-transaction"><span class="std std-ref">Hot to Construct Any Transaction - Manually</span></a></li>
+<li><a class="reference internal" href="propose-transaction.html#proposing-transaction"><span class="std std-ref">How to Propose a Transaction</span></a>
 - Crafting, proposing, and approving</li>
 </ul>
 </div>
@@ -289,6 +290,7 @@
 <div class="section" id="wallet-cli">
 <h2>Wallet / CLI<a class="headerlink" href="#wallet-cli" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
+<li><a class="reference external" href="https://github.com/bitshares/bitshares-ui/blob/staging/app/api/apiConfig.js#L67">Find BitShares Public Full Node</a></li>
 <li><a class="reference internal" href="../../development/apps/cli_wallet.html#run-cli-wallet-steps"><span class="std std-ref">How to connect and use the CLI-Wallet</span></a></li>
 <li><a class="reference internal" href="../../development/apps/network.html#network-setups"><span class="std std-ref">How to setup Network and Wallet Configuration</span></a></li>
 <li><a class="reference internal" href="../../development/apps/cli_wallet.html#transfering-funds-cli-wallet"><span class="std std-ref">Transferring Funds using the CLI-Wallet</span></a></li>
@@ -315,6 +317,14 @@
 <li><a class="reference internal" href="worker-create.html#worker-create"><span class="std std-ref">How to Create a Worker</span></a></li>
 <li><a class="reference internal" href="worker-budget.html#worker-budget"><span class="std std-ref">Claim Worker Pay</span></a></li>
 </ul>
+</div>
+<div class="section" id="migration-from-bitshares1-0">
+<h2>Migration (from BitShares1.0)<a class="headerlink" href="#migration-from-bitshares1-0" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="../migration/howto-exporting-wallet.html#howto-exporting-wallet"><span class="std std-ref">Explore Your Wallet</span></a></li>
+<li><a class="reference internal" href="../migration/howto-importing-wallet.html#howto-importing-wallet"><span class="std std-ref">Improve Your Wallet</span></a></li>
+<li><a class="reference internal" href="howto-importing-wallet-remarks.html#migration-remarks"><span class="std std-ref">Migration Remarks</span></a></li>
+</ul>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -333,7 +343,7 @@
         <a href="../index_faq.html" class="btn btn-neutral float-right" title="Frequently Asked Questions (FAQ)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../../api/namespaces/wallet.html" class="btn btn-neutral" title="6.3. Graphene::Wallet" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../../api/namespaces/wallet.html" class="btn btn-neutral" title="7.3. Graphene::Wallet" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

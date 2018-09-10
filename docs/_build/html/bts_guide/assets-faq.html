@@ -85,6 +85,7 @@
 <p class="caption"><span class="caption-text">Development</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../development/installation.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accounts/bts_account.html">BitShares Accounts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../development/integration.html">Integration Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../development/interaction.html">Blockchain Interaction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../development/testnets.html">Testnets</a></li>
@@ -93,12 +94,13 @@
 </ul>
 <p class="caption"><span class="caption-text">API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../api/restrictions.html">1. API Access and Restrictions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/calls.html">2. Available Calls</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/blockchain_api.html">3. Blockchain API(s)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/wallet_api.html">4. Wallet API - Calls</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/objects_ids.html">5. Objects and IDs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/namespaces.html">6. Graphene - Namespaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/api_about.html">1. API Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/restrictions.html">2. API Access and Restrictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/calls.html">3. Available Calls, Object, and IDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/blockchain_api.html">4. Blockchain API(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/wallet_api.html">5. Wallet API - Calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/objects_ids.html">6. Objects and IDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/namespaces.html">7. Graphene - Namespaces</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Guides</span></p>
 <ul>
@@ -109,7 +111,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../references/info_comunities.html">BitShares Community</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/info_comunities.html#bitshares-blockchain">BitShares Blockchain</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/tech_articles.html">Articles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/tech_articles.html">BitShares Developers’ Contributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/tech_articles.html#articles">Articles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/githubrepo.html">BitShares Repositories</a></li>
 </ul>
 
@@ -175,10 +178,8 @@
             
   <div class="section" id="assets-faq">
 <span id="asset-faq"></span><h1>Assets - FAQ<a class="headerlink" href="#assets-faq" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="general">
-<h2>General<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="can-i-change-x-after-creation-of-the-asset">
-<span id="asset-faq1"></span><h3>Can I change <cite>x</cite> after creation of the asset<a class="headerlink" href="#can-i-change-x-after-creation-of-the-asset" title="Permalink to this headline">¶</a></h3>
+<span id="asset-faq1"></span><h2>Can I change <cite>x</cite> after creation of the asset<a class="headerlink" href="#can-i-change-x-after-creation-of-the-asset" title="Permalink to this headline">¶</a></h2>
 <p>The following parameters can be changed after creation:</p>
 <ul class="simple">
 <li>Issuer</li>
@@ -214,13 +215,13 @@
 </ul>
 <p>A guide can be found <a class="reference internal" href="tutorials/uia-update-manual.html#uia-update-manual"><span class="std std-ref">here</span></a>.</p>
 </div>
-<div class="section" id="changing-the-issuer">
-<span id="asset-faq2"></span><h3>Changing the issuer<a class="headerlink" href="#changing-the-issuer" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="can-i-change-the-issuer">
+<span id="asset-faq2"></span><h2>Can I change the issuer?<a class="headerlink" href="#can-i-change-the-issuer" title="Permalink to this headline">¶</a></h2>
 <p>The current issue of an asset may transfer ownership of the asset to
 someone else by changing the issuer in the asset’s settings.</p>
 </div>
 <div class="section" id="what-about-parent-and-child-assets">
-<span id="asset-faq3"></span><h3>What about Parent and Child assets?<a class="headerlink" href="#what-about-parent-and-child-assets" title="Permalink to this headline">¶</a></h3>
+<span id="asset-faq3"></span><h2>What about Parent and Child assets?<a class="headerlink" href="#what-about-parent-and-child-assets" title="Permalink to this headline">¶</a></h2>
 <p>A <strong>parent</strong>/<strong>child</strong> relation ship for assets can be represented by
 the name of the symbol, e.g.:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PARENT</span><span class="o">.</span><span class="n">child</span>
@@ -229,19 +230,19 @@ the name of the symbol, e.g.:</p>
 <p>can only be created by the issuer of <code class="docutils literal notranslate"><span class="pre">PARENT</span></code> and no one else.</p>
 </div>
 <div class="section" id="what-happens-to-the-asset-creation-fee">
-<span id="asset-faq4"></span><h3>What happens to the asset creation fee?<a class="headerlink" href="#what-happens-to-the-asset-creation-fee" title="Permalink to this headline">¶</a></h3>
+<span id="asset-faq4"></span><h2>What happens to the asset creation fee?<a class="headerlink" href="#what-happens-to-the-asset-creation-fee" title="Permalink to this headline">¶</a></h2>
 <p>50% of the asset creation fee are used to pre-fill the assets fee pool.
 From the other 50%, 20% go to the network and 80% go to the referral
 program. This means, that if you are a life-time member, you get back
 40% of the asset creation fee after the vesting period (currently 90
 days).</p>
-</div>
-</div>
 <hr class="docutils" />
 <div class="section" id="fee-pool">
-<h2>Fee Pool<a class="headerlink" href="#fee-pool" title="Permalink to this headline">¶</a></h2>
+<h3>Fee Pool<a class="headerlink" href="#fee-pool" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
 <div class="section" id="what-is-fee-pool-draining">
-<span id="asset-faq5"></span><h3>What is Fee Pool Draining?<a class="headerlink" href="#what-is-fee-pool-draining" title="Permalink to this headline">¶</a></h3>
+<span id="asset-faq5"></span><h2>What is Fee Pool Draining?<a class="headerlink" href="#what-is-fee-pool-draining" title="Permalink to this headline">¶</a></h2>
 <p>If an order is created and paid in a non-BTS asset, the fee is
 implicitly exchange into BTS to pay the network fee. However, if the
 order is canceled, 90% of the fee will be returned as BTS. The result
@@ -255,7 +256,7 @@ price of your asset. As a consequence, paying fees in BTS should always
 be cheaper.</p>
 </div>
 <div class="section" id="what-is-the-fee-pool-all-about">
-<span id="asset-faq6"></span><h3>What is the fee pool all about?<a class="headerlink" href="#what-is-the-fee-pool-all-about" title="Permalink to this headline">¶</a></h3>
+<span id="asset-faq6"></span><h2>What is the fee pool all about?<a class="headerlink" href="#what-is-the-fee-pool-all-about" title="Permalink to this headline">¶</a></h2>
 <p>The fee pool allows participants in the network to deal with assets and
 pay for the transaction fees without the need to hold BTS. Any
 transaction fee can be paid by paying any asset that has a core exchange
@@ -280,30 +281,30 @@ exchange rate updated unless he wants the owner of his asset to be
 required to hold BTS for the fee.</p>
 </div>
 <div class="section" id="what-to-do-if-the-fee-pool-is-empty">
-<span id="asset-faq7"></span><h3>What to do if the fee pool is empty?<a class="headerlink" href="#what-to-do-if-the-fee-pool-is-empty" title="Permalink to this headline">¶</a></h3>
+<span id="asset-faq7"></span><h2>What to do if the fee pool is empty?<a class="headerlink" href="#what-to-do-if-the-fee-pool-is-empty" title="Permalink to this headline">¶</a></h2>
 <p>Open up the issuer’s account, click the assets tab and open up the
 dialog to change the asset. There will be a fee pool tab that allows you
 to fund the fee pool and claim the accumulated fees!</p>
-</div>
-</div>
 <hr class="docutils" />
 <div class="section" id="market-fees">
-<h2>Market Fees<a class="headerlink" href="#market-fees" title="Permalink to this headline">¶</a></h2>
+<h3>Market Fees<a class="headerlink" href="#market-fees" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
 <div class="section" id="how-to-claim-accumulated-fees">
-<span id="asset-faq8"></span><h3>How to claim accumulated fees?<a class="headerlink" href="#how-to-claim-accumulated-fees" title="Permalink to this headline">¶</a></h3>
+<span id="asset-faq8"></span><h2>How to claim accumulated fees?<a class="headerlink" href="#how-to-claim-accumulated-fees" title="Permalink to this headline">¶</a></h2>
 <p>Open up the issuer’s account, click the assets tab and open up the
 dialog to change the asset. There will be a fee pool tab that allows you
 to fund the fee pool and claim the accumulated fees!</p>
 </div>
 <div class="section" id="what-are-asset-flags-and-permissions">
-<span id="asset-faq9"></span><h3>What are Asset Flags and Permissions?<a class="headerlink" href="#what-are-asset-flags-and-permissions" title="Permalink to this headline">¶</a></h3>
+<span id="asset-faq9"></span><h2>What are Asset Flags and Permissions?<a class="headerlink" href="#what-are-asset-flags-and-permissions" title="Permalink to this headline">¶</a></h2>
 <p>When an asset is creatd, the issuer can set any combination of
 flags/permissions. <strong>Flags</strong> are set in stone unless there is
 <strong>permission</strong> to edit. Once a permission to edit is revoked, flags are
 permanent, and can never be modified again.</p>
 </div>
 <div class="section" id="what-are-the-flags">
-<span id="asset-faq10"></span><h3>What are the Flags?<a class="headerlink" href="#what-are-the-flags" title="Permalink to this headline">¶</a></h3>
+<span id="asset-faq10"></span><h2>What are the Flags?<a class="headerlink" href="#what-are-the-flags" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">charge_market_fee</span></code>:
 an issuer-specified percentage of all market trades in this asset is
@@ -332,7 +333,7 @@ allow the asset to be fed by the committee</li>
 <div></div></blockquote>
 </div>
 <div class="section" id="what-are-the-permissions">
-<span id="asset-faq11"></span><h3>What are the Permissions?<a class="headerlink" href="#what-are-the-permissions" title="Permalink to this headline">¶</a></h3>
+<span id="asset-faq11"></span><h2>What are the Permissions?<a class="headerlink" href="#what-are-the-permissions" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Enable market fee</li>
 <li>Require holders to be white-listed</li>
@@ -342,7 +343,7 @@ allow the asset to be fed by the committee</li>
 </ul>
 </div>
 <div class="section" id="what-happens-if-i-enable-market-fees">
-<span id="asset-faq12"></span><h3>What happens if I enable Market fees?<a class="headerlink" href="#what-happens-if-i-enable-market-fees" title="Permalink to this headline">¶</a></h3>
+<span id="asset-faq12"></span><h2>What happens if I enable Market fees?<a class="headerlink" href="#what-happens-if-i-enable-market-fees" title="Permalink to this headline">¶</a></h2>
 <p>If <em>Market Fees</em> of a UIA are turned on, fees have to be payed for each
 <strong>market transaction</strong>. This means, that market fees only apply to
 <strong>filled orders</strong>!</p>
@@ -354,22 +355,22 @@ as profit. These profits are accumulated for each UIA and can be
 withdrawn by the issuer.</p>
 </div>
 <div class="section" id="what-if-two-different-market-fees-are-involved-in-a-trade">
-<span id="asset-faq13"></span><h3>What if two different market fees are involved in a trade?<a class="headerlink" href="#what-if-two-different-market-fees-are-involved-in-a-trade" title="Permalink to this headline">¶</a></h3>
+<span id="asset-faq13"></span><h2>What if two different market fees are involved in a trade?<a class="headerlink" href="#what-if-two-different-market-fees-are-involved-in-a-trade" title="Permalink to this headline">¶</a></h2>
 <p>Suppose, I set the market fee for MyUIA market at 0.1%.
 and the market fee for YourUIA market at 0.3%.</p>
 <p>In BitShares, You pay the fee upon <strong>receiving an asset</strong>. Hence, one
 side will pay 0.3% the other will pay 0.1%.</p>
-</div>
-</div>
 <hr class="docutils" />
 <div class="section" id="market-pegged-assets">
-<h2>Market Pegged Assets<a class="headerlink" href="#market-pegged-assets" title="Permalink to this headline">¶</a></h2>
+<h3>Market Pegged Assets<a class="headerlink" href="#market-pegged-assets" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
 <div class="section" id="can-i-use-the-same-flags-permissions-as-for-uias">
-<span id="asset-faq14"></span><h3>Can I use the same flags/permissions as for UIAs?<a class="headerlink" href="#can-i-use-the-same-flags-permissions-as-for-uias" title="Permalink to this headline">¶</a></h3>
+<span id="asset-faq14"></span><h2>Can I use the same flags/permissions as for UIAs?<a class="headerlink" href="#can-i-use-the-same-flags-permissions-as-for-uias" title="Permalink to this headline">¶</a></h2>
 <p>Yes!</p>
 </div>
 <div class="section" id="what-are-market-pegged-asset-specific-parameters">
-<span id="asset-faq15"></span><h3>What are market-pegged-asset-specific parameters?<a class="headerlink" href="#what-are-market-pegged-asset-specific-parameters" title="Permalink to this headline">¶</a></h3>
+<span id="asset-faq15"></span><h2>What are market-pegged-asset-specific parameters?<a class="headerlink" href="#what-are-market-pegged-asset-specific-parameters" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">feed_lifetime_sec</span></code>:
 The lifetime of a feed. After this time (in seconds) a feed is no
@@ -389,7 +390,6 @@ The asset that has to be used to <em>back</em> this asset (when borrowing)</li>
 <hr class="docutils" />
 <div class="line-block">
 <div class="line"><br /></div>
-</div>
 </div>
 </div>
 </div>

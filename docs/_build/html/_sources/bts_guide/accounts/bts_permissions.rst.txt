@@ -1,4 +1,6 @@
 
+.. _acc-permission:
+
 Permissions
 ===============
 
@@ -39,7 +41,7 @@ The Permission page locates in a side menu.
 
 - Go to [**Settings**] and click [**Permissions**]
 
-.. image:: ../images/permissions-active2.png
+.. image:: permissions-active2.png
         :alt: Permissions Keys
         :width: 700px
         :align: center
@@ -76,7 +78,7 @@ In this section, we will show you how to find your private key.
 
 You can find each **Public key** and **Private key** on the Permissions page.  
 
-.. image:: ../images/permissions-active3.png
+.. image:: permissions-active3.png
         :alt: Permissions Keys
         :width: 700px
         :align: center
@@ -95,7 +97,7 @@ How to find each private key
  - A Private key viewer form opens. You will find a Public Key and a [**SHOW**] button like below.
  - Click the [**SHOW**] button. You will find your Private key under the Public key. 
 
-.. image:: ../images/permissions-active4b.png
+.. image:: permissions-active4b.png
         :alt: Permissions Keys
         :width: 500px
         :align: center
@@ -121,7 +123,7 @@ In this section, we will show you how to change your Cloud Wallet password.
 If you want to change your **Cloud Wallet** password, use this page. You will change your password and your keys during this process. 
 		
 		
-.. image:: ../images/permissions-cloud2.png
+.. image:: permissions-cloud2.png
         :alt: cloud wallet pwd
         :width: 650px
         :align: center		
@@ -157,7 +159,7 @@ Steps
  - (#5)Click [**SAVE**] 
  - Confirm the Transaction 
 		
-.. image:: ../images/permissions-cloud3.png
+.. image:: permissions-cloud3.png
         :alt: cloud wallet pwd
         :width: 650px
         :align: center	
@@ -177,12 +179,12 @@ Steps
  - Confirm the Transaction
 
 
-.. image:: ../images/permissions-removekey1.png
+.. image:: permissions-removekey1.png
         :alt: cloud wallet pwd
         :width: 650px
         :align: center	
 		
-.. image:: ../images/permissions-removekey2.png
+.. image:: permissions-removekey2.png
         :alt: cloud wallet pwd
         :width: 650px
         :align: center	

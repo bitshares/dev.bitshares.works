@@ -1,4 +1,6 @@
 
+.. _api-access-and-restrictions:
+
 ****************************
 API Access and Restrictions 
 ****************************
@@ -108,6 +110,8 @@ Please check. Our `doxygen <https://bitshares.org/doxygen/>`_ documentation cont
 
 
 ------------------
+
+.. _api-access-via-http:
 
 Accessing the Named API via HTTP
 =======================================

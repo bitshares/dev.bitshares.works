@@ -7,10 +7,6 @@
 Assets - FAQ
 ==================
 
-  
-General
--------------
-
 .. _asset-faq1:
 
 Can I change `x` after creation of the asset
@@ -42,7 +38,7 @@ A guide can be found :ref:`here <uia-update-manual>`.
 
 .. _asset-faq2:
 
-Changing the issuer
+Can I change the issuer?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The current issue of an asset may transfer ownership of the asset to

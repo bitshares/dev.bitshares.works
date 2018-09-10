@@ -87,13 +87,13 @@
 <p class="caption"><span class="caption-text">Development</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bts_guide/accounts/bts_account.html">BitShares Accounts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="integration.html">Integration Guide</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Blockchain Interaction</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="apps/node.html">Full Nodes (Witness Nodes)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apps/node_howto_run.html">How to Run and Use a Full Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apps/network_secure.html">Secure Network and Wallet Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="apps/cli_intro.html">Cli Wallet and the Connectivity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apps/cli_wallet.html">Connect a Cli Wallet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apps/network.html">Network and Wallet Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apps/cli_wallet.html">Launch a Cli Wallet</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="testnets.html">Testnets</a></li>
@@ -102,12 +102,13 @@
 </ul>
 <p class="caption"><span class="caption-text">API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../api/restrictions.html">1. API Access and Restrictions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/calls.html">2. Available Calls</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/blockchain_api.html">3. Blockchain API(s)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/wallet_api.html">4. Wallet API - Calls</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/objects_ids.html">5. Objects and IDs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/namespaces.html">6. Graphene - Namespaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/api_about.html">1. API Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/restrictions.html">2. API Access and Restrictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/calls.html">3. Available Calls, Object, and IDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/blockchain_api.html">4. Blockchain API(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/wallet_api.html">5. Wallet API - Calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/objects_ids.html">6. Objects and IDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/namespaces.html">7. Graphene - Namespaces</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Guides</span></p>
 <ul>
@@ -118,7 +119,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../references/info_comunities.html">BitShares Community</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/info_comunities.html#bitshares-blockchain">BitShares Blockchain</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/tech_articles.html">Articles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/tech_articles.html">BitShares Developers’ Contributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/tech_articles.html#articles">Articles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/githubrepo.html">BitShares Repositories</a></li>
 </ul>
 
@@ -183,10 +185,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="blockchain-interaction">
-<h1>Blockchain Interaction<a class="headerlink" href="#blockchain-interaction" title="Permalink to this headline">¶</a></h1>
+<span id="blockchain-interaction-top"></span><h1>Blockchain Interaction<a class="headerlink" href="#blockchain-interaction" title="Permalink to this headline">¶</a></h1>
 <p>To interface your existing platform with BitShares, you can make use of <a class="reference internal" href="../api/rpc.html#rpc"><span class="std std-ref">Remote Procedure Calls</span></a> and <a class="reference internal" href="../api/websocket.html#websocket-calls"><span class="std std-ref">Websocket Calls &amp; Notifications</span></a> to either a <span class="xref std std-ref">full-node</span> (for monitoring only) or the <span class="xref std std-ref">cli-wallet</span> (for accessing funds).</p>
-<p>All API calls are formated in JSON and return JSON only. You can read more about the API in the <a class="reference internal" href="../api/blockchain_api.html#blockchain-api"><span class="std std-ref">Blockchain API(s)</span></a> and  :ref`wallet-api-calls` sections.</p>
-<p>The Graphene toolkit comprises several tools that allow interaction with the blockchain on different levels and shall thus be briefly described in the following sections.</p>
+<p>All API calls are formated in JSON and return JSON only. You can read more about the API in <a class="reference internal" href="../api/restrictions.html#api-access-and-restrictions"><span class="std std-ref">this section</span></a>.</p>
+<p>The Graphene toolkit comprises several tools that allow interaction with the blockchain on different levels and has been described briefly in the following sections.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="apps/node.html">Full Nodes (Witness Nodes)</a><ul>
@@ -199,31 +201,33 @@
 <li class="toctree-l2"><a class="reference internal" href="apps/node.html#public-full-node-information">Public Full Node information</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="apps/node_howto_run.html">How to Run and Use a Full Node</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="apps/node_howto_run.html#installation-and-build-the-witness-node">Installation and build the Witness Node</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apps/node_howto_run.html#run-the-full-node">Run the Full Node</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apps/node_howto_run.html#connect-to-your-own-full-node-gui">Connect to your own Full Node (GUI)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apps/network_secure.html">Secure Network and Wallet Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="apps/network_secure.html#set-up">Set up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apps/network_secure.html#trusted-full-node">Trusted Full Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apps/network_secure.html#delayed-full-node">Delayed Full Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apps/network_secure.html#wallet">Wallet</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="apps/cli_intro.html">Cli Wallet and the Connectivity</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="apps/cli_intro.html#cli-client-and-wallet">CLI Client and Wallet</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="apps/cli_wallet.html">Connect a Cli Wallet</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="apps/cli_wallet.html">Launch a Cli Wallet</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="apps/cli_wallet.html#steps">Steps</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="apps/network.html">Network and Wallet Configuration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="apps/network.html#components">Components</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apps/network.html#general-network-and-wallet-configuration">General Network and Wallet Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apps/network.html#secure-network-and-wallet-configuration">Secure Network and Wallet Configuration</a></li>
+</ul>
+</div>
+<ul class="simple">
+<li>Guides<ul>
+<li><a class="reference internal" href="../bts_guide/tutorials/python-monitor.html#monitoring-account-deposits-python"><span class="std std-ref">Monitor Account Deposits - Python</span></a></li>
+<li><a class="reference internal" href="../bts_guide/tutorials/nodejs-monitor.html#nodejs-example"><span class="std std-ref">Monitor Balance History of an Account  - NodeJS</span></a></li>
+<li><a class="reference internal" href="../bts_guide/index_faq.html#cli-faq-list"><span class="std std-ref">CLI Wallet and Witness FAQs</span></a></li>
+<li><a class="reference internal" href="../bts_guide/tutorials/index.html#dev-guides"><span class="std std-ref">Developer Guide (Tutorials)</span></a></li>
+<li><a class="reference external" href="http://docs.pybitshares.com/en/latest/">Python-Bitshares Documentation</a></li>
 </ul>
 </li>
 </ul>
-</div>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>

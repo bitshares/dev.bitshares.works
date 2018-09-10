@@ -85,6 +85,7 @@
 <p class="caption"><span class="caption-text">Development</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../development/installation.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accounts/bts_account.html">BitShares Accounts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../development/integration.html">Integration Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../development/interaction.html">Blockchain Interaction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../development/testnets.html">Testnets</a></li>
@@ -93,12 +94,13 @@
 </ul>
 <p class="caption"><span class="caption-text">API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../api/restrictions.html">1. API Access and Restrictions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/calls.html">2. Available Calls</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/blockchain_api.html">3. Blockchain API(s)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/wallet_api.html">4. Wallet API - Calls</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/objects_ids.html">5. Objects and IDs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/namespaces.html">6. Graphene - Namespaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/api_about.html">1. API Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/restrictions.html">2. API Access and Restrictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/calls.html">3. Available Calls, Object, and IDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/blockchain_api.html">4. Blockchain API(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/wallet_api.html">5. Wallet API - Calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/objects_ids.html">6. Objects and IDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/namespaces.html">7. Graphene - Namespaces</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Guides</span></p>
 <ul>
@@ -109,7 +111,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../references/info_comunities.html">BitShares Community</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/info_comunities.html#bitshares-blockchain">BitShares Blockchain</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/tech_articles.html">Articles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/tech_articles.html">BitShares Developers’ Contributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/tech_articles.html#articles">Articles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/githubrepo.html">BitShares Repositories</a></li>
 </ul>
 
@@ -175,14 +178,12 @@
             
   <div class="section" id="developers-faq">
 <span id="dev-faq"></span><h1>Developers - FAQ<a class="headerlink" href="#developers-faq" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="general">
-<h2>General<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="are-there-any-sharding-mechanics-currently-deployed">
-<span id="dev-faq1"></span><h3>Are there any sharding mechanics currently deployed?<a class="headerlink" href="#are-there-any-sharding-mechanics-currently-deployed" title="Permalink to this headline">¶</a></h3>
+<span id="dev-faq1"></span><h2>Are there any sharding mechanics currently deployed?<a class="headerlink" href="#are-there-any-sharding-mechanics-currently-deployed" title="Permalink to this headline">¶</a></h2>
 <p>No</p>
 </div>
 <div class="section" id="are-there-any-special-affordances-made-for-privacy">
-<span id="dev-faq2"></span><h3>Are there any special affordances made for privacy?<a class="headerlink" href="#are-there-any-special-affordances-made-for-privacy" title="Permalink to this headline">¶</a></h3>
+<span id="dev-faq2"></span><h2>Are there any special affordances made for privacy?<a class="headerlink" href="#are-there-any-special-affordances-made-for-privacy" title="Permalink to this headline">¶</a></h2>
 <p>…such as using CoinJoin or a ZK-SNARK based privacy scheme like Zerocash? If
 mixing is integrated at the protocl level are you using the standards set forth
 by the BNMCKF Mixcoin proposal</p>
@@ -191,7 +192,7 @@ by the BNMCKF Mixcoin proposal</p>
 No mixing, No CoinJoin.</p>
 </div>
 <div class="section" id="does-the-protocol-provide-mechanisms-for-overlay-protocols-to-interact-such-as-or-return">
-<span id="dev-faq3"></span><h3>Does the protocol provide mechanisms for overlay protocols to interact such as OR_RETURN?<a class="headerlink" href="#does-the-protocol-provide-mechanisms-for-overlay-protocols-to-interact-such-as-or-return" title="Permalink to this headline">¶</a></h3>
+<span id="dev-faq3"></span><h2>Does the protocol provide mechanisms for overlay protocols to interact such as OR_RETURN?<a class="headerlink" href="#does-the-protocol-provide-mechanisms-for-overlay-protocols-to-interact-such-as-or-return" title="Permalink to this headline">¶</a></h2>
 <p>Yes, using a custom_operation.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="nl">custom_operation</span> <span class="p">:</span> <span class="k">public</span> <span class="n">base_operation</span>
    <span class="p">{</span>
@@ -214,11 +215,11 @@ No mixing, No CoinJoin.</p>
 </div>
 </div>
 <div class="section" id="how-are-spv-clients-handled">
-<span id="dev-faq4"></span><h3>How are SPV clients handled?<a class="headerlink" href="#how-are-spv-clients-handled" title="Permalink to this headline">¶</a></h3>
+<span id="dev-faq4"></span><h2>How are SPV clients handled?<a class="headerlink" href="#how-are-spv-clients-handled" title="Permalink to this headline">¶</a></h2>
 <p>No SPV clients at the moment, each full node can expose a public websocket/http api.</p>
 </div>
 <div class="section" id="how-are-transactions-validated">
-<span id="dev-faq5"></span><h3>How are transactions validated?<a class="headerlink" href="#how-are-transactions-validated" title="Permalink to this headline">¶</a></h3>
+<span id="dev-faq5"></span><h2>How are transactions validated?<a class="headerlink" href="#how-are-transactions-validated" title="Permalink to this headline">¶</a></h2>
 <p>Each operation has a defined evaluator that checks for preconditions
 (do_evaluate) and modify the state (do_apply). (After signature verification)</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">transfer_evaluator</span> <span class="o">:</span> <span class="k">public</span> <span class="n">evaluator</span><span class="o">&lt;</span><span class="n">transfer_evaluator</span><span class="o">&gt;</span>
@@ -233,32 +234,32 @@ No mixing, No CoinJoin.</p>
 </div>
 </div>
 <div class="section" id="how-do-new-clients-bootstrap-into-the-network">
-<span id="dev-faq6"></span><h3>How do new clients bootstrap into the network?<a class="headerlink" href="#how-do-new-clients-bootstrap-into-the-network" title="Permalink to this headline">¶</a></h3>
+<span id="dev-faq6"></span><h2>How do new clients bootstrap into the network?<a class="headerlink" href="#how-do-new-clients-bootstrap-into-the-network" title="Permalink to this headline">¶</a></h2>
 <p>Trusted seed nodes. Knowledge of initial witness keys.</p>
 </div>
 <div class="section" id="how-is-accounting-addressed-in-bitshares-is-it-a-nxt-style-accounting-model-or-like-bitcoin-s-utxo">
-<span id="dev-faq7"></span><h3>How is accounting addressed in Bitshares? Is it a Nxt style accounting model or like Bitcoin’s UTXO<a class="headerlink" href="#how-is-accounting-addressed-in-bitshares-is-it-a-nxt-style-accounting-model-or-like-bitcoin-s-utxo" title="Permalink to this headline">¶</a></h3>
+<span id="dev-faq7"></span><h2>How is accounting addressed in Bitshares? Is it a Nxt style accounting model or like Bitcoin’s UTXO<a class="headerlink" href="#how-is-accounting-addressed-in-bitshares-is-it-a-nxt-style-accounting-model-or-like-bitcoin-s-utxo" title="Permalink to this headline">¶</a></h2>
 <p>Each account has a finite set of balances, one for each asset type.</p>
 </div>
 <div class="section" id="how-is-time-addressed-in-the-blockchain-is-ntp-used-or-some-other-protocol">
-<span id="dev-faq8"></span><h3>How is time addressed in the blockchain? Is NTP used or some other protocol?<a class="headerlink" href="#how-is-time-addressed-in-the-blockchain-is-ntp-used-or-some-other-protocol" title="Permalink to this headline">¶</a></h3>
+<span id="dev-faq8"></span><h2>How is time addressed in the blockchain? Is NTP used or some other protocol?<a class="headerlink" href="#how-is-time-addressed-in-the-blockchain-is-ntp-used-or-some-other-protocol" title="Permalink to this headline">¶</a></h2>
 <p>NTP</p>
 </div>
 <div class="section" id="is-the-scripting-language-turing-complete">
-<span id="dev-faq9"></span><h3>Is the scripting language turing complete?<a class="headerlink" href="#is-the-scripting-language-turing-complete" title="Permalink to this headline">¶</a></h3>
+<span id="dev-faq9"></span><h2>Is the scripting language turing complete?<a class="headerlink" href="#is-the-scripting-language-turing-complete" title="Permalink to this headline">¶</a></h2>
 <p>No scripting</p>
 </div>
 <div class="section" id="is-there-a-specification-for-bitshares-scripting-language-assuming-there-is-one">
-<span id="dev-faq10"></span><h3>Is there a specification for Bitshares scripting language? (assuming there is one)<a class="headerlink" href="#is-there-a-specification-for-bitshares-scripting-language-assuming-there-is-one" title="Permalink to this headline">¶</a></h3>
+<span id="dev-faq10"></span><h2>Is there a specification for Bitshares scripting language? (assuming there is one)<a class="headerlink" href="#is-there-a-specification-for-bitshares-scripting-language-assuming-there-is-one" title="Permalink to this headline">¶</a></h2>
 <p>No scripting</p>
 </div>
 <div class="section" id="is-this-done-via-a-gossip-protocol-or-through-a-federate-relay">
-<span id="dev-faq11"></span><h3>Is this done via a gossip protocol or through a federate relay?<a class="headerlink" href="#is-this-done-via-a-gossip-protocol-or-through-a-federate-relay" title="Permalink to this headline">¶</a></h3>
+<span id="dev-faq11"></span><h2>Is this done via a gossip protocol or through a federate relay?<a class="headerlink" href="#is-this-done-via-a-gossip-protocol-or-through-a-federate-relay" title="Permalink to this headline">¶</a></h2>
 <p>Each node immediately broadcast the data it receives to its peers after validating it
 <a class="reference external" href="https://github.com/cryptonomex/graphene/blob/master/libraries/p2p/design.md">https://github.com/cryptonomex/graphene/blob/master/libraries/p2p/design.md</a></p>
 </div>
 <div class="section" id="what-data-structures-are-used-in-the-blockchain">
-<span id="dev-faq12"></span><h3>What data structures are used in the blockchain?<a class="headerlink" href="#what-data-structures-are-used-in-the-blockchain" title="Permalink to this headline">¶</a></h3>
+<span id="dev-faq12"></span><h2>What data structures are used in the blockchain?<a class="headerlink" href="#what-data-structures-are-used-in-the-blockchain" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
 <dt>::</dt>
 <dd>Blocks =&gt; transactions =&gt; operations =&gt; objects.</dd>
@@ -288,87 +289,27 @@ Example objects::</p>
 </div>
 </div>
 <div class="section" id="what-is-the-average-block-time">
-<span id="dev-faq13"></span><h3>What is the average block time?<a class="headerlink" href="#what-is-the-average-block-time" title="Permalink to this headline">¶</a></h3>
+<span id="dev-faq13"></span><h2>What is the average block time?<a class="headerlink" href="#what-is-the-average-block-time" title="Permalink to this headline">¶</a></h2>
 <p>Current 3 seconds, configurable by chain parameters.</p>
 </div>
 <div class="section" id="what-is-the-average-size-in-bytes-of-a-bitshares-transaction">
-<span id="dev-faq14"></span><h3>What is the average size in Bytes of a Bitshares transaction?<a class="headerlink" href="#what-is-the-average-size-in-bytes-of-a-bitshares-transaction" title="Permalink to this headline">¶</a></h3>
+<span id="dev-faq14"></span><h2>What is the average size in Bytes of a Bitshares transaction?<a class="headerlink" href="#what-is-the-average-size-in-bytes-of-a-bitshares-transaction" title="Permalink to this headline">¶</a></h2>
 <p>Average wire size of operations is ~30 bytes.
 Average mem size of operations is ~100 bytes.
 <a class="reference external" href="https://github.com/cryptonomex/graphene/blob/master/programs/size_checker/main.cpp">https://github.com/cryptonomex/graphene/blob/master/programs/size_checker/main.cpp</a></p>
 </div>
-<div class="section" id="what-is-the-format-of-the-block-header">
-<span id="dev-faq15"></span><h3>What is the format of the block header?<a class="headerlink" href="#what-is-the-format-of-the-block-header" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">block_header</span>
-   <span class="p">{</span>
-      <span class="n">digest_type</span>                   <span class="n">digest</span><span class="p">()</span><span class="k">const</span><span class="p">;</span>
-      <span class="n">block_id_type</span>                 <span class="n">previous</span><span class="p">;</span>
-      <span class="kt">uint32_t</span>                      <span class="nf">block_num</span><span class="p">()</span><span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">num_from_id</span><span class="p">(</span><span class="n">previous</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="p">}</span>
-      <span class="n">fc</span><span class="o">::</span><span class="n">time_point_sec</span>            <span class="n">timestamp</span><span class="p">;</span>
-      <span class="n">witness_id_type</span>               <span class="n">witness</span><span class="p">;</span>
-      <span class="n">checksum_type</span>                 <span class="n">transaction_merkle_root</span><span class="p">;</span>
-      <span class="n">extensions_type</span>               <span class="n">extensions</span><span class="p">;</span>
-
-      <span class="k">static</span> <span class="kt">uint32_t</span> <span class="nf">num_from_id</span><span class="p">(</span><span class="k">const</span> <span class="n">block_id_type</span><span class="o">&amp;</span> <span class="n">id</span><span class="p">);</span>
-   <span class="p">};</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="what-is-the-maximum-bitshares-block-size">
-<span id="dev-faq16"></span><h3>What is the maximum bitshares block size?<a class="headerlink" href="#what-is-the-maximum-bitshares-block-size" title="Permalink to this headline">¶</a></h3>
-<p>Configurable by chain parameters.</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">chain_parameters</span>
-<span class="p">{</span>
-   <span class="cm">/** using a smart ref breaks the circular dependency created between operations and the fee schedule */</span>
-   <span class="n">smart_ref</span><span class="o">&lt;</span><span class="n">fee_schedule</span><span class="o">&gt;</span> <span class="n">current_fees</span><span class="p">;</span>                       <span class="c1">///&lt; current schedule of fees</span>
-   <span class="kt">uint8_t</span>                 <span class="n">block_interval</span>                      <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_BLOCK_INTERVAL</span><span class="p">;</span> <span class="c1">///&lt; interval in seconds between blocks</span>
-   <span class="kt">uint32_t</span>                <span class="n">maintenance_interval</span>                <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_MAINTENANCE_INTERVAL</span><span class="p">;</span> <span class="c1">///&lt; interval in sections between blockchain maintenance events</span>
-   <span class="kt">uint8_t</span>                 <span class="n">maintenance_skip_slots</span>              <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_MAINTENANCE_SKIP_SLOTS</span><span class="p">;</span> <span class="c1">///&lt; number of block_intervals to skip at maintenance time</span>
-   <span class="kt">uint32_t</span>                <span class="n">committee_proposal_review_period</span>    <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_COMMITTEE_PROPOSAL_REVIEW_PERIOD_SEC</span><span class="p">;</span> <span class="c1">///&lt; minimum time in seconds that a proposed transaction requiring committee authority may not be signed, prior to expiration</span>
-   <span class="kt">uint32_t</span>                <span class="n">maximum_transaction_size</span>            <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_MAX_TRANSACTION_SIZE</span><span class="p">;</span> <span class="c1">///&lt; maximum allowable size in bytes for a transaction</span>
-   <span class="kt">uint32_t</span>                <span class="n">maximum_block_size</span>                  <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_MAX_BLOCK_SIZE</span><span class="p">;</span> <span class="c1">///&lt; maximum allowable size in bytes for a block</span>
-   <span class="kt">uint32_t</span>                <span class="n">maximum_time_until_expiration</span>       <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_MAX_TIME_UNTIL_EXPIRATION</span><span class="p">;</span> <span class="c1">///&lt; maximum lifetime in seconds for transactions to be valid, before expiring</span>
-   <span class="kt">uint32_t</span>                <span class="n">maximum_proposal_lifetime</span>           <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_MAX_PROPOSAL_LIFETIME_SEC</span><span class="p">;</span> <span class="c1">///&lt; maximum lifetime in seconds for proposed transactions to be kept, before expiring</span>
-   <span class="kt">uint8_t</span>                 <span class="n">maximum_asset_whitelist_authorities</span> <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_MAX_ASSET_WHITELIST_AUTHORITIES</span><span class="p">;</span> <span class="c1">///&lt; maximum number of accounts which an asset may list as authorities for its whitelist OR blacklist</span>
-   <span class="kt">uint8_t</span>                 <span class="n">maximum_asset_feed_publishers</span>       <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_MAX_ASSET_FEED_PUBLISHERS</span><span class="p">;</span> <span class="c1">///&lt; the maximum number of feed publishers for a given asset</span>
-   <span class="kt">uint16_t</span>                <span class="n">maximum_witness_count</span>               <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_MAX_WITNESSES</span><span class="p">;</span> <span class="c1">///&lt; maximum number of active witnesses</span>
-   <span class="kt">uint16_t</span>                <span class="n">maximum_committee_count</span>             <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_MAX_COMMITTEE</span><span class="p">;</span> <span class="c1">///&lt; maximum number of active committee_members</span>
-   <span class="kt">uint16_t</span>                <span class="n">maximum_authority_membership</span>        <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_MAX_AUTHORITY_MEMBERSHIP</span><span class="p">;</span> <span class="c1">///&lt; largest number of keys/accounts an authority can have</span>
-   <span class="kt">uint16_t</span>                <span class="n">reserve_percent_of_fee</span>              <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_BURN_PERCENT_OF_FEE</span><span class="p">;</span> <span class="c1">///&lt; the percentage of the network&#39;s allocation of a fee that is taken out of circulation</span>
-   <span class="kt">uint16_t</span>                <span class="n">network_percent_of_fee</span>              <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_NETWORK_PERCENT_OF_FEE</span><span class="p">;</span> <span class="c1">///&lt; percent of transaction fees paid to network</span>
-   <span class="kt">uint16_t</span>                <span class="n">lifetime_referrer_percent_of_fee</span>    <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_LIFETIME_REFERRER_PERCENT_OF_FEE</span><span class="p">;</span> <span class="c1">///&lt; percent of transaction fees paid to network</span>
-   <span class="kt">uint32_t</span>                <span class="n">cashback_vesting_period_seconds</span>     <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_CASHBACK_VESTING_PERIOD_SEC</span><span class="p">;</span> <span class="c1">///&lt; time after cashback rewards are accrued before they become liquid</span>
-   <span class="n">share_type</span>              <span class="n">cashback_vesting_threshold</span>          <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_CASHBACK_VESTING_THRESHOLD</span><span class="p">;</span> <span class="c1">///&lt; the maximum cashback that can be received without vesting</span>
-   <span class="kt">bool</span>                    <span class="n">count_non_member_votes</span>              <span class="o">=</span> <span class="nb">true</span><span class="p">;</span> <span class="c1">///&lt; set to false to restrict voting privlegages to member accounts</span>
-   <span class="kt">bool</span>                    <span class="n">allow_non_member_whitelists</span>         <span class="o">=</span> <span class="nb">false</span><span class="p">;</span> <span class="c1">///&lt; true if non-member accounts may set whitelists and blacklists; false otherwise</span>
-   <span class="n">share_type</span>              <span class="n">witness_pay_per_block</span>               <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_WITNESS_PAY_PER_BLOCK</span><span class="p">;</span> <span class="c1">///&lt; CORE to be allocated to witnesses (per block)</span>
-   <span class="kt">uint32_t</span>                <span class="n">witness_pay_vesting_seconds</span>         <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_WITNESS_PAY_VESTING_SECONDS</span><span class="p">;</span> <span class="c1">///&lt; vesting_seconds parameter for witness VBO&#39;s</span>
-   <span class="n">share_type</span>              <span class="n">worker_budget_per_day</span>               <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_WORKER_BUDGET_PER_DAY</span><span class="p">;</span> <span class="c1">///&lt; CORE to be allocated to workers (per day)</span>
-   <span class="kt">uint16_t</span>                <span class="n">max_predicate_opcode</span>                <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_MAX_ASSERT_OPCODE</span><span class="p">;</span> <span class="c1">///&lt; predicate_opcode must be less than this number</span>
-   <span class="n">share_type</span>              <span class="n">fee_liquidation_threshold</span>           <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_FEE_LIQUIDATION_THRESHOLD</span><span class="p">;</span> <span class="c1">///&lt; value in CORE at which accumulated fees in blockchain-issued market assets should be liquidated</span>
-   <span class="kt">uint16_t</span>                <span class="n">accounts_per_fee_scale</span>              <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_ACCOUNTS_PER_FEE_SCALE</span><span class="p">;</span> <span class="c1">///&lt; number of accounts between fee scalings</span>
-   <span class="kt">uint8_t</span>                 <span class="n">account_fee_scale_bitshifts</span>         <span class="o">=</span> <span class="n">GRAPHENE_DEFAULT_ACCOUNT_FEE_SCALE_BITSHIFTS</span><span class="p">;</span> <span class="c1">///&lt; number of times to left bitshift account registration fee at each scaling</span>
-   <span class="kt">uint8_t</span>                 <span class="n">max_authority_depth</span>                 <span class="o">=</span> <span class="n">GRAPHENE_MAX_SIG_CHECK_DEPTH</span><span class="p">;</span>
-   <span class="n">extensions_type</span>         <span class="n">extensions</span><span class="p">;</span>
-
-   <span class="cm">/** defined in fee_schedule.cpp */</span>
-   <span class="kt">void</span> <span class="nf">validate</span><span class="p">()</span><span class="k">const</span><span class="p">;</span>
-<span class="p">};</span>
-</pre></div>
-</div>
-</div>
 <div class="section" id="what-is-the-standard-bitshares-address-structure-and-format">
-<span id="dev-faq17"></span><h3>What is the standard Bitshares address structure and format?<a class="headerlink" href="#what-is-the-standard-bitshares-address-structure-and-format" title="Permalink to this headline">¶</a></h3>
+<span id="dev-faq17"></span><h2>What is the standard Bitshares address structure and format?<a class="headerlink" href="#what-is-the-standard-bitshares-address-structure-and-format" title="Permalink to this headline">¶</a></h2>
 <p>address = ‘BTS’+base58(ripemd(sha512(compressed_pub)))  (checksum obviated)
 But addresses are not used directly, instead you have an account (that can be controlled by one or more address, pubkey or another account).
 <a class="reference external" href="https://bitshares.org/technology/dynamic-account-permissions/">https://bitshares.org/technology/dynamic-account-permissions/</a></p>
 </div>
 <div class="section" id="what-public-key-system-is-used-if-elliptic-curve-then-what-is-the-curve">
-<span id="dev-faq18"></span><h3>What public key system is used? If elliptic curve, then what is the curve?<a class="headerlink" href="#what-public-key-system-is-used-if-elliptic-curve-then-what-is-the-curve" title="Permalink to this headline">¶</a></h3>
+<span id="dev-faq18"></span><h2>What public key system is used? If elliptic curve, then what is the curve?<a class="headerlink" href="#what-public-key-system-is-used-if-elliptic-curve-then-what-is-the-curve" title="Permalink to this headline">¶</a></h2>
 <p>Same as Bitcoin, secp256k1.</p>
 </div>
 <div class="section" id="what-transaction-types-are-natively-supported">
-<span id="dev-faq19"></span><h3>What transaction types are natively supported?<a class="headerlink" href="#what-transaction-types-are-natively-supported" title="Permalink to this headline">¶</a></h3>
+<span id="dev-faq19"></span><h2>What transaction types are natively supported?<a class="headerlink" href="#what-transaction-types-are-natively-supported" title="Permalink to this headline">¶</a></h2>
 <p>Transaction are composed of operations (about ~40 different types).
 Example of operations are:</p>
 <ul class="simple">
@@ -380,7 +321,6 @@ Example of operations are:</p>
 <a class="reference external" href="https://github.com/cryptonomex/graphene/blob/master/libraries/chain/include/graphene/chain/protocol/operations.hpp">https://github.com/cryptonomex/graphene/blob/master/libraries/chain/include/graphene/chain/protocol/operations.hpp</a></p>
 <div class="line-block">
 <div class="line"><br /></div>
-</div>
 </div>
 </div>
 </div>

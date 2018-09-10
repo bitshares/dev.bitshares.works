@@ -1,29 +1,33 @@
 
+.. _blockchain-interaction-top:
+
 ************************
 Blockchain Interaction
 ************************
 
 To interface your existing platform with BitShares, you can make use of :ref:`rpc` and :ref:`websocket-calls` to either a :ref:`full-node` (for monitoring only) or the :ref:`cli-wallet` (for accessing funds). 
 
-All API calls are formated in JSON and return JSON only. You can read more about the API in the :ref:`blockchain-api` and  :ref`wallet-api-calls` sections.
+All API calls are formated in JSON and return JSON only. You can read more about the API in :ref:`this section <api-access-and-restrictions>`.
 
-The Graphene toolkit comprises several tools that allow interaction with the blockchain on different levels and shall thus be briefly described in the following sections.
+The Graphene toolkit comprises several tools that allow interaction with the blockchain on different levels and has been described briefly in the following sections.
 
 
 .. toctree::
     :maxdepth: 2
 
     apps/node
-    apps/node_howto_run
-	
+    apps/network_secure	
     apps/cli_intro
     apps/cli_wallet	
-    apps/network
-	
-  
-	
 
-|
+* Guides
+
+  - :ref:`Monitor Account Deposits - Python <monitoring-account-deposits-python>`
+  - :ref:`Monitor Balance History of an Account  - NodeJS <nodejs-example>`
+  - :ref:`CLI Wallet and Witness FAQs <cli-faq-list>`
+  - :ref:`dev-guides`
+  - `Python-Bitshares Documentation <http://docs.pybitshares.com/en/latest/>`_ 
+
 
 |
 

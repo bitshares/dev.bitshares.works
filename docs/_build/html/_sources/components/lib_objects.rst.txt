@@ -8,6 +8,8 @@ Object Elements
 *BitShares Core - graphene::chain*
 
 
+This document purpose: to make a list of BitShares objects and provide each object structure and the purpose. 
+
 
 .. contents:: Table of Contents
    :local:
@@ -67,7 +69,7 @@ Account
 - Tracks the balance of a single account/asset pair
 - This object is indexed on owner and asset_type so that black swan events in asset_type can be processed quickly
 
-::
+.. code-block:: cpp 
 
    class account_balance_object : public abstract_object<account_balance_object>
    {
@@ -92,7 +94,8 @@ Account
 -----------------------------------------------------
 - This class represents an account on the object graphAccounts are the primary unit of authority on the graphene system. Users must have an account in order to use assets, trade in the markets, vote for committee_members, etc 
 
-::
+.. code-block:: cpp 
+
 
    class account_object : public graphene::db::abstract_object<account_object>
    {
@@ -243,7 +246,7 @@ Account
 -----------------------------------------------------
 - This object contains regularly updated statistical data about an account. It is provided for the purpose of separating the account data that changes frequently from the account data that is mostly static, which will minimize the amount of data that must be backed up as part of the undo history everytime a transfer is made. 
 
-::
+.. code-block:: cpp 
 
    class account_statistics_object : public graphene::db::abstract_object<account_statistics_object>
    {
@@ -326,7 +329,7 @@ Account
 - Grants another account authority to withdraw a limited amount of funds per interval	  
 - The primary purpose of this object is to enable recurring payments on the blockchain. An account which wishes to process a recurring payment may use a ``withdraw_permission_claim_operation`` to reference an object of this type and withdraw up to ``withdrawal_limit`` from ``withdraw_from_account``. Only ``authorized_account`` may do this. Any number of withdrawals may be made so long as the total amount withdrawn per period does not exceed the limit for any given period. 
 
-::
+.. code-block:: cpp 
 
   class withdraw_permission_object : public graphene::db::abstract_object<withdraw_permission_object>
   {
@@ -379,7 +382,7 @@ Authority
 - ``special_authority_object`` only exists to help with a specific indexing problem. We want to be able to iterate over all accounts that contain a special authority. However, accounts which have a special_authority are very rare. So rather than indexing ``ccount_object`` by the special_authority fields (requiring additional bookkeeping for every account), we instead maintain a ``special_authority_object`` pointing to each account which has ``special_authority`` (requiring additional bookkeeping only for every account which has special_authority).
 - This class is an implementation detail.    	
 
-::
+.. code-block:: cpp 
 
 	class special_authority_object : public graphene::db::abstract_object<special_authority_object>
 	{
@@ -402,7 +405,7 @@ Asset
 - Because the ``asset_object`` is very large it doesn't make sense to save an undo state for all of the parameters that never change. This object factors out the parameters of an asset that change in almost every transaction that involves the asset.
 - This object exists as an implementation detail and its ID should never be referenced by a blockchain operation
 
-::
+.. code-block:: cpp 
 
    class asset_dynamic_data_object : public abstract_object<asset_dynamic_data_object>
    {
@@ -423,7 +426,7 @@ Asset
 - tracks the parameters of an asset
 - All assets have a globally unique symbol name that controls how they are traded and an issuer who has authority over the parameters of the asset. 	 
 
-::
+.. code-block:: cpp 
 
    class asset_object : public graphene::db::abstract_object<asset_object>
    {
@@ -522,7 +525,7 @@ Asset
 -----------------------------------------------------
 -   
 
-::
+.. code-block:: cpp 
 
 	struct budget_record
 	{
@@ -568,7 +571,7 @@ Asset
 - ``buyback_authority_object`` only exists to help with a specific indexing problem. We want to be able to iterate over all assets that have a buyback program. However, assets which have a buyback program are very rare. So rather than indexing ``asset_object`` by the buyback field (requiring additional bookkeeping for every asset), we instead maintain a ``buyback_object`` pointing to each asset which has buyback (requiring additional bookkeeping only for every asset which has buyback).
 - This class is an implementation detail.  
 
-::
+.. code-block:: cpp 
 
 	class buyback_object : public graphene::db::abstract_object< buyback_object >
 	{
@@ -587,7 +590,7 @@ BitAsset
 -----------------------------------------------------
 - contains properties that only apply to bitassets (market issued assets) 	  
  
-::
+.. code-block:: cpp 
 
    class asset_bitasset_data_object : public abstract_object<asset_bitasset_data_object>
    {
@@ -672,7 +675,7 @@ Balance
 -----------------------------------------------------
 - tracks a blinded balance commitment	  
 
-::
+.. code-block:: cpp 
 
 	class blinded_balance_object : public graphene::db::abstract_object<blinded_balance_object>
 	{
@@ -690,7 +693,7 @@ Balance
 -----------------------------------------------------
 -   
 
-::
+.. code-block:: cpp 
 
    class balance_object : public abstract_object<balance_object>
    {
@@ -722,7 +725,7 @@ Block
 - tracks minimal information about past blocks to implement TaPOS
 - When attempting to calculate the validity of a transaction we need to lookup a past block and check its block hash and the time it occurred so we can calculate whether the current transaction is valid and at what time it should expire. 
 
-::
+.. code-block:: cpp 
 
    class block_summary_object : public abstract_object<block_summary_object>
    {
@@ -741,7 +744,7 @@ Chain
 -----------------------------------------------------
 - Contains invariants which are set at genesis and never changed. 	  
 
-::
+.. code-block:: cpp 
 
 	class chain_property_object : public abstract_object<chain_property_object>
 	{
@@ -760,7 +763,7 @@ Chain
 - Maintains global state information (committee_member list, current fees)
 - This is an implementation detail. The values here are calculated during normal chain operations and reflect the current values of global blockchain properties. 
 
-::
+.. code-block:: cpp 
 
    class dynamic_global_property_object : public abstract_object<dynamic_global_property_object>
    {
@@ -828,7 +831,7 @@ Chain
 - Maintains global state information (committee_member list, current fees)
 - This is an implementation detail. The values here are set by committee_members to tune the blockchain parameters. 
 
-::
+.. code-block:: cpp 
 
    class global_property_object : public graphene::db::abstract_object<global_property_object>
    {
@@ -855,7 +858,7 @@ Committee
 - A committee_member is responsible for setting blockchain parameters and has dynamic multi-sig control over the committee account. The current set of active committee_members has control.
 - committee_members were separated into a separate object to make iterating over the set of committee_member easy. 
 
-::
+.. code-block:: cpp 
 
    {
       public:
@@ -876,7 +879,7 @@ FBA
 -----------------------------------------------------
 - fba_accumulator_object accumulates fees to be paid out via buyback or other FBA mechanism.   
 
-::
+.. code-block:: cpp 
 
 	class fba_accumulator_object : public graphene::db::abstract_object< fba_accumulator_object >
 	{
@@ -913,7 +916,7 @@ History
 .. Note:: by default these objects are not tracked, the account_history_plugin must be loaded fore these objects to be maintained.
     this object is READ ONLY it can never be modified 
 
-::
+.. code-block:: cpp 
 
    class operation_history_object : public abstract_object<operation_history_object>
    {
@@ -945,7 +948,7 @@ Order (*market*)
 - tracks debt and call price information
 - There should only be one call_order_object per asset pair per account and they will all have the same call price. 
 
-::
+.. code-block:: cpp 
 
 	class call_order_object : public abstract_object<call_order_object>
 	{
@@ -985,7 +988,7 @@ Order (*market*)
 - bids of collateral for debt after a black swan
 - There should only be one collateral_bid_object per asset per account, and only for smartcoin assets that have a global settlement_price. 
 
-::
+.. code-block:: cpp 
 
 	class collateral_bid_object : public abstract_object<collateral_bid_object>
 	{
@@ -1007,7 +1010,7 @@ Order (*market*)
 - tracks bitassets scheduled for force settlement at some point in the future.
 - On the settlement_date the balance will be converted to the collateral asset and paid to owner and then this object will be deleted. 
 
-::
+.. code-block:: cpp
 
 	class force_settlement_object : public abstract_object<force_settlement_object>
 	{
@@ -1029,7 +1032,7 @@ Order (*market*)
 - an offer to sell a amount of a asset at a specified exchange rate by a certain time
 - This limit_order_objects are indexed by expiration and is automatically deleted on the first block after expiration
 
-::
+.. code-block:: cpp
 
 	class limit_order_object : public abstract_object<limit_order_object>
 	{
@@ -1066,7 +1069,7 @@ Proposal
 -----------------------------------------------------
 - tracks the approval of a partially approved transaction 	  
 
-::
+.. code-block:: cpp
 
 	class proposal_object : public abstract_object<proposal_object>
 	{
@@ -1100,7 +1103,7 @@ Transaction
 - This data is never accessed as part of chain validation and therefore can be kept on disk as a memory mapped file. Using a memory mapped file will help the operating system better manage / cache / page files and also accelerates load time.
 - When the transaction history for a particular account is requested the linked list can be traversed with relatively efficient disk access because of the use of a memory mapped stack. 
  
-::
+.. code-block:: cpp
 
    class operation_history_object : public abstract_object<operation_history_object>
    {
@@ -1129,7 +1132,7 @@ Transaction
 - Contains per-node database configuration.
 - Transactions are evaluated differently based on per-node state. Settings here may change based on whether the node is syncing or up-to-date. Or whether the node is a witness node. Or if we're processing a transaction in a witness-signed block vs. a fresh transaction from the p2p network. Or configuration-specified tradeoffs of performance/hardfork resilience vs. paranoia. 
 
-::
+.. code-block:: cpp
 
    class node_property_object
    {
@@ -1146,7 +1149,7 @@ Transaction
 -----------------------------------------------------
 - The purpose of this object is to enable the detection of duplicate transactions. When a transaction is included in a block a transaction_object is added. At the end of block processing all transaction_objects that have expired can be removed from the index.   
 
-::
+.. code-block:: cpp
 
 	namespace graphene { namespace chain {
 	   using namespace graphene::db;
@@ -1192,7 +1195,7 @@ Vesting Balance
 -----------------------------------------------------
 - Vesting balance object is a balance that is locked by the blockchain for a period of time.    
 
-::
+.. code-block:: cpp
 
    class vesting_balance_object : public abstract_object<vesting_balance_object>
    {
@@ -1246,7 +1249,7 @@ Witness
 -----------------------------------------------------
 -   
 
-::
+.. code-block:: cpp
 
    class witness_object : public abstract_object<witness_object>
    {
@@ -1271,7 +1274,7 @@ Witness
 -----------------------------------------------------
 -   
 
-::
+.. code-block:: cpp
 
 	class witness_schedule_object : public graphene::db::abstract_object<witness_schedule_object>
 	{
@@ -1289,7 +1292,7 @@ Worker
 -----------------------------------------------------
 - Worker object contains the details of a blockchain worker. See `The Blockchain Worker System <https://bitshares.org/doxygen/group__workers.html>`_ for details.
 
-::
+.. code-block:: cpp
 
 	class worker_object : public abstract_object<worker_object>
 	{

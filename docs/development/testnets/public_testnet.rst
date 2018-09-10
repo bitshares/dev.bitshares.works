@@ -1,8 +1,11 @@
 
+.. _public-testnet-guide:
 
 ***************
 Public Testnet
 ***************
+
+This section explains the process of customizing and deploying a graphene blockchain in the public testnet environment and also shows the steps to be a block producing node (witness node). 
 
 
 .. contents:: Table of Contents
