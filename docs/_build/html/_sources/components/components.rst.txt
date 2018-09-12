@@ -18,7 +18,9 @@ System Components Elements
 
    lib_database	
    lib_block
-
+   lib_db
+   
+   
 -----------------
 
 .. toctree::
@@ -48,8 +50,22 @@ System Components Elements
 	     
    lib_objects
 
+-----------------
 
+.. toctree::
+    :maxdepth: 1
+	     
+   lib_net
+   
+   
+-----------------
 
+.. toctree::
+    :maxdepth: 1
+	     
+   lib_plugins
+   
+   
 |
 
 |
