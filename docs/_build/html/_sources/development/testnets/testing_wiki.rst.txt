@@ -1,7 +1,7 @@
 
 .. _how-to-testing-bts:
 
-How to Test 
+Code Coverage Testing
 ==============================
 
 (*This content is from Wiki.)
@@ -12,8 +12,10 @@ How to Test
    
 -------
 
+* `BitShares-Core Test folder on GitHub <https://github.com/bitshares/bitshares-core/tree/master/tests>`_
 
-Code Coverage Testing
+
+Code Coverage Testing Information
 --------------------------------------------
 
 Check how much code is covered by unit tests, using gcov/lcov (see http://ltp.sourceforge.net/coverage/lcov.php ).
