@@ -11,7 +11,8 @@ We offer the Open Public Testnets that has been deployed and is fully functional
 
     testnets/public_testnet_details	
 
-  
+* :ref:`Code Coverage Testing (wiki) <how-to-testing-bts>`
+
 ------------
 
 The next sections mainly described how to deploy your public or private network. The Private testnets could be used by every developer to implement at home to benefit from extra low latency and additional superpowers over the system.
@@ -32,7 +33,7 @@ Other References
 
   - How to Create MPAs/UIAs with Python
   
-* :ref:`Testing <how-to-testing-bts>`
+
 * :ref:`Set up Faucet <how-to setup-faucet>`
 * :ref:`Set up Nignx <how-to-setup-nignx>`
 

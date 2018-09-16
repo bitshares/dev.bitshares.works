@@ -50,20 +50,42 @@ System Components Elements
 	     
    lib_objects
 
------------------
-
-.. toctree::
-    :maxdepth: 1
-	     
-   lib_net
-   
-   
+        
 -----------------
 
 .. toctree::
     :maxdepth: 1
 	     
    lib_plugins
+   
+   
+-----------------
+
+.. toctree::
+    :maxdepth: 1
+	     
+   lib_chain_db
+   
+-----------------
+
+.. toctree::
+    :maxdepth: 1
+	     
+   lib_net
+
+-----------------
+
+.. toctree::
+    :maxdepth: 2
+	     
+   lib_app
+   
+-----------------
+
+.. toctree::
+    :maxdepth: 2
+	     
+   lib_wallet   
    
    
 |

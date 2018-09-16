@@ -86,6 +86,38 @@
 <li class="toctree-l2"><a class="reference internal" href="lib_database.html">Database</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lib_block.html">Block</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">db folder - object/index</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#index-cpp">index.cpp</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#save-undo">save_undo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#on-add">on_add</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#on-remove">on_remove</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#on-modify">on_modify</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#object-database-cpp">object_database.cpp</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#find-object">find_object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-object">get_object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-index">get_index</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-mutable-index">get_mutable_index</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#flush">flush</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#wipe">wipe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#open">open</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pop-undo">pop_undo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1">save_undo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#save-undo-add">save_undo_add</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#save-undo-remove">save_undo_remove</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#undo-database-cpp">undo_database.cpp</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#on-create">on_create</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">on_modify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">on_remove</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undo">undo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#merge">merge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#commit">commit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pop-commit">pop_commit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#head">head</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#generic-index-hpp">generic_index.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#index-hpp">index.hpp</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#index-observer">index_observer</a></li>
@@ -125,8 +157,11 @@
 <li class="toctree-l2"><a class="reference internal" href="lib_operations.html">Operations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lib_evalustors.html">Evaluators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lib_objects.html">Object Elements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lib_net.html">Net</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lib_plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib_chain_db.html">Chain - db_xxx.cpp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib_net.html">Net</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib_app.html">libraries - app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib_wallet.html">libraries - wallet</a></li>
 </ul>
 </li>
 </ul>
@@ -233,54 +268,586 @@
 <div class="contents local topic" id="table-of-contents">
 <p class="topic-title first">Table of Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#generic-index-hpp" id="id1">generic_index.hpp</a></li>
-<li><a class="reference internal" href="#index-hpp" id="id2">index.hpp</a><ul>
-<li><a class="reference internal" href="#index-observer" id="id3">index_observer</a></li>
-<li><a class="reference internal" href="#index" id="id4">index</a></li>
-<li><a class="reference internal" href="#secondary-index" id="id5">secondary_index</a></li>
-<li><a class="reference internal" href="#base-primary-index" id="id6">base_primary_index</a></li>
-<li><a class="reference internal" href="#primary-index" id="id7">primary_index</a></li>
+<li><a class="reference internal" href="#index-cpp" id="id4">index.cpp</a><ul>
+<li><a class="reference internal" href="#save-undo" id="id5">save_undo</a></li>
+<li><a class="reference internal" href="#on-add" id="id6">on_add</a></li>
+<li><a class="reference internal" href="#on-remove" id="id7">on_remove</a></li>
+<li><a class="reference internal" href="#on-modify" id="id8">on_modify</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#object-hpp" id="id8">object.hpp</a><ul>
-<li><a class="reference internal" href="#object" id="id9">object</a></li>
-<li><a class="reference internal" href="#abstract-object" id="id10">abstract_object</a></li>
-<li><a class="reference internal" href="#annotated-object" id="id11">annotated_object</a></li>
+<li><a class="reference internal" href="#object-database-cpp" id="id9">object_database.cpp</a><ul>
+<li><a class="reference internal" href="#find-object" id="id10">find_object</a></li>
+<li><a class="reference internal" href="#get-object" id="id11">get_object</a></li>
+<li><a class="reference internal" href="#get-index" id="id12">get_index</a></li>
+<li><a class="reference internal" href="#get-mutable-index" id="id13">get_mutable_index</a></li>
+<li><a class="reference internal" href="#flush" id="id14">flush</a></li>
+<li><a class="reference internal" href="#wipe" id="id15">wipe</a></li>
+<li><a class="reference internal" href="#open" id="id16">open</a></li>
+<li><a class="reference internal" href="#pop-undo" id="id17">pop_undo</a></li>
+<li><a class="reference internal" href="#id1" id="id18">save_undo</a></li>
+<li><a class="reference internal" href="#save-undo-add" id="id19">save_undo_add</a></li>
+<li><a class="reference internal" href="#save-undo-remove" id="id20">save_undo_remove</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#object-database-hpp" id="id12">object_database.hpp</a><ul>
-<li><a class="reference internal" href="#object-database" id="id13">object_database</a></li>
+<li><a class="reference internal" href="#undo-database-cpp" id="id21">undo_database.cpp</a><ul>
+<li><a class="reference internal" href="#on-create" id="id22">on_create</a></li>
+<li><a class="reference internal" href="#id2" id="id23">on_modify</a></li>
+<li><a class="reference internal" href="#id3" id="id24">on_remove</a></li>
+<li><a class="reference internal" href="#undo" id="id25">undo</a></li>
+<li><a class="reference internal" href="#merge" id="id26">merge</a></li>
+<li><a class="reference internal" href="#commit" id="id27">commit</a></li>
+<li><a class="reference internal" href="#pop-commit" id="id28">pop_commit</a></li>
+<li><a class="reference internal" href="#head" id="id29">head</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#object-id-hpp" id="id14">object_id.hpp</a><ul>
-<li><a class="reference internal" href="#object-id-type" id="id15">object_id_type</a></li>
-<li><a class="reference internal" href="#object-id" id="id16">object_id</a></li>
+<li><a class="reference internal" href="#generic-index-hpp" id="id30">generic_index.hpp</a></li>
+<li><a class="reference internal" href="#index-hpp" id="id31">index.hpp</a><ul>
+<li><a class="reference internal" href="#index-observer" id="id32">index_observer</a></li>
+<li><a class="reference internal" href="#index" id="id33">index</a></li>
+<li><a class="reference internal" href="#secondary-index" id="id34">secondary_index</a></li>
+<li><a class="reference internal" href="#base-primary-index" id="id35">base_primary_index</a></li>
+<li><a class="reference internal" href="#primary-index" id="id36">primary_index</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#simple-index-hpp" id="id17">simple_index.hpp</a><ul>
-<li><a class="reference internal" href="#simple-index" id="id18">simple_index</a></li>
+<li><a class="reference internal" href="#object-hpp" id="id37">object.hpp</a><ul>
+<li><a class="reference internal" href="#object" id="id38">object</a></li>
+<li><a class="reference internal" href="#abstract-object" id="id39">abstract_object</a></li>
+<li><a class="reference internal" href="#annotated-object" id="id40">annotated_object</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#undu-database-hpp" id="id19">undu_database.hpp</a><ul>
-<li><a class="reference internal" href="#undo-state" id="id20">undo_state</a></li>
-<li><a class="reference internal" href="#undo-database" id="id21">undo_database</a></li>
+<li><a class="reference internal" href="#object-database-hpp" id="id41">object_database.hpp</a><ul>
+<li><a class="reference internal" href="#object-database" id="id42">object_database</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#object-id-hpp" id="id43">object_id.hpp</a><ul>
+<li><a class="reference internal" href="#object-id-type" id="id44">object_id_type</a></li>
+<li><a class="reference internal" href="#object-id" id="id45">object_id</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#simple-index-hpp" id="id46">simple_index.hpp</a><ul>
+<li><a class="reference internal" href="#simple-index" id="id47">simple_index</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#undu-database-hpp" id="id48">undu_database.hpp</a><ul>
+<li><a class="reference internal" href="#undo-state" id="id49">undo_state</a></li>
+<li><a class="reference internal" href="#undo-database" id="id50">undo_database</a></li>
 </ul>
 </li>
 </ul>
+</div>
+<hr class="docutils" />
+<hr class="docutils" />
+<div class="section" id="index-cpp">
+<h2><a class="toc-backref" href="#id4">index.cpp</a><a class="headerlink" href="#index-cpp" title="Permalink to this headline">¶</a></h2>
+<p><strong>base_primary_index</strong></p>
+<div class="section" id="save-undo">
+<h3><a class="toc-backref" href="#id5">save_undo</a><a class="headerlink" href="#save-undo" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="n">base_primary_index</span><span class="o">::</span><span class="n">save_undo</span><span class="p">(</span> <span class="k">const</span> <span class="n">object</span><span class="o">&amp;</span> <span class="n">obj</span> <span class="p">)</span>
+<span class="p">{</span> <span class="n">_db</span><span class="p">.</span><span class="n">save_undo</span><span class="p">(</span> <span class="n">obj</span> <span class="p">);</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="on-add">
+<h3><a class="toc-backref" href="#id6">on_add</a><a class="headerlink" href="#on-add" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="n">base_primary_index</span><span class="o">::</span><span class="n">on_add</span><span class="p">(</span> <span class="k">const</span> <span class="n">object</span><span class="o">&amp;</span> <span class="n">obj</span> <span class="p">)</span>
+<span class="p">{</span>
+   <span class="n">_db</span><span class="p">.</span><span class="n">save_undo_add</span><span class="p">(</span> <span class="n">obj</span> <span class="p">);</span>
+   <span class="k">for</span><span class="p">(</span> <span class="k">auto</span> <span class="nl">ob</span> <span class="p">:</span> <span class="n">_observers</span> <span class="p">)</span> <span class="n">ob</span><span class="o">-&gt;</span><span class="n">on_add</span><span class="p">(</span> <span class="n">obj</span> <span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="on-remove">
+<h3><a class="toc-backref" href="#id7">on_remove</a><a class="headerlink" href="#on-remove" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="n">base_primary_index</span><span class="o">::</span><span class="n">on_remove</span><span class="p">(</span> <span class="k">const</span> <span class="n">object</span><span class="o">&amp;</span> <span class="n">obj</span> <span class="p">)</span>
+<span class="p">{</span> <span class="n">_db</span><span class="p">.</span><span class="n">save_undo_remove</span><span class="p">(</span> <span class="n">obj</span> <span class="p">);</span> <span class="k">for</span><span class="p">(</span> <span class="k">auto</span> <span class="nl">ob</span> <span class="p">:</span> <span class="n">_observers</span> <span class="p">)</span> <span class="n">ob</span><span class="o">-&gt;</span><span class="n">on_remove</span><span class="p">(</span> <span class="n">obj</span> <span class="p">);</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="on-modify">
+<h3><a class="toc-backref" href="#id8">on_modify</a><a class="headerlink" href="#on-modify" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="n">base_primary_index</span><span class="o">::</span><span class="n">on_modify</span><span class="p">(</span> <span class="k">const</span> <span class="n">object</span><span class="o">&amp;</span> <span class="n">obj</span> <span class="p">)</span>
+<span class="p">{</span><span class="k">for</span><span class="p">(</span> <span class="k">auto</span> <span class="nl">ob</span> <span class="p">:</span> <span class="n">_observers</span> <span class="p">)</span> <span class="n">ob</span><span class="o">-&gt;</span><span class="n">on_modify</span><span class="p">(</span>  <span class="n">obj</span> <span class="p">);</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="object-database-cpp">
+<h2><a class="toc-backref" href="#id9">object_database.cpp</a><a class="headerlink" href="#object-database-cpp" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">object_database</span><span class="o">::</span><span class="n">object_database</span><span class="p">()</span>
+<span class="o">:</span><span class="n">_undo_db</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="n">_index</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span>
+   <span class="n">_undo_db</span><span class="p">.</span><span class="n">enable</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="n">object_database</span><span class="o">::~</span><span class="n">object_database</span><span class="p">(){}</span>
+
+<span class="kt">void</span> <span class="n">object_database</span><span class="o">::</span><span class="n">close</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>object_database</strong></p>
+<div class="section" id="find-object">
+<h3><a class="toc-backref" href="#id10">find_object</a><a class="headerlink" href="#find-object" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="n">object</span><span class="o">*</span> <span class="n">object_database</span><span class="o">::</span><span class="n">find_object</span><span class="p">(</span> <span class="n">object_id_type</span> <span class="n">id</span> <span class="p">)</span><span class="k">const</span>
+<span class="p">{</span>
+   <span class="k">return</span> <span class="n">get_index</span><span class="p">(</span><span class="n">id</span><span class="p">.</span><span class="n">space</span><span class="p">(),</span><span class="n">id</span><span class="p">.</span><span class="n">type</span><span class="p">()).</span><span class="n">find</span><span class="p">(</span> <span class="n">id</span> <span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-object">
+<h3><a class="toc-backref" href="#id11">get_object</a><a class="headerlink" href="#get-object" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="n">object</span><span class="o">&amp;</span> <span class="n">object_database</span><span class="o">::</span><span class="n">get_object</span><span class="p">(</span> <span class="n">object_id_type</span> <span class="n">id</span> <span class="p">)</span><span class="k">const</span>
+<span class="p">{</span>
+   <span class="k">return</span> <span class="n">get_index</span><span class="p">(</span><span class="n">id</span><span class="p">.</span><span class="n">space</span><span class="p">(),</span><span class="n">id</span><span class="p">.</span><span class="n">type</span><span class="p">()).</span><span class="n">get</span><span class="p">(</span> <span class="n">id</span> <span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-index">
+<h3><a class="toc-backref" href="#id12">get_index</a><a class="headerlink" href="#get-index" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="n">index</span><span class="o">&amp;</span> <span class="n">object_database</span><span class="o">::</span><span class="n">get_index</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">space_id</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">type_id</span><span class="p">)</span><span class="k">const</span>
+<span class="p">{</span>
+   <span class="n">FC_ASSERT</span><span class="p">(</span> <span class="n">_index</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">space_id</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s">&quot;space_id&quot;</span><span class="p">,</span><span class="n">space_id</span><span class="p">)(</span><span class="s">&quot;type_id&quot;</span><span class="p">,</span><span class="n">type_id</span><span class="p">)(</span><span class="s">&quot;index.size&quot;</span><span class="p">,</span><span class="n">_index</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="p">);</span>
+   <span class="n">FC_ASSERT</span><span class="p">(</span> <span class="n">_index</span><span class="p">[</span><span class="n">space_id</span><span class="p">].</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">type_id</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s">&quot;space_id&quot;</span><span class="p">,</span><span class="n">space_id</span><span class="p">)(</span><span class="s">&quot;type_id&quot;</span><span class="p">,</span><span class="n">type_id</span><span class="p">)(</span><span class="s">&quot;index[space_id].size&quot;</span><span class="p">,</span><span class="n">_index</span><span class="p">[</span><span class="n">space_id</span><span class="p">].</span><span class="n">size</span><span class="p">())</span> <span class="p">);</span>
+   <span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">_index</span><span class="p">[</span><span class="n">space_id</span><span class="p">][</span><span class="n">type_id</span><span class="p">];</span>
+   <span class="n">FC_ASSERT</span><span class="p">(</span> <span class="n">tmp</span> <span class="p">);</span>
+   <span class="k">return</span> <span class="o">*</span><span class="n">tmp</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-mutable-index">
+<h3><a class="toc-backref" href="#id13">get_mutable_index</a><a class="headerlink" href="#get-mutable-index" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">index</span><span class="o">&amp;</span> <span class="n">object_database</span><span class="o">::</span><span class="n">get_mutable_index</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">space_id</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">type_id</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="n">FC_ASSERT</span><span class="p">(</span> <span class="n">_index</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">space_id</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s">&quot;space_id&quot;</span><span class="p">,</span><span class="n">space_id</span><span class="p">)(</span><span class="s">&quot;type_id&quot;</span><span class="p">,</span><span class="n">type_id</span><span class="p">)(</span><span class="s">&quot;index.size&quot;</span><span class="p">,</span><span class="n">_index</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="p">);</span>
+   <span class="n">FC_ASSERT</span><span class="p">(</span> <span class="n">_index</span><span class="p">[</span><span class="n">space_id</span><span class="p">].</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">type_id</span> <span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s">&quot;space_id&quot;</span><span class="p">,</span><span class="n">space_id</span><span class="p">)(</span><span class="s">&quot;type_id&quot;</span><span class="p">,</span><span class="n">type_id</span><span class="p">)(</span><span class="s">&quot;index[space_id].size&quot;</span><span class="p">,</span><span class="n">_index</span><span class="p">[</span><span class="n">space_id</span><span class="p">].</span><span class="n">size</span><span class="p">())</span> <span class="p">);</span>
+   <span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">idx</span> <span class="o">=</span> <span class="n">_index</span><span class="p">[</span><span class="n">space_id</span><span class="p">][</span><span class="n">type_id</span><span class="p">];</span>
+   <span class="n">FC_ASSERT</span><span class="p">(</span> <span class="n">idx</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s">&quot;space&quot;</span><span class="p">,</span><span class="n">space_id</span><span class="p">)(</span><span class="s">&quot;type&quot;</span><span class="p">,</span><span class="n">type_id</span><span class="p">)</span> <span class="p">);</span>
+   <span class="k">return</span> <span class="o">*</span><span class="n">idx</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="flush">
+<h3><a class="toc-backref" href="#id14">flush</a><a class="headerlink" href="#flush" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="n">object_database</span><span class="o">::</span><span class="n">flush</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="c1">//   ilog(&quot;Save object_database in ${d}&quot;, (&quot;d&quot;, _data_dir));</span>
+   <span class="n">fc</span><span class="o">::</span><span class="n">create_directories</span><span class="p">(</span> <span class="n">_data_dir</span> <span class="o">/</span> <span class="s">&quot;object_database.tmp&quot;</span> <span class="o">/</span> <span class="s">&quot;lock&quot;</span> <span class="p">);</span>
+   <span class="k">for</span><span class="p">(</span> <span class="kt">uint32_t</span> <span class="n">space</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">space</span> <span class="o">&lt;</span> <span class="n">_index</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">space</span> <span class="p">)</span>
+   <span class="p">{</span>
+          <span class="n">fc</span><span class="o">::</span><span class="n">create_directories</span><span class="p">(</span> <span class="n">_data_dir</span> <span class="o">/</span> <span class="s">&quot;object_database.tmp&quot;</span> <span class="o">/</span> <span class="n">fc</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">space</span><span class="p">)</span> <span class="p">);</span>
+          <span class="k">const</span> <span class="k">auto</span> <span class="n">types</span> <span class="o">=</span> <span class="n">_index</span><span class="p">[</span><span class="n">space</span><span class="p">].</span><span class="n">size</span><span class="p">();</span>
+          <span class="k">for</span><span class="p">(</span> <span class="kt">uint32_t</span> <span class="n">type</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">type</span>  <span class="o">&lt;</span>  <span class="n">types</span><span class="p">;</span> <span class="o">++</span><span class="n">type</span> <span class="p">)</span>
+                 <span class="k">if</span><span class="p">(</span> <span class="n">_index</span><span class="p">[</span><span class="n">space</span><span class="p">][</span><span class="n">type</span><span class="p">]</span> <span class="p">)</span>
+                        <span class="n">_index</span><span class="p">[</span><span class="n">space</span><span class="p">][</span><span class="n">type</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">save</span><span class="p">(</span> <span class="n">_data_dir</span> <span class="o">/</span> <span class="s">&quot;object_database.tmp&quot;</span> <span class="o">/</span> <span class="n">fc</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">space</span><span class="p">)</span><span class="o">/</span><span class="n">fc</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">type</span><span class="p">)</span> <span class="p">);</span>
+   <span class="p">}</span>
+   <span class="n">fc</span><span class="o">::</span><span class="n">remove_all</span><span class="p">(</span> <span class="n">_data_dir</span> <span class="o">/</span> <span class="s">&quot;object_database.tmp&quot;</span> <span class="o">/</span> <span class="s">&quot;lock&quot;</span> <span class="p">);</span>
+   <span class="k">if</span><span class="p">(</span> <span class="n">fc</span><span class="o">::</span><span class="n">exists</span><span class="p">(</span> <span class="n">_data_dir</span> <span class="o">/</span> <span class="s">&quot;object_database&quot;</span> <span class="p">)</span> <span class="p">)</span>
+          <span class="n">fc</span><span class="o">::</span><span class="n">rename</span><span class="p">(</span> <span class="n">_data_dir</span> <span class="o">/</span> <span class="s">&quot;object_database&quot;</span><span class="p">,</span> <span class="n">_data_dir</span> <span class="o">/</span> <span class="s">&quot;object_database.old&quot;</span> <span class="p">);</span>
+   <span class="n">fc</span><span class="o">::</span><span class="n">rename</span><span class="p">(</span> <span class="n">_data_dir</span> <span class="o">/</span> <span class="s">&quot;object_database.tmp&quot;</span><span class="p">,</span> <span class="n">_data_dir</span> <span class="o">/</span> <span class="s">&quot;object_database&quot;</span> <span class="p">);</span>
+   <span class="n">fc</span><span class="o">::</span><span class="n">remove_all</span><span class="p">(</span> <span class="n">_data_dir</span> <span class="o">/</span> <span class="s">&quot;object_database.old&quot;</span> <span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="wipe">
+<h3><a class="toc-backref" href="#id15">wipe</a><a class="headerlink" href="#wipe" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="n">object_database</span><span class="o">::</span><span class="n">wipe</span><span class="p">(</span><span class="k">const</span> <span class="n">fc</span><span class="o">::</span><span class="n">path</span><span class="o">&amp;</span> <span class="n">data_dir</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="n">close</span><span class="p">();</span>
+   <span class="n">ilog</span><span class="p">(</span><span class="s">&quot;Wiping object database...&quot;</span><span class="p">);</span>
+   <span class="n">fc</span><span class="o">::</span><span class="n">remove_all</span><span class="p">(</span><span class="n">data_dir</span> <span class="o">/</span> <span class="s">&quot;object_database&quot;</span><span class="p">);</span>
+   <span class="n">ilog</span><span class="p">(</span><span class="s">&quot;Done wiping object databse.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="open">
+<h3><a class="toc-backref" href="#id16">open</a><a class="headerlink" href="#open" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="n">object_database</span><span class="o">::</span><span class="n">open</span><span class="p">(</span><span class="k">const</span> <span class="n">fc</span><span class="o">::</span><span class="n">path</span><span class="o">&amp;</span> <span class="n">data_dir</span><span class="p">)</span>
+<span class="p">{</span> <span class="k">try</span> <span class="p">{</span>
+   <span class="n">_data_dir</span> <span class="o">=</span> <span class="n">data_dir</span><span class="p">;</span>
+   <span class="k">if</span><span class="p">(</span> <span class="n">fc</span><span class="o">::</span><span class="n">exists</span><span class="p">(</span> <span class="n">_data_dir</span> <span class="o">/</span> <span class="s">&quot;object_database&quot;</span> <span class="o">/</span> <span class="s">&quot;lock&quot;</span> <span class="p">)</span> <span class="p">)</span>
+   <span class="p">{</span>
+           <span class="n">wlog</span><span class="p">(</span><span class="s">&quot;Ignoring locked object_database&quot;</span><span class="p">);</span>
+           <span class="k">return</span><span class="p">;</span>
+   <span class="p">}</span>
+   <span class="n">ilog</span><span class="p">(</span><span class="s">&quot;Opening object database from ${d} ...&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s">&quot;d&quot;</span><span class="p">,</span> <span class="n">data_dir</span><span class="p">));</span>
+   <span class="k">for</span><span class="p">(</span> <span class="kt">uint32_t</span> <span class="n">space</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">space</span> <span class="o">&lt;</span> <span class="n">_index</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">space</span> <span class="p">)</span>
+          <span class="k">for</span><span class="p">(</span> <span class="kt">uint32_t</span> <span class="n">type</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">type</span>  <span class="o">&lt;</span> <span class="n">_index</span><span class="p">[</span><span class="n">space</span><span class="p">].</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">type</span> <span class="p">)</span>
+                 <span class="k">if</span><span class="p">(</span> <span class="n">_index</span><span class="p">[</span><span class="n">space</span><span class="p">][</span><span class="n">type</span><span class="p">]</span> <span class="p">)</span>
+                        <span class="n">_index</span><span class="p">[</span><span class="n">space</span><span class="p">][</span><span class="n">type</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">open</span><span class="p">(</span> <span class="n">_data_dir</span> <span class="o">/</span> <span class="s">&quot;object_database&quot;</span> <span class="o">/</span> <span class="n">fc</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">space</span><span class="p">)</span><span class="o">/</span><span class="n">fc</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">type</span><span class="p">)</span> <span class="p">);</span>
+   <span class="n">ilog</span><span class="p">(</span> <span class="s">&quot;Done opening object database.&quot;</span> <span class="p">);</span>
+
+<span class="p">}</span> <span class="n">FC_CAPTURE_AND_RETHROW</span><span class="p">(</span> <span class="p">(</span><span class="n">data_dir</span><span class="p">)</span> <span class="p">)</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pop-undo">
+<h3><a class="toc-backref" href="#id17">pop_undo</a><a class="headerlink" href="#pop-undo" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="n">object_database</span><span class="o">::</span><span class="n">pop_undo</span><span class="p">()</span>
+<span class="p">{</span> <span class="k">try</span> <span class="p">{</span>
+   <span class="n">_undo_db</span><span class="p">.</span><span class="n">pop_commit</span><span class="p">();</span>
+<span class="p">}</span> <span class="n">FC_CAPTURE_AND_RETHROW</span><span class="p">()</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h3><a class="toc-backref" href="#id18">save_undo</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="n">object_database</span><span class="o">::</span><span class="n">save_undo</span><span class="p">(</span> <span class="k">const</span> <span class="n">object</span><span class="o">&amp;</span> <span class="n">obj</span> <span class="p">)</span>
+<span class="p">{</span>
+   <span class="n">_undo_db</span><span class="p">.</span><span class="n">on_modify</span><span class="p">(</span> <span class="n">obj</span> <span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="save-undo-add">
+<h3><a class="toc-backref" href="#id19">save_undo_add</a><a class="headerlink" href="#save-undo-add" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="n">object_database</span><span class="o">::</span><span class="n">save_undo_add</span><span class="p">(</span> <span class="k">const</span> <span class="n">object</span><span class="o">&amp;</span> <span class="n">obj</span> <span class="p">)</span>
+<span class="p">{</span>
+   <span class="n">_undo_db</span><span class="p">.</span><span class="n">on_create</span><span class="p">(</span> <span class="n">obj</span> <span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="save-undo-remove">
+<h3><a class="toc-backref" href="#id20">save_undo_remove</a><a class="headerlink" href="#save-undo-remove" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="n">object_database</span><span class="o">::</span><span class="n">save_undo_remove</span><span class="p">(</span><span class="k">const</span> <span class="n">object</span><span class="o">&amp;</span> <span class="n">obj</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="n">_undo_db</span><span class="p">.</span><span class="n">on_remove</span><span class="p">(</span> <span class="n">obj</span> <span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="undo-database-cpp">
+<h2><a class="toc-backref" href="#id21">undo_database.cpp</a><a class="headerlink" href="#undo-database-cpp" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="n">undo_database</span><span class="o">::</span><span class="n">enable</span><span class="p">()</span>  <span class="p">{</span> <span class="n">_disabled</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span> <span class="p">}</span>
+<span class="kt">void</span> <span class="n">undo_database</span><span class="o">::</span><span class="n">disable</span><span class="p">()</span> <span class="p">{</span> <span class="n">_disabled</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="n">undo_database</span><span class="o">::</span><span class="n">session</span> <span class="n">undo_database</span><span class="o">::</span><span class="n">start_undo_session</span><span class="p">(</span> <span class="kt">bool</span> <span class="n">force_enable</span> <span class="p">)</span>
+<span class="p">{</span>
+   <span class="k">if</span><span class="p">(</span> <span class="n">_disabled</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">force_enable</span> <span class="p">)</span> <span class="k">return</span> <span class="n">session</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">);</span>
+   <span class="kt">bool</span> <span class="n">disable_on_exit</span> <span class="o">=</span> <span class="n">_disabled</span>  <span class="o">&amp;&amp;</span> <span class="n">force_enable</span><span class="p">;</span>
+   <span class="k">if</span><span class="p">(</span> <span class="n">force_enable</span> <span class="p">)</span>
+          <span class="n">_disabled</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+   <span class="k">while</span><span class="p">(</span> <span class="n">size</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">max_size</span><span class="p">()</span> <span class="p">)</span>
+          <span class="n">_stack</span><span class="p">.</span><span class="n">pop_front</span><span class="p">();</span>
+
+   <span class="n">_stack</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">();</span>
+   <span class="o">++</span><span class="n">_active_sessions</span><span class="p">;</span>
+   <span class="k">return</span> <span class="nf">session</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">,</span> <span class="n">disable_on_exit</span> <span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>undo_database</strong></p>
+<div class="section" id="on-create">
+<h3><a class="toc-backref" href="#id22">on_create</a><a class="headerlink" href="#on-create" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="n">undo_database</span><span class="o">::</span><span class="n">on_create</span><span class="p">(</span> <span class="k">const</span> <span class="n">object</span><span class="o">&amp;</span> <span class="n">obj</span> <span class="p">)</span>
+<span class="p">{</span>
+   <span class="k">if</span><span class="p">(</span> <span class="n">_disabled</span> <span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+
+   <span class="k">if</span><span class="p">(</span> <span class="n">_stack</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="p">)</span>
+          <span class="n">_stack</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">();</span>
+   <span class="k">auto</span><span class="o">&amp;</span> <span class="n">state</span> <span class="o">=</span> <span class="n">_stack</span><span class="p">.</span><span class="n">back</span><span class="p">();</span>
+   <span class="k">auto</span> <span class="n">index_id</span> <span class="o">=</span> <span class="n">object_id_type</span><span class="p">(</span> <span class="n">obj</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">space</span><span class="p">(),</span> <span class="n">obj</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">type</span><span class="p">(),</span> <span class="mi">0</span> <span class="p">);</span>
+   <span class="k">auto</span> <span class="n">itr</span> <span class="o">=</span> <span class="n">state</span><span class="p">.</span><span class="n">old_index_next_ids</span><span class="p">.</span><span class="n">find</span><span class="p">(</span> <span class="n">index_id</span> <span class="p">);</span>
+   <span class="k">if</span><span class="p">(</span> <span class="n">itr</span> <span class="o">==</span> <span class="n">state</span><span class="p">.</span><span class="n">old_index_next_ids</span><span class="p">.</span><span class="n">end</span><span class="p">()</span> <span class="p">)</span>
+          <span class="n">state</span><span class="p">.</span><span class="n">old_index_next_ids</span><span class="p">[</span><span class="n">index_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
+   <span class="n">state</span><span class="p">.</span><span class="n">new_ids</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">obj</span><span class="p">.</span><span class="n">id</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3><a class="toc-backref" href="#id23">on_modify</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="n">undo_database</span><span class="o">::</span><span class="n">on_modify</span><span class="p">(</span> <span class="k">const</span> <span class="n">object</span><span class="o">&amp;</span> <span class="n">obj</span> <span class="p">)</span>
+<span class="p">{</span>
+   <span class="k">if</span><span class="p">(</span> <span class="n">_disabled</span> <span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+
+   <span class="k">if</span><span class="p">(</span> <span class="n">_stack</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="p">)</span>
+          <span class="n">_stack</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">();</span>
+   <span class="k">auto</span><span class="o">&amp;</span> <span class="n">state</span> <span class="o">=</span> <span class="n">_stack</span><span class="p">.</span><span class="n">back</span><span class="p">();</span>
+   <span class="k">if</span><span class="p">(</span> <span class="n">state</span><span class="p">.</span><span class="n">new_ids</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">obj</span><span class="p">.</span><span class="n">id</span><span class="p">)</span> <span class="o">!=</span> <span class="n">state</span><span class="p">.</span><span class="n">new_ids</span><span class="p">.</span><span class="n">end</span><span class="p">()</span> <span class="p">)</span>
+          <span class="k">return</span><span class="p">;</span>
+   <span class="k">auto</span> <span class="n">itr</span> <span class="o">=</span>  <span class="n">state</span><span class="p">.</span><span class="n">old_values</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">obj</span><span class="p">.</span><span class="n">id</span><span class="p">);</span>
+   <span class="k">if</span><span class="p">(</span> <span class="n">itr</span> <span class="o">!=</span> <span class="n">state</span><span class="p">.</span><span class="n">old_values</span><span class="p">.</span><span class="n">end</span><span class="p">()</span> <span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+   <span class="n">state</span><span class="p">.</span><span class="n">old_values</span><span class="p">[</span><span class="n">obj</span><span class="p">.</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">clone</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3><a class="toc-backref" href="#id24">on_remove</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="n">undo_database</span><span class="o">::</span><span class="n">on_remove</span><span class="p">(</span> <span class="k">const</span> <span class="n">object</span><span class="o">&amp;</span> <span class="n">obj</span> <span class="p">)</span>
+<span class="p">{</span>
+   <span class="k">if</span><span class="p">(</span> <span class="n">_disabled</span> <span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+
+   <span class="k">if</span><span class="p">(</span> <span class="n">_stack</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="p">)</span>
+          <span class="n">_stack</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">();</span>
+   <span class="n">undo_state</span><span class="o">&amp;</span> <span class="n">state</span> <span class="o">=</span> <span class="n">_stack</span><span class="p">.</span><span class="n">back</span><span class="p">();</span>
+   <span class="k">if</span><span class="p">(</span> <span class="n">state</span><span class="p">.</span><span class="n">new_ids</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">obj</span><span class="p">.</span><span class="n">id</span><span class="p">)</span> <span class="p">)</span>
+   <span class="p">{</span>
+          <span class="n">state</span><span class="p">.</span><span class="n">new_ids</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">obj</span><span class="p">.</span><span class="n">id</span><span class="p">);</span>
+          <span class="k">return</span><span class="p">;</span>
+   <span class="p">}</span>
+   <span class="k">if</span><span class="p">(</span> <span class="n">state</span><span class="p">.</span><span class="n">old_values</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">obj</span><span class="p">.</span><span class="n">id</span><span class="p">)</span> <span class="p">)</span>
+   <span class="p">{</span>
+          <span class="n">state</span><span class="p">.</span><span class="n">removed</span><span class="p">[</span><span class="n">obj</span><span class="p">.</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="n">old_values</span><span class="p">[</span><span class="n">obj</span><span class="p">.</span><span class="n">id</span><span class="p">]);</span>
+          <span class="n">state</span><span class="p">.</span><span class="n">old_values</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">obj</span><span class="p">.</span><span class="n">id</span><span class="p">);</span>
+          <span class="k">return</span><span class="p">;</span>
+   <span class="p">}</span>
+   <span class="k">if</span><span class="p">(</span> <span class="n">state</span><span class="p">.</span><span class="n">removed</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">obj</span><span class="p">.</span><span class="n">id</span><span class="p">)</span> <span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+   <span class="n">state</span><span class="p">.</span><span class="n">removed</span><span class="p">[</span><span class="n">obj</span><span class="p">.</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">clone</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="undo">
+<h3><a class="toc-backref" href="#id25">undo</a><a class="headerlink" href="#undo" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="n">undo_database</span><span class="o">::</span><span class="n">undo</span><span class="p">()</span>
+<span class="p">{</span> <span class="k">try</span> <span class="p">{</span>
+   <span class="n">FC_ASSERT</span><span class="p">(</span> <span class="o">!</span><span class="n">_disabled</span> <span class="p">);</span>
+   <span class="n">FC_ASSERT</span><span class="p">(</span> <span class="n">_active_sessions</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">);</span>
+   <span class="n">disable</span><span class="p">();</span>
+
+   <span class="k">auto</span><span class="o">&amp;</span> <span class="n">state</span> <span class="o">=</span> <span class="n">_stack</span><span class="p">.</span><span class="n">back</span><span class="p">();</span>
+   <span class="k">for</span><span class="p">(</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">item</span> <span class="p">:</span> <span class="n">state</span><span class="p">.</span><span class="n">old_values</span> <span class="p">)</span>
+   <span class="p">{</span>
+          <span class="n">_db</span><span class="p">.</span><span class="n">modify</span><span class="p">(</span> <span class="n">_db</span><span class="p">.</span><span class="n">get_object</span><span class="p">(</span> <span class="n">item</span><span class="p">.</span><span class="n">second</span><span class="o">-&gt;</span><span class="n">id</span> <span class="p">),</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span> <span class="n">object</span><span class="o">&amp;</span> <span class="n">obj</span> <span class="p">){</span> <span class="n">obj</span><span class="p">.</span><span class="n">move_from</span><span class="p">(</span> <span class="o">*</span><span class="n">item</span><span class="p">.</span><span class="n">second</span> <span class="p">);</span> <span class="p">}</span> <span class="p">);</span>
+   <span class="p">}</span>
+
+   <span class="k">for</span><span class="p">(</span> <span class="k">auto</span> <span class="n">ritr</span> <span class="o">=</span> <span class="n">state</span><span class="p">.</span><span class="n">new_ids</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">ritr</span> <span class="o">!=</span> <span class="n">state</span><span class="p">.</span><span class="n">new_ids</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">ritr</span>  <span class="p">)</span>
+   <span class="p">{</span>
+          <span class="n">_db</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span> <span class="n">_db</span><span class="p">.</span><span class="n">get_object</span><span class="p">(</span><span class="o">*</span><span class="n">ritr</span><span class="p">)</span> <span class="p">);</span>
+   <span class="p">}</span>
+
+   <span class="k">for</span><span class="p">(</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">item</span> <span class="p">:</span> <span class="n">state</span><span class="p">.</span><span class="n">old_index_next_ids</span> <span class="p">)</span>
+   <span class="p">{</span>
+          <span class="n">_db</span><span class="p">.</span><span class="n">get_mutable_index</span><span class="p">(</span> <span class="n">item</span><span class="p">.</span><span class="n">first</span><span class="p">.</span><span class="n">space</span><span class="p">(),</span> <span class="n">item</span><span class="p">.</span><span class="n">first</span><span class="p">.</span><span class="n">type</span><span class="p">()</span> <span class="p">).</span><span class="n">set_next_id</span><span class="p">(</span> <span class="n">item</span><span class="p">.</span><span class="n">second</span> <span class="p">);</span>
+   <span class="p">}</span>
+
+   <span class="k">for</span><span class="p">(</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">item</span> <span class="p">:</span> <span class="n">state</span><span class="p">.</span><span class="n">removed</span> <span class="p">)</span>
+          <span class="n">_db</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="o">*</span><span class="n">item</span><span class="p">.</span><span class="n">second</span><span class="p">)</span> <span class="p">);</span>
+
+   <span class="n">_stack</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+   <span class="n">enable</span><span class="p">();</span>
+   <span class="o">--</span><span class="n">_active_sessions</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">FC_CAPTURE_AND_RETHROW</span><span class="p">()</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="merge">
+<h3><a class="toc-backref" href="#id26">merge</a><a class="headerlink" href="#merge" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="n">undo_database</span><span class="o">::</span><span class="n">merge</span><span class="p">()</span>
+<span class="p">{</span>
+   <span class="n">FC_ASSERT</span><span class="p">(</span> <span class="n">_active_sessions</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">);</span>
+   <span class="k">if</span><span class="p">(</span> <span class="n">_active_sessions</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">_stack</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">)</span>
+   <span class="p">{</span>
+          <span class="n">_stack</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+          <span class="o">--</span><span class="n">_active_sessions</span><span class="p">;</span>
+          <span class="k">return</span><span class="p">;</span>
+   <span class="p">}</span>
+   <span class="n">FC_ASSERT</span><span class="p">(</span> <span class="n">_stack</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;=</span><span class="mi">2</span> <span class="p">);</span>
+   <span class="k">auto</span><span class="o">&amp;</span> <span class="n">state</span> <span class="o">=</span> <span class="n">_stack</span><span class="p">.</span><span class="n">back</span><span class="p">();</span>
+   <span class="k">auto</span><span class="o">&amp;</span> <span class="n">prev_state</span> <span class="o">=</span> <span class="n">_stack</span><span class="p">[</span><span class="n">_stack</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="mi">2</span><span class="p">];</span>
+
+   <span class="c1">// An object&#39;s relationship to a state can be:</span>
+   <span class="c1">// in new_ids            : new</span>
+   <span class="c1">// in old_values (was=X) : upd(was=X)</span>
+   <span class="c1">// in removed (was=X)    : del(was=X)</span>
+   <span class="c1">// not in any of above   : nop</span>
+   <span class="c1">//</span>
+   <span class="c1">// When merging A=prev_state and B=state we have a 4x4 matrix of all possibilities:</span>
+   <span class="c1">//</span>
+   <span class="c1">//                   |--------------------- B ----------------------|</span>
+   <span class="c1">//</span>
+   <span class="c1">//                +------------+------------+------------+------------+</span>
+   <span class="c1">//                | new        | upd(was=Y) | del(was=Y) | nop        |</span>
+   <span class="c1">//   +------------+------------+------------+------------+------------+</span>
+   <span class="c1">// / | new        | N/A        | new       A| nop       C| new       A|</span>
+   <span class="c1">// | +------------+------------+------------+------------+------------+</span>
+   <span class="c1">// | | upd(was=X) | N/A        | upd(was=X)A| del(was=X)C| upd(was=X)A|</span>
+   <span class="c1">// A +------------+------------+------------+------------+------------+</span>
+   <span class="c1">// | | del(was=X) | N/A        | N/A        | N/A        | del(was=X)A|</span>
+   <span class="c1">// | +------------+------------+------------+------------+------------+</span>
+   <span class="c1">// \ | nop        | new       B| upd(was=Y)B| del(was=Y)B| nop      AB|</span>
+   <span class="c1">//   +------------+------------+------------+------------+------------+</span>
+   <span class="c1">//</span>
+   <span class="c1">// Each entry was composed by labelling what should occur in the given case.</span>
+   <span class="c1">//</span>
+   <span class="c1">// Type A means the composition of states contains the same entry as the first of the two merged states for that object.</span>
+   <span class="c1">// Type B means the composition of states contains the same entry as the second of the two merged states for that object.</span>
+   <span class="c1">// Type C means the composition of states contains an entry different from either of the merged states for that object.</span>
+   <span class="c1">// Type N/A means the composition of states violates causal timing.</span>
+   <span class="c1">// Type AB means both type A and type B simultaneously.</span>
+   <span class="c1">//</span>
+   <span class="c1">// The merge() operation is defined as modifying prev_state in-place to be the state object which represents the composition of</span>
+   <span class="c1">// state A and B.</span>
+   <span class="c1">//</span>
+   <span class="c1">// Type A (and AB) can be implemented as a no-op; prev_state already contains the correct value for the merged state.</span>
+   <span class="c1">// Type B (and AB) can be implemented by copying from state to prev_state.</span>
+   <span class="c1">// Type C needs special case-by-case logic.</span>
+   <span class="c1">// Type N/A can be ignored or assert(false) as it can only occur if prev_state and state have illegal values</span>
+   <span class="c1">// (a serious logic error which should never happen).</span>
+   <span class="c1">//</span>
+
+   <span class="c1">// We can only be outside type A/AB (the nop path) if B is not nop, so it suffices to iterate through B&#39;s three containers.</span>
+
+   <span class="c1">// *+upd</span>
+   <span class="k">for</span><span class="p">(</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">obj</span> <span class="p">:</span> <span class="n">state</span><span class="p">.</span><span class="n">old_values</span> <span class="p">)</span>
+   <span class="p">{</span>
+          <span class="k">if</span><span class="p">(</span> <span class="n">prev_state</span><span class="p">.</span><span class="n">new_ids</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">obj</span><span class="p">.</span><span class="n">second</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">)</span> <span class="o">!=</span> <span class="n">prev_state</span><span class="p">.</span><span class="n">new_ids</span><span class="p">.</span><span class="n">end</span><span class="p">()</span> <span class="p">)</span>
+          <span class="p">{</span>
+                 <span class="c1">// new+upd -&gt; new, type A</span>
+                 <span class="k">continue</span><span class="p">;</span>
+          <span class="p">}</span>
+          <span class="k">if</span><span class="p">(</span> <span class="n">prev_state</span><span class="p">.</span><span class="n">old_values</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">obj</span><span class="p">.</span><span class="n">second</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">)</span> <span class="o">!=</span> <span class="n">prev_state</span><span class="p">.</span><span class="n">old_values</span><span class="p">.</span><span class="n">end</span><span class="p">()</span> <span class="p">)</span>
+          <span class="p">{</span>
+                 <span class="c1">// upd(was=X) + upd(was=Y) -&gt; upd(was=X), type A</span>
+                 <span class="k">continue</span><span class="p">;</span>
+          <span class="p">}</span>
+          <span class="c1">// del+upd -&gt; N/A</span>
+          <span class="n">assert</span><span class="p">(</span> <span class="n">prev_state</span><span class="p">.</span><span class="n">removed</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">obj</span><span class="p">.</span><span class="n">second</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">)</span> <span class="o">==</span> <span class="n">prev_state</span><span class="p">.</span><span class="n">removed</span><span class="p">.</span><span class="n">end</span><span class="p">()</span> <span class="p">);</span>
+          <span class="c1">// nop+upd(was=Y) -&gt; upd(was=Y), type B</span>
+          <span class="n">prev_state</span><span class="p">.</span><span class="n">old_values</span><span class="p">[</span><span class="n">obj</span><span class="p">.</span><span class="n">second</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">obj</span><span class="p">.</span><span class="n">second</span><span class="p">);</span>
+   <span class="p">}</span>
+
+   <span class="c1">// *+new, but we assume the N/A cases don&#39;t happen, leaving type B nop+new -&gt; new</span>
+   <span class="k">for</span><span class="p">(</span> <span class="k">auto</span> <span class="nl">id</span> <span class="p">:</span> <span class="n">state</span><span class="p">.</span><span class="n">new_ids</span> <span class="p">)</span>
+          <span class="n">prev_state</span><span class="p">.</span><span class="n">new_ids</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">id</span><span class="p">);</span>
+
+   <span class="c1">// old_index_next_ids can only be updated, iterate over *+upd cases</span>
+   <span class="k">for</span><span class="p">(</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">item</span> <span class="p">:</span> <span class="n">state</span><span class="p">.</span><span class="n">old_index_next_ids</span> <span class="p">)</span>
+   <span class="p">{</span>
+          <span class="k">if</span><span class="p">(</span> <span class="n">prev_state</span><span class="p">.</span><span class="n">old_index_next_ids</span><span class="p">.</span><span class="n">find</span><span class="p">(</span> <span class="n">item</span><span class="p">.</span><span class="n">first</span> <span class="p">)</span> <span class="o">==</span> <span class="n">prev_state</span><span class="p">.</span><span class="n">old_index_next_ids</span><span class="p">.</span><span class="n">end</span><span class="p">()</span> <span class="p">)</span>
+          <span class="p">{</span>
+                 <span class="c1">// nop+upd(was=Y) -&gt; upd(was=Y), type B</span>
+                 <span class="n">prev_state</span><span class="p">.</span><span class="n">old_index_next_ids</span><span class="p">[</span><span class="n">item</span><span class="p">.</span><span class="n">first</span><span class="p">]</span> <span class="o">=</span> <span class="n">item</span><span class="p">.</span><span class="n">second</span><span class="p">;</span>
+                 <span class="k">continue</span><span class="p">;</span>
+          <span class="p">}</span>
+          <span class="k">else</span>
+          <span class="p">{</span>
+                 <span class="c1">// upd(was=X)+upd(was=Y) -&gt; upd(was=X), type A</span>
+                 <span class="c1">// type A implementation is a no-op, as discussed above, so there is no code here</span>
+                 <span class="k">continue</span><span class="p">;</span>
+          <span class="p">}</span>
+   <span class="p">}</span>
+
+   <span class="c1">// *+del</span>
+   <span class="k">for</span><span class="p">(</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">obj</span> <span class="p">:</span> <span class="n">state</span><span class="p">.</span><span class="n">removed</span> <span class="p">)</span>
+   <span class="p">{</span>
+          <span class="k">if</span><span class="p">(</span> <span class="n">prev_state</span><span class="p">.</span><span class="n">new_ids</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">obj</span><span class="p">.</span><span class="n">second</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">)</span> <span class="o">!=</span> <span class="n">prev_state</span><span class="p">.</span><span class="n">new_ids</span><span class="p">.</span><span class="n">end</span><span class="p">()</span> <span class="p">)</span>
+          <span class="p">{</span>
+                 <span class="c1">// new + del -&gt; nop (type C)</span>
+                 <span class="n">prev_state</span><span class="p">.</span><span class="n">new_ids</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">obj</span><span class="p">.</span><span class="n">second</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">);</span>
+                 <span class="k">continue</span><span class="p">;</span>
+          <span class="p">}</span>
+          <span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">prev_state</span><span class="p">.</span><span class="n">old_values</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">obj</span><span class="p">.</span><span class="n">second</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">);</span>
+          <span class="k">if</span><span class="p">(</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">prev_state</span><span class="p">.</span><span class="n">old_values</span><span class="p">.</span><span class="n">end</span><span class="p">()</span> <span class="p">)</span>
+          <span class="p">{</span>
+                 <span class="c1">// upd(was=X) + del(was=Y) -&gt; del(was=X)</span>
+                 <span class="n">prev_state</span><span class="p">.</span><span class="n">removed</span><span class="p">[</span><span class="n">obj</span><span class="p">.</span><span class="n">second</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">);</span>
+                 <span class="n">prev_state</span><span class="p">.</span><span class="n">old_values</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">obj</span><span class="p">.</span><span class="n">second</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">);</span>
+                 <span class="k">continue</span><span class="p">;</span>
+          <span class="p">}</span>
+          <span class="c1">// del + del -&gt; N/A</span>
+          <span class="n">assert</span><span class="p">(</span> <span class="n">prev_state</span><span class="p">.</span><span class="n">removed</span><span class="p">.</span><span class="n">find</span><span class="p">(</span> <span class="n">obj</span><span class="p">.</span><span class="n">second</span><span class="o">-&gt;</span><span class="n">id</span> <span class="p">)</span> <span class="o">==</span> <span class="n">prev_state</span><span class="p">.</span><span class="n">removed</span><span class="p">.</span><span class="n">end</span><span class="p">()</span> <span class="p">);</span>
+          <span class="c1">// nop + del(was=Y) -&gt; del(was=Y)</span>
+          <span class="n">prev_state</span><span class="p">.</span><span class="n">removed</span><span class="p">[</span><span class="n">obj</span><span class="p">.</span><span class="n">second</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">obj</span><span class="p">.</span><span class="n">second</span><span class="p">);</span>
+   <span class="p">}</span>
+   <span class="n">_stack</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+   <span class="o">--</span><span class="n">_active_sessions</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="commit">
+<h3><a class="toc-backref" href="#id27">commit</a><a class="headerlink" href="#commit" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="n">undo_database</span><span class="o">::</span><span class="n">commit</span><span class="p">()</span>
+<span class="p">{</span>
+   <span class="n">FC_ASSERT</span><span class="p">(</span> <span class="n">_active_sessions</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">);</span>
+   <span class="o">--</span><span class="n">_active_sessions</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pop-commit">
+<h3><a class="toc-backref" href="#id28">pop_commit</a><a class="headerlink" href="#pop-commit" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="n">undo_database</span><span class="o">::</span><span class="n">pop_commit</span><span class="p">()</span>
+<span class="p">{</span>
+   <span class="n">FC_ASSERT</span><span class="p">(</span> <span class="n">_active_sessions</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">);</span>
+   <span class="n">FC_ASSERT</span><span class="p">(</span> <span class="o">!</span><span class="n">_stack</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="p">);</span>
+
+   <span class="n">disable</span><span class="p">();</span>
+   <span class="k">try</span> <span class="p">{</span>
+          <span class="k">auto</span><span class="o">&amp;</span> <span class="n">state</span> <span class="o">=</span> <span class="n">_stack</span><span class="p">.</span><span class="n">back</span><span class="p">();</span>
+
+          <span class="k">for</span><span class="p">(</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">item</span> <span class="p">:</span> <span class="n">state</span><span class="p">.</span><span class="n">old_values</span> <span class="p">)</span>
+          <span class="p">{</span>
+                 <span class="n">_db</span><span class="p">.</span><span class="n">modify</span><span class="p">(</span> <span class="n">_db</span><span class="p">.</span><span class="n">get_object</span><span class="p">(</span> <span class="n">item</span><span class="p">.</span><span class="n">second</span><span class="o">-&gt;</span><span class="n">id</span> <span class="p">),</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span> <span class="n">object</span><span class="o">&amp;</span> <span class="n">obj</span> <span class="p">){</span> <span class="n">obj</span><span class="p">.</span><span class="n">move_from</span><span class="p">(</span> <span class="o">*</span><span class="n">item</span><span class="p">.</span><span class="n">second</span> <span class="p">);</span> <span class="p">}</span> <span class="p">);</span>
+          <span class="p">}</span>
+
+          <span class="k">for</span><span class="p">(</span> <span class="k">auto</span> <span class="n">ritr</span> <span class="o">=</span> <span class="n">state</span><span class="p">.</span><span class="n">new_ids</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">ritr</span> <span class="o">!=</span> <span class="n">state</span><span class="p">.</span><span class="n">new_ids</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">ritr</span>  <span class="p">)</span>
+          <span class="p">{</span>
+                 <span class="n">_db</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span> <span class="n">_db</span><span class="p">.</span><span class="n">get_object</span><span class="p">(</span><span class="o">*</span><span class="n">ritr</span><span class="p">)</span> <span class="p">);</span>
+          <span class="p">}</span>
+
+          <span class="k">for</span><span class="p">(</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">item</span> <span class="p">:</span> <span class="n">state</span><span class="p">.</span><span class="n">old_index_next_ids</span> <span class="p">)</span>
+          <span class="p">{</span>
+                 <span class="n">_db</span><span class="p">.</span><span class="n">get_mutable_index</span><span class="p">(</span> <span class="n">item</span><span class="p">.</span><span class="n">first</span><span class="p">.</span><span class="n">space</span><span class="p">(),</span> <span class="n">item</span><span class="p">.</span><span class="n">first</span><span class="p">.</span><span class="n">type</span><span class="p">()</span> <span class="p">).</span><span class="n">set_next_id</span><span class="p">(</span> <span class="n">item</span><span class="p">.</span><span class="n">second</span> <span class="p">);</span>
+          <span class="p">}</span>
+
+          <span class="k">for</span><span class="p">(</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">item</span> <span class="p">:</span> <span class="n">state</span><span class="p">.</span><span class="n">removed</span> <span class="p">)</span>
+                 <span class="n">_db</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="o">*</span><span class="n">item</span><span class="p">.</span><span class="n">second</span><span class="p">)</span> <span class="p">);</span>
+
+          <span class="n">_stack</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+   <span class="p">}</span>
+   <span class="k">catch</span> <span class="p">(</span> <span class="k">const</span> <span class="n">fc</span><span class="o">::</span><span class="n">exception</span><span class="o">&amp;</span> <span class="n">e</span> <span class="p">)</span>
+   <span class="p">{</span>
+          <span class="n">elog</span><span class="p">(</span> <span class="s">&quot;error popping commit ${e}&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s">&quot;e&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">.</span><span class="n">to_detail_string</span><span class="p">()</span> <span class="p">)</span>  <span class="p">);</span>
+          <span class="n">enable</span><span class="p">();</span>
+          <span class="k">throw</span><span class="p">;</span>
+   <span class="p">}</span>
+   <span class="n">enable</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="head">
+<h3><a class="toc-backref" href="#id29">head</a><a class="headerlink" href="#head" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="n">undo_state</span><span class="o">&amp;</span> <span class="n">undo_database</span><span class="o">::</span><span class="n">head</span><span class="p">()</span><span class="k">const</span>
+<span class="p">{</span>
+   <span class="n">FC_ASSERT</span><span class="p">(</span> <span class="o">!</span><span class="n">_stack</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="p">);</span>
+   <span class="k">return</span> <span class="n">_stack</span><span class="p">.</span><span class="n">back</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</div>
 </div>
 <hr class="docutils" />
 <div class="section" id="generic-index-hpp">
-<h2><a class="toc-backref" href="#id1">generic_index.hpp</a><a class="headerlink" href="#generic-index-hpp" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id30">generic_index.hpp</a><a class="headerlink" href="#generic-index-hpp" title="Permalink to this headline">¶</a></h2>
 </div>
 <hr class="docutils" />
 <div class="section" id="index-hpp">
-<h2><a class="toc-backref" href="#id2">index.hpp</a><a class="headerlink" href="#index-hpp" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id31">index.hpp</a><a class="headerlink" href="#index-hpp" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">object_database</span><span class="p">;</span>
 <span class="k">using</span> <span class="n">fc</span><span class="o">::</span><span class="n">path</span><span class="p">;</span>
 </pre></div>
 </div>
 <div class="section" id="index-observer">
-<h3><a class="toc-backref" href="#id3">index_observer</a><a class="headerlink" href="#index-observer" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id32">index_observer</a><a class="headerlink" href="#index-observer" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>used to get callbacks when objects change</li>
 </ul>
@@ -299,7 +866,7 @@
 </div>
 </div>
 <div class="section" id="index">
-<h3><a class="toc-backref" href="#id4">index</a><a class="headerlink" href="#index" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id33">index</a><a class="headerlink" href="#index" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>abstract base class for accessing objects indexed in various ways.</li>
 <li>All indexes assume that there exists an object ID space that will grow forever in a seqential manner.  These IDs are used to identify the index, type, and instance of the object.</li>
@@ -378,7 +945,7 @@
 </div>
 </div>
 <div class="section" id="secondary-index">
-<h3><a class="toc-backref" href="#id5">secondary_index</a><a class="headerlink" href="#secondary-index" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id34">secondary_index</a><a class="headerlink" href="#secondary-index" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">secondary_index</span>
 <span class="p">{</span>
    <span class="k">public</span><span class="o">:</span>
@@ -392,7 +959,7 @@
 </div>
 </div>
 <div class="section" id="base-primary-index">
-<h3><a class="toc-backref" href="#id6">base_primary_index</a><a class="headerlink" href="#base-primary-index" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id35">base_primary_index</a><a class="headerlink" href="#base-primary-index" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Defines the common implementation</li>
 </ul>
@@ -442,7 +1009,7 @@
 </div>
 </div>
 <div class="section" id="primary-index">
-<h3><a class="toc-backref" href="#id7">primary_index</a><a class="headerlink" href="#primary-index" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id36">primary_index</a><a class="headerlink" href="#primary-index" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Wraps a derived index to intercept calls to create, modify, and remove so that callbacks may be fired and undo state saved.</li>
 <li>&#64;see <a class="reference external" href="http://en.wikipedia.org/wiki/Curiously_recurring_template_pattern">http://en.wikipedia.org/wiki/Curiously_recurring_template_pattern</a></li>
@@ -586,9 +1153,9 @@
 </div>
 <hr class="docutils" />
 <div class="section" id="object-hpp">
-<h2><a class="toc-backref" href="#id8">object.hpp</a><a class="headerlink" href="#object-hpp" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id37">object.hpp</a><a class="headerlink" href="#object-hpp" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="object">
-<h3><a class="toc-backref" href="#id9">object</a><a class="headerlink" href="#object" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id38">object</a><a class="headerlink" href="#object" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>base for all database objects</li>
 <li>The object is the fundamental building block of the database and is the level upon which undo/redo operations are performed.  Objects are used to track data and their relationships and provide an efficient means to find and update information.</li>
@@ -621,7 +1188,7 @@
 </div>
 </div>
 <div class="section" id="abstract-object">
-<h3><a class="toc-backref" href="#id10">abstract_object</a><a class="headerlink" href="#abstract-object" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id39">abstract_object</a><a class="headerlink" href="#abstract-object" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Use the Curiously Recurring Template Pattern to automatically add the ability to clone, serialize, and move objects polymorphically.</li>
 <li><a class="reference external" href="http://en.wikipedia.org/wiki/Curiously_recurring_template_pattern">http://en.wikipedia.org/wiki/Curiously_recurring_template_pattern</a></li>
@@ -652,7 +1219,7 @@
 </div>
 </div>
 <div class="section" id="annotated-object">
-<h3><a class="toc-backref" href="#id11">annotated_object</a><a class="headerlink" href="#annotated-object" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id40">annotated_object</a><a class="headerlink" href="#annotated-object" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>An object that is easily extended by providing pointers to other objects, one for each space.</li>
 </ul>
@@ -684,9 +1251,9 @@
 </div>
 <hr class="docutils" />
 <div class="section" id="object-database-hpp">
-<h2><a class="toc-backref" href="#id12">object_database.hpp</a><a class="headerlink" href="#object-database-hpp" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id41">object_database.hpp</a><a class="headerlink" href="#object-database-hpp" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="object-database">
-<h3><a class="toc-backref" href="#id13">object_database</a><a class="headerlink" href="#object-database" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id42">object_database</a><a class="headerlink" href="#object-database" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>maintains a set of indexed objects that can be modified with multi-level rollback support</li>
 </ul>
@@ -835,7 +1402,7 @@
 </div>
 <hr class="docutils" />
 <div class="section" id="object-id-hpp">
-<h2><a class="toc-backref" href="#id14">object_id.hpp</a><a class="headerlink" href="#object-id-hpp" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id43">object_id.hpp</a><a class="headerlink" href="#object-id-hpp" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">using</span>  <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="p">;</span>
 <span class="k">using</span>  <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="p">;</span>
 <span class="k">using</span>  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="p">;</span>
@@ -846,7 +1413,7 @@
 </pre></div>
 </div>
 <div class="section" id="object-id-type">
-<h3><a class="toc-backref" href="#id15">object_id_type</a><a class="headerlink" href="#object-id-type" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id44">object_id_type</a><a class="headerlink" href="#object-id-type" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">object_id_type</span>
 <span class="p">{</span>
    <span class="n">object_id_type</span><span class="p">(</span> <span class="kt">uint8_t</span> <span class="n">s</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">t</span><span class="p">,</span> <span class="kt">uint64_t</span> <span class="n">i</span> <span class="p">)</span>
@@ -903,7 +1470,7 @@
 </div>
 </div>
 <div class="section" id="object-id">
-<h3><a class="toc-backref" href="#id16">object_id</a><a class="headerlink" href="#object-id" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id45">object_id</a><a class="headerlink" href="#object-id" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">object</span><span class="p">;</span>
 <span class="k">class</span> <span class="nc">object_database</span><span class="p">;</span>
 
@@ -953,9 +1520,9 @@
 </div>
 <hr class="docutils" />
 <div class="section" id="simple-index-hpp">
-<h2><a class="toc-backref" href="#id17">simple_index.hpp</a><a class="headerlink" href="#simple-index-hpp" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id46">simple_index.hpp</a><a class="headerlink" href="#simple-index-hpp" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="simple-index">
-<h3><a class="toc-backref" href="#id18">simple_index</a><a class="headerlink" href="#simple-index" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id47">simple_index</a><a class="headerlink" href="#simple-index" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>A simple index uses a vector&lt;unique_ptr&lt;T&gt;&gt; to store data</li>
 <li>This index is preferred in situations where the data will never be removed from main memory and when access by ID is the only kind of access that is necessary.</li>
@@ -1077,9 +1644,9 @@
 </div>
 <hr class="docutils" />
 <div class="section" id="undu-database-hpp">
-<h2><a class="toc-backref" href="#id19">undu_database.hpp</a><a class="headerlink" href="#undu-database-hpp" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id48">undu_database.hpp</a><a class="headerlink" href="#undu-database-hpp" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="undo-state">
-<h3><a class="toc-backref" href="#id20">undo_state</a><a class="headerlink" href="#undo-state" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id49">undo_state</a><a class="headerlink" href="#undo-state" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="p">;</span>
 <span class="k">using</span> <span class="n">fc</span><span class="o">::</span><span class="n">flat_set</span><span class="p">;</span>
 <span class="k">class</span> <span class="nc">object_database</span><span class="p">;</span>
@@ -1095,7 +1662,7 @@
 </div>
 </div>
 <div class="section" id="undo-database">
-<h3><a class="toc-backref" href="#id21">undo_database</a><a class="headerlink" href="#undo-database" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id50">undo_database</a><a class="headerlink" href="#undo-database" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>tracks changes to the state and allows changes to be undone</li>
 </ul>
