@@ -1,0 +1,675 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>libraries - app &mdash; BItShares Developers Portal  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="libraries - wallet" href="lib_wallet.html" />
+    <link rel="prev" title="Net" href="lib_net.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> BItShares Developers Portal
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/architectures.html">Introduction &amp; Architectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/environments.html">Development Environments</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="components.html">System Components Elements</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="lib_database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib_block.html">Block</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib_db.html">db folder - object/index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib_protocols.html">Protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib_operations.html">Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib_evalustors.html">Evaluators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib_objects.html">Object Elements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib_plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib_chain_db.html">Chain - db_xxx.cpp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib_net.html">Net</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">libraries - app</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#directories-and-files">Directories and files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#api-hpp">api.hpp</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#struct">struct</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#class">class</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#api-access-hpp">api_access.hpp</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">struct</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#application-hpp">application.hpp</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">class</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#database-api-hpp">database_api.hpp</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id6">struct</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">class</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#full-account-hpp">full_account.hpp</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id9">struct</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#plugin-hpp">plugin.hpp</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id10">class</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#util-hpp">util.hpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="lib_wallet.html">libraries - wallet</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/installation.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bts_guide/accounts/bts_account.html">BitShares Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/integration.html">Integration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/interaction.html">Blockchain Interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/testnets.html">Testnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/bsip.html">BitShares Improvement Proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supports_dev/supports.html">Support and Optimizations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/api_about.html">1. API Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/restrictions.html">2. API Access and Restrictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/calls.html">3. Available Calls, Object, and IDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/blockchain_api.html">4. Blockchain API(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/wallet_api.html">5. Wallet API - Calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/objects_ids.html">6. Objects and IDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/namespaces.html">7. Graphene - Namespaces</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../bts_guide/tutorials/index.html">Developer Guide (Tutorials)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bts_guide/index_faq.html">Frequently Asked Questions (FAQ)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references/info_comunities.html">BitShares Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/info_comunities.html#bitshares-blockchain">BitShares Blockchain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/tech_articles.html">BitShares Developers’ Contributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/tech_articles.html#articles">Articles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/githubrepo.html">BitShares Repositories</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">BItShares Developers Portal</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="components.html">System Components Elements</a> &raquo;</li>
+        
+      <li>libraries - app</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="libraries-app">
+<span id="lib-app"></span><h1>libraries - app<a class="headerlink" href="#libraries-app" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title first">Table of Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#directories-and-files" id="id12">Directories and files</a></li>
+<li><a class="reference internal" href="#api-hpp" id="id13">api.hpp</a><ul>
+<li><a class="reference internal" href="#struct" id="id14">struct</a><ul>
+<li><a class="reference internal" href="#verify-range-result" id="id15">verify_range_result</a></li>
+<li><a class="reference internal" href="#verify-range-proof-rewind-result" id="id16">verify_range_proof_rewind_result</a></li>
+<li><a class="reference internal" href="#account-asset-balance" id="id17">account_asset_balance</a></li>
+<li><a class="reference internal" href="#asset-holders" id="id18">asset_holders</a></li>
+<li><a class="reference internal" href="#history-operation-detail" id="id19">history_operation_detail</a></li>
+<li><a class="reference internal" href="#limit-order-group" id="id20">limit_order_group</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#class" id="id21">class</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#api-access-hpp" id="id22">api_access.hpp</a><ul>
+<li><a class="reference internal" href="#id2" id="id23">struct</a><ul>
+<li><a class="reference internal" href="#api-access-info" id="id24">api_access_info</a></li>
+<li><a class="reference internal" href="#api-access" id="id25">api_access</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#application-hpp" id="id26">application.hpp</a><ul>
+<li><a class="reference internal" href="#id3" id="id27">class</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#database-api-hpp" id="id28">database_api.hpp</a><ul>
+<li><a class="reference internal" href="#id6" id="id29">struct</a><ul>
+<li><a class="reference internal" href="#order" id="id30">order</a></li>
+<li><a class="reference internal" href="#order-book" id="id31">order_book</a></li>
+<li><a class="reference internal" href="#market-ticker" id="id32">market_ticker</a></li>
+<li><a class="reference internal" href="#market-volume" id="id33">market_volume</a></li>
+<li><a class="reference internal" href="#market-trade" id="id34">market_trade</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id7" id="id35">class</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#full-account-hpp" id="id36">full_account.hpp</a><ul>
+<li><a class="reference internal" href="#id9" id="id37">struct</a><ul>
+<li><a class="reference internal" href="#full-account" id="id38">full_account</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#plugin-hpp" id="id39">plugin.hpp</a><ul>
+<li><a class="reference internal" href="#id10" id="id40">class</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#util-hpp" id="id41">util.hpp</a></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="directories-and-files">
+<h2><a class="toc-backref" href="#id12">Directories and files</a><a class="headerlink" href="#directories-and-files" title="Permalink to this headline">¶</a></h2>
+<p>For detail information, please check: <a class="reference external" href="https://bitshares.org/doxygen/namespacegraphene_1_1app.html">graphene::app Namespace Reference</a></p>
+<p>For detail information: <a class="reference external" href="https://bitshares.org/doxygen/classgraphene_1_1app_1_1plugin.html">graphene::app::plugin Class Reference</a></p>
+<ul class="simple">
+<li>../libraries/app/<ul>
+<li>api.cpp</li>
+<li>application.cpp</li>
+<li>database_api.cpp</li>
+<li>plugin.cpp</li>
+<li>util/cpp</li>
+</ul>
+</li>
+<li>../libraries/app/include/graphene/app/<ul>
+<li>api.hpp</li>
+<li>api_access.hpp</li>
+<li>application.hpp</li>
+<li>database_api.hpp</li>
+<li>full_account.hpp</li>
+<li>plugin.hpp</li>
+<li>util.hpp</li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+<p><strong>xxxxx.hpp</strong></p>
+</div>
+<div class="section" id="api-hpp">
+<h2><a class="toc-backref" href="#id13">api.hpp</a><a class="headerlink" href="#api-hpp" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="struct">
+<h3><a class="toc-backref" href="#id14">struct</a><a class="headerlink" href="#struct" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="verify-range-result">
+<h4><a class="toc-backref" href="#id15">verify_range_result</a><a class="headerlink" href="#verify-range-result" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">verify_range_result</span>
+<span class="p">{</span>
+   <span class="kt">bool</span>        <span class="n">success</span><span class="p">;</span>
+   <span class="kt">uint64_t</span>    <span class="n">min_val</span><span class="p">;</span>
+   <span class="kt">uint64_t</span>    <span class="n">max_val</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="verify-range-proof-rewind-result">
+<h4><a class="toc-backref" href="#id16">verify_range_proof_rewind_result</a><a class="headerlink" href="#verify-range-proof-rewind-result" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">verify_range_proof_rewind_result</span>
+<span class="p">{</span>
+   <span class="kt">bool</span>                          <span class="n">success</span><span class="p">;</span>
+   <span class="kt">uint64_t</span>                      <span class="n">min_val</span><span class="p">;</span>
+   <span class="kt">uint64_t</span>                      <span class="n">max_val</span><span class="p">;</span>
+   <span class="kt">uint64_t</span>                      <span class="n">value_out</span><span class="p">;</span>
+   <span class="n">fc</span><span class="o">::</span><span class="n">ecc</span><span class="o">::</span><span class="n">blind_factor_type</span>    <span class="n">blind_out</span><span class="p">;</span>
+   <span class="n">string</span>                        <span class="n">message_out</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="account-asset-balance">
+<h4><a class="toc-backref" href="#id17">account_asset_balance</a><a class="headerlink" href="#account-asset-balance" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">account_asset_balance</span>
+<span class="p">{</span>
+   <span class="n">string</span>          <span class="n">name</span><span class="p">;</span>
+   <span class="n">account_id_type</span> <span class="n">account_id</span><span class="p">;</span>
+   <span class="n">share_type</span>      <span class="n">amount</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="asset-holders">
+<h4><a class="toc-backref" href="#id18">asset_holders</a><a class="headerlink" href="#asset-holders" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">asset_holders</span>
+<span class="p">{</span>
+   <span class="n">asset_id_type</span>   <span class="n">asset_id</span><span class="p">;</span>
+   <span class="kt">int</span>             <span class="n">count</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="history-operation-detail">
+<h4><a class="toc-backref" href="#id19">history_operation_detail</a><a class="headerlink" href="#history-operation-detail" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">history_operation_detail</span> <span class="p">{</span>
+   <span class="kt">uint32_t</span> <span class="n">total_count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+   <span class="n">vector</span><span class="o">&lt;</span><span class="n">operation_history_object</span><span class="o">&gt;</span> <span class="n">operation_history_objs</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="limit-order-group">
+<h4><a class="toc-backref" href="#id20">limit_order_group</a><a class="headerlink" href="#limit-order-group" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>summary data of a group of limit orders</li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">limit_order_group</span>
+<span class="p">{</span>
+   <span class="n">limit_order_group</span><span class="p">(</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">limit_order_group_key</span><span class="p">,</span><span class="n">limit_order_group_data</span><span class="o">&gt;&amp;</span> <span class="n">p</span> <span class="p">)</span>
+      <span class="o">:</span>  <span class="n">min_price</span><span class="p">(</span> <span class="n">p</span><span class="p">.</span><span class="n">first</span><span class="p">.</span><span class="n">min_price</span> <span class="p">),</span>
+         <span class="n">max_price</span><span class="p">(</span> <span class="n">p</span><span class="p">.</span><span class="n">second</span><span class="p">.</span><span class="n">max_price</span> <span class="p">),</span>
+         <span class="n">total_for_sale</span><span class="p">(</span> <span class="n">p</span><span class="p">.</span><span class="n">second</span><span class="p">.</span><span class="n">total_for_sale</span> <span class="p">)</span>
+         <span class="p">{}</span>
+   <span class="n">limit_order_group</span><span class="p">()</span> <span class="p">{}</span>
+
+   <span class="n">price</span>         <span class="n">min_price</span><span class="p">;</span> <span class="c1">///&lt; possible lowest price in the group</span>
+   <span class="n">price</span>         <span class="n">max_price</span><span class="p">;</span> <span class="c1">///&lt; possible highest price in the group</span>
+   <span class="n">share_type</span>    <span class="n">total_for_sale</span><span class="p">;</span> <span class="c1">///&lt; total amount of asset for sale, asset id is min_price.base.asset_id</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="class">
+<h3><a class="toc-backref" href="#id21">class</a><a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h3>
+<p>For detail information, please check: <a class="reference external" href="https://bitshares.org/doxygen/namespacegraphene_1_1app.html">graphene::app Namespace Reference</a></p>
+<ul class="simple">
+<li>history_api</li>
+<li>block_api</li>
+<li>network_broadcast_api</li>
+<li>network_node_api</li>
+<li>crypto_api</li>
+<li>asset_api</li>
+<li>orders_api</li>
+<li>login_api</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="api-access-hpp">
+<h2><a class="toc-backref" href="#id22">api_access.hpp</a><a class="headerlink" href="#api-access-hpp" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3><a class="toc-backref" href="#id23">struct</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="api-access-info">
+<h4><a class="toc-backref" href="#id24">api_access_info</a><a class="headerlink" href="#api-access-info" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">api_access_info</span>
+<span class="p">{</span>
+   <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">password_hash_b64</span><span class="p">;</span>
+   <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">password_salt_b64</span><span class="p">;</span>
+   <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&gt;</span> <span class="n">allowed_apis</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="api-access">
+<h4><a class="toc-backref" href="#id25">api_access</a><a class="headerlink" href="#api-access" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">api_access</span>
+<span class="p">{</span>
+   <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">api_access_info</span> <span class="o">&gt;</span> <span class="n">permission_map</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="application-hpp">
+<h2><a class="toc-backref" href="#id26">application.hpp</a><a class="headerlink" href="#application-hpp" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3><a class="toc-backref" href="#id27">class</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>For detail information, please check: <a class="reference external" href="https://bitshares.org/doxygen/namespacegraphene_1_1app.html">graphene::app Namespace Reference</a></p>
+<p>For detail information: <a class="reference external" href="https://bitshares.org/doxygen/classgraphene_1_1app_1_1plugin.html">graphene::app::plugin Class Reference</a></p>
+<ul class="simple">
+<li>abstract_plugin</li>
+<li>application_options</li>
+<li>application</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="database-api-hpp">
+<h2><a class="toc-backref" href="#id28">database_api.hpp</a><a class="headerlink" href="#database-api-hpp" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h3><a class="toc-backref" href="#id29">struct</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="order">
+<h4><a class="toc-backref" href="#id30">order</a><a class="headerlink" href="#order" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">order</span>
+<span class="p">{</span>
+   <span class="n">string</span>                     <span class="n">price</span><span class="p">;</span>
+   <span class="n">string</span>                     <span class="n">quote</span><span class="p">;</span>
+   <span class="n">string</span>                     <span class="n">base</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="order-book">
+<h4><a class="toc-backref" href="#id31">order_book</a><a class="headerlink" href="#order-book" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">order_book</span>
+<span class="p">{</span>
+  <span class="n">string</span>                      <span class="n">base</span><span class="p">;</span>
+  <span class="n">string</span>                      <span class="n">quote</span><span class="p">;</span>
+  <span class="n">vector</span><span class="o">&lt;</span> <span class="n">order</span> <span class="o">&gt;</span>             <span class="n">bids</span><span class="p">;</span>
+  <span class="n">vector</span><span class="o">&lt;</span> <span class="n">order</span> <span class="o">&gt;</span>             <span class="n">asks</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="market-ticker">
+<h4><a class="toc-backref" href="#id32">market_ticker</a><a class="headerlink" href="#market-ticker" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">market_ticker</span>
+<span class="p">{</span>
+   <span class="n">time_point_sec</span>             <span class="n">time</span><span class="p">;</span>
+   <span class="n">string</span>                     <span class="n">base</span><span class="p">;</span>
+   <span class="n">string</span>                     <span class="n">quote</span><span class="p">;</span>
+   <span class="n">string</span>                     <span class="n">latest</span><span class="p">;</span>
+   <span class="n">string</span>                     <span class="n">lowest_ask</span><span class="p">;</span>
+   <span class="n">string</span>                     <span class="n">highest_bid</span><span class="p">;</span>
+   <span class="n">string</span>                     <span class="n">percent_change</span><span class="p">;</span>
+   <span class="n">string</span>                     <span class="n">base_volume</span><span class="p">;</span>
+   <span class="n">string</span>                     <span class="n">quote_volume</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="market-volume">
+<h4><a class="toc-backref" href="#id33">market_volume</a><a class="headerlink" href="#market-volume" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">market_volume</span>
+<span class="p">{</span>
+   <span class="n">time_point_sec</span>             <span class="n">time</span><span class="p">;</span>
+   <span class="n">string</span>                     <span class="n">base</span><span class="p">;</span>
+   <span class="n">string</span>                     <span class="n">quote</span><span class="p">;</span>
+   <span class="n">string</span>                     <span class="n">base_volume</span><span class="p">;</span>
+   <span class="n">string</span>                     <span class="n">quote_volume</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="market-trade">
+<h4><a class="toc-backref" href="#id34">market_trade</a><a class="headerlink" href="#market-trade" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">market_trade</span>
+<span class="p">{</span>
+   <span class="kt">int64_t</span>                    <span class="n">sequence</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+   <span class="n">fc</span><span class="o">::</span><span class="n">time_point_sec</span>         <span class="n">date</span><span class="p">;</span>
+   <span class="n">string</span>                     <span class="n">price</span><span class="p">;</span>
+   <span class="n">string</span>                     <span class="n">amount</span><span class="p">;</span>
+   <span class="n">string</span>                     <span class="n">value</span><span class="p">;</span>
+   <span class="n">account_id_type</span>            <span class="n">side1_account_id</span> <span class="o">=</span> <span class="n">GRAPHENE_NULL_ACCOUNT</span><span class="p">;</span>
+   <span class="n">account_id_type</span>            <span class="n">side2_account_id</span> <span class="o">=</span> <span class="n">GRAPHENE_NULL_ACCOUNT</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id7">
+<h3><a class="toc-backref" href="#id35">class</a><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>For detail information, please check: <a class="reference external" href="https://bitshares.org/doxygen/namespacegraphene_1_1app.html">graphene::app Namespace Reference</a></p>
+<ul class="simple">
+<li>database_api</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="full-account-hpp">
+<h2><a class="toc-backref" href="#id36">full_account.hpp</a><a class="headerlink" href="#full-account-hpp" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id9">
+<h3><a class="toc-backref" href="#id37">struct</a><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="full-account">
+<h4><a class="toc-backref" href="#id38">full_account</a><a class="headerlink" href="#full-account" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">full_account</span>
+<span class="p">{</span>
+   <span class="n">account_object</span>                   <span class="n">account</span><span class="p">;</span>
+   <span class="n">account_statistics_object</span>        <span class="n">statistics</span><span class="p">;</span>
+   <span class="n">string</span>                           <span class="n">registrar_name</span><span class="p">;</span>
+   <span class="n">string</span>                           <span class="n">referrer_name</span><span class="p">;</span>
+   <span class="n">string</span>                           <span class="n">lifetime_referrer_name</span><span class="p">;</span>
+   <span class="n">vector</span><span class="o">&lt;</span><span class="n">variant</span><span class="o">&gt;</span>                  <span class="n">votes</span><span class="p">;</span>
+   <span class="n">optional</span><span class="o">&lt;</span><span class="n">vesting_balance_object</span><span class="o">&gt;</span> <span class="n">cashback_balance</span><span class="p">;</span>
+   <span class="n">vector</span><span class="o">&lt;</span><span class="n">account_balance_object</span><span class="o">&gt;</span>   <span class="n">balances</span><span class="p">;</span>
+   <span class="n">vector</span><span class="o">&lt;</span><span class="n">vesting_balance_object</span><span class="o">&gt;</span>   <span class="n">vesting_balances</span><span class="p">;</span>
+   <span class="n">vector</span><span class="o">&lt;</span><span class="n">limit_order_object</span><span class="o">&gt;</span>       <span class="n">limit_orders</span><span class="p">;</span>
+   <span class="n">vector</span><span class="o">&lt;</span><span class="n">call_order_object</span><span class="o">&gt;</span>        <span class="n">call_orders</span><span class="p">;</span>
+   <span class="n">vector</span><span class="o">&lt;</span><span class="n">force_settlement_object</span><span class="o">&gt;</span>  <span class="n">settle_orders</span><span class="p">;</span>
+   <span class="n">vector</span><span class="o">&lt;</span><span class="n">proposal_object</span><span class="o">&gt;</span>          <span class="n">proposals</span><span class="p">;</span>
+   <span class="n">vector</span><span class="o">&lt;</span><span class="n">asset_id_type</span><span class="o">&gt;</span>            <span class="n">assets</span><span class="p">;</span>
+   <span class="n">vector</span><span class="o">&lt;</span><span class="n">withdraw_permission_object</span><span class="o">&gt;</span> <span class="n">withdraws</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="plugin-hpp">
+<h2><a class="toc-backref" href="#id39">plugin.hpp</a><a class="headerlink" href="#plugin-hpp" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id10">
+<h3><a class="toc-backref" href="#id40">class</a><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>For detail information: <a class="reference external" href="https://bitshares.org/doxygen/classgraphene_1_1app_1_1plugin.html">graphene::app::plugin Class Reference</a></p>
+<ul class="simple">
+<li>abstract_plugin</li>
+<li>plugin</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="util-hpp">
+<h2><a class="toc-backref" href="#id41">util.hpp</a><a class="headerlink" href="#util-hpp" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="n">boost</span><span class="o">::</span><span class="n">multiprecision</span><span class="o">::</span><span class="n">uint256_t</span> <span class="n">u256</span><span class="p">;</span>
+
+<span class="n">u256</span> <span class="nf">to256</span><span class="p">(</span> <span class="k">const</span> <span class="n">fc</span><span class="o">::</span><span class="n">uint128</span><span class="o">&amp;</span> <span class="n">t</span> <span class="p">);</span>
+<span class="n">fc</span><span class="o">::</span><span class="n">uint128</span> <span class="n">to_capped128</span><span class="p">(</span> <span class="k">const</span> <span class="n">u256</span><span class="o">&amp;</span> <span class="n">t</span> <span class="p">);</span>
+<span class="n">string</span> <span class="nf">uint128_amount_to_string</span><span class="p">(</span> <span class="k">const</span> <span class="n">fc</span><span class="o">::</span><span class="n">uint128</span><span class="o">&amp;</span> <span class="n">amount</span><span class="p">,</span> <span class="k">const</span> <span class="kt">uint8_t</span> <span class="n">precision</span> <span class="p">);</span>
+<span class="n">string</span> <span class="nf">price_to_string</span><span class="p">(</span> <span class="k">const</span> <span class="n">price</span><span class="o">&amp;</span> <span class="n">_price</span><span class="p">,</span> <span class="k">const</span> <span class="kt">uint8_t</span> <span class="n">base_precision</span><span class="p">,</span> <span class="k">const</span> <span class="kt">uint8_t</span> <span class="n">quote_precision</span><span class="p">);</span>
+<span class="n">string</span> <span class="nf">price_diff_percent_string</span><span class="p">(</span> <span class="k">const</span> <span class="n">price</span><span class="o">&amp;</span> <span class="n">old_price</span><span class="p">,</span> <span class="k">const</span> <span class="n">price</span><span class="o">&amp;</span> <span class="n">new_price</span> <span class="p">);</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="lib_wallet.html" class="btn btn-neutral float-right" title="libraries - wallet" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="lib_net.html" class="btn btn-neutral" title="Net" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright BitShares Blockchain Foundation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
