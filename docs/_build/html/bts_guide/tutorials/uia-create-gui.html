@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Creating a new UIA &mdash; BItShares Developers Portal  documentation</title>
+  <title>Creating a new UIA (GUI) &mdash; BItShares Developers Portal  documentation</title>
   
 
   
@@ -159,7 +159,7 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-      <li>Creating a new UIA</li>
+      <li>Creating a new UIA (GUI)</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -176,89 +176,120 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="creating-a-new-uia">
-<span id="creating-new-uia1"></span><h1>Creating a new UIA<a class="headerlink" href="#creating-a-new-uia" title="Permalink to this headline">¶</a></h1>
-<p>In order to create a new asset, we first need to enter our account’s
-asset page and click <cite>CREATE ASSET</cite>:</p>
-<a class="reference internal image-reference" href="../../_images/uia-create-step1.png"><img alt="Export compatible keys from Menu bar" class="align-center" src="../../_images/uia-create-step1.png" style="width: 550px;" /></a>
-<p>We will enter the asset creation page that will allow us to define the
-assets parameters.</p>
+  <div class="section" id="creating-a-new-uia-gui">
+<span id="creating-new-uia-gui"></span><h1>Creating a new UIA (GUI)<a class="headerlink" href="#creating-a-new-uia-gui" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title first">Table of Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#create-asset-feature" id="id1">Create Asset Feature</a><ul>
+<li><a class="reference internal" href="#primary-settings" id="id2">Primary Settings</a></li>
+<li><a class="reference internal" href="#description" id="id3">Description</a></li>
+<li><a class="reference internal" href="#permissions-optional" id="id4">Permissions (Optional)</a></li>
+<li><a class="reference internal" href="#flags-optional" id="id5">Flags (Optional)</a></li>
+<li><a class="reference internal" href="#the-asset-creation-fee" id="id6">The asset creation fee</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#view-existing-asset" id="id7">View existing Asset</a></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="create-asset-feature">
+<h2><a class="toc-backref" href="#id1">Create Asset Feature</a><a class="headerlink" href="#create-asset-feature" title="Permalink to this headline">¶</a></h2>
+<p>Go to <strong>[Settings]</strong> - <strong>[Create Asset]</strong></p>
+<ol class="arabic simple">
+<li>Click [CREATE ASSET]</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/uia-ui-1.png"><img alt="BitShares" class="align-center" src="../../_images/uia-ui-1.png" style="width: 150px;" /></a>
+<a class="reference internal image-reference" href="../../_images/uia-ui-2.png"><img alt="BitShares" class="align-center" src="../../_images/uia-ui-2.png" style="width: 600px;" /></a>
 <div class="section" id="primary-settings">
-<h2>Primary Settings<a class="headerlink" href="#primary-settings" title="Permalink to this headline">¶</a></h2>
-<p>The most important settings are listed in the primary settings.</p>
-<a class="reference internal image-reference" href="../../_images/uia-create-flags-marketfees.png"><img alt="Asset Flags and Market Fees" class="align-center" src="../../_images/uia-create-flags-marketfees.png" style="width: 350px;" /></a>
-<p>The <strong>Symbol</strong> defined here will be reserved in the system for your assets.
-One the asset is created, the symbol cannot be changed again!</p>
+<h3><a class="toc-backref" href="#id2">Primary Settings</a><a class="headerlink" href="#primary-settings" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../../_images/uia-ui-3-primary.png"><img alt="BitShares" class="align-center" src="../../_images/uia-ui-3-primary.png" style="width: 600px;" /></a>
+<p>To allow transaction fees to be paid in the native asset, a core exchange rate is required at which a customer can implicitly trade the UIA into BTS from the asset’s <em>fee pool</em>.</p>
+<p>This also requires that the fee pool is funded (e.g. by the issuer). Since all prices in BitShares are internally represented as <em>fractions</em> (i.e. a/b), we need to define a ratio between quote (the UIA) and base (BTS), i.e. the numerator and denominator for price = a/b</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Symbol:</th><td class="field-body">The Symbol defined here will be reserved in the system for your assets. One the asset is created, the symbol cannot be changed again.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Maximum Supply:</th><td class="field-body">This is also a permanent setting and denotes the maximum amount of shares that can ever exist at the same time.       Please consult the Networks fees in the explorer!</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Number of Decimal Points:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">This is used to denoted the number of decimal places. A 0 will result in an asset that cannot be separated below integer amounts (e.g. 1, 2, ..)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">SmartCoin:</th><td class="field-body">–</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Quote Asset Amount:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Core exchange rate</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Base Asset Amount:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">Core exchange rate</td>
+</tr>
+</tbody>
+</table>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Smybols with less than <strong>5</strong> characters are very expense.
-Please consult the Networks fees in the explorer!</p>
+<p class="last">Symbols with less than 5 characters are very expense. Please consult the Networks fees in the explorer!</p>
 </div>
-<p>The <strong>maximum supply</strong> is also a permanent setting and denotes the maximum
-amount of shares that can ever exist at the same time.</p>
-<p>The <em>precision</em> is used to denoted the number of decimal places. A <cite>0</cite>
-will result in an asset that cannot be separated below integer amounts
-(e.g. 1, 2, ..)</p>
-<p>To allow transaction fees to be paid in the native asset, a core
-exchange rate is required at which a customer can implicitly trade the
-UIA into BTS from the asset’s <em>fee pool</em>. This also requires that the
-fee pool is funded (e.g. by the issuer). Since all prices in BitShares
-are internally represented as <em>fractions</em> (i.e. <cite>a/b</cite>), we need to
-define a ratio between quote (the UIA) and base (BTS), i.e. the
-numerator and denominator for <cite>price = a/b</cite>.</p>
-<p>Finally, a <strong>description</strong> can be used to let everyone know the purpose
-of the asset, or an internet address for further information.</p>
+</div>
+<div class="section" id="description">
+<h3><a class="toc-backref" href="#id3">Description</a><a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../../_images/uia-ui-4-description.png"><img alt="BitShares" class="align-center" src="../../_images/uia-ui-4-description.png" style="width: 600px;" /></a>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body">description can be used to let everyone know the purpose of the asset, or an internet address for further information.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Short Name:</th><td class="field-body">Short Name is also a permanent setting and denotes the maximum amount.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Preferred Market Pairing:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">–</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Asset Name:</th><td class="field-body">–</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="permissions-optional">
-<h2>Permissions (optional)<a class="headerlink" href="#permissions-optional" title="Permalink to this headline">¶</a></h2>
-<p>Even though the default settings should be fine for most UIAs, we have
-the option to <strong>opt-out</strong> of some available features. (By default, or
-permissions are <em>enabled</em>).</p>
+<h3><a class="toc-backref" href="#id4">Permissions (Optional)</a><a class="headerlink" href="#permissions-optional" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../../_images/uia-ui-5-permissions.png"><img alt="BitShares" class="align-center" src="../../_images/uia-ui-5-permissions.png" style="width: 600px;" /></a>
+<p>Even though the default settings should be fine for most UIAs, we have the option to opt-out of some available features. (By default, or permissions are enabled).</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Once a permission has been set to <em>false</em>, the permission
-cannot be reactivated!</p>
+<p class="last">Once a permission has been set to false, the permission cannot be reactivated!</p>
 </div>
-<a class="reference internal image-reference" href="../../_images/uia-create-permissions.png"><img alt="Permissions" class="align-center" src="../../_images/uia-create-permissions.png" style="width: 350px;" /></a>
 <p>We have the options to opt-out of:</p>
 <ul class="simple">
 <li>Enabling Market Fees</li>
 <li>Requiring holders to be white-listed</li>
-<li>Allow Issuer to withdraw from any account</li>
-<li>Require all transfers to be approved by the issuer</li>
-<li>Allow to disable confidential transactions</li>
+<li>Issuer may transfer asset back to himself</li>
+<li>Issuer must approve all transactions</li>
+<li>Disable confidential transactions</li>
 </ul>
-<p>Note that setting these permissions does not imply that the features is
-enabled. To do so, we would also require to enable the corresponding
-flag(s). (See below)</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">that setting these permissions does not imply that the features is enabled. To do so, we would also require to enable the corresponding flag(s). (See below)</p>
 </div>
-<div class="section" id="flags-and-market-fees-optional">
-<h2>Flags and Market Fees (optional)<a class="headerlink" href="#flags-and-market-fees-optional" title="Permalink to this headline">¶</a></h2>
-<p>The flags are used to <em>actually enable</em> a particular features, such as
-market fees or confidential transfers.</p>
-<a class="reference internal image-reference" href="../../_images/uia-create-primary-settings.png"><img alt="Primary Settings" class="align-center" src="../../_images/uia-create-primary-settings.png" style="width: 350px;" /></a>
-<p>If we have set the permission to have a market fee, we can enable the
-market fees here and set a percentage and max. fee.</p>
-<p>We here also can enable the requirements for users to be white-listed,
-enable confidential transfers and give the issuer the power to withdraw
-its asset from customer accounts.</p>
 </div>
-<div class="section" id="issuing-shares">
-<h2>Issuing Shares<a class="headerlink" href="#issuing-shares" title="Permalink to this headline">¶</a></h2>
-<p>After creating the asset, no shares will exist until the issuer <em>issues</em>
-them:</p>
-<a class="reference internal image-reference" href="../../_images/uia-create-issue-1.png"><img alt="Issue shares" class="align-center" src="../../_images/uia-create-issue-1.png" style="width: 350px;" /></a>
+<div class="section" id="flags-optional">
+<h3><a class="toc-backref" href="#id5">Flags (Optional)</a><a class="headerlink" href="#flags-optional" title="Permalink to this headline">¶</a></h3>
+<p>The flags are used to actually enable a particular features, such as market fees or confidential transfers.</p>
+<p>If we have set the permission to have a market fee, we can enable the market fees here and set a percentage and max. fee.</p>
+<p>We here also can enable the requirements for users to be white-listed, enable confidential transfers and give the issuer the power to withdraw its asset from customer accounts.</p>
+<a class="reference internal image-reference" href="../../_images/uia-ui-6-flag.png"><img alt="BitShares" class="align-center" src="../../_images/uia-ui-6-flag.png" style="width: 600px;" /></a>
 </div>
 <div class="section" id="the-asset-creation-fee">
-<h2>The asset creation fee<a class="headerlink" href="#the-asset-creation-fee" title="Permalink to this headline">¶</a></h2>
-<p>The asset creation fee depends on the length of your symbol. 3 Character
-Symbols are the shortest and are rather expensive while symbols with 5
-or more characters are significantly cheaper.</p>
-<p>50% of the asset creation fee are used to pre-fill the assets fee pool.
-From the other 50%, 20% go to the network and 80% go to the referral
-program. This means, that if you are a life-time member, you get back
-40% of the asset creation fee after the vesting period (currently 90
-days).</p>
+<h3><a class="toc-backref" href="#id6">The asset creation fee</a><a class="headerlink" href="#the-asset-creation-fee" title="Permalink to this headline">¶</a></h3>
+<p>The asset creation fee depends on the length of your symbol. 3 Character Symbols are the shortest and are rather expensive while symbols with 5 or more characters are significantly cheaper.</p>
+<p>50% of the asset creation fee are used to pre-fill the assets fee pool. From the other 50%, 20% go to the network and 80% go to the referral program. This means, that if you are a life-time member, you get back 40% of the asset creation fee after the vesting period (currently 90 days).</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="view-existing-asset">
+<h2><a class="toc-backref" href="#id7">View existing Asset</a><a class="headerlink" href="#view-existing-asset" title="Permalink to this headline">¶</a></h2>
+<p>Go to <strong>[Explore]</strong> - <strong>[Asset]</strong> - <strong>[User Issues Assets]</strong></p>
+<a class="reference internal image-reference" href="../../_images/uia-ui-7.png"><img alt="BitShares" class="align-center" src="../../_images/uia-ui-7.png" style="width: 600px;" /></a>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>

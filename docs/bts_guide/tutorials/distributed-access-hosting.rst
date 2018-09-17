@@ -20,15 +20,13 @@ BitShares node setup
 
 Once you have a full node setup, you can allow BitShares shareholders
 secure access to your server to trade and check their accounts by
-following these steps. >A DNS Alias (CNAME) is required to point to your
-server ip address. >See `dyn.com <http://dyn.com>`__ for DNS Alias
-setup. >You may have to wait a few days for the DNS to work through the
-internet. >Please change `altcap.io <http://altcap.io>`__ to your DNS
-alias in the examples below.
+following these steps. 
 
-**Table of Contents**
+* A DNS Alias (CNAME) is required to point to your server ip address. 
+* See `dyn.com <http://dyn.com>`__ for DNS Alias setup. 
+* You may have to wait a few days for the DNS to work through the internet. 
+* Please change `altcap.io <http://altcap.io>`__ to your DNS alias in the examples below.
 
-[TOC]
 
 Create a New User
 ---------------------------

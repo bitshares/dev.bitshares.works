@@ -180,11 +180,7 @@
 <span id="committee-propose-action"></span><h1>How to Propose Committee Actions<a class="headerlink" href="#how-to-propose-committee-actions" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="setting-smartcoin-parameters">
 <h2>Setting Smartcoin Parameters<a class="headerlink" href="#setting-smartcoin-parameters" title="Permalink to this headline">¶</a></h2>
-<p>This paragraph shows how the committee account can act using the proposed
-transaction system. Specifically, as an example I’m using the creation of
-BitShares proposal 1.10.21, a proposal to update a committee-controlled BitAsset
-to reduce <code class="docutils literal notranslate"><span class="pre">maximum_force_settlement_volume</span></code> for asset <code class="docutils literal notranslate"><span class="pre">CNY</span></code> from 2000 (20%)
-to 200 (2%).</p>
+<p>This section shows how the committee account can act using the proposed transaction system. Specifically, as an example I’m using the creation of BitShares proposal 1.10.21, a proposal to update a committee-controlled BitAsset to reduce <code class="docutils literal notranslate"><span class="pre">maximum_force_settlement_volume</span></code> for asset <code class="docutils literal notranslate"><span class="pre">CNY</span></code> from 2000 (20%) to 200 (2%).</p>
 <p>First check the asset to see what its current configuration is:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_asset</span> <span class="n">CNY</span>
 <span class="go">{</span>
@@ -210,25 +206,16 @@ to 200 (2%).</p>
 <span class="go">}</span>
 </pre></div>
 </div>
-<p>Then do <code class="docutils literal notranslate"><span class="pre">update_bitasset</span></code> to update the options. Note we copy-paste
-other fields from above; there is no way to selectively update only one
-field.</p>
+<p>Then do <code class="docutils literal notranslate"><span class="pre">update_bitasset</span></code> to update the options. Note: we copy-paste other fields from above; there is no way to selectively update only one field.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">update_bitasset</span> <span class="s2">&quot;CNY&quot;</span> <span class="p">{</span><span class="s2">&quot;feed_lifetime_sec&quot;</span> <span class="p">:</span> <span class="mi">86400</span><span class="p">,</span> <span class="s2">&quot;minimum_feeds&quot;</span> <span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="s2">&quot;force_settlement_delay_sec&quot;</span> <span class="p">:</span> <span class="mi">86400</span><span class="p">,</span> <span class="s2">&quot;force_settlement_offset_percent&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;maximum_force_settlement_volume&quot;</span> <span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="s2">&quot;short_backing_asset&quot;</span> <span class="p">:</span> <span class="s2">&quot;1.3.0&quot;</span><span class="p">,</span> <span class="s2">&quot;extensions&quot;</span> <span class="p">:</span> <span class="p">[]}</span> <span class="n">false</span>
 </pre></div>
 </div>
-<p>If this was a privatized BitAsset (i.e. a user-issued asset with feed), you
-could simply set the <code class="docutils literal notranslate"><span class="pre">broadcast</span></code> parameter of the above command to <code class="docutils literal notranslate"><span class="pre">true</span></code>
-and be done.</p>
-<p>However this is a committee-issued asset, so we have to use a proposed
-transaction to update it. To create the proposed transaction, we use the
-transaction builder API. Create a transaction builder transaction with
-<code class="docutils literal notranslate"><span class="pre">begin_builder_transaction</span></code> command:</p>
+<p>If this was a privatized BitAsset (i.e. a user-issued asset with feed), you could simply set the <code class="docutils literal notranslate"><span class="pre">broadcast</span></code> parameter of the above command to <code class="docutils literal notranslate"><span class="pre">true</span></code> and be done.</p>
+<p>However this is a committee-issued asset, so we have to use a proposed transaction to update it. To create the proposed transaction, we use the transaction builder API. Create a transaction builder transaction with <code class="docutils literal notranslate"><span class="pre">begin_builder_transaction</span></code> command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">begin_builder_transaction</span>
 </pre></div>
 </div>
-<p>This returns a numeric handle used to refer to the transaction being
-built. In the following commands you need to replace <code class="docutils literal notranslate"><span class="pre">$HANDLE</span></code> with
-the number returned by <code class="docutils literal notranslate"><span class="pre">begin_builder_transaction</span></code> above.</p>
+<p>This returns a numeric handle used to refer to the transaction being built. In the following commands you need to replace <code class="docutils literal notranslate"><span class="pre">$HANDLE</span></code> with the number returned by <code class="docutils literal notranslate"><span class="pre">begin_builder_transaction</span></code> above.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; add_operation_to_builder_transaction $HANDLE [12,{&quot;fee&quot;: {&quot;amount&quot;:
 100000000, &quot;asset_id&quot;: &quot;1.3.0&quot;}, &quot;issuer&quot;: &quot;1.2.0&quot;, &quot;asset_to_update&quot;:
 &quot;1.3.113&quot;, &quot;new_options&quot;: { &quot;feed_lifetime_sec&quot;: 86400, &quot;minimum_feeds&quot;: 7,
@@ -241,8 +228,7 @@ the number returned by <code class="docutils literal notranslate"><span class="p
 <p>The <code class="docutils literal notranslate"><span class="pre">propose_builder_transaction</span></code> command is broken and deprecated.
 You need to recompile with <a class="reference external" href="https://github.com/cryptonomex/graphene/commit/7a5c5c476d9762cbba1d745447191523ca5cd601">this
 patch</a>
-in order to use the new <code class="docutils literal notranslate"><span class="pre">propose_builder_transaction2</span></code> command which
-allows you to set the proposing account.</p>
+in order to use the new <code class="docutils literal notranslate"><span class="pre">propose_builder_transaction2</span></code> command which allows you to set the proposing account.</p>
 <p>Then set fees, sign and broadcast the transaction:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; set_fees_on_builder_transaction $HANDLE BTS
 &gt;&gt;&gt; sign_builder_transaction $HANDLE true
@@ -250,12 +236,8 @@ allows you to set the proposing account.</p>
 </div>
 <p>Notes:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">propose_builder_transaction2</span></code> modifies builder transaction in
-place. It is not idempotent, running it once will get you a proposal
-to execute the transaction, running it twice will cause you to get a
-proposal to propose the transaction!</li>
-<li>Remember to transfer enough to cover the fee to committee account and
-set review period to at least <code class="docutils literal notranslate"><span class="pre">committee_proposal_review_period</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">propose_builder_transaction2</span></code> modifies builder transaction in place. It is not idempotent, running it once will get you a proposal to execute the transaction, running it twice will cause you to get a proposal to propose the transaction!</li>
+<li>Remember to transfer enough to cover the fee to committee account and set review period to at least <code class="docutils literal notranslate"><span class="pre">committee_proposal_review_period</span></code></li>
 <li>Much of this could be automated by a better wallet command.</li>
 </ul>
 <div class="line-block">

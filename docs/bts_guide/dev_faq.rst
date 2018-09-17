@@ -79,6 +79,9 @@ Each operation has a defined evaluator that checks for preconditions
              void_result do_apply( const transfer_operation& o );
        }
 
+.. note::  See a list of :ref:`System Components - Evaluators <lib-evaluators>` information.	   
+	   
+	   
 .. _dev-faq6:
 
 How do new clients bootstrap into the network?
@@ -168,10 +171,8 @@ Current 3 seconds, configurable by chain parameters.
 What is the average size in Bytes of a Bitshares transaction?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Average wire size of operations is ~30 bytes.
-Average mem size of operations is ~100 bytes.
-https://github.com/cryptonomex/graphene/blob/master/programs/size_checker/main.cpp
-
+* Average wire size of operations is ~30 bytes.
+* Average mem size of operations is ~100 bytes.
 
   
 .. _dev-faq17:
@@ -180,8 +181,8 @@ What is the standard Bitshares address structure and format?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 address = 'BTS'+base58(ripemd(sha512(compressed_pub)))  (checksum obviated)
-But addresses are not used directly, instead you have an account (that can be controlled by one or more address, pubkey or another account).
-https://bitshares.org/technology/dynamic-account-permissions/
+
+But addresses are not used directly, instead you have an account (that can be controlled by one or more address, pubkey or another account). ** Read more about `Dynamic Account Permissions <https://bitshares.org/technology/dynamic-account-permissions/>`_ 
 
 .. _dev-faq18:
 
@@ -201,10 +202,7 @@ Example of operations are:
 * limit_order_create_operation
 * asset_issue_operation
 
-Full list
-https://github.com/cryptonomex/graphene/blob/master/libraries/chain/include/graphene/chain/protocol/operations.hpp
-
-
+Full list : :ref:`System component - Operations <lib-operations>`
 
 
 

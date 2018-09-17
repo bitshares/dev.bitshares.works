@@ -84,7 +84,8 @@ You can find each **Public key** and **Private key** on the Permissions page.
         :align: center
 
 |
-		
+	
+	
 How to find each private key
 ---------------------------------
 
@@ -111,6 +112,9 @@ How to find each private key
  - Click the [**SHOW**] button. You will find your Private key under the Public key.  
 
 |
+
+
+.. _howto-change-cloud-wallet-pwd:
 		
 How to change Cloud wallet password
 ------------------------------------
