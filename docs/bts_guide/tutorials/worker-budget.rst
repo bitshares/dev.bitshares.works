@@ -90,8 +90,9 @@ and pay them one hours worth of pay in order or # votes.
 References:
 ~~~~~~~~~~~~~~~~
 
-https://github.com/cryptonomex/graphene/blob/4c09d6b8ed350ff5c7546e2c3fd15d0e6699daf2/libraries/chain/db_maint.cpp
-		
+- `The Blockchain Worker System <https://bitshares.org/doxygen/group__workers.html>`_ (*open a doxygen documentation)
+
+
 |
 
 --------------------

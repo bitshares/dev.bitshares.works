@@ -1,5 +1,5 @@
 
-.. _privbta:
+.. _privbta-cli:
 
 Privatized BitAssets
 =======================
@@ -12,7 +12,10 @@ Some entrepreneurs may want to experiment with SmartCoins that always trade at e
 
 Preparations
 ---------------------
-(add a link to *dev.bitshares.works* )
+
+* :ref:`Asset FAQ <asset-faq-index>`
+* :ref:`How can I create a UIA manually (CLI)? <uia-create-manual>`
+* :ref:`How can I create a MPA manually (CLI)? <mpa-create-manual>`
 
 
 Parameters
@@ -44,8 +47,5 @@ Producing a Feed
 We have a distinct tutorial that describes how feed are can be published.
  
  
-|
-
-|
 
 |

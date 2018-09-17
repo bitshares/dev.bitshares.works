@@ -26,6 +26,7 @@ Questions and Answers for **End Users** and **Developers**.
 
 **Protocol**
 
+* :ref:`What types of protocols BitShares has?  <lib-protocols>`
 * :ref:`dev-faq2`
 * :ref:`dev-faq3`
 * :ref:`dev-faq11`
@@ -33,6 +34,8 @@ Questions and Answers for **End Users** and **Developers**.
 **Data Structures**
 
 * :ref:`dev-faq12`
+* :ref:`How each block is constructed and what kinds of elements are creating the block?   <lib-block>` 
+* :ref:`What types of objects and the elements BitShares has? <lib-objects>`
 
 **Public Key System**
 
@@ -59,27 +62,31 @@ System Components
 Accounts
 -------------------------------------------------------
 
-* :ref:`BitShares Account <bts-accounts>`
+* :ref:`Where can I read about the BitShares Account information?<bts-accounts>`
 
+  - Include: **Membership, Fees, Permissions, Public Key and Private key, Muiti-Signature, Voting, Referral Program, and Vesting Balances**
 
 Installation
 --------------------------------------------------------
 
-* Use :ref:`Ubuntu Linux <build-ubuntu>`
-* Use :ref:`OS X <build-osx>`
-* Use :ref:`Windows <build-windows>`
-* Use :ref:`Windows - CLI Tools <cli-tool>`
-* Use :ref:`Windows Subsystem for Linux <build-wsl>`   
+* Which development environment would be possible to install BitShares-Core?
+  
+  * Use :ref:`Ubuntu Linux <build-ubuntu>`
+  * Use :ref:`OS X <build-osx>`
+  * Use :ref:`Windows <build-windows>`
+  * Use :ref:`Windows - CLI Tools <cli-tool>`
+  * Use :ref:`Windows Subsystem for Linux <build-wsl>`   
+  
 * :ref:`What is the System Requirements? <system-requirements-node>`
 
 
 
 APIs
 ---------------------------------------------------------
-* :ref:`API Restrictions <api-access-json>`
+* :ref:`What's API Restrictions? How to use? <api-access-json>`
 * :ref:`How to access the API via HTTP <api-access-via-http>`
-* :ref:`Use Remote Procedure Calls (RPC) <rpc>`
-* :ref:`Use Websocket Call <websocket-calls>`
+* :ref:`How to use Remote Procedure Calls (RPC) <rpc>`
+* :ref:`How to use Websocket Call <websocket-calls>`
 * `Where to find the doxygen documentation <https://bitshares.org/doxygen/index.html>`_
 * :ref:`How defined BitShares Objects and IDs <objects-ids>`
 * :ref:`api-core-faq-1`
@@ -89,7 +96,7 @@ APIs
 * :ref:`api-core-faq-5`
 * :ref:`api-core-faq-6`
 
-
+.. _asset-faq-index:
 
 Assets
 -------------------------------------------------------

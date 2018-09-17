@@ -256,6 +256,7 @@
 </ul>
 <p><strong>Protocol</strong></p>
 <ul class="simple">
+<li><a class="reference internal" href="../components/lib_protocols.html#lib-protocols"><span class="std std-ref">What types of protocols BitShares has?</span></a></li>
 <li><a class="reference internal" href="#dev-faq2"><span class="std std-ref">Are there any special affordances made for privacy?</span></a></li>
 <li><a class="reference internal" href="#dev-faq3"><span class="std std-ref">Does the protocol provide mechanisms for overlay protocols to interact such as OR_RETURN?</span></a></li>
 <li><a class="reference internal" href="#dev-faq11"><span class="std std-ref">Is this done via a gossip protocol or through a federate relay?</span></a></li>
@@ -263,6 +264,8 @@
 <p><strong>Data Structures</strong></p>
 <ul class="simple">
 <li><a class="reference internal" href="#dev-faq12"><span class="std std-ref">What data structures are used in the blockchain?</span></a></li>
+<li><a class="reference internal" href="../components/lib_block.html#lib-block"><span class="std std-ref">How each block is constructed and what kinds of elements are creating the block?</span></a></li>
+<li><a class="reference internal" href="../components/lib_objects.html#lib-objects"><span class="std std-ref">What types of objects and the elements BitShares has?</span></a></li>
 </ul>
 <p><strong>Public Key System</strong></p>
 <ul class="simple">
@@ -286,27 +289,33 @@
 <div class="section" id="accounts">
 <h2>Accounts<a class="headerlink" href="#accounts" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference internal" href="accounts/bts_account.html#bts-accounts"><span class="std std-ref">BitShares Account</span></a></li>
+<li><a class="reference internal" href="accounts/bts_account.html#bts-accounts"><span class="std std-ref">Where can I read about the BitShares Account information?</span></a><ul>
+<li>Include: <strong>Membership, Fees, Permissions, Public Key and Private key, Muiti-Signature, Voting, Referral Program, and Vesting Balances</strong></li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
+<li>Which development environment would be possible to install BitShares-Core?<ul>
 <li>Use <a class="reference internal" href="../development/installation/build_ubuntu.html#build-ubuntu"><span class="std std-ref">Ubuntu Linux</span></a></li>
 <li>Use <a class="reference internal" href="../development/installation/build_osx.html#build-osx"><span class="std std-ref">OS X</span></a></li>
 <li>Use <a class="reference internal" href="../development/installation/build_windows.html#build-windows"><span class="std std-ref">Windows</span></a></li>
 <li>Use <a class="reference internal" href="../development/installation/windows_cli_tool.html#cli-tool"><span class="std std-ref">Windows - CLI Tools</span></a></li>
 <li>Use <a class="reference internal" href="../development/installation/wsl.html#build-wsl"><span class="std std-ref">Windows Subsystem for Linux</span></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="../development/apps/node.html#system-requirements-node"><span class="std std-ref">What is the System Requirements?</span></a></li>
 </ul>
 </div>
 <div class="section" id="apis">
 <h2>APIs<a class="headerlink" href="#apis" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference internal" href="../api/restrictions.html#api-access-json"><span class="std std-ref">API Restrictions</span></a></li>
+<li><a class="reference internal" href="../api/restrictions.html#api-access-json"><span class="std std-ref">What’s API Restrictions? How to use?</span></a></li>
 <li><a class="reference internal" href="../api/restrictions.html#api-access-via-http"><span class="std std-ref">How to access the API via HTTP</span></a></li>
-<li><a class="reference internal" href="../api/rpc.html#rpc"><span class="std std-ref">Use Remote Procedure Calls (RPC)</span></a></li>
-<li><a class="reference internal" href="../api/websocket.html#websocket-calls"><span class="std std-ref">Use Websocket Call</span></a></li>
+<li><a class="reference internal" href="../api/rpc.html#rpc"><span class="std std-ref">How to use Remote Procedure Calls (RPC)</span></a></li>
+<li><a class="reference internal" href="../api/websocket.html#websocket-calls"><span class="std std-ref">How to use Websocket Call</span></a></li>
 <li><a class="reference external" href="https://bitshares.org/doxygen/index.html">Where to find the doxygen documentation</a></li>
 <li><a class="reference internal" href="../api/objects_ids.html#objects-ids"><span class="std std-ref">How defined BitShares Objects and IDs</span></a></li>
 <li><a class="reference internal" href="apis-faq.html#api-core-faq-1"><span class="std std-ref">How do I get the network_add_nodes command to work? Why is it so complicated?</span></a></li>
@@ -318,7 +327,7 @@
 </ul>
 </div>
 <div class="section" id="assets">
-<h2>Assets<a class="headerlink" href="#assets" title="Permalink to this headline">¶</a></h2>
+<span id="asset-faq-index"></span><h2>Assets<a class="headerlink" href="#assets" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><a class="reference internal" href="#asset-faq4"><span class="std std-ref">What happens to the asset creation fee?</span></a></li>
 <li><a class="reference internal" href="#asset-faq1"><span class="std std-ref">Can I change x after creation of the asset</span></a></li>
@@ -703,6 +712,10 @@ No mixing, No CoinJoin.</p>
    <span class="p">}</span>
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">See a list of <a class="reference internal" href="../components/lib_evalustors.html#lib-evaluators"><span class="std std-ref">System Components - Evaluators</span></a> information.</p>
+</div>
 </div>
 <div class="section" id="how-do-new-clients-bootstrap-into-the-network">
 <span id="dev-faq6"></span><h4>How do new clients bootstrap into the network?<a class="headerlink" href="#how-do-new-clients-bootstrap-into-the-network" title="Permalink to this headline">¶</a></h4>
@@ -765,15 +778,15 @@ Example objects::</p>
 </div>
 <div class="section" id="what-is-the-average-size-in-bytes-of-a-bitshares-transaction">
 <span id="dev-faq14"></span><h4>What is the average size in Bytes of a Bitshares transaction?<a class="headerlink" href="#what-is-the-average-size-in-bytes-of-a-bitshares-transaction" title="Permalink to this headline">¶</a></h4>
-<p>Average wire size of operations is ~30 bytes.
-Average mem size of operations is ~100 bytes.
-<a class="reference external" href="https://github.com/cryptonomex/graphene/blob/master/programs/size_checker/main.cpp">https://github.com/cryptonomex/graphene/blob/master/programs/size_checker/main.cpp</a></p>
+<ul class="simple">
+<li>Average wire size of operations is ~30 bytes.</li>
+<li>Average mem size of operations is ~100 bytes.</li>
+</ul>
 </div>
 <div class="section" id="what-is-the-standard-bitshares-address-structure-and-format">
 <span id="dev-faq17"></span><h4>What is the standard Bitshares address structure and format?<a class="headerlink" href="#what-is-the-standard-bitshares-address-structure-and-format" title="Permalink to this headline">¶</a></h4>
-<p>address = ‘BTS’+base58(ripemd(sha512(compressed_pub)))  (checksum obviated)
-But addresses are not used directly, instead you have an account (that can be controlled by one or more address, pubkey or another account).
-<a class="reference external" href="https://bitshares.org/technology/dynamic-account-permissions/">https://bitshares.org/technology/dynamic-account-permissions/</a></p>
+<p>address = ‘BTS’+base58(ripemd(sha512(compressed_pub)))  (checksum obviated)</p>
+<p>But addresses are not used directly, instead you have an account (that can be controlled by one or more address, pubkey or another account). ** Read more about <a class="reference external" href="https://bitshares.org/technology/dynamic-account-permissions/">Dynamic Account Permissions</a></p>
 </div>
 <div class="section" id="what-public-key-system-is-used-if-elliptic-curve-then-what-is-the-curve">
 <span id="dev-faq18"></span><h4>What public key system is used? If elliptic curve, then what is the curve?<a class="headerlink" href="#what-public-key-system-is-used-if-elliptic-curve-then-what-is-the-curve" title="Permalink to this headline">¶</a></h4>
@@ -788,8 +801,7 @@ Example of operations are:</p>
 <li>limit_order_create_operation</li>
 <li>asset_issue_operation</li>
 </ul>
-<p>Full list
-<a class="reference external" href="https://github.com/cryptonomex/graphene/blob/master/libraries/chain/include/graphene/chain/protocol/operations.hpp">https://github.com/cryptonomex/graphene/blob/master/libraries/chain/include/graphene/chain/protocol/operations.hpp</a></p>
+<p>Full list : <a class="reference internal" href="../components/lib_operations.html#lib-operations"><span class="std std-ref">System component - Operations</span></a></p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>

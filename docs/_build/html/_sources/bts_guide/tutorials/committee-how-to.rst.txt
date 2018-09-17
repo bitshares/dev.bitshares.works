@@ -155,7 +155,7 @@ Note that we now use ``active_approvals_to_remove`` instead of ``active_approval
 How Committee Proposes a Change in Fee
 =========================================
 
-Create an Proposal
+Create a Proposal
 ---------------------
 
 Let's assume we want to propose a new fee for the account creation operation. We
