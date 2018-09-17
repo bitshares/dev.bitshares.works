@@ -4,7 +4,7 @@
 Publishing a Feed
 ==========================
 
-How to test the publishing of price feeds
+How to publish a price feed
 ----------------------------------------------
 
 A price feed operation takes the following form:

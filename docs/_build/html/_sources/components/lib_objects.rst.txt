@@ -2,7 +2,7 @@
 .. _lib-objects:
 
 *********************
-Object Elements
+Objects and Elements
 *********************
 
 *BitShares Core - graphene::chain*

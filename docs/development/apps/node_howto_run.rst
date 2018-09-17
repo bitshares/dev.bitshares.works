@@ -46,6 +46,7 @@ Note, that the full node needs to synchronize the blockchain with the network fi
 
 |
 
+.. _howto-connect-own-full-node-gui:
 
 Connect to your own Full Node (GUI)
 =======================================

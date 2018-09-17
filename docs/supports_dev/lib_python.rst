@@ -27,43 +27,6 @@ Tools
 
 
 
-.. code-block:: python
-   :linenos:
-   :emphasize-lines: 3,5
-
-   def some_function():
-       interesting = False
-       print 'This line is highlighted.'
-       print 'This one is not...'
-       print '...but this one is.'
-
-	
-
-.. code-block:: json
-    :caption: Code Blocks can have captions.
-
-    {
-    "windows": [
-        {
-        "panes": [
-            {
-            "shell_command": [
-                "echo 'did you know'",
-                "echo 'you can inline'"
-            ]
-            },
-            {
-            "shell_command": "echo 'single commands'"
-            },
-            "echo 'for panes'"
-        ],
-        "window_name": "long form"
-        }
-    ],
-    "session_name": "shorthands"
-    }
-
-
 	
 |
 

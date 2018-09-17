@@ -5,7 +5,7 @@ Closing/Settling a Prediction Market
 ========================================
 
 All the issuer needs to do is publish a valid price feed for the asset. 
-The `global_settle` option will be set automatically and borrow positions can settle at the price feed. 
+The ``global_settle`` option will be set automatically and borrow positions can settle at the price feed. 
 
 Python Script
 ----------------

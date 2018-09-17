@@ -4,6 +4,13 @@
 Creating a Prediction Market
 ==============================
 
+
+.. contents:: Table of Contents
+   :local:
+   
+-------	
+		
+		
 Settings
 -------------
 
@@ -74,9 +81,8 @@ need to set the options to:::
 Other Accounts
 ^^^^^^^^^^^^^^^^^^
 
-Similar to :doc:`../user/privbta`, the feed can be also published by a arbitrary set of accounts. It is important to understand that in order to settle a prediction market, only **one price feed** is required.
-Hence, anyone in the list of allowed settlers can settle the market and no consensus needs to be reached. Alternatively, if you want to settle a market only if several accounts can reach a consensus, a new resulution account can be created that uses :doc:`hierarchical multi-signature
-<../user/account-permissions>` similar to the `committee-account`.
+Similar to :ref:`privbta-cli` , the feed can be also published by a arbitrary set of accounts. It is important to understand that in order to settle a prediction market, only **one price feed** is required.
+Hence, anyone in the list of allowed settlers can settle the market and no consensus needs to be reached. Alternatively, if you want to settle a market only if several accounts can reach a consensus, a new resulution account can be created that uses :ref:`<bts-multi-sign>` similar to the ``committee-account``.
 
 The list of settlement price producers can be defined with:
 

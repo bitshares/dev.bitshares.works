@@ -114,7 +114,7 @@ signed_block_with_info
 ----------------------------
 
 
-Block (Detaied image)
+Block (Detailed image)
 ===========================
 
 .. image:: ../../_images/structures/block_structure_sv1.png
@@ -122,7 +122,12 @@ Block (Detaied image)
         :width: 700px
         :align: center
 
-
+|
+		
+.. image:: ../../_images/structures/block_structure_detail1.png
+        :alt: BitShares Architecture
+        :width: 700px
+        :align: center
 
 
 
