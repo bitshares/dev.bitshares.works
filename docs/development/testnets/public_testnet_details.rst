@@ -5,7 +5,7 @@
 Quick Start Guide - Public Testnet
 *************************************
 
-The BitShares Open Public Testnets has been deployed and is fully functional for anyone to use and is shared among developers. All developers take the opportunity to construct a tutorial.
+The BitShares Open Public Testnet has been deployed and is fully functional for anyone to use and is shared among developers. All developers take the opportunity to construct a tutorial.
 
 
 .. contents:: Table of Contents
@@ -13,7 +13,7 @@ The BitShares Open Public Testnets has been deployed and is fully functional for
    
 -------
 
-Use the UI Wallet on Public Testnet
+Use a UI Wallet on Public Testnet
 =======================================
 
 - Go to a Web Wallet - Public testnet: (http://testnet.bitshares.eu/) 
@@ -21,22 +21,22 @@ Use the UI Wallet on Public Testnet
    - Faucet: (https://faucet.testnet.bitshares.eu/)
    - Go to [Setting] menu - [Faucet] and set the above Faucet address 
 - Create an account
-   - [CREATE ACCOUNT] button is for a CLOUD Wallet 
-   - [advanced form] button is for a LOCAL Wallet
+   - For a CLOUD Wallet: Use a [CREATE ACCOUNT] button
+   - For a LOCAL Wallet: Use an [advanced form] button
 - Receive Testnet Cote asset *TEST*.
    - You will have `10k TEST` in your account for free upon registration.
 
-.. note:: **Faucet role**: The faucet address is used to pay the registration fee for new users.
+.. note:: **Faucet Role**: The faucet address is used to pay the registration fee for new users.
 
 -------------------
 
 
-Use the CLI on Public Testnet
+Use a CLI on Public Testnet
 =================================
 
 In this section, we show you how to set up on **Ubuntu 16.04 LTS(64 bit)** environment as an example.
 
-More options to see :ref:`Installation Guide <installation>`.
+To see more options: Go to :ref:`Installation Guide <installation>`.
 
 1. Install Dependencies::
 
