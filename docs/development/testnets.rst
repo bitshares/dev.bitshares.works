@@ -6,6 +6,9 @@ Testnets
 
 We offer the Open Public Testnets that has been deployed and is fully functional for anyone to use and is shared among developers. The Open Public Testnets is a great space to start learning about BitShares-Core and BitShares-UI wallet. You can find all the relevant information about the public network in the next section.
 
+Quick Start
+-------------------
+
 .. toctree::
     :maxdepth: 2
 
@@ -15,7 +18,10 @@ We offer the Open Public Testnets that has been deployed and is fully functional
 
 ------------
 
-The next sections mainly described how to deploy your public or private network. The Private testnets could be used by every developer to implement at home to benefit from extra low latency and additional superpowers over the system.
+Deploy Testnets
+-------------------------
+
+In this section, we mainly describe how to deploy public or private testnets network. The Private testnets could be used by every developer to implement at home to benefit from extra low latency and additional superpowers over the system.
 
 .. toctree::
     :maxdepth: 2
@@ -24,6 +30,7 @@ The next sections mainly described how to deploy your public or private network.
     testnets/private_testnet
   
 
+-----------  
   
   
 Other References 
@@ -53,11 +60,9 @@ This tool allows you to check BitShares blockchain detailed health. You can obse
 The below API tools allow you to try BitShares APIs. You can set a value and click [Try it out!], then you will get a return. The return include a used Curl path format, Requested URL, and Response Body. Those information are very valuable to learn BitShares. 
 
 
-* APIs - the Teatnet Explorer uses to query the Testnet 
+* APIs - the Teatnet Explorer uses to query the **Testnet**
   
   - http://148.251.10.231:5000/apidocs/ -> ES Wrapper : Wrapper to expose **Elasticsearch** Bitshares node data to  clients
-  - http://148.251.10.231:5001/apidocs/ -> Node Wrapper
-  - http://148.251.10.231:5003/apidocs/ ->  Tradingview **UDF** Wrapper for Bitshares
 
 On this page, we introduced a tool for the Testnet. We have the same tool for :ref:`the Mainnet of BitShares blockchain <explorer-wrappers>`.
 

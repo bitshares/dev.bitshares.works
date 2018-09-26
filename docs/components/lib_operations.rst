@@ -201,10 +201,9 @@ account_whitelist_operation
 	};
 
 		 
+Assert
+==================
 
-Asset
-==================	 
-		 
 asset_operation
 ----------------
 
@@ -228,7 +227,12 @@ asset_operation
 		share_type                calculate_fee(const fee_parameters_type& k)const;
 	};
 
-	
+
+
+Asset
+==================	 
+		 
+
 asset_claim_fees_operation
 --------------------------------
 

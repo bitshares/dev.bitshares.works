@@ -15,7 +15,7 @@ import sys
 import os
 
 
-sys.path.append(os.path.abspath('..'))
+# sys.path.append(os.path.abspath('./docs/'))
 #sys.path.append(os.path.abspath('./demo/'))
 
 from sphinx_rtd_theme import __version__
@@ -24,9 +24,6 @@ from sphinx_rtd_theme import __version__
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #sys.path.insert(0, os.path.abspath('.'))
-
-sys.path.append( "C:\Program Files\Python36\Lib\site-packages\breathe" )
-
 
 
 # -- General configuration -----------------------------------------------------
@@ -42,6 +39,7 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
     'sphinxcontrib.httpdomain',
+	'sphinx.ext.autosectionlabel',
 ]
 
 # Do not warn about external images (status badges in README.rst)
