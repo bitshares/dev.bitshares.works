@@ -12,7 +12,6 @@ BitFest Amsterdam 2018
 :Peter Conrad:  `BitShares Core & Network Performance <../_images/presen_docs/BitFest_BTS_Performance.pdf>`_
 :Alfredo Garcia:  `The Business of BitShares Plugins <../_images/presen_docs/BitFest_Business_Plugins.pdf>`_
 :John M. Jones:  Trustless Asset Swaps: BitShares and HTLC
-:Michel Santos:  Life and Times of a BitShares Operation
 :Fabian Schuh:  Escrow Worker Management
  
  
