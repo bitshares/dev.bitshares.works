@@ -244,6 +244,7 @@ try:
     breathe_projects = {
         "graphene": "../doxygen/xml/",
     }
+    breathe_default_project = "dev.bitshares.works"	
   #  breathe_default_project = "bitshares"
 except:
     print("=" * 80)
