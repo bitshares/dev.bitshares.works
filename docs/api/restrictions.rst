@@ -63,7 +63,10 @@ You can restrict API’s to particular users by specifying an ``api-access`` fil
 
 **Example:**
 
-``api-access.json`` file which allows user `bytemaster` with password `supersecret` to access *four different API’s*, while allowing any other user to access the *three public API’s* necessary to use the wallet::
+``api-access.json`` file which allows user `bytemaster` with password `supersecret` to access *four different API’s*, while allowing any other user to access the *three public API’s* necessary to use the wallet:
+
+
+.. code-block:: json
 
     {
        "permission_map" :
@@ -88,12 +91,12 @@ You can restrict API’s to particular users by specifying an ``api-access`` fil
     }
 
 - Passwords are stored in ``ase64`` as as salted `sha256` hashes. 
-- A simple Python script, ``saltpass.py`` is avaliable to obtain hash and salt values from a password. 
+- A simple Python script, ``saltpass.py`` is avaliable `[click here] <https://github.com/bitshares/bitshares-core/blob/master/programs/witness_node/saltpass.py>`_ to obtain hash and salt values from a password. 
 - A single asterisk ``*`` may be specified as username or password hash to accept any value.
 
 With the above configuration, how to call `add_node` from the `network_node` API
 
-::
+.. code-block:: json
 
     {"id":1, "method":"call", "params":[1,"login",["bytemaster", "supersecret"]]}
     {"id":2, "method":"call", "params":[1,"network_node",[]]}
