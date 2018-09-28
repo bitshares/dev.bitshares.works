@@ -244,7 +244,7 @@ try:
     breathe_projects = {
         "graphene": "../doxygen/xml/",
     }
-    breathe_default_project = "bitshares"
+  #  breathe_default_project = "bitshares"
 except:
     print("=" * 80)
     print("Please install 'breathe' as described in README.md to also have API documentation available!")
