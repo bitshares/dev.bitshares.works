@@ -234,7 +234,6 @@ latex_documents = [
 # If false, no module index is generated.
 #latex_domain_indices = True
 
-
 ###############################################################################
 # Breathe configuration
 ###############################################################################
@@ -242,9 +241,9 @@ try:
     import breathe
     extensions.append("breathe")
     breathe_projects = {
-        "bitshares": "../doxygen/xml/",
+        "bitshares-core": "../doxygen/xml/",
     }   
-    breathe_default_project = "bitshares"
+    breathe_default_project = "bitshares-core"
 except:
     print("=" * 80)
     print("Please install 'breathe' as described in README.md to also have API documentation available!")
