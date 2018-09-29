@@ -1,6 +1,6 @@
 
 ***********************************
-Available Calls, Object, and IDs 
+Available Calls and Often used API
 ***********************************
 
 .. toctree::
@@ -9,8 +9,8 @@ Available Calls, Object, and IDs
     rpc	
     websocket
     often-used-calls
+    tryitout
 	
-|
 
 |
 

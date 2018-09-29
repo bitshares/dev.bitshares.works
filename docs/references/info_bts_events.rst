@@ -1,10 +1,13 @@
 
-.. _bitshares-bbf-events:
+.. _bitshares-community-events:
 
 *****************************************
-BitShares Blockchain Foundation Events
+BitShares Community Events
 *****************************************
-	  
+	 
+------------
+
+
 BitFest Amsterdam 2018
 ====================================
 (Saturday 22nd September 2018)
@@ -14,6 +17,7 @@ BitFest Amsterdam 2018
 :John M. Jones:  `Trustless Asset Swaps: BitShares and HTLC <http://www.jmjatlanta.com/index.php/2018/09/27/bitshares-and-hashed-time-lock-contracts-htlc/>`_
 :Fabian Schuh:  Escrow Worker Management
  
+------------
  
 2018 Global Graphene DevCon
 ====================================
@@ -23,7 +27,7 @@ BitFest Amsterdam 2018
 :Alfredo Garcia:  `Graphene Smart Contracts <../_images/presen_docs/DevCon_Smart_Contract.pdf>`_ - Steps involved in the development of new smart contracts in the Graphene based blockchains.
 :Fabian Schuh:  pyBitShares
 
-
+------------
 
 |
 
