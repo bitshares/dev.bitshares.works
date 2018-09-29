@@ -243,8 +243,7 @@ try:
     extensions.append("breathe")
     breathe_projects = {
         "bitshares": "../doxygen/xml/",
-    }
-   
+    }   
     breathe_default_project = "bitshares"
 except:
     print("=" * 80)
