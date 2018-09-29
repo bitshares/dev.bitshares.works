@@ -241,9 +241,9 @@ try:
     import breathe
     extensions.append("breathe")
     breathe_projects = {
-        "bitshares": "../doxygen/xml/",
+        "bitsharescore": "../doxygen/xml/",
     }   
-    breathe_default_project = "bitshares"
+    breathe_default_project = "bitsharescore"
 except:
     print("=" * 80)
     print("Please install 'breathe' as described in README.md to also have API documentation available!")
