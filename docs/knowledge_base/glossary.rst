@@ -32,9 +32,11 @@ CLI
 ----------------------
 - Command-line interface
 
-configuration file (config.ini) - in data dir
+config.ini (in data-dir)
 ------------------------------------------------------------------
-- To generate a default config file: delete the current directory defined by your —data-dir switch, then restart witness_node. A new config.ini file will be generated in that directory. Note: the delete will also delete the /blockchain folder, so perhaps better to just locate the file fist, remove it and restart. Most of the parameters in the config have comments with descriptions and the default values
+- To generate a default config file: First, *delete* the current directory defined by your ``—data-dir`` switch, then restart ``witness_node``. A new config.ini file will be generated in that directory. 
+
+.. Note:: the above *delete* will also delete the ``/blockchain`` folder, so perhaps better to just locate the file fist, remove it and restart. Most of the parameters in the config have comments with descriptions and the default values
 
 Consensus
 ----------------------

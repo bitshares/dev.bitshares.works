@@ -19,14 +19,14 @@ Be sure you've built the right build targets::
 
     $ make get_dev_key debug_node cli_wallet witness_node
 
-Use the get_dev_key utility to generate a keypair::
+Use the ``get_dev_key`` utility to generate a keypair::
 
     $ programs/genesis_util/get_dev_key "" nathan
     [{"private_key":"5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3","public_key":"BTS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV","address":"BTSFAbAx7yuxt725qSZvfwWqkdCwp9ZnUama"}]
 
 Obtain a copy of the blockchain in `block_db` directory: $ programs/witness_node/witness_node --data-dir data/mydatadir # ... wait for chain to sync ^C $ cp -Rp data/mydatadir/blockchain/database/block_num_to_block ./block_db
 
-Set up a new datadir with the following `config.ini` settings::
+Set up a new datadir with the following :ref: ``config.ini`` settings::
 
     # setup API endpoint
     rpc-endpoint = 127.0.0.1:8090
@@ -34,8 +34,15 @@ Set up a new datadir with the following `config.ini` settings::
     seed-nodes = []
     # set apiaccess.json so we can set up
     api-access = "data/debug_datadir/api-access.json"
+	
 
-Then set up `data/debug_datadir/api-access.json` to allow access to the debug API like this::
+* Example of :ref:`configuration file parameters <bts-config-ini-eg>`  	
+	
+	
+Then set up ``data/debug_datadir/api-access.json`` to allow access to the debug API like this:
+
+
+.. code-block:: json
 
     {
        "permission_map" :
@@ -60,9 +67,9 @@ Then set up `data/debug_datadir/api-access.json` to allow access to the debug AP
     }
 
 	
-See :ref:`api-access-json for more detail on the `api-access.json` format.
+See :ref:`api-access-json` for more detail on the ``api-access.json`` format.
 
-Once that is set up, run `debug_node` against your newly prepared datadir::
+Once that is set up, run ``debug_node`` against your newly prepared datadir::
 
     programs/debug_node/debug_node --data-dir data/debug_datadir
 
@@ -78,7 +85,7 @@ Load some blocks from the datadir::
 
     dbg_push_blocks block_db 20000
 
-Note, when pushing a very large number of blocks sometimes `cli_wallet` hangs and you must Ctrl+C and restart it (leaving the `debug_node` running).
+Note, when pushing a very large number of blocks sometimes `cli_wallet` hangs and you must ``Ctrl+C`` and restart it (leaving the `debug_node` running).
 
 Generate (fake) blocks with our own private key::
 

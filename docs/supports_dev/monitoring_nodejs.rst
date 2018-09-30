@@ -5,7 +5,7 @@
 Monitoring the Balance History - NodeJs
 *********************************************
 
-his nodejs script monitors the balance history of an account in a graphene-based network such as BitShares 2.0.
+This nodejs script monitors the balance history of an account in a graphene-based network such as BitShares 2.0.
 
 Installation
 ====================
@@ -29,7 +29,7 @@ Define the accountID and the memo_wif_key. The accountID can be obtained from th
 
 If the script exists abnormally, you can continue operations by setting last_op to the last operation id that you have captured before the abnormal exit.
 
-.. Note:: The current implementation has a maxium history size of 100 transaction. If you have missed more than 100 transaction with the current implementation, manual fixing is required.
+.. Note:: The current implementation has a maximum history size of 100 transaction. If you have missed more than 100 transaction with the current implementation, manual fixing is required.
 
 The settings are located in config.js and take
 

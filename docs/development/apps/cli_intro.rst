@@ -21,9 +21,14 @@ Launching the cli_wallet requires a trusted Full Node to interact with the block
 
 When you start the cli_wallet first time, it creates a local ``wallet.json`` file that contains the encrypted private keys. The key is required to access the funds and add new data to the blockchain with a signature from a private key.
 
+
+.. _cli-wallet-json-eg:
+
+
 **Example: wallet.json**
 
-::
+
+.. code-block:: json
 
 	{
 		"chain_id": "4018d7844c78f6a6c41c6a552b898022310fc5dec06da4222222",

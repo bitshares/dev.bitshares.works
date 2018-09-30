@@ -1,19 +1,19 @@
 
 ***********************************
-BitShares API - Try it out!
+BitShares Explorer API - Try it out!
 ***********************************
 
 
 The below links take you to BitShares API calls list page. They are ES Wrappers (i.e., Wrapper to expose **Elasticsearch** Bitshares node data to clients). On the page, you can select a call and set value(s) and try it out!
 
 
-* APIs - the Explorer uses to query the **Mainnet** 
+* BitShares Explorer API uses to query the **MAINNET** 
 
   - http://185.208.208.184:5000/apidocs/  
 
 
  
-* APIs - the Teatnet Explorer uses to query the **Testnet** 
+* BitShares Explorer Testnet API uses to query the **TESTNET** 
 
   - http://148.251.10.231:5000/apidocs/ 
   

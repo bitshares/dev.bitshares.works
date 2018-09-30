@@ -83,7 +83,9 @@ Still, a workaround the limitation is available. A `visitor` that can be turned 
 
 As a poc we also added amount and asset_id of transfer operations to illustrate how easy is to index more data for any competent graphene developer.
 
-## Hardware needed
+ 
+Hardware needed
+----------------------------------
 
 It is very recommended that you use SSD disks in your node if you are trying to synchronize bitshares blockchain. It will make the task a lot faster.
 
@@ -466,9 +468,8 @@ Elasticsearch database will listen in localhost and the wrapper in the same mach
 
 -----------------
 
-#### Contributor:
-- @oxarbitrage
-    
-
 |
+
+Contributor: @oxarbitrage
+    
 

@@ -59,7 +59,7 @@ Since restricted APIs require login, they are **only** accessible over the webso
 Accessing Restricted API's 
 ==============================
 
-You can restrict API’s to particular users by specifying an ``api-access`` file in :ref:`bts-config-ini-eg`  or by using the ``--api-access /full/path/to/api-access.json`` startup node command. 
+You can restrict API’s to particular users by specifying an ``api-access`` in a :ref:`configuration <bts-config-ini-eg>` file or by using the ``--api-access /full/path/to/api-access.json`` startup node command. 
 
 **Example:**
 
