@@ -4,13 +4,8 @@
 Frequently Asked Questions (FAQ) 
 ********************************
 
-Questions and Answers for **End Users** and **Developers**.
-
+General
 ------------------------------
-
-**Assets Questions**
-
-**General** 
 
 * :ref:`dev-faq17`
 * :ref:`What is the format of the block header? <lib-block>`
@@ -23,6 +18,7 @@ Questions and Answers for **End Users** and **Developers**.
 * :ref:`dev-faq5`
 * :ref:`dev-faq14`
 * :ref:`dev-faq19`
+* :ref:`What parameters in a configuration file in a data directory? <bts-config-ini-eg>` - (rel:*config.ini*)
 
 **Protocol**
 
@@ -64,7 +60,7 @@ Accounts
 
 * :ref:`Where can I read about the BitShares Account information?<bts-accounts>`
 
-  - Include: **Membership, Fees, Permissions, Public Key and Private key, Muiti-Signature, Voting, Referral Program, and Vesting Balances**
+  - Include: *Membership, Fees, Permissions, Public Key and Private key, Muiti-Signature, Voting, Referral Program, and Vesting Balances*
 
 Installation
 --------------------------------------------------------
@@ -83,7 +79,7 @@ Installation
 
 APIs
 ---------------------------------------------------------
-* :ref:`What's API Restrictions? How to use? <api-access-json>`
+* :ref:`What's API Restrictions? How to use? <api-access-json>` - (rel:*api-access.json*)
 * :ref:`How to access the API via HTTP <api-access-via-http>`
 * :ref:`How to use Remote Procedure Calls (RPC) <rpc>`
 * :ref:`How to use Websocket Call <websocket-calls>`
@@ -95,6 +91,13 @@ APIs
 * :ref:`api-core-faq-4`
 * :ref:`api-core-faq-5`
 * :ref:`api-core-faq-6`
+* `Where can I find a simple Python script saltpass.py to obtain hash and salt values from a password? <https://github.com/bitshares/bitshares-core/blob/master/programs/witness_node/saltpass.py>`_ - (rel: *saltpass.py*)
+
+**BitShares Explorer API**
+
+* :ref:`Where can I find a link to try BitShares Explorer API? <explorer-wrappers>`
+* `How to prepare own BitShares Explorer API for a production environment. <https://github.com/oxarbitrage/bitshares-explorer-api#bitshares-explorer-rest-api>`_
+
 
 .. _asset-faq-index:
 
@@ -132,6 +135,7 @@ Assets
 
 * :ref:`cli-faq1`
 * :ref:`cli-faq5`
+* :ref:`What parameters wallet.json has? <cli-wallet-json-eg>` - (rel:*wallet.json*)
 
 **Witness Questions**
 

@@ -124,8 +124,9 @@ Special Notes
 
 -------------
   
--Contributor:
- - @oxarbitrage
+|
+  
+Contributor: @oxarbitrage
  
  
 |

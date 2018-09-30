@@ -68,6 +68,15 @@ Monitoring
 * :ref:`How to monitor Account Deposits - Python <monitoring-account-deposits-python>`
 * :ref:`How to monitor Balance History of an Account  - NodeJS <nodejs-example>`
 
+Performance
+===========================
+* `How to process the Performance Test <https://github.com/bitshares/bitshares-core/tree/develop/tests/performance>`_
+
+Plugin
+===================
+* `Template Plugin - (create a demo API hello) <https://github.com/bitshares/bitshares-core/blob/hello_plugin/libraries/plugins/hello/README.md>`_
+  
+
 
 Testnets
 ===================

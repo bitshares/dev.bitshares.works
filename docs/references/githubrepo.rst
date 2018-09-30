@@ -1,4 +1,3 @@
-
 .. _bitshares-repositories:
 
 BitShares Repositories
