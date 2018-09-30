@@ -1,9 +1,0 @@
-## Example title
-
-#### Contents: 
-- 
-- 
-
-***
-
-###

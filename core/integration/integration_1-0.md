@@ -1,3 +1,0 @@
-## Integration
-
-To be filled.
