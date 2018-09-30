@@ -47,7 +47,7 @@
 
     bts_guide/tutorials/index
     bts_guide/index_faq
-	
+    knowledge_base/glossary
 
 ---------
 	
