@@ -47,7 +47,7 @@
 
     bts_guide/tutorials/index
     bts_guide/index_faq
-	
+    knowledge_base/glossary
 
 ---------
 	
@@ -56,7 +56,7 @@
     :caption: References
 
     references/info_comunities
-    references/info_bbf_events
+    references/info_bts_events
     references/tech_articles
     references/githubrepo
 

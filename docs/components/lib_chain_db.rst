@@ -782,7 +782,9 @@ get_applied_operations
 apply_block	
 ------------
 	
-	//////////////////// private methods ////////////////////
+//////////////////// private methods ////////////////////
+
+.. code-block:: cpp 
 
 	void database::apply_block( const signed_block& next_block, uint32_t skip )
 	{
