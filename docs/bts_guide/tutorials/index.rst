@@ -70,7 +70,7 @@ Monitoring
 
 Performance
 ===========================
-* `How to process the Performance Test <https://github.com/bitshares/bitshares-core/tree/develop/tests/performance>`_
+* `How to run the Performance Test <https://github.com/bitshares/bitshares-core/tree/develop/tests/performance>`_
 
 Plugin
 ===================
