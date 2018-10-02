@@ -9,7 +9,7 @@ CLI Client and Wallet
 Architecture
 ---------------
 
-.. image:: ../../../../_images/structures/bitshares-architecture-clinotop.png
+.. image:: ../../../../_static/structures/bitshares-architecture-clinotop.png
         :alt: BitShares Architecture
         :width: 700px
         :align: center

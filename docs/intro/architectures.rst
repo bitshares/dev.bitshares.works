@@ -22,7 +22,7 @@ If you have a BitShares account, you are a BTS Holder, and you have a voting pow
 
 
 
-.. image:: ../../_images/structures/btsholders-v1.png
+.. image:: ../../_static/structures/btsholders-v1.png
         :alt: BitShares Architecture
         :width: 700px
         :align: center
@@ -37,7 +37,7 @@ GitHub Repositories and Entities
 
 This is an overview of BitShares Architecture image. The purpose of this image is to bring the main elements together and share what types of resources you might find in the BitShares Github repositories. 
 
-.. image:: ../../_images/structures/bitshares-architecture-v3notop.png
+.. image:: ../../_static/structures/bitshares-architecture-v3notop.png
         :alt: BitShares Architecture
         :width: 650px
         :align: center

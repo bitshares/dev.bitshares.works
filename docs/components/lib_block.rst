@@ -22,7 +22,7 @@ The below is simple blockchain structure image.
 - Each operation has "fee" and element(s). Each operation has different elements (processes). 
 
 
-.. image:: ../../_images/structures/block_structure_si1.png
+.. image:: ../../_static/structures/block_structure_si1.png
         :alt: BitShares Architecture
         :width: 700px
         :align: center
@@ -118,7 +118,7 @@ Block (detail image)
 ===========================
 
 		
-.. image:: ../../_images/structures/block_structure_detail1.png
+.. image:: ../../_static/structures/block_structure_detail1.png
         :alt: BitShares Architecture
         :width: 700px
         :align: center

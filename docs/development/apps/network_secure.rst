@@ -15,7 +15,7 @@ For high security, we provide a so called **delayed** full node which accepts th
 Set up
 ----------------
 
-.. image:: ../../../../_images/secure-setup.png
+.. image:: ../../../../_static/structures/secure-setup.png
         :alt: BitShares Architecture
         :width: 650px
         :align: center

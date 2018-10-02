@@ -26,7 +26,7 @@ The below links take you to BitShares API calls list page. They are ES Wrappers 
 2. Set a value
 3. Click [Try it Out!]
 
-.. image:: ../../_images/call-tryitout-1.png
+.. image:: ../../_static/call-tryitout-1.png
         :alt: BitShares API Call
         :width: 650px
         :align: center
@@ -40,7 +40,7 @@ The below links take you to BitShares API calls list page. They are ES Wrappers 
   - Response Headers
   
 
-.. image:: ../../_images/call-tryitout-2.png
+.. image:: ../../_static/call-tryitout-2.png
         :alt: BitShares API Call
         :width: 650px
         :align: center
