@@ -13,7 +13,7 @@ For general purpose setups, we recommend a reduced complexity setup that looks a
 Set up
 -----------
 
-.. image:: ../../../../_images/general-setup.png
+.. image:: ../../../../_static/structures/general-setup.png
         :alt: BitShares Architecture
         :width: 650px
         :align: center

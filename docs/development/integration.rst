@@ -22,9 +22,16 @@ We provide here the necessary information to securely operate as a merchant, tra
 
 * `What is different BitShares <http://how.bitshares.works/en/latest/technology/difference_bitshares.html>`_ (http://how.bitshares.works/en/latest)
 * :ref:`blockchain-interaction-top`
-* :ref:`network-setups`
 * :ref:`often-used-calls`
 
+
+.. toctree::
+    :maxdepth: 2
+
+    apps/network
+
+	
+	
 	
 Use Cases
 ========================

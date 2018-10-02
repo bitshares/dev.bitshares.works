@@ -84,7 +84,7 @@ Purpose
 Non-Consensus: Development / Release / Bugfix Workflows
 -----------------------------------------------------------
 
-.. image:: ../../_images/bts-non-concensus.png
+.. image:: ../../_static/structures/bts-non-concensus.png
         :alt: BitShares
         :width: 750px
         :align: center
@@ -92,7 +92,7 @@ Non-Consensus: Development / Release / Bugfix Workflows
 Consensus: Development / Release / Bugfix Workflows
 ------------------------------------------------------
 
-.. image:: ../../_images/bts-concensus.png
+.. image:: ../../_static/structures/bts-concensus.png
         :alt: BitShares 
         :width: 750px
         :align: center
@@ -160,7 +160,7 @@ Presumably the developer who creates the fix will work on his private master bra
 Emergency Fix Workflows
 -----------------------------
 
-.. image:: ../../_images/bts-emergency-fix.png
+.. image:: ../../_static/structures/bts-emergency-fix.png
         :alt: BitShares
         :width: 750px
         :align: center
