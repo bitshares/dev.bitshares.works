@@ -13,6 +13,7 @@
 
 import sys
 import os
+import subprocess
 
 
 sys.path.append(os.path.abspath('./docs/'))
@@ -39,7 +40,8 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
     'sphinxcontrib.httpdomain',
-	'sphinx.ext.autosectionlabel',
+    'sphinx.ext.autosectionlabel',
+    'breathe',
 ]
 
 # Do not warn about external images (status badges in README.rst)
@@ -191,7 +193,7 @@ html_show_sourcelink = False
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'SphinxRTDthemedemodoc'
+htmlhelp_basename = 'BitSharesDevdoc'
 
 
 # -- Options for LaTeX output --------------------------------------------------
