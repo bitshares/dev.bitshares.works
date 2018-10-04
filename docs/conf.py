@@ -13,6 +13,7 @@
 
 import sys
 import os
+import subprocess
 
 
 sys.path.append(os.path.abspath('./docs/'))
@@ -39,7 +40,8 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
     'sphinxcontrib.httpdomain',
-	'sphinx.ext.autosectionlabel',
+    'sphinx.ext.autosectionlabel',
+    'breathe',
 ]
 
 # Do not warn about external images (status badges in README.rst)
@@ -59,7 +61,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'BItShares Developers Portal'
-copyright = u'BitShares Blockchain Foundation'
+copyright = u'2018 BitShares Blockchain Foundation'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -191,7 +193,7 @@ html_show_sourcelink = False
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'SphinxRTDthemedemodoc'
+htmlhelp_basename = 'BitSharesDevdoc'
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -209,9 +211,13 @@ latex_elements = {
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
+#latex_documents = [
+#  ('index', 'SphinxRTDthemedemo.tex', u'Sphinx RTD theme demo Documentation',
+#   u'Dave Snider, Read the Docs, Inc. & contributors', 'manual'),
+#]
 latex_documents = [
-  ('index', 'SphinxRTDthemedemo.tex', u'Sphinx RTD theme demo Documentation',
-   u'Dave Snider, Read the Docs, Inc. & contributors', 'manual'),
+  ('index', 'BBF.tex', u'BitShares developer Documentation',
+   u'BitShares-Core & contributors', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -251,17 +257,20 @@ except :
     print("Please install 'breathe' as described in README.md to also have API documentation available!")
     print("="*80)
 
-	
-	
 
 # -- Options for manual page output --------------------------------------------
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
+#man_pages = [
+#    ('index', 'sphinxrtdthemedemo', u'Sphinx RTD theme demo Documentation',
+#     [u'Dave Snider, Read the Docs, Inc. & contributors'], 1)
+#]
 man_pages = [
-    ('index', 'sphinxrtdthemedemo', u'Sphinx RTD theme demo Documentation',
-     [u'Dave Snider, Read the Docs, Inc. & contributors'], 1)
+    ('index', 'BBF.tex', u'BitShares developer Documentation',
+     [u'BitShares-Core & contributors'], 1)
 ]
+
 
 # If true, show URL addresses after external links.
 #man_show_urls = False
@@ -272,10 +281,15 @@ man_pages = [
 # Grouping the document tree into Texinfo files. List of tuples
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
+#texinfo_documents = [
+#  ('index', 'SphinxRTDthemedemo', u'Sphinx RTD theme demo Documentation',
+#   u'Dave Snider, Read the Docs, Inc. & contributors', 'SphinxRTDthemedemo',
+#   'One line description of project.', 'Miscellaneous'),
+#]
 texinfo_documents = [
-  ('index', 'SphinxRTDthemedemo', u'Sphinx RTD theme demo Documentation',
-   u'Dave Snider, Read the Docs, Inc. & contributors', 'SphinxRTDthemedemo',
-   'One line description of project.', 'Miscellaneous'),
+  ('index', 'BitSharesDeveloperPortal', u'BitShares developer  Documentation',
+   u'BitShares-Core & contributors', 'BitSharesDeveloperPortal',
+   'BBF project.', 'Miscellaneous'),
 ]
 
 # Documents to append as an appendix to all manuals.
