@@ -54,9 +54,3 @@ This information also locates here - :ref:`explorer-wrappers`
 |
 
 |
-
-Contributor: @oxarbitrage, @Zapata
-
-
-
-
