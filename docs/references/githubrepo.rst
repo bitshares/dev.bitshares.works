@@ -21,3 +21,6 @@ GitHub Code | Issues
 * `code <https://github.com/bitshares/faucet>`_  |  `issue <https://github.com/bitshares/faucet/issues>`_  | **faucet:** 
 * `code <https://github.com/bitshares/secp256k1-zkp>`_  |  `issue <https://github.com/bitshares/secp256k1-zkp/issues>`_  | **secp256k1-zkp:** Experimental fork of libsecp256k1 with support for pedersen commitments and range proofs. 
 * `code <https://github.com/bitshares/btsgo>`_  |  `issue <https://github.com/bitshares/btsgo/issues>`_ | **btsgo:** 
+* `code <https://github.com/bitshares/beet>`_  |  `issue <https://github.com/bitshares/beet/issues>`_ | **beet:** Beet is a stand-alone key/identity-manager and signing app for BitShares, heavily influenced by Scatter.
+
+
