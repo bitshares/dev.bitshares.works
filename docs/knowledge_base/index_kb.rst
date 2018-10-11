@@ -5,10 +5,15 @@
 Knowledge Base
 ***********************
 
-To be filled...
+
+* :ref:`Wiki Legacy list <wiki-legacy-indx>`
 
 
+	
+	
+	
 ---------------
+
 
 
   

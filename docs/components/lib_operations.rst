@@ -1109,11 +1109,11 @@ proposal_create_operation
 -----------------------------------
 
 - The ``proposal_create_operation`` creates a transaction proposal, for use in multi-sig scenarios
-- Creates a transaction proposal. The operations which compose the transaction are listed in order in proposed_ops, and expiration_time specifies the time by which the proposal must be accepted or it will fail permanently. The expiration_time cannot be farther in the future than the maximum expiration time set in the global properties object. 
+- Creates a transaction proposal. The operations which compose the transaction are listed in order in ``proposed_ops``, and ``expiration_time`` specifies the time by which the proposal must be accepted or it will fail permanently. The expiration_time cannot be farther in the future than the maximum expiration time set in the global properties object. 
 - Constructs a ``proposal_create_operation`` suitable for committee proposals, with expiration time and review period set
 
 
-* appropriately.  No proposed_ops are added.  When used to create a proposal to change chain parameters, this method expects to receive the currently effective parameters, not the proposed parameters.  (The proposed parameters will go in proposed_ops, and proposed_ops is untouched by this function.)
+* appropriately.  No ``proposed_ops`` are added.  When used to create a proposal to change chain parameters, this method expects to receive the currently effective parameters, not the proposed parameters.  (The proposed parameters will go in ``proposed_ops``, and ``proposed_ops`` is untouched by this function.)
 	
 	
 .. code-block:: cpp
@@ -1125,19 +1125,29 @@ proposal_create_operation
 			uint32_t price_per_kbyte = 10;
 		};
 
-		asset fee;
-		account_id_type fee_paying_account;
-		vector<op_wrapper> proposed_ops;
-		time_point_sec expiration_time;
-		optional<uint32_t> review_period_seconds;
-		extensions_type extensions;
+       asset              fee;
+       account_id_type    fee_paying_account;
+       vector<op_wrapper> proposed_ops;
+       time_point_sec     expiration_time;
+       optional<uint32_t> review_period_seconds;
+       extensions_type    extensions;
 
-		static proposal_create_operation committee_proposal(const chain_parameters& param, fc::time_point_sec head_block_time );
+       /**
+        * Constructs a proposal_create_operation suitable for committee
+        * proposals, with expiration time and review period set
+        * appropriately.  No proposed_ops are added.  When used to
+        * create a proposal to change chain parameters, this method
+        * expects to receive the currently effective parameters, not
+        * the proposed parameters.  (The proposed parameters will go
+        * in proposed_ops, and proposed_ops is untouched by this
+        * function.)
+        */
+       static proposal_create_operation committee_proposal(const chain_parameters& param, fc::time_point_sec head_block_time );
 
-		account_id_type fee_payer()const { return fee_paying_account; }
-		void validate()const;
-		share_type calculate_fee(const fee_parameters_type& k)const;
-	};
+       account_id_type fee_payer()const { return fee_paying_account; }
+       void            validate()const;
+       share_type      calculate_fee(const fee_parameters_type& k)const;
+   };		
 
 proposal_delete_operation
 -----------------------------------
@@ -1149,16 +1159,16 @@ proposal_delete_operation
 
 	struct proposal_delete_operation : public base_operation
 	{
-		struct fee_parameters_type { uint64_t fee = GRAPHENE_BLOCKCHAIN_PRECISION; };
+      struct fee_parameters_type { uint64_t fee =  GRAPHENE_BLOCKCHAIN_PRECISION; };
 
-		account_id_type fee_paying_account;
-		bool using_owner_authority = false;
-		asset fee;
-		proposal_id_type proposal;
-		extensions_type extensions;
+      account_id_type   fee_paying_account;
+      bool              using_owner_authority = false;
+      asset             fee;
+      proposal_id_type  proposal;
+      extensions_type   extensions;
 
-		account_id_type fee_payer()const { return fee_paying_account; }
-		void validate()const;
+      account_id_type fee_payer()const { return fee_paying_account; }
+      void       validate()const;
 	};
 
 proposal_update_operation
@@ -1181,23 +1191,23 @@ proposal_update_operation
 			uint32_t price_per_kbyte = 10;
 		};
 
-		account_id_type fee_paying_account;
-		asset fee;
-		proposal_id_type proposal;
-		flat_set<account_id_type> active_approvals_to_add;
-		flat_set<account_id_type> active_approvals_to_remove;
-		flat_set<account_id_type> owner_approvals_to_add;
-		flat_set<account_id_type> owner_approvals_to_remove;
-		flat_set<public_key_type> key_approvals_to_add;
-		flat_set<public_key_type> key_approvals_to_remove;
-		extensions_type extensions;
+      account_id_type            fee_paying_account;
+      asset                      fee;
+      proposal_id_type           proposal;
+      flat_set<account_id_type>  active_approvals_to_add;
+      flat_set<account_id_type>  active_approvals_to_remove;
+      flat_set<account_id_type>  owner_approvals_to_add;
+      flat_set<account_id_type>  owner_approvals_to_remove;
+      flat_set<public_key_type>  key_approvals_to_add;
+      flat_set<public_key_type>  key_approvals_to_remove;
+      extensions_type            extensions;
 
-		account_id_type fee_payer()const { return fee_paying_account; }
-		void validate()const;
-		share_type calculate_fee(const fee_parameters_type& k)const;
-		void get_required_authorities( vector<authority>& )const;
-		void get_required_active_authorities( flat_set<account_id_type>& )const;
-		void get_required_owner_authorities( flat_set<account_id_type>& )const;
+      account_id_type fee_payer()const { return fee_paying_account; }
+      void            validate()const;
+      share_type      calculate_fee(const fee_parameters_type& k)const;
+      void get_required_authorities( vector<authority>& )const;
+      void get_required_active_authorities( flat_set<account_id_type>& )const;
+      void get_required_owner_authorities( flat_set<account_id_type>& )const;
 	};
 
  

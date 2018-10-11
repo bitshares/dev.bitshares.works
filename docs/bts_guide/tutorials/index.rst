@@ -89,7 +89,6 @@ Testnets
 * :ref:`How to set up Faucet <how-to setup-faucet>`
 * :ref:`How to set up Nignx <how-to-setup-nignx>`
 
-
 Transfer / Transactions
 ============================
 
@@ -97,10 +96,11 @@ Transfer / Transactions
 * :ref:`dev-faq14`
 * :ref:`dev-faq19`
 * :ref:`How Multi-signature' works <bts-multi-sign>`
-* :ref:`How to use the CLI wallet to perform confidential transfers  <confidential-transactions-guide>`
+* :ref:`How to use the CLI wallet to perform Confidential Transfers  <confidential-transactions-guide>`
 * :ref:`Hot to Construct Any Transaction - Manually <manually-construct-transaction>`
-* :ref:`How to Propose a Transaction <proposing-transaction>`
-  - Crafting, proposing, and approving
+* :ref:`How to Crafting, Proposing, and Approving a Transaction <proposing-transaction>`
+* :ref:`How to use the CLI wallet to Perform Stealth Transfers in BitShares (wiki) <w-stealth-transfers>`  
+* :ref:`Proposed Transaction and  Multi-Signature <proposed-tran>`
 
   
 Wallet / CLI
