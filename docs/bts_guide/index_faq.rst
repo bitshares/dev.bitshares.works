@@ -131,6 +131,12 @@ Assets
 
 .. _cli-faq-list:
 
+
+**Transfer / Transactions**
+
+* :ref:`Chain-Locked Transaction (wiki)<w-chain-locked-tran>`
+
+
 **CLI Wallet Questions**
 
 * :ref:`cli-faq1`
