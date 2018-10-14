@@ -17,6 +17,7 @@ BitFest Amsterdam 2018
 :John M. Jones:  `Trustless Asset Swaps: BitShares and HTLC <http://www.jmjatlanta.com/index.php/2018/09/27/bitshares-and-hashed-time-lock-contracts-htlc/>`_
 :Michel Santos: `Life and Times of a BitShares Operation <../_static/presen_docs/Life_and_Times_of_a_BitShares_Operation.pdf>`_
 
+
 ------------
  
 2018 Global Graphene DevCon

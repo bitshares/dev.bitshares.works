@@ -53,8 +53,13 @@ System Components
 * :ref:`Where can I find the Protocol information? <lib-protocols>`
 * :ref:`What types of Operations are available in BitShares-Core? <lib-operations>`
 * :ref:`What types of Objects and elements are available in BitShares-Core? <lib-objects>`
+* configuration examples and support files
 
-
+  - :ref:`config.ini <bts-config-ini-eg>` (Node Configuration File )
+  - `apiConfig.js <https://github.com/bitshares/bitshares-ui/blob/staging/app/api/apiConfig.js>`_ (BitShares Public Node information)
+  - :ref:`api-access.json <api-access-json>` (API Access restriction)
+  - `saltpass.py <https://github.com/bitshares/bitshares-core/blob/master/programs/witness_node/saltpass.py>`_ (obtain hash and salt values from a password)
+  
 Accounts
 -------------------------------------------------------
 
@@ -62,7 +67,8 @@ Accounts
 
   - Include: *Membership, Fees, Permissions, Public Key and Private key, Muiti-Signature, Voting, Referral Program, and Vesting Balances*
 
-Installation
+  
+Install options
 --------------------------------------------------------
 
 * Which development environment would be possible to install BitShares-Core?
@@ -84,7 +90,7 @@ APIs
 * :ref:`How to use Remote Procedure Calls (RPC) <rpc>`
 * :ref:`How to use Websocket Call <websocket-calls>`
 * `Where to find the doxygen documentation <https://bitshares.org/doxygen/index.html>`_
-* :ref:`How defined BitShares Objects and IDs <objects-ids>`
+* :ref:`How define BitShares Objects and IDs <objects-ids>`
 * :ref:`api-core-faq-1`
 * :ref:`api-core-faq-2`
 * :ref:`api-core-faq-3`
@@ -92,12 +98,14 @@ APIs
 * :ref:`api-core-faq-5`
 * :ref:`api-core-faq-6`
 * `Where can I find a simple Python script saltpass.py to obtain hash and salt values from a password? <https://github.com/bitshares/bitshares-core/blob/master/programs/witness_node/saltpass.py>`_ - (rel: *saltpass.py*)
+* `Where Can I find BitShares Public Full Node information? (apiconfig) <https://github.com/bitshares/bitshares-ui/blob/staging/app/api/apiConfig.js>`_
+
 
 **BitShares Explorer API**
 
-* :ref:`Where can I find a link to try BitShares Explorer API? <explorer-wrappers>`
-* `How to prepare own BitShares Explorer API for a production environment. <https://github.com/oxarbitrage/bitshares-explorer-api#bitshares-explorer-rest-api>`_
-
+* :ref:`Can I try BitShares Explorer API? <bis-explorer-api-tryitout>`
+* `How can I install BitShares Explorer REST API - Installation Guide <https://github.com/oxarbitrage/bitshares-explorer-api#bitshares-explorer-rest-api>`_
+ 
 
 .. _asset-faq-index:
 
@@ -132,19 +140,19 @@ Assets
 .. _cli-faq-list:
 
 
-**Transfer / Transactions**
-
+Transfer / Transactions
+-------------------------------------------------------
 * :ref:`Chain-Locked Transaction (wiki)<w-chain-locked-tran>`
 
 
-**CLI Wallet Questions**
-
+CLI Wallet Questions
+-------------------------------------------------------
 * :ref:`cli-faq1`
 * :ref:`cli-faq5`
 * :ref:`What parameters wallet.json has? <cli-wallet-json-eg>` - (rel:*wallet.json*)
 
-**Witness Questions**
-
+Witness Questions
+-------------------------------------------------------
 * :ref:`witness-faq-1`
 * :ref:`witness-faq-2`
 * :ref:`witness-faq-3`

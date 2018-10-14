@@ -25,6 +25,14 @@ The wallet (cli-wallet)  has your private keyss and signing capabilities.  It re
 In contrast to many existing ecosystems, there is no centralized service that lets you access private API calls after successful authentication. Instead, your run your wallet (and optionally a full node) **locally** and are with **your own API service provider**. This obviously has the advantage that you don’t need to give access to your funds to any third party but has the slight disadvantage that you need to run a local `wallet application`, that however does not download the whole blockchain for verification. If you run a sensitive business, we recommend to also run a local full node to download and verify the blockchain and interface your wallet with your local full node.
 
 
+----------------------------------
+
+Public Full Node information 
+-----------------------------
+
+* Here is the latest list of `BitShares Public Full Nodes (apiConfig) <https://github.com/bitshares/bitshares-ui/blob/staging/app/api/apiConfig.js>`_
+
+
 -----------------
 
 Interfacing with Graphene

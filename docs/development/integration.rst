@@ -30,8 +30,7 @@ We provide here the necessary information to securely operate as a merchant, tra
 
     apps/network
 
-	
-	
+
 	
 Use Cases
 ========================

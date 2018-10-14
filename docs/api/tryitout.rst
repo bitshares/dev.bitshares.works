@@ -1,4 +1,6 @@
 
+.. _bis-explorer-api-tryitout:
+
 ***********************************
 BitShares Explorer API - Try it out!
 ***********************************
@@ -54,3 +56,4 @@ This information also locates here - :ref:`explorer-wrappers`
 |
 
 |
+

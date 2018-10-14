@@ -29,8 +29,7 @@ API
 
 * `How an Exchange can integrate their services to the BitShares UI Wallet - Gateway Integration Requirements <https://github.com/bitshares/bitshares-ui/wiki/Gateway-Integration-Requirements>`_ : from BitShares UI wiki
 * :ref:`How can I enable RPC Logging? <rpc-logging>`
- 
- 
+  
 Assets
 ===========
 
@@ -47,7 +46,9 @@ Prediction Market
 * :ref:`How can I create a Prediction Market (CLI)? <pm-create-manual>`
 * :ref:`How can I close/settle a Prediction Market (CLI)? <pm-close-manual>`
 
-**BitShares Decentralized Exchange (DEX)**
+
+BitShares Decentralized Exchange (DEX)
+=========================================
 
 * :ref:`How can I run own Decentralized Exchange (DEX)? <distributed-access-to-dex>`
 * :ref:`How can I prepare BitShares Exchange? (Single Node Edition) <exchange-single-node>`
@@ -81,6 +82,7 @@ Plugin
 Testnets
 ===================
 
+* :ref:`Code Coverage Testing (wiki) <how-to-testing-bts>`
 * :ref:`How to prepare a Public Testnet - Quick Start Guide <public-testnet-details>`
 * :ref:`How to set up/deploy a Private Testnet (witness-node) <private-testnet-guide>`
 * :ref:`How to set up a Public Testnet <public-testnet-guide>`
@@ -102,16 +104,16 @@ Transfer / Transactions
 * :ref:`How to use the CLI wallet to Perform Stealth Transfers in BitShares (wiki) <w-stealth-transfers>`  
 * :ref:`Proposed Transaction and  Multi-Signature <proposed-tran>`
 
+.. _wallet-cli-tutorials: 
   
 Wallet / CLI
 =====================
 
-* `Where to fund BitShares Public Full Node <https://github.com/bitshares/bitshares-ui/blob/staging/app/api/apiConfig.js>`_
 * :ref:`How to connect and use the CLI-Wallet <run-cli-wallet-steps>`
 * :ref:`How to setup Network and Wallet Configuration <network-setups>`
 * :ref:`How to transferring Funds by using the CLI-Wallet <transfering-funds-cli-wallet>`
-* :ref:`howto-import-gui-wallet-account-cli`
-
+* :ref:`How to import a GUI-Wallet Account into CLI-Wallet <howto-import-gui-wallet-account-cli>`
+* `Where to find BitShares Public Full Nodes <https://github.com/bitshares/bitshares-ui/blob/staging/app/api/apiConfig.js>`_
 
 Witness (Full) node Guide
 ====================
