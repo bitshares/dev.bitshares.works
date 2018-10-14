@@ -23,7 +23,7 @@ Use a UI Wallet on Public Testnet
 - Create an account
    - For a CLOUD Wallet: Use a [CREATE ACCOUNT] button
    - For a LOCAL Wallet: Use an [advanced form] button
-- Receive Testnet Cote asset *TEST*.
+- Receive Testnet Core asset *TEST*.
    - You will have `10k TEST` in your account for free upon registration.
 
 .. note:: **Faucet Role**: The faucet address is used to pay the registration fee for new users.

@@ -3,7 +3,7 @@
 Getting Started 
 ***********************
 
-.. _installation:
+.. _installation-guide:
 
 Installation
 ========================

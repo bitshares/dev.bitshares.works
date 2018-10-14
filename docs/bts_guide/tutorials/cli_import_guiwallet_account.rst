@@ -71,7 +71,7 @@ And you are done. No need to claim balance. Your account balances are in there.
 5. Check your account
 -------------------------------
 
-Use ``list_my_account``s to see your imported account.
+Use ``list_my_accounts`` to see your imported account.
 
 And to check balance::
 
