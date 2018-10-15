@@ -100,59 +100,95 @@ The wallet will be used to transfer assets to the customers. It connects to the 
 Query Blockchain for Required Data
 ===================================
 
+We now use the open ``cli_wallet`` to issue transfers and query the
+blockchain for more information. All cli-wallet commands can be found
+when clicking the tabulator twice.
 
-We now use the open ``cli_wallet`` to issue transfers and query the blockchain for more information. First of all, we create a new wallet and set a pass phrase:::
+First of all, we create a new wallet
+and set a pass phrase:::
 
     >>> set_password <password>
 
-	
-**Existing BitShares 1 Account**
-
-
-*We assume that you already have an account on the BitShares blockchain and show how to export it from the BitShares 1 client.*
-
-We first get the account statistics ID (``2.6.*``) of the deposit account to monitor deposits, the memo key for later decoding of memos and the active key for being able to spend funds of that accounts:::
-
-    >>> get_account <account-name>
-    {
-     [...]
-     "active": {
-        "key_auths": [[
-            "<active_key>",
-            1
-     ] ], },
-     [...]
-     "memo_key": "<memo_key>",
-     [...]
-     "statistics": "<statistics>",
-     [...]
-    }
-
-We now need to export the corresponding private keys from BitShares 1.0 and import the keys into the ``cli_wallet``:::
-
-    BitShares 1: >>> wallet_dump_private_key <memo_key>
-                 "<memo_private_key>"
-    BitShares 1: >>> wallet_dump_private_key <active_key>
-                 "<active_private_key>"
+This will generate a ``wallet.json`` file for you that can contain
+encrypted private keys to your account.
 
 Import the active key into BitShares 2 wallet:::
 
     BitShares 2: >>> import_key <account-name> <active_private_key>
 
-This gives access to the funds stored in ``<account-name>``. We will need the memo private key later when watching deposits.
+This gives access to the funds stored in ``<account-name>``. We will
+need the memo private key later when watching deposits.
 
 
-**Claiming BitShares 1.0 funds**
+Blocks
+------
 
-We now describe how to claim your funds from the Bitshares 1 blockchain so you can use them in BitShares 2.
+Raw blocks can be read when running:::
 
-For **Coldstorage** and plain private keys, we recommend to use::
+    >>> get_block <block_number>
 
-    >>> import_balance <accountname> <private_key> false
+The output will contain a field with all ``transactions``. Each
+transaction is user-signed and can potentially contain multiple
+**operations**. A transaction with a single transfer operation (``0``)
+takes the form:::
 
-to import all balances that are locked in the private key into the account named ``<accountname>``. As long as the last argument is ``false`` the transaction will only be printed for audit and not be broadcasted or executed. **Only** after changing ``false`` to ``true`` will the balances be claimed!
+     {'expiration': '2018-10-15T13:28:28',
+      'extensions': [],
+      'operations': [[0,
+                      {'amount': {'amount': 100000, 'asset_id': '1.3.0'},
+                       'extensions': [],
+                       'fee': {'amount': 10420, 'asset_id': '1.3.0'},
+                       'from': '1.2.282',
+                       'to': '1.2.0'}]],
+      'ref_block_num': 59307,
+      'ref_block_prefix': 2643469633,
+      'signatures': ['2030ec0825f18d180723a11369b213bc1758d351f523572549d0f10c5d3fe88b1a6ad946b700ebeafa867b15180af588088d581a4c3cb350095dafa87123c8f125']}
 
-For your hot wallet (or any other active wallet running in the BitShares 1 client) we recommend to use the GUI to claim your funds.
+
+The operation payload, in this case, is:::
+
+     {
+         'fee': {
+                'amount': 10420,
+                'asset_id': '1.3.0'},
+         'amount': {
+                'amount': 100000,
+                'asset_id': '1.3.0'},
+         'memo': {
+                'from': 'BTS5TPTziKkLexhVKsQKtSpo4bAv5RnB8oXcG4sMHEwCcTf3r7dqE',
+                'message': '58a8a515041812071b2402a0bf67c5e8',
+                'nonce': 3324169168288624499,
+                'prefix': 'BTS',
+                'to': 'BTS5TPTziKkLexhVKsQKtSpo4bAv5RnB8oXcG4sMHEwCcTf3r7dqE'},
+         'extensions': [],
+         'from': '1.2.282',
+         'to': '1.2.0'
+     }
+
+We can ignore ``extensions``.
+The ``from`` and ``to`` field define the account ids. You can identify
+the account ids from account names by using ``get_account <id or name>``.
+The ``fee`` and ``amount`` fields are an *asset* and thus contain an
+**integer** amount (think: satoshis) and an asset id. The precision to
+get from integer representation to floats can be obtained with
+``get_asset <asset name or id>``. With that number, the floating amount
+can be obtained by:::
+
+     amount_integer / 10 ** precision
+
+In the case above, the asset with id 1.3.0 is ``BTS`` which has
+precision 5. Hence, the floating number transfered from account 1.2.282
+to 1.2.0 is 1.0000 BTS!
+
+The optional memo is used to send an encrypted message along the
+transfer. To decode the memo, the receivers or senders private key (for
+the public keys in the memo) need to be in the cli-wallet's wallet. If
+that is the case, then the memo can be decoded using:::
+
+    >>> read_memo {..json..}
+
+It is recommended to call those methods via API (see ``rpc-endpoint``
+above).
 
 ------------------
 
@@ -163,12 +199,3 @@ For your hot wallet (or any other active wallet running in the BitShares 1 clien
 - Executing Transfers for Withdrawals
 
  For transfering funds, we recommend pybitshares. This python module enables all features required to operated on/with BitShares. The full documentation is available on `pybitshares.com <http://pybitshares.com>`_.
-
-
-
-
-
-|
-
-|
-
