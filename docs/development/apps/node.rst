@@ -27,7 +27,7 @@ Both represent nodes in the network that verify all transactions and blocks agai
 System Requirements
 ==========================
 
-By default the witness node will start in reduced memory ram mode by using some of the commands detailed in [Memory reduction for nodes](/forge/plugins/nodes_memory_reduction.md#memory-reduction-for-nodes).
+By default the witness node will start in reduced memory ram mode by using some of the commands detailed in :ref:`Memory reduction for nodes <memory-nodes>`.
 In order to run a full node with all the account history you need to remove `partial-operations` and `max-ops-per-account` from your config file. Please note that currently(2018-07-02) a full node need more than 100GB of RAM to operate and required memory is growing fast. Consider the following table before running a node:
 
 
