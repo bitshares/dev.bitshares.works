@@ -22,7 +22,7 @@ Visit `BitShares.org <https://bitshares.org/>`_ to learn about BitShares and joi
 	git submodule update --init --recursive
 	
 	
-.. Attention:: See BitShares :ref:`system requirements <system-requirements-node>`  for a node (updated: 2018-07-02).
+.. Attention:: See BitShares :ref:`system requirements <system-requirements-node>`.
 
 
 Download and Build
