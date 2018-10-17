@@ -101,7 +101,7 @@ The BitShares uses the DPOS consensus mechanism to vote for the block forge by t
 
 Install 64-bit Ubuntu 16.04 LTS (it will not work on 32-bit Ubuntu), or 64-bit Ubuntu 14.04 LTS, or Windows Server.
 
-> See Also, :ref:`System Requirements <system-requirements-node>` : (updated: 2018-07-02).
+> See Also, :ref:`System Requirements <system-requirements-node>` 
 
 ------------------
 
