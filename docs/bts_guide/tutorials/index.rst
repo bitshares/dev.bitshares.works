@@ -77,7 +77,9 @@ Plugin
 ===================
 * :ref:`ElasticSearch Plugin: How to store account history data into an elasticsearch database <elastic-search-plugin>`
 * :ref:`Memory reduction for nodes: Help to reduce RAM usage significantly by using witness_node executable options <memory-nodes>`
-* `Template Plugin - (create a demo API hello) <https://github.com/bitshares/bitshares-core/blob/hello_plugin/libraries/plugins/hello/README.md>`_
+* `Plugin Template - (create a demo API hello) <https://github.com/bitshares/bitshares-core/blob/hello_plugin/libraries/plugins/hello/README.md>`_
+  
+
   
 
 
