@@ -78,15 +78,17 @@ Tools
 
 Plugins
 ===========================
-
 - `Discussion: "Create plugin script" (#1302) <https://github.com/bitshares/bitshares-core/pull/1302>`_
-- :ref:`elastic-search`
+- :ref:`elastic-search-plugin`
 
   - How to store account history data into an elasticsearch database.
   
 - :ref:`memory-nodes`
 
   - Help to reduce RAM usage significantly by using witness_node executable options.
+
+- `Plugin Template - (create a demo API hello) <https://github.com/bitshares/bitshares-core/blob/hello_plugin/libraries/plugins/hello/README.md>`_
+  
 
   
 Programs
