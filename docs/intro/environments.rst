@@ -124,7 +124,12 @@ How To Create a Release
 
 For a release,
 
-0. Check whether need to bump DB_VERSION to force a replay after upgraded: if there is a data schema change, or logic change that affects historical data, the answer is yes. FC version usually has been bumped already during development, but it doesn't harm if check again.
+0. Bump stuff
+
+  1. Check whether need to bump ``DB_VERSION`` to force a replay after upgraded: if there is a data schema change, or logic change that affects historical data, the answer is yes.
+  2. FC version usually has been bumped already during development, but it doesn't harm if check again.
+  3. Bump docs sub-module which links to wiki.
+
 1. A "release" branch is created based on "develop" or "hardfork".
 2. The "release" branch is merged into "testnet".
 3. For a hardfork release, the hardfork date is adapted directly on the testnet branch.
@@ -135,14 +140,14 @@ For a release,
 8. The "release" branch is merged into "master", and a version tag is created on "master".
 9. The "release" branch is merged back into "develop" and "hardfork".
 10. The "release" branch is merged into "testnet". This will produce a merge conflict for the hardfork dates, which must be resolved without changing the testnet hardfork date.
-11. Update `Doxyfile` with the last version tag. Update online code documentation by using updated `Doxyfile` as config file in the master branch. Send pull request to https://github.com/bitshares/bitshares.github.io with new content in html format.
+11. Update ``Doxyfile`` with the last version tag. Update online code documentation by using updated ``Doxyfile`` as config file in the master branch. Send pull request to https://github.com/bitshares/bitshares.github.io with new content in html format.
 12. Update `download page of bitshares.org site <https://github.com/bitshares/bitshares.github.io/blob/master/_includes/download.html>`_
 
 **Note:** Solving conflicts by github(web) will merge branches in unintended directions. Avoid solving this way, merge and resolve conflicts manually through the git command line. Conflicts generally occur when merging release to testnet.
 
-**Note 2:** Follow command line github suggestion to resolve conflicts but at the end of the process you will not have permission to merge directly to `testnet`, never push the fix to `release`. Create a new branch and push there, then create a new pull request between `testnet` and `new_branch`, merge `new_branch` to `testnet` and `release` will be automatically added to the merge.
+**Note 2:** Follow command line github suggestion to resolve conflicts but at the end of the process you will not have permission to merge directly to ``testnet``, never push the fix to ``release``. Create a new branch and push there, then create a new pull request between ``testnet`` and ``new_branch``, merge ``new_branch`` to ``testnet`` and ``release`` will be automatically added to the merge.
 
-**Note 3:** When creating tag for testnet do it from the command line with `git tag`. Github don't have the option to create a tag without a release.
+**Note 3:** When creating tag for testnet do it from the command line with ``git tag``. Github don't have the option to create a tag without a release.
 
 **Note 4:** ~~the tag commit can be changed.~~ Don't change tags on github. This is a source of confusion, and of irreproducible bug reports. Make new one is better (ex: test-2.0.180321b or wait 1 day).
 
@@ -166,12 +171,12 @@ Emergency Fix Workflows
         :align: center
 		
 
-1. The fix is applied to the version of the "release" branch that was merged into "master" when creating the broken release version.
-2. The "release" branch is merged into "master", and a version tag is created on "master".
+1. The fix is applied to the version of the "release" branch that was merged into ``master`` when creating the broken release version.
+2. The ``release`` branch is merged into ``master``, and a version tag is created on ``master``.
 3. Witnesses update to the new version, and production continues.
-4. A unit test is created on "develop" that reproduces the problem.
-5. The "release" branch is merged into "develop", and it is verified that the fix resolves the problem, by running the unit test.
-6. The "release" branch is merged into "hardfork" and "testnet".
+4. A unit test is created on ``develop`` that reproduces the problem.
+5. The ``release`` branch is merged into ``develop``, and it is verified that the fix resolves the problem, by running the unit test.
+6. The ``release`` branch is merged into ``hardfork`` and ``testnet``.
 
 
 |

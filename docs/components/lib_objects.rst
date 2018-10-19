@@ -263,9 +263,9 @@ Account
           */
          account_transaction_history_id_type most_recent_op;
          /** Total operations related to this account. */
-         uint32_t                            total_ops = 0;
+         uint64_t                            total_ops = 0;
          /** Total operations related to this account that has been removed from the database. */
-         uint32_t                            removed_ops = 0;
+         uint64_t                            removed_ops = 0;
 
          /**
           * When calculating votes it is necessary to know how much is stored in orders (and thus unavailable for
@@ -1105,27 +1105,20 @@ Transaction
  
 .. code-block:: cpp
 
-   class operation_history_object : public abstract_object<operation_history_object>
+   class account_transaction_history_object :  public abstract_object<account_transaction_history_object>
    {
       public:
-         static const uint8_t space_id = protocol_ids;
-         static const uint8_t type_id  = operation_history_object_type;
+         static const uint8_t space_id = implementation_ids;
+         static const uint8_t type_id  = impl_account_transaction_history_object_type;
+         account_id_type                      account; /// the account this operation applies to
+         operation_history_id_type            operation_id;
+         uint64_t                             sequence = 0; /// the operation position within the given account
+         account_transaction_history_id_type  next;
 
-         operation_history_object( const operation& o ):op(o){}
-         operation_history_object(){}
-
-         operation         op;
-         operation_result  result;
-         /** the block that caused this operation */
-         uint32_t          block_num = 0;
-         /** the transaction in the block */
-         uint16_t          trx_in_block = 0;
-         /** the operation within the transaction */
-         uint16_t          op_in_trx = 0;
-         /** any virtual operations implied by operation in block */
-         uint16_t          virtual_op = 0;
+         //std::pair<account_id_type,operation_history_id_type>  account_op()const  { return std::tie( account, operation_id ); }
+         //std::pair<account_id_type,uint32_t>                   account_seq()const { return std::tie( account, sequence );     }
    };
- 
+
  
 `node_property_object <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1node__property__object.html>`_ 
 -----------------------------------------------------

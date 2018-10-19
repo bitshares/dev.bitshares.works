@@ -14,6 +14,10 @@ Memory Reduction for Nodes
 Four New Options to Reduce RAM
 =========================================
 
+The BitShares blockchain is big and Graphene technology stores all the data into RAM at chain replay. Currently(2017-09-04) a full node requires 40GB of RAM. Most of the time a full node with everything loaded is not needed and expensive due to the amount of memory the machine need to have available. RAM usage can be reduced significantly by using ``witness_node`` executable options.
+
+Here are the 4 new options you can use to reduce RAM:
+
 programs/witness_node/witness_node --help
 ------------------------------------------------
 
@@ -23,8 +27,8 @@ Options for plugin accout_history
 ----------------------------------------
 
 :--track-account arg:  Account ID to track history for (may specify multiple times) 
-:--max-ops-per-account arg: Maximum number of operations per account will be kept in memory 
 :--partial-operations arg: Keep only those operations in memory that are related to account history tracking 
+:--max-ops-per-account arg: Maximum number of operations per account will be kept in memory 
 
 --------------
 
@@ -51,7 +55,7 @@ You can launch a node only with the witness plugin activated like the following 
 
 Allows to track only the history of selected accounts.
 
-Suppose you have an application wallet or something that is only interested in the history of one account or just a few accounts, no need to spend the memory in the huge amount of account history from the rest of the network. You will still be able to do transfers and everything as normal, it is just the account history that will not be available.
+Suppose you have an application wallet or something that is only interested in the history of 1 account or just a few accounts, no need to spend the memory in the huge amount of account history from the rest of the network. You will still be able to do transfers and everything as normal, it is just the account history that will not be available.
 
 In order to track the history only for just one account you may start the node as::
 
@@ -73,7 +77,7 @@ Add a number of operations the node will store for each account in the network.
 
 We found out that most of the blockchain size is actually history of millions of orders made by automated bot accounts in the system. The market making these accounts do, is very needed for the DEX liquidity, but is of little value for most nodes.
 
-This parameter allows to go deleting the oldest operation history from all accounts. Balances and everything will still be fine, please remember this is *only deleting history*.
+This parameter allows to go deleting the oldest operation history from all accounts. Balances and everything will still be fine, please remember this is only deleting history.
 
 By limiting the number of operations per account to 1000 the blockchain decrease in size is more than notorious and will allow you to run nodes in reduced memory machines, can run with 4-5 gigs by using combinations around this option.
 
@@ -120,7 +124,7 @@ This will allow me to run the node with less than 5 gigs(4.820492G)::
 Special Notes
 ---------------------
 
-- A new option could be `untrack-account`. we could identify the biggers and run a node with the account history of bots out.
+- A new option could be ``untrack-account``. we could identify the biggers and run a node with the account history of bots out.
 
 -------------
   
