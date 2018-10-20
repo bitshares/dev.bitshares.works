@@ -1,68 +1,67 @@
 
 **************************
-Development Environments
+开发环境
 **************************
 
-.. contents:: Table of Contents
+.. contents:: 目录
    :local:
    
 -------
 
+你可以在不同平台上安装比特股的BitShares-Core;:ref:“Linux:Ubuntu (x64) ”，:ref:“OS X ”，和:“Windows ”。下载OpenSSL和Boost时需要检查部分依赖包。请确认所下载的版本。
 
-BitShares offers you to install BitShares-Core into different platforms; :ref:`Linux:Ubuntu (x64) <build-ubuntu>` , :ref:`OS X <build-osx>` , and :ref:`Windows <build-windows>`.   There are dependencies to check when you download OpenSSL and  Boost. Please make sure which versions you downloaded. 
+另外，如果你是Windows用户，您还有另外两种方法在Windows (x64)操作系统上安装BitShares Core。一种是:ref:“Windows的clic - wallet tools (x64) < clic -tool>”，另一种是:ref:“Linux的Windows子系统 (WSL)”。
 
-Also, if you are a Windows user, you have other two choices to install BitShares Core to your Windows (x64) Operation System.  One is :ref:`CLI-Wallet tools for Windows (x64) <cli-tool>` , another one is :ref:`Windows SubSystem for Linux (WSL) <build-wsl>` .
+用于Windows (x64)系统的clic-wallet工具允许您在不安装BitShares Core的情况下使用命令行钱包（CLI wallet）。下载clic-wallet工具包(zip文件)，解压后您将找到运行命令行钱包所需的所有文件。
 
-The CLI-wallet tools for Windows (x64) allow you to have CLI wallet without the BitShares Core installation. After you download the cli-wallet tools (zip file) and unzip it, you will find all files you need to run CLI wallet.  
+另一种选择是Linux的Windows子系统(WSL)。 WSL适用于使用Windows 10（x64）操作系统并希望在Ubuntu上构建BitShares Core的开发人员。
 
-Another option, Windows SubSystem for Linux (WSL).  The WSL is for a developer who uses a Windows 10 (x64) Operation System and wants to build BitShares Core on Ubuntu. 
-
-> See :ref:`System Requirements <system-requirements-node>` : (updated: 2018-07-02).
+> 查看 :ref:`系统需求 <system-requirements-node>` : (更新: 2018-07-02).
 
 
 -------------------
 
-BitShares Code and Files 
+比特股代码和文件
 ===============================
 
 
-- Open Source program
-- Language uses (mainly): BitShares-Core(C++), python
-- `BitShares GitHub <https://github.com/bitshares>`_
-   - **BitShares-Core (C++)** - BitShares Blockchain implementation and command-line interface.
-   - **Bitshares-FC** - Fast-compiling C++ library 
-   - **BitShares python** - Fully featured client-side library for the BitShares Blockchain - written entirely in python.
-   - **BitShares-UI** - Fully featured Graphical User Interface / Reference Wallet for the BitShares Blockchain.
-   - **BSIPs** - BitShares Improvement Proposals and Protocols. These technical documents describe the process of updating and improving the BitShares blockchain and technical ecosystem.
-   - **BitSharesjs** - JavaScript tools for BitShares Encryption and Serialization.
-   - **BitSharesjs-ws** - Javascript websocket interface for Bitshares 
-   - (more...)
+- 开源项目
+- 使用的语言 (主要地): BitShares-Core(C++), python
+- `比特股 GitHub <https://github.com/bitshares>`_
+   - **BitShares-Core (C++)** - 比特股块链的实现以及命令行接口.
+   - **Bitshares-FC** - 快速编译的 C++ 库 
+   - **BitShares python** - 比特股块链全功能的客户端库-完全用python编写.
+   - **BitShares-UI** - 比特股块链全功能图形用户界面/参考钱包.
+   - **BSIPs** - 比特股改进协议. 这些技术文档描述了更新和改进比特股块链和技术生态系统的过程.
+   - **BitSharesjs** - 比特股加密和序列化的JavaScript工具.
+   - **BitSharesjs-ws** - 比特股的Javascript websocket接口 
+   - (更多...)
 
 ----------
    
 
-BitShares Core: Projects Guide 
+BitShares Core: 项目指南 
 ==================================
 
-Project Guide
+项目指南
 ------------------
 
-- `Contribution Guide [DRAFT] <https://github.com/bitshares/bitshares-core/wiki/Contribution-Guide>`_
-- `Contribution Guide Project <https://github.com/bitshares/bitshares-core/projects/6>`_
+- `贡献指南 [DRAFT] <https://github.com/bitshares/bitshares-core/wiki/Contribution-Guide>`_
+- `贡献指南项目 <https://github.com/bitshares/bitshares-core/projects/6>`_
 
-BitShares-Core (Team) 
+BitShares-Core (团队) 
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-The BitShares-Core team is a team of developers who manage the BitShares-Core code and handle the issues that are submitted by other developers. The team creates project plans for next release(s) and delivers the result to the Bitshares community. 
+BitShares-Core团队是一个由开发人员组成的团队，他们管理BitShares-Core代码并处理其他开发人员提交的问题。团队为下一次版本发布制定项目计划，并将结果提交给比特股社区。
 
-* Roles
+* 角色
 
-  - improving
-  - maintaining
-  - upgrading protocol if needed
-  - making Project plans for the future release
-  - creating/ announcing  Release 
-  - supporting the BitShares community/ answering questions
+  - 改进
+  - 维护
+  - 如果需要的话，更新协议
+  - 为新版本的发布制定计划
+  - 创建/ 通知  Release 
+  - 支持比特股社区/ 解答问题
   
 	
 ------------------	
@@ -70,99 +69,99 @@ The BitShares-Core team is a team of developers who manage the BitShares-Core co
 BitShares Core: GitFlow
 =========================
 
-Purpose
+目的
 -------------
 
-* The purpose of this document is to describe and define how changes flow into our code and through the various stages of development until it finally goes into production.
-* The general idea is based on `git-flow <https://datasift.github.io/gitflow/IntroducingGitFlow.html>`_
-* For our purposes, the general concept behind gitflow has been extended to allow for these additional needs:
+* 本文档的目的是描述和定义变更如何流入我们的代码，以及如何贯穿到开发的各个阶段，直到它最终投入生产.
+* 总体的思路是基于 `git-flow <https://datasift.github.io/gitflow/IntroducingGitFlow.html>`_
+* 为了达到目的，我们将gitflow中的一般概念加以扩展从而满足以下这些额外的需求：
 
-1. We have two different types of releases, mainnet and testnet, with a master-like branch for each one.
-2. We have to distinguish Consensus Impacting Changes (aka hardforks) from Non-Consensus Impacting Changes.
+1. 我们有两种不同的版本，mainnet（主网）和testnet（测试网），每个版本都有一个类似于master的分支.
+2. 我们必须将共识影响变更（又名硬分叉）以及非共识影响变更区分开来.
 
 
-Non-Consensus: Development / Release / Bugfix Workflows
+非共识性的: 开发 / 发布 / Bugfix 工作流
 -----------------------------------------------------------
 
 .. image:: ../../_static/structures/bts-non-concensus.png
-        :alt: BitShares
+        :alt: 比特股
         :width: 750px
         :align: center
 
-Consensus: Development / Release / Bugfix Workflows
+共识性的: 开发 / 发布 / Bugfix 工作流
 ------------------------------------------------------
 
 .. image:: ../../_static/structures/bts-concensus.png
-        :alt: BitShares 
+        :alt: 比特股 
         :width: 750px
         :align: center
 
 
-Goals To Achieve
+待实现的目标
 ---------------------
 
-1. Maintain two independent release versions, testnet and mainnet.
-2. Decouple development from releases, i. e. maintain the ability to create emergency bugfixes for current release without bringing incomplete new features into production.
-3. Separate consensus-related changes from non-consensus-related changes.
-4. Keep development branches compatible with mainnet.
+1. 维护两个独立的版本，测试网和主网.
+2. 将开发与版本发布分离开来，即能够紧急修复当前版本的代码漏洞，而又不会将不完备的功能点引入到生产环境。
+3. 分离共识相关的变更与非共识相关的变更.
+4. 保持开发分支与主网兼容.
 
-Basic Rules
+基本规则
 ---------------
 
-1. Development always happens in private feature-branches. The only exception is a change that must be distinguished in the destination branch (typical example: hardfork date in testnet).
-2. Features are merged after they are reasonably complete, i. e. they come with unit tests that provide reasonable coverage and do not report any errors.
-  - "Completed" features that are not consensus-related are merged into "develop".
-  - "Completed" features that are consensus-related are merged into the "hardfork" branch, with a hardfork date in the far future.
-  - All merges into "develop" or "hardfork" are performed via github PR's and require review and approval from core source (if the PR is created by a core dev at least one other core dev must review and approve).
-  - To maintain a clean history and make reviewing and merging easier, feature branches must be rebased onto current "develop" (or "hardfork") before creating a PR.
-  - Merges are always done as real merges, not as fast-forwards, and not squashed. 
-3. Core devs coordinate regular merges from "develop" into "hardfork".
-4. Both "develop" and "hardfork" should always remain compatible with mainnet, i. e. a full replay must be possible.
+1. 开发都是在私有的功能分支上进行的。唯一例外地能在目标分支上直接更改的变更必须是非常重要的(典型示例:测试网中的硬分叉日期)
+2. 功能在相对完备时可加以合并，也就是说，它们带有提供了合理覆盖率且不报告任何错误的单元测试
+  - 与共识无关的“完备的”功能合并到”开发“分支
+  - 与共识相关的“完备的”功能合并到“硬分叉”分支，且标注上很久之后的硬分叉日期
+  - 所有到“开发”或“硬分叉”分支的合并操作都是通过在github上发起PR请求执行的，并且需要核心源码开发人员的审批(如果PR请求由一个核心开发人员发起，那么至少需要另一个核心开发人员进行审批)
+  - 为了保持清晰的提交历史记录，同时简化审核和合并过程，在发起PR请求之前，功能分支必须从当前的“开发”(或“硬分叉”)分支构建
+  - 总是通过真实合并的方式来合并分支，而不是推进式合并或者拼凑式合并的方式
+3. 核心开发人员协调从“开发”分支到“硬分叉”分支的常规合并
+4. “开发”分支和“硬分叉”分支都应该始终和mainnet保持兼容，也就是说，能保证一次完整的重现
 
-How To Create a Release
+如何创建Release
 ---------------------------
 
-For a release,
+对于一次发版,
 
-0. Bump stuff
+0. 修改
 
-  1. Check whether need to bump ``DB_VERSION`` to force a replay after upgraded: if there is a data schema change, or logic change that affects historical data, the answer is yes.
-  2. FC version usually has been bumped already during development, but it doesn't harm if check again.
-  3. Bump docs sub-module which links to wiki.
+  1. 检查升级后是否需要修改' ' DB_VERSION ' '来强制性重现:如果有数据库变更或逻辑更改而影响了历史数据，则答案是肯定的.
+  2. FC版本通常在开发过程中已经修改过了，不过再检查一遍也没什么损失.
+  3. 修改链接到wiki的子模块文档.
 
-1. A "release" branch is created based on "develop" or "hardfork".
-2. The "release" branch is merged into "testnet".
-3. For a hardfork release, the hardfork date is adapted directly on the testnet branch.
-4. The "testnet" branch is tagged as test-version.
-5. Bugfixes for the release are created on the "release" branch and merged into "testnet". Additional test-versions are tagged as needed.
-6. After sufficient testing, the release must be approved. In the case of a hardfork release, witness approval is required.
-7. After approval, the mainnet hardfork date is decided and set in the "release" branch.
-8. The "release" branch is merged into "master", and a version tag is created on "master".
-9. The "release" branch is merged back into "develop" and "hardfork".
-10. The "release" branch is merged into "testnet". This will produce a merge conflict for the hardfork dates, which must be resolved without changing the testnet hardfork date.
-11. Update ``Doxyfile`` with the last version tag. Update online code documentation by using updated ``Doxyfile`` as config file in the master branch. Send pull request to https://github.com/bitshares/bitshares.github.io with new content in html format.
-12. Update `download page of bitshares.org site <https://github.com/bitshares/bitshares.github.io/blob/master/_includes/download.html>`_
+1. “发布”分支是基于“开发”或“硬分叉”分支的.
+2. “发布”分支合并到测试网.
+3. 发布硬分叉时, 硬分叉日期在测试网分支上直接更改.
+4. “测试网”分支要打上测试版本的标签.
+5. 版本的Bugfixes是在“发布”分支上创建的，并合并进“测试网”分支，此外还需要打上测试版本号标签.
+6. 充分测试后，发版请求必须得到批准. 发布硬分叉版本，需要受托人的批准.
+7. 批准后可确定主网硬分叉日期，同时将该日期记录在“发布”分支上.
+8. 将“发布”分支合并到“主”分支上，并在“主”分支上打上版本号标签.
+9. 将“发布”分支与“开发”分支和“硬分叉”分支进行合并.
+10. 将“发布”分支和并进“测试网”分支. 由于硬分叉日期的差异合并时会发生冲突，需要在不改变测试网硬分叉日期的前提下解决这个冲突.
+11. 更新“Doxyfile”文件，打上最后一次的版本号. 通过更新主分支的配置文件“Doxyfile”从而更新在线代码文档. 使用html格式重新向https://github.com/bitshares/bitshares.github.io 发起PR请求。
+12. 更新 `bitshares.org的下载页 <https://github.com/bitshares/bitshares.github.io/blob/master/_includes/download.html>`_
 
-**Note:** Solving conflicts by github(web) will merge branches in unintended directions. Avoid solving this way, merge and resolve conflicts manually through the git command line. Conflicts generally occur when merging release to testnet.
+**注意:** 通过网页使用github来解决冲突时会合并分支。避免使用这种解决方式，改为使用git的命令行来手动地合并分支，解决冲突。冲突通常发生在合并发布分支进测试网分支的时候.
 
-**Note 2:** Follow command line github suggestion to resolve conflicts but at the end of the process you will not have permission to merge directly to ``testnet``, never push the fix to ``release``. Create a new branch and push there, then create a new pull request between ``testnet`` and ``new_branch``, merge ``new_branch`` to ``testnet`` and ``release`` will be automatically added to the merge.
+**注意 2:** 使用github命令行来解决冲突的最后会提示你没有权限直接将分支合并进测试网分支，永远不要将修复操作推送到发布分支。创建一个新的分支并将提交推送到该分支，然后在测试网分支和这个新分支间发起新的PR请求，将新分支合并进测试网分支，发布分支将会自动被添加到这次合并中。
 
-**Note 3:** When creating tag for testnet do it from the command line with ``git tag``. Github don't have the option to create a tag without a release.
+**注意 3:** 使用“git tag”命令来给测试网创建标签。Github无法在没有发布版本的情况下创建标签.
 
-**Note 4:** ~~the tag commit can be changed.~~ Don't change tags on github. This is a source of confusion, and of irreproducible bug reports. Make new one is better (ex: test-2.0.180321b or wait 1 day).
+**注意 4:** ~~这个创建标签的提交请求是可以改变的。~~不要改变github上的标签。这会令人困惑而且会出现不可重现的bug。最好新建一个标签(例如:test-2.0.180321b或者等一天后再操作）.
 
-**Note 5:** Do not mark releases as "pre release" unless there is a real new version coming immediately after. Never upgrade "pre release" to "release" as new emails to subscribers will not be sent when doing so.
+**注意 5:** 不要将发布标记为“预发布”，除非随后有真正的新版本发布。永远不要将“预发布”升级为“发布”，因为这样做订阅者不会收到新的邮件提醒.
 
-How To Create an Emergency Fix
+如何发起紧急修复
 -------------------------------------
 
-An emergency fix may become necessary when a serious problem in mainnet is discovered. The goal here is to fix the problem as soon as possible, while keeping the risk for creating additional problems as low as possible.
+当在主网发现严重问题时，可能需要进行紧急修复。这里的目标是尽快修复问题，同时尽可能降低产生其他问题的风险.
 
-First of all, the problem must be analyzed and debugged. This happens, naturally, directly on the release version.
+首先需要分析和调试问题，显然，这个需要直接在发布版本上操作.
 
-Presumably the developer who creates the fix will work on his private master branch. That is OK. But for publishing the fix, the following steps should be taken:
+可能发起修复的开发人员需要在他的个人主分支上工作。这没问题，但是要发布修复，应该采取以下步骤:
 
-Emergency Fix Workflows
+紧急修复工作流
 -----------------------------
 
 .. image:: ../../_static/structures/bts-emergency-fix.png
@@ -171,12 +170,12 @@ Emergency Fix Workflows
         :align: center
 		
 
-1. The fix is applied to the version of the "release" branch that was merged into ``master`` when creating the broken release version.
-2. The ``release`` branch is merged into ``master``, and a version tag is created on ``master``.
-3. Witnesses update to the new version, and production continues.
-4. A unit test is created on ``develop`` that reproduces the problem.
-5. The ``release`` branch is merged into ``develop``, and it is verified that the fix resolves the problem, by running the unit test.
-6. The ``release`` branch is merged into ``hardfork`` and ``testnet``.
+1. 当创建被破坏的发行版本时，修复操作会在发布分支上执行，该分支之前已经合并进了主分支.
+2. 将发布分支合并进主分支，同时给主分支打上版本号标签.
+3. 受托人更新节点到新版本，并继续产块.
+4. 在能重现问题的开发分支上创建单元测试.
+5. 将发布分支合并进开发分支，并且通过单元测试验证这次修复解决了问题.
+6. 将发布版本合并进硬分叉分支和测试网分支.
 
 
 |
