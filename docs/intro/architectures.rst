@@ -1,24 +1,22 @@
 
 ******************************
-Introduction & Architectures 
+
+引言 & 架构
 ******************************
 
+欢迎来到比特股！本节我们将概述比特股的架构体系（实体和结构），以及了解核心团队如何处理开发工作。
 
-Welcome to BitShares! In this section, we are looking into the BitShares Architecture overview (entities and structures), and how the Core team processes the development work.
+开发人员如果有兴趣为核心（Core）团队做出贡献，他们可能需要查看贡献指南（Contribution Guid）和GitFlow工作流，从而了解比特股核心（BitShares-Core）团队如何处理仓库文件和分支。 核心团队当前的项目、问题以及发布计划位于比特股核心（bitshares-core）仓库的问题（Issues）和项目（Projects）标签下。
 
-If developers who are interested in contributing to the Core team, they might want to check the Contribution Guide and the GitFlow to understand how BitShares-Core team handles the repository files and branches.  The Core team current project, issues, and releases plans are located in the BitShares Core repository under the Issues and the Projects tabs.m. 
-
-.. contents:: Table of Contents
+.. contents:: 目录
    :local:
    
 -------
 
-
-
-BitShares Members
+比特股成员
 ===================
 
-If you have a BitShares account, you are a BTS Holder, and you have a voting power to make decisions in the BitShares Community. (Read more: :ref:`BitShares Accounts <bts-accounts>` )
+拥有比特股账号就意味着你是BTS的持有者，同时具有投票权从而在比特股社区作出决策. (更多: :ref:`比特股账户 <bts-accounts>` )
 
 
 
@@ -29,104 +27,103 @@ If you have a BitShares account, you are a BTS Holder, and you have a voting pow
 
 ----------------
 
-BitShares Architecture 
+比特股架构 
 ==========================
 
-GitHub Repositories and Entities
+GitHub仓库和实体
 ------------------------------------
 
-This is an overview of BitShares Architecture image. The purpose of this image is to bring the main elements together and share what types of resources you might find in the BitShares Github repositories. 
+下图概述了比特股的架构体系。该图的目的是将主要元素组合在一起，同时分享那些在比特股Github仓库可能出现的资源类型。
 
 .. image:: ../../_static/structures/bitshares-architecture-v3notop.png
-        :alt: BitShares Architecture
+        :alt: 比特股架构
         :width: 650px
         :align: center
 
 ----------------
 
-Key Design Concepts and the Features
+关键的设计概念和特性
 =========================================
 
-The below image is an overview of BitShares Architecture. The purpose of this image is to bring the main elements together and share what types of resources you might find in the BitShares Github repositories. 
+下图概述了比特股的架构体系。该图的目的是将主要元素组合在一起，同时分享那些在比特股Github仓库可能出现的资源类型。
 
-Key points and fundamentals for the design:
+关键的设计概念与特征： 
 ---------------------------------------------
 
-- Keep everything in memory.
-- Keep the core business logic in a single thread.
-- Keep cryptographic operations (hashes and signatures) out of the core business logic.
-- Divide validation into state-dependent and state-independent checks.
-- Use an object-oriented data model.
-- Avoid synchronization primitives (locks, atomic operations)
-- Minimize unnecessary computation in the business logic processor.
+- 将一切都存储在内存中
+- 单线程运行核心业务逻辑
+- 核心业务逻辑不涉及加密操作（哈希和签名）
+- 验证分为状态依赖检查和状态独立检查
+- 使用面向对象的数据模型
+- 避免同步原语（锁，原子操作）
+- 最小化业务逻辑处理器中不必要的计算
     
-BitShares is built to aim high-performance blockchain and has been done to remove all calculations that are not part of the critical, order-dependent, evaluation from the core business logic, and to design a protocol the facilitates these kinds of optimizations.
+比特股的目的是建立高性能的区块链，将那些非关键的、非顺序依赖的、非评估的计算从核心业务逻辑中删除，并设计了一个协议来促进这类优化。
 
-
-BitShares Available Features
+比特股可用的特性
 --------------------------------
 
-BitShares can be made to function as a software, a network, a ledger, a bank, an exchange, and a currency all at once. (e.g., It can fulfill the role of a bank by maintaining a distributed ledger that tracks debt collateralized by other assets. You can find out that BitShares offers numerous features that are not available on other popular blockchain platforms.
+比特股同时兼具软件，网络，账本，银行，交易所和货币的功能。 （例如，它可以通过维护一个分布式账本来充当银行的角色，该账本可以跟踪用其他资产抵押的债务。你可以发现比特股提供了许多在其他流行的区块链平台上没有的功能。
 
-* **SmartCoins** are fungible, divisible and free from any restrictions. A SmartCoin is a cryptocurrency whose value is pegged to that of another asset, such as the US Dollar or gold. SmartCoins implement the concept of a collateralized loan and offer it on the blockchain.
-* **Decentralized Exchange** - BitShares provides a high-performance decentralized exchange, with all the features you would expect in a trading platform. 
+* **智能货币（SmartCoins）** 是可替代，可分割的，且不受任何限制。智能货币是一种加密货币，其价值与美元或黄金等其他资产挂钩。 智能货币实现了抵押贷款的概念并在区块链中加以实现
+* **去中心化交易所** - 比特股提供了一个高性能的去中心化交易所，这个交易所具有你对交易平台所能期待的所有功能。
 
-  - Secure: All of the reserves are kept as BTS held on the blockchain, and they cannot be stolen, because there are no private keys that can be compromised to steal the reserves.
+  - 安全: 所有的储备都以BTS的形式保存在区块链上，且不会被窃取，因为没有私钥可以被破解来窃取这些储备
    
-* Trading / Financial Services 
-* Transferable Named Account (human-friendly account name)
-* Globally unique account name and ID.
-* Dynamic Account Permissions
-* Multi-user control for account
-* Two authorities: owner and active keys
-* Transaction + multi-signature authority
-* **Proposed transaction infrastructure** 
+*交易/金融服务
+*可转让的命名账户（人性化的账户名）
+*全球唯一的账户名和ID
+*动态的账户权限
+*多用户管理账户
+*两种权限：账户拥有者私钥和活动私钥
+*交易+多签名权限
+* **拟议的交易基础设施** 
 
-  - witch tracks partially approved transactions.
-  - It can be used for a scheduled payment 
+  - 跟踪部分批准的交易
+  - 可用于定期支付 
    
-* Fees calculation
+* 交易费计算
 
-  - Transaction fee
-  - Fee Schedules 
+  - 交易费
+  - 费用表 
    
-* Assets - **User Issues Asset (UIA)** 
+* 资产 - **用户发行资产（UIA）**
 
-  - to help facilitate profitable business models for certain types of services.
-  - *Use Cases* (Event tickets, Reward points, privatized SmartCoins, Predictions Market, more).
-  - How to profit (i.e.,Fee pools)
-	 
-* BitAsset - bitUSD, bitEUR, bitCNY, and others.       
-* **Delegated Proof of State Consensus (DPOS)** 
+  - 为某些服务提供可盈利的商业模式
+  - *用例*（活动门票，奖励积分，私有化智能货币，预测市场等）
+  - 如何盈利（即费用池）
   
-  - Under DPOS, BTS Holder has influence.
-  - A robust and flexible consensus protocol.  
-  
-* Block Production by Elected witnesses
-* **Referral Program** - to incentivize people to bring in more people.
-* Vesting valance
+* 比特资产（BitAsset） - 比特美元（bitUSD），比特欧元（bitEUR），比特人民币（bitCNY）等
+* **委托权益证明共识（DPOS）**
 
+  - 根据DPOS，BTS持有者具有影响力.
+  - 强大而灵活的共识协议.
+  
+* 区块由当选的受托人生产
+* **推荐计划** - 激励人们引入更多的人参与.
+* 授予的资金
+  
 ----------------
 
-Transactions and Performance
+交易和性能
 ===============================
 
-Bitshares Block Explorer
+比特股区块浏览器
 -------------------------------
 
-BitShares Explorer shows BitShares Blockchain information. You can observe BitShares Blockchain *Health* Status (head_block_num, head_block_age, chain_id, etc.), how transactions processing, assets volume, and members.
+比特股浏览器（BitShares Explorer）显示了比特股区块链的信息。你可以查看比特股区块链的健康（Health）状态（包括head_block_num, head_block_age, chain_id等），交易处理过程，资产总数以及成员。
 
-If you would like to see more detailed information, the Open Explorer offers other information tabs (i.e., Operations, Proxies, Markets, SmartCoins, UIAs, and Holders) to view.
+Open Explorer提供了其他更多的详细信息（如操作，代理，市值，智能货币，用户发行资产和持有者）。
 
 - `Cryptofresh  <https://www.cryptofresh.com/>`_
 - `Open Explorer <http://open-explorer.io/>`_
 - `bts.ai <https://bts.ai/>`_
 
 
-Blockchain Activity
+区块链活跃度
 ---------------------
 
-Blockchain Activity Matrix shows different tokens (assets) *Activity*, *Value*, and *Index*. It's interesting to check the CUI index is Capacity Utilization Index (a rate of blockchain daily activity to total blockchain capacity) to see how much numbers BitShares has.
+区块链活跃度矩阵显示了不同代币（资产）的*活跃度*, *价格*, 和 *指数*。有趣的是，可以通过容量利用率指数（区块链日活占总的区块链容量的比例）查看比特股有多少活跃人数。
 
 - `Block'tivity <http://blocktivity.info/>`_
   
