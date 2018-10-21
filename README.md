@@ -14,3 +14,9 @@ Welcome to the documentation portal for the BitShares Blockchain. The content on
 
 ***
 
+### Contributing 
+
+- [How to Contribute to BitShares Documentation Project](https://github.com/bitshares/dev.bitshares.works/blob/master/CONTRIBUTING.md)
+
+
+***

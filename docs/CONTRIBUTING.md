@@ -8,7 +8,7 @@ Please take a moment to review this document in order to make the contribution p
 ***
 
 <p align="center">
-  <img src="/_static/imgs/how-to-process-contribution.png" width="800" title="Contribution Process Flow">
+  <img src="how-to-process-contribution.png" width="800" title="Contribution Process Flow">
 </p>
 
 
