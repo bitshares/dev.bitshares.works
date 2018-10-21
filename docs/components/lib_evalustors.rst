@@ -289,7 +289,8 @@ asset_publish_feeds_evaluator
          void_result do_evaluate( const asset_publish_feed_operation& o );
          void_result do_apply( const asset_publish_feed_operation& o );
 
-         std::map<std::pair<asset_id_type,asset_id_type>,price_feed> median_feed_values;
+         const asset_object* asset_ptr = nullptr;
+         const asset_bitasset_data_object* bitasset_ptr = nullptr;
    };
   
   
@@ -378,10 +379,108 @@ evaluator
 market_evaluator
 =============================
 
-* limit_order_create_evaluator
-* limit_order_cancel_evaluator
-* call_order_update_evaluator
-* bid_collateral_evaluator
+.. code-block:: cpp 
+
+   class account_object;
+   class asset_object;
+   class asset_bitasset_data_object;
+   class call_order_object;
+   struct bid_collateral_operation;
+   struct call_order_update_operation;
+   struct limit_order_cancel_operation;
+   struct limit_order_create_operation;
+   
+
+limit_order_create_evaluator
+----------------------------------------------
+
+.. code-block:: cpp 
+
+   class limit_order_create_evaluator : public evaluator<limit_order_create_evaluator>
+   {
+      public:
+         typedef limit_order_create_operation operation_type;
+
+         void_result do_evaluate( const limit_order_create_operation& o );
+         object_id_type do_apply( const limit_order_create_operation& o );
+
+         asset calculate_market_fee( const asset_object* aobj, const asset& trade_amount );
+
+         /** override the default behavior defined by generic_evalautor
+          */
+         virtual void convert_fee() override;
+
+         /** override the default behavior defined by generic_evalautor which is to
+          * post the fee to fee_paying_account_stats.pending_fees
+          */
+         virtual void pay_fee() override;
+
+         share_type                          _deferred_fee  = 0;
+         asset                               _deferred_paid_fee;
+         const limit_order_create_operation* _op            = nullptr;
+         const account_object*               _seller        = nullptr;
+         const asset_object*                 _sell_asset    = nullptr;
+         const asset_object*                 _receive_asset = nullptr;
+   };
+   
+   
+limit_order_cancel_evaluator
+----------------------------------------------
+
+.. code-block:: cpp 
+
+   class limit_order_cancel_evaluator : public evaluator<limit_order_cancel_evaluator>
+   {
+      public:
+         typedef limit_order_cancel_operation operation_type;
+
+         void_result do_evaluate( const limit_order_cancel_operation& o );
+         asset do_apply( const limit_order_cancel_operation& o );
+
+         const limit_order_object* _order;
+   };
+
+
+call_order_update_evaluator
+----------------------------------------------
+
+.. code-block:: cpp 
+
+   class call_order_update_evaluator : public evaluator<call_order_update_evaluator>
+   {
+      public:
+         typedef call_order_update_operation operation_type;
+
+         void_result do_evaluate( const call_order_update_operation& o );
+         object_id_type do_apply( const call_order_update_operation& o );
+
+         bool _closing_order = false;
+         const asset_object* _debt_asset = nullptr;
+         const account_object* _paying_account = nullptr;
+         const call_order_object* _order = nullptr;
+         const asset_bitasset_data_object* _bitasset_data = nullptr;
+   };
+   
+   
+bid_collateral_evaluator
+----------------------------------------------
+
+.. code-block:: cpp 
+
+   class bid_collateral_evaluator : public evaluator<bid_collateral_evaluator>
+   {
+      public:
+         typedef bid_collateral_operation operation_type;
+
+         void_result do_evaluate( const bid_collateral_operation& o );
+         void_result do_apply( const bid_collateral_operation& o );
+
+         const asset_object* _debt_asset = nullptr;
+         const asset_bitasset_data_object* _bitasset_data = nullptr;
+         const account_object* _paying_account = nullptr;
+         const collateral_bid_object* _bid = nullptr;
+   };
+
 
 proposal_evaluator
 =================================

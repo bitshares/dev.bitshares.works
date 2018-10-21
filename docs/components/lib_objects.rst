@@ -92,7 +92,8 @@ Account
 
 `account_object <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1account__object.html>`_ 
 -----------------------------------------------------
-- This class represents an account on the object graphAccounts are the primary unit of authority on the graphene system. Users must have an account in order to use assets, trade in the markets, vote for committee_members, etc 
+- This class represents an account on the object graph
+- Accounts are the primary unit of authority on the graphene system. Users must have an account in order to use assets, trade in the markets, vote for committee_members, etc 
 
 .. code-block:: cpp 
 
@@ -244,6 +245,7 @@ Account
   
 `account_statistics_object <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1account__statistics__object.html>`_ 
 -----------------------------------------------------
+
 - This object contains regularly updated statistical data about an account. It is provided for the purpose of separating the account data that changes frequently from the account data that is mostly static, which will minimize the amount of data that must be backed up as part of the undo history everytime a transfer is made. 
 
 .. code-block:: cpp 
@@ -322,7 +324,161 @@ Account
    };
    
 
- 
+account_member_index
+-----------------------
+- This secondary index will allow a reverse lookup of all accounts that a particular key or account is an potential signing authority.
+  
+.. code-block:: cpp 
+  
+   class account_member_index : public secondary_index
+   {
+      class key_compare {
+      public:
+         inline bool operator()( const public_key_type& a, const public_key_type& b )const
+         {
+            return a.key_data < b.key_data;
+         }
+      };
+
+      public:
+         virtual void object_inserted( const object& obj ) override;
+         virtual void object_removed( const object& obj ) override;
+         virtual void about_to_modify( const object& before ) override;
+         virtual void object_modified( const object& after  ) override;
+
+
+         /** given an account or key, map it to the set of accounts that reference it in an active or owner authority */
+         map< account_id_type, set<account_id_type> > account_to_account_memberships;
+         map< public_key_type, set<account_id_type>, key_compare > account_to_key_memberships;
+         /** some accounts use address authorities in the genesis block */
+         map< address, set<account_id_type> >         account_to_address_memberships;
+
+
+      protected:
+         set<account_id_type>  get_account_members( const account_object& a )const;
+         set<public_key_type, key_compare>  get_key_members( const account_object& a )const;
+         set<address>          get_address_members( const account_object& a )const;
+
+         set<account_id_type>  before_account_members;
+         set<public_key_type, key_compare>  before_key_members;
+         set<address>          before_address_members;
+   };
+   //(20181019)
+
+account_referrer_index
+--------------------------
+- This secondary index will allow a reverse lookup of all accounts that have been referred by a particular account.
+	
+.. code-block:: cpp 
+    
+   class account_referrer_index : public secondary_index
+   {
+      public:
+         virtual void object_inserted( const object& obj ) override;
+         virtual void object_removed( const object& obj ) override;
+         virtual void about_to_modify( const object& before ) override;
+         virtual void object_modified( const object& after  ) override;
+
+         /** maps the referrer to the set of accounts that they have referred */
+         map< account_id_type, set<account_id_type> > referred_by;
+   };
+   //(20181019)
+   
+   
+typedef multi_index_container
+----------------------------------
+
+typedef generic_index
+----------------------
+   
+.. code-block:: cpp 
+       
+	struct by_account_asset;
+	struct by_asset_balance;
+	struct by_maintenance_flag;
+	/**
+	* @ingroup object_index
+	*/
+	typedef multi_index_container<
+	  account_balance_object,
+	  indexed_by<
+		 ordered_unique< tag<by_id>, member< object, object_id_type, &object::id > >,
+		 ordered_non_unique< tag<by_maintenance_flag>,
+							 member< account_balance_object, bool, &account_balance_object::maintenance_flag > >,
+		 ordered_unique< tag<by_account_asset>,
+			composite_key<
+			   account_balance_object,
+			   member<account_balance_object, account_id_type, &account_balance_object::owner>,
+			   member<account_balance_object, asset_id_type, &account_balance_object::asset_type>
+			>
+		 >,
+		 ordered_unique< tag<by_asset_balance>,
+			composite_key<
+			   account_balance_object,
+			   member<account_balance_object, asset_id_type, &account_balance_object::asset_type>,
+			   member<account_balance_object, share_type, &account_balance_object::balance>,
+			   member<account_balance_object, account_id_type, &account_balance_object::owner>
+			>,
+			composite_key_compare<
+			   std::less< asset_id_type >,
+			   std::greater< share_type >,
+			   std::less< account_id_type >
+			>
+		 >
+	  >
+	> account_balance_object_multi_index_type;
+
+	/**
+	* @ingroup object_index
+	*/
+	typedef generic_index<account_balance_object, account_balance_object_multi_index_type> account_balance_index;
+
+	struct by_name{};
+
+	/**
+	* @ingroup object_index
+	*/
+	typedef multi_index_container<
+	  account_object,
+	  indexed_by<
+		 ordered_unique< tag<by_id>, member< object, object_id_type, &object::id > >,
+		 ordered_unique< tag<by_name>, member<account_object, string, &account_object::name> >
+	  >
+	> account_multi_index_type;
+
+	/**
+	* @ingroup object_index
+	*/
+	typedef generic_index<account_object, account_multi_index_type> account_index;
+
+	struct by_owner;
+	struct by_maintenance_seq;
+
+	/**
+	* @ingroup object_index
+	*/
+	typedef multi_index_container<
+	  account_statistics_object,
+	  indexed_by<
+		 ordered_unique< tag<by_id>, member< object, object_id_type, &object::id > >,
+		 ordered_unique< tag<by_owner>,
+						 member< account_statistics_object, account_id_type, &account_statistics_object::owner > >,
+		 ordered_unique< tag<by_maintenance_seq>,
+			composite_key<
+			   account_statistics_object,
+			   const_mem_fun<account_statistics_object, bool, &account_statistics_object::need_maintenance>,
+			   member<account_statistics_object, string, &account_statistics_object::name>
+			>
+		 >
+	  >
+	> account_stats_multi_index_type;
+
+	/**
+	* @ingroup object_index
+	*/
+	typedef generic_index<account_statistics_object, account_stats_multi_index_type> account_stats_index;
+   //(20181019)
+   
 
 `withdraw_permission_object <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1withdraw__permission__object.html>`_ 
 -----------------------------------------------------
@@ -1117,8 +1273,8 @@ Transaction
 
          //std::pair<account_id_type,operation_history_id_type>  account_op()const  { return std::tie( account, operation_id ); }
          //std::pair<account_id_type,uint32_t>                   account_seq()const { return std::tie( account, sequence );     }
-   };
-
+    };
+ 
  
 `node_property_object <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1node__property__object.html>`_ 
 -----------------------------------------------------

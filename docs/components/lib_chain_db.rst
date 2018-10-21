@@ -13,6 +13,7 @@ Chain - db_xxx.cpp
    
 -------
 
+
 db_balance.cpp
 ===============================
 
@@ -887,6 +888,8 @@ apply_transaction
 	   return result;
 	}
 
+.. code-block:: cpp 
+
 	processed_transaction database::_apply_transaction(const signed_transaction& trx)
 	{ try {
 	   uint32_t skip = get_node_properties().skip_flags;
@@ -896,9 +899,12 @@ apply_transaction
 
 	   auto& trx_idx = get_mutable_index_type<transaction_index>();
 	   const chain_id_type& chain_id = get_chain_id();
-	   auto trx_id = trx.id();
-	   FC_ASSERT( (skip & skip_transaction_dupe_check) ||
-				  trx_idx.indices().get<by_trx_id>().find(trx_id) == trx_idx.indices().get<by_trx_id>().end() );
+	   transaction_id_type trx_id;
+	   if( !(skip & skip_transaction_dupe_check) )
+	   {
+		  trx_id = trx.id();
+		  FC_ASSERT( trx_idx.indices().get<by_trx_id>().find(trx_id) == trx_idx.indices().get<by_trx_id>().end() );
+	   }
 	   transaction_evaluation_state eval_state(this);
 	   const chain_parameters& chain_parameters = get_global_properties().parameters;
 	   eval_state._trx = &trx;
@@ -932,7 +938,7 @@ apply_transaction
 	   //Insert transaction into unique transactions database.
 	   if( !(skip & skip_transaction_dupe_check) )
 	   {
-		  create<transaction_object>([&](transaction_object& transaction) {
+		  create<transaction_object>([&trx_id,&trx](transaction_object& transaction) {
 			 transaction.trx_id = trx_id;
 			 transaction.trx = trx;
 		  });
@@ -3400,15 +3406,43 @@ reindex
 	   }
 	   else
 		  _undo_db.disable();
+
+	   uint32_t skip = skip_witness_signature |
+					   skip_block_size_check |
+					   skip_merkle_check |
+					   skip_transaction_signatures |
+					   skip_transaction_dupe_check |
+					   skip_tapos_check |
+					   skip_witness_schedule_check |
+					   skip_authority_check;
+
+	   size_t total_processed_block_size;
+	   size_t total_block_size = _block_id_to_block.total_block_size();
+	   const auto& gpo = get_global_properties();
 	   for( uint32_t i = head_block_num() + 1; i <= last_block_num; ++i )
 	   {
-		  if( i % 10000 == 0 ) std::cerr << "   " << double(i*100)/last_block_num << "%   "<<i << " of " <<last_block_num<<"   \n";
+		  if( i % 10000 == 0 ) 
+		  {
+			 total_processed_block_size = _block_id_to_block.blocks_current_position();
+
+			 ilog(
+				"   [by size: ${size}%   ${processed} of ${total}]   [by num: ${num}%   ${i} of ${last}]",
+				("size", double(total_processed_block_size) / total_block_size * 100)
+				("processed", total_processed_block_size)
+				("total", total_block_size)
+				("num", double(i*100)/last_block_num)
+				("i", i)
+				("last", last_block_num)
+			 );
+		  }
 		  if( i == flush_point )
 		  {
 			 ilog( "Writing database to disk at block ${i}", ("i",i) );
 			 flush();
 			 ilog( "Done" );
 		  }
+		  if( head_block_time() >= last_block->timestamp - gpo.parameters.maximum_time_until_expiration )
+			 skip &= ~skip_transaction_dupe_check;
 		  fc::optional< signed_block > block = _block_id_to_block.fetch_by_number(i);
 		  if( !block.valid() )
 		  {
@@ -3430,27 +3464,18 @@ reindex
 			 break;
 		  }
 		  if( i < undo_point )
-			 apply_block(*block, skip_witness_signature |
-								 skip_transaction_signatures |
-								 skip_transaction_dupe_check |
-								 skip_tapos_check |
-								 skip_witness_schedule_check |
-								 skip_authority_check);
+			 apply_block( *block, skip );
 		  else
 		  {
 			 _undo_db.enable();
-			 push_block(*block, skip_witness_signature |
-								skip_transaction_signatures |
-								skip_transaction_dupe_check |
-								skip_tapos_check |
-								skip_witness_schedule_check |
-								skip_authority_check);
+			 push_block( *block, skip );
 		  }
 	   }
 	   _undo_db.enable();
 	   auto end = fc::time_point::now();
 	   ilog( "Done reindexing, elapsed time: ${t} sec", ("t",double((end-start).count())/1000000.0 ) );
 	} FC_CAPTURE_AND_RETHROW( (data_dir) ) }
+	 //(20181019)
 
 
 wipe
