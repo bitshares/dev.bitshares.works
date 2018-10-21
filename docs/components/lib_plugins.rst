@@ -83,7 +83,7 @@ This section lists existing BitShares pluging folders and file names. By clickin
 
 ------------------------------------
 
-witness
+`witness <https://github.com/bitshares/bitshares-core/tree/cdc2db30c2f06aaddbfda965ee270b99dc24e0aa/libraries/plugins/witness>`_
 ===============================================
 
 * witness.cpp
