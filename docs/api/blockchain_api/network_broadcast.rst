@@ -15,9 +15,20 @@ article <websocket>`.
 
 Transactions
 ================
+broadcast_transaction
+--------------------------
 .. doxygenfunction:: graphene::app::network_broadcast_api::broadcast_transaction
+
+broadcast_transaction_with_callback
+----------------------------------------
 .. doxygenfunction:: graphene::app::network_broadcast_api::broadcast_transaction_with_callback
+
+|
+
+**************
 
 Block
 ============
+broadcast_block
+---------------------------
 .. doxygenfunction:: graphene::app::network_broadcast_api::broadcast_block
