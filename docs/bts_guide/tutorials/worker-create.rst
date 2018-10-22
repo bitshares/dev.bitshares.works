@@ -18,14 +18,14 @@ By using the UI
 
 You can create a Worker Proposal by using BitShares UI form. Go to *Voting* page. There are three tabs: "Witnesses", "Committee", and "Workers". In the "Worker" tab, you will find *CREATE A NEW WORKER* button. 
 
-.. image:: ../../../../_images/ui-worker-create3.png
+.. image:: ../../../../_static/imgs/ui-worker-create3.png
         :alt: BitShares 
         :width: 600px
         :align: center
 
 **a worker proposal form**
 		
-.. image:: ../../../../_images/ui-worker-create.png
+.. image:: ../../../../_static/imgs/ui-worker-create.png
         :alt: BitShares 
         :width: 550px
         :align: center
@@ -92,7 +92,7 @@ By using the UI
 You can check the Worker Proposals by BitShares UI form. Go to *Voting* page. There are three tabs: "Witnesses", "Committee", and "Workers". In the "Worker" tab, you will find all Worker Proposals list. 
 
 
-.. image:: ../../../../_images/ui-voting-worker.png
+.. image:: ../../../../_static/imgs/ui-voting-worker.png
         :alt: BitShares 
         :width: 600px
         :align: center
@@ -136,7 +136,7 @@ By using the UI
 Voting is important. You have the UI form for voting. It's very easy to use. Go to *Voting* page. There are three tabs: "Witnesses", "Committee", and "Workers". In the "Worker" tab, check a Toggle Vote check box and *SAVE*. You might be asked to login. Confirm the transaction. ::
 
 
-.. image:: ../../../../_images/ui-voting-worker-2.png
+.. image:: ../../../../_static/imgs/ui-voting-worker-2.png
         :alt: BitShares 
         :width: 600px
         :align: center

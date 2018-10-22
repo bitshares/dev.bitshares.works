@@ -37,9 +37,12 @@ In order to run a full node that we can connect to, we need to open the RPC inte
 
 ./programs/witness_node/witness_node --rpc-endpoint="0.0.0.0:8090"
 
-This will open port 8090 and make it available over the internet (unless you run behind a router/firewall). If you want it to be open for your machine only, replace 0.0.0.0 by localhost.
+This will open port 8090 and make it available over the internet (unless you run behind a router/firewall). 
 
-Note, that the full node needs to synchronize the blockchain with the network first, which may take a few minutes.
+If you want to open only your (local) machine, replace 0.0.0.0 by localhost (e.g., --rpc-endpoint="127.0.0.1:8090" ).
+
+
+.. Note:: Full node needs to synchronize the blockchain with the network first, which might take a few hours or days.
 
 	
 ------------------------------
@@ -57,7 +60,7 @@ In your wallet (may it be the light wallet or a hosted wallet) you can can defin
 2. In the Settings, click **Nodes**
 3. If **Automatically select node is ``ON``, click to ``OFF`` the switch.
 
-.. image:: nodes-1.png
+.. image:: ../../_static/imgs/nodes-1.png
         :alt: BitShares 
         :width: 650px
         :align: center
@@ -66,7 +69,7 @@ There are four tabs. [AVAILABLE], [PERSONSL], [HIDDEN], and [TESTNET].
 
 4. Click [**PERSONAL**] and [**ADD NODE**]
 		
-.. image:: nodes-2.png
+.. image:: ../../_static/imgs/nodes-2.png
         :alt: BitShares 
         :width: 650px
         :align: center
@@ -81,7 +84,7 @@ For your own full nodes address, type::
    ws://localhost:8090
 
    
-.. image:: nodes-3.png
+.. image:: ../../_static/imgs/nodes-3.png
         :alt: BitShares 
         :width: 600px
         :align: center

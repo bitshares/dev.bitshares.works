@@ -6,7 +6,10 @@ Configuration
 
 The configuration file ``config.ini`` in your data directory is commented and contains the following essential settings:
 
-**Example of a `config.ini` file in the data directory**
+Example
+----------------
+
+Example of a ``config.ini`` file in the data directory
 
 As a default, most parameters have been commented. You have to uncomment to set values.
 
@@ -58,10 +61,10 @@ As a default, most parameters have been commented. You have to uncomment to set 
 	witness-id = "1.6.1"
 
 	# Tuple of [PublicKey, WIF private key] (may specify multiple times)
-	#private-key = ["BTS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV","5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"]
+	#private-key = ["BTS6MRyAjQq8...........GDW5CV","5KQwrPbwdL..............yXtP79zkvFD3"]
 
 	# Tuple of [PublicKey, WIF private key] (may specify multiple times)
-	debug-private-key = ["BTS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV","5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"]
+	debug-private-key = ["BTS6MRyAjQq8...........GDW5CV","5KQwrPbwdL..............yXtP79zkvFD3"]
 
 	# Account ID to track history for (may specify multiple times)
 	# track-account = 

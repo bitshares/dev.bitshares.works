@@ -14,11 +14,11 @@ It is not required to run a local full node if you want to query a particular bl
 
 
 The Graphene full node distinguishes several different APIs that can be
-accessed as described :ref:`the websockets documentation <websocket-calls>`.
+accessed as described :ref:`the Websockets documentation <websocket-calls>`.
 
 Access to some APIs may be **restricted** and requires login with username and
 passphrase. More detailed description about this can be found on the
-:ref:`api-access-restrictions` page.
+:ref:`api-access-and-restrictions` page.
 
 
 BitShares-Core API References - Doxygen Documentation *\<Quick links\>*
@@ -33,6 +33,7 @@ BitShares-Core API References - Doxygen Documentation *\<Quick links\>*
 
    blockchain_api/database
    blockchain_api/history
+   blockchain_api/new_other
    blockchain_api/crypto
    blockchain_api/network_broadcast
    blockchain_api/network_node

@@ -18,14 +18,14 @@ Go to **[Settings]** - **[Create Asset]**
 1. Click [CREATE ASSET]
 
 
-.. image:: uia-ui-1.png
+.. image:: ../../../../_static/imgs/uia-ui-1.png
         :alt: BitShares
         :width: 150px
         :align: center
 
 		
 		
-.. image:: uia-ui-2.png
+.. image:: ../../../../_static/imgs/uia-ui-2.png
         :alt: BitShares
         :width: 600px
         :align: center
@@ -35,7 +35,7 @@ Go to **[Settings]** - **[Create Asset]**
 Primary Settings
 ^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: uia-ui-3-primary.png
+.. image:: ../../../../_static/imgs/uia-ui-3-primary.png
         :alt: BitShares
         :width: 600px
         :align: center
@@ -59,7 +59,7 @@ Description
 ^^^^^^^^^^^^^^^^^^
 
 
-.. image:: uia-ui-4-description.png
+.. image:: ../../../../_static/imgs/uia-ui-4-description.png
         :alt: BitShares
         :width: 600px
         :align: center
@@ -75,7 +75,7 @@ Description
 Permissions (Optional)
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: uia-ui-5-permissions.png
+.. image:: ../../../../_static/imgs/uia-ui-5-permissions.png
         :alt: BitShares
         :width: 600px
         :align: center
@@ -106,7 +106,7 @@ If we have set the permission to have a market fee, we can enable the market fee
 We here also can enable the requirements for users to be white-listed, enable confidential transfers and give the issuer the power to withdraw its asset from customer accounts.
 
 
-.. image:: uia-ui-6-flag.png
+.. image:: ../../../../_static/imgs/uia-ui-6-flag.png
         :alt: BitShares
         :width: 600px
         :align: center
@@ -129,7 +129,7 @@ View existing Asset
 		
 Go to **[Explore]** - **[Asset]** - **[User Issues Assets]**
 		
-.. image:: uia-ui-7.png
+.. image:: ../../../../_static/imgs/uia-ui-7.png
         :alt: BitShares
         :width: 600px
         :align: center

@@ -287,7 +287,7 @@ If you need to monitor multiple accounts, use multiple ``track-account`` configu
 
 Currently, there is a BUG. The configuration of multiple track-accounts will cause the above log changes to not take effect.
 
-The way to get around this problem is not to move config.ini , but to start ``witness_node``, add the ``--track-account`` parameter after the command line, for example::
+The way to get around this problem is not to move config.ini , but to start witness_node, add the --track-account parameter after the command line, for example::
 
 	./witness_node --track-account "\"1.2.12345\"" --track-account "\"1.2.12346\""
 
@@ -315,16 +315,16 @@ Start ``witness_node`` again and start synchronizing data. Depending on the netw
 
 In the above command, use ``--rpc-endpoint`` to enable the node API service so that you can use ``cli_wallet`` to connect with other programs.
 
-.. Note::  When you need to restart the ``witness_node`` later, generally do not add the ``--replay-blockchain`` parameter, otherwise startup will be slow
+.. Note::  When you need to restart the `witness_node` later, generally do not add the ``--replay-blockchain`` parameter, otherwise startup will be slow
 
 
-**5.2 Running a cli_wallet to Process Withdraw**
+**5.2 Running a ``cli_wallet`` to Process Withdraw**
 
 ::
 
 	./cli_wallet -w wallet_for_withdrawal.json -s ws://127.0.0.1:8090 -H 127.0.0.1:8091
 
-The above command uses the ``-w`` parameter to specify the wallet file, the ``-s`` parameter connects to the ``witness_node``, and the ``-H`` parameter opens the wallet API service, listening on port 8091
+The above command uses the ``-w`` parameter to specify the wallet file, the ``-s`` parameter connects to the witness_node, and the ``-H`` parameter opens the wallet API service, listening on port 8091
 
 **Note:**
 
@@ -354,9 +354,7 @@ Successful unlocking will show::
 
 	unlocked >>>
 
-Use the info command to view the current synchronization:
-
-.. code-block:: json
+Use the info command to view the current synchronization::
 
 	unlocked >>> info
 	info
@@ -391,7 +389,7 @@ Considering security, you can use **two accounts** to handle the deposit and wit
 
    Performing ``suggest_brain_key`` in any of the above ``cli_wallets`` will result in a pair of keys, an example of which is as follows:
 
-.. code-block:: json
+::
    
 	unlocked >>> suggest_brain_key
 	suggest_brain_key
