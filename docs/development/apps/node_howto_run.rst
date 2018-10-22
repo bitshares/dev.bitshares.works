@@ -17,7 +17,7 @@ In order to improve decentralization of service, every user can run his own full
 Installation and build the Witness Node
 =========================================
 
-For the installation of the BitShares Core, please see the :ref:`Installation Guide <installation>`:
+For the installation of the BitShares Core, please see the :ref:`Installation Guide <installation-guide>`:
 
 
 To reduce compilation time, you can tell the compile infrastructure to only compile the witness node by running.::
