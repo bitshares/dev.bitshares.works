@@ -19,6 +19,7 @@ General
 * :ref:`dev-faq14`
 * :ref:`dev-faq19`
 * :ref:`What parameters in a configuration file in a data directory? <bts-config-ini-eg>` - (rel:*config.ini*)
+* `Is there a Dockerfile support? <https://github.com/bitshares/bitshares-core/blob/master/README-docker.md>`_
 
 **Protocol**
 

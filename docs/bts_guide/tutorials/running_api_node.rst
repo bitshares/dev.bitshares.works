@@ -22,11 +22,11 @@ This tutorial is for users that already have witness_node compiled successfully.
 Running a Basic API Node
 ===========================
 
-We have witness_node executable and we know we can run it by terminal. First thing is to check the options available::
+We have ``witness_node`` executable and we know we can run it by terminal. First thing is to check the options available::
 
  ./programs/witness_node/witness_node --help
 
-It is important to know what version you are using to know what to expect from a node. Get the version of the node by using the --version flag::
+It is important to know what version you are using to know what to expect from a node. Get the version of the node by using the ``--version`` flag::
 
  ./programs/witness_node/witness_node --version
 
@@ -42,13 +42,13 @@ By default, the blockchain directory will be witness_node_data_dir unless you sp
 
 Depending on your hardware and use purposes of your API node, you will start it with some custom parameters, enabling and disabling plugins. This will be explained as we go.
 
-Options to the witness_node binary can be added to the config file or passed by command line as we did above. Check the default config.ini created when started the node by the first time to make an idea on how you can customize it.
+Options to the ``witness_node`` binary can be added to the config file or passed by command line as we did above. Check the default ``config.ini`` created when started the node by the first time to make an idea on how you can customize it.
 
 A typical node start command can be something like::
 
- programs/witness_node/witness_node --data-dir data/my-blockprod --rpc-endpoint "127.0.0.1:8090" --max-ops-per-account 10000 --partial-operations true
+  ./programs/witness_node/witness_node --data-dir data/my-blockprod --rpc-endpoint "127.0.0.1:8090" --max-ops-per-account 10000 --partial-operations true
 
-Above we limit the operations per account to 1000 to save RAM. This is the default behaviour for newest versions of witness_node as a full node needs more than 80 gigs of ram to run.
+Above we limit the operations per account to 1000 to save RAM. This is the default behaviour for newest versions of ``witness_node`` as a full node needs more than 80 gigs of ram to run.
 
 We call full node to an API node that have all the account history from all the accounts in the bitshares blockchain. As the amount of RAM needed is so big and increasing this kind of nodes are each time more rare.
 
@@ -66,7 +66,9 @@ Running a Production API Node
 GNU screen
 --------------
 
-This is the easier way, start a screen terminal and run your node on it. See: Manage a running Node in the background by using GNU screen
+This is the easier way, start a screen terminal and run your node on it. 
+
+- Read more about: :ref:`manage-gun-screen`
 
 This works but it is not the most recommended, in a reboot the node admin will need to run everything again.
 
@@ -118,12 +120,10 @@ then
 
 ----------------
 
-Contributor:
-
-    @oxarbitrage
-
-
 |
+
+Contributor: @oxarbitrage
+
 
 |
 

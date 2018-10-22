@@ -64,10 +64,20 @@ In order to allow RPC calls for blockchain operations you need to modify the fol
 
 This will open the port 8090 for global queries only. Since the witness node only maintains the blockchain and (unless you are an actively block producing witness) no private keys are involved, it is safe to expose your witness to the internet.
 
+
+* :ref:`How to Run and Use a Full Node <how-to-run-full-node2>`
+* :ref:`Memory Reduction for Nodes: Help to reduce RAM usage significantly by using witness_node executable options <memory-nodes>`
+
+.. note:: Learn more :ref:`how to manage Witness(Full) Node <witness-node-guide-tutorials>`, please check our tutorials. 
+
+
 Restart the Witness Node
 =================================
 
-When restarting the witness node, it may be required to append the ``--replay-blockchain`` parameter to regenerate the local (in-memory) blockchain state.
+When restarting the witness node, it may be required to append the ``--replay-blockchain`` parameter to regenerate the local (in-memory) blockchain state. 
+
+.. tip:: If you want to close the Witness Node in a clean way, use ``Ctrl-C`` in Windows.
+
 
 	
 Public Full Node information 

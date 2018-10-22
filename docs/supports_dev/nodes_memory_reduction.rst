@@ -47,7 +47,7 @@ You can launch a node only with the witness plugin activated like the following 
 
     programs/witness_node/witness_node --data-dir data/my-blockprod 
 	                                   --rpc-endpoint "127.0.0.1:8090" 
-									   --plugins "witness"
+	                                   --plugins "witness"
 
 
 --track-account
@@ -61,14 +61,14 @@ In order to track the history only for just one account you may start the node a
 
     programs/witness_node/witness_node --data-dir data/my-blockprod 
 	                                   --rpc-endpoint "127.0.0.1:8090" 
-									   --track-account "\"1.2.282\""
+	                                   --track-account "\"1.2.282\""
 
 
 To track multiple accounts::
 
     programs/witness_node/witness_node --data-dir data/my-blockprod 
 	                                   --rpc-endpoint "127.0.0.1:8090" 
-									   --track-account "\"1.2.282\"" "\"1.2.24484\"" "\"1.2.2058\""
+	                                   --track-account "\"1.2.282\"" "\"1.2.24484\"" "\"1.2.2058\""
 
 --max-ops-per-account
 ----------------------------------
@@ -85,7 +85,7 @@ Reduce the number of operations for each account that the node will save in the 
 
     programs/witness_node/witness_node --data-dir data/my-blockprod 
 	                                   --rpc-endpoint "127.0.0.1:8090" 
-									   --max-ops-per-account 100
+	                                   --max-ops-per-account 100
  
 --partial-operations
 ----------------------------------
@@ -96,8 +96,8 @@ BitShares-core stores operations in two different objects, the 2.9.X and the 1.1
 
     programs/witness_node/witness_node --data-dir data/my-blockprod 
 	                                   --rpc-endpoint "127.0.0.1:8090" 
-									   --max-ops-per-account 100 
-									   --partial-operations true
+	                                   --max-ops-per-account 100 
+	                                   --partial-operations true
  
 
 -------------
@@ -111,8 +111,8 @@ I personally start my nodes with 1000 ops per account and partial operations::
 
     programs/witness_node/witness_node --data-dir data/my-blockprod 
 	                                   --rpc-endpoint "127.0.0.1:8090" 
-									   --max-ops-per-account 1000 
-									   --partial-operations true
+	                                   --max-ops-per-account 1000 
+	                                   --partial-operations true
    
 
 This will allow me to run the node with less than 5 gigs(4.820492G)::

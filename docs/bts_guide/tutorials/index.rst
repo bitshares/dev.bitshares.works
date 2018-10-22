@@ -29,10 +29,12 @@ API
 
 * `How an Exchange can integrate their services to the BitShares UI Wallet - Gateway Integration Requirements <https://github.com/bitshares/bitshares-ui/wiki/Gateway-Integration-Requirements>`_ : from BitShares UI wiki
 * :ref:`How can I enable RPC Logging? <rpc-logging>`
+* :ref:`How to script Websockets by Python <websocket-script-support>`
+
   
 Assets
 ===========
-
+* `Read BitShartes Assets Tokens (*opens User Guide) <http://how.bitshares.works/en/latest/bts_holders/tokens.html>`_
 * :ref:`How can I create a new UIA by using GUI? <creating-new-uia-gui>`
 * :ref:`How can I create a UIA manually (CLI)? <uia-create-manual>`
 * :ref:`How can I create a MPA manually (CLI)? <mpa-create-manual>`
@@ -76,10 +78,8 @@ Performance
 Plugin
 ===================
 * :ref:`ElasticSearch Plugin: How to store account history data into an elasticsearch database <elastic-search-plugin>`
-* :ref:`Memory reduction for nodes: Help to reduce RAM usage significantly by using witness_node executable options <memory-nodes>`
+* :ref:`Memory Reduction for Nodes: Help to reduce RAM usage significantly by using witness_node executable options <memory-nodes>`
 * `Plugin Template - (create a demo API hello) <https://github.com/bitshares/bitshares-core/blob/hello_plugin/libraries/plugins/hello/README.md>`_
-  
-
   
 
 
@@ -119,7 +119,10 @@ Wallet / CLI
 * :ref:`How to import a GUI-Wallet Account into CLI-Wallet <howto-import-gui-wallet-account-cli>`
 * `Where to find BitShares Public Full Nodes <https://github.com/bitshares/bitshares-ui/blob/staging/app/api/apiConfig.js>`_
 
-Witness (Full) node Guide
+
+.. _witness-node-guide-tutorials: 
+  
+Witness (Full) Node Guide
 ====================
 
 * :ref:`How to connect to your own Full Node (GUI) <howto-connect-own-full-node-gui>`
@@ -127,7 +130,7 @@ Witness (Full) node Guide
 * :ref:`What is System Requirements <system-requirements-node>`  (updated: 2018-07-02)
 * :ref:`How to Run and Use a Full Node <how-to-run-full-node2>`
 * :ref:`How to Become an Active Witness <howto-become-active-witness>`
-* :ref:`How to run node in the background by using GNU screen <manage-gun-screen>`
+* :ref:`How to run Node in the background by using GNU screen <manage-gun-screen>`
 * :ref:`How to run a BitShares API Node <run-api-node-guide>`		
 * :ref:`How to verify block production <veryfy_block_production>`
 * :ref:`How to backup a server <witness-backup-server>`

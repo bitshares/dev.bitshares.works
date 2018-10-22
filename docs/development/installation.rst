@@ -36,7 +36,7 @@ Select an operation system and install and build.
     installation/build_ubuntu
     installation/build_osx
     installation/build_windows
-    installation/build_windows_devenv    
+    installation/build_windows_devenv
     installation/windows_cli_tool
 	
 
