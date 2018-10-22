@@ -114,7 +114,7 @@ As a result, you should get two items:
 
 Open the ``[Testnet-Home]/data/my-blockprod/config.ini`` file and set the following settings, uncommenting them if necessary.
 
-::
+.. code-block:: json
 
     rpc-endpoint = 127.0.0.1:8090
     genesis-json = my-genesis.json
@@ -163,7 +163,9 @@ For testing purposes, the ``--dbg-init-key`` option will allow you to quickly cr
 
 **Each wallet is specifically associated with a single chain, specified by its chain ID. This is to protect the user from (e.g., unintentionally) using a testnet wallet on the real chain.**
 
-The chain ID is printed at witness node startup. It can also be obtained by using the API to query a running witness node with the `get_chain_properties` API call::
+The chain ID is printed at witness node startup. It can also be obtained by using the API to query a running witness node with the `get_chain_properties` API call:
+
+.. code-block:: json
 
     curl --data '{"jsonrpc": "2.0", "method": "get_chain_properties", "params": [], "id": 1}' http://127.0.0.1:11011/rpc && echo
 
@@ -172,7 +174,9 @@ This curl command will return a short JSON object including the ``chain_id``.
 10. Create a new Wallet
 -------------------------------------------
 
-We are now ready to connect a new wallet to your Private testnet witness node. You must specify a chain ID and server. Keep your witness node running and in another _Command Prompt_ window run this command (a blank username and password will suffice)::
+We are now ready to connect a new wallet to your Private testnet witness node. You must specify a chain ID and server. Keep your witness node running and in another *Command Prompt* window run this command (a blank username and password will suffice):
+
+.. code-block:: json
 
     ./cli_wallet --wallet-file my-wallet.json 
                --chain-id cf307110d029cb882d126bf0488dc4864772f68d9888d86b458d16e6c36aa74b 
@@ -192,18 +196,24 @@ Fist you need to create a new password for your wallet. This password is used to
 11. Gain Access to the Genesis Stake
 -------------------------------------------
 
-In Graphene, balances are contained in accounts. To import an account that exists in the Graphene genesis into your wallet, all you need to know its name and its private key. We will now import into the wallet an account called `nathan` (a general purpose test account) by using the `import_key` command::
+In Graphene, balances are contained in accounts. To import an account that exists in the Graphene genesis into your wallet, all you need to know its name and its private key. We will now import into the wallet an account called `nathan` (a general purpose test account) by using the `import_key` command:
+
+.. code-block:: json
 
     unlock supersecret
     import_key nathan "5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"
 
 .. Note:: `nathan` happens to be the account name defined in the genesis file. If you had edited your ``my-genesies.json`` file just after it was created, you could have put a different name there. Also, note that ``5KQwrPbwdL...P79zkvFD3`` is the private key defined in the ``config.ini`` file.
 
-Now we have the private key imported into the wallet but still no funds assocciated with it. Funds are stored in genesis balance objects. These funds can be claimed, with no fee, using the `import_balance` command.::
+Now we have the private key imported into the wallet but still no funds assocciated with it. Funds are stored in genesis balance objects. These funds can be claimed, with no fee, using the `import_balance` command:
+
+.. code-block:: json
 
     import_balance nathan ["5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"] true
 
-As a result, we have one account (named `nathan`) imported into the wallet and this account is well funded with BTS as we have claimed the funds stored in the genesis file. You can view this account information and the balance by using the below commands::
+As a result, we have one account (named `nathan`) imported into the wallet and this account is well funded with BTS as we have claimed the funds stored in the genesis file. You can view this account information and the balance by using the below commands:
+
+.. code-block:: json
 
     get_account nathan
     list_account_balances nathan
@@ -213,7 +223,9 @@ As a result, we have one account (named `nathan`) imported into the wallet and t
 
 We will now create another account (named `alpha`) so that we can transfer funds back and forth between `nathan` and `alpha`.
 
-Creating a new account is always done by using an existing account - we need it because someone (i.e. the registrar) has to fund the registration fee. Also, there is the requirement for the registrar account to have a lifetime member (LTM) status. Therefore we need to upgrade the account `nathan` to LTM, before we can proceed with creating other accounts. ::
+Creating a new account is always done by using an existing account - we need it because someone (i.e. the registrar) has to fund the registration fee. Also, there is the requirement for the registrar account to have a lifetime member (LTM) status. Therefore we need to upgrade the account `nathan` to LTM, before we can proceed with creating other accounts.
+
+.. code-block:: json
 
     upgrade_account nathan true
     get_account nathan
@@ -222,7 +234,9 @@ In the response, next to `membership_expiration_date` you should see ``1969-12-3
 
 We can now register an account by using `nathan` as registrar. But first we need to get hold of the public key for the new account. We do it by using the ``suggest_brain_key`` command.
 
-And the resposne should be something similar to this::
+And the resposne should be something similar to this
+
+.. code-block:: json
 
     suggest_brain_key
     {
@@ -240,7 +254,7 @@ We can now register an account. The ``register_account`` command allows you to r
 Transfer funds between accounts
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-::
+.. code-block:: json
 
     transfer nathan alpha 100000 CORE "here is the cash" true
     list_account_balances alpha
@@ -265,7 +279,7 @@ The ``get_private_key`` command allows us to obtain the WIF private key correspo
 13. Create Committee Members
 -------------------------------------------
 
-::
+.. code-block:: json
 
     create_account_with_brain_key com0 com0 nathan nathan true
     create_account_with_brain_key com1 com1 nathan nathan true
@@ -309,5 +323,4 @@ The ``get_private_key`` command allows us to obtain the WIF private key correspo
 
 |
 
-|
 
