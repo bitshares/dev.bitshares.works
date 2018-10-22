@@ -19,7 +19,7 @@ How to Set up Private Testnet
 1. Prerequisites 
 -------------------------------------------
 
-If you have not installed BitShares-Core and built yet. Please see :ref:`Installation Guide <installation>`. And make sure you have both ``witness_node`` and ``cli_wallet`` already compiled successfully.
+If you have not installed BitShares-Core and built yet. Please see :ref:`Installation Guide <installation-guide>`. And make sure you have both ``witness_node`` and ``cli_wallet`` already compiled successfully.
 
 2. Create a Testnet Folder
 -------------------------------------------
