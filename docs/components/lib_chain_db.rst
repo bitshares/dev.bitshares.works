@@ -6,7 +6,7 @@ Chain - db_xxx.cpp
 *******************************************
 
 
-* File directory: (../ibraries/chain/xxx.cpp)
+* File directory: (../libraries/chain/xxx.cpp)
 
 .. contents:: Table of Contents
    :local:

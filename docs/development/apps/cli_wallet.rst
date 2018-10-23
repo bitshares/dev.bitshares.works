@@ -23,7 +23,7 @@ Steps
 ----------------------------
 
 - 1a) Install and build it from BitShares-Core
-  - BitShares offers you to install BitShares-Core into different platforms; Ubuntu (x64), OSx, and Windows.  Please refer :ref:`installation`.
+  - BitShares offers you to install BitShares-Core into different platforms; Ubuntu (x64), OSx, and Windows.  Please refer :ref:`installation-guide`.
 
 - 1b) Use the :ref:`CLI-Wallet tools for Windows (x64)`
   - This option you do not need to install BitShates Core. To obtain the tool, go to a `BitShares release page <https://github.com/bitshares/bitshares-core/releases>`_ and download the BitShares-Core-\*-x64-cli-tools.zip. 

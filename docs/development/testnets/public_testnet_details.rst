@@ -36,7 +36,7 @@ Use a CLI on Public Testnet
 
 In this section, we show you how to set up on **Ubuntu 16.04 LTS(64 bit)** environment as an example.
 
-To see more options: Go to :ref:`Installation Guide <installation>`.
+To see more options: Go to :ref:`Installation Guide <installation-guide>`.
 
 1. Install Dependencies::
 
