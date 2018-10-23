@@ -154,11 +154,21 @@ Database
 
 (/libraries/chain/include/graphene/chain/database.hpp)
 
-* `database (opens doxygen) <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1database.html>`_ 
-- tracks the blockchain state in an extensible manner  
+- `graphene::chain::database Class Reference (opens doxygen) <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1database.html>`_ 
 
 .. code-block:: cpp 
 
+   using graphene::db::abstract_object;
+   using graphene::db::object;
+   class op_evaluator;
+   class transaction_evaluation_state;
+
+   struct budget_record;
+
+   /**
+    *   @class database
+    *   @brief tracks the blockchain state in an extensible manner
+    */	
    class database : public db::object_database
    {
       public:
