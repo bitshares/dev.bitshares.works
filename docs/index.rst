@@ -28,6 +28,7 @@
 	
 .. toctree::
     :maxdepth: 2
+    :numbered:	
     :caption: API
 
     api/api_about
