@@ -200,11 +200,15 @@ account_whitelist_operation
 		void             validate()const { FC_ASSERT( fee.amount >= 0 ); FC_ASSERT(new_listing < 0x4); }
 	};
 
+|	
+	
+----------------
+		
 		 
 Assert
 ==================
 
-asset_operation
+assert_operation
 ----------------
 
 - assert that some conditions are true.
@@ -228,7 +232,11 @@ asset_operation
 	};
 
 
-
+|	
+	
+----------------
+		
+	
 Asset
 ==================	 
 		 
@@ -602,7 +610,11 @@ asset_update_operation
 
 	};
   
-  
+|	
+	
+----------------
+		
+	  
 Balance Claim
 ======================
   
@@ -638,7 +650,11 @@ bit_collateral_operation
 	};
 
 
-
+|	
+	
+----------------
+		
+	
 Committee
 ===================
   
@@ -703,7 +719,11 @@ committee_member_update_operation
 		void validate()const;
 		};
 
-
+|	
+	
+----------------
+		
+	
 Custom (market)
 ======================
 		
@@ -758,7 +778,12 @@ execute_bit_operation
 
 		share_type calculate_fee(const fee_parameters_type& k)const { return 0; }
 	};
-  
+ 
+|	
+	
+----------------
+		
+	 
 FBA
 =========
 
@@ -782,7 +807,10 @@ fba_distribute_operation
 		share_type calculate_fee(const fee_parameters_type& k)const { return 0; }
 	};
 
+|	
 	
+----------------
+			
 Order (market)
 ==================
 	
@@ -913,7 +941,10 @@ limit_orders_create_operation
 		price get_price()const { return amount_to_sell / min_to_receive; }
 	};
 
-
+|	
+	
+----------------
+		
 Transfer
 ==============
 
@@ -1101,7 +1132,10 @@ transfer_to_blind_operation
 	};
 
 
-
+|	
+	
+----------------
+			
 Proposal
 ===============
 	
@@ -1210,7 +1244,10 @@ proposal_update_operation
       void get_required_owner_authorities( flat_set<account_id_type>& )const;
 	};
 
- 
+|	
+	
+----------------
+		
 Vesting Balance
 ======================
  
@@ -1274,7 +1311,11 @@ vesting_balance_withdraw_operation
 		}
 	};
 
+|	
 	
+----------------
+		
+		
 Withdraw
 ======================
 	
@@ -1381,7 +1422,11 @@ withdraw_permission_update_operation
 		void validate()const;
 	};
 
+|	
 	
+----------------
+		
+		
 Witness
 =====================
 	
@@ -1430,7 +1475,10 @@ witness_update_operation
 		void validate()const;
 	};
 
+|	
 	
+----------------
+		
 Worker
 ===============
 	
