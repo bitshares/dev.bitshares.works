@@ -34,7 +34,17 @@ API
   
 Assets
 ===========
-* `Read BitShartes Assets Tokens (*opens User Guide) <http://how.bitshares.works/en/latest/bts_holders/tokens.html>`_
+* Read: User Guide `BitShartes Assets Tokens <http://how.bitshares.works/en/latest/bts_holders/tokens.html>`_
+
+  1. User Issued Assets (UIAs)
+  2. Market Pegged Assets (MPAs)
+  3. Exchange Backed Assets (EBA)
+  4. Privatized BitAssets
+     - :ref:`Feed Producer <privbta-cli>`
+  5. Fee Backed Asset
+  6. Prediction Markets
+
+	
 * :ref:`How can I create a new UIA by using GUI? <creating-new-uia-gui>`
 * :ref:`How can I create a UIA manually (CLI)? <uia-create-manual>`
 * :ref:`How can I create a MPA manually (CLI)? <mpa-create-manual>`
@@ -52,8 +62,17 @@ Prediction Market
 BitShares Decentralized Exchange (DEX)
 =========================================
 
+* Read: `User Guide : Dex <https://how.bitshares.works/en/latest/bts_holders/dex.html>`_
+
+  1. Trading
+  2. Short Selling BitAssets
+  3. MarginCall Mechanics
+  
 * :ref:`How can I run own Decentralized Exchange (DEX)? <distributed-access-to-dex>`
 * :ref:`How can I prepare BitShares Exchange? (Single Node Edition) <exchange-single-node>`
+
+
+
 
 Committee Guide
 ======================
@@ -62,6 +81,13 @@ Committee Guide
 * :ref:`How to create a Proposal to change a fee? <committee-fee-change>`
 * :ref:`How to approve/disapprove a Proposal <committee-approve-proposal>`
 * :ref:`How to Propose Committee Actions <committee-propose-action>`
+
+Delegated Proof of Stake 
+============================
+* Read" User Guide `(DPOS) <https://how.bitshares.works/en/latest/technology/dpos.html#>`_
+
+
+
 
 .. _monitoring_support:
 
@@ -81,6 +107,10 @@ Plugin
 * :ref:`Memory Reduction for Nodes: Help to reduce RAM usage significantly by using witness_node executable options <memory-nodes>`
 * `Plugin Template - (create a demo API hello) <https://github.com/bitshares/bitshares-core/blob/hello_plugin/libraries/plugins/hello/README.md>`_
   
+  
+Smart Contracts
+====================
+
 
 
 Testnets

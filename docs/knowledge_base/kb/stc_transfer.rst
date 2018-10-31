@@ -4,9 +4,9 @@
 Transfer - smart contract
 ***********************
 
-In this section, we examine how Transfer smart contract was constructed. There are components to build the smart contract. Let's find out how transfer smart contract has been constructed. 
+In this section, we examine how Transfer smart contract was constructed. There are items to look into a developing steps to build the smart contract. 
 
-* Smart contract items
+* **Smart contract items**
 
   - Object
   - Object Index and Call
@@ -18,16 +18,12 @@ In this section, we examine how Transfer smart contract was constructed. There a
 
 -------------------
 
-
-Smart contract items
+Items
 ========================
 
-
-Research - transfer
------------------------
-
 Object
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------------------
+
 - account_object
 - asset_object
 - asset_dynamic_data_object
@@ -35,12 +31,12 @@ Object
 
 
 Object Index and Search Call
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------------------
 - get_asset()
 - get_account()
 
 Operations
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------------------
 - transfer_operation 
 - override_transfer_operation
 - blind_transfer_operation
@@ -49,14 +45,14 @@ Operations
 
 
 Validations
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------------------
 
 .. code-block:: cpp 
 
 
 
 Initialize Evaluators and Index
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------------------
 
 .. code-block:: cpp 
 
@@ -66,10 +62,6 @@ Initialize Evaluators and Index
 	   register_evaluator<account_create_evaluator>()
 	   .......
 	}   
-
-
-- class generic_evaluator
-- class op_evaluator
 
 
 .. code-block:: cpp 
@@ -91,16 +83,42 @@ Initialize Evaluators and Index
 	
    
 Evaluators
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------------------
 
 - transfer_evaluator 
 - override_transfer_evaluator 
+- generic_evaluator
+- op_evaluator
 
--------------------
 
 
-Return pattern (1)
--------------------
+CLI Wallet Calls
+---------------------------------------------
+- 
+
+API calls
+---------------------------------------------
+- set_fees_on_builder_transaction
+
+
+
+------------------------
+
+------------------------
+
+
+broadcast transaction 
+---------------------------------------------
+
+Before the end a method, as one of patterns, 
+
+  - ``signed_transaction`` instance is created, 
+  - Set an operation
+  - Set ``set_operation_fee``
+  - validate the instance
+
+and return ``sign_transaction`` with the instance and broadcast flag.  
+  
 
 .. code-block:: cpp 
 
@@ -113,8 +131,8 @@ Return pattern (1)
 	return sign_transaction(trx, broadcast);
 
 
-other methods return the same (wallet.cpp)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+other methods that have the same pattern ``return`` (wallet.cpp)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 	
 - transfer_to_blind	
 - propose_builder_transaction	
@@ -152,6 +170,7 @@ other methods return the same (wallet.cpp)
 - propose_parameter_change
 - propose_fee_change
 - approve_proposal
+
 
 
 

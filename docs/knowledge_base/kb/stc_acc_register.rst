@@ -4,36 +4,47 @@
 Register Account - smart contract
 ***********************
 
-Register account
+In this section, we examine how Register Account smart contract was constructed. There are items to look into a developing steps to build the smart contract. 
+
+* **Smart contract items**
+
+  - Object
+  - Object Index and Call
+  - Operations
+  - Validations
+  - Initialize Evaluators and Index
+  - Evaluators
+  - API call
+
+-------------------
+
+Items
 ========================
 
-
-Research 
-----------------
-
-Define your Object
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Object
+---------------------------------------------
 - account_object
 
 
-Create Object Index and Search Call
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Object Index and Search Call
+---------------------------------------------
 - account_member_index
 - account_referrer_index
 
 - get_account( registrar_account )
 
 
-Define Operations
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Operations
+---------------------------------------------
 - account_create_operation
 
 
 - signed_transaction tx;
   - struct signed_transaction : public transaction
 
-Create Validations
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Validations
+---------------------------------------------
 - tx.validate();
 
 .. code-block:: cpp 
@@ -45,8 +56,9 @@ Create Validations
 	}
 
 
-Create Initialize Evaluators and Index
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Initialize Evaluators and Index
+---------------------------------------------
+
 
 .. code-block:: cpp 
 
@@ -84,8 +96,8 @@ Create Initialize Evaluators and Index
 	
 	
    
-Create Evaluators
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Evaluators
+---------------------------------------------
 
 .. code-block:: cpp 
 
@@ -98,58 +110,12 @@ Create Evaluators
 	   object_id_type do_apply( const account_create_operation& o ) ;
 	};
 
-
-Return pattern (2)
--------------------
-
-.. code-block:: cpp 
-
-      if( broadcast )
-         _remote_net_broadcast->broadcast_transaction( tx );
-		// do something... 
-		 		 
-      return tx;
-	  
-	  
-	  
-
-other methods return the same (wallet.cpp)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-	  
-create_account_with_private_key  
-sign_transaction
-blind_transfer_help	  
-	  
-
-											   
-	  
-Create Automatic Actions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-
-
-Create Hardfork Guards
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- clean up
-
-
-Building
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-
-
-Prepare Test Cases
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-
 CLI Wallet Calls
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
+---------------------------------------------
+- 
 
 API calls
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
+---------------------------------------------
 
 .. code-block:: cpp 
 
@@ -161,17 +127,46 @@ API calls
                                        string  referrer_account,
                                        uint32_t referrer_percent,
                                        bool broadcast = false)
+									   
+									   
+--------------------
 
 
-Higher Level DAPP
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+broadcast transaction 
+^^^^^^^^^^^^^^^^^^^^^^^
 
+Before the end a method, as one of patterns, 
+
+  - ``signed_transaction`` instance is created, 
+  - (do some processes...)
+  - check `broadcase1 flag 
+  - if true, send the instance bt ``broadcast_transaction``
+  
+and return the transaction instance
+  
+
+.. code-block:: cpp 
+
+   signed_transaction tx;
+   // do some processes...
+   ..........
+   if( broadcast )
+ 	 _remote_net_broadcast->broadcast_transaction( tx );
+
+   return tx;
+  
+  
+
+other methods that have the same pattern ``return`` (wallet.cpp)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	
-	
+- register_account	  
+- create_account_with_private_key  
+- sign_transaction
+- blind_transfer_help	  
+	  
 
-
-
-|
+											   
 
 |
 

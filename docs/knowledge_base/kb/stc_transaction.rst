@@ -4,15 +4,25 @@
 Transaction - smart contract
 ***********************
 
-Transaction
+In this section, we examine how Transaction smart contract was constructed. There are items to look into a developing steps to build the smart contract. 
+
+* **Smart contract items**
+
+  - Object
+  - Object Index and Call
+  - Operations
+  - Validations
+  - Initialize Evaluators and Index
+  - Evaluators
+  - API call
+
+-------------------
+
+Items
 ========================
 
-
-Research 
-----------------
-
-Define your Object
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Object
+---------------------------------------------
 - account_object
 
 
@@ -21,24 +31,28 @@ Create Object Index and Search Call
 -  class transaction_object : public abstract_object<transaction_object>
 
 
-Define Operations
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Object Index and Search Call
+---------------------------------------------
 - account_create_operation
 
 
 - signed_transaction tx;
   - struct signed_transaction : public transaction
 
-Create Validations
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Operations
+---------------------------------------------
+
+  
+Validations
+---------------------------------------------
 - tx.validate();
 
 .. code-block:: cpp 
 
 
 
-Create Initialize Evaluators and Index
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Initialize Evaluators and Index
+---------------------------------------------
 
 .. code-block:: cpp 
 
@@ -74,10 +88,9 @@ Create Initialize Evaluators and Index
 	}}	
 	
 	
-	
    
-Create Evaluators
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Evaluators
+---------------------------------------------
 
 .. code-block:: cpp 
 
@@ -102,44 +115,20 @@ Create Evaluators
 	};
 
 
-Create Automatic Actions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-
-
-Create Hardfork Guards
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- clean up
-
-
-Building
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-
-
 Prepare Test Cases
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------------------
 
 
 CLI Wallet Calls
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------------------
 
 
 API calls
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
+---------------------------------------------
 
 .. code-block:: cpp 
 
 
-
-
-
-Higher Level DAPP
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-	
-	
 
 
 
