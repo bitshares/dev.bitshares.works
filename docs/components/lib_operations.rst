@@ -7,9 +7,9 @@ Operations
 
 *graphene::chain::base_operation*
 
-This document purpose: to describe BitShares available operations details and the object structures. 
+This document purpose: to describe BitShares available operations details and the object structures. Learning BitShares-Core Available Operations! 
 
-Learning BitShares-Core Available Operations! You can find Operations and OperationIDs `here. <https://github.com/abitmore/bitshares-core/blob/170523826b82ba754eeae8706a891797b4b37ee8/libraries/chain/include/graphene/chain/protocol/operations.hpp#L50>`_
+You can find Operations and OperationIDs pairs `here. <https://github.com/abitmore/bitshares-core/blob/170523826b82ba754eeae8706a891797b4b37ee8/libraries/chain/include/graphene/chain/protocol/operations.hpp#L50>`_
 
 -------------
 
@@ -671,6 +671,7 @@ committee_member_create_operation
 		struct fee_parameters_type { uint64_t fee = 5000 * GRAPHENE_BLOCKCHAIN_PRECISION; };
 
 		asset fee;
+		 /// The account which owns the committee_member. This account pays the fee for this operation.
 		account_id_type committee_member_account;
 		string url;
 
@@ -708,17 +709,19 @@ committee_member_update_operation
 
 	struct committee_member_update_operation : public base_operation
 	{
-		struct fee_parameters_type { uint64_t fee = 20 * GRAPHENE_BLOCKCHAIN_PRECISION; };
+      struct fee_parameters_type { uint64_t fee = 20 * GRAPHENE_BLOCKCHAIN_PRECISION; };
 
-		asset fee;
-		committee_member_id_type committee_member;
-		account_id_type committee_member_account;
-		optional< string > new_url;
+      asset                                 fee;
+      /// The committee member to update.
+      committee_member_id_type              committee_member;
+      /// The account which owns the committee_member. This account pays the fee for this operation.
+      account_id_type                       committee_member_account;
+      optional< string >                    new_url;
 
-		account_id_type fee_payer()const { return committee_member_account; }
-		void validate()const;
-		};
-
+      account_id_type fee_payer()const { return committee_member_account; }
+      void            validate()const;
+	};
+	
 |	
 	
 ----------------
@@ -1015,24 +1018,28 @@ override_transfer_operation
 
 	struct override_transfer_operation : public base_operation
 	{
-		struct fee_parameters_type {
-			uint64_t fee = 20 * GRAPHENE_BLOCKCHAIN_PRECISION;
-			uint32_t price_per_kbyte = 10; 
-		};
+      struct fee_parameters_type {
+         uint64_t fee       = 20 * GRAPHENE_BLOCKCHAIN_PRECISION;
+         uint32_t price_per_kbyte = 10; /// only required for large memos.
+      };
 
-		asset fee;
-		account_id_type issuer;
-		account_id_type from;
-		account_id_type to;
-		asset amount;
+      asset           fee;
+      account_id_type issuer;
+      /// Account to transfer asset from
+      account_id_type from;
+      /// Account to transfer asset to
+      account_id_type to;
+      /// The amount of asset to transfer from @ref from to @ref to
+      asset amount;
 
-		optional<memo_data> memo;
-		extensions_type extensions;
+      /// User provided data encrypted to the memo key of the "to" account
+      optional<memo_data> memo;
+      extensions_type   extensions;
 
-		account_id_type fee_payer()const { return issuer; }
-		void validate()const;
-		share_type calculate_fee(const fee_parameters_type& k)const;
-	};
+      account_id_type fee_payer()const { return issuer; }
+      void            validate()const;
+      share_type      calculate_fee(const fee_parameters_type& k)const;
+   };
 
 
 transfer_from_blind_operation
@@ -1044,20 +1051,20 @@ transfer_from_blind_operation
 
 	struct transfer_from_blind_operation : public base_operation
 		{
-			struct fee_parameters_type { 
-			uint64_t fee = 5*GRAPHENE_BLOCKCHAIN_PRECISION; 
-		};
+        struct fee_parameters_type { 
+            uint64_t fee = 5*GRAPHENE_BLOCKCHAIN_PRECISION; ///< the cost to register the cheapest non-free account
+   };
 
-		asset fee;
-		asset amount;
-		account_id_type to;
-		blind_factor_type blinding_factor;
+		asset               fee;
+		asset               amount;
+		account_id_type     to;
+		blind_factor_type   blinding_factor;
 		vector<blind_input> inputs;
 
 		account_id_type fee_payer()const { return GRAPHENE_TEMP_ACCOUNT; }
-		void validate()const;
+		void            validate()const;
 
-		void get_required_authorities( vector<authority>& a )const
+		void   get_required_authorities( vector<authority>& a )const
 		{
 			for( const auto& in : inputs )
 			a.push_back( in.owner ); 
@@ -1088,23 +1095,27 @@ transfer_operation
 
 	struct transfer_operation : public base_operation
 	{
-		struct fee_parameters_type {
-			uint64_t fee = 20 * GRAPHENE_BLOCKCHAIN_PRECISION;
-			uint32_t price_per_kbyte = 10 * GRAPHENE_BLOCKCHAIN_PRECISION; 
-		};
+        struct fee_parameters_type {
+			 uint64_t fee       = 20 * GRAPHENE_BLOCKCHAIN_PRECISION;
+			 uint32_t price_per_kbyte = 10 * GRAPHENE_BLOCKCHAIN_PRECISION; /// only required for large memos.
+        };
 
-		asset fee;
-		account_id_type from;
-		account_id_type to;
-		asset amount;
+        asset            fee;
+		  /// Account to transfer asset from
+        account_id_type  from;
+		  /// Account to transfer asset to
+        account_id_type  to;
+		  /// The amount of asset to transfer from @ref from to @ref to
+        asset            amount;
 
-		optional<memo_data> memo;
-		extensions_type extensions;
+		  /// User provided data encrypted to the memo key of the "to" account
+        optional<memo_data> memo;
+        extensions_type   extensions;
 
-		account_id_type fee_payer()const { return from; }
-		void validate()const;
-		share_type calculate_fee(const fee_parameters_type& k)const;
-	};
+        account_id_type fee_payer()const { return from; }
+        void            validate()const;
+        share_type      calculate_fee(const fee_parameters_type& k)const;
+   };
 
 transfer_to_blind_operation
 -----------------------------------
@@ -1116,19 +1127,19 @@ transfer_to_blind_operation
 	struct transfer_to_blind_operation : public base_operation
 	{
 		struct fee_parameters_type { 
-			uint64_t fee = 5*GRAPHENE_BLOCKCHAIN_PRECISION; 
+			uint64_t fee              = 5*GRAPHENE_BLOCKCHAIN_PRECISION; 
 			uint32_t price_per_output = 5*GRAPHENE_BLOCKCHAIN_PRECISION;
 		};
 
-		asset fee;
-		asset amount;
-		account_id_type from;
-		blind_factor_type blinding_factor;
+		asset                fee;
+		asset                amount;
+		account_id_type      from;
+		blind_factor_type    blinding_factor;
 		vector<blind_output> outputs;
 
 		account_id_type fee_payer()const { return from; }
-		void validate()const;
-		share_type calculate_fee(const fee_parameters_type& )const;
+		void            validate()const;
+		share_type      calculate_fee(const fee_parameters_type& )const;
 	};
 
 
@@ -1268,11 +1279,11 @@ vesting_balance_create_operation
 	{
 		struct fee_parameters_type { uint64_t fee = GRAPHENE_BLOCKCHAIN_PRECISION; };
 
-		asset fee;
-		account_id_type creator; 
-		account_id_type owner; 
-		asset amount;
-		vesting_policy_initializer policy;
+      asset                       fee;
+      account_id_type             creator; ///< Who provides funds initially
+      account_id_type             owner; ///< Who is able to withdraw the balance
+      asset                       amount;
+      vesting_policy_initializer  policy;
 
 		account_id_type fee_payer()const { return creator; }
 		void validate()const
@@ -1298,13 +1309,13 @@ vesting_balance_withdraw_operation
 	{
 		struct fee_parameters_type { uint64_t fee = 20*GRAPHENE_BLOCKCHAIN_PRECISION; };
 
-		asset fee;
-		vesting_balance_id_type vesting_balance;
-		account_id_type owner; 
-		asset amount;
+      asset                   fee;
+      vesting_balance_id_type vesting_balance;
+      account_id_type         owner; ///< Must be vesting_balance.owner
+      asset                   amount;
 
-		account_id_type fee_payer()const { return owner; }
-		void validate()const
+      account_id_type   fee_payer()const { return owner; }
+      void              validate()const
 		{
 			FC_ASSERT( fee.amount >= 0 );
 			FC_ASSERT( amount.amount > 0 );
@@ -1328,24 +1339,30 @@ withdraw_permission_claim_operation
 
 .. code-block:: cpp
 
-	struct withdraw_permission_claim_operation : public base_operation
-	{
-		struct fee_parameters_type { 
-			uint64_t fee = 20*GRAPHENE_BLOCKCHAIN_PRECISION; 
-			uint32_t price_per_kbyte = 10;
-		};
+   struct withdraw_permission_claim_operation : public base_operation
+   {
+      struct fee_parameters_type { 
+         uint64_t fee = 20*GRAPHENE_BLOCKCHAIN_PRECISION; 
+         uint32_t price_per_kbyte = 10;
+      };
 
-		asset fee;
-		withdraw_permission_id_type withdraw_permission;
-		account_id_type withdraw_from_account;
-		account_id_type withdraw_to_account;
-		asset amount_to_withdraw;
-		optional<memo_data> memo;
+      /// Paid by withdraw_to_account
+      asset                       fee;
+      /// ID of the permission authorizing this withdrawal
+      withdraw_permission_id_type withdraw_permission;
+      /// Must match withdraw_permission->withdraw_from_account
+      account_id_type             withdraw_from_account;
+      /// Must match withdraw_permision->authorized_account
+      account_id_type             withdraw_to_account;
+      /// Amount to withdraw. Must not exceed withdraw_permission->withdrawal_limit
+      asset                       amount_to_withdraw;
+      /// Memo for withdraw_from_account. Should generally be encrypted with withdraw_from_account->memo_key
+      optional<memo_data>         memo;
 
-		account_id_type fee_payer()const { return withdraw_to_account; }
-		void validate()const;
-		share_type calculate_fee(const fee_parameters_type& k)const;
-	};
+      account_id_type fee_payer()const { return withdraw_to_account; }
+      void            validate()const;
+      share_type      calculate_fee(const fee_parameters_type& k)const;
+   };
 
 withdraw_permission_create_operation
 -----------------------------------
@@ -1358,21 +1375,27 @@ withdraw_permission_create_operation
 
 .. code-block:: cpp
 
-	struct withdraw_permission_create_operation : public base_operation
-	{
-		struct fee_parameters_type { uint64_t fee = GRAPHENE_BLOCKCHAIN_PRECISION; };
+   struct withdraw_permission_create_operation : public base_operation
+   {
+      struct fee_parameters_type { uint64_t fee =  GRAPHENE_BLOCKCHAIN_PRECISION; };
 
-		asset fee;
-		account_id_type withdraw_from_account;
-		account_id_type authorized_account;
-		asset withdrawal_limit;
-		uint32_t withdrawal_period_sec = 0;
-		uint32_t periods_until_expiration = 0;
-		time_point_sec period_start_time;
+      asset             fee;
+      /// The account authorizing withdrawals from its balances
+      account_id_type   withdraw_from_account;
+      /// The account authorized to make withdrawals from withdraw_from_account
+      account_id_type   authorized_account;
+      /// The maximum amount authorized_account is allowed to withdraw in a given withdrawal period
+      asset             withdrawal_limit;
+      /// Length of the withdrawal period in seconds
+      uint32_t          withdrawal_period_sec = 0;
+      /// The number of withdrawal periods this permission is valid for
+      uint32_t          periods_until_expiration = 0;
+      /// Time at which the first withdrawal period begins; must be in the future
+      time_point_sec    period_start_time;
 
-		account_id_type fee_payer()const { return withdraw_from_account; }
-		void validate()const;
-	};
+      account_id_type fee_payer()const { return withdraw_from_account; }
+      void            validate()const;
+   };
 
 withdraw_permission_delete_operation
 -----------------------------------
@@ -1383,18 +1406,21 @@ withdraw_permission_delete_operation
 
 .. code-block:: cpp
 
-	struct withdraw_permission_delete_operation : public base_operation
-	{
-		struct fee_parameters_type { uint64_t fee = 0; };
+   struct withdraw_permission_delete_operation : public base_operation
+   {
+      struct fee_parameters_type { uint64_t fee = 0; };
 
-		asset fee;
-		account_id_type withdraw_from_account;
-		account_id_type authorized_account;
-		withdraw_permission_id_type withdrawal_permission;
+      asset                         fee;
+      /// Must match withdrawal_permission->withdraw_from_account. This account pays the fee.
+      account_id_type               withdraw_from_account;
+      /// The account previously authorized to make withdrawals. Must match withdrawal_permission->authorized_account
+      account_id_type               authorized_account;
+      /// ID of the permission to be revoked.
+      withdraw_permission_id_type   withdrawal_permission;
 
-		account_id_type fee_payer()const { return withdraw_from_account; }
-		void validate()const;
-	};
+      account_id_type fee_payer()const { return withdraw_from_account; }
+      void            validate()const;
+   };
 	  
 withdraw_permission_update_operation
 -----------------------------------
@@ -1405,23 +1431,29 @@ withdraw_permission_update_operation
 
 .. code-block:: cpp
 
-	struct withdraw_permission_update_operation : public base_operation
-	{
-		struct fee_parameters_type { uint64_t fee = GRAPHENE_BLOCKCHAIN_PRECISION; };
+   struct withdraw_permission_update_operation : public base_operation
+   {
+      struct fee_parameters_type { uint64_t fee =  GRAPHENE_BLOCKCHAIN_PRECISION; };
 
-		asset fee;
-		account_id_type withdraw_from_account;
-		account_id_type authorized_account;
-		withdraw_permission_id_type permission_to_update;
-		asset withdrawal_limit;
-		uint32_t withdrawal_period_sec = 0;
-		time_point_sec period_start_time;
-		uint32_t periods_until_expiration = 0;
+      asset                         fee;
+      /// This account pays the fee. Must match permission_to_update->withdraw_from_account
+      account_id_type               withdraw_from_account;
+      /// The account authorized to make withdrawals. Must match permission_to_update->authorized_account
+      account_id_type               authorized_account;
+      /// ID of the permission which is being updated
+      withdraw_permission_id_type   permission_to_update;
+      /// New maximum amount the withdrawer is allowed to charge per withdrawal period
+      asset                         withdrawal_limit;
+      /// New length of the period between withdrawals
+      uint32_t                      withdrawal_period_sec = 0;
+      /// New beginning of the next withdrawal period; must be in the future
+      time_point_sec                period_start_time;
+      /// The new number of withdrawal periods for which this permission will be valid
+      uint32_t                      periods_until_expiration = 0;
 
-		account_id_type fee_payer()const { return withdraw_from_account; }
-		void validate()const;
-	};
-
+      account_id_type fee_payer()const { return withdraw_from_account; }
+      void            validate()const;
+   };
 |	
 	
 ----------------
@@ -1438,18 +1470,19 @@ witness_create_operation
 
 .. code-block:: cpp
 
-	struct witness_create_operation : public base_operation
-	{
-		struct fee_parameters_type { uint64_t fee = 5000 * GRAPHENE_BLOCKCHAIN_PRECISION; };
+   struct witness_create_operation : public base_operation
+   {
+      struct fee_parameters_type { uint64_t fee = 5000 * GRAPHENE_BLOCKCHAIN_PRECISION; };
 
-		asset fee;
-		account_id_type witness_account;
-		string url;
-		public_key_type block_signing_key;
+      asset             fee;
+      /// The account which owns the witness. This account pays the fee for this operation.
+      account_id_type   witness_account;
+      string            url;
+      public_key_type   block_signing_key;
 
-		account_id_type fee_payer()const { return witness_account; }
-		void validate()const;
-	};
+      account_id_type fee_payer()const { return witness_account; }
+      void            validate()const;
+   };
   
 witness_update_operation
 -----------------------------------
@@ -1460,20 +1493,24 @@ witness_update_operation
 
 	struct witness_update_operation : public base_operation
 	{
-		struct fee_parameters_type
-		{
-			share_type fee = 20 * GRAPHENE_BLOCKCHAIN_PRECISION;
-		};
+      struct fee_parameters_type
+      {
+         share_type fee = 20 * GRAPHENE_BLOCKCHAIN_PRECISION;
+      };
 
-		asset fee;
-		witness_id_type witness;
-		account_id_type witness_account;
-		optional< string > new_url;
-		optional< public_key_type > new_signing_key;
+      asset             fee;
+      /// The witness object to update.
+      witness_id_type   witness;
+      /// The account which owns the witness. This account pays the fee for this operation.
+      account_id_type   witness_account;
+      /// The new URL.
+      optional< string > new_url;
+      /// The new block signing key.
+      optional< public_key_type > new_signing_key;
 
-		account_id_type fee_payer()const { return witness_account; }
-		void validate()const;
-	};
+      account_id_type fee_payer()const { return witness_account; }
+      void            validate()const;
+   };
 
 |	
 	
@@ -1491,19 +1528,20 @@ worker_create_operation
 
 	struct worker_create_operation : public base_operation
 	{
-		struct fee_parameters_type { uint64_t fee = 5000*GRAPHENE_BLOCKCHAIN_PRECISION; };
+      struct fee_parameters_type { uint64_t fee = 5000*GRAPHENE_BLOCKCHAIN_PRECISION; };
 
-		asset fee;
-		account_id_type owner;
-		time_point_sec work_begin_date;
-		time_point_sec work_end_date;
-		share_type daily_pay;
-		string name;
-		string url;
-		worker_initializer initializer;
+      asset                fee;
+      account_id_type      owner;
+      time_point_sec       work_begin_date;
+      time_point_sec       work_end_date;
+      share_type           daily_pay;
+      string               name;
+      string               url;
+      /// This should be set to the initializer appropriate for the type of worker to be created.
+      worker_initializer   initializer;
 
-		account_id_type fee_payer()const { return owner; }
-		void validate()const;
+      account_id_type   fee_payer()const { return owner; }
+      void 
 	};
 
 

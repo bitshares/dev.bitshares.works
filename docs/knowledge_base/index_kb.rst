@@ -12,8 +12,12 @@ Knowledge Base
 
 * :ref:`Graphene Smart Contract - concepts and steps <pre-graphene-smart-contract>`
 * :ref:`trf <trnsf-smartcontract>`
+* :ref:`trx <trx-smartcontract>`
+* :ref:`reg <reg-acc-smartcontract>`
 
 -------------------
+
+* :ref:`broadcast trx <ex-broadcase_trnx>`
 
 
 
@@ -21,13 +25,6 @@ Knowledge Base
 
 
 * :ref:`Wiki Legacy list <wiki-legacy-indx>`
-
-
----------------------  
-
-* :ref:`br1 <ex-broadcase_trnx>`
-* :ref:`v1 <view-code-samples>`
-* :ref:`v2 <sample-research-wallet-hpp>`
 
 
 ----------------------

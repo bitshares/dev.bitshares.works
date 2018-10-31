@@ -7,15 +7,17 @@ Manually Construct Any Transaction
 General Procedure
 ^^^^^^^^^^^^^^^^^^^
 
-The general principle for generating, singing and broadcasting an arbitrary
-transactions works as follows:
+The general principle for generating, singing and broadcasting an arbitrary transactions works as follows:
+
+.. contents:: 
+   :local:
+   
+------
 
 1. Create an instance of the transaction builder
-2. Add arbitrary operation types
-3. Add the required amount of fees
-4. Sign and broadcast your transaction
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The corresponding API calls in the :doc:`../../integration/apps/cliwallet` are:
+The corresponding API calls in the :ref:`Transaction Builder <w-api-trans-builder>` are:
 
 ::
 
@@ -24,11 +26,13 @@ The corresponding API calls in the :doc:`../../integration/apps/cliwallet` are:
     >>> set_fees_on_builder_transaction $HANDLE BTS
     >>> sign_builder_transaction $HANDLE true
 
-The `begin_builder_transaction` call returns a number we call ``$HANDLE`` It
-allows to construct several transactions in parallel and identify them
-individually!
+The ``begin_builder_transaction`` call returns a number we call ``$HANDLE`` It allows to construct several transactions in parallel and identify them individually!
 
-The `opId` and the JSON structure of the `operation` can be obtained with:
+
+2. Add arbitrary operation types
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The ``opId`` and the JSON structure of the ``operation`` can be obtained with:
 
 ::
 
@@ -36,17 +40,20 @@ The `opId` and the JSON structure of the `operation` can be obtained with:
 
 The operation types available are:
 
-.. doxygentypedef:: graphene::chain::operation
-   :outline:
+* :ref:`Operations List and the elements <lib-operations>`
+* Learning BitShares-Core Available Operations! You can find Operations and OperationIDs pair `here. <https://github.com/abitmore/bitshares-core/blob/170523826b82ba754eeae8706a891797b4b37ee8/libraries/chain/include/graphene/chain/protocol/operations.hpp#L50>`_
 
-In practise, each operation has to pay a fee, and hence, each operation has to
+3. Add the required amount of fees
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+ 
+In practice, each operation has to pay a fee, and hence, each operation has to
 carry a ``fee`` member. When crafting a transaction, you now have the choice
 between either defining each fee for your operations individually, or you use
 ``set_fees_on_builder_transaction`` that sets the fee for each operation
 automatically to the chosen asset.
 
-Example: Transfer
-~~~~~~~~~~~~~~~~~~~~~
+3b. (Example) Transfer operation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A simple *transfer* takes the following form:
 
@@ -103,6 +110,9 @@ readability):
 
 The corresponding ``id`` can be obtained with ``get_account``, and
 ``get_asset``.
+
+4. Sign and broadcast your transaction and fees
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We add a fee payed in BTS, sign and broadcast the transaction (if valid):
 

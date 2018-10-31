@@ -36,7 +36,7 @@ A price feed operation takes the following form:
       }
      }
 
-It contains the `publisher` name, the `asset_id` for which the feed has been generated the `feed` as a structure of `base` and `quote` ratio, the maintenance collateral ratio (`1750 = 175%`), the short squeeze
+It contains the ``publisher`` name, the ``asset_id`` for which the feed has been generated the ``feed`` as a structure of ``base`` and ``quote`` ratio, the maintenance collateral ratio (`1750 = 175%`), the short squeeze
 ratio (`1200 = 120%`) and the core exchange rate for implicit exchange of the fee.
 
 Python Script Example

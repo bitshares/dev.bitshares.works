@@ -17,7 +17,7 @@ a transaction to become valid.
 Crafting a Transaction
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If is recommended that the reader first reads through the following tutorial:
+It is recommended that the reader first reads through the following tutorial:
 
 * :doc:`construct-transaction`
 

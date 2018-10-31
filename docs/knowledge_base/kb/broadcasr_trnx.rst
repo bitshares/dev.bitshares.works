@@ -1,11 +1,13 @@
 
 .. _ex-broadcase_trnx:
 
-Broadcast transactions
+Broadcast Transactions Feature 
 **********************************************************
 
 
-BitShares blockchain already handles many features (i.e., transactions, building block, validations, DOPS, etc). 
+BitShares blockchain already handles many features (i.e., transactions, building block, validations, DOPS, etc). We want to talk about 'Broadcast Transaction'.
+
+
 
 
 Broadcast transaction
