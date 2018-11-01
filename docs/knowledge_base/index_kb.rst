@@ -11,14 +11,15 @@ Knowledge Base
 ---------------
 
 * :ref:`Graphene Smart Contract - concepts and steps <pre-graphene-smart-contract>`
-* :ref:`trf <trnsf-smartcontract>`
+* :ref:`transfer <trnsf-smartcontract>`
+* :ref:`worker proposal <worker-smartcontract>`
 * :ref:`trx <trx-smartcontract>`
 * :ref:`reg <reg-acc-smartcontract>`
 
 -------------------
 
-* :ref:`broadcast trx <ex-broadcase_trnx>`
-
+* :ref:`Features: Broadcast and Transactions <ex-broadcase_trnx>`
+* :ref:`image <issue-ex-broadcase_trnx>`
 
 
 -------------------
