@@ -4,7 +4,7 @@
 Transaction - smart contract
 ***********************
 
-In this section, we examine how Transaction smart contract was constructed. There are items to look into a developing steps to build the smart contract. 
+In this section, we examine how worker proposal  smart contract was constructed. There are items and helpful steps to construct a smart contract. We want to list those items by examining BitShares blockchain components.
 
 * **Smart contract items**
 

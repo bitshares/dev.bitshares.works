@@ -1,10 +1,10 @@
 
-.. _trnsf-smartcontract:
+.. _worker-smartcontract:
 
-Transfer - smart contract
+Worker Proposal - smart contract
 ***********************
 
-"The transfer of asset from one account to another is one operation and a smart contract."
+"A worker proposal is a smart contract consisting of several operations and make use of the maintenance interval to automatically do stuff."
 
 In this section, we examine how worker proposal  smart contract was constructed. There are items and helpful steps to construct a smart contract. We want to list those items by examining BitShares blockchain components.
 
@@ -18,8 +18,7 @@ In this section, we examine how worker proposal  smart contract was constructed.
   - Evaluators
   - API call
 
-
--------------------
+-------
 
 Items
 ========================
@@ -27,27 +26,17 @@ Items
 Object
 ---------------------------------------------
 
-- account_object
-- account_balance_object
-- asset_object
-- asset_dynamic_data_object
+- worker_object
 
 
 
 Object Index and Search Call
 ---------------------------------------------
-- generic_index
-- get_asset()
-- get_account()
+- 
 
 Operations
 ---------------------------------------------
-- transfer_operation 
-- override_transfer_operation
-- blind_transfer_operation
-- transfer_from_blind_operation 
-- transfer_to_blind_operation 
-
+- 
 
 Validations
 ---------------------------------------------
@@ -90,8 +79,7 @@ Initialize Evaluators and Index
 Evaluators
 ---------------------------------------------
 
-- transfer_evaluator 
-- override_transfer_evaluator 
+
 - generic_evaluator
 - op_evaluator
 
@@ -103,12 +91,11 @@ CLI Wallet Calls
 
 API calls
 ---------------------------------------------
-- set_fees_on_builder_transaction
-
+-
 
 
 ------------------------
 
 
-|
+
 
