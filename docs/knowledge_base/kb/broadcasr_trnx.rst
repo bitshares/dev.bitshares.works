@@ -1,4 +1,4 @@
-.. _ex-broadcase_trnx:
+.. _ex-broadcase_tx:
 
 Features: Broadcast and Transactions 
 ******************************************
@@ -40,7 +40,7 @@ In BitShares witnesses serve a similar role of validating signatures and time-st
 Broadcast transaction methods
 ==============================
 
-Network_bloadcast_api has methods to broadcast transactions. Those methods are `broadcast_transaction` and `broadcast_transaction_with_callback`. 
+Network_broadcast_api has methods to broadcast transactions. Those methods are `broadcast_transaction` and `broadcast_transaction_with_callback`. 
 
 :broadcase_transaction:  Broadcast a transaction to the network. The transaction will be checked for **validity in the local database prior to broadcasting**. If it fails to apply locally, an error will be thrown and the transaction will not be broadcast. 
 
@@ -108,6 +108,7 @@ and use ``sign_transaction`` with the instance and broadcast flag to get a retur
   -	@return the signed version of the transaction
 
 
+  
 * Other methods that have the same pattern (wallet.cpp)
 	
   - transfer_to_blind	
@@ -147,6 +148,7 @@ and use ``sign_transaction`` with the instance and broadcast flag to get a retur
   - propose_fee_change
   - approve_proposal
 
+  
 |
 	
 Pattern (2)
@@ -167,10 +169,10 @@ Before the end of method,
 
   1. ``signed_transaction`` instance is created, 
   2. (do something...)
-  3. check `broadcase1` flag 
+  3. check `broadcast` flag 
   4. if broadcast=rue, send the instance by ``broadcast_transaction`` 
   
-and return the transaction instance
+and return the instance.
 
   
 * Other methods that have the same pattern (wallet.cpp)
@@ -189,15 +191,11 @@ and return the transaction instance
 Transactions and block
 ==============================
 
-Blocks are produced by witnesses. Each block contain more than one transactions. Each transaction contains more than one operations. And each operation has a "fee" element and other elements. You can find the :ref:`information about block structure here <lib-block>`. 
+Blocks are produced by witnesses. Each block contains more than one transaction. Each transaction can contain more than one operation. And each operation has a "fee" element and other elements. You can find the :ref:`information about block structure here <lib-block>`. 
 
 You can see that each operation has own ``fee_parameter_type`` definition and calculates the fee.  About the "fee" is another big topic. We would like to visit it in another section. 
 
-What is a transaction in BitShares blockchain? Well, you might say "groups operations". That's true also. BitShares blockchain already has implemented about fifty operations. 
-
-Smart contracts in Graphene are one or a group of operations. That means you can use the operations (Smart contracts) for your creations. And if you would like to do more, you can put focus to create new operation and implement it. You can find :ref:`the BitShares blockchain operations list here <lib-operations>`. 
-
-
+What is a transaction in BitShares blockchain? Well, you might say "group of operations". That's true also. We have implemented almost fifty operation types.  You can find :ref:`BitShares blockchain operations list here <lib-operations>`. 
 
 
 Protocols (transactions)
@@ -209,18 +207,29 @@ There are protocols to build up BitShares blockchain components and systems. A p
 :transaction: All transactions are sets of operations that must be applied atomically.
 
   - Transactions must refer to a recent block that defines the context of the operation so that they assert a known binding to the object id’s referenced in the transaction.
-  - Ream more :ref:`Protocol: transaction <lib-transaction-anchor>`
+  - Read more :ref:`Protocol: transaction <lib-transaction-anchor>`
 
 :processed_transaction:  It captures the result of evaluating the operations contained in the transaction.  
 
-  - When processing a transaction some operations generate new ``object IDs`` and these IDs cannot be known until the transaction is actually included into a block. 
-  - When a block is produced these new ids are captured and included with every transaction. The index in ``operation_results`` should correspond to the same index in operations. If an operation did not create any new ``object IDs`` then ``0`` should be returned.
+  - When processing a transaction some operations generate new ``object IDs`` which they are **not** permanent and these ``IDs`` can not be known until the transaction is actually included into a block that has become irreversible. 
+  - When a block is produced these ``new IDs`` are captured and included with every transaction. The index in ``operation_results`` should correspond to the same index in operations. If an operation did not create any new ``object IDs`` then ``0`` should be returned.
+  
+.. code-block:: cpp 
+ 
+	struct processed_transaction : public signed_transaction
+	{
+	  processed_transaction( const signed_transaction& trx = signed_transaction() )
+			 : signed_transaction(trx){}
 
+	  vector<operation_result> operation_results;
+
+	  digest_type merkle_digest()const;
+	};  
+	
+	
 :proposed_transactions: The Graphene Transaction Proposal Protocol. Graphene allows users to propose a transaction which requires approval of multiple accounts in order to execute.
 
-  - The user proposes a transaction using ``proposal_create_operation``, then signatory accounts use ``proposal_update_operations`` to add or remove their approvals from this operation. When a sufficient number of approvals have been granted, the operations in the proposal are used to create a virtual transaction which is subsequently evaluated. Even if the transaction fails, the proposal will be kept until the expiration time, at which point, if sufficient approval is granted, the transaction will be evaluated a final time. This allows transactions which will not execute successfully until a given time to still be executed through the proposal mechanism. The first time the proposed transaction succeeds, the proposal will be regarded as resolved, and all future updates will be invalid.
-  -  The proposal system allows for arbitrarily complex or recursively nested authorities. If a recursive authority (i.e. an authority which requires approval of 'nested' authorities on other accounts) is required for a proposal, then a second proposal can be used to grant the nested authority's approval. That is, a second proposal can be created which, when sufficiently approved, adds the approval of a nested authority to the first proposal. This multiple-proposal scheme can be used to acquire approval for an arbitrarily deep authority tree. 
-  - **Note** that at any time, a proposal can be approved in a single transaction if sufficient signatures are available on the ``proposal_update_operation``, as long as the authority tree to approve the proposal does not exceed the maximum recursion depth. In practice, however, it is easier to use proposals to acquire all approvals, as this leverages on-chain notification of all relevant parties that their approval is required. Off-chain multi-signature approval requires some off-chain mechanism for acquiring several signatures on a single transaction. This off-chain synchronization can be avoided using proposals.
+  - (**researching.)
   
 
 	  

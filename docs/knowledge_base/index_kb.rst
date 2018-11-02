@@ -18,7 +18,7 @@ Knowledge Base
 
 -------------------
 
-* :ref:`Features: Broadcast and Transactions <ex-broadcase_trnx>`
+* :ref:`Features: Broadcast and Transactions <ex-broadcase_tx>`
 * :ref:`image <issue-ex-broadcase_trnx>`
 
 
