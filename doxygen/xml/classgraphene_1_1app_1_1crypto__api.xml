@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="310" column="1" bodyfile="libraries/app/api.cpp" bodystart="471" bodyend="471"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="353" column="1" bodyfile="libraries/app/api.cpp" bodystart="471" bodyend="471"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1crypto__api_1a819517c27c9b5436cea4bd7114d68759" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>fc::ecc::commitment_type</type>
@@ -31,12 +31,28 @@
           <declname>value</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Generates a pedersen commitment: *commit = blind * G + value * G2. The commitment is 33 bytes, the blinding factor is 32 bytes. For more information about pederson commitment check next url <ulink url="https://en.wikipedia.org/wiki/Commitment_scheme">https://en.wikipedia.org/wiki/Commitment_scheme</ulink>. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>blind</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Sha-256 blind factor type </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Positive 64-bit integer value </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A 33-byte pedersen commitment: *commit = blind * G + value * G2 </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="312" column="1" bodyfile="libraries/app/api.cpp" bodystart="473" bodyend="476"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="363" column="1" bodyfile="libraries/app/api.cpp" bodystart="473" bodyend="476"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1crypto__api_1aa1a6caa5122568ca0ae4f5379a2d1943" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>fc::ecc::blind_factor_type</type>
@@ -52,12 +68,28 @@
           <declname>non_neg</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Get sha-256 blind factor type. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>blinds_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of sha-256 blind factor types </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>non_neg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>32-bit integer value </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A blind factor type </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="314" column="1" bodyfile="libraries/app/api.cpp" bodystart="478" bodyend="481"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="371" column="1" bodyfile="libraries/app/api.cpp" bodystart="478" bodyend="481"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1crypto__api_1ad9c6f9589828b10f4cc8bfe4a6a359d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -77,12 +109,35 @@
           <declname>excess</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Verifies that commits + neg_commits + excess == 0. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>commits_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of 33-byte pedersen commitments </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>neg_commits_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of 33-byte pedersen commitments </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>excess</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Sum of two list of 33-byte pedersen commitments where sums the first set and subtracts the second </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Boolean - true in event of commits + neg_commits + excess == 0, otherwise false </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="316" column="1" bodyfile="libraries/app/api.cpp" bodystart="483" bodyend="486"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="380" column="1" bodyfile="libraries/app/api.cpp" bodystart="483" bodyend="486"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1crypto__api_1a5310e5955a16937db91c99a8fea0ffe6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structgraphene_1_1app_1_1verify__range__result" kindref="compound">verify_range_result</ref></type>
@@ -98,12 +153,28 @@
           <declname>proof</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Verifies range proof for 33-byte pedersen commitment. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>commit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>33-byte pedersen commitment </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>proof</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of characters </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A structure with success, min and max values </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="318" column="1" bodyfile="libraries/app/api.cpp" bodystart="488" bodyend="493"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="390" column="1" bodyfile="libraries/app/api.cpp" bodystart="488" bodyend="493"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1crypto__api_1a1923d73235200a4f3da0a4d021a865d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::vector&lt; char &gt;</type>
@@ -139,12 +210,63 @@
           <declname>actual_value</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Proves with respect to min_value the range for pedersen commitment which has the provided blinding factor and value. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>min_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Positive 64-bit integer value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>commit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>33-byte pedersen commitment </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>commit_blind</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Sha-256 blind factor type for the correct digits </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nonce</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Sha-256 blind factor type for our non-forged signatures </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>exp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Exponents base 10 in range [-1 ; 18] inclusively </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>min_bits</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>8-bit positive integer, must be in range [0 ; 64] inclusively </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>actual_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>64-bit positive integer, must be greater or equal min_value </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A list of characters as proof in proof </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="320" column="1" bodyfile="libraries/app/api.cpp" bodystart="495" bodyend="504"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="404" column="1" bodyfile="libraries/app/api.cpp" bodystart="495" bodyend="504"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1crypto__api_1af49d58d9538c6908ea320887af07d9f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structgraphene_1_1app_1_1verify__range__proof__rewind__result" kindref="compound">verify_range_proof_rewind_result</ref></type>
@@ -164,12 +286,35 @@
           <declname>proof</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Verifies range proof rewind for 33-byte pedersen commitment. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>nonce</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Sha-256 blind refactor type </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>commit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>33-byte pedersen commitment </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>proof</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of characters </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A structure with success, min, max, value_out, blind_out and message_out values </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="329" column="1" bodyfile="libraries/app/api.cpp" bodystart="506" bodyend="520"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="419" column="1" bodyfile="libraries/app/api.cpp" bodystart="506" bodyend="520"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1crypto__api_1a6765af523fc6dd5e75872782b4ee12b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>range_proof_info</type>
@@ -181,19 +326,28 @@
           <declname>proof</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Gets &quot;range proof&quot; info. The cli_wallet includes functionality for sending blind transfers in which the values of the input and outputs amounts are “blinded.” In the case where a transaction produces two or more outputs, (e.g. an amount to the intended recipient plus “change” back to the sender), a &quot;range proof&quot; must be supplied to prove that none of the outputs commit to a negative value. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>proof</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of proof&apos;s characters </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A range proof info structure with exponent, mantissa, min and max values </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="334" column="1" bodyfile="libraries/app/api.cpp" bodystart="522" bodyend="525"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="432" column="1" bodyfile="libraries/app/api.cpp" bodystart="522" bodyend="525"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="libraries/app/include/graphene/app/api.hpp" line="308" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="307" bodyend="335"/>
+    <location file="libraries/app/include/graphene/app/api.hpp" line="351" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="350" bodyend="433"/>
     <listofallmembers>
       <member refid="classgraphene_1_1app_1_1crypto__api_1a819517c27c9b5436cea4bd7114d68759" prot="public" virt="non-virtual"><scope>graphene::app::crypto_api</scope><name>blind</name></member>
       <member refid="classgraphene_1_1app_1_1crypto__api_1aa1a6caa5122568ca0ae4f5379a2d1943" prot="public" virt="non-virtual"><scope>graphene::app::crypto_api</scope><name>blind_sum</name></member>

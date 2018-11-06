@@ -105,55 +105,55 @@
     <detaileddescription>
 <para>In order to use this operation, <ref refid="structgraphene_1_1chain_1_1asset__global__settle__operation_1adf491739741f7bd336b7d718a53eedac" kindref="member">asset_to_settle</ref> must have the global_settle flag set</para><para>When this operation is executed all balances are converted into the backing asset at the settle_price and all open margin positions are called at the settle price. If this asset is used as backing for other bitassets, those bitassets will be force settled at their current feed price. </para>    </detaileddescription>
     <inheritancegraph>
+      <node id="659">
+        <label>graphene::chain::base_operation</label>
+        <link refid="structgraphene_1_1chain_1_1base__operation"/>
+      </node>
+      <node id="658">
+        <label>graphene::chain::asset_global_settle_operation</label>
+        <link refid="structgraphene_1_1chain_1_1asset__global__settle__operation"/>
+        <childnode refid="659" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="665">
+        <label>graphene::chain::price</label>
+        <link refid="structgraphene_1_1chain_1_1price"/>
+        <childnode refid="663" relation="usage">
+          <edgelabel>base</edgelabel>
+          <edgelabel>quote</edgelabel>
+        </childnode>
+      </node>
+      <node id="662">
+        <label>flat_set&lt; future_extensions &gt;</label>
+      </node>
       <node id="661">
         <label>graphene::chain::base_operation</label>
         <link refid="structgraphene_1_1chain_1_1base__operation"/>
+      </node>
+      <node id="663">
+        <label>graphene::chain::asset</label>
+        <link refid="structgraphene_1_1chain_1_1asset"/>
+        <childnode refid="664" relation="usage">
+          <edgelabel>amount</edgelabel>
+        </childnode>
+      </node>
+      <node id="664">
+        <label>safe&lt; int64_t &gt;</label>
       </node>
       <node id="660">
         <label>graphene::chain::asset_global_settle_operation</label>
         <link refid="structgraphene_1_1chain_1_1asset__global__settle__operation"/>
         <childnode refid="661" relation="public-inheritance">
         </childnode>
-      </node>
-    </inheritancegraph>
-    <collaborationgraph>
-      <node id="667">
-        <label>graphene::chain::price</label>
-        <link refid="structgraphene_1_1chain_1_1price"/>
-        <childnode refid="665" relation="usage">
-          <edgelabel>base</edgelabel>
-          <edgelabel>quote</edgelabel>
-        </childnode>
-      </node>
-      <node id="664">
-        <label>flat_set&lt; future_extensions &gt;</label>
-      </node>
-      <node id="663">
-        <label>graphene::chain::base_operation</label>
-        <link refid="structgraphene_1_1chain_1_1base__operation"/>
-      </node>
-      <node id="665">
-        <label>graphene::chain::asset</label>
-        <link refid="structgraphene_1_1chain_1_1asset"/>
-        <childnode refid="666" relation="usage">
-          <edgelabel>amount</edgelabel>
-        </childnode>
-      </node>
-      <node id="666">
-        <label>safe&lt; int64_t &gt;</label>
-      </node>
-      <node id="662">
-        <label>graphene::chain::asset_global_settle_operation</label>
-        <link refid="structgraphene_1_1chain_1_1asset__global__settle__operation"/>
-        <childnode refid="663" relation="public-inheritance">
-        </childnode>
-        <childnode refid="664" relation="usage">
+        <childnode refid="662" relation="usage">
           <edgelabel>extensions</edgelabel>
         </childnode>
-        <childnode refid="665" relation="usage">
+        <childnode refid="663" relation="usage">
           <edgelabel>fee</edgelabel>
         </childnode>
-        <childnode refid="667" relation="usage">
+        <childnode refid="665" relation="usage">
           <edgelabel>settle_price</edgelabel>
         </childnode>
       </node>
