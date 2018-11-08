@@ -238,57 +238,57 @@
     <detaileddescription>
 <para>If an account with a multi-signature authority is listed in approvals_to_add or approvals_to_remove, either all required signatures to satisfy that account&apos;s authority must be provided in the transaction containing this operation, or a secondary proposal must be created which contains this operation.</para><para>NOTE: If the proposal requires only an account&apos;s active authority, the account must not update adding its owner authority&apos;s approval. This is considered an error. An owner approval may only be added if the proposal requires the owner&apos;s authority.</para><para>If an account&apos;s owner and active authority are both required, only the owner authority may approve. An attempt to add or remove active authority approval to such a proposal will fail. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="2853">
+      <node id="2846">
         <label>graphene::chain::base_operation</label>
         <link refid="structgraphene_1_1chain_1_1base__operation"/>
       </node>
-      <node id="2852">
+      <node id="2845">
         <label>graphene::chain::proposal_update_operation</label>
         <link refid="structgraphene_1_1chain_1_1proposal__update__operation"/>
-        <childnode refid="2853" relation="public-inheritance">
+        <childnode refid="2846" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="2856">
+      <node id="2849">
         <label>flat_set&lt; future_extensions &gt;</label>
       </node>
-      <node id="2860">
+      <node id="2853">
         <label>flat_set&lt; account_id_type &gt;</label>
       </node>
-      <node id="2855">
+      <node id="2848">
         <label>graphene::chain::base_operation</label>
         <link refid="structgraphene_1_1chain_1_1base__operation"/>
       </node>
-      <node id="2857">
+      <node id="2850">
         <label>flat_set&lt; graphene::chain::public_key_type &gt;</label>
       </node>
-      <node id="2858">
+      <node id="2851">
         <label>graphene::chain::asset</label>
         <link refid="structgraphene_1_1chain_1_1asset"/>
-        <childnode refid="2859" relation="usage">
+        <childnode refid="2852" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
       </node>
-      <node id="2859">
+      <node id="2852">
         <label>safe&lt; int64_t &gt;</label>
       </node>
-      <node id="2854">
+      <node id="2847">
         <label>graphene::chain::proposal_update_operation</label>
         <link refid="structgraphene_1_1chain_1_1proposal__update__operation"/>
-        <childnode refid="2855" relation="public-inheritance">
+        <childnode refid="2848" relation="public-inheritance">
         </childnode>
-        <childnode refid="2856" relation="usage">
+        <childnode refid="2849" relation="usage">
           <edgelabel>extensions</edgelabel>
         </childnode>
-        <childnode refid="2857" relation="usage">
+        <childnode refid="2850" relation="usage">
           <edgelabel>key_approvals_to_remove</edgelabel>
           <edgelabel>key_approvals_to_add</edgelabel>
         </childnode>
-        <childnode refid="2858" relation="usage">
+        <childnode refid="2851" relation="usage">
           <edgelabel>fee</edgelabel>
         </childnode>
-        <childnode refid="2860" relation="usage">
+        <childnode refid="2853" relation="usage">
           <edgelabel>owner_approvals_to_remove</edgelabel>
           <edgelabel>owner_approvals_to_add</edgelabel>
           <edgelabel>active_approvals_to_remove</edgelabel>

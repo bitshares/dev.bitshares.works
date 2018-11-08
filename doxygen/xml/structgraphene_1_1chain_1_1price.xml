@@ -32,10 +32,10 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="structgraphene_1_1chain_1_1price_1a81aafbafeb9daf2cace0bd939ef59a20" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structgraphene_1_1chain_1_1price_1ad4e1abdf60e7ea0faf80b946283a67aa" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
         <type></type>
         <definition>graphene::chain::price::price</definition>
-        <argsstring>(const asset &amp;_base=asset(), const asset _quote=asset())</argsstring>
+        <argsstring>(const asset &amp;_base=asset(), const asset &amp;_quote=asset())</argsstring>
         <name>price</name>
         <param>
           <type>const <ref refid="structgraphene_1_1chain_1_1asset" kindref="compound">asset</ref> &amp;</type>
@@ -43,7 +43,7 @@
           <defval><ref refid="structgraphene_1_1chain_1_1asset" kindref="compound">asset</ref>()</defval>
         </param>
         <param>
-          <type>const <ref refid="structgraphene_1_1chain_1_1asset" kindref="compound">asset</ref></type>
+          <type>const <ref refid="structgraphene_1_1chain_1_1asset" kindref="compound">asset</ref> &amp;</type>
           <declname>_quote</declname>
           <defval><ref refid="structgraphene_1_1chain_1_1asset" kindref="compound">asset</ref>()</defval>
         </param>
@@ -105,7 +105,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/protocol/asset.hpp" line="136" column="1" bodyfile="libraries/chain/protocol/asset.cpp" bodystart="215" bodyend="219"/>
+        <location file="libraries/chain/include/graphene/chain/protocol/asset.hpp" line="136" column="1" bodyfile="libraries/chain/protocol/asset.cpp" bodystart="221" bodyend="225"/>
       </memberdef>
       <memberdef kind="function" id="structgraphene_1_1chain_1_1price_1aa02ede20661c22422de58efb4a221915" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -118,7 +118,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/protocol/asset.hpp" line="137" column="1" bodyfile="libraries/chain/protocol/asset.cpp" bodystart="221" bodyend="226"/>
+        <location file="libraries/chain/include/graphene/chain/protocol/asset.hpp" line="137" column="1" bodyfile="libraries/chain/protocol/asset.cpp" bodystart="227" bodyend="232"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -187,7 +187,7 @@
 <para>The black swan price is defined as debt/collateral, we want to perform a margin call before debt == collateral. Given a debt/collateral ratio of 1 USD / CORE and a maintenance collateral requirement of 2x we can define the call price to be 2 USD / CORE.</para><para>This method divides the collateral by the maintenance collateral ratio to derive a call price for the given black swan ratio.</para><para>There exists some cases where the debt and collateral values are so small that dividing by the collateral ratio will result in a 0 price or really poor rounding errors. No matter what the collateral part of the price ratio can never go to 0 and the debt can never go more than GRAPHENE_MAX_SHARE_SUPPLY</para><para>CR * DEBT/COLLAT or DEBT/(COLLAT/CR) </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/protocol/asset.hpp" line="126" column="1" bodyfile="libraries/chain/protocol/asset.cpp" bodystart="201" bodyend="213"/>
+        <location file="libraries/chain/include/graphene/chain/protocol/asset.hpp" line="126" column="1" bodyfile="libraries/chain/protocol/asset.cpp" bodystart="207" bodyend="219"/>
       </memberdef>
       <memberdef kind="function" id="structgraphene_1_1chain_1_1price_1aa6718b227f89176f631672c14a1314de" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structgraphene_1_1chain_1_1price" kindref="compound">price</ref></type>
@@ -213,22 +213,22 @@
     <detaileddescription>
 <para>A price is defined as a ratio between two assets, and represents a possible exchange rate between those two assets. prices are generally not stored in any simplified form, i.e. a price of (1000 CORE)/(20 USD) is perfectly normal.</para><para>The assets within a price are labeled base and quote. Throughout the Graphene code base, the convention used is that the base asset is the asset being sold, and the quote asset is the asset being purchased, where the price is represented as base/quote, so in the example price above the seller is looking to sell CORE asset and get USD in return. </para>    </detaileddescription>
     <collaborationgraph>
-      <node id="2659">
+      <node id="2652">
         <label>graphene::chain::price</label>
         <link refid="structgraphene_1_1chain_1_1price"/>
-        <childnode refid="2660" relation="usage">
+        <childnode refid="2653" relation="usage">
           <edgelabel>base</edgelabel>
           <edgelabel>quote</edgelabel>
         </childnode>
       </node>
-      <node id="2660">
+      <node id="2653">
         <label>graphene::chain::asset</label>
         <link refid="structgraphene_1_1chain_1_1asset"/>
-        <childnode refid="2661" relation="usage">
+        <childnode refid="2654" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
       </node>
-      <node id="2661">
+      <node id="2654">
         <label>safe&lt; int64_t &gt;</label>
       </node>
     </collaborationgraph>
@@ -241,7 +241,7 @@
       <member refid="structgraphene_1_1chain_1_1price_1a8497919d984e9fb4600a1cc107ff36dd" prot="public" virt="non-virtual"><scope>graphene::chain::price</scope><name>max</name></member>
       <member refid="structgraphene_1_1chain_1_1price_1afb026f15dcdcaf3c4e3dd9faa2a5d641" prot="public" virt="non-virtual"><scope>graphene::chain::price</scope><name>min</name></member>
       <member refid="structgraphene_1_1chain_1_1price_1aff8189b54ad2f0077b316eeaaecf51cd" prot="public" virt="non-virtual"><scope>graphene::chain::price</scope><name>min</name></member>
-      <member refid="structgraphene_1_1chain_1_1price_1a81aafbafeb9daf2cace0bd939ef59a20" prot="public" virt="non-virtual"><scope>graphene::chain::price</scope><name>price</name></member>
+      <member refid="structgraphene_1_1chain_1_1price_1ad4e1abdf60e7ea0faf80b946283a67aa" prot="public" virt="non-virtual"><scope>graphene::chain::price</scope><name>price</name></member>
       <member refid="structgraphene_1_1chain_1_1price_1abc234b899e1c58c00993cf38d4cb75f9" prot="public" virt="non-virtual"><scope>graphene::chain::price</scope><name>quote</name></member>
       <member refid="structgraphene_1_1chain_1_1price_1aec4c800cd443fe76129862b87ead596e" prot="public" virt="non-virtual"><scope>graphene::chain::price</scope><name>to_real</name></member>
       <member refid="structgraphene_1_1chain_1_1price_1aa6718b227f89176f631672c14a1314de" prot="public" virt="non-virtual"><scope>graphene::chain::price</scope><name>unit_price</name></member>

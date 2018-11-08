@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/database_api.hpp" line="722" column="1" bodyfile="libraries/app/include/graphene/app/database_api.hpp" bodystart="722" bodyend="-1"/>
+        <location file="libraries/app/include/graphene/app/database_api.hpp" line="728" column="1" bodyfile="libraries/app/include/graphene/app/database_api.hpp" bodystart="728" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -1350,21 +1350,28 @@ Callback will be passed a variant containing a vector&lt;pair&lt;operation, oper
           <defval>100</defval>
         </param>
         <briefdescription>
-<para>Returns recent trades for the market assetA:assetB, ordered by time, most recent first. The range is [stop, start) Note: Currently, timezone offsets are not supported. The time must be UTC. </para>        </briefdescription>
+<para>Returns recent trades for the market base:quote, ordered by time, most recent first. Note: Currently, timezone offsets are not supported. The time must be UTC. The range is [stop, start). In case when there are more than 100 trades occurred in the same second, this API only returns the first 100 records, can use another API <computeroutput>get_trade_history_by_sequence</computeroutput> to query for the rest. </para>        </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername>a</parametername>
+<parametername>base</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>String name of the first asset </para></parameterdescription>
+<para>symbol or ID of the base asset </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>b</parametername>
+<parametername>quote</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>String name of the second asset </para></parameterdescription>
+<para>symbol or ID of the quote asset </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Start time as a UNIX timestamp, the latest trade to retrieve </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -1378,21 +1385,14 @@ Callback will be passed a variant containing a vector&lt;pair&lt;operation, oper
 <parametername>limit</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Number of trasactions to retrieve, capped at 100 </para></parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>start</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Start time as a UNIX timestamp, the latest trade to retrieve </para></parameterdescription>
+<para>Number of trasactions to retrieve, capped at 100. </para></parameterdescription>
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>Recent transactions in the market </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/database_api.hpp" line="513" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="1467" bodyend="1474"/>
+        <location file="libraries/app/include/graphene/app/database_api.hpp" line="515" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="1467" bodyend="1474"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1database__api_1a19c22f540701825c9292e4a790a4b0d3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>vector&lt; <ref refid="structgraphene_1_1app_1_1market__trade" kindref="compound">market_trade</ref> &gt;</type>
@@ -1421,21 +1421,28 @@ Callback will be passed a variant containing a vector&lt;pair&lt;operation, oper
           <defval>100</defval>
         </param>
         <briefdescription>
-<para>Returns trades for the market assetA:assetB, ordered by time, most recent first. The range is [stop, start) Note: Currently, timezone offsets are not supported. The time must be UTC. </para>        </briefdescription>
+<para>Returns trades for the market base:quote, ordered by time, most recent first. Note: Currently, timezone offsets are not supported. The time must be UTC. The range is [stop, start). </para>        </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername>a</parametername>
+<parametername>base</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>String name of the first asset </para></parameterdescription>
+<para>symbol or ID of the base asset </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>b</parametername>
+<parametername>quote</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>String name of the second asset </para></parameterdescription>
+<para>symbol or ID of the quote asset </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Start sequence as an Integer, the latest trade to retrieve </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -1451,19 +1458,12 @@ Callback will be passed a variant containing a vector&lt;pair&lt;operation, oper
 <parameterdescription>
 <para>Number of trasactions to retrieve, capped at 100 </para></parameterdescription>
 </parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>start</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Start sequence as an Integer, the latest trade to retrieve </para></parameterdescription>
-</parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>Transactions in the market </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/database_api.hpp" line="525" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="1556" bodyend="1564"/>
+        <location file="libraries/app/include/graphene/app/database_api.hpp" line="529" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="1556" bodyend="1564"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1database__api_1a74f6a78e1b086b71d76c13c61344373a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>vector&lt; optional&lt; <ref refid="classgraphene_1_1chain_1_1witness__object" kindref="compound">witness_object</ref> &gt; &gt;</type>
@@ -1489,7 +1489,7 @@ Callback will be passed a variant containing a vector&lt;pair&lt;operation, oper
 This function has semantics identical to <ref refid="classgraphene_1_1app_1_1database__api_1a5a8b2fb34a9ef56da9825e15200720d1" kindref="member">get_objects</ref> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/database_api.hpp" line="540" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="1667" bodyend="1670"/>
+        <location file="libraries/app/include/graphene/app/database_api.hpp" line="546" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="1667" bodyend="1670"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1database__api_1ad02e2ac57c62e08e12de25c5ccdbf179" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>fc::optional&lt; <ref refid="classgraphene_1_1chain_1_1witness__object" kindref="compound">witness_object</ref> &gt;</type>
@@ -1515,7 +1515,7 @@ This function has semantics identical to <ref refid="classgraphene_1_1app_1_1dat
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/database_api.hpp" line="547" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="1684" bodyend="1687"/>
+        <location file="libraries/app/include/graphene/app/database_api.hpp" line="553" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="1684" bodyend="1687"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1database__api_1a5cdf1acf477e9b1e3a439711e39d1e90" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>map&lt; string, <ref refid="namespacegraphene_1_1chain_1ab7749ab4e10e21734e81c82e229657c0" kindref="member">witness_id_type</ref> &gt;</type>
@@ -1552,7 +1552,7 @@ This function has semantics identical to <ref refid="classgraphene_1_1app_1_1dat
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/database_api.hpp" line="555" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="1699" bodyend="1702"/>
+        <location file="libraries/app/include/graphene/app/database_api.hpp" line="561" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="1699" bodyend="1702"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1database__api_1af63c5f89b966944940ac7007f83fe051" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>uint64_t</type>
@@ -1565,7 +1565,7 @@ This function has semantics identical to <ref refid="classgraphene_1_1app_1_1dat
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/database_api.hpp" line="560" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="1727" bodyend="1730"/>
+        <location file="libraries/app/include/graphene/app/database_api.hpp" line="566" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="1727" bodyend="1730"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1database__api_1aacfac5de7a9265a073b678812e26e729" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>vector&lt; optional&lt; <ref refid="classgraphene_1_1chain_1_1committee__member__object" kindref="compound">committee_member_object</ref> &gt; &gt;</type>
@@ -1591,7 +1591,7 @@ This function has semantics identical to <ref refid="classgraphene_1_1app_1_1dat
 This function has semantics identical to <ref refid="classgraphene_1_1app_1_1database__api_1a5a8b2fb34a9ef56da9825e15200720d1" kindref="member">get_objects</ref> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/database_api.hpp" line="573" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="1743" bodyend="1746"/>
+        <location file="libraries/app/include/graphene/app/database_api.hpp" line="579" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="1743" bodyend="1746"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1database__api_1a608a0c36bea6f4041b5d5c400d1de5d9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>fc::optional&lt; <ref refid="classgraphene_1_1chain_1_1committee__member__object" kindref="compound">committee_member_object</ref> &gt;</type>
@@ -1617,7 +1617,7 @@ This function has semantics identical to <ref refid="classgraphene_1_1app_1_1dat
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/database_api.hpp" line="580" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="1760" bodyend="1763"/>
+        <location file="libraries/app/include/graphene/app/database_api.hpp" line="586" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="1760" bodyend="1763"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1database__api_1a9ee2072c704a9a71d6823a5485319035" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>map&lt; string, <ref refid="namespacegraphene_1_1chain_1ab79292a0eac35523c6e76cae4b6b6fa4" kindref="member">committee_member_id_type</ref> &gt;</type>
@@ -1654,7 +1654,7 @@ This function has semantics identical to <ref refid="classgraphene_1_1app_1_1dat
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/database_api.hpp" line="588" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="1775" bodyend="1778"/>
+        <location file="libraries/app/include/graphene/app/database_api.hpp" line="594" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="1775" bodyend="1778"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1database__api_1ae004f1926d5eca8760a9bf1a0f8fffb2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>uint64_t</type>
@@ -1667,7 +1667,7 @@ This function has semantics identical to <ref refid="classgraphene_1_1app_1_1dat
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/database_api.hpp" line="593" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="1803" bodyend="1806"/>
+        <location file="libraries/app/include/graphene/app/database_api.hpp" line="599" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="1803" bodyend="1806"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1database__api_1aedfc3afb6583531c9a651981f97899b8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>vector&lt; <ref refid="classgraphene_1_1chain_1_1worker__object" kindref="compound">worker_object</ref> &gt;</type>
@@ -1681,7 +1681,7 @@ This function has semantics identical to <ref refid="classgraphene_1_1app_1_1dat
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/database_api.hpp" line="605" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="1820" bodyend="1823"/>
+        <location file="libraries/app/include/graphene/app/database_api.hpp" line="611" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="1820" bodyend="1823"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1database__api_1a409bd3a3dde2f4a5fc3e3dbb20f5c290" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>vector&lt; optional&lt; <ref refid="classgraphene_1_1chain_1_1worker__object" kindref="compound">worker_object</ref> &gt; &gt;</type>
@@ -1707,7 +1707,7 @@ This function has semantics identical to <ref refid="classgraphene_1_1app_1_1dat
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/database_api.hpp" line="612" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="1836" bodyend="1839"/>
+        <location file="libraries/app/include/graphene/app/database_api.hpp" line="618" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="1836" bodyend="1839"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1database__api_1abcb21200b2538c1ec2d36d6ae38620cc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>uint64_t</type>
@@ -1720,7 +1720,7 @@ This function has semantics identical to <ref refid="classgraphene_1_1app_1_1dat
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/database_api.hpp" line="617" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="1855" bodyend="1858"/>
+        <location file="libraries/app/include/graphene/app/database_api.hpp" line="623" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="1855" bodyend="1858"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1database__api_1a68b9a93c530b3fa4bb77d5d57b96fab3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>vector&lt; variant &gt;</type>
@@ -1737,7 +1737,7 @@ This function has semantics identical to <ref refid="classgraphene_1_1app_1_1dat
 <para>This will be a mixture of committee_member_object, witness_objects, and worker_objects</para><para>The results will be in the same order as the votes. Null will be returned for any vote ids that are not found. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/database_api.hpp" line="633" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="1873" bodyend="1876"/>
+        <location file="libraries/app/include/graphene/app/database_api.hpp" line="639" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="1873" bodyend="1876"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1database__api_1ad099ccae08856bd4af70aa6669c6e8f6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>std::string</type>
@@ -1754,7 +1754,7 @@ This function has semantics identical to <ref refid="classgraphene_1_1app_1_1dat
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/database_api.hpp" line="640" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="1946" bodyend="1949"/>
+        <location file="libraries/app/include/graphene/app/database_api.hpp" line="646" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="1946" bodyend="1949"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1database__api_1a3e937038077cda27b1f5d06254d3f870" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>std::string</type>
@@ -1771,7 +1771,7 @@ This function has semantics identical to <ref refid="classgraphene_1_1app_1_1dat
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/database_api.hpp" line="644" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="1956" bodyend="1960"/>
+        <location file="libraries/app/include/graphene/app/database_api.hpp" line="650" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="1956" bodyend="1960"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1database__api_1a9ae2eb6a83c27a7b4eec2b00ee8ba371" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>set&lt; <ref refid="structgraphene_1_1chain_1_1public__key__type" kindref="compound">public_key_type</ref> &gt;</type>
@@ -1792,7 +1792,7 @@ This function has semantics identical to <ref refid="classgraphene_1_1app_1_1dat
 <para>This API will take a partially signed transaction and a set of public keys that the owner has the ability to sign for and return the minimal subset of public keys that should add signatures to the transaction. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/database_api.hpp" line="650" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="1968" bodyend="1971"/>
+        <location file="libraries/app/include/graphene/app/database_api.hpp" line="656" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="1968" bodyend="1971"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1database__api_1ae62878047f99b974282302825086d369" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>set&lt; <ref refid="structgraphene_1_1chain_1_1public__key__type" kindref="compound">public_key_type</ref> &gt;</type>
@@ -1809,7 +1809,7 @@ This function has semantics identical to <ref refid="classgraphene_1_1app_1_1dat
 <para>This method will return the set of all public keys that could possibly sign for a given transaction. This call can be used by wallets to filter their set of public keys to just the relevant subset prior to calling <ref refid="classgraphene_1_1app_1_1database__api_1a9ae2eb6a83c27a7b4eec2b00ee8ba371" kindref="member">get_required_signatures</ref> to get the minimum subset. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/database_api.hpp" line="657" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="1983" bodyend="1986"/>
+        <location file="libraries/app/include/graphene/app/database_api.hpp" line="663" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="1983" bodyend="1986"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1database__api_1ae40d3a430ca023b53c09f92351d9e904" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>set&lt; <ref refid="classgraphene_1_1chain_1_1address" kindref="compound">address</ref> &gt;</type>
@@ -1826,7 +1826,7 @@ This function has semantics identical to <ref refid="classgraphene_1_1app_1_1dat
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/database_api.hpp" line="658" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="1987" bodyend="1990"/>
+        <location file="libraries/app/include/graphene/app/database_api.hpp" line="664" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="1987" bodyend="1990"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1database__api_1afe62b6a147149b0954cda6c10c858f7d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -1844,7 +1844,7 @@ This function has semantics identical to <ref refid="classgraphene_1_1app_1_1dat
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/database_api.hpp" line="663" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="2052" bodyend="2055"/>
+        <location file="libraries/app/include/graphene/app/database_api.hpp" line="669" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="2052" bodyend="2055"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1database__api_1a359ba5375d70ea8c68c81e97ff5b90f7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -1866,7 +1866,7 @@ This function has semantics identical to <ref refid="classgraphene_1_1app_1_1dat
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/database_api.hpp" line="668" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="2066" bodyend="2069"/>
+        <location file="libraries/app/include/graphene/app/database_api.hpp" line="674" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="2066" bodyend="2069"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1database__api_1a3b704179a813b26c3f910105f7e6a9f6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structgraphene_1_1chain_1_1processed__transaction" kindref="compound">processed_transaction</ref></type>
@@ -1883,7 +1883,7 @@ This function has semantics identical to <ref refid="classgraphene_1_1app_1_1dat
 <para>Validates a transaction against the current state without broadcasting it on the network. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/database_api.hpp" line="673" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="2084" bodyend="2087"/>
+        <location file="libraries/app/include/graphene/app/database_api.hpp" line="679" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="2084" bodyend="2087"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1database__api_1ad35716561e27ec6913b959f230aa2b1c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>vector&lt; fc::variant &gt;</type>
@@ -1904,7 +1904,7 @@ This function has semantics identical to <ref refid="classgraphene_1_1app_1_1dat
 <para>For each operation calculate the required fee in the specified asset type. If the asset type does not have a valid core_exchange_rate </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/database_api.hpp" line="679" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="2094" bodyend="2097"/>
+        <location file="libraries/app/include/graphene/app/database_api.hpp" line="685" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="2094" bodyend="2097"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1database__api_1a61959ca9a81062807d10b9c2494df0e4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>vector&lt; <ref refid="classgraphene_1_1chain_1_1proposal__object" kindref="compound">proposal_object</ref> &gt;</type>
@@ -1922,7 +1922,7 @@ This function has semantics identical to <ref refid="classgraphene_1_1app_1_1dat
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/database_api.hpp" line="688" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="2183" bodyend="2186"/>
+        <location file="libraries/app/include/graphene/app/database_api.hpp" line="694" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="2183" bodyend="2186"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1database__api_1a42799e089fb62035373538f9ccc973af" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>vector&lt; <ref refid="classgraphene_1_1chain_1_1blinded__balance__object" kindref="compound">blinded_balance_object</ref> &gt;</type>
@@ -1940,7 +1940,7 @@ This function has semantics identical to <ref refid="classgraphene_1_1app_1_1dat
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/database_api.hpp" line="697" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="2213" bodyend="2216"/>
+        <location file="libraries/app/include/graphene/app/database_api.hpp" line="703" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="2213" bodyend="2216"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1database__api_1afae1c289bffebc6da63092fece680bc5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>vector&lt; <ref refid="classgraphene_1_1chain_1_1withdraw__permission__object" kindref="compound">withdraw_permission_object</ref> &gt;</type>
@@ -1988,7 +1988,7 @@ This function has semantics identical to <ref refid="classgraphene_1_1app_1_1dat
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/database_api.hpp" line="710" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="2238" bodyend="2241"/>
+        <location file="libraries/app/include/graphene/app/database_api.hpp" line="716" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="2238" bodyend="2241"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1database__api_1ae77ad455e782215babb694dc01f06b11" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>vector&lt; <ref refid="classgraphene_1_1chain_1_1withdraw__permission__object" kindref="compound">withdraw_permission_object</ref> &gt;</type>
@@ -2036,14 +2036,14 @@ This function has semantics identical to <ref refid="classgraphene_1_1app_1_1dat
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/database_api.hpp" line="719" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="2260" bodyend="2263"/>
+        <location file="libraries/app/include/graphene/app/database_api.hpp" line="725" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="2260" bodyend="2263"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>The <ref refid="classgraphene_1_1app_1_1database__api" kindref="compound">database_api</ref> class implements the RPC API for the chain database. </para>    </briefdescription>
     <detaileddescription>
 <para>This API exposes accessors on the database which query state tracked by a blockchain validating node. This API is read-only; all modifications to the database must be performed via transactions. Transactions are broadcast via the <ref refid="classgraphene_1_1app_1_1network__broadcast__api" kindref="compound">network_broadcast_api</ref>. </para>    </detaileddescription>
-    <location file="libraries/app/include/graphene/app/database_api.hpp" line="123" column="1" bodyfile="libraries/app/include/graphene/app/database_api.hpp" bodystart="122" bodyend="723"/>
+    <location file="libraries/app/include/graphene/app/database_api.hpp" line="123" column="1" bodyfile="libraries/app/include/graphene/app/database_api.hpp" bodystart="122" bodyend="729"/>
     <listofallmembers>
       <member refid="classgraphene_1_1app_1_1database__api_1a0c3f545dec20b073131bbd7466940c6f" prot="public" virt="non-virtual"><scope>graphene::app::database_api</scope><name>cancel_all_subscriptions</name></member>
       <member refid="classgraphene_1_1app_1_1database__api_1ad81929c19600a30b92e8c387338264ab" prot="public" virt="non-virtual"><scope>graphene::app::database_api</scope><name>database_api</name></member>

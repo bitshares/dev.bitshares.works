@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="185" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="185" bodyend="-1"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="218" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="218" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1app_1_1history__api_1af5bed60211b4dbc03bd69cfee1448848" prot="private" static="no" mutable="no">
         <type><ref refid="classgraphene_1_1app_1_1database__api" kindref="compound">graphene::app::database_api</ref></type>
@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="186" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="186" bodyend="-1"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="219" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="219" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -147,7 +147,7 @@
 <parametername>operation_types</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The IDs of the operation we want to get operations in the account( 0 = transfer , 1 = limit order create, ...) </para></parameterdescription>
+<para>The IDs of the operation we want to get operations in the account ( 0 = transfer , 1 = limit order create, ...) </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -168,7 +168,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="143" column="1" bodyfile="libraries/app/api.cpp" bodystart="430" bodyend="443"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="146" column="1" bodyfile="libraries/app/api.cpp" bodystart="430" bodyend="443"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1history__api_1a67e565b2a56a736c31215fb96d216fc9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>vector&lt; <ref refid="classgraphene_1_1chain_1_1operation__history__object" kindref="compound">operation_history_object</ref> &gt;</type>
@@ -213,7 +213,7 @@
 <parametername>operation_id</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The ID of the operation we want to get operations in the account( 0 = transfer , 1 = limit order create, ...) </para></parameterdescription>
+<para>The ID of the operation we want to get operations in the account ( 0 = transfer , 1 = limit order create, ...) </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -241,19 +241,19 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="157" column="1" bodyfile="libraries/app/api.cpp" bodystart="346" bodyend="383"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="163" column="1" bodyfile="libraries/app/api.cpp" bodystart="346" bodyend="383"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1app_1_1history__api_1a610a202a478e582e891f729bcbcf90b0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1app_1_1history__api_1aeed223d6c126ffd0b2a388ae3e026a90" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>vector&lt; <ref refid="classgraphene_1_1chain_1_1operation__history__object" kindref="compound">operation_history_object</ref> &gt;</type>
         <definition>vector&lt; operation_history_object &gt; graphene::app::history_api::get_relative_account_history</definition>
-        <argsstring>(const std::string account_id_or_name, uint32_t stop=0, unsigned limit=100, uint32_t start=0) const</argsstring>
+        <argsstring>(const std::string account_id_or_name, uint64_t stop=0, unsigned limit=100, uint64_t start=0) const</argsstring>
         <name>get_relative_account_history</name>
         <param>
           <type>const std::string</type>
           <declname>account_id_or_name</declname>
         </param>
         <param>
-          <type>uint32_t</type>
+          <type>uint64_t</type>
           <declname>stop</declname>
           <defval>0</defval>
         </param>
@@ -263,7 +263,7 @@
           <defval>100</defval>
         </param>
         <param>
-          <type>uint32_t</type>
+          <type>uint64_t</type>
           <declname>start</declname>
           <defval>0</defval>
         </param>
@@ -303,7 +303,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="175" column="1" bodyfile="libraries/app/api.cpp" bodystart="386" bodyend="421"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="183" column="1" bodyfile="libraries/app/api.cpp" bodystart="386" bodyend="421"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1history__api_1a1574597fa10804bf328b89c12f6f7a9f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>vector&lt; order_history_object &gt;</type>
@@ -323,12 +323,35 @@
           <declname>limit</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Get details of order executions occurred most recently in a trading pair. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>One asset in a trading pair </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other asset in the trading pair </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>limit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maximum records to return </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a list of order_history objects, in &quot;most recent first&quot; order </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="180" column="1" bodyfile="libraries/app/api.cpp" bodystart="286" bodyend="309"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="195" column="1" bodyfile="libraries/app/api.cpp" bodystart="286" bodyend="309"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1history__api_1ab5e379a09632a3e215554cd9ef37dcd9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>vector&lt; bucket_object &gt;</type>
@@ -356,12 +379,49 @@
           <declname>end</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Get OHLCV data of a trading pair in a time range. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>One asset in a trading pair </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other asset in the trading pair </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bucket_seconds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Length of each time bucket in seconds. Note: it need to be within result of <ref refid="classgraphene_1_1app_1_1history__api_1a3cb82a7bb879b9f967665d69fd90c67d" kindref="member">get_market_history_buckets()</ref> API, otherwise no data will be returned </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The start of a time range, E.G. &quot;2018-01-01T00:00:00&quot; </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>end</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The end of the time range </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A list of OHLCV data, in &quot;least recent first&quot; order. If there are more than 200 records in the specified time range, the first 200 records will be returned. </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="181" column="1" bodyfile="libraries/app/api.cpp" bodystart="445" bodyend="469"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="208" column="1" bodyfile="libraries/app/api.cpp" bodystart="445" bodyend="469"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1history__api_1a3cb82a7bb879b9f967665d69fd90c67d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>flat_set&lt; uint32_t &gt;</type>
@@ -369,19 +429,20 @@
         <argsstring>() const</argsstring>
         <name>get_market_history_buckets</name>
         <briefdescription>
-        </briefdescription>
+<para>Get OHLCV time bucket lengths supported (configured) by this API server. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><simplesect kind="return"><para>A list of time bucket lengths in seconds. E.G. if the result contains a number &quot;300&quot;, it means this API server supports OHLCV data aggregated in 5-minute buckets. </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="183" column="1" bodyfile="libraries/app/api.cpp" bodystart="423" bodyend="428"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="216" column="1" bodyfile="libraries/app/api.cpp" bodystart="423" bodyend="428"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>The <ref refid="classgraphene_1_1app_1_1history__api" kindref="compound">history_api</ref> class implements the RPC API for account history. </para>    </briefdescription>
     <detaileddescription>
 <para>This API contains methods to access account histories </para>    </detaileddescription>
-    <location file="libraries/app/include/graphene/app/api.hpp" line="117" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="116" bodyend="187"/>
+    <location file="libraries/app/include/graphene/app/api.hpp" line="117" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="116" bodyend="220"/>
     <listofallmembers>
       <member refid="classgraphene_1_1app_1_1history__api_1a59a2a38b1c81a9e5fed85ea79f25bc38" prot="private" virt="non-virtual"><scope>graphene::app::history_api</scope><name>_app</name></member>
       <member refid="classgraphene_1_1app_1_1history__api_1af5bed60211b4dbc03bd69cfee1448848" prot="private" virt="non-virtual"><scope>graphene::app::history_api</scope><name>database_api</name></member>
@@ -391,7 +452,7 @@
       <member refid="classgraphene_1_1app_1_1history__api_1a1574597fa10804bf328b89c12f6f7a9f" prot="public" virt="non-virtual"><scope>graphene::app::history_api</scope><name>get_fill_order_history</name></member>
       <member refid="classgraphene_1_1app_1_1history__api_1ab5e379a09632a3e215554cd9ef37dcd9" prot="public" virt="non-virtual"><scope>graphene::app::history_api</scope><name>get_market_history</name></member>
       <member refid="classgraphene_1_1app_1_1history__api_1a3cb82a7bb879b9f967665d69fd90c67d" prot="public" virt="non-virtual"><scope>graphene::app::history_api</scope><name>get_market_history_buckets</name></member>
-      <member refid="classgraphene_1_1app_1_1history__api_1a610a202a478e582e891f729bcbcf90b0" prot="public" virt="non-virtual"><scope>graphene::app::history_api</scope><name>get_relative_account_history</name></member>
+      <member refid="classgraphene_1_1app_1_1history__api_1aeed223d6c126ffd0b2a388ae3e026a90" prot="public" virt="non-virtual"><scope>graphene::app::history_api</scope><name>get_relative_account_history</name></member>
       <member refid="classgraphene_1_1app_1_1history__api_1ad034d3e3420e431ad72159b9f3bd807a" prot="public" virt="non-virtual"><scope>graphene::app::history_api</scope><name>history_api</name></member>
     </listofallmembers>
   </compounddef>
