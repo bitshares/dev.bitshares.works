@@ -21,10 +21,23 @@
     development/integration
     development/interaction
     development/testnets
-    development/bsip
     supports_dev/supports
+    development/bsip
+
 	
 -------
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Guides
+
+    bts_guide/tutorials/index
+    bts_guide/index_faq
+    references/tech_articles
+    references/githubrepo
+
+
+---------
 	
 .. toctree::
     :maxdepth: 2
@@ -41,16 +54,6 @@
   
 -------
 	
-.. toctree::
-    :maxdepth: 2
-    :caption: Guides
-
-    bts_guide/tutorials/index
-    bts_guide/index_faq
-    knowledge_base/glossary
-    knowledge_base/index_kb
-
----------
 	
 .. toctree::
     :maxdepth: 2
@@ -58,8 +61,9 @@
 
     references/info_comunities
     references/info_bts_events
-    references/tech_articles
-    references/githubrepo
+    knowledge_base/glossary
+    knowledge_base/index_kb
+
 
 
 |

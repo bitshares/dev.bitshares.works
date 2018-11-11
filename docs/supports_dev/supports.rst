@@ -1,4 +1,5 @@
 
+
 ***************************
 Support and Optimizations 
 ***************************
@@ -11,16 +12,35 @@ This section purpose is to collect and provide useful information for the BitSha
    
 -------
 
+.. _lib-python:
+
 Python - BitShares
 ===============================
-- `Python Library for BitShares: GitHub <https://github.com/bitshares/python-bitshares#python-library-for-bitshares>`_
+* `Python Library for BitShares: GitHub <https://github.com/bitshares/python-bitshares#python-library-for-bitshares>`_
 
   - Fully featured client-side library for the BitShares Blockchain - written entirely in python. 
 
-- `Python-Bitshares 0.1 Documentation <http://docs.pybitshares.com/>`_ - http://pybitshares.com/
-- :ref:`(more...) <lib-python>`
- 
+* `Python-Bitshares 0.1 Documentation <http://docs.pybitshares.com/>`_ - http://pybitshares.com/
+* :ref:`how-to-setup-python-lib`
 
+  - How to Create MPAs/UIAs with Python
+ 
+* `Faucet:: Tapin: tapin is a python-based faucet for Graphene-based blockchains (e.g. BitShares). <https://github.com/xeroc/tapin>`_
+* :ref:`monitor-account-python`
+  - (How to setup)
+
+* :ref:`websocket-script-support`
+
+  - Ptython - websocket-client interact with the Core API
+
+
+
+  
+|
+
+--------
+ 
+ 
 API Support & References
 ===================================
 
@@ -33,8 +53,11 @@ API Support & References
 
   - Step by step on everything needed to have your own BitShares Explorer API up and running for a production environment.
 
-  
-Libraries
+|
+
+--------
+ 
+Support: Libraries
 ======================
 
 - `BitShares-fc: Doxygen Documentation <http://open-explorer.io/doxygen/fc/>`_
@@ -42,10 +65,10 @@ Libraries
 
   - FC stands for fast-compiling c++ library and provides a set of utility libraries useful for the development of asynchronous libraries. 
 
+|
+
+--------
  
-SDKs
-========================
-- 
 
 Tools
 ========================
@@ -74,35 +97,6 @@ Tools
 - :ref:`monitor-balance-nodejs`  
 
   - This nodejs script monitors the balance history of an account in a graphene-based network
-  
-
-Plugins
-===========================
-- `Discussion: "Create plugin script" (#1302) <https://github.com/bitshares/bitshares-core/pull/1302>`_
-- :ref:`elastic-search-plugin`
-
-  - How to store account history data into an elasticsearch database.
-  
-- :ref:`memory-nodes`
-
-  - Help to reduce RAM usage significantly by using witness_node executable options.
-
-- `Plugin Template - (create a demo API hello) <https://github.com/bitshares/bitshares-core/blob/hello_plugin/libraries/plugins/hello/README.md>`_
-  
-
-  
-Programs
-============================
-
-- :ref:`websocket-script-support`
-
-  - Ptython - websocket-client interact with the Core API
-
-
-
-
-
-|
-
+ 
 |
 

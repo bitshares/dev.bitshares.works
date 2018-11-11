@@ -7,6 +7,8 @@ Plugins
 
 This section lists existing BitShares pluging folders and file names. By clicking each folder name (after the Table of Contents), each folder in the GitHub opens. 
 
+**BitShares Plugins ReadMe <https://github.com/bitshares/bitshares-core/tree/master/libraries/plugins>`_**
+
 * File directory: (../ibraries/plugins/xxx.cpp)
 * File directory: (../ibraries/plugins/{folder name}/include/graphene/{folder name}/xxx.hpp)
 

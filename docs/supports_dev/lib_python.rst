@@ -1,8 +1,8 @@
 
-.. _lib-python:
+.. _lib-python-xxxx:
 
 ********************************
-Python Support  
+BitShares Python Support information
 ********************************
 
 This section collects Python BitShares support information
@@ -17,7 +17,10 @@ This section collects Python BitShares support information
 * :ref:`how-to-setup-python-lib`
 
   - How to Create MPAs/UIAs with Python
-  
+ 
+* `Tapin: tapin is a python-based faucet for Graphene-based blockchains (e.g. BitShares). <https://github.com/xeroc/tapin>`_
+
+
 
 Tools
 ===========================
