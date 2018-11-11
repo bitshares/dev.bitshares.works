@@ -7,7 +7,9 @@ System Components Elements
 
 -----------------------------------
 
-- `The Blockchain Worker System <https://bitshares.org/doxygen/group__workers.html>`_ (*open a doxygen documentation)
+* :ref:`ex-broadcase_tx`
+
+* `The Blockchain Worker System <https://bitshares.org/doxygen/group__workers.html>`_ (*open a doxygen documentation)
 
 
 **Structures and Descriptions**

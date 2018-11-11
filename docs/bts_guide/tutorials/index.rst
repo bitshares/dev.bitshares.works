@@ -54,7 +54,7 @@ Assets
 Prediction Market
 ==========================
 
-* :ref:`What is a  prediction market? <pm>` 
+* `What is a  prediction market? <http://how.bitshares.works/en/latest/bts_holders/tokens/pm.html>`_
 * :ref:`How can I create a Prediction Market (CLI)? <pm-create-manual>`
 * :ref:`How can I close/settle a Prediction Market (CLI)? <pm-close-manual>`
 
@@ -103,14 +103,29 @@ Performance
 
 Plugin
 ===================
-* :ref:`ElasticSearch Plugin: How to store account history data into an elasticsearch database <elastic-search-plugin>`
-* :ref:`Memory Reduction for Nodes: Help to reduce RAM usage significantly by using witness_node executable options <memory-nodes>`
+
+* `BitShares Plugins - ReadMe <https://github.com/bitshares/bitshares-core/tree/master/libraries/plugins>`_
+* :ref:`elastic-search-plugin`
+
+  - How to store account history data into an elasticsearch database.
+  
+* :ref:`memory-nodes`
+
+  - Help to reduce RAM usage significantly by using witness_node executable options.
+
 * `Plugin Template - (create a demo API hello) <https://github.com/bitshares/bitshares-core/blob/hello_plugin/libraries/plugins/hello/README.md>`_
+* `Discussion: "Create plugin script" (#1302) <https://github.com/bitshares/bitshares-core/pull/1302>`_
+
+  
+Python
+===================
+* :ref:`BitShares Python Support information links <lib-python>`  
   
   
 Smart Contracts
 ====================
 
+* :ref:`pre-graphene-smart-contract`
 
 
 Testnets
@@ -157,7 +172,7 @@ Witness (Full) Node Guide
 
 * :ref:`How to connect to your own Full Node (GUI) <howto-connect-own-full-node-gui>`
 * :ref:`How to change the Signing Key of your Witness <change-witness-key>`
-* :ref:`What is System Requirements <system-requirements-node>`  (updated: 2018-07-02)
+* :ref:`What is System Requirements <system-requirements-node>` 
 * :ref:`How to Run and Use a Full Node <how-to-run-full-node2>`
 * :ref:`How to Become an Active Witness <howto-become-active-witness>`
 * :ref:`How to run Node in the background by using GNU screen <manage-gun-screen>`

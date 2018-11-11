@@ -3,7 +3,7 @@
 BSIPs
 ************************************************
 
-**Businesses, Developers and Business Developers **
+**Businesses, Developers and Business Developers**
 
 BitShares Improvement Proposals and Protocols (BSIPs)
 ========================================================
