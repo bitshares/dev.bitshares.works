@@ -97,6 +97,33 @@ Monitoring
 * :ref:`How to monitor Account Deposits - Python <monitoring-account-deposits-python>`
 * :ref:`How to monitor Balance History of an Account  - NodeJS <nodejs-example>`
 
+
+.. _witness-node-guide-tutorials: 
+  
+Node (Full) Guide
+==============================
+
+* :ref:`How to connect to your own Full Node (GUI) <howto-connect-own-full-node-gui>`
+* :ref:`How to change the Signing Key of your Witness <change-witness-key>`
+* :ref:`What is System Requirements <system-requirements-node>` 
+* :ref:`How to Run and Use a Full Node <how-to-run-full-node2>`
+* :ref:`How to run Node in the background by using GNU screen <manage-gun-screen>`
+* :ref:`How to run a BitShares API Node <run-api-node-guide>`		
+* :ref:`How to backup a server <witness-backup-server>`
+
+.. _witness-blockproducer-guide: 
+
+Node (Witness - Block Producer) Guide
+====================================
+
+* :ref:`How to Become a Block Producer <howto-become-active-witness>`
+* :ref:`How to verify block production <veryfy_block_production>`
+* :ref:`How to backup a server <witness-backup-server>`
+* :ref:`How witness Price Feeds work <witness-price-feeds>`
+
+
+
+
 Performance
 ===========================
 * `How to run the Performance Test <https://github.com/bitshares/bitshares-core/tree/develop/tests/performance>`_
@@ -120,6 +147,9 @@ Plugin
 Python
 ===================
 * :ref:`BitShares Python Support information links <lib-python>`  
+
+  - Python Library for BitShares:GitHub, Python-Bitshares Documentation, How to Set up Python Library for the Public Testnet, more...
+
   
   
 Smart Contracts
@@ -164,22 +194,6 @@ Wallet / CLI
 * :ref:`How to import a GUI-Wallet Account into CLI-Wallet <howto-import-gui-wallet-account-cli>`
 * `Where to find BitShares Public Full Nodes <https://github.com/bitshares/bitshares-ui/blob/staging/app/api/apiConfig.js>`_
 
-
-.. _witness-node-guide-tutorials: 
-  
-Witness (Full) Node Guide
-====================
-
-* :ref:`How to connect to your own Full Node (GUI) <howto-connect-own-full-node-gui>`
-* :ref:`How to change the Signing Key of your Witness <change-witness-key>`
-* :ref:`What is System Requirements <system-requirements-node>` 
-* :ref:`How to Run and Use a Full Node <how-to-run-full-node2>`
-* :ref:`How to Become an Active Witness <howto-become-active-witness>`
-* :ref:`How to run Node in the background by using GNU screen <manage-gun-screen>`
-* :ref:`How to run a BitShares API Node <run-api-node-guide>`		
-* :ref:`How to verify block production <veryfy_block_production>`
-* :ref:`How to backup a server <witness-backup-server>`
-* :ref:`How witness Price Feeds work <witness-price-feeds>`
 
 Worker Guide
 =======================

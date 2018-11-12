@@ -20,12 +20,15 @@ Python - BitShares
 
   - Fully featured client-side library for the BitShares Blockchain - written entirely in python. 
 
-* `Python-Bitshares 0.1 Documentation <http://docs.pybitshares.com/>`_ - http://pybitshares.com/
+* `Python-Bitshares Documentation <http://docs.pybitshares.com/en/latest/>`_ 
 * :ref:`how-to-setup-python-lib`
 
   - How to Create MPAs/UIAs with Python
  
-* `Faucet:: Tapin: tapin is a python-based faucet for Graphene-based blockchains (e.g. BitShares). <https://github.com/xeroc/tapin>`_
+* `Faucet - Tapin <https://github.com/xeroc/tapin>`_
+
+  -  Tapin is a python-based faucet for Graphene-based blockchains (e.g. BitShares). 
+  
 * :ref:`monitor-account-python`
   - (How to setup)
 

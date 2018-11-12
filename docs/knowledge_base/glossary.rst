@@ -47,9 +47,18 @@ Docker
 - Docker is meant for node operators. It makes it easier to deploy a new node and still allows configuration. I recommend mentioning it because docker is a term to most operators.  The Docker default config.ini is created when first launching the node. An example can be found in the /docker/ folder.
 
 
+Elasticsearch
+-------------------
+- Elasticsearch is a search engine based on Lucene library. It provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents. (ref: `wiki <https://en.wikipedia.org/wiki/Elasticsearch>`_ ) 
+
+
 ElasticSearch Plugin
 ----------------------
 - A "plugin" enables blockchain data to be stored in the elastic search database. A separate instruction guide exists in the -core/wiki. Once data is in ES database, it can be easily access through kibana (e.g. using kibana.bitshares.eu). Many libraries exist to read data from elastic search.
+
+Faucet
+---------------
+- Faucet Role: The faucet address is used to pay the registration fee for new users.
 
 Native Core Token BTS
 ----------------------
@@ -69,7 +78,12 @@ Nodes (witness node)
 
 plugins
 ----------------------
-- 
+- A plugin is a software component that adds a specific feature to an existing computer program. When a program supports plug-ins, it enables customization. (ref: `wiki <https://en.wikipedia.org/wiki/Plug-in_(computing)>`_ )
+
+Price feed
+----------------------
+- Price feed providers use this operation to publish their price feeds for market-issued assets. A price feed is used to tune the market for a particular market-issued asset.
+
 
 Seed Nodes
 ----------------------
@@ -79,6 +93,10 @@ Seed Nodes
 Token
 ----------------------
 - Asset
+
+UI
+--------------
+- User Interface
 
 
 Units
@@ -90,7 +108,9 @@ unit test
 - In BitShares-Core unit test files locate in a /test/ folder. They are meant to ensure that the code behaves the right way.
 
 
-
+Witness Nodes
+-------------------------
+- Block Producing Node. In BitShares, witnesses serve a similar role of validating signatures and timestamping transactions by including them in blocks.
 
 
 Working Budget
