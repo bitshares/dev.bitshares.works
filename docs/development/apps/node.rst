@@ -3,7 +3,7 @@
 .. _how-to-run-full-node:
 
 ****************************
-Full Nodes (Witness Nodes)
+Nodes  
 ****************************
 
 .. contents:: Table of Contents
@@ -11,11 +11,17 @@ Full Nodes (Witness Nodes)
 
 --------------------
 
-Type of Witness nodes
+Type of Nodes
 ==========================
 
-* **Non-block producing** witness nodes
-* **Block producing** witness nodes (more requirements and duties)
+* **Non-block producing** Nodes
+  
+  - API node
+  - Seed node
+  - Faucet
+   
+  
+* **Block producing** Nodes (a.k.a. witness node - voted in/out )
 
 We distinguish between full nodes (a.k.a. non-block producing witness nodes) and block producing witness nodes. Both are implemented by the same executable but the latter requires some additional parameters to be defined and the corresponding witness voted active by the BTS Holders.
 
@@ -62,13 +68,16 @@ In order to allow RPC calls for blockchain operations you need to modify the fol
 
     rpc-endpoint = 0.0.0.0:8090
 
-This will open the port 8090 for global queries only. Since the witness node only maintains the blockchain and (unless you are an actively block producing witness) no private keys are involved, it is safe to expose your witness to the internet.
+This will open the **port 8090 for global queries only**. Since the witness node only maintains the blockchain and (unless you are an actively block producing witness) no private keys are involved, it is safe to expose your witness to the internet.
 
 
 * :ref:`How to Run and Use a Full Node <how-to-run-full-node2>`
+
+Although you would get default parameters in your config file for better memory reduction, you might want to learn about the plugin.
+
 * :ref:`Memory Reduction for Nodes: Help to reduce RAM usage significantly by using witness_node executable options <memory-nodes>`
 
-.. note:: Learn more :ref:`how to manage Witness(Full) Node <witness-node-guide-tutorials>`, please check our tutorials. 
+.. note:: More information about :ref:`how to manage Witness(Full) Node <witness-node-guide-tutorials>`,    in our tutorials. 
 
 
 Restart the Witness Node

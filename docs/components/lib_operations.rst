@@ -1,4 +1,7 @@
-
+.. role:: strike
+    :class: strike
+	
+	
 .. _lib-operations:
 
 *************************************
@@ -77,9 +80,9 @@ account_transfer_operation
 ----------------------------
 
 - Transfers the account to another account while clearing the white list. 
-- In theory an account can be transferred by simply updating the authorities, but that kind of transfer lacks semantic meaning and is more often done to rotate keys without transferring ownership. This operation is used to indicate the legal transfer of title to this account and a break in the operation history. 
+- In theory an account can be transferred by simply updating the authorities, but that kind of transfer lacks semantic meaning and is more often done to rotate keys without transferring ownership.  
+- This operation is used to indicate the legal transfer of title to this account and a break in the operation history. 
 - The account_id's owner/active/voting/memo authority should be set to new_owner
-- This operation is used to indicate the legal transfer of title to this account and a break in the operation history.
 - This operation will clear the account's whitelist statuses, but not the blacklist statuses. 
 
 .. code-block:: cpp 
@@ -148,7 +151,9 @@ account_upgrade_operation
 ----------------------------
 
 - Manage an account's membership status
-- This operation is used to upgrade an account to a member, or renew its subscription. If an account which is an unexpired annual subscription member publishes this operation with ``upgrade_to_lifetime_member`` set to false, the account's membership expiration date will be pushed backward one year. If a basic account publishes it with ``upgrade_to_lifetime_member`` set to false, the account will be upgraded to a subscription member with an expiration date one year after the processing time of this operation.
+- This operation is used to upgrade an account to a member, or renew its subscription. 
+- :strike:`If an account which is an unexpired annual subscription member publishes this operation with upgrade_to_lifetime_member set to false, the account's membership expiration date will be pushed backward one year.` 
+- If a basic account publishes it with ``upgrade_to_lifetime_member`` set to false, the account will be upgraded to a subscription member with an expiration date one year after the processing time of this operation.
 - Any account may use this operation to become a lifetime member by setting ``upgrade_to_lifetime_member`` to true. Once an account has become a lifetime member, it may not use this operation anymore. 
 
 .. code-block:: cpp 
@@ -176,7 +181,7 @@ account_whitelist_operation
 - This operation is used to whitelist and blacklist accounts, primarily for transacting in whitelisted assets.
 - Accounts can freely specify opinions about other accounts, in the form of either whitelisting or blacklisting them. This information is used in chain validation only to determine whether an account is authorized to transact in an asset type which enforces a whitelist, but third parties can use this information for other uses as well, as long as it does not conflict with the use of whitelisted assets.
 - An asset which enforces a whitelist specifies a list of accounts to maintain its whitelist, and a list of accounts to maintain its blacklist. In order for a given account A to hold and transact in a whitelisted asset S, A must be whitelisted by at least one of S's whitelist_authorities and blacklisted by none of S's blacklist_authorities. If A receives a balance of S, and is later removed from the whitelist(s) which allowed it to hold S, or added to any blacklist S specifies as authoritative, A's balance of S will be frozen until A's authorization is reinstated.
-- This operation requires authorizing_account's signature, but not account_to_list's. The fee is paid by authorizing_account
+- This operation requires authorizing_account's signature, but not account_to_list's. The fee is paid by ``authorizing_account``
 
 .. code-block:: cpp 
 
@@ -337,8 +342,8 @@ asset_global_settle_operation
 ---------------------------------
 
 - Allows global settling of bitassets (black swan or prediction markets)
-- In order to use this operation, `asset_to_settle` must have the global_settle flag set
-- When this operation is executed all balances are converted into the backing asset at the settle_price and all open margin positions are called at the settle price. If this asset is used as backing for other bitassets, those bitassets will be force settled at their current feed price. 
+- In order to use this operation, ``asset_to_settle`` must have the ``global_settle`` flag set
+- When this operation is executed all balances are converted into the backing asset at the ``settle_price`` and all open margin positions are called at the settle price. If this asset is used as backing for other bitassets, those bitassets will be force settled at their current feed price. 
 
 .. code-block:: cpp 
 
@@ -373,7 +378,11 @@ asset_publish_feed_operation
 
 - Publish price feeds for market-issued assets
 - Price feed providers use this operation to publish their price feeds for **market-issued assets**. A price feed is used to tune the market for a particular **market-issued asset**. For each value in the feed, the median across all committee_member feeds for that asset is calculated and the market for the asset is configured with the median of that value.
-- The feed in the operation contains three prices: **a call price limit**, **a short price limit**, and **a settlement price**. The call limit price is structured as `(collateral asset) / (debt asset)` and the short limit price is structured as `(asset for sale) / (collateral asset`). Note that the `asset IDs` are opposite to eachother, so if we're publishing a feed for USD, the call limit price will be `CORE/USD `and the short limit price will be `USD/CORE`. The settlement price may be flipped either direction, as long as it is a ratio between the **market-issued asset** and **its collateral**. 
+- The feed in the operation contains three prices: **a call price limit**, **a short price limit**, and **a settlement price**. 
+
+  - The call limit price is structured as ``(collateral asset) / (debt asset)`` and the short limit price is structured as ``(asset for sale) / (collateral asset)``. 
+  
+.. Note:: The ``asset IDs`` are opposite to each other, so if we're publishing a feed for USD, the call limit price will be ``CORE/USD`` and the short limit price will be ``USD/CORE``. The settlement price may be flipped either direction, as long as it is a ratio between the **market-issued asset** and **its collateral**. 
 
 .. code-block:: cpp 
 
@@ -396,7 +405,7 @@ asset_reserve_operation
 
 - used to take an asset out of circulation, returning to the issuer
 
-.. Note:: You cannot use this operation on market-issued assets. 
+.. Note:: You cannot use this operation on **market-issued** assets. 
 
 .. code-block:: cpp 
 

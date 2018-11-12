@@ -11,13 +11,13 @@ Architecture
 
 .. image:: ../../../../_static/structures/bitshares-architecture-clinotop.png
         :alt: BitShares Architecture
-        :width: 700px
+        :width: 750px
         :align: center
 		
 
-The Nodes are connected to the network and verify all transactions and block produces. The cli_wallet does not offer P2P or blockchain capabilities.  
+The Nodes are connected to the network and verify all transactions and block produces. The **cli_wallet** does not offer P2P or blockchain capabilities.  
 
-Launching the cli_wallet requires a trusted Full Node to interact with the blockchain. You might use a localhost or own node to connect. Also, you can select one of `BitShares Public Full Nodes <https://github.com/bitshares/bitshares-ui/blob/staging/app/api/apiConfig.js#L67>`_, or use API Server that runs by _businesses_ or _individuals_.
+Launching the cli_wallet requires a trusted Full Node to interact with the blockchain. You might use a localhost or own node to connect. Also, you can select one of `BitShares Public Full Nodes <https://github.com/bitshares/bitshares-ui/blob/staging/app/api/apiConfig.js>`_, or use API Server that runs by **businesses** or **individuals**.
 
 When you start the cli_wallet first time, it creates a local ``wallet.json`` file that contains the encrypted private keys. The key is required to access the funds and add new data to the blockchain with a signature from a private key.
 

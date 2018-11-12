@@ -257,7 +257,14 @@ except :
     print("Please install 'breathe' as described in README.md to also have API documentation available!")
     print("="*80)
 
-
+###############################################################################
+#   styles  
+###############################################################################
+def setup(app):
+    app.add_stylesheet("btsdefault.css") # also can be a full URL
+    # app.add_stylesheet("ANOTHER.css")
+	
+	
 # -- Options for manual page output --------------------------------------------
 
 # One entry per manual page. List of tuples
