@@ -108,6 +108,8 @@ BitShares can be made to function as a software, a network, a ledger, a bank, an
 
 ----------------
 
+.. _trx-performance-explorer:
+
 Transactions and Performance
 ===============================
 

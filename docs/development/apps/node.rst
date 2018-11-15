@@ -14,19 +14,40 @@ Nodes
 Type of Nodes
 ==========================
 
-* **Non-block producing** Nodes
+In the BitShares blockchain network, you might find the slightly different naming of**node**, such as a full node, witness node, or block producer.  Basically, nodes are keeping all transactions (histories) that have occurred on the blockchain and maintaining the integrity of a blockchain.  A **full node** has every single block that has ever been created on the blockchain. 
+
+In BitShares blockchain network, a **witness node** is a full node, and each witness validates a transaction and broadcasts it. Witness nodes provide the complete history and preserve it as a failsafe. 
+
+As compare to full nodes, **API nodes** only contain partial blockchain histories, (public) API nodes provide essential services without having all blockchain history data (i.e., accept API calls and query the data on witness nodes blockchain). 
+
+**Seed nodes** are the first nodes of the network that accept incoming P2P connection. Its address is hard coded in the program, so when a new node starts, it will connect to the seed nodes by default. Every node (including seed nodes) tells the connected nodes where other nodes are, so all nodes can connect to each other.  
+
+
+So, when and who producing blocks?  We call **Block Producers** ; they serve an important role of validating signatures and timestamping transactions by including them in a block and broadcast it.  Block Producers are witnesses who got enough votes to become **active witnesses** and can produce a block when they got their turn "time slot".  
+
+Each time, block producers produce a block, they get paid for their services. Their pay rate is set by the BTS holders via their elected committee members. If failing to produce a block in a time slot, then the block producer is not paid.  Currently, BitShares blockchain has 27 Block Producers (Active Witnesses).  You can find BitShares Blockchain witnesses in BitShares UI wallet  Explorer-witnesses, or :ref:`other Explorers <trx-performance-explorer>`.
+
+
+You could think about BitShares blockchain nodes like the below. 
+
+* Nodes
+
+  - Full Nodes
   
-  - API node
-  - Seed node
-  - Faucet
-   
+    - **Block Producer** (block producing node or active witness) 
+    - **Non Block Producer** (post-block producing node or waiting to be an active witness) 
   
-* **Block producing** Nodes (a.k.a. witness node - voted in/out )
+  - Light Nodes (?)
+  
+    - **API Node**
+    - **Seed Node**
+    - (Faucet) 
+	
+After proper BitShares-Core release installed, each type node is implemented by the same executable, however, would need to set up different configurations to start the node. 
 
-We distinguish between full nodes (a.k.a. non-block producing witness nodes) and block producing witness nodes. Both are implemented by the same executable but the latter requires some additional parameters to be defined and the corresponding witness voted active by the BTS Holders.
+We strongly recommend all node service providers to run and maintain their own nodes for reliability and security reasons.
 
-Both represent nodes in the network that verify all transactions and blocks against the current state of the overall network. Hence, we recommend all service providers to run and maintain their own full nodes for reliability and security reasons.
-
+|
 
 .. _system-requirements-node:
 
@@ -44,7 +65,7 @@ In order to run a full node with all the account history you need to remove ``pa
 +-------------------+--------------------+-----------------+-------------------+
 
 
-Full Node
+Launch a Node
 ===============
 
 How to launch the full node::
@@ -52,6 +73,10 @@ How to launch the full node::
     ./programs/witness_node/witness_node
 
 It takes an optional –data-dir parameter to define a working and data directory to store the configuration, blockchain and local databases (defaults to `witness_node_data_dir`). Those will be automatically created with default settings if they don’t exist locally set.
+
+
+
+
 
 
 .. node-config-example:
@@ -75,7 +100,9 @@ This will open the **port 8090 for global queries only**. Since the witness node
 
 Although you would get default parameters in your config file for better memory reduction, you might want to learn about the plugin.
 
-* :ref:`Memory Reduction for Nodes: Help to reduce RAM usage significantly by using witness_node executable options <memory-nodes>`
+* :ref:`Memory Reduction for Nodes: <memory-nodes>`
+
+  - Help to reduce RAM usage significantly by using witness_node executable options 
 
 .. note:: More information about :ref:`how to manage Witness(Full) Node <witness-node-guide-tutorials>`,    in our tutorials. 
 
