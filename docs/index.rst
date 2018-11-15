@@ -33,9 +33,8 @@
 
     bts_guide/tutorials/index
     bts_guide/index_faq
+    references/githubrepo	
     references/tech_articles
-    references/githubrepo
-
 
 ---------
 	

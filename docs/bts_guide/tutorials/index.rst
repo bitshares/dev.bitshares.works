@@ -52,7 +52,7 @@ Assets
 * :ref:`How can I publish a price feed (CLI)? <publish-feed>`
 
 Prediction Market
-==========================
+------------------
 
 * `What is a  prediction market? <http://how.bitshares.works/en/latest/bts_holders/tokens/pm.html>`_
 * :ref:`How can I create a Prediction Market (CLI)? <pm-create-manual>`
@@ -100,7 +100,7 @@ Monitoring
 
 .. _witness-node-guide-tutorials: 
   
-Node (Full) Guide
+Node  
 ==============================
 
 * :ref:`How to connect to your own Full Node (GUI) <howto-connect-own-full-node-gui>`
@@ -113,7 +113,7 @@ Node (Full) Guide
 
 .. _witness-blockproducer-guide: 
 
-Node (Witness - Block Producer) Guide
+Node (Witness - Block Producer) 
 ====================================
 
 * :ref:`How to Become a Block Producer <howto-become-active-witness>`
@@ -195,7 +195,7 @@ Wallet / CLI
 * `Where to find BitShares Public Full Nodes <https://github.com/bitshares/bitshares-ui/blob/staging/app/api/apiConfig.js>`_
 
 
-Worker Guide
+Worker 
 =======================
 
 * :ref:`How to Create a Worker <worker-create>`

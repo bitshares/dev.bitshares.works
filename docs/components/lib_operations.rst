@@ -152,9 +152,14 @@ account_upgrade_operation
 
 - Manage an account's membership status
 - This operation is used to upgrade an account to a member, or renew its subscription. 
-- :strike:`If an account which is an unexpired annual subscription member publishes this operation with upgrade_to_lifetime_member set to false, the account's membership expiration date will be pushed backward one year.` 
+- If an account which is an unexpired annual subscription member publishes this operation with ``upgrade_to_lifetime_member`` set to ``false``, the account's membership expiration date will be pushed backward one year.
 - If a basic account publishes it with ``upgrade_to_lifetime_member`` set to false, the account will be upgraded to a subscription member with an expiration date one year after the processing time of this operation.
 - Any account may use this operation to become a lifetime member by setting ``upgrade_to_lifetime_member`` to true. Once an account has become a lifetime member, it may not use this operation anymore. 
+
+.. note:: 
+   - Due to some discrepancies, the annual membership has been disabled in most web wallets and will be re-enabled after a proper update eventually.
+   - In Q1/2016, the *annual membership* has been removed from the code base and no longer exists. References to this kind of memberships can be safely ignored.
+
 
 .. code-block:: cpp 
 

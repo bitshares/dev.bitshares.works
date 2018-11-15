@@ -1,38 +1,10 @@
 
-****************************************
-BitShares Developers' Contributions 
-****************************************
-
-- `BPAB - Bitshares Python Api Backend <https://github.com/oxarbitrage/bitshares-python-api-backend>`_ :oxarbitrage 
-- `Bitshares python API Backend <https://github.com/oxarbitrage/bitshares-python-api-backend>`_  : oxarbitrage 
-- `Simple Wrapper to Query BitShares Data Stored in Elasticsearch Database - oxarbitrage <https://github.com/oxarbitrage/bitshares-es-wrapper>`_  : oxarbitrage 
-- `Configuration for HAproxy with BitShares Health Monitor  <https://github.com/blockchainbv/bitshares-infrastructure>`_  : xeroc 
-- `Python-Bitshares - xeroc <https://github.com/xeroc/python-bitshares>`_   : xeroc 
-- `uptic - xeroc <https://github.com/xeroc/uptick>`_   : xeroc 
-- `AGORISE - c-libp2p <https://github.com/Agorise?tab=repositories>`_  : Agorise
-- `A HUG REST API for the Bitshares network <https://github.com/BTS-CM/Bitshares-HUG-REST-API>`_  : BTS-CM
-- `ChainSquad GmbH <https://github.com/chainsquad>`_ : chainsquad 
-- `Systemd Service Startup configuration and description <https://github.com/Clementvale-LTD/blockchain-telecom.graphene-core/commit/35366d04f4529363e121366171edbebc846f9327>`_ : Clementvale-LTD  
-- `Bitshares Witness Monitor <https://github.com/clockworkgr/bitshares-witness-monitor>`_ : clockworkgr 
-- `LedgerHQ <https://github.com/LedgerHQ/blue-loader-python>`_ : Python Loader for Ledger Blue and Nano S : LedgerHQ
-- `libp2p <https://github.com/libp2p>`_ : libp2p
-- `metaNODE = Bitshares_Trustless_Client() <https://github.com/litepresence/extinction-event/tree/master/metaNODE>`_  : litepresence 
-- `bitshares-ruby <https://github.com/MatzFan/bitshares-ruby>`_  : MatzFan 
-- `PBSA/peerplays - plugins <https://github.com/PBSA/peerplays/tree/master/libraries/plugins/>`_  : PBSA  
-- `PBSA/peerplays - generate genesis <https://github.com/PBSA/peerplays/tree/master/libraries/plugins/generate_genesis>`_  : PBSA
-- `Gem to interact with Bitshares APIs. Porting to Graphene. API Guide - rnglabs/bitshares-ruby <https://github.com/rnglabs/bitshares-ruby>`_  : rnglabs 
-- `satoshilabs <https://github.com/satoshilabs/slips/issues/49>`_ : SLIP-0048 : Deterministic Key Hierarchy for Graphene-based Networks #49 : satoshilabs 
-- `BitShares Delegate tools <https://github.com/wackou/bts_tools>`_ : wackou 
-
---------------------------
-
-|
-
 *************
 Articles
 *************
 
-Post Format: **\- \[ title + (mm/yyyy)\]\( link \) by author name**
+BitShares Related Articles 
+---------------------------------
 
 -------------------------
 
@@ -60,5 +32,11 @@ Post Format: **\- \[ title + (mm/yyyy)\]\( link \) by author name**
 
 
 |
+
+------------
+
+
+Post Format: **\- \[ title + (mm/yyyy)\]\( link \) by author name**
+
 
 |
