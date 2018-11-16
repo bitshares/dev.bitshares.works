@@ -16,6 +16,7 @@ BitShares Related Articles
 
 --------------
 
+- `DPOS Consensus Algorithm - The Missing White Paper (2017) <https://steemit.com/dpos/@dantheman/dpos-consensus-algorithm-this-missing-white-paper>`_ : by dantheman 
 - `How the issuer of an IOU/UIA can transfer assets back to himself (2016) <https://steemit.com/bitshares/@xeroc/how-the-issuer-of-an-iouuia-can-transfer-assets-back-to-himself>`_  : by xeroc
 - `Howto: An Introduction to Python-BitShares (01/2018) <https://steemit.com/python/@full-steem-ahead/howto-an-introduction-to-python-bitshares>`_  : by @full-steem-ahead
 - `Howto: Using Nginx to Load Balance Servers Part 2 (08/2017) <https://steemit.com/witness-category/@full-steem-ahead/howto-using-nginx-to-load-balance-servers-part-2>`_  : by @full-steem-ahead
