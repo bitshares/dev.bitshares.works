@@ -144,12 +144,7 @@ Plugin
 * `Discussion: "Create plugin script" (#1302) <https://github.com/bitshares/bitshares-core/pull/1302>`_
 
   
-Python
-===================
-* :ref:`BitShares Python Support information links <lib-python>`  
-
-  - Python Library for BitShares:GitHub, Python-Bitshares Documentation, How to Set up Python Library for the Public Testnet, more...
-
+.. include:: ../../supports_dev/lib_python.rst   
   
   
 Smart Contracts

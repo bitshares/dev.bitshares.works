@@ -151,7 +151,7 @@ S
 Seed Nodes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - Seed nodes are the first nodes of the network.It allows other nodes to get started by connecting to them.
-- A seed node is a node that accept incoming P2P connection. Its address is hard coded in the program, so when a new node starts, it will connect to the seed nodes by default. Every node (including seed nodes) tells the connected nodes where other nodes are, so all nodes can connect to each other.
+- In BitShares, a seed node is a node that accept incoming P2P connection. Its address is hard coded in the program, so when a new node starts, it will connect to the seed nodes by default. Every node (including seed nodes) tells the connected nodes where other nodes are, so all nodes can connect to each other.
 
 |
 
