@@ -30,7 +30,7 @@ Each time, block producers produce a block, they get paid for their services. Th
 
 You could think about BitShares blockchain nodes like the below. 
 
-* Nodes Types
+* Node Types
 
   - **API Nodes** (i.e., nodes with an open RPC port)
 
@@ -39,10 +39,16 @@ You could think about BitShares blockchain nodes like the below.
   - **Seed Nodes** (i.e., nodes with an open P2P port) 
   - **Block Producing Nodes**
   
-    - Active Witness Node (belongs to a voted-in witness and is configured with correct key)
+    - Block Producer or Active Witness Node (belongs to a voted-in witness and is configured with correct key)
     - Standby Witness Node (either a not-voted-in witness, or a voted-in witness with different key)
 
-	
+
+.. image:: ../../_static/output/NodesTypes1.png
+        :alt: BitShares Architecture
+        :width: 700px
+        :align: center
+
+		
 After proper BitShares-Core release installed, each type node is implemented by the same executable, however, each node would need to set up different configurations to start the node. 
 
 For example; although a block producing node can have full history, that would be a waste of resources. Block producing nodes *should* run with minimal plugins (i.e., only witness_plugin). Also, Block producing nodes should not have open network ports.

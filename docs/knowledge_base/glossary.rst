@@ -35,6 +35,22 @@ Blockchain
 - The Blockchain serves as a journal of user-signed instructions that become a binding agreement as soon as they are included into a block. After inclusion into a block, the agreements are stored indefinitely by means of a hash-linked-list (the Blockchain).
 
 
+Block Producer
+^^^^^^^^^^^^^^^^^^^^^^^^^
+- A witness get enough votes and became a block producer (a.k.a. active witness). 
+ 
+  - Block Producer or Active Witness (belongs to a voted-in witness and is configured with correct key)
+  
+
+
+Witness Nodes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- A witness node would be a full-history node, and each witness validates a transaction and broadcasts it. Witness nodes provide the complete history and preserve it as a failsafe. 
+- Witnesses can be categorized into two groups that would be determined how much votes they received.   If a witness gets enough votes, the witness becomes an active witness and can produce block(s). Therefore, we call active witnesses "Block Producers".
+
+  - **Block Producer**  (a.k.a. active witness node) belongs to a voted-in witness and is configured with correct key.  Block producers are validating signatures and timestamping transactions by including them in a block and broadcast it when they get their turn "time slot".  Each time, block producers produce a block, they get paid for their services.
+  - Non-Block producer (a.k.a. standby witness node) is either a not-voted-in witness or a voted-in witness with a different key. If it gets enough votes then it's an active witness. 
+  
 
 BTS Holder
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -118,13 +134,19 @@ Native Core Token BTS
 
 Nodes 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- API node, Seed node, (or faucet)
+
+* API Nodes (i.e., nodes with an open RPC port)
+   
+  - Nodes with Full History (a.k.a. full nodes)
+  - Nodes with Partial History
+  
+* Seed Nodes (i.e., nodes with an open P2P port)
+* Block Producing Nodes
+
+  - Block producer or Active Witness Node (belongs to a voted-in witness and is configured with correct key)
+  - Standby Witness Node (either a not-voted-in witness, or a voted-in witness with different key)
 
 
-Nodes (full node)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- witness, Block Producer, or active witness (voted in)
-- non Block Producer, or potential Block Producer 
 
 |
 
@@ -188,13 +210,6 @@ unit test
 W 
 -----
 
-Witness Nodes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- A witness node is a full node, and each witness validates a transaction and broadcasts it. Witness nodes provide the complete history and preserve it as a failsafe. 
-- Witness Nodes are categorized to "Block Producing Node" and "Non-Block producing Node".
-
-  - Block Producing Nodes (a.k.a. active witness nodes) are validating signatures and timestamping transactions by including them in a block and broadcast it.  Block Producers are witnesses who got enough votes to become **active witnesses** and can produce a block when they got their turn "time slot". Each time, block producers produce a block, they get paid for their services.
-  - Non-Block producer or a potential block producer is an account in the system, which can be voted. If it gets enough votes then it's an active witness.
 
 
 Working Budget

@@ -14,13 +14,13 @@ How to Run and Use a Full Node
 In order to improve decentralization of service, every user can run his own full node (often referred to non-block-producing witness node) and we here show how to do so.
 
 
-Installation and build the Witness Node
+Installation and build the Node
 =========================================
 
 For the installation of the BitShares Core, please see the :ref:`Installation Guide <installation-guide>`:
 
 
-To reduce compilation time, you can tell the compile infrastructure to only compile the witness node by running.::
+To reduce compilation time, you can tell the compile infrastructure to only compile the ``witness_node`` by running.::
 
 	$ make witness_node
 
@@ -30,7 +30,7 @@ instead of::
 
 	
 
-Run the Full Node
+Run a Full Node
 ===============================
 
 In order to run a full node that we can connect to, we need to open the RPC interface, this can be done by::
