@@ -113,7 +113,7 @@ Node
 
 .. _witness-blockproducer-guide: 
 
-Node (Witness - Block Producer) 
+Node (Block Producer - Witness) 
 ====================================
 
 * :ref:`How to Become a Block Producer <howto-become-active-witness>`

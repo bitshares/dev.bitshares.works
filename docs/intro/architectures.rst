@@ -108,6 +108,20 @@ BitShares can be made to function as a software, a network, a ledger, a bank, an
 
 ----------------
 
+BitShares Cash Flow
+===================
+
+
+.. image:: ../../_static/output/BitShares-Cashflow2.png
+        :alt: BitShares Architecture
+        :width: 700px
+        :align: center
+
+|
+		
+		
+----------------
+
 .. _trx-performance-explorer:
 
 Transactions and Performance

@@ -47,6 +47,8 @@ Support: Libraries
 
   - FC stands for fast-compiling c++ library and provides a set of utility libraries useful for the development of asynchronous libraries. 
 
+- `BitSharesjs: JavaScript Bitshares library <https://bitsharesjs.bitshares.org/>`_
+ 
 |
 
 --------
@@ -61,7 +63,7 @@ Tools
   
 - `bitsharesjs <https://github.com/bitshares/bitsharesjs#bitsharesjs-bitsharesjs>`_
 
-  - JavaScript tools for BitShares Encryption and Serialization
+  - JavaScript tools for BitShares Encryption and Serialization : https://bitsharesjs.bitshares.org/
   
 - `bitsharesjs-ws <https://github.com/bitshares/bitsharesjs-ws#bitshares-websocket-interface-bitsharesjs-ws>`_
 

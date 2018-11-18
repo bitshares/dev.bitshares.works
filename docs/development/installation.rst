@@ -131,6 +131,15 @@ Learn BitShares system components
 - Read BitShares' :ref:`Operations <lib-operations>`
 - Learn BitShares' :ref:`Objects and Elements <lib-objects>`
 
+.. _bitshares-other-language-support:
+
+Know BitShares other languages' support
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- Check :ref:`Python BitShares information links <lib-python>`
+- Check  `BitSharesjs: JavaScript Bitshares library <https://bitsharesjs.bitshares.org/>`_
+ 
+
 
 Know about BSIPs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
