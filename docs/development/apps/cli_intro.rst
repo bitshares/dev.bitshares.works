@@ -1,4 +1,7 @@
 
+
+.. _cli-wallet-intro:
+
 *********************************
 Cli Wallet and the Connectivity 
 *********************************

@@ -124,6 +124,14 @@ Full Node
 
 --------------
 
+G 
+-----
+
+Genesis Block (in BitShares)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- BitShares 2.0 will be initialized with what is called a Genesis Block. That genesis block will be constructed from the balances of BitShares 1.0.
+
+
 N 
 -----
 

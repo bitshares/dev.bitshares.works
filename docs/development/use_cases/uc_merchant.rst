@@ -112,10 +112,9 @@ The ``verify_account_authority`` call will return ``true`` if the provided keys
 have sufficient authority to authorize the account, otherwise it will return
 ``false``
 
+|
 
 ---------------------
-
-|
 
 .. _merchants-case-wallet-merchant-protocol:
 
