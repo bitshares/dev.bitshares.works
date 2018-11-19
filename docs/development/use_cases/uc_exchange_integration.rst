@@ -1,4 +1,3 @@
-
 .. _usecase-exchanges:
 
 *************************************
@@ -30,7 +29,8 @@ For exchanges we recommend to also read :ref:`what-is-different` and
 .. contents:: Table of Contents
    :local:
    
-   
+---------------
+ 
 Step-By-Step Instructions for Exchanges
 ============================================
 
@@ -95,6 +95,8 @@ The wallet will be used to transfer assets to the customers. It connects to the 
     ./programs/cli_wallet/cli_wallet --server-rpc-endpoint="ws://127.0.0.1:8090" \
                                      --rpc-http-endpoint="127.0.0.1:8092"
 
+|
+								 
 --------------------
 
 Query Blockchain for Required Data

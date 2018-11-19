@@ -64,9 +64,9 @@ BitShares Decentralized Exchange (DEX)
 
 * Read: `User Guide : Dex <https://how.bitshares.works/en/latest/bts_holders/dex.html>`_
 
-  1. Trading
-  2. Short Selling BitAssets
-  3. MarginCall Mechanics
+  1. `Trading <https://how.bitshares.works/en/latest/bts_holders/dex_trading.html>`_
+  2. `Short Selling BitAssets <https://how.bitshares.works/en/latest/bts_holders/dex_short.html>`_ 
+  3. `MarginCall Mechanics <https://how.bitshares.works/en/latest/bts_holders/dex_margin_mechanics.html>`_ 
   
 * :ref:`How can I run own Decentralized Exchange (DEX)? <distributed-access-to-dex>`
 * :ref:`How can I prepare BitShares Exchange? (Single Node Edition) <exchange-single-node>`
