@@ -103,6 +103,7 @@ Monitoring
 Node  
 ==============================
 
+* :ref:`How can a let's encrypt certificate be used with an API node to provide a secure web socket (wss) connection <api-node-wss-con>`
 * :ref:`How to connect to your own Full Node (GUI) <howto-connect-own-full-node-gui>`
 * :ref:`How to change the Signing Key of your Witness <change-witness-key>`
 * :ref:`What is System Requirements <system-requirements-node>` 
