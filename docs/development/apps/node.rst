@@ -52,10 +52,13 @@ You could think about BitShares blockchain nodes like the below.
 After proper BitShares-Core release installed, each type node is implemented by the same executable, however, each node would need to set up different configurations to start the node. 
 
 For example; although a block producing node can have full history, that would be a waste of resources. Block producing nodes *should* run with minimal plugins (i.e., only witness_plugin). Also, Block producing nodes should not have open network ports.
+
  
 We strongly recommend all node service providers to run and maintain their own nodes for reliability and security reasons.
 
 |
+
+---------------
 
 .. _system-requirements-node:
 
@@ -72,6 +75,10 @@ In order to run a full node with all the account history you need to remove ``pa
 | 100G SSD, 16G RAM | 200G SSD, 120G RAM | 80G SSD, 8G RAM | 500G SSD, 32G RAM |
 +-------------------+--------------------+-----------------+-------------------+
 
+
+|
+
+---------------
 
 Launch a Node
 ===============
@@ -92,7 +99,11 @@ It takes an optional –data-dir parameter to define a working and data director
 .. include:: node_config_example.rst 
 
 
-------------
+
+|
+
+---------------
+
 
 Enable Remote Procedure Calls
 ================================
@@ -114,6 +125,10 @@ Although you would get default parameters in your config file for better memory 
 
 .. note:: More information about :ref:`how to manage Witness(Full) Node <witness-node-guide-tutorials>`,    in our tutorials. 
 
+|
+
+---------------
+
 
 Restart the Witness Node
 =================================
@@ -123,12 +138,38 @@ When restarting the witness node, it may be required to append the ``--replay-bl
 .. tip:: If you want to close the Witness Node in a clean way, use ``Ctrl-C`` in Windows.
 
 
+
+|
+
+---------------
 	
-Public Full Node information 
+Public Full Node Information 
 ==============================
 
 * Here is the latest list of `BitShares Public Full Nodes (apiConfig) <https://github.com/bitshares/bitshares-ui/blob/staging/app/api/apiConfig.js>`_
 
+
+|
+
+---------------
+
+ 
+.. _api-node-wss-con:
+
+API Node Secure Web Socket Connection
+========================================
+
+.. Tip:: How can a let's encrypt certificate be used with an API node to provide a secure web socket (wss) connection.
+
+  - This can be done with two steps
+
+    1. Concatenate the fullchain.pem with the privkey.pem --  ``cat fullchain.pem privkey.pem > combined.pem```
+
+    2. In the node's configuration file, point the TLS certificate to combined.pem, and leave the TLS certificate password as blank.
+
+ 
+ 
+ 
 
 |
 
