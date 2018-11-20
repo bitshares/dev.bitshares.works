@@ -19,7 +19,7 @@ The purpose of this site is to provide in-depth documentation about the BitShare
 
 
 
-- `BitShares Whitepaper <http://www.bitshares.foundation/papers/BitSharesBlockchain.pdf>`_
+- `BitShares Whitepaper <https://github.com/bitshares-foundation/bitshares.foundation/blob/master/download/articles/BitSharesBlockchain.pdf>`_
 - `BitShares Blockchain Foundation Announcements <http://www.bitshares.foundation/>`_
 - `BitShares Bug Bounty Program <https://hackthedex.io/>`_
 - `BitShares Documentation - Users Guide <http://how.bitshares.works/en/latest/>`_
