@@ -1,4 +1,6 @@
 
+.. _using-white-black-lists:
+
 *********************************
 Using Whitelists and Blacklists
 *********************************
@@ -41,6 +43,8 @@ It expects a `new_listing_status` from
 
 .. doxygenenum:: account_listing
 
+|
+
 -------------
 
 
@@ -80,6 +84,8 @@ Asset Market white-lists work with the following API call:
 
 .. doxygenenum:: graphene::chain::asset_issuer_permission_flags
 
+
+|
 
 -----------------
 

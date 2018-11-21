@@ -159,7 +159,7 @@ Public Full Node Information
 API Node Secure Web Socket Connection
 ========================================
 
-.. Tip:: How can a let's encrypt certificate be used with an API node to provide a secure web socket (wss) connection.
+.. Tip:: How can a Let's Encrypt certificate be used with an API node to provide a secure web socket (wss) connection.
 
   - This can be done with two steps
 

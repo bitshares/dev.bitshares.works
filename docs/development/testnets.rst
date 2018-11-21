@@ -18,7 +18,7 @@ Quick Start
 
 ------------
 
-Deploy Testnets
+Public and Private Testnets
 -------------------------
 
 In this section, we mainly describe how to deploy public or private testnets network. The Private testnets could be used by every developer to implement at home to benefit from extra low latency and additional superpowers over the system.

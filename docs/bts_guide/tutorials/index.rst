@@ -2,7 +2,7 @@
 .. _dev-guides:
 
 *****************************
-Developer Guide (Tutorials)
+Developers Guide (Tutorials)
 *****************************
 
 This section intended to collect “How To” steps information to show some examples to perform a process.
@@ -50,6 +50,8 @@ Assets
 * :ref:`How can I create a MPA manually (CLI)? <mpa-create-manual>`
 * :ref:`How can I update/change an existing UIA (CLI)? <uia-update-manual>`
 * :ref:`How can I publish a price feed (CLI)? <publish-feed>`
+* :ref:`How to use Whitelists and Blacklists? <using-white-black-lists>`
+
 
 Prediction Market
 ------------------
@@ -103,7 +105,7 @@ Monitoring
 Node  
 ==============================
 
-* :ref:`How can a let's encrypt certificate be used with an API node to provide a secure web socket (wss) connection <api-node-wss-con>`
+* :ref:`How can a Let's Encrypt certificate be used with an API node to provide a secure web socket (wss) connection <api-node-wss-con>`
 * :ref:`How to connect to your own Full Node (GUI) <howto-connect-own-full-node-gui>`
 * :ref:`How to change the Signing Key of your Witness <change-witness-key>`
 * :ref:`What is System Requirements <system-requirements-node>` 
@@ -203,6 +205,7 @@ Worker
 Migration (from BitShares1.0)
 ==================================
 
+* :ref:`Migrating from BitShares 1.0 to BitShares 2.0 <migrating-1-to-2>`
 * :ref:`Explore Your Wallet <howto-exporting-wallet>`
 * :ref:`Improve Your Wallet <howto-importing-wallet>`
 * :ref:`migration-remarks`

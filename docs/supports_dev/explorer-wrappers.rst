@@ -36,7 +36,7 @@ If you are interested to have own BitShares Explorer API up and running for a pr
 
 - `BitShares Explorer REST API - Installation Guide <https://github.com/oxarbitrage/bitshares-explorer-api#bitshares-explorer-rest-api>`_
 
-  - Step by step on everything needed to have your own BitShares Explorer API up and running for a production environment.
+  - BitShares Explorer REST API is the backend service of the BitShares explorer that retrieve the information from the blockchain.
 
 
 ----------------------

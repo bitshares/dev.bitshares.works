@@ -39,7 +39,7 @@ Here you can provide the wallet backup file produced from BitShares 0.9.3c and
 the pass phrase. Depending on the size of your import file, this step may take
 some time to auto-complete. Please be patient.
 
-.. image:: import-keys.png
+.. image:: ../../../../../../_static/imgs/import-keys.png
         :alt: Import Wallet Backup from BitShares 1.0
         :width: 550px
         :align: center
