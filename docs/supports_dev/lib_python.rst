@@ -1,4 +1,7 @@
 
+
+.. _lib-pybitshares:
+
 Python - BitShares 
 =========================
 

@@ -25,6 +25,10 @@ Knowledge Base
 -------------------
 
 
+* Documented issues and Notes (TO DO)
+
+----------------------
+
 * :ref:`Wiki Legacy list <wiki-legacy-indx>`
 
 
