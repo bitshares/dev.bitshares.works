@@ -75,6 +75,15 @@ BitShares Decentralized Exchange (DEX)
 
 
 
+BitShares Explorer
+========================
+
+* :ref:`How can I use BitShares APIs? <bis-explorer-api-tryitout>`
+
+  - Try BitShares Explorer APIs!
+  
+* `How can I install BitShares Explorer REST API? - Installation Guide <https://github.com/oxarbitrage/bitshares-explorer-api#bitshares-explorer-rest-api>`_
+ 
 
 Committee Guide
 ======================

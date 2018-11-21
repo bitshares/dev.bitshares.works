@@ -103,12 +103,6 @@ APIs
 * `Where Can I find BitShares Public Full Node information? (apiconfig) <https://github.com/bitshares/bitshares-ui/blob/staging/app/api/apiConfig.js>`_
 
 
-**BitShares Explorer API**
-
-* :ref:`Can I try BitShares Explorer API? <bis-explorer-api-tryitout>`
-* `How can I install BitShares Explorer REST API - Installation Guide <https://github.com/oxarbitrage/bitshares-explorer-api#bitshares-explorer-rest-api>`_
- 
-
 .. _asset-faq-index:
 
 Assets
