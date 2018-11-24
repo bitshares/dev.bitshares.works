@@ -48,7 +48,7 @@ Preparation
 Step 1 - Merchant Login Button
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A login button links to https://wallet.org/login#${args}.
+A login button links to ``https://wallet.org/login#${args}``.
 
 ${args} : A JSON object containing following information and serialized as described below (step 2 & step 3)
 

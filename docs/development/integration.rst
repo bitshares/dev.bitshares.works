@@ -11,11 +11,14 @@ Banks, exchanges and merchants are integrating with the Graphene technology alre
 - its network effect, and
 - existing ecosystem.
 
+|
+
+----------------------
 
 Basic Knowledge
 =========================
 
-If you have not read `BitShares Documentation for all users <http://how.bitshares.works/en/latest>`_ (http://how.bitshares.works/en/latest), we suggest you to read through as your basic knowledge of BitShares. 
+If you have not read `BitShares Documentation for all users <http://how.bitshares.works/en/latest>`_ (http://how.bitshares.works/en/latest), we recommend you to read through as your basic knowledge of BitShares. 
 
 We provide here the necessary information to securely operate as a merchant, trader, exchange, or fiat-gateway. The below-listed contents should be known to all of them before starting to integrate.
 
@@ -30,7 +33,11 @@ We provide here the necessary information to securely operate as a merchant, tra
 
     apps/network
 
+|
 
+---------------------------
+	
+.. _use-cases-list:
 	
 Use Cases
 ========================

@@ -145,12 +145,11 @@ Now run witness_node again::
 
 .. warning:: If you want to use a different folder name and directory for the data, you have to use ``--data-dir`` in a startup command line and set your data directory folder path. Otherwise, the `witness_node_data_dir` folder will be created and used a default ``config.ini`` file to start the witness_node!!
 
-**Note:**
-
-- Since this is a testnet, we do not need to specify ``genesis.json`` on the command line. We now specify it in the ``config file``. 
-- The ``--enable-stale-production`` flag tells the ``witness_node`` to produce on a chain with zero blocks or very old blocks. We specify the ``--enable-stale-production`` parameter on the command line as we will not normally need it (although it can also be specified in the config file). 
-- The empty ``--seed-nodes`` is added to avoid connecting to the default seed nodes hardcoded for production.
--  Subsequent runs which connect to an existing witness node over the p2p network, or which get blockchain state from an existing data directory, need not have the ``--enable-stale-production`` flag.
+.. Note::
+  - Since this is a testnet, we do not need to specify ``genesis.json`` on the command line. We now specify it in the ``config file``. 
+  - The ``--enable-stale-production`` flag tells the ``witness_node`` to produce on a chain with zero blocks or very old blocks. We specify the ``--enable-stale-production`` parameter on the command line as we will not normally need it (although it can also be specified in the config file). 
+  - The empty ``--seed-nodes`` is added to avoid connecting to the default seed nodes hardcoded for production.
+  -  Subsequent runs which connect to an existing witness node over the p2p network, or which get blockchain state from an existing data directory, need not have the ``--enable-stale-production`` flag.
 
 9. Obtain the Chain ID
 -------------------------------------------
@@ -161,7 +160,7 @@ The chain ID (i.g., blockchain id) is a hash of the genesis state. All transacti
 
 For testing purposes, the ``--dbg-init-key`` option will allow you to quickly create a new chain against any genesis file, by replacing the witnesses' block production keys.
 
-**Each wallet is specifically associated with a single chain, specified by its chain ID. This is to protect the user from (e.g., unintentionally) using a testnet wallet on the real chain.**
+.. Important:: Each wallet is specifically associated with a single chain, specified by its chain ID. This is to protect the user from (e.g., unintentionally) using a testnet wallet on the real chain.
 
 The chain ID is printed at witness node startup. It can also be obtained by using the API to query a running witness node with the `get_chain_properties` API call:
 
@@ -182,12 +181,11 @@ We are now ready to connect a new wallet to your Private testnet witness node. Y
                --chain-id cf307110d029cb882d126bf0488dc4864772f68d9888d86b458d16e6c36aa74b 
                --server-rpc-endpoint ws://127.0.0.1:11011 -u '' -p ''
 
-**Note:** 
+.. Note::
+  - Make sure to replace the above chain ID (i.e., blockchain id) ``cf307110d0...36aa74b`` with **your own chain ID** reported by your witness_node. The chain-id passed to the CLI-wallet needs to match the id generated and used by the witness node.
+  - ``--server-rpc-endpoint`` - The port number is how you defined (opened) ``--rpc-endpoint`` for the witness_node.
 
-- Make sure to replace the above chain ID (i.e., blockchain id) ``cf307110d0...36aa74b`` with **your own chain ID** reported by your witness_node. The chain-id passed to the CLI-wallet needs to match the id generated and used by the witness node.
-- ``--server-rpc-endpoint`` - The port number is how you defined (opened) ``--rpc-endpoint`` for the witness_node.
-
-If you get the `set_password` prompt, it means your wallet has successfully connected to the testnet witness node.
+If you get the ``set_password`` prompt, it means your wallet has successfully connected to the testnet witness node.
 
 Fist you need to create a new password for your wallet. This password is used to encrypt all the private keys in the wallet. For this example, we will use the password `supersecret`::
 

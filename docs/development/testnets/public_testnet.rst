@@ -42,7 +42,7 @@ We can add a default list of seed nodes that the witness is supposed to try to c
 
     testnet.bitshares.eu:11010
 
-The full change set can be seen in the corresponding `git commit <https://github.com/BitSharesEurope/graphene-testnet/commit/94f0a95be6f80cb5a7926ba6cc920dd795eb3a19>`_
+	
 
 1.3 Initial Compilation
 
@@ -51,7 +51,7 @@ The full change set can be seen in the corresponding `git commit <https://github
    cmake .
     make
 
-We first need to compile the graphene toolkit so that we can let it generate a plain genesis file in the proper format.
+We first need to compile so that we can let it generate a plain genesis file in the proper format.
 
 
 
@@ -78,7 +78,7 @@ This allows you to control things such as:
 - The initial values of chain parameters
 - The account / signing keys of the ``init`` witnesses (or in fact any account at all).
 
-The chain ID is a hash of the genesis state.  All transaction signatures are only valid for a single chain ID.  So editing the genesis file will change your chain ID, and make you unable to sync with all existing chains (unless one of them has exactly the same genesis file you do).
+.. attention:: The **chain ID** is a hash of the genesis state.  All transaction signatures are only valid for a single chain ID.  So editing the genesis file will change your chain ID, and make you unable to sync with all existing chains (unless one of them has exactly the same genesis file you do).
 
 **Copy final Genesis**
 
@@ -89,7 +89,7 @@ We now copy our gensis template file over to the graphene root directory::
     $ git add genesis.json
     $ git commit -m "Added genesis.json"
 
-The ``initial timestamp`` needs to be pasted into ``genesis.json`` file in the `initial_timestamp` field. Choose it relatively close to the future where you can generate the genesis block (e.g., now plus 10 minutes).
+The ``initial timestamp`` needs to be pasted into ``genesis.json`` file in the ``initial_timestamp`` field. Choose it relatively close to the future where you can generate the genesis block (e.g., now plus 10 minutes).
 
 **Include Genesis into the binaries**
 
@@ -191,7 +191,7 @@ In order to create a wallet, you must specify the previously setup server. With 
 
     programs/cli_wallet/cli_wallet --wallet-file my-wallet.json -s ws://127.0.0.1:11011 -H 127.0.0.1:8090 -r 127.0.0.1:8099
 
-> Note: The parameter ``-H`` is required so that we can interface with the cli-wallet via RPC-HTTP-JSON, later while ``-r`` will open a port for the Ruby-based faucet.
+.. Note:: The parameter ``-H`` is required so that we can interface with the cli-wallet via RPC-HTTP-JSON, later while ``-r`` will open a port for the Ruby-based faucet.
 
 If you get the `set_password` prompt, it means your CLI wallet has successfully connected to the testnet witness node.
 

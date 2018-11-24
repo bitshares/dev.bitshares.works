@@ -44,6 +44,15 @@ Other References
 * :ref:`Set up Faucet <how-to setup-faucet>`
 * :ref:`Set up Nignx <how-to-setup-nignx>`
 
+
+Node (Block Producer - Witness) 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* :ref:`How to Become a Block Producer <howto-become-active-witness>`
+* :ref:`How to verify block production <veryfy_block_production>`
+* :ref:`How to backup a server <witness-backup-server>`
+* :ref:`How witness Price Feeds work <witness-price-feeds>`
+
 	
 	
 -------

@@ -65,7 +65,7 @@ Known issues
 Next Step Guide
 ========================
 
-BitShares offers many features, after the bitshares-core installation, you might think what's the next step?  The below is a short contents guide that you might be interested to look into.
+BitShares offers many features, after the bitshares-core installation, you might think what's the next step?  The below is a short contents guide that you might be interested to look into.  Also, visit Developers :ref:`Guide <dev-guides>` and :ref:`FAQs <faq-top>`.
 
 *If you want to...*
 ------------------------
@@ -129,11 +129,11 @@ Learn BitShares system components
 - Understand about :ref:`block(s) <lib-block>`
 - Read BitShares' :ref:`Protocols <lib-protocols>`
 - Read BitShares' :ref:`Operations <lib-operations>`
-- Learn BitShares' :ref:`Objects and Elements <lib-objects>`
+- Learn BitShares' :ref:`Objects <lib-objects>`
 
 .. _bitshares-other-language-support:
 
-Know BitShares other languages' support
+Know BitShares other languages' supports
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Check :ref:`Python BitShares information links <lib-python>`

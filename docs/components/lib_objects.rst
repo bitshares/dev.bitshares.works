@@ -2,7 +2,7 @@
 .. _lib-objects:
 
 *********************
-Objects and Elements
+Objects 
 *********************
 
 *BitShares Core - graphene::chain*
@@ -14,49 +14,14 @@ This document purpose: to make a list of BitShares objects and provide each obje
 .. contents:: Table of Contents
    :local:
    
-------
+-------------------
 
-Object Types
-=================
-
-*enum graphene::chain::object_type*
-
-(../libraries/chain/protocol/types.hpp)
-
-List all object types from all namespaces here so they can be easily reflected and displayed in debug output. If a 3rd party wants to extend the core code then they will have to change the packed_object::type field from enum_type to uint16 to avoid warnings when converting packed_objects to/from json. 
-
-Enumerator 
---------------
-
-- null_object_type  
-- base_object_type 	 
-- account_object_type  
-- asset_object_type  	
-- force_settlement_object_type 	 
-- committee_member_object_type  	
-- witness_object_type   	
-- limit_order_object_type   
-- call_order_object_type   	
-- custom_object_type   	
-- proposal_object_type   
-- operation_history_object_type  	
-- withdraw_permission_object_type  
-- vesting_balance_object_typev  
-- worker_object_type 	  
-- balance_object_type  	
-- OBJECT_TYPE_COUNT: Sentry value which contains the number of different object types. 
-
-
-------------
-
-Object Names and Detailed Descriptions
+Object Names and Descriptions
 ============================================
 
 *graphene::chain Namespace: Class - Objects*
 
 (../libraries/chain/include/graphene/chain/) 
-
-**Detailed Descriptions**
 
 
 Account 
