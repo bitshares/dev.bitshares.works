@@ -21,6 +21,10 @@ You can find Operations and OperationIDs pairs `here. <https://github.com/abitmo
    
 ------
 
+
+Operations have been carefully designed to include all of the information necessary to interpret them outside the context of the blockchain. This means that information about current chain state is included in the operation even though it could be inferred from a subset of the data. This makes the expected outcome of each operation well defined and easily understood without access to chain state.
+
+
 **Detailed Descriptions**
 
 

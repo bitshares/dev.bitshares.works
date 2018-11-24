@@ -45,7 +45,7 @@ To see more options: Go to :ref:`Installation Guide <installation-guide>`.
 
 2. Build BitShares Core - Select **testnet** branch
 
-*In order to run a full node, get the sources (branch testnet) and compile*::
+*In order to run a full node, get the sources (branch* **testnet** *) and compile*::
 
 	 git clone https://github.com/bitshares/bitshares-core.git bitshares-core-testnet
 	 cd bitshares-core-testnet    
