@@ -14,7 +14,7 @@ Nodes
 Type of Nodes
 ==========================
 
-In the BitShares blockchain network, you might find the slightly different naming of**node**, such as a full node, witness node, or block producer.  Basically, nodes are keeping all transactions (histories) that have occurred on the blockchain and maintaining the integrity of a blockchain.  A **full node** has every single block that has ever been created on the blockchain. 
+In the BitShares blockchain network, you might find the slightly different naming of **nodes**, such as a full node, witness node, or block producer.  Basically, nodes are keeping all transactions (histories) that have occurred on the blockchain and maintaining the integrity of a blockchain.  A **full node** has every single block that has ever been created on the blockchain. 
 
 In BitShares blockchain network, a **witness node** is a full node, and each witness validates a transaction and broadcasts it. Witnesses nodes provide the complete history and preserve it as a failsafe. 
 
