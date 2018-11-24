@@ -2,8 +2,11 @@
 .. _howto-become-active-witness:
 
 *********************************
-Become an Active Witness
+Become a Block Producer
 *********************************
+
+(*Become an Active Witness*)
+
 
 .. contents:: Table of Contents
    :local:
@@ -25,11 +28,11 @@ Requirements
 Technical Specifications
 ---------------------------
 
-- :ref:`node_system_requirements` 
-   
+- :ref:`system-requirements-node`
+ 
 
-Active Witness Duties
-------------------------
+Block Producer (Active Witness) Duties
+-----------------------------------------
 
 - Be a reliable blockproducer
 - Maintain a public seednode
@@ -140,7 +143,7 @@ Steps
       ]
     }
 
- Our witness is registered, but it can’t produce blocks because nobody has voted it in. You can see the current list of active witnesses by the following command:
+ Our witness is registered, but it can’t produce blocks because nobody has voted it in. You can see the current list of **block producers** (active_witnesses) by the following command:
 
 - ``get_global_properties``::
 
@@ -196,7 +199,7 @@ Steps
 
  Once we have both values, run ``dump_private_keys`` which lists the *public-key private-key pairs* to find the *private key*.
 
- **Warning**  ``dump_private_keys`` will display your keys unencrypted on the terminal, don’t do this with someone looking over your shoulder.
+.. Warning:: ``dump_private_keys`` will display your keys unencrypted on the terminal, don’t do this with someone looking over your shoulder.
 
 
 - ``dump_private_keys``::

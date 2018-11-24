@@ -20,7 +20,7 @@ The BitShares toolkit comprises several tools that allow interaction with the bl
     apps/cli_intro
     apps/cli_wallet	
 
-* Guides
+* Quick Guides
 
   - `Python-Bitshares Documentation <http://docs.pybitshares.com/en/latest/>`_ 
   - :ref:`Monitor Account Deposits - Python <monitoring-account-deposits-python>`
@@ -29,7 +29,7 @@ The BitShares toolkit comprises several tools that allow interaction with the bl
   - :ref:`CLI Wallet Tutorials <wallet-cli-tutorials>`
   - :ref:`dev-guides`
 
-* Guide (BitShares UI wiki) 
+* Quick Guide (BitShares UI wiki) 
  
   - `How an Exchange can integrate their services to the BitShares UI Wallet - Gateway Integration Requirements <https://github.com/bitshares/bitshares-ui/wiki/Gateway-Integration-Requirements>`_ : from BitShares UI wiki	
 

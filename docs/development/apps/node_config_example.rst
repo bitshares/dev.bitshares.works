@@ -6,10 +6,13 @@ Configuration
 
 The configuration file ``config.ini`` in your data directory is commented and contains the following essential settings:
 
+.. attention:: We suggest you to examine BitShares configuration items if you are interested starting a node.  
+
+
 Example
 ----------------
 
-Example of a ``config.ini`` file in the data directory
+Example of a ``config.ini`` file in the data directory.
 
 As a default, most parameters have been commented. You have to uncomment to set values.
 

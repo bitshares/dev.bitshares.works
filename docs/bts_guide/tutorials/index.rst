@@ -121,7 +121,6 @@ Node
 * :ref:`How to Run and Use a Full Node <how-to-run-full-node2>`
 * :ref:`How to run Node in the background by using GNU screen <manage-gun-screen>`
 * :ref:`How to run a BitShares API Node <run-api-node-guide>`		
-* :ref:`How to backup a server <witness-backup-server>`
 
 .. _witness-blockproducer-guide: 
 
@@ -129,10 +128,10 @@ Node (Block Producer - Witness)
 ====================================
 
 * :ref:`How to Become a Block Producer <howto-become-active-witness>`
-* :ref:`How to verify block production <veryfy_block_production>`
-* :ref:`How to backup a server <witness-backup-server>`
+* :ref:`How to verify Block Production <veryfy_block_production>`
+* :ref:`How to Backup a server <witness-backup-server>`
 * :ref:`How witness Price Feeds work <witness-price-feeds>`
-
+* `BitShares Block Production Monitor <https://github.com/roelandp/Bitshares-Witness-Monitor>`_
 
 
 
@@ -143,7 +142,7 @@ Performance
 Plugin
 ===================
 
-* `BitShares Plugins - ReadMe <https://github.com/bitshares/bitshares-core/tree/master/libraries/plugins>`_
+* Type of `BitShares Plugins:  Github ReadMe <https://github.com/bitshares/bitshares-core/tree/master/libraries/plugins/README.md>`_
 * :ref:`elastic-search-plugin`
 
   - How to store account history data into an elasticsearch database.
@@ -190,6 +189,14 @@ Transfer / Transactions
 * :ref:`How to use the CLI wallet to Perform Stealth Transfers in BitShares (wiki) <w-stealth-transfers>`  
 * :ref:`Proposed Transaction and  Multi-Signature <proposed-tran>`
 
+
+Use Cases
+========================
+
+* :ref:`For Exchanges, Bridges, and Gateways <usecase-exchanges>`
+* :ref:`For Merchants <usecase-merchants>`
+* :ref:`For Traders <usecase-traders>`
+	
 .. _wallet-cli-tutorials: 
   
 Wallet / CLI
