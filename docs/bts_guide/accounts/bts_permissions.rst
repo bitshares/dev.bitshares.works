@@ -7,20 +7,19 @@ Permissions
 Permission Models
 --------------------
 
-In BitShares, each account is separated into
+In BitShares, each account is separated into the permission types below;
 
-+----------------------+---------------------------------------------------------------------------------------------------------------------+
-|   permission  type   |  note                                                                                                               |
-+======================+=====================================================================================================================+
-| Owner Permission     | This permission has administrative powers over the whole account and should be considered for ‘backup’ strategies.  |
-+----------------------+---------------------------------------------------------------------------------------------------------------------+                           
-| Active Permission    | Allows to access funds and some account settings, but cannot change the owner permission and is thus considered     |
-|                      | the “online” permissions.                                                                                           |
-+----------------------+---------------------------------------------------------------------------------------------------------------------+     
+
+:Owner Permission: 	This permission has administrative powers over the whole account and should be considered for ‘backup’ strategies.
+
+:Active Permission:  Allows to access funds and some account settings, but cannot change the owner permission and is thus considered the “online” permissions.
+
+
+
 
 Both can be defined in the Permissions tab of your account using so called *authorities* together with a so called *threshold* that has to be exceeded in order for a transaction to be valid.
 
-- **Authorities** : In BitShares an authority consists of one or many entities that authorize an action, such as transfers or trades. 
+- **Authorities** :In BitShares an authority consists of one or many entities that authorize an action, such as transfers or trades. 
 
   - An authority consists of one or several pairs of an account name with a weight.
   - In order to obtain a valid transaction, the sum of the weights from signing the parties has to exceed the threshold as defined in the permissions.
@@ -29,7 +28,7 @@ Both can be defined in the Permissions tab of your account using so called *auth
 
 BitShares designs permissions around people, rather than around cryptography, making it easy to use. Every account can be controlled by any weighted combination of other accounts and private keys. This creates a hierarchical structure that reflects how permissions are organized in real life, and makes multi-user control over funds easier than ever. Multi-user control is the single biggest contributor to security, and, when used properly, it can virtually eliminate the risk of theft due to hacking.
 
-Read more about :ref:`multi-signature` 
+Read more about :ref:`bts-multi-sign` 
 
 
 |

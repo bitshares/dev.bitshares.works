@@ -129,15 +129,6 @@ to fund the fee pool and claim the accumulated fees!
 Market Fees
 ---------------
 
-.. _asset-faq8:
-
-How to claim accumulated fees?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Open up the issuer's account, click the assets tab and open up the
-dialog to change the asset. There will be a fee pool tab that allows you
-to fund the fee pool and claim the accumulated fees!
-
 .. _asset-faq9:
 
 What are Asset Flags and Permissions?

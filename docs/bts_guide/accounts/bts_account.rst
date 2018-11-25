@@ -104,15 +104,10 @@ The registrar is the account that paid the transaction fee to register the accou
 Fees types
 -----------
 
-+---------------+----------------------------------------------------------------------------------------------------------+
-|   fee  type   |  note                                                                                                    |
-+===============+==========================================================================================================+
-| Pending Fees  | Fees paid are only divided among the network, referrers, and registrars once every maintenance interval. |
-+---------------+----------------------------------------------------------------------------------------------------------+                        
-| Vesting Fees  | Most fees are made available immediately, but fees over the vesting threshold (such as those paid        |
-|               | to upgrade your membership or register a premium account name) must vest for some period as defined      |
-|               | by the committee.                                                                                        |                            
-+---------------+----------------------------------------------------------------------------------------------------------+                        
+:Pending Fees:  Fees paid are only divided among the network, referrers, and registrars once every maintenance interval.
+
+:Vesting Fees:  Most fees are made available immediately, but fees over the vesting threshold (such as those paid to upgrade your membership or register a premium account name) must vest for some period as defined by the committee.
+
 
 ---------------
 

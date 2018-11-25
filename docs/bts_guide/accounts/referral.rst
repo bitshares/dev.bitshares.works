@@ -47,20 +47,21 @@ What to do?
 
  with ``<your-account>`` being the name of your BitShares Lite-Time Member account.
 
- .. note:: If you want link to pages with in the wallet, e.g. a particular decentralized market, you need to have the ``?r=`` parameter **before** the ``#``, e.g.::
+.. note:: If you want link to pages with in the wallet(e.g., a particular decentralized market), you need to have the ``?r=`` parameter **before** the ``#``. Example :  ``https://<url>/?r=<your-account>#/market/USD_BTC``
 
-        https://<url>/?r=<your-account>#/market/USD_BTC
 
+ 
+If you use your referral link to people you want to refer to BitShares, your referral link would be::
+		
+		https://wallet.bitshares.org/?r=<your-account-name>
+		
+		
+		
 **Example**
 
  When an Basic Account pays $100 to become a Lifetime Member, $50 is paid to their Referrer, $30 is paid to the nearest Lifetime Member, and $20 is paid to the Network. After this point the Lifetime Member becomes its own referrer and nearest Lifetime Member and its prior Referrers no longer get any revenue from this user.
 
 |
-
-Terms & Conditions
-----------------------
- Please see the `Referral Program - Terms & Conditions <https://bitshares.org/referral-program-terms-and-conditions/>`_ for more details.
-
 
 Claiming Referral Bonus and Cashback
 -------------------------------------
@@ -69,7 +70,7 @@ Claiming Referral Bonus and Cashback
  * already paid some fees, or
  * have referred people that paid some fees,
 
- you can withdraw them in the "Vesting balances" menu of your account.
+ you can claim them in the "Vesting balances" menu of your account.
 
 
 |
