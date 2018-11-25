@@ -107,6 +107,44 @@ Debug
 
 ------------------------------------
 
+----------------------------------
+
+plugins code flowchart
+===========================
+
+The below shares plugins methods and processes.
+
+
+**witness_plugin methods and flow**
+
+(Created: 2018-11-24) 
+
+
+.. list-table::
+   :widths: 10 20 70
+   :header-rows: 1
+
+   * - #
+     - File name
+     - name
+   * - 
+     - ..\/libraries\/**plugins\/witness\/witness.cpp**
+     - `included several methods below (pdf) <../../../_static/output/witness-plugin-20181124.pdf>`_ 
+	   
+	   - new_chain_banner()
+	   - plugin_set_program_options()
+	   - plugin_initialize()
+	   - plugin_startup()
+	   - shutdown()
+	   - stop_block_production()
+	   - refresh_witness_key_cache()
+	   - schedule_production_loop()
+	   - block_production_loop()
+	   - maybe_produce)block()
+	
+	   
+	   
+	   
 
 
 

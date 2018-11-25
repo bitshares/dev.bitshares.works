@@ -29,10 +29,13 @@ Knowledge Base
 
 ----------------------
 
-* :ref:`Wiki Legacy list <wiki-legacy-indx>`
+* :ref:`Wiki Legacy Pages list <wiki-legacy-indx>`
 
 
 ----------------------
+
+* :ref:`Code Flowcharts (study) <code-flow-chart>`
+
 
 |
 

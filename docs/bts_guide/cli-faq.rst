@@ -2,13 +2,14 @@
 .. _cli-faq:
 
 
-CLI Wallet - FAQ 
-=================
+CLI Wallet - FAQ
+======================
+
  
 .. _cli-faq1:
  
 How can I close the CLI client in a clean way?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In Windows closing the whole window produces a nasty exception. In
 Windows you can try `ctrl-d` which stops the process but stil produces a
@@ -18,7 +19,7 @@ nasty exception.
 .. _cli-faq5:  
   
 Why does the CLI client crash immediately when I try to run it for the first time?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The CLI client is unable to run on its own, i.e. without being connected
 to the witness node (via a web socket connection). So to successfully

@@ -131,6 +131,7 @@ What data structures are used in the blockchain?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ::
+
     Blocks => transactions => operations => objects.
 
 The blockchain state is contained in an object database that is affected by the operations.
@@ -182,7 +183,7 @@ What is the standard Bitshares address structure and format?
 
 address = 'BTS'+base58(ripemd(sha512(compressed_pub)))  (checksum obviated)
 
-But addresses are not used directly, instead you have an account (that can be controlled by one or more address, pubkey or another account). ** Read more about `Dynamic Account Permissions <https://bitshares.org/technology/dynamic-account-permissions/>`_ 
+But addresses are not used directly, instead you have an account (that can be controlled by one or more address, pubkey or another account). ** Read more about `Dynamic Account Permissions <https://bitshares.org/technology/dynamic-account-permissions>`_ 
 
 .. _dev-faq18:
 

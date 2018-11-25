@@ -121,7 +121,6 @@ Assets
 
 *Market Fees*
 
-* :ref:`asset-faq8`
 * :ref:`asset-faq9`
 * :ref:`asset-faq10`
 * :ref:`asset-faq11`
@@ -176,7 +175,8 @@ bitshares-core wiki (reference)
 .. include:: assets-faq.rst  
    
 -----------------   
-   
+
+ 
 .. include:: cli-faq.rst
    
 ---------------- 
