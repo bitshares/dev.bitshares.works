@@ -38,45 +38,49 @@ account_create_operation
 
 	struct account_create_operation : public base_operation
 	{
-	struct ext
-	{
-		optional< void_t >                  null_ext;
-		optional< special_authority >       owner_special_authority;
-		optional< special_authority >       active_special_authority;
-		optional< buyback_account_options > buyback_options;
-	};
+	  struct ext
+	  {
+		 optional< void_t >            null_ext;
+		 optional< special_authority > owner_special_authority;
+		 optional< special_authority > active_special_authority;
+		 optional< buyback_account_options > buyback_options;
+	  };
 
-	struct fee_parameters_type
-	{
-		uint64_t basic_fee = 5*GRAPHENE_BLOCKCHAIN_PRECISION; 
-		uint64_t premium_fee = 2000*GRAPHENE_BLOCKCHAIN_PRECISION; 
-		uint32_t price_per_kbyte = GRAPHENE_BLOCKCHAIN_PRECISION;
-	}; 
+	  struct fee_parameters_type
+	  {
+		 uint64_t basic_fee      = 5*GRAPHENE_BLOCKCHAIN_PRECISION; ///< the cost to register the cheapest non-free account
+		 uint64_t premium_fee    = 2000*GRAPHENE_BLOCKCHAIN_PRECISION; ///< the cost to register the cheapest non-free account
+		 uint32_t price_per_kbyte = GRAPHENE_BLOCKCHAIN_PRECISION;
+	  };
 
-	asset           fee;
-	account_id_type registrar;
+	  asset           fee;
+	  /// This account pays the fee. Must be a lifetime member.
+	  account_id_type registrar;
 
-	account_id_type referrer;
-	uint16_t        referrer_percent = 0;
+	  /// This account receives a portion of the fee split between registrar and referrer. Must be a member.
+	  account_id_type referrer;
+	  /// Of the fee split between registrar and referrer, this percentage goes to the referrer. The rest goes to the
+	  /// registrar.
+	  uint16_t        referrer_percent = 0;
 
-	string          name;
-	authority       owner;
-	authority       active;
+	  string          name;
+	  authority       owner;
+	  authority       active;
 
-	account_options  options;
-	extension< ext > extensions;
+	  account_options options;
+	  extension< ext > extensions;
 
-	account_id_type  fee_payer()const { return registrar; }
-	void             validate()const;
-	share_type       calculate_fee(const fee_parameters_type& )const;
+	  account_id_type fee_payer()const { return registrar; }
+	  void            validate()const;
+	  share_type      calculate_fee(const fee_parameters_type& )const;
 
-	void             get_required_active_authorities( flat_set<account_id_type>& a )const
-	{
-		// registrar should be required anyway as it is the fee_payer(), but we insert it here just to be sure
-		a.insert( registrar );
-		if( extensions.value.buyback_options.valid() )
-		a.insert( extensions.value.buyback_options->asset_to_buy_issuer );
-	}
+	  void get_required_active_authorities( flat_set<account_id_type>& a )const
+	  {
+		 // registrar should be required anyway as it is the fee_payer(), but we insert it here just to be sure
+		 a.insert( registrar );
+		 if( extensions.value.buyback_options.valid() )
+			a.insert( extensions.value.buyback_options->asset_to_buy_issuer );
+	  }
 	};
 
 	
@@ -94,62 +98,66 @@ account_transfer_operation
 	struct account_transfer_operation : public base_operation
 	{
 	  struct fee_parameters_type { uint64_t fee = 500 * GRAPHENE_BLOCKCHAIN_PRECISION; };
-	 
-	  asset fee;
+
+	  asset           fee;
 	  account_id_type account_id;
 	  account_id_type new_owner;
 	  extensions_type extensions;
-	 
-	  account_id_type  fee_payer()const { return account_id; }
-	  void             validate()const;
+
+	  account_id_type fee_payer()const { return account_id; }
+	  void        validate()const;
 	};
 
 account_update_operation
 ----------------------------
 
 - Update an existing account.
-- This operation is used to update an existing account. It can be used to update the authorities, or adjust the options on the account. See ``account_object::options_type`` for the options which may be updated. 
+- This operation is used to update an existing account. It can be used to update the authorities, or adjust the options on the account. 
+- See ``account_object::options_type`` for the options which may be updated. 
 
 .. code-block:: cpp 
 
 	struct account_update_operation : public base_operation
 	{
-		struct ext
-		{
-			optional< void_t >            null_ext;
-			optional< special_authority > owner_special_authority;
-			optional< special_authority > active_special_authority;
-		};
+	  struct ext
+	  {
+		 optional< void_t >            null_ext;
+		 optional< special_authority > owner_special_authority;
+		 optional< special_authority > active_special_authority;
+	  };
 
-		struct fee_parameters_type
-		{
-			share_type   fee = 20 * GRAPHENE_BLOCKCHAIN_PRECISION;
-			uint32_t     price_per_kbyte = GRAPHENE_BLOCKCHAIN_PRECISION;
-		};
+	  struct fee_parameters_type
+	  {
+		 share_type fee             = 20 * GRAPHENE_BLOCKCHAIN_PRECISION;
+		 uint32_t   price_per_kbyte = GRAPHENE_BLOCKCHAIN_PRECISION;
+	  };
 
-		asset           fee;
-		account_id_type account;
+	  asset fee;
+	  /// The account to update
+	  account_id_type account;
 
-		optional<authority> owner;
-		optional<authority> active;
+	  /// New owner authority. If set, this operation requires owner authority to execute.
+	  optional<authority> owner;
+	  /// New active authority. This can be updated by the current active authority.
+	  optional<authority> active;
 
-		optional<account_options> new_options;
-		extension< ext >          extensions;
+	  /// New account options
+	  optional<account_options> new_options;
+	  extension< ext > extensions;
 
-		account_id_type  fee_payer()const { return account; }
-		void             validate()const;
-		share_type       calculate_fee( const fee_parameters_type& k )const;
+	  account_id_type fee_payer()const { return account; }
+	  void       validate()const;
+	  share_type calculate_fee( const fee_parameters_type& k )const;
 
-		bool is_owner_update()const
-		{ return owner || extensions.value.owner_special_authority.valid(); }
+	  bool is_owner_update()const
+	  { return owner || extensions.value.owner_special_authority.valid(); }
 
-		void get_required_owner_authorities( flat_set<account_id_type>& a )const
-		{ if( is_owner_update() ) a.insert( account ); }
+	  void get_required_owner_authorities( flat_set<account_id_type>& a )const
+	  { if( is_owner_update() ) a.insert( account ); }
 
-		void get_required_active_authorities( flat_set<account_id_type>& a )const
-		{ if( !is_owner_update() ) a.insert( account ); }
+	  void get_required_active_authorities( flat_set<account_id_type>& a )const
+	  { if( !is_owner_update() ) a.insert( account ); }
 	};
-
 
 account_upgrade_operation
 ----------------------------
@@ -169,20 +177,23 @@ account_upgrade_operation
 
 	struct account_upgrade_operation : public base_operation
 	{
-		struct   fee_parameters_type { 
-		uint64_t membership_annual_fee = 2000 * GRAPHENE_BLOCKCHAIN_PRECISION;
-		uint64_t membership_lifetime_fee = 10000 * GRAPHENE_BLOCKCHAIN_PRECISION; 
-		};
+	  struct fee_parameters_type { 
+		 uint64_t membership_annual_fee   =  2000 * GRAPHENE_BLOCKCHAIN_PRECISION;
+		 uint64_t membership_lifetime_fee = 10000 * GRAPHENE_BLOCKCHAIN_PRECISION; ///< the cost to upgrade to a lifetime member
+	  };
 
-		asset            fee;
-		account_id_type  account_to_upgrade;
-		bool             upgrade_to_lifetime_member = false;
-		extensions_type  extensions;
+	  asset             fee;
+	  /// The account to upgrade; must not already be a lifetime member
+	  account_id_type   account_to_upgrade;
+	  /// If true, the account will be upgraded to a lifetime member; otherwise, it will add a year to the subscription
+	  bool              upgrade_to_lifetime_member = false;
+	  extensions_type   extensions;
 
-		account_id_type  fee_payer()const { return account_to_upgrade; }
-		void             validate()const;
-		share_type       calculate_fee( const fee_parameters_type& k )const;
+	  account_id_type fee_payer()const { return account_to_upgrade; }
+	  void       validate()const;
+	  share_type calculate_fee( const fee_parameters_type& k )const;
 	};
+
 
 account_whitelist_operation
 -----------------------------
@@ -196,24 +207,30 @@ account_whitelist_operation
 
 	struct account_whitelist_operation : public base_operation
 	{
-		struct fee_parameters_type { share_type fee = 300000; };
-		enum account_listing {
-		no_listing = 0x0, 
-		white_listed = 0x1, 
-		black_listed = 0x2, 
-		white_and_black_listed = white_listed | black_listed 
-		};
+	  struct fee_parameters_type { share_type fee = 300000; };
+	  enum account_listing {
+		 no_listing = 0x0, ///< No opinion is specified about this account
+		 white_listed = 0x1, ///< This account is whitelisted, but not blacklisted
+		 black_listed = 0x2, ///< This account is blacklisted, but not whitelisted
+		 white_and_black_listed = white_listed | black_listed ///< This account is both whitelisted and blacklisted
+	  };
 
-		asset            fee;
-		account_id_type  authorizing_account;
-		account_id_type  account_to_list;
-		uint8_t          new_listing = no_listing;
-		extensions_type  extensions;
+	  /// Paid by authorizing_account
+	  asset           fee;
+	  /// The account which is specifying an opinion of another account
+	  account_id_type authorizing_account;
+	  /// The account being opined about
+	  account_id_type account_to_list;
+	  /// The new white and blacklist status of account_to_list, as determined by authorizing_account
+	  /// This is a bitfield using values defined in the account_listing enum
+	  uint8_t new_listing = no_listing;
+	  extensions_type extensions;
 
-		account_id_type  fee_payer()const { return authorizing_account; }
-		void             validate()const { FC_ASSERT( fee.amount >= 0 ); FC_ASSERT(new_listing < 0x4); }
+	  account_id_type fee_payer()const { return authorizing_account; }
+	  void validate()const { FC_ASSERT( fee.amount >= 0 ); FC_ASSERT(new_listing < 0x4); }
 	};
 
+	
 |	
 	
 ----------------

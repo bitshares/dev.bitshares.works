@@ -43,16 +43,19 @@ block_header
 
 	struct block_header
 	{
-		digest_type         digest()const;
-		block_id_type       previous;
-		uint32_t            block_num()const { return num_from_id(previous) + 1; }
-		fc::time_point_sec  timestamp;
-		witness_id_type     witness;
-		checksum_type       transaction_merkle_root;
-		extensions_type     extensions;
+	  digest_type                   digest()const;
+	  block_id_type                 previous;
+	  uint32_t                      block_num()const { return num_from_id(previous) + 1; }
+	  fc::time_point_sec            timestamp;
+	  witness_id_type               witness;
+	  checksum_type                 transaction_merkle_root;
+	  // Note: when we need to add data to `extensions`, remember to review `database::_generate_block()`.
+	  //       More info in https://github.com/bitshares/bitshares-core/issues/1136
+	  extensions_type               extensions;
 
-		static uint32_t     num_from_id(const block_id_type& id);
+	  static uint32_t num_from_id(const block_id_type& id);
 	};
+	// (11/27/2018)
 
 
 .. Note:: when we need to add data to `extensions`, remember to review ``database::_generate_block()``.
@@ -130,40 +133,39 @@ Block (detail image)
 
 block_database
 ==========================
-		
-.. code-block:: cpp  
-
-	struct index_entry;
 			
 .. code-block:: cpp  
 
-   class block_database 
-   {
-      public:
-         void open( const fc::path& dbdir );
-         bool is_open()const;
-         void flush();
-         void close();
+	namespace graphene { namespace chain {
+	   struct index_entry;
 
-         void store( const block_id_type& id, const signed_block& b );
-         void remove( const block_id_type& id );
+	   class block_database 
+	   {
+		  public:
+			 void open( const fc::path& dbdir );
+			 bool is_open()const;
+			 void flush();
+			 void close();
 
-         bool                   contains( const block_id_type& id )const;
-         block_id_type          fetch_block_id( uint32_t block_num )const;
-         optional<signed_block> fetch_optional( const block_id_type& id )const;
-         optional<signed_block> fetch_by_number( uint32_t block_num )const;
-         optional<signed_block> last()const;
-         optional<block_id_type> last_id()const;
-         size_t                 blocks_current_position()const;
-         size_t                 total_block_size()const;
-      private:
-         optional<index_entry> last_index_entry()const;
-         fc::path _index_filename;
-         mutable std::fstream _blocks;
-         mutable std::fstream _block_num_to_pos;
-   };	
+			 void store( const block_id_type& id, const signed_block& b );
+			 void remove( const block_id_type& id );
 
-
+			 bool                   contains( const block_id_type& id )const;
+			 block_id_type          fetch_block_id( uint32_t block_num )const;
+			 optional<signed_block> fetch_optional( const block_id_type& id )const;
+			 optional<signed_block> fetch_by_number( uint32_t block_num )const;
+			 optional<signed_block> last()const;
+			 optional<block_id_type> last_id()const;
+			 size_t                 blocks_current_position()const;
+			 size_t                 total_block_size()const;
+		  private:
+			 optional<index_entry> last_index_entry()const;
+			 fc::path _index_filename;
+			 mutable std::fstream _blocks;
+			 mutable std::fstream _block_num_to_pos;
+	   };
+	} }
+    //(11/27/2018)
 
 
 	

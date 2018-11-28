@@ -287,7 +287,7 @@ authority
 		flat_map<public_key_type,weight_type> key_auths;
 		/** needed for backward compatibility only */
 		flat_map<address,weight_type>         address_auths;
-	 };
+	};
 
  
 add_authority_accounts
@@ -1241,55 +1241,51 @@ price
 
 .. code-block:: cpp
 
-   struct price
-   {
-      explicit price(const asset& _base = asset(), const asset& _quote = asset())
-         : base(_base),quote(_quote){}
+	struct price
+	{
+	  explicit price(const asset& _base = asset(), const asset& _quote = asset())
+		 : base(_base),quote(_quote){}
 
-      asset base;
-      asset quote;
+	  asset base;
+	  asset quote;
 
-      static price max(asset_id_type base, asset_id_type quote );
-      static price min(asset_id_type base, asset_id_type quote );
+	  static price max(asset_id_type base, asset_id_type quote );
+	  static price min(asset_id_type base, asset_id_type quote );
 
-      static price call_price(const asset& debt, const asset& collateral, uint16_t collateral_ratio);
+	  static price call_price(const asset& debt, const asset& collateral, uint16_t collateral_ratio);
 
-      /// The unit price for an asset type A is defined to be a price such that for any asset m, m*A=m
-      static price unit_price(asset_id_type a = asset_id_type()) { return price(asset(1, a), asset(1, a)); }
+	  /// The unit price for an asset type A is defined to be a price such that for any asset m, m*A=m
+	  static price unit_price(asset_id_type a = asset_id_type()) { return price(asset(1, a), asset(1, a)); }
 
-      price max()const { return price::max( base.asset_id, quote.asset_id ); }
-      price min()const { return price::min( base.asset_id, quote.asset_id ); }
+	  price max()const { return price::max( base.asset_id, quote.asset_id ); }
+	  price min()const { return price::min( base.asset_id, quote.asset_id ); }
 
-      double to_real()const { return double(base.amount.value)/double(quote.amount.value); }
+	  double to_real()const { return double(base.amount.value)/double(quote.amount.value); }
 
-      bool is_null()const;
-      void validate()const;
-   };
+	  bool is_null()const;
+	  void validate()const;
+	};
 
+	price operator / ( const asset& base, const asset& quote );
+	inline price operator~( const price& p ) { return price{p.quote,p.base}; }
 
-   
-.. code-block:: cpp
-   
-   price operator / ( const asset& base, const asset& quote );
-   inline price operator~( const price& p ) { return price{p.quote,p.base}; }
+	bool  operator <  ( const price& a, const price& b );
+	bool  operator == ( const price& a, const price& b );
 
-   bool  operator <  ( const price& a, const price& b );
-   bool  operator == ( const price& a, const price& b );
+	inline bool  operator >  ( const price& a, const price& b ) { return (b < a); }
+	inline bool  operator <= ( const price& a, const price& b ) { return !(b < a); }
+	inline bool  operator >= ( const price& a, const price& b ) { return !(a < b); }
+	inline bool  operator != ( const price& a, const price& b ) { return !(a == b); }
 
-   inline bool  operator >  ( const price& a, const price& b ) { return (b < a); }
-   inline bool  operator <= ( const price& a, const price& b ) { return !(b < a); }
-   inline bool  operator >= ( const price& a, const price& b ) { return !(a < b); }
-   inline bool  operator != ( const price& a, const price& b ) { return !(a == b); }
+	asset operator *  ( const asset& a, const price& b ); ///< Multiply and round down
 
-   asset operator *  ( const asset& a, const price& b ); ///< Multiply and round down
+	price operator *  ( const price& p, const ratio_type& r );
+	price operator /  ( const price& p, const ratio_type& r );
 
-   price operator *  ( const price& p, const ratio_type& r );
-   price operator /  ( const price& p, const ratio_type& r );
-
-   inline price& operator *=  ( price& p, const ratio_type& r )
-   { return p = p * r; }
-   inline price& operator /=  ( price& p, const ratio_type& r )
-   { return p = p / r; }
+	inline price& operator *=  ( price& p, const ratio_type& r )
+	{ return p = p * r; }
+	inline price& operator /=  ( price& p, const ratio_type& r )
+	{ return p = p / r; }
 	
 
 price_feed
@@ -1306,46 +1302,49 @@ price_feed
 
 	struct price_feed
 	{
+	  ///@{
+	  /**
+	   * Forced settlements will evaluate using this price, defined as BITASSET / COLLATERAL
+	   */
+	  price settlement_price;
 
-		**Forced settlements will evaluate using this price, defined as BITASSET / COLLATERAL**
-      price settlement_price;
+	  /// Price at which automatically exchanging this asset for CORE from fee pool occurs (used for paying fees)
+	  price core_exchange_rate;
 
-      /// Price at which automatically exchanging this asset for CORE from fee pool occurs (used for paying fees)
-      price core_exchange_rate;
+	  /** Fixed point between 1.000 and 10.000, implied fixed point denominator is GRAPHENE_COLLATERAL_RATIO_DENOM */
+	  uint16_t maintenance_collateral_ratio = GRAPHENE_DEFAULT_MAINTENANCE_COLLATERAL_RATIO;
 
-      /** Fixed point between 1.000 and 10.000, implied fixed point denominator is GRAPHENE_COLLATERAL_RATIO_DENOM */
-      uint16_t maintenance_collateral_ratio = GRAPHENE_DEFAULT_MAINTENANCE_COLLATERAL_RATIO;
+	  /** Fixed point between 1.000 and 10.000, implied fixed point denominator is GRAPHENE_COLLATERAL_RATIO_DENOM */
+	  uint16_t maximum_short_squeeze_ratio = GRAPHENE_DEFAULT_MAX_SHORT_SQUEEZE_RATIO;
 
-      /** Fixed point between 1.000 and 10.000, implied fixed point denominator is GRAPHENE_COLLATERAL_RATIO_DENOM */
-      uint16_t maximum_short_squeeze_ratio = GRAPHENE_DEFAULT_MAX_SHORT_SQUEEZE_RATIO;
+	  /**
+	   *  When updating a call order the following condition must be maintained:
+	   *
+	   *  debt * maintenance_price() < collateral
+	   *  debt * settlement_price    < debt * maintenance
+	   *  debt * maintenance_price() < debt * max_short_squeeze_price()
+	  price maintenance_price()const;
+	   */
 
-      /**
-       *  When updating a call order the following condition must be maintained:
-       *
-       *  debt * maintenance_price() < collateral
-       *  debt * settlement_price    < debt * maintenance
-       *  debt * maintenance_price() < debt * max_short_squeeze_price()
-      price maintenance_price()const;
-       */
+	  /** When selling collateral to pay off debt, the least amount of debt to receive should be
+	   *  min_usd = max_short_squeeze_price() * collateral
+	   *
+	   *  This is provided to ensure that a black swan cannot be trigged due to poor liquidity alone, it
+	   *  must be confirmed by having the max_short_squeeze_price() move below the black swan price.
+	   */
+	  price max_short_squeeze_price()const;
+	  ///@}
 
-      /** When selling collateral to pay off debt, the least amount of debt to receive should be
-       *  min_usd = max_short_squeeze_price() * collateral
-       *
-       *  This is provided to ensure that a black swan cannot be trigged due to poor liquidity alone, it
-       *  must be confirmed by having the max_short_squeeze_price() move below the black swan price.
-       */
-      price max_short_squeeze_price()const;
-      ///@}
+	  friend bool operator == ( const price_feed& a, const price_feed& b )
+	  {
+		 return std::tie( a.settlement_price, a.maintenance_collateral_ratio, a.maximum_short_squeeze_ratio ) ==
+				std::tie( b.settlement_price, b.maintenance_collateral_ratio, b.maximum_short_squeeze_ratio );
+	  }
 
-      friend bool operator == ( const price_feed& a, const price_feed& b )
-      {
-         return std::tie( a.settlement_price, a.maintenance_collateral_ratio, a.maximum_short_squeeze_ratio ) ==
-                std::tie( b.settlement_price, b.maintenance_collateral_ratio, b.maximum_short_squeeze_ratio );
-      }
-
-      void validate() const;
-      bool is_for( asset_id_type asset_id ) const;
+	  void validate() const;
+	  bool is_for( asset_id_type asset_id ) const;
 	};
+
 	
 	
 

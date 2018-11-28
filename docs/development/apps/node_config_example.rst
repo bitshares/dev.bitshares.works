@@ -61,7 +61,7 @@ As a default, most parameters have been commented. You have to uncomment to set 
 	required-participation = false
 
 	# ID of witness controlled by this node (e.g. "1.6.5", quotes are required, may specify multiple times)
-	witness-id = "1.6.1"
+	# witness-id = 
 
 	# Tuple of [PublicKey, WIF private key] (may specify multiple times)
 	#private-key = ["BTS6MRyAjQq8...........GDW5CV","5KQwrPbwdL..............yXtP79zkvFD3"]

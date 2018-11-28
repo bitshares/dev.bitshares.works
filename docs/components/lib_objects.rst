@@ -49,7 +49,7 @@ Account
 
          asset get_balance()const { return asset(balance, asset_type); }
          void  adjust_balance(const asset& delta);
-   };  
+   }; 
 
 
 
@@ -442,6 +442,7 @@ typedef generic_index
 	* @ingroup object_index
 	*/
 	typedef generic_index<account_statistics_object, account_stats_multi_index_type> account_stats_index;
+
    //(20181019)
    
 
@@ -540,6 +541,7 @@ Asset
          share_type accumulated_fees; ///< fees accumulate to be paid out over time
          share_type fee_pool;         ///< in core asset
    };
+   //(11/27/2018)
    
    
 `asset_object <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1asset__object.html>`_ 
@@ -639,6 +641,7 @@ Asset
          share_type reserved( const DB& db )const
          { return options.max_supply - dynamic_data(db).current_supply; }
    };
+   //(11/27/2018)
 
 
    
@@ -647,6 +650,8 @@ Asset
 -   
 
 .. code-block:: cpp 
+
+	namespace graphene { namespace chain {
 
 	struct budget_record
 	{
@@ -686,7 +691,10 @@ Asset
 		  budget_record record;
 	};
 
+	} };
 
+	// (11/27/2018)
+	
 `buyback_object <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1buyback__object.html>`_ 
 -----------------------------------------------------
 - ``buyback_authority_object`` only exists to help with a specific indexing problem. We want to be able to iterate over all assets that have a buyback program. However, assets which have a buyback program are very rare. So rather than indexing ``asset_object`` by the buyback field (requiring additional bookkeeping for every asset), we instead maintain a ``buyback_object`` pointing to each asset which has buyback (requiring additional bookkeeping only for every asset which has buyback).
@@ -713,81 +721,132 @@ BitAsset
  
 .. code-block:: cpp 
 
-   class asset_bitasset_data_object : public abstract_object<asset_bitasset_data_object>
-   {
-      public:
-         static const uint8_t space_id = implementation_ids;
-         static const uint8_t type_id  = impl_asset_bitasset_data_type;
+	class asset_bitasset_data_object : public abstract_object<asset_bitasset_data_object>
+	{
+	  public:
+		 static const uint8_t space_id = implementation_ids;
+		 static const uint8_t type_id  = impl_asset_bitasset_data_type;
 
-         /// The asset this object belong to
-         asset_id_type asset_id;
+		 /// The asset this object belong to
+		 asset_id_type asset_id;
 
-         /// The tunable options for BitAssets are stored in this field.
-         bitasset_options options;
+		 /// The tunable options for BitAssets are stored in this field.
+		 bitasset_options options;
 
-         /// Feeds published for this asset. If issuer is not committee, the keys in this map are the feed publishing
-         /// accounts; otherwise, the feed publishers are the currently active committee_members and witnesses and this map
-         /// should be treated as an implementation detail. The timestamp on each feed is the time it was published.
-         flat_map<account_id_type, pair<time_point_sec,price_feed>> feeds;
-         /// This is the currently active price feed, calculated as the median of values from the currently active
-         /// feeds.
-         price_feed current_feed;
-         /// This is the publication time of the oldest feed which was factored into current_feed.
-         time_point_sec current_feed_publication_time;
+		 /// Feeds published for this asset. If issuer is not committee, the keys in this map are the feed publishing
+		 /// accounts; otherwise, the feed publishers are the currently active committee_members and witnesses and this map
+		 /// should be treated as an implementation detail. The timestamp on each feed is the time it was published.
+		 flat_map<account_id_type, pair<time_point_sec,price_feed>> feeds;
+		 /// This is the currently active price feed, calculated as the median of values from the currently active
+		 /// feeds.
+		 price_feed current_feed;
+		 /// This is the publication time of the oldest feed which was factored into current_feed.
+		 time_point_sec current_feed_publication_time;
 
-         /// True if this asset implements a @ref prediction_market
-         bool is_prediction_market = false;
+		 /// True if this asset implements a @ref prediction_market
+		 bool is_prediction_market = false;
 
-         /// This is the volume of this asset which has been force-settled this maintanence interval
-         share_type force_settled_volume;
-         /// Calculate the maximum force settlement volume per maintenance interval, given the current share supply
-         share_type max_force_settlement_volume(share_type current_supply)const;
+		 /// This is the volume of this asset which has been force-settled this maintanence interval
+		 share_type force_settled_volume;
+		 /// Calculate the maximum force settlement volume per maintenance interval, given the current share supply
+		 share_type max_force_settlement_volume(share_type current_supply)const;
 
-         /** return true if there has been a black swan, false otherwise */
-         bool has_settlement()const { return !settlement_price.is_null(); }
+		 /** return true if there has been a black swan, false otherwise */
+		 bool has_settlement()const { return !settlement_price.is_null(); }
 
-         /**
-          *  In the event of a black swan, the swan price is saved in the settlement price, and all margin positions
-          *  are settled at the same price with the siezed collateral being moved into the settlement fund. From this
-          *  point on no further updates to the asset are permitted (no feeds, etc) and forced settlement occurs
-          *  immediately when requested, using the settlement price and fund.
-          */
-         ///@{
-         /// Price at which force settlements of a black swanned asset will occur
-         price settlement_price;
-         /// Amount of collateral which is available for force settlement
-         share_type settlement_fund;
-         ///@}
+		 /**
+		  *  In the event of a black swan, the swan price is saved in the settlement price, and all margin positions
+		  *  are settled at the same price with the siezed collateral being moved into the settlement fund. From this
+		  *  point on no further updates to the asset are permitted (no feeds, etc) and forced settlement occurs
+		  *  immediately when requested, using the settlement price and fund.
+		  */
+		 ///@{
+		 /// Price at which force settlements of a black swanned asset will occur
+		 price settlement_price;
+		 /// Amount of collateral which is available for force settlement
+		 share_type settlement_fund;
+		 ///@}
 
-         /// Track whether core_exchange_rate in corresponding asset_object has updated
-         bool asset_cer_updated = false;
+		 /// Track whether core_exchange_rate in corresponding asset_object has updated
+		 bool asset_cer_updated = false;
 
-         /// Track whether core exchange rate in current feed has updated
-         bool feed_cer_updated = false;
+		 /// Track whether core exchange rate in current feed has updated
+		 bool feed_cer_updated = false;
 
-         /// Whether need to update core_exchange_rate in asset_object
-         bool need_to_update_cer() const
-         {
-            return ( ( feed_cer_updated || asset_cer_updated ) && !current_feed.core_exchange_rate.is_null() );
-         }
+		 /// Whether need to update core_exchange_rate in asset_object
+		 bool need_to_update_cer() const
+		 {
+			return ( ( feed_cer_updated || asset_cer_updated ) && !current_feed.core_exchange_rate.is_null() );
+		 }
 
-         /// The time when @ref current_feed would expire
-         time_point_sec feed_expiration_time()const
-         {
-            uint32_t current_feed_seconds = current_feed_publication_time.sec_since_epoch();
-            if( std::numeric_limits<uint32_t>::max() - current_feed_seconds <= options.feed_lifetime_sec )
-               return time_point_sec::maximum();
-            else
-               return current_feed_publication_time + options.feed_lifetime_sec;
-         }
-         bool feed_is_expired_before_hardfork_615(time_point_sec current_time)const
-         { return feed_expiration_time() >= current_time; }
-         bool feed_is_expired(time_point_sec current_time)const
-         { return feed_expiration_time() <= current_time; }
-         void update_median_feeds(time_point_sec current_time);
-   };
+		 /// The time when @ref current_feed would expire
+		 time_point_sec feed_expiration_time()const
+		 {
+			uint32_t current_feed_seconds = current_feed_publication_time.sec_since_epoch();
+			if( std::numeric_limits<uint32_t>::max() - current_feed_seconds <= options.feed_lifetime_sec )
+			   return time_point_sec::maximum();
+			else
+			   return current_feed_publication_time + options.feed_lifetime_sec;
+		 }
+		 bool feed_is_expired_before_hardfork_615(time_point_sec current_time)const
+		 { return feed_expiration_time() >= current_time; }
+		 bool feed_is_expired(time_point_sec current_time)const
+		 { return feed_expiration_time() <= current_time; }
+		 void update_median_feeds(time_point_sec current_time);
+	};
    
- 
+	// key extractor for short backing asset
+	struct bitasset_short_backing_asset_extractor
+	{
+	  typedef asset_id_type result_type;
+	  result_type operator() (const asset_bitasset_data_object& obj) const
+	  {
+		 return obj.options.short_backing_asset;
+	  }
+	};
+
+	struct by_short_backing_asset;
+	struct by_feed_expiration;
+	struct by_cer_update;
+
+	typedef multi_index_container<
+	  asset_bitasset_data_object,
+	  indexed_by<
+		 ordered_unique< tag<by_id>, member< object, object_id_type, &object::id > >,
+		 ordered_non_unique< tag<by_short_backing_asset>, bitasset_short_backing_asset_extractor >,
+		 ordered_unique< tag<by_feed_expiration>,
+			composite_key< asset_bitasset_data_object,
+			   const_mem_fun< asset_bitasset_data_object, time_point_sec, &asset_bitasset_data_object::feed_expiration_time >,
+			   member< asset_bitasset_data_object, asset_id_type, &asset_bitasset_data_object::asset_id >
+			>
+		 >,
+		 ordered_non_unique< tag<by_cer_update>,
+							 const_mem_fun< asset_bitasset_data_object, bool, &asset_bitasset_data_object::need_to_update_cer >
+		 >
+	  >
+	> asset_bitasset_data_object_multi_index_type;
+	typedef generic_index<asset_bitasset_data_object, asset_bitasset_data_object_multi_index_type> asset_bitasset_data_index;
+
+	struct by_symbol;
+	struct by_type;
+	struct by_issuer;
+	typedef multi_index_container<
+	  asset_object,
+	  indexed_by<
+		 ordered_unique< tag<by_id>, member< object, object_id_type, &object::id > >,
+		 ordered_unique< tag<by_symbol>, member<asset_object, string, &asset_object::symbol> >,
+		 ordered_non_unique< tag<by_issuer>, member<asset_object, account_id_type, &asset_object::issuer > >,
+		 ordered_unique< tag<by_type>,
+			composite_key< asset_object,
+				const_mem_fun<asset_object, bool, &asset_object::is_market_issued>,
+				member< object, object_id_type, &object::id >
+			>
+		 >
+	  >
+	> asset_object_multi_index_type;
+	typedef generic_index<asset_object, asset_object_multi_index_type> asset_index;
+	// (11/27/2018)
+	
 
 Balance
 ==============
@@ -1059,8 +1118,73 @@ History
          /** any virtual operations implied by operation in block */
          uint16_t          virtual_op = 0;
    };
+   
+   
+`account_transaction_history_object <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1account__transaction__history__object.html>`_ 
+-----------------------------------------------------
+- a node in a linked list of operation_history_objects
+- Account history is important for users and wallets even though it is not part of "core validation". Account history is maintained as a linked list stored on disk in a stack. Each account will point to the most recent account history object by ID. When a new operation relativent to that account is processed a new account history object is allocated at the end of the stack and initialized to point to the prior object.
+- This data is never accessed as part of chain validation and therefore can be kept on disk as a memory mapped file. Using a memory mapped file will help the operating system better manage / cache / page files and also accelerates load time.
+- When the transaction history for a particular account is requested the linked list can be traversed with relatively efficient disk access because of the use of a memory mapped stack. 
+ 
+.. code-block:: cpp
+
+   class account_transaction_history_object :  public abstract_object<account_transaction_history_object>
+   {
+      public:
+         static const uint8_t space_id = implementation_ids;
+         static const uint8_t type_id  = impl_account_transaction_history_object_type;
+         account_id_type                      account; /// the account this operation applies to
+         operation_history_id_type            operation_id;
+         uint64_t                             sequence = 0; /// the operation position within the given account
+         account_transaction_history_id_type  next;
+
+         //std::pair<account_id_type,operation_history_id_type>  account_op()const  { return std::tie( account, operation_id ); }
+         //std::pair<account_id_type,uint32_t>                   account_seq()const { return std::tie( account, sequence );     }
+   };
+ 
+   struct by_id;
+
+   typedef multi_index_container<
+      operation_history_object,
+      indexed_by<
+         ordered_unique< tag<by_id>, member< object, object_id_type, &object::id > >
+      >
+   > operation_history_multi_index_type;
+
+   typedef generic_index<operation_history_object, operation_history_multi_index_type> operation_history_index;
+
+   struct by_seq;
+   struct by_op;
+   struct by_opid;
+
+   typedef multi_index_container<
+      account_transaction_history_object,
+      indexed_by<
+         ordered_unique< tag<by_id>, member< object, object_id_type, &object::id > >,
+         ordered_unique< tag<by_seq>,
+            composite_key< account_transaction_history_object,
+               member< account_transaction_history_object, account_id_type, &account_transaction_history_object::account>,
+               member< account_transaction_history_object, uint64_t, &account_transaction_history_object::sequence>
+            >
+         >,
+         ordered_unique< tag<by_op>,
+            composite_key< account_transaction_history_object,
+               member< account_transaction_history_object, account_id_type, &account_transaction_history_object::account>,
+               member< account_transaction_history_object, operation_history_id_type, &account_transaction_history_object::operation_id>
+            >
+         >,
+         ordered_non_unique< tag<by_opid>,
+            member< account_transaction_history_object, operation_history_id_type, &account_transaction_history_object::operation_id>
+         >
+      >
+   > account_transaction_history_multi_index_type;
+
+   typedef generic_index<account_transaction_history_object, account_transaction_history_multi_index_type> account_transaction_history_index;
 
 
+   
+ 
 Order (*market*)
 =======================
 
@@ -1215,31 +1339,6 @@ Proposal
 
 Transaction 
 =============================
-
-
-`account_transaction_history_object <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1account__transaction__history__object.html>`_ 
------------------------------------------------------
-- a node in a linked list of operation_history_objects
-- Account history is important for users and wallets even though it is not part of "core validation". Account history is maintained as a linked list stored on disk in a stack. Each account will point to the most recent account history object by ID. When a new operation relativent to that account is processed a new account history object is allocated at the end of the stack and initialized to point to the prior object.
-- This data is never accessed as part of chain validation and therefore can be kept on disk as a memory mapped file. Using a memory mapped file will help the operating system better manage / cache / page files and also accelerates load time.
-- When the transaction history for a particular account is requested the linked list can be traversed with relatively efficient disk access because of the use of a memory mapped stack. 
- 
-.. code-block:: cpp
-
-   class account_transaction_history_object :  public abstract_object<account_transaction_history_object>
-   {
-      public:
-         static const uint8_t space_id = implementation_ids;
-         static const uint8_t type_id  = impl_account_transaction_history_object_type;
-         account_id_type                      account; /// the account this operation applies to
-         operation_history_id_type            operation_id;
-         uint64_t                             sequence = 0; /// the operation position within the given account
-         account_transaction_history_id_type  next;
-
-         //std::pair<account_id_type,operation_history_id_type>  account_op()const  { return std::tie( account, operation_id ); }
-         //std::pair<account_id_type,uint32_t>                   account_seq()const { return std::tie( account, sequence );     }
-    };
- 
  
 `node_property_object <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1node__property__object.html>`_ 
 -----------------------------------------------------
