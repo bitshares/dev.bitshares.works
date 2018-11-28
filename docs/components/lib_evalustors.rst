@@ -180,7 +180,7 @@ asset_update_evaluator
          void_result do_apply( const asset_update_operation& o );
 
          const asset_object* asset_to_update = nullptr;
-   };
+   }
 
 asset_update_issuer_evaluator
 ----------------------------------------------
@@ -229,7 +229,7 @@ asset_update_feed_producers_evaluator
          void_result do_evaluate( const operation_type& o );
          void_result do_apply( const operation_type& o );
 
-         const asset_bitasset_data_object* bitasset_to_update = nullptr;
+         const asset_object* asset_to_update = nullptr;
    };
 
 asset_fund_fee_pool_evaluator
@@ -667,7 +667,7 @@ limit_order_create_evaluator
          const account_object*               _seller        = nullptr;
          const asset_object*                 _sell_asset    = nullptr;
          const asset_object*                 _receive_asset = nullptr;
-   };
+   }
    
    
 limit_order_cancel_evaluator
@@ -706,6 +706,7 @@ call_order_update_evaluator
          const call_order_object* _order = nullptr;
          const asset_bitasset_data_object* _bitasset_data = nullptr;
    };
+
    
    
 bid_collateral_evaluator

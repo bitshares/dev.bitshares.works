@@ -8,6 +8,7 @@ BitShares Related Articles
 
 -------------------------
 
+- `How Global Settlements work (11/2018) <https://steemit.com/bitshares/@bitshares.fdn/how-global-settlements-work>`_ : by BBF
 - `DevWork Update: BitShares Witness Monitor (06/2018) <https://steemit.com/bitshares/@clockwork/devwork-update-bitshares-witness-monitor>`_  : by  @cloclwork
 - `Bitshares ElasticSearch Wrapper and Swagger (05/2018) <https://steemit.com/bitshares/@oxarbitrage/bitshares-elasticsearch-wrapper-and-swagger>`_   by @oxarbitrage
 - `Slides How to create smart contracts in graphene blockchains (05/2018) <https://steemit.com/bitshares/@oxarbitrage/slides-how-to-create-smart-contracts-in-graphene-blockchains>`_   by @oxarbitrage
@@ -16,6 +17,8 @@ BitShares Related Articles
 
 --------------
 
+- `Bitshares: Margin Trading and Swap contracts on the DEX discussion (2018) <https://medium.com/@George_harrap/bitshares-margin-trading-and-swap-contracts-on-the-dex-discussion-3856b00a8349>`_ : by George Harrap
+- `Detailed mechanism of global settlement (black swan) and reviving of bitAssets (2018) <https://steemit.com/bitshares/@haruka/detailed-mechanism-of-global-settlement-black-swan-and-reviving-of-bitassets>`_ : by @haruka
 - `DPOS Consensus Algorithm - The Missing White Paper (2017) <https://steemit.com/dpos/@dantheman/dpos-consensus-algorithm-this-missing-white-paper>`_ : by dantheman 
 - `How the issuer of an IOU/UIA can transfer assets back to himself (2016) <https://steemit.com/bitshares/@xeroc/how-the-issuer-of-an-iouuia-can-transfer-assets-back-to-himself>`_  : by xeroc
 - `Howto: An Introduction to Python-BitShares (01/2018) <https://steemit.com/python/@full-steem-ahead/howto-an-introduction-to-python-bitshares>`_  : by @full-steem-ahead
@@ -27,9 +30,8 @@ BitShares Related Articles
 - `HERTZ Price Feed Script Updates! September 2017 <https://steemit.com/bitshares/@cm-steem/hertz-price-feed-script-updates-september-2017>`_ : by cm-steem
 - `HERTZ - Next area of investigation prior to production! <https://steemit.com/bitshares/@cm-steem/hertz-next-area-of-investigation-prior-to-production>`_  : by cm-steem
 - `Project-Rain Pull-Request submitted to the BOINC GitHub Repo! <https://steemit.com/beyondbitcoin/@cm-steem/project-rain-pull-request-submitted-to-the-boinc-github-repo>`_ : by cm-steem
-- https://steemit.com/eos/@eosio/introducing-eos-io-application-stack : Introducing EOS.IO Application Stack by eos
-- https://serverfault.com/questions/377617/how-to-interpret-output-from-linux-top-command : How to interpret output from Linux ‘top’ command?
-- https://steemit.com/@bitspark : bitspark - The world’s first cash in cash out money transfer service leveraging Bitcoin and Blockchain Technology. Quicker, cheaper, everywhere.
+- `Introducing EOS.IO Application Stack <https://steemit.com/eos/@eosio/introducing-eos-io-application-stack>`_ :by eos
+- `How to interpret output from Linux ‘top’ command? <https://serverfault.com/questions/377617/how-to-interpret-output-from-linux-top-command>`_
 
 
 |
