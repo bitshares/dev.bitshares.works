@@ -14,14 +14,13 @@ Nodes
 Type of Nodes
 ==========================
 
-In the BitShares blockchain network, you might find the slightly different naming of **nodes**, such as a full node, witness node, or block producer.  Basically, nodes are keeping all transactions (histories) that have occurred on the blockchain and maintaining the integrity of a blockchain.  A **full node** has every single block that has ever been created on the blockchain. 
+In the BitShares blockchain network, you might find the slightly different naming of **nodes**, such as a full node, witness node, or block producer.  All nodes keep updating an internal database by applying the transactions as they arrive in incoming blocks.  The difference between the node types lies in the amount of history they keep track of, and in the functionality they provide.
 
-In BitShares blockchain network, a **witness node** is a full node, and each witness validates a transaction and broadcasts it. Witnesses nodes provide the complete history and preserve it as a failsafe. 
+A **witness node** is a node run by a witness. Each witness node validates all blocks and transactions it receives. The nodes of elected witnesses take turns in bundling new transactions into blocks and broadcasting them to the network.
 
-**API nodes** do not need to have all blockchain histories. They might contain partial blockchain histories.  (Public) API nodes provide essential services without having all blockchain history data (i.e., accept API calls and query the data on witness nodes blockchain). 
+**API nodes** provide network services to client applications. They usually have account transaction histories accessible though API calls, but can vary in the amount of available history.  **Full nodes** are API nodes with a complete transaction history of all accounts. 
 
-**Seed nodes** are the first nodes of the network that accept incoming P2P connection. Also, a seed node can be an API node. In BitShares, its address is hard coded in the program, so when a new node starts, it will connect to the seed nodes by default. Every node (including seed nodes) tells the connected nodes where other nodes are, so all nodes can connect to each other.  
-
+**Seed nodes** are nodes that accept incoming P2P connections.  They are the first nodes contacted by a freshly started node.  In that sense they serve as an entry point into the network.  Once a node has entered the network it will receive additional node addresses from its peers, so all nodes can connect to each other.  A seed node can also be an API node.  The BitShares core software, also called `witness_node`, comes with a preconfigured list of seed nodes for easy bootstrapping.
 
 So, when and who producing blocks?  We call **Block Producers** ; they serve an important role of validating signatures and timestamping transactions by including them in a block and broadcast it.  Block Producers are witnesses who got enough votes to become **active witnesses** and can produce a block when they got their turn "time slot".  
 
