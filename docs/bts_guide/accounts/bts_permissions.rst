@@ -4,6 +4,11 @@
 Permissions
 ===============
 
+
+.. contents:: Table of Contents
+
+-----------
+
 Permission Models
 --------------------
 
@@ -48,21 +53,17 @@ The Permission page locates in a side menu.
 Permissions Tabs
 ------------------
 
-+---+--------------------+--------------------------------------------------------------------------------------------------------------------------------+
-|   | tab                |                                                                                                                                |
-+===+====================+================================================================================================================================+
-| 1 | Active Permissions | Active permissions define the accounts that have permission to spend funds for this account.                                   |
-+---+--------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| 2 | Owner Permissions  | Owner permissions define who has control over the account. Owners may overwrite all keys and change any account settings.      |
-+---+--------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| 3 | Memo Key           | The memo key is where you receive memos, in order to decode the memos you need to control the private key for the public key   |
-|   |                    | By using a public/private key pair without spending authority, you may give read-only access to your memos to third parties.   |
-+---+--------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| 4 | Cloud Wallet       | You can use this feature, if you want to change your **Cloud wallet** password.                                                |
-+---+--------------------+--------------------------------------------------------------------------------------------------------------------------------+
+:Active Permissions: Active permissions define the accounts that have permission to spend funds for this account.            
+
+:Owner Permissions:  Owner permissions define who has control over the account. Owners may overwrite all keys and change any account settings.
+
+:Memo Key:  The memo key is where you receive memos, in order to decode the memos you need to control the private key for the public key. By using a public/private key pair without spending authority, you may give read-only access to your memos to third parties. 
+
+:Cloud Wallet:  You can use this feature, if you want to change your **Cloud wallet** password.
 
 |
 
+-------------------
 
 
 Public Key and Private Key

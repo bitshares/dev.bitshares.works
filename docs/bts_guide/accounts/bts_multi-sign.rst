@@ -5,6 +5,10 @@ Multi-Signature
 ======================
 
 
+.. contents:: Table of Contents
+
+-----------
+
 Authorities
 -----------------
 
