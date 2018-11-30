@@ -1,9 +1,17 @@
 
+.. _bts-voting:
 
 Voting 
 ===================
 
- If you hold some ``BTS`` tokens, you are considered a BTS Holder of the BitShares business and thus have a say in where it should be heading in future. As a BTS Holder you can cast a vote for three different entities within the network:
+
+
+.. contents:: Table of Contents
+
+-----------
+
+
+If you hold some BTS tokens, you are considered a BTS Holder of the BitShares business and thus have a say in where it should be heading in future. As a BTS Holder you can cast a vote for three different entities within the network:
 
 
  
@@ -20,6 +28,9 @@ Since voting might be a too time-consuming task for many BTS Holders, BitShares 
 
 Voting itself is **very simple** with the User interface and requires only a few clicks.
 
+|
+
+-----------------
 
 Voting by using BitShares UI
 ---------------------------------
@@ -33,8 +44,7 @@ Voting by using BitShares UI
         :alt: cloud wallet pwd
         :width: 200px
         :align: center		
-		
-		
+			
 
 Setting a proxy
 ^^^^^^^^^^^^^^^^

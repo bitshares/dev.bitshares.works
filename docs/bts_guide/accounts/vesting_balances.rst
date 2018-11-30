@@ -2,18 +2,24 @@
 Vesting Balances 
 ===================
 
-
-
 In BitShares 2.0, some balances are vesting over time. This feature has been introduced initially in BitShares 1 when merging several blockchain businesses into one blockchain.
 
 
+
+.. contents:: Table of Contents
+
+-----------
+
+
+What is it?
+---------------------
 Vesting balances contain any fees earned through the referral program or from worker pay, for example. They have a certain vesting period and are continually unlocked during that vesting period until all of the balances are available.
 
 
-Account income and Strategies
--------------------------------
+Account income
+------------------------
 
-Now, we make even more use of this functionality in such that an accounts income in form of
+We make even more use of this functionality in such that an account's income in form of
 
 * worker pay,
 * witness pay,
@@ -25,7 +31,6 @@ is vesting over several days with different strategies.
 For instance, a worker can define for how long he would like his pay to vest to encourage BTS Holders to vote for him due to no imminent additional sell pressure from the worker.
 
 **Strategies**
-
 
  1. **CCD / Coin Days Destroyed**
 
@@ -40,7 +45,7 @@ For instance, a worker can define for how long he would like his pay to vest to 
 Claiming A Vesting Balance
 -----------------------------
 
- You can claim vesting balances by using BitShares User interface.
+ You can claim vesting balances by using BitShares User interface. (You might need to wait certain days to claim.)
 
  Open the side dropdown menu and select **[Vesting Balances]**
 
