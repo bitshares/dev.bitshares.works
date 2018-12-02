@@ -1293,7 +1293,9 @@ proposal_update_operation
 |	
 	
 ----------------
-		
+	
+.. _vesting-balance-op:
+	
 Vesting Balance
 ======================
  

@@ -17,7 +17,7 @@ Vesting balances contain any fees earned through the referral program or from wo
 
 
 Account income
-------------------------
+^^^^^^^^^^^^^^^^^^^
 
 We make even more use of this functionality in such that an account's income in form of
 

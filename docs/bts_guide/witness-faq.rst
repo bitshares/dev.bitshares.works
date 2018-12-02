@@ -2,7 +2,7 @@
 .. _witness-faq:
 
 Witness - FAQ
-===============
+--------------------
 
 .. _witness-faq-1:  
   

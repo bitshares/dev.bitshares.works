@@ -34,8 +34,8 @@ How can I do?
 -------------------
 If you want to participate in the referral program, you need to have a life-time member account, first! Then you can bring in new users by 
 
- * running your own faucet and actually register new accounts (will give you 80% of all the fees of those minus a fraction that you decide to give to affiliates (the referrers)
- * referring people to a hosted wallet that offers you a cut of the fees as an affiliate.
+ * (1)- running your own faucet and actually register new accounts (will give you 80% of all the fees of those minus a fraction that you decide to give to affiliates (the referrers)
+ * (2)- referring people to a hosted wallet that offers you a cut of the fees as an affiliate.
 
  The case below, most hosted wallets add your account as affiliate if you provide the following link structure to people
 
@@ -49,10 +49,11 @@ If you want to participate in the referral program, you need to have a life-time
 
 
  
-If you use your referral link to people you want to refer to BitShares, your referral link would be::
+ * (3)- or sending your referral link to people you want to refer to BitShares, your referral link would be::
 		
 		https://wallet.bitshares.org/?r=<your-account-name>
 		
+		(*You might want to use yow wallet address instead of "wallet.bitshares.org"*)
 		
 		
 **Example:**
@@ -66,7 +67,7 @@ Fee Division
 
 Every time an account you referred pays a transaction fee, that fee is divided among several different accounts. The network takes a cut, and the Lifetime Member who referred the account gets a cut.
 
-The registrar is the account that paid the transaction fee to register the account with the network. The registrar gets to decide how to divide the remaining fee between themselves and their affiliate. 
+The **registrar** is the account that paid the transaction fee to register the account with the network. The registrar gets to decide how to divide the remaining fee between themselves and their affiliate. 
 
 Fee status
 ^^^^^^^^^^^^^^
@@ -86,7 +87,7 @@ Claiming Referral Bonus and Cashback
  * already paid some fees, or
  * have referred people that paid some fees,
 
- you can claim them in the "Vesting balances" menu of your account.
+ you can claim them in the "Vesting balances" of your account.
 
 
 |

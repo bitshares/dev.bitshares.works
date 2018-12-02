@@ -69,6 +69,8 @@ Permissions Tabs
 Public Key and Private Key
 ===========================
 
+.. _where-pub-prv-keys:
+
 Where are public/private keys?
 ---------------------------------
 

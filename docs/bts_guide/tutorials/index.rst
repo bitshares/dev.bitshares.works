@@ -15,14 +15,17 @@ Accounts
 
 * :ref:`How can I register an account by using CLI? <create-account-dev-cli>`
 * :ref:`How can I change a Cloud Wallet Password? <howto-change-cloud-wallet-pwd>`
-* :ref:`How can I import a GUI-wallet account into CLI-wallet <howto-import-gui-wallet-account-cli>`
+* :ref:`How can I import a GUI-wallet account into CLI-wallet? <howto-import-gui-wallet-account-cli>`
 
 
 **Vesting Balance**
 
 * :ref:`How can I check a Vesting Balances? <list-vesting-balances>`
 * :ref:`How can I claim a Vesting Balance? <claiming-vesting-balance>`
+* :ref:`Vesting Balance Operation <vesting-balance-op>`
 
+  - vesting_balance_create_operation
+  - vesting_balance_withdraw_operation
  
 API
 ============
@@ -98,6 +101,10 @@ Delegated Proof of Stake
 * Read" User Guide `(DPOS) <https://how.bitshares.works/en/latest/technology/dpos.html#>`_
 
 
+Keys
+=====================
+* :ref:`How can I import a GUI-wallet account into CLI-wallet? <howto-import-gui-wallet-account-cli>`
+* :ref:`Where are public/private keys? GUI <where-pub-prv-keys>`
 
 
 .. _monitoring_support:
