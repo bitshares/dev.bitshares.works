@@ -23,7 +23,10 @@ In BitShares, you can create an account relatively easily by using the BitShares
     voting
 
 
+-----------------------------
 
+.. note:: BitShares Account section in the dev.bitshares.works and the how.bitshares.works are the same contents. For searching purpose, having pages in the both sites.
+	
 |
 
 
