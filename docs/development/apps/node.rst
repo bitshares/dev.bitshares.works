@@ -122,7 +122,7 @@ Although you would get default parameters in your config file for better memory 
 
   - Help to reduce RAM usage significantly by using witness_node executable options 
 
-.. note:: More information about :ref:`how to manage Witness(Full) Node <witness-node-guide-tutorials>`,    in our tutorials. 
+.. note:: Find more information about Node, check :ref:`Node Tutorials <witness-node-guide-tutorials>`.
 
 |
 
@@ -140,12 +140,16 @@ When restarting the witness node, it may be required to append the ``--replay-bl
 
 |
 
+.. _bts-nodes-info:
+
 ---------------
 	
 Public Full Node Information 
 ==============================
 
-* Here is the latest list of `BitShares Public Full Nodes (apiConfig) <https://github.com/bitshares/bitshares-ui/blob/staging/app/api/apiConfig.js>`_
+* `BitShares Public Full Nodes (apiConfig) <https://github.com/bitshares/bitshares-ui/blob/staging/app/api/apiConfig.js>`_
+* `Global BitShares Node Distribution Map <https://bitshares.eu/network/>`_
+* `Seed Nodes information (application.cpp) <https://github.com/bitshares/bitshares-core/blob/master/libraries/app/application.cpp>`_ 
 
 
 |

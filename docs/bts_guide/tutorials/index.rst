@@ -192,7 +192,7 @@ Transfer / Transactions
 * :ref:`How Multi-signature' works <bts-multi-sign>`
 * :ref:`How to use the CLI wallet to perform Confidential Transfers  <confidential-transactions-guide>`
 * :ref:`Hot to Construct Any Transaction - Manually <manually-construct-transaction>`
-* :ref:`How to Crafting, Proposing, and Approving a Transaction <proposing-transaction>`
+* :ref:`How to Crafting, Proposing, and Approving a Transaction <proposing-transaction>` - Proposed Transaction 
 * :ref:`How to use the CLI wallet to Perform Stealth Transfers in BitShares (wiki) <w-stealth-transfers>`  
 * :ref:`Proposed Transaction and  Multi-Signature <proposed-tran>`
 
