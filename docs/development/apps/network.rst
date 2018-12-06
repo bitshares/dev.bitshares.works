@@ -34,12 +34,6 @@ Wallet API
 Since we have a delayed full node that we can fully trust, we will interface with this node to query the blockchain and receive notifications from it one balance changes. Hence, we use this API to watch deposits of users into the exchange’s account. Because the delayed node only knows about irreversible blocks all transactions are at this point irreversible as well. For customer withdrawals, we will interface with the wallet to initiate transfers to the accounts of the customers on request. As we are connected to the trusted node directly, there will not be any delay on withdrawals.
 
 
-----------------------
-
-.. include:: network_general.rst 
-
-
-.. include:: network_secure.rst 
 
 
 

@@ -62,7 +62,7 @@ Known issues
 ------------------------
 
 
-Next Step Guide
+Next Step...
 ========================
 
 BitShares offers many features, after the bitshares-core installation, you might think what's the next step?  The below is a short contents guide that you might be interested to look into.  Also, visit Developers :ref:`Guide <dev-guides>` and :ref:`FAQs <faq-top>`.
@@ -84,7 +84,7 @@ Create a BitShares GUI wallet
 - Check `BitShares-UI Release <https://github.com/bitshares/bitshares-ui/releases>`_
 - Read how to create `BitShares UI Wallet  <http://how.bitshares.works/en/latest/user_guide/create_account.html>`_ steps 
 - Understand `BitShares Client and Login Mode <http://how.bitshares.works/en/latest/user_guide/bitshares-client.html>`_ 
-
+- Know :ref:`where to find public/private keys (GUI) <where-pub-prv-keys>`
 
 Know how to Backup/Restore (GUI) 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -96,8 +96,11 @@ Create and launch a CLI wallet
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  
 - Understand `CLI Client and Wallet -  Connectivity <https://dev.bitshares.works/en/master/development/apps/cli_intro.html>`_
-- Try `Connecting a CLI wallet <https://dev.bitshares.works/en/master/development/apps/cli_wallet.html>`_  section 
-- Learn how to setup :ref:`secure-network-configuration`
+- Learn how to `Connecte a CLI wallet <https://dev.bitshares.works/en/master/development/apps/cli_wallet.html>`_  
+- Learn how to :ref:`set up Secure Network and Wallet Configuration <secure-network-configuration>`
+- Know how to :ref:`import a GUI-wallet account into CLI-wallet <howto-import-gui-wallet-account-cli>`
+
+
 
 Run a node
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

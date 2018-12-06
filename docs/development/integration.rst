@@ -32,7 +32,10 @@ We provide here the necessary information to securely operate as a merchant, tra
     :maxdepth: 2
 
     apps/network
-
+    apps/network_general
+    apps/network_secure
+	
+	
 |
 
 ---------------------------

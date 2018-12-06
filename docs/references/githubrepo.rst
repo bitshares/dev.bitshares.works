@@ -79,6 +79,9 @@ More Resources in GitHub
    * - Name
      - Note
      - Repository
+   * - `bitshares-latency <https://github.com/litepresence/extinction-event/blob/master/EV/bitshares-latency.py>`_ 
+     - BitShares Nodes list (source code)
+     - litepresence	 
    * - `bitshares-explorer-api <https://github.com/oxarbitrage/bitshares-explorer-api>`_ 
      - Simple Wrapper to Query BitShares Data Stored in Elasticsearch Database 
      - oxarbitrage

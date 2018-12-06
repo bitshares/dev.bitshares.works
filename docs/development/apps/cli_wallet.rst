@@ -37,7 +37,7 @@ instead of::
 	
 	$ make
 
-
+|
   
 2. Launching a cli_wallet
 ----------------------------
@@ -88,6 +88,7 @@ This will open the port 8091 for HTTP-RPC requests and has the capabilities to h
 
 After opening the cli-wallet, if you have not had a local wallet yet, you will receive ``>>> new`` prompt to provide a pass-phrase for the local wallet. Once a wallet has been created (default wallet file is ``wallet.json``), then it will prompt with ``locked >>>``.
 
+|
 
 3.Unlock the Cli_Wallet
 ----------------------------
@@ -128,6 +129,7 @@ You can get more detailed information by issuing ``gethelp``. Detailed explanati
 	  
 .. Note:: Many calls have a obligatory ``broadcast``  -flag as last argument. If this flag is ``False``, the wallet will construct and sign, but **not** broadcast the transaction. This can be very useful for a cold storage setup or to verify transactions.
 	  
+|
 
 4. Gain Access to Blockchain
 ----------------------------------
@@ -148,6 +150,7 @@ Funds are stored in genesis balance objects. These funds can be claimed, with no
 
     >>> import_balance <name> ["*"] true
 
+|
 
 5. Create Accounts
 -------------------------------
@@ -177,6 +180,8 @@ This command allows you to register an account using only a **public key**.
 	
 .. _transfering-funds-cli-wallet:	
 	
+|
+	
 6. Transfer Funds by using the Cli-wallet
 ----------------------------------------------
 
@@ -204,6 +209,7 @@ The wallet will return the actually signed transaction.
     >>> create_witness alpha "http://www.alpha" true
 
 
+|
 
 7. Obtain the private key
 ----------------------------
@@ -215,7 +221,15 @@ The ``get_private_key`` command allows us to obtain the **private key** correspo
 
     >>> get_private_key GPH6viEhYCQr8xKP3Vj8wfHh6WfZeJK7H9uhLPDYWLGCRSj5kHQZM
 
+|
 
+---------------
+	
+.. tip:: If you want to import your current GUI wallet fund(s), see
+  
+    * :ref:`How can I import a GUI-wallet account into CLI-wallet? <howto-import-gui-wallet-account-cli>`
+	
+	
 |
 
 |

@@ -20,6 +20,8 @@ The BitShares toolkit comprises several tools that allow interaction with the bl
     apps/cli_intro
     apps/cli_wallet	
 
+-----------
+	
 * Quick Guides
 
   - `Python-Bitshares Documentation <http://docs.pybitshares.com/en/latest/>`_ 
