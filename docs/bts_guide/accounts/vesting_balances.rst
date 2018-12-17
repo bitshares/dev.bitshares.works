@@ -14,8 +14,8 @@ In BitShares 2.0, some balances are vesting over time. This feature has been int
 What is it?
 ---------------------
 Vesting balances contain any fees earned through the referral program or from worker pay, for example. They have a certain vesting period and are continually unlocked during that vesting period until all of the balances are available.
-
-
+		
+		
 Account income
 ^^^^^^^^^^^^^^^^^^^
 
@@ -40,7 +40,10 @@ For instance, a worker can define for how long he would like his pay to vest to 
 
  This vesting balance type is used to mimic traditional stock vesting contracts where each day a certain amount vests until it is fully matured.
 
+		
 |
+		
+-------------
 
 Claiming A Vesting Balance
 -----------------------------
@@ -59,6 +62,7 @@ Claiming A Vesting Balance
         :alt: Vesting Balances
         :width: 600px
         :align: center
+
 
 		
 |

@@ -42,20 +42,50 @@ BitShares Code and Files
 
 ----------
    
+What's your interests?
+========================
 
+What would you like to know more about BitShares Blockchain? If you are interested to know about BitShares blockchain background, history, and features, please visit `how.bitshares.works <http://how.bitshares.works/en/latest/#>`_ and `bitshares.org <https://bitshares.org/>`_ to read more information. 
+
+If yo do not have a BitShares account yet, you can use BitShares UI wallet (`wallet.bitshares.org <https://wallet.bitshares.org>`_ ) or download a `Light Client Wallet <https://bitshares.org/download>`_  to create your BitShares account. Here is the latest `BitShares-UI – Release <https://github.com/bitshares/bitshares-ui/releases>`_ information. 
+
+If your interests are trying and learning BitShares features, you might want to use BitShares TestNet to experience them. If you are a developer who is interested to contribute to the BitShares Core team, you could download a developer branch and learn more about BitShares-Core current Project might be a good start. Select an appropriate branch when you install BitShares-Core.
+
+After you know which branch to download, your next step is the installation of BitShares-Core. Check the :ref:`BitShares Installation Guide <installation-guide>` and select your Operation System to follow the installation steps. 
+
+.. image:: ../../_static/imgs/your-interests.png
+        :alt: BitShares
+        :width: 750px
+        :align: center
+  
+
+BitSharea has great communities to support others and have discussions. Check out the :ref:`BitShares communities <bitshares-communities>` and join to meet other BTS holders!    
+  
+|
+  
+----------------   
+   
+   
+   
 BitShares Core: Projects Guide 
 ==================================
 
-Project Guide
-------------------
+If you are interested to know or involve BitShares-Core developments, you will find the contribution guide, current project, issues and plans in this section. 
+
+Project Guide and Milestones 
+------------------------------
 
 - `Contribution Guide [DRAFT] <https://github.com/bitshares/bitshares-core/wiki/Contribution-Guide>`_
-- `Contribution Guide Project <https://github.com/bitshares/bitshares-core/projects/6>`_
+- `Project <https://github.com/bitshares/bitshares-core/projects/6>`_
+- `BitShares-Core: current issues and requests <https://github.com/bitshares/bitshares-core/issues>`_ 
+- `Milestones and Plans <https://github.com/bitshares/bitshares-core/milestones>`_ 
+- `BitShares-Core Releases <https://github.com/bitshares/bitshares-core/releases>`_ 
+
 
 BitShares-Core (Team) 
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-The BitShares-Core team is a team of developers who manage the BitShares-Core code and handle the issues that are submitted by other developers. The team creates project plans for next release(s) and delivers the result to the Bitshares community. 
+The BitShares-Core team is a team of developers who manage the BitShares-Core repository code and handle the issues that are submitted by other developers. The team creates project plans for next release(s) and delivers the result to the Bitshares community. 
 
 * Roles
 

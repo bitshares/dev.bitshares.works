@@ -2,11 +2,12 @@
 
 
 .. toctree::
-    :caption: Introduction :
+    :caption: Introduction
     :maxdepth: 2
 
     intro/architectures
     intro/environments
+    bts_guide/accounts/index_account	
     components/components
 
 	
@@ -17,7 +18,6 @@
     :maxdepth: 2
 
     development/installation
-    bts_guide/accounts/index_account
     development/integration
     development/interaction
     development/testnets

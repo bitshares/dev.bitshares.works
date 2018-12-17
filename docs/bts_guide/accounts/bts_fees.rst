@@ -42,8 +42,6 @@ You can use the memo section to send a message. Also, some transactions require 
         :alt: fee schedule
         :width: 650px
         :align: center	
-
-|
 		
 Paying Fees
 ^^^^^^^^^^^^^^^^
@@ -58,6 +56,8 @@ Order Cancellation
 If you cancel an order that has not been fully or partially filled, 90% of the fee will be payed back to your account. However, this cashback will be in BTS (CORE token) and not in the asset you have originally paid the fee in. 
 
 |
+
+-----------------
 
 Standard Fee and Lifetime Membership Fee
 -----------------------------------------
@@ -74,6 +74,7 @@ For many cases it may make sense to upgrade the account even though you don’t 
 
 |
 
+--------------
 
 Asset Creation Fee
 ---------------------------
@@ -98,4 +99,13 @@ Issuers may optionally maintain a Fee Pool. The **Fee Pool is a pool of BTS** an
 
 If the assets fee pool is funded, the fees can be payed in the native UIA instead of BTS.
 
-|
+
+BitShares Reserve Pool and Cashflow 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: ../../_static/output/BitShares-Cashflow2.png
+        :alt: BitShares cashflow
+        :width: 700px
+        :align: center
+		
+|		

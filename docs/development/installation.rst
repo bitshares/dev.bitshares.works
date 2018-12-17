@@ -74,7 +74,7 @@ Know more about how BitShares Works
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Check `How BitShares Works <http://how.bitshares.works/en/latest/index.html>`_ Guide
-- Understand `BitShares Accounts <http://how.bitshares.works/en/latest/user_guide/accounts/bts_account.html>`_ Features
+- Understand :ref:`BitShares Accounts <index-bts-accounts>` Features
 - Read about Types of `Asset Tokens <http://how.bitshares.works/en/latest/bts_holders/tokens.html>`_
 
 

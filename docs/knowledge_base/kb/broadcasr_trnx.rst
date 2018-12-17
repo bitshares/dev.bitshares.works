@@ -22,9 +22,9 @@ In this section, we look into BitShares Blockchain transaction and the flow. The
 
 On the BitShares blockchain, every node receives a transaction (1a&1b), locally validates its content and signature(2a&2b), and re-broadcasts to its connected peers(3a&3b). The connected peers could be another API node or witness node. 
 
-Block producer nodes (a.k.a. witness nodes) will sign blocks if it is their turn (time slot), produce a block(5b), and broadcast(6b) that block to its connected peers.
+Block producer nodes (a.k.a. Active witness nodes) will sign blocks if it is their turn (time slot), produce a block(5b) and broadcast(6b) the block to its connected peers.
 
-If other nodes receive that block, they attempt it to make their copy of the blockchain.
+If other nodes receive the block, they attempt it to make their copy of the blockchain.
 
 Block producing nodes provide the blockchain with signed (like to think about it as "certified") blocks containing all new data that is previously submitted by account holders through API nodes.
 

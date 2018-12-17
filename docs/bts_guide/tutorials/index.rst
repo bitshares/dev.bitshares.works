@@ -18,7 +18,8 @@ Accounts
 * :ref:`How can I import a GUI-wallet account into CLI-wallet? <howto-import-gui-wallet-account-cli>`
 
 
-**Vesting Balance**
+Vesting Balance
+-------------------
 
 * :ref:`How can I check a Vesting Balances? <list-vesting-balances>`
 * :ref:`How can I claim a Vesting Balance? <claiming-vesting-balance>`
