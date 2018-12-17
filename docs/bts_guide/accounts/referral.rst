@@ -14,11 +14,13 @@ The purpose of the referral program is to incentivize people to bring in more pe
 Participation
 ----------------------
 
-Every BitShares Holder can become a Lifetime Member and participate in the Referral Program. In this program: 
+Every BTS Holder can become a Lifetime Member and participate in the Referral Program. In this program: 
 
-**Basic Accounts** are free, but do not qualify for the referral program, nor any cash back on transaction fees.
+.. Attention::
 
-**Lifetime Members** pay an upgrade fee and earn **80% cash back on every fee they pay**. They also qualify for **80% cashback of the fees paid by Basic Accounts they refer** to the network. These 80% can be split among the registrar, that actually registers the accounts, and an affiliate referrer, that brought in the new user.
+  **Basic Accounts** are free, but do not qualify for the referral program, nor any cash back on transaction fees.
+
+  **Lifetime Members** pay an upgrade fee and earn **80% cash back on every fee they pay**. They also qualify for **80% cashback of the fees paid by Basic Accounts they refer** to the network. These 80% can be split among the registrar, that actually registers the accounts, and an affiliate referrer, that brought in the new user.
 
 
 The referral fees are controlled by the blockchain and are distributed like this:
@@ -30,12 +32,15 @@ The referral fees are controlled by the blockchain and are distributed like this
    - of this 80%, 100%-x% go to the affiliate referrer
 
 
+---------------------
+
+  
 How can I do?
 -------------------
-If you want to participate in the referral program, you need to have a life-time member account, first! Then you can bring in new users by 
+**If you want to participate in the referral program, you need to have a life-time member account, first! Then you can bring in new users by**
 
- * (1)- running your own faucet and actually register new accounts (will give you 80% of all the fees of those minus a fraction that you decide to give to affiliates (the referrers)
- * (2)- referring people to a hosted wallet that offers you a cut of the fees as an affiliate.
+ * (1)- **running your own faucet and actually register new accounts (will give you 80% of all the fees of those minus a fraction that you decide to give to affiliates (the referrers)**
+ * (2)- **referring people to a hosted wallet that offers you a cut of the fees as an affiliate.**
 
  The case below, most hosted wallets add your account as affiliate if you provide the following link structure to people
 
@@ -49,7 +54,7 @@ If you want to participate in the referral program, you need to have a life-time
 
 
  
- * (3)- or sending your referral link to people you want to refer to BitShares, your referral link would be::
+ * (3)- **or sending your referral link to people you want to refer to BitShares, your referral link would be**::
 		
 		https://wallet.bitshares.org/?r=<your-account-name>
 		
@@ -62,10 +67,13 @@ If you want to participate in the referral program, you need to have a life-time
 
 |
 
+---------------------
+
+
 Fee Division
 ----------------
 
-Every time an account you referred pays a transaction fee, that fee is divided among several different accounts. The network takes a cut, and the Lifetime Member who referred the account gets a cut.
+.. Tip:: Every time an account you referred pays a transaction fee, that fee is divided among several different accounts. The network takes a cut, and the Lifetime Member who referred the account gets a cut.
 
 The **registrar** is the account that paid the transaction fee to register the account with the network. The registrar gets to decide how to divide the remaining fee between themselves and their affiliate. 
 
@@ -78,11 +86,14 @@ Fee status
 
 To see your vesting balances, open the side menu and select **Vesting balance**.  Vesting balances are recalculated hourly, so you might not yet see them right away.
 
-|
+
+---------------------
+
 
 Claiming Referral Bonus and Cashback
 -------------------------------------
- If you have a lifetime memb1er account and 
+
+ If you have a Lifetime Member (LTM) account and 
 
  * already paid some fees, or
  * have referred people that paid some fees,

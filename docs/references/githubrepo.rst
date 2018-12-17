@@ -1,6 +1,6 @@
 .. _bitshares-repositories:
 
-GitHub Contributions
+GitHub Resources
 ====================================
 
 BitShares Repositories

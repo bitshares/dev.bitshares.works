@@ -124,7 +124,7 @@ BitShares Cash Flow
 
 .. _trx-performance-explorer:
 
-Transactions and Performance
+Blockchain Observation
 ===============================
 
 Bitshares Block Explorer

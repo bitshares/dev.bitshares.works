@@ -5,7 +5,7 @@
 BitShares Community
 ********************      
 	  
-Communities
+Join Us!	  
 ======================
 	 
 * `BitShares Community <https://t.me/bitshares_community>`_
