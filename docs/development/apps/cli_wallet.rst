@@ -90,6 +90,8 @@ After opening the cli-wallet, if you have not had a local wallet yet, you will r
 
 |
 
+.. _3-unlock-cli-wallet:
+
 3.Unlock the Cli_Wallet
 ----------------------------
 

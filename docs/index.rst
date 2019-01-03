@@ -7,9 +7,9 @@
 
     intro/architectures
     intro/environments
+	
     bts_guide/accounts/index_account	
     components/components
-
 	
 ---------	
 

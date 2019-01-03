@@ -2,7 +2,7 @@
 .. _build-wsl:
 
 **************************************
-Build and Run BitShares-Core in WSL
+Build and Run BitShares-Core in WSL (option)
 **************************************
 
 WSL stands for **Windows SubSystem for Linux**. If you use Windows 10 OS, you have an option to download and install Ubuntu on it. And you can install BitShares-Core to it.

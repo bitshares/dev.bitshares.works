@@ -1,4 +1,6 @@
-
+.. role:: strike
+    :class: strike
+	
 .. _build-ubuntu:
 
 
@@ -24,9 +26,8 @@ Ubuntu 16.04 LTS (64-bit)
 
     git clone https://github.com/bitshares/bitshares-core.git
     cd bitshares-core
-    git checkout <LATEST_RELEASE_TAG>
     git submodule update --init --recursive
-    cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo .
+    cmake -DCMAKE_BUILD_TYPE=Release  .
     make
 
 ---------------------
@@ -47,7 +48,7 @@ This is necessary for clean installation.::
 
 Download the Boost tarball for Boost 1.57.0. (*Ubuntu 14.04 ships old version of Boost.) 
 
-.. Note:: 1.58.0 requires C++14 and will not build on Ubuntu 14.04 LTS; this requirement was an accident, see this mailing list post.
+.. Note:: 1.58.0 requires C++14 and will not build on Ubuntu 14.04 LTS; this requirement was an accident, see `this mailing list post <http://boost.2283326.n4.nabble.com/1-58-1-bugfix-release-necessary-td4674686.html>`_ .
 
 ::
 
@@ -68,9 +69,9 @@ Download the Boost tarball for Boost 1.57.0. (*Ubuntu 14.04 ships old version of
     cd ..
     git clone https://github.com/bitshares/bitshares-core.git
     cd bitshares-core
-    git submodule update --init --recursive
-    cmake -DBOOST_ROOT="$BOOST_ROOT" -DCMAKE_BUILD_TYPE=Release .
-    make 
+    
+	cmake -DBOOST_ROOT="$BOOST_ROOT" -DCMAKE_BUILD_TYPE=Release .
+    make
 
 
 ---------------
@@ -83,6 +84,7 @@ Ubuntu
 
 We recommend building on Ubuntu 16.04 LTS (64-bit), and the build dependencies may be installed with:
 
+- Ubuntu 18.04 LTS (**64-bit**)
 - Ubuntu 16.04 LTS (**64-bit**)
  
  
@@ -100,9 +102,10 @@ Versions earlier than 1.57 or newer than 1.65 are NOT supported. If your system 
 OpenSSL
 ---------
 
+- OpenSSL: 1.1.0 - **BitShares now supports OpenSSL 1.1.0**
 - OpenSSL: 1.0.x series
 
-OpenSSL 1.1.0 and newer are NOT supported. If your system OpenSSL version is newer, then you will need to manually provide an older version of OpenSSL and specify it to CMake using ``-DOPENSSL_INCLUDE_DIR``, ``-DOPENSSL_SSL_LIBRARY``, and ``-DOPENSSL_CRYPTO_LIBRARY``. Example::
+OpenSSL :strike:`1.1.0 and` newer are NOT supported. If your system OpenSSL version is newer, then you will need to manually provide an older version of OpenSSL and specify it to CMake using ``-DOPENSSL_INCLUDE_DIR``, ``-DOPENSSL_SSL_LIBRARY``, and ``-DOPENSSL_CRYPTO_LIBRARY``. Example::
 
         cmake -DOPENSSL_INCLUDE_DIR=/usr/include/openssl-1.0 -DOPENSSL_SSL_LIBRARY=/usr/lib/openssl-1.0/libssl.so -DOPENSSL_CRYPTO_LIBRARY=/usr/lib/openssl-1.0/libcrypto.so .
 

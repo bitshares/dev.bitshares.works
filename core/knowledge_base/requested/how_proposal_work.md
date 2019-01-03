@@ -1,2 +1,0 @@
-## How Proposal Work
-

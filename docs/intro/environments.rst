@@ -8,25 +8,10 @@ Development Environments
 .. contents:: Table of Contents
    :local:
    
--------
-
-
-BitShares offers you to install BitShares-Core into different platforms; :ref:`Linux:Ubuntu (x64) <build-ubuntu>` , :ref:`OS X <build-osx>` , and :ref:`Windows <build-windows>`.   There are dependencies to check when you download OpenSSL and  Boost. Please make sure which versions you downloaded. 
-
-Also, if you are a Windows user, you have other two choices to install BitShares Core to your Windows (x64) Operation System.  One is :ref:`CLI-Wallet tools for Windows (x64) <cli-tool>` , another one is :ref:`Windows SubSystem for Linux (WSL) <build-wsl>` .
-
-The CLI-wallet tools for Windows (x64) allow you to have CLI wallet without the BitShares Core installation. After you download the cli-wallet tools (zip file) and unzip it, you will find all files you need to run CLI wallet.  
-
-Another option, Windows SubSystem for Linux (WSL).  The WSL is for a developer who uses a Windows 10 (x64) Operation System and wants to build BitShares Core on Ubuntu. 
-
-> See :ref:`System Requirements <system-requirements-node>` .
-
-
 -------------------
 
 BitShares Code and Files 
 ===============================
-
 
 - Open Source program
 - Language uses (mainly): BitShares-Core(C++), python
@@ -45,7 +30,7 @@ BitShares Code and Files
 What's your interests?
 ========================
 
-What would you like to know more about BitShares Blockchain? If you are interested to know about BitShares blockchain background, history, and features, please visit `how.bitshares.works <http://how.bitshares.works/en/latest/#>`_ and `bitshares.org <https://bitshares.org/>`_ to read more information. 
+What would you like to know more about BitShares Blockchain? BitShares Core is the BitShares blockchain implementation and command-line interface. If you are interested to know about BitShares blockchain background, history, and features, please visit `how.bitshares.works <http://how.bitshares.works/en/latest/#>`_ and `bitshares.org <https://bitshares.org/>`_ to read more information. 
 
 If yo do not have a BitShares account yet, you can use BitShares UI wallet (`wallet.bitshares.org <https://wallet.bitshares.org>`_ ) or download a `Light Client Wallet <https://bitshares.org/download>`_  to create your BitShares account. Here is the latest `BitShares-UI – Release <https://github.com/bitshares/bitshares-ui/releases>`_ information. 
 
@@ -58,8 +43,9 @@ After you know which branch to download, your next step is the installation of B
         :width: 750px
         :align: center
   
-
-BitSharea has great communities to support others and have discussions. Check out the :ref:`BitShares communities <bitshares-communities>` and join to meet other BTS holders!    
+BitSharea has great communities to support others and have discussions. Check out the :ref:`BitShares communities <bitshares-communities>` and join to meet other BTS holders!     
+  
+For security issues and bug bounty program, please visit `Hack the DEX <https://hackthedex.io/>`_ .
   
 |
   
