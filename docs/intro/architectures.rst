@@ -4,9 +4,8 @@ Introduction & Architectures
 ******************************
 
 
-Welcome to BitShares! In this section, we are looking into the BitShares Architecture overview (entities and structures), and how the Core team processes the development work.
+Welcome to BitShares! BitShares Blockchain implements an industrial-grade technology focused on businesses, organizations or individuals, with an amazing eco-system and free-market economy.  Though this documentation, we introduce BitShares Blockchain features and functions to create your Command-Line (i.e., CLI) wallet, application, or other programs for developers. 
 
-If developers who are interested in contributing to the Core team, they might want to check the Contribution Guide and the GitFlow to understand how BitShares-Core team handles the repository files and branches.  The Core team current project, issues, and releases plans are located in the BitShares Core repository under the Issues and the Projects tabs.m. 
 
 .. contents:: Table of Contents
    :local:
@@ -18,9 +17,7 @@ If developers who are interested in contributing to the Core team, they might wa
 BitShares Members
 ===================
 
-If you have a BitShares account, you are a BTS Holder, and you have a voting power to make decisions in the BitShares Community. (Read more: :ref:`BitShares Accounts <bts-accounts>` )
-
-
+First, let's understand how we call BitShares Blockchain Community members and groups.  When you create a wallet and hold any BTS, you are a BTS Holder (i.e., shareholder). As a BTS Holder, you have a voting power to make decisions in the BitShares Blockchain Community. BTS Holders can vote for witnesses, committee members, and workers by using your wallet. As an option, if you wish,  you can case your voting power to a "Proxy" voter. The Proxy vote in behalf of BTS Holders account.  
 
 .. image:: ../../_static/structures/btsholders-v1.png
         :alt: BitShares Architecture
@@ -35,7 +32,7 @@ BitShares Architecture
 GitHub Repositories and Entities
 ------------------------------------
 
-This is an overview of BitShares Architecture image. The purpose of this image is to bring the main elements together and share what types of resources you might find in the BitShares Github repositories. 
+This is an overview of BitShares Architecture entities. The purpose of this image is to bring the main elements together and share what types of resources you might find in the BitShares Github repositories. 
 
 .. image:: ../../_static/structures/bitshares-architecture-v3notop.png
         :alt: BitShares Architecture
@@ -46,8 +43,6 @@ This is an overview of BitShares Architecture image. The purpose of this image i
 
 Key Design Concepts and the Features
 =========================================
-
-The below image is an overview of BitShares Architecture. The purpose of this image is to bring the main elements together and share what types of resources you might find in the BitShares Github repositories. 
 
 Key points and fundamentals for the design:
 ---------------------------------------------
