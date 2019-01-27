@@ -1,7 +1,7 @@
 
 
 
-Database API
+4.1. Database API
 *******************
 
 The database API is available from the full node via websockets.
@@ -16,10 +16,10 @@ article <websocket>`.
 ----------
    
 
-Objects
+1. Objects
 =================
 
-get_objects
+1-1. get_objects
 -------------------------
 .. doxygenfunction:: graphene::app::database_api::get_objects
 
@@ -27,21 +27,21 @@ get_objects
 
 **************
 
-Subscriptions
+2. Subscriptions
 ================
-set_subscribe_callback
+2-1. set_subscribe_callback
 -------------------------
 .. doxygenfunction:: graphene::app::database_api::set_subscribe_callback
 
-set_pending_transaction_callback
+2-2. set_pending_transaction_callback
 -------------------------------------
 .. doxygenfunction:: graphene::app::database_api::set_pending_transaction_callback
 
-set_block_applied_callback
+2-3. set_block_applied_callback
 -------------------------------------
 .. doxygenfunction:: graphene::app::database_api::set_block_applied_callback
 
-cancel_all_subscriptions
+2-4. cancel_all_subscriptions
 -------------------------------------
 .. doxygenfunction:: graphene::app::database_api::cancel_all_subscriptions
 
@@ -49,22 +49,22 @@ cancel_all_subscriptions
 
 **************
 
-Blocks and transactions
+3. Blocks and transactions
 =========================
 
-get_block_header
+3-1. get_block_header
 -------------------------------------
 .. doxygenfunction:: graphene::app::database_api::get_block_header
 
-get_block
+3-2. get_block
 -------------------------------------
 .. doxygenfunction:: graphene::app::database_api::get_block
 
-get_transaction
+3-3. get_transaction
 -------------------------------------
 .. doxygenfunction:: graphene::app::database_api::get_transaction
 
-get_recent_transaction_by_id
+3-4. get_recent_transaction_by_id
 -------------------------------------
 .. doxygenfunction:: graphene::app::database_api::get_recent_transaction_by_id
 
@@ -72,7 +72,7 @@ get_recent_transaction_by_id
 
 **************
 
-Globals
+4. Globals
 ===============
 get_chain_properties
 -------------------------------------
