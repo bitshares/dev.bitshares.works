@@ -5,6 +5,9 @@
 Knowledge Base
 ***********************
 
+------------------
+
+* :ref:`Wiki Legacy Pages list <wiki-legacy-indx>`
 
 	
 	
@@ -25,14 +28,10 @@ Knowledge Base
 -------------------
 
 
-* Documented issues and Notes (TO DO)
+* `Documented issues and Notes (TO DO) <https://github.com/bitshares/dev.bitshares.works/blob/master/docs/knowledge_base/documented_issues/README.md#documented-issues>`_
 
 ----------------------
 
-* :ref:`Wiki Legacy Pages list <wiki-legacy-indx>`
-
-
-----------------------
 
 * :ref:`Code Flowcharts (study) <code-flow-chart>`
 

@@ -1,7 +1,7 @@
 
 .. _api-guide:
 
-API Guide
+1.API Guide
 ========================
 
 BitShares APIs are available by using Remote Procedure Calls (RPC) and WebSocket Calls & Notifications. All API calls are formatted in JSON and return JSON only. We look into the APIs' every feature. BitShares-Core API references locate in the `Doxygen documentation. <https://bitshares.org/doxygen/index.html>`_  Also, you can find the APIs' classes, components, and elements information looking into "Graphene - Namespaces" section. 
@@ -12,7 +12,7 @@ BitShares APIs are available by using Remote Procedure Calls (RPC) and WebSocket
 ------------
    
 
-APIs Categories
+1.1. APIs Categories
 ------------------------------
 
 APIs are separated into two categories, namely
@@ -27,7 +27,7 @@ In contrast to many existing ecosystems, there is no centralized service that le
 
 ----------------------------------
 
-Public Full Node information 
+1.2. Public Full Node information 
 -----------------------------
 
 * Here is the latest list of `BitShares Public Full Nodes (apiConfig) <https://github.com/bitshares/bitshares-ui/blob/staging/app/api/apiConfig.js>`_
@@ -35,7 +35,7 @@ Public Full Node information
 
 -----------------
 
-Interfacing with Graphene
+1.3. Interfacing with Graphene
 ------------------------------
 
 The set of available calls depends on whether you connect to a full node (``witness_node``) or the wallet (``cli_wallet``). Both support RPC-JSON. The full node also supports the websocket protocol with notifications
@@ -56,7 +56,7 @@ For sensitive businesses that want to ensure that deposits are irreversible, we 
 
 ------------------------------------
 
-Quick points - *Side notes*
+1.4. Quick points - *Side notes*
 ---------------------------
 
 **Blockchain APIs - introduction**

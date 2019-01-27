@@ -13,10 +13,15 @@ Development Environments
 BitShares Code and Files 
 ===============================
 
-- Open Source program
-- Language uses (mainly): BitShares-Core(C++), python
-- `BitShares GitHub <https://github.com/bitshares>`_
+* Open Source program
+* Language uses (mainly): BitShares-Core(C++), python
+* `BitShares GitHub <https://github.com/bitshares>`_
    - **BitShares-Core (C++)** - BitShares Blockchain implementation and command-line interface.
+   
+    + `Programs <https://github.com/bitshares/bitshares-core/blob/41bff6ead331c4f340e874c5c9102d23deb487be/programs/README.md#bitshares-programs>`_ : The bitshares programs are a collection of binaries to run the blockchain, interact with it or utilities.	 
+	   
+    + `Libraries <https://github.com/bitshares/bitshares-core/blob/41bff6ead331c4f340e874c5c9102d23deb487be/libraries/README.md#bitshares-libraries>`_ : The libraries are the core of the project and defines everything where applications can build on top.
+	 
    - **Bitshares-FC** - Fast-compiling C++ library 
    - **BitShares python** - Fully featured client-side library for the BitShares Blockchain - written entirely in python.
    - **BitShares-UI** - Fully featured Graphical User Interface / Reference Wallet for the BitShares Blockchain.

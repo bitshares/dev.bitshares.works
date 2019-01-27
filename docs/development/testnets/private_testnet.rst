@@ -2,24 +2,64 @@
 .. _private-testnet-guide:
 
 ************************
-Private Testnet
+Private Testnet Set up
 ************************
 
-Some developers may want to deploy their own graphene blockchain locally for governance, and speed reasons. This section explains how to prepare the private testnet environment and what steps to take to be a block producing node (witness node). 
+Some developers may want to deploy their own BitShares blockchain locally for governance, and speed reasons. This section explains how to prepare the private testnet environment and what steps to take to be a block producing node (witness node). 
 
 .. contents:: Table of Contents
    :local:
    
 -------
 
-How to Set up Private Testnet
-===================================
+For the private testnet, you should create and set up own genesis.json file and a database configuration file (config.ini). You should not connect to the mainnet. 
 
 
-1. Prerequisites 
--------------------------------------------
+1. Installation
+----------------------
 
-If you have not installed BitShares-Core and built yet. Please see :ref:`Installation Guide <installation-guide>`. And make sure you have both ``witness_node`` and ``cli_wallet`` already compiled successfully.
+Depending on your OS, we have the Installation guides available. To see more Installation options: Go to :ref:`Installation Guide <installation-guide>`.
+
+1-1. Download the Source files
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Let's get started, open a **new command line interface (CLI) window** and go to a directory you want to download the ``testnet`` branch files. And run the following command lines. 
+
+ ::
+ 
+    git clone https://github.com/bitshares/bitshares-core.git bitshares-core-testnet
+    cd bitshares-core-testnet/
+    git checkout testnet
+    git submodule update --init --recursive
+
+
+1-2. Initial Compilation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+After you download a testnet branch files in a ``bitshares-core-testnet`` directory, let's build the programs. Run the following commands. This command will create two program files (witness_node and cli_wallet). 
+
+ ::
+
+   cmake .
+    make
+
+You will find the compiled program files in the below folders. 
+
+.. list-table::
+   :widths: 20 80
+   :header-rows: 1
+   
+   * - program name
+     - directory and folder
+   * - witness_node 
+     - ../bitshares-core-testnet/programs/witness_node/
+   * - cli_wallet 
+     - ../bitshares-core-testnet/programs/cli_wallet/
+
+	 
+The above installation steps are the same with the public testnet installation.
+
+
 
 2. Create a Testnet Folder
 -------------------------------------------
@@ -28,8 +68,11 @@ Create a new folder (e.g., ``[Testnet-Home]``) in any location you like and copy
 
 Open a **Command Prompt** window and switch the current directory to ``[Testnet-Home]``.
 
-3. Create a Genesis File for a Private Testnet
+3. Genesis File 
 -------------------------------------------
+
+3-1. Create a Genesis File for a Private Testnet
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The genesis.json is the initial state of the network. We create a new genesis json file named ``my-genesis.json`` for a Private Testnet in the same folder just created.::
 
@@ -39,8 +82,8 @@ The ``my-genesis.json`` file will be created in the ``[Testnet-Home]`` folder. O
 
 .. Note::  ``witness_node`` startup will create a ``witness_node_data_dir`` as a default data directory (with config.ini). If you want to use a differnt folder name and directory for the data, you have to use ``--data-dir`` in a startup command line and set your data directory folder path. Otherwise, the ``witness_node_data_dir`` folder will be created and use a default ``config.ini`` file to start the witness_node.
 
-4. Customization of the Genesis File
--------------------------------------------
+3-2. Customization of the Genesis File
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you want to customize the network's initial state, edit ``my-genesis.json``. This allows you to control things such as:
 
@@ -50,14 +93,14 @@ If you want to customize the network's initial state, edit ``my-genesis.json``. 
 - The account / signing keys of the `init` witnesses (or in fact any account at all).
 
 Default Genesis
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 The graphene code base has a default genesis block integrated that has all witnesses, committee members and funds and a single account called `nathan` available from a single private key::
 
     5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3
 
-5. Embed Genesis (optional)
--------------------------------------------
+3-3. Embed Genesis (optional)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Once you have ``genesis.json``, you may set a cmake variable like so::
 
@@ -81,8 +124,11 @@ Embedded genesis is a feature designed to make life easier for consumers of pre-
 
 
 
-6. Create a Data Directory
--------------------------------------------
+4. Data Directory and Configuration
+--------------------------------------
+
+4-1. Create a Data Directory
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We create a new data directory for our witness.::
 
@@ -109,8 +155,8 @@ As a result, you should get two items:
 - The chain ID is now known - it’s displayed in the message above (i.g., Chain ID).
 
 
-7. Set up Witness Configuration
--------------------------------------------
+4-2. Set up Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Open the ``[Testnet-Home]/data/my-blockprod/config.ini`` file and set the following settings, uncommenting them if necessary.
 
@@ -136,7 +182,7 @@ Open the ``[Testnet-Home]/data/my-blockprod/config.ini`` file and set the follow
 
 The above list authorizes the ``witness_node`` to produce blocks on behalf of the listed ``witness-id`s`` and specifies the private key needed to sign those blocks. Normally each witness would be on a different node, but for the purpose of this **private testnet**, we will start out with all witnesses signing blocks on a single node. 
 
-8. Start Block Production
+5. Start Block Production
 -------------------------------------------
 
 Now run witness_node again::
@@ -151,7 +197,7 @@ Now run witness_node again::
   - The empty ``--seed-nodes`` is added to avoid connecting to the default seed nodes hardcoded for production.
   -  Subsequent runs which connect to an existing witness node over the p2p network, or which get blockchain state from an existing data directory, need not have the ``--enable-stale-production`` flag.
 
-9. Obtain the Chain ID
+6. Obtain the Chain ID
 -------------------------------------------
 
 (*see #6.when we created a data directory, we also obtained a chain ID.*)
@@ -170,8 +216,11 @@ The chain ID is printed at witness node startup. It can also be obtained by usin
 
 This curl command will return a short JSON object including the ``chain_id``.
 
-10. Create a new Wallet
--------------------------------------------
+7. Cli Wallet 
+-----------------------
+
+7-1. Create a new Wallet
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We are now ready to connect a new wallet to your Private testnet witness node. You must specify a chain ID and server. Keep your witness node running and in another *Command Prompt* window run this command (a blank username and password will suffice):
 
@@ -191,8 +240,8 @@ Fist you need to create a new password for your wallet. This password is used to
 
     >>> set_password supersecret
 
-11. Gain Access to the Genesis Stake
--------------------------------------------
+7-2. Gain Access to the Genesis Stake
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In Graphene, balances are contained in accounts. To import an account that exists in the Graphene genesis into your wallet, all you need to know its name and its private key. We will now import into the wallet an account called `nathan` (a general purpose test account) by using the `import_key` command:
 
@@ -216,8 +265,8 @@ As a result, we have one account (named `nathan`) imported into the wallet and t
     get_account nathan
     list_account_balances nathan
 
-12. Create Another Account
--------------------------------------------
+7-3. Create Another Account
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We will now create another account (named `alpha`) so that we can transfer funds back and forth between `nathan` and `alpha`.
 
@@ -250,7 +299,7 @@ We can now register an account. The ``register_account`` command allows you to r
 > Use a public key ``pub_key`` which you just created by ``suggest_brain_key``. 
 
 Transfer funds between accounts
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: json
 
@@ -274,8 +323,8 @@ The ``get_private_key`` command allows us to obtain the WIF private key correspo
 
 > You can try to make sure your ``suggest_brain_key`` outputs key pair. You should get the same pair of keys set.
 
-13. Create Committee Members
--------------------------------------------
+7-4. Create Committee Members
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: json
 

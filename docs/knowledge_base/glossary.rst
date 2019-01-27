@@ -115,6 +115,8 @@ Faucet
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - Faucet Role: The faucet address is used to pay the registration fee for new users.
 
+
+
 Full Node
 ^^^^^^^^^^^^^^^^^^
 - Basically, nodes are keeping all transactions (histories) that have occurred on the blockchain and maintaining the integrity of a blockchain. A full node is a full-history node that loaded account history via configuration. 

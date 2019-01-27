@@ -115,6 +115,62 @@ After that, nginx can be launched with::
 .. Note:: To reload nginx.  ``sudo service nginx reload`` 
 
 
+
+---------------
+
+**** (ask) ****
+
+6. Web Wallet
+----------------------------------------------------
+
+
+Since we need to provide a way for people to enter the network/blockchain, we need to install the web wallet into nginx.
+
+6.1 Installation of Dependencies::
+
+    sudo apt-get install git nodejs-legacy npm
+    sudo npm install -g webpack coffee-script
+
+6.2 Fetching the web wallet
+
+Afterwards, we download the bitshares-ui repository from Cryptonomex and install the Node dependencies::
+
+    git clone https://github.com/bitshares/bitshares-ui
+    cd bitshares-ui/
+
+    for I in dl web; do cd $I; npm install; cd ..; done
+
+6.3 Configuration
+
+Obtain the chain_id of the chain we are running.::
+
+    $ curl --data '{"jsonrpc": "2.0", "method": "get_chain_properties", "params": [], "id": 1}' http://127.0.0.1:11011/rpc && echo
+
+The chain id is used to let the web wallet know to which network it connects and how to deal with it. For this we modify the file dl/src/chain/config.coffee and add our blockchain::
+
+    Test:
+    core_asset: "TEST"
+    address_prefix: "TEST"
+    chain_id: "<chain-id>"
+
+Furthermore, we need to tell our web wallet to which witness node to connect to. This can be done in the file dl/src/stores/SettingsStore.js.::
+
+    connection: "ws://<host>/ws",
+    faucet_address: "https://<host>",
+
+    # also edit the "default" settings
+
+6.4 Compilation
+
+**Compile the web wallet**  
+
+- This will generate the static files in the dist/ folder.
+
+::
+
+    cd web
+    npm run build
+
 |
 
 

@@ -3,7 +3,7 @@
 .. _blockchain-api:
 
 ***********************
-Blockchain API(s)
+4. Blockchain API(s)
 ***********************
 
 The blockchain API can be used to obtain any kind of data stored in the blockchain. Besides data stores in the blockchain itself (blocks, transactions, etc. ..), higher level objects (such as accounts, balances, etc. ...) can be retrieved through the full node’s database.

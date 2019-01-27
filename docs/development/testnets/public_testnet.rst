@@ -1,11 +1,11 @@
 
 .. _public-testnet-guide:
 
-***************
-Public Testnet
-***************
+************************
+Public Testnet Set up
+************************
 
-This section explains the process of customizing and deploying a graphene blockchain in the public testnet environment and also shows the steps to be a block producing node (witness node). 
+In this section, we are going to set up the BitShares Public Testnet. For the Public Testnet, you should download a testnet branch from the BitShares-Core Github repository. The testnet branch files are for the Testnet. 
 
 
 .. contents:: Table of Contents
@@ -13,125 +13,179 @@ This section explains the process of customizing and deploying a graphene blockc
    
 -------
 
-How to Set up Public Open Testnet 
-======================================
 
-1. Installation_Configuration 
-----------------------------------------------------
+Depending on your OS, we have the Installation guides available. To see more Installation options: Go to :ref:`Installation Guide <installation-guide>`.
 
 
-1.1 BitShares-Core Testnet branch:: 
+1. Installation
+----------------------
 
+1-1. Download the Source files
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Let's get started, open a **new command line interface (CLI) window** and go to a directory you want to download the ``testnet`` branch files. And run the following command lines. 
+
+ ::
+ 
     git clone https://github.com/bitshares/bitshares-core.git bitshares-core-testnet
     cd bitshares-core-testnet/
     git checkout testnet
+    git submodule update --init --recursive
 
 
-1.2 Configuration
+1-2. Initial Compilation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Blockchain Parameters**
-
-The blockchain parameters can be modified in the
-`libraries/chain/include/graphene/chain/config.hpp <https://github.com/bitshares/bitshares-core/blob/master/libraries/chain/include/graphene/chain/config.hpp>`_ file::
-
-    vim libraries/chain/include/graphene/chain/config.hpp
-
-**Default Seed Node List**
-
-We can add a default list of seed nodes that the witness is supposed to try to connect to in `libraries/app/application.cpp <https://github.com/bitshares/bitshares-core/blob/master/libraries/app/application.cpp>`_ and will add the IP/Address and port of the machine we are going to setup later already::
-
-    testnet.bitshares.eu:11010
-
-	
-
-1.3 Initial Compilation
+After you download a testnet branch files in a ``bitshares-core-testnet`` directory, let's build the programs. Run the following commands. This command will create two program files (witness_node and cli_wallet). 
 
  ::
 
    cmake .
     make
 
-We first need to compile so that we can let it generate a plain genesis file in the proper format.
+You will find the compiled program files in the below folders. 
+
+.. list-table::
+   :widths: 20 80
+   :header-rows: 1
+   
+   * - program name
+     - directory and folder
+   * - witness_node 
+     - ../bitshares-core-testnet/programs/witness_node/
+   * - cli_wallet 
+     - ../bitshares-core-testnet/programs/cli_wallet/
+
+	 
+
+Genesis File
+~~~~~~~~~~~~~~~~
+
+As you know, each blockchain starts with a genesis block that definitions are in a :ref:`genesis file <testnet-genesis-example>`. **The bitshares-core-testnet has already prepared a genesis.json file for the Public Testnet.**  You will not need to modify the genesis.json file. You will find the ``genesis.json`` in the **bitshares-core-testnet** directory.
 
 
+--------------
 
-2. Genesis Configuration
+2. Configuration
 ----------------------------------------------------
 
-2.1 Create a Genesis file
+2-1. Obtain a config.ini file
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We will create a genesis file named ``my-genesis.json`` that contains the genesis block::
+The BitShares Blockchain Data Configuration file exists in the blockchain data directory. And the data directory will be created by launching a witness_node. 
 
-    mkdir -p genesis
-    programs/witness_node/witness_node --create-genesis-json genesis/my-genesis.json
-    vim genesis/my-genesis.json
+At this point, we just want to create the configuration file ``config.ini`` to observe the parameters. If you want to use the Public Testnet, you can use the default configuration settings without changes.
 
-The ``my-genesis.json`` is the initial state of the network.
+Run the following command and end the process. In Windows, you can use ``[ctl]+c`` to end the process.
 
-2.2 Edit a Genesis file
+:: 
+   
+   ./programs/witness_node/witness_node
+   
+   
+2-2. Blockchain Data Directory
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you want to customize the network's initial state, edit ``my-genesis.json``.
-This allows you to control things such as:
+As a default the BitShatres Blockchain data directory ``witness_node_data_dir`` will be created in a current directory.
 
-- The accounts that exist at genesis, their names and public keys
-- Assets and their initial distribution (including core asset)
-- The initial values of chain parameters
-- The account / signing keys of the ``init`` witnesses (or in fact any account at all).
+For example, if your current directory is ``bitshares-core-testnet`` and you run this command ``./programs/witness_node/witness_node``, you will find the data directory in the same current directory with the programs folder.
 
-.. attention:: The **chain ID** is a hash of the genesis state.  All transaction signatures are only valid for a single chain ID.  So editing the genesis file will change your chain ID, and make you unable to sync with all existing chains (unless one of them has exactly the same genesis file you do).
+::
 
-**Copy final Genesis**
+	../bitshares-core-testnet/
+		+ [programs]
+			+ [witness_node]
+			+ [cli_wallet]
+			+....
+		+ [witness_node_data_dir]
+			  + [blockchain]
+				+ [database]
+			  + [logs]
+			  + [p2p]
+			  + config.ini
+			  + logging.ini
 
-We now copy our gensis template file over to the graphene root directory::
+			  
+2-3. Create own Data Directory (alternative)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    $ cp genesis/my-genesis.json genesis.json
-    $ vim genesis.json
-    $ git add genesis.json
-    $ git commit -m "Added genesis.json"
+If you want to create own data directory, use ``--data-dir`` parameter and run the following command. This will create a **data** directory and a **testnet** folder inside of it.  
 
-The ``initial timestamp`` needs to be pasted into ``genesis.json`` file in the ``initial_timestamp`` field. Choose it relatively close to the future where you can generate the genesis block (e.g., now plus 10 minutes).
+::
 
-**Include Genesis into the binaries**
+   ./programs/witness_node/witness_node --data-dir data/testnet
 
-To let the binaries know about your new genesis block, we need to recompile it and provide ``cmake`` with the parameter to identify the genesis block properly::
+::
 
-    $ make clean
-    $ find . -name "CMakeCache.txt" | xargs rm -f
-    $ find . -name "CMakeFiles" | xargs rm -Rf
-    $ cmake -DGRAPHENE_EGENESIS_JSON="$(pwd)/genesis.json" .
+	../bitshares-core-testnet/
+		+ [programs]
+			+ [witness_node]
+			+ [cli_wallet]
+			+....
+		+ [data]
+		   + [testnet]
+			  + [blockchain]
+				+ [database]
+			  + [logs]
+			  + [p2p]
+			  + config.ini
+			  + logging.ini
 
-You can add the ``GRAPHENE_EGENESIS_JSON`` to the default parameters by adding::
+			  
+			  
+			  
+2-4. Observe the config.ini file
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    set(GRAPHENE_EGENESIS_JSON "${CMAKE_CURRENT_SOURCE_DIR}/genesis.json" )
+Although you can use the default :ref:`cinfig.ini <bts-config-ini-eg-testnet>` file for the Public Testnet, it's worth to recognize the parameters. 
 
-to the ``CMakeLists.txt`` file. This way, you don't need to provide this parameter all the time.
+In BitShares, a seed node is a node that accept incoming P2P connection. Its address is hard coded in the program, so when a new node starts, it will connect to the seed nodes by default. Every node (including seed nodes) tells the connected nodes where other nodes are, so all nodes can connect to each other.
+
+.. list-table::
+   :widths: 20 80
+   :header-rows: 1
+   
+   * - 
+     - Seed Node Information
+   * - testnet
+     - https://github.com/bitshares/bitshares-core/blob/testnet/libraries/app/application.cpp
+   * - production
+     - https://github.com/bitshares/bitshares-core/blob/master/libraries/app/application.cpp#L168-L187	 
+
+  
+----------------
 
 
+3. Start the Testnet (witness_node)
+--------------------------------------
 
-3. Initialize Blockchain
-----------------------------------------------------
+Now you know the testnet directory structure and some of important files. Let's start the testnet! 
 
-3.1 Initialize the Genesis Block
+::
 
-The ``--enable-stale-production`` flag tells the ``witness_node`` to produce on a chain with zero blocks or very old blocks.  We specify the ``--enable-stale-production`` parameter on the command line as we will not normally need it (although it can also be specified in the config file).::
+   ./programs/witness_node/witness_node 
+   
+   
+If you want to use own data directory, do not forget to set the parameter! Otherwise, the default data directory `witness_node_data_dir` will be created to use in your current directory. 
+   
+::
+   
+   ./programs/witness_node/witness_node --data-dir data/testnet
 
-    programs/witness_node/witness_node --genesis-json genesis.json \
-                                      --enable-stale-production \
-                                      --data-dir data/testnet
 
-**Chain ID:**::
+   
+If you want to use the cli_wallet, you need to specify at least the rpc endpoint. For instance, 
 
-    Started witness node on a chain with 0 blocks.
-    Chain ID is cf307110d029cb882d126bf0488dc4864772f68d9888d86b458d16e6c36aa74b
+::
 
-.. Note:: If other witness produces blocks and witness participation is high enough, subsequent runs which connect to an existing witness node over the p2p network, or which get blockchain state from an existing data directory, need not have the ``--enable-stale-production`` flag.
+    ./programs/witness_node/witness_node --rpc-endpoint "127.0.0.1:8090"
 
-3.2 Set up Block Production
+ 
+									  
+3.1 Set up Block Production (Option)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Create a very basic configuration file in ``data/testnet/config.ini``::
-    
-    $ mkdir -p data/testnet
-    $ vim data/testnet/config.ini
+If you want to produce blocks, you have to modify the data configulation file ``config.ini``. 
 
 All we put into the configuration file is the ids and the keys for the witnesses so that we can start producing blocks ::
 
@@ -158,70 +212,93 @@ All we put into the configuration file is the ids and the keys for the witnesses
     private-key = [<pubkey>,<privkey>]
     private-key = [<pubkey>,<privkey>]
 
-This authorizes the ``witness_node`` to produce blocks on behalf of the listed ``witness-id``'s, and specifies the private key needed to sign those blocks.  Normally each witness would be on a different node, but for the purposes of this testnet, we will start out with all witnesses signing blocks on a single node.
-
-.. Note:: The setting ``rpc-endpoint = 0.0.0.0:11011`` will open up the RPC-port ``11011`` to connect a cli-wallet or web wallet to it. With the ``p2p-endpoint = 0.0.0.0:11010`` being accessible from the internet, this node can be used as seed node.
-
-3.3 Embed the Genesis block (optional)
-
-Now that we have the blockchain established and the used correct genesis block, we can have it embedded into the binaries directly. For that reasons we have moved it into the root directory and called it ``genesis.json`` for the default compile toolchain to catch it automatically. We recompile to include the genesis block with::
-
-    make clean
-    find . -name "CMakeCache.txt" | xargs rm -f
-    find . -name "CMakeFiles" | xargs rm -Rf
-    cmake -DCMAKE_BUILD_TYPE=Release .
-
-Deleting caches will reset all ``cmake`` variables, you might be asked to set other ``cmake`` variables. You will have to add those variables to the ``cmake`` line above.
-
-Embedding the genesis copies the entire content of genesis block into the ``witness_node`` binary, and additionally copies the chain ID into the ``cli_wallet`` binary.  Embedded genesis allows the following simplifications to the subsequent instructions:
-
-* You need **not** specify the genesis file on the witness node command line, or in the witness node configuration file.
-* You need **not** specify the chain ID on the ``cli_wallet`` command line when starting a new wallet.
+This authorizes the ``witness_node`` to produce blocks on behalf of the listed **witness-id's**, and specifies the private key needed to sign those blocks.  Normally each witness would be on a different node, but for the purposes of this testnet, we will start out with all witnesses signing blocks on a single node.
 
 
-4. Connect a CLI wallet
+---------------
+
+4.  CLI wallet for testnet
 ----------------------------------------------------
 
+In this section, we will connect a cli_wallet and import an existing testnet account. After we import the testnet account, we will generate our first transaction ``transfer`` on the BitShares testnet blockchain.
 
-We will show how to connect a cli-wallet to the new blockchain and generate our first transaction on the new blockchain.
 
-In order to create a wallet, you must specify the previously setup server. With the witness node’s default access control settings.
+4-1. Connect cli_wallet
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Create a Wallet - Public Testnet**::
+Let's open another command window. If you have started the public testnet (witness_node) with the rpc endpoint, you will be able to connect a wallet by the following command ::
 
-    programs/cli_wallet/cli_wallet --wallet-file my-wallet.json -s ws://127.0.0.1:11011 -H 127.0.0.1:8090 -r 127.0.0.1:8099
+    ./programs/cli_wallet/cli_wallet -s ws://127.0.0.1:8090
 
-.. Note:: The parameter ``-H`` is required so that we can interface with the cli-wallet via RPC-HTTP-JSON, later while ``-r`` will open a port for the Ruby-based faucet.
+	
+4-2. Create a testnet account 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(If you have your testnet accounts already, you can jump this section.)
 
-If you get the `set_password` prompt, it means your CLI wallet has successfully connected to the testnet witness node.
+We want to use a BitShares Public UI wallet for testnet(http://testnet.bitshares.eu/) to register new testnet account. The public UI wallet has been set the faucet (https://faucet.testnet.bitshares.eu/) already. The faucet will handle the registration fee for you.
 
-* ``set_password``
 
-This password is used to encrypt the private keys in the wallet. (e.g., `supersecret` is a password)::
+  1) Go to the Public testnet UI wallet: (http://testnet.bitshares.eu/) to create new testnet account.
+  2) If you see "Application initialization issues", try to select "Public Testnet Server (...)" from a FULL NODE API SERVER dropdown list. 
+  3) Click a [CREATE ACCOUNT] button to register a new testnet account. 
+  4) Save your password and Create an account.
+  5) If the new account was created successfully, you will receive some asset TEST for the Public Testnet transactions.
+  6) Go to a [Permissions] page and save your new UI wallet Active, Owner, and Memo key pairs (public key and private key).
 
-    >>> set_password supersecret
+In the next section, we are going to import the keys from new testnet account into your cli_wallet.
+  
+.. note:: **Faucet Role**: The faucet address is used to pay the registration fee for new users.
+
+
+4-3. Set a password 
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Let's start using the cli_wallet. If you are first time connecting the cli_wallet, you will find a ``set_password`` prompt. That means your CLI wallet has successfully connected to the testnet witness node.
+
+We are going to set a password and unlock the cli_wallet. The password is used to encrypt the private keys in the wallet. In the below,`supersecret` is a password. You should cheese a better password. 
+
+* ``set_password`` 
+
+   >>> set_password supersecret
 
 * ``unlock`` the wallet::
 
-    >>> unlock supersecret
+   >>> unlock supersecret
 
 
-Gain Access to Stake
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. note:: If you have newly created testnet account, you have to make sure if your node has been synced completely. Otherwise, you will not be able to see the new account data. 
 
-In Graphene, balances are contained in accounts. To import an account that exists in the Graphene genesis. (i.g.,\<name\> is an account name owning the key.  \<wifkey\> is a private key)
+   
+4-4. Import your testnet account to a cli_wallet
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^	
+	
+The following command will import an account that exists in the BitShares testnet genesis. 
 
 * ``import_key``::
 
     >>> import_key <name> "<wifkey>"
 
-Funds are stored in genesis balance objects. These funds can be claimed, with no fee.
+  - \<name\> is an account name owning the key
+  - \<wifkey\> is a private key
+	
+
+In BitShares Blockchain, balances are contained in accounts. These balances can be claimed, with no fee.
 
 * ``import_balance``::
 
     >>> import_balance <name> ["*"] true
 
-Manage Accounts
+After you imported your testnet account and balance, let's check if you imported them successfully.
+
+
+* ``get_account <name>``
+* ``list_my_accounts``
+* ``list_account_balances <name>``
+
+
+	
+	
+4-5. Manage Accounts
 ^^^^^^^^^^^^^^^^^^^^^
 
 * ``upgrade_account``
@@ -240,24 +317,20 @@ Manage Accounts
 
     >>> register_account alpha GPH4zSJHx7D84T1j6HQ7keXWdtabBBWJxvfJw72XmEyqmgdoo1njF GPH4zSJHx7D84T1j6HQ7keXWdtabBBWJxvfJw72XmEyqmgdoo1njF faucet faucet 0 true
 
- Test ``transfer`` to send `CORE` from `faucet` to `alpha` user.::
+	
+4-6. Transfer funds
+^^^^^^^^^^^^^^^^^^^^^^^^^
+We have a testnet account, let's try to send the testnet asset TEST from `faucet` to `alpha`. You can use the following command ::  	
+	
+    >>> transfer faucet alpha 1000 TEST "here is the cash" true
 
-    >>> transfer faucet alpha 100000 CORE "here is the cash" true
 
-**Open a new Wallet for `alpha` user**::
+.. Note::
+   The ``get_private_key`` command allows us to obtain the **private key** corresponding to the block signing key.::
 
-    >>> import_key alpha 5HuCDiMeESd86xrRvTbexLjkVg2BEoKrb7BAA5RLgXizkgV3shs
+      >>> get_private_key GPH6viEhYCQr8xKP3Vj8wfHh6WfZeJK7H9uhLPDYWLGCRSj5kHQZM
 
-    >>> upgrade_account alpha true
-
-    >>> create_witness alpha "http://www.alpha" true
-
-**Obtain the private key**
-
-The ``get_private_key`` command allows us to obtain the **private key** corresponding to the block signing key.::
-
-    >>> get_private_key GPH6viEhYCQr8xKP3Vj8wfHh6WfZeJK7H9uhLPDYWLGCRSj5kHQZM
-
+----------
 
 5. Establish a Committee
 ----------------------------------------------------
@@ -333,57 +406,8 @@ All we need to do know is vote for our own committee members:
     vote_for_committee_member faucet com5 true true
     vote_for_committee_member faucet com6 true true
 
+-------------
 	
-6. Web Wallet
-----------------------------------------------------
-
-
-Since we need to provide a way for people to enter the network/blockchain, we need to install the web wallet into nginx.
-
-6.1 Installation of Dependencies::
-
-    sudo apt-get install git nodejs-legacy npm
-    sudo npm install -g webpack coffee-script
-
-6.2 Fetching the web wallet
-
-Afterwards, we download the bitshares-ui repository from Cryptonomex and install the Node dependencies::
-
-    git clone https://github.com/bitshares/bitshares-ui
-    cd bitshares-ui/
-
-    for I in dl web; do cd $I; npm install; cd ..; done
-
-6.3 Configuration
-
-Obtain the chain_id of the chain we are running.::
-
-    $ curl --data '{"jsonrpc": "2.0", "method": "get_chain_properties", "params": [], "id": 1}' http://127.0.0.1:11011/rpc && echo
-
-The chain id is used to let the web wallet know to which network it connects and how to deal with it. For this we modify the file dl/src/chain/config.coffee and add our blockchain::
-
-    Test:
-    core_asset: "TEST"
-    address_prefix: "TEST"
-    chain_id: "<chain-id>"
-
-Furthermore, we need to tell our web wallet to which witness node to connect to. This can be done in the file dl/src/stores/SettingsStore.js.::
-
-    connection: "ws://<host>/ws",
-    faucet_address: "https://<host>",
-
-    # also edit the "default" settings
-
-6.4 Compilation
-
-**Compile the web wallet**  
-
-- This will generate the static files in the dist/ folder.
-
-::
-
-    cd web
-    npm run build
 
 
 |
