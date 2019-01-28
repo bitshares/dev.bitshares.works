@@ -59,7 +59,9 @@ You will find the compiled program files in the below folders.
 	 
 The above installation steps are the same with the public testnet installation.
 
+|
 
+----------------
 
 2. Create a Testnet Folder
 -------------------------------------------
@@ -67,6 +69,10 @@ The above installation steps are the same with the public testnet installation.
 Create a new folder (e.g., ``[Testnet-Home]``) in any location you like and copy `witness_node` and `cli_wallet` there. The `[Testnet-Home]` folder will contain all files and folders related to the Testnet.
 
 Open a **Command Prompt** window and switch the current directory to ``[Testnet-Home]``.
+
+|
+
+------------------
 
 3. Genesis File 
 -------------------------------------------
@@ -82,8 +88,8 @@ The ``my-genesis.json`` file will be created in the ``[Testnet-Home]`` folder. O
 
 .. Note::  ``witness_node`` startup will create a ``witness_node_data_dir`` as a default data directory (with config.ini). If you want to use a differnt folder name and directory for the data, you have to use ``--data-dir`` in a startup command line and set your data directory folder path. Otherwise, the ``witness_node_data_dir`` folder will be created and use a default ``config.ini`` file to start the witness_node.
 
-3-2. Customization of the Genesis File
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+3-2. Customization of the :ref:`Genesis File <public-testnet-genesis-example>`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you want to customize the network's initial state, edit ``my-genesis.json``. This allows you to control things such as:
 
@@ -123,6 +129,9 @@ Embedding the genesis copies the entire content of genesis.json into the witness
 Embedded genesis is a feature designed to make life easier for consumers of pre-compiled binaries, in exchange for slight, optional complication of the process for producing binaries.
 
 
+|
+
+----------------
 
 4. Data Directory and Configuration
 --------------------------------------
@@ -160,27 +169,13 @@ As a result, you should get two items:
 
 Open the ``[Testnet-Home]/data/my-blockprod/config.ini`` file and set the following settings, uncommenting them if necessary.
 
-.. code-block:: json
+* Example: :ref:`config.ini <bts-config-ini-eg-private-testnet>`
 
-    rpc-endpoint = 127.0.0.1:8090
-    genesis-json = my-genesis.json
-    enable-stale-production = true
 
-    private-key = ["GPH6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV","5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"]
 
-    witness-id = "1.6.1"
-    witness-id = "1.6.2"
-    witness-id = "1.6.3"
-    witness-id = "1.6.4"
-    witness-id = "1.6.5"
-    witness-id = "1.6.6"
-    witness-id = "1.6.7"
-    witness-id = "1.6.8"
-    witness-id = "1.6.9"
-    witness-id = "1.6.10"
-    witness-id = "1.6.11"
+|
 
-The above list authorizes the ``witness_node`` to produce blocks on behalf of the listed ``witness-id`s`` and specifies the private key needed to sign those blocks. Normally each witness would be on a different node, but for the purpose of this **private testnet**, we will start out with all witnesses signing blocks on a single node. 
+--------------
 
 5. Start Block Production
 -------------------------------------------
@@ -196,6 +191,11 @@ Now run witness_node again::
   - The ``--enable-stale-production`` flag tells the ``witness_node`` to produce on a chain with zero blocks or very old blocks. We specify the ``--enable-stale-production`` parameter on the command line as we will not normally need it (although it can also be specified in the config file). 
   - The empty ``--seed-nodes`` is added to avoid connecting to the default seed nodes hardcoded for production.
   -  Subsequent runs which connect to an existing witness node over the p2p network, or which get blockchain state from an existing data directory, need not have the ``--enable-stale-production`` flag.
+
+  
+|
+
+--------------
 
 6. Obtain the Chain ID
 -------------------------------------------
@@ -215,6 +215,10 @@ The chain ID is printed at witness node startup. It can also be obtained by usin
     curl --data '{"jsonrpc": "2.0", "method": "get_chain_properties", "params": [], "id": 1}' http://127.0.0.1:11011/rpc && echo
 
 This curl command will return a short JSON object including the ``chain_id``.
+
+|
+
+-----------------
 
 7. Cli Wallet 
 -----------------------
