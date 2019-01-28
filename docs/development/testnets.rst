@@ -28,7 +28,7 @@ Private Testnets
 -------------------------
 
 
-If you want to test the feature set of current mainnet without connecting to mainnet, you must start a new (private) network. 
+If you want to test the feature set of current mainnet without connecting to mainnet, you must start a new (private) network. The private testnet is suitable for building faster local testing environments and testing your applications.
 
 For a Private Testnet set up, you can download and use the testnet branch. However, you will have to set up necessary parameters' valuables for your Private Testnet **before** you start ``witness_node``. 
 
