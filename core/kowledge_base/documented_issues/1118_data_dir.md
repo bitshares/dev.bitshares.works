@@ -15,8 +15,7 @@ Testing setup [Private Testnet steps](https://dev.bitshares.works/en/master/deve
 
 ***
 
-#### Research:
-I checked a witness_node executable main() for a part of another issue and created a [coding flowchart](../knowledge_base/shared_files/witness_node_ex-codeflows.pdf) (in page 8) to view the flow.
+
 
 #### Findings:
 You may or may not have own data directory that does not matter. If --data-dir is not set in a command line and when witness_node starts (and not find a config.ini), a witness_node_data_dir will be created (if not exists). So, if you create own data directory and forget to set the --data-dir when you start a witness_node, you get new default data directory and config.ini to start the witness_node.
