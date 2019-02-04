@@ -93,19 +93,18 @@ For example, if your current directory is ``bitshares-core-testnet`` and you run
 
 ::
 
-	../bitshares-core-testnet/
-		+ [programs]
-			+ [witness_node]
-			+ [cli_wallet]
-			+....
-		+ [witness_node_data_dir]
-			  + [blockchain]
-				+ [database]
-			  + [logs]
-			  + [p2p]
-			  + config.ini
-			  + logging.ini
-
+  ../bitshares-core-testnet/
+      + /programs/
+        + /witness_node/
+        + /cli_wallet/
+        +....
+        + /witness_node_data_dir/
+          + /blockchain/
+            + /database/
+          + /logs/
+          + /p2p/
+          - [config.ini]
+          - [logging.ini]
 			  
 2-3. Create own Data Directory (alternative)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -119,18 +118,18 @@ If you want to create own data directory, use ``--data-dir`` parameter and run t
 ::
 
 	../bitshares-core-testnet/
-		+ [programs]
-			+ [witness_node]
-			+ [cli_wallet]
+		+ /programs/
+			+ /witness_node/
+			+ /cli_wallet/
 			+....
-		+ [data]
-		   + [testnet]
-			  + [blockchain]
-				+ [database]
-			  + [logs]
-			  + [p2p]
-			  + config.ini
-			  + logging.ini
+		+ /data/
+		   + /testnet/
+			  + /blockchain/
+				+ /database/
+			  + /logs/
+			  + /p2p/
+			  - [config.ini]
+			  - [logging.ini]
 
 			  
 			  
@@ -168,7 +167,7 @@ Now you know the testnet directory structure and some of important files. Let's 
    ./programs/witness_node/witness_node 
    
    
-If you want to use own data directory, do not forget to set the parameter! Otherwise, the default data directory `witness_node_data_dir` will be created to use in your current directory. 
+If you want to use own data directory, do not forget to set the parameter ``--data-dir``! Otherwise, the default data directory ``witness_node_data_dir`` will be created to use in your current directory. 
    
 ::
    
@@ -310,17 +309,13 @@ We are going to set a password and unlock the ``cli_wallet``. The password is us
 
    >>> unlock supersecret
 
-   
-5-3. Import your testnet account to a cli_wallet
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^	
-In the following section, we use *ken-test01* as a testnet user account to explain easier. You should replace the account by your testnet account. 
 
-After the ``unlock``, we can find and view the existing public testnet accounts data. Let's check if your testnet account is on the public testnet blockchain. We use the following command to view an account information::
+After the ``unlock``, we can search and view the existing public testnet accounts data. Let's check if your testnet account is on the public testnet blockchain. We use the following command ``get_account`` to view an account information::
  
       unlocked >>> get_account ken-test01
 
    
-And the following command to view the balance of the account:: 
+And the following command ``list_account_balances`` to view the balance of the account:: 
   
        unlocked >>> list_account_balances ken-test01
 
@@ -329,6 +324,12 @@ And the following command to view the balance of the account::
 
 
 If you could find your testnet account successfully, your next step is **importing** your testnet account into the cli wallet. 
+
+
+5-3. Import your testnet account to a cli_wallet
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^	
+In the following section, we use *ken-test01* as a testnet user account to explain easier. You should replace the account by your testnet account. 
+
 
 We want to import two private keys. First one is **Active Private key** to transfer your fund.    The next one is **Memo Private key** to transfer your memo data.   
 

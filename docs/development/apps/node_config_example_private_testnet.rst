@@ -26,10 +26,31 @@ As a default, most parameters have been commented. You have to uncomment to set 
 
 ::
 
+	p2p-endpoint = 127.0.0.1:11010
+	rpc-endpoint = 127.0.0.1:11011
+
+	genesis-json = genesis/my-genesis.json
+
+	private-key = ["BTS....","5KQwr...."]  //Set your key pairs
+
+	witness-id = "1.6.1"
+	witness-id = "1.6.2"
+	witness-id = "1.6.3"
+	witness-id = "1.6.4"
+	witness-id = "1.6.5"
+	witness-id = "1.6.6"
+	witness-id = "1.6.7"
+	witness-id = "1.6.8"
+	witness-id = "1.6.9"
+	witness-id = "1.6.10"
+	witness-id = "1.6.11"
+	
 
 	# Logging configuration is loaded from logging.ini by default.
 	# If logging.ini exists, logging configuration added in this file will be ignored.
 
+	
+	
 Example - logging.ini
 ---------------------
 

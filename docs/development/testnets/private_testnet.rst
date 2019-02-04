@@ -66,10 +66,22 @@ The above installation steps are the same with the public testnet installation.
 2. Create a Testnet Folder
 -------------------------------------------
 
-Create a new folder (e.g., ``[Testnet-Home]``) in any location you like and copy `witness_node` and `cli_wallet` there. The `[Testnet-Home]` folder will contain all files and folders related to the Testnet.
+Create a new folder (e.g., ``[Testnet-Home]``) in any location you like and copy a `witness_node` program and a `cli_wallet` program there. And create a subdirectory named ``genesis`` and create a file within it named ``my-genesis.json``. This file dictates the initial state of the network. 
 
-Open a **Command Prompt** window and switch the current directory to ``[Testnet-Home]``.
+You can use the existing public testnet genesis.json file as an example. That file can be found at https://github.com/bitshares/bitshares-core/blob/testnet/genesis.json
 
+The `[Testnet-Home]` folder will contain all files and folders related to the Testnet.
+
+Open a **Command Prompt** window and switch the current directory to ``[Testnet-Home]``. Your folder structure should look like the below.
+
+::
+
+   ../[Testnet-Home]
+       - witness_node          // program
+       - cli_wallet            // program
+       + /[genesis]            // folder
+          - my-genesis.json   // your private testnet genesis file. You have to set own parameter values. 
+	 
 |
 
 ------------------
@@ -80,15 +92,14 @@ Open a **Command Prompt** window and switch the current directory to ``[Testnet-
 3-1. Create a Genesis File for a Private Testnet
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The genesis.json is the initial state of the network. We create a new genesis json file named ``my-genesis.json`` for a Private Testnet in the same folder just created.::
+The genesis file is the initial state of the network. We create a new genesis file named ``my-genesis.json`` for a Private Testnet in a genesis folder.
 
-    ./witness_node --create-genesis-json=my-genesis.json
+``witness_node`` startup will create a ``witness_node_data_dir`` as a default data directory. And you will find a cinfigulation ``config.ini`` file in the data directory. 
 
-The ``my-genesis.json`` file will be created in the ``[Testnet-Home]`` folder. Once this task is done, the witness node will terminate on its own. 
+.. Note::  If you want to use a different folder name and directory for the data, you have to use ``--data-dir`` in a startup command line and set your data directory folder path, every time you start the witness_node. Otherwise, the ``witness_node_data_dir`` folder and another ``config.ini`` file will be created (if it's not existed) to start the witness_node.
 
-.. Note::  ``witness_node`` startup will create a ``witness_node_data_dir`` as a default data directory (with config.ini). If you want to use a differnt folder name and directory for the data, you have to use ``--data-dir`` in a startup command line and set your data directory folder path. Otherwise, the ``witness_node_data_dir`` folder will be created and use a default ``config.ini`` file to start the witness_node.
 
-3-2. Customization of the :ref:`Genesis File <public-testnet-genesis-example>`
+3-2. Customization of the :ref:`Genesis File <private-testnet-genesis-example>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you want to customize the network's initial state, edit ``my-genesis.json``. This allows you to control things such as:
@@ -98,17 +109,23 @@ If you want to customize the network's initial state, edit ``my-genesis.json``. 
 - The initial values of chain parameters
 - The account / signing keys of the `init` witnesses (or in fact any account at all).
 
+The **chain ID** is a hash of the genesis state. All transaction signatures are only valid for **a single chain ID**. So editing the genesis file will change your chain ID, and make you unable to sync with all existing chains (unless one of them has exactly the same genesis file you do).
+
+For testing purposes, the ``--dbg-init-key`` option will allow you to quickly create a new chain against any genesis file, by replacing the witnesses' block production keys.
+
+
 Default Genesis
 ~~~~~~~~~~~~~~~~~~
 
-The graphene code base has a default genesis block integrated that has all witnesses, committee members and funds and a single account called `nathan` available from a single private key::
+The graphene code base has a default genesis block integrated that has all witnesses, committee members and funds and a single account called ``nathan`` available from a single private key::
 
     5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3
 
+	
 3-3. Embed Genesis (optional)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Once you have ``genesis.json``, you may set a cmake variable like so::
+Once you have ``my-genesis.json``, you may set a cmake variable like so::
 
     cmake -DGRAPHENE_EGENESIS_JSON="$(pwd)/genesis/my-genesis.json"
 
@@ -121,10 +138,10 @@ and then rebuild. Note, sometimes I've had to clean the build and CMake cache va
 
 Deleting caches will reset all ``cmake`` variables, so if you have used instructions like build-ubuntu which tells you to set other ``cmake`` variables, you will have to add those variables to the ``cmake`` line above.
 
-Embedding the genesis copies the entire content of genesis.json into the witness_node binary, and additionally copies the chain ID into the cli_wallet binary. Embedded genesis allows the following simplifications to the subsequent instructions:
+.. tip:: Embedding the genesis copies the entire content of genesis.json into the witness_node binary, and additionally copies the chain ID into the cli_wallet binary. Embedded genesis allows the following simplifications to the subsequent instructions:
 
-- You do not need to specify the ``genesis.json`` file on the witness node command line, or in the witness node configuration file.
-- You do not need to specify the chain ID on the ``cli_wallet`` command line when starting a new wallet.
+	- You do **not** need to specify the ``my-genesis.json`` file on the witness node command line, or in the witness node configuration file.
+	- You do **not** need to specify the **chain ID** on the ``cli_wallet`` command line when starting a new wallet.
 
 Embedded genesis is a feature designed to make life easier for consumers of pre-compiled binaries, in exchange for slight, optional complication of the process for producing binaries.
 
@@ -141,7 +158,9 @@ Embedded genesis is a feature designed to make life easier for consumers of pre-
 
 We create a new data directory for our witness.::
 
-    ./witness_node --data-dir data/my-blockprod --genesis-json my-genesis.json --seed-nodes "[]"   # or
+    ./witness_node --data-dir data/my-blockprod --genesis-json my-genesis.json --seed-nodes "[]"   
+	
+	  // or
     
     ./witness_node --data-dir=data/my-blockprod --genesis-json=my-genesis.json --seed-nodes "[]"
 
@@ -149,10 +168,11 @@ We create a new data directory for our witness.::
 
 **Note:**
 
-- The ``data/my-blockprod`` directory does not exist, it will be created by the witness node.
+- The ``data/my-blockprod`` directory does not exist, it will be created by starting a witness node.
 - ``seed-nodes = []`` creates a list of empty seed nodes to avoid connecting to default hardcoded seeds.  
 - **Known issue:** Missing ``=`` sign between input parameter and value. --> This is due to a bug of a boost 1.60. If you compile with boost 1.58, the ``=`` sign can be omitted.
-  
+ 
+ 
 The below message means the initialization is complete. It will complete nearly instantaneously with the tiny example genesis, unless you added a ton of balances. Use ``ctrl-c`` to close the witness node. ::
 
     3501235ms th_a main.cpp:165 main] Started witness node on a chain with 0 blocks.
@@ -164,6 +184,22 @@ As a result, you should get two items:
 - The chain ID is now known - it’s displayed in the message above (i.g., Chain ID).
 
 
+::
+
+   ../[Testnet-Home]
+       - witness_node         // program
+       - cli_wallet           // program
+       + /[genesis]           // folder
+          - my-genesis.json // your private testnet genesis file. You have to set own parameter values. 
+       + /[data]              // data folder	
+          + /[my-blockprod]/
+             + /[blockchain]
+             + /[logs]
+             + /[p2p]
+             - config.ini     // configuration file
+             - logging.ini
+			  
+
 4-2. Set up Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -171,7 +207,29 @@ Open the ``[Testnet-Home]/data/my-blockprod/config.ini`` file and set the follow
 
 * Example: :ref:`config.ini <bts-config-ini-eg-private-testnet>`
 
+::
 
+	p2p-endpoint = 127.0.0.1:11010
+	rpc-endpoint = 127.0.0.1:11011
+
+	genesis-json = genesis/my-genesis.json
+
+	private-key = ["BTS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV","5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"]
+
+	witness-id = "1.6.1"
+	witness-id = "1.6.2"
+	witness-id = "1.6.3"
+	witness-id = "1.6.4"
+	witness-id = "1.6.5"
+	witness-id = "1.6.6"
+	witness-id = "1.6.7"
+	witness-id = "1.6.8"
+	witness-id = "1.6.9"
+	witness-id = "1.6.10"
+	witness-id = "1.6.11"
+	
+
+This authorizes the ``witness_node`` to produce blocks on behalf of the listed **witness-id's**, and specifies the private key needed to sign those blocks. Normally each witness would be on a different node, but for the purposes of this testnet, we will start out with all witnesses signing blocks on a single node.
 
 |
 
@@ -184,13 +242,14 @@ Now run witness_node again::
 
     ./witness_node --data-dir data/my-blockprod --enable-stale-production --seed-nodes "[]"
 
-.. warning:: If you want to use a different folder name and directory for the data, you have to use ``--data-dir`` in a startup command line and set your data directory folder path. Otherwise, the `witness_node_data_dir` folder will be created and used a default ``config.ini`` file to start the witness_node!!
+.. warning:: If you want to use a different folder name and directory for the data, you have to use ``--data-dir`` in a startup command line and set your data directory folder path. Otherwise, the ``witness_node_data_dir`` folder will be created and be used to generate a default ``config.ini`` file to start the witness_node!!
 
-.. Note::
-  - Since this is a testnet, we do not need to specify ``genesis.json`` on the command line. We now specify it in the ``config file``. 
+
+**Note**
+  - Set your genesis ``my-genesis.json`` file for the Private testnet in a configuration ``config file`` file!!  
   - The ``--enable-stale-production`` flag tells the ``witness_node`` to produce on a chain with zero blocks or very old blocks. We specify the ``--enable-stale-production`` parameter on the command line as we will not normally need it (although it can also be specified in the config file). 
-  - The empty ``--seed-nodes`` is added to avoid connecting to the default seed nodes hardcoded for production.
-  -  Subsequent runs which connect to an existing witness node over the p2p network, or which get blockchain state from an existing data directory, need not have the ``--enable-stale-production`` flag.
+  - The empty ``--seed-nodes`` is added to avoid connecting to the default seed nodes hardcoded for production.  (i.e., # seed-node =   )
+  -  Subsequent runs which connect to an existing witness node over the p2p network, or which get blockchain state from an existing data directory, do not need to have the ``--enable-stale-production`` flag.
 
   
 |
@@ -200,7 +259,7 @@ Now run witness_node again::
 6. Obtain the Chain ID
 -------------------------------------------
 
-(*see #6.when we created a data directory, we also obtained a chain ID.*)
+(*see above.. When we started a witness_node for a short time to create a data directory, we also obtained a chain ID.*)
 
 The chain ID (i.g., blockchain id) is a hash of the genesis state. All transaction signatures are only valid for a single chain ID. So editing the genesis file will change your chain ID, and make you unable to sync with all existing chains (unless one of them has exactly the same genesis file you do).
 
@@ -208,13 +267,13 @@ For testing purposes, the ``--dbg-init-key`` option will allow you to quickly cr
 
 .. Important:: Each wallet is specifically associated with a single chain, specified by its chain ID. This is to protect the user from (e.g., unintentionally) using a testnet wallet on the real chain.
 
-The chain ID is printed at witness node startup. It can also be obtained by using the API to query a running witness node with the `get_chain_properties` API call:
+The chain ID is printed at witness node startup. It can also be obtained by using the API to query a running witness node with the ``get_chain_properties`` API call:
 
 .. code-block:: json
 
     curl --data '{"jsonrpc": "2.0", "method": "get_chain_properties", "params": [], "id": 1}' http://127.0.0.1:11011/rpc && echo
 
-This curl command will return a short JSON object including the ``chain_id``.
+This ``curl`` command will return a short JSON object including the ``chain_id``.
 
 |
 
@@ -226,19 +285,19 @@ This curl command will return a short JSON object including the ``chain_id``.
 7-1. Create a new Wallet
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We are now ready to connect a new wallet to your Private testnet witness node. You must specify a chain ID and server. Keep your witness node running and in another *Command Prompt* window run this command (a blank username and password will suffice):
+We are now ready to connect a new wallet to your Private testnet witness node. You must specify a chain ID and server. Keep your witness node running. Open another *Command Prompt* window run this command (a blank username and password will suffice):
 
 .. code-block:: json
 
     ./cli_wallet --wallet-file my-wallet.json 
-               --chain-id cf307110d029cb882d126bf0488dc4864772f68d9888d86b458d16e6c36aa74b 
+               --chain-id cf30711----USE-OWN-CHAIN-ID---68d9888d86b458d16e6c36aa74b 
                --server-rpc-endpoint ws://127.0.0.1:11011 -u '' -p ''
 
 .. Note::
-  - Make sure to replace the above chain ID (i.e., blockchain id) ``cf307110d0...36aa74b`` with **your own chain ID** reported by your witness_node. The chain-id passed to the CLI-wallet needs to match the id generated and used by the witness node.
+  - Make sure to replace the above chain ID (i.e., blockchain id) ``cf307110d0...36aa74b`` with **your chain ID** reported by your ``witness_node``. The chain-id passed to the CLI-wallet needs to match the id generated and used by the ``witness node``.
   - ``--server-rpc-endpoint`` - The port number is how you defined (opened) ``--rpc-endpoint`` for the witness_node.
 
-If you get the ``set_password`` prompt, it means your wallet has successfully connected to the testnet witness node.
+If you receive the ``set_password`` prompt, it means your wallet has successfully connected to the testnet witness node.
 
 Fist you need to create a new password for your wallet. This password is used to encrypt all the private keys in the wallet. For this example, we will use the password `supersecret`::
 
@@ -247,7 +306,9 @@ Fist you need to create a new password for your wallet. This password is used to
 7-2. Gain Access to the Genesis Stake
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In Graphene, balances are contained in accounts. To import an account that exists in the Graphene genesis into your wallet, all you need to know its name and its private key. We will now import into the wallet an account called `nathan` (a general purpose test account) by using the `import_key` command:
+In BitShares, balances are contained in accounts. To import an account that exists in the BitShares genesis into your wallet, all you need to know its **name** and its **private key**. 
+
+In this section, we use an account name ``nathan`` We will now import into the wallet an account called ``nathan`` (a general purpose test account) by using the ``import_key`` command:
 
 .. code-block:: json
 
