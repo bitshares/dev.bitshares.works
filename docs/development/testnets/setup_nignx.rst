@@ -96,7 +96,7 @@ We have set it to be::
 
 .. Note:: The parameters passenger_root and passenger_ruby may be different in your setup. Please compare with the default nginx.conf file to identify the proper directories.
 
-We create an _upstream _called `websockets` which is uses to proxy the queries to `http://host/ws` directly to the websocket server. This allows to have a websocket address be available from the same port as the web wallet.
+We create an *upstream* called ``websockets`` which is uses to proxy the queries to ``http://host/ws`` directly to the websocket server. This allows to have a websocket address be available from the same port as the web wallet.
 
 3. Running nginx as service
 ------------------------------------
@@ -118,20 +118,20 @@ After that, nginx can be launched with::
 
 ---------------
 
-**** (ask) ****
+*working on*
 
-6. Web Wallet
+5. Web Wallet
 ----------------------------------------------------
 
 
 Since we need to provide a way for people to enter the network/blockchain, we need to install the web wallet into nginx.
 
-6.1 Installation of Dependencies::
+5.1 Installation of Dependencies::
 
     sudo apt-get install git nodejs-legacy npm
     sudo npm install -g webpack coffee-script
 
-6.2 Fetching the web wallet
+5.2 Fetching the web wallet
 
 Afterwards, we download the bitshares-ui repository from Cryptonomex and install the Node dependencies::
 
@@ -140,7 +140,7 @@ Afterwards, we download the bitshares-ui repository from Cryptonomex and install
 
     for I in dl web; do cd $I; npm install; cd ..; done
 
-6.3 Configuration
+5.3 Configuration
 
 Obtain the chain_id of the chain we are running.::
 
@@ -160,7 +160,7 @@ Furthermore, we need to tell our web wallet to which witness node to connect to.
 
     # also edit the "default" settings
 
-6.4 Compilation
+5.4 Compilation
 
 **Compile the web wallet**  
 
