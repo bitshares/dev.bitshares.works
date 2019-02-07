@@ -2,7 +2,7 @@
 .. _cli-tool:
 
 *******************************
-CLI-Wallet on Windows (x64)
+Windows x64 CLI Tool
 *******************************
 
 
@@ -13,7 +13,7 @@ CLI-Wallet on Windows (x64)
 
 In this section, we will show you how to install cli-wallet tools for Windows and try several methods to get the data from blockchain. 
 
-How to install BitShares Core
+How to install BitShares-Core CLI Tool
 ===========================================================
 
 CLI-Wallet on Windows (x64)
