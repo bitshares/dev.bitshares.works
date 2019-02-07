@@ -17,11 +17,16 @@ Installation
    - BitShares requires a 64-bit operating system to build
    - See BitShares :ref:`system requirements <system-requirements-node>`
    
+Releases
+-----------------------
+* BitShares-Core Release information
+
+  - `Latest Release and Notes <https://github.com/bitshares/bitshares-core/releases>`_ 
+  
+   
 
 Download and Build
 -----------------------
-
-Select an operation system and install and build.
 
 .. toctree:: 
     :maxdepth: 1
@@ -30,9 +35,22 @@ Select an operation system and install and build.
     installation/build_osx
     installation/build_windows
     installation/build_windows_devenv
-    installation/windows_cli_tool
 	
+CLI Tools
+-------------------------
+BitShares-Core has prepared three CLI wallet tools. You can find the latest cli tool files in `BitShares-Core Release <https://github.com/bitshares/bitshares-core/releases>`_ page. 
 
+* BitShares-Core CLI Tools 
+
+  - BitShares-Core-x.x.xxxxxx-Linux-cli-tools.tar.gz
+  - BitShares-Core-x.x.xxxxxx-macOS-cli-tools.tar.gz
+  - BitShares-Core-x.x.xxxxxx-Windows-x64-cli-tools.zip   
+  
+	- :ref:`How to install CLI tool on Windows x64 <cli-tool>`
+
+	
+Use Windows SubSystem for Linux
+---------------------------------
 .. toctree:: 
     :maxdepth: 1
 
