@@ -12,7 +12,7 @@ Some developers may want to deploy their own BitShares blockchain locally for go
    
 -------
 
-For the private testnet, you should create and set up own genesis.json file and a database configuration file (config.ini). You should not connect to the mainnet. 
+.. warning:: For the private testnet, you should create and set up own genesis file (my-genesis.json) and set values into a database configuration file (config.ini). You should not connect to the mainnet. 
 
 
 1. Installation
@@ -66,21 +66,16 @@ The above installation steps are the same with the public testnet installation.
 2. Create a Testnet Folder
 -------------------------------------------
 
-Create a new folder (e.g., ``[Testnet-Home]``) in any location you like and copy a `witness_node` program and a `cli_wallet` program there. And create a subdirectory named ``genesis`` and create a file within it named ``my-genesis.json``. This file dictates the initial state of the network. 
+Create a new folder (e.g., ``[Testnet-Home]``) in any location you like and copy a `witness_node` program and a `cli_wallet` program there. 
 
-You can use the existing public testnet genesis.json file as an example. That file can be found at https://github.com/bitshares/bitshares-core/blob/testnet/genesis.json
-
-The `[Testnet-Home]` folder will contain all files and folders related to the Testnet.
-
-Open a **Command Prompt** window and switch the current directory to ``[Testnet-Home]``. Your folder structure should look like the below.
+Open a **command prompt** window and switch the current directory to ``[Testnet-Home]``. Your folder structure should look like the below.
 
 ::
 
    ../[Testnet-Home]
        - witness_node          // program
        - cli_wallet            // program
-       + /[genesis]            // folder
-          - my-genesis.json   // your private testnet genesis file. You have to set own parameter values. 
+ 
 	 
 |
 
@@ -92,14 +87,19 @@ Open a **Command Prompt** window and switch the current directory to ``[Testnet-
 3-1. Create a Genesis File for a Private Testnet
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The genesis file is the initial state of the network. We create a new genesis file named ``my-genesis.json`` for a Private Testnet in a genesis folder.
 
-``witness_node`` startup will create a ``witness_node_data_dir`` as a default data directory. And you will find a cinfigulation ``config.ini`` file in the data directory. 
+The genesis file is the initial state of the network. We want to create a subdirectory named ``genesis`` and create a file within it named ``my-genesis.json``.  In the private testnet, we have to generate each active and owner private key. Here is a sample private testnet genesis file template, copy and past into your my-genesis.json file. 
 
-.. Note::  If you want to use a different folder name and directory for the data, you have to use ``--data-dir`` in a startup command line and set your data directory folder path, every time you start the witness_node. Otherwise, the ``witness_node_data_dir`` folder and another ``config.ini`` file will be created (if it's not existed) to start the witness_node.
+::
+
+   ../[Testnet-Home]
+       - witness_node          // program
+       - cli_wallet            // program
+       + /[genesis]            // folder
+          - my-genesis.json   // your private testnet genesis file. You have to set own parameter values. 
 
 
-3-2. Customization of the :ref:`Genesis File <private-testnet-genesis-example>`
+3-2. Customization of the private testnet :ref:`Genesis File <private-testnet-genesis-example>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you want to customize the network's initial state, edit ``my-genesis.json``. This allows you to control things such as:
@@ -109,7 +109,7 @@ If you want to customize the network's initial state, edit ``my-genesis.json``. 
 - The initial values of chain parameters
 - The account / signing keys of the `init` witnesses (or in fact any account at all).
 
-The **chain ID** is a hash of the genesis state. All transaction signatures are only valid for **a single chain ID**. So editing the genesis file will change your chain ID, and make you unable to sync with all existing chains (unless one of them has exactly the same genesis file you do).
+.. note:: The **chain ID** is a hash of the genesis state. All transaction signatures are only valid for **a single chain ID**. So editing the genesis file will change your chain ID, and make you unable to sync with all existing chains (unless one of them has exactly the same genesis file you do).
 
 For testing purposes, the ``--dbg-init-key`` option will allow you to quickly create a new chain against any genesis file, by replacing the witnesses' block production keys.
 
@@ -153,6 +153,11 @@ Embedded genesis is a feature designed to make life easier for consumers of pre-
 4. Data Directory and Configuration
 --------------------------------------
 
+``witness_node`` startup will create a ``witness_node_data_dir`` as a default data directory. And you will find a cinfigulation ``config.ini`` file in the data directory. 
+
+.. Note::  If you want to use a different folder name and directory for the data, you have to use ``--data-dir`` option in a startup command line and set your data directory folder path, **every time** when you start the witness_node. Otherwise, the ``witness_node_data_dir`` folder and another ``config.ini`` file will be created (if it's not existed) and the witness_node will use the data directory. 
+
+
 4-1. Create a Data Directory
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -166,11 +171,11 @@ We create a new data directory for our witness.::
 
 
 
-**Note:**
+* **Note:**
 
-- The ``data/my-blockprod`` directory does not exist, it will be created by starting a witness node.
-- ``seed-nodes = []`` creates a list of empty seed nodes to avoid connecting to default hardcoded seeds.  
-- **Known issue:** Missing ``=`` sign between input parameter and value. --> This is due to a bug of a boost 1.60. If you compile with boost 1.58, the ``=`` sign can be omitted.
+  - The ``data/my-blockprod`` directory does not exist, it will be created by starting a witness node.
+  - ``seed-nodes = []`` creates a list of empty seed nodes to avoid connecting to default hardcoded seeds.  
+  - **Known issue:** Missing ``=`` sign between input parameter and value. --> This is due to a bug of a boost 1.60. If you compile with boost 1.58, the ``=`` sign can be omitted.
  
  
 The below message means the initialization is complete. It will complete nearly instantaneously with the tiny example genesis, unless you added a ton of balances. Use ``ctrl-c`` to close the witness node. ::
@@ -181,7 +186,7 @@ The below message means the initialization is complete. It will complete nearly 
 As a result, you should get two items:
 
 - A directory named ``data/my-blockprod`` has been created (initialized) with a file named ``config.ini`` located in it.
-- The chain ID is now known - it’s displayed in the message above (i.g., Chain ID).
+- A Chain ID. It’s displayed in the message above (i.g., Chain ID).
 
 
 ::
@@ -214,7 +219,7 @@ Open the ``[Testnet-Home]/data/my-blockprod/config.ini`` file and set the follow
 
 	genesis-json = genesis/my-genesis.json
 
-	private-key = ["BTS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV","5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"]
+	private-key = ["-- generated key --","5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"]
 
 	witness-id = "1.6.1"
 	witness-id = "1.6.2"
@@ -245,7 +250,8 @@ Now run witness_node again::
 .. warning:: If you want to use a different folder name and directory for the data, you have to use ``--data-dir`` in a startup command line and set your data directory folder path. Otherwise, the ``witness_node_data_dir`` folder will be created and be used to generate a default ``config.ini`` file to start the witness_node!!
 
 
-**Note**
+* **Note**
+
   - Set your genesis ``my-genesis.json`` file for the Private testnet in a configuration ``config file`` file!!  
   - The ``--enable-stale-production`` flag tells the ``witness_node`` to produce on a chain with zero blocks or very old blocks. We specify the ``--enable-stale-production`` parameter on the command line as we will not normally need it (although it can also be specified in the config file). 
   - The empty ``--seed-nodes`` is added to avoid connecting to the default seed nodes hardcoded for production.  (i.e., # seed-node =   )
@@ -259,7 +265,7 @@ Now run witness_node again::
 6. Obtain the Chain ID
 -------------------------------------------
 
-(*see above.. When we started a witness_node for a short time to create a data directory, we also obtained a chain ID.*)
+(*When we started a witness_node for a short time to create a data directory, we also obtained a chain ID.*)
 
 The chain ID (i.g., blockchain id) is a hash of the genesis state. All transaction signatures are only valid for a single chain ID. So editing the genesis file will change your chain ID, and make you unable to sync with all existing chains (unless one of them has exactly the same genesis file you do).
 
@@ -303,6 +309,8 @@ Fist you need to create a new password for your wallet. This password is used to
 
     >>> set_password supersecret
 
+|
+	
 7-2. Gain Access to the Genesis Stake
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -317,36 +325,38 @@ In this section, we use an account name ``nathan`` We will now import into the w
 
 .. Note:: `nathan` happens to be the account name defined in the genesis file. If you had edited your ``my-genesies.json`` file just after it was created, you could have put a different name there. Also, note that ``5KQwrPbwdL...P79zkvFD3`` is the private key defined in the ``config.ini`` file.
 
-Now we have the private key imported into the wallet but still no funds assocciated with it. Funds are stored in genesis balance objects. These funds can be claimed, with no fee, using the `import_balance` command:
+Now we have the private key imported into the wallet but still no funds assocciated with it. Funds are stored in genesis balance objects. These funds can be claimed, with no fee, using the ``import_balance`` command:
 
 .. code-block:: json
 
     import_balance nathan ["5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"] true
 
-As a result, we have one account (named `nathan`) imported into the wallet and this account is well funded with BTS as we have claimed the funds stored in the genesis file. You can view this account information and the balance by using the below commands:
+As a result, we have one account (named ``nathan``) imported into the wallet and this account is well funded with BTS as we have claimed the funds stored in the genesis file. You can view this account information and the balance by using the below commands:
 
 .. code-block:: json
 
     get_account nathan
     list_account_balances nathan
 
+|
+
 7-3. Create Another Account
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We will now create another account (named `alpha`) so that we can transfer funds back and forth between `nathan` and `alpha`.
+We will now create another account (named ``alpha``) so that we can transfer funds back and forth between ``nathan`` and ``alpha``.
 
-Creating a new account is always done by using an existing account - we need it because someone (i.e. the registrar) has to fund the registration fee. Also, there is the requirement for the registrar account to have a lifetime member (LTM) status. Therefore we need to upgrade the account `nathan` to LTM, before we can proceed with creating other accounts.
+Creating a new account is always done by using an existing account - we need it because someone (i.e. the registrar) has to fund the registration fee. Also, there is the requirement for the registrar account to have a lifetime member (LTM) status. Therefore we need to upgrade the account ``nathan`` to LTM, before we can proceed with creating other accounts.
 
 .. code-block:: json
 
     upgrade_account nathan true
     get_account nathan
 
-In the response, next to `membership_expiration_date` you should see ``1969-12-31T23:59:59``. If you get ``1970-01-01T00:00:00`` something is wrong and `nathan` has not been successfully upgraded.
+In the response, next to ``membership_expiration_date`` you should see ``1969-12-31T23:59:59``. If you get ``1970-01-01T00:00:00`` something is wrong and ``nathan`` has not been successfully upgraded.
 
-We can now register an account by using `nathan` as registrar. But first we need to get hold of the public key for the new account. We do it by using the ``suggest_brain_key`` command.
+We can now register an account by using ``nathan`` as registrar. But first we need to generate the public key for the new account. We do it by using the ``suggest_brain_key`` command.
 
-And the resposne should be something similar to this
+And the response should be something similar to this
 
 .. code-block:: json
 
@@ -361,7 +371,7 @@ We can now register an account. The ``register_account`` command allows you to r
 
     register_account alpha BTS78CuY47Vds2nfw2t88ckjTaggPkw16tLhcmg4ReVx1WPr1zRL5 BTS78CuY47Vds2nfw2t88ckjTaggPkw16tLhcmg4ReVx1WPr1zRL5 nathan nathan 0 true
 
-> Use a public key ``pub_key`` which you just created by ``suggest_brain_key``. 
+* Use a public key ``pub_key`` which you just created by ``suggest_brain_key``.
 
 Transfer funds between accounts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -380,13 +390,16 @@ We can now open a new wallet for alpha user::
     create_witness alpha "http://www.alpha" true
 
 
-> Use a private key ``wif_priv_key`` which you just created by ``suggest_brain_key``. 
+* Use a private key ``wif_priv_key`` which you just created by ``suggest_brain_key``.
  
-The ``get_private_key`` command allows us to obtain the WIF private key corresponding to a public key. The private key must already be in the wallet::
+ 
+The ``get_private_key`` command allows us to obtain the **WIF private key** corresponding to a public key. The private key must already be in the wallet::
 
     get_private_key BTS78CuY47Vds2nfw2t88ckjTaggPkw16tLhcmg4ReVx1WPr1zRL5
 
 > You can try to make sure your ``suggest_brain_key`` outputs key pair. You should get the same pair of keys set.
+
+|
 
 7-4. Create Committee Members
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

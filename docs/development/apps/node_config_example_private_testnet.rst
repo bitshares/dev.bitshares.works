@@ -9,6 +9,7 @@ This section shows the BitShres Blockchain configuration file ``config.ini`` par
 
 .. WARNING:: For a Private testnet, you must add a seed node of your own, you should not connect to the Public testnet.
 
+
 **Parameters you should update**
 
 * 

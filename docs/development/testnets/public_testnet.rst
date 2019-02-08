@@ -61,7 +61,7 @@ You will find the compiled program files in the below folders.
 Genesis File
 ~~~~~~~~~~~~~~~~
 
-As you know, each blockchain starts with a genesis block that definitions are in a :ref:`genesis file <public-testnet-genesis-example>`. **The bitshares-core-testnet has already prepared a genesis.json file for the Public Testnet.**  You will not need to modify the genesis.json file. You will find the ``genesis.json`` in the **bitshares-core-testnet** directory.
+As you know, each blockchain starts with a genesis block that definitions are in a :ref:`genesis file <public-testnet-genesis-example>`. The bitshares-core-testnet has already prepared **a genesis.json file for the Public Testnet.**  Unless you want to adjust parameter values, you will not need to modify the public testnet genesis.json file.  
 
 |
 
@@ -406,13 +406,13 @@ Since only lifetime members can be committee members, we need to fund these acco
 
 ::
 
-    transfer faucet com0 100000 CORE "some cash" true
-    transfer faucet com1 100000 CORE "some cash" true
-    transfer faucet com2 100000 CORE "some cash" true
-    transfer faucet com3 100000 CORE "some cash" true
-    transfer faucet com4 100000 CORE "some cash" true
-    transfer faucet com5 100000 CORE "some cash" true
-    transfer faucet com6 100000 CORE "some cash" true
+    transfer faucet com0 100000 TEST "some cash" true
+    transfer faucet com1 100000 TEST "some cash" true
+    transfer faucet com2 100000 TEST "some cash" true
+    transfer faucet com3 100000 TEST "some cash" true
+    transfer faucet com4 100000 TEST "some cash" true
+    transfer faucet com5 100000 TEST "some cash" true
+    transfer faucet com6 100000 TEST "some cash" true
     upgrade_account com0 true
     upgrade_account com1 true
     upgrade_account com2 true
