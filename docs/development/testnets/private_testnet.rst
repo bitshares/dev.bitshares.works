@@ -12,7 +12,7 @@ Some developers may want to deploy their own BitShares blockchain locally for go
    
 -------
 
-.. warning:: For the private testnet, you should create and set up own genesis file (my-genesis.json) and set values into a database configuration file (config.ini). You should not connect to the mainnet. 
+.. warning:: For the private testnet, you **MUST** create and set up own genesis file (my-genesis.json) and set values into a database configuration file (config.ini). You should not connect to the mainnet. 
 
 
 1. Installation
@@ -84,9 +84,22 @@ Open a **command prompt** window and switch the current directory to ``[Testnet-
 3. Genesis File 
 -------------------------------------------
 
-3-1. Create a Genesis File for a Private Testnet
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. attention:: For a Private Testnet setup, we have prepared a ``genesis-dev.json`` file. This genesis-dev file can be used with no modification to create a private testnet and produce blocks on it with the init* accounts.
+ 
 
+::
+
+   ../[Testnet-Home]
+       - witness_node          // program
+       - cli_wallet            // program
+       - genesis-dev.json      // private testnet genesis file
+  
+
+|
+
+-------
+
+**3-11. Create a Genesis File for a Private Testnet**
 
 The genesis file is the initial state of the network. We want to create a subdirectory named ``genesis`` and create a file within it named ``my-genesis.json``.  In the private testnet, we have to generate each active and owner private key. Here is a sample private testnet genesis file template, copy and past into your my-genesis.json file. 
 
@@ -96,11 +109,10 @@ The genesis file is the initial state of the network. We want to create a subdir
        - witness_node          // program
        - cli_wallet            // program
        + /[genesis]            // folder
-          - my-genesis.json   // your private testnet genesis file. You have to set own parameter values. 
+          - my-genesis.json   // your private testnet genesis file. You MUST set own parameter values. 
 
 
-3-2. Customization of the private testnet :ref:`Genesis File <private-testnet-genesis-example>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**3-12 Customization of the private testnet :ref:`Genesis File <private-testnet-genesis-example>`**
 
 If you want to customize the network's initial state, edit ``my-genesis.json``. This allows you to control things such as:
 
@@ -114,16 +126,14 @@ If you want to customize the network's initial state, edit ``my-genesis.json``. 
 For testing purposes, the ``--dbg-init-key`` option will allow you to quickly create a new chain against any genesis file, by replacing the witnesses' block production keys.
 
 
-Default Genesis
-~~~~~~~~~~~~~~~~~~
+*Default Genesis*
 
 The graphene code base has a default genesis block integrated that has all witnesses, committee members and funds and a single account called ``nathan`` available from a single private key::
 
     5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3
 
 	
-3-3. Embed Genesis (optional)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**3-13. Embed Genesis (optional)**
 
 Once you have ``my-genesis.json``, you may set a cmake variable like so::
 
@@ -150,16 +160,15 @@ Embedded genesis is a feature designed to make life easier for consumers of pre-
 
 ----------------
 
-4. Data Directory and Configuration
+4. Configurations
 --------------------------------------
+4-1. Create a Data Directory
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ``witness_node`` startup will create a ``witness_node_data_dir`` as a default data directory. And you will find a cinfigulation ``config.ini`` file in the data directory. 
 
 .. Note::  If you want to use a different folder name and directory for the data, you have to use ``--data-dir`` option in a startup command line and set your data directory folder path, **every time** when you start the witness_node. Otherwise, the ``witness_node_data_dir`` folder and another ``config.ini`` file will be created (if it's not existed) and the witness_node will use the data directory. 
 
-
-4-1. Create a Data Directory
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We create a new data directory for our witness.::
 
@@ -178,7 +187,7 @@ We create a new data directory for our witness.::
   - **Known issue:** Missing ``=`` sign between input parameter and value. --> This is due to a bug of a boost 1.60. If you compile with boost 1.58, the ``=`` sign can be omitted.
  
  
-The below message means the initialization is complete. It will complete nearly instantaneously with the tiny example genesis, unless you added a ton of balances. Use ``ctrl-c`` to close the witness node. ::
+The below message means the initialization is complete. It will complete nearly instantaneously with the tiny example genesis, unless you added a ton of balances. Use ``ctrl + c`` to close the witness node. ::
 
     3501235ms th_a main.cpp:165 main] Started witness node on a chain with 0 blocks.
     3501235ms th_a main.cpp:166 main] Chain ID is cf307110d029cb882d126bf0488dc4864772f68d9888d86b458d16e6c36aa74b
@@ -217,7 +226,8 @@ Open the ``[Testnet-Home]/data/my-blockprod/config.ini`` file and set the follow
 	p2p-endpoint = 127.0.0.1:11010
 	rpc-endpoint = 127.0.0.1:11011
 
-	genesis-json = genesis/my-genesis.json
+	genesis-json = genesis-dev.json
+	# genesis-json = genesis/my-genesis.json
 
 	private-key = ["-- generated key --","5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"]
 
@@ -235,6 +245,10 @@ Open the ``[Testnet-Home]/data/my-blockprod/config.ini`` file and set the follow
 	
 
 This authorizes the ``witness_node`` to produce blocks on behalf of the listed **witness-id's**, and specifies the private key needed to sign those blocks. Normally each witness would be on a different node, but for the purposes of this testnet, we will start out with all witnesses signing blocks on a single node.
+
+.. note:: It's important to activate a 2/3 majority of the witnesses defined in the genesis file.
+
+
 
 |
 
@@ -401,8 +415,14 @@ The ``get_private_key`` command allows us to obtain the **WIF private key** corr
 
 |
 
-7-4. Create Committee Members
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+8. Create Committee Members
+--------------------------------
+
+8-1. Creating members
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* ``create_account_with_brain_key``
+
 
 .. code-block:: json
 
@@ -413,13 +433,22 @@ The ``get_private_key`` command allows us to obtain the **WIF private key** corr
     create_account_with_brain_key com4 com4 nathan nathan true
     create_account_with_brain_key com5 com5 nathan nathan true
     create_account_with_brain_key com6 com6 nathan nathan true
+	
+8-2 Upgrading members
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Since only lifetime members can be committee members, we need to fund these accounts ``transfer``  and upgrade ``upgrade_account`` them accordingly:
+
+.. code-block:: json
+	
     transfer nathan com0 100000 CORE "some cash" true
     transfer nathan com1 100000 CORE "some cash" true
     transfer nathan com2 100000 CORE "some cash" true
     transfer nathan com3 100000 CORE "some cash" true
     transfer nathan com4 100000 CORE "some cash" true
     transfer nathan com5 100000 CORE "some cash" true
-    transfer nathan com6 100000 CORE "some cash" true
+    transfer nathan com6 100000 CORE "some cash" true	
+	
     upgrade_account com0 true
     upgrade_account com1 true
     upgrade_account com2 true
@@ -427,6 +456,17 @@ The ``get_private_key`` command allows us to obtain the **WIF private key** corr
     upgrade_account com4 true
     upgrade_account com5 true
     upgrade_account com6 true
+	
+	
+8-3 Registering as committee member
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+We can apply for committee with create_committee_member:
+
+* ``create_committee_member``
+
+ ::
+	
     create_committee_member com0 "http://www.com0" true
     create_committee_member com1 "http://www.com1" true
     create_committee_member com2 "http://www.com2" true
@@ -434,6 +474,17 @@ The ``get_private_key`` command allows us to obtain the **WIF private key** corr
     create_committee_member com4 "http://www.com4" true
     create_committee_member com5 "http://www.com5" true
     create_committee_member com6 "http://www.com6" true
+	
+	
+8-4 Voting with faucet account
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+All we need to do know is vote for our own committee members:
+
+* ``vote_for_committee_member``
+
+::
+	
     vote_for_committee_member nathan com0 true true
     vote_for_committee_member nathan com1 true true
     vote_for_committee_member nathan com2 true true
@@ -444,6 +495,31 @@ The ``get_private_key`` command allows us to obtain the **WIF private key** corr
 
     propose_parameter_change com0 {"block_interval" : 6} true
 
+
+|
+
+-----------------
+
+9. Set up the Second Node
+-----------------------
+
+If you want to set up a second node (with the same genesis file) and connect it to the first node by using the ``p2p-endpoint`` of the first node as the ``seed-node`` for the second.
+
+
+**Node 1: config.ini**
+
+::
+
+	p2p-endpoint = 127.0.0.1:11010
+	rpc-endpoint = 127.0.0.1:11011
+	
+	
+**Node 2: config.ini**
+
+::
+
+	p2p-endpoint = 127.0.0.1:11015
+	seed-node = 127.0.0.1:11010
 
 
 |

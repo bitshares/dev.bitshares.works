@@ -5,24 +5,30 @@
 Bitshares Blockchain Explorer and the Wrappers 
 ******************************************************
 
-Mainnet
+BliShares Blockchain Explorer
 ========================
 
-* Bitshares Blockchain Open Explore: http://open-explorer.io
+This tool allows you to check BitShares blockchain health. You can observe the BitShares blockchain operations/transactions, market volumes, assets, and fees. Also you can search “block”, “Account”, “Object”, “Asset”, and Transaction by the ID.
+
+
+* Bitshares Blockchain Open Explore for Mainnet: http://open-explorer.io
+* Bitshares Blockchain Open Explorer for Public Testnet: http://bitshares-testnet.xyz/ 
+
+|
+
+APIs to Query BitShares Blockchain
+=====================================
+
+The below API tools allow you to try BitShares APIs. You can set value(s) and click [Try it out!], then, you will get a return. The return include an example Curl command path, Request URL, Response Body, Response Code, and Response Headers. Those information are very valuable to learn BitShares Blockchain. 
+
 * BitShares Explorer API uses to query the Mainnet  - *Try it out!*
 
   - http://185.208.208.184:5000/apidocs/  
 
     - ES Wrapper : Wrapper to expose **Elasticsearch** Bitshares node data to clients
-  
-  
--------------------
 
-Testnet
-======================
 
-* Bitshares Blockchain Open Explorer for Testnet: http://bitshares-testnet.xyz/ 
-* BitShares Explorer Testnet API uses to query the Testnet   - *Try it out!*
+* BitShares Explorer Testnet API uses to query the Public Testnet   - *Try it out!*
 
   - http://148.251.10.231:5000/apidocs/ 
   
