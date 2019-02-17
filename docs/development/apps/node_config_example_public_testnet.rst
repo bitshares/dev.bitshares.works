@@ -4,7 +4,7 @@
 Configuration for Public Testnets
 ============================
 
-This section shows the BitShres Blockchain configuration file ``config.ini`` parameter items. The configuration file locates in your data directory and the most parameter items are commented and contain the essential settings to adjust.
+This section shows the BitShres Blockchain configuration file ``config.ini`` parameter items. The configuration file locates in your data directory and the most parameter items have been commented and contain the essential settings to adjust.
 
 
 Example - config.ini (testnet)
