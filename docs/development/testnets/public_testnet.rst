@@ -23,7 +23,7 @@ Depending on your OS, we have the Installation guides available. To see more Ins
 1-1. Download the Source files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Let's get started, open a **new command line interface (CLI) window** and go to a directory you want to download the ``testnet`` branch files. And run the following command lines. 
+Let's get started, open a **new command line interface (CLI) window** and go to a directory you want to download the ``testnet`` branch files. And run the following command lines.  In this example, you create a ``bitshares-core-testnet`` directory.
 
  ::
  
@@ -75,7 +75,7 @@ As you know, each blockchain starts with a genesis block that definitions are in
 
 The BitShares Blockchain Data Configuration file exists in the blockchain data directory. And the data directory will be created by launching a witness_node. 
 
-At this point, we just want to create the configuration file ``config.ini`` to observe the parameters. If you want to use the Public Testnet, you can use the default configuration settings without changes.
+At this point, we just want to create a :ref:`configuration file (cinfig.ini)  <bts-config-ini-eg-public-testnet>` to observe the parameters. If you want to use the Public Testnet, you can use the default configuration settings without changes.
 
 Run the following command and end the process. In Windows, you can use ``[ctl]+c`` to end the process.
 
