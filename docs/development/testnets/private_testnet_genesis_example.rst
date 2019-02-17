@@ -8,10 +8,7 @@ As you know, each blockchain starts with a genesis block that definitions are in
 
 If you want to test the feature set of current mainnet without connecting to mainnet, you must start a new (**private**) network.  
 
-In a private testnet, you have to create and configure own genesis file by creating a subdirectory named **genesis** and create a file within it named ``my-genesis.json``. This file dictates the initial state of the network.  
-
-
-.. Attention:: ``--create-genesis-json`` option will be removed. In a pprivate testnet, you need to create a file named ``my-genesis.json``. You can use the existing public testnet genesis.json file as an example. 
+In a private testnet, you **MUST** create and configure own genesis file by creating a subdirectory named **genesis** and create a file within it named ``my-genesis.json``. This file dictates the initial state of the network.  
 
 
 For the use of private testnet, you must put an account into the genesis file with keys that you have generated yourself. In a configuration ``config.ini`` file, you can set a genesis.json path parameter value (i.e.,  genesis-json = genesis/my-genesis.json ).  Before you start a ``witness_node``, make sure if you set your **my-genesis.json** file name in a ``config.ini`` file.
@@ -388,8 +385,7 @@ Sample private testnet genesis file
 		  "owner_name": "init10"
 		}
 	  ],
-	  "initial_worker_candidates": [],
-	  "initial_chain_id": "--- set a chain id ---",
+	  "initial_worker_candidates": [],	 
 	  "immutable_parameters": {
 		"min_committee_member_count": 11,
 		"min_witness_count": 11,

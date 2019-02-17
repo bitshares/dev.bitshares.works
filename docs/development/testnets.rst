@@ -20,8 +20,7 @@ If you want to prepare a Public Testnet, you can simply download and use BitShar
     :maxdepth: 2
 
     testnets/public_testnet
-
-  
+ 
 -------------  
   
 Private Testnets
@@ -56,40 +55,11 @@ Other References
 * :ref:`How to verify block production <veryfy_block_production>`
 * :ref:`How to backup a server <witness-backup-server>`
 * :ref:`How witness Price Feeds work <witness-price-feeds>`
-
+* :ref:`explorer-wrappers`
+* :ref:`public-testnet-guide-2`
 	
 	
 -------
 
-Testnet Explorer
-------------------
-
-This tool allows you to check BitShares blockchain health. You can observe the BitShares blockchain operations/transactions, market volumes, assets, and fees. Also you can search "block", "Account", "Object", "Asset", and Transaction by the ID. 
-
-* **Bitshares Blockchain Explorer for Testnet:** http://bitshares-testnet.xyz/ 
- 
-.. Note:: In the Testnet explorer, you may not find many activities. If you want to see the currest activities, pleaser check the Mainnet Explorer.
- 
-**APIs to query the Testnet** 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- 
-The below API tools allow you to try BitShares APIs. You can set a value and click [Try it out!], then you will get a return. The return include a used Curl path format, Requested URL, and Response Body. Those information are very valuable to learn BitShares. 
-
-
-* APIs - the Testnet Explorer uses to query the **Testnet**
-  
-  - http://148.251.10.231:5000/apidocs/ -> ES Wrapper : Wrapper to expose **Elasticsearch** Bitshares node data to  clients
-
-On this page, we introduced a tool for the Testnet. We have the same tool for :ref:`the Mainnet of BitShares blockchain <explorer-wrappers>`.
-
-
-
--------------
-
-* :ref:`consensus-changes-2018-06`
-
----------------------------
-
-|
 
 |

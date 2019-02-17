@@ -30,7 +30,8 @@ As a default, most parameters have been commented. You have to uncomment to set 
 	p2p-endpoint = 127.0.0.1:11010
 	rpc-endpoint = 127.0.0.1:11011
 
-	genesis-json = genesis/my-genesis.json
+	genesis-json = genesis-dev.json
+	# genesis-json = genesis/my-genesis.json
 
 	private-key = ["BTS....","5KQwr...."]  //Set your key pairs
 

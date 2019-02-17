@@ -25,7 +25,7 @@ This section purpose is to collect and provide useful information for the BitSha
 --------
  
  
-API Support & References
+API Support & Explorers
 ===================================
 
 - :ref:`explorer-wrappers`
