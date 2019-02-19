@@ -59,7 +59,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/protocol/base.hpp" line="84" column="1" bodyfile="libraries/chain/include/graphene/chain/protocol/base.hpp" bodystart="84" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/protocol/base.hpp" line="86" column="1" bodyfile="libraries/chain/include/graphene/chain/protocol/base.hpp" bodystart="86" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__operations_1ga5821094f7885507dc340e54592ee7fb4" prot="public" static="no">
         <type>static_variant&lt; void_t &gt;</type>
@@ -72,7 +72,7 @@
 <para>For future expansion many structus include a single member of type extensions_type that can be changed when updating a protocol. You can always add new types to a static_variant without breaking backward compatibility. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/protocol/base.hpp" line="107" column="1" bodyfile="libraries/chain/include/graphene/chain/protocol/base.hpp" bodystart="107" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/protocol/base.hpp" line="110" column="1" bodyfile="libraries/chain/include/graphene/chain/protocol/base.hpp" bodystart="110" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__operations_1gae0096750377f6e9d61dba5765284de99" prot="public" static="no">
         <type>flat_set&lt; future_extensions &gt;</type>
@@ -86,7 +86,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/protocol/base.hpp" line="116" column="1" bodyfile="libraries/chain/include/graphene/chain/protocol/base.hpp" bodystart="116" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/protocol/base.hpp" line="119" column="1" bodyfile="libraries/chain/include/graphene/chain/protocol/base.hpp" bodystart="119" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__operations_1gac47176a69808d4ca769092ca957db937" prot="public" static="no">
         <type>fc::static_variant&lt; transfer_operation, limit_order_create_operation, limit_order_cancel_operation, call_order_update_operation, fill_order_operation, account_create_operation, account_update_operation, account_whitelist_operation, account_upgrade_operation, account_transfer_operation, asset_create_operation, asset_update_operation, asset_update_bitasset_operation, asset_update_feed_producers_operation, asset_issue_operation, asset_reserve_operation, asset_fund_fee_pool_operation, asset_settle_operation, asset_global_settle_operation, asset_publish_feed_operation, witness_create_operation, witness_update_operation, proposal_create_operation, proposal_update_operation, proposal_delete_operation, withdraw_permission_create_operation, withdraw_permission_update_operation, withdraw_permission_claim_operation, withdraw_permission_delete_operation, committee_member_create_operation, committee_member_update_operation, committee_member_update_global_parameters_operation, vesting_balance_create_operation, vesting_balance_withdraw_operation, worker_create_operation, custom_operation, assert_operation, balance_claim_operation, override_transfer_operation, transfer_to_blind_operation, blind_transfer_operation, transfer_from_blind_operation, asset_settle_cancel_operation, asset_claim_fees_operation, fba_distribute_operation, bid_collateral_operation, execute_bid_operation, asset_claim_pool_operation, asset_update_issuer_operation &gt;</type>
@@ -105,7 +105,7 @@
     <briefdescription>
 <para>A set of valid comands for mutating the globally shared state. </para>    </briefdescription>
     <detaileddescription>
-<para>An operation can be thought of like a function that will modify the global shared state of the blockchain. The members of each struct are like function arguments and each operation can potentially generate a return value.</para><para>Operations can be grouped into transactions (<ref refid="structgraphene_1_1chain_1_1transaction" kindref="compound">transaction</ref>) to ensure that they occur in a particular order and that all operations apply successfully or no operations apply.</para><para>Each operation is a fully defined state transition and can exist in a transaction on its own.</para><sect1 id="group__operations_1operation_design_principles">
+<para>An operation can be thought of like a function that will modify the global shared state of the blockchain. The members of each struct are like function arguments and each operation can potentially generate a return value.</para><para>Operations can be grouped into transactions (<ref refid="classgraphene_1_1chain_1_1transaction" kindref="compound">transaction</ref>) to ensure that they occur in a particular order and that all operations apply successfully or no operations apply.</para><para>Each operation is a fully defined state transition and can exist in a transaction on its own.</para><sect1 id="group__operations_1operation_design_principles">
 <title>Design Principles</title>
 <para>Operations have been carefully designed to include all of the information necessary to interpret them outside the context of the blockchain. This means that information about current chain state is included in the operation even though it could be inferred from a subset of the data. This makes the expected outcome of each operation well defined and easily understood without access to chain state.</para><sect2 id="group__operations_1balance_calculation">
 <title>Balance Calculation Principle</title>

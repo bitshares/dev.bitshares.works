@@ -150,44 +150,44 @@
     <detaileddescription>
 <para>An asset which enforces a whitelist specifies a list of accounts to maintain its whitelist, and a list of accounts to maintain its blacklist. In order for a given account A to hold and transact in a whitelisted asset S, A must be whitelisted by at least one of S&apos;s whitelist_authorities and blacklisted by none of S&apos;s blacklist_authorities. If A receives a balance of S, and is later removed from the whitelist(s) which allowed it to hold S, or added to any blacklist S specifies as authoritative, A&apos;s balance of S will be frozen until A&apos;s authorization is reinstated.</para><para>This operation requires authorizing_account&apos;s signature, but not account_to_list&apos;s. The fee is paid by authorizing_account. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="294">
+      <node id="295">
         <label>graphene::chain::base_operation</label>
         <link refid="structgraphene_1_1chain_1_1base__operation"/>
       </node>
-      <node id="293">
+      <node id="294">
         <label>graphene::chain::account_whitelist_operation</label>
         <link refid="structgraphene_1_1chain_1_1account__whitelist__operation"/>
-        <childnode refid="294" relation="public-inheritance">
+        <childnode refid="295" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="297">
+      <node id="298">
         <label>flat_set&lt; future_extensions &gt;</label>
       </node>
-      <node id="296">
+      <node id="297">
         <label>graphene::chain::base_operation</label>
         <link refid="structgraphene_1_1chain_1_1base__operation"/>
       </node>
-      <node id="298">
+      <node id="299">
         <label>graphene::chain::asset</label>
         <link refid="structgraphene_1_1chain_1_1asset"/>
-        <childnode refid="299" relation="usage">
+        <childnode refid="300" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
       </node>
-      <node id="299">
+      <node id="300">
         <label>safe&lt; int64_t &gt;</label>
       </node>
-      <node id="295">
+      <node id="296">
         <label>graphene::chain::account_whitelist_operation</label>
         <link refid="structgraphene_1_1chain_1_1account__whitelist__operation"/>
-        <childnode refid="296" relation="public-inheritance">
-        </childnode>
-        <childnode refid="297" relation="usage">
-          <edgelabel>extensions</edgelabel>
+        <childnode refid="297" relation="public-inheritance">
         </childnode>
         <childnode refid="298" relation="usage">
+          <edgelabel>extensions</edgelabel>
+        </childnode>
+        <childnode refid="299" relation="usage">
           <edgelabel>fee</edgelabel>
         </childnode>
       </node>
@@ -209,6 +209,7 @@
       <member refid="structgraphene_1_1chain_1_1account__whitelist__operation_1a01ae6af064bd2c1d3e8767fcc0b7b460" prot="public" virt="non-virtual"><scope>graphene::chain::account_whitelist_operation</scope><name>new_listing</name></member>
       <member refid="structgraphene_1_1chain_1_1account__whitelist__operation_1abba3d110e073c52309b894c4342fc660a5784b62ddb2021fb6f337578f714ef3e" prot="public" virt="non-virtual"><scope>graphene::chain::account_whitelist_operation</scope><name>no_listing</name></member>
       <member refid="structgraphene_1_1chain_1_1account__whitelist__operation_1a44b3441dd83877fe2bbaf801a6b64151" prot="public" virt="non-virtual"><scope>graphene::chain::account_whitelist_operation</scope><name>validate</name></member>
+      <member refid="structgraphene_1_1chain_1_1base__operation_1aba2bfdabb6d782e8b7843a363e85c69e" prot="public" virt="non-virtual"><scope>graphene::chain::account_whitelist_operation</scope><name>validate_parallel</name></member>
       <member refid="structgraphene_1_1chain_1_1account__whitelist__operation_1abba3d110e073c52309b894c4342fc660a8a0156a219f322cde14c69b0f9748515" prot="public" virt="non-virtual"><scope>graphene::chain::account_whitelist_operation</scope><name>white_and_black_listed</name></member>
       <member refid="structgraphene_1_1chain_1_1account__whitelist__operation_1abba3d110e073c52309b894c4342fc660a57b41bd3f476a766dd10d0c83accb2fa" prot="public" virt="non-virtual"><scope>graphene::chain::account_whitelist_operation</scope><name>white_listed</name></member>
     </listofallmembers>

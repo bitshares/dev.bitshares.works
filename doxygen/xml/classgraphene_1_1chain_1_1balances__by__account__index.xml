@@ -1,0 +1,213 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classgraphene_1_1chain_1_1balances__by__account__index" kind="class" language="C++" prot="public">
+    <compoundname>graphene::chain::balances_by_account_index</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">secondary_index</basecompoundref>
+    <includes refid="account__object_8hpp" local="no">account_object.hpp</includes>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classgraphene_1_1chain_1_1balances__by__account__index_1a56a1fec9105bbbd9ea8a2d1ab32b8227" prot="private" static="yes" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t graphene::chain::balances_by_account_index::bits</definition>
+        <argsstring></argsstring>
+        <name>bits</name>
+        <initializer>= 20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/chain/include/graphene/chain/account_object.hpp" line="354" column="1" bodyfile="libraries/chain/include/graphene/chain/account_object.hpp" bodystart="354" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgraphene_1_1chain_1_1balances__by__account__index_1a55f48cabacfcdc9d9ef74656bd78647d" prot="private" static="yes" mutable="no">
+        <type>const uint64_t</type>
+        <definition>const uint64_t graphene::chain::balances_by_account_index::mask</definition>
+        <argsstring></argsstring>
+        <name>mask</name>
+        <initializer>= (1ULL &lt;&lt; balances_by_account_index::bits) - 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/chain/include/graphene/chain/account_object.hpp" line="355" column="1" bodyfile="libraries/chain/include/graphene/chain/account_object.hpp" bodystart="355" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classgraphene_1_1chain_1_1balances__by__account__index_1a02eb8d7d258cb6718c2e97807f32946b" prot="private" static="no" mutable="no">
+        <type>vector&lt; vector&lt; map&lt; <ref refid="namespacegraphene_1_1chain_1a8719a403aa47e9d369890c01d60d0bb2" kindref="member">asset_id_type</ref>, const <ref refid="classgraphene_1_1chain_1_1account__balance__object" kindref="compound">account_balance_object</ref> *&gt; &gt; &gt;</type>
+        <definition>vector&lt; vector&lt; map&lt; asset_id_type, const account_balance_object* &gt; &gt; &gt; graphene::chain::balances_by_account_index::balances</definition>
+        <argsstring></argsstring>
+        <name>balances</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Maps each account to its balance objects </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/chain/include/graphene/chain/account_object.hpp" line="358" column="1" bodyfile="libraries/chain/include/graphene/chain/account_object.hpp" bodystart="358" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgraphene_1_1chain_1_1balances__by__account__index_1a1fae8d28eda4d01812be8b3a17963448" prot="private" static="no" mutable="no">
+        <type>std::stack&lt; object_id_type &gt;</type>
+        <definition>std::stack&lt; object_id_type &gt; graphene::chain::balances_by_account_index::ids_being_modified</definition>
+        <argsstring></argsstring>
+        <name>ids_being_modified</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/chain/include/graphene/chain/account_object.hpp" line="359" column="1" bodyfile="libraries/chain/include/graphene/chain/account_object.hpp" bodystart="359" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgraphene_1_1chain_1_1balances__by__account__index_1aa08b58598300b14cd728fbfd0288a5f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void graphene::chain::balances_by_account_index::object_inserted</definition>
+        <argsstring>(const object &amp;obj) override</argsstring>
+        <name>object_inserted</name>
+        <param>
+          <type>const object &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/chain/include/graphene/chain/account_object.hpp" line="345" column="1" bodyfile="libraries/chain/account_object.cpp" bodystart="275" bodyend="285"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1chain_1_1balances__by__account__index_1a11bea578dbc56c2dca72a6cafedbe366" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void graphene::chain::balances_by_account_index::object_removed</definition>
+        <argsstring>(const object &amp;obj) override</argsstring>
+        <name>object_removed</name>
+        <param>
+          <type>const object &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/chain/include/graphene/chain/account_object.hpp" line="346" column="1" bodyfile="libraries/chain/account_object.cpp" bodystart="287" bodyend="292"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1chain_1_1balances__by__account__index_1ae8d313e9878995bd04ae05fc89e5297a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void graphene::chain::balances_by_account_index::about_to_modify</definition>
+        <argsstring>(const object &amp;before) override</argsstring>
+        <name>about_to_modify</name>
+        <param>
+          <type>const object &amp;</type>
+          <declname>before</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/chain/include/graphene/chain/account_object.hpp" line="347" column="1" bodyfile="libraries/chain/account_object.cpp" bodystart="294" bodyend="297"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1chain_1_1balances__by__account__index_1ad1dc2668025ed93dac936a944c89d50d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void graphene::chain::balances_by_account_index::object_modified</definition>
+        <argsstring>(const object &amp;after) override</argsstring>
+        <name>object_modified</name>
+        <param>
+          <type>const object &amp;</type>
+          <declname>after</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/chain/include/graphene/chain/account_object.hpp" line="348" column="1" bodyfile="libraries/chain/account_object.cpp" bodystart="299" bodyend="303"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1chain_1_1balances__by__account__index_1a8a9d1a0a698c1af7531738267559d748" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const map&lt; <ref refid="namespacegraphene_1_1chain_1a8719a403aa47e9d369890c01d60d0bb2" kindref="member">asset_id_type</ref>, const <ref refid="classgraphene_1_1chain_1_1account__balance__object" kindref="compound">account_balance_object</ref> *&gt; &amp;</type>
+        <definition>const map&lt; asset_id_type, const account_balance_object *&gt; &amp; graphene::chain::balances_by_account_index::get_account_balances</definition>
+        <argsstring>(const account_id_type &amp;acct) const</argsstring>
+        <name>get_account_balances</name>
+        <param>
+          <type>const <ref refid="namespacegraphene_1_1chain_1a11927fb343f953514ab6235d6e7233ee" kindref="member">account_id_type</ref> &amp;</type>
+          <declname>acct</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/chain/include/graphene/chain/account_object.hpp" line="350" column="1" bodyfile="libraries/chain/account_object.cpp" bodystart="305" bodyend="311"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1chain_1_1balances__by__account__index_1a6ff4406776dbf9b33b05d50fb4df9a82" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classgraphene_1_1chain_1_1account__balance__object" kindref="compound">account_balance_object</ref> *</type>
+        <definition>const account_balance_object * graphene::chain::balances_by_account_index::get_account_balance</definition>
+        <argsstring>(const account_id_type &amp;acct, const asset_id_type &amp;asset) const</argsstring>
+        <name>get_account_balance</name>
+        <param>
+          <type>const <ref refid="namespacegraphene_1_1chain_1a11927fb343f953514ab6235d6e7233ee" kindref="member">account_id_type</ref> &amp;</type>
+          <declname>acct</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespacegraphene_1_1chain_1a8719a403aa47e9d369890c01d60d0bb2" kindref="member">asset_id_type</ref> &amp;</type>
+          <declname>asset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/chain/include/graphene/chain/account_object.hpp" line="351" column="1" bodyfile="libraries/chain/account_object.cpp" bodystart="313" bodyend="320"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This secondary index will allow fast access to the balance objects that belonging to an account. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1210">
+        <label>secondary_index</label>
+      </node>
+      <node id="1209">
+        <label>graphene::chain::balances_by_account_index</label>
+        <link refid="classgraphene_1_1chain_1_1balances__by__account__index"/>
+        <childnode refid="1210" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1212">
+        <label>secondary_index</label>
+      </node>
+      <node id="1211">
+        <label>graphene::chain::balances_by_account_index</label>
+        <link refid="classgraphene_1_1chain_1_1balances__by__account__index"/>
+        <childnode refid="1212" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="libraries/chain/include/graphene/chain/account_object.hpp" line="343" column="1" bodyfile="libraries/chain/include/graphene/chain/account_object.hpp" bodystart="342" bodyend="360"/>
+    <listofallmembers>
+      <member refid="classgraphene_1_1chain_1_1balances__by__account__index_1ae8d313e9878995bd04ae05fc89e5297a" prot="public" virt="virtual"><scope>graphene::chain::balances_by_account_index</scope><name>about_to_modify</name></member>
+      <member refid="classgraphene_1_1chain_1_1balances__by__account__index_1a02eb8d7d258cb6718c2e97807f32946b" prot="private" virt="non-virtual"><scope>graphene::chain::balances_by_account_index</scope><name>balances</name></member>
+      <member refid="classgraphene_1_1chain_1_1balances__by__account__index_1a56a1fec9105bbbd9ea8a2d1ab32b8227" prot="private" virt="non-virtual"><scope>graphene::chain::balances_by_account_index</scope><name>bits</name></member>
+      <member refid="classgraphene_1_1chain_1_1balances__by__account__index_1a6ff4406776dbf9b33b05d50fb4df9a82" prot="public" virt="non-virtual"><scope>graphene::chain::balances_by_account_index</scope><name>get_account_balance</name></member>
+      <member refid="classgraphene_1_1chain_1_1balances__by__account__index_1a8a9d1a0a698c1af7531738267559d748" prot="public" virt="non-virtual"><scope>graphene::chain::balances_by_account_index</scope><name>get_account_balances</name></member>
+      <member refid="classgraphene_1_1chain_1_1balances__by__account__index_1a1fae8d28eda4d01812be8b3a17963448" prot="private" virt="non-virtual"><scope>graphene::chain::balances_by_account_index</scope><name>ids_being_modified</name></member>
+      <member refid="classgraphene_1_1chain_1_1balances__by__account__index_1a55f48cabacfcdc9d9ef74656bd78647d" prot="private" virt="non-virtual"><scope>graphene::chain::balances_by_account_index</scope><name>mask</name></member>
+      <member refid="classgraphene_1_1chain_1_1balances__by__account__index_1aa08b58598300b14cd728fbfd0288a5f1" prot="public" virt="virtual"><scope>graphene::chain::balances_by_account_index</scope><name>object_inserted</name></member>
+      <member refid="classgraphene_1_1chain_1_1balances__by__account__index_1ad1dc2668025ed93dac936a944c89d50d" prot="public" virt="virtual"><scope>graphene::chain::balances_by_account_index</scope><name>object_modified</name></member>
+      <member refid="classgraphene_1_1chain_1_1balances__by__account__index_1a11bea578dbc56c2dca72a6cafedbe366" prot="public" virt="virtual"><scope>graphene::chain::balances_by_account_index</scope><name>object_removed</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
