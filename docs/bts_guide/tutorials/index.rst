@@ -106,7 +106,8 @@ Keys
 =====================
 * :ref:`How can I import a GUI-wallet account into CLI-wallet? <howto-import-gui-wallet-account-cli>`
 * :ref:`Where are public/private keys? GUI <where-pub-prv-keys>`
-
+* :ref:`how-to-get-key-pairs`
+  
 
 .. _monitoring_support:
 

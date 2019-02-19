@@ -32,7 +32,7 @@ All we put into the configuration file is the ids and the keys for the witnesses
     witness-id = "1.6.9"
     witness-id = "1.6.10"
     # For each witness, add pubkey and private key:
-    private-key = ["TEST6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV","5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"]
+    private-key = ["BTS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV","5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"]
     private-key = [<pubkey>,<privkey>]
     private-key = [<pubkey>,<privkey>]
     private-key = [<pubkey>,<privkey>]

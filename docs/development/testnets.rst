@@ -3,9 +3,9 @@
 Testnets
 **************
 
-BitShares offers an Open Public Testnets that has been deployed and is fully functional for anyone to join and test without using real BTS.  Instead, you will receive Testnet Core asset TEST.  The Open Public Testnets is a great space to start learning about BitShares-Core features and BitShares-UI wallet. 
+BitShares offers an Open Public Testnet that has been deployed and is fully functional for anyone to join and test without using real BTS.  Instead, you will receive Testnet Core asset TEST.  The Open Public Testnet is a great space to start learning about BitShares-Core features and BitShares-UI wallet. 
 
-For the BitShares Testnet preparation, you should download a **testnet** branch from the BitShares-Core repository. The testrnet branch files are for the Testnets to use.
+For the BitShares Testnet preparation, you should download a **testnet** branch from the BitShares-Core repository. The testnet branch files are for the Testnets to use.
 
 **The testnet branch files:** include bug fixes or new features
 

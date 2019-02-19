@@ -12,7 +12,7 @@ Some developers may want to deploy their own BitShares blockchain locally for go
    
 -------
 
-.. warning:: For the private testnet, you **MUST** create and set up own genesis file (my-genesis.json) and also, set parameters' values into a database configuration file (config.ini). You should not connect to the mainnet. 
+.. warning:: For the private testnet, you **MUST** create and set up own genesis file and also, set parameters' values into a database configuration file (config.ini).  You should not connect to the mainnet nor the public testnet.
 
 
 1. Installation
@@ -224,10 +224,11 @@ Open the ``[Testnet-Home]/data/my-blocktestnet/config.ini`` file and set the fol
 ::
 
 	p2p-endpoint = 127.0.0.1:11010
+	# seed_node =                   // add a seed node of your own
+	
 	rpc-endpoint = 127.0.0.1:11011
 
 	genesis-json = genesis/my-genesis.json
-	# genesis-json = genesis-dev.json	
 
 	private-key = ["-- generated key --","5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"]
 
@@ -511,6 +512,8 @@ If you want to set up a second node (with the same genesis file) and connect it 
 ::
 
 	p2p-endpoint = 127.0.0.1:11010
+	# seed-node =                // add a seed node of your own
+	
 	rpc-endpoint = 127.0.0.1:11011
 	
 	
@@ -521,8 +524,12 @@ If you want to set up a second node (with the same genesis file) and connect it 
 ::
 
 	p2p-endpoint = 127.0.0.1:11015
-	seed-node = 127.0.0.1:11010
+	seed-node = 127.0.0.1:11010	
+	
+	rpc-endpoint = 127.0.0.1:11020
+		
 
+	
 
 |
 

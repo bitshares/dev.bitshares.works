@@ -7,16 +7,7 @@ Configuration for Private Testnets
 This section shows the BitShres Blockchain configuration file ``config.ini`` parameter items. The configuration file locates in your data directory and the most parameter items are commented and contain the essential settings to adjust.
 
 
-.. WARNING:: For a Private testnet, you must add a seed node of your own, you should not connect to the Public testnet.
-
-
-**Parameters you should update**
-
-* 
-* 
-* 
-* 
-
+.. WARNING:: For a Private testnet, you must add a seed node of your own, you should not connect to the mainnet nor the public testnet.
 
 
 Example - config.ini (private testnet)
@@ -29,11 +20,13 @@ As a default, most parameters have been commented. You have to uncomment to set 
 
 	p2p-endpoint = 127.0.0.1:11010
 	rpc-endpoint = 127.0.0.1:11011
-
+	# seed_node =                   // add a seed node of your own
+	
 	genesis-json = genesis/my-genesis.json
 
 	private-key = ["BTS....","5KQwr...."]  //Set your key pairs
-
+	# private-key = ["BTS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV","5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"]
+	
 	witness-id = "1.6.1"
 	witness-id = "1.6.2"
 	witness-id = "1.6.3"
@@ -104,6 +97,34 @@ Example - logging.ini
 	level=error
 	appenders=rpc
 
+|
 
+Example - Set up the Second Node
+--------------------------------
+
+If you want to set up a second node (with the same genesis file) and connect it to the first node by using the ``p2p-endpoint`` of the first node as the ``seed-node`` for the second. The below are example settings.
+
+
+**Node-001: config.ini**
+
+::
+
+	p2p-endpoint = 127.0.0.1:11010
+	# seed-node =                // add a seed node of your own
+	
+	rpc-endpoint = 127.0.0.1:11011
+	
+	
+**Node-002: config.ini**
+
+  - Set the Node-001's ``p2p-endpoint`` as the Node-002's ``seed-node``. 
+  
+::
+
+	p2p-endpoint = 127.0.0.1:11015
+	seed-node = 127.0.0.1:11010	
+	
+	rpc-endpoint = 127.0.0.1:11020
+		
 	
 
