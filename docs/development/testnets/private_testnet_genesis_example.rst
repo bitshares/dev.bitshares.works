@@ -15,9 +15,10 @@ For the use of private testnet, you must put an account into the genesis file wi
 
 
 .. tip:: If you want to generate new keys pairs, you can use 
-   - ``suggest-brain-key`` option in cli_wallet. Or  ``./get_dev_key --help`` option by using the corresponding network prefix("BTS", "TEST", "MY", etc).
+   - ``suggest_brain_key`` option in cli_wallet. Or  ``./get_dev_key`` option in the ``programs/genesis_util/`` by using the corresponding network prefix("BTS", "TEST", "MY", etc). 
 
 
+* :ref:`how-to-get-key-pairs`
   
 |
 
