@@ -109,7 +109,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="130" column="1" bodyfile="libraries/app/api.cpp" bodystart="311" bodyend="344"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="130" column="1" bodyfile="libraries/app/api.cpp" bodystart="313" bodyend="346"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1history__api_1aa089e3b3c533e4f195c6af5c230c8a3b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structgraphene_1_1app_1_1history__operation__detail" kindref="compound">history_operation_detail</ref></type>
@@ -168,12 +168,12 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="146" column="1" bodyfile="libraries/app/api.cpp" bodystart="430" bodyend="443"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="146" column="1" bodyfile="libraries/app/api.cpp" bodystart="432" bodyend="445"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1app_1_1history__api_1a67e565b2a56a736c31215fb96d216fc9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1app_1_1history__api_1ae934c392409cbb761f3c846ed49d3411" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>vector&lt; <ref refid="classgraphene_1_1chain_1_1operation__history__object" kindref="compound">operation_history_object</ref> &gt;</type>
         <definition>vector&lt; operation_history_object &gt; graphene::app::history_api::get_account_history_operations</definition>
-        <argsstring>(const std::string account_id_or_name, int operation_id, operation_history_id_type start=operation_history_id_type(), operation_history_id_type stop=operation_history_id_type(), unsigned limit=100) const</argsstring>
+        <argsstring>(const std::string account_id_or_name, int operation_type, operation_history_id_type start=operation_history_id_type(), operation_history_id_type stop=operation_history_id_type(), unsigned limit=100) const</argsstring>
         <name>get_account_history_operations</name>
         <param>
           <type>const std::string</type>
@@ -181,7 +181,7 @@
         </param>
         <param>
           <type>int</type>
-          <declname>operation_id</declname>
+          <declname>operation_type</declname>
         </param>
         <param>
           <type><ref refid="namespacegraphene_1_1chain_1ac95699e79dcc01de0d506840c1b7feb4" kindref="member">operation_history_id_type</ref></type>
@@ -210,10 +210,10 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>operation_id</parametername>
+<parametername>operation_type</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The ID of the operation we want to get operations in the account ( 0 = transfer , 1 = limit order create, ...) </para></parameterdescription>
+<para>The type of the operation we want to get operations in the account ( 0 = transfer , 1 = limit order create, ...) </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -241,7 +241,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="163" column="1" bodyfile="libraries/app/api.cpp" bodystart="346" bodyend="383"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="163" column="1" bodyfile="libraries/app/api.cpp" bodystart="348" bodyend="385"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1history__api_1aeed223d6c126ffd0b2a388ae3e026a90" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>vector&lt; <ref refid="classgraphene_1_1chain_1_1operation__history__object" kindref="compound">operation_history_object</ref> &gt;</type>
@@ -303,19 +303,19 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="183" column="1" bodyfile="libraries/app/api.cpp" bodystart="386" bodyend="421"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="183" column="1" bodyfile="libraries/app/api.cpp" bodystart="388" bodyend="423"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1app_1_1history__api_1a1574597fa10804bf328b89c12f6f7a9f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1app_1_1history__api_1a3207e2d3f44030f5b4b82223005f15bd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>vector&lt; order_history_object &gt;</type>
         <definition>vector&lt; order_history_object &gt; graphene::app::history_api::get_fill_order_history</definition>
-        <argsstring>(asset_id_type a, asset_id_type b, uint32_t limit) const</argsstring>
+        <argsstring>(std::string a, std::string b, uint32_t limit) const</argsstring>
         <name>get_fill_order_history</name>
         <param>
-          <type><ref refid="namespacegraphene_1_1chain_1a8719a403aa47e9d369890c01d60d0bb2" kindref="member">asset_id_type</ref></type>
+          <type>std::string</type>
           <declname>a</declname>
         </param>
         <param>
-          <type><ref refid="namespacegraphene_1_1chain_1a8719a403aa47e9d369890c01d60d0bb2" kindref="member">asset_id_type</ref></type>
+          <type>std::string</type>
           <declname>b</declname>
         </param>
         <param>
@@ -330,14 +330,14 @@
 <parametername>a</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>One asset in a trading pair </para></parameterdescription>
+<para>Asset symbol or ID in a trading pair </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>b</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The other asset in the trading pair </para></parameterdescription>
+<para>The other asset symbol or ID in the trading pair </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -351,19 +351,19 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="195" column="1" bodyfile="libraries/app/api.cpp" bodystart="286" bodyend="309"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="195" column="1" bodyfile="libraries/app/api.cpp" bodystart="286" bodyend="311"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1app_1_1history__api_1ab5e379a09632a3e215554cd9ef37dcd9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1app_1_1history__api_1aa53f0db49a63cd2277ac94dbfc0d10c9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>vector&lt; bucket_object &gt;</type>
         <definition>vector&lt; bucket_object &gt; graphene::app::history_api::get_market_history</definition>
-        <argsstring>(asset_id_type a, asset_id_type b, uint32_t bucket_seconds, fc::time_point_sec start, fc::time_point_sec end) const</argsstring>
+        <argsstring>(std::string a, std::string b, uint32_t bucket_seconds, fc::time_point_sec start, fc::time_point_sec end) const</argsstring>
         <name>get_market_history</name>
         <param>
-          <type><ref refid="namespacegraphene_1_1chain_1a8719a403aa47e9d369890c01d60d0bb2" kindref="member">asset_id_type</ref></type>
+          <type>std::string</type>
           <declname>a</declname>
         </param>
         <param>
-          <type><ref refid="namespacegraphene_1_1chain_1a8719a403aa47e9d369890c01d60d0bb2" kindref="member">asset_id_type</ref></type>
+          <type>std::string</type>
           <declname>b</declname>
         </param>
         <param>
@@ -386,14 +386,14 @@
 <parametername>a</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>One asset in a trading pair </para></parameterdescription>
+<para>Asset symbol or ID in a trading pair </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>b</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The other asset in the trading pair </para></parameterdescription>
+<para>The other asset symbol or ID in the trading pair </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -421,7 +421,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="208" column="1" bodyfile="libraries/app/api.cpp" bodystart="445" bodyend="469"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="208" column="1" bodyfile="libraries/app/api.cpp" bodystart="447" bodyend="473"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1history__api_1a3cb82a7bb879b9f967665d69fd90c67d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>flat_set&lt; uint32_t &gt;</type>
@@ -435,7 +435,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="216" column="1" bodyfile="libraries/app/api.cpp" bodystart="423" bodyend="428"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="216" column="1" bodyfile="libraries/app/api.cpp" bodystart="425" bodyend="430"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -448,9 +448,9 @@
       <member refid="classgraphene_1_1app_1_1history__api_1af5bed60211b4dbc03bd69cfee1448848" prot="private" virt="non-virtual"><scope>graphene::app::history_api</scope><name>database_api</name></member>
       <member refid="classgraphene_1_1app_1_1history__api_1a70b3af7edeea81534a4db9e83b2cbd88" prot="public" virt="non-virtual"><scope>graphene::app::history_api</scope><name>get_account_history</name></member>
       <member refid="classgraphene_1_1app_1_1history__api_1aa089e3b3c533e4f195c6af5c230c8a3b" prot="public" virt="non-virtual"><scope>graphene::app::history_api</scope><name>get_account_history_by_operations</name></member>
-      <member refid="classgraphene_1_1app_1_1history__api_1a67e565b2a56a736c31215fb96d216fc9" prot="public" virt="non-virtual"><scope>graphene::app::history_api</scope><name>get_account_history_operations</name></member>
-      <member refid="classgraphene_1_1app_1_1history__api_1a1574597fa10804bf328b89c12f6f7a9f" prot="public" virt="non-virtual"><scope>graphene::app::history_api</scope><name>get_fill_order_history</name></member>
-      <member refid="classgraphene_1_1app_1_1history__api_1ab5e379a09632a3e215554cd9ef37dcd9" prot="public" virt="non-virtual"><scope>graphene::app::history_api</scope><name>get_market_history</name></member>
+      <member refid="classgraphene_1_1app_1_1history__api_1ae934c392409cbb761f3c846ed49d3411" prot="public" virt="non-virtual"><scope>graphene::app::history_api</scope><name>get_account_history_operations</name></member>
+      <member refid="classgraphene_1_1app_1_1history__api_1a3207e2d3f44030f5b4b82223005f15bd" prot="public" virt="non-virtual"><scope>graphene::app::history_api</scope><name>get_fill_order_history</name></member>
+      <member refid="classgraphene_1_1app_1_1history__api_1aa53f0db49a63cd2277ac94dbfc0d10c9" prot="public" virt="non-virtual"><scope>graphene::app::history_api</scope><name>get_market_history</name></member>
       <member refid="classgraphene_1_1app_1_1history__api_1a3cb82a7bb879b9f967665d69fd90c67d" prot="public" virt="non-virtual"><scope>graphene::app::history_api</scope><name>get_market_history_buckets</name></member>
       <member refid="classgraphene_1_1app_1_1history__api_1aeed223d6c126ffd0b2a388ae3e026a90" prot="public" virt="non-virtual"><scope>graphene::app::history_api</scope><name>get_relative_account_history</name></member>
       <member refid="classgraphene_1_1app_1_1history__api_1ad034d3e3420e431ad72159b9f3bd807a" prot="public" virt="non-virtual"><scope>graphene::app::history_api</scope><name>history_api</name></member>

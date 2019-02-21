@@ -36,7 +36,7 @@
       </sectiondef>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1transaction__object_1a4e8cf483725517a654686544358f93a8" prot="public" static="no" mutable="no">
-        <type><ref refid="structgraphene_1_1chain_1_1signed__transaction" kindref="compound">signed_transaction</ref></type>
+        <type><ref refid="classgraphene_1_1chain_1_1signed__transaction" kindref="compound">signed_transaction</ref></type>
         <definition>signed_transaction graphene::chain::transaction_object::trx</definition>
         <argsstring></argsstring>
         <name>trx</name>
@@ -82,66 +82,66 @@
     <detaileddescription>
 <para>The purpose of this object is to enable the detection of duplicate transactions. When a transaction is included in a block a <ref refid="classgraphene_1_1chain_1_1transaction__object" kindref="compound">transaction_object</ref> is added. At the end of block processing all transaction_objects that have expired can be removed from the index. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="2988">
+      <node id="3021">
         <label>graphene::db::abstract_object&lt; transaction_object &gt;</label>
       </node>
-      <node id="2987">
+      <node id="3020">
         <label>graphene::chain::transaction_object</label>
         <link refid="classgraphene_1_1chain_1_1transaction__object"/>
-        <childnode refid="2988" relation="public-inheritance">
+        <childnode refid="3021" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="2994">
+      <node id="3027">
         <label>time_point_sec</label>
       </node>
-      <node id="2993">
+      <node id="3026">
         <label>flat_set&lt; future_extensions &gt;</label>
       </node>
-      <node id="2990">
+      <node id="3023">
         <label>graphene::db::abstract_object&lt; transaction_object &gt;</label>
       </node>
-      <node id="2996">
+      <node id="3029">
         <label>vector&lt; signature_type &gt;</label>
       </node>
-      <node id="2991">
+      <node id="3024">
         <label>graphene::chain::signed_transaction</label>
-        <link refid="structgraphene_1_1chain_1_1signed__transaction"/>
-        <childnode refid="2992" relation="public-inheritance">
+        <link refid="classgraphene_1_1chain_1_1signed__transaction"/>
+        <childnode refid="3025" relation="public-inheritance">
         </childnode>
-        <childnode refid="2996" relation="usage">
+        <childnode refid="3029" relation="usage">
           <edgelabel>signatures</edgelabel>
         </childnode>
-        <childnode refid="2997" relation="usage">
-          <edgelabel>signees</edgelabel>
+        <childnode refid="3030" relation="usage">
+          <edgelabel>_signees</edgelabel>
         </childnode>
       </node>
-      <node id="2995">
+      <node id="3028">
         <label>vector&lt; operation &gt;</label>
       </node>
-      <node id="2997">
+      <node id="3030">
         <label>flat_set&lt; graphene::chain::public_key_type &gt;</label>
       </node>
-      <node id="2992">
+      <node id="3025">
         <label>graphene::chain::transaction</label>
-        <link refid="structgraphene_1_1chain_1_1transaction"/>
-        <childnode refid="2993" relation="usage">
+        <link refid="classgraphene_1_1chain_1_1transaction"/>
+        <childnode refid="3026" relation="usage">
           <edgelabel>extensions</edgelabel>
         </childnode>
-        <childnode refid="2994" relation="usage">
+        <childnode refid="3027" relation="usage">
           <edgelabel>expiration</edgelabel>
         </childnode>
-        <childnode refid="2995" relation="usage">
+        <childnode refid="3028" relation="usage">
           <edgelabel>operations</edgelabel>
         </childnode>
       </node>
-      <node id="2989">
+      <node id="3022">
         <label>graphene::chain::transaction_object</label>
         <link refid="classgraphene_1_1chain_1_1transaction__object"/>
-        <childnode refid="2990" relation="public-inheritance">
+        <childnode refid="3023" relation="public-inheritance">
         </childnode>
-        <childnode refid="2991" relation="usage">
+        <childnode refid="3024" relation="usage">
           <edgelabel>trx</edgelabel>
         </childnode>
       </node>

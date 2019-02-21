@@ -17,16 +17,29 @@
         </inbodydescription>
         <location file="libraries/app/include/graphene/app/api.hpp" line="467" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="467" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="variable" id="classgraphene_1_1app_1_1asset__api_1aa0e04f18fa2500535d12934db69f7532" prot="private" static="no" mutable="no">
+        <type><ref refid="classgraphene_1_1app_1_1database__api" kindref="compound">graphene::app::database_api</ref></type>
+        <definition>graphene::app::database_api graphene::app::asset_api::database_api</definition>
+        <argsstring></argsstring>
+        <name>database_api</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="468" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="468" bodyend="-1"/>
+      </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classgraphene_1_1app_1_1asset__api_1a66f2a59451ff7ba96817de8c195fcd17" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1app_1_1asset__api_1a2be74609de33cf295986e52b9f1ac92d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>graphene::app::asset_api::asset_api</definition>
-        <argsstring>(graphene::chain::database &amp;db)</argsstring>
+        <argsstring>(graphene::app::application &amp;app)</argsstring>
         <name>asset_api</name>
         <param>
-          <type><ref refid="classgraphene_1_1chain_1_1database" kindref="compound">graphene::chain::database</ref> &amp;</type>
-          <declname>db</declname>
+          <type><ref refid="classgraphene_1_1app_1_1application" kindref="compound">graphene::app::application</ref> &amp;</type>
+          <declname>app</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -34,7 +47,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="441" column="1" bodyfile="libraries/app/api.cpp" bodystart="528" bodyend="528"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="441" column="1" bodyfile="libraries/app/api.cpp" bodystart="532" bodyend="535"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1asset__api_1a715c6f7a5640aa5d045c43ef3e6728e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -47,16 +60,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="442" column="1" bodyfile="libraries/app/api.cpp" bodystart="529" bodyend="529"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="442" column="1" bodyfile="libraries/app/api.cpp" bodystart="536" bodyend="536"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1app_1_1asset__api_1af3fd02c6cca9a5b66877755c11b49ef2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1app_1_1asset__api_1a2d515d27a54522ced1a418a5728dde95" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>vector&lt; <ref refid="structgraphene_1_1app_1_1account__asset__balance" kindref="compound">account_asset_balance</ref> &gt;</type>
         <definition>vector&lt; account_asset_balance &gt; graphene::app::asset_api::get_asset_holders</definition>
-        <argsstring>(asset_id_type asset_id, uint32_t start, uint32_t limit) const</argsstring>
+        <argsstring>(std::string asset, uint32_t start, uint32_t limit) const</argsstring>
         <name>get_asset_holders</name>
         <param>
-          <type><ref refid="namespacegraphene_1_1chain_1a8719a403aa47e9d369890c01d60d0bb2" kindref="member">asset_id_type</ref></type>
-          <declname>asset_id</declname>
+          <type>std::string</type>
+          <declname>asset</declname>
         </param>
         <param>
           <type>uint32_t</type>
@@ -71,10 +84,10 @@
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername>asset_id</parametername>
+<parametername>asset</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The specific asset </para></parameterdescription>
+<para>The specific asset id or symbol </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -95,33 +108,33 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="451" column="1" bodyfile="libraries/app/api.cpp" bodystart="531" bodyend="562"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="451" column="1" bodyfile="libraries/app/api.cpp" bodystart="538" bodyend="571"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1app_1_1asset__api_1a524e86df17e406217eb6964644f3d723" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1app_1_1asset__api_1a1c4c683d7d754c7b04559a83c2a92982" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int graphene::app::asset_api::get_asset_holders_count</definition>
-        <argsstring>(asset_id_type asset_id) const</argsstring>
+        <argsstring>(std::string asset) const</argsstring>
         <name>get_asset_holders_count</name>
         <param>
-          <type><ref refid="namespacegraphene_1_1chain_1a8719a403aa47e9d369890c01d60d0bb2" kindref="member">asset_id_type</ref></type>
-          <declname>asset_id</declname>
+          <type>std::string</type>
+          <declname>asset</declname>
         </param>
         <briefdescription>
 <para>Get asset holders count for a specific asset. </para>        </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername>asset_id</parametername>
+<parametername>asset</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The specific asset </para></parameterdescription>
+<para>The specific asset id or symbol </para></parameterdescription>
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>Holders count for the specified asset </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="458" column="1" bodyfile="libraries/app/api.cpp" bodystart="564" bodyend="572"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="458" column="1" bodyfile="libraries/app/api.cpp" bodystart="573" bodyend="582"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1asset__api_1aab832080159854fe72dffa563dc0f23c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>vector&lt; <ref refid="structgraphene_1_1app_1_1asset__holders" kindref="compound">asset_holders</ref> &gt;</type>
@@ -135,20 +148,21 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="464" column="1" bodyfile="libraries/app/api.cpp" bodystart="574" bodyend="599"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="464" column="1" bodyfile="libraries/app/api.cpp" bodystart="584" bodyend="609"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="libraries/app/include/graphene/app/api.hpp" line="439" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="438" bodyend="468"/>
+    <location file="libraries/app/include/graphene/app/api.hpp" line="439" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="438" bodyend="469"/>
     <listofallmembers>
       <member refid="classgraphene_1_1app_1_1asset__api_1a6f3109e02a4091cb8ac153a6be4fbdba" prot="private" virt="non-virtual"><scope>graphene::app::asset_api</scope><name>_db</name></member>
-      <member refid="classgraphene_1_1app_1_1asset__api_1a66f2a59451ff7ba96817de8c195fcd17" prot="public" virt="non-virtual"><scope>graphene::app::asset_api</scope><name>asset_api</name></member>
+      <member refid="classgraphene_1_1app_1_1asset__api_1a2be74609de33cf295986e52b9f1ac92d" prot="public" virt="non-virtual"><scope>graphene::app::asset_api</scope><name>asset_api</name></member>
+      <member refid="classgraphene_1_1app_1_1asset__api_1aa0e04f18fa2500535d12934db69f7532" prot="private" virt="non-virtual"><scope>graphene::app::asset_api</scope><name>database_api</name></member>
       <member refid="classgraphene_1_1app_1_1asset__api_1aab832080159854fe72dffa563dc0f23c" prot="public" virt="non-virtual"><scope>graphene::app::asset_api</scope><name>get_all_asset_holders</name></member>
-      <member refid="classgraphene_1_1app_1_1asset__api_1af3fd02c6cca9a5b66877755c11b49ef2" prot="public" virt="non-virtual"><scope>graphene::app::asset_api</scope><name>get_asset_holders</name></member>
-      <member refid="classgraphene_1_1app_1_1asset__api_1a524e86df17e406217eb6964644f3d723" prot="public" virt="non-virtual"><scope>graphene::app::asset_api</scope><name>get_asset_holders_count</name></member>
+      <member refid="classgraphene_1_1app_1_1asset__api_1a2d515d27a54522ced1a418a5728dde95" prot="public" virt="non-virtual"><scope>graphene::app::asset_api</scope><name>get_asset_holders</name></member>
+      <member refid="classgraphene_1_1app_1_1asset__api_1a1c4c683d7d754c7b04559a83c2a92982" prot="public" virt="non-virtual"><scope>graphene::app::asset_api</scope><name>get_asset_holders_count</name></member>
       <member refid="classgraphene_1_1app_1_1asset__api_1a715c6f7a5640aa5d045c43ef3e6728e2" prot="public" virt="non-virtual"><scope>graphene::app::asset_api</scope><name>~asset_api</name></member>
     </listofallmembers>
   </compounddef>

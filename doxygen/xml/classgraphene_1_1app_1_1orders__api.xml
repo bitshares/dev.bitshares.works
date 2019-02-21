@@ -15,7 +15,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="502" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="502" bodyend="-1"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="503" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="503" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgraphene_1_1app_1_1orders__api_1ab503d20bfa95180ee6046feeda757b77" prot="private" static="no" mutable="no">
+        <type><ref refid="classgraphene_1_1app_1_1database__api" kindref="compound">graphene::app::database_api</ref></type>
+        <definition>graphene::app::database_api graphene::app::orders_api::database_api</definition>
+        <argsstring></argsstring>
+        <name>database_api</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="504" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="504" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -34,7 +47,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="476" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="476" bodyend="476"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="477" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="477" bodyend="477"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1orders__api_1ac03c7b822ceec55577ff9470b6a4ce3c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>flat_set&lt; uint16_t &gt;</type>
@@ -48,20 +61,20 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="483" column="1" bodyfile="libraries/app/api.cpp" bodystart="602" bodyend="607"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="484" column="1" bodyfile="libraries/app/api.cpp" bodystart="612" bodyend="617"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1app_1_1orders__api_1a31bfe6b880c2598bdbcab2712e68d64b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1app_1_1orders__api_1a4a1a90a159a7e7dd1b697c88eb3417b9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>vector&lt; <ref refid="structgraphene_1_1app_1_1limit__order__group" kindref="compound">limit_order_group</ref> &gt;</type>
         <definition>vector&lt; limit_order_group &gt; graphene::app::orders_api::get_grouped_limit_orders</definition>
-        <argsstring>(asset_id_type base_asset_id, asset_id_type quote_asset_id, uint16_t group, optional&lt; price &gt; start, uint32_t limit) const</argsstring>
+        <argsstring>(std::string base_asset, std::string quote_asset, uint16_t group, optional&lt; price &gt; start, uint32_t limit) const</argsstring>
         <name>get_grouped_limit_orders</name>
         <param>
-          <type><ref refid="namespacegraphene_1_1chain_1a8719a403aa47e9d369890c01d60d0bb2" kindref="member">asset_id_type</ref></type>
-          <declname>base_asset_id</declname>
+          <type>std::string</type>
+          <declname>base_asset</declname>
         </param>
         <param>
-          <type><ref refid="namespacegraphene_1_1chain_1a8719a403aa47e9d369890c01d60d0bb2" kindref="member">asset_id_type</ref></type>
-          <declname>quote_asset_id</declname>
+          <type>std::string</type>
+          <declname>quote_asset</declname>
         </param>
         <param>
           <type>uint16_t</type>
@@ -80,17 +93,17 @@
         <detaileddescription>
 <para>Get grouped limit orders in given market.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername>base_asset_id</parametername>
+<parametername>base_asset</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>ID of asset being sold </para></parameterdescription>
+<para>ID or symbol of asset being sold </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>quote_asset_id</parametername>
+<parametername>quote_asset</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>ID of asset being purchased </para></parameterdescription>
+<para>ID or symbol of asset being purchased </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -118,17 +131,18 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="495" column="1" bodyfile="libraries/app/api.cpp" bodystart="609" bodyend="635"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="496" column="1" bodyfile="libraries/app/api.cpp" bodystart="619" bodyend="648"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>the <ref refid="classgraphene_1_1app_1_1orders__api" kindref="compound">orders_api</ref> class exposes access to data processed with grouped orders plugin. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="libraries/app/include/graphene/app/api.hpp" line="474" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="473" bodyend="503"/>
+    <location file="libraries/app/include/graphene/app/api.hpp" line="475" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="474" bodyend="505"/>
     <listofallmembers>
       <member refid="classgraphene_1_1app_1_1orders__api_1a6c967505a58b0d56ea6ac2ee28328d7f" prot="private" virt="non-virtual"><scope>graphene::app::orders_api</scope><name>_app</name></member>
-      <member refid="classgraphene_1_1app_1_1orders__api_1a31bfe6b880c2598bdbcab2712e68d64b" prot="public" virt="non-virtual"><scope>graphene::app::orders_api</scope><name>get_grouped_limit_orders</name></member>
+      <member refid="classgraphene_1_1app_1_1orders__api_1ab503d20bfa95180ee6046feeda757b77" prot="private" virt="non-virtual"><scope>graphene::app::orders_api</scope><name>database_api</name></member>
+      <member refid="classgraphene_1_1app_1_1orders__api_1a4a1a90a159a7e7dd1b697c88eb3417b9" prot="public" virt="non-virtual"><scope>graphene::app::orders_api</scope><name>get_grouped_limit_orders</name></member>
       <member refid="classgraphene_1_1app_1_1orders__api_1ac03c7b822ceec55577ff9470b6a4ce3c" prot="public" virt="non-virtual"><scope>graphene::app::orders_api</scope><name>get_tracked_groups</name></member>
       <member refid="classgraphene_1_1app_1_1orders__api_1a1c1a0920781506af3b59128c6f8912aa" prot="public" virt="non-virtual"><scope>graphene::app::orders_api</scope><name>orders_api</name></member>
     </listofallmembers>
