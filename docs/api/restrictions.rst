@@ -2,7 +2,7 @@
 .. _api-access-and-restrictions:
 
 ****************************
-2.API Access and Restrictions 
+API Access and Restrictions 
 ****************************
 
 .. contents:: Table of Contents
@@ -10,7 +10,7 @@
    
 ---------------   
 
-2.1. Using the API
+Using the API
 =================
 
 We provide several different API's. Each API has its own ID. When running `witness_node`, initially two API's are available.
@@ -56,7 +56,7 @@ Since restricted APIs require login, they are **only** accessible over the webso
 
 .. _api-access-json:
 
-2.2. Accessing Restricted API's 
+Accessing Restricted API's 
 ==============================
 
 You can restrict API’s to particular users by specifying an ``api-access`` in a :ref:`configuration <bts-config-ini-eg>` file or by using the ``--api-access /full/path/to/api-access.json`` startup node command. 
@@ -116,7 +116,7 @@ Please check. Our `doxygen <https://bitshares.org/doxygen/>`_ documentation cont
 
 .. _api-access-via-http:
 
-2.3. Accessing the Named API via HTTP
+ Accessing the Named API via HTTP
 =======================================
 
 When you access the API via HTTP, use the name of the APIs like below,
@@ -139,7 +139,7 @@ When you use WS, use like below to prevent unnecessary round trips (login, query
 
 -------------------
 
-2.4. Login In
+Login In
 =============
 
 The ``login_api`` class implements the bottom layer of the RPC API. All other APIs must be requested from this API.

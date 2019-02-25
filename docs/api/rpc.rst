@@ -1,7 +1,7 @@
 
 .. _rpc:
 
-3.1 Remote Procedure Calls
+Remote Procedure Calls
 ========================
 
 .. contents:: Table of Contents
@@ -9,7 +9,7 @@
    
 ------------
    
-1.Prerequisites
+Prerequisites
 ---------------------
 
 This page assumes that you either have a full node or a wallet running and
@@ -17,7 +17,7 @@ listening to port ``8090``, locally.
 
 .. note:: The set of available commands depends on application you connect to.
 
-2.Call Format
+Call Format
 ------------------
 
 In Graphene, RPC calls are state-less and accessible via regular JSON formated
@@ -74,7 +74,7 @@ a detailed description:
       },
     }
 
-3.Remarks
+Remarks
 --------------
 
 Wallet specific commands, such as ``transfer`` and market orders, are only
@@ -87,7 +87,5 @@ avaiable via RPC. Calls that are restricted by default (i.e.
 ``network_node_api``) or have been restricted by configuration are not
 accessible via RPC because a statefull protocol (websocket) is required for
 login.
-
-|
 
 |

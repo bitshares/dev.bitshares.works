@@ -2,15 +2,18 @@
 .. _bts-config-ini-eg:
 
 Configuration
-====================
+************************
 
 This section shows the BitShres Blockchain configuration file ``config.ini`` parameter items. The configuration file locates in your data directory and the most parameter items are commented and contain the essential settings to adjust.
 
 .. note:: The below cinfig.ini output is an example (default values). You should modify ``private-key`` and debug-private-key`` and adjust other parameter values respectively. 
 
 
-Example - config.ini
----------------------
+Examples
+===========
+
+**Example - config.ini**
+
 
 Example of a ``config.ini`` file in the data directory.
 
@@ -175,9 +178,10 @@ As a default, most parameters have been commented. You have to uncomment to set 
 	# Logging configuration is loaded from logging.ini by default.
 	# If logging.ini exists, logging configuration added in this file will be ignored.
 
+|
 
-Example - logging.ini
----------------------
+**Example - logging.ini**
+
 
 ::
 
@@ -232,4 +236,13 @@ Example - logging.ini
 	
 .. Note:: Folders and files are considered to be relative to the working directory (i.e. the directory from which the executables are launched from)
 
+|
+
 	
+plugins
+================
+
+* `Type of BitShares Plugins: Github ReadMe <https://github.com/bitshares/bitshares-core/blob/master/libraries/plugins/README.md>`_ 
+
+
+|

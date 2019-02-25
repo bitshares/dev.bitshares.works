@@ -1,6 +1,6 @@
 
 ***********************************
-3.Available Calls and Often used API
+Available Calls and Often used API
 ***********************************
 
 .. toctree::

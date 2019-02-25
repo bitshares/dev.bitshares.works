@@ -2,7 +2,7 @@
 
 .. _run-cli-wallet-steps:
 
-***********************
+
 Launch a Cli Wallet 
 ***********************
 
@@ -14,13 +14,11 @@ The following will explain about the installation and how to use the console wal
    
 -------
 
+**Steps**
 
-
-Steps
-=======
 
 1.Installation and build 
-----------------------------
+==================================
 
 - 1a) Install and build it from BitShares-Core
   - BitShares offers you to install BitShares-Core into different platforms; Ubuntu (x64), OSx, and Windows.  Please refer :ref:`installation-guide`.
@@ -40,7 +38,7 @@ instead of::
 |
   
 2. Launching a cli_wallet
-----------------------------
+==================================
 
 The cli_wallet creates a local wallet.json file that contains the encrypted private keys required to access the funds in your account. It **requires** a running witness node (not necessarily locally) and connects to it on launch. 
 
@@ -93,7 +91,7 @@ After opening the cli-wallet, if you have not had a local wallet yet, you will r
 .. _3-unlock-cli-wallet:
 
 3.Unlock the Cli_Wallet
-----------------------------
+==================================
 
 If you open the cli-wallet successfully, you will receive ``new >>>`` prompt (if no local wallet found). Set a password and unlock the cli-wallet.
 
@@ -134,7 +132,7 @@ You can get more detailed information by issuing ``gethelp``. Detailed explanati
 |
 
 4. Gain Access to Blockchain
-----------------------------------
+==================================
 
 In Graphene, balances are contained in accounts. To claim an account that exists in the Graphene genesis, **imports the private key for an existing account**. The private key must match either an owner key or an active key for the named account.
 
@@ -155,7 +153,7 @@ Funds are stored in genesis balance objects. These funds can be claimed, with no
 |
 
 5. Create Accounts
--------------------------------
+==================================
 
 .. Note:: To register an account, the registrar needs to be a lifetime member. You can use ``upgrade_account`` to upgrade the account to be **Lifetime member (LTM)** status.
 
@@ -185,7 +183,7 @@ This command allows you to register an account using only a **public key**.
 |
 	
 6. Transfer Funds by using the Cli-wallet
-----------------------------------------------
+==================================
 
 In ``transfer``, if the broadcast flag is ``False``, the wallet will construct and sign, but **not**, broadcast the transaction. 
 
@@ -214,7 +212,7 @@ The wallet will return the actually signed transaction.
 |
 
 7. Obtain the private key
-----------------------------
+==================================
 
 The ``get_private_key`` command allows us to obtain the **private key** corresponding to the block signing key.::
 
