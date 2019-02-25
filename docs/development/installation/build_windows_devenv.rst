@@ -31,7 +31,7 @@ Download and install libraries
 
 You do can download the source and compile the two libraries above, it will take more time and return more safety/security. Again, we still suggest you to keep all the default settings in the install process. Any changes you made here, you have to make the corresponding changes to cmake command we use later.
 
-Down and Compile
+Download and Compile
 ==============================
 
 1. cURL, we do not find any usable prebuilt cURL, so we have to compile it from source. Open a command window with administrator right, and run

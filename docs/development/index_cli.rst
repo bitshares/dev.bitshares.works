@@ -1,25 +1,20 @@
 
-.. _blockchain-interaction-top:
+.. _index-cli:
 
 ************************
-Blockchain Interaction
+CLI
 ************************
 
-To interface your existing platform with BitShares, you can make use of :ref:`rpc` and :ref:`websocket-calls` to either a :ref:`full-node` (for monitoring only) or the :ref:`cli-wallet` (for accessing funds). 
-
-All API calls are formated in JSON and return JSON only. You can read more about the API in :ref:`this section <api-access-and-restrictions>`.
-
-The BitShares toolkit comprises several tools that allow interaction with the blockchain on different levels and has been described briefly in the following sections.
+*Command line interface (CLI) is a text-based interface.*
 
 
 .. toctree::
     :maxdepth: 2
 
-    apps/node
-    apps/network_secure	
-    apps/cli_intro
-    apps/cli_wallet	
 
+    apps/cli_wallet	
+    apps/cli_intro
+	
 -----------
 	
 * Quick Guides

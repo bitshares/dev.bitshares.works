@@ -1,6 +1,8 @@
 
+.. _index-usecases:
+
 ***********************
-Integration Guide
+Use Cases
 ***********************
 
 
@@ -22,19 +24,8 @@ If you have not read `BitShares Documentation for all users <http://how.bitshare
 
 We provide here the necessary information to securely operate as a merchant, trader, exchange, or fiat-gateway. The below-listed contents should be known to all of them before starting to integrate.
 
-
 * `What is different BitShares <http://how.bitshares.works/en/latest/technology/difference_bitshares.html>`_ (http://how.bitshares.works/en/latest)
-* :ref:`blockchain-interaction-top`
-* :ref:`often-used-calls`
 
-
-.. toctree::
-    :maxdepth: 2
-
-    apps/network
-    apps/network_general
-    apps/network_secure
-	
 	
 |
 

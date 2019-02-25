@@ -1,7 +1,7 @@
 
 
 
-4.1. Database API
+Database API
 *******************
 
 The database API is available from the full node via websockets.
@@ -16,10 +16,10 @@ article <websocket>`.
 ----------
    
 
-1. Objects
+Objects
 =================
 
-1-1. get_objects
+get_objects
 -------------------------
 .. doxygenfunction:: graphene::app::database_api::get_objects
 
@@ -27,21 +27,22 @@ article <websocket>`.
 
 **************
 
-2. Subscriptions
+Subscriptions
 ================
-2-1. set_subscribe_callback
+
+set_subscribe_callback
 -------------------------
 .. doxygenfunction:: graphene::app::database_api::set_subscribe_callback
 
-2-2. set_pending_transaction_callback
+set_pending_transaction_callback
 -------------------------------------
 .. doxygenfunction:: graphene::app::database_api::set_pending_transaction_callback
 
-2-3. set_block_applied_callback
+set_block_applied_callback
 -------------------------------------
 .. doxygenfunction:: graphene::app::database_api::set_block_applied_callback
 
-2-4. cancel_all_subscriptions
+cancel_all_subscriptions
 -------------------------------------
 .. doxygenfunction:: graphene::app::database_api::cancel_all_subscriptions
 
@@ -49,22 +50,22 @@ article <websocket>`.
 
 **************
 
-3. Blocks and transactions
+Blocks and transactions
 =========================
 
-3-1. get_block_header
+get_block_header
 -------------------------------------
 .. doxygenfunction:: graphene::app::database_api::get_block_header
 
-3-2. get_block
+get_block
 -------------------------------------
 .. doxygenfunction:: graphene::app::database_api::get_block
 
-3-3. get_transaction
+get_transaction
 -------------------------------------
 .. doxygenfunction:: graphene::app::database_api::get_transaction
 
-3-4. get_recent_transaction_by_id
+get_recent_transaction_by_id
 -------------------------------------
 .. doxygenfunction:: graphene::app::database_api::get_recent_transaction_by_id
 
@@ -72,7 +73,7 @@ article <websocket>`.
 
 **************
 
-4. Globals
+Globals
 ===============
 get_chain_properties
 -------------------------------------

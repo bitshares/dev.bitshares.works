@@ -18,12 +18,13 @@
     :maxdepth: 2
 
     development/installation
-    development/integration
-    development/interaction
+    development/index_node
+    development/index_cli
+    api/index_api
     development/testnets
     supports_dev/supports
     development/bsip
-
+    development/index_usecases
 	
 -------
 
@@ -37,21 +38,7 @@
     references/tech_articles
 
 ---------
-	
-.. toctree::
-    :maxdepth: 2
-    :numbered:	
-    :caption: API
 
-    api/api_about
-    api/restrictions	
-    api/calls
-    api/blockchain_api
-    api/wallet_api
-    api/objects_ids
-    api/namespaces
-  
--------
 	
 	
 .. toctree::
