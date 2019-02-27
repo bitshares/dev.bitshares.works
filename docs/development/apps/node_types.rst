@@ -6,7 +6,7 @@
 Type of Nodes
 ********************
 
-* witness nodes
+* Witness Nodes
 * API nodes
 * Seed Nodes 
 * Block Producing Nodes 

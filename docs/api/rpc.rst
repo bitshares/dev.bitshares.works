@@ -1,7 +1,7 @@
 
 .. _rpc:
 
-Remote Procedure Calls
+RPC (Remote Procedure Calls)
 ========================
 
 .. contents:: Table of Contents

@@ -16,6 +16,9 @@ Public Testnets
 
 If you want to prepare a Public Testnet, you can simply download and use BitShares-Core's testnet branch. The testnet branch files have been prepared for the Public Testnet environment. 
 
+If you want to register a public testnet account, go to this link (http://testnet.bitshares.eu/) to create BitShares Public UI wallet for the public testnet.
+
+
 .. toctree::
     :maxdepth: 2
 
