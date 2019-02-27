@@ -186,10 +186,10 @@ If you want to use the ``cli_wallet``, you need to specify at least the rpc endp
 
 ---------------
 
-4.  Preparation for CLI wallet
+4.  Create a Testnet Account 
 ----------------------------------------------------
 
-4-1. Create a testnet account 
+4-1. Preparation for CLI wallet
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 (If you have your testnet accounts already, you can jump this section.)
 

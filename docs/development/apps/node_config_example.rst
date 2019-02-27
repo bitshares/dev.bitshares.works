@@ -239,10 +239,12 @@ As a default, most parameters have been commented. You have to uncomment to set 
 |
 
 	
-plugins
-================
+Plugins
+**************
 
-* `Type of BitShares Plugins: Github ReadMe <https://github.com/bitshares/bitshares-core/blob/master/libraries/plugins/README.md>`_ 
+You will find a list of Available BitShares Plugins. 
+
+* `BitShares Plugins: Github ReadMe <https://github.com/bitshares/bitshares-core/blob/master/libraries/plugins/README.md>`_ 
 
 
 |

@@ -49,11 +49,13 @@ bitshares-core
 
 ::
 
-   - `./cli_wallet -s ws://1.2.3.4:5678/` works with boost 1.57 and 1.58, but doesn't work with 1.60
-   - `./cli_wallet -sws://1.2.3.4:5678/` works with boost 1.57, 1.58 and 1.60
+   - ``./cli_wallet -s ws://1.2.3.4:5678/`` works with boost 1.57 and 1.58, but doesn't work with 1.60
+   - ``./cli_wallet -sws://1.2.3.4:5678/`` works with boost 1.57, 1.58 and 1.60
    
-- `time_point_sec` internally uses an unsigned int to count seconds from epoch, like unix time. That means it is impossible to represent dates before 1970-01-01. Still, we sometime see dates before that in JSON output. Probably a bug in boost::posix_time, have received a report that it's fixed in Boost-1.64 #597
-   - Updating to boost 1.64 might fix this issue, however BitShares is not compatible with Boost 1.64 at this point (typing:4/29/2018)
+- ``time_point_sec`` jsonifies to different result in boost 1.64, as mentioned in `#597 <https://github.com/bitshares/bitshares-core/issues/597>`_ 
+
+.. note:: This document is for users of witness_node and cli_wallet, not for the core developers.
+
 
 
 
