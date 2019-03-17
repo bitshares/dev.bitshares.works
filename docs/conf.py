@@ -18,9 +18,7 @@ import subprocess
 
 sys.path.append(os.path.abspath('./docs/'))
 #sys.path.append(os.path.abspath('./demo/'))
-sys.path.append( "./ext/breathe/" )
-
-
+#sys.path.append( "./ext/breathe/" )
 
 from sphinx_rtd_theme import __version__
 
