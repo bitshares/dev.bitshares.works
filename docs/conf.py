@@ -18,6 +18,9 @@ import subprocess
 
 sys.path.append(os.path.abspath('./docs/'))
 #sys.path.append(os.path.abspath('./demo/'))
+# sys.path.append( "./ext/breathe/" )
+
+
 
 from sphinx_rtd_theme import __version__
 
@@ -34,8 +37,9 @@ from sphinx_rtd_theme import __version__
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
+#     'sphinx.ext.intersphinx',
+
 extensions = [
-    'sphinx.ext.intersphinx',
     'sphinx.ext.autodoc',
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
@@ -244,6 +248,11 @@ latex_documents = [
 ###############################################################################
 # Breathe configuration
 ###############################################################################
+
+#breathe_projects = { "bitshares": "../doxygen/xml/" }
+#breathe_default_project = "bitshares"
+
+
 try :
     import breathe
 
