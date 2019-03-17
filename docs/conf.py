@@ -18,7 +18,7 @@ import subprocess
 
 sys.path.append(os.path.abspath('./docs/'))
 #sys.path.append(os.path.abspath('./demo/'))
-# sys.path.append( "./ext/breathe/" )
+sys.path.append( "./ext/breathe/" )
 
 
 
@@ -40,6 +40,7 @@ from sphinx_rtd_theme import __version__
 #     'sphinx.ext.intersphinx',
 
 extensions = [
+    'sphinx.ext.intersphinx',
     'sphinx.ext.autodoc',
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
@@ -65,7 +66,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'BItShares Developers Portal'
-copyright = u'2018 BitShares Blockchain Foundation'
+copyright = u'2019 BitShares Blockchain Foundation'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
