@@ -15,7 +15,7 @@ import sys
 import os
 import subprocess
 
-import sphinx
+#import sphinx
 
 sys.path.append(os.path.abspath('./docs/'))
 #sys.path.append(os.path.abspath('./demo/'))
@@ -39,6 +39,7 @@ from sphinx_rtd_theme import __version__
 #     'sphinx.ext.intersphinx',
 
 extensions = [
+    'sphinx.ext.intersphinx',
     'sphinx.ext.autodoc',
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
@@ -247,11 +248,6 @@ latex_documents = [
 ###############################################################################
 # Breathe configuration
 ###############################################################################
-
-#breathe_projects = { "bitshares": "../doxygen/xml/" }
-#breathe_default_project = "bitshares"
-
-
 try :
     import breathe
 
@@ -260,6 +256,7 @@ try :
         "bitshares": "../doxygen/xml/",
     }
     breathe_default_project = "bitshares"
+	
 except :
     print("="*80)
     print("Please install 'breathe' as described in README.md to also have API documentation available!")
