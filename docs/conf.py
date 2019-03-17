@@ -15,6 +15,7 @@ import sys
 import os
 import subprocess
 
+import sphinx
 
 sys.path.append(os.path.abspath('./docs/'))
 #sys.path.append(os.path.abspath('./demo/'))
@@ -38,7 +39,6 @@ from sphinx_rtd_theme import __version__
 #     'sphinx.ext.intersphinx',
 
 extensions = [
-    'sphinx.ext.intersphinx',
     'sphinx.ext.autodoc',
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
@@ -87,7 +87,7 @@ language = 'en'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = []
+exclude_patterns = ['_build']
 
 # The reST default role (used for this markup: `text`) to use for all documents.
 #default_role = None
