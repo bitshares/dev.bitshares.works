@@ -15,12 +15,11 @@ import sys
 import os
 import subprocess
 
+#import sphinx
 
 sys.path.append(os.path.abspath('./docs/'))
 #sys.path.append(os.path.abspath('./demo/'))
-sys.path.append( "./ext/breathe/" )
-
-
+#sys.path.append( "./ext/breathe/" )
 
 from sphinx_rtd_theme import __version__
 
@@ -89,7 +88,7 @@ language = 'en'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = []
+exclude_patterns = ['_build']
 
 # The reST default role (used for this markup: `text`) to use for all documents.
 #default_role = None
@@ -249,11 +248,6 @@ latex_documents = [
 ###############################################################################
 # Breathe configuration
 ###############################################################################
-
-#breathe_projects = { "bitshares": "../doxygen/xml/" }
-#breathe_default_project = "bitshares"
-
-
 try :
     import breathe
 
@@ -262,6 +256,7 @@ try :
         "bitshares": "../doxygen/xml/",
     }
     breathe_default_project = "bitshares"
+	
 except :
     print("="*80)
     print("Please install 'breathe' as described in README.md to also have API documentation available!")
