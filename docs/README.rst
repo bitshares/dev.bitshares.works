@@ -24,6 +24,8 @@ The purpose of this site is to provide in-depth documentation about the BitShare
 - `BitShares Documentation - Users Guide <http://how.bitshares.works/en/latest/>`_
 - :ref:`BitShares Community <bitshares-communities>` 
 
+----------------
 
-----------
+BitShares Development:  :ref:`Zero to Sixty in 30 Minutes or Less <zero-to-sixty-guide>`
 
+----------------
