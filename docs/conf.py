@@ -17,10 +17,10 @@ import subprocess
 import re
 
 
+
 sys.path.append(os.path.abspath('./docs/'))
 #sys.path.append(os.path.abspath('./demo/'))
 #sys.path.append( "./ext/breathe/" )
-
 
 from sphinx.locale import _
 from sphinx_rtd_theme import __version__
@@ -40,7 +40,6 @@ from sphinx_rtd_theme import __version__
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 
 extensions = [
-    'sphinx.ext.intersphinx',
     'sphinx.ext.autodoc',
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
