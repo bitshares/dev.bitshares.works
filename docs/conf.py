@@ -14,15 +14,16 @@
 import sys
 import os
 import subprocess
+import re
 
-#import sphinx
 
 
 sys.path.append(os.path.abspath('./docs/'))
 #sys.path.append(os.path.abspath('./demo/'))
 #sys.path.append( "./ext/breathe/" )
 
-#from sphinx_rtd_theme import __version__
+from sphinx.locale import _
+from sphinx_rtd_theme import __version__
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -37,7 +38,6 @@ sys.path.append(os.path.abspath('./docs/'))
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-#     'sphinx.ext.intersphinx',
 
 extensions = [
     'sphinx.ext.autodoc',
@@ -88,7 +88,7 @@ language = 'en'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_build']
+exclude_patterns =  ['_build']
 
 # The reST default role (used for this markup: `text`) to use for all documents.
 #default_role = None
@@ -110,8 +110,12 @@ pygments_style = 'default'
 # A list of ignored prefixes for module index sorting.
 #modindex_common_prefix = []
 
-intersphinx_mapping = {'rtd': ('https://docs.readthedocs.io/en/latest/', None)}
+#intersphinx_mapping = {'rtd': ('https://docs.readthedocs.io/en/latest/', None)}
 
+intersphinx_mapping = {
+    'rtd': ('https://docs.readthedocs.io/en/latest/', None),
+    'sphinx': ('http://www.sphinx-doc.org/en/stable/', None),
+}
 
 # -- Options for HTML output ---------------------------------------------------
 
@@ -256,7 +260,6 @@ try :
         "bitshares": "../doxygen/xml/",
     }
     breathe_default_project = "bitshares"
-	
 except :
     print("="*80)
     print("Please install 'breathe' as described in README.md to also have API documentation available!")
@@ -268,7 +271,31 @@ except :
 def setup(app):
     app.add_stylesheet("btsdefault.css") # also can be a full URL
     # app.add_stylesheet("ANOTHER.css")
-	
+	# from sphinx.domains.python import PyField
+    # from sphinx.util.docfields import Field
+
+    # app.add_object_type(
+        # 'confval',
+        # 'confval',
+        # objname='configuration value',
+        # indextemplate='pair: %s; configuration value',
+        # doc_field_types=[
+            # PyField(
+                # 'type',
+                # label=_('Type'),
+                # has_arg=False,
+                # names=('type',),
+                # bodyrolename='class'
+            # ),
+            # Field(
+                # 'default',
+                # label=_('Default'),
+                # has_arg=False,
+                # names=('default',),
+            # ),
+        # ]
+# )
+
 	
 # -- Options for manual page output --------------------------------------------
 
