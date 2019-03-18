@@ -115,6 +115,7 @@ pygments_style = 'default'
 intersphinx_mapping = {
     'rtd': ('https://docs.readthedocs.io/en/latest/', None),
     'sphinx': ('http://www.sphinx-doc.org/en/stable/', None),
+    'python': ('https://docs.python.org/', None),	
 }
 
 # -- Options for HTML output ---------------------------------------------------
