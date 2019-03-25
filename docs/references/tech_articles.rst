@@ -9,6 +9,7 @@ BitShares Related Articles
 Technical 
 -------------------------
 
+- `python-bitshares: How to derive transaction ids <https://steemit.com/bitshares/@xeroc/python-bitshares-how-to-derive-transaction-ids>`_  by @xeroc
 - `How Global Settlements work (11/2018) <https://steemit.com/bitshares/@bitshares.fdn/how-global-settlements-work>`_ : by BBF
 - `DevWork Update: BitShares Witness Monitor (06/2018) <https://steemit.com/bitshares/@clockwork/devwork-update-bitshares-witness-monitor>`_  : by  @cloclwork
 - `Bitshares ElasticSearch Wrapper and Swagger (05/2018) <https://steemit.com/bitshares/@oxarbitrage/bitshares-elasticsearch-wrapper-and-swagger>`_   by @oxarbitrage
