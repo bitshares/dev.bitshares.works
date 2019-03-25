@@ -177,8 +177,8 @@ Testnets
 ===================
 
 * :ref:`Code Coverage Testing (wiki) <how-to-testing-bts>`
-* :ref:`How to prepare a Public Testnet - Quick Start Guide <public-testnet-details>`
-* :ref:`How to set up/deploy a Private Testnet (witness-node) <private-testnet-guide>`
+* :ref:`How to set up a Public Testnet <public-testnet-guide>`
+* :ref:`How to set up a Private Testnet <private-testnet-guide>`
 * :ref:`How to set up a Public Testnet <public-testnet-guide>`
 * :ref:`How to set up Python Library <how-to-setup-python-lib>`
 * :ref:`How to do a code coverage testing <how-to-testing-bts>`

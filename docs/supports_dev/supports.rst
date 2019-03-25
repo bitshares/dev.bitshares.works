@@ -54,6 +54,17 @@ Support: Libraries
 |
 
 --------
+
+Plugins
+=======================
+
+You will find a list of Available BitShares Plugins. 
+
+* `BitShares Plugins: Github ReadMe <https://github.com/bitshares/bitshares-core/blob/master/libraries/plugins/README.md>`_ 
+
+|
+
+---------
  
 
 Tools
