@@ -9,10 +9,10 @@
     <innerclass refid="structgraphene_1_1chain_1_1processed__transaction" prot="public">graphene::chain::processed_transaction</innerclass>
     <innergroup refid="group__operations">Operations</innergroup>
       <sectiondef kind="func">
-      <memberdef kind="function" id="group__transactions_1ga48bf3d11043fdbf6ce62604e448e3313" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__transactions_1ga3ea1187779e6b5339be4900a65debed0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void graphene::chain::verify_authority</definition>
-        <argsstring>(const vector&lt; operation &gt; &amp;ops, const flat_set&lt; public_key_type &gt; &amp;sigs, const std::function&lt; const authority *(account_id_type)&gt; &amp;get_active, const std::function&lt; const authority *(account_id_type)&gt; &amp;get_owner, uint32_t max_recursion=GRAPHENE_MAX_SIG_CHECK_DEPTH, bool allow_committe=false, const flat_set&lt; account_id_type &gt; &amp;active_aprovals=flat_set&lt; account_id_type &gt;(), const flat_set&lt; account_id_type &gt; &amp;owner_approvals=flat_set&lt; account_id_type &gt;())</argsstring>
+        <argsstring>(const vector&lt; operation &gt; &amp;ops, const flat_set&lt; public_key_type &gt; &amp;sigs, const std::function&lt; const authority *(account_id_type)&gt; &amp;get_active, const std::function&lt; const authority *(account_id_type)&gt; &amp;get_owner, bool allow_non_immediate_owner, uint32_t max_recursion=GRAPHENE_MAX_SIG_CHECK_DEPTH, bool allow_committe=false, const flat_set&lt; account_id_type &gt; &amp;active_aprovals=flat_set&lt; account_id_type &gt;(), const flat_set&lt; account_id_type &gt; &amp;owner_approvals=flat_set&lt; account_id_type &gt;())</argsstring>
         <name>verify_authority</name>
         <param>
           <type>const vector&lt; operation &gt; &amp;</type>
@@ -29,6 +29,10 @@
         <param>
           <type>const std::function&lt; const authority *(account_id_type)&gt; &amp;</type>
           <declname>get_owner</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>allow_non_immediate_owner</declname>
         </param>
         <param>
           <type>uint32_t</type>
@@ -53,10 +57,74 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Checks whether given public keys and approvals are sufficient to authorize given operations. Throws an exception when failed.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ops</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a vector of operations </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sigs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a set of public keys </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>get_active</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>callback function to retrieve active authorities of a given account </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>get_owner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>callback function to retrieve owner authorities of a given account </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>allow_non_immediate_owner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>whether to allow owner authority of non-immediately required accounts to authorize operations </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>max_recursion</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>maximum level of recursion when verifying, since an account can have another account in active authorities and/or owner authorities </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>allow_committee</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>whether to allow the special &quot;committee account&quot; to authorize the operations </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>active_approvals</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>accounts that approved the operations with their active authories </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>owner_approvals</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>accounts that approved the operations with their owner authories </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/protocol/transaction.hpp" line="216" column="1" bodyfile="libraries/chain/protocol/transaction.cpp" bodystart="248" bodyend="300"/>
+        <location file="libraries/chain/include/graphene/chain/protocol/transaction.hpp" line="252" column="1" bodyfile="libraries/chain/protocol/transaction.cpp" bodystart="265" bodyend="317"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
