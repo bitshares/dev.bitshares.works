@@ -66,6 +66,27 @@ As a default, most parameters have been commented. You have to uncomment to set 
 	# Whether to enable tracking of votes of standby witnesses and committee members. Set it to true to provide accurate data to API clients, set to false for slightly better performance.
 	# enable-standby-votes-tracking = 
 
+	# For history_api::get_account_history_operations to set its default limit value as 100
+	# api-limit-get-account-history-operations =
+	
+	# For history_api::get_account_history to set its default limit value as 100
+	# api-limit-get-account-history =
+	
+	# For orders_api::get_grouped_limit_orders to set its default limit value as 101
+	# api-limit-get-grouped-limit-orders =
+	
+	# For history_api::get_relative_account_history to set its default limit value as 100
+	# api-limit-get-relative-account-history =
+	
+	# For history_api::get_account_history_by_operations to set its default limit value as 100
+	# api-limit-get-account-history-by-operations =
+	
+	# For asset_api::get_asset_holders to set its default limit value as 100
+	# api-limit-get-asset-holders =
+	
+	# For database_api_impl::get_key_references to set its default limit value as 100
+	# api-limit-get-key-references =	
+	
 	# Enable block production, even if the chain is stale.
 	enable-stale-production = false
 

@@ -2,16 +2,17 @@
 .. _wiki-legacy-indx:
 
 *****************************
-Wiki Legacy 
+Wiki Legacy
 *****************************
 
-This page links were in BitShares Core Wiki.
+BitShares Core Wiki (html version)
 
 -----------------
 
 .. toctree::
     :maxdepth: 1
 
+    haproxy_and_bitshares
     wallet_2factor_auth_protocol
     creating-a-new-fba
     dpos-slot-tickets
