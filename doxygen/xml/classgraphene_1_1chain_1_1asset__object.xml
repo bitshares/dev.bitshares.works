@@ -277,7 +277,7 @@
 <para>Convert a string amount (i.e. &quot;123.45&quot;) to an asset object with this asset&apos;s type The string may have a decimal and/or a negative sign. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="104" column="1" bodyfile="libraries/chain/asset_object.cpp" bodystart="107" bodyend="160"/>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="104" column="1" bodyfile="libraries/chain/asset_object.cpp" bodystart="110" bodyend="163"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1asset__object_1ad0f7792fcad856d35d1049b95acedec3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>string</type>
@@ -294,7 +294,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="106" column="1" bodyfile="libraries/chain/asset_object.cpp" bodystart="162" bodyend="175"/>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="106" column="1" bodyfile="libraries/chain/asset_object.cpp" bodystart="165" bodyend="178"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1asset__object_1a05bc40ee989e7c43e8ab14a010519175" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>string</type>
@@ -445,95 +445,103 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="723">
+      <node id="749">
         <label>graphene::db::abstract_object&lt; asset_object &gt;</label>
       </node>
-      <node id="722">
+      <node id="748">
         <label>graphene::chain::asset_object</label>
         <link refid="classgraphene_1_1chain_1_1asset__object"/>
-        <childnode refid="723" relation="public-inheritance">
+        <childnode refid="749" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="725">
+      <node id="751">
         <label>graphene::db::abstract_object&lt; asset_object &gt;</label>
       </node>
-      <node id="730">
+      <node id="757">
         <label>flat_set&lt; asset_id_type &gt;</label>
       </node>
-      <node id="733">
+      <node id="760">
         <label>graphene::chain::price</label>
         <link refid="structgraphene_1_1chain_1_1price"/>
-        <childnode refid="734" relation="usage">
+        <childnode refid="761" relation="usage">
           <edgelabel>base</edgelabel>
           <edgelabel>quote</edgelabel>
         </childnode>
       </node>
-      <node id="732">
+      <node id="759">
         <label>string</label>
       </node>
-      <node id="729">
-        <label>flat_set&lt; future_extensions &gt;</label>
+      <node id="755">
+        <label>graphene::chain::extension&lt; additional_asset_options &gt;</label>
+        <link refid="structgraphene_1_1chain_1_1extension"/>
+        <childnode refid="756" relation="usage">
+          <edgelabel>value</edgelabel>
+        </childnode>
       </node>
-      <node id="735">
+      <node id="762">
         <label>flat_set&lt; account_id_type &gt;</label>
       </node>
-      <node id="727">
+      <node id="753">
         <label>optional&lt; account_id_type &gt;</label>
       </node>
-      <node id="734">
+      <node id="756">
+        <label>graphene::chain::additional_asset_options</label>
+        <link refid="structgraphene_1_1chain_1_1additional__asset__options"/>
+      </node>
+      <node id="761">
         <label>graphene::chain::asset</label>
         <link refid="structgraphene_1_1chain_1_1asset"/>
-        <childnode refid="731" relation="usage">
+        <childnode refid="758" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
       </node>
-      <node id="724">
+      <node id="750">
         <label>graphene::chain::asset_object</label>
         <link refid="classgraphene_1_1chain_1_1asset__object"/>
-        <childnode refid="725" relation="public-inheritance">
+        <childnode refid="751" relation="public-inheritance">
         </childnode>
-        <childnode refid="726" relation="usage">
+        <childnode refid="752" relation="usage">
           <edgelabel>bitasset_data_id</edgelabel>
         </childnode>
-        <childnode refid="727" relation="usage">
+        <childnode refid="753" relation="usage">
           <edgelabel>buyback_account</edgelabel>
         </childnode>
-        <childnode refid="728" relation="usage">
+        <childnode refid="754" relation="usage">
           <edgelabel>options</edgelabel>
         </childnode>
-        <childnode refid="732" relation="usage">
+        <childnode refid="759" relation="usage">
           <edgelabel>symbol</edgelabel>
         </childnode>
       </node>
-      <node id="731">
+      <node id="758">
         <label>safe&lt; int64_t &gt;</label>
       </node>
-      <node id="726">
+      <node id="752">
         <label>optional&lt; asset_bitasset_data_id_type &gt;</label>
       </node>
-      <node id="728">
+      <node id="754">
         <label>graphene::chain::asset_options</label>
         <link refid="structgraphene_1_1chain_1_1asset__options"/>
-        <childnode refid="729" relation="usage">
+        <childnode refid="755" relation="usage">
           <edgelabel>extensions</edgelabel>
         </childnode>
-        <childnode refid="730" relation="usage">
+        <childnode refid="757" relation="usage">
           <edgelabel>whitelist_markets</edgelabel>
           <edgelabel>blacklist_markets</edgelabel>
         </childnode>
-        <childnode refid="731" relation="usage">
+        <childnode refid="758" relation="usage">
           <edgelabel>max_market_fee</edgelabel>
           <edgelabel>max_supply</edgelabel>
         </childnode>
-        <childnode refid="732" relation="usage">
+        <childnode refid="759" relation="usage">
           <edgelabel>description</edgelabel>
         </childnode>
-        <childnode refid="733" relation="usage">
+        <childnode refid="760" relation="usage">
           <edgelabel>core_exchange_rate</edgelabel>
         </childnode>
-        <childnode refid="735" relation="usage">
+        <childnode refid="762" relation="usage">
           <edgelabel>whitelist_authorities</edgelabel>
           <edgelabel>blacklist_authorities</edgelabel>
         </childnode>

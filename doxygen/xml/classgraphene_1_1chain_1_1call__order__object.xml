@@ -193,10 +193,10 @@
         </inbodydescription>
         <location file="libraries/chain/include/graphene/chain/market_object.hpp" line="132" column="1" bodyfile="libraries/chain/include/graphene/chain/market_object.hpp" bodystart="132" bodyend="137"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1chain_1_1call__order__object_1a335509e02ac917c36525b1ce6aaecf48" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1chain_1_1call__order__object_1a33c173ea8d1a621ea9c391de78debeb6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="namespacegraphene_1_1chain_1ab4bea4aef5fe40c66b42537da931bffe" kindref="member">share_type</ref></type>
         <definition>share_type call_order_object::get_max_debt_to_cover</definition>
-        <argsstring>(price match_price, price feed_price, const uint16_t maintenance_collateral_ratio) const</argsstring>
+        <argsstring>(price match_price, price feed_price, const uint16_t maintenance_collateral_ratio, const optional&lt; price &gt; &amp;maintenance_collateralization=optional&lt; price &gt;()) const</argsstring>
         <name>get_max_debt_to_cover</name>
         <param>
           <type><ref refid="structgraphene_1_1chain_1_1price" kindref="compound">price</ref></type>
@@ -210,13 +210,48 @@
           <type>const uint16_t</type>
           <declname>maintenance_collateral_ratio</declname>
         </param>
+        <param>
+          <type>const optional&lt; <ref refid="structgraphene_1_1chain_1_1price" kindref="compound">price</ref> &gt; &amp;</type>
+          <declname>maintenance_collateralization</declname>
+          <defval>optional&lt; <ref refid="structgraphene_1_1chain_1_1price" kindref="compound">price</ref> &gt;()</defval>
+        </param>
         <briefdescription>
-<para>Calculate maximum quantity of debt to cover to satisfy <ref refid="classgraphene_1_1chain_1_1call__order__object_1a8c10d7744d26d49b81be66635f0585ff" kindref="member">target_collateral_ratio</ref>. </para>        </briefdescription>
+        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Calculate maximum quantity of debt to cover to satisfy <ref refid="classgraphene_1_1chain_1_1call__order__object_1a8c10d7744d26d49b81be66635f0585ff" kindref="member">target_collateral_ratio</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>match_price</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the matching price if this call order is margin called </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>feed_price</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>median settlement price of debt asset </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>maintenance_collateral_ratio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>median maintenance collateral ratio of debt asset </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>maintenance_collateralization</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>maintenance collateralization of debt asset, should only be valid after core-1270 hard fork </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>maximum amount of debt that can be called </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/market_object.hpp" line="140" column="1" bodyfile="libraries/chain/market_object.cpp" bodystart="57" bodyend="266"/>
+        <location file="libraries/chain/include/graphene/chain/market_object.hpp" line="149" column="1" bodyfile="libraries/chain/market_object.cpp" bodystart="59" bodyend="302"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -224,59 +259,59 @@
     <detaileddescription>
 <para>There should only be one <ref refid="classgraphene_1_1chain_1_1call__order__object" kindref="compound">call_order_object</ref> per asset pair per account and they will all have the same call price. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="1499">
+      <node id="1554">
         <label>graphene::chain::call_order_object</label>
         <link refid="classgraphene_1_1chain_1_1call__order__object"/>
-        <childnode refid="1500" relation="public-inheritance">
+        <childnode refid="1555" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="1500">
+      <node id="1555">
         <label>graphene::db::abstract_object&lt; call_order_object &gt;</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="1505">
+      <node id="1560">
         <label>graphene::chain::price</label>
         <link refid="structgraphene_1_1chain_1_1price"/>
-        <childnode refid="1506" relation="usage">
+        <childnode refid="1561" relation="usage">
           <edgelabel>base</edgelabel>
           <edgelabel>quote</edgelabel>
         </childnode>
       </node>
-      <node id="1501">
+      <node id="1556">
         <label>graphene::chain::call_order_object</label>
         <link refid="classgraphene_1_1chain_1_1call__order__object"/>
-        <childnode refid="1502" relation="public-inheritance">
+        <childnode refid="1557" relation="public-inheritance">
         </childnode>
-        <childnode refid="1503" relation="usage">
+        <childnode refid="1558" relation="usage">
           <edgelabel>target_collateral_ratio</edgelabel>
         </childnode>
-        <childnode refid="1504" relation="usage">
+        <childnode refid="1559" relation="usage">
           <edgelabel>debt</edgelabel>
           <edgelabel>collateral</edgelabel>
         </childnode>
-        <childnode refid="1505" relation="usage">
+        <childnode refid="1560" relation="usage">
           <edgelabel>call_price</edgelabel>
         </childnode>
       </node>
-      <node id="1503">
+      <node id="1558">
         <label>optional&lt; uint16_t &gt;</label>
       </node>
-      <node id="1506">
+      <node id="1561">
         <label>graphene::chain::asset</label>
         <link refid="structgraphene_1_1chain_1_1asset"/>
-        <childnode refid="1504" relation="usage">
+        <childnode refid="1559" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
       </node>
-      <node id="1504">
+      <node id="1559">
         <label>safe&lt; int64_t &gt;</label>
       </node>
-      <node id="1502">
+      <node id="1557">
         <label>graphene::db::abstract_object&lt; call_order_object &gt;</label>
       </node>
     </collaborationgraph>
-    <location file="libraries/chain/include/graphene/chain/market_object.hpp" line="113" column="1" bodyfile="libraries/chain/include/graphene/chain/market_object.hpp" bodystart="112" bodyend="141"/>
+    <location file="libraries/chain/include/graphene/chain/market_object.hpp" line="113" column="1" bodyfile="libraries/chain/include/graphene/chain/market_object.hpp" bodystart="112" bodyend="153"/>
     <listofallmembers>
       <member refid="classgraphene_1_1chain_1_1call__order__object_1a067e439fbf6b4fef237ef929255718f4" prot="public" virt="non-virtual"><scope>graphene::chain::call_order_object</scope><name>amount_to_receive</name></member>
       <member refid="classgraphene_1_1chain_1_1call__order__object_1ac4996a67c8cf9be42bb9275240d6bcd0" prot="public" virt="non-virtual"><scope>graphene::chain::call_order_object</scope><name>borrower</name></member>
@@ -289,7 +324,7 @@
       <member refid="classgraphene_1_1chain_1_1call__order__object_1ac02b0fe0f81f40f36fcb4e4dfc7c384b" prot="public" virt="non-virtual"><scope>graphene::chain::call_order_object</scope><name>get_collateral</name></member>
       <member refid="classgraphene_1_1chain_1_1call__order__object_1a90552c5a02f02441d5b9f9000f22d51b" prot="public" virt="non-virtual"><scope>graphene::chain::call_order_object</scope><name>get_debt</name></member>
       <member refid="classgraphene_1_1chain_1_1call__order__object_1a36eb86e9be5d51ff11d16251d0599210" prot="public" virt="non-virtual"><scope>graphene::chain::call_order_object</scope><name>get_market</name></member>
-      <member refid="classgraphene_1_1chain_1_1call__order__object_1a335509e02ac917c36525b1ce6aaecf48" prot="public" virt="non-virtual"><scope>graphene::chain::call_order_object</scope><name>get_max_debt_to_cover</name></member>
+      <member refid="classgraphene_1_1chain_1_1call__order__object_1a33c173ea8d1a621ea9c391de78debeb6" prot="public" virt="non-virtual"><scope>graphene::chain::call_order_object</scope><name>get_max_debt_to_cover</name></member>
       <member refid="classgraphene_1_1chain_1_1call__order__object_1a384e8843ed00719c044a631f97d76479" prot="public" virt="non-virtual"><scope>graphene::chain::call_order_object</scope><name>space_id</name></member>
       <member refid="classgraphene_1_1chain_1_1call__order__object_1a8c10d7744d26d49b81be66635f0585ff" prot="public" virt="non-virtual"><scope>graphene::chain::call_order_object</scope><name>target_collateral_ratio</name></member>
       <member refid="classgraphene_1_1chain_1_1call__order__object_1aec9e906304c1f718535430c2c0d58fa0" prot="public" virt="non-virtual"><scope>graphene::chain::call_order_object</scope><name>type_id</name></member>
