@@ -116,7 +116,7 @@ Please check. Our `doxygen <https://bitshares.org/doxygen/>`_ documentation cont
 
 .. _api-access-via-http:
 
- Accessing the Named API via HTTP
+Accessing the Named API via HTTP
 =======================================
 
 When you access the API via HTTP, use the name of the APIs like below,
