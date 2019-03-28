@@ -152,11 +152,9 @@ How To Create a Release
 For a release,
 
 0. Bump stuff
-
   1) Check whether need to bump ``DB_VERSION`` to force a replay after upgraded: if there is a data schema change, or logic change that affects historical data, the answer is yes.  
   2) FC version usually has been bumped already during development, but it doesn't harm if check again.  
   3) Bump docs sub-module which links to wiki.
-
 1. A "release" branch is created based on "develop" or "hardfork".
 2. The "release" branch is merged into "testnet".
 3. For a hardfork release, the hardfork date is adapted directly on the testnet branch.
@@ -217,7 +215,21 @@ Emergency Fix Workflows
 5. The ``release`` branch is merged into ``develop``, and it is verified that the fix resolves the problem, by running the unit test.
 6. The ``release`` branch is merged into ``hardfork`` and ``testnet``.
 
+|
 
+-----------------------
+
+How To Update the README.md
+-----------------------------
+
+In general we want changes in the README to be visible fast in ``master``.
+
+1. Update the README.md of the ``release`` candidate.
+2. Merge ``release`` to ``master``.
+3. Merge back ``release`` to ``develop``.
+4. Merge develop into ``hardfork`` and ``testnet`` if changes need to be visible in all the branches or wait until this merges occur naturally.
+
+	
 
 |
 
