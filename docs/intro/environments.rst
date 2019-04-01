@@ -178,6 +178,9 @@ For a release,
 	
 **Note:** Solving conflicts by github(web) will merge branches in unintended directions. Avoid solving this way, merge and resolve conflicts manually through the git command line. Conflicts generally occur when merging release to testnet.
 
+  - How to: `Snapshot Comparison in Bitshares <https://github.com/oxarbitrage/documentation/blob/master/snapshot.md>`_ 
+  
+
 **Note 2:** Follow command line github suggestion to resolve conflicts but at the end of the process you will not have permission to merge directly to ``testnet``, never push the fix to ``release``. Create a new branch and push there, then create a new pull request between ``testnet`` and ``new_branch``, merge ``new_branch`` to ``testnet`` and ``release`` will be automatically added to the merge.
 
 **Note 3:** When creating tag for testnet do it from the command line with ``git tag``. Github don't have the option to create a tag without a release.
