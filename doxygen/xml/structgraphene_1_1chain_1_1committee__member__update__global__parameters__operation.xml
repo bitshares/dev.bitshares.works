@@ -66,63 +66,77 @@
     <detaileddescription>
 <para>This operation may only be used in a proposed transaction, and a proposed transaction which contains this operation must have a review period specified in the current global parameters before it may be accepted. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="1741">
+      <node id="1806">
         <label>graphene::chain::base_operation</label>
         <link refid="structgraphene_1_1chain_1_1base__operation"/>
       </node>
-      <node id="1740">
+      <node id="1805">
         <label>graphene::chain::committee_member_update_global_parameters_operation</label>
         <link refid="structgraphene_1_1chain_1_1committee__member__update__global__parameters__operation"/>
-        <childnode refid="1741" relation="public-inheritance">
+        <childnode refid="1806" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="1745">
-        <label>flat_set&lt; future_extensions &gt;</label>
+      <node id="1814">
+        <label>optional&lt; graphene::chain::htlc_options &gt;</label>
       </node>
-      <node id="1744">
+      <node id="1812">
+        <label>graphene::chain::extension&lt; graphene::chain::chain_parameters::ext &gt;</label>
+        <link refid="structgraphene_1_1chain_1_1extension"/>
+        <childnode refid="1813" relation="usage">
+          <edgelabel>value</edgelabel>
+        </childnode>
+      </node>
+      <node id="1809">
         <label>graphene::chain::chain_parameters</label>
         <link refid="structgraphene_1_1chain_1_1chain__parameters"/>
-        <childnode refid="1745" relation="usage">
-          <edgelabel>extensions</edgelabel>
-        </childnode>
-        <childnode refid="1746" relation="usage">
+        <childnode refid="1810" relation="usage">
           <edgelabel>current_fees</edgelabel>
         </childnode>
-        <childnode refid="1747" relation="usage">
+        <childnode refid="1811" relation="usage">
           <edgelabel>cashback_vesting_threshold</edgelabel>
           <edgelabel>worker_budget_per_day</edgelabel>
           <edgelabel>fee_liquidation_threshold</edgelabel>
           <edgelabel>witness_pay_per_block</edgelabel>
         </childnode>
+        <childnode refid="1812" relation="usage">
+          <edgelabel>extensions</edgelabel>
+        </childnode>
       </node>
-      <node id="1746">
+      <node id="1810">
         <label>smart_ref&lt; graphene::chain::fee_schedule &gt;</label>
       </node>
-      <node id="1743">
+      <node id="1808">
         <label>graphene::chain::base_operation</label>
         <link refid="structgraphene_1_1chain_1_1base__operation"/>
       </node>
-      <node id="1748">
+      <node id="1815">
         <label>graphene::chain::asset</label>
         <link refid="structgraphene_1_1chain_1_1asset"/>
-        <childnode refid="1747" relation="usage">
+        <childnode refid="1811" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
       </node>
-      <node id="1747">
+      <node id="1813">
+        <label>graphene::chain::chain_parameters::ext</label>
+        <link refid="structgraphene_1_1chain_1_1chain__parameters_1_1ext"/>
+        <childnode refid="1814" relation="usage">
+          <edgelabel>updatable_htlc_options</edgelabel>
+        </childnode>
+      </node>
+      <node id="1811">
         <label>safe&lt; int64_t &gt;</label>
       </node>
-      <node id="1742">
+      <node id="1807">
         <label>graphene::chain::committee_member_update_global_parameters_operation</label>
         <link refid="structgraphene_1_1chain_1_1committee__member__update__global__parameters__operation"/>
-        <childnode refid="1743" relation="public-inheritance">
+        <childnode refid="1808" relation="public-inheritance">
         </childnode>
-        <childnode refid="1744" relation="usage">
+        <childnode refid="1809" relation="usage">
           <edgelabel>new_parameters</edgelabel>
         </childnode>
-        <childnode refid="1748" relation="usage">
+        <childnode refid="1815" relation="usage">
           <edgelabel>fee</edgelabel>
         </childnode>
       </node>

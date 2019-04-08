@@ -105,7 +105,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/protocol/asset.hpp" line="136" column="1" bodyfile="libraries/chain/protocol/asset.cpp" bodystart="221" bodyend="225"/>
+        <location file="libraries/chain/include/graphene/chain/protocol/asset.hpp" line="136" column="1" bodyfile="libraries/chain/protocol/asset.cpp" bodystart="222" bodyend="226"/>
       </memberdef>
       <memberdef kind="function" id="structgraphene_1_1chain_1_1price_1aa02ede20661c22422de58efb4a221915" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -118,7 +118,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/protocol/asset.hpp" line="137" column="1" bodyfile="libraries/chain/protocol/asset.cpp" bodystart="227" bodyend="232"/>
+        <location file="libraries/chain/include/graphene/chain/protocol/asset.hpp" line="137" column="1" bodyfile="libraries/chain/protocol/asset.cpp" bodystart="228" bodyend="233"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -184,10 +184,10 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>The black swan price is defined as debt/collateral, we want to perform a margin call before debt == collateral. Given a debt/collateral ratio of 1 USD / CORE and a maintenance collateral requirement of 2x we can define the call price to be 2 USD / CORE.</para><para>This method divides the collateral by the maintenance collateral ratio to derive a call price for the given black swan ratio.</para><para>There exists some cases where the debt and collateral values are so small that dividing by the collateral ratio will result in a 0 price or really poor rounding errors. No matter what the collateral part of the price ratio can never go to 0 and the debt can never go more than GRAPHENE_MAX_SHARE_SUPPLY</para><para>CR * DEBT/COLLAT or DEBT/(COLLAT/CR) </para>        </detaileddescription>
+<para>The black swan price is defined as debt/collateral, we want to perform a margin call before debt == collateral. Given a debt/collateral ratio of 1 USD / CORE and a maintenance collateral requirement of 2x we can define the call price to be 2 USD / CORE.</para><para>This method divides the collateral by the maintenance collateral ratio to derive a call price for the given black swan ratio.</para><para>There exists some cases where the debt and collateral values are so small that dividing by the collateral ratio will result in a 0 price or really poor rounding errors. No matter what the collateral part of the price ratio can never go to 0 and the debt can never go more than GRAPHENE_MAX_SHARE_SUPPLY</para><para>CR * DEBT/COLLAT or DEBT/(COLLAT/CR)</para><para>Note: this function is only used before core-1270 hard fork. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/protocol/asset.hpp" line="126" column="1" bodyfile="libraries/chain/protocol/asset.cpp" bodystart="207" bodyend="219"/>
+        <location file="libraries/chain/include/graphene/chain/protocol/asset.hpp" line="126" column="1" bodyfile="libraries/chain/protocol/asset.cpp" bodystart="209" bodyend="220"/>
       </memberdef>
       <memberdef kind="function" id="structgraphene_1_1chain_1_1price_1aa6718b227f89176f631672c14a1314de" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structgraphene_1_1chain_1_1price" kindref="compound">price</ref></type>
@@ -213,22 +213,22 @@
     <detaileddescription>
 <para>A price is defined as a ratio between two assets, and represents a possible exchange rate between those two assets. prices are generally not stored in any simplified form, i.e. a price of (1000 CORE)/(20 USD) is perfectly normal.</para><para>The assets within a price are labeled base and quote. Throughout the Graphene code base, the convention used is that the base asset is the asset being sold, and the quote asset is the asset being purchased, where the price is represented as base/quote, so in the example price above the seller is looking to sell CORE asset and get USD in return. </para>    </detaileddescription>
     <collaborationgraph>
-      <node id="2676">
+      <node id="2999">
         <label>graphene::chain::price</label>
         <link refid="structgraphene_1_1chain_1_1price"/>
-        <childnode refid="2677" relation="usage">
+        <childnode refid="3000" relation="usage">
           <edgelabel>base</edgelabel>
           <edgelabel>quote</edgelabel>
         </childnode>
       </node>
-      <node id="2677">
+      <node id="3000">
         <label>graphene::chain::asset</label>
         <link refid="structgraphene_1_1chain_1_1asset"/>
-        <childnode refid="2678" relation="usage">
+        <childnode refid="3001" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
       </node>
-      <node id="2678">
+      <node id="3001">
         <label>safe&lt; int64_t &gt;</label>
       </node>
     </collaborationgraph>
