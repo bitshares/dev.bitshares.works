@@ -14,24 +14,26 @@ Creating an Asset
 
 ::
 
-    >>> create_asset <issuer> <symbol> <precision> <options> {} false
+    >>> create_asset <issuer> <symbol> <precision> <options> null false
 
 .. note:: A `false` at the end allows to check and verify the
-          constructed transaction and does **not** broadcast it.  The
-          empty `{}` could be used to construct a :doc:`../user/mpa` and
-          is subject of another tutorial.
+          constructed transaction and does **not** broadcast it.
+          The null for the bitassets parameter is essential
+          for a user-issued asset that is not also a prediction market asset.
+          An `{}` for the parameter could be used to construct a :doc:`../user/mpa`
+          and is the subject of another tutorial.
 
 Parameters
 ~~~~~~~~~
 
-The `precision` can any positive integer starting from `0`.
+The `precision` can be any non-negative integer starting from `0`.
 As `options` we pass a JSON object that can contain these settings:
 
 .. code-block:: js
 
    {
       "max_supply" : 10000,    # Integer in satoshi! (100 for precision 1 and max 10)
-      "market_fee_percent" : 0.3,
+      "market_fee_percent" : 30, # Integer in hundredths of one percent. 30/100 of 1% = 0.30% = 0.0030
       "max_market_fee" : 1000, # in satoshi
       "issuer_permissions" : <permissions>,
       "flags" : <flags>,
@@ -53,7 +55,7 @@ As `options` we pass a JSON object that can contain these settings:
    }
 
 The flags are construction as an JSON object containing these
-flags/permissions 
+flags/permissions (see :doc:`../assets-faq`):
 
 .. code-block:: js
 
@@ -69,7 +71,7 @@ flags/permissions
       "committee_fed_asset" : true
    }
 
-Permissions and flags are modelled as sum of binary flags (see example
+Permissions and flags are modelled as a sum of binary flags (see example
 below)
 
 - :ref:`asset-user-whitelists`
