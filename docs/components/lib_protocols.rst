@@ -9,7 +9,9 @@ Protocols
 
 This document purpose: to bring BitShares Protocols information (files) close to users.
 
-These are a collection of the BitShares Protocols information. Sometimes it's difficult to find and read through all of them.  The original files locate: (..\\libraries\\chain\\include\\graphene\\chain\\protocol\\xxx.hpp)
+The classes declared in these headers provide the complete definition of the Graphene protocol and are organized according to feature. Nothing in this directory should depend upon anything other than fc or other types defined in the protocol directory.
+
+The below information are a collection of the BitShares Protocols. Sometimes it's difficult to find and read through all of them.  The original files locate: (..\\libraries\\chain\\include\\graphene\\chain\\protocol\\xxx.hpp)
 
 ----------------
 
@@ -792,25 +794,37 @@ account_options
 
 .. code-block:: cpp
 
-	struct account_options
-	{
-	  public_key_type  memo_key;
-	  account_id_type  voting_account = GRAPHENE_PROXY_TO_SELF_ACCOUNT;
+   /// These are the fields which can be updated by the active authority.
+   struct account_options
+   {
+      /// The memo key is the key this account will typically use to encrypt/sign transaction memos and other non-
+      /// validated account activities. This field is here to prevent confusion if the active authority has zero or
+      /// multiple keys in it.
+      public_key_type  memo_key;
+      /// If this field is set to an account ID other than GRAPHENE_PROXY_TO_SELF_ACCOUNT,
+      /// then this account's votes will be ignored; its stake
+      /// will be counted as voting for the referenced account's selected votes instead.
+      account_id_type voting_account = GRAPHENE_PROXY_TO_SELF_ACCOUNT;
 
-	  uint16_t num_witness = 0;
-	  uint16_t num_committee = 0;
+      /// The number of active witnesses this account votes the blockchain should appoint
+      /// Must not exceed the actual number of witnesses voted for in @ref votes
+      uint16_t num_witness = 0;
+      /// The number of active committee members this account votes the blockchain should appoint
+      /// Must not exceed the actual number of committee members voted for in @ref votes
+      uint16_t num_committee = 0;
+      /// This is the list of vote IDs this account votes for. The weight of these votes is determined by this
+      /// account's balance of core asset.
+      flat_set<vote_id_type> votes;
+      extensions_type        extensions;
 
-	  flat_set<vote_id_type>   votes;
-	  extensions_type          extensions;
+      /// Whether this account is voting
+      inline bool is_voting() const
+      {
+         return ( voting_account != GRAPHENE_PROXY_TO_SELF_ACCOUNT || !votes.empty() );
+      }
 
-	  /// Whether this account is voting
-	  inline bool              is_voting() const
-	  {
-		return ( voting_account != GRAPHENE_PROXY_TO_SELF_ACCOUNT || !votes.empty() );
-	  }
-
-	  void validate()const;
-	};
+      void validate()const;
+   };
 
 **The description of ``account_options`` elements**
 
@@ -1091,9 +1105,14 @@ account_name_eq_lit_predicate
 
 	struct account_name_eq_lit_predicate
 	{
-		account_id_type account_id;
-		string          name;
-		bool   validate()const;
+	  account_id_type account_id;
+	  string          name;
+
+	  /**
+	   *  Perform state-independent checks.  Verify
+	   *  account_name is a valid account name.
+	   */
+	  bool validate()const;
 	};
 	
 
@@ -1107,11 +1126,16 @@ asset_symbol_eq_lit_predicate
 
 	struct asset_symbol_eq_lit_predicate
 	{
-		asset_id_type   asset_id;
-		string          symbol;
-		bool validate()const;
-	};
+	  asset_id_type   asset_id;
+	  string          symbol;
 
+	  /**
+	   *  Perform state independent checks.  Verify symbol is a
+	   *  valid asset symbol.
+	   */
+	  bool validate()const;
+
+	};
 
 block_id_predicate
 ^^^^^^^^^^^^^^^^^^^^^
@@ -1162,74 +1186,74 @@ asset
 
    struct price;
 
-   struct asset
-   {
-      asset( share_type a = 0, asset_id_type id = asset_id_type() )
-      :amount(a),asset_id(id){}
+	struct asset
+	{
+	  asset( share_type a = 0, asset_id_type id = asset_id_type() )
+	  :amount(a),asset_id(id){}
 
-      share_type    amount;
-      asset_id_type asset_id;
+	  share_type    amount;
+	  asset_id_type asset_id;
 
-      asset& operator += ( const asset& o )
-      {
-         FC_ASSERT( asset_id == o.asset_id );
-         amount += o.amount;
-         return *this;
-      }
-      asset& operator -= ( const asset& o )
-      {
-         FC_ASSERT( asset_id == o.asset_id );
-         amount -= o.amount;
-         return *this;
-      }
-      asset operator -()const { return asset( -amount, asset_id ); }
+	  asset& operator += ( const asset& o )
+	  {
+		 FC_ASSERT( asset_id == o.asset_id );
+		 amount += o.amount;
+		 return *this;
+	  }
+	  asset& operator -= ( const asset& o )
+	  {
+		 FC_ASSERT( asset_id == o.asset_id );
+		 amount -= o.amount;
+		 return *this;
+	  }
+	  asset operator -()const { return asset( -amount, asset_id ); }
 
-      friend bool operator == ( const asset& a, const asset& b )
-      {
-         return std::tie( a.asset_id, a.amount ) == std::tie( b.asset_id, b.amount );
-      }
-      friend bool operator < ( const asset& a, const asset& b )
-      {
-         FC_ASSERT( a.asset_id == b.asset_id );
-         return a.amount < b.amount;
-      }
-      friend inline bool operator <= ( const asset& a, const asset& b )
-      {
-         return !(b < a);
-      }
+	  friend bool operator == ( const asset& a, const asset& b )
+	  {
+		 return std::tie( a.asset_id, a.amount ) == std::tie( b.asset_id, b.amount );
+	  }
+	  friend bool operator < ( const asset& a, const asset& b )
+	  {
+		 FC_ASSERT( a.asset_id == b.asset_id );
+		 return a.amount < b.amount;
+	  }
+	  friend inline bool operator <= ( const asset& a, const asset& b )
+	  {
+		 return !(b < a);
+	  }
 
-      friend inline bool operator != ( const asset& a, const asset& b )
-      {
-         return !(a == b);
-      }
-      friend inline bool operator > ( const asset& a, const asset& b )
-      {
-         return (b < a);
-      }
-      friend inline bool operator >= ( const asset& a, const asset& b )
-      {
-         return !(a < b);
-      }
+	  friend inline bool operator != ( const asset& a, const asset& b )
+	  {
+		 return !(a == b);
+	  }
+	  friend inline bool operator > ( const asset& a, const asset& b )
+	  {
+		 return (b < a);
+	  }
+	  friend inline bool operator >= ( const asset& a, const asset& b )
+	  {
+		 return !(a < b);
+	  }
 
-      friend asset operator - ( const asset& a, const asset& b )
-      {
-         FC_ASSERT( a.asset_id == b.asset_id );
-         return asset( a.amount - b.amount, a.asset_id );
-      }
-      friend asset operator + ( const asset& a, const asset& b )
-      {
-         FC_ASSERT( a.asset_id == b.asset_id );
-         return asset( a.amount + b.amount, a.asset_id );
-      }
+	  friend asset operator - ( const asset& a, const asset& b )
+	  {
+		 FC_ASSERT( a.asset_id == b.asset_id );
+		 return asset( a.amount - b.amount, a.asset_id );
+	  }
+	  friend asset operator + ( const asset& a, const asset& b )
+	  {
+		 FC_ASSERT( a.asset_id == b.asset_id );
+		 return asset( a.amount + b.amount, a.asset_id );
+	  }
 
-      static share_type scaled_precision( uint8_t precision )
-      {
-         FC_ASSERT( precision < 19 );
-         return scaled_precision_lut[ precision ];
-      }
+	  static share_type scaled_precision( uint8_t precision )
+	  {
+		 FC_ASSERT( precision < 19 );
+		 return scaled_precision_lut[ precision ];
+	  }
 
-      asset multiply_and_round_up( const price& p )const; ///< Multiply and round up
-   };
+	  asset multiply_and_round_up( const price& p )const; ///< Multiply and round up
+	};
 
 
 price
@@ -1498,7 +1522,7 @@ buyback_account_options
 	   flat_set< asset_id_type > markets;
 	};
 
-**The descriptions of `buyback` elements**
+**The descriptions of `buyback`  elements**
 
 +---------------------------+---------------------+--------------------------------------------------------------------------------------------------------------------------------+
 |                           |                     | descriptions                                                                                                                   |

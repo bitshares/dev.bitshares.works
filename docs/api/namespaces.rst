@@ -21,9 +21,9 @@ The below links will take you to BitShares-Core Doxygen documentation website.
 
 * BitShares-Core Doxygen documentation
 
-  - `graphene::app Namespace Reference <https://bitshares.org/doxygen/namespacegraphene_1_1app.html>`_
-  - `graphene::chain Namespace Reference <https://bitshares.org/doxygen/namespacegraphene_1_1chain.html>`_  
-  - `graphene::wallet Namespace Reference <https://bitshares.org/doxygen/namespacegraphene_1_1wallet.html>`_ 
+  - `graphene::app Namespace Reference <https://doxygen.bitshares.org/namespacegraphene_1_1app.html>`_
+  - `graphene::chain Namespace Reference <https://doxygen.bitshares.org/namespacegraphene_1_1chain.html>`_  
+  - `graphene::wallet Namespace Reference <https://doxygen.bitshares.org/namespacegraphene_1_1wallet.html>`_ 
 
 
     

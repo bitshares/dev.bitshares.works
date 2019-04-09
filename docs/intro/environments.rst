@@ -134,13 +134,13 @@ Basic Rules
 
 1. Development always happens in private feature-branches. The only exception is a change that must be distinguished in the destination branch (typical example: hardfork date in testnet).
 2. Features are merged after they are reasonably complete, i. e. they come with unit tests that provide reasonable coverage and do not report any errors.
-  - "Completed" features that are not consensus-related are merged into "develop".
-  - "Completed" features that are consensus-related are merged into the "hardfork" branch, with a hardfork date in the far future.
-  - All merges into "develop" or "hardfork" are performed via github PR's and require review and approval from core source (if the PR is created by a core dev at least one other core dev must review and approve).
-  - To maintain a clean history and make reviewing and merging easier, feature branches must be rebased onto current "develop" (or "hardfork") before creating a PR.
+  - **Completed** features that are not consensus-related are merged into **develop**.
+  - **Completed** features that are consensus-related are merged into the **hardfork** branch, with a hardfork date in the far future.
+  - All merges into **develop** or **hardfork** are performed via github PR's and require review and approval from core source (if the PR is created by a core dev at least one other core dev must review and approve).
+  - To maintain a clean history and make reviewing and merging easier, feature branches must be rebased onto current **develop** (or **hardfork**) before creating a PR.
   - Merges are always done as real merges, not as fast-forwards, and not squashed. 
-3. Core devs coordinate regular merges from "develop" into "hardfork".
-4. Both "develop" and "hardfork" should always remain compatible with mainnet, i. e. a full replay must be possible.
+3. Core devs coordinate regular merges from **develop** into **hardfork**.
+4. Both **develop** and **hardfork** should always remain compatible with mainnet, i. e. a full replay must be possible.
 
 |
 
@@ -152,31 +152,33 @@ How To Create a Release
 For a release,
 
 0. Bump stuff
-  1) Check whether need to bump ``DB_VERSION`` to force a replay after upgraded: if there is a data schema change, or logic change that affects historical data, the answer is yes.  
-  2) FC version usually has been bumped already during development, but it doesn't harm if check again.  
-  3) Bump docs sub-module which links to wiki.
-1. A "release" branch is created based on "develop" or "hardfork".
-2. The "release" branch is merged into "testnet".
-3. For a hardfork release, the hardfork date is adapted directly on the testnet branch.
-4. The "testnet" branch is tagged as test-version.
-5. Bugfixes for the release are created on the "release" branch and merged into "testnet". Additional test-versions are tagged as needed.
-6. After sufficient testing, the release must be approved. In the case of a hardfork release, witness approval is required.
-7. After approval, the mainnet hardfork date is decided and set in the "release" branch.
-8. The "release" branch is merged into "master", and a version tag is created on "master".
-9. The "release" branch is merged back into "develop" and "hardfork".
-10. The "release" branch is merged into "testnet". This will produce a merge conflict for the hardfork dates, which must be resolved without changing the testnet hardfork date.
-11. Update ``Doxyfile`` with the last version tag. Update online code documentation by using updated ``Doxyfile`` as config file in the ``master`` branch. Send pull request to https://github.com/bitshares/bitshares.github.io with new content in html format.Send pull to https://github.com/bitshares/dev.bitshares.works with new content in xml format.
-12. Update `download page of bitshares.org site <https://github.com/bitshares/bitshares.github.io/blob/master/_includes/download.html>`_
-13. Create binaries for linux, macos and windows. Once the tag name is known create binaries for this 3 OS. Attach them to release notes. 
-
-  - Example: https://github.com/bitshares/bitshares-core/releases/tag/2.0.181105 Binaries names for this release:
+ 1) Check whether need to bump ``DB_VERSION`` to force a replay after upgraded: if there is a data schema change, or logic change that affects historical data, the answer is yes.  
+ 2) FC version usually has been bumped already during development, but it doesn't harm if check again.  
+ 3) Bump docs sub-module which links to wiki.
+1. A **release** branch is created based on **develop** or **hardfork**.
+2. Update Doxyfile with the last version tag in **release** branch.
+3. The **release** branch is merged into **testnet**.
+4. For a hardfork release, the hardfork date is adapted directly on the testnet branch.
+5. The **testnet** branch is tagged as test-version.
+6. Bugfixes for the release are created on the **release** branch and merged into **testnet**. Additional test-versions are tagged as needed.
+7. After sufficient testing, the release must be approved. In the case of a hardfork release, witness approval is required.
+8. After approval, the mainnet hardfork date is decided and set in the **release** branch.
+9. The **release** branch is merged into **master**, and a version tag is created on **master**. Create tag by git command line and then point the release to the created tag in github. This is needed for Docker to catch the new code.
+10. The **release** branch is merged back into **develop** and **hardfork**.
+11. The **release** branch is merged into **testnet**. This will produce a merge conflict for the hardfork dates, which must be resolved without changing the testnet hardfork date.
+12. Update online code documentation by using updated Doxyfile as config file in the master branch. Send pull request to https://github.com/bitshares/doxygen.bitshares.org with new content in html format. Send pull to https://github.com/bitshares/dev.bitshares.works with new content in xml format.
+13. Update date of last core download page of bitshares.org site.
+14. Create binaries for linux, macos and windows. Once the tag name is known create binaries for this 3 OS. Attach them to release notes.
+**Example**: https://github.com/bitshares/bitshares-core/releases/tag/3.0.0 Binaries names for this release:
   
-    - Linux: BitShares-core-2.0.181105-Linux-cli-tools.tar.gz
-    - Windows: BitShares-Core-2.0.181105-Windows-x64-cli-tools.zip
-    - macOS: BitShares-Core-2.0.181105-macOS-cli-tools.tar.gz
-
+  - Linux: BitShares-core-3.0.0-Linux-cli-tools.tar.gz
+  - Windows: BitShares-Core-3.0.0-Windows-x64-cli-tools.zip
+  - macOS: BitShares-Core-3.0.0-macOS-cli-tools.tar.gz
 	
 **Note:** Solving conflicts by github(web) will merge branches in unintended directions. Avoid solving this way, merge and resolve conflicts manually through the git command line. Conflicts generally occur when merging release to testnet.
+
+  - How to: `Snapshot Comparison in Bitshares <https://github.com/oxarbitrage/documentation/blob/master/snapshot.md>`_ 
+  
 
 **Note 2:** Follow command line github suggestion to resolve conflicts but at the end of the process you will not have permission to merge directly to ``testnet``, never push the fix to ``release``. Create a new branch and push there, then create a new pull request between ``testnet`` and ``new_branch``, merge ``new_branch`` to ``testnet`` and ``release`` will be automatically added to the merge.
 
@@ -184,7 +186,7 @@ For a release,
 
 **Note 4:** :strike:`the tag commit can be changed`. Don't change tags on github. This is a source of confusion, and of irreproducible bug reports. Make new one is better (ex: test-2.0.180321b or wait 1 day).
 
-**Note 5:** Do not mark releases as "pre release" unless there is a real new version coming immediately after. Never upgrade "pre release" to "release" as new emails to subscribers will not be sent when doing so.
+**Note 5:** Do not mark releases as **pre release** unless there is a real new version coming immediately after. Never upgrade **pre release** to **release** as new emails to subscribers will not be sent when doing so.
 
 |
 
@@ -208,7 +210,7 @@ Emergency Fix Workflows
         :align: center
 		
 
-1. The fix is applied to the version of the "release" branch that was merged into ``master`` when creating the broken release version.
+1. The fix is applied to the version of the **release** branch that was merged into ``master`` when creating the broken release version.
 2. The ``release`` branch is merged into ``master``, and a version tag is created on ``master``.
 3. Witnesses update to the new version, and production continues.
 4. A unit test is created on ``develop`` that reproduces the problem.
