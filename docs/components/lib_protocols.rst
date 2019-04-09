@@ -1522,7 +1522,7 @@ buyback_account_options
 	   flat_set< asset_id_type > markets;
 	};
 
-**The descriptions of `buyback` elements**
+**The descriptions of `buyback`  elements**
 
 +---------------------------+---------------------+--------------------------------------------------------------------------------------------------------------------------------+
 |                           |                     | descriptions                                                                                                                   |

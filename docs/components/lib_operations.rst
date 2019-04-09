@@ -297,7 +297,7 @@ asset_claim_fees_operation
 asset_claim_pool_operation
 -------------------------------
 
-- Transfers BTS from the fee pool of a specified asset back to the issuer's balance. 
+- Transfers BTS from the fee pool of a specified asset back to the issue's balance. 
 - Parameters
 
   - `fee`  Payment for the operation execution
