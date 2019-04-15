@@ -10,8 +10,8 @@ Join Us!
 	 
 * `BitShares Community <https://t.me/bitshares_community>`_
 * `Forum - BitSharesTalk`_ 
-* `Telagram - BitSharesDEX`_
-* `Telagram - BitShares Traders`_
+* `Telegram - BitSharesDEX`_
+* `Telegram - BitShares Traders`_
 * `Discord - BitShares`_
 * `BitSares on Steemit`_
 * `Twitter`_
@@ -20,11 +20,11 @@ Join Us!
 * (*will be added more*)
 
 .. _Forum - BitSharesTalk: https://bitsharestalk.org/
-.. _Telagram - BitSharesDEX: https://t.me/BitSharesDEX
-.. _Telagram - BitSharesEXCHANGES: https://t.me/BitSharesEXCHANGES
-.. _Telagram - BitShares Traders: https://t.me/BitShares_Traders
+.. _Telegram - BitSharesDEX: https://t.me/BitSharesDEX
+.. _Telegram - BitSharesEXCHANGES: https://t.me/BitSharesEXCHANGES
+.. _Telegram - BitShares Traders: https://t.me/BitShares_Traders
 .. _Discord - BitShares: https://discord.gg/GsjQfAJ
-.. _BitSares on Steemit: https://steemit.com/trending/bitshares
+.. _BitShares on Steemit: https://steemit.com/trending/bitshares
 .. _Twitter: https://twitter.com/bitshares
 .. _Reddit: https://www.reddit.com/r/BitShares/
 .. _BitSharesTalk.io: https://bitsharestalk.io/forums
@@ -58,7 +58,7 @@ BitShares Blockchain Foundation
 
 BitShares UI Wallet
 ====================
-- `BitShare UI wallet <https://wallet.bitshares.org>`_
+- `BitShares UI wallet <https://wallet.bitshares.org>`_
 
 
 Bitshares Block Exploer
