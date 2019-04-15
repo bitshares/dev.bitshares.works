@@ -92,7 +92,11 @@ Running ``witness_node`` with the default configuration will cause it to connect
 Launching a Private Test Blockchain
 -------------------------------------
 
-Oftentimes it is useful to create a private test network when developing and testing new features. This can be done by configuring ``witness_node`` to use a custom Genesis block, and enabling block production using the witness accounts defined by that Genesis.
+Oftentimes it is useful to create a :ref:`Private Test Network <private-testnet-guide>` when developing and testing new features. This can be done by configuring ``witness_node`` to use a custom Genesis block, and enabling block production using the witness accounts defined by that Genesis.
+
+* Example: :ref:`Private Genesis file <private-testnet-genesis-example>`
+
+* Example: :ref:`Configuration file - config.ini <bts-config-ini-eg-private-testnet>`
 
 To start a node using a custom Genesis block, run ``witness_node --genesis-json /path/to/genesis-dev.json``. A suitable Genesis file is available within the repository at ``libraries/egenesis/genesis-dev.json`` (as of this writing, available in the ``develop`` branch, but not ``master``). It will also be necessary to set the following options in the ``config.ini`` file::
 

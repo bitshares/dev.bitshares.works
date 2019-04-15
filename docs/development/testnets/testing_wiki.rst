@@ -44,7 +44,7 @@ Check how much code is covered by unit tests, using gcov/lcov (see http://ltp.so
     mkdir -p lcov
     genhtml interesting.info --output-directory lcov --prefix `pwd`
 
-Now open `lcov/index.html` in a browser.
+Now open ``lcov/index.html`` in a browser.
 
 Unit testing
 --------------------------------------------
