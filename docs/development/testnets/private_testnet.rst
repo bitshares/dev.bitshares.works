@@ -225,7 +225,10 @@ Open the ``[Testnet-Home]/data/my-blocktestnet/config.ini`` file and set the fol
 
 	p2p-endpoint = 127.0.0.1:11010
 	# seed_node =                   // add a seed node of your own
-	
+
+	# This value set needs to overwrite default checkpoint.
+	checkpoint = []
+
 	rpc-endpoint = 127.0.0.1:11011
 
 	genesis-json = genesis/my-genesis.json

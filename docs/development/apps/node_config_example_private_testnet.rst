@@ -21,6 +21,9 @@ As a default, most parameters have been commented. You have to uncomment to set 
 	p2p-endpoint = 127.0.0.1:11010
 	rpc-endpoint = 127.0.0.1:11011
 	# seed_node =                   // add a seed node of your own
+
+	# This value set needs to overwrite default checkpoint.
+	checkpoint = []
 	
 	genesis-json = genesis/my-genesis.json
 
