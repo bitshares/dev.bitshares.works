@@ -16,14 +16,15 @@ import os
 import subprocess
 import re
 
-import sphinx_rtd_theme
+##import sphinx_rtd_theme
 
 sys.path.append(os.path.abspath('./docs/'))
 #sys.path.append(os.path.abspath('./demo/'))
 #sys.path.append( "./ext/breathe/" )
+sys.path.append(os.path.abspath('./ext/breathe/'))
 
-## from sphinx.locale import _
-## from sphinx_rtd_theme import __version__
+from sphinx.locale import _
+from sphinx_rtd_theme import __version__
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -40,12 +41,13 @@ sys.path.append(os.path.abspath('./docs/'))
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 
 extensions = [
-    'sphinx.ext.autodoc',
     'sphinx.ext.intersphinx',
+    'sphinx.ext.autodoc',
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
     'sphinxcontrib.httpdomain',
-    'sphinx.ext.autosectionlabel',	
+    'sphinx.ext.autosectionlabel',
+	'sphinx.ext.todo', 
     'breathe'
 ]
 
@@ -113,15 +115,20 @@ pygments_style = 'default'
 
 #intersphinx_mapping = {'rtd': ('https://docs.readthedocs.io/en/latest/', None)}
 
-#intersphinx_mapping = {
-#    'sphinx': ('http://www.sphinx-doc.org/en/stable/', None),
-#    'python': ('https://docs.python.org/', None),	
-#}
+##intersphinx_mapping = {
+ #   'rtd': ('https://docs.readthedocs.io/en/latest/', None),
+ ##   'sphinx': ('http://www.sphinx-doc.org/en/stable/', None),
+ ##   'python': ('https://docs.python.org/', None),	
+##}
 
 intersphinx_mapping = {
     'python': ('https://python.readthedocs.io/en/latest/', None),
     'sphinx': ('https://sphinx.readthedocs.io/en/latest/', None),
 }
+
+# Example configuration for intersphinx: refer to the Python standard library.
+# intersphinx_mapping = {'https://docs.python.org/': None}
+
 # -- Options for HTML output ---------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
@@ -253,13 +260,14 @@ latex_documents = [
 # If false, no module index is generated.
 #latex_domain_indices = True
 
+
 ###############################################################################
 # Breathe configuration
 ###############################################################################
 try :
-    import breathe
+#    import breathe
 
-    extensions.append( "breathe" )
+ #   extensions.append( "breathe" )
     breathe_projects = {
         "bitshares": "../doxygen/xml/",
     }
