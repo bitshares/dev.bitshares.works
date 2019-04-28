@@ -16,14 +16,14 @@ import os
 import subprocess
 import re
 
-
+import sphinx_rtd_theme
 
 sys.path.append(os.path.abspath('./docs/'))
 #sys.path.append(os.path.abspath('./demo/'))
 #sys.path.append( "./ext/breathe/" )
 
-from sphinx.locale import _
-from sphinx_rtd_theme import __version__
+## from sphinx.locale import _
+## from sphinx_rtd_theme import __version__
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -41,10 +41,16 @@ from sphinx_rtd_theme import __version__
 
 extensions = [
     'sphinx.ext.autodoc',
+    'sphinx.ext.intersphinx',
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
     'sphinxcontrib.httpdomain',
     'sphinx.ext.autosectionlabel',
+    'doc_extensions',
+    'sphinx_tabs.tabs',
+    'sphinx-prompt',
+    'recommonmark',
+    'notfound.extension',	
     'breathe',
 ]
 
@@ -112,12 +118,15 @@ pygments_style = 'default'
 
 #intersphinx_mapping = {'rtd': ('https://docs.readthedocs.io/en/latest/', None)}
 
-intersphinx_mapping = {
-    'rtd': ('https://docs.readthedocs.io/en/latest/', None),
-    'sphinx': ('http://www.sphinx-doc.org/en/stable/', None),
-    'python': ('https://docs.python.org/', None),	
-}
+#intersphinx_mapping = {
+#    'sphinx': ('http://www.sphinx-doc.org/en/stable/', None),
+#    'python': ('https://docs.python.org/', None),	
+#}
 
+intersphinx_mapping = {
+    'python': ('https://python.readthedocs.io/en/latest/', None),
+    'sphinx': ('https://sphinx.readthedocs.io/en/latest/', None),
+}
 # -- Options for HTML output ---------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
@@ -249,6 +258,17 @@ latex_documents = [
 # If false, no module index is generated.
 #latex_domain_indices = True
 
+
+# sphinx-notfound-page
+# https://github.com/rtfd/sphinx-notfound-page
+notfound_context = {
+    'title': 'Page Not Found',
+    'body': '''
+<h1>Page Not Found</h1>
+<p>Sorry, we couldn't find that page.</p>
+<p>Try using the search box or go to the homepage.</p>
+''',
+}
 
 ###############################################################################
 # Breathe configuration
