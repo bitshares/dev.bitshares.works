@@ -45,8 +45,7 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
     'sphinxcontrib.httpdomain',
-    'sphinx.ext.autosectionlabel',
-    'notfound.extension',	
+    'sphinx.ext.autosectionlabel',	
     'breathe',
 ]
 
@@ -253,18 +252,6 @@ latex_documents = [
 
 # If false, no module index is generated.
 #latex_domain_indices = True
-
-
-# sphinx-notfound-page
-# https://github.com/rtfd/sphinx-notfound-page
-notfound_context = {
-    'title': 'Page Not Found',
-    'body': '''
-<h1>Page Not Found</h1>
-<p>Sorry, we couldn't find that page.</p>
-<p>Try using the search box or go to the homepage.</p>
-''',
-}
 
 ###############################################################################
 # Breathe configuration
