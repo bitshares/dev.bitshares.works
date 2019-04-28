@@ -46,7 +46,7 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinxcontrib.httpdomain',
     'sphinx.ext.autosectionlabel',	
-    'breathe',
+    'breathe'
 ]
 
 # Do not warn about external images (status badges in README.rst)
