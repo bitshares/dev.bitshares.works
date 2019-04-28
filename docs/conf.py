@@ -48,7 +48,7 @@ extensions = [
     'sphinxcontrib.httpdomain',
     'sphinx.ext.autosectionlabel',
 	'sphinx.ext.todo', 
-    'breathe'
+    'breathe',
 ]
 
 # Do not warn about external images (status badges in README.rst)
@@ -115,16 +115,16 @@ pygments_style = 'default'
 
 #intersphinx_mapping = {'rtd': ('https://docs.readthedocs.io/en/latest/', None)}
 
-##intersphinx_mapping = {
- #   'rtd': ('https://docs.readthedocs.io/en/latest/', None),
- ##   'sphinx': ('http://www.sphinx-doc.org/en/stable/', None),
- ##   'python': ('https://docs.python.org/', None),	
-##}
-
 intersphinx_mapping = {
-    'python': ('https://python.readthedocs.io/en/latest/', None),
-    'sphinx': ('https://sphinx.readthedocs.io/en/latest/', None),
+  #  'rtd': ('https://docs.readthedocs.io/en/latest/', None),
+    'sphinx': ('http://www.sphinx-doc.org/en/stable/', None),
+    'python': ('https://docs.python.org/', None),
 }
+
+##intersphinx_mapping = {
+##    'python': ('https://python.readthedocs.io/en/latest/', None),
+##    'sphinx': ('https://sphinx.readthedocs.io/en/latest/', None),
+##}
 
 # Example configuration for intersphinx: refer to the Python standard library.
 # intersphinx_mapping = {'https://docs.python.org/': None}
@@ -265,9 +265,9 @@ latex_documents = [
 # Breathe configuration
 ###############################################################################
 try :
-#    import breathe
+    import breathe
 
- #   extensions.append( "breathe" )
+    extensions.append( "breathe" )
     breathe_projects = {
         "bitshares": "../doxygen/xml/",
     }
