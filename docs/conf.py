@@ -14,7 +14,6 @@
 import sys
 import os
 import subprocess
-import re
 
 ##import sphinx_rtd_theme
 
@@ -265,9 +264,9 @@ latex_documents = [
 # Breathe configuration
 ###############################################################################
 try :
-    import breathe
+  ##  import breathe
 
-    extensions.append( "breathe" )
+  ## extensions.append( "breathe" )
     breathe_projects = {
         "bitshares": "../doxygen/xml/",
     }
