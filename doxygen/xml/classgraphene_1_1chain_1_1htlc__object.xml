@@ -7,6 +7,7 @@
     <innerclass refid="structgraphene_1_1chain_1_1htlc__object_1_1condition__info" prot="public">graphene::chain::htlc_object::condition_info</innerclass>
     <innerclass refid="structgraphene_1_1chain_1_1htlc__object_1_1from__extractor" prot="public">graphene::chain::htlc_object::from_extractor</innerclass>
     <innerclass refid="structgraphene_1_1chain_1_1htlc__object_1_1timelock__extractor" prot="public">graphene::chain::htlc_object::timelock_extractor</innerclass>
+    <innerclass refid="structgraphene_1_1chain_1_1htlc__object_1_1to__extractor" prot="public">graphene::chain::htlc_object::to_extractor</innerclass>
     <innerclass refid="structgraphene_1_1chain_1_1htlc__object_1_1transfer__info" prot="public">graphene::chain::htlc_object::transfer_info</innerclass>
       <sectiondef kind="public-static-attrib">
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1htlc__object_1a4811b91adcc46453979d47dbf5e0330f" prot="public" static="yes" mutable="no">
@@ -66,75 +67,95 @@
         <location file="libraries/chain/include/graphene/chain/htlc_object.hpp" line="62" column="1"/>
       </memberdef>
       </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgraphene_1_1chain_1_1htlc__object_1a7961f5cf38d737209b330d4540476ccc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool graphene::chain::htlc_object::operator==</definition>
+        <argsstring>(const htlc_object &amp;in)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classgraphene_1_1chain_1_1htlc__object" kindref="compound">htlc_object</ref> &amp;</type>
+          <declname>in</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/chain/include/graphene/chain/htlc_object.hpp" line="88" column="1" bodyfile="libraries/chain/include/graphene/chain/htlc_object.hpp" bodystart="88" bodyend="88"/>
+      </memberdef>
+      </sectiondef>
     <briefdescription>
 <para>database object to store HTLCs </para>    </briefdescription>
     <detaileddescription>
 <para>This object is stored in the database while an HTLC is active. The HTLC will become inactive at expiration or when unlocked via the preimage. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="2521">
+      <node id="2522">
         <label>graphene::db::abstract_object&lt; htlc_object &gt;</label>
       </node>
-      <node id="2520">
+      <node id="2521">
         <label>graphene::chain::htlc_object</label>
         <link refid="classgraphene_1_1chain_1_1htlc__object"/>
-        <childnode refid="2521" relation="public-inheritance">
+        <childnode refid="2522" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="2528">
+      <node id="2529">
         <label>time_point_sec</label>
       </node>
-      <node id="2523">
+      <node id="2524">
         <label>graphene::db::abstract_object&lt; htlc_object &gt;</label>
       </node>
-      <node id="2529">
+      <node id="2530">
         <label>graphene::chain::htlc_object::condition_info::hash_lock_info</label>
         <link refid="structgraphene_1_1chain_1_1htlc__object_1_1condition__info_1_1hash__lock__info"/>
       </node>
-      <node id="2527">
+      <node id="2528">
         <label>graphene::chain::htlc_object::condition_info::time_lock_info</label>
         <link refid="structgraphene_1_1chain_1_1htlc__object_1_1condition__info_1_1time__lock__info"/>
-        <childnode refid="2528" relation="usage">
+        <childnode refid="2529" relation="usage">
           <edgelabel>expiration</edgelabel>
         </childnode>
       </node>
-      <node id="2524">
+      <node id="2525">
         <label>graphene::chain::htlc_object::transfer_info</label>
         <link refid="structgraphene_1_1chain_1_1htlc__object_1_1transfer__info"/>
-        <childnode refid="2525" relation="usage">
+        <childnode refid="2526" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
       </node>
-      <node id="2522">
+      <node id="2523">
         <label>graphene::chain::htlc_object</label>
         <link refid="classgraphene_1_1chain_1_1htlc__object"/>
-        <childnode refid="2523" relation="public-inheritance">
+        <childnode refid="2524" relation="public-inheritance">
         </childnode>
-        <childnode refid="2524" relation="usage">
+        <childnode refid="2525" relation="usage">
           <edgelabel>transfer</edgelabel>
         </childnode>
-        <childnode refid="2526" relation="usage">
+        <childnode refid="2527" relation="usage">
           <edgelabel>conditions</edgelabel>
         </childnode>
       </node>
-      <node id="2526">
+      <node id="2527">
         <label>graphene::chain::htlc_object::condition_info</label>
         <link refid="structgraphene_1_1chain_1_1htlc__object_1_1condition__info"/>
-        <childnode refid="2527" relation="usage">
+        <childnode refid="2528" relation="usage">
           <edgelabel>time_lock</edgelabel>
         </childnode>
-        <childnode refid="2529" relation="usage">
+        <childnode refid="2530" relation="usage">
           <edgelabel>hash_lock</edgelabel>
         </childnode>
       </node>
-      <node id="2525">
+      <node id="2526">
         <label>safe&lt; int64_t &gt;</label>
       </node>
     </collaborationgraph>
-    <location file="libraries/chain/include/graphene/chain/htlc_object.hpp" line="42" column="1" bodyfile="libraries/chain/include/graphene/chain/htlc_object.hpp" bodystart="42" bodyend="80"/>
+    <location file="libraries/chain/include/graphene/chain/htlc_object.hpp" line="42" column="1" bodyfile="libraries/chain/include/graphene/chain/htlc_object.hpp" bodystart="42" bodyend="90"/>
     <listofallmembers>
       <member refid="classgraphene_1_1chain_1_1htlc__object_1ad574e7e681d94e0c65c3be5bc35b9500" prot="public" virt="non-virtual"><scope>graphene::chain::htlc_object</scope><name>conditions</name></member>
+      <member refid="classgraphene_1_1chain_1_1htlc__object_1a7961f5cf38d737209b330d4540476ccc" prot="public" virt="non-virtual"><scope>graphene::chain::htlc_object</scope><name>operator==</name></member>
       <member refid="classgraphene_1_1chain_1_1htlc__object_1a4811b91adcc46453979d47dbf5e0330f" prot="public" virt="non-virtual"><scope>graphene::chain::htlc_object</scope><name>space_id</name></member>
       <member refid="classgraphene_1_1chain_1_1htlc__object_1afae31794067be0d970ed6ee719ad53da" prot="public" virt="non-virtual"><scope>graphene::chain::htlc_object</scope><name>transfer</name></member>
       <member refid="classgraphene_1_1chain_1_1htlc__object_1a22617dafd9557b3bff40c3d0463b168d" prot="public" virt="non-virtual"><scope>graphene::chain::htlc_object</scope><name>type_id</name></member>

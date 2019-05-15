@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/protocol/transaction.hpp" line="279" column="1" bodyfile="libraries/chain/include/graphene/chain/protocol/transaction.hpp" bodystart="279" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/protocol/transaction.hpp" line="283" column="1" bodyfile="libraries/chain/include/graphene/chain/protocol/transaction.hpp" bodystart="283" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -36,7 +36,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/protocol/transaction.hpp" line="276" column="1" bodyfile="libraries/chain/include/graphene/chain/protocol/transaction.hpp" bodystart="276" bodyend="277"/>
+        <location file="libraries/chain/include/graphene/chain/protocol/transaction.hpp" line="279" column="1" bodyfile="libraries/chain/include/graphene/chain/protocol/transaction.hpp" bodystart="279" bodyend="280"/>
+      </memberdef>
+      <memberdef kind="function" id="structgraphene_1_1chain_1_1processed__transaction_1a89d1f2f408d562bb61fd8a40a4ce28fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual graphene::chain::processed_transaction::~processed_transaction</definition>
+        <argsstring>()=default</argsstring>
+        <name>~processed_transaction</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/chain/include/graphene/chain/protocol/transaction.hpp" line="281" column="1"/>
       </memberdef>
       <memberdef kind="function" id="structgraphene_1_1chain_1_1processed__transaction_1a348571d7429c14a3b847c03ebaba545a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="namespacegraphene_1_1chain_1a575e2ea493a5e8f4d2888ee753084596" kindref="member">digest_type</ref></type>
@@ -49,7 +62,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/protocol/transaction.hpp" line="281" column="1" bodyfile="libraries/chain/protocol/transaction.cpp" bodystart="33" bodyend="38"/>
+        <location file="libraries/chain/include/graphene/chain/protocol/transaction.hpp" line="285" column="1" bodyfile="libraries/chain/protocol/transaction.cpp" bodystart="33" bodyend="38"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -57,90 +70,90 @@
     <detaileddescription>
 <para>When processing a transaction some operations generate new object IDs and these IDs cannot be known until the transaction is actually included into a block. When a block is produced these new ids are captured and included with every transaction. The index in operation_results should correspond to the same index in operations.</para><para>If an operation did not create any new object IDs then 0 should be returned. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="3007">
+      <node id="3008">
         <label>graphene::chain::processed_transaction</label>
         <link refid="structgraphene_1_1chain_1_1processed__transaction"/>
-        <childnode refid="3008" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="3009">
-        <label>graphene::chain::signed_transaction</label>
-        <link refid="classgraphene_1_1chain_1_1signed__transaction"/>
-        <childnode refid="3010" relation="public-inheritance">
+        <childnode refid="3009" relation="public-inheritance">
         </childnode>
       </node>
       <node id="3010">
+        <label>graphene::chain::signed_transaction</label>
+        <link refid="classgraphene_1_1chain_1_1signed__transaction"/>
+        <childnode refid="3011" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3011">
         <label>graphene::chain::transaction</label>
         <link refid="classgraphene_1_1chain_1_1transaction"/>
       </node>
-      <node id="3008">
+      <node id="3009">
         <label>graphene::chain::precomputable_transaction</label>
         <link refid="classgraphene_1_1chain_1_1precomputable__transaction"/>
-        <childnode refid="3009" relation="public-inheritance">
+        <childnode refid="3010" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="3016">
+      <node id="3017">
         <label>time_point_sec</label>
       </node>
-      <node id="3011">
+      <node id="3012">
         <label>graphene::chain::processed_transaction</label>
         <link refid="structgraphene_1_1chain_1_1processed__transaction"/>
-        <childnode refid="3012" relation="public-inheritance">
+        <childnode refid="3013" relation="public-inheritance">
         </childnode>
-        <childnode refid="3020" relation="usage">
+        <childnode refid="3021" relation="usage">
           <edgelabel>operation_results</edgelabel>
         </childnode>
       </node>
-      <node id="3015">
+      <node id="3016">
         <label>flat_set&lt; future_extensions &gt;</label>
       </node>
-      <node id="3018">
+      <node id="3019">
         <label>vector&lt; signature_type &gt;</label>
       </node>
-      <node id="3013">
+      <node id="3014">
         <label>graphene::chain::signed_transaction</label>
         <link refid="classgraphene_1_1chain_1_1signed__transaction"/>
-        <childnode refid="3014" relation="public-inheritance">
-        </childnode>
-        <childnode refid="3018" relation="usage">
-          <edgelabel>signatures</edgelabel>
+        <childnode refid="3015" relation="public-inheritance">
         </childnode>
         <childnode refid="3019" relation="usage">
+          <edgelabel>signatures</edgelabel>
+        </childnode>
+        <childnode refid="3020" relation="usage">
           <edgelabel>_signees</edgelabel>
         </childnode>
       </node>
-      <node id="3017">
+      <node id="3018">
         <label>vector&lt; operation &gt;</label>
       </node>
-      <node id="3020">
+      <node id="3021">
         <label>vector&lt; operation_result &gt;</label>
       </node>
-      <node id="3019">
+      <node id="3020">
         <label>flat_set&lt; graphene::chain::public_key_type &gt;</label>
       </node>
-      <node id="3014">
+      <node id="3015">
         <label>graphene::chain::transaction</label>
         <link refid="classgraphene_1_1chain_1_1transaction"/>
-        <childnode refid="3015" relation="usage">
+        <childnode refid="3016" relation="usage">
           <edgelabel>extensions</edgelabel>
         </childnode>
-        <childnode refid="3016" relation="usage">
+        <childnode refid="3017" relation="usage">
           <edgelabel>expiration</edgelabel>
         </childnode>
-        <childnode refid="3017" relation="usage">
+        <childnode refid="3018" relation="usage">
           <edgelabel>operations</edgelabel>
         </childnode>
       </node>
-      <node id="3012">
+      <node id="3013">
         <label>graphene::chain::precomputable_transaction</label>
         <link refid="classgraphene_1_1chain_1_1precomputable__transaction"/>
-        <childnode refid="3013" relation="public-inheritance">
+        <childnode refid="3014" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="libraries/chain/include/graphene/chain/protocol/transaction.hpp" line="275" column="1" bodyfile="libraries/chain/include/graphene/chain/protocol/transaction.hpp" bodystart="274" bodyend="282"/>
+    <location file="libraries/chain/include/graphene/chain/protocol/transaction.hpp" line="278" column="1" bodyfile="libraries/chain/include/graphene/chain/protocol/transaction.hpp" bodystart="277" bodyend="286"/>
     <listofallmembers>
       <member refid="classgraphene_1_1chain_1_1precomputable__transaction_1a0014c0d590c58b7fe3dfdd63775e6e60" prot="protected" virt="non-virtual"><scope>graphene::chain::processed_transaction</scope><name>_packed_size</name></member>
       <member refid="classgraphene_1_1chain_1_1signed__transaction_1a4202c6b4b8afba37daac2456326acee2" prot="protected" virt="non-virtual"><scope>graphene::chain::processed_transaction</scope><name>_signees</name></member>
@@ -177,6 +190,10 @@
       <member refid="classgraphene_1_1chain_1_1signed__transaction_1a99688f54e20dded0b80441d9ee2e390f" prot="public" virt="non-virtual"><scope>graphene::chain::processed_transaction</scope><name>verify_authority</name></member>
       <member refid="classgraphene_1_1chain_1_1transaction_1a870f3054c7403dbce2b21a7253b2a1d1" prot="public" virt="non-virtual"><scope>graphene::chain::processed_transaction</scope><name>visit</name></member>
       <member refid="classgraphene_1_1chain_1_1transaction_1a927bed92680e17e9790a598a64f79943" prot="public" virt="non-virtual"><scope>graphene::chain::processed_transaction</scope><name>visit</name></member>
+      <member refid="classgraphene_1_1chain_1_1precomputable__transaction_1aad2facec4f2f115417ae89f0c14f2881" prot="public" virt="virtual"><scope>graphene::chain::processed_transaction</scope><name>~precomputable_transaction</name></member>
+      <member refid="structgraphene_1_1chain_1_1processed__transaction_1a89d1f2f408d562bb61fd8a40a4ce28fe" prot="public" virt="virtual"><scope>graphene::chain::processed_transaction</scope><name>~processed_transaction</name></member>
+      <member refid="classgraphene_1_1chain_1_1signed__transaction_1a7ea0fe8e47f3f07ab6cd9dd9660915ba" prot="public" virt="virtual"><scope>graphene::chain::processed_transaction</scope><name>~signed_transaction</name></member>
+      <member refid="classgraphene_1_1chain_1_1transaction_1a850827b7688680d67a78d48de9f97404" prot="public" virt="virtual"><scope>graphene::chain::processed_transaction</scope><name>~transaction</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>
