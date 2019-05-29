@@ -107,7 +107,7 @@ Create the public directly that is served and copy/link the configuration file t
 ::
 
     sudo mkdir /www
-    sudo chown -R gph:gph /www
+    sudo chown -R bts:bts /www
 
     mina setup
     ln -s $HOME/faucet/config/faucet.yml /www/shared/config/
@@ -116,7 +116,7 @@ Create the public directly that is served and copy/link the configuration file t
 
 Deploy mina and the wallet with::
 
-    ln -s $HOME/graphene-ui/web/dist $HOME/faucet/public/wallet
+    ln -s $HOME/bitshares-ui/web/dist $HOME/faucet/public/wallet
     mina deploy
     mina wallet
 
@@ -127,7 +127,7 @@ Update Wallet
 If you have modified something in the wallet, you need to recompile the Javascript/HTML files and re-deploy the wallet with::
 
     _# re-compile_
-    cd ~/graphene-ui/web
+    cd ~/bitshares-ui/web
     git pull # fetch changes from origin
     npm run build
 
