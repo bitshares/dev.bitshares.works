@@ -16,7 +16,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/protocol/fee_schedule.hpp" line="194" column="1" bodyfile="libraries/chain/include/graphene/chain/protocol/fee_schedule.hpp" bodystart="194" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/protocol/fee_schedule.hpp" line="202" column="1" bodyfile="libraries/chain/include/graphene/chain/protocol/fee_schedule.hpp" bodystart="202" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1chain_1_1fee__schedule_1a9514950a9e0a23748f37fd9eb72c3568" prot="public" static="no" mutable="no">
         <type>uint32_t</type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/protocol/fee_schedule.hpp" line="195" column="1" bodyfile="libraries/chain/include/graphene/chain/protocol/fee_schedule.hpp" bodystart="195" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/protocol/fee_schedule.hpp" line="203" column="1" bodyfile="libraries/chain/include/graphene/chain/protocol/fee_schedule.hpp" bodystart="203" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -45,12 +45,29 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/protocol/fee_schedule.hpp" line="156" column="1" bodyfile="libraries/chain/protocol/fee_schedule.cpp" bodystart="43" bodyend="45"/>
+        <location file="libraries/chain/include/graphene/chain/protocol/fee_schedule.hpp" line="155" column="1" bodyfile="libraries/chain/protocol/fee_schedule.cpp" bodystart="31" bodyend="33"/>
       </memberdef>
-      <memberdef kind="function" id="structgraphene_1_1chain_1_1fee__schedule_1a202d9b1da4ac4ba7503b9d577951fc02" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structgraphene_1_1chain_1_1fee__schedule_1a5e885b8cc6af507685a7fb06fd6f28bb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structgraphene_1_1chain_1_1asset" kindref="compound">asset</ref></type>
         <definition>asset graphene::chain::fee_schedule::calculate_fee</definition>
-        <argsstring>(const operation &amp;op, const price &amp;core_exchange_rate=price::unit_price()) const</argsstring>
+        <argsstring>(const operation &amp;op) const</argsstring>
+        <name>calculate_fee</name>
+        <param>
+          <type>const <ref refid="group__operations_1ga1f34da121b0143fb12ee42cffb9308e9" kindref="member">operation</ref> &amp;</type>
+          <declname>op</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Finds the appropriate fee parameter struct for the operation and then calculates the appropriate fee in CORE asset. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/chain/include/graphene/chain/protocol/fee_schedule.hpp" line="163" column="1" bodyfile="libraries/chain/protocol/fee_schedule.cpp" bodystart="118" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="structgraphene_1_1chain_1_1fee__schedule_1a2e93d0455a81b0a972d8b8390ea07be7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structgraphene_1_1chain_1_1asset" kindref="compound">asset</ref></type>
+        <definition>asset graphene::chain::fee_schedule::calculate_fee</definition>
+        <argsstring>(const operation &amp;op, const price &amp;core_exchange_rate) const</argsstring>
         <name>calculate_fee</name>
         <param>
           <type>const <ref refid="group__operations_1ga1f34da121b0143fb12ee42cffb9308e9" kindref="member">operation</ref> &amp;</type>
@@ -59,15 +76,14 @@
         <param>
           <type>const <ref refid="structgraphene_1_1chain_1_1price" kindref="compound">price</ref> &amp;</type>
           <declname>core_exchange_rate</declname>
-          <defval><ref refid="structgraphene_1_1chain_1_1price_1aa6718b227f89176f631672c14a1314de" kindref="member">price::unit_price</ref>()</defval>
         </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Finds the appropriate fee parameter struct for the operation and then calculates the appropriate fee. </para>        </detaileddescription>
+<para>Finds the appropriate fee parameter struct for the operation and then calculates the appropriate fee in an asset specified implicitly by core_exchange_rate. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/protocol/fee_schedule.hpp" line="164" column="1" bodyfile="libraries/chain/protocol/fee_schedule.cpp" bodystart="130" bodyend="145"/>
+        <location file="libraries/chain/include/graphene/chain/protocol/fee_schedule.hpp" line="169" column="1" bodyfile="libraries/chain/protocol/fee_schedule.cpp" bodystart="132" bodyend="135"/>
       </memberdef>
       <memberdef kind="function" id="structgraphene_1_1chain_1_1fee__schedule_1ac97fd96d020f88da2df9fe8246ec8049" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structgraphene_1_1chain_1_1asset" kindref="compound">asset</ref></type>
@@ -86,10 +102,10 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Updates the operation with appropriate fee and returns the fee. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/protocol/fee_schedule.hpp" line="165" column="1" bodyfile="libraries/chain/protocol/fee_schedule.cpp" bodystart="147" bodyend="167"/>
+        <location file="libraries/chain/include/graphene/chain/protocol/fee_schedule.hpp" line="173" column="1" bodyfile="libraries/chain/protocol/fee_schedule.cpp" bodystart="137" bodyend="157"/>
       </memberdef>
       <memberdef kind="function" id="structgraphene_1_1chain_1_1fee__schedule_1a5c40e1bf4252fe43c56759ec5d1208b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -102,7 +118,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/protocol/fee_schedule.hpp" line="167" column="1" bodyfile="libraries/chain/protocol/fee_schedule.cpp" bodystart="122" bodyend="128"/>
+        <location file="libraries/chain/include/graphene/chain/protocol/fee_schedule.hpp" line="175" column="1" bodyfile="libraries/chain/protocol/fee_schedule.cpp" bodystart="110" bodyend="116"/>
       </memberdef>
       <memberdef kind="function" id="structgraphene_1_1chain_1_1fee__schedule_1a286d34dbe7c1514e0934e85388b5c984" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -115,7 +131,7 @@
 <para>Validates all of the parameters are present and accounted for. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/protocol/fee_schedule.hpp" line="172" column="1" bodyfile="libraries/chain/protocol/fee_schedule.cpp" bodystart="69" bodyend="73"/>
+        <location file="libraries/chain/include/graphene/chain/protocol/fee_schedule.hpp" line="180" column="1" bodyfile="libraries/chain/protocol/fee_schedule.cpp" bodystart="57" bodyend="61"/>
       </memberdef>
       <memberdef kind="function" id="structgraphene_1_1chain_1_1fee__schedule_1a59ef38d531a1022de98e9d82bd903637" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -133,7 +149,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/protocol/fee_schedule.hpp" line="175" column="1" bodyfile="libraries/chain/include/graphene/chain/protocol/fee_schedule.hpp" bodystart="175" bodyend="178"/>
+        <location file="libraries/chain/include/graphene/chain/protocol/fee_schedule.hpp" line="183" column="1" bodyfile="libraries/chain/include/graphene/chain/protocol/fee_schedule.hpp" bodystart="183" bodyend="186"/>
       </memberdef>
       <memberdef kind="function" id="structgraphene_1_1chain_1_1fee__schedule_1a91ee2c4c9bcd64e0363241cd7e13bb22" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -151,7 +167,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/protocol/fee_schedule.hpp" line="180" column="1" bodyfile="libraries/chain/include/graphene/chain/protocol/fee_schedule.hpp" bodystart="180" bodyend="183"/>
+        <location file="libraries/chain/include/graphene/chain/protocol/fee_schedule.hpp" line="188" column="1" bodyfile="libraries/chain/include/graphene/chain/protocol/fee_schedule.hpp" bodystart="188" bodyend="191"/>
       </memberdef>
       <memberdef kind="function" id="structgraphene_1_1chain_1_1fee__schedule_1a7c7531988cd465bea062e93944710334" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -169,7 +185,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/protocol/fee_schedule.hpp" line="185" column="1" bodyfile="libraries/chain/include/graphene/chain/protocol/fee_schedule.hpp" bodystart="185" bodyend="189"/>
+        <location file="libraries/chain/include/graphene/chain/protocol/fee_schedule.hpp" line="193" column="1" bodyfile="libraries/chain/include/graphene/chain/protocol/fee_schedule.hpp" bodystart="193" bodyend="197"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -184,7 +200,26 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/protocol/fee_schedule.hpp" line="158" column="1" bodyfile="libraries/chain/protocol/fee_schedule.cpp" bodystart="47" bodyend="56"/>
+        <location file="libraries/chain/include/graphene/chain/protocol/fee_schedule.hpp" line="157" column="1" bodyfile="libraries/chain/protocol/fee_schedule.cpp" bodystart="35" bodyend="44"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="structgraphene_1_1chain_1_1fee__schedule_1ad8f1ad45aaf7110c4a19d06fd02434ff" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void graphene::chain::fee_schedule::set_fee_parameters</definition>
+        <argsstring>(fee_schedule &amp;sched)</argsstring>
+        <name>set_fee_parameters</name>
+        <param>
+          <type><ref refid="structgraphene_1_1chain_1_1fee__schedule" kindref="compound">fee_schedule</ref> &amp;</type>
+          <declname>sched</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/chain/include/graphene/chain/protocol/fee_schedule.hpp" line="205" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -192,20 +227,21 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="2125">
+      <node id="2123">
         <label>flat_set&lt; fee_parameters &gt;</label>
       </node>
-      <node id="2124">
+      <node id="2122">
         <label>graphene::chain::fee_schedule</label>
         <link refid="structgraphene_1_1chain_1_1fee__schedule"/>
-        <childnode refid="2125" relation="usage">
+        <childnode refid="2123" relation="usage">
           <edgelabel>parameters</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="libraries/chain/include/graphene/chain/protocol/fee_schedule.hpp" line="155" column="1" bodyfile="libraries/chain/include/graphene/chain/protocol/fee_schedule.hpp" bodystart="154" bodyend="196"/>
+    <location file="libraries/chain/include/graphene/chain/protocol/fee_schedule.hpp" line="154" column="1" bodyfile="libraries/chain/include/graphene/chain/protocol/fee_schedule.hpp" bodystart="153" bodyend="206"/>
     <listofallmembers>
-      <member refid="structgraphene_1_1chain_1_1fee__schedule_1a202d9b1da4ac4ba7503b9d577951fc02" prot="public" virt="non-virtual"><scope>graphene::chain::fee_schedule</scope><name>calculate_fee</name></member>
+      <member refid="structgraphene_1_1chain_1_1fee__schedule_1a5e885b8cc6af507685a7fb06fd6f28bb" prot="public" virt="non-virtual"><scope>graphene::chain::fee_schedule</scope><name>calculate_fee</name></member>
+      <member refid="structgraphene_1_1chain_1_1fee__schedule_1a2e93d0455a81b0a972d8b8390ea07be7" prot="public" virt="non-virtual"><scope>graphene::chain::fee_schedule</scope><name>calculate_fee</name></member>
       <member refid="structgraphene_1_1chain_1_1fee__schedule_1a7c7531988cd465bea062e93944710334" prot="public" virt="non-virtual"><scope>graphene::chain::fee_schedule</scope><name>exists</name></member>
       <member refid="structgraphene_1_1chain_1_1fee__schedule_1a7cc5fc9a07c6b029f7bedb182affde75" prot="public" virt="non-virtual"><scope>graphene::chain::fee_schedule</scope><name>fee_schedule</name></member>
       <member refid="structgraphene_1_1chain_1_1fee__schedule_1a59ef38d531a1022de98e9d82bd903637" prot="public" virt="non-virtual"><scope>graphene::chain::fee_schedule</scope><name>get</name></member>
@@ -214,6 +250,7 @@
       <member refid="structgraphene_1_1chain_1_1fee__schedule_1ad704ab74dbee7235106a0e7585d9113c" prot="public" virt="non-virtual"><scope>graphene::chain::fee_schedule</scope><name>parameters</name></member>
       <member refid="structgraphene_1_1chain_1_1fee__schedule_1a9514950a9e0a23748f37fd9eb72c3568" prot="public" virt="non-virtual"><scope>graphene::chain::fee_schedule</scope><name>scale</name></member>
       <member refid="structgraphene_1_1chain_1_1fee__schedule_1ac97fd96d020f88da2df9fe8246ec8049" prot="public" virt="non-virtual"><scope>graphene::chain::fee_schedule</scope><name>set_fee</name></member>
+      <member refid="structgraphene_1_1chain_1_1fee__schedule_1ad8f1ad45aaf7110c4a19d06fd02434ff" prot="private" virt="non-virtual"><scope>graphene::chain::fee_schedule</scope><name>set_fee_parameters</name></member>
       <member refid="structgraphene_1_1chain_1_1fee__schedule_1a286d34dbe7c1514e0934e85388b5c984" prot="public" virt="non-virtual"><scope>graphene::chain::fee_schedule</scope><name>validate</name></member>
       <member refid="structgraphene_1_1chain_1_1fee__schedule_1a5c40e1bf4252fe43c56759ec5d1208b5" prot="public" virt="non-virtual"><scope>graphene::chain::fee_schedule</scope><name>zero_all_fees</name></member>
     </listofallmembers>
