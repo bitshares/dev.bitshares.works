@@ -11,11 +11,11 @@ The below links take you to BitShares API calls list page. They are ES Wrappers 
 
 * BitShares Explorer API uses to query the **MAINNET** 
 
-  - http://185.208.208.184:5000/apidocs/  
+  - https://explorer.bitshares-kibana.info/apidocs/ 
 
 
  
-* BitShares Explorer Testnet API uses to query the **TESTNET** 
+* BitShares Explorer Testnet API uses to query the **Public TESTNET** 
 
   - http://148.251.10.231:5000/apidocs/ 
   

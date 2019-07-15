@@ -23,7 +23,7 @@ The below API tools allow you to try BitShares APIs. You can set value(s) and cl
 
 * BitShares Explorer API uses to query the Mainnet  - *Try it out!*
 
-  - http://185.208.208.184:5000/apidocs/  
+  - https://explorer.bitshares-kibana.info/apidocs/  
 
     - ES Wrapper : Wrapper to expose **Elasticsearch** Bitshares node data to clients
 

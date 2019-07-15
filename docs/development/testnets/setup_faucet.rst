@@ -9,8 +9,17 @@ How to Set up the Faucet
    
 -------
 
+In order to allow people who do not have funds yet to enter the system, we need to setup a faucet.
 
-In order to allow people that do not have funds yet to enter the system, we need to setup a faucet. Here, we will also use mina as our **deployment tool** for a productive installation.
+Tapin
+----------
+
+If you are interested Python-based faucet, check out `Tapin <https://github.com/bitshares/tapin>`_ . Tapin is a python-based faucet for Graphene-based blockchains (e.g. BitShares).
+
+
+----------------
+ 
+Here, we will also use *mina* as our **deployment tool** for a production installation.
 
 1. Installation of Dependencies
 --------------------------------------------
@@ -121,20 +130,6 @@ Deploy mina and the wallet with::
     mina wallet
 
 
-Update Wallet
---------------------------------------------
-
-If you have modified something in the wallet, you need to recompile the Javascript/HTML files and re-deploy the wallet with::
-
-    _# re-compile_
-    cd ~/graphene-ui/web
-    git pull # fetch changes from origin
-    npm run build
-
-    _ # deploy_
-    cd ~/faucet
-    mina wallet
-    
 
 |
 
