@@ -13,7 +13,7 @@ Join Us!
 * `Telegram - BitSharesDEX`_
 * `Telegram - BitShares Traders`_
 * `Discord - BitShares`_
-* `BitSares on Steemit`_
+* `BitShares on Steemit`_
 * `Twitter`_
 * `Reddit`_	
 * `BitSharesTalk.io`_
