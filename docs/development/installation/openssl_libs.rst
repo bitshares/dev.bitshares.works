@@ -4,7 +4,7 @@
 .. _openssl-and-lib:
 
 *********************
-OpenSSl and another Library
+OpenSSL and another Library
 *********************
 
 

@@ -82,9 +82,9 @@ witness_node folder
           + [witness_node_data_dir] (*Not exists after the initial installation*)
               + [blockchain]
                 + [database]
-                   + [object_database]
-                   + [block_num_to_block]
-                   + db_version
+				   + [block_num_to_block]
+                + [object_database]                
+                + db_version
               + [logs]
                  + [default]
                  + [p2p]
