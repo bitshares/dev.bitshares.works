@@ -99,22 +99,56 @@ If you open the cli-wallet successfully, you will receive ``new >>>`` prompt (if
 
     new >>>
 
-- ``set_password`` and ``unlock``
-
-(e.g.) we used `supersecretpassphrase` as a password. This password is used to encrypt the private keys in the wallet.
-
-.. Note::  The passphrase is given in clear text and is echoed by the wallet!
-
+- ``set_password`` 
 
 ::
 
     new >>> set_password supersecretpassphrase
-    set_password supersecretpassphrase
     null
+    locked >>>
+
 	
-    locked >>> unlock "supersecretpassphrase"   
+(e.g.) we used `supersecretpassphrase` as a password. This password is used to encrypt the private keys in the wallet.
+
+- ``unlock`` a wallet
+
+::
+
+    locked >>> unlock supersecretpassphrase
+    null
     unlocked >>>
 
+	
+- ``lock`` a wallet
+
+::
+
+    unlocked >>> lock
+    null 
+    locked >>> 
+	
+	
+- ``unlock`` a wallet
+
+::
+
+    locked >>> unlock 
+    Enter password: ( *input your password here and hit Enter* )
+    unlocked >>>
+
+	
+.. Note::  When you type in your password, you type in a blank section and hit Enter. If you unlock successfully, you will receive "unlocked >>>" and see a letter "null" in the blank section.
+
+
+**Example output**
+	
+.. image:: cli_wallet_unlock2.png
+        :alt: BitShares Unlock 
+        :width: 550px
+        :align: center
+		
+		
+		
 .. Note:: After this point, you can issue any command available to the cli-wallet (Wallet APIs) or construct your own transaction manually.
 
 
@@ -222,6 +256,8 @@ The ``get_private_key`` command allows us to obtain the **private key** correspo
     >>> get_private_key GPH6viEhYCQr8xKP3Vj8wfHh6WfZeJK7H9uhLPDYWLGCRSj5kHQZM
 
 |
+
+
 
 ---------------
 	

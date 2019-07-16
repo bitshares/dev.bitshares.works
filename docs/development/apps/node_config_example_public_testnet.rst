@@ -49,9 +49,6 @@ As a default, most parameters have been commented. You have to uncomment to set 
 	# JSON file specifying API permissions
 	# api-access = 
 
-	# Space-separated list of plugins to activate
-	# plugins = 
-
 	# Number of IO threads, default to 0 for auto-configuration
 	# io-threads = 
 
@@ -61,11 +58,64 @@ As a default, most parameters have been commented. You have to uncomment to set 
 	# Whether to enable tracking of votes of standby witnesses and committee members. Set it to true to provide accurate data to API clients, set to false for slightly better performance.
 	# enable-standby-votes-tracking = 
 
+	# For history_api::get_account_history_operations to set its default limit value as 100
+	api-limit-get-account-history-operations = 100
+
+	# For history_api::get_account_history to set its default limit value as 100
+	api-limit-get-account-history = 100
+
+	# For orders_api::get_grouped_limit_orders to set its default limit value as 101
+	api-limit-get-grouped-limit-orders = 101
+
+	# For history_api::get_relative_account_history to set its default limit value as 100
+	api-limit-get-relative-account-history = 100
+
+	# For history_api::get_account_history_by_operations to set its default limit value as 100
+	api-limit-get-account-history-by-operations = 100
+
+	# For asset_api::get_asset_holders to set its default limit value as 100
+	api-limit-get-asset-holders = 100
+
+	# For database_api_impl::get_key_references to set its default limit value as 100
+	api-limit-get-key-references = 100
+
+	# For database_api_impl::get_htlc_by_from and get_htlc_by_to to set its default limit value as 100
+	api-limit-get-htlc-by = 100
+
+	# For database_api_impl::get_full_accounts to set its account default limit values as 10
+	api-limit-get-full-accounts = 10
+
+	# For database_api_impl::get_full_accounts to set its lists default limit values as 100
+	api-limit-get-full-accounts-lists = 100
+
+	# For database_api_impl::get_call_orders and get_call_orders_by_account to set its default limit values as 300
+	api-limit-get-call-orders = 300
+
+	# For database_api_impl::get_settle_orders and get_settle_orders_by_account to set its default limit values as 300
+	api-limit-get-settle-orders = 300
+
+	# For database_api_impl::list_assets and get_assets_by_issuer to set its default limit values as 101
+	api-limit-get-assets = 101
+
+	# For database_api_impl::get_limit_orders to set its default limit value as 300
+	api-limit-get-limit-orders = 300
+
+	# For database_api_impl::get_order_book to set its default limit value as 50
+	api-limit-get-order-book = 50
+
+	# Space-separated list of plugins to activate
+	plugins = witness account_history market_history grouped_orders
+
+
+	# ==============================================================================
+	# witness plugin options
+	# ==============================================================================
+
 	# Enable block production, even if the chain is stale.
 	enable-stale-production = false
 
-	# Percent of witnesses (0-99) that must be participating in order to produce blocks
-	required-participation = false
+	# Percent of witnesses (0-100) that must be participating in order to produce blocks
+	required-participation = 33
 
 	# ID of witness controlled by this node (e.g. "1.6.5", quotes are required, may specify multiple times)
 	# witness-id = 
@@ -73,8 +123,18 @@ As a default, most parameters have been commented. You have to uncomment to set 
 	# Tuple of [PublicKey, WIF private key] (may specify multiple times)
 	private-key = ["TEST6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV","5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"]
 
+
+	# ==============================================================================
+	# debug_witness plugin options
+	# ==============================================================================
+
 	# Tuple of [PublicKey, WIF private key] (may specify multiple times)
 	debug-private-key = ["TEST6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV","5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"]
+
+
+	# ==============================================================================
+	# account_history plugin options
+	# ==============================================================================
 
 	# Account ID to track history for (may specify multiple times)
 	# track-account = 
@@ -84,6 +144,11 @@ As a default, most parameters have been commented. You have to uncomment to set 
 
 	# Maximum number of operations per account will be kept in memory
 	max-ops-per-account = 100
+
+
+	# ==============================================================================
+	# elasticsearch plugin options
+	# ==============================================================================
 
 	# Elastic Search database node url(http://localhost:9200/)
 	# elasticsearch-node-url = 
@@ -109,6 +174,11 @@ As a default, most parameters have been commented. You have to uncomment to set 
 	# Start doing ES job after block(0)
 	# elasticsearch-start-es-after-block = 
 
+
+	# ==============================================================================
+	# market_history plugin options
+	# ==============================================================================
+
 	# Track market history by grouping orders into buckets of equal size measured in seconds specified as a JSON array of numbers
 	bucket-size = [60,300,900,1800,3600,14400,86400]
 
@@ -121,8 +191,18 @@ As a default, most parameters have been commented. You have to uncomment to set 
 	# Will only store matched orders in last X seconds for each market in order history for querying, or those meet the other option, which has more data (default: 259200 (3 days))
 	max-order-his-seconds-per-market = 259200
 
+
+	# ==============================================================================
+	# delayed_node plugin options
+	# ==============================================================================
+
 	# RPC endpoint of a trusted validating node (required for delayed_node)
 	# trusted-node = 
+
+
+	# ==============================================================================
+	# snapshot plugin options
+	# ==============================================================================
 
 	# Block number after which to do a snapshot
 	# snapshot-at-block = 
@@ -132,6 +212,11 @@ As a default, most parameters have been commented. You have to uncomment to set 
 
 	# Pathname of JSON file where to store the snapshot
 	# snapshot-to = 
+
+
+	# ==============================================================================
+	# es_objects plugin options
+	# ==============================================================================
 
 	# Elasticsearch node url(http://localhost:9200/)
 	# es-objects-elasticsearch-url = 
@@ -169,13 +254,28 @@ As a default, most parameters have been commented. You have to uncomment to set 
 	# Keep only current state of the objects(true)
 	# es-objects-keep-only-current = 
 
+	# Start doing ES job after block(0)
+	# es-objects-start-es-after-block = 
+
+
+	# ==============================================================================
+	# grouped_orders plugin options
+	# ==============================================================================
+
 	# Group orders by percentage increase on price. Specify a JSON array of numbers here, each number is a group, number 1 means 0.01%. 
 	tracked-groups = [10,100]
 
 
+	# ==============================================================================
+	# logging options
+	# ==============================================================================
+	#
 	# Logging configuration is loaded from logging.ini by default.
 	# If logging.ini exists, logging configuration added in this file will be ignored.
 
+	#(-- updated: 20190715)
+
+	
 Example - logging.ini
 ---------------------
 
@@ -227,6 +327,9 @@ Example - logging.ini
 	[logger.rpc]
 	level=error
 	appenders=rpc
+
+	#(-- updated: 20190715)
+
 
 
 	
