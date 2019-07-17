@@ -93,13 +93,20 @@ After opening the cli-wallet, if you have not had a local wallet yet, you will r
 3.Unlock the Cli_Wallet
 ==================================
 
-If you open the cli-wallet successfully, you will receive ``new >>>`` prompt (if no local wallet found). Set a password and unlock the cli-wallet.
+If you open the cli-wallet successfully, you will receive ``new >>>`` prompt (if no local wallet found, you will be asked to set a password). The following shows how to use cli_wallet unlock/lock commands. 
 
 ::
 
-    new >>>
+	Please use the set_password method to initialize a new wallet before continuing
+	new >>> 
 
-- ``set_password`` 
+	
+.. Note::  
+   Keep your password safe. New features will not show your password while you are typing in.
+      -  If you type ``set_password`` or ``unlock`` command with no parameter, you will be prompted `Enter password:` to input your password in a blank section. 
+      - This new feature is **only applies to Linux and macOS**.
+	
+- ``set_password`` with parameter (password)
 
 ::
 
@@ -107,10 +114,20 @@ If you open the cli-wallet successfully, you will receive ``new >>>`` prompt (if
     null
     locked >>>
 
-	
 (e.g.) we used `supersecretpassphrase` as a password. This password is used to encrypt the private keys in the wallet.
 
-- ``unlock`` a wallet
+	
+- ``set_password``  with no parameter (Linux and macOS only)
+   - Type a password after `Enter password:`  and hit [enter]. If successful, you will receive ``locked``. 
+   
+::
+
+    new >>> set_password 
+    Enter password:
+    
+	
+
+- ``unlock`` a wallet with parameter (password)
 
 ::
 
@@ -118,6 +135,16 @@ If you open the cli-wallet successfully, you will receive ``new >>>`` prompt (if
     null
     unlocked >>>
 
+	
+- ``unlock`` a wallet with no parameter (Linux and macOS only)
+   - Type a password after `Enter password:`  and hit [enter]. If successful, you will receive ``unlocked``. 
+   
+::
+
+    locked >>> unlock 
+    Enter password:
+    
+	
 	
 - ``lock`` a wallet
 
@@ -128,19 +155,17 @@ If you open the cli-wallet successfully, you will receive ``new >>>`` prompt (if
     locked >>> 
 	
 	
-- ``unlock`` a wallet
-
+- ``ser_password`` - change your password
+   - If you want to change your password, type `set_password' after unlocked your cli_wallet.
+   
 ::
 
-    locked >>> unlock 
-    Enter password: ( *input your password here and hit Enter* )
-    unlocked >>>
+    unlocked >>> set_password
+    Enter password:
 
 	
-.. Note::  When you type in your password, you type in a blank section and hit Enter. If you unlock successfully, you will receive "unlocked >>>" and see a letter "null" in the blank section.
 
-
-**Example output**
+**Sample output**
 	
 .. image:: cli_wallet_unlock2.png
         :alt: BitShares Unlock 
