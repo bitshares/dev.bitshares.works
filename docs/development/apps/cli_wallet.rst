@@ -117,7 +117,8 @@ If you open the cli-wallet successfully, you will receive ``new >>>`` prompt (if
 (e.g.) we used `supersecretpassphrase` as a password. This password is used to encrypt the private keys in the wallet.
 
 	
-- ``set_password``  with no parameter (Linux and macOS only)
+- ``set_password``  with no parameter (**Linux and macOS only**)
+
    - Type a password after `Enter password:`  and hit [enter]. If successful, you will receive ``locked``. 
    
 ::
@@ -127,7 +128,7 @@ If you open the cli-wallet successfully, you will receive ``new >>>`` prompt (if
     
 	
 
-- ``unlock`` a wallet with parameter (password)
+- ``unlock``  a wallet with parameter (password)
 
 ::
 
@@ -136,7 +137,8 @@ If you open the cli-wallet successfully, you will receive ``new >>>`` prompt (if
     unlocked >>>
 
 	
-- ``unlock`` a wallet with no parameter (Linux and macOS only)
+- ``unlock``  a wallet with no parameter (**Linux and macOS only**)
+
    - Type a password after `Enter password:`  and hit [enter]. If successful, you will receive ``unlocked``. 
    
 ::
@@ -155,8 +157,9 @@ If you open the cli-wallet successfully, you will receive ``new >>>`` prompt (if
     locked >>> 
 	
 	
-- ``ser_password`` - change your password
-   - If you want to change your password, type `set_password' after unlocked your cli_wallet.
+- ``set_password``  change your password
+
+   - If you want to change your password, type ``set_password`` after unlocked your cli_wallet.
    
 ::
 
