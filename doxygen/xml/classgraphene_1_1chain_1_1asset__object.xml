@@ -76,7 +76,7 @@
         <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="124" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="124" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1asset__object_1a51510fee637f062e6db9cfc0986fcf49" prot="public" static="no" mutable="no">
-        <type>asset_options</type>
+        <type><ref refid="structgraphene_1_1protocol_1_1asset__options" kindref="compound">asset_options</ref></type>
         <definition>asset_options graphene::chain::asset_object::options</definition>
         <argsstring></argsstring>
         <name>options</name>
@@ -246,12 +246,12 @@
         <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="100" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="100" bodyend="100"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1asset__object_1acb60f1912e9463316ae5c1577cafdaa5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type>asset</type>
+        <type><ref refid="structgraphene_1_1protocol_1_1asset" kindref="compound">asset</ref></type>
         <definition>asset graphene::chain::asset_object::amount</definition>
         <argsstring>(share_type a) const</argsstring>
         <name>amount</name>
         <param>
-          <type>share_type</type>
+          <type><ref refid="namespacegraphene_1_1protocol_1a69b2104c1c11eed2d17bd29b86713347" kindref="member">share_type</ref></type>
           <declname>a</declname>
         </param>
         <briefdescription>
@@ -263,7 +263,7 @@
         <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="103" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="103" bodyend="103"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1asset__object_1acc8913cfd17675156bc4ed9e43c3e04d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>asset</type>
+        <type><ref refid="structgraphene_1_1protocol_1_1asset" kindref="compound">asset</ref></type>
         <definition>asset asset_object::amount_from_string</definition>
         <argsstring>(string amount_string) const</argsstring>
         <name>amount_from_string</name>
@@ -285,7 +285,7 @@
         <argsstring>(share_type amount) const</argsstring>
         <name>amount_to_string</name>
         <param>
-          <type>share_type</type>
+          <type><ref refid="namespacegraphene_1_1protocol_1a69b2104c1c11eed2d17bd29b86713347" kindref="member">share_type</ref></type>
           <declname>amount</declname>
         </param>
         <briefdescription>
@@ -302,7 +302,7 @@
         <argsstring>(const asset &amp;amount) const</argsstring>
         <name>amount_to_string</name>
         <param>
-          <type>const asset &amp;</type>
+          <type>const <ref refid="structgraphene_1_1protocol_1_1asset" kindref="compound">asset</ref> &amp;</type>
           <declname>amount</declname>
         </param>
         <briefdescription>
@@ -319,7 +319,7 @@
         <argsstring>(share_type amount) const</argsstring>
         <name>amount_to_pretty_string</name>
         <param>
-          <type>share_type</type>
+          <type><ref refid="namespacegraphene_1_1protocol_1a69b2104c1c11eed2d17bd29b86713347" kindref="member">share_type</ref></type>
           <declname>amount</declname>
         </param>
         <briefdescription>
@@ -336,7 +336,7 @@
         <argsstring>(const asset &amp;amount) const</argsstring>
         <name>amount_to_pretty_string</name>
         <param>
-          <type>const asset &amp;</type>
+          <type>const <ref refid="structgraphene_1_1protocol_1_1asset" kindref="compound">asset</ref> &amp;</type>
           <declname>amount</declname>
         </param>
         <briefdescription>
@@ -423,7 +423,7 @@
             <type>class DB</type>
           </param>
         </templateparamlist>
-        <type>share_type</type>
+        <type><ref refid="namespacegraphene_1_1protocol_1a69b2104c1c11eed2d17bd29b86713347" kindref="member">share_type</ref></type>
         <definition>share_type graphene::chain::asset_object::reserved</definition>
         <argsstring>(const DB &amp;db) const</argsstring>
         <name>reserved</name>
@@ -445,31 +445,106 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="305">
+      <node id="749">
         <label>graphene::db::abstract_object&lt; asset_object &gt;</label>
       </node>
-      <node id="304">
+      <node id="748">
         <label>graphene::chain::asset_object</label>
         <link refid="classgraphene_1_1chain_1_1asset__object"/>
-        <childnode refid="305" relation="public-inheritance">
+        <childnode refid="749" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="307">
+      <node id="751">
         <label>graphene::db::abstract_object&lt; asset_object &gt;</label>
       </node>
-      <node id="308">
+      <node id="756">
+        <label>flat_set&lt; asset_id_type &gt;</label>
+      </node>
+      <node id="758">
         <label>string</label>
       </node>
-      <node id="306">
+      <node id="759">
+        <label>graphene::protocol::price</label>
+        <link refid="structgraphene_1_1protocol_1_1price"/>
+        <childnode refid="760" relation="usage">
+          <edgelabel>base</edgelabel>
+          <edgelabel>quote</edgelabel>
+        </childnode>
+      </node>
+      <node id="755">
+        <label>graphene::protocol::additional_asset_options</label>
+        <link refid="structgraphene_1_1protocol_1_1additional__asset__options"/>
+      </node>
+      <node id="761">
+        <label>flat_set&lt; account_id_type &gt;</label>
+      </node>
+      <node id="753">
+        <label>graphene::protocol::asset_options</label>
+        <link refid="structgraphene_1_1protocol_1_1asset__options"/>
+        <childnode refid="754" relation="usage">
+          <edgelabel>extensions</edgelabel>
+        </childnode>
+        <childnode refid="756" relation="usage">
+          <edgelabel>whitelist_markets</edgelabel>
+          <edgelabel>blacklist_markets</edgelabel>
+        </childnode>
+        <childnode refid="757" relation="usage">
+          <edgelabel>max_market_fee</edgelabel>
+          <edgelabel>max_supply</edgelabel>
+        </childnode>
+        <childnode refid="758" relation="usage">
+          <edgelabel>description</edgelabel>
+        </childnode>
+        <childnode refid="759" relation="usage">
+          <edgelabel>core_exchange_rate</edgelabel>
+        </childnode>
+        <childnode refid="761" relation="usage">
+          <edgelabel>whitelist_authorities</edgelabel>
+          <edgelabel>blacklist_authorities</edgelabel>
+        </childnode>
+      </node>
+      <node id="762">
+        <label>optional&lt; account_id_type &gt;</label>
+      </node>
+      <node id="760">
+        <label>graphene::protocol::asset</label>
+        <link refid="structgraphene_1_1protocol_1_1asset"/>
+        <childnode refid="757" relation="usage">
+          <edgelabel>amount</edgelabel>
+        </childnode>
+      </node>
+      <node id="750">
         <label>graphene::chain::asset_object</label>
         <link refid="classgraphene_1_1chain_1_1asset__object"/>
-        <childnode refid="307" relation="public-inheritance">
+        <childnode refid="751" relation="public-inheritance">
         </childnode>
-        <childnode refid="308" relation="usage">
+        <childnode refid="752" relation="usage">
+          <edgelabel>bitasset_data_id</edgelabel>
+        </childnode>
+        <childnode refid="753" relation="usage">
+          <edgelabel>options</edgelabel>
+        </childnode>
+        <childnode refid="762" relation="usage">
+          <edgelabel>buyback_account</edgelabel>
+        </childnode>
+        <childnode refid="758" relation="usage">
           <edgelabel>symbol</edgelabel>
         </childnode>
+      </node>
+      <node id="757">
+        <label>safe&lt; int64_t &gt;</label>
+      </node>
+      <node id="754">
+        <label>graphene::protocol::extension&lt; additional_asset_options &gt;</label>
+        <link refid="structgraphene_1_1protocol_1_1extension"/>
+        <childnode refid="755" relation="usage">
+          <edgelabel>value</edgelabel>
+        </childnode>
+      </node>
+      <node id="752">
+        <label>optional&lt; asset_bitasset_data_id_type &gt;</label>
       </node>
     </collaborationgraph>
     <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="79" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="78" bodyend="167"/>

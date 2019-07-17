@@ -63,7 +63,7 @@
         <location file="libraries/chain/include/graphene/chain/witness_object.hpp" line="39" column="1" bodyfile="libraries/chain/include/graphene/chain/witness_object.hpp" bodystart="39" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1witness__object_1a8b836aa0128e497c598f5f5035f02327" prot="public" static="no" mutable="no">
-        <type>public_key_type</type>
+        <type><ref refid="structgraphene_1_1protocol_1_1public__key__type" kindref="compound">public_key_type</ref></type>
         <definition>public_key_type graphene::chain::witness_object::signing_key</definition>
         <argsstring></argsstring>
         <name>signing_key</name>
@@ -89,7 +89,7 @@
         <location file="libraries/chain/include/graphene/chain/witness_object.hpp" line="41" column="1" bodyfile="libraries/chain/include/graphene/chain/witness_object.hpp" bodystart="41" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1witness__object_1aa9ae30d474319543424c6156b11e3a1e" prot="public" static="no" mutable="no">
-        <type>vote_id_type</type>
+        <type><ref refid="structgraphene_1_1protocol_1_1vote__id__type" kindref="compound">vote_id_type</ref></type>
         <definition>vote_id_type graphene::chain::witness_object::vote_id</definition>
         <argsstring></argsstring>
         <name>vote_id</name>
@@ -177,31 +177,51 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="1647">
+      <node id="3965">
         <label>graphene::chain::witness_object</label>
         <link refid="classgraphene_1_1chain_1_1witness__object"/>
-        <childnode refid="1648" relation="public-inheritance">
+        <childnode refid="3966" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="1648">
+      <node id="3966">
         <label>graphene::db::abstract_object&lt; witness_object &gt;</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="1651">
+      <node id="3970">
+        <label>optional&lt; vesting_balance_id_type &gt;</label>
+      </node>
+      <node id="3971">
         <label>string</label>
       </node>
-      <node id="1649">
+      <node id="3967">
         <label>graphene::chain::witness_object</label>
         <link refid="classgraphene_1_1chain_1_1witness__object"/>
-        <childnode refid="1650" relation="public-inheritance">
+        <childnode refid="3968" relation="public-inheritance">
         </childnode>
-        <childnode refid="1651" relation="usage">
+        <childnode refid="3969" relation="usage">
+          <edgelabel>vote_id</edgelabel>
+        </childnode>
+        <childnode refid="3970" relation="usage">
+          <edgelabel>pay_vb</edgelabel>
+        </childnode>
+        <childnode refid="3971" relation="usage">
           <edgelabel>url</edgelabel>
         </childnode>
+        <childnode refid="3972" relation="usage">
+          <edgelabel>signing_key</edgelabel>
+        </childnode>
       </node>
-      <node id="1650">
+      <node id="3969">
+        <label>graphene::protocol::vote_id_type</label>
+        <link refid="structgraphene_1_1protocol_1_1vote__id__type"/>
+      </node>
+      <node id="3968">
         <label>graphene::db::abstract_object&lt; witness_object &gt;</label>
+      </node>
+      <node id="3972">
+        <label>graphene::protocol::public_key_type</label>
+        <link refid="structgraphene_1_1protocol_1_1public__key__type"/>
       </node>
     </collaborationgraph>
     <location file="libraries/chain/include/graphene/chain/witness_object.hpp" line="33" column="1" bodyfile="libraries/chain/include/graphene/chain/witness_object.hpp" bodystart="32" bodyend="49"/>

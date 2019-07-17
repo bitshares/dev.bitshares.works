@@ -62,7 +62,7 @@
         <location file="libraries/chain/include/graphene/chain/market_object.hpp" line="51" column="1" bodyfile="libraries/chain/include/graphene/chain/market_object.hpp" bodystart="51" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1limit__order__object_1a8333aa2cee6447aaaf1f596bc55f5f9f" prot="public" static="no" mutable="no">
-        <type>share_type</type>
+        <type><ref refid="namespacegraphene_1_1protocol_1a69b2104c1c11eed2d17bd29b86713347" kindref="member">share_type</ref></type>
         <definition>share_type graphene::chain::limit_order_object::for_sale</definition>
         <argsstring></argsstring>
         <name>for_sale</name>
@@ -75,7 +75,7 @@
         <location file="libraries/chain/include/graphene/chain/market_object.hpp" line="52" column="1" bodyfile="libraries/chain/include/graphene/chain/market_object.hpp" bodystart="52" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1limit__order__object_1ae0546fce0941e19f3128cbb31fb49199" prot="public" static="no" mutable="no">
-        <type>price</type>
+        <type><ref refid="structgraphene_1_1protocol_1_1price" kindref="compound">price</ref></type>
         <definition>price graphene::chain::limit_order_object::sell_price</definition>
         <argsstring></argsstring>
         <name>sell_price</name>
@@ -88,7 +88,7 @@
         <location file="libraries/chain/include/graphene/chain/market_object.hpp" line="53" column="1" bodyfile="libraries/chain/include/graphene/chain/market_object.hpp" bodystart="53" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1limit__order__object_1a196948424e5625ac52a833ae8d06917d" prot="public" static="no" mutable="no">
-        <type>share_type</type>
+        <type><ref refid="namespacegraphene_1_1protocol_1a69b2104c1c11eed2d17bd29b86713347" kindref="member">share_type</ref></type>
         <definition>share_type graphene::chain::limit_order_object::deferred_fee</definition>
         <argsstring></argsstring>
         <name>deferred_fee</name>
@@ -101,7 +101,7 @@
         <location file="libraries/chain/include/graphene/chain/market_object.hpp" line="54" column="1" bodyfile="libraries/chain/include/graphene/chain/market_object.hpp" bodystart="54" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1limit__order__object_1aebf0d7c90b69cc9f08140ff95e761a90" prot="public" static="no" mutable="no">
-        <type>asset</type>
+        <type><ref refid="structgraphene_1_1protocol_1_1asset" kindref="compound">asset</ref></type>
         <definition>asset graphene::chain::limit_order_object::deferred_paid_fee</definition>
         <argsstring></argsstring>
         <name>deferred_paid_fee</name>
@@ -129,7 +129,7 @@
         <location file="libraries/chain/include/graphene/chain/market_object.hpp" line="57" column="1" bodyfile="libraries/chain/include/graphene/chain/market_object.hpp" bodystart="57" bodyend="62"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1limit__order__object_1a0aec22a97ce661db95d1ea3182994694" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type>asset</type>
+        <type><ref refid="structgraphene_1_1protocol_1_1asset" kindref="compound">asset</ref></type>
         <definition>asset graphene::chain::limit_order_object::amount_for_sale</definition>
         <argsstring>() const</argsstring>
         <name>amount_for_sale</name>
@@ -142,7 +142,7 @@
         <location file="libraries/chain/include/graphene/chain/market_object.hpp" line="64" column="1" bodyfile="libraries/chain/include/graphene/chain/market_object.hpp" bodystart="64" bodyend="64"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1limit__order__object_1a25f37b3832ece111a36442e032660e51" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type>asset</type>
+        <type><ref refid="structgraphene_1_1protocol_1_1asset" kindref="compound">asset</ref></type>
         <definition>asset graphene::chain::limit_order_object::amount_to_receive</definition>
         <argsstring>() const</argsstring>
         <name>amount_to_receive</name>
@@ -186,24 +186,58 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="1121">
+      <node id="2748">
         <label>graphene::db::abstract_object&lt; limit_order_object &gt;</label>
       </node>
-      <node id="1120">
+      <node id="2747">
         <label>graphene::chain::limit_order_object</label>
         <link refid="classgraphene_1_1chain_1_1limit__order__object"/>
-        <childnode refid="1121" relation="public-inheritance">
+        <childnode refid="2748" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="1123">
+      <node id="2753">
+        <label>time_point_sec</label>
+      </node>
+      <node id="2750">
         <label>graphene::db::abstract_object&lt; limit_order_object &gt;</label>
       </node>
-      <node id="1122">
+      <node id="2754">
+        <label>graphene::protocol::price</label>
+        <link refid="structgraphene_1_1protocol_1_1price"/>
+        <childnode refid="2751" relation="usage">
+          <edgelabel>base</edgelabel>
+          <edgelabel>quote</edgelabel>
+        </childnode>
+      </node>
+      <node id="2751">
+        <label>graphene::protocol::asset</label>
+        <link refid="structgraphene_1_1protocol_1_1asset"/>
+        <childnode refid="2752" relation="usage">
+          <edgelabel>amount</edgelabel>
+        </childnode>
+      </node>
+      <node id="2752">
+        <label>safe&lt; int64_t &gt;</label>
+      </node>
+      <node id="2749">
         <label>graphene::chain::limit_order_object</label>
         <link refid="classgraphene_1_1chain_1_1limit__order__object"/>
-        <childnode refid="1123" relation="public-inheritance">
+        <childnode refid="2750" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2751" relation="usage">
+          <edgelabel>deferred_paid_fee</edgelabel>
+        </childnode>
+        <childnode refid="2753" relation="usage">
+          <edgelabel>expiration</edgelabel>
+        </childnode>
+        <childnode refid="2752" relation="usage">
+          <edgelabel>for_sale</edgelabel>
+          <edgelabel>deferred_fee</edgelabel>
+        </childnode>
+        <childnode refid="2754" relation="usage">
+          <edgelabel>sell_price</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>

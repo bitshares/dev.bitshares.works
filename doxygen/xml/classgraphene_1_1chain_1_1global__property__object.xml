@@ -36,7 +36,7 @@
       </sectiondef>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1global__property__object_1aea41cf6b9f20046f119e51ca3c2cee7e" prot="public" static="no" mutable="no">
-        <type>chain_parameters</type>
+        <type><ref refid="structgraphene_1_1protocol_1_1chain__parameters" kindref="compound">chain_parameters</ref></type>
         <definition>chain_parameters graphene::chain::global_property_object::parameters</definition>
         <argsstring></argsstring>
         <name>parameters</name>
@@ -49,7 +49,7 @@
         <location file="libraries/chain/include/graphene/chain/global_property_object.hpp" line="48" column="1" bodyfile="libraries/chain/include/graphene/chain/global_property_object.hpp" bodystart="48" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1global__property__object_1aff81309e0727bfdc6b9281dec04e2228" prot="public" static="no" mutable="no">
-        <type>optional&lt; chain_parameters &gt;</type>
+        <type>optional&lt; <ref refid="structgraphene_1_1protocol_1_1chain__parameters" kindref="compound">chain_parameters</ref> &gt;</type>
         <definition>optional&lt;chain_parameters&gt; graphene::chain::global_property_object::pending_parameters</definition>
         <argsstring></argsstring>
         <name>pending_parameters</name>
@@ -107,36 +107,78 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="932">
+      <node id="2337">
         <label>graphene::chain::global_property_object</label>
         <link refid="classgraphene_1_1chain_1_1global__property__object"/>
-        <childnode refid="933" relation="public-inheritance">
+        <childnode refid="2338" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="933">
+      <node id="2338">
         <label>graphene::db::abstract_object&lt; global_property_object &gt;</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="934">
+      <node id="2343">
+        <label>graphene::protocol::chain_parameters</label>
+        <link refid="structgraphene_1_1protocol_1_1chain__parameters"/>
+        <childnode refid="2344" relation="usage">
+          <edgelabel>cashback_vesting_threshold</edgelabel>
+          <edgelabel>worker_budget_per_day</edgelabel>
+          <edgelabel>fee_liquidation_threshold</edgelabel>
+          <edgelabel>witness_pay_per_block</edgelabel>
+        </childnode>
+        <childnode refid="2345" relation="usage">
+          <edgelabel>extensions</edgelabel>
+        </childnode>
+      </node>
+      <node id="2347">
+        <label>optional&lt; graphene::protocol::htlc_options &gt;</label>
+      </node>
+      <node id="2339">
         <label>graphene::chain::global_property_object</label>
         <link refid="classgraphene_1_1chain_1_1global__property__object"/>
-        <childnode refid="935" relation="public-inheritance">
+        <childnode refid="2340" relation="public-inheritance">
         </childnode>
-        <childnode refid="936" relation="usage">
+        <childnode refid="2341" relation="usage">
           <edgelabel>active_witnesses</edgelabel>
         </childnode>
-        <childnode refid="937" relation="usage">
+        <childnode refid="2342" relation="usage">
+          <edgelabel>pending_parameters</edgelabel>
+        </childnode>
+        <childnode refid="2343" relation="usage">
+          <edgelabel>parameters</edgelabel>
+        </childnode>
+        <childnode refid="2348" relation="usage">
           <edgelabel>active_committee_members</edgelabel>
         </childnode>
       </node>
-      <node id="936">
+      <node id="2341">
         <label>flat_set&lt; witness_id_type &gt;</label>
       </node>
-      <node id="937">
+      <node id="2345">
+        <label>graphene::protocol::extension&lt; graphene::protocol::chain_parameters::ext &gt;</label>
+        <link refid="structgraphene_1_1protocol_1_1extension"/>
+        <childnode refid="2346" relation="usage">
+          <edgelabel>value</edgelabel>
+        </childnode>
+      </node>
+      <node id="2348">
         <label>vector&lt; committee_member_id_type &gt;</label>
       </node>
-      <node id="935">
+      <node id="2344">
+        <label>safe&lt; int64_t &gt;</label>
+      </node>
+      <node id="2342">
+        <label>optional&lt; graphene::protocol::chain_parameters &gt;</label>
+      </node>
+      <node id="2346">
+        <label>graphene::protocol::chain_parameters::ext</label>
+        <link refid="structgraphene_1_1protocol_1_1chain__parameters_1_1ext"/>
+        <childnode refid="2347" relation="usage">
+          <edgelabel>updatable_htlc_options</edgelabel>
+        </childnode>
+      </node>
+      <node id="2340">
         <label>graphene::db::abstract_object&lt; global_property_object &gt;</label>
       </node>
     </collaborationgraph>

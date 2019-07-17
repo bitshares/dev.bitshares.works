@@ -36,7 +36,7 @@
       </sectiondef>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1fba__accumulator__object_1a45696b9e94b9c21d01fc2908971fc598" prot="public" static="no" mutable="no">
-        <type>share_type</type>
+        <type><ref refid="namespacegraphene_1_1protocol_1a69b2104c1c11eed2d17bd29b86713347" kindref="member">share_type</ref></type>
         <definition>share_type graphene::chain::fba_accumulator_object::accumulated_fba_fees</definition>
         <argsstring></argsstring>
         <name>accumulated_fba_fees</name>
@@ -86,25 +86,37 @@
     <detaileddescription>
 <para><ref refid="classgraphene_1_1chain_1_1fba__accumulator__object" kindref="compound">fba_accumulator_object</ref> accumulates fees to be paid out via buyback or other FBA mechanism. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="763">
+      <node id="1950">
         <label>graphene::db::abstract_object&lt; fba_accumulator_object &gt;</label>
       </node>
-      <node id="762">
+      <node id="1949">
         <label>graphene::chain::fba_accumulator_object</label>
         <link refid="classgraphene_1_1chain_1_1fba__accumulator__object"/>
-        <childnode refid="763" relation="public-inheritance">
+        <childnode refid="1950" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="765">
+      <node id="1952">
         <label>graphene::db::abstract_object&lt; fba_accumulator_object &gt;</label>
       </node>
-      <node id="764">
+      <node id="1951">
         <label>graphene::chain::fba_accumulator_object</label>
         <link refid="classgraphene_1_1chain_1_1fba__accumulator__object"/>
-        <childnode refid="765" relation="public-inheritance">
+        <childnode refid="1952" relation="public-inheritance">
         </childnode>
+        <childnode refid="1953" relation="usage">
+          <edgelabel>designated_asset</edgelabel>
+        </childnode>
+        <childnode refid="1954" relation="usage">
+          <edgelabel>accumulated_fba_fees</edgelabel>
+        </childnode>
+      </node>
+      <node id="1953">
+        <label>optional&lt; asset_id_type &gt;</label>
+      </node>
+      <node id="1954">
+        <label>safe&lt; int64_t &gt;</label>
       </node>
     </collaborationgraph>
     <location file="libraries/chain/include/graphene/chain/fba_object.hpp" line="38" column="1" bodyfile="libraries/chain/include/graphene/chain/fba_object.hpp" bodystart="37" bodyend="47"/>

@@ -49,7 +49,7 @@
         <location file="libraries/chain/include/graphene/chain/market_object.hpp" line="165" column="1" bodyfile="libraries/chain/include/graphene/chain/market_object.hpp" bodystart="165" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1force__settlement__object_1a2d65ffc314ae231fe18da619f50cccc6" prot="public" static="no" mutable="no">
-        <type>asset</type>
+        <type><ref refid="structgraphene_1_1protocol_1_1asset" kindref="compound">asset</ref></type>
         <definition>asset graphene::chain::force_settlement_object::balance</definition>
         <argsstring></argsstring>
         <name>balance</name>
@@ -95,25 +95,44 @@
     <detaileddescription>
 <para>On the <ref refid="classgraphene_1_1chain_1_1force__settlement__object_1a0103c99d7da425720324c3173a24c27c" kindref="member">settlement_date</ref> the <ref refid="classgraphene_1_1chain_1_1force__settlement__object_1a2d65ffc314ae231fe18da619f50cccc6" kindref="member">balance</ref> will be converted to the collateral asset and paid to <ref refid="classgraphene_1_1chain_1_1force__settlement__object_1ac8de2416504f8e2f3425bb5ff459805f" kindref="member">owner</ref> and then this object will be deleted. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="766">
+      <node id="2102">
         <label>graphene::chain::force_settlement_object</label>
         <link refid="classgraphene_1_1chain_1_1force__settlement__object"/>
-        <childnode refid="767" relation="public-inheritance">
+        <childnode refid="2103" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="767">
+      <node id="2103">
         <label>graphene::db::abstract_object&lt; force_settlement_object &gt;</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="768">
+      <node id="2108">
+        <label>time_point_sec</label>
+      </node>
+      <node id="2104">
         <label>graphene::chain::force_settlement_object</label>
         <link refid="classgraphene_1_1chain_1_1force__settlement__object"/>
-        <childnode refid="769" relation="public-inheritance">
+        <childnode refid="2105" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2106" relation="usage">
+          <edgelabel>balance</edgelabel>
+        </childnode>
+        <childnode refid="2108" relation="usage">
+          <edgelabel>settlement_date</edgelabel>
         </childnode>
       </node>
-      <node id="769">
+      <node id="2106">
+        <label>graphene::protocol::asset</label>
+        <link refid="structgraphene_1_1protocol_1_1asset"/>
+        <childnode refid="2107" relation="usage">
+          <edgelabel>amount</edgelabel>
+        </childnode>
+      </node>
+      <node id="2105">
         <label>graphene::db::abstract_object&lt; force_settlement_object &gt;</label>
+      </node>
+      <node id="2107">
+        <label>safe&lt; int64_t &gt;</label>
       </node>
     </collaborationgraph>
     <location file="libraries/chain/include/graphene/chain/market_object.hpp" line="160" column="1" bodyfile="libraries/chain/include/graphene/chain/market_object.hpp" bodystart="159" bodyend="171"/>

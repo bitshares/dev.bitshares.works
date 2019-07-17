@@ -36,7 +36,7 @@
       </sectiondef>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1transaction__history__object_1a91c339a1eadc6e3c212d9554625904ab" prot="public" static="no" mutable="no">
-        <type>signed_transaction</type>
+        <type><ref refid="classgraphene_1_1protocol_1_1signed__transaction" kindref="compound">signed_transaction</ref></type>
         <definition>signed_transaction graphene::chain::transaction_history_object::trx</definition>
         <argsstring></argsstring>
         <name>trx</name>
@@ -49,7 +49,7 @@
         <location file="libraries/chain/include/graphene/chain/transaction_history_object.hpp" line="50" column="1" bodyfile="libraries/chain/include/graphene/chain/transaction_history_object.hpp" bodystart="50" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1transaction__history__object_1a560310e0f7d30895e76e3b026926e005" prot="public" static="no" mutable="no">
-        <type>transaction_id_type</type>
+        <type><ref refid="namespacegraphene_1_1protocol_1a040f9f71bff896e89dc9ee3ff92bb076" kindref="member">transaction_id_type</ref></type>
         <definition>transaction_id_type graphene::chain::transaction_history_object::trx_id</definition>
         <argsstring></argsstring>
         <name>trx_id</name>
@@ -82,30 +82,67 @@
     <detaileddescription>
 <para>The purpose of this object is to enable the detection of duplicate transactions. When a transaction is included in a block a <ref refid="classgraphene_1_1chain_1_1transaction__history__object" kindref="compound">transaction_history_object</ref> is added. At the end of block processing all transaction_history_objects that have expired can be removed from the index. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="1373">
+      <node id="3321">
         <label>graphene::db::abstract_object&lt; transaction_history_object &gt;</label>
       </node>
-      <node id="1372">
+      <node id="3320">
         <label>graphene::chain::transaction_history_object</label>
         <link refid="classgraphene_1_1chain_1_1transaction__history__object"/>
-        <childnode refid="1373" relation="public-inheritance">
+        <childnode refid="3321" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="1375">
+      <node id="3323">
         <label>graphene::db::abstract_object&lt; transaction_history_object &gt;</label>
       </node>
-      <node id="1376">
-        <label>signed_transaction</label>
+      <node id="3327">
+        <label>time_point_sec</label>
       </node>
-      <node id="1374">
+      <node id="3326">
+        <label>flat_set&lt; future_extensions &gt;</label>
+      </node>
+      <node id="3329">
+        <label>vector&lt; signature_type &gt;</label>
+      </node>
+      <node id="3330">
+        <label>flat_set&lt; graphene::protocol::public_key_type &gt;</label>
+      </node>
+      <node id="3322">
         <label>graphene::chain::transaction_history_object</label>
         <link refid="classgraphene_1_1chain_1_1transaction__history__object"/>
-        <childnode refid="1375" relation="public-inheritance">
+        <childnode refid="3323" relation="public-inheritance">
         </childnode>
-        <childnode refid="1376" relation="usage">
+        <childnode refid="3324" relation="usage">
           <edgelabel>trx</edgelabel>
+        </childnode>
+      </node>
+      <node id="3328">
+        <label>vector&lt; operation &gt;</label>
+      </node>
+      <node id="3324">
+        <label>graphene::protocol::signed_transaction</label>
+        <link refid="classgraphene_1_1protocol_1_1signed__transaction"/>
+        <childnode refid="3325" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3329" relation="usage">
+          <edgelabel>signatures</edgelabel>
+        </childnode>
+        <childnode refid="3330" relation="usage">
+          <edgelabel>_signees</edgelabel>
+        </childnode>
+      </node>
+      <node id="3325">
+        <label>graphene::protocol::transaction</label>
+        <link refid="classgraphene_1_1protocol_1_1transaction"/>
+        <childnode refid="3326" relation="usage">
+          <edgelabel>extensions</edgelabel>
+        </childnode>
+        <childnode refid="3327" relation="usage">
+          <edgelabel>expiration</edgelabel>
+        </childnode>
+        <childnode refid="3328" relation="usage">
+          <edgelabel>operations</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>

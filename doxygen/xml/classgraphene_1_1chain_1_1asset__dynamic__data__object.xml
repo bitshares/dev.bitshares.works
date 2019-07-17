@@ -36,7 +36,7 @@
       </sectiondef>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1asset__dynamic__data__object_1a56c347be9fbeade55f503038014a75c7" prot="public" static="no" mutable="no">
-        <type>share_type</type>
+        <type><ref refid="namespacegraphene_1_1protocol_1a69b2104c1c11eed2d17bd29b86713347" kindref="member">share_type</ref></type>
         <definition>share_type graphene::chain::asset_dynamic_data_object::current_supply</definition>
         <argsstring></argsstring>
         <name>current_supply</name>
@@ -49,7 +49,7 @@
         <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="65" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="65" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1asset__dynamic__data__object_1a7012a5128bd9858186cadd30ea2b111d" prot="public" static="no" mutable="no">
-        <type>share_type</type>
+        <type><ref refid="namespacegraphene_1_1protocol_1a69b2104c1c11eed2d17bd29b86713347" kindref="member">share_type</ref></type>
         <definition>share_type graphene::chain::asset_dynamic_data_object::confidential_supply</definition>
         <argsstring></argsstring>
         <name>confidential_supply</name>
@@ -62,7 +62,7 @@
         <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="66" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="66" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1asset__dynamic__data__object_1a0ca39e6109a6dacda9390df582b7a9c5" prot="public" static="no" mutable="no">
-        <type>share_type</type>
+        <type><ref refid="namespacegraphene_1_1protocol_1a69b2104c1c11eed2d17bd29b86713347" kindref="member">share_type</ref></type>
         <definition>share_type graphene::chain::asset_dynamic_data_object::accumulated_fees</definition>
         <argsstring></argsstring>
         <name>accumulated_fees</name>
@@ -75,7 +75,7 @@
         <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="67" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="67" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1asset__dynamic__data__object_1a724dd171541800a1ad822fb3eff9b8a3" prot="public" static="no" mutable="no">
-        <type>share_type</type>
+        <type><ref refid="namespacegraphene_1_1protocol_1a69b2104c1c11eed2d17bd29b86713347" kindref="member">share_type</ref></type>
         <definition>share_type graphene::chain::asset_dynamic_data_object::fee_pool</definition>
         <argsstring></argsstring>
         <name>fee_pool</name>
@@ -93,24 +93,33 @@
     <detaileddescription>
 <para>This object exists as an implementation detail and its ID should never be referenced by a blockchain operation. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="236">
+      <node id="578">
         <label>graphene::db::abstract_object&lt; asset_dynamic_data_object &gt;</label>
       </node>
-      <node id="235">
+      <node id="577">
         <label>graphene::chain::asset_dynamic_data_object</label>
         <link refid="classgraphene_1_1chain_1_1asset__dynamic__data__object"/>
-        <childnode refid="236" relation="public-inheritance">
+        <childnode refid="578" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="238">
+      <node id="580">
         <label>graphene::db::abstract_object&lt; asset_dynamic_data_object &gt;</label>
       </node>
-      <node id="237">
+      <node id="581">
+        <label>safe&lt; int64_t &gt;</label>
+      </node>
+      <node id="579">
         <label>graphene::chain::asset_dynamic_data_object</label>
         <link refid="classgraphene_1_1chain_1_1asset__dynamic__data__object"/>
-        <childnode refid="238" relation="public-inheritance">
+        <childnode refid="580" relation="public-inheritance">
+        </childnode>
+        <childnode refid="581" relation="usage">
+          <edgelabel>confidential_supply</edgelabel>
+          <edgelabel>fee_pool</edgelabel>
+          <edgelabel>current_supply</edgelabel>
+          <edgelabel>accumulated_fees</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>

@@ -62,7 +62,7 @@
         <location file="libraries/chain/include/graphene/chain/confidential_object.hpp" line="48" column="1" bodyfile="libraries/chain/include/graphene/chain/confidential_object.hpp" bodystart="48" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1blinded__balance__object_1a0211822596062e58127bc19e0cd499ca" prot="public" static="no" mutable="no">
-        <type>authority</type>
+        <type><ref refid="structgraphene_1_1protocol_1_1authority" kindref="compound">authority</ref></type>
         <definition>authority graphene::chain::blinded_balance_object::owner</definition>
         <argsstring></argsstring>
         <name>owner</name>
@@ -80,25 +80,56 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="548">
+      <node id="1468">
         <label>graphene::chain::blinded_balance_object</label>
         <link refid="classgraphene_1_1chain_1_1blinded__balance__object"/>
-        <childnode refid="549" relation="public-inheritance">
+        <childnode refid="1469" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="549">
+      <node id="1469">
         <label>graphene::db::abstract_object&lt; blinded_balance_object &gt;</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="550">
+      <node id="1472">
+        <label>commitment_type</label>
+      </node>
+      <node id="1476">
+        <label>flat_map&lt; graphene::protocol::address, weight_type &gt;</label>
+      </node>
+      <node id="1474">
+        <label>flat_map&lt; graphene::protocol::public_key_type, weight_type &gt;</label>
+      </node>
+      <node id="1470">
         <label>graphene::chain::blinded_balance_object</label>
         <link refid="classgraphene_1_1chain_1_1blinded__balance__object"/>
-        <childnode refid="551" relation="public-inheritance">
+        <childnode refid="1471" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1472" relation="usage">
+          <edgelabel>commitment</edgelabel>
+        </childnode>
+        <childnode refid="1473" relation="usage">
+          <edgelabel>owner</edgelabel>
         </childnode>
       </node>
-      <node id="551">
+      <node id="1471">
         <label>graphene::db::abstract_object&lt; blinded_balance_object &gt;</label>
+      </node>
+      <node id="1473">
+        <label>graphene::protocol::authority</label>
+        <link refid="structgraphene_1_1protocol_1_1authority"/>
+        <childnode refid="1474" relation="usage">
+          <edgelabel>key_auths</edgelabel>
+        </childnode>
+        <childnode refid="1475" relation="usage">
+          <edgelabel>account_auths</edgelabel>
+        </childnode>
+        <childnode refid="1476" relation="usage">
+          <edgelabel>address_auths</edgelabel>
+        </childnode>
+      </node>
+      <node id="1475">
+        <label>flat_map&lt; account_id_type, weight_type &gt;</label>
       </node>
     </collaborationgraph>
     <location file="libraries/chain/include/graphene/chain/confidential_object.hpp" line="42" column="1" bodyfile="libraries/chain/include/graphene/chain/confidential_object.hpp" bodystart="41" bodyend="50"/>

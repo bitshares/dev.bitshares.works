@@ -25,11 +25,11 @@
         <location file="libraries/chain/include/graphene/chain/genesis_state.hpp" line="103" column="1" bodyfile="libraries/chain/include/graphene/chain/genesis_state.hpp" bodystart="103" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1chain_1_1genesis__state__type_1aadad7a6e05c0d2ea8e0f24295b43f053" prot="public" static="no" mutable="no">
-        <type>share_type</type>
+        <type><ref refid="namespacegraphene_1_1protocol_1a69b2104c1c11eed2d17bd29b86713347" kindref="member">share_type</ref></type>
         <definition>share_type graphene::chain::genesis_state_type::max_core_supply</definition>
         <argsstring></argsstring>
         <name>max_core_supply</name>
-        <initializer>= GRAPHENE_MAX_SHARE_SUPPLY</initializer>
+        <initializer>= <ref refid="protocol_2include_2graphene_2protocol_2config_8hpp_1a0097d4b8dab3cb6d7c7f275b054c2380" kindref="member">GRAPHENE_MAX_SHARE_SUPPLY</ref></initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -39,7 +39,7 @@
         <location file="libraries/chain/include/graphene/chain/genesis_state.hpp" line="104" column="1" bodyfile="libraries/chain/include/graphene/chain/genesis_state.hpp" bodystart="104" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1chain_1_1genesis__state__type_1a622cfe709ead0ef037ab939d53bd953e" prot="public" static="no" mutable="no">
-        <type>chain_parameters</type>
+        <type><ref refid="structgraphene_1_1protocol_1_1chain__parameters" kindref="compound">chain_parameters</ref></type>
         <definition>chain_parameters graphene::chain::genesis_state_type::initial_parameters</definition>
         <argsstring></argsstring>
         <name>initial_parameters</name>
@@ -121,7 +121,7 @@
         <definition>uint64_t graphene::chain::genesis_state_type::initial_active_witnesses</definition>
         <argsstring></argsstring>
         <name>initial_active_witnesses</name>
-        <initializer>= GRAPHENE_DEFAULT_MIN_WITNESS_COUNT</initializer>
+        <initializer>= <ref refid="protocol_2include_2graphene_2protocol_2config_8hpp_1a5c3f129952ba0c8c9679a54a0075f7db" kindref="member">GRAPHENE_DEFAULT_MIN_WITNESS_COUNT</ref></initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -170,7 +170,7 @@
         <location file="libraries/chain/include/graphene/chain/genesis_state.hpp" line="114" column="1" bodyfile="libraries/chain/include/graphene/chain/genesis_state.hpp" bodystart="114" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1chain_1_1genesis__state__type_1acbf6798be37935a7c792b4fd7adba4c8" prot="public" static="no" mutable="no">
-        <type>chain_id_type</type>
+        <type><ref refid="namespacegraphene_1_1protocol_1a56354f39ed89f6a0a13fe90ba8228809" kindref="member">chain_id_type</ref></type>
         <definition>chain_id_type graphene::chain::genesis_state_type::initial_chain_id</definition>
         <argsstring></argsstring>
         <name>initial_chain_id</name>
@@ -185,7 +185,7 @@
       </sectiondef>
       <sectiondef kind="public-func">
       <memberdef kind="function" id="structgraphene_1_1chain_1_1genesis__state__type_1a1212f7780e4dd0f749e59bcdf9149a96" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>chain_id_type</type>
+        <type><ref refid="namespacegraphene_1_1protocol_1a56354f39ed89f6a0a13fe90ba8228809" kindref="member">chain_id_type</ref></type>
         <definition>chain_id_type graphene::chain::genesis_state_type::compute_chain_id</definition>
         <argsstring>() const</argsstring>
         <name>compute_chain_id</name>
@@ -203,57 +203,102 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="924">
+      <node id="2311">
+        <label>graphene::protocol::chain_parameters</label>
+        <link refid="structgraphene_1_1protocol_1_1chain__parameters"/>
+        <childnode refid="2312" relation="usage">
+          <edgelabel>cashback_vesting_threshold</edgelabel>
+          <edgelabel>worker_budget_per_day</edgelabel>
+          <edgelabel>fee_liquidation_threshold</edgelabel>
+          <edgelabel>witness_pay_per_block</edgelabel>
+        </childnode>
+        <childnode refid="2313" relation="usage">
+          <edgelabel>extensions</edgelabel>
+        </childnode>
+      </node>
+      <node id="2310">
+        <label>time_point_sec</label>
+      </node>
+      <node id="2316">
         <label>vector&lt; graphene::chain::genesis_state_type::initial_account_type &gt;</label>
       </node>
-      <node id="922">
+      <node id="2308">
         <label>vector&lt; graphene::chain::genesis_state_type::initial_witness_type &gt;</label>
       </node>
-      <node id="921">
+      <node id="2315">
+        <label>optional&lt; graphene::protocol::htlc_options &gt;</label>
+      </node>
+      <node id="2313">
+        <label>graphene::protocol::extension&lt; graphene::protocol::chain_parameters::ext &gt;</label>
+        <link refid="structgraphene_1_1protocol_1_1extension"/>
+        <childnode refid="2314" relation="usage">
+          <edgelabel>value</edgelabel>
+        </childnode>
+      </node>
+      <node id="2307">
         <label>vector&lt; graphene::chain::genesis_state_type::initial_committee_member_type &gt;</label>
       </node>
-      <node id="926">
+      <node id="2318">
         <label>vector&lt; graphene::chain::genesis_state_type::initial_asset_type &gt;</label>
       </node>
-      <node id="920">
+      <node id="2306">
         <label>vector&lt; graphene::chain::genesis_state_type::initial_balance_type &gt;</label>
       </node>
-      <node id="918">
+      <node id="2304">
         <label>graphene::chain::genesis_state_type</label>
         <link refid="structgraphene_1_1chain_1_1genesis__state__type"/>
-        <childnode refid="919" relation="usage">
+        <childnode refid="2305" relation="usage">
           <edgelabel>immutable_parameters</edgelabel>
         </childnode>
-        <childnode refid="920" relation="usage">
+        <childnode refid="2306" relation="usage">
           <edgelabel>initial_balances</edgelabel>
         </childnode>
-        <childnode refid="921" relation="usage">
+        <childnode refid="2307" relation="usage">
           <edgelabel>initial_committee_candidates</edgelabel>
         </childnode>
-        <childnode refid="922" relation="usage">
+        <childnode refid="2308" relation="usage">
           <edgelabel>initial_witness_candidates</edgelabel>
         </childnode>
-        <childnode refid="923" relation="usage">
+        <childnode refid="2309" relation="usage">
           <edgelabel>initial_vesting_balances</edgelabel>
         </childnode>
-        <childnode refid="924" relation="usage">
+        <childnode refid="2310" relation="usage">
+          <edgelabel>initial_timestamp</edgelabel>
+        </childnode>
+        <childnode refid="2311" relation="usage">
+          <edgelabel>initial_parameters</edgelabel>
+        </childnode>
+        <childnode refid="2316" relation="usage">
           <edgelabel>initial_accounts</edgelabel>
         </childnode>
-        <childnode refid="925" relation="usage">
+        <childnode refid="2312" relation="usage">
+          <edgelabel>max_core_supply</edgelabel>
+        </childnode>
+        <childnode refid="2317" relation="usage">
           <edgelabel>initial_worker_candidates</edgelabel>
         </childnode>
-        <childnode refid="926" relation="usage">
+        <childnode refid="2318" relation="usage">
           <edgelabel>initial_assets</edgelabel>
         </childnode>
       </node>
-      <node id="919">
+      <node id="2312">
+        <label>safe&lt; int64_t &gt;</label>
+      </node>
+      <node id="2314">
+        <label>graphene::protocol::chain_parameters::ext</label>
+        <link refid="structgraphene_1_1protocol_1_1chain__parameters_1_1ext"/>
+        <childnode refid="2315" relation="usage">
+          <edgelabel>updatable_htlc_options</edgelabel>
+        </childnode>
+      </node>
+      <node id="2305">
         <label>graphene::chain::immutable_chain_parameters</label>
         <link refid="structgraphene_1_1chain_1_1immutable__chain__parameters"/>
       </node>
-      <node id="925">
+      <node id="2317">
         <label>vector&lt; graphene::chain::genesis_state_type::initial_worker_type &gt;</label>
       </node>
-      <node id="923">
+      <node id="2309">
         <label>vector&lt; graphene::chain::genesis_state_type::initial_vesting_balance_type &gt;</label>
       </node>
     </collaborationgraph>

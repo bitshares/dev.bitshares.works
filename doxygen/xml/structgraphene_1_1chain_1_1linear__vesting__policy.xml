@@ -46,7 +46,7 @@
         <location file="libraries/chain/include/graphene/chain/vesting_balance_object.hpp" line="68" column="1" bodyfile="libraries/chain/include/graphene/chain/vesting_balance_object.hpp" bodystart="68" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1chain_1_1linear__vesting__policy_1ab3f3542a5f32fe04cd18b0d2b8350479" prot="public" static="no" mutable="no">
-        <type>share_type</type>
+        <type><ref refid="namespacegraphene_1_1protocol_1a69b2104c1c11eed2d17bd29b86713347" kindref="member">share_type</ref></type>
         <definition>share_type graphene::chain::linear_vesting_policy::begin_balance</definition>
         <argsstring></argsstring>
         <name>begin_balance</name>
@@ -61,7 +61,7 @@
       </sectiondef>
       <sectiondef kind="public-func">
       <memberdef kind="function" id="structgraphene_1_1chain_1_1linear__vesting__policy_1a8067d85502f9ec742d838fd6f80bb84a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>asset</type>
+        <type><ref refid="structgraphene_1_1protocol_1_1asset" kindref="compound">asset</ref></type>
         <definition>asset graphene::chain::linear_vesting_policy::get_allowed_withdraw</definition>
         <argsstring>(const vesting_policy_context &amp;ctx) const</argsstring>
         <name>get_allowed_withdraw</name>
@@ -183,6 +183,24 @@
     <detaileddescription>
 <para>This vesting balance type is used to mimic traditional stock vesting contracts where each day a certain amount vests until it is fully matured.</para><para><simplesect kind="note"><para>New funds may not be added to a linear vesting balance. </para></simplesect>
 </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="2757">
+        <label>time_point_sec</label>
+      </node>
+      <node id="2756">
+        <label>graphene::chain::linear_vesting_policy</label>
+        <link refid="structgraphene_1_1chain_1_1linear__vesting__policy"/>
+        <childnode refid="2757" relation="usage">
+          <edgelabel>begin_timestamp</edgelabel>
+        </childnode>
+        <childnode refid="2758" relation="usage">
+          <edgelabel>begin_balance</edgelabel>
+        </childnode>
+      </node>
+      <node id="2758">
+        <label>safe&lt; int64_t &gt;</label>
+      </node>
+    </collaborationgraph>
     <location file="libraries/chain/include/graphene/chain/vesting_balance_object.hpp" line="62" column="1" bodyfile="libraries/chain/include/graphene/chain/vesting_balance_object.hpp" bodystart="61" bodyend="80"/>
     <listofallmembers>
       <member refid="structgraphene_1_1chain_1_1linear__vesting__policy_1ab3f3542a5f32fe04cd18b0d2b8350479" prot="public" virt="non-virtual"><scope>graphene::chain::linear_vesting_policy</scope><name>begin_balance</name></member>

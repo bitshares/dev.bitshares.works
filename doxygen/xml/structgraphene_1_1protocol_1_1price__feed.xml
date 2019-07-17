@@ -1,0 +1,202 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structgraphene_1_1protocol_1_1price__feed" kind="class" language="C++" prot="public">
+    <compoundname>graphene::protocol::price_feed</compoundname>
+    <includes refid="asset_8hpp" local="no">asset.hpp</includes>
+      <sectiondef kind="user-defined">
+      <memberdef kind="variable" id="structgraphene_1_1protocol_1_1price__feed_1a6252428604466bc644f3e56ce8353c02" prot="public" static="no" mutable="no">
+        <type><ref refid="structgraphene_1_1protocol_1_1price" kindref="compound">price</ref></type>
+        <definition>price graphene::protocol::price_feed::settlement_price</definition>
+        <argsstring></argsstring>
+        <name>settlement_price</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Required maintenance collateral is defined as a fixed point number with a maximum value of 10.000 and a minimum value of 1.000. (denominated in GRAPHENE_COLLATERAL_RATIO_DENOM)</para><para>A black swan event occurs when value_of_collateral equals value_of_debt, to avoid a black swan a margin call is executed when value_of_debt * required_maintenance_collateral equals value_of_collateral using rate.</para><para>Default requirement is $1.75 of collateral per $1 of debt</para><para>BlackSwan <mdash/>&gt; SQR <mdash/>&gt; MCR -<mdash/>&gt; SP Forced settlements will evaluate using this price, defined as BITASSET / COLLATERAL </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="184" column="1" bodyfile="libraries/protocol/include/graphene/protocol/asset.hpp" bodystart="184" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgraphene_1_1protocol_1_1price__feed_1ae6bf318a90269e2e638df9b3cb89504e" prot="public" static="no" mutable="no">
+        <type><ref refid="structgraphene_1_1protocol_1_1price" kindref="compound">price</ref></type>
+        <definition>price graphene::protocol::price_feed::core_exchange_rate</definition>
+        <argsstring></argsstring>
+        <name>core_exchange_rate</name>
+        <briefdescription>
+<para>Price at which automatically exchanging this asset for CORE from fee pool occurs (used for paying fees) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="187" column="1" bodyfile="libraries/protocol/include/graphene/protocol/asset.hpp" bodystart="187" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgraphene_1_1protocol_1_1price__feed_1a81a886eed9c27f296d4631a885b97c8a" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t graphene::protocol::price_feed::maintenance_collateral_ratio</definition>
+        <argsstring></argsstring>
+        <name>maintenance_collateral_ratio</name>
+        <initializer>= <ref refid="protocol_2include_2graphene_2protocol_2config_8hpp_1a088a6500f643fafb7334b33bbea0231a" kindref="member">GRAPHENE_DEFAULT_MAINTENANCE_COLLATERAL_RATIO</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Fixed point between 1.000 and 10.000, implied fixed point denominator is GRAPHENE_COLLATERAL_RATIO_DENOM </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="190" column="1" bodyfile="libraries/protocol/include/graphene/protocol/asset.hpp" bodystart="190" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgraphene_1_1protocol_1_1price__feed_1afef11ed5832c728c7dec984b0d75e6da" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t graphene::protocol::price_feed::maximum_short_squeeze_ratio</definition>
+        <argsstring></argsstring>
+        <name>maximum_short_squeeze_ratio</name>
+        <initializer>= <ref refid="protocol_2include_2graphene_2protocol_2config_8hpp_1ac958a0ef18d1ca306502634fc8946d96" kindref="member">GRAPHENE_DEFAULT_MAX_SHORT_SQUEEZE_RATIO</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Fixed point between 1.000 and 10.000, implied fixed point denominator is GRAPHENE_COLLATERAL_RATIO_DENOM </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="193" column="1" bodyfile="libraries/protocol/include/graphene/protocol/asset.hpp" bodystart="193" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1price__feed_1af018fd5a315703a5afcd20fdf287a464" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structgraphene_1_1protocol_1_1price" kindref="compound">price</ref></type>
+        <definition>price graphene::protocol::price_feed::max_short_squeeze_price</definition>
+        <argsstring>() const</argsstring>
+        <name>max_short_squeeze_price</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>When selling collateral to pay off debt, the least amount of debt to receive should be min_usd = <ref refid="structgraphene_1_1protocol_1_1price__feed_1af018fd5a315703a5afcd20fdf287a464" kindref="member">max_short_squeeze_price()</ref> * collateral</para><para>This is provided to ensure that a black swan cannot be trigged due to poor liquidity alone, it must be confirmed by having the <ref refid="structgraphene_1_1protocol_1_1price__feed_1af018fd5a315703a5afcd20fdf287a464" kindref="member">max_short_squeeze_price()</ref> move below the black swan price. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="201" column="1" bodyfile="libraries/protocol/asset.cpp" bodystart="283" bodyend="287"/>
+      </memberdef>
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1price__feed_1a98463272d7cab66ef4201b261eca5c43" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structgraphene_1_1protocol_1_1price" kindref="compound">price</ref></type>
+        <definition>price graphene::protocol::price_feed::max_short_squeeze_price_before_hf_1270</definition>
+        <argsstring>() const</argsstring>
+        <name>max_short_squeeze_price_before_hf_1270</name>
+        <briefdescription>
+<para>Another implementation of <ref refid="structgraphene_1_1protocol_1_1price__feed_1af018fd5a315703a5afcd20fdf287a464" kindref="member">max_short_squeeze_price()</ref> before the core-1270 hard fork. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="203" column="1" bodyfile="libraries/protocol/asset.cpp" bodystart="268" bodyend="281"/>
+      </memberdef>
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1price__feed_1a30f1e1b7f21c0e198dfae800c4d11273" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structgraphene_1_1protocol_1_1price" kindref="compound">price</ref></type>
+        <definition>price graphene::protocol::price_feed::maintenance_collateralization</definition>
+        <argsstring>() const</argsstring>
+        <name>maintenance_collateralization</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Call orders with collateralization (aka collateral/debt) not greater than this value are in margin call territory. Calculation: ~settlement_price * maintenance_collateral_ratio / GRAPHENE_COLLATERAL_RATIO_DENOM </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="207" column="1" bodyfile="libraries/protocol/asset.cpp" bodystart="289" bodyend="294"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1price__feed_1affca92dc941ee449f0a2a1c99a3e1473" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void graphene::protocol::price_feed::validate</definition>
+        <argsstring>() const</argsstring>
+        <name>validate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="217" column="1" bodyfile="libraries/protocol/asset.cpp" bodystart="237" bodyend="250"/>
+      </memberdef>
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1price__feed_1ac9864f61729920e739c9272b89719273" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool graphene::protocol::price_feed::is_for</definition>
+        <argsstring>(asset_id_type asset_id) const</argsstring>
+        <name>is_for</name>
+        <param>
+          <type>asset_id_type</type>
+          <declname>asset_id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="218" column="1" bodyfile="libraries/protocol/asset.cpp" bodystart="252" bodyend="264"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="structgraphene_1_1protocol_1_1price__feed_1a74702de56c3c544fad20152a6d709194" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>friend bool</type>
+        <definition>bool operator==</definition>
+        <argsstring>(const price_feed &amp;a, const price_feed &amp;b)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="structgraphene_1_1protocol_1_1price__feed" kindref="compound">price_feed</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structgraphene_1_1protocol_1_1price__feed" kindref="compound">price_feed</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="211" column="1" bodyfile="libraries/protocol/include/graphene/protocol/asset.hpp" bodystart="211" bodyend="215"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>defines market parameters for margin positions </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2973">
+        <label>graphene::protocol::price</label>
+        <link refid="structgraphene_1_1protocol_1_1price"/>
+        <childnode refid="2974" relation="usage">
+          <edgelabel>base</edgelabel>
+          <edgelabel>quote</edgelabel>
+        </childnode>
+      </node>
+      <node id="2972">
+        <label>graphene::protocol::price_feed</label>
+        <link refid="structgraphene_1_1protocol_1_1price__feed"/>
+        <childnode refid="2973" relation="usage">
+          <edgelabel>core_exchange_rate</edgelabel>
+          <edgelabel>settlement_price</edgelabel>
+        </childnode>
+      </node>
+      <node id="2974">
+        <label>graphene::protocol::asset</label>
+        <link refid="structgraphene_1_1protocol_1_1asset"/>
+        <childnode refid="2975" relation="usage">
+          <edgelabel>amount</edgelabel>
+        </childnode>
+      </node>
+      <node id="2975">
+        <label>safe&lt; int64_t &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="165" column="1" bodyfile="libraries/protocol/include/graphene/protocol/asset.hpp" bodystart="164" bodyend="219"/>
+    <listofallmembers>
+      <member refid="structgraphene_1_1protocol_1_1price__feed_1ae6bf318a90269e2e638df9b3cb89504e" prot="public" virt="non-virtual"><scope>graphene::protocol::price_feed</scope><name>core_exchange_rate</name></member>
+      <member refid="structgraphene_1_1protocol_1_1price__feed_1ac9864f61729920e739c9272b89719273" prot="public" virt="non-virtual"><scope>graphene::protocol::price_feed</scope><name>is_for</name></member>
+      <member refid="structgraphene_1_1protocol_1_1price__feed_1a81a886eed9c27f296d4631a885b97c8a" prot="public" virt="non-virtual"><scope>graphene::protocol::price_feed</scope><name>maintenance_collateral_ratio</name></member>
+      <member refid="structgraphene_1_1protocol_1_1price__feed_1a30f1e1b7f21c0e198dfae800c4d11273" prot="public" virt="non-virtual"><scope>graphene::protocol::price_feed</scope><name>maintenance_collateralization</name></member>
+      <member refid="structgraphene_1_1protocol_1_1price__feed_1af018fd5a315703a5afcd20fdf287a464" prot="public" virt="non-virtual"><scope>graphene::protocol::price_feed</scope><name>max_short_squeeze_price</name></member>
+      <member refid="structgraphene_1_1protocol_1_1price__feed_1a98463272d7cab66ef4201b261eca5c43" prot="public" virt="non-virtual"><scope>graphene::protocol::price_feed</scope><name>max_short_squeeze_price_before_hf_1270</name></member>
+      <member refid="structgraphene_1_1protocol_1_1price__feed_1afef11ed5832c728c7dec984b0d75e6da" prot="public" virt="non-virtual"><scope>graphene::protocol::price_feed</scope><name>maximum_short_squeeze_ratio</name></member>
+      <member refid="structgraphene_1_1protocol_1_1price__feed_1a74702de56c3c544fad20152a6d709194" prot="public" virt="non-virtual"><scope>graphene::protocol::price_feed</scope><name>operator==</name></member>
+      <member refid="structgraphene_1_1protocol_1_1price__feed_1a6252428604466bc644f3e56ce8353c02" prot="public" virt="non-virtual"><scope>graphene::protocol::price_feed</scope><name>settlement_price</name></member>
+      <member refid="structgraphene_1_1protocol_1_1price__feed_1affca92dc941ee449f0a2a1c99a3e1473" prot="public" virt="non-virtual"><scope>graphene::protocol::price_feed</scope><name>validate</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

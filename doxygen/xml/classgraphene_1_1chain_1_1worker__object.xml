@@ -75,7 +75,7 @@
         <location file="libraries/chain/include/graphene/chain/worker_object.hpp" line="118" column="1" bodyfile="libraries/chain/include/graphene/chain/worker_object.hpp" bodystart="118" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1worker__object_1a6c2d8d4a16fe45f978a591a31aa8f848" prot="public" static="no" mutable="no">
-        <type>share_type</type>
+        <type><ref refid="namespacegraphene_1_1protocol_1a69b2104c1c11eed2d17bd29b86713347" kindref="member">share_type</ref></type>
         <definition>share_type graphene::chain::worker_object::daily_pay</definition>
         <argsstring></argsstring>
         <name>daily_pay</name>
@@ -127,7 +127,7 @@
         <location file="libraries/chain/include/graphene/chain/worker_object.hpp" line="126" column="1" bodyfile="libraries/chain/include/graphene/chain/worker_object.hpp" bodystart="126" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1worker__object_1a59fe30f86eb264a837de20f7060139fe" prot="public" static="no" mutable="no">
-        <type>vote_id_type</type>
+        <type><ref refid="structgraphene_1_1protocol_1_1vote__id__type" kindref="compound">vote_id_type</ref></type>
         <definition>vote_id_type graphene::chain::worker_object::vote_for</definition>
         <argsstring></argsstring>
         <name>vote_for</name>
@@ -140,7 +140,7 @@
         <location file="libraries/chain/include/graphene/chain/worker_object.hpp" line="129" column="1" bodyfile="libraries/chain/include/graphene/chain/worker_object.hpp" bodystart="129" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1worker__object_1a04502ac21107ce051c9d4eac2417061a" prot="public" static="no" mutable="no">
-        <type>vote_id_type</type>
+        <type><ref refid="structgraphene_1_1protocol_1_1vote__id__type" kindref="compound">vote_id_type</ref></type>
         <definition>vote_id_type graphene::chain::worker_object::vote_against</definition>
         <argsstring></argsstring>
         <name>vote_against</name>
@@ -200,7 +200,7 @@
         <location file="libraries/chain/include/graphene/chain/worker_object.hpp" line="136" column="1" bodyfile="libraries/chain/include/graphene/chain/worker_object.hpp" bodystart="136" bodyend="138"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1worker__object_1a689234470f9ed7dab3b402e1c7e35cbe" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type>share_type</type>
+        <type><ref refid="namespacegraphene_1_1protocol_1a69b2104c1c11eed2d17bd29b86713347" kindref="member">share_type</ref></type>
         <definition>share_type graphene::chain::worker_object::approving_stake</definition>
         <argsstring>() const</argsstring>
         <name>approving_stake</name>
@@ -214,33 +214,60 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>Worker object contains the details of a blockchain worker. See workers for details. </para>    </briefdescription>
+<para>Worker object contains the details of a blockchain worker. See <ref refid="group__workers" kindref="compound">The Blockchain Worker System</ref> for details. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="1707">
+      <node id="4101">
         <label>graphene::db::abstract_object&lt; worker_object &gt;</label>
       </node>
-      <node id="1706">
+      <node id="4100">
         <label>graphene::chain::worker_object</label>
         <link refid="classgraphene_1_1chain_1_1worker__object"/>
-        <childnode refid="1707" relation="public-inheritance">
+        <childnode refid="4101" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="1710">
+      <node id="4104">
+        <label>static_variant&lt; refund_worker_type, vesting_balance_worker_type, burn_worker_type &gt;</label>
+      </node>
+      <node id="4106">
+        <label>time_point_sec</label>
+      </node>
+      <node id="4108">
         <label>string</label>
       </node>
-      <node id="1709">
+      <node id="4105">
+        <label>graphene::protocol::vote_id_type</label>
+        <link refid="structgraphene_1_1protocol_1_1vote__id__type"/>
+      </node>
+      <node id="4103">
         <label>graphene::db::abstract_object&lt; worker_object &gt;</label>
       </node>
-      <node id="1708">
+      <node id="4107">
+        <label>safe&lt; int64_t &gt;</label>
+      </node>
+      <node id="4102">
         <label>graphene::chain::worker_object</label>
         <link refid="classgraphene_1_1chain_1_1worker__object"/>
-        <childnode refid="1709" relation="public-inheritance">
+        <childnode refid="4103" relation="public-inheritance">
         </childnode>
-        <childnode refid="1710" relation="usage">
+        <childnode refid="4104" relation="usage">
+          <edgelabel>worker</edgelabel>
+        </childnode>
+        <childnode refid="4105" relation="usage">
+          <edgelabel>vote_for</edgelabel>
+          <edgelabel>vote_against</edgelabel>
+        </childnode>
+        <childnode refid="4106" relation="usage">
+          <edgelabel>work_end_date</edgelabel>
+          <edgelabel>work_begin_date</edgelabel>
+        </childnode>
+        <childnode refid="4107" relation="usage">
+          <edgelabel>daily_pay</edgelabel>
+        </childnode>
+        <childnode refid="4108" relation="usage">
           <edgelabel>url</edgelabel>
           <edgelabel>name</edgelabel>
         </childnode>

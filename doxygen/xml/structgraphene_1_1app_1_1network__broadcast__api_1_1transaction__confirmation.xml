@@ -5,7 +5,7 @@
     <includes refid="api_8hpp" local="no">api.hpp</includes>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structgraphene_1_1app_1_1network__broadcast__api_1_1transaction__confirmation_1a29c7cc4e034c9cf708417135792736db" prot="public" static="no" mutable="no">
-        <type>transaction_id_type</type>
+        <type><ref refid="namespacegraphene_1_1protocol_1a040f9f71bff896e89dc9ee3ff92bb076" kindref="member">transaction_id_type</ref></type>
         <definition>transaction_id_type graphene::app::network_broadcast_api::transaction_confirmation::id</definition>
         <argsstring></argsstring>
         <name>id</name>
@@ -44,7 +44,7 @@
         <location file="libraries/app/include/graphene/app/api.hpp" line="258" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="258" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1app_1_1network__broadcast__api_1_1transaction__confirmation_1af0db052dc5b9c4768ae6416606637949" prot="public" static="no" mutable="no">
-        <type>processed_transaction</type>
+        <type><ref refid="structgraphene_1_1protocol_1_1processed__transaction" kindref="compound">processed_transaction</ref></type>
         <definition>processed_transaction graphene::app::network_broadcast_api::transaction_confirmation::trx</definition>
         <argsstring></argsstring>
         <name>trx</name>
@@ -61,6 +61,73 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
+    <collaborationgraph>
+      <node id="3303">
+        <label>time_point_sec</label>
+      </node>
+      <node id="3299">
+        <label>graphene::protocol::precomputable_transaction</label>
+        <link refid="classgraphene_1_1protocol_1_1precomputable__transaction"/>
+        <childnode refid="3300" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3297">
+        <label>graphene::app::network_broadcast_api::transaction_confirmation</label>
+        <link refid="structgraphene_1_1app_1_1network__broadcast__api_1_1transaction__confirmation"/>
+        <childnode refid="3298" relation="usage">
+          <edgelabel>trx</edgelabel>
+        </childnode>
+      </node>
+      <node id="3298">
+        <label>graphene::protocol::processed_transaction</label>
+        <link refid="structgraphene_1_1protocol_1_1processed__transaction"/>
+        <childnode refid="3299" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3307" relation="usage">
+          <edgelabel>operation_results</edgelabel>
+        </childnode>
+      </node>
+      <node id="3302">
+        <label>flat_set&lt; future_extensions &gt;</label>
+      </node>
+      <node id="3305">
+        <label>vector&lt; signature_type &gt;</label>
+      </node>
+      <node id="3306">
+        <label>flat_set&lt; graphene::protocol::public_key_type &gt;</label>
+      </node>
+      <node id="3304">
+        <label>vector&lt; operation &gt;</label>
+      </node>
+      <node id="3307">
+        <label>vector&lt; operation_result &gt;</label>
+      </node>
+      <node id="3300">
+        <label>graphene::protocol::signed_transaction</label>
+        <link refid="classgraphene_1_1protocol_1_1signed__transaction"/>
+        <childnode refid="3301" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3305" relation="usage">
+          <edgelabel>signatures</edgelabel>
+        </childnode>
+        <childnode refid="3306" relation="usage">
+          <edgelabel>_signees</edgelabel>
+        </childnode>
+      </node>
+      <node id="3301">
+        <label>graphene::protocol::transaction</label>
+        <link refid="classgraphene_1_1protocol_1_1transaction"/>
+        <childnode refid="3302" relation="usage">
+          <edgelabel>extensions</edgelabel>
+        </childnode>
+        <childnode refid="3303" relation="usage">
+          <edgelabel>expiration</edgelabel>
+        </childnode>
+        <childnode refid="3304" relation="usage">
+          <edgelabel>operations</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
     <location file="libraries/app/include/graphene/app/api.hpp" line="255" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="254" bodyend="260"/>
     <listofallmembers>
       <member refid="structgraphene_1_1app_1_1network__broadcast__api_1_1transaction__confirmation_1a408d15e9cba4daf26519245b1d0c57d8" prot="public" virt="non-virtual"><scope>graphene::app::network_broadcast_api::transaction_confirmation</scope><name>block_num</name></member>

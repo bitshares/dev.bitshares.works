@@ -72,53 +72,65 @@
     <detaileddescription>
 <para>This object is stored in the database while an HTLC is active. The HTLC will become inactive at expiration or when unlocked via the preimage. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="1002">
+      <node id="2494">
         <label>graphene::db::abstract_object&lt; htlc_object &gt;</label>
       </node>
-      <node id="1001">
+      <node id="2493">
         <label>graphene::chain::htlc_object</label>
         <link refid="classgraphene_1_1chain_1_1htlc__object"/>
-        <childnode refid="1002" relation="public-inheritance">
+        <childnode refid="2494" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="1004">
+      <node id="2501">
+        <label>time_point_sec</label>
+      </node>
+      <node id="2496">
         <label>graphene::db::abstract_object&lt; htlc_object &gt;</label>
       </node>
-      <node id="1008">
+      <node id="2502">
         <label>graphene::chain::htlc_object::condition_info::hash_lock_info</label>
         <link refid="structgraphene_1_1chain_1_1htlc__object_1_1condition__info_1_1hash__lock__info"/>
       </node>
-      <node id="1007">
+      <node id="2500">
         <label>graphene::chain::htlc_object::condition_info::time_lock_info</label>
         <link refid="structgraphene_1_1chain_1_1htlc__object_1_1condition__info_1_1time__lock__info"/>
+        <childnode refid="2501" relation="usage">
+          <edgelabel>expiration</edgelabel>
+        </childnode>
       </node>
-      <node id="1005">
+      <node id="2497">
         <label>graphene::chain::htlc_object::transfer_info</label>
         <link refid="structgraphene_1_1chain_1_1htlc__object_1_1transfer__info"/>
+        <childnode refid="2498" relation="usage">
+          <edgelabel>amount</edgelabel>
+        </childnode>
       </node>
-      <node id="1003">
+      <node id="2495">
         <label>graphene::chain::htlc_object</label>
         <link refid="classgraphene_1_1chain_1_1htlc__object"/>
-        <childnode refid="1004" relation="public-inheritance">
+        <childnode refid="2496" relation="public-inheritance">
         </childnode>
-        <childnode refid="1005" relation="usage">
+        <childnode refid="2497" relation="usage">
           <edgelabel>transfer</edgelabel>
         </childnode>
-        <childnode refid="1006" relation="usage">
+        <childnode refid="2499" relation="usage">
           <edgelabel>conditions</edgelabel>
         </childnode>
       </node>
-      <node id="1006">
+      <node id="2499">
         <label>graphene::chain::htlc_object::condition_info</label>
         <link refid="structgraphene_1_1chain_1_1htlc__object_1_1condition__info"/>
-        <childnode refid="1007" relation="usage">
+        <childnode refid="2500" relation="usage">
           <edgelabel>time_lock</edgelabel>
         </childnode>
-        <childnode refid="1008" relation="usage">
+        <childnode refid="2502" relation="usage">
           <edgelabel>hash_lock</edgelabel>
         </childnode>
+      </node>
+      <node id="2498">
+        <label>safe&lt; int64_t &gt;</label>
       </node>
     </collaborationgraph>
     <location file="libraries/chain/include/graphene/chain/htlc_object.hpp" line="40" column="1" bodyfile="libraries/chain/include/graphene/chain/htlc_object.hpp" bodystart="40" bodyend="85"/>

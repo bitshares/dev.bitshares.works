@@ -103,7 +103,7 @@
         <location file="libraries/chain/include/graphene/chain/account_object.hpp" line="63" column="1" bodyfile="libraries/chain/include/graphene/chain/account_object.hpp" bodystart="63" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1account__statistics__object_1a3d24f49bd8bccd624bc91fd55e33e25e" prot="public" static="no" mutable="no">
-        <type>share_type</type>
+        <type><ref refid="namespacegraphene_1_1protocol_1a69b2104c1c11eed2d17bd29b86713347" kindref="member">share_type</ref></type>
         <definition>share_type graphene::chain::account_statistics_object::total_core_in_orders</definition>
         <argsstring></argsstring>
         <name>total_core_in_orders</name>
@@ -116,7 +116,7 @@
         <location file="libraries/chain/include/graphene/chain/account_object.hpp" line="70" column="1" bodyfile="libraries/chain/include/graphene/chain/account_object.hpp" bodystart="70" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1account__statistics__object_1aadca0c129effcdbd4a6403cfbb1bd6fd" prot="public" static="no" mutable="no">
-        <type>share_type</type>
+        <type><ref refid="namespacegraphene_1_1protocol_1a69b2104c1c11eed2d17bd29b86713347" kindref="member">share_type</ref></type>
         <definition>share_type graphene::chain::account_statistics_object::core_in_balance</definition>
         <argsstring></argsstring>
         <name>core_in_balance</name>
@@ -171,7 +171,7 @@
         <location file="libraries/chain/include/graphene/chain/account_object.hpp" line="78" column="1" bodyfile="libraries/chain/include/graphene/chain/account_object.hpp" bodystart="78" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1account__statistics__object_1adfd506e7176772143a194e1f214feaa2" prot="public" static="no" mutable="no">
-        <type>share_type</type>
+        <type><ref refid="namespacegraphene_1_1protocol_1a69b2104c1c11eed2d17bd29b86713347" kindref="member">share_type</ref></type>
         <definition>share_type graphene::chain::account_statistics_object::lifetime_fees_paid</definition>
         <argsstring></argsstring>
         <name>lifetime_fees_paid</name>
@@ -184,7 +184,7 @@
         <location file="libraries/chain/include/graphene/chain/account_object.hpp" line="89" column="1" bodyfile="libraries/chain/include/graphene/chain/account_object.hpp" bodystart="89" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1account__statistics__object_1a6e24bf9caed87ca04ade5361a0b2b818" prot="public" static="no" mutable="no">
-        <type>share_type</type>
+        <type><ref refid="namespacegraphene_1_1protocol_1a69b2104c1c11eed2d17bd29b86713347" kindref="member">share_type</ref></type>
         <definition>share_type graphene::chain::account_statistics_object::pending_fees</definition>
         <argsstring></argsstring>
         <name>pending_fees</name>
@@ -197,7 +197,7 @@
         <location file="libraries/chain/include/graphene/chain/account_object.hpp" line="99" column="1" bodyfile="libraries/chain/include/graphene/chain/account_object.hpp" bodystart="99" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1account__statistics__object_1a1bf6b14fa88cc2bfac01861c2d896db8" prot="public" static="no" mutable="no">
-        <type>share_type</type>
+        <type><ref refid="namespacegraphene_1_1protocol_1a69b2104c1c11eed2d17bd29b86713347" kindref="member">share_type</ref></type>
         <definition>share_type graphene::chain::account_statistics_object::pending_vested_fees</definition>
         <argsstring></argsstring>
         <name>pending_vested_fees</name>
@@ -277,11 +277,11 @@
         <argsstring>(share_type core_fee, share_type cashback_vesting_threshold)</argsstring>
         <name>pay_fee</name>
         <param>
-          <type>share_type</type>
+          <type><ref refid="namespacegraphene_1_1protocol_1a69b2104c1c11eed2d17bd29b86713347" kindref="member">share_type</ref></type>
           <declname>core_fee</declname>
         </param>
         <param>
-          <type>share_type</type>
+          <type><ref refid="namespacegraphene_1_1protocol_1a69b2104c1c11eed2d17bd29b86713347" kindref="member">share_type</ref></type>
           <declname>cashback_vesting_threshold</declname>
         </param>
         <briefdescription>
@@ -298,30 +298,46 @@
     <detaileddescription>
 <para>This object contains regularly updated statistical data about an account. It is provided for the purpose of separating the account data that changes frequently from the account data that is mostly static, which will minimize the amount of data that must be backed up as part of the undo history everytime a transfer is made. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="52">
+      <node id="124">
         <label>graphene::chain::account_statistics_object</label>
         <link refid="classgraphene_1_1chain_1_1account__statistics__object"/>
-        <childnode refid="53" relation="public-inheritance">
+        <childnode refid="125" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="53">
+      <node id="125">
         <label>graphene::db::abstract_object&lt; account_statistics_object &gt;</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="56">
+      <node id="128">
+        <label>time_point_sec</label>
+      </node>
+      <node id="130">
         <label>string</label>
       </node>
-      <node id="54">
+      <node id="129">
+        <label>safe&lt; int64_t &gt;</label>
+      </node>
+      <node id="126">
         <label>graphene::chain::account_statistics_object</label>
         <link refid="classgraphene_1_1chain_1_1account__statistics__object"/>
-        <childnode refid="55" relation="public-inheritance">
+        <childnode refid="127" relation="public-inheritance">
         </childnode>
-        <childnode refid="56" relation="usage">
+        <childnode refid="128" relation="usage">
+          <edgelabel>last_vote_time</edgelabel>
+        </childnode>
+        <childnode refid="129" relation="usage">
+          <edgelabel>pending_fees</edgelabel>
+          <edgelabel>core_in_balance</edgelabel>
+          <edgelabel>lifetime_fees_paid</edgelabel>
+          <edgelabel>pending_vested_fees</edgelabel>
+          <edgelabel>total_core_in_orders</edgelabel>
+        </childnode>
+        <childnode refid="130" relation="usage">
           <edgelabel>name</edgelabel>
         </childnode>
       </node>
-      <node id="55">
+      <node id="127">
         <label>graphene::db::abstract_object&lt; account_statistics_object &gt;</label>
       </node>
     </collaborationgraph>

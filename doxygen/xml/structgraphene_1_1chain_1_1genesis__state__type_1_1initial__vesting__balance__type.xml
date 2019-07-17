@@ -5,7 +5,7 @@
     <includes refid="genesis__state_8hpp" local="no">genesis_state.hpp</includes>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structgraphene_1_1chain_1_1genesis__state__type_1_1initial__vesting__balance__type_1ab4e8d515f1ead1ccaf4bb609a4a33d2f" prot="public" static="no" mutable="no">
-        <type>address</type>
+        <type><ref refid="classgraphene_1_1protocol_1_1address" kindref="compound">address</ref></type>
         <definition>address graphene::chain::genesis_state_type::initial_vesting_balance_type::owner</definition>
         <argsstring></argsstring>
         <name>owner</name>
@@ -31,7 +31,7 @@
         <location file="libraries/chain/include/graphene/chain/genesis_state.hpp" line="82" column="1" bodyfile="libraries/chain/include/graphene/chain/genesis_state.hpp" bodystart="82" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1chain_1_1genesis__state__type_1_1initial__vesting__balance__type_1ae785077db28cb25685e379b2dabf3b86" prot="public" static="no" mutable="no">
-        <type>share_type</type>
+        <type><ref refid="namespacegraphene_1_1protocol_1a69b2104c1c11eed2d17bd29b86713347" kindref="member">share_type</ref></type>
         <definition>share_type graphene::chain::genesis_state_type::initial_vesting_balance_type::amount</definition>
         <argsstring></argsstring>
         <name>amount</name>
@@ -71,7 +71,7 @@
         <location file="libraries/chain/include/graphene/chain/genesis_state.hpp" line="85" column="1" bodyfile="libraries/chain/include/graphene/chain/genesis_state.hpp" bodystart="85" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1chain_1_1genesis__state__type_1_1initial__vesting__balance__type_1a84d58b8491d069ed8786a2b98ee1a797" prot="public" static="no" mutable="no">
-        <type>share_type</type>
+        <type><ref refid="namespacegraphene_1_1protocol_1a69b2104c1c11eed2d17bd29b86713347" kindref="member">share_type</ref></type>
         <definition>share_type graphene::chain::genesis_state_type::initial_vesting_balance_type::begin_balance</definition>
         <argsstring></argsstring>
         <name>begin_balance</name>
@@ -89,15 +89,35 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="1061">
+      <node id="2609">
         <label>graphene::chain::genesis_state_type::initial_vesting_balance_type</label>
         <link refid="structgraphene_1_1chain_1_1genesis__state__type_1_1initial__vesting__balance__type"/>
-        <childnode refid="1062" relation="usage">
+        <childnode refid="2610" relation="usage">
+          <edgelabel>begin_timestamp</edgelabel>
+        </childnode>
+        <childnode refid="2611" relation="usage">
+          <edgelabel>owner</edgelabel>
+        </childnode>
+        <childnode refid="2612" relation="usage">
+          <edgelabel>begin_balance</edgelabel>
+          <edgelabel>amount</edgelabel>
+        </childnode>
+        <childnode refid="2613" relation="usage">
           <edgelabel>asset_symbol</edgelabel>
         </childnode>
       </node>
-      <node id="1062">
+      <node id="2610">
+        <label>time_point_sec</label>
+      </node>
+      <node id="2613">
         <label>string</label>
+      </node>
+      <node id="2611">
+        <label>graphene::protocol::address</label>
+        <link refid="classgraphene_1_1protocol_1_1address"/>
+      </node>
+      <node id="2612">
+        <label>safe&lt; int64_t &gt;</label>
       </node>
     </collaborationgraph>
     <location file="libraries/chain/include/graphene/chain/genesis_state.hpp" line="80" column="1" bodyfile="libraries/chain/include/graphene/chain/genesis_state.hpp" bodystart="80" bodyend="87"/>

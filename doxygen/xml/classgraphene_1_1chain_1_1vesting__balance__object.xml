@@ -50,7 +50,7 @@
         <location file="libraries/chain/include/graphene/chain/vesting_balance_object.hpp" line="158" column="1" bodyfile="libraries/chain/include/graphene/chain/vesting_balance_object.hpp" bodystart="158" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1vesting__balance__object_1ad0a453c90b0555f470fe04692400a770" prot="public" static="no" mutable="no">
-        <type>asset</type>
+        <type><ref refid="structgraphene_1_1protocol_1_1asset" kindref="compound">asset</ref></type>
         <definition>asset graphene::chain::vesting_balance_object::balance</definition>
         <argsstring></argsstring>
         <name>balance</name>
@@ -114,7 +114,7 @@
           <declname>now</declname>
         </param>
         <param>
-          <type>const asset &amp;</type>
+          <type>const <ref refid="structgraphene_1_1protocol_1_1asset" kindref="compound">asset</ref> &amp;</type>
           <declname>amount</declname>
         </param>
         <briefdescription>
@@ -135,7 +135,7 @@
           <declname>now</declname>
         </param>
         <param>
-          <type>const asset &amp;</type>
+          <type>const <ref refid="structgraphene_1_1protocol_1_1asset" kindref="compound">asset</ref> &amp;</type>
           <declname>amount</declname>
         </param>
         <briefdescription>
@@ -156,7 +156,7 @@
           <declname>now</declname>
         </param>
         <param>
-          <type>const asset &amp;</type>
+          <type>const <ref refid="structgraphene_1_1protocol_1_1asset" kindref="compound">asset</ref> &amp;</type>
           <declname>amount</declname>
         </param>
         <briefdescription>
@@ -177,7 +177,7 @@
           <declname>now</declname>
         </param>
         <param>
-          <type>const asset &amp;</type>
+          <type>const <ref refid="structgraphene_1_1protocol_1_1asset" kindref="compound">asset</ref> &amp;</type>
           <declname>amount</declname>
         </param>
         <briefdescription>
@@ -198,7 +198,7 @@
           <declname>now</declname>
         </param>
         <param>
-          <type>const asset &amp;</type>
+          <type>const <ref refid="structgraphene_1_1protocol_1_1asset" kindref="compound">asset</ref> &amp;</type>
           <declname>amount</declname>
         </param>
         <briefdescription>
@@ -219,7 +219,7 @@
           <declname>now</declname>
         </param>
         <param>
-          <type>const asset &amp;</type>
+          <type>const <ref refid="structgraphene_1_1protocol_1_1asset" kindref="compound">asset</ref> &amp;</type>
           <declname>amount</declname>
         </param>
         <briefdescription>
@@ -231,7 +231,7 @@
         <location file="libraries/chain/include/graphene/chain/vesting_balance_object.hpp" line="186" column="1" bodyfile="libraries/chain/vesting_balance_object.cpp" bodystart="230" bodyend="237"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1vesting__balance__object_1ac603d34434a36d083c4220f4ee90bb45" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>asset</type>
+        <type><ref refid="structgraphene_1_1protocol_1_1asset" kindref="compound">asset</ref></type>
         <definition>asset graphene::chain::vesting_balance_object::get_allowed_withdraw</definition>
         <argsstring>(const time_point_sec &amp;now) const</argsstring>
         <name>get_allowed_withdraw</name>
@@ -253,31 +253,44 @@
     <detaileddescription>
 <para>Vesting balance object is a balance that is locked by the blockchain for a period of time. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="1472">
+      <node id="3566">
         <label>graphene::chain::vesting_balance_object</label>
         <link refid="classgraphene_1_1chain_1_1vesting__balance__object"/>
-        <childnode refid="1473" relation="public-inheritance">
+        <childnode refid="3567" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="1473">
+      <node id="3567">
         <label>graphene::db::abstract_object&lt; vesting_balance_object &gt;</label>
       </node>
-      <node id="1474">
+      <node id="3568">
         <label>graphene::wallet::vesting_balance_object_with_info</label>
         <link refid="structgraphene_1_1wallet_1_1vesting__balance__object__with__info"/>
-        <childnode refid="1472" relation="public-inheritance">
+        <childnode refid="3566" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="1475">
+      <node id="3569">
         <label>graphene::chain::vesting_balance_object</label>
         <link refid="classgraphene_1_1chain_1_1vesting__balance__object"/>
-        <childnode refid="1476" relation="public-inheritance">
+        <childnode refid="3570" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3571" relation="usage">
+          <edgelabel>balance</edgelabel>
         </childnode>
       </node>
-      <node id="1476">
+      <node id="3570">
         <label>graphene::db::abstract_object&lt; vesting_balance_object &gt;</label>
+      </node>
+      <node id="3571">
+        <label>graphene::protocol::asset</label>
+        <link refid="structgraphene_1_1protocol_1_1asset"/>
+        <childnode refid="3572" relation="usage">
+          <edgelabel>amount</edgelabel>
+        </childnode>
+      </node>
+      <node id="3572">
+        <label>safe&lt; int64_t &gt;</label>
       </node>
     </collaborationgraph>
     <location file="libraries/chain/include/graphene/chain/vesting_balance_object.hpp" line="152" column="1" bodyfile="libraries/chain/include/graphene/chain/vesting_balance_object.hpp" bodystart="151" bodyend="192"/>

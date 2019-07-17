@@ -18,7 +18,7 @@
         <location file="libraries/chain/include/graphene/chain/fork_database.hpp" line="68" column="1" bodyfile="libraries/chain/include/graphene/chain/fork_database.hpp" bodystart="68" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classgraphene_1_1chain_1_1fork__database_1a632498ce1db11194e52bba4b389e196e" prot="public" static="no">
-        <type>multi_index_container&lt; <ref refid="namespacegraphene_1_1chain_1a455f7a42385453236a3252fa8ba97654" kindref="member">item_ptr</ref>, indexed_by&lt; hashed_unique&lt; tag&lt; block_id &gt;, member&lt; <ref refid="structgraphene_1_1chain_1_1fork__item" kindref="compound">fork_item</ref>, block_id_type, &amp;<ref refid="structgraphene_1_1chain_1_1fork__item_1a3d96781568fcbebf3cfa0a53e08530c3" kindref="member">fork_item::id</ref> &gt;, std::hash&lt; fc::ripemd160 &gt; &gt;, ordered_non_unique&lt; tag&lt; block_num &gt;, member&lt; <ref refid="structgraphene_1_1chain_1_1fork__item" kindref="compound">fork_item</ref>, uint32_t,&amp;<ref refid="structgraphene_1_1chain_1_1fork__item_1a382a00efd04e95349085a60530134fa9" kindref="member">fork_item::num</ref> &gt; &gt; &gt; &gt;</type>
+        <type>multi_index_container&lt; <ref refid="namespacegraphene_1_1chain_1a455f7a42385453236a3252fa8ba97654" kindref="member">item_ptr</ref>, indexed_by&lt; hashed_unique&lt; tag&lt; block_id &gt;, member&lt; <ref refid="structgraphene_1_1chain_1_1fork__item" kindref="compound">fork_item</ref>, <ref refid="namespacegraphene_1_1protocol_1a32e784a8edceba5506db2c130ed9cb9c" kindref="member">block_id_type</ref>, &amp;<ref refid="structgraphene_1_1chain_1_1fork__item_1a3d96781568fcbebf3cfa0a53e08530c3" kindref="member">fork_item::id</ref> &gt;, std::hash&lt; fc::ripemd160 &gt; &gt;, ordered_non_unique&lt; tag&lt; block_num &gt;, member&lt; <ref refid="structgraphene_1_1chain_1_1fork__item" kindref="compound">fork_item</ref>, uint32_t,&amp;<ref refid="structgraphene_1_1chain_1_1fork__item_1a382a00efd04e95349085a60530134fa9" kindref="member">fork_item::num</ref> &gt; &gt; &gt; &gt;</type>
         <definition>typedef multi_index_container&lt; item_ptr, indexed_by&lt; hashed_unique&lt;tag&lt;block_id&gt;, member&lt;fork_item, block_id_type, &amp;fork_item::id&gt;, std::hash&lt;fc::ripemd160&gt; &gt;, ordered_non_unique&lt;tag&lt;block_num&gt;, member&lt;fork_item,uint32_t,&amp;fork_item::num&gt; &gt; &gt; &gt; graphene::chain::fork_database::fork_multi_index_type</definition>
         <argsstring></argsstring>
         <name>fork_multi_index_type</name>
@@ -122,7 +122,7 @@
         <argsstring>(signed_block b)</argsstring>
         <name>start_block</name>
         <param>
-          <type>signed_block</type>
+          <type><ref refid="classgraphene_1_1protocol_1_1signed__block" kindref="compound">signed_block</ref></type>
           <declname>b</declname>
         </param>
         <briefdescription>
@@ -139,7 +139,7 @@
         <argsstring>(block_id_type b)</argsstring>
         <name>remove</name>
         <param>
-          <type>block_id_type</type>
+          <type><ref refid="namespacegraphene_1_1protocol_1a32e784a8edceba5506db2c130ed9cb9c" kindref="member">block_id_type</ref></type>
           <declname>b</declname>
         </param>
         <briefdescription>
@@ -173,7 +173,7 @@
         <argsstring>(const block_id_type &amp;id) const</argsstring>
         <name>is_known_block</name>
         <param>
-          <type>const block_id_type &amp;</type>
+          <type>const <ref refid="namespacegraphene_1_1protocol_1a32e784a8edceba5506db2c130ed9cb9c" kindref="member">block_id_type</ref> &amp;</type>
           <declname>id</declname>
         </param>
         <briefdescription>
@@ -190,7 +190,7 @@
         <argsstring>(const block_id_type &amp;id) const</argsstring>
         <name>fetch_block</name>
         <param>
-          <type>const block_id_type &amp;</type>
+          <type>const <ref refid="namespacegraphene_1_1protocol_1a32e784a8edceba5506db2c130ed9cb9c" kindref="member">block_id_type</ref> &amp;</type>
           <declname>id</declname>
         </param>
         <briefdescription>
@@ -224,7 +224,7 @@
         <argsstring>(const signed_block &amp;b)</argsstring>
         <name>push_block</name>
         <param>
-          <type>const signed_block &amp;</type>
+          <type>const <ref refid="classgraphene_1_1protocol_1_1signed__block" kindref="compound">signed_block</ref> &amp;</type>
           <declname>b</declname>
         </param>
         <briefdescription>
@@ -268,11 +268,11 @@ Pushes the block into the fork database </para>        </detaileddescription>
         <argsstring>(block_id_type first, block_id_type second) const</argsstring>
         <name>fetch_branch_from</name>
         <param>
-          <type>block_id_type</type>
+          <type><ref refid="namespacegraphene_1_1protocol_1a32e784a8edceba5506db2c130ed9cb9c" kindref="member">block_id_type</ref></type>
           <declname>first</declname>
         </param>
         <param>
-          <type>block_id_type</type>
+          <type><ref refid="namespacegraphene_1_1protocol_1a32e784a8edceba5506db2c130ed9cb9c" kindref="member">block_id_type</ref></type>
           <declname>second</declname>
         </param>
         <briefdescription>

@@ -5,7 +5,7 @@
     <includes refid="genesis__state_8hpp" local="no">genesis_state.hpp</includes>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structgraphene_1_1chain_1_1genesis__state__type_1_1initial__balance__type_1ab4cdf98a4564b478cf40286d423b644a" prot="public" static="no" mutable="no">
-        <type>address</type>
+        <type><ref refid="classgraphene_1_1protocol_1_1address" kindref="compound">address</ref></type>
         <definition>address graphene::chain::genesis_state_type::initial_balance_type::owner</definition>
         <argsstring></argsstring>
         <name>owner</name>
@@ -31,7 +31,7 @@
         <location file="libraries/chain/include/graphene/chain/genesis_state.hpp" line="77" column="1" bodyfile="libraries/chain/include/graphene/chain/genesis_state.hpp" bodystart="77" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1chain_1_1genesis__state__type_1_1initial__balance__type_1abeb43be87a234e1603b99bb0e3420a83" prot="public" static="no" mutable="no">
-        <type>share_type</type>
+        <type><ref refid="namespacegraphene_1_1protocol_1a69b2104c1c11eed2d17bd29b86713347" kindref="member">share_type</ref></type>
         <definition>share_type graphene::chain::genesis_state_type::initial_balance_type::amount</definition>
         <argsstring></argsstring>
         <name>amount</name>
@@ -49,15 +49,28 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="1054">
+      <node id="2600">
         <label>string</label>
       </node>
-      <node id="1053">
+      <node id="2598">
+        <label>graphene::protocol::address</label>
+        <link refid="classgraphene_1_1protocol_1_1address"/>
+      </node>
+      <node id="2597">
         <label>graphene::chain::genesis_state_type::initial_balance_type</label>
         <link refid="structgraphene_1_1chain_1_1genesis__state__type_1_1initial__balance__type"/>
-        <childnode refid="1054" relation="usage">
+        <childnode refid="2598" relation="usage">
+          <edgelabel>owner</edgelabel>
+        </childnode>
+        <childnode refid="2599" relation="usage">
+          <edgelabel>amount</edgelabel>
+        </childnode>
+        <childnode refid="2600" relation="usage">
           <edgelabel>asset_symbol</edgelabel>
         </childnode>
+      </node>
+      <node id="2599">
+        <label>safe&lt; int64_t &gt;</label>
       </node>
     </collaborationgraph>
     <location file="libraries/chain/include/graphene/chain/genesis_state.hpp" line="75" column="1" bodyfile="libraries/chain/include/graphene/chain/genesis_state.hpp" bodystart="75" bodyend="79"/>

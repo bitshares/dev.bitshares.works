@@ -94,7 +94,7 @@
         <location file="libraries/chain/include/graphene/chain/vesting_balance_object.hpp" line="109" column="1" bodyfile="libraries/chain/vesting_balance_object.cpp" bodystart="107" bodyend="111"/>
       </memberdef>
       <memberdef kind="function" id="structgraphene_1_1chain_1_1cdd__vesting__policy_1a6c48aca0e1ae19fe66fc1cf60225f358" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>asset</type>
+        <type><ref refid="structgraphene_1_1protocol_1_1asset" kindref="compound">asset</ref></type>
         <definition>asset graphene::chain::cdd_vesting_policy::get_allowed_withdraw</definition>
         <argsstring>(const vesting_policy_context &amp;ctx) const</argsstring>
         <name>get_allowed_withdraw</name>
@@ -217,6 +217,19 @@
 <para>defines vesting in terms of coin-days accrued which allows for dynamic deposit/withdraw </para>    </briefdescription>
     <detaileddescription>
 <para>The economic effect of this vesting policy is to require a certain amount of &quot;interest&quot; to accrue before the full balance may be withdrawn. Interest accrues as coindays (balance * length held). If some of the balance is withdrawn, the remaining balance must be held longer. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="1597">
+        <label>graphene::chain::cdd_vesting_policy</label>
+        <link refid="structgraphene_1_1chain_1_1cdd__vesting__policy"/>
+        <childnode refid="1598" relation="usage">
+          <edgelabel>coin_seconds_earned_last_update</edgelabel>
+          <edgelabel>start_claim</edgelabel>
+        </childnode>
+      </node>
+      <node id="1598">
+        <label>time_point_sec</label>
+      </node>
+    </collaborationgraph>
     <location file="libraries/chain/include/graphene/chain/vesting_balance_object.hpp" line="90" column="1" bodyfile="libraries/chain/include/graphene/chain/vesting_balance_object.hpp" bodystart="89" bodyend="118"/>
     <listofallmembers>
       <member refid="structgraphene_1_1chain_1_1cdd__vesting__policy_1afff4c320b2166bf3920745bb8367d900" prot="public" virt="non-virtual"><scope>graphene::chain::cdd_vesting_policy</scope><name>coin_seconds_earned</name></member>

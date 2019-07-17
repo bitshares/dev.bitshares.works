@@ -62,7 +62,7 @@
         <location file="libraries/chain/include/graphene/chain/proposal_object.hpp" line="47" column="1" bodyfile="libraries/chain/include/graphene/chain/proposal_object.hpp" bodystart="47" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1proposal__object_1a119d1007b9df990295ddf36b3854053e" prot="public" static="no" mutable="no">
-        <type>transaction</type>
+        <type><ref refid="classgraphene_1_1protocol_1_1transaction" kindref="compound">transaction</ref></type>
         <definition>transaction graphene::chain::proposal_object::proposed_transaction</definition>
         <argsstring></argsstring>
         <name>proposed_transaction</name>
@@ -127,7 +127,7 @@
         <location file="libraries/chain/include/graphene/chain/proposal_object.hpp" line="52" column="1" bodyfile="libraries/chain/include/graphene/chain/proposal_object.hpp" bodystart="52" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1proposal__object_1ad82cd826ac213f74375932aa485964dd" prot="public" static="no" mutable="no">
-        <type>flat_set&lt; public_key_type &gt;</type>
+        <type>flat_set&lt; <ref refid="structgraphene_1_1protocol_1_1public__key__type" kindref="compound">public_key_type</ref> &gt;</type>
         <definition>flat_set&lt;public_key_type&gt; graphene::chain::proposal_object::available_key_approvals</definition>
         <argsstring></argsstring>
         <name>available_key_approvals</name>
@@ -190,46 +190,80 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="1284">
+      <node id="3105">
         <label>graphene::chain::proposal_object</label>
         <link refid="classgraphene_1_1chain_1_1proposal__object"/>
-        <childnode refid="1285" relation="public-inheritance">
+        <childnode refid="3106" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="1285">
+      <node id="3106">
         <label>graphene::db::abstract_object&lt; proposal_object &gt;</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="1289">
+      <node id="3109">
+        <label>time_point_sec</label>
+      </node>
+      <node id="3110">
         <label>string</label>
       </node>
-      <node id="1286">
+      <node id="3113">
+        <label>flat_set&lt; future_extensions &gt;</label>
+      </node>
+      <node id="3107">
         <label>graphene::chain::proposal_object</label>
         <link refid="classgraphene_1_1chain_1_1proposal__object"/>
-        <childnode refid="1287" relation="public-inheritance">
+        <childnode refid="3108" relation="public-inheritance">
         </childnode>
-        <childnode refid="1288" relation="usage">
-          <edgelabel>available_key_approvals</edgelabel>
+        <childnode refid="3109" relation="usage">
+          <edgelabel>expiration_time</edgelabel>
         </childnode>
-        <childnode refid="1289" relation="usage">
+        <childnode refid="3110" relation="usage">
           <edgelabel>fail_reason</edgelabel>
         </childnode>
-        <childnode refid="1290" relation="usage">
+        <childnode refid="3111" relation="usage">
+          <edgelabel>available_key_approvals</edgelabel>
+        </childnode>
+        <childnode refid="3112" relation="usage">
+          <edgelabel>proposed_transaction</edgelabel>
+        </childnode>
+        <childnode refid="3115" relation="usage">
+          <edgelabel>review_period_time</edgelabel>
+        </childnode>
+        <childnode refid="3116" relation="usage">
           <edgelabel>required_owner_approvals</edgelabel>
           <edgelabel>available_owner_approvals</edgelabel>
           <edgelabel>required_active_approvals</edgelabel>
           <edgelabel>available_active_approvals</edgelabel>
         </childnode>
       </node>
-      <node id="1287">
+      <node id="3108">
         <label>graphene::db::abstract_object&lt; proposal_object &gt;</label>
       </node>
-      <node id="1290">
+      <node id="3116">
         <label>flat_set&lt; account_id_type &gt;</label>
       </node>
-      <node id="1288">
-        <label>flat_set&lt; public_key_type &gt;</label>
+      <node id="3111">
+        <label>flat_set&lt; graphene::protocol::public_key_type &gt;</label>
+      </node>
+      <node id="3115">
+        <label>optional&lt; time_point_sec &gt;</label>
+      </node>
+      <node id="3114">
+        <label>vector&lt; operation &gt;</label>
+      </node>
+      <node id="3112">
+        <label>graphene::protocol::transaction</label>
+        <link refid="classgraphene_1_1protocol_1_1transaction"/>
+        <childnode refid="3113" relation="usage">
+          <edgelabel>extensions</edgelabel>
+        </childnode>
+        <childnode refid="3109" relation="usage">
+          <edgelabel>expiration</edgelabel>
+        </childnode>
+        <childnode refid="3114" relation="usage">
+          <edgelabel>operations</edgelabel>
+        </childnode>
       </node>
     </collaborationgraph>
     <location file="libraries/chain/include/graphene/chain/proposal_object.hpp" line="41" column="1" bodyfile="libraries/chain/include/graphene/chain/proposal_object.hpp" bodystart="40" bodyend="58"/>

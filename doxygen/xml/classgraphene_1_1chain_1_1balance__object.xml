@@ -36,7 +36,7 @@
       </sectiondef>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1balance__object_1ab59c8def92ab5290ebfcfcbe2e1e763f" prot="public" static="no" mutable="no">
-        <type>address</type>
+        <type><ref refid="classgraphene_1_1protocol_1_1address" kindref="compound">address</ref></type>
         <definition>address graphene::chain::balance_object::owner</definition>
         <argsstring></argsstring>
         <name>owner</name>
@@ -49,7 +49,7 @@
         <location file="libraries/chain/include/graphene/chain/balance_object.hpp" line="44" column="1" bodyfile="libraries/chain/include/graphene/chain/balance_object.hpp" bodystart="44" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1balance__object_1a60363615da54ec77f5348f3227aace17" prot="public" static="no" mutable="no">
-        <type>asset</type>
+        <type><ref refid="structgraphene_1_1protocol_1_1asset" kindref="compound">asset</ref></type>
         <definition>asset graphene::chain::balance_object::balance</definition>
         <argsstring></argsstring>
         <name>balance</name>
@@ -103,7 +103,7 @@
         <location file="libraries/chain/include/graphene/chain/balance_object.hpp" line="36" column="1" bodyfile="libraries/chain/include/graphene/chain/balance_object.hpp" bodystart="36" bodyend="37"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1balance__object_1abc9aa8646d5952a3cd75b07a3ebdcf57" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type>asset</type>
+        <type><ref refid="structgraphene_1_1protocol_1_1asset" kindref="compound">asset</ref></type>
         <definition>asset graphene::chain::balance_object::available</definition>
         <argsstring>(fc::time_point_sec now) const</argsstring>
         <name>available</name>
@@ -138,25 +138,57 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="484">
+      <node id="1247">
         <label>graphene::db::abstract_object&lt; balance_object &gt;</label>
       </node>
-      <node id="483">
+      <node id="1246">
         <label>graphene::chain::balance_object</label>
         <link refid="classgraphene_1_1chain_1_1balance__object"/>
-        <childnode refid="484" relation="public-inheritance">
+        <childnode refid="1247" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="486">
+      <node id="1249">
         <label>graphene::db::abstract_object&lt; balance_object &gt;</label>
       </node>
-      <node id="485">
+      <node id="1248">
         <label>graphene::chain::balance_object</label>
         <link refid="classgraphene_1_1chain_1_1balance__object"/>
-        <childnode refid="486" relation="public-inheritance">
+        <childnode refid="1249" relation="public-inheritance">
         </childnode>
+        <childnode refid="1250" relation="usage">
+          <edgelabel>balance</edgelabel>
+        </childnode>
+        <childnode refid="1252" relation="usage">
+          <edgelabel>last_claim_date</edgelabel>
+        </childnode>
+        <childnode refid="1253" relation="usage">
+          <edgelabel>owner</edgelabel>
+        </childnode>
+        <childnode refid="1254" relation="usage">
+          <edgelabel>vesting_policy</edgelabel>
+        </childnode>
+      </node>
+      <node id="1252">
+        <label>time_point_sec</label>
+      </node>
+      <node id="1254">
+        <label>optional&lt; graphene::chain::linear_vesting_policy &gt;</label>
+      </node>
+      <node id="1253">
+        <label>graphene::protocol::address</label>
+        <link refid="classgraphene_1_1protocol_1_1address"/>
+      </node>
+      <node id="1250">
+        <label>graphene::protocol::asset</label>
+        <link refid="structgraphene_1_1protocol_1_1asset"/>
+        <childnode refid="1251" relation="usage">
+          <edgelabel>amount</edgelabel>
+        </childnode>
+      </node>
+      <node id="1251">
+        <label>safe&lt; int64_t &gt;</label>
       </node>
     </collaborationgraph>
     <location file="libraries/chain/include/graphene/chain/balance_object.hpp" line="31" column="1" bodyfile="libraries/chain/include/graphene/chain/balance_object.hpp" bodystart="30" bodyend="49"/>

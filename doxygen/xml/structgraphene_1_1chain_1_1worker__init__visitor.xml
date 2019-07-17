@@ -73,7 +73,7 @@
         <argsstring>(const vesting_balance_worker_initializer &amp;i) const</argsstring>
         <name>operator()</name>
         <param>
-          <type>const vesting_balance_worker_initializer &amp;</type>
+          <type>const <ref refid="structgraphene_1_1protocol_1_1vesting__balance__worker__initializer" kindref="compound">vesting_balance_worker_initializer</ref> &amp;</type>
           <declname>i</declname>
         </param>
         <briefdescription>
@@ -111,37 +111,64 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="1705">
+      <node id="4093">
+        <label>static_variant&lt; refund_worker_type, vesting_balance_worker_type, burn_worker_type &gt;</label>
+      </node>
+      <node id="4095">
+        <label>time_point_sec</label>
+      </node>
+      <node id="4099">
         <label>db::object_database</label>
       </node>
-      <node id="1703">
+      <node id="4097">
         <label>string</label>
       </node>
-      <node id="1702">
+      <node id="4094">
+        <label>graphene::protocol::vote_id_type</label>
+        <link refid="structgraphene_1_1protocol_1_1vote__id__type"/>
+      </node>
+      <node id="4092">
         <label>graphene::db::abstract_object&lt; worker_object &gt;</label>
       </node>
-      <node id="1700">
+      <node id="4090">
         <label>graphene::chain::worker_init_visitor</label>
         <link refid="structgraphene_1_1chain_1_1worker__init__visitor"/>
-        <childnode refid="1701" relation="usage">
+        <childnode refid="4091" relation="usage">
           <edgelabel>worker</edgelabel>
         </childnode>
-        <childnode refid="1704" relation="usage">
+        <childnode refid="4098" relation="usage">
           <edgelabel>db</edgelabel>
         </childnode>
       </node>
-      <node id="1704">
+      <node id="4098">
         <label>graphene::chain::database</label>
         <link refid="classgraphene_1_1chain_1_1database"/>
-        <childnode refid="1705" relation="public-inheritance">
+        <childnode refid="4099" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="1701">
+      <node id="4096">
+        <label>safe&lt; int64_t &gt;</label>
+      </node>
+      <node id="4091">
         <label>graphene::chain::worker_object</label>
         <link refid="classgraphene_1_1chain_1_1worker__object"/>
-        <childnode refid="1702" relation="public-inheritance">
+        <childnode refid="4092" relation="public-inheritance">
         </childnode>
-        <childnode refid="1703" relation="usage">
+        <childnode refid="4093" relation="usage">
+          <edgelabel>worker</edgelabel>
+        </childnode>
+        <childnode refid="4094" relation="usage">
+          <edgelabel>vote_for</edgelabel>
+          <edgelabel>vote_against</edgelabel>
+        </childnode>
+        <childnode refid="4095" relation="usage">
+          <edgelabel>work_end_date</edgelabel>
+          <edgelabel>work_begin_date</edgelabel>
+        </childnode>
+        <childnode refid="4096" relation="usage">
+          <edgelabel>daily_pay</edgelabel>
+        </childnode>
+        <childnode refid="4097" relation="usage">
           <edgelabel>url</edgelabel>
           <edgelabel>name</edgelabel>
         </childnode>

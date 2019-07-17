@@ -5,7 +5,7 @@
     <includes refid="vesting__balance__object_8hpp" local="no">vesting_balance_object.hpp</includes>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structgraphene_1_1chain_1_1vesting__policy__context_1a7b82c68fef82acb24b0a7bde5a0f3850" prot="public" static="no" mutable="no">
-        <type>asset</type>
+        <type><ref refid="structgraphene_1_1protocol_1_1asset" kindref="compound">asset</ref></type>
         <definition>asset graphene::chain::vesting_policy_context::balance</definition>
         <argsstring></argsstring>
         <name>balance</name>
@@ -31,7 +31,7 @@
         <location file="libraries/chain/include/graphene/chain/vesting_balance_object.hpp" line="49" column="1" bodyfile="libraries/chain/include/graphene/chain/vesting_balance_object.hpp" bodystart="49" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1chain_1_1vesting__policy__context_1af5da5ef34878534263341d212197af4d" prot="public" static="no" mutable="no">
-        <type>asset</type>
+        <type><ref refid="structgraphene_1_1protocol_1_1asset" kindref="compound">asset</ref></type>
         <definition>asset graphene::chain::vesting_policy_context::amount</definition>
         <argsstring></argsstring>
         <name>amount</name>
@@ -51,7 +51,7 @@
         <argsstring>(asset _balance, fc::time_point_sec _now, asset _amount)</argsstring>
         <name>vesting_policy_context</name>
         <param>
-          <type>asset</type>
+          <type><ref refid="structgraphene_1_1protocol_1_1asset" kindref="compound">asset</ref></type>
           <declname>_balance</declname>
         </param>
         <param>
@@ -59,7 +59,7 @@
           <declname>_now</declname>
         </param>
         <param>
-          <type>asset</type>
+          <type><ref refid="structgraphene_1_1protocol_1_1asset" kindref="compound">asset</ref></type>
           <declname>_amount</declname>
         </param>
         <briefdescription>
@@ -75,6 +75,32 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
+    <collaborationgraph>
+      <node id="3644">
+        <label>graphene::chain::vesting_policy_context</label>
+        <link refid="structgraphene_1_1chain_1_1vesting__policy__context"/>
+        <childnode refid="3645" relation="usage">
+          <edgelabel>balance</edgelabel>
+          <edgelabel>amount</edgelabel>
+        </childnode>
+        <childnode refid="3647" relation="usage">
+          <edgelabel>now</edgelabel>
+        </childnode>
+      </node>
+      <node id="3647">
+        <label>time_point_sec</label>
+      </node>
+      <node id="3645">
+        <label>graphene::protocol::asset</label>
+        <link refid="structgraphene_1_1protocol_1_1asset"/>
+        <childnode refid="3646" relation="usage">
+          <edgelabel>amount</edgelabel>
+        </childnode>
+      </node>
+      <node id="3646">
+        <label>safe&lt; int64_t &gt;</label>
+      </node>
+    </collaborationgraph>
     <location file="libraries/chain/include/graphene/chain/vesting_balance_object.hpp" line="41" column="1" bodyfile="libraries/chain/include/graphene/chain/vesting_balance_object.hpp" bodystart="40" bodyend="51"/>
     <listofallmembers>
       <member refid="structgraphene_1_1chain_1_1vesting__policy__context_1af5da5ef34878534263341d212197af4d" prot="public" virt="non-virtual"><scope>graphene::chain::vesting_policy_context</scope><name>amount</name></member>

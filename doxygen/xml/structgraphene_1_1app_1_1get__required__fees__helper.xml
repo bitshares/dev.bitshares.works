@@ -4,7 +4,7 @@
     <compoundname>graphene::app::get_required_fees_helper</compoundname>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structgraphene_1_1app_1_1get__required__fees__helper_1a5bc988de7f812f1e17f07655f9321cb1" prot="public" static="no" mutable="no">
-        <type>const fee_schedule &amp;</type>
+        <type>const <ref refid="structgraphene_1_1protocol_1_1fee__schedule" kindref="compound">fee_schedule</ref> &amp;</type>
         <definition>const fee_schedule&amp; graphene::app::get_required_fees_helper::current_fee_schedule</definition>
         <argsstring></argsstring>
         <name>current_fee_schedule</name>
@@ -17,7 +17,7 @@
         <location file="libraries/app/database_api.cpp" line="2443" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="2443" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1app_1_1get__required__fees__helper_1ac4e834bd0ce40f5f222474d3ee019365" prot="public" static="no" mutable="no">
-        <type>const price &amp;</type>
+        <type>const <ref refid="structgraphene_1_1protocol_1_1price" kindref="compound">price</ref> &amp;</type>
         <definition>const price&amp; graphene::app::get_required_fees_helper::core_exchange_rate</definition>
         <argsstring></argsstring>
         <name>core_exchange_rate</name>
@@ -64,11 +64,11 @@
         <argsstring>(const fee_schedule &amp;_current_fee_schedule, const price &amp;_core_exchange_rate, uint32_t _max_recursion)</argsstring>
         <name>get_required_fees_helper</name>
         <param>
-          <type>const fee_schedule &amp;</type>
+          <type>const <ref refid="structgraphene_1_1protocol_1_1fee__schedule" kindref="compound">fee_schedule</ref> &amp;</type>
           <declname>_current_fee_schedule</declname>
         </param>
         <param>
-          <type>const price &amp;</type>
+          <type>const <ref refid="structgraphene_1_1protocol_1_1price" kindref="compound">price</ref> &amp;</type>
           <declname>_core_exchange_rate</declname>
         </param>
         <param>
@@ -89,7 +89,7 @@
         <argsstring>(operation &amp;op)</argsstring>
         <name>set_op_fees</name>
         <param>
-          <type>operation &amp;</type>
+          <type><ref refid="group__operations_1gab6781848f77412553db6f687c895a5d1" kindref="member">operation</ref> &amp;</type>
           <declname>op</declname>
         </param>
         <briefdescription>
@@ -106,7 +106,7 @@
         <argsstring>(operation &amp;proposal_create_op)</argsstring>
         <name>set_proposal_create_op_fees</name>
         <param>
-          <type>operation &amp;</type>
+          <type><ref refid="group__operations_1gab6781848f77412553db6f687c895a5d1" kindref="member">operation</ref> &amp;</type>
           <declname>proposal_create_op</declname>
         </param>
         <briefdescription>
@@ -122,6 +122,46 @@
     </briefdescription>
     <detaileddescription>
 <para>Container method for mutually recursive functions used to implement get_required_fees() with potentially nested proposals. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="2324">
+        <label>graphene::protocol::fee_schedule</label>
+        <link refid="structgraphene_1_1protocol_1_1fee__schedule"/>
+        <childnode refid="2325" relation="usage">
+          <edgelabel>parameters</edgelabel>
+        </childnode>
+      </node>
+      <node id="2323">
+        <label>graphene::app::get_required_fees_helper</label>
+        <link refid="structgraphene_1_1app_1_1get__required__fees__helper"/>
+        <childnode refid="2324" relation="usage">
+          <edgelabel>current_fee_schedule</edgelabel>
+        </childnode>
+        <childnode refid="2326" relation="usage">
+          <edgelabel>core_exchange_rate</edgelabel>
+        </childnode>
+      </node>
+      <node id="2326">
+        <label>graphene::protocol::price</label>
+        <link refid="structgraphene_1_1protocol_1_1price"/>
+        <childnode refid="2327" relation="usage">
+          <edgelabel>base</edgelabel>
+          <edgelabel>quote</edgelabel>
+        </childnode>
+      </node>
+      <node id="2325">
+        <label>flat_set&lt; fee_parameters &gt;</label>
+      </node>
+      <node id="2327">
+        <label>graphene::protocol::asset</label>
+        <link refid="structgraphene_1_1protocol_1_1asset"/>
+        <childnode refid="2328" relation="usage">
+          <edgelabel>amount</edgelabel>
+        </childnode>
+      </node>
+      <node id="2328">
+        <label>safe&lt; int64_t &gt;</label>
+      </node>
+    </collaborationgraph>
     <location file="libraries/app/database_api.cpp" line="2398" column="1" bodyfile="libraries/app/database_api.cpp" bodystart="2397" bodyend="2447"/>
     <listofallmembers>
       <member refid="structgraphene_1_1app_1_1get__required__fees__helper_1ac4e834bd0ce40f5f222474d3ee019365" prot="public" virt="non-virtual"><scope>graphene::app::get_required_fees_helper</scope><name>core_exchange_rate</name></member>
