@@ -16,7 +16,7 @@
           <defname>mia</defname>
         </param>
         <param>
-          <type>const <ref refid="structgraphene_1_1chain_1_1price" kindref="compound">price</ref> &amp;</type>
+          <type>const price &amp;</type>
           <declname>settle_price</declname>
           <defname>settlement_price</defname>
         </param>
@@ -26,7 +26,7 @@
 <para>All margin positions are force closed at the swan price Collateral received goes into a force-settlement fund No new margin positions can be created for this asset Force settlement happens without delay at the swan price, deducting from force-settlement fund No more asset updates may be issued. </para>        </detaileddescription>
         <inbodydescription>
 <para>After all margin positions are closed, the current supply will be reported as 0, but that is a lie, the supply didn&apos;t change. We need to capture the current supply before filling all call orders and then restore it afterward. Then in the force settlement evaluator reduce the supply </para>        </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="349" column="1" bodyfile="libraries/chain/db_market.cpp" bodystart="54" bodyend="109"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="361" column="1" bodyfile="libraries/chain/db_market.cpp" bodystart="55" bodyend="110"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1aab77fa872b5bfcf96654059bcf8bdf94" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -48,7 +48,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="350" column="1" bodyfile="libraries/chain/db_market.cpp" bodystart="205" bodyend="218"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="362" column="1" bodyfile="libraries/chain/db_market.cpp" bodystart="206" bodyend="219"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a245d31d0cbaec0e89b38659b19154c54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -75,7 +75,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="351" column="1" bodyfile="libraries/chain/db_market.cpp" bodystart="220" bodyend="314"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="363" column="1" bodyfile="libraries/chain/db_market.cpp" bodystart="221" bodyend="315"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a515d7047c1c86cd1a19476d62a8b9256" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -92,7 +92,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="352" column="1" bodyfile="libraries/chain/db_market.cpp" bodystart="111" bodyend="133"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="364" column="1" bodyfile="libraries/chain/db_market.cpp" bodystart="112" bodyend="134"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a21787ce006ee78b21cf2de47767fab5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -114,7 +114,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="353" column="1" bodyfile="libraries/chain/db_market.cpp" bodystart="160" bodyend="173"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="365" column="1" bodyfile="libraries/chain/db_market.cpp" bodystart="161" bodyend="174"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1aeb2506f031441c93b369b3c21552131d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -126,15 +126,15 @@
           <declname>bid</declname>
         </param>
         <param>
-          <type><ref refid="namespacegraphene_1_1chain_1ab4bea4aef5fe40c66b42537da931bffe" kindref="member">share_type</ref></type>
+          <type>share_type</type>
           <declname>debt_covered</declname>
         </param>
         <param>
-          <type><ref refid="namespacegraphene_1_1chain_1ab4bea4aef5fe40c66b42537da931bffe" kindref="member">share_type</ref></type>
+          <type>share_type</type>
           <declname>collateral_from_fund</declname>
         </param>
         <param>
-          <type>const <ref refid="structgraphene_1_1chain_1_1price__feed" kindref="compound">price_feed</ref> &amp;</type>
+          <type>const price_feed &amp;</type>
           <declname>current_feed</declname>
         </param>
         <briefdescription>
@@ -143,7 +143,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="354" column="1" bodyfile="libraries/chain/db_market.cpp" bodystart="175" bodyend="203"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="366" column="1" bodyfile="libraries/chain/db_market.cpp" bodystart="176" bodyend="204"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a790b5ff3904f8ac712b1db24ed0813a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -174,7 +174,7 @@
 This function takes a new limit order, and runs the markets attempting to match it with existing orders already on the books. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="365" column="1" bodyfile="libraries/chain/db_market.cpp" bodystart="342" bodyend="391"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="377" column="1" bodyfile="libraries/chain/db_market.cpp" bodystart="343" bodyend="392"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a69b1c5d7b0b79d702e6de4a4a04ee95b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -196,7 +196,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="366" column="1" bodyfile="libraries/chain/db_market.cpp" bodystart="393" bodyend="551"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="378" column="1" bodyfile="libraries/chain/db_market.cpp" bodystart="394" bodyend="552"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -216,7 +216,7 @@ This function takes a new limit order, and runs the markets attempting to match 
           <defname>core</defname>
         </param>
         <param>
-          <type>const <ref refid="structgraphene_1_1chain_1_1price" kindref="compound">price</ref> &amp;</type>
+          <type>const price &amp;</type>
           <declname>trade_price</declname>
           <defname>match_price</defname>
         </param>
@@ -227,7 +227,7 @@ This function takes a new limit order, and runs the markets attempting to match 
 0 - no orders were matched 1 - taker was filled 2 - maker was filled 3 - both were filled </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="380" column="1" bodyfile="libraries/chain/db_market.cpp" bodystart="563" bodyend="628"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="392" column="1" bodyfile="libraries/chain/db_market.cpp" bodystart="564" bodyend="629"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a83513d51e6e629ef3b2a7815caefcdf3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -243,11 +243,11 @@ This function takes a new limit order, and runs the markets attempting to match 
           <declname>maker</declname>
         </param>
         <param>
-          <type>const <ref refid="structgraphene_1_1chain_1_1price" kindref="compound">price</ref> &amp;</type>
+          <type>const price &amp;</type>
           <declname>trade_price</declname>
         </param>
         <param>
-          <type>const <ref refid="structgraphene_1_1chain_1_1price" kindref="compound">price</ref> &amp;</type>
+          <type>const price &amp;</type>
           <declname>feed_price</declname>
         </param>
         <param>
@@ -255,7 +255,7 @@ This function takes a new limit order, and runs the markets attempting to match 
           <declname>maintenance_collateral_ratio</declname>
         </param>
         <param>
-          <type>const optional&lt; <ref refid="structgraphene_1_1chain_1_1price" kindref="compound">price</ref> &gt; &amp;</type>
+          <type>const optional&lt; price &gt; &amp;</type>
           <declname>maintenance_collateralization</declname>
         </param>
         <briefdescription>
@@ -264,12 +264,12 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="381" column="1" bodyfile="libraries/chain/db_market.cpp" bodystart="630" bodyend="701"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="393" column="1" bodyfile="libraries/chain/db_market.cpp" bodystart="631" bodyend="702"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1database_1a6c5fdb41f8fff0fa1aecc3c7778bf28c" prot="public" static="no" mutable="no">
-        <type>std::deque&lt; <ref refid="classgraphene_1_1chain_1_1precomputable__transaction" kindref="compound">precomputable_transaction</ref> &gt;</type>
+        <type>std::deque&lt; precomputable_transaction &gt;</type>
         <definition>std::deque&lt; precomputable_transaction &gt; graphene::chain::database::_popped_tx</definition>
         <argsstring></argsstring>
         <name>_popped_tx</name>
@@ -279,15 +279,15 @@ This function takes a new limit order, and runs the markets attempting to match 
 <para>when popping a block, the transactions that were removed get cached here so they can be reapplied at the proper time </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="426" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="426" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="438" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="438" bodyend="-1"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a414ee96a9f64b119cd3849266885d93d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="structgraphene_1_1chain_1_1processed__transaction" kindref="compound">processed_transaction</ref></type>
+        <type>processed_transaction</type>
         <definition>processed_transaction graphene::chain::database::validate_transaction</definition>
         <argsstring>(const signed_transaction &amp;trx)</argsstring>
         <name>validate_transaction</name>
         <param>
-          <type>const <ref refid="classgraphene_1_1chain_1_1signed__transaction" kindref="compound">signed_transaction</ref> &amp;</type>
+          <type>const signed_transaction &amp;</type>
           <declname>trx</declname>
         </param>
         <briefdescription>
@@ -297,7 +297,7 @@ This function takes a new limit order, and runs the markets attempting to match 
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="421" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="261" bodyend="265"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="433" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="263" bodyend="267"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -311,7 +311,7 @@ This function takes a new limit order, and runs the markets attempting to match 
           <declname>skip</declname>
         </param>
         <param>
-          <type>const <ref refid="classgraphene_1_1chain_1_1signed__block" kindref="compound">signed_block</ref> &amp;</type>
+          <type>const signed_block &amp;</type>
           <declname>next_block</declname>
         </param>
         <briefdescription>
@@ -320,7 +320,7 @@ This function takes a new limit order, and runs the markets attempting to match 
 <para>Steps involved in applying a new block </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="488" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="716" bodyend="737"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="500" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="718" bodyend="739"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1afe0c00a60f6bbe322c6a2db3cfb74b25" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classgraphene_1_1chain_1_1witness__object" kindref="compound">witness_object</ref> &amp;</type>
@@ -328,7 +328,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         <argsstring>(const signed_block &amp;next_block) const</argsstring>
         <name>_validate_block_header</name>
         <param>
-          <type>const <ref refid="classgraphene_1_1chain_1_1signed__block" kindref="compound">signed_block</ref> &amp;</type>
+          <type>const signed_block &amp;</type>
           <declname>next_block</declname>
         </param>
         <briefdescription>
@@ -337,7 +337,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="489" column="1"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="501" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a614eb98379c3991d972133f6f846593d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -345,7 +345,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         <argsstring>(const signed_block &amp;next_block)</argsstring>
         <name>create_block_summary</name>
         <param>
-          <type>const <ref refid="classgraphene_1_1chain_1_1signed__block" kindref="compound">signed_block</ref> &amp;</type>
+          <type>const signed_block &amp;</type>
           <declname>next_block</declname>
         </param>
         <briefdescription>
@@ -354,7 +354,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="490" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="739" bodyend="745"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="502" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="741" bodyend="747"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a163717adf25c4e105fe25d26531cbe51" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>uint32_t</type>
@@ -362,7 +362,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         <argsstring>(const signed_block &amp;b)</argsstring>
         <name>update_witness_missed_blocks</name>
         <param>
-          <type>const <ref refid="classgraphene_1_1chain_1_1signed__block" kindref="compound">signed_block</ref> &amp;</type>
+          <type>const signed_block &amp;</type>
           <declname>b</declname>
         </param>
         <briefdescription>
@@ -371,7 +371,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="494" column="1" bodyfile="libraries/chain/db_witness_schedule.cpp" bodystart="80" bodyend="94"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="506" column="1" bodyfile="libraries/chain/db_witness_schedule.cpp" bodystart="80" bodyend="94"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a3eab987028ac7d74e4788ccc020f27e8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -379,7 +379,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         <argsstring>(const signed_block &amp;b, const uint32_t missed_blocks)</argsstring>
         <name>update_global_dynamic_data</name>
         <param>
-          <type>const <ref refid="classgraphene_1_1chain_1_1signed__block" kindref="compound">signed_block</ref> &amp;</type>
+          <type>const signed_block &amp;</type>
           <declname>b</declname>
         </param>
         <param>
@@ -392,7 +392,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="497" column="1" bodyfile="libraries/chain/db_update.cpp" bodystart="44" bodyend="83"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="509" column="1" bodyfile="libraries/chain/db_update.cpp" bodystart="44" bodyend="83"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a0485e7a64376580ca08ada3b83a6de76" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -404,7 +404,7 @@ This function takes a new limit order, and runs the markets attempting to match 
           <declname>signing_witness</declname>
         </param>
         <param>
-          <type>const <ref refid="classgraphene_1_1chain_1_1signed__block" kindref="compound">signed_block</ref> &amp;</type>
+          <type>const signed_block &amp;</type>
           <declname>new_block</declname>
         </param>
         <briefdescription>
@@ -413,7 +413,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="498" column="1" bodyfile="libraries/chain/db_update.cpp" bodystart="85" bodyend="105"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="510" column="1" bodyfile="libraries/chain/db_update.cpp" bodystart="85" bodyend="105"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1aa281b08f27f23e83863106e7c5db543b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -426,7 +426,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="499" column="1" bodyfile="libraries/chain/db_update.cpp" bodystart="107" bodyend="142"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="511" column="1" bodyfile="libraries/chain/db_update.cpp" bodystart="107" bodyend="142"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1ad4844a036da23d18c0e65f5859f12683" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -439,7 +439,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="500" column="1" bodyfile="libraries/chain/db_update.cpp" bodystart="144" bodyend="152"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="512" column="1" bodyfile="libraries/chain/db_update.cpp" bodystart="144" bodyend="153"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1ad75c225b144139e71fa68de637b2c548" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -452,7 +452,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="501" column="1" bodyfile="libraries/chain/db_update.cpp" bodystart="154" bodyend="174"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="513" column="1" bodyfile="libraries/chain/db_update.cpp" bodystart="155" bodyend="175"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1abdcb89e79aaadcdec3b90ebebcd130c5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -465,7 +465,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="502" column="1" bodyfile="libraries/chain/db_update.cpp" bodystart="274" bodyend="475"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="514" column="1" bodyfile="libraries/chain/db_update.cpp" bodystart="275" bodyend="476"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1ae46cba129339864cc6958450b53c27f6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -478,7 +478,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="503" column="1" bodyfile="libraries/chain/db_update.cpp" bodystart="477" bodyend="534"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="515" column="1" bodyfile="libraries/chain/db_update.cpp" bodystart="478" bodyend="535"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1acd99f1cccc899866bb8473242aa78385" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -491,7 +491,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="504" column="1" bodyfile="libraries/chain/db_update.cpp" bodystart="536" bodyend="559"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="516" column="1" bodyfile="libraries/chain/db_update.cpp" bodystart="537" bodyend="560"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1ae68098fd0de4ab679bfc696a364ebb56" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -508,7 +508,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="505" column="1" bodyfile="libraries/chain/db_update.cpp" bodystart="561" bodyend="571"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="517" column="1" bodyfile="libraries/chain/db_update.cpp" bodystart="562" bodyend="572"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a5dd219435fad332aa12893b1aefdcbf8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -521,7 +521,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="506" column="1" bodyfile="libraries/chain/db_update.cpp" bodystart="573" bodyend="578"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="518" column="1" bodyfile="libraries/chain/db_update.cpp" bodystart="574" bodyend="579"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1af3e204348461ff4f9327416072d4eb94" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -548,7 +548,7 @@ This function takes a new limit order, and runs the markets attempting to match 
 <para>let HB = the highest bid for the collateral (aka who will pay the most DEBT for the least collateral) let SP = current median feed&apos;s Settlement Price let LC = the least collateralized call order&apos;s swan price (debt/collateral)</para><para>If there is no valid price feed or no bids then there is no black swan.</para><para>A black swan occurs if MAX(HB,SP) &lt;= LC </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="507" column="1" bodyfile="libraries/chain/db_update.cpp" bodystart="185" bodyend="272"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="519" column="1" bodyfile="libraries/chain/db_update.cpp" bodystart="186" bodyend="273"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a23203344023adbac57dab610604aa030" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -561,7 +561,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="509" column="1" bodyfile="libraries/chain/db_update.cpp" bodystart="580" bodyend="596"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="521" column="1" bodyfile="libraries/chain/db_update.cpp" bodystart="581" bodyend="597"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1af51b59445b07cab91bd70fd4ddec2e4f" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -582,7 +582,7 @@ This function takes a new limit order, and runs the markets attempting to match 
 <para>Steps performed only at maintenance intervals </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="516" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="403" bodyend="448"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="528" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="405" bodyend="450"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1aff91fc596f814302f39d4c0233969d37" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -595,7 +595,7 @@ This function takes a new limit order, and runs the markets attempting to match 
 <para>Update the budget for witnesses and workers. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="517" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="453" bodyend="546"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="529" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="455" bodyend="548"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a6fe82633f6c1133154b070c83a05362f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -603,7 +603,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         <argsstring>(share_type &amp;budget)</argsstring>
         <name>pay_workers</name>
         <param>
-          <type><ref refid="namespacegraphene_1_1chain_1ab4bea4aef5fe40c66b42537da931bffe" kindref="member">share_type</ref> &amp;</type>
+          <type>share_type &amp;</type>
           <declname>budget</declname>
         </param>
         <briefdescription>
@@ -612,7 +612,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="518" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="151" bodyend="198"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="530" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="153" bodyend="200"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1ab47b0c08852cb203a4ba77240383b131" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -620,7 +620,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         <argsstring>(const signed_block &amp;next_block, const global_property_object &amp;global_props)</argsstring>
         <name>perform_chain_maintenance</name>
         <param>
-          <type>const <ref refid="classgraphene_1_1chain_1_1signed__block" kindref="compound">signed_block</ref> &amp;</type>
+          <type>const signed_block &amp;</type>
           <declname>next_block</declname>
         </param>
         <param>
@@ -633,7 +633,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="519" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="1146" bodyend="1330"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="531" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="1148" bodyend="1332"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1af31a9714d1e4a1de0ecd91346e0ae35f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -646,7 +646,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
 <para>accounts that vote for 0 or 1 witness do not get to express an opinion on the number of witnesses to have (they abstain and are non-voting accounts) </para>        </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="520" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="200" bodyend="300"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="532" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="202" bodyend="302"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a8c6abb44b82f50b6c07b759bae840064" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -658,8 +658,8 @@ This function takes a new limit order, and runs the markets attempting to match 
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
-<para>accounts that vote for 0 or 1 witness do not get to express an opinion on the number of witnesses to have (they abstain and are non-voting accounts) </para>        </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="521" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="302" bodyend="401"/>
+<para>accounts that vote for 0 or 1 committee member do not get to express an opinion on the number of committee members to have (they abstain and are non-voting accounts) </para>        </inbodydescription>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="533" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="304" bodyend="403"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1af3b2871563286c018ef252daec940f15" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -672,7 +672,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="522" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="134" bodyend="149"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="534" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="136" bodyend="151"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1abbadc138e491d9fabf4c4500fb3f7880" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -689,7 +689,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="523" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="793" bodyend="847"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="535" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="795" bodyend="849"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a7a68bea3940b894653ed5f38b41e3063" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -702,7 +702,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="524" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="908" bodyend="944"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="536" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="910" bodyend="946"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a7127cd2d681e467886043883d32cc4a1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -724,7 +724,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="527" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="75" bodyend="113"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="539" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="77" bodyend="115"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -740,7 +740,7 @@ This function takes a new limit order, and runs the markets attempting to match 
 <para>Pointers to core asset object and global objects who will have immutable addresses after created </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="588" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="588" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="600" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="600" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1database_1a8682770e72c0e3fa93275c4ff96049de" prot="private" static="no" mutable="no">
         <type>const <ref refid="classgraphene_1_1chain_1_1asset__dynamic__data__object" kindref="compound">asset_dynamic_data_object</ref> *</type>
@@ -754,7 +754,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="589" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="589" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="601" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="601" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1database_1a154deba8b408604a3dd800434f8687de" prot="private" static="no" mutable="no">
         <type>const <ref refid="classgraphene_1_1chain_1_1global__property__object" kindref="compound">global_property_object</ref> *</type>
@@ -768,7 +768,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="590" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="590" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="602" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="602" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1database_1a5e02222afc911521d869764c88527f1f" prot="private" static="no" mutable="no">
         <type>const <ref refid="classgraphene_1_1chain_1_1dynamic__global__property__object" kindref="compound">dynamic_global_property_object</ref> *</type>
@@ -782,7 +782,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="591" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="591" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="603" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="603" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1database_1a4c733864b6589d5c7ec61f2ee584e4ab" prot="private" static="no" mutable="no">
         <type>const <ref refid="classgraphene_1_1chain_1_1chain__property__object" kindref="compound">chain_property_object</ref> *</type>
@@ -796,7 +796,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="592" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="592" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="604" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="604" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1database_1a65931172b3a3900067a78f0c03ae4735" prot="private" static="no" mutable="no">
         <type>const <ref refid="classgraphene_1_1chain_1_1witness__schedule__object" kindref="compound">witness_schedule_object</ref> *</type>
@@ -810,7 +810,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="593" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="593" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="605" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="605" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-type">
@@ -902,12 +902,12 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="65" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="64" bodyend="77"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="77" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="76" bodyend="89"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1database_1a3e6934dcd3926a0064ef136afc242c33" prot="public" static="no" mutable="no">
-        <type>fc::signal&lt; void(const <ref refid="classgraphene_1_1chain_1_1signed__block" kindref="compound">signed_block</ref> &amp;)&gt;</type>
+        <type>fc::signal&lt; void(const signed_block &amp;)&gt;</type>
         <definition>fc::signal&lt;void(const signed_block&amp;)&gt; graphene::chain::database::applied_block</definition>
         <argsstring></argsstring>
         <name>applied_block</name>
@@ -917,10 +917,10 @@ This function takes a new limit order, and runs the markets attempting to match 
 <para>This signal is emitted after all operations and virtual operation for a block have been applied but before the <ref refid="classgraphene_1_1chain_1_1database_1a87c74f1ef2f8840261c3d9789151b305" kindref="member">get_applied_operations()</ref> are cleared.</para><para>You may not yield from this callback because the blockchain is holding the write lock and may be in an &quot;inconstant state&quot; until after it is released. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="183" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="183" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="195" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="195" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1database_1a0747f461aea199b260777d4b1975013d" prot="public" static="no" mutable="no">
-        <type>fc::signal&lt; void(const <ref refid="classgraphene_1_1chain_1_1signed__transaction" kindref="compound">signed_transaction</ref> &amp;)&gt;</type>
+        <type>fc::signal&lt; void(const signed_transaction &amp;)&gt;</type>
         <definition>fc::signal&lt;void(const signed_transaction&amp;)&gt; graphene::chain::database::on_pending_transaction</definition>
         <argsstring></argsstring>
         <name>on_pending_transaction</name>
@@ -930,10 +930,10 @@ This function takes a new limit order, and runs the markets attempting to match 
 <para>This signal is emitted any time a new transaction is added to the pending block state. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="189" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="189" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="201" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="201" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1database_1a11eac7e673b4a9bb4458282b3b01e21f" prot="public" static="no" mutable="no">
-        <type>fc::signal&lt; void(const vector&lt; object_id_type &gt; &amp;, const flat_set&lt; <ref refid="namespacegraphene_1_1chain_1a11927fb343f953514ab6235d6e7233ee" kindref="member">account_id_type</ref> &gt; &amp;)&gt;</type>
+        <type>fc::signal&lt; void(const vector&lt; object_id_type &gt; &amp;, const flat_set&lt; account_id_type &gt; &amp;)&gt;</type>
         <definition>fc::signal&lt;void(const vector&lt;object_id_type&gt;&amp;, const flat_set&lt;account_id_type&gt;&amp;)&gt; graphene::chain::database::new_objects</definition>
         <argsstring></argsstring>
         <name>new_objects</name>
@@ -943,10 +943,10 @@ This function takes a new limit order, and runs the markets attempting to match 
 <para>Emitted After a block has been applied and committed. The callback should not yield and should execute quickly. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="195" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="195" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="207" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="207" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1database_1a89c462c2ed0224b34cd6b6b06985d046" prot="public" static="no" mutable="no">
-        <type>fc::signal&lt; void(const vector&lt; object_id_type &gt; &amp;, const flat_set&lt; <ref refid="namespacegraphene_1_1chain_1a11927fb343f953514ab6235d6e7233ee" kindref="member">account_id_type</ref> &gt; &amp;)&gt;</type>
+        <type>fc::signal&lt; void(const vector&lt; object_id_type &gt; &amp;, const flat_set&lt; account_id_type &gt; &amp;)&gt;</type>
         <definition>fc::signal&lt;void(const vector&lt;object_id_type&gt;&amp;, const flat_set&lt;account_id_type&gt;&amp;)&gt; graphene::chain::database::changed_objects</definition>
         <argsstring></argsstring>
         <name>changed_objects</name>
@@ -956,10 +956,10 @@ This function takes a new limit order, and runs the markets attempting to match 
 <para>Emitted After a block has been applied and committed. The callback should not yield and should execute quickly. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="201" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="201" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="213" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="213" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1database_1a9aa30b505cfa4e5cdc9a0b354d49e89e" prot="public" static="no" mutable="no">
-        <type>fc::signal&lt; void(const vector&lt; object_id_type &gt; &amp;, const vector&lt; const object * &gt; &amp;, const flat_set&lt; <ref refid="namespacegraphene_1_1chain_1a11927fb343f953514ab6235d6e7233ee" kindref="member">account_id_type</ref> &gt; &amp;)&gt;</type>
+        <type>fc::signal&lt; void(const vector&lt; object_id_type &gt; &amp;, const vector&lt; const object * &gt; &amp;, const flat_set&lt; account_id_type &gt; &amp;)&gt;</type>
         <definition>fc::signal&lt;void(const vector&lt;object_id_type&gt;&amp;, const vector&lt;const object*&gt;&amp;, const flat_set&lt;account_id_type&gt;&amp;)&gt; graphene::chain::database::removed_objects</definition>
         <argsstring></argsstring>
         <name>removed_objects</name>
@@ -969,7 +969,7 @@ This function takes a new limit order, and runs the markets attempting to match 
 <para>this signal is emitted any time an object is removed and contains a pointer to the last value of every object that was removed. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="206" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="206" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="218" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="218" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -984,7 +984,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="466" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="466" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="478" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="478" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1database_1ac9b667d4d617a607787c9a3c1f42ac30" prot="private" static="no" mutable="no">
         <type>vector&lt; unique_ptr&lt; <ref refid="classgraphene_1_1chain_1_1op__evaluator" kindref="compound">op_evaluator</ref> &gt; &gt;</type>
@@ -997,10 +997,10 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="467" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="467" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="479" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="479" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1database_1a2818f2ad9b765d588fd125dc191e523a" prot="private" static="no" mutable="no">
-        <type>vector&lt; <ref refid="structgraphene_1_1chain_1_1processed__transaction" kindref="compound">processed_transaction</ref> &gt;</type>
+        <type>vector&lt; processed_transaction &gt;</type>
         <definition>vector&lt; processed_transaction &gt; graphene::chain::database::_pending_tx</definition>
         <argsstring></argsstring>
         <name>_pending_tx</name>
@@ -1010,7 +1010,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="531" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="531" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="543" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="543" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1database_1ac1eab6ae52717cef08746bd3b2c9d464" prot="private" static="no" mutable="no">
         <type><ref refid="classgraphene_1_1chain_1_1fork__database" kindref="compound">fork_database</ref></type>
@@ -1023,7 +1023,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="532" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="532" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="544" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="544" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1database_1aca7a7972f572bb397bb9cd666f476879" prot="private" static="no" mutable="no">
         <type><ref refid="classgraphene_1_1chain_1_1block__database" kindref="compound">block_database</ref></type>
@@ -1036,7 +1036,7 @@ This function takes a new limit order, and runs the markets attempting to match 
 <para>Note: we can probably store blocks by block num rather than block id because after the undo window is past the block ID is no longer relevant and its number is irreversible.</para><para>During the &quot;fork window&quot; we can cache blocks in memory until the fork is resolved. This should make maintaining the fork tree relatively simple. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="543" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="543" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="555" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="555" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1database_1a0cdbc9e636ec8cba85507264b3477c79" prot="private" static="no" mutable="no">
         <type>vector&lt; optional&lt; <ref refid="classgraphene_1_1chain_1_1operation__history__object" kindref="compound">operation_history_object</ref> &gt; &gt;</type>
@@ -1049,7 +1049,7 @@ This function takes a new limit order, and runs the markets attempting to match 
 <para>Contains the set of ops that are in the process of being applied from the current block. It contains real and virtual operations in the order they occur and is cleared after the applied_block signal is emited. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="551" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="551" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="563" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="563" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1database_1a675728076c3aec61222edcae59af7337" prot="private" static="no" mutable="no">
         <type>uint32_t</type>
@@ -1063,7 +1063,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="553" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="553" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="565" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="565" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1database_1a84008aa5f9c5d989b2e5e1bb9b91a995" prot="private" static="no" mutable="no">
         <type>uint16_t</type>
@@ -1077,7 +1077,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="554" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="554" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="566" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="566" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1database_1a1e9b993a696f1fc3be6b913686d8b35b" prot="private" static="no" mutable="no">
         <type>uint16_t</type>
@@ -1091,7 +1091,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="555" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="555" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="567" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="567" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1database_1aa39fa024e699c96b04b3c54d0d56972f" prot="private" static="no" mutable="no">
         <type>uint32_t</type>
@@ -1105,7 +1105,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="556" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="556" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="568" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="568" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1database_1a59e5f7edb13bd71745c73e65359ca465" prot="private" static="no" mutable="no">
         <type>vector&lt; uint64_t &gt;</type>
@@ -1118,7 +1118,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="558" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="558" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="570" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="570" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1database_1a694ccfb5385c32ab164b8388802ce36b" prot="private" static="no" mutable="no">
         <type>vector&lt; uint64_t &gt;</type>
@@ -1131,7 +1131,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="559" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="559" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="571" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="571" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1database_1aa26ab6ee28c4157489e89160659e2ef8" prot="private" static="no" mutable="no">
         <type>vector&lt; uint64_t &gt;</type>
@@ -1144,7 +1144,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="560" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="560" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="572" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="572" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1database_1a9c144da0b732c3ad9434f5a878bc0916" prot="private" static="no" mutable="no">
         <type>uint64_t</type>
@@ -1157,10 +1157,10 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="561" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="561" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="573" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="573" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1database_1a61078f4c87b4fcb49d5a3e15d235fe0c" prot="private" static="no" mutable="no">
-        <type>flat_map&lt; uint32_t, <ref refid="namespacegraphene_1_1chain_1a314b030d7a6107c5641fd9945da7f568" kindref="member">block_id_type</ref> &gt;</type>
+        <type>flat_map&lt; uint32_t, block_id_type &gt;</type>
         <definition>flat_map&lt;uint32_t,block_id_type&gt; graphene::chain::database::_checkpoints</definition>
         <argsstring></argsstring>
         <name>_checkpoints</name>
@@ -1170,7 +1170,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="563" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="563" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="575" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="575" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1database_1a6c570ecbccb63d37c08c060f3dfaed19" prot="private" static="no" mutable="no">
         <type><ref refid="classgraphene_1_1chain_1_1node__property__object" kindref="compound">node_property_object</ref></type>
@@ -1183,7 +1183,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="565" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="565" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="577" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="577" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1database_1aee254525d107b4e2f6723833be243dad" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -1197,7 +1197,7 @@ This function takes a new limit order, and runs the markets attempting to match 
 <para>Whether to update votes of standby witnesses and committee members when performing chain maintenance. Set it to true to provide accurate data to API clients, set to false to have better performance. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="569" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="569" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="581" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="581" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1database_1a99bb66b056f57f04f50dc88b480babff" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -1211,7 +1211,7 @@ This function takes a new limit order, and runs the markets attempting to match 
 <para>Whether database is successfully opened or not.</para><para>The database is considered open when there&apos;s no exception or assertion fail during <ref refid="classgraphene_1_1chain_1_1database_1a2d5356973d8d14d8267b7d49a2c6d939" kindref="member">database::open()</ref> method, and <ref refid="classgraphene_1_1chain_1_1database_1aaef6e311f1eb8ddfea82751b4e2df2d2" kindref="member">database::close()</ref> has not been called, or failed during execution. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="578" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="578" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="590" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="590" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1database_1a2939ee47f5556c2a3d2870c293fd73cc" prot="private" static="no" mutable="no">
         <type>uint32_t</type>
@@ -1225,10 +1225,10 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="581" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="581" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="593" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="593" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1database_1a888ab47c857e5047b0e2dc40d09bca7f" prot="private" static="no" mutable="no">
-        <type>flat_set&lt; <ref refid="namespacegraphene_1_1chain_1a8719a403aa47e9d369890c01d60d0bb2" kindref="member">asset_id_type</ref> &gt;</type>
+        <type>flat_set&lt; asset_id_type &gt;</type>
         <definition>flat_set&lt;asset_id_type&gt; graphene::chain::database::_issue_453_affected_assets</definition>
         <argsstring></argsstring>
         <name>_issue_453_affected_assets</name>
@@ -1238,7 +1238,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="584" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="584" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="596" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="596" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -1253,7 +1253,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="61" column="1" bodyfile="libraries/chain/db_management.cpp" bodystart="43" bodyend="47"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="73" column="1" bodyfile="libraries/chain/db_management.cpp" bodystart="44" bodyend="48"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a1733f5bf8a8ea84dcd8f962eb61debe1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -1266,7 +1266,7 @@ This function takes a new limit order, and runs the markets attempting to match 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="62" column="1" bodyfile="libraries/chain/db_management.cpp" bodystart="49" bodyend="52"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="74" column="1" bodyfile="libraries/chain/db_management.cpp" bodystart="50" bodyend="53"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a2d5356973d8d14d8267b7d49a2c6d939" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1313,7 +1313,7 @@ This function takes a new limit order, and runs the markets attempting to match 
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="91" column="1" bodyfile="libraries/chain/db_management.cpp" bodystart="173" bodyend="225"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="103" column="1" bodyfile="libraries/chain/db_management.cpp" bodystart="174" bodyend="226"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1ad9a4bc8bc2683554aac84fdd1e96b710" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1330,7 +1330,7 @@ This function takes a new limit order, and runs the markets attempting to match 
 <para>This method may be called after or instead of <ref refid="classgraphene_1_1chain_1_1database_1a2d5356973d8d14d8267b7d49a2c6d939" kindref="member">database::open</ref>, and will rebuild the object graph by replaying blockchain history. When this method exits successfully, the database will be open. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="102" column="1" bodyfile="libraries/chain/db_management.cpp" bodystart="54" bodyend="160"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="114" column="1" bodyfile="libraries/chain/db_management.cpp" bodystart="55" bodyend="161"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a37463bb4fc61d94effff3f5784a2f168" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1359,7 +1359,7 @@ This function takes a new limit order, and runs the markets attempting to match 
 Will close the database before wiping. Database will be closed when this function returns. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="110" column="1" bodyfile="libraries/chain/db_management.cpp" bodystart="162" bodyend="171"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="122" column="1" bodyfile="libraries/chain/db_management.cpp" bodystart="163" bodyend="172"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1aaef6e311f1eb8ddfea82751b4e2df2d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1377,7 +1377,7 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="111" column="1" bodyfile="libraries/chain/db_management.cpp" bodystart="227" bodyend="271"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="123" column="1" bodyfile="libraries/chain/db_management.cpp" bodystart="228" bodyend="272"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a98795dba60947210dd9a0fbb770709a2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -1385,7 +1385,7 @@ Will close the database before wiping. Database will be closed when this functio
         <argsstring>(const block_id_type &amp;id) const</argsstring>
         <name>is_known_block</name>
         <param>
-          <type>const <ref refid="namespacegraphene_1_1chain_1a314b030d7a6107c5641fd9945da7f568" kindref="member">block_id_type</ref> &amp;</type>
+          <type>const block_id_type &amp;</type>
           <declname>id</declname>
         </param>
         <briefdescription>
@@ -1395,7 +1395,7 @@ Will close the database before wiping. Database will be closed when this functio
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="119" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="44" bodyend="47"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="131" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="46" bodyend="49"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a0600c987cf89e038128684da9b8c2829" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -1403,7 +1403,7 @@ Will close the database before wiping. Database will be closed when this functio
         <argsstring>(const transaction_id_type &amp;id) const</argsstring>
         <name>is_known_transaction</name>
         <param>
-          <type>const <ref refid="namespacegraphene_1_1chain_1adc38ef0a36d8b8dfcef2cbbcacb6d1e8" kindref="member">transaction_id_type</ref> &amp;</type>
+          <type>const transaction_id_type &amp;</type>
           <declname>id</declname>
         </param>
         <briefdescription>
@@ -1412,10 +1412,10 @@ Will close the database before wiping. Database will be closed when this functio
 <para>Only return true <emphasis>if</emphasis> the transaction has not expired or been invalidated. If this method is called with a VERY old transaction we will return false, they should query things by blocks if they are that old. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="120" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="53" bodyend="57"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="132" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="55" bodyend="59"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a4294f12b2299bab7684555c986abac76" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="namespacegraphene_1_1chain_1a314b030d7a6107c5641fd9945da7f568" kindref="member">block_id_type</ref></type>
+        <type>block_id_type</type>
         <definition>block_id_type graphene::chain::database::get_block_id_for_num</definition>
         <argsstring>(uint32_t block_num) const</argsstring>
         <name>get_block_id_for_num</name>
@@ -1429,15 +1429,15 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="121" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="59" bodyend="62"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="133" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="61" bodyend="64"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1ae517d3ed2a2362a70d120962536e16a0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>optional&lt; <ref refid="classgraphene_1_1chain_1_1signed__block" kindref="compound">signed_block</ref> &gt;</type>
+        <type>optional&lt; signed_block &gt;</type>
         <definition>optional&lt; signed_block &gt; graphene::chain::database::fetch_block_by_id</definition>
         <argsstring>(const block_id_type &amp;id) const</argsstring>
         <name>fetch_block_by_id</name>
         <param>
-          <type>const <ref refid="namespacegraphene_1_1chain_1a314b030d7a6107c5641fd9945da7f568" kindref="member">block_id_type</ref> &amp;</type>
+          <type>const block_id_type &amp;</type>
           <declname>id</declname>
         </param>
         <briefdescription>
@@ -1446,10 +1446,10 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="122" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="64" bodyend="70"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="134" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="66" bodyend="72"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a380a803937941dbbf86321373279a218" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>optional&lt; <ref refid="classgraphene_1_1chain_1_1signed__block" kindref="compound">signed_block</ref> &gt;</type>
+        <type>optional&lt; signed_block &gt;</type>
         <definition>optional&lt; signed_block &gt; graphene::chain::database::fetch_block_by_number</definition>
         <argsstring>(uint32_t num) const</argsstring>
         <name>fetch_block_by_number</name>
@@ -1463,15 +1463,15 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="123" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="72" bodyend="79"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="135" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="74" bodyend="81"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a19352bf8822d30ed4c71dd65fd62f0ca" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>const <ref refid="classgraphene_1_1chain_1_1signed__transaction" kindref="compound">signed_transaction</ref> &amp;</type>
+        <type>const signed_transaction &amp;</type>
         <definition>const signed_transaction &amp; graphene::chain::database::get_recent_transaction</definition>
         <argsstring>(const transaction_id_type &amp;trx_id) const</argsstring>
         <name>get_recent_transaction</name>
         <param>
-          <type>const <ref refid="namespacegraphene_1_1chain_1adc38ef0a36d8b8dfcef2cbbcacb6d1e8" kindref="member">transaction_id_type</ref> &amp;</type>
+          <type>const transaction_id_type &amp;</type>
           <declname>trx_id</declname>
         </param>
         <briefdescription>
@@ -1480,15 +1480,15 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="124" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="81" bodyend="87"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="136" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="83" bodyend="89"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1aba653e023b116d6a004ebf27dd184328" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>std::vector&lt; <ref refid="namespacegraphene_1_1chain_1a314b030d7a6107c5641fd9945da7f568" kindref="member">block_id_type</ref> &gt;</type>
+        <type>std::vector&lt; block_id_type &gt;</type>
         <definition>std::vector&lt; block_id_type &gt; graphene::chain::database::get_block_ids_on_fork</definition>
         <argsstring>(block_id_type head_of_fork) const</argsstring>
         <name>get_block_ids_on_fork</name>
         <param>
-          <type><ref refid="namespacegraphene_1_1chain_1a314b030d7a6107c5641fd9945da7f568" kindref="member">block_id_type</ref></type>
+          <type>block_id_type</type>
           <declname>head_of_fork</declname>
         </param>
         <briefdescription>
@@ -1497,7 +1497,7 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="125" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="89" bodyend="105"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="137" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="91" bodyend="107"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1afa79d883fabbeab89ec71a47566ef1e6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>uint32_t</type>
@@ -1510,7 +1510,7 @@ Will close the database before wiping. Database will be closed when this functio
 <para>Calculate the percent of block production slots that were missed in the past 128 blocks, not including the current block. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="131" column="1" bodyfile="libraries/chain/db_witness_schedule.cpp" bodystart="96" bodyend="100"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="143" column="1" bodyfile="libraries/chain/db_witness_schedule.cpp" bodystart="96" bodyend="100"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a0e8c92ac95d4ac2569f6b079193691dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1518,7 +1518,7 @@ Will close the database before wiping. Database will be closed when this functio
         <argsstring>(const flat_map&lt; uint32_t, block_id_type &gt; &amp;checkpts)</argsstring>
         <name>add_checkpoints</name>
         <param>
-          <type>const flat_map&lt; uint32_t, <ref refid="namespacegraphene_1_1chain_1a314b030d7a6107c5641fd9945da7f568" kindref="member">block_id_type</ref> &gt; &amp;</type>
+          <type>const flat_map&lt; uint32_t, block_id_type &gt; &amp;</type>
           <declname>checkpts</declname>
         </param>
         <briefdescription>
@@ -1527,10 +1527,10 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="133" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="747" bodyend="751"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="145" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="749" bodyend="753"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1ad467f7f5b2d7cb5a142e1e80186589a6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type>const flat_map&lt; uint32_t, <ref refid="namespacegraphene_1_1chain_1a314b030d7a6107c5641fd9945da7f568" kindref="member">block_id_type</ref> &gt;</type>
+        <type>const flat_map&lt; uint32_t, block_id_type &gt;</type>
         <definition>const flat_map&lt;uint32_t,block_id_type&gt; graphene::chain::database::get_checkpoints</definition>
         <argsstring>() const</argsstring>
         <name>get_checkpoints</name>
@@ -1540,7 +1540,7 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="134" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="134" bodyend="134"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="146" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="146" bodyend="146"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a293e9896a2e9c9b6d62fb5e2c19d11e8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -1553,7 +1553,7 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="135" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="753" bodyend="756"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="147" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="755" bodyend="758"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1aa62eb8144a717f62da5404e8bb482414" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -1561,7 +1561,7 @@ Will close the database before wiping. Database will be closed when this functio
         <argsstring>(const signed_block &amp;b, uint32_t skip=skip_nothing)</argsstring>
         <name>push_block</name>
         <param>
-          <type>const <ref refid="classgraphene_1_1chain_1_1signed__block" kindref="compound">signed_block</ref> &amp;</type>
+          <type>const signed_block &amp;</type>
           <declname>b</declname>
           <defname>new_block</defname>
         </param>
@@ -1577,15 +1577,15 @@ Will close the database before wiping. Database will be closed when this functio
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="137" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="113" bodyend="126"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="149" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="115" bodyend="128"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1af9ec01b12cd9c42a2da204c4a19d63aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="structgraphene_1_1chain_1_1processed__transaction" kindref="compound">processed_transaction</ref></type>
+        <type>processed_transaction</type>
         <definition>processed_transaction graphene::chain::database::push_transaction</definition>
         <argsstring>(const precomputable_transaction &amp;trx, uint32_t skip=skip_nothing)</argsstring>
         <name>push_transaction</name>
         <param>
-          <type>const <ref refid="classgraphene_1_1chain_1_1precomputable__transaction" kindref="compound">precomputable_transaction</ref> &amp;</type>
+          <type>const precomputable_transaction &amp;</type>
           <declname>trx</declname>
         </param>
         <param>
@@ -1599,7 +1599,7 @@ Will close the database before wiping. Database will be closed when this functio
 <para>Attempts to push the transaction into the pending queue</para><para>When called to push a locally generated transaction, set the skip_block_size_check bit on the skip argument. This will allow the transaction to be pushed even if it causes the pending block size to exceed the maximum block size. Although the transaction will probably not propagate further now, as the peers are likely to have their pending queues full as well, it will be kept in the queue to be propagated later when a new block flushes out the pending queues. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="138" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="224" bodyend="234"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="150" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="226" bodyend="236"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1aae68153f9fb7d63e8c3d2d43875acbf9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -1607,7 +1607,7 @@ Will close the database before wiping. Database will be closed when this functio
         <argsstring>(const signed_block &amp;b)</argsstring>
         <name>_push_block</name>
         <param>
-          <type>const <ref refid="classgraphene_1_1chain_1_1signed__block" kindref="compound">signed_block</ref> &amp;</type>
+          <type>const signed_block &amp;</type>
           <declname>b</declname>
         </param>
         <briefdescription>
@@ -1616,15 +1616,15 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="139" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="128" bodyend="213"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="151" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="130" bodyend="215"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1ad8ca84ffcf797732a8227b27b335c66c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="structgraphene_1_1chain_1_1processed__transaction" kindref="compound">processed_transaction</ref></type>
+        <type>processed_transaction</type>
         <definition>processed_transaction graphene::chain::database::_push_transaction</definition>
         <argsstring>(const precomputable_transaction &amp;trx)</argsstring>
         <name>_push_transaction</name>
         <param>
-          <type>const <ref refid="classgraphene_1_1chain_1_1precomputable__transaction" kindref="compound">precomputable_transaction</ref> &amp;</type>
+          <type>const precomputable_transaction &amp;</type>
           <declname>trx</declname>
         </param>
         <briefdescription>
@@ -1633,10 +1633,10 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="140" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="236" bodyend="259"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="152" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="238" bodyend="261"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1ab5abeddad5156d1bcad2e97256d54fa0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="structgraphene_1_1chain_1_1processed__transaction" kindref="compound">processed_transaction</ref></type>
+        <type>processed_transaction</type>
         <definition>processed_transaction graphene::chain::database::push_proposal</definition>
         <argsstring>(const proposal_object &amp;proposal)</argsstring>
         <name>push_proposal</name>
@@ -1658,10 +1658,10 @@ Will close the database before wiping. Database will be closed when this functio
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="143" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="285" bodyend="323"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="155" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="287" bodyend="325"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1ae8f11489883556cf872c893bc90fae53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classgraphene_1_1chain_1_1signed__block" kindref="compound">signed_block</ref></type>
+        <type>signed_block</type>
         <definition>signed_block graphene::chain::database::generate_block</definition>
         <argsstring>(const fc::time_point_sec when, witness_id_type witness_id, const fc::ecc::private_key &amp;block_signing_private_key, uint32_t skip)</argsstring>
         <name>generate_block</name>
@@ -1670,7 +1670,7 @@ Will close the database before wiping. Database will be closed when this functio
           <declname>when</declname>
         </param>
         <param>
-          <type><ref refid="namespacegraphene_1_1chain_1ab7749ab4e10e21734e81c82e229657c0" kindref="member">witness_id_type</ref></type>
+          <type>witness_id_type</type>
           <declname>witness_id</declname>
         </param>
         <param>
@@ -1687,10 +1687,10 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="145" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="325" bodyend="338"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="157" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="327" bodyend="340"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a581a8d9539e3d2337d5665932048156c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classgraphene_1_1chain_1_1signed__block" kindref="compound">signed_block</ref></type>
+        <type>signed_block</type>
         <definition>signed_block graphene::chain::database::_generate_block</definition>
         <argsstring>(const fc::time_point_sec when, witness_id_type witness_id, const fc::ecc::private_key &amp;block_signing_private_key)</argsstring>
         <name>_generate_block</name>
@@ -1699,7 +1699,7 @@ Will close the database before wiping. Database will be closed when this functio
           <declname>when</declname>
         </param>
         <param>
-          <type><ref refid="namespacegraphene_1_1chain_1ab7749ab4e10e21734e81c82e229657c0" kindref="member">witness_id_type</ref></type>
+          <type>witness_id_type</type>
           <declname>witness_id</declname>
         </param>
         <param>
@@ -1712,7 +1712,7 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="151" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="340" bodyend="455"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="163" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="342" bodyend="457"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a03253124ee8714af752c1d68b7cc206c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1725,7 +1725,7 @@ Will close the database before wiping. Database will be closed when this functio
 <para>Removes the most recent block from the database and undoes any changes it made. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="157" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="461" bodyend="475"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="169" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="463" bodyend="477"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1af1c4e067598a0318e728b1d28df7a598" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1738,7 +1738,7 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="158" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="477" bodyend="482"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="170" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="479" bodyend="484"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a2fef3858781108d62da007cc155ccec7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>uint32_t</type>
@@ -1746,7 +1746,7 @@ Will close the database before wiping. Database will be closed when this functio
         <argsstring>(const operation &amp;op)</argsstring>
         <name>push_applied_operation</name>
         <param>
-          <type>const <ref refid="group__operations_1ga1f34da121b0143fb12ee42cffb9308e9" kindref="member">operation</ref> &amp;</type>
+          <type>const operation &amp;</type>
           <declname>op</declname>
         </param>
         <briefdescription>
@@ -1756,7 +1756,7 @@ Will close the database before wiping. Database will be closed when this functio
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="169" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="484" bodyend="493"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="181" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="486" bodyend="495"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a1d85784b1e8dd37a7cecce893e248061" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1768,7 +1768,7 @@ Will close the database before wiping. Database will be closed when this functio
           <declname>op_id</declname>
         </param>
         <param>
-          <type>const <ref refid="group__operations_1gaf121d5f218e142d53acffc833cae929a" kindref="member">operation_result</ref> &amp;</type>
+          <type>const operation_result &amp;</type>
           <declname>r</declname>
         </param>
         <briefdescription>
@@ -1777,7 +1777,7 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="170" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="494" bodyend="503"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="182" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="496" bodyend="505"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a87c74f1ef2f8840261c3d9789151b305" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const vector&lt; optional&lt; <ref refid="classgraphene_1_1chain_1_1operation__history__object" kindref="compound">operation_history_object</ref> &gt; &gt; &amp;</type>
@@ -1790,7 +1790,7 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="171" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="505" bodyend="508"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="183" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="507" bodyend="510"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a5ebd612bd6895e9acf40c71ac69baed8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>string</type>
@@ -1798,7 +1798,7 @@ Will close the database before wiping. Database will be closed when this functio
         <argsstring>(const asset &amp;a) const</argsstring>
         <name>to_pretty_string</name>
         <param>
-          <type>const <ref refid="structgraphene_1_1chain_1_1asset" kindref="compound">asset</ref> &amp;</type>
+          <type>const asset &amp;</type>
           <declname>a</declname>
         </param>
         <briefdescription>
@@ -1807,10 +1807,10 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="173" column="1" bodyfile="libraries/chain/db_balance.cpp" bodystart="49" bodyend="52"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="185" column="1" bodyfile="libraries/chain/db_balance.cpp" bodystart="49" bodyend="52"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a3daf7627fbbad235bc99cecc6464731b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="namespacegraphene_1_1chain_1ab7749ab4e10e21734e81c82e229657c0" kindref="member">witness_id_type</ref></type>
+        <type>witness_id_type</type>
         <definition>witness_id_type graphene::chain::database::get_scheduled_witness</definition>
         <argsstring>(uint32_t slot_num) const</argsstring>
         <name>get_scheduled_witness</name>
@@ -1824,7 +1824,7 @@ Will close the database before wiping. Database will be closed when this functio
 <para>slot_num always corresponds to a time in the future.</para><para>If slot_num == 1, returns the next scheduled witness. If slot_num == 2, returns the next scheduled witness after 1 block gap.</para><para>Use the <ref refid="classgraphene_1_1chain_1_1database_1a7a40590812847fac95aaded9dcac020e" kindref="member">get_slot_time()</ref> and <ref refid="classgraphene_1_1chain_1_1database_1a9f6a3131085a7411a46db17a818fd1ca" kindref="member">get_slot_at_time()</ref> functions to convert between slot_num and timestamp.</para><para>Passing slot_num == 0 returns GRAPHENE_NULL_WITNESS </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="224" column="1" bodyfile="libraries/chain/db_witness_schedule.cpp" bodystart="34" bodyend="40"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="236" column="1" bodyfile="libraries/chain/db_witness_schedule.cpp" bodystart="34" bodyend="40"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a7a40590812847fac95aaded9dcac020e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>fc::time_point_sec</type>
@@ -1841,7 +1841,7 @@ Will close the database before wiping. Database will be closed when this functio
 <para>Get the time at which the given slot occurs.</para><para>If slot_num == 0, return time_point_sec().</para><para>If slot_num == N for N &gt; 0, return the Nth next block-interval-aligned time greater than <ref refid="classgraphene_1_1chain_1_1database_1aa53e34701c0ab1b1c124b9c9e9c50ba1" kindref="member">head_block_time()</ref>. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="234" column="1" bodyfile="libraries/chain/db_witness_schedule.cpp" bodystart="42" bodyend="70"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="246" column="1" bodyfile="libraries/chain/db_witness_schedule.cpp" bodystart="42" bodyend="70"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a9f6a3131085a7411a46db17a818fd1ca" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>uint32_t</type>
@@ -1858,7 +1858,7 @@ Will close the database before wiping. Database will be closed when this functio
 <para>Get the last slot which occurs AT or BEFORE the given time.</para><para>The return value is the greatest value N such that get_slot_time( N ) &lt;= when.</para><para>If no such N exists, return 0. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="244" column="1" bodyfile="libraries/chain/db_witness_schedule.cpp" bodystart="72" bodyend="78"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="256" column="1" bodyfile="libraries/chain/db_witness_schedule.cpp" bodystart="72" bodyend="78"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1aa10c1d73609828c1594e4054e4399b9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1871,10 +1871,10 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
 <para>High performance random generator <ulink url="http://xorshift.di.unimi.it/">http://xorshift.di.unimi.it/</ulink> </para>        </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="246" column="1" bodyfile="libraries/chain/db_witness_schedule.cpp" bodystart="102" bodyend="135"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="258" column="1" bodyfile="libraries/chain/db_witness_schedule.cpp" bodystart="102" bodyend="135"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a92ccabc0b2ed4232e41f44ad57ef321a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>const <ref refid="namespacegraphene_1_1chain_1a8182991954496b517776f06844cf2d93" kindref="member">chain_id_type</ref> &amp;</type>
+        <type>const chain_id_type &amp;</type>
         <definition>const chain_id_type &amp; graphene::chain::database::get_chain_id</definition>
         <argsstring>() const</argsstring>
         <name>get_chain_id</name>
@@ -1884,7 +1884,7 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="250" column="1" bodyfile="libraries/chain/db_getter.cpp" bodystart="83" bodyend="86"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="262" column="1" bodyfile="libraries/chain/db_getter.cpp" bodystart="83" bodyend="86"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a73b613c345d2411977fb4f1b12b0b837" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classgraphene_1_1chain_1_1asset__object" kindref="compound">asset_object</ref> &amp;</type>
@@ -1897,7 +1897,7 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="251" column="1" bodyfile="libraries/chain/db_getter.cpp" bodystart="33" bodyend="36"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="263" column="1" bodyfile="libraries/chain/db_getter.cpp" bodystart="33" bodyend="36"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a32af52750e60217ee3a2d9189c1d5437" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classgraphene_1_1chain_1_1asset__dynamic__data__object" kindref="compound">asset_dynamic_data_object</ref> &amp;</type>
@@ -1910,7 +1910,7 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="252" column="1" bodyfile="libraries/chain/db_getter.cpp" bodystart="38" bodyend="41"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="264" column="1" bodyfile="libraries/chain/db_getter.cpp" bodystart="38" bodyend="41"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1ac5519a9a8081356fa490be2db554b2e6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classgraphene_1_1chain_1_1chain__property__object" kindref="compound">chain_property_object</ref> &amp;</type>
@@ -1923,7 +1923,7 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="253" column="1" bodyfile="libraries/chain/db_getter.cpp" bodystart="48" bodyend="51"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="265" column="1" bodyfile="libraries/chain/db_getter.cpp" bodystart="48" bodyend="51"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a464a05994e41fdadd6351114eddaa316" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classgraphene_1_1chain_1_1global__property__object" kindref="compound">global_property_object</ref> &amp;</type>
@@ -1936,7 +1936,7 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="254" column="1" bodyfile="libraries/chain/db_getter.cpp" bodystart="43" bodyend="46"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="266" column="1" bodyfile="libraries/chain/db_getter.cpp" bodystart="43" bodyend="46"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a3d8bc74b9cd108aaff1ed60de7fbfeb3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classgraphene_1_1chain_1_1dynamic__global__property__object" kindref="compound">dynamic_global_property_object</ref> &amp;</type>
@@ -1949,7 +1949,7 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="255" column="1" bodyfile="libraries/chain/db_getter.cpp" bodystart="53" bodyend="56"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="267" column="1" bodyfile="libraries/chain/db_getter.cpp" bodystart="53" bodyend="56"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1ad10d0309e4c878cb896b09bcbdb5e3b4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classgraphene_1_1chain_1_1node__property__object" kindref="compound">node_property_object</ref> &amp;</type>
@@ -1962,10 +1962,10 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="256" column="1" bodyfile="libraries/chain/db_getter.cpp" bodystart="88" bodyend="91"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="268" column="1" bodyfile="libraries/chain/db_getter.cpp" bodystart="88" bodyend="91"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a337f8cd5e02c51ffde53b67cc04e2581" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>const <ref refid="structgraphene_1_1chain_1_1fee__schedule" kindref="compound">fee_schedule</ref> &amp;</type>
+        <type>const fee_schedule &amp;</type>
         <definition>const fee_schedule &amp; graphene::chain::database::current_fee_schedule</definition>
         <argsstring>() const</argsstring>
         <name>current_fee_schedule</name>
@@ -1975,7 +1975,7 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="257" column="1" bodyfile="libraries/chain/db_getter.cpp" bodystart="58" bodyend="61"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="269" column="1" bodyfile="libraries/chain/db_getter.cpp" bodystart="58" bodyend="61"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a1fecc8c74e7c53dc3429bcfebda91775" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classgraphene_1_1chain_1_1account__statistics__object" kindref="compound">account_statistics_object</ref> &amp;</type>
@@ -1983,7 +1983,7 @@ Will close the database before wiping. Database will be closed when this functio
         <argsstring>(account_id_type owner) const</argsstring>
         <name>get_account_stats_by_owner</name>
         <param>
-          <type><ref refid="namespacegraphene_1_1chain_1a11927fb343f953514ab6235d6e7233ee" kindref="member">account_id_type</ref></type>
+          <type>account_id_type</type>
           <declname>owner</declname>
         </param>
         <briefdescription>
@@ -1992,7 +1992,7 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="258" column="1" bodyfile="libraries/chain/db_getter.cpp" bodystart="110" bodyend="116"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="270" column="1" bodyfile="libraries/chain/db_getter.cpp" bodystart="110" bodyend="116"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a8e31a33a034747e485b88aa194b048e5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classgraphene_1_1chain_1_1witness__schedule__object" kindref="compound">witness_schedule_object</ref> &amp;</type>
@@ -2005,7 +2005,7 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="259" column="1" bodyfile="libraries/chain/db_getter.cpp" bodystart="118" bodyend="121"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="271" column="1" bodyfile="libraries/chain/db_getter.cpp" bodystart="118" bodyend="121"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1aa53e34701c0ab1b1c124b9c9e9c50ba1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>time_point_sec</type>
@@ -2018,7 +2018,7 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="261" column="1" bodyfile="libraries/chain/db_getter.cpp" bodystart="63" bodyend="66"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="273" column="1" bodyfile="libraries/chain/db_getter.cpp" bodystart="63" bodyend="66"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1aed39a6bd1c0356d6b7016af12509726d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>uint32_t</type>
@@ -2031,10 +2031,10 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="262" column="1" bodyfile="libraries/chain/db_getter.cpp" bodystart="68" bodyend="71"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="274" column="1" bodyfile="libraries/chain/db_getter.cpp" bodystart="68" bodyend="71"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a9d10c99200b0fa6dacc17993e7e22985" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="namespacegraphene_1_1chain_1a314b030d7a6107c5641fd9945da7f568" kindref="member">block_id_type</ref></type>
+        <type>block_id_type</type>
         <definition>block_id_type graphene::chain::database::head_block_id</definition>
         <argsstring>() const</argsstring>
         <name>head_block_id</name>
@@ -2044,10 +2044,10 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="263" column="1" bodyfile="libraries/chain/db_getter.cpp" bodystart="73" bodyend="76"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="275" column="1" bodyfile="libraries/chain/db_getter.cpp" bodystart="73" bodyend="76"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a021e7b3697719810c2cf76772b55b44e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="namespacegraphene_1_1chain_1ab7749ab4e10e21734e81c82e229657c0" kindref="member">witness_id_type</ref></type>
+        <type>witness_id_type</type>
         <definition>witness_id_type graphene::chain::database::head_block_witness</definition>
         <argsstring>() const</argsstring>
         <name>head_block_witness</name>
@@ -2057,7 +2057,7 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="264" column="1"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="276" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a5a11d2aa7bfc6fbbc33f67f6a6174b10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classgraphene_1_1chain_1_1node__property__object" kindref="compound">node_property_object</ref> &amp;</type>
@@ -2070,7 +2070,7 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="268" column="1" bodyfile="libraries/chain/db_getter.cpp" bodystart="93" bodyend="96"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="280" column="1" bodyfile="libraries/chain/db_getter.cpp" bodystart="93" bodyend="96"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1aee3dea95aed2dc56b5e3243e85c72e15" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>uint32_t</type>
@@ -2083,7 +2083,7 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="271" column="1" bodyfile="libraries/chain/db_getter.cpp" bodystart="98" bodyend="108"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="283" column="1" bodyfile="libraries/chain/db_getter.cpp" bodystart="98" bodyend="108"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1adbdb993dd56503d38044847dc478d19d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2096,7 +2096,7 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="274" column="1" bodyfile="libraries/chain/db_init.cpp" bodystart="134" bodyend="184"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="286" column="1" bodyfile="libraries/chain/db_init.cpp" bodystart="132" bodyend="182"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1aa771c27abfab94ef6ed5f32348594508" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2109,7 +2109,7 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="276" column="1" bodyfile="libraries/chain/db_init.cpp" bodystart="186" bodyend="233"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="288" column="1" bodyfile="libraries/chain/db_init.cpp" bodystart="184" bodyend="231"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a91a45b5f416d80e1abab0affb75ea16a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2127,7 +2127,7 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="277" column="1" bodyfile="libraries/chain/db_init.cpp" bodystart="235" bodyend="738"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="289" column="1" bodyfile="libraries/chain/db_init.cpp" bodystart="233" bodyend="736"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a116eef07a5b0af2512e1c55c724c6a60" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -2145,19 +2145,19 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="280" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="280" bodyend="284"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="292" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="292" bodyend="296"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a8f835513204025989f650833b43fb60c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="structgraphene_1_1chain_1_1asset" kindref="compound">asset</ref></type>
+        <type>asset</type>
         <definition>asset graphene::chain::database::get_balance</definition>
         <argsstring>(account_id_type owner, asset_id_type asset_id) const</argsstring>
         <name>get_balance</name>
         <param>
-          <type><ref refid="namespacegraphene_1_1chain_1a11927fb343f953514ab6235d6e7233ee" kindref="member">account_id_type</ref></type>
+          <type>account_id_type</type>
           <declname>owner</declname>
         </param>
         <param>
-          <type><ref refid="namespacegraphene_1_1chain_1a8719a403aa47e9d369890c01d60d0bb2" kindref="member">asset_id_type</ref></type>
+          <type>asset_id_type</type>
           <declname>asset_id</declname>
         </param>
         <briefdescription>
@@ -2182,10 +2182,10 @@ Will close the database before wiping. Database will be closed when this functio
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="294" column="1" bodyfile="libraries/chain/db_balance.cpp" bodystart="35" bodyend="42"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="306" column="1" bodyfile="libraries/chain/db_balance.cpp" bodystart="35" bodyend="42"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a66a6c5d7a70f514b80fff03620656f7d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="structgraphene_1_1chain_1_1asset" kindref="compound">asset</ref></type>
+        <type>asset</type>
         <definition>asset graphene::chain::database::get_balance</definition>
         <argsstring>(const account_object &amp;owner, const asset_object &amp;asset_obj) const</argsstring>
         <name>get_balance</name>
@@ -2203,7 +2203,7 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="296" column="1" bodyfile="libraries/chain/db_balance.cpp" bodystart="44" bodyend="47"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="308" column="1" bodyfile="libraries/chain/db_balance.cpp" bodystart="44" bodyend="47"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a1a4ebf561fcd858fa830e0582193eddd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2211,11 +2211,11 @@ Will close the database before wiping. Database will be closed when this functio
         <argsstring>(account_id_type account, asset delta)</argsstring>
         <name>adjust_balance</name>
         <param>
-          <type><ref refid="namespacegraphene_1_1chain_1a11927fb343f953514ab6235d6e7233ee" kindref="member">account_id_type</ref></type>
+          <type>account_id_type</type>
           <declname>account</declname>
         </param>
         <param>
-          <type><ref refid="structgraphene_1_1chain_1_1asset" kindref="compound">asset</ref></type>
+          <type>asset</type>
           <declname>delta</declname>
         </param>
         <briefdescription>
@@ -2239,7 +2239,7 @@ Will close the database before wiping. Database will be closed when this functio
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="303" column="1" bodyfile="libraries/chain/db_balance.cpp" bodystart="54" bodyend="83"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="315" column="1" bodyfile="libraries/chain/db_balance.cpp" bodystart="54" bodyend="83"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a8f8a92f72cc2c03fb8b144419011e746" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2247,11 +2247,11 @@ Will close the database before wiping. Database will be closed when this functio
         <argsstring>(const account_id_type &amp;account_id, const asset &amp;delta)</argsstring>
         <name>deposit_market_fee_vesting_balance</name>
         <param>
-          <type>const <ref refid="namespacegraphene_1_1chain_1a11927fb343f953514ab6235d6e7233ee" kindref="member">account_id_type</ref> &amp;</type>
+          <type>const account_id_type &amp;</type>
           <declname>account_id</declname>
         </param>
         <param>
-          <type>const <ref refid="structgraphene_1_1chain_1_1asset" kindref="compound">asset</ref> &amp;</type>
+          <type>const asset &amp;</type>
           <declname>delta</declname>
         </param>
         <briefdescription>
@@ -2260,19 +2260,19 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="305" column="1" bodyfile="libraries/chain/db_balance.cpp" bodystart="127" bodyend="154"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="317" column="1" bodyfile="libraries/chain/db_balance.cpp" bodystart="127" bodyend="154"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1ae62c01ea5a924d30bf3bc7a16af185d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="structgraphene_1_1chain_1_1asset" kindref="compound">asset</ref></type>
+        <type>asset</type>
         <definition>asset graphene::chain::database::get_market_fee_vesting_balance</definition>
         <argsstring>(const account_id_type &amp;account_id, const asset_id_type &amp;asset_id)</argsstring>
         <name>get_market_fee_vesting_balance</name>
         <param>
-          <type>const <ref refid="namespacegraphene_1_1chain_1a11927fb343f953514ab6235d6e7233ee" kindref="member">account_id_type</ref> &amp;</type>
+          <type>const account_id_type &amp;</type>
           <declname>account_id</declname>
         </param>
         <param>
-          <type>const <ref refid="namespacegraphene_1_1chain_1a8719a403aa47e9d369890c01d60d0bb2" kindref="member">asset_id_type</ref> &amp;</type>
+          <type>const asset_id_type &amp;</type>
           <declname>asset_id</declname>
         </param>
         <briefdescription>
@@ -2297,19 +2297,19 @@ Will close the database before wiping. Database will be closed when this functio
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="312" column="1" bodyfile="libraries/chain/db_balance.cpp" bodystart="114" bodyend="125"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="324" column="1" bodyfile="libraries/chain/db_balance.cpp" bodystart="114" bodyend="125"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a47c4b977b360da1178df3a5ef5d1cb0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>optional&lt; <ref refid="namespacegraphene_1_1chain_1a3c7832a7fb78912c0bd3b8b50a19c3f1" kindref="member">vesting_balance_id_type</ref> &gt;</type>
+        <type>optional&lt; vesting_balance_id_type &gt;</type>
         <definition>optional&lt; vesting_balance_id_type &gt; graphene::chain::database::deposit_lazy_vesting</definition>
         <argsstring>(const optional&lt; vesting_balance_id_type &gt; &amp;ovbid, share_type amount, uint32_t req_vesting_seconds, vesting_balance_type balance_type, account_id_type req_owner, bool require_vesting)</argsstring>
         <name>deposit_lazy_vesting</name>
         <param>
-          <type>const optional&lt; <ref refid="namespacegraphene_1_1chain_1a3c7832a7fb78912c0bd3b8b50a19c3f1" kindref="member">vesting_balance_id_type</ref> &gt; &amp;</type>
+          <type>const optional&lt; vesting_balance_id_type &gt; &amp;</type>
           <declname>ovbid</declname>
         </param>
         <param>
-          <type><ref refid="namespacegraphene_1_1chain_1ab4bea4aef5fe40c66b42537da931bffe" kindref="member">share_type</ref></type>
+          <type>share_type</type>
           <declname>amount</declname>
         </param>
         <param>
@@ -2321,7 +2321,7 @@ Will close the database before wiping. Database will be closed when this functio
           <declname>balance_type</declname>
         </param>
         <param>
-          <type><ref refid="namespacegraphene_1_1chain_1a11927fb343f953514ab6235d6e7233ee" kindref="member">account_id_type</ref></type>
+          <type>account_id_type</type>
           <declname>req_owner</declname>
         </param>
         <param>
@@ -2335,7 +2335,7 @@ Will close the database before wiping. Database will be closed when this functio
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="327" column="1" bodyfile="libraries/chain/db_balance.cpp" bodystart="156" bodyend="204"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="339" column="1" bodyfile="libraries/chain/db_balance.cpp" bodystart="156" bodyend="204"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1ada0ca07bcd351e7ee1f95719b8543579" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2347,7 +2347,7 @@ Will close the database before wiping. Database will be closed when this functio
           <declname>acct</declname>
         </param>
         <param>
-          <type><ref refid="namespacegraphene_1_1chain_1ab4bea4aef5fe40c66b42537da931bffe" kindref="member">share_type</ref></type>
+          <type>share_type</type>
           <declname>amount</declname>
         </param>
         <param>
@@ -2361,7 +2361,7 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="336" column="1" bodyfile="libraries/chain/db_balance.cpp" bodystart="206" bodyend="246"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="348" column="1" bodyfile="libraries/chain/db_balance.cpp" bodystart="206" bodyend="246"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a8eba388c99ae3a7c13bb16cbfeb6be10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2373,7 +2373,7 @@ Will close the database before wiping. Database will be closed when this functio
           <declname>wit</declname>
         </param>
         <param>
-          <type><ref refid="namespacegraphene_1_1chain_1ab4bea4aef5fe40c66b42537da931bffe" kindref="member">share_type</ref></type>
+          <type>share_type</type>
           <declname>amount</declname>
         </param>
         <briefdescription>
@@ -2382,7 +2382,7 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="338" column="1" bodyfile="libraries/chain/db_balance.cpp" bodystart="248" bodyend="270"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="350" column="1" bodyfile="libraries/chain/db_balance.cpp" bodystart="248" bodyend="270"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1ae82d4e2f0f40a9b7a5b13eb23315d637" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2395,7 +2395,7 @@ Will close the database before wiping. Database will be closed when this functio
 <para>This method dumps the state of the blockchain in a semi-human readable form for the purpose of tracking down funds and mismatches in currency allocation </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="342" column="1" bodyfile="libraries/chain/db_debug.cpp" bodystart="40" bodyend="111"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="354" column="1" bodyfile="libraries/chain/db_debug.cpp" bodystart="40" bodyend="111"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a8a805900b1a5c1ee4672b8f2732fda0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2408,7 +2408,7 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="343" column="1" bodyfile="libraries/chain/db_debug.cpp" bodystart="184" bodyend="192"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="355" column="1" bodyfile="libraries/chain/db_debug.cpp" bodystart="184" bodyend="192"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a69528d69a226d6a75670f5e31187db3f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2425,10 +2425,10 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="344" column="1" bodyfile="libraries/chain/db_debug.cpp" bodystart="194" bodyend="208"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="356" column="1" bodyfile="libraries/chain/db_debug.cpp" bodystart="194" bodyend="208"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1af380d754e57a21159b78dece2f4daf1e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="structgraphene_1_1chain_1_1asset" kindref="compound">asset</ref></type>
+        <type>asset</type>
         <definition>asset graphene::chain::database::match</definition>
         <argsstring>(const call_order_object &amp;call, const force_settlement_object &amp;settle, const price &amp;match_price, asset max_settlement, const price &amp;fill_price)</argsstring>
         <name>match</name>
@@ -2441,15 +2441,15 @@ Will close the database before wiping. Database will be closed when this functio
           <declname>settle</declname>
         </param>
         <param>
-          <type>const <ref refid="structgraphene_1_1chain_1_1price" kindref="compound">price</ref> &amp;</type>
+          <type>const price &amp;</type>
           <declname>match_price</declname>
         </param>
         <param>
-          <type><ref refid="structgraphene_1_1chain_1_1asset" kindref="compound">asset</ref></type>
+          <type>asset</type>
           <declname>max_settlement</declname>
         </param>
         <param>
-          <type>const <ref refid="structgraphene_1_1chain_1_1price" kindref="compound">price</ref> &amp;</type>
+          <type>const price &amp;</type>
           <declname>fill_price</declname>
         </param>
         <briefdescription>
@@ -2459,7 +2459,7 @@ Will close the database before wiping. Database will be closed when this functio
 </para>        </detaileddescription>
         <inbodydescription>
 <para>If the least collateralized call position lacks sufficient collateral to cover at the match price then this indicates a black swan event according to the price feed, but only the market can trigger a black swan. So now we must cancel the forced settlement object.</para>        </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="388" column="1" bodyfile="libraries/chain/db_market.cpp" bodystart="704" bodyend="808"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="400" column="1" bodyfile="libraries/chain/db_market.cpp" bodystart="705" bodyend="809"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a88144a9795e65d5836711f69a1848bdb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -2471,11 +2471,11 @@ Will close the database before wiping. Database will be closed when this functio
           <declname>order</declname>
         </param>
         <param>
-          <type>const <ref refid="structgraphene_1_1chain_1_1asset" kindref="compound">asset</ref> &amp;</type>
+          <type>const asset &amp;</type>
           <declname>pays</declname>
         </param>
         <param>
-          <type>const <ref refid="structgraphene_1_1chain_1_1asset" kindref="compound">asset</ref> &amp;</type>
+          <type>const asset &amp;</type>
           <declname>receives</declname>
         </param>
         <param>
@@ -2483,7 +2483,7 @@ Will close the database before wiping. Database will be closed when this functio
           <declname>cull_if_small</declname>
         </param>
         <param>
-          <type>const <ref refid="structgraphene_1_1chain_1_1price" kindref="compound">price</ref> &amp;</type>
+          <type>const price &amp;</type>
           <declname>fill_price</declname>
         </param>
         <param>
@@ -2497,7 +2497,7 @@ Will close the database before wiping. Database will be closed when this functio
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="397" column="1" bodyfile="libraries/chain/db_market.cpp" bodystart="810" bodyend="863"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="409" column="1" bodyfile="libraries/chain/db_market.cpp" bodystart="811" bodyend="864"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a1752b9a5ae05ebd5bd910d46db3f65ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -2509,15 +2509,15 @@ Will close the database before wiping. Database will be closed when this functio
           <declname>order</declname>
         </param>
         <param>
-          <type>const <ref refid="structgraphene_1_1chain_1_1asset" kindref="compound">asset</ref> &amp;</type>
+          <type>const asset &amp;</type>
           <declname>pays</declname>
         </param>
         <param>
-          <type>const <ref refid="structgraphene_1_1chain_1_1asset" kindref="compound">asset</ref> &amp;</type>
+          <type>const asset &amp;</type>
           <declname>receives</declname>
         </param>
         <param>
-          <type>const <ref refid="structgraphene_1_1chain_1_1price" kindref="compound">price</ref> &amp;</type>
+          <type>const price &amp;</type>
           <declname>fill_price</declname>
         </param>
         <param>
@@ -2530,7 +2530,7 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="399" column="1" bodyfile="libraries/chain/db_market.cpp" bodystart="866" bodyend="927"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="411" column="1" bodyfile="libraries/chain/db_market.cpp" bodystart="867" bodyend="928"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1aa5036ea052f41fe75fa1a381234b23c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -2542,15 +2542,15 @@ Will close the database before wiping. Database will be closed when this functio
           <declname>settle</declname>
         </param>
         <param>
-          <type>const <ref refid="structgraphene_1_1chain_1_1asset" kindref="compound">asset</ref> &amp;</type>
+          <type>const asset &amp;</type>
           <declname>pays</declname>
         </param>
         <param>
-          <type>const <ref refid="structgraphene_1_1chain_1_1asset" kindref="compound">asset</ref> &amp;</type>
+          <type>const asset &amp;</type>
           <declname>receives</declname>
         </param>
         <param>
-          <type>const <ref refid="structgraphene_1_1chain_1_1price" kindref="compound">price</ref> &amp;</type>
+          <type>const price &amp;</type>
           <declname>fill_price</declname>
         </param>
         <param>
@@ -2563,7 +2563,7 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="401" column="1" bodyfile="libraries/chain/db_market.cpp" bodystart="929" bodyend="954"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="413" column="1" bodyfile="libraries/chain/db_market.cpp" bodystart="930" bodyend="955"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a63c09c05efe17bfbd639a9a7c9fffd54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -2625,7 +2625,7 @@ Will close the database before wiping. Database will be closed when this functio
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="404" column="1" bodyfile="libraries/chain/db_market.cpp" bodystart="970" bodyend="1174"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="416" column="1" bodyfile="libraries/chain/db_market.cpp" bodystart="971" bodyend="1175"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a98391f198bc95d206c91da61dc55373d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2637,11 +2637,11 @@ Will close the database before wiping. Database will be closed when this functio
           <declname>receiver</declname>
         </param>
         <param>
-          <type>const <ref refid="structgraphene_1_1chain_1_1asset" kindref="compound">asset</ref> &amp;</type>
+          <type>const asset &amp;</type>
           <declname>receives</declname>
         </param>
         <param>
-          <type>const <ref refid="structgraphene_1_1chain_1_1asset" kindref="compound">asset</ref> &amp;</type>
+          <type>const asset &amp;</type>
           <declname>pays</declname>
         </param>
         <briefdescription>
@@ -2650,10 +2650,10 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="408" column="1" bodyfile="libraries/chain/db_market.cpp" bodystart="1176" bodyend="1186"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="420" column="1" bodyfile="libraries/chain/db_market.cpp" bodystart="1177" bodyend="1187"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a67e467860627363519b8548029102ff1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="structgraphene_1_1chain_1_1asset" kindref="compound">asset</ref></type>
+        <type>asset</type>
         <definition>asset graphene::chain::database::calculate_market_fee</definition>
         <argsstring>(const asset_object &amp;recv_asset, const asset &amp;trade_amount)</argsstring>
         <name>calculate_market_fee</name>
@@ -2662,7 +2662,7 @@ Will close the database before wiping. Database will be closed when this functio
           <declname>recv_asset</declname>
         </param>
         <param>
-          <type>const <ref refid="structgraphene_1_1chain_1_1asset" kindref="compound">asset</ref> &amp;</type>
+          <type>const asset &amp;</type>
           <declname>trade_amount</declname>
         </param>
         <briefdescription>
@@ -2671,10 +2671,10 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="410" column="1" bodyfile="libraries/chain/db_market.cpp" bodystart="1188" bodyend="1204"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="422" column="1" bodyfile="libraries/chain/db_market.cpp" bodystart="1189" bodyend="1205"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a5a9971fa9b80be998c1ff8f33726996e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="structgraphene_1_1chain_1_1asset" kindref="compound">asset</ref></type>
+        <type>asset</type>
         <definition>asset graphene::chain::database::pay_market_fees</definition>
         <argsstring>(const asset_object &amp;recv_asset, const asset &amp;receives)</argsstring>
         <name>pay_market_fees</name>
@@ -2683,7 +2683,7 @@ Will close the database before wiping. Database will be closed when this functio
           <declname>recv_asset</declname>
         </param>
         <param>
-          <type>const <ref refid="structgraphene_1_1chain_1_1asset" kindref="compound">asset</ref> &amp;</type>
+          <type>const asset &amp;</type>
           <declname>receives</declname>
         </param>
         <briefdescription>
@@ -2692,10 +2692,10 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="411" column="1" bodyfile="libraries/chain/db_market.cpp" bodystart="1206" bodyend="1222"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="423" column="1" bodyfile="libraries/chain/db_market.cpp" bodystart="1207" bodyend="1223"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1ab96f64fc33b091d2d9fd26d52ff7f58e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="structgraphene_1_1chain_1_1asset" kindref="compound">asset</ref></type>
+        <type>asset</type>
         <definition>asset graphene::chain::database::pay_market_fees</definition>
         <argsstring>(const account_object &amp;seller, const asset_object &amp;recv_asset, const asset &amp;receives)</argsstring>
         <name>pay_market_fees</name>
@@ -2708,7 +2708,7 @@ Will close the database before wiping. Database will be closed when this functio
           <declname>recv_asset</declname>
         </param>
         <param>
-          <type>const <ref refid="structgraphene_1_1chain_1_1asset" kindref="compound">asset</ref> &amp;</type>
+          <type>const asset &amp;</type>
           <declname>receives</declname>
         </param>
         <briefdescription>
@@ -2717,7 +2717,7 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="412" column="1" bodyfile="libraries/chain/db_market.cpp" bodystart="1224" bodyend="1273"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="424" column="1" bodyfile="libraries/chain/db_market.cpp" bodystart="1225" bodyend="1278"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1abbc9d3f6064163078b9a21c2c580f24b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -2734,7 +2734,7 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="433" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="433" bodyend="433"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="445" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="445" bodyend="445"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a34c54fd8e47f00cdfe23de1eb8a55bb8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>fc::future&lt; void &gt;</type>
@@ -2742,7 +2742,7 @@ Will close the database before wiping. Database will be closed when this functio
         <argsstring>(const signed_block &amp;block, const uint32_t skip=skip_nothing) const</argsstring>
         <name>precompute_parallel</name>
         <param>
-          <type>const <ref refid="classgraphene_1_1chain_1_1signed__block" kindref="compound">signed_block</ref> &amp;</type>
+          <type>const signed_block &amp;</type>
           <declname>block</declname>
         </param>
         <param>
@@ -2772,7 +2772,7 @@ Will close the database before wiping. Database will be closed when this functio
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="444" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="777" bodyend="812"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="456" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="779" bodyend="814"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1ad76db729d92b453958e49c4ca7b9e382" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>fc::future&lt; void &gt;</type>
@@ -2780,7 +2780,7 @@ Will close the database before wiping. Database will be closed when this functio
         <argsstring>(const precomputable_transaction &amp;trx) const</argsstring>
         <name>precompute_parallel</name>
         <param>
-          <type>const <ref refid="classgraphene_1_1chain_1_1precomputable__transaction" kindref="compound">precomputable_transaction</ref> &amp;</type>
+          <type>const precomputable_transaction &amp;</type>
           <declname>trx</declname>
         </param>
         <briefdescription>
@@ -2798,7 +2798,7 @@ Will close the database before wiping. Database will be closed when this functio
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="453" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="814" bodyend="819"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="465" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="816" bodyend="821"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1af9556e43f26824c2036c8916d0bc460c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2806,7 +2806,7 @@ Will close the database before wiping. Database will be closed when this functio
         <argsstring>(const signed_block &amp;next_block, uint32_t skip=skip_nothing)</argsstring>
         <name>apply_block</name>
         <param>
-          <type>const <ref refid="classgraphene_1_1chain_1_1signed__block" kindref="compound">signed_block</ref> &amp;</type>
+          <type>const signed_block &amp;</type>
           <declname>next_block</declname>
         </param>
         <param>
@@ -2820,15 +2820,15 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="476" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="512" bodyend="530"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="488" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="514" bodyend="532"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1aaadc49139eb020b3b1e91b60b128e49f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="structgraphene_1_1chain_1_1processed__transaction" kindref="compound">processed_transaction</ref></type>
+        <type>processed_transaction</type>
         <definition>processed_transaction graphene::chain::database::apply_transaction</definition>
         <argsstring>(const signed_transaction &amp;trx, uint32_t skip=skip_nothing)</argsstring>
         <name>apply_transaction</name>
         <param>
-          <type>const <ref refid="classgraphene_1_1chain_1_1signed__transaction" kindref="compound">signed_transaction</ref> &amp;</type>
+          <type>const signed_transaction &amp;</type>
           <declname>trx</declname>
         </param>
         <param>
@@ -2842,10 +2842,10 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="477" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="618" bodyend="626"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="489" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="620" bodyend="628"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a930314aa34166b1dbfc06d0cd85d481d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__operations_1gaf121d5f218e142d53acffc833cae929a" kindref="member">operation_result</ref></type>
+        <type>operation_result</type>
         <definition>operation_result graphene::chain::database::apply_operation</definition>
         <argsstring>(transaction_evaluation_state &amp;eval_state, const operation &amp;op)</argsstring>
         <name>apply_operation</name>
@@ -2854,7 +2854,7 @@ Will close the database before wiping. Database will be closed when this functio
           <declname>eval_state</declname>
         </param>
         <param>
-          <type>const <ref refid="group__operations_1ga1f34da121b0143fb12ee42cffb9308e9" kindref="member">operation</ref> &amp;</type>
+          <type>const operation &amp;</type>
           <declname>op</declname>
         </param>
         <briefdescription>
@@ -2863,7 +2863,7 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="478" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="702" bodyend="714"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="490" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="704" bodyend="716"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -2895,7 +2895,7 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="456" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="763" bodyend="775"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="468" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="765" bodyend="777"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1aa90507ca970108d15c464c3938bb98df" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -2917,7 +2917,7 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="470" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="51" bodyend="72"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="482" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="53" bodyend="74"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a55eb3701b763add49f4dc56f848b6dd3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2925,7 +2925,7 @@ Will close the database before wiping. Database will be closed when this functio
         <argsstring>(const signed_block &amp;next_block)</argsstring>
         <name>_apply_block</name>
         <param>
-          <type>const <ref refid="classgraphene_1_1chain_1_1signed__block" kindref="compound">signed_block</ref> &amp;</type>
+          <type>const signed_block &amp;</type>
           <declname>next_block</declname>
         </param>
         <briefdescription>
@@ -2934,15 +2934,15 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="481" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="532" bodyend="614"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="493" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="534" bodyend="616"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a575e603b3c68ea8fb91d16b92a8c543a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="structgraphene_1_1chain_1_1processed__transaction" kindref="compound">processed_transaction</ref></type>
+        <type>processed_transaction</type>
         <definition>processed_transaction graphene::chain::database::_apply_transaction</definition>
         <argsstring>(const signed_transaction &amp;trx)</argsstring>
         <name>_apply_transaction</name>
         <param>
-          <type>const <ref refid="classgraphene_1_1chain_1_1signed__transaction" kindref="compound">signed_transaction</ref> &amp;</type>
+          <type>const signed_transaction &amp;</type>
           <declname>trx</declname>
         </param>
         <briefdescription>
@@ -2951,7 +2951,7 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="482" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="628" bodyend="700"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="494" column="1" bodyfile="libraries/chain/db_block.cpp" bodystart="630" bodyend="702"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a12b1cbf647a44777d323f313d5dd7c0a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2972,7 +2972,7 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="483" column="1" bodyfile="libraries/chain/db_market.cpp" bodystart="135" bodyend="158"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="495" column="1" bodyfile="libraries/chain/db_market.cpp" bodystart="136" bodyend="159"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-func">
@@ -2987,7 +2987,7 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="460" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="460" bodyend="460"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="472" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="472" bodyend="472"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a110fcf6a054a23576d5573ee4db3fd9c" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2995,7 +2995,7 @@ Will close the database before wiping. Database will be closed when this functio
         <argsstring>(const signed_block &amp;block)</argsstring>
         <name>notify_applied_block</name>
         <param>
-          <type>const <ref refid="classgraphene_1_1chain_1_1signed__block" kindref="compound">signed_block</ref> &amp;</type>
+          <type>const signed_block &amp;</type>
           <declname>block</declname>
         </param>
         <briefdescription>
@@ -3004,7 +3004,7 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="461" column="1" bodyfile="libraries/chain/db_notify.cpp" bodystart="446" bodyend="449"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="473" column="1" bodyfile="libraries/chain/db_notify.cpp" bodystart="446" bodyend="449"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1a9b827a50067542ef8c1ea9f2e6177f8d" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -3012,7 +3012,7 @@ Will close the database before wiping. Database will be closed when this functio
         <argsstring>(const signed_transaction &amp;tx)</argsstring>
         <name>notify_on_pending_transaction</name>
         <param>
-          <type>const <ref refid="classgraphene_1_1chain_1_1signed__transaction" kindref="compound">signed_transaction</ref> &amp;</type>
+          <type>const signed_transaction &amp;</type>
           <declname>tx</declname>
         </param>
         <briefdescription>
@@ -3021,7 +3021,7 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="462" column="1" bodyfile="libraries/chain/db_notify.cpp" bodystart="451" bodyend="454"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="474" column="1" bodyfile="libraries/chain/db_notify.cpp" bodystart="451" bodyend="454"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1database_1ae3f480762bbb94cfecf98dd81fe3ed6e" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -3034,7 +3034,7 @@ Will close the database before wiping. Database will be closed when this functio
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/database.hpp" line="463" column="1" bodyfile="libraries/chain/db_notify.cpp" bodystart="456" bodyend="512"/>
+        <location file="libraries/chain/include/graphene/chain/database.hpp" line="475" column="1" bodyfile="libraries/chain/db_notify.cpp" bodystart="456" bodyend="512"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -3042,28 +3042,28 @@ Will close the database before wiping. Database will be closed when this functio
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="1884">
+      <node id="715">
         <label>db::object_database</label>
       </node>
-      <node id="1883">
+      <node id="714">
         <label>graphene::chain::database</label>
         <link refid="classgraphene_1_1chain_1_1database"/>
-        <childnode refid="1884" relation="public-inheritance">
+        <childnode refid="715" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="1886">
+      <node id="717">
         <label>db::object_database</label>
       </node>
-      <node id="1885">
+      <node id="716">
         <label>graphene::chain::database</label>
         <link refid="classgraphene_1_1chain_1_1database"/>
-        <childnode refid="1886" relation="public-inheritance">
+        <childnode refid="717" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="libraries/chain/include/graphene/chain/database.hpp" line="57" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="56" bodyend="595"/>
+    <location file="libraries/chain/include/graphene/chain/database.hpp" line="69" column="1" bodyfile="libraries/chain/include/graphene/chain/database.hpp" bodystart="68" bodyend="607"/>
     <listofallmembers>
       <member refid="classgraphene_1_1chain_1_1database_1a0cdbc9e636ec8cba85507264b3477c79" prot="private" virt="non-virtual"><scope>graphene::chain::database</scope><name>_applied_ops</name></member>
       <member refid="classgraphene_1_1chain_1_1database_1a55eb3701b763add49f4dc56f848b6dd3" prot="private" virt="non-virtual"><scope>graphene::chain::database</scope><name>_apply_block</name></member>
