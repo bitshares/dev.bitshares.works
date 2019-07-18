@@ -75,7 +75,7 @@ As you know, each blockchain starts with a genesis block that definitions are in
 
 The BitShares Blockchain Data Configuration file exists in the blockchain data directory. And the data directory will be created by launching a witness_node. 
 
-At this point, we just want to create a :ref:`configuration file (config.ini)  <bts-config-ini-eg-public-testnet>` to observe the parameters. If you want to use the Public Testnet, you can use the default configuration settings without changes.
+At this point, we just want to create a :ref:`configuration file (cinfig.ini)  <bts-config-ini-eg-public-testnet>` to observe the parameters. If you want to use the Public Testnet, you can use the default configuration settings without changes.
 
 Run the following command and end the process. In Windows, you can use ``[ctl]+c`` to end the process.
 
@@ -87,7 +87,7 @@ Run the following command and end the process. In Windows, you can use ``[ctl]+c
 2-2. Blockchain Data Directory
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-As a default the BitShares Blockchain data directory ``witness_node_data_dir`` will be created in a current directory.
+As a default the BitShatres Blockchain data directory ``witness_node_data_dir`` will be created in a current directory.
 
 For example, if your current directory is ``bitshares-core-testnet`` and you run this command ``./programs/witness_node/witness_node``, you will find the data directory in the same current directory with the programs folder.
 
@@ -137,7 +137,7 @@ If you want to create own data directory, use ``--data-dir`` parameter and run t
 2-4. Observe the config.ini file
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Although you can use the default :ref:`config.ini <bts-config-ini-eg-public-testnet>` file for the Public Testnet, it's worth to recognize the parameters. 
+Although you can use the default :ref:`cinfig.ini <bts-config-ini-eg-public-testnet>` file for the Public Testnet, it's worth to recognize the parameters. 
 
 In BitShares, a seed node is a node that accept incoming P2P connection. Its address is hard coded in the program, so when a new node starts, it will connect to the seed nodes by default. Every node (including seed nodes) tells the connected nodes where other nodes are, so all nodes can connect to each other.
 
@@ -277,8 +277,11 @@ We are going to set a password and unlock the ``cli_wallet``. The password is us
 * ``unlock`` the wallet::
 
    >>> unlock supersecret
-
-
+   
+   
+.. Note:: **New Feature:** Keep your password safe. New features will not show your password while you are typing in. :ref:`Click here to check it out. <3-unlock-cli-wallet>`
+   
+   
 After the ``unlock``, we can search and view the existing public testnet accounts data. Let's check if your testnet account is on the public testnet blockchain. We use the following command ``get_account`` to view an account information::
  
       unlocked >>> get_account ken-test01

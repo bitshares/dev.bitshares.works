@@ -327,6 +327,12 @@ Fist you need to create a new password for your wallet. This password is used to
 
     >>> set_password supersecret
 
+	
+	   
+.. Note:: **New Feature:** Keep your password safe. New features will not show your password while you are typing in. :ref:`Click here to check it out. <3-unlock-cli-wallet>`
+   
+   
+   
 |
 	
 7-2. Gain Access to the Genesis Stake
