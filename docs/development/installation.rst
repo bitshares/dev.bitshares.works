@@ -14,7 +14,9 @@ Installation
 ========================
 
 .. Important::  
-   - BitShares requires a 64-bit operating system to build
+   - BitShares requires a 64-bit operating system to build, and will not build on a 32-bit OS.
+   - BitShares now supports Ubuntu 18.04 LTS
+   - BitShares now supports OpenSSL 1.1.0
    - See BitShares :ref:`system requirements <system-requirements-node>`
 
 |

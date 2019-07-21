@@ -281,6 +281,15 @@ As a default, most parameters have been commented. You have to uncomment to set 
 	# (updated - 20190715)
 
 
+	
+.. note:: Please see more information for Public testnet and Private testnet configurations.
+
+  - Public testnet:  :ref:`config.ini <bts-config-ini-eg-public-testnet>` information
+  - Private testnet: :ref:`config.ini <bts-config-ini-eg-private-testnet>` information
+
+  
+  
+	
 |
 
 **Example - logging.ini**

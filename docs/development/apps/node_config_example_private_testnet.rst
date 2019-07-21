@@ -26,10 +26,24 @@ As a default, most parameters have been commented. You have to uncomment to set 
 	checkpoint = []
 	
 	genesis-json = genesis/my-genesis.json
+		
+	# ==============================================================================
+	# witness plugin options
+	# ==============================================================================
 
-	private-key = ["BTS....","5KQwr...."]  //Set your key pairs
-	# private-key = ["BTS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV","5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"]
+	# Enable block production, even if the chain is stale.
+	enable-stale-production = false
+
+	# Percent of witnesses (0-100) that must be participating in order to produce blocks
+	# required-participation = 33 
+	# If start a private testnet with the default number 33, the node won't produce blocks	
+	required-participation = 0 # Set 0 for Private testnet 
 	
+	# Tuple of [PublicKey, WIF private key] (may specify multiple times)
+	private-key = ["BTS....","5KQwr...."]  //Set your key pairs
+
+	# ID of witness controlled by this node (e.g. "1.6.5", quotes are required, may specify multiple times)
+	# witness-id =	
 	witness-id = "1.6.1"
 	witness-id = "1.6.2"
 	witness-id = "1.6.3"
@@ -46,6 +60,10 @@ As a default, most parameters have been commented. You have to uncomment to set 
 	# Logging configuration is loaded from logging.ini by default.
 	# If logging.ini exists, logging configuration added in this file will be ignored.
 
+
+.. WARNING:: Please adjust the value of ``required-participation`` accordingly. If you start a private testnet with the default number 33, the node won't produce blocks.
+	
+	
 	
 	
 Example - logging.ini
