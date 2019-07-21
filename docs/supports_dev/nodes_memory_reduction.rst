@@ -21,14 +21,18 @@ Here are the 4 new options you can use to reduce RAM:
 programs/witness_node/witness_node --help
 ------------------------------------------------
 
-:--plugins arg:  Space-separated list of plugins to activate 
+- ``--plugins arg`` : Space-separated list of plugins to activate 
 
 Options for plugin accout_history
 ----------------------------------------
 
-:--track-account arg:  Account ID to track history for (may specify multiple times) 
-:--partial-operations arg: Keep only those operations in memory that are related to account history tracking 
-:--max-ops-per-account arg: Maximum number of operations per account will be kept in memory 
+- ``--track-account arg`` :  Account ID to track history for (may specify multiple times) 
+- ``--partial-operations arg`` : Keep only those operations in memory that are related to account history tracking 
+- ``--max-ops-per-account arg`` : Maximum number of operations per account will be kept in memory 
+
+
+.. Note::  You can find the same parameters in a configuration file :ref:`(config.ini)<bts-config-ini-eg>` to set each value. 
+
 
 --------------
 

@@ -75,9 +75,10 @@ In order to run a full node with all the account history you need to remove ``pa
 +-------------------+--------------------+-----------------+-------------------+
 |    Default        |    Full            |     Minimal     | ElasticSearch     |
 +===================+====================+=================+===================+
-| 100G SSD, 16G RAM | 200G SSD, 120G RAM | 80G SSD, 8G RAM | 500G SSD, 32G RAM |
+| 100G SSD, 16G RAM | 640G SSD,64G RAM* | 80G SSD, 4G RAM | 500G SSD, 32G RAM |
 +-------------------+--------------------+-----------------+-------------------+
 
+(*For this setup, allocate at least 500GB of SSD as swap.)
 
 |
 

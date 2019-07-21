@@ -232,9 +232,25 @@ Open the ``[Testnet-Home]/data/my-blocktestnet/config.ini`` file and set the fol
 	rpc-endpoint = 127.0.0.1:11011
 
 	genesis-json = genesis/my-genesis.json
+		
+	# ==============================================================================
+	# witness plugin options
+	# ==============================================================================
 
+	# Enable block production, even if the chain is stale.
+	enable-stale-production = false
+
+	# Percent of witnesses (0-100) that must be participating in order to produce blocks
+	# required-participation = 33 
+	# If start a private testnet with the default number 33, the node won't produce blocks	
+	required-participation = 0 # Set 0 for Private testnet 
+	
+
+	# Tuple of [PublicKey, WIF private key] (may specify multiple times)
 	private-key = ["-- generated key --","5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"]
 
+	# ID of witness controlled by this node (e.g. "1.6.5", quotes are required, may specify multiple times)
+	# witness-id =
 	witness-id = "1.6.1"
 	witness-id = "1.6.2"
 	witness-id = "1.6.3"

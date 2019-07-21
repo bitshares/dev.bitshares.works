@@ -8,11 +8,12 @@ Boost Versions
 Supported Versions
 ======================
 
-* Boost version: between 1.57 and 1.65
+* Boost version: between 1.58 and 1.69
 
-Versions earlier than 1.57 or newer than 1.65 are NOT supported. If your system's Boost version is newer, then you will have to manually build an older version of Boost and specify it to CMake using -DBOOST_ROOT. The following is an example::
+Newer versions may work, but have not been tested. If your system came pre-installed with a version of Boost that you do not wish to use, you may manually build your preferred version and use it with BitShares by specifying it on the CMake command line. The following is an example::
 
-    cmake -DBOOST_ROOT=~/boost160 .
+    cmake -DBOOST_ROOT=/path/to/boost -DCMAKE_BUILD_TYPE=Release .
+    make
 
 	
 The Boost which ships with Ubuntu 14.04 LTS (64-bit) is too old. You need to download the Boost tarball for Boost 1.57.0 (Note, 1.58.0 requires C++14 and will not build on Ubuntu 14.04 LTS (64-bit); this requirement was an accident, see this mailing list post).
