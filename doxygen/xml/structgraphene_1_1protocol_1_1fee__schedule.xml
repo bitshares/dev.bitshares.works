@@ -1,0 +1,258 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structgraphene_1_1protocol_1_1fee__schedule" kind="struct" language="C++" prot="public">
+    <compoundname>graphene::protocol::fee_schedule</compoundname>
+    <includes refid="fee__schedule_8hpp" local="no">fee_schedule.hpp</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structgraphene_1_1protocol_1_1fee__schedule_1afc4e0cb515ab95e68d92e075c9aee557" prot="public" static="no" mutable="no">
+        <type>flat_set&lt; <ref refid="namespacegraphene_1_1protocol_1aeae4158c1eb06993eba92e3174ad6570" kindref="member">fee_parameters</ref> &gt;</type>
+        <definition>flat_set&lt;fee_parameters&gt; graphene::protocol::fee_schedule::parameters</definition>
+        <argsstring></argsstring>
+        <name>parameters</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>must be sorted by fee_parameters.which() and have no duplicates </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/protocol/include/graphene/protocol/fee_schedule.hpp" line="202" column="1" bodyfile="libraries/protocol/include/graphene/protocol/fee_schedule.hpp" bodystart="202" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgraphene_1_1protocol_1_1fee__schedule_1ae12915cb45122c62dd7071a112269c26" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t graphene::protocol::fee_schedule::scale</definition>
+        <argsstring></argsstring>
+        <name>scale</name>
+        <initializer>= <ref refid="protocol_2include_2graphene_2protocol_2config_8hpp_1af5f2c9a6e3c5d50383888931f500eaea" kindref="member">GRAPHENE_100_PERCENT</ref></initializer>
+        <briefdescription>
+<para>fee * scale / GRAPHENE_100_PERCENT </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/protocol/include/graphene/protocol/fee_schedule.hpp" line="203" column="1" bodyfile="libraries/protocol/include/graphene/protocol/fee_schedule.hpp" bodystart="203" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1fee__schedule_1aa8b1729f8d71016692e87f1388a4bfe0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>graphene::protocol::fee_schedule::fee_schedule</definition>
+        <argsstring>()</argsstring>
+        <name>fee_schedule</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/protocol/include/graphene/protocol/fee_schedule.hpp" line="155" column="1" bodyfile="libraries/protocol/fee_schedule.cpp" bodystart="33" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1fee__schedule_1a8caa53e1912237899ffc6866c34a6d2c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structgraphene_1_1protocol_1_1asset" kindref="compound">asset</ref></type>
+        <definition>asset graphene::protocol::fee_schedule::calculate_fee</definition>
+        <argsstring>(const operation &amp;op) const</argsstring>
+        <name>calculate_fee</name>
+        <param>
+          <type>const <ref refid="group__operations_1gab6781848f77412553db6f687c895a5d1" kindref="member">operation</ref> &amp;</type>
+          <declname>op</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Finds the appropriate fee parameter struct for the operation and then calculates the appropriate fee in CORE asset. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/protocol/include/graphene/protocol/fee_schedule.hpp" line="163" column="1" bodyfile="libraries/protocol/fee_schedule.cpp" bodystart="120" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1fee__schedule_1ac5a07999f7ec3b5a9a0dcb5654659ccd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structgraphene_1_1protocol_1_1asset" kindref="compound">asset</ref></type>
+        <definition>asset graphene::protocol::fee_schedule::calculate_fee</definition>
+        <argsstring>(const operation &amp;op, const price &amp;core_exchange_rate) const</argsstring>
+        <name>calculate_fee</name>
+        <param>
+          <type>const <ref refid="group__operations_1gab6781848f77412553db6f687c895a5d1" kindref="member">operation</ref> &amp;</type>
+          <declname>op</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structgraphene_1_1protocol_1_1price" kindref="compound">price</ref> &amp;</type>
+          <declname>core_exchange_rate</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Finds the appropriate fee parameter struct for the operation and then calculates the appropriate fee in an asset specified implicitly by core_exchange_rate. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/protocol/include/graphene/protocol/fee_schedule.hpp" line="169" column="1" bodyfile="libraries/protocol/fee_schedule.cpp" bodystart="134" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1fee__schedule_1a203d9fd9a3229a20f5be3c4dad100bec" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structgraphene_1_1protocol_1_1asset" kindref="compound">asset</ref></type>
+        <definition>asset graphene::protocol::fee_schedule::set_fee</definition>
+        <argsstring>(operation &amp;op, const price &amp;core_exchange_rate=price::unit_price()) const</argsstring>
+        <name>set_fee</name>
+        <param>
+          <type><ref refid="group__operations_1gab6781848f77412553db6f687c895a5d1" kindref="member">operation</ref> &amp;</type>
+          <declname>op</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structgraphene_1_1protocol_1_1price" kindref="compound">price</ref> &amp;</type>
+          <declname>core_exchange_rate</declname>
+          <defval><ref refid="structgraphene_1_1protocol_1_1price_1af7da4b4f58613cb400bfe587232e091f" kindref="member">price::unit_price</ref>()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Updates the operation with appropriate fee and returns the fee. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/protocol/include/graphene/protocol/fee_schedule.hpp" line="173" column="1" bodyfile="libraries/protocol/fee_schedule.cpp" bodystart="139" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1fee__schedule_1a663f3793b8df54ed1c9d629e3205b8da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void graphene::protocol::fee_schedule::zero_all_fees</definition>
+        <argsstring>()</argsstring>
+        <name>zero_all_fees</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/protocol/include/graphene/protocol/fee_schedule.hpp" line="175" column="1" bodyfile="libraries/protocol/fee_schedule.cpp" bodystart="112" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1fee__schedule_1ac2f874d5346cace27ca2120ad43d2455" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void graphene::protocol::fee_schedule::validate</definition>
+        <argsstring>() const</argsstring>
+        <name>validate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Validates all of the parameters are present and accounted for. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/protocol/include/graphene/protocol/fee_schedule.hpp" line="180" column="1" bodyfile="libraries/protocol/fee_schedule.cpp" bodystart="59" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1fee__schedule_1a88f40d18649136d6b874fb44892d57fe" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Operation</type>
+          </param>
+        </templateparamlist>
+        <type>const Operation::fee_parameters_type &amp;</type>
+        <definition>const Operation::fee_parameters_type&amp; graphene::protocol::fee_schedule::get</definition>
+        <argsstring>() const</argsstring>
+        <name>get</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/protocol/include/graphene/protocol/fee_schedule.hpp" line="183" column="1" bodyfile="libraries/protocol/include/graphene/protocol/fee_schedule.hpp" bodystart="183" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1fee__schedule_1af417f87b21ec7b2c95e74a74476788ae" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Operation</type>
+          </param>
+        </templateparamlist>
+        <type>Operation::fee_parameters_type &amp;</type>
+        <definition>Operation::fee_parameters_type&amp; graphene::protocol::fee_schedule::get</definition>
+        <argsstring>()</argsstring>
+        <name>get</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/protocol/include/graphene/protocol/fee_schedule.hpp" line="188" column="1" bodyfile="libraries/protocol/include/graphene/protocol/fee_schedule.hpp" bodystart="188" bodyend="191"/>
+      </memberdef>
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1fee__schedule_1a617938f112beb4720480f47e8e9a7722" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Operation</type>
+          </param>
+        </templateparamlist>
+        <type>const bool</type>
+        <definition>const bool graphene::protocol::fee_schedule::exists</definition>
+        <argsstring>() const</argsstring>
+        <name>exists</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/protocol/include/graphene/protocol/fee_schedule.hpp" line="193" column="1" bodyfile="libraries/protocol/include/graphene/protocol/fee_schedule.hpp" bodystart="193" bodyend="197"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1fee__schedule_1a4ac42fef7ee8afb22d694eccf396abfb" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structgraphene_1_1protocol_1_1fee__schedule" kindref="compound">fee_schedule</ref></type>
+        <definition>fee_schedule graphene::protocol::fee_schedule::get_default</definition>
+        <argsstring>()</argsstring>
+        <name>get_default</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/protocol/include/graphene/protocol/fee_schedule.hpp" line="157" column="1" bodyfile="libraries/protocol/fee_schedule.cpp" bodystart="37" bodyend="46"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1fee__schedule_1ac73c8278f2023211e4fc01c2557b6ac6" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void graphene::protocol::fee_schedule::set_fee_parameters</definition>
+        <argsstring>(fee_schedule &amp;sched)</argsstring>
+        <name>set_fee_parameters</name>
+        <param>
+          <type><ref refid="structgraphene_1_1protocol_1_1fee__schedule" kindref="compound">fee_schedule</ref> &amp;</type>
+          <declname>sched</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/protocol/include/graphene/protocol/fee_schedule.hpp" line="205" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>contains all of the parameters necessary to calculate the fee for any operation </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2090">
+        <label>graphene::protocol::fee_schedule</label>
+        <link refid="structgraphene_1_1protocol_1_1fee__schedule"/>
+        <childnode refid="2091" relation="usage">
+          <edgelabel>parameters</edgelabel>
+        </childnode>
+      </node>
+      <node id="2091">
+        <label>flat_set&lt; fee_parameters &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="libraries/protocol/include/graphene/protocol/fee_schedule.hpp" line="154" column="1" bodyfile="libraries/protocol/include/graphene/protocol/fee_schedule.hpp" bodystart="153" bodyend="206"/>
+    <listofallmembers>
+      <member refid="structgraphene_1_1protocol_1_1fee__schedule_1a8caa53e1912237899ffc6866c34a6d2c" prot="public" virt="non-virtual"><scope>graphene::protocol::fee_schedule</scope><name>calculate_fee</name></member>
+      <member refid="structgraphene_1_1protocol_1_1fee__schedule_1ac5a07999f7ec3b5a9a0dcb5654659ccd" prot="public" virt="non-virtual"><scope>graphene::protocol::fee_schedule</scope><name>calculate_fee</name></member>
+      <member refid="structgraphene_1_1protocol_1_1fee__schedule_1a617938f112beb4720480f47e8e9a7722" prot="public" virt="non-virtual"><scope>graphene::protocol::fee_schedule</scope><name>exists</name></member>
+      <member refid="structgraphene_1_1protocol_1_1fee__schedule_1aa8b1729f8d71016692e87f1388a4bfe0" prot="public" virt="non-virtual"><scope>graphene::protocol::fee_schedule</scope><name>fee_schedule</name></member>
+      <member refid="structgraphene_1_1protocol_1_1fee__schedule_1a88f40d18649136d6b874fb44892d57fe" prot="public" virt="non-virtual"><scope>graphene::protocol::fee_schedule</scope><name>get</name></member>
+      <member refid="structgraphene_1_1protocol_1_1fee__schedule_1af417f87b21ec7b2c95e74a74476788ae" prot="public" virt="non-virtual"><scope>graphene::protocol::fee_schedule</scope><name>get</name></member>
+      <member refid="structgraphene_1_1protocol_1_1fee__schedule_1a4ac42fef7ee8afb22d694eccf396abfb" prot="public" virt="non-virtual"><scope>graphene::protocol::fee_schedule</scope><name>get_default</name></member>
+      <member refid="structgraphene_1_1protocol_1_1fee__schedule_1afc4e0cb515ab95e68d92e075c9aee557" prot="public" virt="non-virtual"><scope>graphene::protocol::fee_schedule</scope><name>parameters</name></member>
+      <member refid="structgraphene_1_1protocol_1_1fee__schedule_1ae12915cb45122c62dd7071a112269c26" prot="public" virt="non-virtual"><scope>graphene::protocol::fee_schedule</scope><name>scale</name></member>
+      <member refid="structgraphene_1_1protocol_1_1fee__schedule_1a203d9fd9a3229a20f5be3c4dad100bec" prot="public" virt="non-virtual"><scope>graphene::protocol::fee_schedule</scope><name>set_fee</name></member>
+      <member refid="structgraphene_1_1protocol_1_1fee__schedule_1ac73c8278f2023211e4fc01c2557b6ac6" prot="private" virt="non-virtual"><scope>graphene::protocol::fee_schedule</scope><name>set_fee_parameters</name></member>
+      <member refid="structgraphene_1_1protocol_1_1fee__schedule_1ac2f874d5346cace27ca2120ad43d2455" prot="public" virt="non-virtual"><scope>graphene::protocol::fee_schedule</scope><name>validate</name></member>
+      <member refid="structgraphene_1_1protocol_1_1fee__schedule_1a663f3793b8df54ed1c9d629e3205b8da" prot="public" virt="non-virtual"><scope>graphene::protocol::fee_schedule</scope><name>zero_all_fees</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

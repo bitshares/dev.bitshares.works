@@ -47,7 +47,7 @@
         <location file="libraries/chain/include/graphene/chain/vote_count.hpp" line="73" column="1" bodyfile="libraries/chain/include/graphene/chain/vote_count.hpp" bodystart="73" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1chain_1_1vote__counter_1af696bd52942fc3ea33528c5d8efd66c7" prot="public" static="no" mutable="no">
-        <type><ref refid="structgraphene_1_1chain_1_1authority" kindref="compound">authority</ref></type>
+        <type><ref refid="structgraphene_1_1protocol_1_1authority" kindref="compound">authority</ref></type>
         <definition>authority graphene::chain::vote_counter::auth</definition>
         <argsstring></argsstring>
         <name>auth</name>
@@ -93,7 +93,7 @@
         <argsstring>(authority &amp;out_auth)</argsstring>
         <name>finish</name>
         <param>
-          <type><ref refid="structgraphene_1_1chain_1_1authority" kindref="compound">authority</ref> &amp;</type>
+          <type><ref refid="structgraphene_1_1protocol_1_1authority" kindref="compound">authority</ref> &amp;</type>
           <declname>out_auth</declname>
         </param>
         <briefdescription>
@@ -123,33 +123,33 @@
     <detaileddescription>
 <para>Keep track of vote totals in internal authority object. See #533. </para>    </detaileddescription>
     <collaborationgraph>
-      <node id="3696">
-        <label>flat_map&lt; graphene::chain::address, weight_type &gt;</label>
-      </node>
-      <node id="3692">
+      <node id="3653">
         <label>graphene::chain::vote_counter</label>
         <link refid="structgraphene_1_1chain_1_1vote__counter"/>
-        <childnode refid="3693" relation="usage">
+        <childnode refid="3654" relation="usage">
           <edgelabel>auth</edgelabel>
         </childnode>
       </node>
-      <node id="3693">
-        <label>graphene::chain::authority</label>
-        <link refid="structgraphene_1_1chain_1_1authority"/>
-        <childnode refid="3694" relation="usage">
+      <node id="3657">
+        <label>flat_map&lt; graphene::protocol::address, weight_type &gt;</label>
+      </node>
+      <node id="3655">
+        <label>flat_map&lt; graphene::protocol::public_key_type, weight_type &gt;</label>
+      </node>
+      <node id="3654">
+        <label>graphene::protocol::authority</label>
+        <link refid="structgraphene_1_1protocol_1_1authority"/>
+        <childnode refid="3655" relation="usage">
           <edgelabel>key_auths</edgelabel>
         </childnode>
-        <childnode refid="3695" relation="usage">
+        <childnode refid="3656" relation="usage">
           <edgelabel>account_auths</edgelabel>
         </childnode>
-        <childnode refid="3696" relation="usage">
+        <childnode refid="3657" relation="usage">
           <edgelabel>address_auths</edgelabel>
         </childnode>
       </node>
-      <node id="3694">
-        <label>flat_map&lt; graphene::chain::public_key_type, weight_type &gt;</label>
-      </node>
-      <node id="3695">
+      <node id="3656">
         <label>flat_map&lt; account_id_type, weight_type &gt;</label>
       </node>
     </collaborationgraph>

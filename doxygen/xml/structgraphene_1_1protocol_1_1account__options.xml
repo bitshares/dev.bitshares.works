@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structgraphene_1_1protocol_1_1account__options" kind="struct" language="C++" prot="public">
+    <compoundname>graphene::protocol::account_options</compoundname>
+    <includes refid="account_8hpp" local="no">account.hpp</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structgraphene_1_1protocol_1_1account__options_1a242055a720cd8dccf281a9f0596ccf77" prot="public" static="no" mutable="no">
+        <type><ref refid="structgraphene_1_1protocol_1_1public__key__type" kindref="compound">public_key_type</ref></type>
+        <definition>public_key_type graphene::protocol::account_options::memo_key</definition>
+        <argsstring></argsstring>
+        <name>memo_key</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The memo key is the key this account will typically use to encrypt/sign transaction memos and other non- validated account activities. This field is here to prevent confusion if the active authority has zero or multiple keys in it. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/protocol/include/graphene/protocol/account.hpp" line="44" column="1" bodyfile="libraries/protocol/include/graphene/protocol/account.hpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgraphene_1_1protocol_1_1account__options_1a6ac45c09dda1b78fe445ddc7a75de3bc" prot="public" static="no" mutable="no">
+        <type>account_id_type</type>
+        <definition>account_id_type graphene::protocol::account_options::voting_account</definition>
+        <argsstring></argsstring>
+        <name>voting_account</name>
+        <initializer>= <ref refid="protocol_2include_2graphene_2protocol_2config_8hpp_1a0e7b7e752584cc6dfeaf0683c3f8f6c8" kindref="member">GRAPHENE_PROXY_TO_SELF_ACCOUNT</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>If this field is set to an account ID other than GRAPHENE_PROXY_TO_SELF_ACCOUNT, then this account&apos;s votes will be ignored; its stake will be counted as voting for the referenced account&apos;s selected votes instead. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/protocol/include/graphene/protocol/account.hpp" line="48" column="1" bodyfile="libraries/protocol/include/graphene/protocol/account.hpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgraphene_1_1protocol_1_1account__options_1a69c5adde30faa231585f54e0ab46df3a" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t graphene::protocol::account_options::num_witness</definition>
+        <argsstring></argsstring>
+        <name>num_witness</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The number of active witnesses this account votes the blockchain should appoint Must not exceed the actual number of witnesses voted for in <ref refid="structgraphene_1_1protocol_1_1account__options_1abb04c930e531a26564dcac0fdd1c7f07" kindref="member">votes</ref> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/protocol/include/graphene/protocol/account.hpp" line="52" column="1" bodyfile="libraries/protocol/include/graphene/protocol/account.hpp" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgraphene_1_1protocol_1_1account__options_1acf18ab0f2f5095d339a2c5001ef00f2e" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t graphene::protocol::account_options::num_committee</definition>
+        <argsstring></argsstring>
+        <name>num_committee</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The number of active committee members this account votes the blockchain should appoint Must not exceed the actual number of committee members voted for in <ref refid="structgraphene_1_1protocol_1_1account__options_1abb04c930e531a26564dcac0fdd1c7f07" kindref="member">votes</ref> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/protocol/include/graphene/protocol/account.hpp" line="55" column="1" bodyfile="libraries/protocol/include/graphene/protocol/account.hpp" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgraphene_1_1protocol_1_1account__options_1abb04c930e531a26564dcac0fdd1c7f07" prot="public" static="no" mutable="no">
+        <type>flat_set&lt; <ref refid="structgraphene_1_1protocol_1_1vote__id__type" kindref="compound">vote_id_type</ref> &gt;</type>
+        <definition>flat_set&lt;vote_id_type&gt; graphene::protocol::account_options::votes</definition>
+        <argsstring></argsstring>
+        <name>votes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is the list of vote IDs this account votes for. The weight of these votes is determined by this account&apos;s balance of core asset. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/protocol/include/graphene/protocol/account.hpp" line="58" column="1" bodyfile="libraries/protocol/include/graphene/protocol/account.hpp" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgraphene_1_1protocol_1_1account__options_1a36e25634d8b3670116c0b0bb7b6b0542" prot="public" static="no" mutable="no">
+        <type><ref refid="group__operations_1ga10cfb9bd22260c851c06b3b33ac0c512" kindref="member">extensions_type</ref></type>
+        <definition>extensions_type graphene::protocol::account_options::extensions</definition>
+        <argsstring></argsstring>
+        <name>extensions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/protocol/include/graphene/protocol/account.hpp" line="59" column="1" bodyfile="libraries/protocol/include/graphene/protocol/account.hpp" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1account__options_1ad2818851004779adbf4b103f08b6128d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool graphene::protocol::account_options::is_voting</definition>
+        <argsstring>() const</argsstring>
+        <name>is_voting</name>
+        <briefdescription>
+<para>Whether this account is voting. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/protocol/include/graphene/protocol/account.hpp" line="62" column="1" bodyfile="libraries/protocol/include/graphene/protocol/account.hpp" bodystart="62" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1account__options_1af5cc1c805a9006fcf4e90b53403dc101" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void graphene::protocol::account_options::validate</definition>
+        <argsstring>() const</argsstring>
+        <name>validate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/protocol/include/graphene/protocol/account.hpp" line="67" column="1" bodyfile="libraries/protocol/account.cpp" bodystart="152" bodyend="165"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>These are the fields which can be updated by the active authority. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="115">
+        <label>graphene::protocol::account_options</label>
+        <link refid="structgraphene_1_1protocol_1_1account__options"/>
+        <childnode refid="116" relation="usage">
+          <edgelabel>extensions</edgelabel>
+        </childnode>
+        <childnode refid="117" relation="usage">
+          <edgelabel>votes</edgelabel>
+        </childnode>
+        <childnode refid="118" relation="usage">
+          <edgelabel>memo_key</edgelabel>
+        </childnode>
+      </node>
+      <node id="116">
+        <label>flat_set&lt; future_extensions &gt;</label>
+      </node>
+      <node id="118">
+        <label>graphene::protocol::public_key_type</label>
+        <link refid="structgraphene_1_1protocol_1_1public__key__type"/>
+      </node>
+      <node id="117">
+        <label>flat_set&lt; graphene::protocol::vote_id_type &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="libraries/protocol/include/graphene/protocol/account.hpp" line="40" column="1" bodyfile="libraries/protocol/include/graphene/protocol/account.hpp" bodystart="39" bodyend="68"/>
+    <listofallmembers>
+      <member refid="structgraphene_1_1protocol_1_1account__options_1a36e25634d8b3670116c0b0bb7b6b0542" prot="public" virt="non-virtual"><scope>graphene::protocol::account_options</scope><name>extensions</name></member>
+      <member refid="structgraphene_1_1protocol_1_1account__options_1ad2818851004779adbf4b103f08b6128d" prot="public" virt="non-virtual"><scope>graphene::protocol::account_options</scope><name>is_voting</name></member>
+      <member refid="structgraphene_1_1protocol_1_1account__options_1a242055a720cd8dccf281a9f0596ccf77" prot="public" virt="non-virtual"><scope>graphene::protocol::account_options</scope><name>memo_key</name></member>
+      <member refid="structgraphene_1_1protocol_1_1account__options_1acf18ab0f2f5095d339a2c5001ef00f2e" prot="public" virt="non-virtual"><scope>graphene::protocol::account_options</scope><name>num_committee</name></member>
+      <member refid="structgraphene_1_1protocol_1_1account__options_1a69c5adde30faa231585f54e0ab46df3a" prot="public" virt="non-virtual"><scope>graphene::protocol::account_options</scope><name>num_witness</name></member>
+      <member refid="structgraphene_1_1protocol_1_1account__options_1af5cc1c805a9006fcf4e90b53403dc101" prot="public" virt="non-virtual"><scope>graphene::protocol::account_options</scope><name>validate</name></member>
+      <member refid="structgraphene_1_1protocol_1_1account__options_1abb04c930e531a26564dcac0fdd1c7f07" prot="public" virt="non-virtual"><scope>graphene::protocol::account_options</scope><name>votes</name></member>
+      <member refid="structgraphene_1_1protocol_1_1account__options_1a6ac45c09dda1b78fe445ddc7a75de3bc" prot="public" virt="non-virtual"><scope>graphene::protocol::account_options</scope><name>voting_account</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
