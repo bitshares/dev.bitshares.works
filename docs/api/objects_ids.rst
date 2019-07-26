@@ -76,7 +76,7 @@ List of commonly used objects
 +--------+------------------------------------+ 
 | 2.6.x  | account_statistics_object          | 
 +--------+------------------------------------+ 
-| 2.7.x  | transaction_object                 | 
+| 2.7.x  | transaction_history_object         | 
 +--------+------------------------------------+ 
 | 2.8.x  | block_summary_object               | 
 +--------+------------------------------------+ 
@@ -91,6 +91,12 @@ List of commonly used objects
 | 2.13.x | budget_record_object               | 
 +--------+------------------------------------+ 
 | 2.14.x | special_authority_object           | 
++--------+------------------------------------+ 
+| 2.15.x | buyback_object                     | 
++--------+------------------------------------+ 
+| 2.16.x | fba_accumulator_object             | 
++--------+------------------------------------+ 
+| 2.17.x | collateral_bid_object              | 
 +--------+------------------------------------+ 
 
 Examples
@@ -131,27 +137,25 @@ The BitShares blockchain users are requires to register each account with a uniq
 +-------------+---------------------------------------------------------+ 
 | Object ID   | Translates to                                           |
 +=============+=========================================================+ 
-| 2.6.80      | # implementation space / account-balance / id: 80       |
+| 2.5.80      | # implementation space / account-balance / id: 80       |
 +-------------+---------------------------------------------------------+ 
-| 2.7.80      | # implementation space / account-statistics / id: 80    |
+| 2.6.80      | # implementation space / account-statistics / id: 80    |
 +-------------+---------------------------------------------------------+ 
-| 2.10.80     |  # implementation space / account-transactions / id: 80 |
+| 2.9.80     |  # implementation space / account-transactions / id: 80 |
 +-------------+---------------------------------------------------------+ 
-| 2.8.80      | # implementation space / transactions / id: 80          | 
+| 2.7.80      | # implementation space / transactions / id: 80          | 
 +-------------+---------------------------------------------------------+ 
-| 2.9.80      | # implementation space / block-summary / id: 80         |
+| 2.8.80      | # implementation space / block-summary / id: 80         |
 +-------------+---------------------------------------------------------+ 
 
    
-- A programmatic description of all fields can be found in the `sources <https://github.com/bitshares/bitshares-core/blob/master/libraries/chain/protocol/types.cpp>`_
+- A programmatic description of all fields can be found in the `sources <https://github.com/bitshares/bitshares-core/blob/master/libraries/protocol/include/graphene/protocol/types.hpp>`_
 
 --------------
    
 **Example Call and a result: account object (id: 1.2.x)**::
 
 		unlocked >>> get_account_id "user123"
-		
-		get_account_id "user123"
 		"1.2.539269"
 		unlocked >>>
 
@@ -159,8 +163,6 @@ The BitShares blockchain users are requires to register each account with a uniq
 **Example Call and a result: asset object (id: 1.3.x)**::
 
 		unlocked >>> list_assets "BTS" "2"
-		
-		list_assets "BTS" "2"
 		[{
 				"id": "1.3.0",
 				"symbol": "BTS",
