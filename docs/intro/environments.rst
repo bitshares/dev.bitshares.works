@@ -16,6 +16,7 @@ BitShares Code and Files
 * Open Source program
 * Language uses (mainly): BitShares-Core(C++), python
 * `BitShares GitHub <https://github.com/bitshares>`_
+
    - **BitShares-Core (C++)** - BitShares Blockchain implementation and command-line interface.
    
     + `Programs <https://github.com/bitshares/bitshares-core/tree/master/programs#bitshares-programs>`_ : The bitshares programs are a collection of binaries to run the blockchain, interact with it or utilities.	 
@@ -28,6 +29,8 @@ BitShares Code and Files
    - **BSIPs** - BitShares Improvement Proposals and Protocols. These technical documents describe the process of updating and improving the BitShares blockchain and technical ecosystem.
    - **BitSharesjs** - JavaScript tools for BitShares Encryption and Serialization.
    - **BitSharesjs-ws** - Javascript websocket interface for Bitshares 
+   - **Beet** - Beet is a stand-alone key/identity-manager and signing app for BitShares, heavily influenced by Scatter
+   - **Bitshares Mobile App** - The mobile app for bitshares blockchain
    - (more...)
 
 ----------
