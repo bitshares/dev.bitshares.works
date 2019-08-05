@@ -6,7 +6,7 @@
     <includes refid="wallet_8hpp" local="no">wallet.hpp</includes>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structgraphene_1_1wallet_1_1vesting__balance__object__with__info_1ae173df1cdc0a25fbaf31c371c3c08386" prot="public" static="no" mutable="no">
-        <type><ref refid="structgraphene_1_1chain_1_1asset" kindref="compound">asset</ref></type>
+        <type>asset</type>
         <definition>asset graphene::wallet::vesting_balance_object_with_info::allowed_withdraw</definition>
         <argsstring></argsstring>
         <name>allowed_withdraw</name>
@@ -16,7 +16,7 @@
 <para>How much is allowed to be withdrawn. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/wallet/include/graphene/wallet/wallet.hpp" line="249" column="1" bodyfile="libraries/wallet/include/graphene/wallet/wallet.hpp" bodystart="249" bodyend="-1"/>
+        <location file="libraries/wallet/include/graphene/wallet/wallet.hpp" line="250" column="1" bodyfile="libraries/wallet/include/graphene/wallet/wallet.hpp" bodystart="250" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1wallet_1_1vesting__balance__object__with__info_1a857d1f08924a5e942316308bd8e994a5" prot="public" static="no" mutable="no">
         <type>fc::time_point_sec</type>
@@ -29,7 +29,7 @@
 <para>The time at which allowed_withdrawal was calculated. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/wallet/include/graphene/wallet/wallet.hpp" line="254" column="1" bodyfile="libraries/wallet/include/graphene/wallet/wallet.hpp" bodystart="254" bodyend="-1"/>
+        <location file="libraries/wallet/include/graphene/wallet/wallet.hpp" line="255" column="1" bodyfile="libraries/wallet/include/graphene/wallet/wallet.hpp" bodystart="255" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -52,7 +52,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/wallet/include/graphene/wallet/wallet.hpp" line="243" column="1" bodyfile="libraries/wallet/wallet.cpp" bodystart="5042" bodyend="5047"/>
+        <location file="libraries/wallet/include/graphene/wallet/wallet.hpp" line="244" column="1" bodyfile="libraries/wallet/wallet.cpp" bodystart="5083" bodyend="5090"/>
       </memberdef>
       <memberdef kind="function" id="structgraphene_1_1wallet_1_1vesting__balance__object__with__info_1a44853f6bcd0ba2a1a0943ec8b08c2291" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -69,7 +69,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/wallet/include/graphene/wallet/wallet.hpp" line="244" column="1"/>
+        <location file="libraries/wallet/include/graphene/wallet/wallet.hpp" line="245" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -77,62 +77,59 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="3617">
+      <node id="3578">
         <label>graphene::chain::vesting_balance_object</label>
         <link refid="classgraphene_1_1chain_1_1vesting__balance__object"/>
-        <childnode refid="3618" relation="public-inheritance">
+        <childnode refid="3579" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="3618">
+      <node id="3579">
         <label>graphene::db::abstract_object&lt; vesting_balance_object &gt;</label>
       </node>
-      <node id="3616">
+      <node id="3577">
         <label>graphene::wallet::vesting_balance_object_with_info</label>
         <link refid="structgraphene_1_1wallet_1_1vesting__balance__object__with__info"/>
-        <childnode refid="3617" relation="public-inheritance">
+        <childnode refid="3578" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="3624">
+      <node id="3585">
         <label>time_point_sec</label>
       </node>
-      <node id="3620">
+      <node id="3581">
         <label>graphene::chain::vesting_balance_object</label>
         <link refid="classgraphene_1_1chain_1_1vesting__balance__object"/>
-        <childnode refid="3621" relation="public-inheritance">
+        <childnode refid="3582" relation="public-inheritance">
         </childnode>
-        <childnode refid="3622" relation="usage">
+        <childnode refid="3583" relation="usage">
           <edgelabel>balance</edgelabel>
         </childnode>
       </node>
-      <node id="3621">
+      <node id="3582">
         <label>graphene::db::abstract_object&lt; vesting_balance_object &gt;</label>
       </node>
-      <node id="3619">
+      <node id="3580">
         <label>graphene::wallet::vesting_balance_object_with_info</label>
         <link refid="structgraphene_1_1wallet_1_1vesting__balance__object__with__info"/>
-        <childnode refid="3620" relation="public-inheritance">
+        <childnode refid="3581" relation="public-inheritance">
         </childnode>
-        <childnode refid="3624" relation="usage">
+        <childnode refid="3585" relation="usage">
           <edgelabel>allowed_withdraw_time</edgelabel>
         </childnode>
-        <childnode refid="3622" relation="usage">
-          <edgelabel>allowed_withdraw</edgelabel>
-        </childnode>
       </node>
-      <node id="3622">
-        <label>graphene::chain::asset</label>
-        <link refid="structgraphene_1_1chain_1_1asset"/>
-        <childnode refid="3623" relation="usage">
+      <node id="3583">
+        <label>graphene::protocol::asset</label>
+        <link refid="structgraphene_1_1protocol_1_1asset"/>
+        <childnode refid="3584" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
       </node>
-      <node id="3623">
+      <node id="3584">
         <label>safe&lt; int64_t &gt;</label>
       </node>
     </collaborationgraph>
-    <location file="libraries/wallet/include/graphene/wallet/wallet.hpp" line="242" column="1" bodyfile="libraries/wallet/include/graphene/wallet/wallet.hpp" bodystart="241" bodyend="255"/>
+    <location file="libraries/wallet/include/graphene/wallet/wallet.hpp" line="243" column="1" bodyfile="libraries/wallet/include/graphene/wallet/wallet.hpp" bodystart="242" bodyend="256"/>
     <listofallmembers>
       <member refid="structgraphene_1_1wallet_1_1vesting__balance__object__with__info_1ae173df1cdc0a25fbaf31c371c3c08386" prot="public" virt="non-virtual"><scope>graphene::wallet::vesting_balance_object_with_info</scope><name>allowed_withdraw</name></member>
       <member refid="structgraphene_1_1wallet_1_1vesting__balance__object__with__info_1a857d1f08924a5e942316308bd8e994a5" prot="public" virt="non-virtual"><scope>graphene::wallet::vesting_balance_object_with_info</scope><name>allowed_withdraw_time</name></member>

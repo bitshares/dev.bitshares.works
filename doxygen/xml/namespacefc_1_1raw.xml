@@ -3,7 +3,7 @@
   <compounddef id="namespacefc_1_1raw" kind="namespace" language="C++">
     <compoundname>fc::raw</compoundname>
       <sectiondef kind="func">
-      <memberdef kind="function" id="namespacefc_1_1raw_1a0459ae1dab930c32a8d16dbf24d4a342" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacefc_1_1raw_1ae203fcff2601478bcfb3d241c9a9a54f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename Stream</type>
@@ -14,14 +14,14 @@
         </templateparamlist>
         <type>void</type>
         <definition>void fc::raw::pack</definition>
-        <argsstring>(Stream &amp;stream, const graphene::chain::extension&lt; T &gt; &amp;value, uint32_t _max_depth=FC_PACK_MAX_DEPTH)</argsstring>
+        <argsstring>(Stream &amp;stream, const graphene::protocol::extension&lt; T &gt; &amp;value, uint32_t _max_depth=FC_PACK_MAX_DEPTH)</argsstring>
         <name>pack</name>
         <param>
           <type>Stream &amp;</type>
           <declname>stream</declname>
         </param>
         <param>
-          <type>const <ref refid="structgraphene_1_1chain_1_1extension" kindref="compound">graphene::chain::extension</ref>&lt; T &gt; &amp;</type>
+          <type>const <ref refid="structgraphene_1_1protocol_1_1extension" kindref="compound">graphene::protocol::extension</ref>&lt; T &gt; &amp;</type>
           <declname>value</declname>
         </param>
         <param>
@@ -35,9 +35,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/protocol/ext.hpp" line="207" column="1" bodyfile="libraries/chain/include/graphene/chain/protocol/ext.hpp" bodystart="207" bodyend="216"/>
+        <location file="libraries/protocol/include/graphene/protocol/ext.hpp" line="209" column="1" bodyfile="libraries/protocol/include/graphene/protocol/ext.hpp" bodystart="209" bodyend="218"/>
       </memberdef>
-      <memberdef kind="function" id="namespacefc_1_1raw_1aea32f12afa168b804f56efd15e0f23fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacefc_1_1raw_1a0b0b7520308593827677d1e430c5fdd8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename Stream</type>
@@ -48,14 +48,14 @@
         </templateparamlist>
         <type>void</type>
         <definition>void fc::raw::unpack</definition>
-        <argsstring>(Stream &amp;s, graphene::chain::extension&lt; T &gt; &amp;value, uint32_t _max_depth=FC_PACK_MAX_DEPTH)</argsstring>
+        <argsstring>(Stream &amp;s, graphene::protocol::extension&lt; T &gt; &amp;value, uint32_t _max_depth=FC_PACK_MAX_DEPTH)</argsstring>
         <name>unpack</name>
         <param>
           <type>Stream &amp;</type>
           <declname>s</declname>
         </param>
         <param>
-          <type><ref refid="structgraphene_1_1chain_1_1extension" kindref="compound">graphene::chain::extension</ref>&lt; T &gt; &amp;</type>
+          <type><ref refid="structgraphene_1_1protocol_1_1extension" kindref="compound">graphene::protocol::extension</ref>&lt; T &gt; &amp;</type>
           <declname>value</declname>
         </param>
         <param>
@@ -69,30 +69,24 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/protocol/ext.hpp" line="220" column="1" bodyfile="libraries/chain/include/graphene/chain/protocol/ext.hpp" bodystart="220" bodyend="228"/>
+        <location file="libraries/protocol/include/graphene/protocol/ext.hpp" line="222" column="1" bodyfile="libraries/protocol/include/graphene/protocol/ext.hpp" bodystart="222" bodyend="230"/>
       </memberdef>
-      <memberdef kind="function" id="namespacefc_1_1raw_1a276573165e7455d0a01ddcdbc76cb8bd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>typename T</type>
-          </param>
-        </templateparamlist>
-        <type>void</type>
-        <definition>void fc::raw::pack</definition>
-        <argsstring>(T &amp;ds, const fc::sha1 &amp;ep, uint32_t _max_depth=1)</argsstring>
+      <memberdef kind="function" id="namespacefc_1_1raw_1a32a199697045525fbca469dfeeb161c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>template void</type>
+        <definition>template void fc::raw::pack</definition>
+        <argsstring>(datastream&lt; size_t &gt; &amp;s, const graphene::protocol::pts_address &amp;tx, uint32_t _max_depth)</argsstring>
         <name>pack</name>
         <param>
-          <type>T &amp;</type>
-          <declname>ds</declname>
+          <type>datastream&lt; size_t &gt; &amp;</type>
+          <declname>s</declname>
         </param>
         <param>
-          <type>const fc::sha1 &amp;</type>
-          <declname>ep</declname>
+          <type>const <ref refid="structgraphene_1_1protocol_1_1pts__address" kindref="compound">graphene::protocol::pts_address</ref> &amp;</type>
+          <declname>tx</declname>
         </param>
         <param>
           <type>uint32_t</type>
           <declname>_max_depth</declname>
-          <defval>1</defval>
         </param>
         <briefdescription>
         </briefdescription>
@@ -100,30 +94,49 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/protocol/types.hpp" line="43" column="1" bodyfile="libraries/chain/include/graphene/chain/protocol/types.hpp" bodystart="43" bodyend="45"/>
+        <location file="libraries/protocol/include/graphene/protocol/pts_address.hpp" line="82" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="namespacefc_1_1raw_1a22c23b68a3f90723ef7c2ca919fd340f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>typename T</type>
-          </param>
-        </templateparamlist>
-        <type>void</type>
-        <definition>void fc::raw::unpack</definition>
-        <argsstring>(T &amp;ds, sha1 &amp;ep, uint32_t _max_depth=1)</argsstring>
+      <memberdef kind="function" id="namespacefc_1_1raw_1a0661099108a86db1bbbbe87d3b4fcf23" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>template void</type>
+        <definition>template void fc::raw::pack</definition>
+        <argsstring>(datastream&lt; char *&gt; &amp;s, const graphene::protocol::pts_address &amp;tx, uint32_t _max_depth)</argsstring>
+        <name>pack</name>
+        <param>
+          <type>datastream&lt; char *&gt; &amp;</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structgraphene_1_1protocol_1_1pts__address" kindref="compound">graphene::protocol::pts_address</ref> &amp;</type>
+          <declname>tx</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>_max_depth</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/protocol/include/graphene/protocol/pts_address.hpp" line="84" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1raw_1a9f26174b9936275643d584dc50f0f0f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>template void</type>
+        <definition>template void fc::raw::unpack</definition>
+        <argsstring>(datastream&lt; const char *&gt; &amp;s, graphene::protocol::pts_address &amp;tx, uint32_t _max_depth)</argsstring>
         <name>unpack</name>
         <param>
-          <type>T &amp;</type>
-          <declname>ds</declname>
+          <type>datastream&lt; const char *&gt; &amp;</type>
+          <declname>s</declname>
         </param>
         <param>
-          <type>sha1 &amp;</type>
-          <declname>ep</declname>
+          <type><ref refid="structgraphene_1_1protocol_1_1pts__address" kindref="compound">graphene::protocol::pts_address</ref> &amp;</type>
+          <declname>tx</declname>
         </param>
         <param>
           <type>uint32_t</type>
           <declname>_max_depth</declname>
-          <defval>1</defval>
         </param>
         <briefdescription>
         </briefdescription>
@@ -131,13 +144,91 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/protocol/types.hpp" line="48" column="1" bodyfile="libraries/chain/include/graphene/chain/protocol/types.hpp" bodystart="48" bodyend="50"/>
+        <location file="libraries/protocol/include/graphene/protocol/pts_address.hpp" line="86" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1raw_1abc75bf53849c3eca153e7b43f7ef7e29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>template void</type>
+        <definition>template void fc::raw::pack</definition>
+        <argsstring>(datastream&lt; size_t &gt; &amp;s, const graphene::protocol::public_key_type &amp;tx, uint32_t _max_depth=FC_PACK_MAX_DEPTH)</argsstring>
+        <name>pack</name>
+        <param>
+          <type>datastream&lt; size_t &gt; &amp;</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structgraphene_1_1protocol_1_1public__key__type" kindref="compound">graphene::protocol::public_key_type</ref> &amp;</type>
+          <declname>tx</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>_max_depth</declname>
+          <defval>FC_PACK_MAX_DEPTH</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/protocol/types.cpp" line="116" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1raw_1a026c54b0882f93c9f9b6e3a8e0e69fe4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>template void</type>
+        <definition>template void fc::raw::pack</definition>
+        <argsstring>(datastream&lt; char *&gt; &amp;s, const graphene::protocol::public_key_type &amp;tx, uint32_t _max_depth=FC_PACK_MAX_DEPTH)</argsstring>
+        <name>pack</name>
+        <param>
+          <type>datastream&lt; char *&gt; &amp;</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structgraphene_1_1protocol_1_1public__key__type" kindref="compound">graphene::protocol::public_key_type</ref> &amp;</type>
+          <declname>tx</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>_max_depth</declname>
+          <defval>FC_PACK_MAX_DEPTH</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/protocol/types.cpp" line="118" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1raw_1a844eae7e15c9b4a41f93cba66c73d548" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>template void</type>
+        <definition>template void fc::raw::unpack</definition>
+        <argsstring>(datastream&lt; const char *&gt; &amp;s, graphene::protocol::public_key_type &amp;tx, uint32_t _max_depth=FC_PACK_MAX_DEPTH)</argsstring>
+        <name>unpack</name>
+        <param>
+          <type>datastream&lt; const char *&gt; &amp;</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type><ref refid="structgraphene_1_1protocol_1_1public__key__type" kindref="compound">graphene::protocol::public_key_type</ref> &amp;</type>
+          <declname>tx</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>_max_depth</declname>
+          <defval>FC_PACK_MAX_DEPTH</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/protocol/types.cpp" line="120" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="libraries/chain/include/graphene/chain/protocol/ext.hpp" line="204" column="1"/>
+    <location file="libraries/protocol/include/graphene/protocol/ext.hpp" line="206" column="1"/>
   </compounddef>
 </doxygen>

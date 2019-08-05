@@ -10,7 +10,7 @@
         <definition>const uint8_t graphene::chain::balance_object::space_id</definition>
         <argsstring></argsstring>
         <name>space_id</name>
-        <initializer>= <ref refid="namespacegraphene_1_1chain_1a92e55d4242187696c5e2c5eaafbd9400a9dadbbe526b5096091138116c13d612d" kindref="member">protocol_ids</ref></initializer>
+        <initializer>= protocol_ids</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -24,7 +24,7 @@
         <definition>const uint8_t graphene::chain::balance_object::type_id</definition>
         <argsstring></argsstring>
         <name>type_id</name>
-        <initializer>= <ref refid="namespacegraphene_1_1chain_1aa6e32c79e2b22c998deddedcb696633da87cfe643d795d2b468fbc0bbf7b5d4ec" kindref="member">balance_object_type</ref></initializer>
+        <initializer>= balance_object_type</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -36,7 +36,7 @@
       </sectiondef>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1balance__object_1ab59c8def92ab5290ebfcfcbe2e1e763f" prot="public" static="no" mutable="no">
-        <type><ref refid="classgraphene_1_1chain_1_1address" kindref="compound">address</ref></type>
+        <type><ref refid="classgraphene_1_1protocol_1_1address" kindref="compound">address</ref></type>
         <definition>address graphene::chain::balance_object::owner</definition>
         <argsstring></argsstring>
         <name>owner</name>
@@ -49,7 +49,7 @@
         <location file="libraries/chain/include/graphene/chain/balance_object.hpp" line="44" column="1" bodyfile="libraries/chain/include/graphene/chain/balance_object.hpp" bodystart="44" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1balance__object_1a60363615da54ec77f5348f3227aace17" prot="public" static="no" mutable="no">
-        <type><ref refid="structgraphene_1_1chain_1_1asset" kindref="compound">asset</ref></type>
+        <type><ref refid="structgraphene_1_1protocol_1_1asset" kindref="compound">asset</ref></type>
         <definition>asset graphene::chain::balance_object::balance</definition>
         <argsstring></argsstring>
         <name>balance</name>
@@ -103,7 +103,7 @@
         <location file="libraries/chain/include/graphene/chain/balance_object.hpp" line="36" column="1" bodyfile="libraries/chain/include/graphene/chain/balance_object.hpp" bodystart="36" bodyend="37"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1balance__object_1abc9aa8646d5952a3cd75b07a3ebdcf57" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="structgraphene_1_1chain_1_1asset" kindref="compound">asset</ref></type>
+        <type><ref refid="structgraphene_1_1protocol_1_1asset" kindref="compound">asset</ref></type>
         <definition>asset graphene::chain::balance_object::available</definition>
         <argsstring>(fc::time_point_sec now) const</argsstring>
         <name>available</name>
@@ -120,7 +120,7 @@
         <location file="libraries/chain/include/graphene/chain/balance_object.hpp" line="38" column="1" bodyfile="libraries/chain/include/graphene/chain/balance_object.hpp" bodystart="38" bodyend="42"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1balance__object_1acf4f4e7977c8d4176fb02b108d4af9ac" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="namespacegraphene_1_1chain_1a8719a403aa47e9d369890c01d60d0bb2" kindref="member">asset_id_type</ref></type>
+        <type>asset_id_type</type>
         <definition>asset_id_type graphene::chain::balance_object::asset_type</definition>
         <argsstring>() const</argsstring>
         <name>asset_type</name>
@@ -158,36 +158,36 @@
         <childnode refid="1249" relation="public-inheritance">
         </childnode>
         <childnode refid="1250" relation="usage">
-          <edgelabel>last_claim_date</edgelabel>
-        </childnode>
-        <childnode refid="1251" relation="usage">
-          <edgelabel>owner</edgelabel>
+          <edgelabel>balance</edgelabel>
         </childnode>
         <childnode refid="1252" relation="usage">
-          <edgelabel>balance</edgelabel>
+          <edgelabel>last_claim_date</edgelabel>
+        </childnode>
+        <childnode refid="1253" relation="usage">
+          <edgelabel>owner</edgelabel>
         </childnode>
         <childnode refid="1254" relation="usage">
           <edgelabel>vesting_policy</edgelabel>
         </childnode>
       </node>
-      <node id="1250">
+      <node id="1252">
         <label>time_point_sec</label>
       </node>
       <node id="1254">
         <label>optional&lt; graphene::chain::linear_vesting_policy &gt;</label>
       </node>
-      <node id="1251">
-        <label>graphene::chain::address</label>
-        <link refid="classgraphene_1_1chain_1_1address"/>
+      <node id="1253">
+        <label>graphene::protocol::address</label>
+        <link refid="classgraphene_1_1protocol_1_1address"/>
       </node>
-      <node id="1252">
-        <label>graphene::chain::asset</label>
-        <link refid="structgraphene_1_1chain_1_1asset"/>
-        <childnode refid="1253" relation="usage">
+      <node id="1250">
+        <label>graphene::protocol::asset</label>
+        <link refid="structgraphene_1_1protocol_1_1asset"/>
+        <childnode refid="1251" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
       </node>
-      <node id="1253">
+      <node id="1251">
         <label>safe&lt; int64_t &gt;</label>
       </node>
     </collaborationgraph>

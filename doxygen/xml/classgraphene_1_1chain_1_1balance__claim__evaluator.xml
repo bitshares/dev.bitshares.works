@@ -6,7 +6,7 @@
     <includes refid="balance__evaluator_8hpp" local="no">balance_evaluator.hpp</includes>
       <sectiondef kind="public-type">
       <memberdef kind="typedef" id="classgraphene_1_1chain_1_1balance__claim__evaluator_1a3cc544793c33b76c9470431d468ad7fe" prot="public" static="no">
-        <type><ref refid="structgraphene_1_1chain_1_1balance__claim__operation" kindref="compound">balance_claim_operation</ref></type>
+        <type><ref refid="structgraphene_1_1protocol_1_1balance__claim__operation" kindref="compound">balance_claim_operation</ref></type>
         <definition>typedef balance_claim_operation graphene::chain::balance_claim_evaluator::operation_type</definition>
         <argsstring></argsstring>
         <name>operation_type</name>
@@ -37,12 +37,12 @@
       </sectiondef>
       <sectiondef kind="public-func">
       <memberdef kind="function" id="classgraphene_1_1chain_1_1balance__claim__evaluator_1a08e1277ba5d4275a1acd07dd1c577181" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="structgraphene_1_1chain_1_1void__result" kindref="compound">void_result</ref></type>
+        <type><ref refid="structgraphene_1_1protocol_1_1void__result" kindref="compound">void_result</ref></type>
         <definition>void_result graphene::chain::balance_claim_evaluator::do_evaluate</definition>
         <argsstring>(const balance_claim_operation &amp;op)</argsstring>
         <name>do_evaluate</name>
         <param>
-          <type>const <ref refid="structgraphene_1_1chain_1_1balance__claim__operation" kindref="compound">balance_claim_operation</ref> &amp;</type>
+          <type>const <ref refid="structgraphene_1_1protocol_1_1balance__claim__operation" kindref="compound">balance_claim_operation</ref> &amp;</type>
           <declname>op</declname>
         </param>
         <briefdescription>
@@ -51,15 +51,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/balance_evaluator.hpp" line="41" column="1" bodyfile="libraries/chain/balance_evaluator.cpp" bodystart="28" bodyend="68"/>
+        <location file="libraries/chain/include/graphene/chain/balance_evaluator.hpp" line="41" column="1" bodyfile="libraries/chain/balance_evaluator.cpp" bodystart="29" bodyend="69"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1balance__claim__evaluator_1a92dc0b7a18d2506b03ca215419865a4d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="structgraphene_1_1chain_1_1void__result" kindref="compound">void_result</ref></type>
+        <type><ref refid="structgraphene_1_1protocol_1_1void__result" kindref="compound">void_result</ref></type>
         <definition>void_result graphene::chain::balance_claim_evaluator::do_apply</definition>
         <argsstring>(const balance_claim_operation &amp;op)</argsstring>
         <name>do_apply</name>
         <param>
-          <type>const <ref refid="structgraphene_1_1chain_1_1balance__claim__operation" kindref="compound">balance_claim_operation</ref> &amp;</type>
+          <type>const <ref refid="structgraphene_1_1protocol_1_1balance__claim__operation" kindref="compound">balance_claim_operation</ref> &amp;</type>
           <declname>op</declname>
         </param>
         <briefdescription>
@@ -69,7 +69,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/balance_evaluator.hpp" line="47" column="1" bodyfile="libraries/chain/balance_evaluator.cpp" bodystart="74" bodyend="89"/>
+        <location file="libraries/chain/include/graphene/chain/balance_evaluator.hpp" line="47" column="1" bodyfile="libraries/chain/balance_evaluator.cpp" bodystart="75" bodyend="90"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -95,7 +95,7 @@
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="1195">
+      <node id="1197">
         <label>graphene::db::abstract_object&lt; asset_object &gt;</label>
       </node>
       <node id="1236">
@@ -106,58 +106,64 @@
         <link refid="classgraphene_1_1chain_1_1balance__object"/>
         <childnode refid="1236" relation="public-inheritance">
         </childnode>
-        <childnode refid="1211" relation="usage">
+        <childnode refid="1194" relation="usage">
+          <edgelabel>balance</edgelabel>
+        </childnode>
+        <childnode refid="1214" relation="usage">
           <edgelabel>last_claim_date</edgelabel>
         </childnode>
         <childnode refid="1237" relation="usage">
           <edgelabel>owner</edgelabel>
         </childnode>
-        <childnode refid="1205" relation="usage">
-          <edgelabel>balance</edgelabel>
-        </childnode>
         <childnode refid="1238" relation="usage">
           <edgelabel>vesting_policy</edgelabel>
         </childnode>
       </node>
-      <node id="1201">
+      <node id="1202">
         <label>flat_set&lt; asset_id_type &gt;</label>
       </node>
-      <node id="1211">
+      <node id="1214">
         <label>time_point_sec</label>
       </node>
       <node id="1226">
         <label>optional&lt; vesting_balance_id_type &gt;</label>
       </node>
-      <node id="1233">
-        <label>flat_map&lt; graphene::chain::address, weight_type &gt;</label>
-      </node>
-      <node id="1216">
+      <node id="1209">
         <label>db::object_database</label>
       </node>
-      <node id="1204">
-        <label>graphene::chain::price</label>
-        <link refid="structgraphene_1_1chain_1_1price"/>
-        <childnode refid="1205" relation="usage">
-          <edgelabel>base</edgelabel>
-          <edgelabel>quote</edgelabel>
+      <node id="1227">
+        <label>graphene::protocol::account_options</label>
+        <link refid="structgraphene_1_1protocol_1_1account__options"/>
+        <childnode refid="1213" relation="usage">
+          <edgelabel>extensions</edgelabel>
+        </childnode>
+        <childnode refid="1228" relation="usage">
+          <edgelabel>votes</edgelabel>
+        </childnode>
+        <childnode refid="1229" relation="usage">
+          <edgelabel>memo_key</edgelabel>
         </childnode>
       </node>
       <node id="1203">
         <label>string</label>
       </node>
-      <node id="1210">
+      <node id="1213">
         <label>flat_set&lt; future_extensions &gt;</label>
       </node>
-      <node id="1229">
-        <label>graphene::chain::public_key_type</label>
-        <link refid="structgraphene_1_1chain_1_1public__key__type"/>
-      </node>
-      <node id="1199">
-        <label>graphene::chain::extension&lt; additional_asset_options &gt;</label>
-        <link refid="structgraphene_1_1chain_1_1extension"/>
-        <childnode refid="1200" relation="usage">
-          <edgelabel>value</edgelabel>
+      <node id="1204">
+        <label>graphene::protocol::price</label>
+        <link refid="structgraphene_1_1protocol_1_1price"/>
+        <childnode refid="1194" relation="usage">
+          <edgelabel>base</edgelabel>
+          <edgelabel>quote</edgelabel>
         </childnode>
+      </node>
+      <node id="1201">
+        <label>graphene::protocol::additional_asset_options</label>
+        <link refid="structgraphene_1_1protocol_1_1additional__asset__options"/>
+      </node>
+      <node id="1233">
+        <label>flat_map&lt; graphene::protocol::address, weight_type &gt;</label>
       </node>
       <node id="1221">
         <label>graphene::db::abstract_object&lt; asset_dynamic_data_object &gt;</label>
@@ -180,21 +186,21 @@
         <childnode refid="1227" relation="usage">
           <edgelabel>options</edgelabel>
         </childnode>
-        <childnode refid="1230" relation="usage">
-          <edgelabel>active</edgelabel>
-          <edgelabel>owner</edgelabel>
-        </childnode>
-        <childnode refid="1211" relation="usage">
+        <childnode refid="1214" relation="usage">
           <edgelabel>membership_expiration_date</edgelabel>
         </childnode>
         <childnode refid="1203" relation="usage">
           <edgelabel>name</edgelabel>
         </childnode>
+        <childnode refid="1230" relation="usage">
+          <edgelabel>active</edgelabel>
+          <edgelabel>owner</edgelabel>
+        </childnode>
         <childnode refid="1234" relation="usage">
           <edgelabel>whitelisted_accounts</edgelabel>
           <edgelabel>blacklisted_accounts</edgelabel>
         </childnode>
-        <childnode refid="1206" relation="usage">
+        <childnode refid="1205" relation="usage">
           <edgelabel>whitelisting_accounts</edgelabel>
           <edgelabel>blacklisting_accounts</edgelabel>
         </childnode>
@@ -205,29 +211,56 @@
       <node id="1234">
         <label>set&lt; account_id_type &gt;</label>
       </node>
-      <node id="1237">
-        <label>graphene::chain::address</label>
-        <link refid="classgraphene_1_1chain_1_1address"/>
-      </node>
       <node id="1223">
         <label>graphene::db::abstract_object&lt; account_object &gt;</label>
       </node>
-      <node id="1206">
+      <node id="1231">
+        <label>flat_map&lt; graphene::protocol::public_key_type, weight_type &gt;</label>
+      </node>
+      <node id="1205">
         <label>flat_set&lt; account_id_type &gt;</label>
       </node>
-      <node id="1228">
-        <label>flat_set&lt; graphene::chain::vote_id_type &gt;</label>
-      </node>
-      <node id="1213">
+      <node id="1216">
         <label>vector&lt; signature_type &gt;</label>
+      </node>
+      <node id="1199">
+        <label>graphene::protocol::asset_options</label>
+        <link refid="structgraphene_1_1protocol_1_1asset__options"/>
+        <childnode refid="1200" relation="usage">
+          <edgelabel>extensions</edgelabel>
+        </childnode>
+        <childnode refid="1202" relation="usage">
+          <edgelabel>whitelist_markets</edgelabel>
+          <edgelabel>blacklist_markets</edgelabel>
+        </childnode>
+        <childnode refid="1195" relation="usage">
+          <edgelabel>max_market_fee</edgelabel>
+          <edgelabel>max_supply</edgelabel>
+        </childnode>
+        <childnode refid="1203" relation="usage">
+          <edgelabel>description</edgelabel>
+        </childnode>
+        <childnode refid="1204" relation="usage">
+          <edgelabel>core_exchange_rate</edgelabel>
+        </childnode>
+        <childnode refid="1205" relation="usage">
+          <edgelabel>whitelist_authorities</edgelabel>
+          <edgelabel>blacklist_authorities</edgelabel>
+        </childnode>
+      </node>
+      <node id="1217">
+        <label>flat_set&lt; graphene::protocol::public_key_type &gt;</label>
       </node>
       <node id="1193">
         <label>graphene::chain::generic_evaluator</label>
         <link refid="classgraphene_1_1chain_1_1generic__evaluator"/>
         <childnode refid="1194" relation="usage">
+          <edgelabel>fee_from_account</edgelabel>
+        </childnode>
+        <childnode refid="1196" relation="usage">
           <edgelabel>fee_asset</edgelabel>
         </childnode>
-        <childnode refid="1202" relation="usage">
+        <childnode refid="1195" relation="usage">
           <edgelabel>core_fee_paid</edgelabel>
         </childnode>
         <childnode refid="1207" relation="usage">
@@ -239,121 +272,88 @@
         <childnode refid="1220" relation="usage">
           <edgelabel>fee_asset_dyn_data</edgelabel>
         </childnode>
-        <childnode refid="1205" relation="usage">
-          <edgelabel>fee_from_account</edgelabel>
-        </childnode>
         <childnode refid="1222" relation="usage">
           <edgelabel>fee_paying_account</edgelabel>
         </childnode>
       </node>
-      <node id="1208">
-        <label>graphene::chain::signed_transaction</label>
-        <link refid="classgraphene_1_1chain_1_1signed__transaction"/>
-        <childnode refid="1209" relation="public-inheritance">
-        </childnode>
-        <childnode refid="1213" relation="usage">
-          <edgelabel>signatures</edgelabel>
-        </childnode>
-        <childnode refid="1214" relation="usage">
-          <edgelabel>_signees</edgelabel>
-        </childnode>
-      </node>
-      <node id="1230">
-        <label>graphene::chain::authority</label>
-        <link refid="structgraphene_1_1chain_1_1authority"/>
-        <childnode refid="1231" relation="usage">
-          <edgelabel>key_auths</edgelabel>
-        </childnode>
-        <childnode refid="1232" relation="usage">
-          <edgelabel>account_auths</edgelabel>
-        </childnode>
-        <childnode refid="1233" relation="usage">
-          <edgelabel>address_auths</edgelabel>
-        </childnode>
-      </node>
-      <node id="1212">
+      <node id="1215">
         <label>vector&lt; operation &gt;</label>
       </node>
-      <node id="1217">
+      <node id="1237">
+        <label>graphene::protocol::address</label>
+        <link refid="classgraphene_1_1protocol_1_1address"/>
+      </node>
+      <node id="1210">
         <label>vector&lt; operation_result &gt;</label>
       </node>
       <node id="1225">
         <label>static_variant&lt; no_special_authority, top_holders_special_authority &gt;</label>
       </node>
-      <node id="1197">
+      <node id="1206">
         <label>optional&lt; account_id_type &gt;</label>
       </node>
-      <node id="1200">
-        <label>graphene::chain::additional_asset_options</label>
-        <link refid="structgraphene_1_1chain_1_1additional__asset__options"/>
-      </node>
-      <node id="1214">
-        <label>flat_set&lt; graphene::chain::public_key_type &gt;</label>
-      </node>
-      <node id="1205">
-        <label>graphene::chain::asset</label>
-        <link refid="structgraphene_1_1chain_1_1asset"/>
-        <childnode refid="1202" relation="usage">
+      <node id="1194">
+        <label>graphene::protocol::asset</label>
+        <link refid="structgraphene_1_1protocol_1_1asset"/>
+        <childnode refid="1195" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
       </node>
-      <node id="1194">
+      <node id="1196">
         <label>graphene::chain::asset_object</label>
         <link refid="classgraphene_1_1chain_1_1asset__object"/>
-        <childnode refid="1195" relation="public-inheritance">
-        </childnode>
-        <childnode refid="1196" relation="usage">
-          <edgelabel>bitasset_data_id</edgelabel>
-        </childnode>
-        <childnode refid="1197" relation="usage">
-          <edgelabel>buyback_account</edgelabel>
+        <childnode refid="1197" relation="public-inheritance">
         </childnode>
         <childnode refid="1198" relation="usage">
+          <edgelabel>bitasset_data_id</edgelabel>
+        </childnode>
+        <childnode refid="1199" relation="usage">
           <edgelabel>options</edgelabel>
+        </childnode>
+        <childnode refid="1206" relation="usage">
+          <edgelabel>buyback_account</edgelabel>
         </childnode>
         <childnode refid="1203" relation="usage">
           <edgelabel>symbol</edgelabel>
         </childnode>
       </node>
-      <node id="1215">
+      <node id="1208">
         <label>graphene::chain::database</label>
         <link refid="classgraphene_1_1chain_1_1database"/>
-        <childnode refid="1216" relation="public-inheritance">
+        <childnode refid="1209" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="1231">
-        <label>flat_map&lt; graphene::chain::public_key_type, weight_type &gt;</label>
-      </node>
-      <node id="1227">
-        <label>graphene::chain::account_options</label>
-        <link refid="structgraphene_1_1chain_1_1account__options"/>
-        <childnode refid="1210" relation="usage">
-          <edgelabel>extensions</edgelabel>
-        </childnode>
-        <childnode refid="1228" relation="usage">
-          <edgelabel>votes</edgelabel>
-        </childnode>
-        <childnode refid="1229" relation="usage">
-          <edgelabel>memo_key</edgelabel>
-        </childnode>
-      </node>
-      <node id="1202">
+      <node id="1195">
         <label>safe&lt; int64_t &gt;</label>
+      </node>
+      <node id="1229">
+        <label>graphene::protocol::public_key_type</label>
+        <link refid="structgraphene_1_1protocol_1_1public__key__type"/>
+      </node>
+      <node id="1200">
+        <label>graphene::protocol::extension&lt; additional_asset_options &gt;</label>
+        <link refid="structgraphene_1_1protocol_1_1extension"/>
+        <childnode refid="1201" relation="usage">
+          <edgelabel>value</edgelabel>
+        </childnode>
       </node>
       <node id="1207">
         <label>graphene::chain::transaction_evaluation_state</label>
         <link refid="classgraphene_1_1chain_1_1transaction__evaluation__state"/>
         <childnode refid="1208" relation="usage">
-          <edgelabel>_trx</edgelabel>
-        </childnode>
-        <childnode refid="1215" relation="usage">
           <edgelabel>_db</edgelabel>
         </childnode>
-        <childnode refid="1217" relation="usage">
+        <childnode refid="1210" relation="usage">
           <edgelabel>operation_results</edgelabel>
         </childnode>
+        <childnode refid="1211" relation="usage">
+          <edgelabel>_trx</edgelabel>
+        </childnode>
       </node>
-      <node id="1196">
+      <node id="1228">
+        <label>flat_set&lt; graphene::protocol::vote_id_type &gt;</label>
+      </node>
+      <node id="1198">
         <label>optional&lt; asset_bitasset_data_id_type &gt;</label>
       </node>
       <node id="1218">
@@ -361,10 +361,10 @@
         <link refid="classgraphene_1_1chain_1_1account__statistics__object"/>
         <childnode refid="1219" relation="public-inheritance">
         </childnode>
-        <childnode refid="1211" relation="usage">
+        <childnode refid="1214" relation="usage">
           <edgelabel>last_vote_time</edgelabel>
         </childnode>
-        <childnode refid="1202" relation="usage">
+        <childnode refid="1195" relation="usage">
           <edgelabel>pending_fees</edgelabel>
           <edgelabel>core_in_balance</edgelabel>
           <edgelabel>lifetime_fees_paid</edgelabel>
@@ -375,46 +375,21 @@
           <edgelabel>name</edgelabel>
         </childnode>
       </node>
-      <node id="1209">
-        <label>graphene::chain::transaction</label>
-        <link refid="classgraphene_1_1chain_1_1transaction"/>
-        <childnode refid="1210" relation="usage">
-          <edgelabel>extensions</edgelabel>
-        </childnode>
-        <childnode refid="1211" relation="usage">
-          <edgelabel>expiration</edgelabel>
-        </childnode>
-        <childnode refid="1212" relation="usage">
-          <edgelabel>operations</edgelabel>
-        </childnode>
-      </node>
-      <node id="1198">
-        <label>graphene::chain::asset_options</label>
-        <link refid="structgraphene_1_1chain_1_1asset__options"/>
-        <childnode refid="1199" relation="usage">
-          <edgelabel>extensions</edgelabel>
-        </childnode>
-        <childnode refid="1201" relation="usage">
-          <edgelabel>whitelist_markets</edgelabel>
-          <edgelabel>blacklist_markets</edgelabel>
-        </childnode>
-        <childnode refid="1202" relation="usage">
-          <edgelabel>max_market_fee</edgelabel>
-          <edgelabel>max_supply</edgelabel>
-        </childnode>
-        <childnode refid="1203" relation="usage">
-          <edgelabel>description</edgelabel>
-        </childnode>
-        <childnode refid="1204" relation="usage">
-          <edgelabel>core_exchange_rate</edgelabel>
-        </childnode>
-        <childnode refid="1206" relation="usage">
-          <edgelabel>whitelist_authorities</edgelabel>
-          <edgelabel>blacklist_authorities</edgelabel>
-        </childnode>
-      </node>
       <node id="1224">
         <label>optional&lt; flat_set&lt; asset_id_type &gt; &gt;</label>
+      </node>
+      <node id="1230">
+        <label>graphene::protocol::authority</label>
+        <link refid="structgraphene_1_1protocol_1_1authority"/>
+        <childnode refid="1231" relation="usage">
+          <edgelabel>key_auths</edgelabel>
+        </childnode>
+        <childnode refid="1232" relation="usage">
+          <edgelabel>account_auths</edgelabel>
+        </childnode>
+        <childnode refid="1233" relation="usage">
+          <edgelabel>address_auths</edgelabel>
+        </childnode>
       </node>
       <node id="1191">
         <label>graphene::chain::balance_claim_evaluator</label>
@@ -423,6 +398,18 @@
         </childnode>
         <childnode refid="1235" relation="usage">
           <edgelabel>balance</edgelabel>
+        </childnode>
+      </node>
+      <node id="1211">
+        <label>graphene::protocol::signed_transaction</label>
+        <link refid="classgraphene_1_1protocol_1_1signed__transaction"/>
+        <childnode refid="1212" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1216" relation="usage">
+          <edgelabel>signatures</edgelabel>
+        </childnode>
+        <childnode refid="1217" relation="usage">
+          <edgelabel>_signees</edgelabel>
         </childnode>
       </node>
       <node id="1192">
@@ -434,12 +421,25 @@
       <node id="1232">
         <label>flat_map&lt; account_id_type, weight_type &gt;</label>
       </node>
+      <node id="1212">
+        <label>graphene::protocol::transaction</label>
+        <link refid="classgraphene_1_1protocol_1_1transaction"/>
+        <childnode refid="1213" relation="usage">
+          <edgelabel>extensions</edgelabel>
+        </childnode>
+        <childnode refid="1214" relation="usage">
+          <edgelabel>expiration</edgelabel>
+        </childnode>
+        <childnode refid="1215" relation="usage">
+          <edgelabel>operations</edgelabel>
+        </childnode>
+      </node>
       <node id="1220">
         <label>graphene::chain::asset_dynamic_data_object</label>
         <link refid="classgraphene_1_1chain_1_1asset__dynamic__data__object"/>
         <childnode refid="1221" relation="public-inheritance">
         </childnode>
-        <childnode refid="1202" relation="usage">
+        <childnode refid="1195" relation="usage">
           <edgelabel>confidential_supply</edgelabel>
           <edgelabel>fee_pool</edgelabel>
           <edgelabel>current_supply</edgelabel>
