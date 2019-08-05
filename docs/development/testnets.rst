@@ -7,7 +7,9 @@ BitShares offers an Open Public Testnet that has been deployed and is fully func
 
 For the BitShares Testnet preparation, you should download a **testnet** branch from the BitShares-Core repository. The testnet branch files are for the Testnets to use.
 
-**The testnet branch files:** include bug fixes or new features
+
+.. note:: The testnet branch files: include bug fixes or new features
+
 
 -------------
 
@@ -47,11 +49,7 @@ For a Private Testnet set up, you can download and use the testnet branch. Howev
 Other References 
 ------------------
 
-* :ref:`how-to-setup-python-lib`
-
-  - How to Create MPAs/UIAs with Python
-  
-
+* :ref:`how-to-setup-python-lib` *also, how to Create MPAs/UIAs with Python)
 * :ref:`Set up Faucet <how-to setup-faucet>`
 * :ref:`Set up Nignx <how-to-setup-nignx>`
 * :ref:`Code Coverage Testing (wiki) <how-to-testing-bts>`

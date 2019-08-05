@@ -6,7 +6,7 @@ Configuration
 
 This section shows the BitShres Blockchain configuration file ``config.ini`` parameter items. The configuration file locates in your data directory and the most parameter items are commented and contain the essential settings to adjust.
 
-.. note:: The below cinfig.ini output is an example (default values). You should modify ``private-key`` and debug-private-key`` and adjust other parameter values respectively. 
+.. note:: The below cinfig.ini output is an example (default values). You should modify ``private-key`` and ``debug-private-key`` and adjust other parameter values respectively. 
 
 
 Examples
@@ -359,6 +359,8 @@ Plugins
 You will find a list of Available BitShares Plugins. 
 
 * `BitShares Plugins: Github ReadMe <https://github.com/bitshares/bitshares-core/blob/master/libraries/plugins/README.md>`_ 
+  
+  - ``account_history``, ``debug_witness``, ``delayed_node``, ``elasticsearch``, ``es_objects``,  ``grouped_orders``, ``market_history``, ``snapshot``, ``witness``
 
 
 |
