@@ -40,7 +40,21 @@ BitShares Core C++ Library
    * - `Websocket pp <https://github.com/bitshares/websocketpp>`_  
      - C++ websocket client/server library 	
 
+|
 
+HTLC
+----------------------
+
+.. list-table::
+   :widths: 15 80
+   :header-rows: 0	 
+	
+   * - `Hashed Time-Lock Contracts (HTLC) on BitShares <https://github.com/bitshares/bitshares-core/wiki/HTLC>`_  
+     - TESTNET: User Guide for Hashed Time-Lock Contracts (HTLC) on BitShares	 
+   * - `Hashed Time-Lock Contracts (HTLC) on BitShares:CN <https://github.com/bitshares/bitshares-core/wiki/HTLC-(CN)>`_  
+     - 测试网：BitShares 哈希时间锁合约（HTLC）用户指南
+ 
+ 
 |
 
 API Related 
@@ -82,8 +96,8 @@ JavaScript
 
    * - `Bitshares JS <https://github.com/bitshares/bitsharesjs>`_  
      - JavaScript tools for BitShares Encryption and Serialization. https://bitsharesjs.bitshares.org/
-   * - `Bitshares JA-WS <https://github.com/bitshares/bitsharesjs-ws>`_  
-     - Javascript websocket interface for Bitshares
+   * - `Bitshares JS-WS <https://github.com/bitshares/bitsharesjs-ws>`_  
+     - JavaScript websocket interface for Bitshares
 
 |
 	 

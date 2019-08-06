@@ -49,7 +49,10 @@ You should get a prompt::
 
 Set a password for your CLI-wallet and unlock.
 
-.. Note::  This password does not need to be the same with your GUI-wallet password. You will create a *new wallet* and it will be secured by the new password.
+.. Note:: 
+  - **New Feature:** Keep your password safe. New features will not show your password while you are typing in. :ref:`Click here to check it out. <3-unlock-cli-wallet>`
+
+  - This password does not need to be the same with your GUI-wallet password. You will create a *new wallet* and it will be secured by the new password.
 
 ::
 
