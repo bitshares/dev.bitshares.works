@@ -285,7 +285,7 @@ If you need to monitor multiple accounts, use multiple ``track-account`` configu
 	track-account = "1.2.12346"
 	partial-operations = true
 
-Currently, there is a BUG. The configuration of multiple track-accounts will cause the above log changes to not take effect.
+The configuration of multiple track-accounts will cause the above log changes to not take effect.
 
 The way to get around this problem is not to move config.ini , but to start witness_node, add the --track-account parameter after the command line, for example::
 
@@ -336,8 +336,12 @@ The above command uses the ``-w`` parameter to specify the wallet file, the ``-s
 
 Successful execution will show::
 
+	Please use the set_password method to initialize a new wallet before continuing
 	new >>>
-
+	
+	
+.. Note:: **New Feature:** Keep your password safe. New features will not show your password while you are typing in. :ref:`Click here to check it out. <3-unlock-cli-wallet>`
+  
 First need to set a password for the wallet file::
 
 	new >>> set_password my_password_1234
@@ -368,6 +372,10 @@ Use the info command to view the current synchronization::
 	  ...
 	}
 
+   
+ 
+
+   
 **5.3 Run another cli_wallet to handle deposit**
 
 ::
@@ -550,7 +558,7 @@ Such as::
 The four parameters are: **account name, minimum number, maximum return number, and maximum number.** Numbering starts with 1.
 
 **Note:**
-There is a bug when the maximum number of cli_wallets returned in a certain version exceeds 100, resulting in inaccurate results. Please avoid using the limit to exceed 100.
+When the maximum number of cli_wallets returned in a certain version exceeds 100, resulting in inaccurate results. Please avoid using the limit to exceed 100.
 
 The result is an array, sorted in reverse chronological order, with the most recent record at the top.
 
@@ -642,7 +650,7 @@ Let the result block be result , according to the above `trx_in_block`,
 3) There may be more than one deposit in a block. The result is that ``block_num`` is the same. It may even be the same for ``trx_in_block`` and ``op_in_trx``, but ``virtual_op`` is different.
 
   - It is certain that the combination of **blocknum + trx_in_block + op_in_trx + vitrual_op** is unique.
-  - It is also worth noting here that the data of ``virtual_op`` currently has a BUG. If the parameters are not the same and replay every time you restart the device, and you check the historical data again, you will find that this value will be inconsistent.
+  - It is also worth noting here that the data of ``virtual_op``. If the parameters are not the same and replay every time you restart the device, and you check the historical data again, you will find that this value will be inconsistent.
   
 4) Due to the "Proposal" function, it is possible to postpone execution. When using ``get_block`` and then positioning with ``trx_in_block``, the corresponding transaction may not be available, or the acquired transaction does not correspond to the recharge operation.
 
