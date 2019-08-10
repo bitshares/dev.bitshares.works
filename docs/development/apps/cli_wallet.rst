@@ -99,97 +99,10 @@ If you open the cli-wallet successfully, you will receive ``new >>>`` prompt (if
 
 	Please use the set_password method to initialize a new wallet before continuing
 	new >>> 
-
-	
-.. Note::  
-   Keep your password safe. New features will not show your password while you are typing in.
-      -  If you type ``set_password`` or ``unlock`` command with no parameter, you will be prompted `Enter password:` to input your password in a blank section. 
-      - This new feature is **only applies to Linux and macOS**.
-	
-- ``set_password`` with parameter (password)
-
-::
-
-    new >>> set_password supersecretpassphrase
-    null
-    locked >>>
-
-(e.g.) we used `supersecretpassphrase` as a password. This password is used to encrypt the private keys in the wallet.
-
-	
-- ``set_password``  with no parameter (**Linux and macOS only**)
-
-   - Type a password after `Enter password:`  and hit [enter]. If successful, you will receive ``locked``. 
-   
-::
-
-    new >>> set_password 
-    Enter password:
-    
-	
-
-- ``unlock``  a wallet with parameter (password)
-
-::
-
-    locked >>> unlock supersecretpassphrase
-    null
-    unlocked >>>
-
-	
-- ``unlock``  a wallet with no parameter (**Linux and macOS only**)
-
-   - Type a password after `Enter password:`  and hit [enter]. If successful, you will receive ``unlocked``. 
-   
-::
-
-    locked >>> unlock 
-    Enter password:
-    
 	
 	
-- ``lock`` a wallet
+* **For more detailed instructions, see the tutorial on** :ref:`How to Set a password and Unlock a Cli Wallet <cli-wallet-setpwd-unlock>`
 
-::
-
-    unlocked >>> lock
-    null 
-    locked >>> 
-	
-	
-- ``set_password``  change your password
-
-   - If you want to change your password, type ``set_password`` after unlocked your cli_wallet.
-   
-::
-
-    unlocked >>> set_password
-    Enter password:
-
-	
-
-**Sample output**
-	
-.. image:: cli_wallet_unlock2.png
-        :alt: BitShares Unlock 
-        :width: 550px
-        :align: center
-		
-		
-		
-.. Note:: After this point, you can issue any command available to the cli-wallet (Wallet APIs) or construct your own transaction manually.
-
-
-- ``gethelp``
-
-You can get more detailed information by issuing ``gethelp``. Detailed explanations for most calls are available. For example, 
-
-::
-
-      unlocked >> gethelp "list_account_balances"
-
-	  
-.. Note:: Many calls have a obligatory ``broadcast``  -flag as last argument. If this flag is ``False``, the wallet will construct and sign, but **not** broadcast the transaction. This can be very useful for a cold storage setup or to verify transactions.
 	  
 |
 

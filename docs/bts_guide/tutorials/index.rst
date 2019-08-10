@@ -211,6 +211,7 @@ Use Cases
 Wallet / CLI
 =====================
 
+* :ref:`How to Set a password and Unlock a Cli Wallet <cli-wallet-setpwd-unlock>`
 * :ref:`How to connect and use the CLI-Wallet <run-cli-wallet-steps>`
 * :ref:`How to setup Network and Wallet Configuration <network-setups>`
 * :ref:`How to transferring Funds by using the CLI-Wallet <transfering-funds-cli-wallet>`
