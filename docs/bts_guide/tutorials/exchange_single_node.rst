@@ -340,23 +340,9 @@ Successful execution will show::
 	new >>>
 	
 	
-.. Note:: **New Feature:** Keep your password safe. New features will not show your password while you are typing in. :ref:`Click here to check it out. <3-unlock-cli-wallet>`
-  
-First need to set a password for the wallet file::
+* **For more detailed instructions, see the tutorial on** :ref:`How to Set a password and Unlock a Cli Wallet <cli-wallet-setpwd-unlock>`
 
-	new >>> set_password my_password_1234
 
-Successful execution will show::
-
-	locked >>>
-
-Then unlock your wallet::
-
-	locked >>> unlock my_password_1234
-
-Successful unlocking will show::
-
-	unlocked >>>
 
 Use the info command to view the current synchronization::
 

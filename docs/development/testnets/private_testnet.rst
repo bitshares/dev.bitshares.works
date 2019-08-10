@@ -337,17 +337,12 @@ We are now ready to connect a new wallet to your private testnet witness node. Y
   - Make sure to replace the above chain ID (i.e., blockchain id) ``cf307110d0...36aa74b`` with **your chain ID** reported by your ``witness_node``. The chain-id passed to the CLI-wallet needs to match the id generated and used by the ``witness node``.
   - ``--server-rpc-endpoint`` - The port number is how you defined (opened) ``--rpc-endpoint`` for the witness_node.
 
-If you receive the ``set_password`` prompt, it means your wallet has successfully connected to the testnet witness node.
+  
+If you receive the ``new >>>`` prompt, it means your wallet has been executed successfully.
 
-Fist you need to create a new password for your wallet. This password is used to encrypt all the private keys in the wallet. For this example, we will use the password `supersecret`::
+Fist you need to create a new password for your wallet. This password is used to encrypt all the private keys in the wallet. **For more detailed instructions, see the tutorial on** :ref:`How to Set a password and Unlock a Cli Wallet <cli-wallet-setpwd-unlock>`
 
-    >>> set_password supersecret
-
-	
-	   
-.. Note:: **New Feature:** Keep your password safe. New features will not show your password while you are typing in. :ref:`Click here to check it out. <3-unlock-cli-wallet>`
-   
-   
+  
    
 |
 	
