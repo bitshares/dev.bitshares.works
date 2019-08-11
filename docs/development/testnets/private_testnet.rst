@@ -219,18 +219,26 @@ As a result, you should get two items:
 
 Open the ``[Testnet-Home]/data/my-blocktestnet/config.ini`` file and set the following settings, uncommenting them if necessary.
 
-* Example: :ref:`config.ini <bts-config-ini-eg-private-testnet>`
+* Example: :ref:`Configuration file - config.ini <bts-config-ini-eg-private-testnet>`
 
 ::
 
+	# Endpoint for P2P node to listen on
 	p2p-endpoint = 127.0.0.1:11010
-	# seed_node =                   // add a seed node of your own
-
-	# This value set needs to overwrite default checkpoint.
-	checkpoint = []
-
+	
+	# Endpoint for websocket RPC to listen on
 	rpc-endpoint = 127.0.0.1:11011
-
+	                
+	###--> For Private Testnet, add a seed node of your own
+	# P2P nodes to connect to on startup (may specify multiple times)
+	# seed_node =  
+	
+	###--> For Private Testnet, this value set needs to overwrite default checkpoint.
+	checkpoint = []
+	# Pairs of [BLOCK_NUM,BLOCK_ID] that should be enforced as checkpoints.
+	## checkpoint = ["22668518", "0159e4e600cb149e22ef960442ca331159914617"]
+	
+	# File to read Genesis State from
 	genesis-json = genesis/my-genesis.json
 		
 	# ==============================================================================
@@ -243,9 +251,10 @@ Open the ``[Testnet-Home]/data/my-blocktestnet/config.ini`` file and set the fol
 	# Percent of witnesses (0-100) that must be participating in order to produce blocks
 	# required-participation = 33 
 	# If start a private testnet with the default number 33, the node won't produce blocks	
-	required-participation = 0 # Set 0 for Private testnet 
+	####--> For Private testnet, set 0 
+	required-participation = 0 
 	
-
+	###--> For Private Testnet, set own key pairs
 	# Tuple of [PublicKey, WIF private key] (may specify multiple times)
 	private-key = ["-- generated key --","5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"]
 

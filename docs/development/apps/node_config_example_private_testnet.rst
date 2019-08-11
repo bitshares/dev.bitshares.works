@@ -4,6 +4,11 @@
 Configuration for Private Testnets
 ===================================
 
+.. contents:: Table of Contents
+   :local:
+   
+-------
+
 This section shows the BitShres Blockchain configuration file ``config.ini`` parameter items. The configuration file locates in your data directory and the most parameter items are commented and contain the essential settings to adjust.
 
 
@@ -18,14 +23,24 @@ As a default, most parameters have been commented. You have to uncomment to set 
 
 ::
 
+	# Endpoint for P2P node to listen on
 	p2p-endpoint = 127.0.0.1:11010
-	rpc-endpoint = 127.0.0.1:11011
-	# seed_node =                   // add a seed node of your own
-
-	# This value set needs to overwrite default checkpoint.
-	checkpoint = []
 	
+	# Endpoint for websocket RPC to listen on
+	rpc-endpoint = 127.0.0.1:11011
+	                
+	###--> For Private Testnet, add a seed node of your own
+	# P2P nodes to connect to on startup (may specify multiple times)
+	# seed_node =  
+	
+	###--> For Private Testnet, this value set needs to overwrite default checkpoint.
+	checkpoint = []
+	# Pairs of [BLOCK_NUM,BLOCK_ID] that should be enforced as checkpoints.
+	## checkpoint = ["22668518", "0159e4e600cb149e22ef960442ca331159914617"]
+	
+	# File to read Genesis State from
 	genesis-json = genesis/my-genesis.json
+	
 		
 	# ==============================================================================
 	# witness plugin options
@@ -37,10 +52,12 @@ As a default, most parameters have been commented. You have to uncomment to set 
 	# Percent of witnesses (0-100) that must be participating in order to produce blocks
 	# required-participation = 33 
 	# If start a private testnet with the default number 33, the node won't produce blocks	
-	required-participation = 0 # Set 0 for Private testnet 
+	####--> For Private testnet, set 0 
+	required-participation = 0 
 	
+	###--> For Private Testnet, set own key pairs
 	# Tuple of [PublicKey, WIF private key] (may specify multiple times)
-	private-key = ["BTS....","5KQwr...."]  //Set your key pairs
+	private-key = ["BTS....","5KQwr...."]  
 
 	# ID of witness controlled by this node (e.g. "1.6.5", quotes are required, may specify multiple times)
 	# witness-id =	
@@ -61,7 +78,7 @@ As a default, most parameters have been commented. You have to uncomment to set 
 	# If logging.ini exists, logging configuration added in this file will be ignored.
 
 
-.. WARNING:: Please adjust the value of ``required-participation`` accordingly. If you start a private testnet with the default number 33, the node won't produce blocks.
+.. WARNING:: Adjust the value of ``required-participation`` accordingly. If you start a private testnet with the default number 33, the node won't produce blocks.
 	
 	
 	
