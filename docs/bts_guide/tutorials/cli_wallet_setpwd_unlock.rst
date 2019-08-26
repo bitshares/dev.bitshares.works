@@ -15,10 +15,11 @@ If the wallet file does not exist, it will prompt ``new >>>`` to setup a passwor
   
 
  
-.. Note:: New feature has been added to the commands ``set_password`` and ``unlock``.
+.. Note:: New features have been added to the commands ``set_password`` and ``unlock``.
 
-          - This new feature will prompt ``Enter password:`` and will **not** show the input. 
-          - This new feature works **only on Linux and MacOS**.
+          - These new features will prompt ``Enter password:`` and will **not** show the input. 
+          - These features work **on Linux and MacOS**.
+          - These features also work on Windows, however not MSVC build.
 
 
   
@@ -57,7 +58,7 @@ If the password  was saved successfully, it will show ``locked``. The Cli Wallet
 
 |
 	
-Use ``set_password`` without a parameter (**Linux and macOS only**)
+Use ``set_password`` without a parameter (**Linux and MacOS**)
 -----------------------------------------------------------------------
 
 If cli_wallet starts without a wallet file, it will prompt ``new >>>`` to set up a password.
@@ -95,7 +96,7 @@ If the password has been saved successfully, it will prompt ``unlock``. The Cli 
 Unlock a Cli Wallet 
 ==================================
 
-Originally, ``unlock`` command worked only with a parameter (c.g., password). New feature the command works without a parameter. This section provides the differences and the steps.
+Originally, ``unlock`` command worked only with a parameter (i.e., password). New feature the command works without a parameter. This section provides the differences and the steps.
 
 Use ``unlock`` with a parameter (password)
 -----------------------------------------------------
@@ -117,7 +118,7 @@ If successful, it will prompt ``unlocked``.  The Cli Wallet has been unlocked, i
 	
 |
 
-Use ``unlock`` without a parameter (**Linux and macOS only**)
+Use ``unlock`` without a parameter (**Linux and MacOS**)
 ---------------------------------------------------------------
 
 Type ``unlock`` and hit [enter] 
