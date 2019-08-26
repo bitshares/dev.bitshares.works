@@ -72,11 +72,11 @@ System Requirements
 In order to run a full node with all the account history you need to remove ``partial-operations`` and ``max-ops-per-account`` from your config file. Please note that currently(2018-10-17) a full node will need more than 160GB of RAM to operate and required memory is growing fast. Consider the following table as minimal requirements before running a node:
 
 
-+-------------------+--------------------+-----------------+-------------------+
-|    Default        |    Full            |     Minimal     | ElasticSearch     |
-+===================+====================+=================+===================+
-| 100G SSD, 16G RAM | 640G SSD,64G RAM*  | 80G SSD, 4G RAM | 500G SSD, 32G RAM |
-+-------------------+--------------------+-----------------+-------------------+
++-------------------+--------------------+-------------------+-------------------+
+|    Default        |    Full            |     Minimal       | ElasticSearch     |
++===================+====================+===================+===================+
+| 120G SSD, 16G RAM | 1T SSD,64G RAM*    | 100G SSD, 8G RAM  | 1T SSD, 32G RAM   |
++-------------------+--------------------+-------------------+-------------------+
 
 (*For this setup, allocate at least 500GB of SSD as swap.)
 
