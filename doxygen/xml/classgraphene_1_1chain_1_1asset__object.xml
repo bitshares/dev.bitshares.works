@@ -2,7 +2,8 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="classgraphene_1_1chain_1_1asset__object" kind="class" language="C++" prot="public">
     <compoundname>graphene::chain::asset_object</compoundname>
-    <basecompoundref prot="public" virt="non-virtual">graphene::db::abstract_object&lt; asset_object &gt;</basecompoundref>
+    <basecompoundref refid="classgraphene_1_1db_1_1abstract__object" prot="public" virt="non-virtual">graphene::db::abstract_object&lt; asset_object &gt;</basecompoundref>
+    <derivedcompoundref refid="structgraphene_1_1app_1_1extended__asset__object" prot="public" virt="non-virtual">graphene::app::extended_asset_object</derivedcompoundref>
     <includes refid="asset__object_8hpp" local="no">asset_object.hpp</includes>
       <sectiondef kind="public-static-attrib">
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1asset__object_1a2ec03bf0f8b75cc3de37168452cb1b48" prot="public" static="yes" mutable="no">
@@ -102,7 +103,7 @@
         <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="130" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="130" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1asset__object_1a5a69d1ef467d5eb7163fb4c301937066" prot="public" static="no" mutable="no">
-        <type>optional&lt; asset_bitasset_data_id_type &gt;</type>
+        <type><ref refid="classfc_1_1optional" kindref="compound">optional</ref>&lt; asset_bitasset_data_id_type &gt;</type>
         <definition>optional&lt;asset_bitasset_data_id_type&gt; graphene::chain::asset_object::bitasset_data_id</definition>
         <argsstring></argsstring>
         <name>bitasset_data_id</name>
@@ -115,7 +116,7 @@
         <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="132" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="132" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1asset__object_1a57ff2c36a04a2123d1dad48ea76049bc" prot="public" static="no" mutable="no">
-        <type>optional&lt; account_id_type &gt;</type>
+        <type><ref refid="classfc_1_1optional" kindref="compound">optional</ref>&lt; account_id_type &gt;</type>
         <definition>optional&lt;account_id_type&gt; graphene::chain::asset_object::buyback_account</definition>
         <argsstring></argsstring>
         <name>buyback_account</name>
@@ -277,7 +278,7 @@
 <para>Convert a string amount (i.e. &quot;123.45&quot;) to an asset object with this asset&apos;s type The string may have a decimal and/or a negative sign. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="106" column="1" bodyfile="libraries/chain/asset_object.cpp" bodystart="109" bodyend="162"/>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="106" column="1" bodyfile="libraries/chain/asset_object.cpp" bodystart="110" bodyend="163"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1asset__object_1ad0f7792fcad856d35d1049b95acedec3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>string</type>
@@ -294,7 +295,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="108" column="1" bodyfile="libraries/chain/asset_object.cpp" bodystart="164" bodyend="177"/>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="108" column="1" bodyfile="libraries/chain/asset_object.cpp" bodystart="165" bodyend="178"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1asset__object_1a05bc40ee989e7c43e8ab14a010519175" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>string</type>
@@ -445,106 +446,150 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="749">
+      <node id="992">
         <label>graphene::db::abstract_object&lt; asset_object &gt;</label>
+        <link refid="classgraphene_1_1db_1_1abstract__object"/>
+        <childnode refid="993" relation="public-inheritance">
+        </childnode>
       </node>
-      <node id="748">
+      <node id="991">
         <label>graphene::chain::asset_object</label>
         <link refid="classgraphene_1_1chain_1_1asset__object"/>
-        <childnode refid="749" relation="public-inheritance">
+        <childnode refid="992" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="993">
+        <label>graphene::db::object</label>
+        <link refid="classgraphene_1_1db_1_1object"/>
+      </node>
+      <node id="994">
+        <label>graphene::app::extended_asset_object</label>
+        <link refid="structgraphene_1_1app_1_1extended__asset__object"/>
+        <childnode refid="991" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="751">
+      <node id="996">
         <label>graphene::db::abstract_object&lt; asset_object &gt;</label>
+        <link refid="classgraphene_1_1db_1_1abstract__object"/>
+        <childnode refid="997" relation="public-inheritance">
+        </childnode>
       </node>
-      <node id="756">
+      <node id="1005">
         <label>flat_set&lt; asset_id_type &gt;</label>
       </node>
-      <node id="758">
+      <node id="1007">
         <label>string</label>
       </node>
-      <node id="759">
+      <node id="1008">
         <label>graphene::protocol::price</label>
         <link refid="structgraphene_1_1protocol_1_1price"/>
-        <childnode refid="760" relation="usage">
+        <childnode refid="1009" relation="usage">
           <edgelabel>base</edgelabel>
           <edgelabel>quote</edgelabel>
         </childnode>
       </node>
-      <node id="755">
+      <node id="1002">
         <label>graphene::protocol::additional_asset_options</label>
         <link refid="structgraphene_1_1protocol_1_1additional__asset__options"/>
+        <childnode refid="1003" relation="usage">
+          <edgelabel>reward_percent</edgelabel>
+        </childnode>
+        <childnode refid="1004" relation="usage">
+          <edgelabel>whitelist_market_fee_sharing</edgelabel>
+        </childnode>
       </node>
-      <node id="761">
+      <node id="1004">
+        <label>fc::optional&lt; flat_set&lt; account_id_type &gt; &gt;</label>
+        <link refid="classfc_1_1optional"/>
+      </node>
+      <node id="1010">
         <label>flat_set&lt; account_id_type &gt;</label>
       </node>
-      <node id="753">
+      <node id="1006">
+        <label>fc::safe&lt; int64_t &gt;</label>
+        <link refid="structfc_1_1safe"/>
+      </node>
+      <node id="1000">
         <label>graphene::protocol::asset_options</label>
         <link refid="structgraphene_1_1protocol_1_1asset__options"/>
-        <childnode refid="754" relation="usage">
+        <childnode refid="1001" relation="usage">
           <edgelabel>extensions</edgelabel>
         </childnode>
-        <childnode refid="756" relation="usage">
+        <childnode refid="1005" relation="usage">
           <edgelabel>whitelist_markets</edgelabel>
           <edgelabel>blacklist_markets</edgelabel>
         </childnode>
-        <childnode refid="757" relation="usage">
+        <childnode refid="1006" relation="usage">
           <edgelabel>max_market_fee</edgelabel>
           <edgelabel>max_supply</edgelabel>
         </childnode>
-        <childnode refid="758" relation="usage">
+        <childnode refid="1007" relation="usage">
           <edgelabel>description</edgelabel>
         </childnode>
-        <childnode refid="759" relation="usage">
+        <childnode refid="1008" relation="usage">
           <edgelabel>core_exchange_rate</edgelabel>
         </childnode>
-        <childnode refid="761" relation="usage">
+        <childnode refid="1010" relation="usage">
           <edgelabel>whitelist_authorities</edgelabel>
           <edgelabel>blacklist_authorities</edgelabel>
         </childnode>
       </node>
-      <node id="762">
-        <label>optional&lt; account_id_type &gt;</label>
+      <node id="999">
+        <label>fc::optional&lt; asset_bitasset_data_id_type &gt;</label>
+        <link refid="classfc_1_1optional"/>
       </node>
-      <node id="760">
+      <node id="1009">
         <label>graphene::protocol::asset</label>
         <link refid="structgraphene_1_1protocol_1_1asset"/>
-        <childnode refid="757" relation="usage">
+        <childnode refid="1006" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
       </node>
-      <node id="750">
+      <node id="995">
         <label>graphene::chain::asset_object</label>
         <link refid="classgraphene_1_1chain_1_1asset__object"/>
-        <childnode refid="751" relation="public-inheritance">
+        <childnode refid="996" relation="public-inheritance">
         </childnode>
-        <childnode refid="752" relation="usage">
+        <childnode refid="999" relation="usage">
           <edgelabel>bitasset_data_id</edgelabel>
         </childnode>
-        <childnode refid="753" relation="usage">
+        <childnode refid="1000" relation="usage">
           <edgelabel>options</edgelabel>
         </childnode>
-        <childnode refid="762" relation="usage">
+        <childnode refid="1011" relation="usage">
           <edgelabel>buyback_account</edgelabel>
         </childnode>
-        <childnode refid="758" relation="usage">
+        <childnode refid="1007" relation="usage">
           <edgelabel>symbol</edgelabel>
         </childnode>
       </node>
-      <node id="757">
-        <label>safe&lt; int64_t &gt;</label>
+      <node id="998">
+        <label>graphene::db::object_id_type</label>
+        <link refid="structgraphene_1_1db_1_1object__id__type"/>
       </node>
-      <node id="754">
+      <node id="997">
+        <label>graphene::db::object</label>
+        <link refid="classgraphene_1_1db_1_1object"/>
+        <childnode refid="998" relation="usage">
+          <edgelabel>id</edgelabel>
+        </childnode>
+      </node>
+      <node id="1001">
         <label>graphene::protocol::extension&lt; additional_asset_options &gt;</label>
         <link refid="structgraphene_1_1protocol_1_1extension"/>
-        <childnode refid="755" relation="usage">
+        <childnode refid="1002" relation="usage">
           <edgelabel>value</edgelabel>
         </childnode>
       </node>
-      <node id="752">
-        <label>optional&lt; asset_bitasset_data_id_type &gt;</label>
+      <node id="1011">
+        <label>fc::optional&lt; account_id_type &gt;</label>
+        <link refid="classfc_1_1optional"/>
+      </node>
+      <node id="1003">
+        <label>fc::optional&lt; uint16_t &gt;</label>
+        <link refid="classfc_1_1optional"/>
       </node>
     </collaborationgraph>
     <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="79" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="78" bodyend="167"/>
@@ -563,20 +608,27 @@
       <member refid="classgraphene_1_1chain_1_1asset__object_1a0a21f0bfc85c0e44928d9ada2ae89327" prot="public" virt="non-virtual"><scope>graphene::chain::asset_object</scope><name>can_global_settle</name></member>
       <member refid="classgraphene_1_1chain_1_1asset__object_1a5531018d6bc4fd9bca594cbefa0f414f" prot="public" virt="non-virtual"><scope>graphene::chain::asset_object</scope><name>can_override</name></member>
       <member refid="classgraphene_1_1chain_1_1asset__object_1aab9293c90db12e09ca4d95f5fa4706c1" prot="public" virt="non-virtual"><scope>graphene::chain::asset_object</scope><name>charges_market_fees</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1a189144fd7eef0317898bc83b30b143c6" prot="public" virt="virtual"><scope>graphene::chain::asset_object</scope><name>clone</name></member>
       <member refid="classgraphene_1_1chain_1_1asset__object_1a85367857043568d480de982ae1b6518c" prot="public" virt="non-virtual"><scope>graphene::chain::asset_object</scope><name>dynamic_asset_data_id</name></member>
       <member refid="classgraphene_1_1chain_1_1asset__object_1a6d1165c64b8d38b36b8c8d4165cbfc7b" prot="public" virt="non-virtual"><scope>graphene::chain::asset_object</scope><name>dynamic_data</name></member>
       <member refid="classgraphene_1_1chain_1_1asset__object_1a14bea5d61d935e4f4890df38cde0e295" prot="public" virt="non-virtual"><scope>graphene::chain::asset_object</scope><name>get_id</name></member>
+      <member refid="classgraphene_1_1db_1_1object_1a2ce812569d565a45dda1420cfbdf79ad" prot="public" virt="non-virtual"><scope>graphene::chain::asset_object</scope><name>id</name></member>
       <member refid="classgraphene_1_1chain_1_1asset__object_1a5cd681e6cc216f87d99f60c1de63eba8" prot="public" virt="non-virtual"><scope>graphene::chain::asset_object</scope><name>is_market_issued</name></member>
       <member refid="classgraphene_1_1chain_1_1asset__object_1a6d2f96a1d93ba79d13a184a259a7c3da" prot="public" virt="non-virtual"><scope>graphene::chain::asset_object</scope><name>is_transfer_restricted</name></member>
       <member refid="classgraphene_1_1chain_1_1asset__object_1ac15166dec400e72604ecdbb6d25ae800" prot="public" virt="non-virtual"><scope>graphene::chain::asset_object</scope><name>is_valid_symbol</name></member>
       <member refid="classgraphene_1_1chain_1_1asset__object_1ad5274b71ad420b57da53c3ef80b95577" prot="public" virt="non-virtual"><scope>graphene::chain::asset_object</scope><name>issuer</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1ad7329292e8fa9035cf2596d72c4868b5" prot="public" virt="virtual"><scope>graphene::chain::asset_object</scope><name>move_from</name></member>
+      <member refid="classgraphene_1_1db_1_1object_1a64864992a46d9d52836afe1a52a2e394" prot="public" virt="non-virtual"><scope>graphene::chain::asset_object</scope><name>object</name></member>
       <member refid="classgraphene_1_1chain_1_1asset__object_1a51510fee637f062e6db9cfc0986fcf49" prot="public" virt="non-virtual"><scope>graphene::chain::asset_object</scope><name>options</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1a792a9c05cfe1cf7628cb6f8c4a65b0f7" prot="public" virt="virtual"><scope>graphene::chain::asset_object</scope><name>pack</name></member>
       <member refid="classgraphene_1_1chain_1_1asset__object_1a7169594e64f681273a6ece486de9ef38" prot="public" virt="non-virtual"><scope>graphene::chain::asset_object</scope><name>precision</name></member>
       <member refid="classgraphene_1_1chain_1_1asset__object_1a6c2a607af2e8ef974baa0f347a7c2ffe" prot="public" virt="non-virtual"><scope>graphene::chain::asset_object</scope><name>reserved</name></member>
       <member refid="classgraphene_1_1chain_1_1asset__object_1a2ec03bf0f8b75cc3de37168452cb1b48" prot="public" virt="non-virtual"><scope>graphene::chain::asset_object</scope><name>space_id</name></member>
       <member refid="classgraphene_1_1chain_1_1asset__object_1a089165870abab6b77345acea240937b6" prot="public" virt="non-virtual"><scope>graphene::chain::asset_object</scope><name>symbol</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1a6f0f2e9eb0399057ff3334bf328b5007" prot="public" virt="virtual"><scope>graphene::chain::asset_object</scope><name>to_variant</name></member>
       <member refid="classgraphene_1_1chain_1_1asset__object_1a35a5e4d40e2e14e87997953f787a5108" prot="public" virt="non-virtual"><scope>graphene::chain::asset_object</scope><name>type_id</name></member>
       <member refid="classgraphene_1_1chain_1_1asset__object_1aa7756248ee88ce97490c4261c7e1b75c" prot="public" virt="non-virtual"><scope>graphene::chain::asset_object</scope><name>validate</name></member>
+      <member refid="classgraphene_1_1db_1_1object_1ac457a859418c22014c07a3bcdc67ed04" prot="public" virt="virtual"><scope>graphene::chain::asset_object</scope><name>~object</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

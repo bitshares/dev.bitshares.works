@@ -5,7 +5,7 @@
     <includes refid="address_8hpp" local="no">address.hpp</includes>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="classgraphene_1_1protocol_1_1address_1a9f4aa58a58d011bc2ae7e3efcbda2e3f" prot="public" static="no" mutable="no">
-        <type>fc::ripemd160</type>
+        <type><ref refid="classfc_1_1ripemd160" kindref="compound">fc::ripemd160</ref></type>
         <definition>fc::ripemd160 graphene::protocol::address::addr</definition>
         <argsstring></argsstring>
         <name>addr</name>
@@ -55,7 +55,7 @@
         <argsstring>(const fc::ecc::public_key &amp;pub)</argsstring>
         <name>address</name>
         <param>
-          <type>const fc::ecc::public_key &amp;</type>
+          <type>const <ref refid="classfc_1_1ecc_1_1public__key" kindref="compound">fc::ecc::public_key</ref> &amp;</type>
           <declname>pub</declname>
         </param>
         <briefdescription>
@@ -72,7 +72,7 @@
         <argsstring>(const fc::ecc::public_key_data &amp;pub)</argsstring>
         <name>address</name>
         <param>
-          <type>const fc::ecc::public_key_data &amp;</type>
+          <type>const <ref refid="namespacefc_1_1ecc_1af1dc74a983548f8f8f167644826acced" kindref="member">fc::ecc::public_key_data</ref> &amp;</type>
           <declname>pub</declname>
         </param>
         <briefdescription>
@@ -128,7 +128,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/address.hpp" line="56" column="1" bodyfile="libraries/protocol/address.cpp" bodystart="90" bodyend="97"/>
+        <location file="libraries/protocol/include/graphene/protocol/address.hpp" line="56" column="1" bodyfile="libraries/protocol/address.cpp" bodystart="90" bodyend="98"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -159,6 +159,19 @@
 <para>a 160 bit hash of a public key </para>    </briefdescription>
     <detaileddescription>
 <para>An address can be converted to or from a base58 string with 32 bit checksum.</para><para>An address is calculated as ripemd160( sha512( compressed_ecc_public_key ) )</para><para>When converted to a string, checksum calculated as the first 4 bytes ripemd160( address ) is appended to the binary address before converting to base58. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="395">
+        <label>fc::ripemd160</label>
+        <link refid="classfc_1_1ripemd160"/>
+      </node>
+      <node id="394">
+        <label>graphene::protocol::address</label>
+        <link refid="classgraphene_1_1protocol_1_1address"/>
+        <childnode refid="395" relation="usage">
+          <edgelabel>addr</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
     <location file="libraries/protocol/include/graphene/protocol/address.hpp" line="45" column="1" bodyfile="libraries/protocol/include/graphene/protocol/address.hpp" bodystart="44" bodyend="59"/>
     <listofallmembers>
       <member refid="classgraphene_1_1protocol_1_1address_1a9f4aa58a58d011bc2ae7e3efcbda2e3f" prot="public" virt="non-virtual"><scope>graphene::protocol::address</scope><name>addr</name></member>

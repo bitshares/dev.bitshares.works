@@ -1,0 +1,528 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structfc_1_1context" kind="struct" language="C++" prot="public">
+    <compoundname>fc::context</compoundname>
+    <includes refid="context_8hpp" local="no">context.hpp</includes>
+    <innerclass refid="structfc_1_1context_1_1blocked__promise" prot="public">fc::context::blocked_promise</innerclass>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structfc_1_1context_1a1b9582ff49a0b19c0268ff0c411c33e3" prot="public" static="no">
+        <type><ref refid="structfc_1_1context" kindref="compound">fc::context</ref> *</type>
+        <definition>typedef fc::context* fc::context::ptr</definition>
+        <argsstring></argsstring>
+        <name>ptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/context.hpp" line="57" column="1" bodyfile="libraries/fc/src/thread/context.hpp" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structfc_1_1context_1aed69e4fe73eabb90ccdb334e1863909e" prot="public" static="no">
+        <type>void(*)(intptr_t)</type>
+        <definition>using fc::context::context_fn =  void(*)(intptr_t)</definition>
+        <argsstring></argsstring>
+        <name>context_fn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/context.hpp" line="66" column="1" bodyfile="libraries/fc/src/thread/context.hpp" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structfc_1_1context_1afdc5cebefdbd98f09a0f5bcdc73ce439" prot="public" static="no" mutable="no">
+        <type>bc::fcontext_t</type>
+        <definition>bc::fcontext_t fc::context::my_context</definition>
+        <argsstring></argsstring>
+        <name>my_context</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/context.hpp" line="233" column="1" bodyfile="libraries/fc/src/thread/context.hpp" bodystart="233" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfc_1_1context_1a989add98cca9572c7a4e85c911693865" prot="public" static="no" mutable="no">
+        <type><ref refid="structfc_1_1context" kindref="compound">fc::context</ref> *</type>
+        <definition>fc::context* fc::context::caller_context</definition>
+        <argsstring></argsstring>
+        <name>caller_context</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/context.hpp" line="235" column="1" bodyfile="libraries/fc/src/thread/context.hpp" bodystart="235" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfc_1_1context_1af345e74a906e9c2d90b8097700808069" prot="public" static="no" mutable="no">
+        <type>stack_allocator *</type>
+        <definition>stack_allocator* fc::context::stack_alloc</definition>
+        <argsstring></argsstring>
+        <name>stack_alloc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/context.hpp" line="236" column="1" bodyfile="libraries/fc/src/thread/context.hpp" bodystart="236" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfc_1_1context_1af9e5129ac0f9694cf09f7049de2cd325" prot="public" static="no" mutable="no">
+        <type><ref refid="classfc_1_1priority" kindref="compound">priority</ref></type>
+        <definition>priority fc::context::prio</definition>
+        <argsstring></argsstring>
+        <name>prio</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/context.hpp" line="237" column="1" bodyfile="libraries/fc/src/thread/context.hpp" bodystart="237" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfc_1_1context_1a91a11a3565c5c20f3c986c3a4b58916c" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structfc_1_1context_1_1blocked__promise" kindref="compound">blocked_promise</ref> &gt;</type>
+        <definition>std::vector&lt;blocked_promise&gt; fc::context::blocking_prom</definition>
+        <argsstring></argsstring>
+        <name>blocking_prom</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/context.hpp" line="239" column="1" bodyfile="libraries/fc/src/thread/context.hpp" bodystart="239" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfc_1_1context_1af182b58d83293a4d7a6e0c8fefe863d0" prot="public" static="no" mutable="no">
+        <type><ref refid="classfc_1_1time__point" kindref="compound">time_point</ref></type>
+        <definition>time_point fc::context::resume_time</definition>
+        <argsstring></argsstring>
+        <name>resume_time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/context.hpp" line="240" column="1" bodyfile="libraries/fc/src/thread/context.hpp" bodystart="240" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfc_1_1context_1acfd82710b787422ac7fc54a6d3f9907f" prot="public" static="no" mutable="no">
+        <type><ref refid="structfc_1_1context" kindref="compound">fc::context</ref> *</type>
+        <definition>fc::context* fc::context::next_blocked</definition>
+        <argsstring></argsstring>
+        <name>next_blocked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/context.hpp" line="242" column="1" bodyfile="libraries/fc/src/thread/context.hpp" bodystart="242" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfc_1_1context_1a1a62d66ad1248f7e91c5c1bf115dca6c" prot="public" static="no" mutable="no">
+        <type><ref refid="structfc_1_1context" kindref="compound">fc::context</ref> *</type>
+        <definition>fc::context* fc::context::next_blocked_mutex</definition>
+        <argsstring></argsstring>
+        <name>next_blocked_mutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/context.hpp" line="243" column="1" bodyfile="libraries/fc/src/thread/context.hpp" bodystart="243" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfc_1_1context_1a2d38d8ebd0679f31892475dfd2ff5c3b" prot="public" static="no" mutable="no">
+        <type><ref refid="structfc_1_1context" kindref="compound">fc::context</ref> *</type>
+        <definition>fc::context* fc::context::next</definition>
+        <argsstring></argsstring>
+        <name>next</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/context.hpp" line="244" column="1" bodyfile="libraries/fc/src/thread/context.hpp" bodystart="244" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfc_1_1context_1a6562fa202eeb453014538e526d050029" prot="public" static="no" mutable="no">
+        <type><ref refid="classfc_1_1thread" kindref="compound">fc::thread</ref> *</type>
+        <definition>fc::thread* fc::context::ctx_thread</definition>
+        <argsstring></argsstring>
+        <name>ctx_thread</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/context.hpp" line="245" column="1" bodyfile="libraries/fc/src/thread/context.hpp" bodystart="245" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfc_1_1context_1a7a2d30fb2c6f56aea965d98fc321f422" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool fc::context::canceled</definition>
+        <argsstring></argsstring>
+        <name>canceled</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/context.hpp" line="246" column="1" bodyfile="libraries/fc/src/thread/context.hpp" bodystart="246" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfc_1_1context_1aaf9bd66239b19ee4212931a14c07476e" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* fc::context::cancellation_reason</definition>
+        <argsstring></argsstring>
+        <name>cancellation_reason</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/context.hpp" line="248" column="1" bodyfile="libraries/fc/src/thread/context.hpp" bodystart="248" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfc_1_1context_1aa52042dc63f18f79b47e217ffc50fc7f" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool fc::context::complete</definition>
+        <argsstring></argsstring>
+        <name>complete</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/context.hpp" line="250" column="1" bodyfile="libraries/fc/src/thread/context.hpp" bodystart="250" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfc_1_1context_1ad04cfb38eae59b5d6aadb65655a61fd0" prot="public" static="no" mutable="no">
+        <type><ref refid="classfc_1_1task__base" kindref="compound">task_base</ref> *</type>
+        <definition>task_base* fc::context::cur_task</definition>
+        <argsstring></argsstring>
+        <name>cur_task</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/context.hpp" line="251" column="1" bodyfile="libraries/fc/src/thread/context.hpp" bodystart="251" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfc_1_1context_1a226d8c3459b06801de21647d5adea29c" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t fc::context::context_posted_num</definition>
+        <argsstring></argsstring>
+        <name>context_posted_num</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/context.hpp" line="252" column="1" bodyfile="libraries/fc/src/thread/context.hpp" bodystart="252" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structfc_1_1context_1a8bc3e2324991654bab52fa25b257dc71" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>fc::context::context</definition>
+        <argsstring>(context_fn sf, stack_allocator &amp;alloc, fc::thread *t)</argsstring>
+        <name>context</name>
+        <param>
+          <type><ref refid="structfc_1_1context_1aed69e4fe73eabb90ccdb334e1863909e" kindref="member">context_fn</ref></type>
+          <declname>sf</declname>
+        </param>
+        <param>
+          <type>stack_allocator &amp;</type>
+          <declname>alloc</declname>
+        </param>
+        <param>
+          <type><ref refid="classfc_1_1thread" kindref="compound">fc::thread</ref> *</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/context.hpp" line="69" column="1" bodyfile="libraries/fc/src/thread/context.hpp" bodystart="69" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="structfc_1_1context_1ad029dc8239f9cfe814ec9368e362e83e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>fc::context::context</definition>
+        <argsstring>(fc::thread *t)</argsstring>
+        <name>context</name>
+        <param>
+          <type><ref refid="classfc_1_1thread" kindref="compound">fc::thread</ref> *</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/context.hpp" line="104" column="1" bodyfile="libraries/fc/src/thread/context.hpp" bodystart="104" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="structfc_1_1context_1ab0e49f42804832b8762250665010e553" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>fc::context::~context</definition>
+        <argsstring>()</argsstring>
+        <name>~context</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/context.hpp" line="125" column="1" bodyfile="libraries/fc/src/thread/context.hpp" bodystart="125" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="structfc_1_1context_1a4ca4f496d79b9759c334b55f8d095feb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::context::reinitialize</definition>
+        <argsstring>()</argsstring>
+        <name>reinitialize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/context.hpp" line="145" column="1" bodyfile="libraries/fc/src/thread/context.hpp" bodystart="145" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="structfc_1_1context_1abe4660332a1a1a3fa79d3e9aa70e24a5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::context::add_blocking_promise</definition>
+        <argsstring>(promise_base *p, bool req=true)</argsstring>
+        <name>add_blocking_promise</name>
+        <param>
+          <type><ref refid="classfc_1_1promise__base" kindref="compound">promise_base</ref> *</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>req</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="todo_1_todo000005"><xreftitle>Todo</xreftitle><xrefdescription><para>Have a list of promises so that we can wait for P1 or P2 and either will unblock instead of requiring both </para></xrefdescription></xrefsect><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>req</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- require this promise to &apos;unblock&apos;, otherwise try_unblock will allow it to be one of many that could &apos;unblock&apos; </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/context.hpp" line="174" column="1" bodyfile="libraries/fc/src/thread/context.hpp" bodystart="174" bodyend="182"/>
+      </memberdef>
+      <memberdef kind="function" id="structfc_1_1context_1aa4fc076cb1a33fc1ef9f7d0a50463d25" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool fc::context::try_unblock</definition>
+        <argsstring>(promise_base *p)</argsstring>
+        <name>try_unblock</name>
+        <param>
+          <type><ref refid="classfc_1_1promise__base" kindref="compound">promise_base</ref> *</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>If all of the required promises and any optional promises then return true, else false. <xrefsect id="todo_1_todo000006"><xreftitle>Todo</xreftitle><xrefdescription><para>check list </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/context.hpp" line="188" column="1" bodyfile="libraries/fc/src/thread/context.hpp" bodystart="188" bodyend="201"/>
+      </memberdef>
+      <memberdef kind="function" id="structfc_1_1context_1aba81975d0248b6edca5488fbfcee1271" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::context::remove_blocking_promise</definition>
+        <argsstring>(promise_base *p)</argsstring>
+        <name>remove_blocking_promise</name>
+        <param>
+          <type><ref refid="classfc_1_1promise__base" kindref="compound">promise_base</ref> *</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/context.hpp" line="203" column="1" bodyfile="libraries/fc/src/thread/context.hpp" bodystart="203" bodyend="210"/>
+      </memberdef>
+      <memberdef kind="function" id="structfc_1_1context_1a160e98e893a372d2f40f9e9551143099" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::context::timeout_blocking_promises</definition>
+        <argsstring>()</argsstring>
+        <name>timeout_blocking_promises</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/context.hpp" line="212" column="1" bodyfile="libraries/fc/src/thread/context.hpp" bodystart="212" bodyend="216"/>
+      </memberdef>
+      <memberdef kind="function" id="structfc_1_1context_1af6bbc929c9ee3f08023528a4e6c8c0cd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::context::set_exception_on_blocking_promises</definition>
+        <argsstring>(const exception_ptr &amp;e)</argsstring>
+        <name>set_exception_on_blocking_promises</name>
+        <param>
+          <type>const <ref refid="namespacefc_1a15170d1be1e682691dfe6ae09790edce" kindref="member">exception_ptr</ref> &amp;</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/context.hpp" line="217" column="1" bodyfile="libraries/fc/src/thread/context.hpp" bodystart="217" bodyend="221"/>
+      </memberdef>
+      <memberdef kind="function" id="structfc_1_1context_1acebb8feac7edf929c34918b233035692" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::context::clear_blocking_promises</definition>
+        <argsstring>()</argsstring>
+        <name>clear_blocking_promises</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/context.hpp" line="222" column="1" bodyfile="libraries/fc/src/thread/context.hpp" bodystart="222" bodyend="224"/>
+      </memberdef>
+      <memberdef kind="function" id="structfc_1_1context_1ac35d90ff80c5730beed349182cad31c4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool fc::context::is_complete</definition>
+        <argsstring>() const</argsstring>
+        <name>is_complete</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/context.hpp" line="226" column="1" bodyfile="libraries/fc/src/thread/context.hpp" bodystart="226" bodyend="226"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>maintains information associated with each context such as where it is blocked, what time it should resume, priority, etc. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="2340">
+        <label>fc::thread</label>
+        <link refid="classfc_1_1thread"/>
+      </node>
+      <node id="2339">
+        <label>fc::time_point</label>
+        <link refid="classfc_1_1time__point"/>
+      </node>
+      <node id="2338">
+        <label>fc::fwd&lt; fc::spin_lock, 8 &gt;</label>
+        <link refid="classfc_1_1fwd"/>
+      </node>
+      <node id="2334">
+        <label>fc::task_base</label>
+        <link refid="classfc_1_1task__base"/>
+        <childnode refid="2335" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2334" relation="usage">
+          <edgelabel>_next</edgelabel>
+        </childnode>
+        <childnode refid="2337" relation="usage">
+          <edgelabel>_prio</edgelabel>
+        </childnode>
+        <childnode refid="2338" relation="usage">
+          <edgelabel>_spinlock</edgelabel>
+        </childnode>
+        <childnode refid="2333" relation="usage">
+          <edgelabel>_active_context</edgelabel>
+        </childnode>
+        <childnode refid="2339" relation="usage">
+          <edgelabel>_when</edgelabel>
+        </childnode>
+      </node>
+      <node id="2333">
+        <label>fc::context</label>
+        <link refid="structfc_1_1context"/>
+        <childnode refid="2334" relation="usage">
+          <edgelabel>cur_task</edgelabel>
+        </childnode>
+        <childnode refid="2337" relation="usage">
+          <edgelabel>prio</edgelabel>
+        </childnode>
+        <childnode refid="2340" relation="usage">
+          <edgelabel>ctx_thread</edgelabel>
+        </childnode>
+        <childnode refid="2333" relation="usage">
+          <edgelabel>next_blocked_mutex</edgelabel>
+          <edgelabel>next</edgelabel>
+          <edgelabel>caller_context</edgelabel>
+          <edgelabel>next_blocked</edgelabel>
+        </childnode>
+        <childnode refid="2339" relation="usage">
+          <edgelabel>resume_time</edgelabel>
+        </childnode>
+      </node>
+      <node id="2337">
+        <label>fc::priority</label>
+        <link refid="classfc_1_1priority"/>
+      </node>
+      <node id="2336">
+        <label>std::enable_shared_from_this&lt; promise_base &gt;</label>
+      </node>
+      <node id="2335">
+        <label>fc::promise_base</label>
+        <link refid="classfc_1_1promise__base"/>
+        <childnode refid="2336" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="libraries/fc/src/thread/context.hpp" line="56" column="1" bodyfile="libraries/fc/src/thread/context.hpp" bodystart="56" bodyend="253"/>
+    <listofallmembers>
+      <member refid="structfc_1_1context_1abe4660332a1a1a3fa79d3e9aa70e24a5" prot="public" virt="non-virtual"><scope>fc::context</scope><name>add_blocking_promise</name></member>
+      <member refid="structfc_1_1context_1a91a11a3565c5c20f3c986c3a4b58916c" prot="public" virt="non-virtual"><scope>fc::context</scope><name>blocking_prom</name></member>
+      <member refid="structfc_1_1context_1a989add98cca9572c7a4e85c911693865" prot="public" virt="non-virtual"><scope>fc::context</scope><name>caller_context</name></member>
+      <member refid="structfc_1_1context_1a7a2d30fb2c6f56aea965d98fc321f422" prot="public" virt="non-virtual"><scope>fc::context</scope><name>canceled</name></member>
+      <member refid="structfc_1_1context_1aaf9bd66239b19ee4212931a14c07476e" prot="public" virt="non-virtual"><scope>fc::context</scope><name>cancellation_reason</name></member>
+      <member refid="structfc_1_1context_1acebb8feac7edf929c34918b233035692" prot="public" virt="non-virtual"><scope>fc::context</scope><name>clear_blocking_promises</name></member>
+      <member refid="structfc_1_1context_1aa52042dc63f18f79b47e217ffc50fc7f" prot="public" virt="non-virtual"><scope>fc::context</scope><name>complete</name></member>
+      <member refid="structfc_1_1context_1a8bc3e2324991654bab52fa25b257dc71" prot="public" virt="non-virtual"><scope>fc::context</scope><name>context</name></member>
+      <member refid="structfc_1_1context_1ad029dc8239f9cfe814ec9368e362e83e" prot="public" virt="non-virtual"><scope>fc::context</scope><name>context</name></member>
+      <member refid="structfc_1_1context_1aed69e4fe73eabb90ccdb334e1863909e" prot="public" virt="non-virtual"><scope>fc::context</scope><name>context_fn</name></member>
+      <member refid="structfc_1_1context_1a226d8c3459b06801de21647d5adea29c" prot="public" virt="non-virtual"><scope>fc::context</scope><name>context_posted_num</name></member>
+      <member refid="structfc_1_1context_1a6562fa202eeb453014538e526d050029" prot="public" virt="non-virtual"><scope>fc::context</scope><name>ctx_thread</name></member>
+      <member refid="structfc_1_1context_1ad04cfb38eae59b5d6aadb65655a61fd0" prot="public" virt="non-virtual"><scope>fc::context</scope><name>cur_task</name></member>
+      <member refid="structfc_1_1context_1ac35d90ff80c5730beed349182cad31c4" prot="public" virt="non-virtual"><scope>fc::context</scope><name>is_complete</name></member>
+      <member refid="structfc_1_1context_1afdc5cebefdbd98f09a0f5bcdc73ce439" prot="public" virt="non-virtual"><scope>fc::context</scope><name>my_context</name></member>
+      <member refid="structfc_1_1context_1a2d38d8ebd0679f31892475dfd2ff5c3b" prot="public" virt="non-virtual"><scope>fc::context</scope><name>next</name></member>
+      <member refid="structfc_1_1context_1acfd82710b787422ac7fc54a6d3f9907f" prot="public" virt="non-virtual"><scope>fc::context</scope><name>next_blocked</name></member>
+      <member refid="structfc_1_1context_1a1a62d66ad1248f7e91c5c1bf115dca6c" prot="public" virt="non-virtual"><scope>fc::context</scope><name>next_blocked_mutex</name></member>
+      <member refid="structfc_1_1context_1af9e5129ac0f9694cf09f7049de2cd325" prot="public" virt="non-virtual"><scope>fc::context</scope><name>prio</name></member>
+      <member refid="structfc_1_1context_1a1b9582ff49a0b19c0268ff0c411c33e3" prot="public" virt="non-virtual"><scope>fc::context</scope><name>ptr</name></member>
+      <member refid="structfc_1_1context_1a4ca4f496d79b9759c334b55f8d095feb" prot="public" virt="non-virtual"><scope>fc::context</scope><name>reinitialize</name></member>
+      <member refid="structfc_1_1context_1aba81975d0248b6edca5488fbfcee1271" prot="public" virt="non-virtual"><scope>fc::context</scope><name>remove_blocking_promise</name></member>
+      <member refid="structfc_1_1context_1af182b58d83293a4d7a6e0c8fefe863d0" prot="public" virt="non-virtual"><scope>fc::context</scope><name>resume_time</name></member>
+      <member refid="structfc_1_1context_1af6bbc929c9ee3f08023528a4e6c8c0cd" prot="public" virt="non-virtual"><scope>fc::context</scope><name>set_exception_on_blocking_promises</name></member>
+      <member refid="structfc_1_1context_1af345e74a906e9c2d90b8097700808069" prot="public" virt="non-virtual"><scope>fc::context</scope><name>stack_alloc</name></member>
+      <member refid="structfc_1_1context_1a160e98e893a372d2f40f9e9551143099" prot="public" virt="non-virtual"><scope>fc::context</scope><name>timeout_blocking_promises</name></member>
+      <member refid="structfc_1_1context_1aa4fc076cb1a33fc1ef9f7d0a50463d25" prot="public" virt="non-virtual"><scope>fc::context</scope><name>try_unblock</name></member>
+      <member refid="structfc_1_1context_1ab0e49f42804832b8762250665010e553" prot="public" virt="non-virtual"><scope>fc::context</scope><name>~context</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

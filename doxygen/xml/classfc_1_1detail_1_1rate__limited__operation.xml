@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classfc_1_1detail_1_1rate__limited__operation" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>fc::detail::rate_limited_operation</compoundname>
+    <derivedcompoundref refid="classfc_1_1detail_1_1rate__limited__tcp__read__operation" prot="public" virt="non-virtual">fc::detail::rate_limited_tcp_read_operation</derivedcompoundref>
+    <derivedcompoundref refid="classfc_1_1detail_1_1rate__limited__tcp__write__operation" prot="public" virt="non-virtual">fc::detail::rate_limited_tcp_write_operation</derivedcompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classfc_1_1detail_1_1rate__limited__operation_1ae8457a63170710103e077ec951c26564" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t fc::detail::rate_limited_operation::length</definition>
+        <argsstring></argsstring>
+        <name>length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/network/rate_limiting.cpp" line="23" column="1" bodyfile="libraries/fc/src/network/rate_limiting.cpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1detail_1_1rate__limited__operation_1a6ba877d2a0fdcb8b029af48feb07421f" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t fc::detail::rate_limited_operation::offset</definition>
+        <argsstring></argsstring>
+        <name>offset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/network/rate_limiting.cpp" line="24" column="1" bodyfile="libraries/fc/src/network/rate_limiting.cpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1detail_1_1rate__limited__operation_1ae0ebd3357543b80e348bf68b75b796ad" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t fc::detail::rate_limited_operation::permitted_length</definition>
+        <argsstring></argsstring>
+        <name>permitted_length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/network/rate_limiting.cpp" line="25" column="1" bodyfile="libraries/fc/src/network/rate_limiting.cpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1detail_1_1rate__limited__operation_1ac8b6e31c5908b626e58252fe8048f8b9" prot="public" static="no" mutable="no">
+        <type><ref refid="classfc_1_1promise" kindref="compound">promise</ref>&lt; size_t &gt;::ptr</type>
+        <definition>promise&lt;size_t&gt;::ptr fc::detail::rate_limited_operation::completion_promise</definition>
+        <argsstring></argsstring>
+        <name>completion_promise</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/network/rate_limiting.cpp" line="26" column="1" bodyfile="libraries/fc/src/network/rate_limiting.cpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfc_1_1detail_1_1rate__limited__operation_1aa04333ce2124f5041df4d4c29edf6c43" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>fc::detail::rate_limited_operation::rate_limited_operation</definition>
+        <argsstring>(size_t length, size_t offset, promise&lt; size_t &gt;::ptr &amp;&amp;completion_promise)</argsstring>
+        <name>rate_limited_operation</name>
+        <param>
+          <type>size_t</type>
+          <declname>length</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>offset</declname>
+        </param>
+        <param>
+          <type><ref refid="classfc_1_1promise" kindref="compound">promise</ref>&lt; size_t &gt;::ptr &amp;&amp;</type>
+          <declname>completion_promise</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/network/rate_limiting.cpp" line="28" column="1" bodyfile="libraries/fc/src/network/rate_limiting.cpp" bodystart="28" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1detail_1_1rate__limited__operation_1a7090878b9387f70e1718021b5fc596cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void fc::detail::rate_limited_operation::perform_operation</definition>
+        <argsstring>()=0</argsstring>
+        <name>perform_operation</name>
+        <reimplementedby refid="classfc_1_1detail_1_1rate__limited__tcp__write__operation_1a333fa348b1497124ff27733ab0d5e3d8">perform_operation</reimplementedby>
+        <reimplementedby refid="classfc_1_1detail_1_1rate__limited__tcp__read__operation_1a2a3b725337858366df8ba839db3e4b4b">perform_operation</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/network/rate_limiting.cpp" line="37" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="4840">
+        <label>fc::detail::rate_limited_tcp_read_operation</label>
+        <link refid="classfc_1_1detail_1_1rate__limited__tcp__read__operation"/>
+        <childnode refid="4839" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4841">
+        <label>fc::detail::rate_limited_tcp_write_operation</label>
+        <link refid="classfc_1_1detail_1_1rate__limited__tcp__write__operation"/>
+        <childnode refid="4839" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4839">
+        <label>fc::detail::rate_limited_operation</label>
+        <link refid="classfc_1_1detail_1_1rate__limited__operation"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="4846">
+        <label>fc::optional&lt; size_t &gt;</label>
+        <link refid="classfc_1_1optional"/>
+      </node>
+      <node id="4842">
+        <label>fc::detail::rate_limited_operation</label>
+        <link refid="classfc_1_1detail_1_1rate__limited__operation"/>
+        <childnode refid="4843" relation="usage">
+          <edgelabel>completion_promise</edgelabel>
+        </childnode>
+      </node>
+      <node id="4843">
+        <label>fc::promise&lt; size_t &gt;</label>
+        <link refid="classfc_1_1promise"/>
+        <childnode refid="4844" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4846" relation="usage">
+          <edgelabel>result</edgelabel>
+        </childnode>
+      </node>
+      <node id="4845">
+        <label>std::enable_shared_from_this&lt; promise_base &gt;</label>
+      </node>
+      <node id="4844">
+        <label>fc::promise_base</label>
+        <link refid="classfc_1_1promise__base"/>
+        <childnode refid="4845" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="libraries/fc/src/network/rate_limiting.cpp" line="21" column="1" bodyfile="libraries/fc/src/network/rate_limiting.cpp" bodystart="20" bodyend="38"/>
+    <listofallmembers>
+      <member refid="classfc_1_1detail_1_1rate__limited__operation_1ac8b6e31c5908b626e58252fe8048f8b9" prot="public" virt="non-virtual"><scope>fc::detail::rate_limited_operation</scope><name>completion_promise</name></member>
+      <member refid="classfc_1_1detail_1_1rate__limited__operation_1ae8457a63170710103e077ec951c26564" prot="public" virt="non-virtual"><scope>fc::detail::rate_limited_operation</scope><name>length</name></member>
+      <member refid="classfc_1_1detail_1_1rate__limited__operation_1a6ba877d2a0fdcb8b029af48feb07421f" prot="public" virt="non-virtual"><scope>fc::detail::rate_limited_operation</scope><name>offset</name></member>
+      <member refid="classfc_1_1detail_1_1rate__limited__operation_1a7090878b9387f70e1718021b5fc596cb" prot="public" virt="pure-virtual"><scope>fc::detail::rate_limited_operation</scope><name>perform_operation</name></member>
+      <member refid="classfc_1_1detail_1_1rate__limited__operation_1ae0ebd3357543b80e348bf68b75b796ad" prot="public" virt="non-virtual"><scope>fc::detail::rate_limited_operation</scope><name>permitted_length</name></member>
+      <member refid="classfc_1_1detail_1_1rate__limited__operation_1aa04333ce2124f5041df4d4c29edf6c43" prot="public" virt="non-virtual"><scope>fc::detail::rate_limited_operation</scope><name>rate_limited_operation</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -5,7 +5,7 @@
     <includes refid="confidential_8hpp" local="no">confidential.hpp</includes>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1stealth__confirmation_1_1memo__data_1a47ec6717c771e3275bb27b92b1517cc7" prot="public" static="no" mutable="no">
-        <type>optional&lt; <ref refid="structgraphene_1_1protocol_1_1public__key__type" kindref="compound">public_key_type</ref> &gt;</type>
+        <type><ref refid="classfc_1_1optional" kindref="compound">optional</ref>&lt; <ref refid="structgraphene_1_1protocol_1_1public__key__type" kindref="compound">public_key_type</ref> &gt;</type>
         <definition>optional&lt;public_key_type&gt; graphene::protocol::stealth_confirmation::memo_data::from</definition>
         <argsstring></argsstring>
         <name>from</name>
@@ -31,7 +31,7 @@
         <location file="libraries/protocol/include/graphene/protocol/confidential.hpp" line="107" column="1" bodyfile="libraries/protocol/include/graphene/protocol/confidential.hpp" bodystart="107" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1stealth__confirmation_1_1memo__data_1a05b3a975fdae1a026bd476faf1ba1918" prot="public" static="no" mutable="no">
-        <type>fc::sha256</type>
+        <type><ref refid="classfc_1_1sha256" kindref="compound">fc::sha256</ref></type>
         <definition>fc::sha256 graphene::protocol::stealth_confirmation::memo_data::blinding_factor</definition>
         <argsstring></argsstring>
         <name>blinding_factor</name>
@@ -44,7 +44,7 @@
         <location file="libraries/protocol/include/graphene/protocol/confidential.hpp" line="108" column="1" bodyfile="libraries/protocol/include/graphene/protocol/confidential.hpp" bodystart="108" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1stealth__confirmation_1_1memo__data_1a9c2883233438f968b066e917de2f41a1" prot="public" static="no" mutable="no">
-        <type>fc::ecc::commitment_type</type>
+        <type><ref refid="namespacefc_1_1ecc_1a2fe2b77a4b704ac1d7a71260be0211ff" kindref="member">fc::ecc::commitment_type</ref></type>
         <definition>fc::ecc::commitment_type graphene::protocol::stealth_confirmation::memo_data::commitment</definition>
         <argsstring></argsstring>
         <name>commitment</name>
@@ -76,34 +76,37 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="2781">
-        <label>optional&lt; graphene::protocol::public_key_type &gt;</label>
+      <node id="4001">
+        <label>fc::safe&lt; int64_t &gt;</label>
+        <link refid="structfc_1_1safe"/>
       </node>
-      <node id="2780">
-        <label>commitment_type</label>
+      <node id="4003">
+        <label>fc::sha256</label>
+        <link refid="classfc_1_1sha256"/>
       </node>
-      <node id="2777">
+      <node id="3999">
         <label>graphene::protocol::stealth_confirmation::memo_data</label>
         <link refid="structgraphene_1_1protocol_1_1stealth__confirmation_1_1memo__data"/>
-        <childnode refid="2778" relation="usage">
+        <childnode refid="4000" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
-        <childnode refid="2780" relation="usage">
-          <edgelabel>commitment</edgelabel>
-        </childnode>
-        <childnode refid="2781" relation="usage">
+        <childnode refid="4002" relation="usage">
           <edgelabel>from</edgelabel>
         </childnode>
+        <childnode refid="4003" relation="usage">
+          <edgelabel>blinding_factor</edgelabel>
+        </childnode>
       </node>
-      <node id="2778">
+      <node id="4000">
         <label>graphene::protocol::asset</label>
         <link refid="structgraphene_1_1protocol_1_1asset"/>
-        <childnode refid="2779" relation="usage">
+        <childnode refid="4001" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
       </node>
-      <node id="2779">
-        <label>safe&lt; int64_t &gt;</label>
+      <node id="4002">
+        <label>fc::optional&lt; graphene::protocol::public_key_type &gt;</label>
+        <link refid="classfc_1_1optional"/>
       </node>
     </collaborationgraph>
     <location file="libraries/protocol/include/graphene/protocol/confidential.hpp" line="105" column="1" bodyfile="libraries/protocol/include/graphene/protocol/confidential.hpp" bodystart="104" bodyend="111"/>

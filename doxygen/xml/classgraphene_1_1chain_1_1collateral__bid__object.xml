@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="classgraphene_1_1chain_1_1collateral__bid__object" kind="class" language="C++" prot="public">
     <compoundname>graphene::chain::collateral_bid_object</compoundname>
-    <basecompoundref prot="public" virt="non-virtual">graphene::db::abstract_object&lt; collateral_bid_object &gt;</basecompoundref>
+    <basecompoundref refid="classgraphene_1_1db_1_1abstract__object" prot="public" virt="non-virtual">graphene::db::abstract_object&lt; collateral_bid_object &gt;</basecompoundref>
     <includes refid="market__object_8hpp" local="no">market_object.hpp</includes>
       <sectiondef kind="public-static-attrib">
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1collateral__bid__object_1a291f944b1c35515d58c5a9440145b405" prot="public" static="yes" mutable="no">
@@ -108,44 +108,66 @@
     <detaileddescription>
 <para>There should only be one <ref refid="classgraphene_1_1chain_1_1collateral__bid__object" kindref="compound">collateral_bid_object</ref> per asset per account, and only for smartcoin assets that have a global settlement_price. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="1614">
+      <node id="2080">
         <label>graphene::db::abstract_object&lt; collateral_bid_object &gt;</label>
+        <link refid="classgraphene_1_1db_1_1abstract__object"/>
+        <childnode refid="2081" relation="public-inheritance">
+        </childnode>
       </node>
-      <node id="1613">
+      <node id="2081">
+        <label>graphene::db::object</label>
+        <link refid="classgraphene_1_1db_1_1object"/>
+      </node>
+      <node id="2079">
         <label>graphene::chain::collateral_bid_object</label>
         <link refid="classgraphene_1_1chain_1_1collateral__bid__object"/>
-        <childnode refid="1614" relation="public-inheritance">
+        <childnode refid="2080" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="1616">
+      <node id="2083">
         <label>graphene::db::abstract_object&lt; collateral_bid_object &gt;</label>
+        <link refid="classgraphene_1_1db_1_1abstract__object"/>
+        <childnode refid="2084" relation="public-inheritance">
+        </childnode>
       </node>
-      <node id="1617">
+      <node id="2086">
         <label>graphene::protocol::price</label>
         <link refid="structgraphene_1_1protocol_1_1price"/>
-        <childnode refid="1618" relation="usage">
+        <childnode refid="2087" relation="usage">
           <edgelabel>base</edgelabel>
           <edgelabel>quote</edgelabel>
         </childnode>
       </node>
-      <node id="1618">
+      <node id="2088">
+        <label>fc::safe&lt; int64_t &gt;</label>
+        <link refid="structfc_1_1safe"/>
+      </node>
+      <node id="2087">
         <label>graphene::protocol::asset</label>
         <link refid="structgraphene_1_1protocol_1_1asset"/>
-        <childnode refid="1619" relation="usage">
+        <childnode refid="2088" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
       </node>
-      <node id="1619">
-        <label>safe&lt; int64_t &gt;</label>
+      <node id="2085">
+        <label>graphene::db::object_id_type</label>
+        <link refid="structgraphene_1_1db_1_1object__id__type"/>
       </node>
-      <node id="1615">
+      <node id="2084">
+        <label>graphene::db::object</label>
+        <link refid="classgraphene_1_1db_1_1object"/>
+        <childnode refid="2085" relation="usage">
+          <edgelabel>id</edgelabel>
+        </childnode>
+      </node>
+      <node id="2082">
         <label>graphene::chain::collateral_bid_object</label>
         <link refid="classgraphene_1_1chain_1_1collateral__bid__object"/>
-        <childnode refid="1616" relation="public-inheritance">
+        <childnode refid="2083" relation="public-inheritance">
         </childnode>
-        <childnode refid="1617" relation="usage">
+        <childnode refid="2086" relation="usage">
           <edgelabel>inv_swan_price</edgelabel>
         </childnode>
       </node>
@@ -153,12 +175,19 @@
     <location file="libraries/chain/include/graphene/chain/market_object.hpp" line="181" column="1" bodyfile="libraries/chain/include/graphene/chain/market_object.hpp" bodystart="180" bodyend="192"/>
     <listofallmembers>
       <member refid="classgraphene_1_1chain_1_1collateral__bid__object_1ae942b411820989fac2636a5873d7485c" prot="public" virt="non-virtual"><scope>graphene::chain::collateral_bid_object</scope><name>bidder</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1a189144fd7eef0317898bc83b30b143c6" prot="public" virt="virtual"><scope>graphene::chain::collateral_bid_object</scope><name>clone</name></member>
       <member refid="classgraphene_1_1chain_1_1collateral__bid__object_1a9a81dbffc55704cc9e41a81986d14fa9" prot="public" virt="non-virtual"><scope>graphene::chain::collateral_bid_object</scope><name>debt_type</name></member>
       <member refid="classgraphene_1_1chain_1_1collateral__bid__object_1a96856708ccc8101968e3c68e75d7c43c" prot="public" virt="non-virtual"><scope>graphene::chain::collateral_bid_object</scope><name>get_additional_collateral</name></member>
       <member refid="classgraphene_1_1chain_1_1collateral__bid__object_1a161c822ee07b07889214efb12f0a5aed" prot="public" virt="non-virtual"><scope>graphene::chain::collateral_bid_object</scope><name>get_debt_covered</name></member>
+      <member refid="classgraphene_1_1db_1_1object_1a2ce812569d565a45dda1420cfbdf79ad" prot="public" virt="non-virtual"><scope>graphene::chain::collateral_bid_object</scope><name>id</name></member>
       <member refid="classgraphene_1_1chain_1_1collateral__bid__object_1a918e9c9fd9d7dadcd9144ff79dc5fb1f" prot="public" virt="non-virtual"><scope>graphene::chain::collateral_bid_object</scope><name>inv_swan_price</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1ad7329292e8fa9035cf2596d72c4868b5" prot="public" virt="virtual"><scope>graphene::chain::collateral_bid_object</scope><name>move_from</name></member>
+      <member refid="classgraphene_1_1db_1_1object_1a64864992a46d9d52836afe1a52a2e394" prot="public" virt="non-virtual"><scope>graphene::chain::collateral_bid_object</scope><name>object</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1a792a9c05cfe1cf7628cb6f8c4a65b0f7" prot="public" virt="virtual"><scope>graphene::chain::collateral_bid_object</scope><name>pack</name></member>
       <member refid="classgraphene_1_1chain_1_1collateral__bid__object_1a291f944b1c35515d58c5a9440145b405" prot="public" virt="non-virtual"><scope>graphene::chain::collateral_bid_object</scope><name>space_id</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1a6f0f2e9eb0399057ff3334bf328b5007" prot="public" virt="virtual"><scope>graphene::chain::collateral_bid_object</scope><name>to_variant</name></member>
       <member refid="classgraphene_1_1chain_1_1collateral__bid__object_1ac2afceca888e9ecc55d4ee2e6b86d91e" prot="public" virt="non-virtual"><scope>graphene::chain::collateral_bid_object</scope><name>type_id</name></member>
+      <member refid="classgraphene_1_1db_1_1object_1ac457a859418c22014c07a3bcdc67ed04" prot="public" virt="virtual"><scope>graphene::chain::collateral_bid_object</scope><name>~object</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

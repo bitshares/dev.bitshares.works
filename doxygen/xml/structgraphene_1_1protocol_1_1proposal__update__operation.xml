@@ -238,62 +238,63 @@
     <detaileddescription>
 <para>If an account with a multi-signature authority is listed in approvals_to_add or approvals_to_remove, either all required signatures to satisfy that account&apos;s authority must be provided in the transaction containing this operation, or a secondary proposal must be created which contains this operation.</para><para>NOTE: If the proposal requires only an account&apos;s active authority, the account must not update adding its owner authority&apos;s approval. This is considered an error. An owner approval may only be added if the proposal requires the owner&apos;s authority.</para><para>If an account&apos;s owner and active authority are both required, only the owner authority may approve. An attempt to add or remove active authority approval to such a proposal will fail. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="3173">
+      <node id="4812">
         <label>graphene::protocol::proposal_update_operation</label>
         <link refid="structgraphene_1_1protocol_1_1proposal__update__operation"/>
-        <childnode refid="3174" relation="public-inheritance">
+        <childnode refid="4813" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="3174">
+      <node id="4813">
         <label>graphene::protocol::base_operation</label>
         <link refid="structgraphene_1_1protocol_1_1base__operation"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="3175">
+      <node id="4814">
         <label>graphene::protocol::proposal_update_operation</label>
         <link refid="structgraphene_1_1protocol_1_1proposal__update__operation"/>
-        <childnode refid="3176" relation="public-inheritance">
+        <childnode refid="4815" relation="public-inheritance">
         </childnode>
-        <childnode refid="3177" relation="usage">
+        <childnode refid="4816" relation="usage">
           <edgelabel>extensions</edgelabel>
         </childnode>
-        <childnode refid="3178" relation="usage">
+        <childnode refid="4817" relation="usage">
           <edgelabel>fee</edgelabel>
         </childnode>
-        <childnode refid="3180" relation="usage">
+        <childnode refid="4819" relation="usage">
           <edgelabel>key_approvals_to_remove</edgelabel>
           <edgelabel>key_approvals_to_add</edgelabel>
         </childnode>
-        <childnode refid="3181" relation="usage">
+        <childnode refid="4820" relation="usage">
           <edgelabel>owner_approvals_to_remove</edgelabel>
           <edgelabel>owner_approvals_to_add</edgelabel>
           <edgelabel>active_approvals_to_remove</edgelabel>
           <edgelabel>active_approvals_to_add</edgelabel>
         </childnode>
       </node>
-      <node id="3177">
+      <node id="4816">
         <label>flat_set&lt; future_extensions &gt;</label>
       </node>
-      <node id="3181">
+      <node id="4820">
         <label>flat_set&lt; account_id_type &gt;</label>
       </node>
-      <node id="3180">
+      <node id="4818">
+        <label>fc::safe&lt; int64_t &gt;</label>
+        <link refid="structfc_1_1safe"/>
+      </node>
+      <node id="4819">
         <label>flat_set&lt; graphene::protocol::public_key_type &gt;</label>
       </node>
-      <node id="3176">
+      <node id="4815">
         <label>graphene::protocol::base_operation</label>
         <link refid="structgraphene_1_1protocol_1_1base__operation"/>
       </node>
-      <node id="3178">
+      <node id="4817">
         <label>graphene::protocol::asset</label>
         <link refid="structgraphene_1_1protocol_1_1asset"/>
-        <childnode refid="3179" relation="usage">
+        <childnode refid="4818" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
-      </node>
-      <node id="3179">
-        <label>safe&lt; int64_t &gt;</label>
       </node>
     </collaborationgraph>
     <location file="libraries/protocol/include/graphene/protocol/proposal.hpp" line="120" column="1" bodyfile="libraries/protocol/include/graphene/protocol/proposal.hpp" bodystart="119" bodyend="143"/>

@@ -33,7 +33,7 @@
         <location file="libraries/protocol/include/graphene/protocol/worker.hpp" line="83" column="1" bodyfile="libraries/protocol/include/graphene/protocol/worker.hpp" bodystart="83" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1worker__create__operation_1a0a02ad08392650b99ef0dde2bd333fe7" prot="public" static="no" mutable="no">
-        <type>time_point_sec</type>
+        <type><ref refid="classfc_1_1time__point__sec" kindref="compound">time_point_sec</ref></type>
         <definition>time_point_sec graphene::protocol::worker_create_operation::work_begin_date</definition>
         <argsstring></argsstring>
         <name>work_begin_date</name>
@@ -46,7 +46,7 @@
         <location file="libraries/protocol/include/graphene/protocol/worker.hpp" line="84" column="1" bodyfile="libraries/protocol/include/graphene/protocol/worker.hpp" bodystart="84" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1worker__create__operation_1a050dba590771b4520501348d3cff61e1" prot="public" static="no" mutable="no">
-        <type>time_point_sec</type>
+        <type><ref refid="classfc_1_1time__point__sec" kindref="compound">time_point_sec</ref></type>
         <definition>time_point_sec graphene::protocol::worker_create_operation::work_end_date</definition>
         <argsstring></argsstring>
         <name>work_end_date</name>
@@ -144,61 +144,71 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="4081">
+      <node id="6289">
         <label>graphene::protocol::base_operation</label>
         <link refid="structgraphene_1_1protocol_1_1base__operation"/>
       </node>
-      <node id="4080">
+      <node id="6288">
         <label>graphene::protocol::worker_create_operation</label>
         <link refid="structgraphene_1_1protocol_1_1worker__create__operation"/>
-        <childnode refid="4081" relation="public-inheritance">
+        <childnode refid="6289" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="4086">
-        <label>time_point_sec</label>
+      <node id="6296">
+        <label>fc::static_variant&lt; refund_worker_initializer, vesting_balance_worker_initializer, burn_worker_initializer &gt;</label>
+        <link refid="classfc_1_1static__variant"/>
+        <childnode refid="6297" relation="usage">
+          <edgelabel>storage</edgelabel>
+        </childnode>
       </node>
-      <node id="4087">
+      <node id="6295">
         <label>string</label>
       </node>
-      <node id="4088">
-        <label>static_variant&lt; refund_worker_initializer, vesting_balance_worker_initializer, burn_worker_initializer &gt;</label>
+      <node id="6293">
+        <label>fc::safe&lt; int64_t &gt;</label>
+        <link refid="structfc_1_1safe"/>
       </node>
-      <node id="4083">
+      <node id="6294">
+        <label>fc::time_point_sec</label>
+        <link refid="classfc_1_1time__point__sec"/>
+      </node>
+      <node id="6291">
         <label>graphene::protocol::base_operation</label>
         <link refid="structgraphene_1_1protocol_1_1base__operation"/>
       </node>
-      <node id="4084">
+      <node id="6292">
         <label>graphene::protocol::asset</label>
         <link refid="structgraphene_1_1protocol_1_1asset"/>
-        <childnode refid="4085" relation="usage">
+        <childnode refid="6293" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
       </node>
-      <node id="4085">
-        <label>safe&lt; int64_t &gt;</label>
+      <node id="6297">
+        <label>fc::impl::dynamic_storage</label>
+        <link refid="classfc_1_1impl_1_1dynamic__storage"/>
       </node>
-      <node id="4082">
+      <node id="6290">
         <label>graphene::protocol::worker_create_operation</label>
         <link refid="structgraphene_1_1protocol_1_1worker__create__operation"/>
-        <childnode refid="4083" relation="public-inheritance">
+        <childnode refid="6291" relation="public-inheritance">
         </childnode>
-        <childnode refid="4084" relation="usage">
+        <childnode refid="6292" relation="usage">
           <edgelabel>fee</edgelabel>
         </childnode>
-        <childnode refid="4086" relation="usage">
+        <childnode refid="6294" relation="usage">
           <edgelabel>work_end_date</edgelabel>
           <edgelabel>work_begin_date</edgelabel>
         </childnode>
-        <childnode refid="4085" relation="usage">
+        <childnode refid="6293" relation="usage">
           <edgelabel>daily_pay</edgelabel>
         </childnode>
-        <childnode refid="4087" relation="usage">
+        <childnode refid="6295" relation="usage">
           <edgelabel>url</edgelabel>
           <edgelabel>name</edgelabel>
         </childnode>
-        <childnode refid="4088" relation="usage">
+        <childnode refid="6296" relation="usage">
           <edgelabel>initializer</edgelabel>
         </childnode>
       </node>

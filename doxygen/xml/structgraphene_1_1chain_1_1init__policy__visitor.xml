@@ -45,7 +45,7 @@
         <location file="libraries/chain/vesting_balance_evaluator.cpp" line="71" column="1" bodyfile="libraries/chain/vesting_balance_evaluator.cpp" bodystart="71" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1chain_1_1init__policy__visitor_1a45a88fe8d423ea338f5203390f98c718" prot="public" static="no" mutable="no">
-        <type>fc::time_point_sec</type>
+        <type><ref refid="classfc_1_1time__point__sec" kindref="compound">fc::time_point_sec</ref></type>
         <definition>fc::time_point_sec graphene::chain::init_policy_visitor::now</definition>
         <argsstring></argsstring>
         <name>now</name>
@@ -73,7 +73,7 @@
           <declname>begin_balance</declname>
         </param>
         <param>
-          <type>const fc::time_point_sec &amp;</type>
+          <type>const <ref refid="classfc_1_1time__point__sec" kindref="compound">fc::time_point_sec</ref> &amp;</type>
           <declname>n</declname>
         </param>
         <briefdescription>
@@ -141,21 +141,37 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="2585">
-        <label>time_point_sec</label>
+      <node id="3666">
+        <label>fc::static_variant&lt; linear_vesting_policy, cdd_vesting_policy, instant_vesting_policy &gt;</label>
+        <link refid="classfc_1_1static__variant"/>
+        <childnode refid="3667" relation="usage">
+          <edgelabel>storage</edgelabel>
+        </childnode>
       </node>
-      <node id="2584">
+      <node id="3665">
+        <label>fc::safe&lt; int64_t &gt;</label>
+        <link refid="structfc_1_1safe"/>
+      </node>
+      <node id="3663">
         <label>graphene::chain::init_policy_visitor</label>
         <link refid="structgraphene_1_1chain_1_1init__policy__visitor"/>
-        <childnode refid="2585" relation="usage">
+        <childnode refid="3664" relation="usage">
           <edgelabel>now</edgelabel>
         </childnode>
-        <childnode refid="2586" relation="usage">
+        <childnode refid="3665" relation="usage">
           <edgelabel>init_balance</edgelabel>
         </childnode>
+        <childnode refid="3666" relation="usage">
+          <edgelabel>p</edgelabel>
+        </childnode>
       </node>
-      <node id="2586">
-        <label>safe&lt; int64_t &gt;</label>
+      <node id="3664">
+        <label>fc::time_point_sec</label>
+        <link refid="classfc_1_1time__point__sec"/>
+      </node>
+      <node id="3667">
+        <label>fc::impl::dynamic_storage</label>
+        <link refid="classfc_1_1impl_1_1dynamic__storage"/>
       </node>
     </collaborationgraph>
     <location file="libraries/chain/vesting_balance_evaluator.cpp" line="63" column="1" bodyfile="libraries/chain/vesting_balance_evaluator.cpp" bodystart="62" bodyend="99"/>

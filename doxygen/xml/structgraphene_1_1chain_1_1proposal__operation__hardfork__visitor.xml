@@ -32,7 +32,7 @@
         <location file="libraries/chain/proposal_evaluator.cpp" line="39" column="1" bodyfile="libraries/chain/proposal_evaluator.cpp" bodystart="39" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1chain_1_1proposal__operation__hardfork__visitor_1a49d262acc4a43da659e0aee75d1665d1" prot="public" static="no" mutable="no">
-        <type>const fc::time_point_sec</type>
+        <type>const <ref refid="classfc_1_1time__point__sec" kindref="compound">fc::time_point_sec</ref></type>
         <definition>const fc::time_point_sec graphene::chain::proposal_operation_hardfork_visitor::block_time</definition>
         <argsstring></argsstring>
         <name>block_time</name>
@@ -45,7 +45,7 @@
         <location file="libraries/chain/proposal_evaluator.cpp" line="40" column="1" bodyfile="libraries/chain/proposal_evaluator.cpp" bodystart="40" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1chain_1_1proposal__operation__hardfork__visitor_1a60e8c44ebd54d5aa07097f0321d48756" prot="public" static="no" mutable="no">
-        <type>const fc::time_point_sec</type>
+        <type>const <ref refid="classfc_1_1time__point__sec" kindref="compound">fc::time_point_sec</ref></type>
         <definition>const fc::time_point_sec graphene::chain::proposal_operation_hardfork_visitor::next_maintenance_time</definition>
         <argsstring></argsstring>
         <name>next_maintenance_time</name>
@@ -69,7 +69,7 @@
           <declname>_db</declname>
         </param>
         <param>
-          <type>const fc::time_point_sec</type>
+          <type>const <ref refid="classfc_1_1time__point__sec" kindref="compound">fc::time_point_sec</ref></type>
           <declname>bt</declname>
         </param>
         <briefdescription>
@@ -278,21 +278,37 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="3120">
-        <label>db::object_database</label>
-      </node>
-      <node id="3118">
+      <node id="4749">
         <label>graphene::chain::proposal_operation_hardfork_visitor</label>
         <link refid="structgraphene_1_1chain_1_1proposal__operation__hardfork__visitor"/>
-        <childnode refid="3119" relation="usage">
+        <childnode refid="4750" relation="usage">
+          <edgelabel>block_time</edgelabel>
+          <edgelabel>next_maintenance_time</edgelabel>
+        </childnode>
+        <childnode refid="4751" relation="usage">
           <edgelabel>db</edgelabel>
         </childnode>
       </node>
-      <node id="3119">
+      <node id="4750">
+        <label>fc::time_point_sec</label>
+        <link refid="classfc_1_1time__point__sec"/>
+      </node>
+      <node id="4752">
+        <label>graphene::db::object_database</label>
+        <link refid="classgraphene_1_1db_1_1object__database"/>
+        <childnode refid="4753" relation="usage">
+          <edgelabel>_undo_db</edgelabel>
+        </childnode>
+      </node>
+      <node id="4751">
         <label>graphene::chain::database</label>
         <link refid="classgraphene_1_1chain_1_1database"/>
-        <childnode refid="3120" relation="public-inheritance">
+        <childnode refid="4752" relation="public-inheritance">
         </childnode>
+      </node>
+      <node id="4753">
+        <label>graphene::db::undo_database</label>
+        <link refid="classgraphene_1_1db_1_1undo__database"/>
       </node>
     </collaborationgraph>
     <location file="libraries/chain/proposal_evaluator.cpp" line="37" column="1" bodyfile="libraries/chain/proposal_evaluator.cpp" bodystart="36" bodyend="128"/>

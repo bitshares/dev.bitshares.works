@@ -1,0 +1,247 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classfc_1_1istream" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>fc::istream</compoundname>
+    <derivedcompoundref refid="classfc_1_1asio_1_1istream" prot="public" virt="virtual">fc::asio::istream&lt; AsyncReadStream &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classfc_1_1buffered__istream" prot="public" virt="virtual">fc::buffered_istream</derivedcompoundref>
+    <derivedcompoundref refid="classfc_1_1cin__t" prot="public" virt="virtual">fc::cin_t</derivedcompoundref>
+    <derivedcompoundref refid="classfc_1_1ifstream" prot="public" virt="virtual">fc::ifstream</derivedcompoundref>
+    <derivedcompoundref refid="classfc_1_1iostream" prot="public" virt="virtual">fc::iostream</derivedcompoundref>
+    <includes refid="iostream_8hpp" local="no">iostream.hpp</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfc_1_1istream_1a3d6f017f2fbcead4c7213618b5a21d36" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual fc::istream::~istream</definition>
+        <argsstring>()</argsstring>
+        <name>~istream</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/io/iostream.hpp" line="14" column="1" bodyfile="libraries/fc/include/fc/io/iostream.hpp" bodystart="14" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1istream_1a2d8500cfafdd8ee8134a6dbe30ffbc57" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>size_t</type>
+        <definition>virtual size_t fc::istream::readsome</definition>
+        <argsstring>(char *buf, size_t len)=0</argsstring>
+        <name>readsome</name>
+        <reimplementedby refid="classfc_1_1stringstream_1a246d53362cf8c29f22b5d57ec034e3d6">readsome</reimplementedby>
+        <reimplementedby refid="classfc_1_1cin__t_1a78507d015aaa3a3cb8477ef2a9fc39fd">readsome</reimplementedby>
+        <reimplementedby refid="classfc_1_1tcp__socket_1a2c785e6f21f4383a47bcc1ed15eae71d">readsome</reimplementedby>
+        <reimplementedby refid="classfc_1_1ifstream_1a3b0612e0baec2ab639f12d64eb02587a">readsome</reimplementedby>
+        <reimplementedby refid="classgraphene_1_1net_1_1stcp__socket_1a3da981f7903cdd79873e3fc83377ee45">readsome</reimplementedby>
+        <reimplementedby refid="classfc_1_1asio_1_1istream_1afa81ec76f0c56c68f18bacf6b1ae6720">readsome</reimplementedby>
+        <param>
+          <type>char *</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>read at least 1 byte or throw, if no data is available this method should block cooperatively until data is available or fc::eof is thrown.</para><para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>fc::eof</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if at least 1 byte cannot be read </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/io/iostream.hpp" line="22" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1istream_1a1480e604a53bd3f92f44c217a472fed0" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>size_t</type>
+        <definition>virtual size_t fc::istream::readsome</definition>
+        <argsstring>(const std::shared_ptr&lt; char &gt; &amp;buf, size_t len, size_t offset)=0</argsstring>
+        <name>readsome</name>
+        <reimplementedby refid="classfc_1_1stringstream_1a1408f915bf6105391d1616a9a8c22418">readsome</reimplementedby>
+        <reimplementedby refid="classfc_1_1cin__t_1a39b0060d62667065d5f72e1e693c35d5">readsome</reimplementedby>
+        <reimplementedby refid="classfc_1_1tcp__socket_1a37ab772f32325bbd3dde8854bb2a0ce2">readsome</reimplementedby>
+        <reimplementedby refid="classfc_1_1buffered__istream_1a462190e5205b4aaad1ad0108f31dd7d4">readsome</reimplementedby>
+        <reimplementedby refid="classfc_1_1ifstream_1a64b6a02e1516136b31a5a369942ff5db">readsome</reimplementedby>
+        <reimplementedby refid="classgraphene_1_1net_1_1stcp__socket_1ab8427e5a94056717ba509f82e660607e">readsome</reimplementedby>
+        <reimplementedby refid="classfc_1_1asio_1_1istream_1aaaca6edbd7472173edc231cf9a2c4066">readsome</reimplementedby>
+        <param>
+          <type>const std::shared_ptr&lt; char &gt; &amp;</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/io/iostream.hpp" line="23" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1istream_1ad7f71af193e4aa4c2efaab0ca22b1b86" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classfc_1_1istream" kindref="compound">istream</ref> &amp;</type>
+        <definition>istream &amp; fc::istream::read</definition>
+        <argsstring>(char *buf, size_t len)</argsstring>
+        <name>read</name>
+        <param>
+          <type>char *</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>read len bytes or throw, this method is implemented in terms of readsome.</para><para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>fc::eof_exception</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if len bytes cannot be read </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/io/iostream.hpp" line="30" column="1" bodyfile="libraries/fc/src/io/iostream.cpp" bodystart="274" bodyend="280"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1istream_1a94e767f126e952db54be791ee0cc6d1e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classfc_1_1istream" kindref="compound">istream</ref> &amp;</type>
+        <definition>istream &amp; fc::istream::read</definition>
+        <argsstring>(const std::shared_ptr&lt; char &gt; &amp;buf, size_t len, size_t offset=0)</argsstring>
+        <name>read</name>
+        <param>
+          <type>const std::shared_ptr&lt; char &gt; &amp;</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>offset</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/io/iostream.hpp" line="31" column="1" bodyfile="libraries/fc/src/io/iostream.cpp" bodystart="282" bodyend="288"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1istream_1ac217a213d8fe2554eaba25b7daf6c9b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>char</type>
+        <definition>char fc::istream::get</definition>
+        <argsstring>()</argsstring>
+        <name>get</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/io/iostream.hpp" line="32" column="1" bodyfile="libraries/fc/src/io/iostream.cpp" bodystart="267" bodyend="272"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1istream_1af20469d279f38832b5a2e13c95185e95" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::istream::get</definition>
+        <argsstring>(char &amp;c)</argsstring>
+        <name>get</name>
+        <param>
+          <type>char &amp;</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/io/iostream.hpp" line="33" column="1" bodyfile="libraries/fc/include/fc/io/iostream.hpp" bodystart="33" bodyend="33"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Provides a <ref refid="classfc_1_1thread" kindref="compound">fc::thread</ref> friendly cooperatively multi-tasked stream that will block &apos;cooperatively&apos; instead of hard blocking. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="3737">
+        <label>fc::cin_t</label>
+        <link refid="classfc_1_1cin__t"/>
+        <childnode refid="3734" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3741">
+        <label>fc::tcp_socket</label>
+        <link refid="classfc_1_1tcp__socket"/>
+        <childnode refid="3739" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3738">
+        <label>fc::ifstream</label>
+        <link refid="classfc_1_1ifstream"/>
+        <childnode refid="3734" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3740">
+        <label>fc::stringstream</label>
+        <link refid="classfc_1_1stringstream"/>
+        <childnode refid="3739" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3742">
+        <label>graphene::net::stcp_socket</label>
+        <link refid="classgraphene_1_1net_1_1stcp__socket"/>
+        <childnode refid="3739" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3736">
+        <label>fc::buffered_istream</label>
+        <link refid="classfc_1_1buffered__istream"/>
+        <childnode refid="3734" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3734">
+        <label>fc::istream</label>
+        <link refid="classfc_1_1istream"/>
+      </node>
+      <node id="3739">
+        <label>fc::iostream</label>
+        <link refid="classfc_1_1iostream"/>
+        <childnode refid="3734" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3735">
+        <label>fc::asio::istream&lt; AsyncReadStream &gt;</label>
+        <link refid="classfc_1_1asio_1_1istream"/>
+        <childnode refid="3734" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="libraries/fc/include/fc/io/iostream.hpp" line="12" column="1" bodyfile="libraries/fc/include/fc/io/iostream.hpp" bodystart="11" bodyend="34"/>
+    <listofallmembers>
+      <member refid="classfc_1_1istream_1ac217a213d8fe2554eaba25b7daf6c9b2" prot="public" virt="virtual"><scope>fc::istream</scope><name>get</name></member>
+      <member refid="classfc_1_1istream_1af20469d279f38832b5a2e13c95185e95" prot="public" virt="non-virtual"><scope>fc::istream</scope><name>get</name></member>
+      <member refid="classfc_1_1istream_1ad7f71af193e4aa4c2efaab0ca22b1b86" prot="public" virt="non-virtual"><scope>fc::istream</scope><name>read</name></member>
+      <member refid="classfc_1_1istream_1a94e767f126e952db54be791ee0cc6d1e" prot="public" virt="non-virtual"><scope>fc::istream</scope><name>read</name></member>
+      <member refid="classfc_1_1istream_1a2d8500cfafdd8ee8134a6dbe30ffbc57" prot="public" virt="pure-virtual"><scope>fc::istream</scope><name>readsome</name></member>
+      <member refid="classfc_1_1istream_1a1480e604a53bd3f92f44c217a472fed0" prot="public" virt="pure-virtual"><scope>fc::istream</scope><name>readsome</name></member>
+      <member refid="classfc_1_1istream_1a3d6f017f2fbcead4c7213618b5a21d36" prot="public" virt="virtual"><scope>fc::istream</scope><name>~istream</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

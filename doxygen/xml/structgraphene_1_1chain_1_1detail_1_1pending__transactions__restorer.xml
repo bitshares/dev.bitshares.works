@@ -72,19 +72,27 @@
     <detaileddescription>
 <para>Class used to help the without_pending_transactions implementation.</para><para>TODO: Change the name of this class to better reflect the fact that it restores popped transactions as well as pending transactions. </para>    </detaileddescription>
     <collaborationgraph>
-      <node id="2941">
-        <label>db::object_database</label>
-      </node>
-      <node id="2940">
-        <label>graphene::chain::database</label>
-        <link refid="classgraphene_1_1chain_1_1database"/>
-        <childnode refid="2941" relation="public-inheritance">
+      <node id="4480">
+        <label>graphene::db::object_database</label>
+        <link refid="classgraphene_1_1db_1_1object__database"/>
+        <childnode refid="4481" relation="usage">
+          <edgelabel>_undo_db</edgelabel>
         </childnode>
       </node>
-      <node id="2939">
+      <node id="4479">
+        <label>graphene::chain::database</label>
+        <link refid="classgraphene_1_1chain_1_1database"/>
+        <childnode refid="4480" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4481">
+        <label>graphene::db::undo_database</label>
+        <link refid="classgraphene_1_1db_1_1undo__database"/>
+      </node>
+      <node id="4478">
         <label>graphene::chain::detail::pending_transactions_restorer</label>
         <link refid="structgraphene_1_1chain_1_1detail_1_1pending__transactions__restorer"/>
-        <childnode refid="2940" relation="usage">
+        <childnode refid="4479" relation="usage">
           <edgelabel>_db</edgelabel>
         </childnode>
       </node>

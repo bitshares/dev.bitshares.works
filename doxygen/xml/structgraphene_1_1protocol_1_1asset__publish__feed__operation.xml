@@ -105,63 +105,64 @@
     <detaileddescription>
 <para>The feed in the operation contains three prices: a call price limit, a short price limit, and a settlement price. The call limit price is structured as (collateral asset) / (debt asset) and the short limit price is structured as (asset for sale) / (collateral asset). Note that the asset IDs are opposite to eachother, so if we&apos;re publishing a feed for USD, the call limit price will be CORE/USD and the short limit price will be USD/CORE. The settlement price may be flipped either direction, as long as it is a ratio between the market-issued asset and its collateral. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="774">
+      <node id="1025">
         <label>graphene::protocol::base_operation</label>
         <link refid="structgraphene_1_1protocol_1_1base__operation"/>
       </node>
-      <node id="773">
+      <node id="1024">
         <label>graphene::protocol::asset_publish_feed_operation</label>
         <link refid="structgraphene_1_1protocol_1_1asset__publish__feed__operation"/>
-        <childnode refid="774" relation="public-inheritance">
+        <childnode refid="1025" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="777">
+      <node id="1028">
         <label>flat_set&lt; future_extensions &gt;</label>
       </node>
-      <node id="781">
+      <node id="1032">
         <label>graphene::protocol::price</label>
         <link refid="structgraphene_1_1protocol_1_1price"/>
-        <childnode refid="778" relation="usage">
+        <childnode refid="1029" relation="usage">
           <edgelabel>base</edgelabel>
           <edgelabel>quote</edgelabel>
         </childnode>
       </node>
-      <node id="780">
+      <node id="1030">
+        <label>fc::safe&lt; int64_t &gt;</label>
+        <link refid="structfc_1_1safe"/>
+      </node>
+      <node id="1031">
         <label>graphene::protocol::price_feed</label>
         <link refid="structgraphene_1_1protocol_1_1price__feed"/>
-        <childnode refid="781" relation="usage">
+        <childnode refid="1032" relation="usage">
           <edgelabel>core_exchange_rate</edgelabel>
           <edgelabel>settlement_price</edgelabel>
         </childnode>
       </node>
-      <node id="776">
+      <node id="1027">
         <label>graphene::protocol::base_operation</label>
         <link refid="structgraphene_1_1protocol_1_1base__operation"/>
       </node>
-      <node id="778">
+      <node id="1029">
         <label>graphene::protocol::asset</label>
         <link refid="structgraphene_1_1protocol_1_1asset"/>
-        <childnode refid="779" relation="usage">
+        <childnode refid="1030" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
       </node>
-      <node id="779">
-        <label>safe&lt; int64_t &gt;</label>
-      </node>
-      <node id="775">
+      <node id="1026">
         <label>graphene::protocol::asset_publish_feed_operation</label>
         <link refid="structgraphene_1_1protocol_1_1asset__publish__feed__operation"/>
-        <childnode refid="776" relation="public-inheritance">
+        <childnode refid="1027" relation="public-inheritance">
         </childnode>
-        <childnode refid="777" relation="usage">
+        <childnode refid="1028" relation="usage">
           <edgelabel>extensions</edgelabel>
         </childnode>
-        <childnode refid="778" relation="usage">
+        <childnode refid="1029" relation="usage">
           <edgelabel>fee</edgelabel>
         </childnode>
-        <childnode refid="780" relation="usage">
+        <childnode refid="1031" relation="usage">
           <edgelabel>feed</edgelabel>
         </childnode>
       </node>

@@ -1,0 +1,774 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="base58_8cpp" kind="file" language="C++">
+    <compoundname>base58.cpp</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">limits</includes>
+    <includes local="no">algorithm</includes>
+    <includes local="no">string.h</includes>
+    <includes refid="logger_8hpp" local="no">fc/log/logger.hpp</includes>
+    <includes refid="exception_8hpp" local="no">fc/exception/exception.hpp</includes>
+    <includes local="no">stdexcept</includes>
+    <includes local="no">openssl/bn.h</includes>
+    <incdepgraph>
+      <node id="34747">
+        <label>boost/endian/buffers.hpp</label>
+      </node>
+      <node id="34704">
+        <label>libraries/fc/src/crypto/base58.cpp</label>
+        <link refid="base58_8cpp"/>
+        <childnode refid="34705" relation="include">
+        </childnode>
+        <childnode refid="34706" relation="include">
+        </childnode>
+        <childnode refid="34707" relation="include">
+        </childnode>
+        <childnode refid="34708" relation="include">
+        </childnode>
+        <childnode refid="34709" relation="include">
+        </childnode>
+        <childnode refid="34710" relation="include">
+        </childnode>
+        <childnode refid="34750" relation="include">
+        </childnode>
+        <childnode refid="34753" relation="include">
+        </childnode>
+        <childnode refid="34754" relation="include">
+        </childnode>
+      </node>
+      <node id="34752">
+        <label>functional</label>
+      </node>
+      <node id="34724">
+        <label>boost/preprocessor/seq/seq.hpp</label>
+      </node>
+      <node id="34707">
+        <label>limits</label>
+      </node>
+      <node id="34715">
+        <label>assert.h</label>
+      </node>
+      <node id="34714">
+        <label>fc/optional.hpp</label>
+        <link refid="optional_8hpp"/>
+        <childnode refid="34715" relation="include">
+        </childnode>
+        <childnode refid="34716" relation="include">
+        </childnode>
+      </node>
+      <node id="34720">
+        <label>boost/lexical_cast.hpp</label>
+      </node>
+      <node id="34718">
+        <label>fc/string.hpp</label>
+        <link refid="string_8hpp"/>
+        <childnode refid="34719" relation="include">
+        </childnode>
+        <childnode refid="34714" relation="include">
+        </childnode>
+        <childnode refid="34705" relation="include">
+        </childnode>
+      </node>
+      <node id="34711">
+        <label>fc/config.hpp</label>
+        <link refid="fc_2include_2fc_2config_8hpp"/>
+      </node>
+      <node id="34713">
+        <label>stdint.h</label>
+      </node>
+      <node id="34732">
+        <label>fc/container/flat_fwd.hpp</label>
+        <link refid="flat__fwd_8hpp"/>
+        <childnode refid="34733" relation="include">
+        </childnode>
+        <childnode refid="34734" relation="include">
+        </childnode>
+        <childnode refid="34735" relation="include">
+        </childnode>
+        <childnode refid="34711" relation="include">
+        </childnode>
+      </node>
+      <node id="34753">
+        <label>stdexcept</label>
+      </node>
+      <node id="34710">
+        <label>fc/log/logger.hpp</label>
+        <link refid="logger_8hpp"/>
+        <childnode refid="34711" relation="include">
+        </childnode>
+        <childnode refid="34712" relation="include">
+        </childnode>
+        <childnode refid="34736" relation="include">
+        </childnode>
+        <childnode refid="34738" relation="include">
+        </childnode>
+        <childnode refid="34741" relation="include">
+        </childnode>
+        <childnode refid="34737" relation="include">
+        </childnode>
+        <childnode refid="34721" relation="include">
+        </childnode>
+        <childnode refid="34722" relation="include">
+        </childnode>
+        <childnode refid="34723" relation="include">
+        </childnode>
+        <childnode refid="34724" relation="include">
+        </childnode>
+        <childnode refid="34725" relation="include">
+        </childnode>
+        <childnode refid="34749" relation="include">
+        </childnode>
+      </node>
+      <node id="34705">
+        <label>string</label>
+      </node>
+      <node id="34730">
+        <label>map</label>
+      </node>
+      <node id="34743">
+        <label>unordered_set</label>
+      </node>
+      <node id="34736">
+        <label>fc/log/appender.hpp</label>
+        <link refid="appender_8hpp"/>
+        <childnode refid="34737" relation="include">
+        </childnode>
+        <childnode refid="34705" relation="include">
+        </childnode>
+      </node>
+      <node id="34749">
+        <label>boost/preprocessor/punctuation/paren.hpp</label>
+      </node>
+      <node id="34751">
+        <label>exception</label>
+      </node>
+      <node id="34738">
+        <label>fc/log/log_message.hpp</label>
+        <link refid="log__message_8hpp"/>
+        <childnode refid="34711" relation="include">
+        </childnode>
+        <childnode refid="34712" relation="include">
+        </childnode>
+        <childnode refid="34739" relation="include">
+        </childnode>
+        <childnode refid="34737" relation="include">
+        </childnode>
+        <childnode refid="34705" relation="include">
+        </childnode>
+      </node>
+      <node id="34748">
+        <label>boost/multi_index_container_fwd.hpp</label>
+      </node>
+      <node id="34740">
+        <label>fc/variant.hpp</label>
+        <link refid="variant_8hpp"/>
+        <childnode refid="34728" relation="include">
+        </childnode>
+        <childnode refid="34741" relation="include">
+        </childnode>
+        <childnode refid="34729" relation="include">
+        </childnode>
+        <childnode refid="34730" relation="include">
+        </childnode>
+        <childnode refid="34737" relation="include">
+        </childnode>
+        <childnode refid="34731" relation="include">
+        </childnode>
+        <childnode refid="34742" relation="include">
+        </childnode>
+        <childnode refid="34743" relation="include">
+        </childnode>
+        <childnode refid="34706" relation="include">
+        </childnode>
+        <childnode refid="34709" relation="include">
+        </childnode>
+        <childnode refid="34714" relation="include">
+        </childnode>
+        <childnode refid="34744" relation="include">
+        </childnode>
+        <childnode refid="34732" relation="include">
+        </childnode>
+        <childnode refid="34746" relation="include">
+        </childnode>
+        <childnode refid="34747" relation="include">
+        </childnode>
+        <childnode refid="34748" relation="include">
+        </childnode>
+        <childnode refid="34717" relation="include">
+        </childnode>
+      </node>
+      <node id="34712">
+        <label>fc/time.hpp</label>
+        <link refid="time_8hpp"/>
+        <childnode refid="34713" relation="include">
+        </childnode>
+        <childnode refid="34705" relation="include">
+        </childnode>
+        <childnode refid="34714" relation="include">
+        </childnode>
+        <childnode refid="34717" relation="include">
+        </childnode>
+      </node>
+      <node id="34725">
+        <label>boost/preprocessor/stringize.hpp</label>
+      </node>
+      <node id="34723">
+        <label>boost/preprocessor/seq/size.hpp</label>
+      </node>
+      <node id="34744">
+        <label>fc/uint128.hpp</label>
+        <link refid="uint128_8hpp"/>
+        <childnode refid="34745" relation="include">
+        </childnode>
+      </node>
+      <node id="34746">
+        <label>fc/crypto/hex.hpp</label>
+        <link refid="hex_8hpp"/>
+        <childnode refid="34713" relation="include">
+        </childnode>
+        <childnode refid="34705" relation="include">
+        </childnode>
+        <childnode refid="34706" relation="include">
+        </childnode>
+      </node>
+      <node id="34735">
+        <label>boost/interprocess/containers/vector.hpp</label>
+      </node>
+      <node id="34719">
+        <label>fc/fwd.hpp</label>
+        <link refid="fwd_8hpp"/>
+      </node>
+      <node id="34709">
+        <label>string.h</label>
+      </node>
+      <node id="34734">
+        <label>boost/container/flat_set.hpp</label>
+      </node>
+      <node id="34739">
+        <label>fc/variant_object.hpp</label>
+        <link refid="variant__object_8hpp"/>
+        <childnode refid="34740" relation="include">
+        </childnode>
+        <childnode refid="34737" relation="include">
+        </childnode>
+      </node>
+      <node id="34727">
+        <label>fc/reflect/typename.hpp</label>
+        <link refid="typename_8hpp"/>
+        <childnode refid="34728" relation="include">
+        </childnode>
+        <childnode refid="34729" relation="include">
+        </childnode>
+        <childnode refid="34730" relation="include">
+        </childnode>
+        <childnode refid="34731" relation="include">
+        </childnode>
+        <childnode refid="34705" relation="include">
+        </childnode>
+        <childnode refid="34706" relation="include">
+        </childnode>
+        <childnode refid="34714" relation="include">
+        </childnode>
+        <childnode refid="34718" relation="include">
+        </childnode>
+        <childnode refid="34732" relation="include">
+        </childnode>
+      </node>
+      <node id="34706">
+        <label>vector</label>
+      </node>
+      <node id="34750">
+        <label>fc/exception/exception.hpp</label>
+        <link refid="exception_8hpp"/>
+        <childnode refid="34710" relation="include">
+        </childnode>
+        <childnode refid="34714" relation="include">
+        </childnode>
+        <childnode refid="34751" relation="include">
+        </childnode>
+        <childnode refid="34752" relation="include">
+        </childnode>
+        <childnode refid="34742" relation="include">
+        </childnode>
+      </node>
+      <node id="34716">
+        <label>utility</label>
+      </node>
+      <node id="34728">
+        <label>array</label>
+      </node>
+      <node id="34745">
+        <label>boost/multiprecision/integer.hpp</label>
+      </node>
+      <node id="34741">
+        <label>cstddef</label>
+      </node>
+      <node id="34729">
+        <label>deque</label>
+      </node>
+      <node id="34742">
+        <label>unordered_map</label>
+      </node>
+      <node id="34722">
+        <label>boost/preprocessor/seq/enum.hpp</label>
+      </node>
+      <node id="34733">
+        <label>boost/container/flat_map.hpp</label>
+      </node>
+      <node id="34717">
+        <label>fc/reflect/reflect.hpp</label>
+        <link refid="reflect_8hpp"/>
+        <childnode refid="34718" relation="include">
+        </childnode>
+        <childnode refid="34720" relation="include">
+        </childnode>
+        <childnode refid="34721" relation="include">
+        </childnode>
+        <childnode refid="34722" relation="include">
+        </childnode>
+        <childnode refid="34723" relation="include">
+        </childnode>
+        <childnode refid="34724" relation="include">
+        </childnode>
+        <childnode refid="34725" relation="include">
+        </childnode>
+        <childnode refid="34713" relation="include">
+        </childnode>
+        <childnode refid="34709" relation="include">
+        </childnode>
+        <childnode refid="34726" relation="include">
+        </childnode>
+        <childnode refid="34727" relation="include">
+        </childnode>
+      </node>
+      <node id="34754">
+        <label>openssl/bn.h</label>
+      </node>
+      <node id="34726">
+        <label>type_traits</label>
+      </node>
+      <node id="34731">
+        <label>set</label>
+      </node>
+      <node id="34708">
+        <label>algorithm</label>
+      </node>
+      <node id="34737">
+        <label>memory</label>
+      </node>
+      <node id="34721">
+        <label>boost/preprocessor/seq/for_each.hpp</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classbignum__error" prot="public">bignum_error</innerclass>
+    <innerclass refid="class_c_auto_b_n___c_t_x" prot="public">CAutoBN_CTX</innerclass>
+    <innerclass refid="class_c_big_num" prot="public">CBigNum</innerclass>
+    <innernamespace refid="namespacefc">fc</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="base58_8cpp_1adcd4a3e88429063bb53da8b3abd9335c" prot="public" static="no">
+        <name>BITCOIN_BASE58_H</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/base58.cpp" line="16" column="9" bodyfile="libraries/fc/src/crypto/base58.cpp" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="base58_8cpp_1ab647a562dea2d764299dc9a7d3bb1175" prot="public" static="yes" mutable="no">
+        <type>const char *</type>
+        <definition>const char* pszBase58</definition>
+        <argsstring></argsstring>
+        <name>pszBase58</name>
+        <initializer>= &quot;123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/base58.cpp" line="501" column="1" bodyfile="libraries/fc/src/crypto/base58.cpp" bodystart="501" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="base58_8cpp_1a819bba1b2b78b483f97b382d10428aec" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="class_c_big_num" kindref="compound">CBigNum</ref></type>
+        <definition>const CBigNum operator+</definition>
+        <argsstring>(const CBigNum &amp;a, const CBigNum &amp;b)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>const <ref refid="class_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/base58.cpp" line="428" column="1" bodyfile="libraries/fc/src/crypto/base58.cpp" bodystart="428" bodyend="434"/>
+      </memberdef>
+      <memberdef kind="function" id="base58_8cpp_1aeb0210adda76affb66975146b1168f71" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="class_c_big_num" kindref="compound">CBigNum</ref></type>
+        <definition>const CBigNum operator-</definition>
+        <argsstring>(const CBigNum &amp;a, const CBigNum &amp;b)</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>const <ref refid="class_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/base58.cpp" line="436" column="1" bodyfile="libraries/fc/src/crypto/base58.cpp" bodystart="436" bodyend="442"/>
+      </memberdef>
+      <memberdef kind="function" id="base58_8cpp_1aa232c7b9c490c7d5631f83d395e4cb4d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="class_c_big_num" kindref="compound">CBigNum</ref></type>
+        <definition>const CBigNum operator-</definition>
+        <argsstring>(const CBigNum &amp;a)</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>const <ref refid="class_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/base58.cpp" line="444" column="1" bodyfile="libraries/fc/src/crypto/base58.cpp" bodystart="444" bodyend="449"/>
+      </memberdef>
+      <memberdef kind="function" id="base58_8cpp_1a62e78c276de3957d599fd4974713fed2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="class_c_big_num" kindref="compound">CBigNum</ref></type>
+        <definition>const CBigNum operator*</definition>
+        <argsstring>(const CBigNum &amp;a, const CBigNum &amp;b)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="class_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/base58.cpp" line="451" column="1" bodyfile="libraries/fc/src/crypto/base58.cpp" bodystart="451" bodyend="458"/>
+      </memberdef>
+      <memberdef kind="function" id="base58_8cpp_1ac5a9fb08b1522f0cbcc30f87bac72f4b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="class_c_big_num" kindref="compound">CBigNum</ref></type>
+        <definition>const CBigNum operator/</definition>
+        <argsstring>(const CBigNum &amp;a, const CBigNum &amp;b)</argsstring>
+        <name>operator/</name>
+        <param>
+          <type>const <ref refid="class_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/base58.cpp" line="460" column="1" bodyfile="libraries/fc/src/crypto/base58.cpp" bodystart="460" bodyend="467"/>
+      </memberdef>
+      <memberdef kind="function" id="base58_8cpp_1a8abffdb8b9ce531fef9fc3067d7329ef" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="class_c_big_num" kindref="compound">CBigNum</ref></type>
+        <definition>const CBigNum operator%</definition>
+        <argsstring>(const CBigNum &amp;a, const CBigNum &amp;b)</argsstring>
+        <name>operator%</name>
+        <param>
+          <type>const <ref refid="class_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/base58.cpp" line="469" column="1" bodyfile="libraries/fc/src/crypto/base58.cpp" bodystart="469" bodyend="476"/>
+      </memberdef>
+      <memberdef kind="function" id="base58_8cpp_1a86b058302c849275feacf293a83ee8be" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="class_c_big_num" kindref="compound">CBigNum</ref></type>
+        <definition>const CBigNum operator&lt;&lt;</definition>
+        <argsstring>(const CBigNum &amp;a, unsigned int shift)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>const <ref refid="class_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>shift</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/base58.cpp" line="478" column="1" bodyfile="libraries/fc/src/crypto/base58.cpp" bodystart="478" bodyend="484"/>
+      </memberdef>
+      <memberdef kind="function" id="base58_8cpp_1a04d04f2aaa8deba2ea08938e22b565a6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="class_c_big_num" kindref="compound">CBigNum</ref></type>
+        <definition>const CBigNum operator&gt;&gt;</definition>
+        <argsstring>(const CBigNum &amp;a, unsigned int shift)</argsstring>
+        <name>operator&gt;&gt;</name>
+        <param>
+          <type>const <ref refid="class_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>shift</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/base58.cpp" line="486" column="1" bodyfile="libraries/fc/src/crypto/base58.cpp" bodystart="486" bodyend="491"/>
+      </memberdef>
+      <memberdef kind="function" id="base58_8cpp_1af5a5df78a886ba34c3ce242b02a62bad" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool operator==</definition>
+        <argsstring>(const CBigNum &amp;a, const CBigNum &amp;b)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="class_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/base58.cpp" line="493" column="1" bodyfile="libraries/fc/src/crypto/base58.cpp" bodystart="493" bodyend="493"/>
+      </memberdef>
+      <memberdef kind="function" id="base58_8cpp_1a136920a941d817d467017f36d63e48a8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool operator!=</definition>
+        <argsstring>(const CBigNum &amp;a, const CBigNum &amp;b)</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="class_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/base58.cpp" line="494" column="1" bodyfile="libraries/fc/src/crypto/base58.cpp" bodystart="494" bodyend="494"/>
+      </memberdef>
+      <memberdef kind="function" id="base58_8cpp_1a9ecd8e4eda0fd40c50bf1dc79278b8da" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool operator&lt;=</definition>
+        <argsstring>(const CBigNum &amp;a, const CBigNum &amp;b)</argsstring>
+        <name>operator&lt;=</name>
+        <param>
+          <type>const <ref refid="class_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/base58.cpp" line="495" column="1" bodyfile="libraries/fc/src/crypto/base58.cpp" bodystart="495" bodyend="495"/>
+      </memberdef>
+      <memberdef kind="function" id="base58_8cpp_1ad413d94390cfa29840c6887cdc07959e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool operator&gt;=</definition>
+        <argsstring>(const CBigNum &amp;a, const CBigNum &amp;b)</argsstring>
+        <name>operator&gt;=</name>
+        <param>
+          <type>const <ref refid="class_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/base58.cpp" line="496" column="1" bodyfile="libraries/fc/src/crypto/base58.cpp" bodystart="496" bodyend="496"/>
+      </memberdef>
+      <memberdef kind="function" id="base58_8cpp_1a6db3085f36d565f1dd8589c8386d3a2f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool operator&lt;</definition>
+        <argsstring>(const CBigNum &amp;a, const CBigNum &amp;b)</argsstring>
+        <name>operator&lt;</name>
+        <param>
+          <type>const <ref refid="class_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/base58.cpp" line="497" column="1" bodyfile="libraries/fc/src/crypto/base58.cpp" bodystart="497" bodyend="497"/>
+      </memberdef>
+      <memberdef kind="function" id="base58_8cpp_1ae09a7d6e173c46e14f62c1d0790bce20" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool operator&gt;</definition>
+        <argsstring>(const CBigNum &amp;a, const CBigNum &amp;b)</argsstring>
+        <name>operator&gt;</name>
+        <param>
+          <type>const <ref refid="class_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/base58.cpp" line="498" column="1" bodyfile="libraries/fc/src/crypto/base58.cpp" bodystart="498" bodyend="498"/>
+      </memberdef>
+      <memberdef kind="function" id="base58_8cpp_1a8d6f0e9d5df175b4966dcede31dc90ad" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string EncodeBase58</definition>
+        <argsstring>(const unsigned char *pbegin, const unsigned char *pend)</argsstring>
+        <name>EncodeBase58</name>
+        <param>
+          <type>const unsigned char *</type>
+          <declname>pbegin</declname>
+        </param>
+        <param>
+          <type>const unsigned char *</type>
+          <declname>pend</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/base58.cpp" line="504" column="1" bodyfile="libraries/fc/src/crypto/base58.cpp" bodystart="504" bodyend="543"/>
+      </memberdef>
+      <memberdef kind="function" id="base58_8cpp_1ab95cf95fa4e2631017335c2ea73090bc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string EncodeBase58</definition>
+        <argsstring>(const std::vector&lt; unsigned char &gt; &amp;vch)</argsstring>
+        <name>EncodeBase58</name>
+        <param>
+          <type>const std::vector&lt; unsigned char &gt; &amp;</type>
+          <declname>vch</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/base58.cpp" line="546" column="1" bodyfile="libraries/fc/src/crypto/base58.cpp" bodystart="546" bodyend="549"/>
+      </memberdef>
+      <memberdef kind="function" id="base58_8cpp_1a2a7a6efa38bda9181b9a28ab3e675bea" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DecodeBase58</definition>
+        <argsstring>(const char *psz, std::vector&lt; unsigned char &gt; &amp;vchRet)</argsstring>
+        <name>DecodeBase58</name>
+        <param>
+          <type>const char *</type>
+          <declname>psz</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; unsigned char &gt; &amp;</type>
+          <declname>vchRet</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/base58.cpp" line="553" column="1" bodyfile="libraries/fc/src/crypto/base58.cpp" bodystart="553" bodyend="599"/>
+      </memberdef>
+      <memberdef kind="function" id="base58_8cpp_1a83e290bb1b09e9c26a86863c5641111f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DecodeBase58</definition>
+        <argsstring>(const std::string &amp;str, std::vector&lt; unsigned char &gt; &amp;vchRet)</argsstring>
+        <name>DecodeBase58</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; unsigned char &gt; &amp;</type>
+          <declname>vchRet</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/base58.cpp" line="603" column="1" bodyfile="libraries/fc/src/crypto/base58.cpp" bodystart="603" bodyend="606"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="libraries/fc/src/crypto/base58.cpp"/>
+  </compounddef>
+</doxygen>

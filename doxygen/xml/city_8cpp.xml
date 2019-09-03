@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="city_8cpp" kind="file" language="C++">
+    <compoundname>city.cpp</compoundname>
+    <includes local="no">algorithm</includes>
+    <includes local="no">array</includes>
+    <includes local="no">string.h</includes>
+    <includes refid="city_8hpp" local="no">fc/crypto/city.hpp</includes>
+    <includes local="no">boost/endian/buffers.hpp</includes>
+    <includes local="no">byteswap.h</includes>
+    <incdepgraph>
+      <node id="34822">
+        <label>boost/endian/buffers.hpp</label>
+      </node>
+      <node id="34820">
+        <label>stdint.h</label>
+      </node>
+      <node id="34819">
+        <label>stdlib.h</label>
+      </node>
+      <node id="34817">
+        <label>fc/uint128.hpp</label>
+        <link refid="uint128_8hpp"/>
+        <childnode refid="34818" relation="include">
+        </childnode>
+      </node>
+      <node id="34815">
+        <label>string.h</label>
+      </node>
+      <node id="34823">
+        <label>byteswap.h</label>
+      </node>
+      <node id="34812">
+        <label>libraries/fc/src/crypto/city.cpp</label>
+        <link refid="city_8cpp"/>
+        <childnode refid="34813" relation="include">
+        </childnode>
+        <childnode refid="34814" relation="include">
+        </childnode>
+        <childnode refid="34815" relation="include">
+        </childnode>
+        <childnode refid="34816" relation="include">
+        </childnode>
+        <childnode refid="34822" relation="include">
+        </childnode>
+        <childnode refid="34823" relation="include">
+        </childnode>
+      </node>
+      <node id="34821">
+        <label>utility</label>
+      </node>
+      <node id="34814">
+        <label>array</label>
+      </node>
+      <node id="34818">
+        <label>boost/multiprecision/integer.hpp</label>
+      </node>
+      <node id="34813">
+        <label>algorithm</label>
+      </node>
+      <node id="34816">
+        <label>fc/crypto/city.hpp</label>
+        <link refid="city_8hpp"/>
+        <childnode refid="34817" relation="include">
+        </childnode>
+        <childnode refid="34819" relation="include">
+        </childnode>
+        <childnode refid="34820" relation="include">
+        </childnode>
+        <childnode refid="34821" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespacefc">fc</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="city_8cpp_1affde14445f49f65ff4f5b592e44ee71a" prot="public" static="no">
+        <name>LIKELY</name>
+        <param><defname>x</defname></param>
+        <initializer>(x)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/city.cpp" line="113" column="10" bodyfile="libraries/fc/src/crypto/city.cpp" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="city_8cpp_1a6b854d47c10d6bfe9674b07cc48660dc" prot="public" static="no">
+        <name>PERMUTE3</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <param><defname>c</defname></param>
+        <initializer>do { std::swap(a, b); std::swap(a, c); } while (0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/city.cpp" line="155" column="10" bodyfile="libraries/fc/src/crypto/city.cpp" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="city_8cpp_1a2b7129d8fd966cc7d442029d78690508" prot="public" static="no">
+        <name>CHUNK</name>
+        <param><defname>r</defname></param>
+        <initializer><ref refid="city_8cpp_1a6b854d47c10d6bfe9674b07cc48660dc" kindref="member">PERMUTE3</ref>(x, z, y);                          \
+    b += Fetch64(s);                            \
+    c += Fetch64(s + 8);                        \
+    d += Fetch64(s + 16);                       \
+    e += Fetch64(s + 24);                       \
+    f += Fetch64(s + 32);                       \
+    a += b;                                     \
+    h += f;                                     \
+    b += c;                                     \
+    f += d;                                     \
+    g += e;                                     \
+    e += z;                                     \
+    g += x;                                     \
+    z = <ref refid="crc_8cpp_1aa1f41584649362a8cc8fdaf5af39ee7d" kindref="member">_mm_crc32_u64_impl</ref>(z, b + g);                \
+    y = <ref refid="crc_8cpp_1aa1f41584649362a8cc8fdaf5af39ee7d" kindref="member">_mm_crc32_u64_impl</ref>(y, e + h);                \
+    x = <ref refid="crc_8cpp_1aa1f41584649362a8cc8fdaf5af39ee7d" kindref="member">_mm_crc32_u64_impl</ref>(x, f + a);                \
+    e = Rotate(e, r);                           \
+    c += e;                                     \
+    s += 40</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/city.cpp" line="546" column="10"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="city_8cpp_1aa1f41584649362a8cc8fdaf5af39ee7d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t _mm_crc32_u64_impl</definition>
+        <argsstring>(uint64_t a, uint64_t b)</argsstring>
+        <name>_mm_crc32_u64_impl</name>
+        <param>
+          <type>uint64_t</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/city.cpp" line="43" column="1" bodyfile="libraries/fc/src/crypto/crc.cpp" bodystart="607" bodyend="612"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="libraries/fc/src/crypto/city.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,257 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classfc_1_1rpc_1_1state" kind="class" language="C++" prot="public">
+    <compoundname>fc::rpc::state</compoundname>
+    <includes refid="state_8hpp" local="no">state.hpp</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classfc_1_1rpc_1_1state_1a73a24388f26727ae077e380b97a7ddda" prot="public" static="no">
+        <type>std::function&lt; <ref refid="classfc_1_1variant" kindref="compound">variant</ref>(const <ref refid="namespacefc_1a2e5e6bdb302dfb79e684336f3fbbd8bc" kindref="member">variants</ref> &amp;)&gt;</type>
+        <definition>typedef std::function&lt;variant(const variants&amp;)&gt; fc::rpc::state::method</definition>
+        <argsstring></argsstring>
+        <name>method</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/state.hpp" line="40" column="1" bodyfile="libraries/fc/include/fc/rpc/state.hpp" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classfc_1_1rpc_1_1state_1a68c75e97c23e5828d65c782dc90abd12" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t fc::rpc::state::_next_id</definition>
+        <argsstring></argsstring>
+        <name>_next_id</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/state.hpp" line="57" column="1" bodyfile="libraries/fc/include/fc/rpc/state.hpp" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1rpc_1_1state_1aa1faf15eb1fe57d308cc993053c199f4" prot="private" static="no" mutable="no">
+        <type>std::map&lt; <ref refid="classfc_1_1variant" kindref="compound">variant</ref>, <ref refid="classfc_1_1promise" kindref="compound">fc::promise</ref>&lt; <ref refid="classfc_1_1variant" kindref="compound">variant</ref> &gt;::ptr &gt;</type>
+        <definition>std::map&lt;variant, fc::promise&lt;variant&gt;::ptr&gt; fc::rpc::state::_awaiting</definition>
+        <argsstring></argsstring>
+        <name>_awaiting</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/state.hpp" line="58" column="1" bodyfile="libraries/fc/include/fc/rpc/state.hpp" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1rpc_1_1state_1ab2cc5d9460c869b3e8cc9ac2372b6539" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, <ref refid="classfc_1_1rpc_1_1state_1a73a24388f26727ae077e380b97a7ddda" kindref="member">method</ref> &gt;</type>
+        <definition>std::unordered_map&lt;std::string, method&gt; fc::rpc::state::_methods</definition>
+        <argsstring></argsstring>
+        <name>_methods</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/state.hpp" line="59" column="1" bodyfile="libraries/fc/include/fc/rpc/state.hpp" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1rpc_1_1state_1a0a1f0ab51e7b25ee75751f90fa093e3f" prot="private" static="no" mutable="no">
+        <type>std::function&lt; <ref refid="classfc_1_1variant" kindref="compound">variant</ref>(const string &amp;, const <ref refid="namespacefc_1a2e5e6bdb302dfb79e684336f3fbbd8bc" kindref="member">variants</ref> &amp;)&gt;</type>
+        <definition>std::function&lt;variant(const string&amp;,const variants&amp;)&gt; fc::rpc::state::_unhandled</definition>
+        <argsstring></argsstring>
+        <name>_unhandled</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/state.hpp" line="60" column="1" bodyfile="libraries/fc/include/fc/rpc/state.hpp" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfc_1_1rpc_1_1state_1aabd20b172a99aa5aa58a3ee269f6fe82" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fc::rpc::state::~state</definition>
+        <argsstring>()</argsstring>
+        <name>~state</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/state.hpp" line="41" column="1" bodyfile="libraries/fc/src/rpc/state.cpp" bodystart="6" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1rpc_1_1state_1a884ebe584be3b0c097f8ea32b6faf589" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::rpc::state::add_method</definition>
+        <argsstring>(const std::string &amp;name, method m)</argsstring>
+        <name>add_method</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="classfc_1_1rpc_1_1state_1a73a24388f26727ae077e380b97a7ddda" kindref="member">method</ref></type>
+          <declname>m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/state.hpp" line="43" column="1" bodyfile="libraries/fc/src/rpc/state.cpp" bodystart="11" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1rpc_1_1state_1ac1cadc3e54941fdc6dac4e22ac21e5fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::rpc::state::remove_method</definition>
+        <argsstring>(const std::string &amp;name)</argsstring>
+        <name>remove_method</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/state.hpp" line="44" column="1" bodyfile="libraries/fc/src/rpc/state.cpp" bodystart="16" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1rpc_1_1state_1aede92c668b0648f58d42de5c4fc780dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classfc_1_1variant" kindref="compound">variant</ref></type>
+        <definition>variant fc::rpc::state::local_call</definition>
+        <argsstring>(const string &amp;method_name, const variants &amp;args)</argsstring>
+        <name>local_call</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>method_name</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespacefc_1a2e5e6bdb302dfb79e684336f3fbbd8bc" kindref="member">variants</ref> &amp;</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/state.hpp" line="46" column="1" bodyfile="libraries/fc/src/rpc/state.cpp" bodystart="21" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1rpc_1_1state_1abb09c235e94cdda4ffc96aab931cd782" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::rpc::state::handle_reply</definition>
+        <argsstring>(const response &amp;response)</argsstring>
+        <name>handle_reply</name>
+        <param>
+          <type>const <ref refid="structfc_1_1rpc_1_1response" kindref="compound">response</ref> &amp;</type>
+          <declname>response</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/state.hpp" line="47" column="1" bodyfile="libraries/fc/src/rpc/state.cpp" bodystart="30" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1rpc_1_1state_1ab74687f573df08fe5fc37049ac7fe42f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structfc_1_1rpc_1_1request" kindref="compound">request</ref></type>
+        <definition>request fc::rpc::state::start_remote_call</definition>
+        <argsstring>(const string &amp;method_name, variants args)</argsstring>
+        <name>start_remote_call</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>method_name</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacefc_1a2e5e6bdb302dfb79e684336f3fbbd8bc" kindref="member">variants</ref></type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/state.hpp" line="49" column="1" bodyfile="libraries/fc/src/rpc/state.cpp" bodystart="46" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1rpc_1_1state_1a9844123a5a05aedff4f15a4eac305c81" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classfc_1_1variant" kindref="compound">variant</ref></type>
+        <definition>variant fc::rpc::state::wait_for_response</definition>
+        <argsstring>(const variant &amp;request_id)</argsstring>
+        <name>wait_for_response</name>
+        <param>
+          <type>const <ref refid="classfc_1_1variant" kindref="compound">variant</ref> &amp;</type>
+          <declname>request_id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/state.hpp" line="50" column="1" bodyfile="libraries/fc/src/rpc/state.cpp" bodystart="52" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1rpc_1_1state_1a61151a50ad7ad396e88c742b627db03d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::rpc::state::close</definition>
+        <argsstring>()</argsstring>
+        <name>close</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/state.hpp" line="52" column="1" bodyfile="libraries/fc/src/rpc/state.cpp" bodystart="58" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1rpc_1_1state_1a9632d44eb9bb091da7edded1f2440c51" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::rpc::state::on_unhandled</definition>
+        <argsstring>(const std::function&lt; variant(const string &amp;, const variants &amp;)&gt; &amp;unhandled)</argsstring>
+        <name>on_unhandled</name>
+        <param>
+          <type>const std::function&lt; <ref refid="classfc_1_1variant" kindref="compound">variant</ref>(const string &amp;, const <ref refid="namespacefc_1a2e5e6bdb302dfb79e684336f3fbbd8bc" kindref="member">variants</ref> &amp;)&gt; &amp;</type>
+          <declname>unhandled</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/state.hpp" line="54" column="1" bodyfile="libraries/fc/src/rpc/state.cpp" bodystart="64" bodyend="67"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="libraries/fc/include/fc/rpc/state.hpp" line="38" column="1" bodyfile="libraries/fc/include/fc/rpc/state.hpp" bodystart="37" bodyend="61"/>
+    <listofallmembers>
+      <member refid="classfc_1_1rpc_1_1state_1aa1faf15eb1fe57d308cc993053c199f4" prot="private" virt="non-virtual"><scope>fc::rpc::state</scope><name>_awaiting</name></member>
+      <member refid="classfc_1_1rpc_1_1state_1ab2cc5d9460c869b3e8cc9ac2372b6539" prot="private" virt="non-virtual"><scope>fc::rpc::state</scope><name>_methods</name></member>
+      <member refid="classfc_1_1rpc_1_1state_1a68c75e97c23e5828d65c782dc90abd12" prot="private" virt="non-virtual"><scope>fc::rpc::state</scope><name>_next_id</name></member>
+      <member refid="classfc_1_1rpc_1_1state_1a0a1f0ab51e7b25ee75751f90fa093e3f" prot="private" virt="non-virtual"><scope>fc::rpc::state</scope><name>_unhandled</name></member>
+      <member refid="classfc_1_1rpc_1_1state_1a884ebe584be3b0c097f8ea32b6faf589" prot="public" virt="non-virtual"><scope>fc::rpc::state</scope><name>add_method</name></member>
+      <member refid="classfc_1_1rpc_1_1state_1a61151a50ad7ad396e88c742b627db03d" prot="public" virt="non-virtual"><scope>fc::rpc::state</scope><name>close</name></member>
+      <member refid="classfc_1_1rpc_1_1state_1abb09c235e94cdda4ffc96aab931cd782" prot="public" virt="non-virtual"><scope>fc::rpc::state</scope><name>handle_reply</name></member>
+      <member refid="classfc_1_1rpc_1_1state_1aede92c668b0648f58d42de5c4fc780dc" prot="public" virt="non-virtual"><scope>fc::rpc::state</scope><name>local_call</name></member>
+      <member refid="classfc_1_1rpc_1_1state_1a73a24388f26727ae077e380b97a7ddda" prot="public" virt="non-virtual"><scope>fc::rpc::state</scope><name>method</name></member>
+      <member refid="classfc_1_1rpc_1_1state_1a9632d44eb9bb091da7edded1f2440c51" prot="public" virt="non-virtual"><scope>fc::rpc::state</scope><name>on_unhandled</name></member>
+      <member refid="classfc_1_1rpc_1_1state_1ac1cadc3e54941fdc6dac4e22ac21e5fc" prot="public" virt="non-virtual"><scope>fc::rpc::state</scope><name>remove_method</name></member>
+      <member refid="classfc_1_1rpc_1_1state_1ab74687f573df08fe5fc37049ac7fe42f" prot="public" virt="non-virtual"><scope>fc::rpc::state</scope><name>start_remote_call</name></member>
+      <member refid="classfc_1_1rpc_1_1state_1a9844123a5a05aedff4f15a4eac305c81" prot="public" virt="non-virtual"><scope>fc::rpc::state</scope><name>wait_for_response</name></member>
+      <member refid="classfc_1_1rpc_1_1state_1aabd20b172a99aa5aa58a3ee269f6fe82" prot="public" virt="non-virtual"><scope>fc::rpc::state</scope><name>~state</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

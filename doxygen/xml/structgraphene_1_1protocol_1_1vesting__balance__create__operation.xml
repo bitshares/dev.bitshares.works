@@ -106,41 +106,56 @@
 <para>Manual creation of vesting balances can be used by a stakeholder to publicly demonstrate that they are committed to the chain. It can also be used as a building block to create transactions that function like public debt. Finally, it is useful for testing vesting balance functionality.</para><para><simplesect kind="return"><para>ID of newly created vesting_balance_object </para></simplesect>
 </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="3561">
+      <node id="5625">
         <label>graphene::protocol::base_operation</label>
         <link refid="structgraphene_1_1protocol_1_1base__operation"/>
       </node>
-      <node id="3560">
+      <node id="5624">
         <label>graphene::protocol::vesting_balance_create_operation</label>
         <link refid="structgraphene_1_1protocol_1_1vesting__balance__create__operation"/>
-        <childnode refid="3561" relation="public-inheritance">
+        <childnode refid="5625" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="3563">
+      <node id="5629">
+        <label>fc::safe&lt; int64_t &gt;</label>
+        <link refid="structfc_1_1safe"/>
+      </node>
+      <node id="5627">
         <label>graphene::protocol::base_operation</label>
         <link refid="structgraphene_1_1protocol_1_1base__operation"/>
       </node>
-      <node id="3564">
+      <node id="5630">
+        <label>fc::static_variant&lt; linear_vesting_policy_initializer, cdd_vesting_policy_initializer, instant_vesting_policy_initializer &gt;</label>
+        <link refid="classfc_1_1static__variant"/>
+        <childnode refid="5631" relation="usage">
+          <edgelabel>storage</edgelabel>
+        </childnode>
+      </node>
+      <node id="5628">
         <label>graphene::protocol::asset</label>
         <link refid="structgraphene_1_1protocol_1_1asset"/>
-        <childnode refid="3565" relation="usage">
+        <childnode refid="5629" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
       </node>
-      <node id="3562">
+      <node id="5626">
         <label>graphene::protocol::vesting_balance_create_operation</label>
         <link refid="structgraphene_1_1protocol_1_1vesting__balance__create__operation"/>
-        <childnode refid="3563" relation="public-inheritance">
+        <childnode refid="5627" relation="public-inheritance">
         </childnode>
-        <childnode refid="3564" relation="usage">
+        <childnode refid="5628" relation="usage">
           <edgelabel>fee</edgelabel>
           <edgelabel>amount</edgelabel>
         </childnode>
+        <childnode refid="5630" relation="usage">
+          <edgelabel>policy</edgelabel>
+        </childnode>
       </node>
-      <node id="3565">
-        <label>safe&lt; int64_t &gt;</label>
+      <node id="5631">
+        <label>fc::impl::dynamic_storage</label>
+        <link refid="classfc_1_1impl_1_1dynamic__storage"/>
       </node>
     </collaborationgraph>
     <location file="libraries/protocol/include/graphene/protocol/vesting.hpp" line="75" column="1" bodyfile="libraries/protocol/include/graphene/protocol/vesting.hpp" bodystart="74" bodyend="90"/>

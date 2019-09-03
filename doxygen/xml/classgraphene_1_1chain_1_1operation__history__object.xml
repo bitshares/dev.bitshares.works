@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="classgraphene_1_1chain_1_1operation__history__object" kind="class" language="C++" prot="public">
     <compoundname>graphene::chain::operation_history_object</compoundname>
-    <basecompoundref prot="public" virt="non-virtual">graphene::db::abstract_object&lt; operation_history_object &gt;</basecompoundref>
+    <basecompoundref refid="classgraphene_1_1db_1_1abstract__object" prot="public" virt="non-virtual">graphene::db::abstract_object&lt; operation_history_object &gt;</basecompoundref>
     <includes refid="operation__history__object_8hpp" local="no">operation_history_object.hpp</includes>
       <sectiondef kind="public-static-attrib">
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1operation__history__object_1aceab3313fb6186e16699ddf04d056fd2" prot="public" static="yes" mutable="no">
@@ -157,39 +157,91 @@
 <simplesect kind="note"><para>this object is READ ONLY it can never be modified </para></simplesect>
 </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="2837">
+      <node id="4244">
         <label>graphene::chain::operation_history_object</label>
         <link refid="classgraphene_1_1chain_1_1operation__history__object"/>
-        <childnode refid="2838" relation="public-inheritance">
+        <childnode refid="4245" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="2838">
+      <node id="4246">
+        <label>graphene::db::object</label>
+        <link refid="classgraphene_1_1db_1_1object"/>
+      </node>
+      <node id="4245">
         <label>graphene::db::abstract_object&lt; operation_history_object &gt;</label>
+        <link refid="classgraphene_1_1db_1_1abstract__object"/>
+        <childnode refid="4246" relation="public-inheritance">
+        </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="2839">
+      <node id="4247">
         <label>graphene::chain::operation_history_object</label>
         <link refid="classgraphene_1_1chain_1_1operation__history__object"/>
-        <childnode refid="2840" relation="public-inheritance">
+        <childnode refid="4248" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4251" relation="usage">
+          <edgelabel>result</edgelabel>
+        </childnode>
+        <childnode refid="4253" relation="usage">
+          <edgelabel>op</edgelabel>
         </childnode>
       </node>
-      <node id="2840">
+      <node id="4253">
+        <label>fc::static_variant&lt; transfer_operation, limit_order_create_operation, limit_order_cancel_operation, call_order_update_operation, fill_order_operation, account_create_operation, account_update_operation, account_whitelist_operation, account_upgrade_operation, account_transfer_operation, asset_create_operation, asset_update_operation, asset_update_bitasset_operation, asset_update_feed_producers_operation, asset_issue_operation, asset_reserve_operation, asset_fund_fee_pool_operation, asset_settle_operation, asset_global_settle_operation, asset_publish_feed_operation, witness_create_operation, witness_update_operation, proposal_create_operation, proposal_update_operation, proposal_delete_operation, withdraw_permission_create_operation, withdraw_permission_update_operation, withdraw_permission_claim_operation, withdraw_permission_delete_operation, committee_member_create_operation, committee_member_update_operation, committee_member_update_global_parameters_operation, vesting_balance_create_operation, vesting_balance_withdraw_operation, worker_create_operation, custom_operation, assert_operation, balance_claim_operation, override_transfer_operation, transfer_to_blind_operation, blind_transfer_operation, transfer_from_blind_operation, asset_settle_cancel_operation, asset_claim_fees_operation, fba_distribute_operation, bid_collateral_operation, execute_bid_operation, asset_claim_pool_operation, asset_update_issuer_operation, htlc_create_operation, htlc_redeem_operation, htlc_redeemed_operation, htlc_extend_operation, htlc_refund_operation &gt;</label>
+        <link refid="classfc_1_1static__variant"/>
+        <childnode refid="4252" relation="usage">
+          <edgelabel>storage</edgelabel>
+        </childnode>
+      </node>
+      <node id="4250">
+        <label>graphene::db::object_id_type</label>
+        <link refid="structgraphene_1_1db_1_1object__id__type"/>
+      </node>
+      <node id="4251">
+        <label>fc::static_variant&lt; void_result, object_id_type, asset &gt;</label>
+        <link refid="classfc_1_1static__variant"/>
+        <childnode refid="4252" relation="usage">
+          <edgelabel>storage</edgelabel>
+        </childnode>
+      </node>
+      <node id="4252">
+        <label>fc::impl::dynamic_storage</label>
+        <link refid="classfc_1_1impl_1_1dynamic__storage"/>
+      </node>
+      <node id="4249">
+        <label>graphene::db::object</label>
+        <link refid="classgraphene_1_1db_1_1object"/>
+        <childnode refid="4250" relation="usage">
+          <edgelabel>id</edgelabel>
+        </childnode>
+      </node>
+      <node id="4248">
         <label>graphene::db::abstract_object&lt; operation_history_object &gt;</label>
+        <link refid="classgraphene_1_1db_1_1abstract__object"/>
+        <childnode refid="4249" relation="public-inheritance">
+        </childnode>
       </node>
     </collaborationgraph>
     <location file="libraries/chain/include/graphene/chain/operation_history_object.hpp" line="49" column="1" bodyfile="libraries/chain/include/graphene/chain/operation_history_object.hpp" bodystart="48" bodyend="67"/>
     <listofallmembers>
       <member refid="classgraphene_1_1chain_1_1operation__history__object_1a61d9cdd758c7d1a44d4584d4f9b00cf9" prot="public" virt="non-virtual"><scope>graphene::chain::operation_history_object</scope><name>block_num</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1a189144fd7eef0317898bc83b30b143c6" prot="public" virt="virtual"><scope>graphene::chain::operation_history_object</scope><name>clone</name></member>
+      <member refid="classgraphene_1_1db_1_1object_1a2ce812569d565a45dda1420cfbdf79ad" prot="public" virt="non-virtual"><scope>graphene::chain::operation_history_object</scope><name>id</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1ad7329292e8fa9035cf2596d72c4868b5" prot="public" virt="virtual"><scope>graphene::chain::operation_history_object</scope><name>move_from</name></member>
+      <member refid="classgraphene_1_1db_1_1object_1a64864992a46d9d52836afe1a52a2e394" prot="public" virt="non-virtual"><scope>graphene::chain::operation_history_object</scope><name>object</name></member>
       <member refid="classgraphene_1_1chain_1_1operation__history__object_1a7751d7608c13e3cdd16db096b8f1bee8" prot="public" virt="non-virtual"><scope>graphene::chain::operation_history_object</scope><name>op</name></member>
       <member refid="classgraphene_1_1chain_1_1operation__history__object_1adb82d1da05d0e4ae1f769e0c542798b7" prot="public" virt="non-virtual"><scope>graphene::chain::operation_history_object</scope><name>op_in_trx</name></member>
       <member refid="classgraphene_1_1chain_1_1operation__history__object_1aa538e9858ceaba61248dafdb2bcd2cfc" prot="public" virt="non-virtual"><scope>graphene::chain::operation_history_object</scope><name>operation_history_object</name></member>
       <member refid="classgraphene_1_1chain_1_1operation__history__object_1ac7263b85c1d6b2d782ddc450c2c02776" prot="public" virt="non-virtual"><scope>graphene::chain::operation_history_object</scope><name>operation_history_object</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1a792a9c05cfe1cf7628cb6f8c4a65b0f7" prot="public" virt="virtual"><scope>graphene::chain::operation_history_object</scope><name>pack</name></member>
       <member refid="classgraphene_1_1chain_1_1operation__history__object_1a3a8cf9058797fda8b539ee4fb40e8797" prot="public" virt="non-virtual"><scope>graphene::chain::operation_history_object</scope><name>result</name></member>
       <member refid="classgraphene_1_1chain_1_1operation__history__object_1aceab3313fb6186e16699ddf04d056fd2" prot="public" virt="non-virtual"><scope>graphene::chain::operation_history_object</scope><name>space_id</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1a6f0f2e9eb0399057ff3334bf328b5007" prot="public" virt="virtual"><scope>graphene::chain::operation_history_object</scope><name>to_variant</name></member>
       <member refid="classgraphene_1_1chain_1_1operation__history__object_1a2e9f9bf1331fa109858f11aaf4800be4" prot="public" virt="non-virtual"><scope>graphene::chain::operation_history_object</scope><name>trx_in_block</name></member>
       <member refid="classgraphene_1_1chain_1_1operation__history__object_1a493d16157973d661a584feecf63dd0bb" prot="public" virt="non-virtual"><scope>graphene::chain::operation_history_object</scope><name>type_id</name></member>
       <member refid="classgraphene_1_1chain_1_1operation__history__object_1a04cc2ed8c2b67ef3b13df9f46cf5e492" prot="public" virt="non-virtual"><scope>graphene::chain::operation_history_object</scope><name>virtual_op</name></member>
+      <member refid="classgraphene_1_1db_1_1object_1ac457a859418c22014c07a3bcdc67ed04" prot="public" virt="virtual"><scope>graphene::chain::operation_history_object</scope><name>~object</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

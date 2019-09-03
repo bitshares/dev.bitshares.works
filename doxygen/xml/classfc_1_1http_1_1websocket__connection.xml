@@ -1,0 +1,268 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classfc_1_1http_1_1websocket__connection" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>fc::http::websocket_connection</compoundname>
+    <derivedcompoundref refid="classfc_1_1http_1_1detail_1_1websocket__connection__impl" prot="public" virt="non-virtual">fc::http::detail::websocket_connection_impl&lt; T &gt;</derivedcompoundref>
+    <includes refid="websocket_8hpp" local="no">websocket.hpp</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classfc_1_1http_1_1websocket__connection_1af4959cf610382457a4f002d1f73137b3" prot="public" static="no" mutable="no">
+        <type><ref refid="namespacefc_1a6c2f257e2f2f1a64dbdfe8b7b5e0f411" kindref="member">fc::signal</ref>&lt; void()&gt;</type>
+        <definition>fc::signal&lt;void()&gt; fc::http::websocket_connection::closed</definition>
+        <argsstring></argsstring>
+        <name>closed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/network/http/websocket.hpp" line="35" column="1" bodyfile="libraries/fc/include/fc/network/http/websocket.hpp" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classfc_1_1http_1_1websocket__connection_1a010a5531d38261bf06046b9bc56bbc32" prot="private" static="no" mutable="no">
+        <type>boost::any</type>
+        <definition>boost::any fc::http::websocket_connection::_session_data</definition>
+        <argsstring></argsstring>
+        <name>_session_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/network/http/websocket.hpp" line="37" column="1" bodyfile="libraries/fc/include/fc/network/http/websocket.hpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1http_1_1websocket__connection_1a6b5437fc3f26babec3462908c1f5cbe3" prot="private" static="no" mutable="no">
+        <type>std::function&lt; void(const std::string &amp;)&gt;</type>
+        <definition>std::function&lt;void(const std::string&amp;)&gt; fc::http::websocket_connection::_on_message</definition>
+        <argsstring></argsstring>
+        <name>_on_message</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/network/http/websocket.hpp" line="38" column="1" bodyfile="libraries/fc/include/fc/network/http/websocket.hpp" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1http_1_1websocket__connection_1a447c6dc1d2858d5f1e1d2aa7710a0fac" prot="private" static="no" mutable="no">
+        <type>std::function&lt; <ref refid="structfc_1_1http_1_1reply" kindref="compound">fc::http::reply</ref>(const std::string &amp;)&gt;</type>
+        <definition>std::function&lt;fc::http::reply(const std::string&amp;)&gt; fc::http::websocket_connection::_on_http</definition>
+        <argsstring></argsstring>
+        <name>_on_http</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/network/http/websocket.hpp" line="39" column="1" bodyfile="libraries/fc/include/fc/network/http/websocket.hpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfc_1_1http_1_1websocket__connection_1a49aa1fc54136fef5933540dd0823497f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual fc::http::websocket_connection::~websocket_connection</definition>
+        <argsstring>()</argsstring>
+        <name>~websocket_connection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/network/http/websocket.hpp" line="21" column="1" bodyfile="libraries/fc/include/fc/network/http/websocket.hpp" bodystart="21" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1http_1_1websocket__connection_1a384b2ebf034fa721a7f746b295f5b752" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void fc::http::websocket_connection::send_message</definition>
+        <argsstring>(const std::string &amp;message)=0</argsstring>
+        <name>send_message</name>
+        <reimplementedby refid="classfc_1_1http_1_1detail_1_1websocket__connection__impl_1a0a7bde6d2a19c325d5ff022339e3822a">send_message</reimplementedby>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/network/http/websocket.hpp" line="22" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1http_1_1websocket__connection_1a5b6f7172afd902f1a2673b94483c08f1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void fc::http::websocket_connection::close</definition>
+        <argsstring>(int64_t code, const std::string &amp;reason)</argsstring>
+        <name>close</name>
+        <reimplementedby refid="classfc_1_1http_1_1detail_1_1websocket__connection__impl_1a4acaa8c78b8ad95b014620a62bf51227">close</reimplementedby>
+        <param>
+          <type>int64_t</type>
+          <declname>code</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>reason</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/network/http/websocket.hpp" line="23" column="1" bodyfile="libraries/fc/include/fc/network/http/websocket.hpp" bodystart="23" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1http_1_1websocket__connection_1aa2eff4c7416a21a16f2711ebc5080998" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::http::websocket_connection::on_message</definition>
+        <argsstring>(const std::string &amp;message)</argsstring>
+        <name>on_message</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/network/http/websocket.hpp" line="24" column="1" bodyfile="libraries/fc/include/fc/network/http/websocket.hpp" bodystart="24" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1http_1_1websocket__connection_1a769ba4073f446d2cfa5f08f7fad4b9eb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structfc_1_1http_1_1reply" kindref="compound">fc::http::reply</ref></type>
+        <definition>fc::http::reply fc::http::websocket_connection::on_http</definition>
+        <argsstring>(const std::string &amp;message)</argsstring>
+        <name>on_http</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/network/http/websocket.hpp" line="25" column="1" bodyfile="libraries/fc/include/fc/network/http/websocket.hpp" bodystart="25" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1http_1_1websocket__connection_1ad2a068c4e45ff2881780422817bacd43" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::http::websocket_connection::on_message_handler</definition>
+        <argsstring>(const std::function&lt; void(const std::string &amp;)&gt; &amp;h)</argsstring>
+        <name>on_message_handler</name>
+        <param>
+          <type>const std::function&lt; void(const std::string &amp;)&gt; &amp;</type>
+          <declname>h</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/network/http/websocket.hpp" line="27" column="1" bodyfile="libraries/fc/include/fc/network/http/websocket.hpp" bodystart="27" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1http_1_1websocket__connection_1ad4acda2cfb8bd74f42f41163743ac3db" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::http::websocket_connection::on_http_handler</definition>
+        <argsstring>(const std::function&lt; fc::http::reply(const std::string &amp;)&gt; &amp;h)</argsstring>
+        <name>on_http_handler</name>
+        <param>
+          <type>const std::function&lt; <ref refid="structfc_1_1http_1_1reply" kindref="compound">fc::http::reply</ref>(const std::string &amp;)&gt; &amp;</type>
+          <declname>h</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/network/http/websocket.hpp" line="28" column="1" bodyfile="libraries/fc/include/fc/network/http/websocket.hpp" bodystart="28" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1http_1_1websocket__connection_1a708dadc0a395fe8ca7fc6d2637fb0fdd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::http::websocket_connection::set_session_data</definition>
+        <argsstring>(boost::any d)</argsstring>
+        <name>set_session_data</name>
+        <param>
+          <type>boost::any</type>
+          <declname>d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/network/http/websocket.hpp" line="30" column="1" bodyfile="libraries/fc/include/fc/network/http/websocket.hpp" bodystart="30" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1http_1_1websocket__connection_1a44c9e5968abebd69f0882271a37f4d4c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boost::any &amp;</type>
+        <definition>boost::any&amp; fc::http::websocket_connection::get_session_data</definition>
+        <argsstring>()</argsstring>
+        <name>get_session_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/network/http/websocket.hpp" line="31" column="1" bodyfile="libraries/fc/include/fc/network/http/websocket.hpp" bodystart="31" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1http_1_1websocket__connection_1add7b0929a42e3288d476679ce6152355" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::string</type>
+        <definition>virtual std::string fc::http::websocket_connection::get_request_header</definition>
+        <argsstring>(const std::string &amp;key)=0</argsstring>
+        <name>get_request_header</name>
+        <reimplementedby refid="classfc_1_1http_1_1detail_1_1websocket__connection__impl_1a968906bc44eceff471b8396b91b0aae8">get_request_header</reimplementedby>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/network/http/websocket.hpp" line="33" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="5814">
+        <label>fc::http::detail::websocket_connection_impl&lt; T &gt;</label>
+        <link refid="classfc_1_1http_1_1detail_1_1websocket__connection__impl"/>
+        <childnode refid="5813" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5813">
+        <label>fc::http::websocket_connection</label>
+        <link refid="classfc_1_1http_1_1websocket__connection"/>
+      </node>
+    </inheritancegraph>
+    <location file="libraries/fc/include/fc/network/http/websocket.hpp" line="19" column="1" bodyfile="libraries/fc/include/fc/network/http/websocket.hpp" bodystart="18" bodyend="40"/>
+    <listofallmembers>
+      <member refid="classfc_1_1http_1_1websocket__connection_1a447c6dc1d2858d5f1e1d2aa7710a0fac" prot="private" virt="non-virtual"><scope>fc::http::websocket_connection</scope><name>_on_http</name></member>
+      <member refid="classfc_1_1http_1_1websocket__connection_1a6b5437fc3f26babec3462908c1f5cbe3" prot="private" virt="non-virtual"><scope>fc::http::websocket_connection</scope><name>_on_message</name></member>
+      <member refid="classfc_1_1http_1_1websocket__connection_1a010a5531d38261bf06046b9bc56bbc32" prot="private" virt="non-virtual"><scope>fc::http::websocket_connection</scope><name>_session_data</name></member>
+      <member refid="classfc_1_1http_1_1websocket__connection_1a5b6f7172afd902f1a2673b94483c08f1" prot="public" virt="virtual"><scope>fc::http::websocket_connection</scope><name>close</name></member>
+      <member refid="classfc_1_1http_1_1websocket__connection_1af4959cf610382457a4f002d1f73137b3" prot="public" virt="non-virtual"><scope>fc::http::websocket_connection</scope><name>closed</name></member>
+      <member refid="classfc_1_1http_1_1websocket__connection_1add7b0929a42e3288d476679ce6152355" prot="public" virt="pure-virtual"><scope>fc::http::websocket_connection</scope><name>get_request_header</name></member>
+      <member refid="classfc_1_1http_1_1websocket__connection_1a44c9e5968abebd69f0882271a37f4d4c" prot="public" virt="non-virtual"><scope>fc::http::websocket_connection</scope><name>get_session_data</name></member>
+      <member refid="classfc_1_1http_1_1websocket__connection_1a769ba4073f446d2cfa5f08f7fad4b9eb" prot="public" virt="non-virtual"><scope>fc::http::websocket_connection</scope><name>on_http</name></member>
+      <member refid="classfc_1_1http_1_1websocket__connection_1ad4acda2cfb8bd74f42f41163743ac3db" prot="public" virt="non-virtual"><scope>fc::http::websocket_connection</scope><name>on_http_handler</name></member>
+      <member refid="classfc_1_1http_1_1websocket__connection_1aa2eff4c7416a21a16f2711ebc5080998" prot="public" virt="non-virtual"><scope>fc::http::websocket_connection</scope><name>on_message</name></member>
+      <member refid="classfc_1_1http_1_1websocket__connection_1ad2a068c4e45ff2881780422817bacd43" prot="public" virt="non-virtual"><scope>fc::http::websocket_connection</scope><name>on_message_handler</name></member>
+      <member refid="classfc_1_1http_1_1websocket__connection_1a384b2ebf034fa721a7f746b295f5b752" prot="public" virt="pure-virtual"><scope>fc::http::websocket_connection</scope><name>send_message</name></member>
+      <member refid="classfc_1_1http_1_1websocket__connection_1a708dadc0a395fe8ca7fc6d2637fb0fdd" prot="public" virt="non-virtual"><scope>fc::http::websocket_connection</scope><name>set_session_data</name></member>
+      <member refid="classfc_1_1http_1_1websocket__connection_1a49aa1fc54136fef5933540dd0823497f" prot="public" virt="virtual"><scope>fc::http::websocket_connection</scope><name>~websocket_connection</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

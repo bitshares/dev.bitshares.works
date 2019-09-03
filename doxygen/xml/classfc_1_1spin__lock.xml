@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classfc_1_1spin__lock" kind="class" language="C++" prot="public">
+    <compoundname>fc::spin_lock</compoundname>
+    <includes refid="spin__lock_8hpp" local="no">spin_lock.hpp</includes>
+      <sectiondef kind="private-type">
+      <memberdef kind="enum" id="classfc_1_1spin__lock_1a73b077fa3765768e2e82c043bf34e60f" prot="private" static="no">
+        <name>lock_store</name>
+        <enumvalue id="classfc_1_1spin__lock_1a73b077fa3765768e2e82c043bf34e60fa2e3d236d2c69074638360ee83b4bcb7e" prot="private">
+          <name>locked</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classfc_1_1spin__lock_1a73b077fa3765768e2e82c043bf34e60faafd757defc74772646844ca174796000" prot="private">
+          <name>unlocked</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/spin_lock.hpp" line="30" column="1" bodyfile="libraries/fc/include/fc/thread/spin_lock.hpp" bodystart="30" bodyend="30"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classfc_1_1spin__lock_1a2f6e90afd87d1f167d019f4bc4966244" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int fc::spin_lock::_lock</definition>
+        <argsstring></argsstring>
+        <name>_lock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/spin_lock.hpp" line="31" column="1" bodyfile="libraries/fc/include/fc/thread/spin_lock.hpp" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfc_1_1spin__lock_1ab53c0c6d71e5c0d1251846af6caf8c5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fc::spin_lock::spin_lock</definition>
+        <argsstring>()</argsstring>
+        <name>spin_lock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/spin_lock.hpp" line="22" column="1" bodyfile="libraries/fc/src/thread/spin_lock.cpp" bodystart="9" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1spin__lock_1a143704636b416776588b00ed2761ab56" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool fc::spin_lock::try_lock</definition>
+        <argsstring>()</argsstring>
+        <name>try_lock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/spin_lock.hpp" line="23" column="1" bodyfile="libraries/fc/src/thread/spin_lock.cpp" bodystart="17" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1spin__lock_1a0f109f3b8fff3cd9d7e1a87a6076c542" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool fc::spin_lock::try_lock_for</definition>
+        <argsstring>(const microseconds &amp;rel_time)</argsstring>
+        <name>try_lock_for</name>
+        <param>
+          <type>const <ref refid="classfc_1_1microseconds" kindref="compound">microseconds</ref> &amp;</type>
+          <declname>rel_time</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/spin_lock.hpp" line="24" column="1" bodyfile="libraries/fc/src/thread/spin_lock.cpp" bodystart="22" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1spin__lock_1a482c8f2ac76abf34ce33f0704b23a8e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool fc::spin_lock::try_lock_until</definition>
+        <argsstring>(const time_point &amp;abs_time)</argsstring>
+        <name>try_lock_until</name>
+        <param>
+          <type>const <ref refid="classfc_1_1time__point" kindref="compound">time_point</ref> &amp;</type>
+          <declname>abs_time</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/spin_lock.hpp" line="25" column="1" bodyfile="libraries/fc/src/thread/spin_lock.cpp" bodystart="26" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1spin__lock_1a3ec20ec990c4f56b61468028db5b5a9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::spin_lock::lock</definition>
+        <argsstring>()</argsstring>
+        <name>lock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/spin_lock.hpp" line="26" column="1" bodyfile="libraries/fc/src/thread/spin_lock.cpp" bodystart="34" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1spin__lock_1a138ff8e449306b5f9c3f98073efbfc71" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::spin_lock::unlock</definition>
+        <argsstring>()</argsstring>
+        <name>unlock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/spin_lock.hpp" line="27" column="1" bodyfile="libraries/fc/src/thread/spin_lock.cpp" bodystart="39" bodyend="42"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>modified spin-lock that yields on failure, but becomes a &apos;spin lock&apos; if there are no other tasks to yield to. </para>    </briefdescription>
+    <detaileddescription>
+<para>This kind of lock is lighter weight than a full mutex, but potentially slower than a staight <ref refid="classfc_1_1spin__lock" kindref="compound">spin_lock</ref>.</para><para>This <ref refid="classfc_1_1spin__lock" kindref="compound">spin_lock</ref> does not block the current thread, but instead attempts to use an atomic operation to aquire the lock. If unsuccessful, then it yields to other tasks before trying again. If there are no other tasks then yield is a no-op and <ref refid="classfc_1_1spin__lock" kindref="compound">spin_lock</ref> becomes a spin-lock. </para>    </detaileddescription>
+    <location file="libraries/fc/include/fc/thread/spin_lock.hpp" line="20" column="1" bodyfile="libraries/fc/include/fc/thread/spin_lock.hpp" bodystart="20" bodyend="32"/>
+    <listofallmembers>
+      <member refid="classfc_1_1spin__lock_1a2f6e90afd87d1f167d019f4bc4966244" prot="private" virt="non-virtual"><scope>fc::spin_lock</scope><name>_lock</name></member>
+      <member refid="classfc_1_1spin__lock_1a3ec20ec990c4f56b61468028db5b5a9e" prot="public" virt="non-virtual"><scope>fc::spin_lock</scope><name>lock</name></member>
+      <member refid="classfc_1_1spin__lock_1a73b077fa3765768e2e82c043bf34e60f" prot="private" virt="non-virtual"><scope>fc::spin_lock</scope><name>lock_store</name></member>
+      <member refid="classfc_1_1spin__lock_1a73b077fa3765768e2e82c043bf34e60fa2e3d236d2c69074638360ee83b4bcb7e" prot="private" virt="non-virtual"><scope>fc::spin_lock</scope><name>locked</name></member>
+      <member refid="classfc_1_1spin__lock_1ab53c0c6d71e5c0d1251846af6caf8c5a" prot="public" virt="non-virtual"><scope>fc::spin_lock</scope><name>spin_lock</name></member>
+      <member refid="classfc_1_1spin__lock_1a143704636b416776588b00ed2761ab56" prot="public" virt="non-virtual"><scope>fc::spin_lock</scope><name>try_lock</name></member>
+      <member refid="classfc_1_1spin__lock_1a0f109f3b8fff3cd9d7e1a87a6076c542" prot="public" virt="non-virtual"><scope>fc::spin_lock</scope><name>try_lock_for</name></member>
+      <member refid="classfc_1_1spin__lock_1a482c8f2ac76abf34ce33f0704b23a8e1" prot="public" virt="non-virtual"><scope>fc::spin_lock</scope><name>try_lock_until</name></member>
+      <member refid="classfc_1_1spin__lock_1a138ff8e449306b5f9c3f98073efbfc71" prot="public" virt="non-virtual"><scope>fc::spin_lock</scope><name>unlock</name></member>
+      <member refid="classfc_1_1spin__lock_1a73b077fa3765768e2e82c043bf34e60faafd757defc74772646844ca174796000" prot="private" virt="non-virtual"><scope>fc::spin_lock</scope><name>unlocked</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

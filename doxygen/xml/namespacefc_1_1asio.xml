@@ -1,0 +1,531 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespacefc_1_1asio" kind="namespace" language="C++">
+    <compoundname>fc::asio</compoundname>
+    <innerclass refid="classfc_1_1asio_1_1default__io__service__scope" prot="public">fc::asio::default_io_service_scope</innerclass>
+    <innerclass refid="classfc_1_1asio_1_1istream" prot="public">fc::asio::istream</innerclass>
+    <innerclass refid="classfc_1_1asio_1_1ostream" prot="public">fc::asio::ostream</innerclass>
+    <innernamespace refid="namespacefc_1_1asio_1_1detail">fc::asio::detail</innernamespace>
+    <innernamespace refid="namespacefc_1_1asio_1_1tcp">fc::asio::tcp</innernamespace>
+    <innernamespace refid="namespacefc_1_1asio_1_1udp">fc::asio::udp</innernamespace>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacefc_1_1asio_1a25f142c1704b75ed97e1106a9c29f4b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boost::asio::io_service &amp;</type>
+        <definition>boost::asio::io_service &amp; fc::asio::default_io_service</definition>
+        <argsstring>()</argsstring>
+        <name>default_io_service</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the default boost::asio::io_service for use with <ref refid="namespacefc_1_1asio" kindref="compound">fc::asio</ref></para></simplesect>
+This IO service is automatically running in its own thread to service asynchronous requests without blocking any other threads. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/asio.hpp" line="96" column="1" bodyfile="libraries/fc/src/asio.cpp" bodystart="182" bodyend="185"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1asio_1a4ef121489bdee40f68b44fbce0c4a012" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename AsyncReadStream</type>
+          </param>
+          <param>
+            <type>typename MutableBufferSequence</type>
+          </param>
+        </templateparamlist>
+        <type>size_t</type>
+        <definition>size_t fc::asio::read</definition>
+        <argsstring>(AsyncReadStream &amp;s, const MutableBufferSequence &amp;buf)</argsstring>
+        <name>read</name>
+        <param>
+          <type>AsyncReadStream &amp;</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>const MutableBufferSequence &amp;</type>
+          <declname>buf</declname>
+        </param>
+        <briefdescription>
+<para>wraps boost::asio::async_read </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>s.non_blocking() == true </para></simplesect>
+<simplesect kind="return"><para>the number of bytes read. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/asio.hpp" line="104" column="1" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="104" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1asio_1aebe137701d4d69e5896882575791cb9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename AsyncReadStream</type>
+          </param>
+          <param>
+            <type>typename MutableBufferSequence</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classfc_1_1future" kindref="compound">future</ref>&lt; size_t &gt;</type>
+        <definition>future&lt;size_t&gt; fc::asio::read_some</definition>
+        <argsstring>(AsyncReadStream &amp;s, const MutableBufferSequence &amp;buf)</argsstring>
+        <name>read_some</name>
+        <param>
+          <type>AsyncReadStream &amp;</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>const MutableBufferSequence &amp;</type>
+          <declname>buf</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This method will read at least 1 byte from the stream and will cooperatively block until that byte is available or an error occurs.</para><para>If the stream is not in &apos;non-blocking&apos; mode it will be put in &apos;non-blocking&apos; mode it the stream supports s.non_blocking() and s.non_blocking(bool).</para><para>If in non blocking mode, the call will be synchronous avoiding heap allocs and context switching. If the sync call returns &apos;would block&apos; then an promise is created and an async read is generated.</para><para><simplesect kind="return"><para>the number of bytes read. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/asio.hpp" line="123" column="1" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="123" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1asio_1a94ca4a2337ac514fa496b796ad24a8fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename AsyncReadStream</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classfc_1_1future" kindref="compound">future</ref>&lt; size_t &gt;</type>
+        <definition>future&lt;size_t&gt; fc::asio::read_some</definition>
+        <argsstring>(AsyncReadStream &amp;s, char *buffer, size_t length, size_t offset=0)</argsstring>
+        <name>read_some</name>
+        <param>
+          <type>AsyncReadStream &amp;</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>length</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>offset</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/asio.hpp" line="131" column="1" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="131" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1asio_1a2c20b1570e884b68abce55d077cff007" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename AsyncReadStream</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classfc_1_1future" kindref="compound">future</ref>&lt; size_t &gt;</type>
+        <definition>future&lt;size_t&gt; fc::asio::read_some</definition>
+        <argsstring>(AsyncReadStream &amp;s, const std::shared_ptr&lt; char &gt; &amp;buffer, size_t length, size_t offset)</argsstring>
+        <name>read_some</name>
+        <param>
+          <type>AsyncReadStream &amp;</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>const std::shared_ptr&lt; char &gt; &amp;</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>length</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/asio.hpp" line="140" column="1" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="140" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1asio_1a6b515a0b3e6bd32e252eabceab3e7c7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename AsyncReadStream</type>
+          </param>
+          <param>
+            <type>typename MutableBufferSequence</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void fc::asio::async_read_some</definition>
+        <argsstring>(AsyncReadStream &amp;s, const MutableBufferSequence &amp;buf, promise&lt; size_t &gt;::ptr completion_promise)</argsstring>
+        <name>async_read_some</name>
+        <param>
+          <type>AsyncReadStream &amp;</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>const MutableBufferSequence &amp;</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type><ref refid="classfc_1_1promise" kindref="compound">promise</ref>&lt; size_t &gt;::ptr</type>
+          <declname>completion_promise</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/asio.hpp" line="149" column="1" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="149" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1asio_1a398e725cb9b95ca07540eeb130b05197" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename AsyncReadStream</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void fc::asio::async_read_some</definition>
+        <argsstring>(AsyncReadStream &amp;s, char *buffer, size_t length, promise&lt; size_t &gt;::ptr completion_promise)</argsstring>
+        <name>async_read_some</name>
+        <param>
+          <type>AsyncReadStream &amp;</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>length</declname>
+        </param>
+        <param>
+          <type><ref refid="classfc_1_1promise" kindref="compound">promise</ref>&lt; size_t &gt;::ptr</type>
+          <declname>completion_promise</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/asio.hpp" line="155" column="1" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="155" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1asio_1a8e94f925defc40ac80274de784fe2828" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename AsyncReadStream</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void fc::asio::async_read_some</definition>
+        <argsstring>(AsyncReadStream &amp;s, const std::shared_ptr&lt; char &gt; &amp;buffer, size_t length, size_t offset, promise&lt; size_t &gt;::ptr completion_promise)</argsstring>
+        <name>async_read_some</name>
+        <param>
+          <type>AsyncReadStream &amp;</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>const std::shared_ptr&lt; char &gt; &amp;</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>length</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>offset</declname>
+        </param>
+        <param>
+          <type><ref refid="classfc_1_1promise" kindref="compound">promise</ref>&lt; size_t &gt;::ptr</type>
+          <declname>completion_promise</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/asio.hpp" line="162" column="1" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="162" bodyend="166"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1asio_1a216235541dbfab69fc452bac7b785ffa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename AsyncReadStream</type>
+          </param>
+        </templateparamlist>
+        <type>size_t</type>
+        <definition>size_t fc::asio::read_some</definition>
+        <argsstring>(AsyncReadStream &amp;s, boost::asio::streambuf &amp;buf)</argsstring>
+        <name>read_some</name>
+        <param>
+          <type>AsyncReadStream &amp;</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>boost::asio::streambuf &amp;</type>
+          <declname>buf</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/asio.hpp" line="169" column="1" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="169" bodyend="175"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1asio_1a5a7c601acc24570e6f43bafea3b2baa3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename AsyncWriteStream</type>
+          </param>
+          <param>
+            <type>typename ConstBufferSequence</type>
+          </param>
+        </templateparamlist>
+        <type>size_t</type>
+        <definition>size_t fc::asio::write</definition>
+        <argsstring>(AsyncWriteStream &amp;s, const ConstBufferSequence &amp;buf)</argsstring>
+        <name>write</name>
+        <param>
+          <type>AsyncWriteStream &amp;</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>const ConstBufferSequence &amp;</type>
+          <declname>buf</declname>
+        </param>
+        <briefdescription>
+<para>wraps boost::asio::async_write </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the number of bytes written </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/asio.hpp" line="181" column="1" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="181" bodyend="185"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1asio_1a4343b53ca01ef5c71c49d80d1861cd0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename AsyncWriteStream</type>
+          </param>
+          <param>
+            <type>typename ConstBufferSequence</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classfc_1_1future" kindref="compound">future</ref>&lt; size_t &gt;</type>
+        <definition>future&lt;size_t&gt; fc::asio::write_some</definition>
+        <argsstring>(AsyncWriteStream &amp;s, const ConstBufferSequence &amp;buf)</argsstring>
+        <name>write_some</name>
+        <param>
+          <type>AsyncWriteStream &amp;</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>const ConstBufferSequence &amp;</type>
+          <declname>buf</declname>
+        </param>
+        <briefdescription>
+<para>wraps boost::asio::async_write_some </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>s.non_blocking() == true </para></simplesect>
+<simplesect kind="return"><para>the number of bytes written </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/asio.hpp" line="193" column="1" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="193" bodyend="197"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1asio_1acb0c69f6ef665be667cfba8ba73978e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename AsyncWriteStream</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classfc_1_1future" kindref="compound">future</ref>&lt; size_t &gt;</type>
+        <definition>future&lt;size_t&gt; fc::asio::write_some</definition>
+        <argsstring>(AsyncWriteStream &amp;s, const char *buffer, size_t length, size_t offset=0)</argsstring>
+        <name>write_some</name>
+        <param>
+          <type>AsyncWriteStream &amp;</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>length</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>offset</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/asio.hpp" line="200" column="1" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="200" bodyend="205"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1asio_1a99ea0588c232f80a5381b65ef77a69a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename AsyncWriteStream</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classfc_1_1future" kindref="compound">future</ref>&lt; size_t &gt;</type>
+        <definition>future&lt;size_t&gt; fc::asio::write_some</definition>
+        <argsstring>(AsyncWriteStream &amp;s, const std::shared_ptr&lt; const char &gt; &amp;buffer, size_t length, size_t offset)</argsstring>
+        <name>write_some</name>
+        <param>
+          <type>AsyncWriteStream &amp;</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>const std::shared_ptr&lt; const char &gt; &amp;</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>length</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/asio.hpp" line="208" column="1" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="208" bodyend="213"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1asio_1a5f3631b82c359db03a93ef4f6b7b25b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename AsyncWriteStream</type>
+          </param>
+          <param>
+            <type>typename ConstBufferSequence</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void fc::asio::async_write_some</definition>
+        <argsstring>(AsyncWriteStream &amp;s, const ConstBufferSequence &amp;buf, promise&lt; size_t &gt;::ptr completion_promise)</argsstring>
+        <name>async_write_some</name>
+        <param>
+          <type>AsyncWriteStream &amp;</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>const ConstBufferSequence &amp;</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type><ref refid="classfc_1_1promise" kindref="compound">promise</ref>&lt; size_t &gt;::ptr</type>
+          <declname>completion_promise</declname>
+        </param>
+        <briefdescription>
+<para>wraps boost::asio::async_write_some </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>s.non_blocking() == true </para></simplesect>
+<simplesect kind="return"><para>the number of bytes written </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/asio.hpp" line="221" column="1" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="221" bodyend="223"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1asio_1a324a298de0793bf6a320aeda1d7602d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename AsyncWriteStream</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void fc::asio::async_write_some</definition>
+        <argsstring>(AsyncWriteStream &amp;s, const char *buffer, size_t length, promise&lt; size_t &gt;::ptr completion_promise)</argsstring>
+        <name>async_write_some</name>
+        <param>
+          <type>AsyncWriteStream &amp;</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>length</declname>
+        </param>
+        <param>
+          <type><ref refid="classfc_1_1promise" kindref="compound">promise</ref>&lt; size_t &gt;::ptr</type>
+          <declname>completion_promise</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/asio.hpp" line="226" column="1" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="226" bodyend="230"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1asio_1a9645ab9824d9b4b9b3cd6e8ce751c063" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename AsyncWriteStream</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void fc::asio::async_write_some</definition>
+        <argsstring>(AsyncWriteStream &amp;s, const std::shared_ptr&lt; const char &gt; &amp;buffer, size_t length, size_t offset, promise&lt; size_t &gt;::ptr completion_promise)</argsstring>
+        <name>async_write_some</name>
+        <param>
+          <type>AsyncWriteStream &amp;</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>const std::shared_ptr&lt; const char &gt; &amp;</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>length</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>offset</declname>
+        </param>
+        <param>
+          <type><ref refid="classfc_1_1promise" kindref="compound">promise</ref>&lt; size_t &gt;::ptr</type>
+          <declname>completion_promise</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/asio.hpp" line="233" column="1" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="233" bodyend="237"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>defines fc wrappers for boost::asio functions. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="libraries/fc/include/fc/asio.hpp" line="17" column="1"/>
+  </compounddef>
+</doxygen>

@@ -34,7 +34,7 @@
         <location file="libraries/protocol/include/graphene/protocol/transaction.hpp" line="76" column="1" bodyfile="libraries/protocol/include/graphene/protocol/transaction.hpp" bodystart="76" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1protocol_1_1transaction_1a303447df940705d8ab860d2d52317e80" prot="public" static="no" mutable="no">
-        <type>fc::time_point_sec</type>
+        <type><ref refid="classfc_1_1time__point__sec" kindref="compound">fc::time_point_sec</ref></type>
         <definition>fc::time_point_sec graphene::protocol::transaction::expiration</definition>
         <argsstring></argsstring>
         <name>expiration</name>
@@ -149,7 +149,7 @@
         <argsstring>(fc::time_point_sec expiration_time)</argsstring>
         <name>set_expiration</name>
         <param>
-          <type>fc::time_point_sec</type>
+          <type><ref refid="classfc_1_1time__point__sec" kindref="compound">fc::time_point_sec</ref></type>
           <declname>expiration_time</declname>
         </param>
         <briefdescription>
@@ -285,49 +285,57 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="3290">
+      <node id="5263">
         <label>graphene::protocol::precomputable_transaction</label>
         <link refid="classgraphene_1_1protocol_1_1precomputable__transaction"/>
-        <childnode refid="3289" relation="public-inheritance">
+        <childnode refid="5262" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="3291">
+      <node id="5264">
         <label>graphene::protocol::processed_transaction</label>
         <link refid="structgraphene_1_1protocol_1_1processed__transaction"/>
-        <childnode refid="3290" relation="public-inheritance">
+        <childnode refid="5263" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="3289">
+      <node id="5262">
         <label>graphene::protocol::signed_transaction</label>
         <link refid="classgraphene_1_1protocol_1_1signed__transaction"/>
-        <childnode refid="3288" relation="public-inheritance">
+        <childnode refid="5261" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="3288">
+      <node id="5261">
         <label>graphene::protocol::transaction</label>
         <link refid="classgraphene_1_1protocol_1_1transaction"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="3294">
-        <label>time_point_sec</label>
+      <node id="5267">
+        <label>fc::ripemd160</label>
+        <link refid="classfc_1_1ripemd160"/>
       </node>
-      <node id="3293">
+      <node id="5266">
         <label>flat_set&lt; future_extensions &gt;</label>
       </node>
-      <node id="3295">
-        <label>vector&lt; operation &gt;</label>
+      <node id="5268">
+        <label>fc::time_point_sec</label>
+        <link refid="classfc_1_1time__point__sec"/>
       </node>
-      <node id="3292">
+      <node id="5269">
+        <label>vector&lt; fc::static_variant &gt;</label>
+      </node>
+      <node id="5265">
         <label>graphene::protocol::transaction</label>
         <link refid="classgraphene_1_1protocol_1_1transaction"/>
-        <childnode refid="3293" relation="usage">
+        <childnode refid="5266" relation="usage">
           <edgelabel>extensions</edgelabel>
         </childnode>
-        <childnode refid="3294" relation="usage">
+        <childnode refid="5267" relation="usage">
+          <edgelabel>_tx_id_buffer</edgelabel>
+        </childnode>
+        <childnode refid="5268" relation="usage">
           <edgelabel>expiration</edgelabel>
         </childnode>
-        <childnode refid="3295" relation="usage">
+        <childnode refid="5269" relation="usage">
           <edgelabel>operations</edgelabel>
         </childnode>
       </node>

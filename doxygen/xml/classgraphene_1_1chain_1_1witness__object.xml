@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="classgraphene_1_1chain_1_1witness__object" kind="class" language="C++" prot="public">
     <compoundname>graphene::chain::witness_object</compoundname>
-    <basecompoundref prot="public" virt="non-virtual">graphene::db::abstract_object&lt; witness_object &gt;</basecompoundref>
+    <basecompoundref refid="classgraphene_1_1db_1_1abstract__object" prot="public" virt="non-virtual">graphene::db::abstract_object&lt; witness_object &gt;</basecompoundref>
     <includes refid="witness__object_8hpp" local="no">witness_object.hpp</includes>
       <sectiondef kind="public-static-attrib">
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1witness__object_1a05550b88a0245c6c3ef94644302608cb" prot="public" static="yes" mutable="no">
@@ -76,7 +76,7 @@
         <location file="libraries/chain/include/graphene/chain/witness_object.hpp" line="40" column="1" bodyfile="libraries/chain/include/graphene/chain/witness_object.hpp" bodystart="40" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1witness__object_1a2c7f509f3a5cd1d1da9b77c6874ff86b" prot="public" static="no" mutable="no">
-        <type>optional&lt; vesting_balance_id_type &gt;</type>
+        <type><ref refid="classfc_1_1optional" kindref="compound">optional</ref>&lt; vesting_balance_id_type &gt;</type>
         <definition>optional&lt; vesting_balance_id_type &gt; graphene::chain::witness_object::pay_vb</definition>
         <argsstring></argsstring>
         <name>pay_vb</name>
@@ -177,60 +177,88 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="3965">
+      <node id="6149">
         <label>graphene::chain::witness_object</label>
         <link refid="classgraphene_1_1chain_1_1witness__object"/>
-        <childnode refid="3966" relation="public-inheritance">
+        <childnode refid="6150" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="3966">
+      <node id="6150">
         <label>graphene::db::abstract_object&lt; witness_object &gt;</label>
+        <link refid="classgraphene_1_1db_1_1abstract__object"/>
+        <childnode refid="6151" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6151">
+        <label>graphene::db::object</label>
+        <link refid="classgraphene_1_1db_1_1object"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="3970">
-        <label>optional&lt; vesting_balance_id_type &gt;</label>
-      </node>
-      <node id="3971">
+      <node id="6158">
         <label>string</label>
       </node>
-      <node id="3967">
+      <node id="6152">
         <label>graphene::chain::witness_object</label>
         <link refid="classgraphene_1_1chain_1_1witness__object"/>
-        <childnode refid="3968" relation="public-inheritance">
+        <childnode refid="6153" relation="public-inheritance">
         </childnode>
-        <childnode refid="3969" relation="usage">
+        <childnode refid="6156" relation="usage">
           <edgelabel>vote_id</edgelabel>
         </childnode>
-        <childnode refid="3970" relation="usage">
+        <childnode refid="6157" relation="usage">
           <edgelabel>pay_vb</edgelabel>
         </childnode>
-        <childnode refid="3971" relation="usage">
+        <childnode refid="6158" relation="usage">
           <edgelabel>url</edgelabel>
         </childnode>
-        <childnode refid="3972" relation="usage">
+        <childnode refid="6159" relation="usage">
           <edgelabel>signing_key</edgelabel>
         </childnode>
       </node>
-      <node id="3969">
+      <node id="6157">
+        <label>fc::optional&lt; vesting_balance_id_type &gt;</label>
+        <link refid="classfc_1_1optional"/>
+      </node>
+      <node id="6156">
         <label>graphene::protocol::vote_id_type</label>
         <link refid="structgraphene_1_1protocol_1_1vote__id__type"/>
       </node>
-      <node id="3968">
+      <node id="6153">
         <label>graphene::db::abstract_object&lt; witness_object &gt;</label>
+        <link refid="classgraphene_1_1db_1_1abstract__object"/>
+        <childnode refid="6154" relation="public-inheritance">
+        </childnode>
       </node>
-      <node id="3972">
+      <node id="6155">
+        <label>graphene::db::object_id_type</label>
+        <link refid="structgraphene_1_1db_1_1object__id__type"/>
+      </node>
+      <node id="6154">
+        <label>graphene::db::object</label>
+        <link refid="classgraphene_1_1db_1_1object"/>
+        <childnode refid="6155" relation="usage">
+          <edgelabel>id</edgelabel>
+        </childnode>
+      </node>
+      <node id="6159">
         <label>graphene::protocol::public_key_type</label>
         <link refid="structgraphene_1_1protocol_1_1public__key__type"/>
       </node>
     </collaborationgraph>
     <location file="libraries/chain/include/graphene/chain/witness_object.hpp" line="33" column="1" bodyfile="libraries/chain/include/graphene/chain/witness_object.hpp" bodystart="32" bodyend="49"/>
     <listofallmembers>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1a189144fd7eef0317898bc83b30b143c6" prot="public" virt="virtual"><scope>graphene::chain::witness_object</scope><name>clone</name></member>
+      <member refid="classgraphene_1_1db_1_1object_1a2ce812569d565a45dda1420cfbdf79ad" prot="public" virt="non-virtual"><scope>graphene::chain::witness_object</scope><name>id</name></member>
       <member refid="classgraphene_1_1chain_1_1witness__object_1a0b6afcff19d10b92ed58bf65fc920dc6" prot="public" virt="non-virtual"><scope>graphene::chain::witness_object</scope><name>last_aslot</name></member>
       <member refid="classgraphene_1_1chain_1_1witness__object_1a19274ffd2f316d389724aef1e3b44450" prot="public" virt="non-virtual"><scope>graphene::chain::witness_object</scope><name>last_confirmed_block_num</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1ad7329292e8fa9035cf2596d72c4868b5" prot="public" virt="virtual"><scope>graphene::chain::witness_object</scope><name>move_from</name></member>
+      <member refid="classgraphene_1_1db_1_1object_1a64864992a46d9d52836afe1a52a2e394" prot="public" virt="non-virtual"><scope>graphene::chain::witness_object</scope><name>object</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1a792a9c05cfe1cf7628cb6f8c4a65b0f7" prot="public" virt="virtual"><scope>graphene::chain::witness_object</scope><name>pack</name></member>
       <member refid="classgraphene_1_1chain_1_1witness__object_1a2c7f509f3a5cd1d1da9b77c6874ff86b" prot="public" virt="non-virtual"><scope>graphene::chain::witness_object</scope><name>pay_vb</name></member>
       <member refid="classgraphene_1_1chain_1_1witness__object_1a8b836aa0128e497c598f5f5035f02327" prot="public" virt="non-virtual"><scope>graphene::chain::witness_object</scope><name>signing_key</name></member>
       <member refid="classgraphene_1_1chain_1_1witness__object_1a05550b88a0245c6c3ef94644302608cb" prot="public" virt="non-virtual"><scope>graphene::chain::witness_object</scope><name>space_id</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1a6f0f2e9eb0399057ff3334bf328b5007" prot="public" virt="virtual"><scope>graphene::chain::witness_object</scope><name>to_variant</name></member>
       <member refid="classgraphene_1_1chain_1_1witness__object_1ad7caa0474c1fb01bf38502c868ec3e7c" prot="public" virt="non-virtual"><scope>graphene::chain::witness_object</scope><name>total_missed</name></member>
       <member refid="classgraphene_1_1chain_1_1witness__object_1a4337a869e3eafeb9a753f1db57af697b" prot="public" virt="non-virtual"><scope>graphene::chain::witness_object</scope><name>total_votes</name></member>
       <member refid="classgraphene_1_1chain_1_1witness__object_1a14d96bbb487fcd324d612164402ee469" prot="public" virt="non-virtual"><scope>graphene::chain::witness_object</scope><name>type_id</name></member>
@@ -238,6 +266,7 @@
       <member refid="classgraphene_1_1chain_1_1witness__object_1aa9ae30d474319543424c6156b11e3a1e" prot="public" virt="non-virtual"><scope>graphene::chain::witness_object</scope><name>vote_id</name></member>
       <member refid="classgraphene_1_1chain_1_1witness__object_1a64388167dad5135a79764204baaffe6e" prot="public" virt="non-virtual"><scope>graphene::chain::witness_object</scope><name>witness_account</name></member>
       <member refid="classgraphene_1_1chain_1_1witness__object_1ac7c4ecc18a24456b5898c94a1e4000b5" prot="public" virt="non-virtual"><scope>graphene::chain::witness_object</scope><name>witness_object</name></member>
+      <member refid="classgraphene_1_1db_1_1object_1ac457a859418c22014c07a3bcdc67ed04" prot="public" virt="virtual"><scope>graphene::chain::witness_object</scope><name>~object</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

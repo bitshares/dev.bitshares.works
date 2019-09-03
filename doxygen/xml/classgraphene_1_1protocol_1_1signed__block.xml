@@ -54,57 +54,79 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="3219">
+      <node id="4966">
         <label>graphene::protocol::block_header</label>
         <link refid="classgraphene_1_1protocol_1_1block__header"/>
       </node>
-      <node id="3218">
+      <node id="4965">
         <label>graphene::protocol::signed_block_header</label>
         <link refid="classgraphene_1_1protocol_1_1signed__block__header"/>
-        <childnode refid="3219" relation="public-inheritance">
+        <childnode refid="4966" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="3217">
+      <node id="4964">
         <label>graphene::protocol::signed_block</label>
         <link refid="classgraphene_1_1protocol_1_1signed__block"/>
-        <childnode refid="3218" relation="public-inheritance">
+        <childnode refid="4965" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="3224">
-        <label>time_point_sec</label>
+      <node id="4971">
+        <label>fc::ripemd160</label>
+        <link refid="classfc_1_1ripemd160"/>
       </node>
-      <node id="3222">
+      <node id="4969">
         <label>graphene::protocol::block_header</label>
         <link refid="classgraphene_1_1protocol_1_1block__header"/>
-        <childnode refid="3223" relation="usage">
+        <childnode refid="4970" relation="usage">
           <edgelabel>extensions</edgelabel>
         </childnode>
-        <childnode refid="3224" relation="usage">
+        <childnode refid="4971" relation="usage">
+          <edgelabel>previous</edgelabel>
+          <edgelabel>transaction_merkle_root</edgelabel>
+        </childnode>
+        <childnode refid="4972" relation="usage">
           <edgelabel>timestamp</edgelabel>
         </childnode>
       </node>
-      <node id="3223">
+      <node id="4970">
         <label>flat_set&lt; future_extensions &gt;</label>
       </node>
-      <node id="3225">
+      <node id="4973">
+        <label>fc::ecc::public_key</label>
+        <link refid="classfc_1_1ecc_1_1public__key"/>
+      </node>
+      <node id="4974">
         <label>vector&lt; graphene::protocol::processed_transaction &gt;</label>
       </node>
-      <node id="3221">
+      <node id="4968">
         <label>graphene::protocol::signed_block_header</label>
         <link refid="classgraphene_1_1protocol_1_1signed__block__header"/>
-        <childnode refid="3222" relation="public-inheritance">
+        <childnode refid="4969" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4971" relation="usage">
+          <edgelabel>_block_id</edgelabel>
+        </childnode>
+        <childnode refid="4973" relation="usage">
+          <edgelabel>_signee</edgelabel>
         </childnode>
       </node>
-      <node id="3220">
+      <node id="4967">
         <label>graphene::protocol::signed_block</label>
         <link refid="classgraphene_1_1protocol_1_1signed__block"/>
-        <childnode refid="3221" relation="public-inheritance">
+        <childnode refid="4968" relation="public-inheritance">
         </childnode>
-        <childnode refid="3225" relation="usage">
+        <childnode refid="4971" relation="usage">
+          <edgelabel>_calculated_merkle_root</edgelabel>
+        </childnode>
+        <childnode refid="4974" relation="usage">
           <edgelabel>transactions</edgelabel>
         </childnode>
+      </node>
+      <node id="4972">
+        <label>fc::time_point_sec</label>
+        <link refid="classfc_1_1time__point__sec"/>
       </node>
     </collaborationgraph>
     <location file="libraries/protocol/include/graphene/protocol/block.hpp" line="60" column="1" bodyfile="libraries/protocol/include/graphene/protocol/block.hpp" bodystart="59" bodyend="66"/>

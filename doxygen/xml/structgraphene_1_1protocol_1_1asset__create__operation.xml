@@ -74,7 +74,7 @@
         <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="149" column="1" bodyfile="libraries/protocol/include/graphene/protocol/asset_ops.hpp" bodystart="149" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1asset__create__operation_1a905f77a54beb7eeeb182e398f25757ac" prot="public" static="no" mutable="no">
-        <type>optional&lt; <ref refid="structgraphene_1_1protocol_1_1bitasset__options" kindref="compound">bitasset_options</ref> &gt;</type>
+        <type><ref refid="classfc_1_1optional" kindref="compound">optional</ref>&lt; <ref refid="structgraphene_1_1protocol_1_1bitasset__options" kindref="compound">bitasset_options</ref> &gt;</type>
         <definition>optional&lt;bitasset_options&gt; graphene::protocol::asset_create_operation::bitasset_opts</definition>
         <argsstring></argsstring>
         <name>bitasset_opts</name>
@@ -164,111 +164,127 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="563">
+      <node id="783">
         <label>graphene::protocol::base_operation</label>
         <link refid="structgraphene_1_1protocol_1_1base__operation"/>
       </node>
-      <node id="562">
+      <node id="782">
         <label>graphene::protocol::asset_create_operation</label>
         <link refid="structgraphene_1_1protocol_1_1asset__create__operation"/>
-        <childnode refid="563" relation="public-inheritance">
+        <childnode refid="783" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="576">
-        <label>optional&lt; graphene::protocol::bitasset_options &gt;</label>
-      </node>
-      <node id="570">
+      <node id="792">
         <label>flat_set&lt; asset_id_type &gt;</label>
       </node>
-      <node id="572">
+      <node id="794">
         <label>string</label>
       </node>
-      <node id="566">
+      <node id="786">
         <label>flat_set&lt; future_extensions &gt;</label>
       </node>
-      <node id="573">
+      <node id="795">
         <label>graphene::protocol::price</label>
         <link refid="structgraphene_1_1protocol_1_1price"/>
-        <childnode refid="574" relation="usage">
+        <childnode refid="796" relation="usage">
           <edgelabel>base</edgelabel>
           <edgelabel>quote</edgelabel>
         </childnode>
       </node>
-      <node id="569">
+      <node id="789">
         <label>graphene::protocol::additional_asset_options</label>
         <link refid="structgraphene_1_1protocol_1_1additional__asset__options"/>
+        <childnode refid="790" relation="usage">
+          <edgelabel>reward_percent</edgelabel>
+        </childnode>
+        <childnode refid="791" relation="usage">
+          <edgelabel>whitelist_market_fee_sharing</edgelabel>
+        </childnode>
       </node>
-      <node id="575">
+      <node id="798">
+        <label>fc::optional&lt; graphene::protocol::bitasset_options &gt;</label>
+        <link refid="classfc_1_1optional"/>
+      </node>
+      <node id="791">
+        <label>fc::optional&lt; flat_set&lt; account_id_type &gt; &gt;</label>
+        <link refid="classfc_1_1optional"/>
+      </node>
+      <node id="797">
         <label>flat_set&lt; account_id_type &gt;</label>
       </node>
-      <node id="567">
+      <node id="793">
+        <label>fc::safe&lt; int64_t &gt;</label>
+        <link refid="structfc_1_1safe"/>
+      </node>
+      <node id="787">
         <label>graphene::protocol::asset_options</label>
         <link refid="structgraphene_1_1protocol_1_1asset__options"/>
-        <childnode refid="568" relation="usage">
+        <childnode refid="788" relation="usage">
           <edgelabel>extensions</edgelabel>
         </childnode>
-        <childnode refid="570" relation="usage">
+        <childnode refid="792" relation="usage">
           <edgelabel>whitelist_markets</edgelabel>
           <edgelabel>blacklist_markets</edgelabel>
         </childnode>
-        <childnode refid="571" relation="usage">
+        <childnode refid="793" relation="usage">
           <edgelabel>max_market_fee</edgelabel>
           <edgelabel>max_supply</edgelabel>
         </childnode>
-        <childnode refid="572" relation="usage">
+        <childnode refid="794" relation="usage">
           <edgelabel>description</edgelabel>
         </childnode>
-        <childnode refid="573" relation="usage">
+        <childnode refid="795" relation="usage">
           <edgelabel>core_exchange_rate</edgelabel>
         </childnode>
-        <childnode refid="575" relation="usage">
+        <childnode refid="797" relation="usage">
           <edgelabel>whitelist_authorities</edgelabel>
           <edgelabel>blacklist_authorities</edgelabel>
         </childnode>
       </node>
-      <node id="565">
+      <node id="785">
         <label>graphene::protocol::base_operation</label>
         <link refid="structgraphene_1_1protocol_1_1base__operation"/>
       </node>
-      <node id="574">
+      <node id="796">
         <label>graphene::protocol::asset</label>
         <link refid="structgraphene_1_1protocol_1_1asset"/>
-        <childnode refid="571" relation="usage">
+        <childnode refid="793" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
       </node>
-      <node id="571">
-        <label>safe&lt; int64_t &gt;</label>
-      </node>
-      <node id="568">
+      <node id="788">
         <label>graphene::protocol::extension&lt; additional_asset_options &gt;</label>
         <link refid="structgraphene_1_1protocol_1_1extension"/>
-        <childnode refid="569" relation="usage">
+        <childnode refid="789" relation="usage">
           <edgelabel>value</edgelabel>
         </childnode>
       </node>
-      <node id="564">
+      <node id="784">
         <label>graphene::protocol::asset_create_operation</label>
         <link refid="structgraphene_1_1protocol_1_1asset__create__operation"/>
-        <childnode refid="565" relation="public-inheritance">
+        <childnode refid="785" relation="public-inheritance">
         </childnode>
-        <childnode refid="566" relation="usage">
+        <childnode refid="786" relation="usage">
           <edgelabel>extensions</edgelabel>
         </childnode>
-        <childnode refid="567" relation="usage">
+        <childnode refid="787" relation="usage">
           <edgelabel>common_options</edgelabel>
         </childnode>
-        <childnode refid="576" relation="usage">
+        <childnode refid="798" relation="usage">
           <edgelabel>bitasset_opts</edgelabel>
         </childnode>
-        <childnode refid="574" relation="usage">
+        <childnode refid="796" relation="usage">
           <edgelabel>fee</edgelabel>
         </childnode>
-        <childnode refid="572" relation="usage">
+        <childnode refid="794" relation="usage">
           <edgelabel>symbol</edgelabel>
         </childnode>
+      </node>
+      <node id="790">
+        <label>fc::optional&lt; uint16_t &gt;</label>
+        <link refid="classfc_1_1optional"/>
       </node>
     </collaborationgraph>
     <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="128" column="1" bodyfile="libraries/protocol/include/graphene/protocol/asset_ops.hpp" bodystart="127" bodyend="160"/>

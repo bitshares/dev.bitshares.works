@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespacefc_1_1asio_1_1tcp" kind="namespace" language="C++">
+    <compoundname>fc::asio::tcp</compoundname>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespacefc_1_1asio_1_1tcp_1aaaf875000d53a6ec4c33850f99fb2e88" prot="public" static="no">
+        <type>boost::asio::ip::tcp::endpoint</type>
+        <definition>typedef boost::asio::ip::tcp::endpoint fc::asio::tcp::endpoint</definition>
+        <argsstring></argsstring>
+        <name>endpoint</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/asio.hpp" line="240" column="1" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="240" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacefc_1_1asio_1_1tcp_1a75d025373d4bfb1b40a5f062481d9c01" prot="public" static="no">
+        <type>boost::asio::ip::tcp::resolver::iterator</type>
+        <definition>typedef boost::asio::ip::tcp::resolver::iterator fc::asio::tcp::resolver_iterator</definition>
+        <argsstring></argsstring>
+        <name>resolver_iterator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/asio.hpp" line="241" column="1" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="241" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacefc_1_1asio_1_1tcp_1a33c61cce84a2a8f3bde1421ad2140470" prot="public" static="no">
+        <type>boost::asio::ip::tcp::resolver</type>
+        <definition>typedef boost::asio::ip::tcp::resolver fc::asio::tcp::resolver</definition>
+        <argsstring></argsstring>
+        <name>resolver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/asio.hpp" line="242" column="1" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="242" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacefc_1_1asio_1_1tcp_1a073e5a0c5d24d9894ff4da05a51b808b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="namespacefc_1_1asio_1_1tcp_1aaaf875000d53a6ec4c33850f99fb2e88" kindref="member">endpoint</ref> &gt;</type>
+        <definition>std::vector&lt; boost::asio::ip::tcp::endpoint &gt; fc::asio::tcp::resolve</definition>
+        <argsstring>(const std::string &amp;hostname, const std::string &amp;port)</argsstring>
+        <name>resolve</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>hostname</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>port</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/asio.hpp" line="243" column="1" bodyfile="libraries/fc/src/asio.cpp" bodystart="188" bodyend="199"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1asio_1_1tcp_1ab3a80fca97a6bb0e2f3e68d636cbee47" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename SocketType</type>
+          </param>
+          <param>
+            <type>typename AcceptorType</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void fc::asio::tcp::accept</definition>
+        <argsstring>(AcceptorType &amp;acc, SocketType &amp;sock)</argsstring>
+        <name>accept</name>
+        <param>
+          <type>AcceptorType &amp;</type>
+          <declname>acc</declname>
+        </param>
+        <param>
+          <type>SocketType &amp;</type>
+          <declname>sock</declname>
+        </param>
+        <briefdescription>
+<para>wraps boost::asio::async_accept </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="post"><para>sock is connected </para></simplesect>
+<simplesect kind="post"><para>sock.non_blocking() == true </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>on</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/asio.hpp" line="251" column="1" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="251" bodyend="256"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1asio_1_1tcp_1af9153d258164729d82d01361ae7f2d62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename AsyncSocket</type>
+          </param>
+          <param>
+            <type>typename EndpointType</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void fc::asio::tcp::connect</definition>
+        <argsstring>(AsyncSocket &amp;sock, const EndpointType &amp;ep)</argsstring>
+        <name>connect</name>
+        <param>
+          <type>AsyncSocket &amp;</type>
+          <declname>sock</declname>
+        </param>
+        <param>
+          <type>const EndpointType &amp;</type>
+          <declname>ep</declname>
+        </param>
+        <briefdescription>
+<para>wraps boost::asio::socket::async_connect </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="post"><para>sock.non_blocking() == true </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>on</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/asio.hpp" line="263" column="1" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="263" bodyend="268"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="libraries/fc/include/fc/asio.hpp" line="239" column="1"/>
+  </compounddef>
+</doxygen>

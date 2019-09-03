@@ -1,0 +1,411 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classfc_1_1api__connection" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>fc::api_connection</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">std::enable_shared_from_this&lt; fc::api_connection &gt;</basecompoundref>
+    <derivedcompoundref refid="classfc_1_1local__api__connection" prot="public" virt="non-virtual">fc::local_api_connection</derivedcompoundref>
+    <derivedcompoundref refid="classfc_1_1rpc_1_1cli" prot="public" virt="non-virtual">fc::rpc::cli</derivedcompoundref>
+    <derivedcompoundref refid="classfc_1_1rpc_1_1websocket__api__connection" prot="public" virt="non-virtual">fc::rpc::websocket_api_connection</derivedcompoundref>
+    <includes refid="api__connection_8hpp" local="no">api_connection.hpp</includes>
+    <innerclass refid="structfc_1_1api__connection_1_1api__visitor" prot="private">fc::api_connection::api_visitor</innerclass>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classfc_1_1api__connection_1a7213e0fce1d2cf67df39ade2d9e06bd7" prot="public" static="no" mutable="no">
+        <type><ref refid="namespacefc_1a6c2f257e2f2f1a64dbdfe8b7b5e0f411" kindref="member">fc::signal</ref>&lt; void()&gt;</type>
+        <definition>fc::signal&lt;void()&gt; fc::api_connection::closed</definition>
+        <argsstring></argsstring>
+        <name>closed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/api_connection.hpp" line="297" column="1" bodyfile="libraries/fc/include/fc/rpc/api_connection.hpp" bodystart="297" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1api__connection_1abd6de8c0c3adc803714ee6ff1694ac20" prot="public" static="no" mutable="no">
+        <type>const uint32_t</type>
+        <definition>const uint32_t fc::api_connection::_max_conversion_depth</definition>
+        <argsstring></argsstring>
+        <name>_max_conversion_depth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/api_connection.hpp" line="298" column="1" bodyfile="libraries/fc/include/fc/rpc/api_connection.hpp" bodystart="298" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classfc_1_1api__connection_1a2aa4b4501be4c3e0e0d4e840c65277da" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::unique_ptr&lt; <ref refid="classfc_1_1generic__api" kindref="compound">generic_api</ref> &gt; &gt;</type>
+        <definition>std::vector&lt; std::unique_ptr&lt;generic_api&gt; &gt; fc::api_connection::_local_apis</definition>
+        <argsstring></argsstring>
+        <name>_local_apis</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/api_connection.hpp" line="300" column="1" bodyfile="libraries/fc/include/fc/rpc/api_connection.hpp" bodystart="300" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1api__connection_1aa65e64546ad32d01973fde9e3e3b7674" prot="private" static="no" mutable="no">
+        <type>std::map&lt; uint64_t, <ref refid="namespacefc_1a18e9e0bd9c0a52896425ae1172bc4e2b" kindref="member">api_id_type</ref> &gt;</type>
+        <definition>std::map&lt; uint64_t, api_id_type &gt; fc::api_connection::_handle_to_id</definition>
+        <argsstring></argsstring>
+        <name>_handle_to_id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/api_connection.hpp" line="301" column="1" bodyfile="libraries/fc/include/fc/rpc/api_connection.hpp" bodystart="301" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1api__connection_1a81673f6dec224e6b7b2911c35e0d0290" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::function&lt; <ref refid="classfc_1_1variant" kindref="compound">variant</ref>(const <ref refid="namespacefc_1a2e5e6bdb302dfb79e684336f3fbbd8bc" kindref="member">variants</ref> &amp;, uint32_t)&gt; &gt;</type>
+        <definition>std::vector&lt; std::function&lt;variant(const variants&amp;, uint32_t)&gt; &gt; fc::api_connection::_local_callbacks</definition>
+        <argsstring></argsstring>
+        <name>_local_callbacks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/api_connection.hpp" line="302" column="1" bodyfile="libraries/fc/include/fc/rpc/api_connection.hpp" bodystart="302" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfc_1_1api__connection_1a1aa38079892340e2745c82327a198869" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>fc::api_connection::api_connection</definition>
+        <argsstring>(uint32_t max_depth)</argsstring>
+        <name>api_connection</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>max_depth</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/api_connection.hpp" line="243" column="1" bodyfile="libraries/fc/include/fc/rpc/api_connection.hpp" bodystart="243" bodyend="243"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1api__connection_1a194008fa45fe1107a454d47beeba3c39" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual fc::api_connection::~api_connection</definition>
+        <argsstring>()</argsstring>
+        <name>~api_connection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/api_connection.hpp" line="244" column="1" bodyfile="libraries/fc/include/fc/rpc/api_connection.hpp" bodystart="244" bodyend="244"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1api__connection_1a0cbbf236b38b8d2cbec418e4663c1d38" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classfc_1_1api" kindref="compound">api</ref>&lt; T &gt;</type>
+        <definition>api&lt;T&gt; fc::api_connection::get_remote_api</definition>
+        <argsstring>(api_id_type api_id=0)</argsstring>
+        <name>get_remote_api</name>
+        <param>
+          <type><ref refid="namespacefc_1a18e9e0bd9c0a52896425ae1172bc4e2b" kindref="member">api_id_type</ref></type>
+          <declname>api_id</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/api_connection.hpp" line="248" column="1" bodyfile="libraries/fc/include/fc/rpc/api_connection.hpp" bodystart="248" bodyend="253"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1api__connection_1a38d046b1803e1242ce10f36c694b9dea" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classfc_1_1variant" kindref="compound">variant</ref></type>
+        <definition>virtual variant fc::api_connection::send_call</definition>
+        <argsstring>(api_id_type api_id, string method_name, variants args=variants())=0</argsstring>
+        <name>send_call</name>
+        <reimplementedby refid="classfc_1_1rpc_1_1websocket__api__connection_1a30eb8e7cdee7c2ca0049f565f100ab14">send_call</reimplementedby>
+        <reimplementedby refid="classfc_1_1rpc_1_1cli_1ab42308885a2df6f53bef3c9407d5e775">send_call</reimplementedby>
+        <reimplementedby refid="classfc_1_1local__api__connection_1a95994755615aedc3f14f7ac7e5085a00">send_call</reimplementedby>
+        <param>
+          <type><ref refid="namespacefc_1a18e9e0bd9c0a52896425ae1172bc4e2b" kindref="member">api_id_type</ref></type>
+          <declname>api_id</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>method_name</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacefc_1a2e5e6bdb302dfb79e684336f3fbbd8bc" kindref="member">variants</ref></type>
+          <declname>args</declname>
+          <defval><ref refid="namespacefc_1a2e5e6bdb302dfb79e684336f3fbbd8bc" kindref="member">variants</ref>()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>makes calls to the remote server </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/api_connection.hpp" line="256" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1api__connection_1ae2a0f9123066ff0df3445ee86ee982d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classfc_1_1variant" kindref="compound">variant</ref></type>
+        <definition>virtual variant fc::api_connection::send_callback</definition>
+        <argsstring>(uint64_t callback_id, variants args=variants())=0</argsstring>
+        <name>send_callback</name>
+        <reimplementedby refid="classfc_1_1rpc_1_1websocket__api__connection_1a7c420430971d7e9af1b3e11b043de1c8">send_callback</reimplementedby>
+        <reimplementedby refid="classfc_1_1rpc_1_1cli_1a386f494f901a7abfba5ab682be6dd489">send_callback</reimplementedby>
+        <reimplementedby refid="classfc_1_1local__api__connection_1ad546fad508d9fe0fb14b371ddabb9cc7">send_callback</reimplementedby>
+        <param>
+          <type>uint64_t</type>
+          <declname>callback_id</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacefc_1a2e5e6bdb302dfb79e684336f3fbbd8bc" kindref="member">variants</ref></type>
+          <declname>args</declname>
+          <defval><ref refid="namespacefc_1a2e5e6bdb302dfb79e684336f3fbbd8bc" kindref="member">variants</ref>()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/api_connection.hpp" line="257" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1api__connection_1acc9e1ac12402ebf9dcb3be57035a2623" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void fc::api_connection::send_notice</definition>
+        <argsstring>(uint64_t callback_id, variants args=variants())=0</argsstring>
+        <name>send_notice</name>
+        <reimplementedby refid="classfc_1_1rpc_1_1websocket__api__connection_1adc639d508ff7b2442badd783c19b469b">send_notice</reimplementedby>
+        <reimplementedby refid="classfc_1_1rpc_1_1cli_1afa3a01d9134551ba945efe8264838583">send_notice</reimplementedby>
+        <reimplementedby refid="classfc_1_1local__api__connection_1a954b2a8148847c29650ed8bdbb3bc076">send_notice</reimplementedby>
+        <param>
+          <type>uint64_t</type>
+          <declname>callback_id</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacefc_1a2e5e6bdb302dfb79e684336f3fbbd8bc" kindref="member">variants</ref></type>
+          <declname>args</declname>
+          <defval><ref refid="namespacefc_1a2e5e6bdb302dfb79e684336f3fbbd8bc" kindref="member">variants</ref>()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/api_connection.hpp" line="258" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1api__connection_1aee1166b3d1f739ffd7759cf02b2e7efa" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classfc_1_1variant" kindref="compound">variant</ref></type>
+        <definition>variant fc::api_connection::receive_call</definition>
+        <argsstring>(api_id_type api_id, const string &amp;method_name, const variants &amp;args=variants()) const</argsstring>
+        <name>receive_call</name>
+        <param>
+          <type><ref refid="namespacefc_1a18e9e0bd9c0a52896425ae1172bc4e2b" kindref="member">api_id_type</ref></type>
+          <declname>api_id</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>method_name</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespacefc_1a2e5e6bdb302dfb79e684336f3fbbd8bc" kindref="member">variants</ref> &amp;</type>
+          <declname>args</declname>
+          <defval><ref refid="namespacefc_1a2e5e6bdb302dfb79e684336f3fbbd8bc" kindref="member">variants</ref>()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/api_connection.hpp" line="260" column="1" bodyfile="libraries/fc/include/fc/rpc/api_connection.hpp" bodystart="260" bodyend="264"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1api__connection_1a16bc734461e2954bf42d2f97be137eb8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classfc_1_1variant" kindref="compound">variant</ref></type>
+        <definition>variant fc::api_connection::receive_callback</definition>
+        <argsstring>(uint64_t callback_id, const variants &amp;args=variants()) const</argsstring>
+        <name>receive_callback</name>
+        <param>
+          <type>uint64_t</type>
+          <declname>callback_id</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespacefc_1a2e5e6bdb302dfb79e684336f3fbbd8bc" kindref="member">variants</ref> &amp;</type>
+          <declname>args</declname>
+          <defval><ref refid="namespacefc_1a2e5e6bdb302dfb79e684336f3fbbd8bc" kindref="member">variants</ref>()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/api_connection.hpp" line="265" column="1" bodyfile="libraries/fc/include/fc/rpc/api_connection.hpp" bodystart="265" bodyend="269"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1api__connection_1ad5bd634f7e967ca90ccc8fd4c3e9fac8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::api_connection::receive_notice</definition>
+        <argsstring>(uint64_t callback_id, const variants &amp;args=variants()) const</argsstring>
+        <name>receive_notice</name>
+        <param>
+          <type>uint64_t</type>
+          <declname>callback_id</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespacefc_1a2e5e6bdb302dfb79e684336f3fbbd8bc" kindref="member">variants</ref> &amp;</type>
+          <declname>args</declname>
+          <defval><ref refid="namespacefc_1a2e5e6bdb302dfb79e684336f3fbbd8bc" kindref="member">variants</ref>()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/api_connection.hpp" line="270" column="1" bodyfile="libraries/fc/include/fc/rpc/api_connection.hpp" bodystart="270" bodyend="274"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1api__connection_1aede0d0e920a2018f3f74841a3c98a270" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Interface</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespacefc_1a18e9e0bd9c0a52896425ae1172bc4e2b" kindref="member">api_id_type</ref></type>
+        <definition>api_id_type fc::api_connection::register_api</definition>
+        <argsstring>(const Interface &amp;a)</argsstring>
+        <name>register_api</name>
+        <param>
+          <type>const Interface &amp;</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/api_connection.hpp" line="277" column="1" bodyfile="libraries/fc/include/fc/rpc/api_connection.hpp" bodystart="277" bodyend="286"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1api__connection_1a9c8aa3ef4091a3b634cb8413ac6979c7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Signature</type>
+          </param>
+        </templateparamlist>
+        <type>uint64_t</type>
+        <definition>uint64_t fc::api_connection::register_callback</definition>
+        <argsstring>(const std::function&lt; Signature &gt; &amp;cb)</argsstring>
+        <name>register_callback</name>
+        <param>
+          <type>const std::function&lt; Signature &gt; &amp;</type>
+          <declname>cb</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/api_connection.hpp" line="289" column="1" bodyfile="libraries/fc/include/fc/rpc/api_connection.hpp" bodystart="289" bodyend="293"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1api__connection_1a60236d3c608b33431e0016a23c51b62a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; fc::api_connection::get_method_names</definition>
+        <argsstring>(api_id_type local_api_id=0) const</argsstring>
+        <name>get_method_names</name>
+        <param>
+          <type><ref refid="namespacefc_1a18e9e0bd9c0a52896425ae1172bc4e2b" kindref="member">api_id_type</ref></type>
+          <declname>local_api_id</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/api_connection.hpp" line="295" column="1" bodyfile="libraries/fc/include/fc/rpc/api_connection.hpp" bodystart="295" bodyend="295"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="463">
+        <label>fc::rpc::websocket_api_connection</label>
+        <link refid="classfc_1_1rpc_1_1websocket__api__connection"/>
+        <childnode refid="459" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="459">
+        <label>fc::api_connection</label>
+        <link refid="classfc_1_1api__connection"/>
+        <childnode refid="460" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="460">
+        <label>std::enable_shared_from_this&lt; fc::api_connection &gt;</label>
+      </node>
+      <node id="461">
+        <label>fc::local_api_connection</label>
+        <link refid="classfc_1_1local__api__connection"/>
+        <childnode refid="459" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="462">
+        <label>fc::rpc::cli</label>
+        <link refid="classfc_1_1rpc_1_1cli"/>
+        <childnode refid="459" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="464">
+        <label>fc::api_connection</label>
+        <link refid="classfc_1_1api__connection"/>
+        <childnode refid="465" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="465">
+        <label>std::enable_shared_from_this&lt; fc::api_connection &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="libraries/fc/include/fc/rpc/api_connection.hpp" line="241" column="1" bodyfile="libraries/fc/include/fc/rpc/api_connection.hpp" bodystart="240" bodyend="377"/>
+    <listofallmembers>
+      <member refid="classfc_1_1api__connection_1aa65e64546ad32d01973fde9e3e3b7674" prot="private" virt="non-virtual"><scope>fc::api_connection</scope><name>_handle_to_id</name></member>
+      <member refid="classfc_1_1api__connection_1a2aa4b4501be4c3e0e0d4e840c65277da" prot="private" virt="non-virtual"><scope>fc::api_connection</scope><name>_local_apis</name></member>
+      <member refid="classfc_1_1api__connection_1a81673f6dec224e6b7b2911c35e0d0290" prot="private" virt="non-virtual"><scope>fc::api_connection</scope><name>_local_callbacks</name></member>
+      <member refid="classfc_1_1api__connection_1abd6de8c0c3adc803714ee6ff1694ac20" prot="public" virt="non-virtual"><scope>fc::api_connection</scope><name>_max_conversion_depth</name></member>
+      <member refid="classfc_1_1api__connection_1a1aa38079892340e2745c82327a198869" prot="public" virt="non-virtual"><scope>fc::api_connection</scope><name>api_connection</name></member>
+      <member refid="classfc_1_1api__connection_1a7213e0fce1d2cf67df39ade2d9e06bd7" prot="public" virt="non-virtual"><scope>fc::api_connection</scope><name>closed</name></member>
+      <member refid="classfc_1_1api__connection_1a60236d3c608b33431e0016a23c51b62a" prot="public" virt="non-virtual"><scope>fc::api_connection</scope><name>get_method_names</name></member>
+      <member refid="classfc_1_1api__connection_1a0cbbf236b38b8d2cbec418e4663c1d38" prot="public" virt="non-virtual"><scope>fc::api_connection</scope><name>get_remote_api</name></member>
+      <member refid="classfc_1_1api__connection_1aee1166b3d1f739ffd7759cf02b2e7efa" prot="public" virt="non-virtual"><scope>fc::api_connection</scope><name>receive_call</name></member>
+      <member refid="classfc_1_1api__connection_1a16bc734461e2954bf42d2f97be137eb8" prot="public" virt="non-virtual"><scope>fc::api_connection</scope><name>receive_callback</name></member>
+      <member refid="classfc_1_1api__connection_1ad5bd634f7e967ca90ccc8fd4c3e9fac8" prot="public" virt="non-virtual"><scope>fc::api_connection</scope><name>receive_notice</name></member>
+      <member refid="classfc_1_1api__connection_1aede0d0e920a2018f3f74841a3c98a270" prot="public" virt="non-virtual"><scope>fc::api_connection</scope><name>register_api</name></member>
+      <member refid="classfc_1_1api__connection_1a9c8aa3ef4091a3b634cb8413ac6979c7" prot="public" virt="non-virtual"><scope>fc::api_connection</scope><name>register_callback</name></member>
+      <member refid="classfc_1_1api__connection_1a38d046b1803e1242ce10f36c694b9dea" prot="public" virt="pure-virtual"><scope>fc::api_connection</scope><name>send_call</name></member>
+      <member refid="classfc_1_1api__connection_1ae2a0f9123066ff0df3445ee86ee982d5" prot="public" virt="pure-virtual"><scope>fc::api_connection</scope><name>send_callback</name></member>
+      <member refid="classfc_1_1api__connection_1acc9e1ac12402ebf9dcb3be57035a2623" prot="public" virt="pure-virtual"><scope>fc::api_connection</scope><name>send_notice</name></member>
+      <member refid="classfc_1_1api__connection_1a194008fa45fe1107a454d47beeba3c39" prot="public" virt="virtual"><scope>fc::api_connection</scope><name>~api_connection</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

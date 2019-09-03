@@ -70,85 +70,90 @@
     <detaileddescription>
 <para>When processing a transaction some operations generate new object IDs and these IDs cannot be known until the transaction is actually included into a block. When a block is produced these new ids are captured and included with every transaction. The index in operation_results should correspond to the same index in operations.</para><para>If an operation did not create any new object IDs then 0 should be returned. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="2977">
+      <node id="4570">
         <label>graphene::protocol::precomputable_transaction</label>
         <link refid="classgraphene_1_1protocol_1_1precomputable__transaction"/>
-        <childnode refid="2978" relation="public-inheritance">
+        <childnode refid="4571" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="2976">
+      <node id="4569">
         <label>graphene::protocol::processed_transaction</label>
         <link refid="structgraphene_1_1protocol_1_1processed__transaction"/>
-        <childnode refid="2977" relation="public-inheritance">
+        <childnode refid="4570" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="2978">
+      <node id="4571">
         <label>graphene::protocol::signed_transaction</label>
         <link refid="classgraphene_1_1protocol_1_1signed__transaction"/>
-        <childnode refid="2979" relation="public-inheritance">
+        <childnode refid="4572" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="2979">
+      <node id="4572">
         <label>graphene::protocol::transaction</label>
         <link refid="classgraphene_1_1protocol_1_1transaction"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="2985">
-        <label>time_point_sec</label>
+      <node id="4578">
+        <label>fc::ripemd160</label>
+        <link refid="classfc_1_1ripemd160"/>
       </node>
-      <node id="2981">
+      <node id="4574">
         <label>graphene::protocol::precomputable_transaction</label>
         <link refid="classgraphene_1_1protocol_1_1precomputable__transaction"/>
-        <childnode refid="2982" relation="public-inheritance">
+        <childnode refid="4575" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="2980">
+      <node id="4573">
         <label>graphene::protocol::processed_transaction</label>
         <link refid="structgraphene_1_1protocol_1_1processed__transaction"/>
-        <childnode refid="2981" relation="public-inheritance">
+        <childnode refid="4574" relation="public-inheritance">
         </childnode>
-        <childnode refid="2989" relation="usage">
+        <childnode refid="4580" relation="usage">
           <edgelabel>operation_results</edgelabel>
         </childnode>
       </node>
-      <node id="2984">
+      <node id="4577">
         <label>flat_set&lt; future_extensions &gt;</label>
       </node>
-      <node id="2987">
+      <node id="4581">
         <label>vector&lt; signature_type &gt;</label>
       </node>
-      <node id="2988">
+      <node id="4582">
         <label>flat_set&lt; graphene::protocol::public_key_type &gt;</label>
       </node>
-      <node id="2986">
-        <label>vector&lt; operation &gt;</label>
+      <node id="4579">
+        <label>fc::time_point_sec</label>
+        <link refid="classfc_1_1time__point__sec"/>
       </node>
-      <node id="2989">
-        <label>vector&lt; operation_result &gt;</label>
+      <node id="4580">
+        <label>vector&lt; fc::static_variant &gt;</label>
       </node>
-      <node id="2982">
+      <node id="4575">
         <label>graphene::protocol::signed_transaction</label>
         <link refid="classgraphene_1_1protocol_1_1signed__transaction"/>
-        <childnode refid="2983" relation="public-inheritance">
+        <childnode refid="4576" relation="public-inheritance">
         </childnode>
-        <childnode refid="2987" relation="usage">
+        <childnode refid="4581" relation="usage">
           <edgelabel>signatures</edgelabel>
         </childnode>
-        <childnode refid="2988" relation="usage">
+        <childnode refid="4582" relation="usage">
           <edgelabel>_signees</edgelabel>
         </childnode>
       </node>
-      <node id="2983">
+      <node id="4576">
         <label>graphene::protocol::transaction</label>
         <link refid="classgraphene_1_1protocol_1_1transaction"/>
-        <childnode refid="2984" relation="usage">
+        <childnode refid="4577" relation="usage">
           <edgelabel>extensions</edgelabel>
         </childnode>
-        <childnode refid="2985" relation="usage">
+        <childnode refid="4578" relation="usage">
+          <edgelabel>_tx_id_buffer</edgelabel>
+        </childnode>
+        <childnode refid="4579" relation="usage">
           <edgelabel>expiration</edgelabel>
         </childnode>
-        <childnode refid="2986" relation="usage">
+        <childnode refid="4580" relation="usage">
           <edgelabel>operations</edgelabel>
         </childnode>
       </node>

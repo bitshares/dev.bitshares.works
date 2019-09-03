@@ -1,0 +1,211 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classfc_1_1file__appender_1_1impl" kind="class" language="C++" prot="public">
+    <compoundname>fc::file_appender::impl</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classfc_1_1file__appender_1_1impl_1a4dbc2161ba39ea507e97276ce96c841b" prot="public" static="no" mutable="no">
+        <type><ref refid="structfc_1_1file__appender_1_1config" kindref="compound">config</ref></type>
+        <definition>config fc::file_appender::impl::cfg</definition>
+        <argsstring></argsstring>
+        <name>cfg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/log/file_appender.cpp" line="19" column="1" bodyfile="libraries/fc/src/log/file_appender.cpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1file__appender_1_1impl_1aec4dd551509e87455254409bc658ca56" prot="public" static="no" mutable="no">
+        <type><ref refid="classfc_1_1ofstream" kindref="compound">ofstream</ref></type>
+        <definition>ofstream fc::file_appender::impl::out</definition>
+        <argsstring></argsstring>
+        <name>out</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/log/file_appender.cpp" line="20" column="1" bodyfile="libraries/fc/src/log/file_appender.cpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1file__appender_1_1impl_1ae659ea7d03512cc07ce4cd3f243fcad1" prot="public" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex fc::file_appender::impl::slock</definition>
+        <argsstring></argsstring>
+        <name>slock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/log/file_appender.cpp" line="21" column="1" bodyfile="libraries/fc/src/log/file_appender.cpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classfc_1_1file__appender_1_1impl_1ad69835de6eafc0545fa02bb9bdef7db5" prot="private" static="no" mutable="no">
+        <type><ref refid="classfc_1_1future" kindref="compound">future</ref>&lt; void &gt;</type>
+        <definition>future&lt;void&gt; fc::file_appender::impl::_rotation_task</definition>
+        <argsstring></argsstring>
+        <name>_rotation_task</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/log/file_appender.cpp" line="24" column="1" bodyfile="libraries/fc/src/log/file_appender.cpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1file__appender_1_1impl_1a76d40148b7036c05c11e6088bc18a0b6" prot="private" static="no" mutable="no">
+        <type><ref refid="classfc_1_1time__point__sec" kindref="compound">time_point_sec</ref></type>
+        <definition>time_point_sec fc::file_appender::impl::_current_file_start_time</definition>
+        <argsstring></argsstring>
+        <name>_current_file_start_time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/log/file_appender.cpp" line="25" column="1" bodyfile="libraries/fc/src/log/file_appender.cpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classfc_1_1file__appender_1_1impl_1a838836b9ea05bc2d330d80883fb1f711" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classfc_1_1time__point__sec" kindref="compound">time_point_sec</ref></type>
+        <definition>time_point_sec fc::file_appender::impl::get_file_start_time</definition>
+        <argsstring>(const time_point_sec &amp;timestamp, const microseconds &amp;interval)</argsstring>
+        <name>get_file_start_time</name>
+        <param>
+          <type>const <ref refid="classfc_1_1time__point__sec" kindref="compound">time_point_sec</ref> &amp;</type>
+          <declname>timestamp</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classfc_1_1microseconds" kindref="compound">microseconds</ref> &amp;</type>
+          <declname>interval</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/log/file_appender.cpp" line="27" column="1" bodyfile="libraries/fc/src/log/file_appender.cpp" bodystart="27" bodyend="32"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfc_1_1file__appender_1_1impl_1a8395957b498a9256f5f22f35092b81ba" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>fc::file_appender::impl::impl</definition>
+        <argsstring>(const config &amp;c)</argsstring>
+        <name>impl</name>
+        <param>
+          <type>const <ref refid="structfc_1_1file__appender_1_1config" kindref="compound">config</ref> &amp;</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/log/file_appender.cpp" line="35" column="1" bodyfile="libraries/fc/src/log/file_appender.cpp" bodystart="35" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1file__appender_1_1impl_1a7a694551e31cd03b8add8474fa1c9521" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>fc::file_appender::impl::~impl</definition>
+        <argsstring>()</argsstring>
+        <name>~impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/log/file_appender.cpp" line="57" column="1" bodyfile="libraries/fc/src/log/file_appender.cpp" bodystart="57" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1file__appender_1_1impl_1a80c2b12a1b539e2449a24cb2abc1b856" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::file_appender::impl::rotate_files</definition>
+        <argsstring>(bool initializing=false)</argsstring>
+        <name>rotate_files</name>
+        <param>
+          <type>bool</type>
+          <declname>initializing</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/log/file_appender.cpp" line="68" column="1" bodyfile="libraries/fc/src/log/file_appender.cpp" bodystart="68" bodyend="135"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3617">
+        <label>fc::file_appender::config</label>
+        <link refid="structfc_1_1file__appender_1_1config"/>
+        <childnode refid="3618" relation="usage">
+          <edgelabel>filename</edgelabel>
+        </childnode>
+        <childnode refid="3619" relation="usage">
+          <edgelabel>rotation_limit</edgelabel>
+          <edgelabel>rotation_interval</edgelabel>
+        </childnode>
+        <childnode refid="3620" relation="usage">
+          <edgelabel>format</edgelabel>
+        </childnode>
+      </node>
+      <node id="3620">
+        <label>string</label>
+      </node>
+      <node id="3619">
+        <label>fc::microseconds</label>
+        <link refid="classfc_1_1microseconds"/>
+      </node>
+      <node id="3618">
+        <label>fc::path</label>
+        <link refid="classfc_1_1path"/>
+      </node>
+      <node id="3616">
+        <label>fc::file_appender::impl</label>
+        <link refid="classfc_1_1file__appender_1_1impl"/>
+        <childnode refid="3617" relation="usage">
+          <edgelabel>cfg</edgelabel>
+        </childnode>
+        <childnode refid="3621" relation="usage">
+          <edgelabel>out</edgelabel>
+        </childnode>
+      </node>
+      <node id="3621">
+        <label>fc::ofstream</label>
+        <link refid="classfc_1_1ofstream"/>
+        <childnode refid="3622" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3622">
+        <label>fc::ostream</label>
+        <link refid="classfc_1_1ostream"/>
+      </node>
+    </collaborationgraph>
+    <location file="libraries/fc/src/log/file_appender.cpp" line="17" column="1" bodyfile="libraries/fc/src/log/file_appender.cpp" bodystart="16" bodyend="136"/>
+    <listofallmembers>
+      <member refid="classfc_1_1file__appender_1_1impl_1a76d40148b7036c05c11e6088bc18a0b6" prot="private" virt="non-virtual"><scope>fc::file_appender::impl</scope><name>_current_file_start_time</name></member>
+      <member refid="classfc_1_1file__appender_1_1impl_1ad69835de6eafc0545fa02bb9bdef7db5" prot="private" virt="non-virtual"><scope>fc::file_appender::impl</scope><name>_rotation_task</name></member>
+      <member refid="classfc_1_1file__appender_1_1impl_1a4dbc2161ba39ea507e97276ce96c841b" prot="public" virt="non-virtual"><scope>fc::file_appender::impl</scope><name>cfg</name></member>
+      <member refid="classfc_1_1file__appender_1_1impl_1a838836b9ea05bc2d330d80883fb1f711" prot="private" virt="non-virtual"><scope>fc::file_appender::impl</scope><name>get_file_start_time</name></member>
+      <member refid="classfc_1_1file__appender_1_1impl_1a8395957b498a9256f5f22f35092b81ba" prot="public" virt="non-virtual"><scope>fc::file_appender::impl</scope><name>impl</name></member>
+      <member refid="classfc_1_1file__appender_1_1impl_1aec4dd551509e87455254409bc658ca56" prot="public" virt="non-virtual"><scope>fc::file_appender::impl</scope><name>out</name></member>
+      <member refid="classfc_1_1file__appender_1_1impl_1a80c2b12a1b539e2449a24cb2abc1b856" prot="public" virt="non-virtual"><scope>fc::file_appender::impl</scope><name>rotate_files</name></member>
+      <member refid="classfc_1_1file__appender_1_1impl_1ae659ea7d03512cc07ce4cd3f243fcad1" prot="public" virt="non-virtual"><scope>fc::file_appender::impl</scope><name>slock</name></member>
+      <member refid="classfc_1_1file__appender_1_1impl_1a7a694551e31cd03b8add8474fa1c9521" prot="public" virt="non-virtual"><scope>fc::file_appender::impl</scope><name>~impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -69,7 +69,7 @@
 <para>When selling collateral to pay off debt, the least amount of debt to receive should be min_usd = <ref refid="structgraphene_1_1protocol_1_1price__feed_1af018fd5a315703a5afcd20fdf287a464" kindref="member">max_short_squeeze_price()</ref> * collateral</para><para>This is provided to ensure that a black swan cannot be trigged due to poor liquidity alone, it must be confirmed by having the <ref refid="structgraphene_1_1protocol_1_1price__feed_1af018fd5a315703a5afcd20fdf287a464" kindref="member">max_short_squeeze_price()</ref> move below the black swan price. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="201" column="1" bodyfile="libraries/protocol/asset.cpp" bodystart="283" bodyend="287"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="201" column="1" bodyfile="libraries/protocol/asset.cpp" bodystart="284" bodyend="288"/>
       </memberdef>
       <memberdef kind="function" id="structgraphene_1_1protocol_1_1price__feed_1a98463272d7cab66ef4201b261eca5c43" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structgraphene_1_1protocol_1_1price" kindref="compound">price</ref></type>
@@ -82,7 +82,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="203" column="1" bodyfile="libraries/protocol/asset.cpp" bodystart="268" bodyend="281"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="203" column="1" bodyfile="libraries/protocol/asset.cpp" bodystart="269" bodyend="282"/>
       </memberdef>
       <memberdef kind="function" id="structgraphene_1_1protocol_1_1price__feed_1a30f1e1b7f21c0e198dfae800c4d11273" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structgraphene_1_1protocol_1_1price" kindref="compound">price</ref></type>
@@ -95,7 +95,7 @@
 <para>Call orders with collateralization (aka collateral/debt) not greater than this value are in margin call territory. Calculation: ~settlement_price * maintenance_collateral_ratio / GRAPHENE_COLLATERAL_RATIO_DENOM </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="207" column="1" bodyfile="libraries/protocol/asset.cpp" bodystart="289" bodyend="294"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="207" column="1" bodyfile="libraries/protocol/asset.cpp" bodystart="290" bodyend="295"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -110,7 +110,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="217" column="1" bodyfile="libraries/protocol/asset.cpp" bodystart="237" bodyend="250"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="217" column="1" bodyfile="libraries/protocol/asset.cpp" bodystart="238" bodyend="251"/>
       </memberdef>
       <memberdef kind="function" id="structgraphene_1_1protocol_1_1price__feed_1ac9864f61729920e739c9272b89719273" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -127,7 +127,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="218" column="1" bodyfile="libraries/protocol/asset.cpp" bodystart="252" bodyend="264"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="218" column="1" bodyfile="libraries/protocol/asset.cpp" bodystart="253" bodyend="265"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="friend">
@@ -158,31 +158,32 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="2973">
+      <node id="4545">
         <label>graphene::protocol::price</label>
         <link refid="structgraphene_1_1protocol_1_1price"/>
-        <childnode refid="2974" relation="usage">
+        <childnode refid="4546" relation="usage">
           <edgelabel>base</edgelabel>
           <edgelabel>quote</edgelabel>
         </childnode>
       </node>
-      <node id="2972">
+      <node id="4547">
+        <label>fc::safe&lt; int64_t &gt;</label>
+        <link refid="structfc_1_1safe"/>
+      </node>
+      <node id="4544">
         <label>graphene::protocol::price_feed</label>
         <link refid="structgraphene_1_1protocol_1_1price__feed"/>
-        <childnode refid="2973" relation="usage">
+        <childnode refid="4545" relation="usage">
           <edgelabel>core_exchange_rate</edgelabel>
           <edgelabel>settlement_price</edgelabel>
         </childnode>
       </node>
-      <node id="2974">
+      <node id="4546">
         <label>graphene::protocol::asset</label>
         <link refid="structgraphene_1_1protocol_1_1asset"/>
-        <childnode refid="2975" relation="usage">
+        <childnode refid="4547" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
-      </node>
-      <node id="2975">
-        <label>safe&lt; int64_t &gt;</label>
       </node>
     </collaborationgraph>
     <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="165" column="1" bodyfile="libraries/protocol/include/graphene/protocol/asset.hpp" bodystart="164" bodyend="219"/>

@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="classgraphene_1_1chain_1_1required__approval__index" kind="class" language="C++" prot="public">
     <compoundname>graphene::chain::required_approval_index</compoundname>
-    <basecompoundref prot="public" virt="non-virtual">secondary_index</basecompoundref>
+    <basecompoundref refid="classgraphene_1_1db_1_1secondary__index" prot="public" virt="non-virtual">graphene::db::secondary_index</basecompoundref>
     <includes refid="proposal__object_8hpp" local="no">proposal_object.hpp</includes>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1required__approval__index_1a45bf422073fcbe6c65a01183535004cd" prot="public" static="no" mutable="no">
@@ -53,8 +53,9 @@
         <definition>void graphene::chain::required_approval_index::object_inserted</definition>
         <argsstring>(const object &amp;obj) override</argsstring>
         <name>object_inserted</name>
+        <reimplements refid="classgraphene_1_1db_1_1secondary__index_1a1547c2ff1f51b54cc58fa35c458f0b88">object_inserted</reimplements>
         <param>
-          <type>const object &amp;</type>
+          <type>const <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref> &amp;</type>
           <declname>obj</declname>
         </param>
         <briefdescription>
@@ -70,8 +71,9 @@
         <definition>void graphene::chain::required_approval_index::object_removed</definition>
         <argsstring>(const object &amp;obj) override</argsstring>
         <name>object_removed</name>
+        <reimplements refid="classgraphene_1_1db_1_1secondary__index_1ab0fb2b00a61cf3c56525bc4c11307493">object_removed</reimplements>
         <param>
-          <type>const object &amp;</type>
+          <type>const <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref> &amp;</type>
           <declname>obj</declname>
         </param>
         <briefdescription>
@@ -87,8 +89,9 @@
         <definition>void graphene::chain::required_approval_index::about_to_modify</definition>
         <argsstring>(const object &amp;before) override</argsstring>
         <name>about_to_modify</name>
+        <reimplements refid="classgraphene_1_1db_1_1secondary__index_1a7818dbe861f44645884766c3b125856d">about_to_modify</reimplements>
         <param>
-          <type>const object &amp;</type>
+          <type>const <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref> &amp;</type>
           <declname>before</declname>
         </param>
         <briefdescription>
@@ -104,8 +107,9 @@
         <definition>void graphene::chain::required_approval_index::object_modified</definition>
         <argsstring>(const object &amp;after) override</argsstring>
         <name>object_modified</name>
+        <reimplements refid="classgraphene_1_1db_1_1secondary__index_1a3e21e2a429a0993b9c14052451c6d549">object_modified</reimplements>
         <param>
-          <type>const object &amp;</type>
+          <type>const <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref> &amp;</type>
           <declname>after</declname>
         </param>
         <briefdescription>
@@ -171,31 +175,33 @@
 <para>This is a secondary index on the proposal_index</para><para><simplesect kind="note"><para>the set of required approvals is constant </para></simplesect>
 </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="3201">
-        <label>secondary_index</label>
-      </node>
-      <node id="3200">
+      <node id="4910">
         <label>graphene::chain::required_approval_index</label>
         <link refid="classgraphene_1_1chain_1_1required__approval__index"/>
-        <childnode refid="3201" relation="public-inheritance">
+        <childnode refid="4911" relation="public-inheritance">
         </childnode>
+      </node>
+      <node id="4911">
+        <label>graphene::db::secondary_index</label>
+        <link refid="classgraphene_1_1db_1_1secondary__index"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="3203">
-        <label>secondary_index</label>
-      </node>
-      <node id="3202">
+      <node id="4912">
         <label>graphene::chain::required_approval_index</label>
         <link refid="classgraphene_1_1chain_1_1required__approval__index"/>
-        <childnode refid="3203" relation="public-inheritance">
+        <childnode refid="4913" relation="public-inheritance">
         </childnode>
-        <childnode refid="3204" relation="usage">
+        <childnode refid="4914" relation="usage">
           <edgelabel>_account_to_proposals</edgelabel>
         </childnode>
       </node>
-      <node id="3204">
+      <node id="4914">
         <label>map&lt; account_id_type, set&lt; proposal_id_type &gt; &gt;</label>
+      </node>
+      <node id="4913">
+        <label>graphene::db::secondary_index</label>
+        <link refid="classgraphene_1_1db_1_1secondary__index"/>
       </node>
     </collaborationgraph>
     <location file="libraries/chain/include/graphene/chain/proposal_object.hpp" line="72" column="1" bodyfile="libraries/chain/include/graphene/chain/proposal_object.hpp" bodystart="71" bodyend="87"/>
@@ -209,6 +215,7 @@
       <member refid="classgraphene_1_1chain_1_1required__approval__index_1a9c17955bbff402db635689184caa222a" prot="public" virt="virtual"><scope>graphene::chain::required_approval_index</scope><name>object_modified</name></member>
       <member refid="classgraphene_1_1chain_1_1required__approval__index_1aedceac62ad3a5954c03e057ee25598e5" prot="public" virt="virtual"><scope>graphene::chain::required_approval_index</scope><name>object_removed</name></member>
       <member refid="classgraphene_1_1chain_1_1required__approval__index_1a7a2607d68febfd8c5478ebe13ac365c2" prot="private" virt="non-virtual"><scope>graphene::chain::required_approval_index</scope><name>remove</name></member>
+      <member refid="classgraphene_1_1db_1_1secondary__index_1a99e9c2411aab4366a325560013137e62" prot="public" virt="virtual"><scope>graphene::chain::required_approval_index</scope><name>~secondary_index</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

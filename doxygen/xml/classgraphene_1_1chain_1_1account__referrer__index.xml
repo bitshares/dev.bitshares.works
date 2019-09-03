@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="classgraphene_1_1chain_1_1account__referrer__index" kind="class" language="C++" prot="public">
     <compoundname>graphene::chain::account_referrer_index</compoundname>
-    <basecompoundref prot="public" virt="non-virtual">secondary_index</basecompoundref>
+    <basecompoundref refid="classgraphene_1_1db_1_1secondary__index" prot="public" virt="non-virtual">graphene::db::secondary_index</basecompoundref>
     <includes refid="account__object_8hpp" local="no">account_object.hpp</includes>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1account__referrer__index_1a6342cf7925f86c27748625017a9d4e63" prot="public" static="no" mutable="no">
@@ -25,8 +25,9 @@
         <definition>void graphene::chain::account_referrer_index::object_inserted</definition>
         <argsstring>(const object &amp;obj) override</argsstring>
         <name>object_inserted</name>
+        <reimplements refid="classgraphene_1_1db_1_1secondary__index_1a1547c2ff1f51b54cc58fa35c458f0b88">object_inserted</reimplements>
         <param>
-          <type>const object &amp;</type>
+          <type>const <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref> &amp;</type>
           <declname>obj</declname>
         </param>
         <briefdescription>
@@ -42,8 +43,9 @@
         <definition>void graphene::chain::account_referrer_index::object_removed</definition>
         <argsstring>(const object &amp;obj) override</argsstring>
         <name>object_removed</name>
+        <reimplements refid="classgraphene_1_1db_1_1secondary__index_1ab0fb2b00a61cf3c56525bc4c11307493">object_removed</reimplements>
         <param>
-          <type>const object &amp;</type>
+          <type>const <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref> &amp;</type>
           <declname>obj</declname>
         </param>
         <briefdescription>
@@ -59,8 +61,9 @@
         <definition>void graphene::chain::account_referrer_index::about_to_modify</definition>
         <argsstring>(const object &amp;before) override</argsstring>
         <name>about_to_modify</name>
+        <reimplements refid="classgraphene_1_1db_1_1secondary__index_1a7818dbe861f44645884766c3b125856d">about_to_modify</reimplements>
         <param>
-          <type>const object &amp;</type>
+          <type>const <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref> &amp;</type>
           <declname>before</declname>
         </param>
         <briefdescription>
@@ -76,8 +79,9 @@
         <definition>void graphene::chain::account_referrer_index::object_modified</definition>
         <argsstring>(const object &amp;after) override</argsstring>
         <name>object_modified</name>
+        <reimplements refid="classgraphene_1_1db_1_1secondary__index_1a3e21e2a429a0993b9c14052451c6d549">object_modified</reimplements>
         <param>
-          <type>const object &amp;</type>
+          <type>const <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref> &amp;</type>
           <declname>after</declname>
         </param>
         <briefdescription>
@@ -94,29 +98,31 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="120">
-        <label>secondary_index</label>
+      <node id="165">
+        <label>graphene::db::secondary_index</label>
+        <link refid="classgraphene_1_1db_1_1secondary__index"/>
       </node>
-      <node id="119">
+      <node id="164">
         <label>graphene::chain::account_referrer_index</label>
         <link refid="classgraphene_1_1chain_1_1account__referrer__index"/>
-        <childnode refid="120" relation="public-inheritance">
+        <childnode refid="165" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="123">
+      <node id="168">
         <label>map&lt; account_id_type, set&lt; account_id_type &gt; &gt;</label>
       </node>
-      <node id="122">
-        <label>secondary_index</label>
+      <node id="167">
+        <label>graphene::db::secondary_index</label>
+        <link refid="classgraphene_1_1db_1_1secondary__index"/>
       </node>
-      <node id="121">
+      <node id="166">
         <label>graphene::chain::account_referrer_index</label>
         <link refid="classgraphene_1_1chain_1_1account__referrer__index"/>
-        <childnode refid="122" relation="public-inheritance">
+        <childnode refid="167" relation="public-inheritance">
         </childnode>
-        <childnode refid="123" relation="usage">
+        <childnode refid="168" relation="usage">
           <edgelabel>referred_by</edgelabel>
         </childnode>
       </node>
@@ -128,6 +134,7 @@
       <member refid="classgraphene_1_1chain_1_1account__referrer__index_1a9708eb5c78b3163999d95e4d71353e54" prot="public" virt="virtual"><scope>graphene::chain::account_referrer_index</scope><name>object_modified</name></member>
       <member refid="classgraphene_1_1chain_1_1account__referrer__index_1ad5305ac928521e9c969715e59609c30f" prot="public" virt="virtual"><scope>graphene::chain::account_referrer_index</scope><name>object_removed</name></member>
       <member refid="classgraphene_1_1chain_1_1account__referrer__index_1a6342cf7925f86c27748625017a9d4e63" prot="public" virt="non-virtual"><scope>graphene::chain::account_referrer_index</scope><name>referred_by</name></member>
+      <member refid="classgraphene_1_1db_1_1secondary__index_1a99e9c2411aab4366a325560013137e62" prot="public" virt="virtual"><scope>graphene::chain::account_referrer_index</scope><name>~secondary_index</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>
