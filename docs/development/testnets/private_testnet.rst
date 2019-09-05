@@ -1,5 +1,5 @@
 
-.. _private-testnet-guide:
+.. _private-testnet-guide-ver0:
 
 ************************
 Private Testnet Set up

@@ -40,8 +40,8 @@ For a Private Testnet set up, you can download and use the testnet branch. Howev
 .. toctree::
     :maxdepth: 2
  
-    testnets/private_testnet
-  
+    testnets/private_testnet-v2
+    
 
 -----------  
  
