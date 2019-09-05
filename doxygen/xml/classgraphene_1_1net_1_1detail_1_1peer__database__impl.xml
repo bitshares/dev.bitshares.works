@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classgraphene_1_1net_1_1detail_1_1peer__database__impl" kind="class" language="C++" prot="public">
+    <compoundname>graphene::net::detail::peer_database_impl</compoundname>
+    <innerclass refid="structgraphene_1_1net_1_1detail_1_1peer__database__impl_1_1endpoint__index" prot="public">graphene::net::detail::peer_database_impl::endpoint_index</innerclass>
+    <innerclass refid="structgraphene_1_1net_1_1detail_1_1peer__database__impl_1_1last__seen__time__index" prot="public">graphene::net::detail::peer_database_impl::last_seen_time_index</innerclass>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classgraphene_1_1net_1_1detail_1_1peer__database__impl_1a2c6df949d4eb4675c158c21307560f8a" prot="public" static="no">
+        <type>boost::multi_index_container&lt; <ref refid="structgraphene_1_1net_1_1potential__peer__record" kindref="compound">potential_peer_record</ref>, indexed_by&lt; ordered_non_unique&lt; tag&lt; <ref refid="structgraphene_1_1net_1_1detail_1_1peer__database__impl_1_1last__seen__time__index" kindref="compound">last_seen_time_index</ref> &gt;, member&lt; <ref refid="structgraphene_1_1net_1_1potential__peer__record" kindref="compound">potential_peer_record</ref>, <ref refid="classfc_1_1time__point__sec" kindref="compound">fc::time_point_sec</ref>, &amp;<ref refid="structgraphene_1_1net_1_1potential__peer__record_1a63bb5d5a5225755fb291d08788f1a91f" kindref="member">potential_peer_record::last_seen_time</ref> &gt; &gt;, hashed_unique&lt; tag&lt; <ref refid="structgraphene_1_1net_1_1detail_1_1peer__database__impl_1_1endpoint__index" kindref="compound">endpoint_index</ref> &gt;, member&lt; <ref refid="structgraphene_1_1net_1_1potential__peer__record" kindref="compound">potential_peer_record</ref>, <ref refid="classfc_1_1ip_1_1endpoint" kindref="compound">fc::ip::endpoint</ref>, &amp;<ref refid="structgraphene_1_1net_1_1potential__peer__record_1a0a28087c2b741b243ef6d2fb9490d71c" kindref="member">potential_peer_record::endpoint</ref> &gt;, std::hash&lt; <ref refid="classfc_1_1ip_1_1endpoint" kindref="compound">fc::ip::endpoint</ref> &gt; &gt; &gt; &gt;</type>
+        <definition>typedef boost::multi_index_container&lt;potential_peer_record, indexed_by&lt;ordered_non_unique&lt;tag&lt;last_seen_time_index&gt;, member&lt;potential_peer_record, fc::time_point_sec, &amp;potential_peer_record::last_seen_time&gt; &gt;, hashed_unique&lt;tag&lt;endpoint_index&gt;, member&lt;potential_peer_record, fc::ip::endpoint, &amp;potential_peer_record::endpoint&gt;, std::hash&lt;fc::ip::endpoint&gt; &gt; &gt; &gt; graphene::net::detail::peer_database_impl::potential_peer_set</definition>
+        <argsstring></argsstring>
+        <name>potential_peer_set</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/peer_database.cpp" line="58" column="1" bodyfile="libraries/net/peer_database.cpp" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classgraphene_1_1net_1_1detail_1_1peer__database__impl_1aa4362fedc163b0fc65d00d9527830214" prot="private" static="no" mutable="no">
+        <type><ref refid="classgraphene_1_1net_1_1detail_1_1peer__database__impl_1a2c6df949d4eb4675c158c21307560f8a" kindref="member">potential_peer_set</ref></type>
+        <definition>potential_peer_set graphene::net::detail::peer_database_impl::_potential_peer_set</definition>
+        <argsstring></argsstring>
+        <name>_potential_peer_set</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/peer_database.cpp" line="61" column="1" bodyfile="libraries/net/peer_database.cpp" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgraphene_1_1net_1_1detail_1_1peer__database__impl_1ad6888c10273e54fb2949db479d748666" prot="private" static="no" mutable="no">
+        <type><ref refid="classfc_1_1path" kindref="compound">fc::path</ref></type>
+        <definition>fc::path graphene::net::detail::peer_database_impl::_peer_database_filename</definition>
+        <argsstring></argsstring>
+        <name>_peer_database_filename</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/peer_database.cpp" line="62" column="1" bodyfile="libraries/net/peer_database.cpp" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1peer__database__impl_1ac0c9646e6ff89816de81840cdc6743b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void graphene::net::detail::peer_database_impl::open</definition>
+        <argsstring>(const fc::path &amp;databaseFilename)</argsstring>
+        <name>open</name>
+        <param>
+          <type>const <ref refid="classfc_1_1path" kindref="compound">fc::path</ref> &amp;</type>
+          <declname>databaseFilename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/peer_database.cpp" line="65" column="1" bodyfile="libraries/net/peer_database.cpp" bodystart="90" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1peer__database__impl_1a09b794724d0b175f15e92ad51f8ec163" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void graphene::net::detail::peer_database_impl::close</definition>
+        <argsstring>()</argsstring>
+        <name>close</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/peer_database.cpp" line="66" column="1" bodyfile="libraries/net/peer_database.cpp" bodystart="115" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1peer__database__impl_1a8abd5a750f404b78f9832eb307d241ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void graphene::net::detail::peer_database_impl::clear</definition>
+        <argsstring>()</argsstring>
+        <name>clear</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/peer_database.cpp" line="67" column="1" bodyfile="libraries/net/peer_database.cpp" bodystart="136" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1peer__database__impl_1a9e5783bfca6bcdf2c418749f75c19245" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void graphene::net::detail::peer_database_impl::erase</definition>
+        <argsstring>(const fc::ip::endpoint &amp;endpointToErase)</argsstring>
+        <name>erase</name>
+        <param>
+          <type>const <ref refid="classfc_1_1ip_1_1endpoint" kindref="compound">fc::ip::endpoint</ref> &amp;</type>
+          <declname>endpointToErase</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/peer_database.cpp" line="68" column="1" bodyfile="libraries/net/peer_database.cpp" bodystart="141" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1peer__database__impl_1a90a0cbe9603d5772bd4cb65d4b3d24b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void graphene::net::detail::peer_database_impl::update_entry</definition>
+        <argsstring>(const potential_peer_record &amp;updatedRecord)</argsstring>
+        <name>update_entry</name>
+        <param>
+          <type>const <ref refid="structgraphene_1_1net_1_1potential__peer__record" kindref="compound">potential_peer_record</ref> &amp;</type>
+          <declname>updatedRecord</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/peer_database.cpp" line="69" column="1" bodyfile="libraries/net/peer_database.cpp" bodystart="148" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1peer__database__impl_1a76c79ba051ef6817ad9cc6406c0d7fc4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structgraphene_1_1net_1_1potential__peer__record" kindref="compound">potential_peer_record</ref></type>
+        <definition>potential_peer_record graphene::net::detail::peer_database_impl::lookup_or_create_entry_for_endpoint</definition>
+        <argsstring>(const fc::ip::endpoint &amp;endpointToLookup)</argsstring>
+        <name>lookup_or_create_entry_for_endpoint</name>
+        <param>
+          <type>const <ref refid="classfc_1_1ip_1_1endpoint" kindref="compound">fc::ip::endpoint</ref> &amp;</type>
+          <declname>endpointToLookup</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/peer_database.cpp" line="70" column="1" bodyfile="libraries/net/peer_database.cpp" bodystart="157" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1peer__database__impl_1ab0cf8400fb403852faab3d34fd33b3ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classfc_1_1optional" kindref="compound">fc::optional</ref>&lt; <ref refid="structgraphene_1_1net_1_1potential__peer__record" kindref="compound">potential_peer_record</ref> &gt;</type>
+        <definition>fc::optional&lt; potential_peer_record &gt; graphene::net::detail::peer_database_impl::lookup_entry_for_endpoint</definition>
+        <argsstring>(const fc::ip::endpoint &amp;endpointToLookup)</argsstring>
+        <name>lookup_entry_for_endpoint</name>
+        <param>
+          <type>const <ref refid="classfc_1_1ip_1_1endpoint" kindref="compound">fc::ip::endpoint</ref> &amp;</type>
+          <declname>endpointToLookup</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/peer_database.cpp" line="71" column="1" bodyfile="libraries/net/peer_database.cpp" bodystart="165" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1peer__database__impl_1a370cd86f8af8c9dc2c56ff98f46b7e5a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classgraphene_1_1net_1_1peer__database_1acf9d70c395705d569f206ab33f345e9d" kindref="member">peer_database::iterator</ref></type>
+        <definition>peer_database::iterator graphene::net::detail::peer_database_impl::begin</definition>
+        <argsstring>() const</argsstring>
+        <name>begin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/peer_database.cpp" line="73" column="1" bodyfile="libraries/net/peer_database.cpp" bodystart="173" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1peer__database__impl_1a736b657e225dbfb0ada7e38f8d08e370" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classgraphene_1_1net_1_1peer__database_1acf9d70c395705d569f206ab33f345e9d" kindref="member">peer_database::iterator</ref></type>
+        <definition>peer_database::iterator graphene::net::detail::peer_database_impl::end</definition>
+        <argsstring>() const</argsstring>
+        <name>end</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/peer_database.cpp" line="74" column="1" bodyfile="libraries/net/peer_database.cpp" bodystart="178" bodyend="181"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1peer__database__impl_1a891bb0ccdd40b54387614adc30de9d22" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t graphene::net::detail::peer_database_impl::size</definition>
+        <argsstring>() const</argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/peer_database.cpp" line="75" column="1" bodyfile="libraries/net/peer_database.cpp" bodystart="183" bodyend="186"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="libraries/net/peer_database.cpp" line="45" column="1" bodyfile="libraries/net/peer_database.cpp" bodystart="44" bodyend="76"/>
+    <listofallmembers>
+      <member refid="classgraphene_1_1net_1_1detail_1_1peer__database__impl_1ad6888c10273e54fb2949db479d748666" prot="private" virt="non-virtual"><scope>graphene::net::detail::peer_database_impl</scope><name>_peer_database_filename</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1peer__database__impl_1aa4362fedc163b0fc65d00d9527830214" prot="private" virt="non-virtual"><scope>graphene::net::detail::peer_database_impl</scope><name>_potential_peer_set</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1peer__database__impl_1a370cd86f8af8c9dc2c56ff98f46b7e5a" prot="public" virt="non-virtual"><scope>graphene::net::detail::peer_database_impl</scope><name>begin</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1peer__database__impl_1a8abd5a750f404b78f9832eb307d241ed" prot="public" virt="non-virtual"><scope>graphene::net::detail::peer_database_impl</scope><name>clear</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1peer__database__impl_1a09b794724d0b175f15e92ad51f8ec163" prot="public" virt="non-virtual"><scope>graphene::net::detail::peer_database_impl</scope><name>close</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1peer__database__impl_1a736b657e225dbfb0ada7e38f8d08e370" prot="public" virt="non-virtual"><scope>graphene::net::detail::peer_database_impl</scope><name>end</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1peer__database__impl_1a9e5783bfca6bcdf2c418749f75c19245" prot="public" virt="non-virtual"><scope>graphene::net::detail::peer_database_impl</scope><name>erase</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1peer__database__impl_1ab0cf8400fb403852faab3d34fd33b3ae" prot="public" virt="non-virtual"><scope>graphene::net::detail::peer_database_impl</scope><name>lookup_entry_for_endpoint</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1peer__database__impl_1a76c79ba051ef6817ad9cc6406c0d7fc4" prot="public" virt="non-virtual"><scope>graphene::net::detail::peer_database_impl</scope><name>lookup_or_create_entry_for_endpoint</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1peer__database__impl_1ac0c9646e6ff89816de81840cdc6743b2" prot="public" virt="non-virtual"><scope>graphene::net::detail::peer_database_impl</scope><name>open</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1peer__database__impl_1a2c6df949d4eb4675c158c21307560f8a" prot="public" virt="non-virtual"><scope>graphene::net::detail::peer_database_impl</scope><name>potential_peer_set</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1peer__database__impl_1a891bb0ccdd40b54387614adc30de9d22" prot="public" virt="non-virtual"><scope>graphene::net::detail::peer_database_impl</scope><name>size</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1peer__database__impl_1a90a0cbe9603d5772bd4cb65d4b3d24b3" prot="public" virt="non-virtual"><scope>graphene::net::detail::peer_database_impl</scope><name>update_entry</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -4,7 +4,7 @@
     <compoundname>graphene::protocol::sign_state</compoundname>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1sign__state_1ac4be7c9b749f88e9fa64a812265395f7" prot="public" static="no" mutable="no">
-        <type>optional&lt; map&lt; <ref refid="classgraphene_1_1protocol_1_1address" kindref="compound">address</ref>, <ref refid="structgraphene_1_1protocol_1_1public__key__type" kindref="compound">public_key_type</ref> &gt; &gt;</type>
+        <type><ref refid="classfc_1_1optional" kindref="compound">optional</ref>&lt; map&lt; <ref refid="classgraphene_1_1protocol_1_1address" kindref="compound">address</ref>, <ref refid="structgraphene_1_1protocol_1_1public__key__type" kindref="compound">public_key_type</ref> &gt; &gt;</type>
         <definition>optional&lt;map&lt;address,public_key_type&gt; &gt; graphene::protocol::sign_state::available_address_sigs</definition>
         <argsstring></argsstring>
         <name>available_address_sigs</name>
@@ -17,7 +17,7 @@
         <location file="libraries/protocol/transaction.cpp" line="133" column="1" bodyfile="libraries/protocol/transaction.cpp" bodystart="133" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1sign__state_1a922858d9706ef0416d1e06d7d1992134" prot="public" static="no" mutable="no">
-        <type>optional&lt; map&lt; <ref refid="classgraphene_1_1protocol_1_1address" kindref="compound">address</ref>, <ref refid="structgraphene_1_1protocol_1_1public__key__type" kindref="compound">public_key_type</ref> &gt; &gt;</type>
+        <type><ref refid="classfc_1_1optional" kindref="compound">optional</ref>&lt; map&lt; <ref refid="classgraphene_1_1protocol_1_1address" kindref="compound">address</ref>, <ref refid="structgraphene_1_1protocol_1_1public__key__type" kindref="compound">public_key_type</ref> &gt; &gt;</type>
         <definition>optional&lt;map&lt;address,public_key_type&gt; &gt; graphene::protocol::sign_state::provided_address_sigs</definition>
         <argsstring></argsstring>
         <name>provided_address_sigs</name>
@@ -253,32 +253,33 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="3216">
+      <node id="4961">
+        <label>fc::optional&lt; map&lt; graphene::protocol::address, graphene::protocol::public_key_type &gt; &gt;</label>
+        <link refid="classfc_1_1optional"/>
+      </node>
+      <node id="4963">
         <label>flat_set&lt; account_id_type &gt;</label>
       </node>
-      <node id="3215">
+      <node id="4962">
         <label>flat_set&lt; graphene::protocol::public_key_type &gt;</label>
       </node>
-      <node id="3213">
+      <node id="4960">
         <label>flat_map&lt; graphene::protocol::public_key_type, bool &gt;</label>
       </node>
-      <node id="3214">
-        <label>optional&lt; map&lt; graphene::protocol::address, graphene::protocol::public_key_type &gt; &gt;</label>
-      </node>
-      <node id="3212">
+      <node id="4959">
         <label>graphene::protocol::sign_state</label>
         <link refid="structgraphene_1_1protocol_1_1sign__state"/>
-        <childnode refid="3213" relation="usage">
+        <childnode refid="4960" relation="usage">
           <edgelabel>provided_signatures</edgelabel>
         </childnode>
-        <childnode refid="3214" relation="usage">
+        <childnode refid="4961" relation="usage">
           <edgelabel>provided_address_sigs</edgelabel>
           <edgelabel>available_address_sigs</edgelabel>
         </childnode>
-        <childnode refid="3215" relation="usage">
+        <childnode refid="4962" relation="usage">
           <edgelabel>available_keys</edgelabel>
         </childnode>
-        <childnode refid="3216" relation="usage">
+        <childnode refid="4963" relation="usage">
           <edgelabel>approved_by</edgelabel>
         </childnode>
       </node>

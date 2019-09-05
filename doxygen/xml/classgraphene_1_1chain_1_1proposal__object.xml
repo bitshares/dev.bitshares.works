@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="classgraphene_1_1chain_1_1proposal__object" kind="class" language="C++" prot="public">
     <compoundname>graphene::chain::proposal_object</compoundname>
-    <basecompoundref prot="public" virt="non-virtual">graphene::db::abstract_object&lt; proposal_object &gt;</basecompoundref>
+    <basecompoundref refid="classgraphene_1_1db_1_1abstract__object" prot="public" virt="non-virtual">graphene::db::abstract_object&lt; proposal_object &gt;</basecompoundref>
     <includes refid="proposal__object_8hpp" local="no">proposal_object.hpp</includes>
       <sectiondef kind="public-static-attrib">
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1proposal__object_1a76da455fa1feee65e202055d975bd14e" prot="public" static="yes" mutable="no">
@@ -49,7 +49,7 @@
         <location file="libraries/chain/include/graphene/chain/proposal_object.hpp" line="46" column="1" bodyfile="libraries/chain/include/graphene/chain/proposal_object.hpp" bodystart="46" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1proposal__object_1a51a2a94347b83a82b042465d2db19949" prot="public" static="no" mutable="no">
-        <type>optional&lt; time_point_sec &gt;</type>
+        <type><ref refid="classfc_1_1optional" kindref="compound">optional</ref>&lt; time_point_sec &gt;</type>
         <definition>optional&lt;time_point_sec&gt; graphene::chain::proposal_object::review_period_time</definition>
         <argsstring></argsstring>
         <name>review_period_time</name>
@@ -190,78 +190,90 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="3105">
+      <node id="4734">
         <label>graphene::chain::proposal_object</label>
         <link refid="classgraphene_1_1chain_1_1proposal__object"/>
-        <childnode refid="3106" relation="public-inheritance">
+        <childnode refid="4735" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="3106">
+      <node id="4735">
         <label>graphene::db::abstract_object&lt; proposal_object &gt;</label>
+        <link refid="classgraphene_1_1db_1_1abstract__object"/>
+        <childnode refid="4736" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4736">
+        <label>graphene::db::object</label>
+        <link refid="classgraphene_1_1db_1_1object"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="3109">
-        <label>time_point_sec</label>
+      <node id="4744">
+        <label>fc::ripemd160</label>
+        <link refid="classfc_1_1ripemd160"/>
       </node>
-      <node id="3110">
+      <node id="4741">
         <label>string</label>
       </node>
-      <node id="3113">
+      <node id="4743">
         <label>flat_set&lt; future_extensions &gt;</label>
       </node>
-      <node id="3107">
+      <node id="4737">
         <label>graphene::chain::proposal_object</label>
         <link refid="classgraphene_1_1chain_1_1proposal__object"/>
-        <childnode refid="3108" relation="public-inheritance">
+        <childnode refid="4738" relation="public-inheritance">
         </childnode>
-        <childnode refid="3109" relation="usage">
-          <edgelabel>expiration_time</edgelabel>
-        </childnode>
-        <childnode refid="3110" relation="usage">
+        <childnode refid="4741" relation="usage">
           <edgelabel>fail_reason</edgelabel>
         </childnode>
-        <childnode refid="3111" relation="usage">
-          <edgelabel>available_key_approvals</edgelabel>
-        </childnode>
-        <childnode refid="3112" relation="usage">
+        <childnode refid="4742" relation="usage">
           <edgelabel>proposed_transaction</edgelabel>
         </childnode>
-        <childnode refid="3115" relation="usage">
+        <childnode refid="4747" relation="usage">
           <edgelabel>review_period_time</edgelabel>
         </childnode>
-        <childnode refid="3116" relation="usage">
-          <edgelabel>required_owner_approvals</edgelabel>
-          <edgelabel>available_owner_approvals</edgelabel>
-          <edgelabel>required_active_approvals</edgelabel>
-          <edgelabel>available_active_approvals</edgelabel>
+      </node>
+      <node id="4738">
+        <label>graphene::db::abstract_object&lt; proposal_object &gt;</label>
+        <link refid="classgraphene_1_1db_1_1abstract__object"/>
+        <childnode refid="4739" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="3108">
-        <label>graphene::db::abstract_object&lt; proposal_object &gt;</label>
+      <node id="4747">
+        <label>fc::optional&lt; time_point_sec &gt;</label>
+        <link refid="classfc_1_1optional"/>
       </node>
-      <node id="3116">
-        <label>flat_set&lt; account_id_type &gt;</label>
+      <node id="4745">
+        <label>fc::time_point_sec</label>
+        <link refid="classfc_1_1time__point__sec"/>
       </node>
-      <node id="3111">
-        <label>flat_set&lt; graphene::protocol::public_key_type &gt;</label>
+      <node id="4746">
+        <label>vector&lt; fc::static_variant &gt;</label>
       </node>
-      <node id="3115">
-        <label>optional&lt; time_point_sec &gt;</label>
+      <node id="4740">
+        <label>graphene::db::object_id_type</label>
+        <link refid="structgraphene_1_1db_1_1object__id__type"/>
       </node>
-      <node id="3114">
-        <label>vector&lt; operation &gt;</label>
+      <node id="4739">
+        <label>graphene::db::object</label>
+        <link refid="classgraphene_1_1db_1_1object"/>
+        <childnode refid="4740" relation="usage">
+          <edgelabel>id</edgelabel>
+        </childnode>
       </node>
-      <node id="3112">
+      <node id="4742">
         <label>graphene::protocol::transaction</label>
         <link refid="classgraphene_1_1protocol_1_1transaction"/>
-        <childnode refid="3113" relation="usage">
+        <childnode refid="4743" relation="usage">
           <edgelabel>extensions</edgelabel>
         </childnode>
-        <childnode refid="3109" relation="usage">
+        <childnode refid="4744" relation="usage">
+          <edgelabel>_tx_id_buffer</edgelabel>
+        </childnode>
+        <childnode refid="4745" relation="usage">
           <edgelabel>expiration</edgelabel>
         </childnode>
-        <childnode refid="3114" relation="usage">
+        <childnode refid="4746" relation="usage">
           <edgelabel>operations</edgelabel>
         </childnode>
       </node>
@@ -271,16 +283,23 @@
       <member refid="classgraphene_1_1chain_1_1proposal__object_1ae109f072dacb60e7fdfebca0e5c560a3" prot="public" virt="non-virtual"><scope>graphene::chain::proposal_object</scope><name>available_active_approvals</name></member>
       <member refid="classgraphene_1_1chain_1_1proposal__object_1ad82cd826ac213f74375932aa485964dd" prot="public" virt="non-virtual"><scope>graphene::chain::proposal_object</scope><name>available_key_approvals</name></member>
       <member refid="classgraphene_1_1chain_1_1proposal__object_1a33710200550c2677447db15ffb66eec4" prot="public" virt="non-virtual"><scope>graphene::chain::proposal_object</scope><name>available_owner_approvals</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1a189144fd7eef0317898bc83b30b143c6" prot="public" virt="virtual"><scope>graphene::chain::proposal_object</scope><name>clone</name></member>
       <member refid="classgraphene_1_1chain_1_1proposal__object_1aaa68f7f84d178e7141e6a66b2217bc7d" prot="public" virt="non-virtual"><scope>graphene::chain::proposal_object</scope><name>expiration_time</name></member>
       <member refid="classgraphene_1_1chain_1_1proposal__object_1a72ad95da585f4ab59e0b91260694f5d9" prot="public" virt="non-virtual"><scope>graphene::chain::proposal_object</scope><name>fail_reason</name></member>
+      <member refid="classgraphene_1_1db_1_1object_1a2ce812569d565a45dda1420cfbdf79ad" prot="public" virt="non-virtual"><scope>graphene::chain::proposal_object</scope><name>id</name></member>
       <member refid="classgraphene_1_1chain_1_1proposal__object_1abf831c04e5464e80091559ad4184258f" prot="public" virt="non-virtual"><scope>graphene::chain::proposal_object</scope><name>is_authorized_to_execute</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1ad7329292e8fa9035cf2596d72c4868b5" prot="public" virt="virtual"><scope>graphene::chain::proposal_object</scope><name>move_from</name></member>
+      <member refid="classgraphene_1_1db_1_1object_1a64864992a46d9d52836afe1a52a2e394" prot="public" virt="non-virtual"><scope>graphene::chain::proposal_object</scope><name>object</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1a792a9c05cfe1cf7628cb6f8c4a65b0f7" prot="public" virt="virtual"><scope>graphene::chain::proposal_object</scope><name>pack</name></member>
       <member refid="classgraphene_1_1chain_1_1proposal__object_1a119d1007b9df990295ddf36b3854053e" prot="public" virt="non-virtual"><scope>graphene::chain::proposal_object</scope><name>proposed_transaction</name></member>
       <member refid="classgraphene_1_1chain_1_1proposal__object_1adb8e871945a22d633f91576c8e94d714" prot="public" virt="non-virtual"><scope>graphene::chain::proposal_object</scope><name>proposer</name></member>
       <member refid="classgraphene_1_1chain_1_1proposal__object_1abb764a31f14a6f02d27cbb759b663c42" prot="public" virt="non-virtual"><scope>graphene::chain::proposal_object</scope><name>required_active_approvals</name></member>
       <member refid="classgraphene_1_1chain_1_1proposal__object_1a720ae65a9704e4813116565c6affc733" prot="public" virt="non-virtual"><scope>graphene::chain::proposal_object</scope><name>required_owner_approvals</name></member>
       <member refid="classgraphene_1_1chain_1_1proposal__object_1a51a2a94347b83a82b042465d2db19949" prot="public" virt="non-virtual"><scope>graphene::chain::proposal_object</scope><name>review_period_time</name></member>
       <member refid="classgraphene_1_1chain_1_1proposal__object_1a76da455fa1feee65e202055d975bd14e" prot="public" virt="non-virtual"><scope>graphene::chain::proposal_object</scope><name>space_id</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1a6f0f2e9eb0399057ff3334bf328b5007" prot="public" virt="virtual"><scope>graphene::chain::proposal_object</scope><name>to_variant</name></member>
       <member refid="classgraphene_1_1chain_1_1proposal__object_1ad212fd881a4bf89acc9c394edcbd545f" prot="public" virt="non-virtual"><scope>graphene::chain::proposal_object</scope><name>type_id</name></member>
+      <member refid="classgraphene_1_1db_1_1object_1ac457a859418c22014c07a3bcdc67ed04" prot="public" virt="virtual"><scope>graphene::chain::proposal_object</scope><name>~object</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

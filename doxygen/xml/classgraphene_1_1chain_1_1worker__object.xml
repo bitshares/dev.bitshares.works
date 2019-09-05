@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="classgraphene_1_1chain_1_1worker__object" kind="class" language="C++" prot="public">
     <compoundname>graphene::chain::worker_object</compoundname>
-    <basecompoundref prot="public" virt="non-virtual">graphene::db::abstract_object&lt; worker_object &gt;</basecompoundref>
+    <basecompoundref refid="classgraphene_1_1db_1_1abstract__object" prot="public" virt="non-virtual">graphene::db::abstract_object&lt; worker_object &gt;</basecompoundref>
     <includes refid="worker__object_8hpp" local="no">worker_object.hpp</includes>
       <sectiondef kind="public-static-attrib">
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1worker__object_1a42487999635d7eaaabed8c4ba501dd01" prot="public" static="yes" mutable="no">
@@ -188,7 +188,7 @@
         <argsstring>(fc::time_point_sec now) const</argsstring>
         <name>is_active</name>
         <param>
-          <type>fc::time_point_sec</type>
+          <type><ref refid="classfc_1_1time__point__sec" kindref="compound">fc::time_point_sec</ref></type>
           <declname>now</declname>
         </param>
         <briefdescription>
@@ -218,68 +218,97 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="4101">
+      <node id="6313">
         <label>graphene::db::abstract_object&lt; worker_object &gt;</label>
+        <link refid="classgraphene_1_1db_1_1abstract__object"/>
+        <childnode refid="6314" relation="public-inheritance">
+        </childnode>
       </node>
-      <node id="4100">
+      <node id="6314">
+        <label>graphene::db::object</label>
+        <link refid="classgraphene_1_1db_1_1object"/>
+      </node>
+      <node id="6312">
         <label>graphene::chain::worker_object</label>
         <link refid="classgraphene_1_1chain_1_1worker__object"/>
-        <childnode refid="4101" relation="public-inheritance">
+        <childnode refid="6313" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="4104">
-        <label>static_variant&lt; refund_worker_type, vesting_balance_worker_type, burn_worker_type &gt;</label>
-      </node>
-      <node id="4106">
-        <label>time_point_sec</label>
-      </node>
-      <node id="4108">
+      <node id="6323">
         <label>string</label>
       </node>
-      <node id="4105">
+      <node id="6321">
         <label>graphene::protocol::vote_id_type</label>
         <link refid="structgraphene_1_1protocol_1_1vote__id__type"/>
       </node>
-      <node id="4103">
+      <node id="6316">
         <label>graphene::db::abstract_object&lt; worker_object &gt;</label>
+        <link refid="classgraphene_1_1db_1_1abstract__object"/>
+        <childnode refid="6317" relation="public-inheritance">
+        </childnode>
       </node>
-      <node id="4107">
-        <label>safe&lt; int64_t &gt;</label>
+      <node id="6322">
+        <label>fc::safe&lt; int64_t &gt;</label>
+        <link refid="structfc_1_1safe"/>
       </node>
-      <node id="4102">
+      <node id="6318">
+        <label>graphene::db::object_id_type</label>
+        <link refid="structgraphene_1_1db_1_1object__id__type"/>
+      </node>
+      <node id="6320">
+        <label>fc::impl::dynamic_storage</label>
+        <link refid="classfc_1_1impl_1_1dynamic__storage"/>
+      </node>
+      <node id="6317">
+        <label>graphene::db::object</label>
+        <link refid="classgraphene_1_1db_1_1object"/>
+        <childnode refid="6318" relation="usage">
+          <edgelabel>id</edgelabel>
+        </childnode>
+      </node>
+      <node id="6315">
         <label>graphene::chain::worker_object</label>
         <link refid="classgraphene_1_1chain_1_1worker__object"/>
-        <childnode refid="4103" relation="public-inheritance">
+        <childnode refid="6316" relation="public-inheritance">
         </childnode>
-        <childnode refid="4104" relation="usage">
+        <childnode refid="6319" relation="usage">
           <edgelabel>worker</edgelabel>
         </childnode>
-        <childnode refid="4105" relation="usage">
+        <childnode refid="6321" relation="usage">
           <edgelabel>vote_for</edgelabel>
           <edgelabel>vote_against</edgelabel>
         </childnode>
-        <childnode refid="4106" relation="usage">
-          <edgelabel>work_end_date</edgelabel>
-          <edgelabel>work_begin_date</edgelabel>
-        </childnode>
-        <childnode refid="4107" relation="usage">
+        <childnode refid="6322" relation="usage">
           <edgelabel>daily_pay</edgelabel>
         </childnode>
-        <childnode refid="4108" relation="usage">
+        <childnode refid="6323" relation="usage">
           <edgelabel>url</edgelabel>
           <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="6319">
+        <label>fc::static_variant&lt; refund_worker_type, vesting_balance_worker_type, burn_worker_type &gt;</label>
+        <link refid="classfc_1_1static__variant"/>
+        <childnode refid="6320" relation="usage">
+          <edgelabel>storage</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
     <location file="libraries/chain/include/graphene/chain/worker_object.hpp" line="108" column="1" bodyfile="libraries/chain/include/graphene/chain/worker_object.hpp" bodystart="107" bodyend="143"/>
     <listofallmembers>
       <member refid="classgraphene_1_1chain_1_1worker__object_1a689234470f9ed7dab3b402e1c7e35cbe" prot="public" virt="non-virtual"><scope>graphene::chain::worker_object</scope><name>approving_stake</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1a189144fd7eef0317898bc83b30b143c6" prot="public" virt="virtual"><scope>graphene::chain::worker_object</scope><name>clone</name></member>
       <member refid="classgraphene_1_1chain_1_1worker__object_1a6c2d8d4a16fe45f978a591a31aa8f848" prot="public" virt="non-virtual"><scope>graphene::chain::worker_object</scope><name>daily_pay</name></member>
+      <member refid="classgraphene_1_1db_1_1object_1a2ce812569d565a45dda1420cfbdf79ad" prot="public" virt="non-virtual"><scope>graphene::chain::worker_object</scope><name>id</name></member>
       <member refid="classgraphene_1_1chain_1_1worker__object_1ae8ad74d11c51f78619a015013ce79907" prot="public" virt="non-virtual"><scope>graphene::chain::worker_object</scope><name>is_active</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1ad7329292e8fa9035cf2596d72c4868b5" prot="public" virt="virtual"><scope>graphene::chain::worker_object</scope><name>move_from</name></member>
       <member refid="classgraphene_1_1chain_1_1worker__object_1aff3a79340947f2e2e448c3af578efe04" prot="public" virt="non-virtual"><scope>graphene::chain::worker_object</scope><name>name</name></member>
+      <member refid="classgraphene_1_1db_1_1object_1a64864992a46d9d52836afe1a52a2e394" prot="public" virt="non-virtual"><scope>graphene::chain::worker_object</scope><name>object</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1a792a9c05cfe1cf7628cb6f8c4a65b0f7" prot="public" virt="virtual"><scope>graphene::chain::worker_object</scope><name>pack</name></member>
       <member refid="classgraphene_1_1chain_1_1worker__object_1a42487999635d7eaaabed8c4ba501dd01" prot="public" virt="non-virtual"><scope>graphene::chain::worker_object</scope><name>space_id</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1a6f0f2e9eb0399057ff3334bf328b5007" prot="public" virt="virtual"><scope>graphene::chain::worker_object</scope><name>to_variant</name></member>
       <member refid="classgraphene_1_1chain_1_1worker__object_1af2f0ec3093c6cbd178f660304290fb09" prot="public" virt="non-virtual"><scope>graphene::chain::worker_object</scope><name>total_votes_against</name></member>
       <member refid="classgraphene_1_1chain_1_1worker__object_1af50e00a4516cbb8b9e991e2316ffba34" prot="public" virt="non-virtual"><scope>graphene::chain::worker_object</scope><name>total_votes_for</name></member>
       <member refid="classgraphene_1_1chain_1_1worker__object_1a4defb57c4917c3391521a5e5b51fa861" prot="public" virt="non-virtual"><scope>graphene::chain::worker_object</scope><name>type_id</name></member>
@@ -290,6 +319,7 @@
       <member refid="classgraphene_1_1chain_1_1worker__object_1a7adef03c9c161025de19148e1a1c2938" prot="public" virt="non-virtual"><scope>graphene::chain::worker_object</scope><name>work_end_date</name></member>
       <member refid="classgraphene_1_1chain_1_1worker__object_1a815d5e45c913b5cfbfa159603d884aae" prot="public" virt="non-virtual"><scope>graphene::chain::worker_object</scope><name>worker</name></member>
       <member refid="classgraphene_1_1chain_1_1worker__object_1a8f85a7277840f8966a8f93b634b7d08d" prot="public" virt="non-virtual"><scope>graphene::chain::worker_object</scope><name>worker_account</name></member>
+      <member refid="classgraphene_1_1db_1_1object_1ac457a859418c22014c07a3bcdc67ed04" prot="public" virt="virtual"><scope>graphene::chain::worker_object</scope><name>~object</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

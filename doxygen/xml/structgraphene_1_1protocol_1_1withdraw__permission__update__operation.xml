@@ -86,7 +86,7 @@
         <location file="libraries/protocol/include/graphene/protocol/withdraw_permission.hpp" line="97" column="1" bodyfile="libraries/protocol/include/graphene/protocol/withdraw_permission.hpp" bodystart="97" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1withdraw__permission__update__operation_1a37672399097e4861c973b819ebc7f3fd" prot="public" static="no" mutable="no">
-        <type>time_point_sec</type>
+        <type><ref refid="classfc_1_1time__point__sec" kindref="compound">time_point_sec</ref></type>
         <definition>time_point_sec graphene::protocol::withdraw_permission_update_operation::period_start_time</definition>
         <argsstring></argsstring>
         <name>period_start_time</name>
@@ -146,45 +146,47 @@
     <detaileddescription>
 <para>Fee is paid by withdraw_from_account, which is required to authorize this operation </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="3904">
+      <node id="6082">
         <label>graphene::protocol::base_operation</label>
         <link refid="structgraphene_1_1protocol_1_1base__operation"/>
       </node>
-      <node id="3903">
+      <node id="6081">
         <label>graphene::protocol::withdraw_permission_update_operation</label>
         <link refid="structgraphene_1_1protocol_1_1withdraw__permission__update__operation"/>
-        <childnode refid="3904" relation="public-inheritance">
+        <childnode refid="6082" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="3909">
-        <label>time_point_sec</label>
+      <node id="6086">
+        <label>fc::safe&lt; int64_t &gt;</label>
+        <link refid="structfc_1_1safe"/>
       </node>
-      <node id="3906">
+      <node id="6087">
+        <label>fc::time_point_sec</label>
+        <link refid="classfc_1_1time__point__sec"/>
+      </node>
+      <node id="6084">
         <label>graphene::protocol::base_operation</label>
         <link refid="structgraphene_1_1protocol_1_1base__operation"/>
       </node>
-      <node id="3907">
+      <node id="6085">
         <label>graphene::protocol::asset</label>
         <link refid="structgraphene_1_1protocol_1_1asset"/>
-        <childnode refid="3908" relation="usage">
+        <childnode refid="6086" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
       </node>
-      <node id="3908">
-        <label>safe&lt; int64_t &gt;</label>
-      </node>
-      <node id="3905">
+      <node id="6083">
         <label>graphene::protocol::withdraw_permission_update_operation</label>
         <link refid="structgraphene_1_1protocol_1_1withdraw__permission__update__operation"/>
-        <childnode refid="3906" relation="public-inheritance">
+        <childnode refid="6084" relation="public-inheritance">
         </childnode>
-        <childnode refid="3907" relation="usage">
+        <childnode refid="6085" relation="usage">
           <edgelabel>fee</edgelabel>
           <edgelabel>withdrawal_limit</edgelabel>
         </childnode>
-        <childnode refid="3909" relation="usage">
+        <childnode refid="6087" relation="usage">
           <edgelabel>period_start_time</edgelabel>
         </childnode>
       </node>

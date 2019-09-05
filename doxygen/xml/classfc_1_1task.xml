@@ -1,0 +1,323 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classfc_1_1task" kind="class" language="C++" prot="public">
+    <compoundname>fc::task</compoundname>
+    <basecompoundref refid="classfc_1_1task__base" prot="public" virt="virtual">fc::task_base</basecompoundref>
+    <basecompoundref refid="classfc_1_1promise" prot="public" virt="virtual">fc::promise&lt; R &gt;</basecompoundref>
+    <includes refid="task_8hpp" local="no">task.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>typename</type>
+        <declname>R</declname>
+        <defname>R</defname>
+      </param>
+      <param>
+        <type>uint64_t</type>
+        <declname>FunctorSize</declname>
+        <defname>FunctorSize</defname>
+        <defval>64</defval>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classfc_1_1task_1ad47b969b3fe6d0cc51c0289bf8b69e40" prot="public" static="no">
+        <type>std::shared_ptr&lt; <ref refid="classfc_1_1task" kindref="compound">task</ref>&lt; R, FunctorSize &gt; &gt;</type>
+        <definition>typedef std::shared_ptr&lt;task&lt;R,FunctorSize&gt; &gt; fc::task&lt; R, FunctorSize &gt;::ptr</definition>
+        <argsstring></argsstring>
+        <name>ptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/task.hpp" line="116" column="1" bodyfile="libraries/fc/include/fc/thread/task.hpp" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classfc_1_1task_1ae628bad8e241c6af7c88a87ea871bc49" prot="private" static="no" mutable="no">
+        <type>char</type>
+        <definition>char fc::task&lt; R, FunctorSize &gt;::_functor[FunctorSize]</definition>
+        <argsstring>[FunctorSize]</argsstring>
+        <name>_functor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/task.hpp" line="138" column="1" bodyfile="libraries/fc/include/fc/thread/task.hpp" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfc_1_1task_1a8cf0308911809beebbe3c16fac039363" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual fc::task&lt; R, FunctorSize &gt;::~task</definition>
+        <argsstring>()</argsstring>
+        <name>~task</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/task.hpp" line="118" column="1" bodyfile="libraries/fc/include/fc/thread/task.hpp" bodystart="118" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1task_1a82653ae65a8fd1d6640fbac24ad4358e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void fc::task&lt; R, FunctorSize &gt;::cancel</definition>
+        <argsstring>(const char *reason FC_CANCELATION_REASON_DEFAULT_ARG) override</argsstring>
+        <name>cancel</name>
+        <reimplements refid="classfc_1_1task__base_1a64b4d2fd1ad11728a8bc2438095a52e0">cancel</reimplements>
+        <param>
+          <type>const char *reason</type>
+          <declname>FC_CANCELATION_REASON_DEFAULT_ARG</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/task.hpp" line="125" column="1" bodyfile="libraries/fc/include/fc/thread/task.hpp" bodystart="125" bodyend="125"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classfc_1_1task_1a949bfc2763cb8de0e64894f2eede3000" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Functor</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classfc_1_1promise__base_1a981f5f6eb5de005018991933ca06580d" kindref="member">ptr</ref></type>
+        <definition>static ptr fc::task&lt; R, FunctorSize &gt;::create</definition>
+        <argsstring>(Functor &amp;&amp;f, const char *desc)</argsstring>
+        <name>create</name>
+        <param>
+          <type>Functor &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>desc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/task.hpp" line="121" column="1" bodyfile="libraries/fc/include/fc/thread/task.hpp" bodystart="121" bodyend="124"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classfc_1_1task_1a3ba1770158880b9934d609e6e7e1d360" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Functor</type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>fc::task&lt; R, FunctorSize &gt;::task</definition>
+        <argsstring>(Functor &amp;&amp;f, const char *desc)</argsstring>
+        <name>task</name>
+        <param>
+          <type>Functor &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>desc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/task.hpp" line="128" column="1" bodyfile="libraries/fc/include/fc/thread/task.hpp" bodystart="128" bodyend="136"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="5124">
+        <label>fc::promise&lt; R &gt;</label>
+        <link refid="classfc_1_1promise"/>
+        <childnode refid="5122" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5121">
+        <label>fc::task_base</label>
+        <link refid="classfc_1_1task__base"/>
+        <childnode refid="5122" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5120">
+        <label>fc::task&lt; R, FunctorSize &gt;</label>
+        <link refid="classfc_1_1task"/>
+        <childnode refid="5121" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5124" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5123">
+        <label>std::enable_shared_from_this&lt; promise_base &gt;</label>
+      </node>
+      <node id="5122">
+        <label>fc::promise_base</label>
+        <link refid="classfc_1_1promise__base"/>
+        <childnode refid="5123" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="5132">
+        <label>fc::thread</label>
+        <link refid="classfc_1_1thread"/>
+      </node>
+      <node id="5135">
+        <label>fc::optional&lt; R &gt;</label>
+        <link refid="classfc_1_1optional"/>
+      </node>
+      <node id="5133">
+        <label>fc::time_point</label>
+        <link refid="classfc_1_1time__point"/>
+      </node>
+      <node id="5134">
+        <label>fc::promise&lt; R &gt;</label>
+        <link refid="classfc_1_1promise"/>
+        <childnode refid="5127" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5135" relation="usage">
+          <edgelabel>result</edgelabel>
+        </childnode>
+      </node>
+      <node id="5130">
+        <label>fc::fwd&lt; fc::spin_lock, 8 &gt;</label>
+        <link refid="classfc_1_1fwd"/>
+      </node>
+      <node id="5126">
+        <label>fc::task_base</label>
+        <link refid="classfc_1_1task__base"/>
+        <childnode refid="5127" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5126" relation="usage">
+          <edgelabel>_next</edgelabel>
+        </childnode>
+        <childnode refid="5129" relation="usage">
+          <edgelabel>_prio</edgelabel>
+        </childnode>
+        <childnode refid="5130" relation="usage">
+          <edgelabel>_spinlock</edgelabel>
+        </childnode>
+        <childnode refid="5131" relation="usage">
+          <edgelabel>_active_context</edgelabel>
+        </childnode>
+        <childnode refid="5133" relation="usage">
+          <edgelabel>_when</edgelabel>
+        </childnode>
+      </node>
+      <node id="5131">
+        <label>fc::context</label>
+        <link refid="structfc_1_1context"/>
+        <childnode refid="5126" relation="usage">
+          <edgelabel>cur_task</edgelabel>
+        </childnode>
+        <childnode refid="5129" relation="usage">
+          <edgelabel>prio</edgelabel>
+        </childnode>
+        <childnode refid="5132" relation="usage">
+          <edgelabel>ctx_thread</edgelabel>
+        </childnode>
+        <childnode refid="5131" relation="usage">
+          <edgelabel>next_blocked_mutex</edgelabel>
+          <edgelabel>next</edgelabel>
+          <edgelabel>caller_context</edgelabel>
+          <edgelabel>next_blocked</edgelabel>
+        </childnode>
+        <childnode refid="5133" relation="usage">
+          <edgelabel>resume_time</edgelabel>
+        </childnode>
+      </node>
+      <node id="5129">
+        <label>fc::priority</label>
+        <link refid="classfc_1_1priority"/>
+      </node>
+      <node id="5125">
+        <label>fc::task&lt; R, FunctorSize &gt;</label>
+        <link refid="classfc_1_1task"/>
+        <childnode refid="5126" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5134" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5128">
+        <label>std::enable_shared_from_this&lt; promise_base &gt;</label>
+      </node>
+      <node id="5127">
+        <label>fc::promise_base</label>
+        <link refid="classfc_1_1promise__base"/>
+        <childnode refid="5128" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="libraries/fc/include/fc/thread/task.hpp" line="114" column="1" bodyfile="libraries/fc/include/fc/thread/task.hpp" bodystart="114" bodyend="139"/>
+    <listofallmembers>
+      <member refid="classfc_1_1task__base_1aefaec2571643ac1efd3c3d49bdc845cb" prot="protected" virt="non-virtual"><scope>fc::task</scope><name>_active_context</name></member>
+      <member refid="classfc_1_1promise__base_1a11f63028c05408c07cd9281171af6001" prot="protected" virt="non-virtual"><scope>fc::task</scope><name>_cancellation_reason</name></member>
+      <member refid="classfc_1_1promise__base_1a2db0a2f3139577fcb7f5f82dc85f8534" prot="protected" virt="non-virtual"><scope>fc::task</scope><name>_dequeue_thread</name></member>
+      <member refid="classfc_1_1task__base_1a829e96413662f82a99c06cec11ee402c" prot="protected" virt="non-virtual"><scope>fc::task</scope><name>_destroy_functor</name></member>
+      <member refid="classfc_1_1promise__base_1a6a87975a31dd58f11e1b62ae28eb5f83" prot="protected" virt="non-virtual"><scope>fc::task</scope><name>_enqueue_thread</name></member>
+      <member refid="classfc_1_1task_1ae628bad8e241c6af7c88a87ea871bc49" prot="private" virt="non-virtual"><scope>fc::task</scope><name>_functor</name></member>
+      <member refid="classfc_1_1task__base_1aef79bbec2637fc1605529bf1cc703446" prot="protected" virt="non-virtual"><scope>fc::task</scope><name>_next</name></member>
+      <member refid="classfc_1_1promise__base_1a320d282323c9805b6387a7b7ea6dcd79" prot="protected" virt="non-virtual"><scope>fc::task</scope><name>_notify</name></member>
+      <member refid="classfc_1_1promise__base_1ab0d96cf4e63f9ede926e779149c16d1e" prot="protected" virt="non-virtual"><scope>fc::task</scope><name>_on_complete</name></member>
+      <member refid="classfc_1_1task__base_1a1ce52945a93866495b8221182b339676" prot="protected" virt="non-virtual"><scope>fc::task</scope><name>_posted_num</name></member>
+      <member refid="classfc_1_1task__base_1a3195ee5599bf11c9094c79aa0852f99b" prot="protected" virt="non-virtual"><scope>fc::task</scope><name>_prio</name></member>
+      <member refid="classfc_1_1task__base_1ad57a67a331a9df6f58b8e3e915bbd7ee" prot="protected" virt="non-virtual"><scope>fc::task</scope><name>_promise_impl</name></member>
+      <member refid="classfc_1_1task__base_1a2ffe6f99f990462860e74fe0ea98cd80" prot="protected" virt="non-virtual"><scope>fc::task</scope><name>_run_functor</name></member>
+      <member refid="classfc_1_1task__base_1afc3600277fb6f0487d8570e866bf12b2" prot="protected" virt="non-virtual"><scope>fc::task</scope><name>_set_active_context</name></member>
+      <member refid="classfc_1_1promise__base_1a1c0586c58e083c299cfe212080e42212" prot="protected" virt="non-virtual"><scope>fc::task</scope><name>_set_timeout</name></member>
+      <member refid="classfc_1_1promise__base_1af1b26ac27dbdfe255b4d44c98ac0bde8" prot="protected" virt="non-virtual"><scope>fc::task</scope><name>_set_value</name></member>
+      <member refid="classfc_1_1task__base_1aeaf7f27ad93d9d920ef07373a66bb727" prot="protected" virt="non-virtual"><scope>fc::task</scope><name>_spinlock</name></member>
+      <member refid="classfc_1_1task__base_1a55a8a9920ee4ba9b90818958fef9793c" prot="protected" virt="non-virtual"><scope>fc::task</scope><name>_task_specific_data</name></member>
+      <member refid="classfc_1_1promise__base_1a75479ef52e8d8e2a6770bef9b4b281dc" prot="protected" virt="non-virtual"><scope>fc::task</scope><name>_wait</name></member>
+      <member refid="classfc_1_1promise__base_1a4a2aa31afeaf26faaff3d1799435f4d4" prot="protected" virt="non-virtual"><scope>fc::task</scope><name>_wait_until</name></member>
+      <member refid="classfc_1_1task__base_1af69949c93190c281cfd6887b39cd2e5b" prot="protected" virt="non-virtual"><scope>fc::task</scope><name>_when</name></member>
+      <member refid="classfc_1_1task_1a82653ae65a8fd1d6640fbac24ad4358e" prot="public" virt="virtual"><scope>fc::task</scope><name>cancel</name></member>
+      <member refid="classfc_1_1promise__base_1aa2defa3c6bb9cf9a6f0a1e38b1b8a475" prot="public" virt="non-virtual"><scope>fc::task</scope><name>canceled</name></member>
+      <member refid="classfc_1_1task__base_1a83c6b88bc9a517544959885f8c47cd0b" prot="protected" virt="non-virtual"><scope>fc::task</scope><name>cleanup_task_specific_data</name></member>
+      <member refid="classfc_1_1task_1a949bfc2763cb8de0e64894f2eede3000" prot="public" virt="non-virtual"><scope>fc::task</scope><name>create</name></member>
+      <member refid="classfc_1_1promise_1aea1eedc4d2baf928b35a69eba569cdd2" prot="public" virt="non-virtual" ambiguityscope="promise&lt; R &gt;::"><scope>fc::task</scope><name>create</name></member>
+      <member refid="classfc_1_1promise_1a312c47f89eaaabe5737b89efd5ee87e2" prot="public" virt="non-virtual" ambiguityscope="promise&lt; R &gt;::"><scope>fc::task</scope><name>create</name></member>
+      <member refid="classfc_1_1promise_1a45f8130cf579b72aa9236b728e6dbcb4" prot="public" virt="non-virtual" ambiguityscope="promise&lt; R &gt;::"><scope>fc::task</scope><name>create</name></member>
+      <member refid="classfc_1_1promise__base_1a169688ce87883c5483c5d6e0d7ae84d0" prot="public" virt="non-virtual"><scope>fc::task</scope><name>error</name></member>
+      <member refid="classfc_1_1promise__base_1ae2f98357966b2fbecbf35736ef904bea" prot="public" virt="non-virtual"><scope>fc::task</scope><name>get_desc</name></member>
+      <member refid="classfc_1_1promise_1a0006a67d05e17baf042e25b08889541f" prot="public" virt="non-virtual"><scope>fc::task</scope><name>on_complete</name></member>
+      <member refid="classfc_1_1promise_1a86646178b0df4d22b81a8e1b326a8173" prot="protected" virt="non-virtual"><scope>fc::task</scope><name>promise</name></member>
+      <member refid="classfc_1_1promise_1a62f3f34ae0f91fa866889ecfc90152e6" prot="protected" virt="non-virtual"><scope>fc::task</scope><name>promise</name></member>
+      <member refid="classfc_1_1promise_1af12b943b41091c5282c4015bb7cd0014" prot="protected" virt="non-virtual"><scope>fc::task</scope><name>promise</name></member>
+      <member refid="classfc_1_1promise__base_1adea93b6fbaa0f0e832d331bde7314bea" prot="protected" virt="non-virtual"><scope>fc::task</scope><name>promise_base</name></member>
+      <member refid="classfc_1_1task_1ad47b969b3fe6d0cc51c0289bf8b69e40" prot="public" virt="non-virtual"><scope>fc::task</scope><name>ptr</name></member>
+      <member refid="classfc_1_1promise__base_1a6090bb47228cded5eb9319b7e81726b3" prot="public" virt="non-virtual"><scope>fc::task</scope><name>ready</name></member>
+      <member refid="classfc_1_1task__base_1a413bffca4b6ef32ba8190b5d25a39677" prot="public" virt="non-virtual"><scope>fc::task</scope><name>release</name></member>
+      <member refid="classfc_1_1promise_1a4f890afd6fb589d0e76359d71182166a" prot="protected" virt="non-virtual"><scope>fc::task</scope><name>result</name></member>
+      <member refid="classfc_1_1task__base_1a393410abe6c551a9c5d6d2f8ec64fe18" prot="public" virt="non-virtual"><scope>fc::task</scope><name>retain</name></member>
+      <member refid="classfc_1_1task__base_1a139cba0f6e55189152a327559589ac35" prot="public" virt="non-virtual"><scope>fc::task</scope><name>run</name></member>
+      <member refid="classfc_1_1task__base_1a52d7729494a725f955ceeda38f28a597" prot="protected" virt="non-virtual"><scope>fc::task</scope><name>run_impl</name></member>
+      <member refid="classfc_1_1promise__base_1a3119bcaac019e31280151b19c3f6aa72" prot="public" virt="non-virtual"><scope>fc::task</scope><name>set_exception</name></member>
+      <member refid="classfc_1_1promise_1a49310e3ebfedef61b19309c2af3a13da" prot="public" virt="non-virtual"><scope>fc::task</scope><name>set_value</name></member>
+      <member refid="classfc_1_1promise_1a48db53880b5b7e93e41f1670f181965d" prot="public" virt="non-virtual"><scope>fc::task</scope><name>set_value</name></member>
+      <member refid="classfc_1_1task_1a3ba1770158880b9934d609e6e7e1d360" prot="private" virt="non-virtual"><scope>fc::task</scope><name>task</name></member>
+      <member refid="classfc_1_1task__base_1a1f3e0b1e23f2dff5336cd16f701e345a" prot="protected" virt="non-virtual"><scope>fc::task</scope><name>task_base</name></member>
+      <member refid="classfc_1_1promise_1a1a4717cfbf9cce193fe2813cb0800a29" prot="public" virt="non-virtual"><scope>fc::task</scope><name>wait</name></member>
+      <member refid="classfc_1_1promise_1a703194a66c51cf4cbd5ab06b64d9f20a" prot="public" virt="non-virtual"><scope>fc::task</scope><name>wait_until</name></member>
+      <member refid="classfc_1_1promise_1a521ecf999c9954b2e9d30e5d4850bf8a" prot="public" virt="virtual"><scope>fc::task</scope><name>~promise</name></member>
+      <member refid="classfc_1_1promise__base_1ac9c941e4d650683268f8a12ec13edc86" prot="public" virt="virtual"><scope>fc::task</scope><name>~promise_base</name></member>
+      <member refid="classfc_1_1task_1a8cf0308911809beebbe3c16fac039363" prot="public" virt="virtual"><scope>fc::task</scope><name>~task</name></member>
+      <member refid="classfc_1_1task__base_1ae579645ce7de6e1fd6fa64ffa4aad80f" prot="public" virt="virtual"><scope>fc::task</scope><name>~task_base</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -14,6 +14,7 @@
     <innerclass refid="classgraphene_1_1app_1_1crypto__api" prot="public">graphene::app::crypto_api</innerclass>
     <innerclass refid="classgraphene_1_1app_1_1database__api" prot="public">graphene::app::database_api</innerclass>
     <innerclass refid="classgraphene_1_1app_1_1database__api__impl" prot="public">graphene::app::database_api_impl</innerclass>
+    <innerclass refid="structgraphene_1_1app_1_1extended__asset__object" prot="public">graphene::app::extended_asset_object</innerclass>
     <innerclass refid="structgraphene_1_1app_1_1full__account" prot="public">graphene::app::full_account</innerclass>
     <innerclass refid="structgraphene_1_1app_1_1get__required__fees__helper" prot="public">graphene::app::get_required_fees_helper</innerclass>
     <innerclass refid="classgraphene_1_1app_1_1history__api" prot="public">graphene::app::history_api</innerclass>
@@ -63,18 +64,18 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
-      <memberdef kind="typedef" id="namespacegraphene_1_1app_1a68cce708efd2be5859a5e75899e3f4f1" prot="public" static="no">
-        <type>boost::multiprecision::uint256_t</type>
-        <definition>typedef boost::multiprecision::uint256_t graphene::app::u256</definition>
+      <memberdef kind="typedef" id="namespacegraphene_1_1app_1a26804ee36d39c9a57ef54ba85f3ca894" prot="public" static="no">
+        <type>std::map&lt; std::pair&lt; graphene::chain::asset_id_type, graphene::chain::asset_id_type &gt;, std::vector&lt; <ref refid="classfc_1_1variant" kindref="compound">fc::variant</ref> &gt; &gt;</type>
+        <definition>typedef std::map&lt; std::pair&lt;graphene::chain::asset_id_type, graphene::chain::asset_id_type&gt;, std::vector&lt;fc::variant&gt; &gt; graphene::app::market_queue_type</definition>
         <argsstring></argsstring>
-        <name>u256</name>
+        <name>market_queue_type</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/util.hpp" line="35" column="1" bodyfile="libraries/app/include/graphene/app/util.hpp" bodystart="35" bodyend="-1"/>
+        <location file="libraries/app/database_api_impl.hxx" line="34" column="1" bodyfile="libraries/app/database_api_impl.hxx" bodystart="34" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -84,7 +85,7 @@
         <argsstring>(const fc::path &amp;data_dir, const bpo::options_description &amp;cfg_options, bpo::variables_map &amp;options)</argsstring>
         <name>load_configuration_options</name>
         <param>
-          <type>const fc::path &amp;</type>
+          <type>const <ref refid="classfc_1_1path" kindref="compound">fc::path</ref> &amp;</type>
           <declname>data_dir</declname>
         </param>
         <param>
@@ -109,7 +110,7 @@
         <argsstring>(const fc::path &amp;data_dir, const boost::program_options::options_description &amp;cfg_options, boost::program_options::variables_map &amp;options)</argsstring>
         <name>load_configuration_options</name>
         <param>
-          <type>const fc::path &amp;</type>
+          <type>const <ref refid="classfc_1_1path" kindref="compound">fc::path</ref> &amp;</type>
           <declname>data_dir</declname>
         </param>
         <param>
@@ -128,47 +129,13 @@
         </inbodydescription>
         <location file="libraries/app/include/graphene/app/config_util.hpp" line="31" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="namespacegraphene_1_1app_1a8235359fc02af7a350bb55033b850dd8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="namespacegraphene_1_1app_1a68cce708efd2be5859a5e75899e3f4f1" kindref="member">u256</ref></type>
-        <definition>u256 graphene::app::to256</definition>
-        <argsstring>(const fc::uint128 &amp;t)</argsstring>
-        <name>to256</name>
-        <param>
-          <type>const fc::uint128 &amp;</type>
-          <declname>t</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="libraries/app/include/graphene/app/util.hpp" line="37" column="1" bodyfile="libraries/app/util.cpp" bodystart="30" bodyend="36"/>
-      </memberdef>
-      <memberdef kind="function" id="namespacegraphene_1_1app_1af047f47d42f0057b71b692a49d87051b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>fc::uint128</type>
-        <definition>fc::uint128 graphene::app::to_capped128</definition>
-        <argsstring>(const u256 &amp;t)</argsstring>
-        <name>to_capped128</name>
-        <param>
-          <type>const <ref refid="namespacegraphene_1_1app_1a68cce708efd2be5859a5e75899e3f4f1" kindref="member">u256</ref> &amp;</type>
-          <declname>t</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="libraries/app/include/graphene/app/util.hpp" line="38" column="1" bodyfile="libraries/app/util.cpp" bodystart="38" bodyend="52"/>
-      </memberdef>
-      <memberdef kind="function" id="namespacegraphene_1_1app_1ac983e2615e3c4305778d61b9f0c4450a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>string</type>
-        <definition>string graphene::app::uint128_amount_to_string</definition>
-        <argsstring>(const fc::uint128 &amp;amount, const uint8_t precision)</argsstring>
+      <memberdef kind="function" id="namespacegraphene_1_1app_1acbd852a2885fb5bd35312a04bf192bd0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string graphene::app::uint128_amount_to_string</definition>
+        <argsstring>(const fc::uint128_t &amp;amount, const uint8_t precision)</argsstring>
         <name>uint128_amount_to_string</name>
         <param>
-          <type>const fc::uint128 &amp;</type>
+          <type>const fc::uint128_t &amp;</type>
           <declname>amount</declname>
         </param>
         <param>
@@ -181,15 +148,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/util.hpp" line="39" column="1" bodyfile="libraries/app/util.cpp" bodystart="54" bodyend="78"/>
+        <location file="libraries/app/include/graphene/app/util.hpp" line="37" column="1" bodyfile="libraries/app/util.cpp" bodystart="42" bodyend="66"/>
       </memberdef>
-      <memberdef kind="function" id="namespacegraphene_1_1app_1aa5c778a6ce322d86a92a25bceeeffdd2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>string</type>
-        <definition>string graphene::app::price_to_string</definition>
-        <argsstring>(const price &amp;_price, const uint8_t base_precision, const uint8_t quote_precision)</argsstring>
+      <memberdef kind="function" id="namespacegraphene_1_1app_1a7dfa3f93151c8127c89ab6e5dcd3cdf6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string graphene::app::price_to_string</definition>
+        <argsstring>(const graphene::protocol::price &amp;_price, const uint8_t base_precision, const uint8_t quote_precision)</argsstring>
         <name>price_to_string</name>
         <param>
-          <type>const <ref refid="structgraphene_1_1protocol_1_1price" kindref="compound">price</ref> &amp;</type>
+          <type>const <ref refid="structgraphene_1_1protocol_1_1price" kindref="compound">graphene::protocol::price</ref> &amp;</type>
           <declname>_price</declname>
         </param>
         <param>
@@ -206,19 +173,44 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/util.hpp" line="40" column="1" bodyfile="libraries/app/util.cpp" bodystart="80" bodyend="100"/>
+        <location file="libraries/app/include/graphene/app/util.hpp" line="38" column="1" bodyfile="libraries/app/util.cpp" bodystart="68" bodyend="90"/>
       </memberdef>
-      <memberdef kind="function" id="namespacegraphene_1_1app_1a4960f0d94097a5cda651acec71c461ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>string</type>
-        <definition>string graphene::app::price_diff_percent_string</definition>
-        <argsstring>(const price &amp;old_price, const price &amp;new_price)</argsstring>
+      <memberdef kind="function" id="namespacegraphene_1_1app_1ab0735634d911657e6f34b4734dfeaf0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string graphene::app::price_to_string</definition>
+        <argsstring>(const graphene::protocol::price &amp;_price, const graphene::chain::asset_object &amp;_base, const graphene::chain::asset_object &amp;_quote)</argsstring>
+        <name>price_to_string</name>
+        <param>
+          <type>const <ref refid="structgraphene_1_1protocol_1_1price" kindref="compound">graphene::protocol::price</ref> &amp;</type>
+          <declname>_price</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classgraphene_1_1chain_1_1asset__object" kindref="compound">graphene::chain::asset_object</ref> &amp;</type>
+          <declname>_base</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classgraphene_1_1chain_1_1asset__object" kindref="compound">graphene::chain::asset_object</ref> &amp;</type>
+          <declname>_quote</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/app/include/graphene/app/util.hpp" line="41" column="1" bodyfile="libraries/app/util.cpp" bodystart="92" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacegraphene_1_1app_1a80b57dd51b4fdd0f9cce94a056f74cb7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string graphene::app::price_diff_percent_string</definition>
+        <argsstring>(const graphene::protocol::price &amp;old_price, const graphene::protocol::price &amp;new_price)</argsstring>
         <name>price_diff_percent_string</name>
         <param>
-          <type>const <ref refid="structgraphene_1_1protocol_1_1price" kindref="compound">price</ref> &amp;</type>
+          <type>const <ref refid="structgraphene_1_1protocol_1_1price" kindref="compound">graphene::protocol::price</ref> &amp;</type>
           <declname>old_price</declname>
         </param>
         <param>
-          <type>const <ref refid="structgraphene_1_1protocol_1_1price" kindref="compound">price</ref> &amp;</type>
+          <type>const <ref refid="structgraphene_1_1protocol_1_1price" kindref="compound">graphene::protocol::price</ref> &amp;</type>
           <declname>new_price</declname>
         </param>
         <briefdescription>
@@ -227,13 +219,30 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/util.hpp" line="41" column="1" bodyfile="libraries/app/util.cpp" bodystart="102" bodyend="159"/>
+        <location file="libraries/app/include/graphene/app/util.hpp" line="44" column="1" bodyfile="libraries/app/util.cpp" bodystart="104" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacegraphene_1_1app_1ab254b54cd162bbf71a38361cc20610da" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>fc::uint128_t</type>
+        <definition>static fc::uint128_t graphene::app::to_capped_128</definition>
+        <argsstring>(const uint256_t &amp;t)</argsstring>
+        <name>to_capped_128</name>
+        <param>
+          <type>const uint256_t &amp;</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/app/util.cpp" line="35" column="1" bodyfile="libraries/app/util.cpp" bodystart="35" bodyend="40"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="libraries/app/api.cpp" line="54" column="1"/>
+    <location file="libraries/app/api.cpp" line="55" column="1"/>
   </compounddef>
 </doxygen>

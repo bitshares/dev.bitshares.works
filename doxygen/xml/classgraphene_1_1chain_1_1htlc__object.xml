@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="classgraphene_1_1chain_1_1htlc__object" kind="class" language="C++" prot="public">
     <compoundname>graphene::chain::htlc_object</compoundname>
-    <basecompoundref prot="public" virt="non-virtual">graphene::db::abstract_object&lt; htlc_object &gt;</basecompoundref>
+    <basecompoundref refid="classgraphene_1_1db_1_1abstract__object" prot="public" virt="non-virtual">graphene::db::abstract_object&lt; htlc_object &gt;</basecompoundref>
     <includes refid="htlc__object_8hpp" local="no">htlc_object.hpp</includes>
     <innerclass refid="structgraphene_1_1chain_1_1htlc__object_1_1condition__info" prot="public">graphene::chain::htlc_object::condition_info</innerclass>
     <innerclass refid="structgraphene_1_1chain_1_1htlc__object_1_1from__extractor" prot="public">graphene::chain::htlc_object::from_extractor</innerclass>
@@ -72,73 +72,117 @@
     <detaileddescription>
 <para>This object is stored in the database while an HTLC is active. The HTLC will become inactive at expiration or when unlocked via the preimage. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="2494">
+      <node id="3442">
         <label>graphene::db::abstract_object&lt; htlc_object &gt;</label>
+        <link refid="classgraphene_1_1db_1_1abstract__object"/>
+        <childnode refid="3443" relation="public-inheritance">
+        </childnode>
       </node>
-      <node id="2493">
+      <node id="3441">
         <label>graphene::chain::htlc_object</label>
         <link refid="classgraphene_1_1chain_1_1htlc__object"/>
-        <childnode refid="2494" relation="public-inheritance">
+        <childnode refid="3442" relation="public-inheritance">
         </childnode>
+      </node>
+      <node id="3443">
+        <label>graphene::db::object</label>
+        <link refid="classgraphene_1_1db_1_1object"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="2501">
-        <label>time_point_sec</label>
-      </node>
-      <node id="2496">
+      <node id="3445">
         <label>graphene::db::abstract_object&lt; htlc_object &gt;</label>
+        <link refid="classgraphene_1_1db_1_1abstract__object"/>
+        <childnode refid="3446" relation="public-inheritance">
+        </childnode>
       </node>
-      <node id="2502">
+      <node id="3453">
         <label>graphene::chain::htlc_object::condition_info::hash_lock_info</label>
         <link refid="structgraphene_1_1chain_1_1htlc__object_1_1condition__info_1_1hash__lock__info"/>
+        <childnode refid="3454" relation="usage">
+          <edgelabel>preimage_hash</edgelabel>
+        </childnode>
       </node>
-      <node id="2500">
+      <node id="3451">
         <label>graphene::chain::htlc_object::condition_info::time_lock_info</label>
         <link refid="structgraphene_1_1chain_1_1htlc__object_1_1condition__info_1_1time__lock__info"/>
-        <childnode refid="2501" relation="usage">
+        <childnode refid="3452" relation="usage">
           <edgelabel>expiration</edgelabel>
         </childnode>
       </node>
-      <node id="2497">
+      <node id="3448">
         <label>graphene::chain::htlc_object::transfer_info</label>
         <link refid="structgraphene_1_1chain_1_1htlc__object_1_1transfer__info"/>
-        <childnode refid="2498" relation="usage">
+        <childnode refid="3449" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
       </node>
-      <node id="2495">
+      <node id="3444">
         <label>graphene::chain::htlc_object</label>
         <link refid="classgraphene_1_1chain_1_1htlc__object"/>
-        <childnode refid="2496" relation="public-inheritance">
+        <childnode refid="3445" relation="public-inheritance">
         </childnode>
-        <childnode refid="2497" relation="usage">
+        <childnode refid="3448" relation="usage">
           <edgelabel>transfer</edgelabel>
         </childnode>
-        <childnode refid="2499" relation="usage">
+        <childnode refid="3450" relation="usage">
           <edgelabel>conditions</edgelabel>
         </childnode>
       </node>
-      <node id="2499">
+      <node id="3454">
+        <label>fc::static_variant&lt; htlc_algo_ripemd160, htlc_algo_sha1, htlc_algo_sha256 &gt;</label>
+        <link refid="classfc_1_1static__variant"/>
+        <childnode refid="3455" relation="usage">
+          <edgelabel>storage</edgelabel>
+        </childnode>
+      </node>
+      <node id="3449">
+        <label>fc::safe&lt; int64_t &gt;</label>
+        <link refid="structfc_1_1safe"/>
+      </node>
+      <node id="3452">
+        <label>fc::time_point_sec</label>
+        <link refid="classfc_1_1time__point__sec"/>
+      </node>
+      <node id="3450">
         <label>graphene::chain::htlc_object::condition_info</label>
         <link refid="structgraphene_1_1chain_1_1htlc__object_1_1condition__info"/>
-        <childnode refid="2500" relation="usage">
+        <childnode refid="3451" relation="usage">
           <edgelabel>time_lock</edgelabel>
         </childnode>
-        <childnode refid="2502" relation="usage">
+        <childnode refid="3453" relation="usage">
           <edgelabel>hash_lock</edgelabel>
         </childnode>
       </node>
-      <node id="2498">
-        <label>safe&lt; int64_t &gt;</label>
+      <node id="3447">
+        <label>graphene::db::object_id_type</label>
+        <link refid="structgraphene_1_1db_1_1object__id__type"/>
+      </node>
+      <node id="3455">
+        <label>fc::impl::dynamic_storage</label>
+        <link refid="classfc_1_1impl_1_1dynamic__storage"/>
+      </node>
+      <node id="3446">
+        <label>graphene::db::object</label>
+        <link refid="classgraphene_1_1db_1_1object"/>
+        <childnode refid="3447" relation="usage">
+          <edgelabel>id</edgelabel>
+        </childnode>
       </node>
     </collaborationgraph>
     <location file="libraries/chain/include/graphene/chain/htlc_object.hpp" line="40" column="1" bodyfile="libraries/chain/include/graphene/chain/htlc_object.hpp" bodystart="40" bodyend="85"/>
     <listofallmembers>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1a189144fd7eef0317898bc83b30b143c6" prot="public" virt="virtual"><scope>graphene::chain::htlc_object</scope><name>clone</name></member>
       <member refid="classgraphene_1_1chain_1_1htlc__object_1ad574e7e681d94e0c65c3be5bc35b9500" prot="public" virt="non-virtual"><scope>graphene::chain::htlc_object</scope><name>conditions</name></member>
+      <member refid="classgraphene_1_1db_1_1object_1a2ce812569d565a45dda1420cfbdf79ad" prot="public" virt="non-virtual"><scope>graphene::chain::htlc_object</scope><name>id</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1ad7329292e8fa9035cf2596d72c4868b5" prot="public" virt="virtual"><scope>graphene::chain::htlc_object</scope><name>move_from</name></member>
+      <member refid="classgraphene_1_1db_1_1object_1a64864992a46d9d52836afe1a52a2e394" prot="public" virt="non-virtual"><scope>graphene::chain::htlc_object</scope><name>object</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1a792a9c05cfe1cf7628cb6f8c4a65b0f7" prot="public" virt="virtual"><scope>graphene::chain::htlc_object</scope><name>pack</name></member>
       <member refid="classgraphene_1_1chain_1_1htlc__object_1a4811b91adcc46453979d47dbf5e0330f" prot="public" virt="non-virtual"><scope>graphene::chain::htlc_object</scope><name>space_id</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1a6f0f2e9eb0399057ff3334bf328b5007" prot="public" virt="virtual"><scope>graphene::chain::htlc_object</scope><name>to_variant</name></member>
       <member refid="classgraphene_1_1chain_1_1htlc__object_1afae31794067be0d970ed6ee719ad53da" prot="public" virt="non-virtual"><scope>graphene::chain::htlc_object</scope><name>transfer</name></member>
       <member refid="classgraphene_1_1chain_1_1htlc__object_1a22617dafd9557b3bff40c3d0463b168d" prot="public" virt="non-virtual"><scope>graphene::chain::htlc_object</scope><name>type_id</name></member>
+      <member refid="classgraphene_1_1db_1_1object_1ac457a859418c22014c07a3bcdc67ed04" prot="public" virt="virtual"><scope>graphene::chain::htlc_object</scope><name>~object</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

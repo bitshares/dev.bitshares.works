@@ -72,7 +72,7 @@
         <location file="libraries/protocol/include/graphene/protocol/withdraw_permission.hpp" line="136" column="1" bodyfile="libraries/protocol/include/graphene/protocol/withdraw_permission.hpp" bodystart="136" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1withdraw__permission__claim__operation_1a35465da9b6d9f53164418118b69e4f66" prot="public" static="no" mutable="no">
-        <type>optional&lt; <ref refid="structgraphene_1_1protocol_1_1memo__data" kindref="compound">memo_data</ref> &gt;</type>
+        <type><ref refid="classfc_1_1optional" kindref="compound">optional</ref>&lt; <ref refid="structgraphene_1_1protocol_1_1memo__data" kindref="compound">memo_data</ref> &gt;</type>
         <definition>optional&lt;memo_data&gt; graphene::protocol::withdraw_permission_claim_operation::memo</definition>
         <argsstring></argsstring>
         <name>memo</name>
@@ -135,45 +135,47 @@
     <detaileddescription>
 <para>Fee is paid by withdraw_to_account, which is required to authorize this operation </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="3736">
+      <node id="5894">
         <label>graphene::protocol::base_operation</label>
         <link refid="structgraphene_1_1protocol_1_1base__operation"/>
       </node>
-      <node id="3735">
+      <node id="5893">
         <label>graphene::protocol::withdraw_permission_claim_operation</label>
         <link refid="structgraphene_1_1protocol_1_1withdraw__permission__claim__operation"/>
-        <childnode refid="3736" relation="public-inheritance">
+        <childnode refid="5894" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="3738">
+      <node id="5899">
+        <label>fc::optional&lt; graphene::protocol::memo_data &gt;</label>
+        <link refid="classfc_1_1optional"/>
+      </node>
+      <node id="5898">
+        <label>fc::safe&lt; int64_t &gt;</label>
+        <link refid="structfc_1_1safe"/>
+      </node>
+      <node id="5896">
         <label>graphene::protocol::base_operation</label>
         <link refid="structgraphene_1_1protocol_1_1base__operation"/>
       </node>
-      <node id="3739">
+      <node id="5897">
         <label>graphene::protocol::asset</label>
         <link refid="structgraphene_1_1protocol_1_1asset"/>
-        <childnode refid="3740" relation="usage">
+        <childnode refid="5898" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
       </node>
-      <node id="3741">
-        <label>optional&lt; graphene::protocol::memo_data &gt;</label>
-      </node>
-      <node id="3740">
-        <label>safe&lt; int64_t &gt;</label>
-      </node>
-      <node id="3737">
+      <node id="5895">
         <label>graphene::protocol::withdraw_permission_claim_operation</label>
         <link refid="structgraphene_1_1protocol_1_1withdraw__permission__claim__operation"/>
-        <childnode refid="3738" relation="public-inheritance">
+        <childnode refid="5896" relation="public-inheritance">
         </childnode>
-        <childnode refid="3739" relation="usage">
+        <childnode refid="5897" relation="usage">
           <edgelabel>fee</edgelabel>
           <edgelabel>amount_to_withdraw</edgelabel>
         </childnode>
-        <childnode refid="3741" relation="usage">
+        <childnode refid="5899" relation="usage">
           <edgelabel>memo</edgelabel>
         </childnode>
       </node>

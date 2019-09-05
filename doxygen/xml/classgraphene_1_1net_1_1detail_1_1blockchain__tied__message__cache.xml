@@ -1,0 +1,190 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classgraphene_1_1net_1_1detail_1_1blockchain__tied__message__cache" kind="class" language="C++" prot="public">
+    <compoundname>graphene::net::detail::blockchain_tied_message_cache</compoundname>
+    <innerclass refid="structgraphene_1_1net_1_1detail_1_1blockchain__tied__message__cache_1_1block__clock__index" prot="private">graphene::net::detail::blockchain_tied_message_cache::block_clock_index</innerclass>
+    <innerclass refid="structgraphene_1_1net_1_1detail_1_1blockchain__tied__message__cache_1_1message__contents__hash__index" prot="private">graphene::net::detail::blockchain_tied_message_cache::message_contents_hash_index</innerclass>
+    <innerclass refid="structgraphene_1_1net_1_1detail_1_1blockchain__tied__message__cache_1_1message__hash__index" prot="private">graphene::net::detail::blockchain_tied_message_cache::message_hash_index</innerclass>
+    <innerclass refid="structgraphene_1_1net_1_1detail_1_1blockchain__tied__message__cache_1_1message__info" prot="private">graphene::net::detail::blockchain_tied_message_cache::message_info</innerclass>
+      <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classgraphene_1_1net_1_1detail_1_1blockchain__tied__message__cache_1a62115f98972b4925e59fcd63c18ce0b5" prot="private" static="no">
+        <type>boost::multi_index_container&lt; message_info, bmi::indexed_by&lt; bmi::ordered_unique&lt; bmi::tag&lt; message_hash_index &gt;, bmi::member&lt; message_info, <ref refid="namespacegraphene_1_1net_1a558c737515532a9589221a0eb9111aec" kindref="member">message_hash_type</ref>, &amp;message_info::message_hash &gt; &gt;, bmi::ordered_non_unique&lt; bmi::tag&lt; message_contents_hash_index &gt;, bmi::member&lt; message_info, <ref refid="namespacefc_1a5d143859f1f34b560f2f2f13d9d078d4" kindref="member">fc::uint160_t</ref>, &amp;message_info::message_contents_hash &gt; &gt;, bmi::ordered_non_unique&lt; bmi::tag&lt; block_clock_index &gt;, bmi::member&lt; message_info, uint32_t, &amp;message_info::block_clock_when_received &gt; &gt; &gt; &gt;</type>
+        <definition>typedef boost::multi_index_container&lt; message_info, bmi::indexed_by&lt; bmi::ordered_unique&lt; bmi::tag&lt;message_hash_index&gt;, bmi::member&lt;message_info, message_hash_type, &amp;message_info::message_hash&gt; &gt;, bmi::ordered_non_unique&lt; bmi::tag&lt;message_contents_hash_index&gt;, bmi::member&lt;message_info, fc::uint160_t, &amp;message_info::message_contents_hash&gt; &gt;, bmi::ordered_non_unique&lt; bmi::tag&lt;block_clock_index&gt;, bmi::member&lt;message_info, uint32_t, &amp;message_info::block_clock_when_received&gt; &gt; &gt; &gt; graphene::net::detail::blockchain_tied_message_cache::message_cache_container</definition>
+        <argsstring></argsstring>
+        <name>message_cache_container</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/node.cpp" line="169" column="1" bodyfile="libraries/net/node.cpp" bodystart="169" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classgraphene_1_1net_1_1detail_1_1blockchain__tied__message__cache_1a4fb0394d62577b701ea52aed8b5117aa" prot="private" static="yes" mutable="no">
+        <type>const uint32_t</type>
+        <definition>const uint32_t graphene::net::detail::blockchain_tied_message_cache::cache_duration_in_blocks</definition>
+        <argsstring></argsstring>
+        <name>cache_duration_in_blocks</name>
+        <initializer>= <ref refid="net_2include_2graphene_2net_2config_8hpp_1a71db3bb2e7076180876b67233ace2303" kindref="member">GRAPHENE_NET_MESSAGE_CACHE_DURATION_IN_BLOCKS</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/node.cpp" line="134" column="1" bodyfile="libraries/net/node.cpp" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classgraphene_1_1net_1_1detail_1_1blockchain__tied__message__cache_1a149627284dccbd374e20db021ac7f5ce" prot="private" static="no" mutable="no">
+        <type>message_cache_container</type>
+        <definition>message_cache_container graphene::net::detail::blockchain_tied_message_cache::_message_cache</definition>
+        <argsstring></argsstring>
+        <name>_message_cache</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/node.cpp" line="171" column="1" bodyfile="libraries/net/node.cpp" bodystart="171" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgraphene_1_1net_1_1detail_1_1blockchain__tied__message__cache_1a012fe3c34f318bbae0dd40d9e73bcffa" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t graphene::net::detail::blockchain_tied_message_cache::block_clock</definition>
+        <argsstring></argsstring>
+        <name>block_clock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/node.cpp" line="173" column="1" bodyfile="libraries/net/node.cpp" bodystart="173" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1blockchain__tied__message__cache_1aaf07fd7f73276ec910e27185a9a3a380" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>graphene::net::detail::blockchain_tied_message_cache::blockchain_tied_message_cache</definition>
+        <argsstring>()</argsstring>
+        <name>blockchain_tied_message_cache</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/node.cpp" line="176" column="1" bodyfile="libraries/net/node.cpp" bodystart="176" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1blockchain__tied__message__cache_1a44c2af34b71307d0b732c3b45ec951eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void graphene::net::detail::blockchain_tied_message_cache::block_accepted</definition>
+        <argsstring>()</argsstring>
+        <name>block_accepted</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/node.cpp" line="179" column="1" bodyfile="libraries/net/node.cpp" bodystart="187" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1blockchain__tied__message__cache_1ae237ac4ff64998933b45d8145b492cb9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void graphene::net::detail::blockchain_tied_message_cache::cache_message</definition>
+        <argsstring>(const message &amp;message_to_cache, const message_hash_type &amp;hash_of_message_to_cache, const message_propagation_data &amp;propagation_data, const fc::uint160_t &amp;message_content_hash)</argsstring>
+        <name>cache_message</name>
+        <param>
+          <type>const <ref refid="structgraphene_1_1net_1_1message" kindref="compound">message</ref> &amp;</type>
+          <declname>message_to_cache</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespacegraphene_1_1net_1a558c737515532a9589221a0eb9111aec" kindref="member">message_hash_type</ref> &amp;</type>
+          <declname>hash_of_message_to_cache</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structgraphene_1_1net_1_1message__propagation__data" kindref="compound">message_propagation_data</ref> &amp;</type>
+          <declname>propagation_data</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespacefc_1a5d143859f1f34b560f2f2f13d9d078d4" kindref="member">fc::uint160_t</ref> &amp;</type>
+          <declname>message_content_hash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/node.cpp" line="180" column="1" bodyfile="libraries/net/node.cpp" bodystart="195" bodyend="205"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1blockchain__tied__message__cache_1a8b384c7dfd709c7122dd5ec42852d6c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structgraphene_1_1net_1_1message" kindref="compound">message</ref></type>
+        <definition>message graphene::net::detail::blockchain_tied_message_cache::get_message</definition>
+        <argsstring>(const message_hash_type &amp;hash_of_message_to_lookup)</argsstring>
+        <name>get_message</name>
+        <param>
+          <type>const <ref refid="namespacegraphene_1_1net_1a558c737515532a9589221a0eb9111aec" kindref="member">message_hash_type</ref> &amp;</type>
+          <declname>hash_of_message_to_lookup</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/node.cpp" line="182" column="1" bodyfile="libraries/net/node.cpp" bodystart="207" bodyend="214"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1blockchain__tied__message__cache_1aed28b4bee20fc4c71f099a585c267f5e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structgraphene_1_1net_1_1message__propagation__data" kindref="compound">message_propagation_data</ref></type>
+        <definition>message_propagation_data graphene::net::detail::blockchain_tied_message_cache::get_message_propagation_data</definition>
+        <argsstring>(const fc::uint160_t &amp;hash_of_message_contents_to_lookup) const</argsstring>
+        <name>get_message_propagation_data</name>
+        <param>
+          <type>const <ref refid="namespacefc_1a5d143859f1f34b560f2f2f13d9d078d4" kindref="member">fc::uint160_t</ref> &amp;</type>
+          <declname>hash_of_message_contents_to_lookup</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/node.cpp" line="183" column="1" bodyfile="libraries/net/node.cpp" bodystart="216" bodyend="226"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1blockchain__tied__message__cache_1a0b5d154b929dd76f1cf736b9e228140f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t graphene::net::detail::blockchain_tied_message_cache::size</definition>
+        <argsstring>() const</argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/node.cpp" line="184" column="1" bodyfile="libraries/net/node.cpp" bodystart="184" bodyend="184"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="libraries/net/node.cpp" line="132" column="1" bodyfile="libraries/net/node.cpp" bodystart="131" bodyend="185"/>
+    <listofallmembers>
+      <member refid="classgraphene_1_1net_1_1detail_1_1blockchain__tied__message__cache_1a149627284dccbd374e20db021ac7f5ce" prot="private" virt="non-virtual"><scope>graphene::net::detail::blockchain_tied_message_cache</scope><name>_message_cache</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1blockchain__tied__message__cache_1a44c2af34b71307d0b732c3b45ec951eb" prot="public" virt="non-virtual"><scope>graphene::net::detail::blockchain_tied_message_cache</scope><name>block_accepted</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1blockchain__tied__message__cache_1a012fe3c34f318bbae0dd40d9e73bcffa" prot="private" virt="non-virtual"><scope>graphene::net::detail::blockchain_tied_message_cache</scope><name>block_clock</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1blockchain__tied__message__cache_1aaf07fd7f73276ec910e27185a9a3a380" prot="public" virt="non-virtual"><scope>graphene::net::detail::blockchain_tied_message_cache</scope><name>blockchain_tied_message_cache</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1blockchain__tied__message__cache_1a4fb0394d62577b701ea52aed8b5117aa" prot="private" virt="non-virtual"><scope>graphene::net::detail::blockchain_tied_message_cache</scope><name>cache_duration_in_blocks</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1blockchain__tied__message__cache_1ae237ac4ff64998933b45d8145b492cb9" prot="public" virt="non-virtual"><scope>graphene::net::detail::blockchain_tied_message_cache</scope><name>cache_message</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1blockchain__tied__message__cache_1a8b384c7dfd709c7122dd5ec42852d6c6" prot="public" virt="non-virtual"><scope>graphene::net::detail::blockchain_tied_message_cache</scope><name>get_message</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1blockchain__tied__message__cache_1aed28b4bee20fc4c71f099a585c267f5e" prot="public" virt="non-virtual"><scope>graphene::net::detail::blockchain_tied_message_cache</scope><name>get_message_propagation_data</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1blockchain__tied__message__cache_1a62115f98972b4925e59fcd63c18ce0b5" prot="private" virt="non-virtual"><scope>graphene::net::detail::blockchain_tied_message_cache</scope><name>message_cache_container</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1blockchain__tied__message__cache_1a0b5d154b929dd76f1cf736b9e228140f" prot="public" virt="non-virtual"><scope>graphene::net::detail::blockchain_tied_message_cache</scope><name>size</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

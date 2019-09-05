@@ -19,7 +19,7 @@
         <location file="libraries/protocol/include/graphene/protocol/confidential.hpp" line="123" column="1" bodyfile="libraries/protocol/include/graphene/protocol/confidential.hpp" bodystart="123" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1stealth__confirmation_1a036c0ddb21551c30e78fd5fe4729e838" prot="public" static="no" mutable="no">
-        <type>optional&lt; <ref refid="structgraphene_1_1protocol_1_1public__key__type" kindref="compound">public_key_type</ref> &gt;</type>
+        <type><ref refid="classfc_1_1optional" kindref="compound">optional</ref>&lt; <ref refid="structgraphene_1_1protocol_1_1public__key__type" kindref="compound">public_key_type</ref> &gt;</type>
         <definition>optional&lt;public_key_type&gt; graphene::protocol::stealth_confirmation::to</definition>
         <argsstring></argsstring>
         <name>to</name>
@@ -95,28 +95,29 @@
     <detaileddescription>
 <para>When sending a stealth tranfer we assume users are unable to scan the full blockchain; therefore, payments require confirmation data to be passed out of band. We assume this out-of-band channel is not secure and therefore the contents of the confirmation must be encrypted. </para>    </detaileddescription>
     <collaborationgraph>
-      <node id="3276">
-        <label>optional&lt; graphene::protocol::public_key_type &gt;</label>
-      </node>
-      <node id="3274">
+      <node id="5093">
         <label>vector&lt; char &gt;</label>
       </node>
-      <node id="3273">
+      <node id="5092">
         <label>graphene::protocol::stealth_confirmation</label>
         <link refid="structgraphene_1_1protocol_1_1stealth__confirmation"/>
-        <childnode refid="3274" relation="usage">
+        <childnode refid="5093" relation="usage">
           <edgelabel>encrypted_memo</edgelabel>
         </childnode>
-        <childnode refid="3275" relation="usage">
+        <childnode refid="5094" relation="usage">
           <edgelabel>one_time_key</edgelabel>
         </childnode>
-        <childnode refid="3276" relation="usage">
+        <childnode refid="5095" relation="usage">
           <edgelabel>to</edgelabel>
         </childnode>
       </node>
-      <node id="3275">
+      <node id="5094">
         <label>graphene::protocol::public_key_type</label>
         <link refid="structgraphene_1_1protocol_1_1public__key__type"/>
+      </node>
+      <node id="5095">
+        <label>fc::optional&lt; graphene::protocol::public_key_type &gt;</label>
+        <link refid="classfc_1_1optional"/>
       </node>
     </collaborationgraph>
     <location file="libraries/protocol/include/graphene/protocol/confidential.hpp" line="103" column="1" bodyfile="libraries/protocol/include/graphene/protocol/confidential.hpp" bodystart="102" bodyend="126"/>

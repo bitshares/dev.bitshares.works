@@ -1,0 +1,486 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classgraphene_1_1net_1_1stcp__socket" kind="class" language="C++" prot="public">
+    <compoundname>graphene::net::stcp_socket</compoundname>
+    <basecompoundref refid="classfc_1_1iostream" prot="public" virt="virtual">fc::iostream</basecompoundref>
+    <includes refid="stcp__socket_8hpp" local="no">stcp_socket.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classgraphene_1_1net_1_1stcp__socket_1a8513eef2568468c64933af6212802844" prot="private" static="no" mutable="no">
+        <type><ref refid="classfc_1_1sha512" kindref="compound">fc::sha512</ref></type>
+        <definition>fc::sha512 graphene::net::stcp_socket::_shared_secret</definition>
+        <argsstring></argsstring>
+        <name>_shared_secret</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/include/graphene/net/stcp_socket.hpp" line="64" column="1" bodyfile="libraries/net/include/graphene/net/stcp_socket.hpp" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgraphene_1_1net_1_1stcp__socket_1a3399eb1656d460422b54704e97af3f32" prot="private" static="no" mutable="no">
+        <type><ref refid="classfc_1_1ecc_1_1private__key" kindref="compound">fc::ecc::private_key</ref></type>
+        <definition>fc::ecc::private_key graphene::net::stcp_socket::_priv_key</definition>
+        <argsstring></argsstring>
+        <name>_priv_key</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/include/graphene/net/stcp_socket.hpp" line="65" column="1" bodyfile="libraries/net/include/graphene/net/stcp_socket.hpp" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgraphene_1_1net_1_1stcp__socket_1a3589abe5391718c8a2e2254557003bc1" prot="private" static="no" mutable="no">
+        <type><ref refid="classfc_1_1tcp__socket" kindref="compound">fc::tcp_socket</ref></type>
+        <definition>fc::tcp_socket graphene::net::stcp_socket::_sock</definition>
+        <argsstring></argsstring>
+        <name>_sock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/include/graphene/net/stcp_socket.hpp" line="66" column="1" bodyfile="libraries/net/include/graphene/net/stcp_socket.hpp" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgraphene_1_1net_1_1stcp__socket_1a46257530bc51a33e84521936c0a79c35" prot="private" static="no" mutable="no">
+        <type><ref refid="classfc_1_1aes__encoder" kindref="compound">fc::aes_encoder</ref></type>
+        <definition>fc::aes_encoder graphene::net::stcp_socket::_send_aes</definition>
+        <argsstring></argsstring>
+        <name>_send_aes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/include/graphene/net/stcp_socket.hpp" line="67" column="1" bodyfile="libraries/net/include/graphene/net/stcp_socket.hpp" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgraphene_1_1net_1_1stcp__socket_1aa4b3385fddb3c91b8fd9c3e1bd33e46d" prot="private" static="no" mutable="no">
+        <type><ref refid="classfc_1_1aes__decoder" kindref="compound">fc::aes_decoder</ref></type>
+        <definition>fc::aes_decoder graphene::net::stcp_socket::_recv_aes</definition>
+        <argsstring></argsstring>
+        <name>_recv_aes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/include/graphene/net/stcp_socket.hpp" line="68" column="1" bodyfile="libraries/net/include/graphene/net/stcp_socket.hpp" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgraphene_1_1net_1_1stcp__socket_1add3b03753cf4726d3918a41c223db1ba" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; char &gt;</type>
+        <definition>std::shared_ptr&lt;char&gt; graphene::net::stcp_socket::_read_buffer</definition>
+        <argsstring></argsstring>
+        <name>_read_buffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/include/graphene/net/stcp_socket.hpp" line="69" column="1" bodyfile="libraries/net/include/graphene/net/stcp_socket.hpp" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgraphene_1_1net_1_1stcp__socket_1a6649eac970311234c50508ba5f907152" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; char &gt;</type>
+        <definition>std::shared_ptr&lt;char&gt; graphene::net::stcp_socket::_write_buffer</definition>
+        <argsstring></argsstring>
+        <name>_write_buffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/include/graphene/net/stcp_socket.hpp" line="70" column="1" bodyfile="libraries/net/include/graphene/net/stcp_socket.hpp" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgraphene_1_1net_1_1stcp__socket_1a44c8d33ff5d5c00b7c69da11ab6e0e5c" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool graphene::net::stcp_socket::_read_buffer_in_use</definition>
+        <argsstring></argsstring>
+        <name>_read_buffer_in_use</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/include/graphene/net/stcp_socket.hpp" line="72" column="1" bodyfile="libraries/net/include/graphene/net/stcp_socket.hpp" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgraphene_1_1net_1_1stcp__socket_1acd27974c4eb3eabc1107dc4b7a48148a" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool graphene::net::stcp_socket::_write_buffer_in_use</definition>
+        <argsstring></argsstring>
+        <name>_write_buffer_in_use</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/include/graphene/net/stcp_socket.hpp" line="73" column="1" bodyfile="libraries/net/include/graphene/net/stcp_socket.hpp" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgraphene_1_1net_1_1stcp__socket_1a4df64c50ef3a4ae776bb868dfd0b1592" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>graphene::net::stcp_socket::stcp_socket</definition>
+        <argsstring>()</argsstring>
+        <name>stcp_socket</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/include/graphene/net/stcp_socket.hpp" line="40" column="1" bodyfile="libraries/net/stcp_socket.cpp" bodystart="39" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1stcp__socket_1ab55d0a5ed264af0840e8b545882aaf3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>graphene::net::stcp_socket::~stcp_socket</definition>
+        <argsstring>()</argsstring>
+        <name>~stcp_socket</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/include/graphene/net/stcp_socket.hpp" line="41" column="1" bodyfile="libraries/net/stcp_socket.cpp" bodystart="47" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1stcp__socket_1a04b9cdf23d11f863190cbe5de277ca3a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classfc_1_1tcp__socket" kindref="compound">fc::tcp_socket</ref> &amp;</type>
+        <definition>fc::tcp_socket&amp; graphene::net::stcp_socket::get_socket</definition>
+        <argsstring>()</argsstring>
+        <name>get_socket</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/include/graphene/net/stcp_socket.hpp" line="42" column="1" bodyfile="libraries/net/include/graphene/net/stcp_socket.hpp" bodystart="42" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1stcp__socket_1a730aa9260e44a0c7edb8adfe5e7acc5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void graphene::net::stcp_socket::accept</definition>
+        <argsstring>()</argsstring>
+        <name>accept</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/include/graphene/net/stcp_socket.hpp" line="43" column="1" bodyfile="libraries/net/stcp_socket.cpp" bodystart="180" bodyend="183"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1stcp__socket_1ab01ab9f977a617146c10f9e66848aa4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void graphene::net::stcp_socket::connect_to</definition>
+        <argsstring>(const fc::ip::endpoint &amp;remote_endpoint)</argsstring>
+        <name>connect_to</name>
+        <param>
+          <type>const <ref refid="classfc_1_1ip_1_1endpoint" kindref="compound">fc::ip::endpoint</ref> &amp;</type>
+          <declname>remote_endpoint</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/include/graphene/net/stcp_socket.hpp" line="45" column="1" bodyfile="libraries/net/stcp_socket.cpp" bodystart="72" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1stcp__socket_1a608bf3e26c036acd35b826e6b0830bc9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void graphene::net::stcp_socket::bind</definition>
+        <argsstring>(const fc::ip::endpoint &amp;local_endpoint)</argsstring>
+        <name>bind</name>
+        <param>
+          <type>const <ref refid="classfc_1_1ip_1_1endpoint" kindref="compound">fc::ip::endpoint</ref> &amp;</type>
+          <declname>local_endpoint</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/include/graphene/net/stcp_socket.hpp" line="46" column="1" bodyfile="libraries/net/stcp_socket.cpp" bodystart="78" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1stcp__socket_1a3da981f7903cdd79873e3fc83377ee45" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>size_t</type>
+        <definition>size_t graphene::net::stcp_socket::readsome</definition>
+        <argsstring>(char *buffer, size_t max)</argsstring>
+        <name>readsome</name>
+        <reimplements refid="classfc_1_1istream_1a2d8500cfafdd8ee8134a6dbe30ffbc57">readsome</reimplements>
+        <param>
+          <type>char *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>max</declname>
+          <defname>len</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This method must read at least 16 bytes at a time from the underlying TCP socket so that it can decrypt them. It will buffer any left-over. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/include/graphene/net/stcp_socket.hpp" line="48" column="1" bodyfile="libraries/net/stcp_socket.cpp" bodystart="88" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1stcp__socket_1ab8427e5a94056717ba509f82e660607e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>size_t</type>
+        <definition>size_t graphene::net::stcp_socket::readsome</definition>
+        <argsstring>(const std::shared_ptr&lt; char &gt; &amp;buf, size_t len, size_t offset)</argsstring>
+        <name>readsome</name>
+        <reimplements refid="classfc_1_1istream_1a1480e604a53bd3f92f44c217a472fed0">readsome</reimplements>
+        <param>
+          <type>const std::shared_ptr&lt; char &gt; &amp;</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/include/graphene/net/stcp_socket.hpp" line="49" column="1" bodyfile="libraries/net/stcp_socket.cpp" bodystart="119" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1stcp__socket_1abe59970072a174e383dca8adbee103d9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool graphene::net::stcp_socket::eof</definition>
+        <argsstring>() const</argsstring>
+        <name>eof</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/include/graphene/net/stcp_socket.hpp" line="50" column="1" bodyfile="libraries/net/stcp_socket.cpp" bodystart="124" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1stcp__socket_1a5afb0c829c6d401ce6a3a751d851486a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>size_t</type>
+        <definition>size_t graphene::net::stcp_socket::writesome</definition>
+        <argsstring>(const char *buffer, size_t len)</argsstring>
+        <name>writesome</name>
+        <reimplements refid="classfc_1_1ostream_1aac50b472ffc544ec0b171c5df21f4505">writesome</reimplements>
+        <param>
+          <type>const char *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>every sizeof(crypt_buf) bytes the aes channel has an error and doesn&apos;t decrypt properly... disable for now because we are going to upgrade to something better.</para>        </inbodydescription>
+        <location file="libraries/net/include/graphene/net/stcp_socket.hpp" line="52" column="1" bodyfile="libraries/net/stcp_socket.cpp" bodystart="129" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1stcp__socket_1aa9664b2d37ede9a3227d1cca79d5c792" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>size_t</type>
+        <definition>size_t graphene::net::stcp_socket::writesome</definition>
+        <argsstring>(const std::shared_ptr&lt; const char &gt; &amp;buf, size_t len, size_t offset)</argsstring>
+        <name>writesome</name>
+        <reimplements refid="classfc_1_1ostream_1acb234eb77ec18eef2c2aeef8f645a862">writesome</reimplements>
+        <param>
+          <type>const std::shared_ptr&lt; const char &gt; &amp;</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/include/graphene/net/stcp_socket.hpp" line="53" column="1" bodyfile="libraries/net/stcp_socket.cpp" bodystart="161" bodyend="164"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1stcp__socket_1aba252057ad2c4ebb769f0810e00f4995" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void graphene::net::stcp_socket::flush</definition>
+        <argsstring>()</argsstring>
+        <name>flush</name>
+        <reimplements refid="classfc_1_1ostream_1af0a9d82410120b00b036462594f05549">flush</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/include/graphene/net/stcp_socket.hpp" line="55" column="1" bodyfile="libraries/net/stcp_socket.cpp" bodystart="166" bodyend="169"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1stcp__socket_1a6acc99736fd33793e614ea47604602dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void graphene::net::stcp_socket::close</definition>
+        <argsstring>()</argsstring>
+        <name>close</name>
+        <reimplements refid="classfc_1_1ostream_1ab0055550951d519b5cf95c2f4d07379c">close</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/include/graphene/net/stcp_socket.hpp" line="56" column="1" bodyfile="libraries/net/stcp_socket.cpp" bodystart="172" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1stcp__socket_1a89e78a66acad2d7a8336dd99e33631ca" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void graphene::net::stcp_socket::get</definition>
+        <argsstring>(char &amp;c)</argsstring>
+        <name>get</name>
+        <param>
+          <type>char &amp;</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/include/graphene/net/stcp_socket.hpp" line="59" column="1" bodyfile="libraries/net/include/graphene/net/stcp_socket.hpp" bodystart="59" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1stcp__socket_1af6e00cd877432a37673f25cb7558dde3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classfc_1_1sha512" kindref="compound">fc::sha512</ref></type>
+        <definition>fc::sha512 graphene::net::stcp_socket::get_shared_secret</definition>
+        <argsstring>() const</argsstring>
+        <name>get_shared_secret</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/include/graphene/net/stcp_socket.hpp" line="60" column="1" bodyfile="libraries/net/include/graphene/net/stcp_socket.hpp" bodystart="60" bodyend="60"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classgraphene_1_1net_1_1stcp__socket_1a91d1117fcefec51495d07ac07a0b93f8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void graphene::net::stcp_socket::do_key_exchange</definition>
+        <argsstring>()</argsstring>
+        <name>do_key_exchange</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/include/graphene/net/stcp_socket.hpp" line="62" column="1" bodyfile="libraries/net/stcp_socket.cpp" bodystart="51" bodyend="69"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Uses ECDH to negotiate a aes key for communicating with other nodes on the network. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="5083">
+        <label>graphene::net::stcp_socket</label>
+        <link refid="classgraphene_1_1net_1_1stcp__socket"/>
+        <childnode refid="5084" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5086">
+        <label>fc::istream</label>
+        <link refid="classfc_1_1istream"/>
+      </node>
+      <node id="5084">
+        <label>fc::iostream</label>
+        <link refid="classfc_1_1iostream"/>
+        <childnode refid="5085" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5086" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5085">
+        <label>fc::ostream</label>
+        <link refid="classfc_1_1ostream"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="5087">
+        <label>graphene::net::stcp_socket</label>
+        <link refid="classgraphene_1_1net_1_1stcp__socket"/>
+        <childnode refid="5088" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5090">
+        <label>fc::istream</label>
+        <link refid="classfc_1_1istream"/>
+      </node>
+      <node id="5088">
+        <label>fc::iostream</label>
+        <link refid="classfc_1_1iostream"/>
+        <childnode refid="5089" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5090" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5089">
+        <label>fc::ostream</label>
+        <link refid="classfc_1_1ostream"/>
+      </node>
+    </collaborationgraph>
+    <location file="libraries/net/include/graphene/net/stcp_socket.hpp" line="38" column="1" bodyfile="libraries/net/include/graphene/net/stcp_socket.hpp" bodystart="37" bodyend="75"/>
+    <listofallmembers>
+      <member refid="classgraphene_1_1net_1_1stcp__socket_1a3399eb1656d460422b54704e97af3f32" prot="private" virt="non-virtual"><scope>graphene::net::stcp_socket</scope><name>_priv_key</name></member>
+      <member refid="classgraphene_1_1net_1_1stcp__socket_1add3b03753cf4726d3918a41c223db1ba" prot="private" virt="non-virtual"><scope>graphene::net::stcp_socket</scope><name>_read_buffer</name></member>
+      <member refid="classgraphene_1_1net_1_1stcp__socket_1a44c8d33ff5d5c00b7c69da11ab6e0e5c" prot="private" virt="non-virtual"><scope>graphene::net::stcp_socket</scope><name>_read_buffer_in_use</name></member>
+      <member refid="classgraphene_1_1net_1_1stcp__socket_1aa4b3385fddb3c91b8fd9c3e1bd33e46d" prot="private" virt="non-virtual"><scope>graphene::net::stcp_socket</scope><name>_recv_aes</name></member>
+      <member refid="classgraphene_1_1net_1_1stcp__socket_1a46257530bc51a33e84521936c0a79c35" prot="private" virt="non-virtual"><scope>graphene::net::stcp_socket</scope><name>_send_aes</name></member>
+      <member refid="classgraphene_1_1net_1_1stcp__socket_1a8513eef2568468c64933af6212802844" prot="private" virt="non-virtual"><scope>graphene::net::stcp_socket</scope><name>_shared_secret</name></member>
+      <member refid="classgraphene_1_1net_1_1stcp__socket_1a3589abe5391718c8a2e2254557003bc1" prot="private" virt="non-virtual"><scope>graphene::net::stcp_socket</scope><name>_sock</name></member>
+      <member refid="classgraphene_1_1net_1_1stcp__socket_1a6649eac970311234c50508ba5f907152" prot="private" virt="non-virtual"><scope>graphene::net::stcp_socket</scope><name>_write_buffer</name></member>
+      <member refid="classgraphene_1_1net_1_1stcp__socket_1acd27974c4eb3eabc1107dc4b7a48148a" prot="private" virt="non-virtual"><scope>graphene::net::stcp_socket</scope><name>_write_buffer_in_use</name></member>
+      <member refid="classgraphene_1_1net_1_1stcp__socket_1a730aa9260e44a0c7edb8adfe5e7acc5e" prot="public" virt="non-virtual"><scope>graphene::net::stcp_socket</scope><name>accept</name></member>
+      <member refid="classgraphene_1_1net_1_1stcp__socket_1a608bf3e26c036acd35b826e6b0830bc9" prot="public" virt="non-virtual"><scope>graphene::net::stcp_socket</scope><name>bind</name></member>
+      <member refid="classgraphene_1_1net_1_1stcp__socket_1a6acc99736fd33793e614ea47604602dd" prot="public" virt="virtual"><scope>graphene::net::stcp_socket</scope><name>close</name></member>
+      <member refid="classgraphene_1_1net_1_1stcp__socket_1ab01ab9f977a617146c10f9e66848aa4a" prot="public" virt="non-virtual"><scope>graphene::net::stcp_socket</scope><name>connect_to</name></member>
+      <member refid="classgraphene_1_1net_1_1stcp__socket_1a91d1117fcefec51495d07ac07a0b93f8" prot="private" virt="non-virtual"><scope>graphene::net::stcp_socket</scope><name>do_key_exchange</name></member>
+      <member refid="classgraphene_1_1net_1_1stcp__socket_1abe59970072a174e383dca8adbee103d9" prot="public" virt="virtual"><scope>graphene::net::stcp_socket</scope><name>eof</name></member>
+      <member refid="classgraphene_1_1net_1_1stcp__socket_1aba252057ad2c4ebb769f0810e00f4995" prot="public" virt="virtual"><scope>graphene::net::stcp_socket</scope><name>flush</name></member>
+      <member refid="classgraphene_1_1net_1_1stcp__socket_1a89e78a66acad2d7a8336dd99e33631ca" prot="public" virt="non-virtual"><scope>graphene::net::stcp_socket</scope><name>get</name></member>
+      <member refid="classfc_1_1istream_1ac217a213d8fe2554eaba25b7daf6c9b2" prot="public" virt="virtual" ambiguityscope="fc::iostream::"><scope>graphene::net::stcp_socket</scope><name>get</name></member>
+      <member refid="classgraphene_1_1net_1_1stcp__socket_1af6e00cd877432a37673f25cb7558dde3" prot="public" virt="non-virtual"><scope>graphene::net::stcp_socket</scope><name>get_shared_secret</name></member>
+      <member refid="classgraphene_1_1net_1_1stcp__socket_1a04b9cdf23d11f863190cbe5de277ca3a" prot="public" virt="non-virtual"><scope>graphene::net::stcp_socket</scope><name>get_socket</name></member>
+      <member refid="classfc_1_1ostream_1a5eb546403297f3a0124af202d9544fc4" prot="public" virt="non-virtual"><scope>graphene::net::stcp_socket</scope><name>put</name></member>
+      <member refid="classfc_1_1istream_1ad7f71af193e4aa4c2efaab0ca22b1b86" prot="public" virt="non-virtual"><scope>graphene::net::stcp_socket</scope><name>read</name></member>
+      <member refid="classfc_1_1istream_1a94e767f126e952db54be791ee0cc6d1e" prot="public" virt="non-virtual"><scope>graphene::net::stcp_socket</scope><name>read</name></member>
+      <member refid="classgraphene_1_1net_1_1stcp__socket_1a3da981f7903cdd79873e3fc83377ee45" prot="public" virt="virtual"><scope>graphene::net::stcp_socket</scope><name>readsome</name></member>
+      <member refid="classgraphene_1_1net_1_1stcp__socket_1ab8427e5a94056717ba509f82e660607e" prot="public" virt="virtual"><scope>graphene::net::stcp_socket</scope><name>readsome</name></member>
+      <member refid="classgraphene_1_1net_1_1stcp__socket_1a4df64c50ef3a4ae776bb868dfd0b1592" prot="public" virt="non-virtual"><scope>graphene::net::stcp_socket</scope><name>stcp_socket</name></member>
+      <member refid="classfc_1_1ostream_1a8abbd25d7d136527d1bb36c1ca24427e" prot="public" virt="non-virtual"><scope>graphene::net::stcp_socket</scope><name>write</name></member>
+      <member refid="classfc_1_1ostream_1afa09d563e34c1e16aee4709d4a47483a" prot="public" virt="non-virtual"><scope>graphene::net::stcp_socket</scope><name>write</name></member>
+      <member refid="classgraphene_1_1net_1_1stcp__socket_1a5afb0c829c6d401ce6a3a751d851486a" prot="public" virt="virtual"><scope>graphene::net::stcp_socket</scope><name>writesome</name></member>
+      <member refid="classgraphene_1_1net_1_1stcp__socket_1aa9664b2d37ede9a3227d1cca79d5c792" prot="public" virt="virtual"><scope>graphene::net::stcp_socket</scope><name>writesome</name></member>
+      <member refid="classfc_1_1istream_1a3d6f017f2fbcead4c7213618b5a21d36" prot="public" virt="virtual"><scope>graphene::net::stcp_socket</scope><name>~istream</name></member>
+      <member refid="classfc_1_1ostream_1aa2ed925328be7251755abfb9ca5f01d2" prot="public" virt="virtual"><scope>graphene::net::stcp_socket</scope><name>~ostream</name></member>
+      <member refid="classgraphene_1_1net_1_1stcp__socket_1ab55d0a5ed264af0840e8b545882aaf3d" prot="public" virt="non-virtual"><scope>graphene::net::stcp_socket</scope><name>~stcp_socket</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

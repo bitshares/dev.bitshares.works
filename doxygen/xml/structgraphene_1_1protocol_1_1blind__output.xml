@@ -5,7 +5,7 @@
     <includes refid="confidential_8hpp" local="no">confidential.hpp</includes>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1blind__output_1a9f769b81ea0d838c59987453005ed31c" prot="public" static="no" mutable="no">
-        <type>fc::ecc::commitment_type</type>
+        <type><ref refid="namespacefc_1_1ecc_1a2fe2b77a4b704ac1d7a71260be0211ff" kindref="member">fc::ecc::commitment_type</ref></type>
         <definition>fc::ecc::commitment_type graphene::protocol::blind_output::commitment</definition>
         <argsstring></argsstring>
         <name>commitment</name>
@@ -44,7 +44,7 @@
         <location file="libraries/protocol/include/graphene/protocol/confidential.hpp" line="140" column="1" bodyfile="libraries/protocol/include/graphene/protocol/confidential.hpp" bodystart="140" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1blind__output_1aaa51bddef9ca43bd33740ecb2c00e7d4" prot="public" static="no" mutable="no">
-        <type>optional&lt; <ref refid="structgraphene_1_1protocol_1_1stealth__confirmation" kindref="compound">stealth_confirmation</ref> &gt;</type>
+        <type><ref refid="classfc_1_1optional" kindref="compound">optional</ref>&lt; <ref refid="structgraphene_1_1protocol_1_1stealth__confirmation" kindref="compound">stealth_confirmation</ref> &gt;</type>
         <definition>optional&lt;stealth_confirmation&gt; graphene::protocol::blind_output::stealth_memo</definition>
         <argsstring></argsstring>
         <name>stealth_memo</name>
@@ -62,51 +62,46 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="1403">
+      <node id="1729">
         <label>range_proof_type</label>
       </node>
-      <node id="1404">
-        <label>commitment_type</label>
-      </node>
-      <node id="1402">
-        <label>optional&lt; graphene::protocol::stealth_confirmation &gt;</label>
-      </node>
-      <node id="1408">
+      <node id="1733">
         <label>flat_map&lt; graphene::protocol::address, weight_type &gt;</label>
       </node>
-      <node id="1401">
+      <node id="1727">
         <label>graphene::protocol::blind_output</label>
         <link refid="structgraphene_1_1protocol_1_1blind__output"/>
-        <childnode refid="1402" relation="usage">
+        <childnode refid="1728" relation="usage">
           <edgelabel>stealth_memo</edgelabel>
         </childnode>
-        <childnode refid="1403" relation="usage">
+        <childnode refid="1729" relation="usage">
           <edgelabel>range_proof</edgelabel>
         </childnode>
-        <childnode refid="1404" relation="usage">
-          <edgelabel>commitment</edgelabel>
-        </childnode>
-        <childnode refid="1405" relation="usage">
+        <childnode refid="1730" relation="usage">
           <edgelabel>owner</edgelabel>
         </childnode>
       </node>
-      <node id="1406">
+      <node id="1731">
         <label>flat_map&lt; graphene::protocol::public_key_type, weight_type &gt;</label>
       </node>
-      <node id="1405">
+      <node id="1728">
+        <label>fc::optional&lt; graphene::protocol::stealth_confirmation &gt;</label>
+        <link refid="classfc_1_1optional"/>
+      </node>
+      <node id="1730">
         <label>graphene::protocol::authority</label>
         <link refid="structgraphene_1_1protocol_1_1authority"/>
-        <childnode refid="1406" relation="usage">
+        <childnode refid="1731" relation="usage">
           <edgelabel>key_auths</edgelabel>
         </childnode>
-        <childnode refid="1407" relation="usage">
+        <childnode refid="1732" relation="usage">
           <edgelabel>account_auths</edgelabel>
         </childnode>
-        <childnode refid="1408" relation="usage">
+        <childnode refid="1733" relation="usage">
           <edgelabel>address_auths</edgelabel>
         </childnode>
       </node>
-      <node id="1407">
+      <node id="1732">
         <label>flat_map&lt; account_id_type, weight_type &gt;</label>
       </node>
     </collaborationgraph>

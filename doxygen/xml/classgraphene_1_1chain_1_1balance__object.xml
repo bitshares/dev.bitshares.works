@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="classgraphene_1_1chain_1_1balance__object" kind="class" language="C++" prot="public">
     <compoundname>graphene::chain::balance_object</compoundname>
-    <basecompoundref prot="public" virt="non-virtual">graphene::db::abstract_object&lt; balance_object &gt;</basecompoundref>
+    <basecompoundref refid="classgraphene_1_1db_1_1abstract__object" prot="public" virt="non-virtual">graphene::db::abstract_object&lt; balance_object &gt;</basecompoundref>
     <includes refid="balance__object_8hpp" local="no">balance_object.hpp</includes>
       <sectiondef kind="public-static-attrib">
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1balance__object_1a45d1c432b110c300994b4ae54a2f1b79" prot="public" static="yes" mutable="no">
@@ -62,7 +62,7 @@
         <location file="libraries/chain/include/graphene/chain/balance_object.hpp" line="45" column="1" bodyfile="libraries/chain/include/graphene/chain/balance_object.hpp" bodystart="45" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1balance__object_1a64fb341d2130ca8bb565b8680455d5df" prot="public" static="no" mutable="no">
-        <type>optional&lt; <ref refid="structgraphene_1_1chain_1_1linear__vesting__policy" kindref="compound">linear_vesting_policy</ref> &gt;</type>
+        <type><ref refid="classfc_1_1optional" kindref="compound">optional</ref>&lt; <ref refid="structgraphene_1_1chain_1_1linear__vesting__policy" kindref="compound">linear_vesting_policy</ref> &gt;</type>
         <definition>optional&lt;linear_vesting_policy&gt; graphene::chain::balance_object::vesting_policy</definition>
         <argsstring></argsstring>
         <name>vesting_policy</name>
@@ -75,7 +75,7 @@
         <location file="libraries/chain/include/graphene/chain/balance_object.hpp" line="46" column="1" bodyfile="libraries/chain/include/graphene/chain/balance_object.hpp" bodystart="46" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1balance__object_1a198dec1120c06ce42b278959d4ca000a" prot="public" static="no" mutable="no">
-        <type>time_point_sec</type>
+        <type><ref refid="classfc_1_1time__point__sec" kindref="compound">time_point_sec</ref></type>
         <definition>time_point_sec graphene::chain::balance_object::last_claim_date</definition>
         <argsstring></argsstring>
         <name>last_claim_date</name>
@@ -108,7 +108,7 @@
         <argsstring>(fc::time_point_sec now) const</argsstring>
         <name>available</name>
         <param>
-          <type>fc::time_point_sec</type>
+          <type><ref refid="classfc_1_1time__point__sec" kindref="compound">fc::time_point_sec</ref></type>
           <declname>now</declname>
         </param>
         <briefdescription>
@@ -138,57 +138,81 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="1247">
+      <node id="1550">
         <label>graphene::db::abstract_object&lt; balance_object &gt;</label>
+        <link refid="classgraphene_1_1db_1_1abstract__object"/>
+        <childnode refid="1551" relation="public-inheritance">
+        </childnode>
       </node>
-      <node id="1246">
+      <node id="1549">
         <label>graphene::chain::balance_object</label>
         <link refid="classgraphene_1_1chain_1_1balance__object"/>
-        <childnode refid="1247" relation="public-inheritance">
+        <childnode refid="1550" relation="public-inheritance">
         </childnode>
+      </node>
+      <node id="1551">
+        <label>graphene::db::object</label>
+        <link refid="classgraphene_1_1db_1_1object"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="1249">
+      <node id="1553">
         <label>graphene::db::abstract_object&lt; balance_object &gt;</label>
+        <link refid="classgraphene_1_1db_1_1abstract__object"/>
+        <childnode refid="1554" relation="public-inheritance">
+        </childnode>
       </node>
-      <node id="1248">
+      <node id="1552">
         <label>graphene::chain::balance_object</label>
         <link refid="classgraphene_1_1chain_1_1balance__object"/>
-        <childnode refid="1249" relation="public-inheritance">
+        <childnode refid="1553" relation="public-inheritance">
         </childnode>
-        <childnode refid="1250" relation="usage">
+        <childnode refid="1556" relation="usage">
           <edgelabel>balance</edgelabel>
         </childnode>
-        <childnode refid="1252" relation="usage">
-          <edgelabel>last_claim_date</edgelabel>
-        </childnode>
-        <childnode refid="1253" relation="usage">
+        <childnode refid="1558" relation="usage">
           <edgelabel>owner</edgelabel>
         </childnode>
-        <childnode refid="1254" relation="usage">
+        <childnode refid="1560" relation="usage">
           <edgelabel>vesting_policy</edgelabel>
         </childnode>
       </node>
-      <node id="1252">
-        <label>time_point_sec</label>
+      <node id="1559">
+        <label>fc::ripemd160</label>
+        <link refid="classfc_1_1ripemd160"/>
       </node>
-      <node id="1254">
-        <label>optional&lt; graphene::chain::linear_vesting_policy &gt;</label>
+      <node id="1557">
+        <label>fc::safe&lt; int64_t &gt;</label>
+        <link refid="structfc_1_1safe"/>
       </node>
-      <node id="1253">
+      <node id="1558">
         <label>graphene::protocol::address</label>
         <link refid="classgraphene_1_1protocol_1_1address"/>
+        <childnode refid="1559" relation="usage">
+          <edgelabel>addr</edgelabel>
+        </childnode>
       </node>
-      <node id="1250">
+      <node id="1560">
+        <label>fc::optional&lt; graphene::chain::linear_vesting_policy &gt;</label>
+        <link refid="classfc_1_1optional"/>
+      </node>
+      <node id="1556">
         <label>graphene::protocol::asset</label>
         <link refid="structgraphene_1_1protocol_1_1asset"/>
-        <childnode refid="1251" relation="usage">
+        <childnode refid="1557" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
       </node>
-      <node id="1251">
-        <label>safe&lt; int64_t &gt;</label>
+      <node id="1555">
+        <label>graphene::db::object_id_type</label>
+        <link refid="structgraphene_1_1db_1_1object__id__type"/>
+      </node>
+      <node id="1554">
+        <label>graphene::db::object</label>
+        <link refid="classgraphene_1_1db_1_1object"/>
+        <childnode refid="1555" relation="usage">
+          <edgelabel>id</edgelabel>
+        </childnode>
       </node>
     </collaborationgraph>
     <location file="libraries/chain/include/graphene/chain/balance_object.hpp" line="31" column="1" bodyfile="libraries/chain/include/graphene/chain/balance_object.hpp" bodystart="30" bodyend="49"/>
@@ -196,12 +220,19 @@
       <member refid="classgraphene_1_1chain_1_1balance__object_1acf4f4e7977c8d4176fb02b108d4af9ac" prot="public" virt="non-virtual"><scope>graphene::chain::balance_object</scope><name>asset_type</name></member>
       <member refid="classgraphene_1_1chain_1_1balance__object_1abc9aa8646d5952a3cd75b07a3ebdcf57" prot="public" virt="non-virtual"><scope>graphene::chain::balance_object</scope><name>available</name></member>
       <member refid="classgraphene_1_1chain_1_1balance__object_1a60363615da54ec77f5348f3227aace17" prot="public" virt="non-virtual"><scope>graphene::chain::balance_object</scope><name>balance</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1a189144fd7eef0317898bc83b30b143c6" prot="public" virt="virtual"><scope>graphene::chain::balance_object</scope><name>clone</name></member>
+      <member refid="classgraphene_1_1db_1_1object_1a2ce812569d565a45dda1420cfbdf79ad" prot="public" virt="non-virtual"><scope>graphene::chain::balance_object</scope><name>id</name></member>
       <member refid="classgraphene_1_1chain_1_1balance__object_1a6670368d220d89425ae1f1ab8befcbba" prot="public" virt="non-virtual"><scope>graphene::chain::balance_object</scope><name>is_vesting_balance</name></member>
       <member refid="classgraphene_1_1chain_1_1balance__object_1a198dec1120c06ce42b278959d4ca000a" prot="public" virt="non-virtual"><scope>graphene::chain::balance_object</scope><name>last_claim_date</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1ad7329292e8fa9035cf2596d72c4868b5" prot="public" virt="virtual"><scope>graphene::chain::balance_object</scope><name>move_from</name></member>
+      <member refid="classgraphene_1_1db_1_1object_1a64864992a46d9d52836afe1a52a2e394" prot="public" virt="non-virtual"><scope>graphene::chain::balance_object</scope><name>object</name></member>
       <member refid="classgraphene_1_1chain_1_1balance__object_1ab59c8def92ab5290ebfcfcbe2e1e763f" prot="public" virt="non-virtual"><scope>graphene::chain::balance_object</scope><name>owner</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1a792a9c05cfe1cf7628cb6f8c4a65b0f7" prot="public" virt="virtual"><scope>graphene::chain::balance_object</scope><name>pack</name></member>
       <member refid="classgraphene_1_1chain_1_1balance__object_1a45d1c432b110c300994b4ae54a2f1b79" prot="public" virt="non-virtual"><scope>graphene::chain::balance_object</scope><name>space_id</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1a6f0f2e9eb0399057ff3334bf328b5007" prot="public" virt="virtual"><scope>graphene::chain::balance_object</scope><name>to_variant</name></member>
       <member refid="classgraphene_1_1chain_1_1balance__object_1a2ea7fbb5a7ea3cf0619b03efb8e8dff6" prot="public" virt="non-virtual"><scope>graphene::chain::balance_object</scope><name>type_id</name></member>
       <member refid="classgraphene_1_1chain_1_1balance__object_1a64fb341d2130ca8bb565b8680455d5df" prot="public" virt="non-virtual"><scope>graphene::chain::balance_object</scope><name>vesting_policy</name></member>
+      <member refid="classgraphene_1_1db_1_1object_1ac457a859418c22014c07a3bcdc67ed04" prot="public" virt="virtual"><scope>graphene::chain::balance_object</scope><name>~object</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

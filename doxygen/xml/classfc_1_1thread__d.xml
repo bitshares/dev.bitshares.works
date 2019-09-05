@@ -1,0 +1,822 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classfc_1_1thread__d" kind="class" language="C++" prot="public">
+    <compoundname>fc::thread_d</compoundname>
+    <includes refid="thread__d_8hpp" local="no">thread_d.hpp</includes>
+    <innerclass refid="structfc_1_1thread__d_1_1task__priority__less" prot="public">fc::thread_d::task_priority_less</innerclass>
+    <innerclass refid="structfc_1_1thread__d_1_1task__when__less" prot="public">fc::thread_d::task_when_less</innerclass>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classfc_1_1thread__d_1a721c6ffc4b7a2e4b4038c45cb8fc4b20" prot="public" static="no">
+        <type>std::pair&lt; <ref refid="classfc_1_1thread__d" kindref="compound">thread_d</ref> *, <ref refid="structfc_1_1context" kindref="compound">fc::context</ref> * &gt;</type>
+        <definition>using fc::thread_d::context_pair =  std::pair&lt;thread_d*, fc::context*&gt;</definition>
+        <argsstring></argsstring>
+        <name>context_pair</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="31" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classfc_1_1thread__d_1a01223d906d0e178e30a361b357ada09c" prot="public" static="no" mutable="no">
+        <type><ref refid="classfc_1_1thread" kindref="compound">fc::thread</ref> &amp;</type>
+        <definition>fc::thread&amp; fc::thread_d::self</definition>
+        <argsstring></argsstring>
+        <name>self</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="89" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1thread__d_1a5a4000758513b2335180ff06d97a0403" prot="public" static="no" mutable="no">
+        <type>boost::thread *</type>
+        <definition>boost::thread* fc::thread_d::boost_thread</definition>
+        <argsstring></argsstring>
+        <name>boost_thread</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="90" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1thread__d_1ad769aff55d2a8391a87702d0bf733d43" prot="public" static="no" mutable="no">
+        <type>stack_allocator</type>
+        <definition>stack_allocator fc::thread_d::stack_alloc</definition>
+        <argsstring></argsstring>
+        <name>stack_alloc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="91" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1thread__d_1a3e79dcc61fefa608154d198c45d5941f" prot="public" static="no" mutable="no">
+        <type>boost::condition_variable</type>
+        <definition>boost::condition_variable fc::thread_d::task_ready</definition>
+        <argsstring></argsstring>
+        <name>task_ready</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="92" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1thread__d_1ac2f8566bf89a726e6c2e252bb43ae133" prot="public" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex fc::thread_d::task_ready_mutex</definition>
+        <argsstring></argsstring>
+        <name>task_ready_mutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="93" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1thread__d_1a614f86c996dc9b7bf8790fe01552ff06" prot="public" static="no" mutable="no">
+        <type>boost::atomic&lt; <ref refid="classfc_1_1task__base" kindref="compound">task_base</ref> * &gt;</type>
+        <definition>boost::atomic&lt;task_base*&gt; fc::thread_d::task_in_queue</definition>
+        <argsstring></argsstring>
+        <name>task_in_queue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="95" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1thread__d_1ac4e866cbd9a7c482c4b938c987964af8" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classfc_1_1task__base" kindref="compound">task_base</ref> * &gt;</type>
+        <definition>std::vector&lt;task_base*&gt; fc::thread_d::task_pqueue</definition>
+        <argsstring></argsstring>
+        <name>task_pqueue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="96" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1thread__d_1ad2710a66c1833df0e8004f79749cd507" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t fc::thread_d::next_posted_num</definition>
+        <argsstring></argsstring>
+        <name>next_posted_num</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="97" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1thread__d_1a32ea0b72a9c3a6643e5df7df6231ef39" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classfc_1_1task__base" kindref="compound">task_base</ref> * &gt;</type>
+        <definition>std::vector&lt;task_base*&gt; fc::thread_d::task_sch_queue</definition>
+        <argsstring></argsstring>
+        <name>task_sch_queue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="98" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1thread__d_1a58b6de49135d3cc308f44784179540c4" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structfc_1_1context" kindref="compound">fc::context</ref> * &gt;</type>
+        <definition>std::vector&lt;fc::context*&gt; fc::thread_d::sleep_pqueue</definition>
+        <argsstring></argsstring>
+        <name>sleep_pqueue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="99" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1thread__d_1ad21124b01614fe31e70917567cc865e3" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structfc_1_1context" kindref="compound">fc::context</ref> * &gt;</type>
+        <definition>std::vector&lt;fc::context*&gt; fc::thread_d::free_list</definition>
+        <argsstring></argsstring>
+        <name>free_list</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="100" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1thread__d_1a77febc340e08da98b0b9c50844179c97" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool fc::thread_d::done</definition>
+        <argsstring></argsstring>
+        <name>done</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="102" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1thread__d_1adb3d948e58f1d5fc857b36ebae00ab72" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string fc::thread_d::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="103" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1thread__d_1a013bd26c54ea829374218b11bb1eff39" prot="public" static="no" mutable="no">
+        <type><ref refid="structfc_1_1context" kindref="compound">fc::context</ref> *</type>
+        <definition>fc::context* fc::thread_d::current</definition>
+        <argsstring></argsstring>
+        <name>current</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="104" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1thread__d_1a1c59dc492633fb2b14fa0a3b4052aeac" prot="public" static="no" mutable="no">
+        <type><ref refid="structfc_1_1context" kindref="compound">fc::context</ref> *</type>
+        <definition>fc::context* fc::thread_d::pt_head</definition>
+        <argsstring></argsstring>
+        <name>pt_head</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="106" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1thread__d_1a90e798c3874b609291c43ce53fed0afd" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structfc_1_1context" kindref="compound">fc::context</ref> * &gt;</type>
+        <definition>std::vector&lt;fc::context*&gt; fc::thread_d::ready_heap</definition>
+        <argsstring></argsstring>
+        <name>ready_heap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="108" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1thread__d_1a98f2a2d89a1a677ef2e293a839b82d65" prot="public" static="no" mutable="no">
+        <type><ref refid="structfc_1_1context" kindref="compound">fc::context</ref> *</type>
+        <definition>fc::context* fc::thread_d::blocked</definition>
+        <argsstring></argsstring>
+        <name>blocked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="110" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1thread__d_1a0df7759c6dd9ed33d89774431fedb0ce" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structfc_1_1detail_1_1specific__data__info" kindref="compound">detail::specific_data_info</ref> &gt;</type>
+        <definition>std::vector&lt;detail::specific_data_info&gt; fc::thread_d::thread_specific_data</definition>
+        <argsstring></argsstring>
+        <name>thread_specific_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="113" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1thread__d_1aec841c11fa469fef86a8c62043a49cfb" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structfc_1_1detail_1_1specific__data__info" kindref="compound">detail::specific_data_info</ref> &gt;</type>
+        <definition>std::vector&lt;detail::specific_data_info&gt; fc::thread_d::non_task_specific_data</definition>
+        <argsstring></argsstring>
+        <name>non_task_specific_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="117" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1thread__d_1a4e0fec7e6239676bbe82d0186b8b9e18" prot="public" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned fc::thread_d::next_unused_task_storage_slot</definition>
+        <argsstring></argsstring>
+        <name>next_unused_task_storage_slot</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="118" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1thread__d_1a566b026f034553609b9d8ebc76ca2e75" prot="public" static="no" mutable="no">
+        <type><ref refid="classfc_1_1thread__idle__notifier" kindref="compound">thread_idle_notifier</ref> *</type>
+        <definition>thread_idle_notifier* fc::thread_d::notifier</definition>
+        <argsstring></argsstring>
+        <name>notifier</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="120" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1thread__d_1a1af49f0b7ac6cdbfd8b487173138a3a9" prot="public" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned fc::thread_d::non_preemptable_scope_count</definition>
+        <argsstring></argsstring>
+        <name>non_preemptable_scope_count</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="123" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfc_1_1thread__d_1aaeb6064efa35d6e24a2db919b8f47509" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>fc::thread_d::thread_d</definition>
+        <argsstring>(fc::thread &amp;s, thread_idle_notifier *n=0)</argsstring>
+        <name>thread_d</name>
+        <param>
+          <type><ref refid="classfc_1_1thread" kindref="compound">fc::thread</ref> &amp;</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type><ref refid="classfc_1_1thread__idle__notifier" kindref="compound">thread_idle_notifier</ref> *</type>
+          <declname>n</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="33" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="33" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1thread__d_1a2875d46eaae87b0c35c29b07dbf470cd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>fc::thread_d::~thread_d</definition>
+        <argsstring>()</argsstring>
+        <name>~thread_d</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="52" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="52" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1thread__d_1ada8050487bff8f64c66640692d10ab60" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::thread_d::add_to_blocked</definition>
+        <argsstring>(fc::context *c)</argsstring>
+        <name>add_to_blocked</name>
+        <param>
+          <type><ref refid="structfc_1_1context" kindref="compound">fc::context</ref> *</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="172" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="172" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1thread__d_1a3b463a8704ab572d9ca88034fa845d25" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::thread_d::pt_push_back</definition>
+        <argsstring>(fc::context *c)</argsstring>
+        <name>pt_push_back</name>
+        <param>
+          <type><ref refid="structfc_1_1context" kindref="compound">fc::context</ref> *</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="178" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="178" bodyend="191"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1thread__d_1a56a468f11c9edf01e8e65f56df7bcb48" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structfc_1_1context_1a1b9582ff49a0b19c0268ff0c411c33e3" kindref="member">fc::context::ptr</ref></type>
+        <definition>fc::context::ptr fc::thread_d::ready_pop_front</definition>
+        <argsstring>()</argsstring>
+        <name>ready_pop_front</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="193" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="193" bodyend="199"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1thread__d_1a23a205f29c4b7b41b6686da1303866e2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::thread_d::add_context_to_ready_list</definition>
+        <argsstring>(context *context_to_add, bool at_end=false)</argsstring>
+        <name>add_context_to_ready_list</name>
+        <param>
+          <type><ref refid="structfc_1_1context" kindref="compound">context</ref> *</type>
+          <declname>context_to_add</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>at_end</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="201" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="201" bodyend="207"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1thread__d_1a87178d6f98440fe84f898832ebf58bde" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::thread_d::enqueue</definition>
+        <argsstring>(task_base *t)</argsstring>
+        <name>enqueue</name>
+        <param>
+          <type><ref refid="classfc_1_1task__base" kindref="compound">task_base</ref> *</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="245" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="245" bodyend="283"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1thread__d_1adbb520f5ccc6446d5a32255a7fce31a3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::thread_d::move_newly_scheduled_tasks_to_task_pqueue</definition>
+        <argsstring>()</argsstring>
+        <name>move_newly_scheduled_tasks_to_task_pqueue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="285" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="285" bodyend="314"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1thread__d_1a59e31bd7bfdc646fe9b5cba77e28d07e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classfc_1_1task__base" kindref="compound">task_base</ref> *</type>
+        <definition>task_base* fc::thread_d::dequeue</definition>
+        <argsstring>()</argsstring>
+        <name>dequeue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="316" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="316" bodyend="326"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1thread__d_1ad8318db0689e845a7f76df474d64dcdc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool fc::thread_d::process_canceled_tasks</definition>
+        <argsstring>()</argsstring>
+        <name>process_canceled_tasks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="328" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="328" bodyend="350"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1thread__d_1ac522b294bbec94ef14563e9ece57a8b8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::thread_d::check_fiber_exceptions</definition>
+        <argsstring>()</argsstring>
+        <name>check_fiber_exceptions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This should be before or after a context switch to detect quit/cancel operations and throw an exception. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="356" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="356" bodyend="372"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1thread__d_1a9744c27086857f2792073021ca53141f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool fc::thread_d::start_next_fiber</definition>
+        <argsstring>(bool reschedule=false)</argsstring>
+        <name>start_next_fiber</name>
+        <param>
+          <type>bool</type>
+          <declname>reschedule</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Find the next available context and switch to it. If none are available then create a new context and have it wait for something to do. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="379" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="379" bodyend="499"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1thread__d_1a8fbabb8a5e9c1612b7d3747f0c179cd4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::thread_d::run_next_task</definition>
+        <argsstring>()</argsstring>
+        <name>run_next_task</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="528" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="528" bodyend="539"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1thread__d_1a6d6924c0620c5db17b5cba5be7536092" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool fc::thread_d::has_next_task</definition>
+        <argsstring>()</argsstring>
+        <name>has_next_task</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="541" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="541" bodyend="548"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1thread__d_1aa264f4e2fd56836fe7d059805939b463" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::thread_d::clear_free_list</definition>
+        <argsstring>()</argsstring>
+        <name>clear_free_list</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="550" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="550" bodyend="555"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1thread__d_1a88e235224d40c9983429efc7a5002fa4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::thread_d::process_tasks</definition>
+        <argsstring>()</argsstring>
+        <name>process_tasks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="557" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="557" bodyend="643"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1thread__d_1a7b1e555a2c3a837db9b101f4c9e74abb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classfc_1_1time__point" kindref="compound">time_point</ref></type>
+        <definition>time_point fc::thread_d::check_for_timeouts</definition>
+        <argsstring>()</argsstring>
+        <name>check_for_timeouts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return system_clock::time_point::min() if tasks have timed out Retunn system_clock::time_point::max() if there are no scheduled tasks Return the time the next task needs to be run if there is anything scheduled. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="649" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="649" bodyend="689"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1thread__d_1a0315fbeed6717e7dd56e4dddfe3f3c2a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::thread_d::unblock</definition>
+        <argsstring>(fc::context *c)</argsstring>
+        <name>unblock</name>
+        <param>
+          <type><ref refid="structfc_1_1context" kindref="compound">fc::context</ref> *</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="691" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="691" bodyend="701"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1thread__d_1ab0876676f7a0e22e3703e7fdb04089a7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::thread_d::yield_until</definition>
+        <argsstring>(const time_point &amp;tp, bool reschedule)</argsstring>
+        <name>yield_until</name>
+        <param>
+          <type>const <ref refid="classfc_1_1time__point" kindref="compound">time_point</ref> &amp;</type>
+          <declname>tp</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>reschedule</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="703" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="703" bodyend="739"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1thread__d_1a2b82b1630f665e1b897982fe2ae743f1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::thread_d::wait</definition>
+        <argsstring>(const promise_base::ptr &amp;p, const time_point &amp;timeout)</argsstring>
+        <name>wait</name>
+        <param>
+          <type>const <ref refid="classfc_1_1promise__base_1a981f5f6eb5de005018991933ca06580d" kindref="member">promise_base::ptr</ref> &amp;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classfc_1_1time__point" kindref="compound">time_point</ref> &amp;</type>
+          <declname>timeout</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="741" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="741" bodyend="779"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1thread__d_1a44b2cfc90b6553ba398505b767f6f8e8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::thread_d::cleanup_thread_specific_data</definition>
+        <argsstring>()</argsstring>
+        <name>cleanup_thread_specific_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="781" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="781" bodyend="790"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1thread__d_1a5f5ee20818a04a54558e1252b83c8579" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::thread_d::notify_task_has_been_canceled</definition>
+        <argsstring>()</argsstring>
+        <name>notify_task_has_been_canceled</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="792" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="792" bodyend="824"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classfc_1_1thread__d_1a9bbc3af29a5772171d3e7bdbe1f985ef" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void fc::thread_d::start_process_tasks</definition>
+        <argsstring>(intptr_t my)</argsstring>
+        <name>start_process_tasks</name>
+        <param>
+          <type>intptr_t</type>
+          <declname>my</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/thread/thread_d.hpp" line="508" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="508" bodyend="526"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="5217">
+        <label>fc::thread</label>
+        <link refid="classfc_1_1thread"/>
+      </node>
+      <node id="5218">
+        <label>fc::thread_idle_notifier</label>
+        <link refid="classfc_1_1thread__idle__notifier"/>
+      </node>
+      <node id="5219">
+        <label>string</label>
+      </node>
+      <node id="5226">
+        <label>fc::time_point</label>
+        <link refid="classfc_1_1time__point"/>
+      </node>
+      <node id="5216">
+        <label>fc::thread_d</label>
+        <link refid="classfc_1_1thread__d"/>
+        <childnode refid="5217" relation="usage">
+          <edgelabel>self</edgelabel>
+        </childnode>
+        <childnode refid="5218" relation="usage">
+          <edgelabel>notifier</edgelabel>
+        </childnode>
+        <childnode refid="5219" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="5220" relation="usage">
+          <edgelabel>pt_head</edgelabel>
+          <edgelabel>blocked</edgelabel>
+          <edgelabel>current</edgelabel>
+        </childnode>
+      </node>
+      <node id="5225">
+        <label>fc::fwd&lt; fc::spin_lock, 8 &gt;</label>
+        <link refid="classfc_1_1fwd"/>
+      </node>
+      <node id="5221">
+        <label>fc::task_base</label>
+        <link refid="classfc_1_1task__base"/>
+        <childnode refid="5222" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5221" relation="usage">
+          <edgelabel>_next</edgelabel>
+        </childnode>
+        <childnode refid="5224" relation="usage">
+          <edgelabel>_prio</edgelabel>
+        </childnode>
+        <childnode refid="5225" relation="usage">
+          <edgelabel>_spinlock</edgelabel>
+        </childnode>
+        <childnode refid="5220" relation="usage">
+          <edgelabel>_active_context</edgelabel>
+        </childnode>
+        <childnode refid="5226" relation="usage">
+          <edgelabel>_when</edgelabel>
+        </childnode>
+      </node>
+      <node id="5220">
+        <label>fc::context</label>
+        <link refid="structfc_1_1context"/>
+        <childnode refid="5221" relation="usage">
+          <edgelabel>cur_task</edgelabel>
+        </childnode>
+        <childnode refid="5224" relation="usage">
+          <edgelabel>prio</edgelabel>
+        </childnode>
+        <childnode refid="5217" relation="usage">
+          <edgelabel>ctx_thread</edgelabel>
+        </childnode>
+        <childnode refid="5220" relation="usage">
+          <edgelabel>next_blocked_mutex</edgelabel>
+          <edgelabel>next</edgelabel>
+          <edgelabel>caller_context</edgelabel>
+          <edgelabel>next_blocked</edgelabel>
+        </childnode>
+        <childnode refid="5226" relation="usage">
+          <edgelabel>resume_time</edgelabel>
+        </childnode>
+      </node>
+      <node id="5224">
+        <label>fc::priority</label>
+        <link refid="classfc_1_1priority"/>
+      </node>
+      <node id="5223">
+        <label>std::enable_shared_from_this&lt; promise_base &gt;</label>
+      </node>
+      <node id="5222">
+        <label>fc::promise_base</label>
+        <link refid="classfc_1_1promise__base"/>
+        <childnode refid="5223" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="libraries/fc/src/thread/thread_d.hpp" line="28" column="1" bodyfile="libraries/fc/src/thread/thread_d.hpp" bodystart="28" bodyend="825"/>
+    <listofallmembers>
+      <member refid="classfc_1_1thread__d_1a23a205f29c4b7b41b6686da1303866e2" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>add_context_to_ready_list</name></member>
+      <member refid="classfc_1_1thread__d_1ada8050487bff8f64c66640692d10ab60" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>add_to_blocked</name></member>
+      <member refid="classfc_1_1thread__d_1a98f2a2d89a1a677ef2e293a839b82d65" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>blocked</name></member>
+      <member refid="classfc_1_1thread__d_1a5a4000758513b2335180ff06d97a0403" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>boost_thread</name></member>
+      <member refid="classfc_1_1thread__d_1ac522b294bbec94ef14563e9ece57a8b8" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>check_fiber_exceptions</name></member>
+      <member refid="classfc_1_1thread__d_1a7b1e555a2c3a837db9b101f4c9e74abb" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>check_for_timeouts</name></member>
+      <member refid="classfc_1_1thread__d_1a44b2cfc90b6553ba398505b767f6f8e8" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>cleanup_thread_specific_data</name></member>
+      <member refid="classfc_1_1thread__d_1aa264f4e2fd56836fe7d059805939b463" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>clear_free_list</name></member>
+      <member refid="classfc_1_1thread__d_1a721c6ffc4b7a2e4b4038c45cb8fc4b20" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>context_pair</name></member>
+      <member refid="classfc_1_1thread__d_1a013bd26c54ea829374218b11bb1eff39" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>current</name></member>
+      <member refid="classfc_1_1thread__d_1a59e31bd7bfdc646fe9b5cba77e28d07e" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>dequeue</name></member>
+      <member refid="classfc_1_1thread__d_1a77febc340e08da98b0b9c50844179c97" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>done</name></member>
+      <member refid="classfc_1_1thread__d_1a87178d6f98440fe84f898832ebf58bde" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>enqueue</name></member>
+      <member refid="classfc_1_1thread__d_1ad21124b01614fe31e70917567cc865e3" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>free_list</name></member>
+      <member refid="classfc_1_1thread__d_1a6d6924c0620c5db17b5cba5be7536092" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>has_next_task</name></member>
+      <member refid="classfc_1_1thread__d_1adbb520f5ccc6446d5a32255a7fce31a3" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>move_newly_scheduled_tasks_to_task_pqueue</name></member>
+      <member refid="classfc_1_1thread__d_1adb3d948e58f1d5fc857b36ebae00ab72" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>name</name></member>
+      <member refid="classfc_1_1thread__d_1ad2710a66c1833df0e8004f79749cd507" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>next_posted_num</name></member>
+      <member refid="classfc_1_1thread__d_1a4e0fec7e6239676bbe82d0186b8b9e18" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>next_unused_task_storage_slot</name></member>
+      <member refid="classfc_1_1thread__d_1a1af49f0b7ac6cdbfd8b487173138a3a9" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>non_preemptable_scope_count</name></member>
+      <member refid="classfc_1_1thread__d_1aec841c11fa469fef86a8c62043a49cfb" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>non_task_specific_data</name></member>
+      <member refid="classfc_1_1thread__d_1a566b026f034553609b9d8ebc76ca2e75" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>notifier</name></member>
+      <member refid="classfc_1_1thread__d_1a5f5ee20818a04a54558e1252b83c8579" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>notify_task_has_been_canceled</name></member>
+      <member refid="classfc_1_1thread__d_1ad8318db0689e845a7f76df474d64dcdc" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>process_canceled_tasks</name></member>
+      <member refid="classfc_1_1thread__d_1a88e235224d40c9983429efc7a5002fa4" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>process_tasks</name></member>
+      <member refid="classfc_1_1thread__d_1a1c59dc492633fb2b14fa0a3b4052aeac" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>pt_head</name></member>
+      <member refid="classfc_1_1thread__d_1a3b463a8704ab572d9ca88034fa845d25" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>pt_push_back</name></member>
+      <member refid="classfc_1_1thread__d_1a90e798c3874b609291c43ce53fed0afd" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>ready_heap</name></member>
+      <member refid="classfc_1_1thread__d_1a56a468f11c9edf01e8e65f56df7bcb48" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>ready_pop_front</name></member>
+      <member refid="classfc_1_1thread__d_1a8fbabb8a5e9c1612b7d3747f0c179cd4" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>run_next_task</name></member>
+      <member refid="classfc_1_1thread__d_1a01223d906d0e178e30a361b357ada09c" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>self</name></member>
+      <member refid="classfc_1_1thread__d_1a58b6de49135d3cc308f44784179540c4" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>sleep_pqueue</name></member>
+      <member refid="classfc_1_1thread__d_1ad769aff55d2a8391a87702d0bf733d43" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>stack_alloc</name></member>
+      <member refid="classfc_1_1thread__d_1a9744c27086857f2792073021ca53141f" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>start_next_fiber</name></member>
+      <member refid="classfc_1_1thread__d_1a9bbc3af29a5772171d3e7bdbe1f985ef" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>start_process_tasks</name></member>
+      <member refid="classfc_1_1thread__d_1a614f86c996dc9b7bf8790fe01552ff06" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>task_in_queue</name></member>
+      <member refid="classfc_1_1thread__d_1ac4e866cbd9a7c482c4b938c987964af8" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>task_pqueue</name></member>
+      <member refid="classfc_1_1thread__d_1a3e79dcc61fefa608154d198c45d5941f" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>task_ready</name></member>
+      <member refid="classfc_1_1thread__d_1ac2f8566bf89a726e6c2e252bb43ae133" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>task_ready_mutex</name></member>
+      <member refid="classfc_1_1thread__d_1a32ea0b72a9c3a6643e5df7df6231ef39" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>task_sch_queue</name></member>
+      <member refid="classfc_1_1thread__d_1aaeb6064efa35d6e24a2db919b8f47509" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>thread_d</name></member>
+      <member refid="classfc_1_1thread__d_1a0df7759c6dd9ed33d89774431fedb0ce" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>thread_specific_data</name></member>
+      <member refid="classfc_1_1thread__d_1a0315fbeed6717e7dd56e4dddfe3f3c2a" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>unblock</name></member>
+      <member refid="classfc_1_1thread__d_1a2b82b1630f665e1b897982fe2ae743f1" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>wait</name></member>
+      <member refid="classfc_1_1thread__d_1ab0876676f7a0e22e3703e7fdb04089a7" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>yield_until</name></member>
+      <member refid="classfc_1_1thread__d_1a2875d46eaae87b0c35c29b07dbf470cd" prot="public" virt="non-virtual"><scope>fc::thread_d</scope><name>~thread_d</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

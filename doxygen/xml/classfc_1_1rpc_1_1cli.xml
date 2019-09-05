@@ -1,0 +1,382 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classfc_1_1rpc_1_1cli" kind="class" language="C++" prot="public">
+    <compoundname>fc::rpc::cli</compoundname>
+    <basecompoundref refid="classfc_1_1api__connection" prot="public" virt="non-virtual">fc::api_connection</basecompoundref>
+    <includes refid="cli_8hpp" local="no">cli.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classfc_1_1rpc_1_1cli_1a854e92d0eba2b536ad2e02850b0af4e0" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string fc::rpc::cli::_prompt</definition>
+        <argsstring></argsstring>
+        <name>_prompt</name>
+        <initializer>= &quot;&gt;&gt;&gt;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/cli.hpp" line="41" column="1" bodyfile="libraries/fc/include/fc/rpc/cli.hpp" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1rpc_1_1cli_1a2fce747d1be186c72005642450e612ae" prot="private" static="no" mutable="no">
+        <type>std::map&lt; string, std::function&lt; string(<ref refid="classfc_1_1variant" kindref="compound">variant</ref>, const <ref refid="namespacefc_1a2e5e6bdb302dfb79e684336f3fbbd8bc" kindref="member">variants</ref> &amp;)&gt; &gt;</type>
+        <definition>std::map&lt;string,std::function&lt;string(variant,const variants&amp;)&gt; &gt; fc::rpc::cli::_result_formatters</definition>
+        <argsstring></argsstring>
+        <name>_result_formatters</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/cli.hpp" line="42" column="1" bodyfile="libraries/fc/include/fc/rpc/cli.hpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1rpc_1_1cli_1a73736a0f20b3cfd437ee5c3cf1210189" prot="private" static="no" mutable="no">
+        <type><ref refid="classfc_1_1future" kindref="compound">fc::future</ref>&lt; void &gt;</type>
+        <definition>fc::future&lt;void&gt; fc::rpc::cli::_run_complete</definition>
+        <argsstring></argsstring>
+        <name>_run_complete</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/cli.hpp" line="43" column="1" bodyfile="libraries/fc/include/fc/rpc/cli.hpp" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1rpc_1_1cli_1aa448fbfb5768388cbf34ddf967db845c" prot="private" static="no" mutable="no">
+        <type><ref refid="classfc_1_1thread" kindref="compound">fc::thread</ref> *</type>
+        <definition>fc::thread* fc::rpc::cli::_getline_thread</definition>
+        <argsstring></argsstring>
+        <name>_getline_thread</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+<para>Wait for user input in this thread. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/cli.hpp" line="44" column="1" bodyfile="libraries/fc/include/fc/rpc/cli.hpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfc_1_1rpc_1_1cli_1a778fed83d5fcb81dd454e075e84c4649" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>fc::rpc::cli::cli</definition>
+        <argsstring>(uint32_t max_depth)</argsstring>
+        <name>cli</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>max_depth</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/cli.hpp" line="19" column="1" bodyfile="libraries/fc/include/fc/rpc/cli.hpp" bodystart="19" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1rpc_1_1cli_1aeb4ce839785088fcffe1c6d35532dfcf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fc::rpc::cli::~cli</definition>
+        <argsstring>()</argsstring>
+        <name>~cli</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/cli.hpp" line="20" column="1" bodyfile="libraries/fc/src/rpc/cli.cpp" bodystart="34" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1rpc_1_1cli_1ab42308885a2df6f53bef3c9407d5e775" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classfc_1_1variant" kindref="compound">variant</ref></type>
+        <definition>variant fc::rpc::cli::send_call</definition>
+        <argsstring>(api_id_type api_id, string method_name, variants args=variants())</argsstring>
+        <name>send_call</name>
+        <reimplements refid="classfc_1_1api__connection_1a38d046b1803e1242ce10f36c694b9dea">send_call</reimplements>
+        <param>
+          <type><ref refid="namespacefc_1a18e9e0bd9c0a52896425ae1172bc4e2b" kindref="member">api_id_type</ref></type>
+          <declname>api_id</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>method_name</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacefc_1a2e5e6bdb302dfb79e684336f3fbbd8bc" kindref="member">variants</ref></type>
+          <declname>args</declname>
+          <defval><ref refid="namespacefc_1a2e5e6bdb302dfb79e684336f3fbbd8bc" kindref="member">variants</ref>()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>makes calls to the remote server </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/cli.hpp" line="22" column="1" bodyfile="libraries/fc/src/rpc/cli.cpp" bodystart="42" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1rpc_1_1cli_1a386f494f901a7abfba5ab682be6dd489" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classfc_1_1variant" kindref="compound">variant</ref></type>
+        <definition>variant fc::rpc::cli::send_callback</definition>
+        <argsstring>(uint64_t callback_id, variants args=variants())</argsstring>
+        <name>send_callback</name>
+        <reimplements refid="classfc_1_1api__connection_1ae2a0f9123066ff0df3445ee86ee982d5">send_callback</reimplements>
+        <param>
+          <type>uint64_t</type>
+          <declname>callback_id</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacefc_1a2e5e6bdb302dfb79e684336f3fbbd8bc" kindref="member">variants</ref></type>
+          <declname>args</declname>
+          <defval><ref refid="namespacefc_1a2e5e6bdb302dfb79e684336f3fbbd8bc" kindref="member">variants</ref>()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/cli.hpp" line="23" column="1" bodyfile="libraries/fc/src/rpc/cli.cpp" bodystart="47" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1rpc_1_1cli_1afa3a01d9134551ba945efe8264838583" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void fc::rpc::cli::send_notice</definition>
+        <argsstring>(uint64_t callback_id, variants args=variants())</argsstring>
+        <name>send_notice</name>
+        <reimplements refid="classfc_1_1api__connection_1acc9e1ac12402ebf9dcb3be57035a2623">send_notice</reimplements>
+        <param>
+          <type>uint64_t</type>
+          <declname>callback_id</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacefc_1a2e5e6bdb302dfb79e684336f3fbbd8bc" kindref="member">variants</ref></type>
+          <declname>args</declname>
+          <defval><ref refid="namespacefc_1a2e5e6bdb302dfb79e684336f3fbbd8bc" kindref="member">variants</ref>()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/cli.hpp" line="24" column="1" bodyfile="libraries/fc/src/rpc/cli.cpp" bodystart="52" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1rpc_1_1cli_1a5ca2f4c807517379e93cbe65371f599d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::rpc::cli::start</definition>
+        <argsstring>()</argsstring>
+        <name>start</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/cli.hpp" line="26" column="1" bodyfile="libraries/fc/src/rpc/cli.cpp" bodystart="252" bodyend="272"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1rpc_1_1cli_1ae5e9817886a423fcf8f78fa3fbd894cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::rpc::cli::stop</definition>
+        <argsstring>()</argsstring>
+        <name>stop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/cli.hpp" line="27" column="1" bodyfile="libraries/fc/src/rpc/cli.cpp" bodystart="287" bodyend="291"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1rpc_1_1cli_1a1e4c654063e85a7029d6815730dc1e9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::rpc::cli::cancel</definition>
+        <argsstring>()</argsstring>
+        <name>cancel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/cli.hpp" line="28" column="1" bodyfile="libraries/fc/src/rpc/cli.cpp" bodystart="274" bodyend="285"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1rpc_1_1cli_1ae273a9d552292105027c5a508403f934" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::rpc::cli::wait</definition>
+        <argsstring>()</argsstring>
+        <name>wait</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/cli.hpp" line="29" column="1" bodyfile="libraries/fc/src/rpc/cli.cpp" bodystart="293" bodyend="296"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1rpc_1_1cli_1af7966485df0bc34229281a078063f79b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::rpc::cli::format_result</definition>
+        <argsstring>(const string &amp;method, std::function&lt; string(variant, const variants &amp;)&gt; formatter)</argsstring>
+        <name>format_result</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>method</declname>
+        </param>
+        <param>
+          <type>std::function&lt; string(<ref refid="classfc_1_1variant" kindref="compound">variant</ref>, const <ref refid="namespacefc_1a2e5e6bdb302dfb79e684336f3fbbd8bc" kindref="member">variants</ref> &amp;)&gt;</type>
+          <declname>formatter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/cli.hpp" line="30" column="1" bodyfile="libraries/fc/src/rpc/cli.cpp" bodystart="57" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1rpc_1_1cli_1a33a63aec194f25533d96fa1a16a82825" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void fc::rpc::cli::getline</definition>
+        <argsstring>(const std::string &amp;prompt, std::string &amp;line)</argsstring>
+        <name>getline</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>prompt</declname>
+        </param>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>line</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/cli.hpp" line="32" column="1" bodyfile="libraries/fc/src/rpc/cli.cpp" bodystart="303" bodyend="349"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1rpc_1_1cli_1afbfce92d8307a2197c2d668c96f58f9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::rpc::cli::set_prompt</definition>
+        <argsstring>(const string &amp;prompt)</argsstring>
+        <name>set_prompt</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>prompt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/cli.hpp" line="34" column="1" bodyfile="libraries/fc/src/rpc/cli.cpp" bodystart="62" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1rpc_1_1cli_1a3914d298e02920d6379aae3a2f9d2a96" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::rpc::cli::set_regex_secret</definition>
+        <argsstring>(const string &amp;expr)</argsstring>
+        <name>set_regex_secret</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>expr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/cli.hpp" line="36" column="1" bodyfile="libraries/fc/src/rpc/cli.cpp" bodystart="67" bodyend="70"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classfc_1_1rpc_1_1cli_1a8b4da1676e9b4a9f0a81120cee0fc094" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::rpc::cli::run</definition>
+        <argsstring>()</argsstring>
+        <name>run</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/rpc/cli.hpp" line="39" column="1" bodyfile="libraries/fc/src/rpc/cli.cpp" bodystart="72" bodyend="120"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Provides a simple wrapper for RPC calls to a given interface. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="2071">
+        <label>fc::api_connection</label>
+        <link refid="classfc_1_1api__connection"/>
+        <childnode refid="2072" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2072">
+        <label>std::enable_shared_from_this&lt; fc::api_connection &gt;</label>
+      </node>
+      <node id="2070">
+        <label>fc::rpc::cli</label>
+        <link refid="classfc_1_1rpc_1_1cli"/>
+        <childnode refid="2071" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2074">
+        <label>fc::api_connection</label>
+        <link refid="classfc_1_1api__connection"/>
+        <childnode refid="2075" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2075">
+        <label>std::enable_shared_from_this&lt; fc::api_connection &gt;</label>
+      </node>
+      <node id="2073">
+        <label>fc::rpc::cli</label>
+        <link refid="classfc_1_1rpc_1_1cli"/>
+        <childnode refid="2074" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="libraries/fc/include/fc/rpc/cli.hpp" line="17" column="1" bodyfile="libraries/fc/include/fc/rpc/cli.hpp" bodystart="16" bodyend="45"/>
+    <listofallmembers>
+      <member refid="classfc_1_1rpc_1_1cli_1aa448fbfb5768388cbf34ddf967db845c" prot="private" virt="non-virtual"><scope>fc::rpc::cli</scope><name>_getline_thread</name></member>
+      <member refid="classfc_1_1api__connection_1abd6de8c0c3adc803714ee6ff1694ac20" prot="public" virt="non-virtual"><scope>fc::rpc::cli</scope><name>_max_conversion_depth</name></member>
+      <member refid="classfc_1_1rpc_1_1cli_1a854e92d0eba2b536ad2e02850b0af4e0" prot="private" virt="non-virtual"><scope>fc::rpc::cli</scope><name>_prompt</name></member>
+      <member refid="classfc_1_1rpc_1_1cli_1a2fce747d1be186c72005642450e612ae" prot="private" virt="non-virtual"><scope>fc::rpc::cli</scope><name>_result_formatters</name></member>
+      <member refid="classfc_1_1rpc_1_1cli_1a73736a0f20b3cfd437ee5c3cf1210189" prot="private" virt="non-virtual"><scope>fc::rpc::cli</scope><name>_run_complete</name></member>
+      <member refid="classfc_1_1api__connection_1a1aa38079892340e2745c82327a198869" prot="public" virt="non-virtual"><scope>fc::rpc::cli</scope><name>api_connection</name></member>
+      <member refid="classfc_1_1rpc_1_1cli_1a1e4c654063e85a7029d6815730dc1e9f" prot="public" virt="non-virtual"><scope>fc::rpc::cli</scope><name>cancel</name></member>
+      <member refid="classfc_1_1rpc_1_1cli_1a778fed83d5fcb81dd454e075e84c4649" prot="public" virt="non-virtual"><scope>fc::rpc::cli</scope><name>cli</name></member>
+      <member refid="classfc_1_1api__connection_1a7213e0fce1d2cf67df39ade2d9e06bd7" prot="public" virt="non-virtual"><scope>fc::rpc::cli</scope><name>closed</name></member>
+      <member refid="classfc_1_1rpc_1_1cli_1af7966485df0bc34229281a078063f79b" prot="public" virt="non-virtual"><scope>fc::rpc::cli</scope><name>format_result</name></member>
+      <member refid="classfc_1_1api__connection_1a60236d3c608b33431e0016a23c51b62a" prot="public" virt="non-virtual"><scope>fc::rpc::cli</scope><name>get_method_names</name></member>
+      <member refid="classfc_1_1api__connection_1a0cbbf236b38b8d2cbec418e4663c1d38" prot="public" virt="non-virtual"><scope>fc::rpc::cli</scope><name>get_remote_api</name></member>
+      <member refid="classfc_1_1rpc_1_1cli_1a33a63aec194f25533d96fa1a16a82825" prot="public" virt="virtual"><scope>fc::rpc::cli</scope><name>getline</name></member>
+      <member refid="classfc_1_1api__connection_1aee1166b3d1f739ffd7759cf02b2e7efa" prot="public" virt="non-virtual"><scope>fc::rpc::cli</scope><name>receive_call</name></member>
+      <member refid="classfc_1_1api__connection_1a16bc734461e2954bf42d2f97be137eb8" prot="public" virt="non-virtual"><scope>fc::rpc::cli</scope><name>receive_callback</name></member>
+      <member refid="classfc_1_1api__connection_1ad5bd634f7e967ca90ccc8fd4c3e9fac8" prot="public" virt="non-virtual"><scope>fc::rpc::cli</scope><name>receive_notice</name></member>
+      <member refid="classfc_1_1api__connection_1aede0d0e920a2018f3f74841a3c98a270" prot="public" virt="non-virtual"><scope>fc::rpc::cli</scope><name>register_api</name></member>
+      <member refid="classfc_1_1api__connection_1a9c8aa3ef4091a3b634cb8413ac6979c7" prot="public" virt="non-virtual"><scope>fc::rpc::cli</scope><name>register_callback</name></member>
+      <member refid="classfc_1_1rpc_1_1cli_1a8b4da1676e9b4a9f0a81120cee0fc094" prot="private" virt="non-virtual"><scope>fc::rpc::cli</scope><name>run</name></member>
+      <member refid="classfc_1_1rpc_1_1cli_1ab42308885a2df6f53bef3c9407d5e775" prot="public" virt="virtual"><scope>fc::rpc::cli</scope><name>send_call</name></member>
+      <member refid="classfc_1_1rpc_1_1cli_1a386f494f901a7abfba5ab682be6dd489" prot="public" virt="virtual"><scope>fc::rpc::cli</scope><name>send_callback</name></member>
+      <member refid="classfc_1_1rpc_1_1cli_1afa3a01d9134551ba945efe8264838583" prot="public" virt="virtual"><scope>fc::rpc::cli</scope><name>send_notice</name></member>
+      <member refid="classfc_1_1rpc_1_1cli_1afbfce92d8307a2197c2d668c96f58f9c" prot="public" virt="non-virtual"><scope>fc::rpc::cli</scope><name>set_prompt</name></member>
+      <member refid="classfc_1_1rpc_1_1cli_1a3914d298e02920d6379aae3a2f9d2a96" prot="public" virt="non-virtual"><scope>fc::rpc::cli</scope><name>set_regex_secret</name></member>
+      <member refid="classfc_1_1rpc_1_1cli_1a5ca2f4c807517379e93cbe65371f599d" prot="public" virt="non-virtual"><scope>fc::rpc::cli</scope><name>start</name></member>
+      <member refid="classfc_1_1rpc_1_1cli_1ae5e9817886a423fcf8f78fa3fbd894cc" prot="public" virt="non-virtual"><scope>fc::rpc::cli</scope><name>stop</name></member>
+      <member refid="classfc_1_1rpc_1_1cli_1ae273a9d552292105027c5a508403f934" prot="public" virt="non-virtual"><scope>fc::rpc::cli</scope><name>wait</name></member>
+      <member refid="classfc_1_1api__connection_1a194008fa45fe1107a454d47beeba3c39" prot="public" virt="virtual"><scope>fc::rpc::cli</scope><name>~api_connection</name></member>
+      <member refid="classfc_1_1rpc_1_1cli_1aeb4ce839785088fcffe1c6d35532dfcf" prot="public" virt="non-virtual"><scope>fc::rpc::cli</scope><name>~cli</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

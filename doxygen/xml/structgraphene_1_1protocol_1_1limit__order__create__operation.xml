@@ -59,11 +59,11 @@
         <location file="libraries/protocol/include/graphene/protocol/market.hpp" line="55" column="1" bodyfile="libraries/protocol/include/graphene/protocol/market.hpp" bodystart="55" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1limit__order__create__operation_1a3c7a09bfaeebeb0fab8e56664dccb73d" prot="public" static="no" mutable="no">
-        <type>time_point_sec</type>
+        <type><ref refid="classfc_1_1time__point__sec" kindref="compound">time_point_sec</ref></type>
         <definition>time_point_sec graphene::protocol::limit_order_create_operation::expiration</definition>
         <argsstring></argsstring>
         <name>expiration</name>
-        <initializer>= time_point_sec::maximum()</initializer>
+        <initializer>= <ref refid="classfc_1_1time__point__sec_1a45d3b7342e76cfb07ef1845d75b57a39" kindref="member">time_point_sec::maximum</ref>()</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -159,54 +159,56 @@
     <detaileddescription>
 <para>If either the selling asset or the receiving asset is white list restricted, the order will only be created if the seller is on the white list of the restricted asset type.</para><para>Market orders are matched in the order they are included in the block chain. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="2735">
+      <node id="3888">
         <label>graphene::protocol::base_operation</label>
         <link refid="structgraphene_1_1protocol_1_1base__operation"/>
       </node>
-      <node id="2734">
+      <node id="3887">
         <label>graphene::protocol::limit_order_create_operation</label>
         <link refid="structgraphene_1_1protocol_1_1limit__order__create__operation"/>
-        <childnode refid="2735" relation="public-inheritance">
+        <childnode refid="3888" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="2741">
-        <label>time_point_sec</label>
-      </node>
-      <node id="2738">
+      <node id="3891">
         <label>flat_set&lt; future_extensions &gt;</label>
       </node>
-      <node id="2737">
+      <node id="3893">
+        <label>fc::safe&lt; int64_t &gt;</label>
+        <link refid="structfc_1_1safe"/>
+      </node>
+      <node id="3894">
+        <label>fc::time_point_sec</label>
+        <link refid="classfc_1_1time__point__sec"/>
+      </node>
+      <node id="3890">
         <label>graphene::protocol::base_operation</label>
         <link refid="structgraphene_1_1protocol_1_1base__operation"/>
       </node>
-      <node id="2739">
+      <node id="3892">
         <label>graphene::protocol::asset</label>
         <link refid="structgraphene_1_1protocol_1_1asset"/>
-        <childnode refid="2740" relation="usage">
+        <childnode refid="3893" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
       </node>
-      <node id="2736">
+      <node id="3889">
         <label>graphene::protocol::limit_order_create_operation</label>
         <link refid="structgraphene_1_1protocol_1_1limit__order__create__operation"/>
-        <childnode refid="2737" relation="public-inheritance">
+        <childnode refid="3890" relation="public-inheritance">
         </childnode>
-        <childnode refid="2738" relation="usage">
+        <childnode refid="3891" relation="usage">
           <edgelabel>extensions</edgelabel>
         </childnode>
-        <childnode refid="2739" relation="usage">
+        <childnode refid="3892" relation="usage">
           <edgelabel>fee</edgelabel>
           <edgelabel>min_to_receive</edgelabel>
           <edgelabel>amount_to_sell</edgelabel>
         </childnode>
-        <childnode refid="2741" relation="usage">
+        <childnode refid="3894" relation="usage">
           <edgelabel>expiration</edgelabel>
         </childnode>
-      </node>
-      <node id="2740">
-        <label>safe&lt; int64_t &gt;</label>
       </node>
     </collaborationgraph>
     <location file="libraries/protocol/include/graphene/protocol/market.hpp" line="49" column="1" bodyfile="libraries/protocol/include/graphene/protocol/market.hpp" bodystart="48" bodyend="74"/>

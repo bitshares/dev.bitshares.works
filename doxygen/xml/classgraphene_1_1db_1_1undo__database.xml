@@ -1,0 +1,357 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classgraphene_1_1db_1_1undo__database" kind="class" language="C++" prot="public">
+    <compoundname>graphene::db::undo_database</compoundname>
+    <includes refid="undo__database_8hpp" local="no">undo_database.hpp</includes>
+    <innerclass refid="classgraphene_1_1db_1_1undo__database_1_1session" prot="public">graphene::db::undo_database::session</innerclass>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classgraphene_1_1db_1_1undo__database_1a7922cbd4a409e90cbb63074df67b94a5" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t graphene::db::undo_database::_active_sessions</definition>
+        <argsstring></argsstring>
+        <name>_active_sessions</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/db/include/graphene/db/undo_database.hpp" line="131" column="1" bodyfile="libraries/db/include/graphene/db/undo_database.hpp" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgraphene_1_1db_1_1undo__database_1a5bcc18586a7b02bc2f3a206997af00f9" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool graphene::db::undo_database::_disabled</definition>
+        <argsstring></argsstring>
+        <name>_disabled</name>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/db/include/graphene/db/undo_database.hpp" line="132" column="1" bodyfile="libraries/db/include/graphene/db/undo_database.hpp" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgraphene_1_1db_1_1undo__database_1a97f57de95823d9cb5a6fc81e9a6451b9" prot="private" static="no" mutable="no">
+        <type>std::deque&lt; <ref refid="structgraphene_1_1db_1_1undo__state" kindref="compound">undo_state</ref> &gt;</type>
+        <definition>std::deque&lt;undo_state&gt; graphene::db::undo_database::_stack</definition>
+        <argsstring></argsstring>
+        <name>_stack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/db/include/graphene/db/undo_database.hpp" line="133" column="1" bodyfile="libraries/db/include/graphene/db/undo_database.hpp" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgraphene_1_1db_1_1undo__database_1a6b8b5fe62154d3962c93290a66dc361b" prot="private" static="no" mutable="no">
+        <type><ref refid="classgraphene_1_1db_1_1object__database" kindref="compound">object_database</ref> &amp;</type>
+        <definition>object_database&amp; graphene::db::undo_database::_db</definition>
+        <argsstring></argsstring>
+        <name>_db</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/db/include/graphene/db/undo_database.hpp" line="134" column="1" bodyfile="libraries/db/include/graphene/db/undo_database.hpp" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgraphene_1_1db_1_1undo__database_1ae2daeec85fbefcbfe58e5e3151b28f59" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t graphene::db::undo_database::_max_size</definition>
+        <argsstring></argsstring>
+        <name>_max_size</name>
+        <initializer>= 256</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/db/include/graphene/db/undo_database.hpp" line="135" column="1" bodyfile="libraries/db/include/graphene/db/undo_database.hpp" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgraphene_1_1db_1_1undo__database_1a76e67c5afaea117b87410dc4ceb4bd93" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>graphene::db::undo_database::undo_database</definition>
+        <argsstring>(object_database &amp;db)</argsstring>
+        <name>undo_database</name>
+        <param>
+          <type><ref refid="classgraphene_1_1db_1_1object__database" kindref="compound">object_database</ref> &amp;</type>
+          <declname>db</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/db/include/graphene/db/undo_database.hpp" line="52" column="1" bodyfile="libraries/db/include/graphene/db/undo_database.hpp" bodystart="52" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1db_1_1undo__database_1aa872ccf85b7de68fe5fb733846db56ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void graphene::db::undo_database::disable</definition>
+        <argsstring>()</argsstring>
+        <name>disable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/db/include/graphene/db/undo_database.hpp" line="84" column="1" bodyfile="libraries/db/undo_database.cpp" bodystart="31" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1db_1_1undo__database_1a115282c719303eb47bfcb414cda007b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void graphene::db::undo_database::enable</definition>
+        <argsstring>()</argsstring>
+        <name>enable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/db/include/graphene/db/undo_database.hpp" line="85" column="1" bodyfile="libraries/db/undo_database.cpp" bodystart="30" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1db_1_1undo__database_1acf5271fb4c5ac030c292eaa75c9c7890" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool graphene::db::undo_database::enabled</definition>
+        <argsstring>() const</argsstring>
+        <name>enabled</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/db/include/graphene/db/undo_database.hpp" line="86" column="1" bodyfile="libraries/db/include/graphene/db/undo_database.hpp" bodystart="86" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1db_1_1undo__database_1ac054cd92fe23ba25b2f164f7e549c332" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classgraphene_1_1db_1_1undo__database_1_1session" kindref="compound">session</ref></type>
+        <definition>undo_database::session graphene::db::undo_database::start_undo_session</definition>
+        <argsstring>(bool force_enable=false)</argsstring>
+        <name>start_undo_session</name>
+        <param>
+          <type>bool</type>
+          <declname>force_enable</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/db/include/graphene/db/undo_database.hpp" line="88" column="1" bodyfile="libraries/db/undo_database.cpp" bodystart="46" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1db_1_1undo__database_1a3630ad1beced2dd83695e1d342039432" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void graphene::db::undo_database::on_create</definition>
+        <argsstring>(const object &amp;obj)</argsstring>
+        <name>on_create</name>
+        <param>
+          <type>const <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This should be called just after an object is created </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/db/include/graphene/db/undo_database.hpp" line="92" column="1" bodyfile="libraries/db/undo_database.cpp" bodystart="60" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1db_1_1undo__database_1af49a06cdb49babd9ded4a6b8422191bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void graphene::db::undo_database::on_modify</definition>
+        <argsstring>(const object &amp;obj)</argsstring>
+        <name>on_modify</name>
+        <param>
+          <type>const <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This should be called just before an object is modified</para><para>If it&apos;s a new object as of this undo state, its pre-modification value is not stored, because prior to this undo state, it did not exist. Any modifications in this undo state are irrelevant, as the object will simply be removed if we undo. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/db/include/graphene/db/undo_database.hpp" line="100" column="1" bodyfile="libraries/db/undo_database.cpp" bodystart="73" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1db_1_1undo__database_1ad5ca52ea871377ebd3a5543798ae821c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void graphene::db::undo_database::on_remove</definition>
+        <argsstring>(const object &amp;obj)</argsstring>
+        <name>on_remove</name>
+        <param>
+          <type>const <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This should be called just before an object is removed.</para><para>If it&apos;s a new object as of this undo state, its pre-removal value is not stored, because prior to this undo state, it did not exist. Now that it&apos;s been removed, it doesn&apos;t exist again, so nothing has happened. Instead, remove it from the list of newly created objects (which must be deleted if we undo), as we don&apos;t want to re-delete it if this state is undone. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/db/include/graphene/db/undo_database.hpp" line="109" column="1" bodyfile="libraries/db/undo_database.cpp" bodystart="86" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1db_1_1undo__database_1a7ee27819435f1fe3e11ed3c493bb557a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void graphene::db::undo_database::pop_commit</definition>
+        <argsstring>()</argsstring>
+        <name>pop_commit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Removes the last committed session, note... this is dangerous if there are active sessions... thus active sessions should track </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/db/include/graphene/db/undo_database.hpp" line="117" column="1" bodyfile="libraries/db/undo_database.cpp" bodystart="264" bodyend="300"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1db_1_1undo__database_1a9d0143bd59cb68a1f5418f2e07be0a18" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::size_t</type>
+        <definition>std::size_t graphene::db::undo_database::size</definition>
+        <argsstring>() const</argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/db/include/graphene/db/undo_database.hpp" line="119" column="1" bodyfile="libraries/db/include/graphene/db/undo_database.hpp" bodystart="119" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1db_1_1undo__database_1aff63be221838bc155ca1f65ba77cc63a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void graphene::db::undo_database::set_max_size</definition>
+        <argsstring>(size_t new_max_size)</argsstring>
+        <name>set_max_size</name>
+        <param>
+          <type>size_t</type>
+          <declname>new_max_size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/db/include/graphene/db/undo_database.hpp" line="120" column="1" bodyfile="libraries/db/include/graphene/db/undo_database.hpp" bodystart="120" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1db_1_1undo__database_1a8cfe96deca9bf4754c32a819c5a9314b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t graphene::db::undo_database::max_size</definition>
+        <argsstring>() const</argsstring>
+        <name>max_size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/db/include/graphene/db/undo_database.hpp" line="121" column="1" bodyfile="libraries/db/include/graphene/db/undo_database.hpp" bodystart="121" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1db_1_1undo__database_1ab888695158f4f3db5a506116d4d4cbae" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t graphene::db::undo_database::active_sessions</definition>
+        <argsstring>() const</argsstring>
+        <name>active_sessions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/db/include/graphene/db/undo_database.hpp" line="122" column="1" bodyfile="libraries/db/include/graphene/db/undo_database.hpp" bodystart="122" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1db_1_1undo__database_1a76cd646a73d9ba7259779e4282b45032" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="structgraphene_1_1db_1_1undo__state" kindref="compound">undo_state</ref> &amp;</type>
+        <definition>const undo_state &amp; graphene::db::undo_database::head</definition>
+        <argsstring>() const</argsstring>
+        <name>head</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/db/include/graphene/db/undo_database.hpp" line="124" column="1" bodyfile="libraries/db/undo_database.cpp" bodystart="301" bodyend="305"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classgraphene_1_1db_1_1undo__database_1a48bc6a31f1b727c50a698c4f67a1fe80" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void graphene::db::undo_database::undo</definition>
+        <argsstring>()</argsstring>
+        <name>undo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/db/include/graphene/db/undo_database.hpp" line="127" column="1" bodyfile="libraries/db/undo_database.cpp" bodystart="108" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1db_1_1undo__database_1a139c3ee9b8b75adfd5697dbb2ddba605" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void graphene::db::undo_database::merge</definition>
+        <argsstring>()</argsstring>
+        <name>merge</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/db/include/graphene/db/undo_database.hpp" line="128" column="1" bodyfile="libraries/db/undo_database.cpp" bodystart="138" bodyend="257"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1db_1_1undo__database_1a56d60be883b37fa4c9a1d1e673f310ab" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void graphene::db::undo_database::commit</definition>
+        <argsstring>()</argsstring>
+        <name>commit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/db/include/graphene/db/undo_database.hpp" line="129" column="1" bodyfile="libraries/db/undo_database.cpp" bodystart="258" bodyend="262"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>tracks changes to the state and allows changes to be undone </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="libraries/db/include/graphene/db/undo_database.hpp" line="50" column="1" bodyfile="libraries/db/include/graphene/db/undo_database.hpp" bodystart="49" bodyend="136"/>
+    <listofallmembers>
+      <member refid="classgraphene_1_1db_1_1undo__database_1a7922cbd4a409e90cbb63074df67b94a5" prot="private" virt="non-virtual"><scope>graphene::db::undo_database</scope><name>_active_sessions</name></member>
+      <member refid="classgraphene_1_1db_1_1undo__database_1a6b8b5fe62154d3962c93290a66dc361b" prot="private" virt="non-virtual"><scope>graphene::db::undo_database</scope><name>_db</name></member>
+      <member refid="classgraphene_1_1db_1_1undo__database_1a5bcc18586a7b02bc2f3a206997af00f9" prot="private" virt="non-virtual"><scope>graphene::db::undo_database</scope><name>_disabled</name></member>
+      <member refid="classgraphene_1_1db_1_1undo__database_1ae2daeec85fbefcbfe58e5e3151b28f59" prot="private" virt="non-virtual"><scope>graphene::db::undo_database</scope><name>_max_size</name></member>
+      <member refid="classgraphene_1_1db_1_1undo__database_1a97f57de95823d9cb5a6fc81e9a6451b9" prot="private" virt="non-virtual"><scope>graphene::db::undo_database</scope><name>_stack</name></member>
+      <member refid="classgraphene_1_1db_1_1undo__database_1ab888695158f4f3db5a506116d4d4cbae" prot="public" virt="non-virtual"><scope>graphene::db::undo_database</scope><name>active_sessions</name></member>
+      <member refid="classgraphene_1_1db_1_1undo__database_1a56d60be883b37fa4c9a1d1e673f310ab" prot="private" virt="non-virtual"><scope>graphene::db::undo_database</scope><name>commit</name></member>
+      <member refid="classgraphene_1_1db_1_1undo__database_1aa872ccf85b7de68fe5fb733846db56ef" prot="public" virt="non-virtual"><scope>graphene::db::undo_database</scope><name>disable</name></member>
+      <member refid="classgraphene_1_1db_1_1undo__database_1a115282c719303eb47bfcb414cda007b8" prot="public" virt="non-virtual"><scope>graphene::db::undo_database</scope><name>enable</name></member>
+      <member refid="classgraphene_1_1db_1_1undo__database_1acf5271fb4c5ac030c292eaa75c9c7890" prot="public" virt="non-virtual"><scope>graphene::db::undo_database</scope><name>enabled</name></member>
+      <member refid="classgraphene_1_1db_1_1undo__database_1a76cd646a73d9ba7259779e4282b45032" prot="public" virt="non-virtual"><scope>graphene::db::undo_database</scope><name>head</name></member>
+      <member refid="classgraphene_1_1db_1_1undo__database_1a8cfe96deca9bf4754c32a819c5a9314b" prot="public" virt="non-virtual"><scope>graphene::db::undo_database</scope><name>max_size</name></member>
+      <member refid="classgraphene_1_1db_1_1undo__database_1a139c3ee9b8b75adfd5697dbb2ddba605" prot="private" virt="non-virtual"><scope>graphene::db::undo_database</scope><name>merge</name></member>
+      <member refid="classgraphene_1_1db_1_1undo__database_1a3630ad1beced2dd83695e1d342039432" prot="public" virt="non-virtual"><scope>graphene::db::undo_database</scope><name>on_create</name></member>
+      <member refid="classgraphene_1_1db_1_1undo__database_1af49a06cdb49babd9ded4a6b8422191bc" prot="public" virt="non-virtual"><scope>graphene::db::undo_database</scope><name>on_modify</name></member>
+      <member refid="classgraphene_1_1db_1_1undo__database_1ad5ca52ea871377ebd3a5543798ae821c" prot="public" virt="non-virtual"><scope>graphene::db::undo_database</scope><name>on_remove</name></member>
+      <member refid="classgraphene_1_1db_1_1undo__database_1a7ee27819435f1fe3e11ed3c493bb557a" prot="public" virt="non-virtual"><scope>graphene::db::undo_database</scope><name>pop_commit</name></member>
+      <member refid="classgraphene_1_1db_1_1undo__database_1aff63be221838bc155ca1f65ba77cc63a" prot="public" virt="non-virtual"><scope>graphene::db::undo_database</scope><name>set_max_size</name></member>
+      <member refid="classgraphene_1_1db_1_1undo__database_1a9d0143bd59cb68a1f5418f2e07be0a18" prot="public" virt="non-virtual"><scope>graphene::db::undo_database</scope><name>size</name></member>
+      <member refid="classgraphene_1_1db_1_1undo__database_1ac054cd92fe23ba25b2f164f7e549c332" prot="public" virt="non-virtual"><scope>graphene::db::undo_database</scope><name>start_undo_session</name></member>
+      <member refid="classgraphene_1_1db_1_1undo__database_1a48bc6a31f1b727c50a698c4f67a1fe80" prot="private" virt="non-virtual"><scope>graphene::db::undo_database</scope><name>undo</name></member>
+      <member refid="classgraphene_1_1db_1_1undo__database_1a76e67c5afaea117b87410dc4ceb4bd93" prot="public" virt="non-virtual"><scope>graphene::db::undo_database</scope><name>undo_database</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

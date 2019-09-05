@@ -126,68 +126,81 @@
     <detaileddescription>
 <para>Place holder for state tracked while processing a transaction. This class provides helper methods that are common to many different operations and also tracks which keys have signed the transaction </para>    </detaileddescription>
     <collaborationgraph>
-      <node id="3316">
-        <label>time_point_sec</label>
+      <node id="5281">
+        <label>fc::ripemd160</label>
+        <link refid="classfc_1_1ripemd160"/>
       </node>
-      <node id="3311">
-        <label>db::object_database</label>
-      </node>
-      <node id="3315">
+      <node id="5280">
         <label>flat_set&lt; future_extensions &gt;</label>
       </node>
-      <node id="3318">
+      <node id="5283">
         <label>vector&lt; signature_type &gt;</label>
       </node>
-      <node id="3319">
+      <node id="5284">
         <label>flat_set&lt; graphene::protocol::public_key_type &gt;</label>
       </node>
-      <node id="3317">
-        <label>vector&lt; operation &gt;</label>
+      <node id="5282">
+        <label>fc::time_point_sec</label>
+        <link refid="classfc_1_1time__point__sec"/>
       </node>
-      <node id="3312">
-        <label>vector&lt; operation_result &gt;</label>
+      <node id="5275">
+        <label>graphene::db::object_database</label>
+        <link refid="classgraphene_1_1db_1_1object__database"/>
+        <childnode refid="5276" relation="usage">
+          <edgelabel>_undo_db</edgelabel>
+        </childnode>
       </node>
-      <node id="3310">
+      <node id="5277">
+        <label>vector&lt; fc::static_variant &gt;</label>
+      </node>
+      <node id="5274">
         <label>graphene::chain::database</label>
         <link refid="classgraphene_1_1chain_1_1database"/>
-        <childnode refid="3311" relation="public-inheritance">
+        <childnode refid="5275" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="3309">
+      <node id="5273">
         <label>graphene::chain::transaction_evaluation_state</label>
         <link refid="classgraphene_1_1chain_1_1transaction__evaluation__state"/>
-        <childnode refid="3310" relation="usage">
+        <childnode refid="5274" relation="usage">
           <edgelabel>_db</edgelabel>
         </childnode>
-        <childnode refid="3312" relation="usage">
+        <childnode refid="5277" relation="usage">
           <edgelabel>operation_results</edgelabel>
         </childnode>
-        <childnode refid="3313" relation="usage">
+        <childnode refid="5278" relation="usage">
           <edgelabel>_trx</edgelabel>
         </childnode>
       </node>
-      <node id="3313">
+      <node id="5276">
+        <label>graphene::db::undo_database</label>
+        <link refid="classgraphene_1_1db_1_1undo__database"/>
+      </node>
+      <node id="5278">
         <label>graphene::protocol::signed_transaction</label>
         <link refid="classgraphene_1_1protocol_1_1signed__transaction"/>
-        <childnode refid="3314" relation="public-inheritance">
+        <childnode refid="5279" relation="public-inheritance">
         </childnode>
-        <childnode refid="3318" relation="usage">
+        <childnode refid="5283" relation="usage">
           <edgelabel>signatures</edgelabel>
         </childnode>
-        <childnode refid="3319" relation="usage">
+        <childnode refid="5284" relation="usage">
           <edgelabel>_signees</edgelabel>
         </childnode>
       </node>
-      <node id="3314">
+      <node id="5279">
         <label>graphene::protocol::transaction</label>
         <link refid="classgraphene_1_1protocol_1_1transaction"/>
-        <childnode refid="3315" relation="usage">
+        <childnode refid="5280" relation="usage">
           <edgelabel>extensions</edgelabel>
         </childnode>
-        <childnode refid="3316" relation="usage">
+        <childnode refid="5281" relation="usage">
+          <edgelabel>_tx_id_buffer</edgelabel>
+        </childnode>
+        <childnode refid="5282" relation="usage">
           <edgelabel>expiration</edgelabel>
         </childnode>
-        <childnode refid="3317" relation="usage">
+        <childnode refid="5277" relation="usage">
           <edgelabel>operations</edgelabel>
         </childnode>
       </node>

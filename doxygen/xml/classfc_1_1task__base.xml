@@ -1,0 +1,552 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classfc_1_1task__base" kind="class" language="C++" prot="public">
+    <compoundname>fc::task_base</compoundname>
+    <basecompoundref refid="classfc_1_1promise__base" prot="public" virt="virtual">fc::promise_base</basecompoundref>
+    <derivedcompoundref refid="classfc_1_1task" prot="public" virt="virtual">fc::task&lt; R, FunctorSize &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classfc_1_1task_3_01void_00_01_functor_size_01_4" prot="public" virt="non-virtual">fc::task&lt; void, FunctorSize &gt;</derivedcompoundref>
+    <includes refid="task_8hpp" local="no">task.hpp</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classfc_1_1task__base_1a1ce52945a93866495b8221182b339676" prot="protected" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t fc::task_base::_posted_num</definition>
+        <argsstring></argsstring>
+        <name>_posted_num</name>
+        <briefdescription>
+<para>Task priority looks like unsupported feature. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/task.hpp" line="58" column="1" bodyfile="libraries/fc/include/fc/thread/task.hpp" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1task__base_1a3195ee5599bf11c9094c79aa0852f99b" prot="protected" static="no" mutable="no">
+        <type><ref refid="classfc_1_1priority" kindref="compound">priority</ref></type>
+        <definition>priority fc::task_base::_prio</definition>
+        <argsstring></argsstring>
+        <name>_prio</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/task.hpp" line="59" column="1" bodyfile="libraries/fc/include/fc/thread/task.hpp" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1task__base_1af69949c93190c281cfd6887b39cd2e5b" prot="protected" static="no" mutable="no">
+        <type><ref refid="classfc_1_1time__point" kindref="compound">time_point</ref></type>
+        <definition>time_point fc::task_base::_when</definition>
+        <argsstring></argsstring>
+        <name>_when</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/task.hpp" line="60" column="1" bodyfile="libraries/fc/include/fc/thread/task.hpp" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1task__base_1aefaec2571643ac1efd3c3d49bdc845cb" prot="protected" static="no" mutable="no">
+        <type><ref refid="structfc_1_1context" kindref="compound">context</ref> *</type>
+        <definition>context* fc::task_base::_active_context</definition>
+        <argsstring></argsstring>
+        <name>_active_context</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/task.hpp" line="62" column="1" bodyfile="libraries/fc/include/fc/thread/task.hpp" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1task__base_1aef79bbec2637fc1605529bf1cc703446" prot="protected" static="no" mutable="no">
+        <type><ref refid="classfc_1_1task__base" kindref="compound">task_base</ref> *</type>
+        <definition>task_base* fc::task_base::_next</definition>
+        <argsstring></argsstring>
+        <name>_next</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/task.hpp" line="63" column="1" bodyfile="libraries/fc/include/fc/thread/task.hpp" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1task__base_1a55a8a9920ee4ba9b90818958fef9793c" prot="protected" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structfc_1_1detail_1_1specific__data__info" kindref="compound">detail::specific_data_info</ref> &gt; *</type>
+        <definition>std::vector&lt;detail::specific_data_info&gt;* fc::task_base::_task_specific_data</definition>
+        <argsstring></argsstring>
+        <name>_task_specific_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/task.hpp" line="66" column="1" bodyfile="libraries/fc/include/fc/thread/task.hpp" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1task__base_1aeaf7f27ad93d9d920ef07373a66bb727" prot="protected" static="no" mutable="no">
+        <type><ref refid="classfc_1_1fwd" kindref="compound">fwd</ref>&lt; <ref refid="classfc_1_1spin__lock" kindref="compound">spin_lock</ref>, 8 &gt;</type>
+        <definition>fwd&lt;spin_lock,8&gt; fc::task_base::_spinlock</definition>
+        <argsstring></argsstring>
+        <name>_spinlock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/task.hpp" line="77" column="1" bodyfile="libraries/fc/include/fc/thread/task.hpp" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1task__base_1ad57a67a331a9df6f58b8e3e915bbd7ee" prot="protected" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* fc::task_base::_promise_impl</definition>
+        <argsstring></argsstring>
+        <name>_promise_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/task.hpp" line="80" column="1" bodyfile="libraries/fc/include/fc/thread/task.hpp" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1task__base_1a24254c5230e57ae25c4285b9d8caa0fd" prot="protected" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* fc::task_base::_functor</definition>
+        <argsstring></argsstring>
+        <name>_functor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/task.hpp" line="81" column="1" bodyfile="libraries/fc/include/fc/thread/task.hpp" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1task__base_1a829e96413662f82a99c06cec11ee402c" prot="protected" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* fc::task_base::_destroy_functor) (void *)</definition>
+        <argsstring>)(void *)</argsstring>
+        <name>_destroy_functor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/task.hpp" line="82" column="1" bodyfile="libraries/fc/include/fc/thread/task.hpp" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1task__base_1a2ffe6f99f990462860e74fe0ea98cd80" prot="protected" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* fc::task_base::_run_functor) (void *, void *)</definition>
+        <argsstring>)(void *, void *)</argsstring>
+        <name>_run_functor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/task.hpp" line="83" column="1" bodyfile="libraries/fc/include/fc/thread/task.hpp" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classfc_1_1task__base_1adb314a48b19f4325e5e69e8a60091fce" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class thread</definition>
+        <argsstring></argsstring>
+        <name>thread</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/task.hpp" line="74" column="1" bodyfile="libraries/fc/include/fc/thread/task.hpp" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="friend" id="classfc_1_1task__base_1adf6b3bf455e0a61e7d995a5fdd4b70fb" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class thread_d</definition>
+        <argsstring></argsstring>
+        <name>thread_d</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/task.hpp" line="75" column="1" bodyfile="libraries/fc/include/fc/thread/task.hpp" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="friend" id="classfc_1_1task__base_1ac25b7472f9cc238f32fe45cf5c83cd98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class detail::idle_guard</definition>
+        <argsstring></argsstring>
+        <name>detail::idle_guard</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/task.hpp" line="76" column="1" bodyfile="libraries/fc/include/fc/thread/task.hpp" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="friend" id="classfc_1_1task__base_1a0af797fb528d666a56eff3dc50950e14" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend void *</type>
+        <definition>void* detail::get_task_specific_data</definition>
+        <argsstring>(unsigned slot)</argsstring>
+        <name>detail::get_task_specific_data</name>
+        <param>
+          <type>unsigned</type>
+          <declname>slot</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/task.hpp" line="68" column="1"/>
+      </memberdef>
+      <memberdef kind="friend" id="classfc_1_1task__base_1a3e7af3eff286dea559576b55f54e48cf" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend void</type>
+        <definition>void detail::set_task_specific_data</definition>
+        <argsstring>(unsigned slot, void *new_value, void(*cleanup)(void *))</argsstring>
+        <name>detail::set_task_specific_data</name>
+        <param>
+          <type>unsigned</type>
+          <declname>slot</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>new_value</declname>
+        </param>
+        <param>
+          <type>void(*)(void *)</type>
+          <declname>cleanup</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/task.hpp" line="69" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classfc_1_1task__base_1a2baef17ecd71e317c409447ccaab47c4" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classfc_1_1promise__base" kindref="compound">promise_base</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;promise_base&gt; fc::task_base::_self</definition>
+        <argsstring></argsstring>
+        <name>_self</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/task.hpp" line="89" column="1" bodyfile="libraries/fc/include/fc/thread/task.hpp" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfc_1_1task__base_1abb30654ef585a4c0d8f72239e8a0320b" prot="private" static="no" mutable="no">
+        <type>boost::atomic&lt; int32_t &gt;</type>
+        <definition>boost::atomic&lt;int32_t&gt; fc::task_base::_retain_count</definition>
+        <argsstring></argsstring>
+        <name>_retain_count</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/task.hpp" line="90" column="1" bodyfile="libraries/fc/include/fc/thread/task.hpp" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfc_1_1task__base_1a139cba0f6e55189152a327559589ac35" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::task_base::run</definition>
+        <argsstring>()</argsstring>
+        <name>run</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/task.hpp" line="33" column="1" bodyfile="libraries/fc/src/thread/task.cpp" bodystart="29" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1task__base_1a64b4d2fd1ad11728a8bc2438095a52e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void fc::task_base::cancel</definition>
+        <argsstring>(const char *reason FC_CANCELATION_REASON_DEFAULT_ARG) override</argsstring>
+        <name>cancel</name>
+        <reimplements refid="classfc_1_1promise__base_1a5d2719d4d2948d8e1e600ec88af91e91">cancel</reimplements>
+        <reimplementedby refid="classfc_1_1task_1a82653ae65a8fd1d6640fbac24ad4358e">cancel</reimplementedby>
+        <reimplementedby refid="classfc_1_1task_3_01void_00_01_functor_size_01_4_1a66f66417f10b7ea512978dfce3ceb510">cancel</reimplementedby>
+        <param>
+          <type>const char *reason</type>
+          <declname>FC_CANCELATION_REASON_DEFAULT_ARG</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/task.hpp" line="34" column="1" bodyfile="libraries/fc/src/thread/task.cpp" bodystart="64" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1task__base_1ae579645ce7de6e1fd6fa64ffa4aad80f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>fc::task_base::~task_base</definition>
+        <argsstring>()</argsstring>
+        <name>~task_base</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/task.hpp" line="35" column="1" bodyfile="libraries/fc/src/thread/task.cpp" bodystart="82" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1task__base_1a393410abe6c551a9c5d6d2f8ec64fe18" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::task_base::retain</definition>
+        <argsstring>()</argsstring>
+        <name>retain</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/task.hpp" line="53" column="1" bodyfile="libraries/fc/src/thread/task.cpp" bodystart="105" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1task__base_1a413bffca4b6ef32ba8190b5d25a39677" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::task_base::release</definition>
+        <argsstring>()</argsstring>
+        <name>release</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/task.hpp" line="54" column="1" bodyfile="libraries/fc/src/thread/task.cpp" bodystart="109" bodyend="112"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classfc_1_1task__base_1afc3600277fb6f0487d8570e866bf12b2" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::task_base::_set_active_context</definition>
+        <argsstring>(context *)</argsstring>
+        <name>_set_active_context</name>
+        <param>
+          <type><ref refid="structfc_1_1context" kindref="compound">context</ref> *</type>
+          <defname>c</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/task.hpp" line="61" column="1" bodyfile="libraries/fc/src/thread/task.cpp" bodystart="87" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1task__base_1a1f3e0b1e23f2dff5336cd16f701e345a" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fc::task_base::task_base</definition>
+        <argsstring>(void *func)</argsstring>
+        <name>task_base</name>
+        <param>
+          <type>void *</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/task.hpp" line="71" column="1" bodyfile="libraries/fc/src/thread/task.cpp" bodystart="17" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1task__base_1a52d7729494a725f955ceeda38f28a597" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::task_base::run_impl</definition>
+        <argsstring>()</argsstring>
+        <name>run_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/task.hpp" line="85" column="1" bodyfile="libraries/fc/src/thread/task.cpp" bodystart="41" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1task__base_1a83c6b88bc9a517544959885f8c47cd0b" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::task_base::cleanup_task_specific_data</definition>
+        <argsstring>()</argsstring>
+        <name>cleanup_task_specific_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/task.hpp" line="87" column="1" bodyfile="libraries/fc/src/thread/task.cpp" bodystart="93" bodyend="103"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="5155">
+        <label>fc::task&lt; void, FunctorSize &gt;</label>
+        <link refid="classfc_1_1task_3_01void_00_01_functor_size_01_4"/>
+        <childnode refid="5151" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5151">
+        <label>fc::task_base</label>
+        <link refid="classfc_1_1task__base"/>
+        <childnode refid="5152" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5154">
+        <label>fc::task&lt; R, FunctorSize &gt;</label>
+        <link refid="classfc_1_1task"/>
+        <childnode refid="5151" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5153">
+        <label>std::enable_shared_from_this&lt; promise_base &gt;</label>
+      </node>
+      <node id="5152">
+        <label>fc::promise_base</label>
+        <link refid="classfc_1_1promise__base"/>
+        <childnode refid="5153" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="5162">
+        <label>fc::thread</label>
+        <link refid="classfc_1_1thread"/>
+      </node>
+      <node id="5163">
+        <label>fc::time_point</label>
+        <link refid="classfc_1_1time__point"/>
+      </node>
+      <node id="5160">
+        <label>fc::fwd&lt; fc::spin_lock, 8 &gt;</label>
+        <link refid="classfc_1_1fwd"/>
+      </node>
+      <node id="5156">
+        <label>fc::task_base</label>
+        <link refid="classfc_1_1task__base"/>
+        <childnode refid="5157" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5156" relation="usage">
+          <edgelabel>_next</edgelabel>
+        </childnode>
+        <childnode refid="5159" relation="usage">
+          <edgelabel>_prio</edgelabel>
+        </childnode>
+        <childnode refid="5160" relation="usage">
+          <edgelabel>_spinlock</edgelabel>
+        </childnode>
+        <childnode refid="5161" relation="usage">
+          <edgelabel>_active_context</edgelabel>
+        </childnode>
+        <childnode refid="5163" relation="usage">
+          <edgelabel>_when</edgelabel>
+        </childnode>
+      </node>
+      <node id="5161">
+        <label>fc::context</label>
+        <link refid="structfc_1_1context"/>
+        <childnode refid="5156" relation="usage">
+          <edgelabel>cur_task</edgelabel>
+        </childnode>
+        <childnode refid="5159" relation="usage">
+          <edgelabel>prio</edgelabel>
+        </childnode>
+        <childnode refid="5162" relation="usage">
+          <edgelabel>ctx_thread</edgelabel>
+        </childnode>
+        <childnode refid="5161" relation="usage">
+          <edgelabel>next_blocked_mutex</edgelabel>
+          <edgelabel>next</edgelabel>
+          <edgelabel>caller_context</edgelabel>
+          <edgelabel>next_blocked</edgelabel>
+        </childnode>
+        <childnode refid="5163" relation="usage">
+          <edgelabel>resume_time</edgelabel>
+        </childnode>
+      </node>
+      <node id="5159">
+        <label>fc::priority</label>
+        <link refid="classfc_1_1priority"/>
+      </node>
+      <node id="5158">
+        <label>std::enable_shared_from_this&lt; promise_base &gt;</label>
+      </node>
+      <node id="5157">
+        <label>fc::promise_base</label>
+        <link refid="classfc_1_1promise__base"/>
+        <childnode refid="5158" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="libraries/fc/include/fc/thread/task.hpp" line="31" column="1" bodyfile="libraries/fc/include/fc/thread/task.hpp" bodystart="31" bodyend="91"/>
+    <listofallmembers>
+      <member refid="classfc_1_1task__base_1aefaec2571643ac1efd3c3d49bdc845cb" prot="protected" virt="non-virtual"><scope>fc::task_base</scope><name>_active_context</name></member>
+      <member refid="classfc_1_1promise__base_1a11f63028c05408c07cd9281171af6001" prot="protected" virt="non-virtual"><scope>fc::task_base</scope><name>_cancellation_reason</name></member>
+      <member refid="classfc_1_1promise__base_1a2db0a2f3139577fcb7f5f82dc85f8534" prot="protected" virt="non-virtual"><scope>fc::task_base</scope><name>_dequeue_thread</name></member>
+      <member refid="classfc_1_1task__base_1a829e96413662f82a99c06cec11ee402c" prot="protected" virt="non-virtual"><scope>fc::task_base</scope><name>_destroy_functor</name></member>
+      <member refid="classfc_1_1promise__base_1a6a87975a31dd58f11e1b62ae28eb5f83" prot="protected" virt="non-virtual"><scope>fc::task_base</scope><name>_enqueue_thread</name></member>
+      <member refid="classfc_1_1task__base_1a24254c5230e57ae25c4285b9d8caa0fd" prot="protected" virt="non-virtual"><scope>fc::task_base</scope><name>_functor</name></member>
+      <member refid="classfc_1_1task__base_1aef79bbec2637fc1605529bf1cc703446" prot="protected" virt="non-virtual"><scope>fc::task_base</scope><name>_next</name></member>
+      <member refid="classfc_1_1promise__base_1a320d282323c9805b6387a7b7ea6dcd79" prot="protected" virt="non-virtual"><scope>fc::task_base</scope><name>_notify</name></member>
+      <member refid="classfc_1_1promise__base_1ab0d96cf4e63f9ede926e779149c16d1e" prot="protected" virt="non-virtual"><scope>fc::task_base</scope><name>_on_complete</name></member>
+      <member refid="classfc_1_1task__base_1a1ce52945a93866495b8221182b339676" prot="protected" virt="non-virtual"><scope>fc::task_base</scope><name>_posted_num</name></member>
+      <member refid="classfc_1_1task__base_1a3195ee5599bf11c9094c79aa0852f99b" prot="protected" virt="non-virtual"><scope>fc::task_base</scope><name>_prio</name></member>
+      <member refid="classfc_1_1task__base_1ad57a67a331a9df6f58b8e3e915bbd7ee" prot="protected" virt="non-virtual"><scope>fc::task_base</scope><name>_promise_impl</name></member>
+      <member refid="classfc_1_1task__base_1abb30654ef585a4c0d8f72239e8a0320b" prot="private" virt="non-virtual"><scope>fc::task_base</scope><name>_retain_count</name></member>
+      <member refid="classfc_1_1task__base_1a2ffe6f99f990462860e74fe0ea98cd80" prot="protected" virt="non-virtual"><scope>fc::task_base</scope><name>_run_functor</name></member>
+      <member refid="classfc_1_1task__base_1a2baef17ecd71e317c409447ccaab47c4" prot="private" virt="non-virtual"><scope>fc::task_base</scope><name>_self</name></member>
+      <member refid="classfc_1_1task__base_1afc3600277fb6f0487d8570e866bf12b2" prot="protected" virt="non-virtual"><scope>fc::task_base</scope><name>_set_active_context</name></member>
+      <member refid="classfc_1_1promise__base_1a1c0586c58e083c299cfe212080e42212" prot="protected" virt="non-virtual"><scope>fc::task_base</scope><name>_set_timeout</name></member>
+      <member refid="classfc_1_1promise__base_1af1b26ac27dbdfe255b4d44c98ac0bde8" prot="protected" virt="non-virtual"><scope>fc::task_base</scope><name>_set_value</name></member>
+      <member refid="classfc_1_1task__base_1aeaf7f27ad93d9d920ef07373a66bb727" prot="protected" virt="non-virtual"><scope>fc::task_base</scope><name>_spinlock</name></member>
+      <member refid="classfc_1_1task__base_1a55a8a9920ee4ba9b90818958fef9793c" prot="protected" virt="non-virtual"><scope>fc::task_base</scope><name>_task_specific_data</name></member>
+      <member refid="classfc_1_1promise__base_1a75479ef52e8d8e2a6770bef9b4b281dc" prot="protected" virt="non-virtual"><scope>fc::task_base</scope><name>_wait</name></member>
+      <member refid="classfc_1_1promise__base_1a4a2aa31afeaf26faaff3d1799435f4d4" prot="protected" virt="non-virtual"><scope>fc::task_base</scope><name>_wait_until</name></member>
+      <member refid="classfc_1_1task__base_1af69949c93190c281cfd6887b39cd2e5b" prot="protected" virt="non-virtual"><scope>fc::task_base</scope><name>_when</name></member>
+      <member refid="classfc_1_1task__base_1a64b4d2fd1ad11728a8bc2438095a52e0" prot="public" virt="virtual"><scope>fc::task_base</scope><name>cancel</name></member>
+      <member refid="classfc_1_1promise__base_1aa2defa3c6bb9cf9a6f0a1e38b1b8a475" prot="public" virt="non-virtual"><scope>fc::task_base</scope><name>canceled</name></member>
+      <member refid="classfc_1_1task__base_1a83c6b88bc9a517544959885f8c47cd0b" prot="protected" virt="non-virtual"><scope>fc::task_base</scope><name>cleanup_task_specific_data</name></member>
+      <member refid="classfc_1_1task__base_1a0af797fb528d666a56eff3dc50950e14" prot="protected" virt="non-virtual"><scope>fc::task_base</scope><name>detail::get_task_specific_data</name></member>
+      <member refid="classfc_1_1task__base_1ac25b7472f9cc238f32fe45cf5c83cd98" prot="public" virt="non-virtual"><scope>fc::task_base</scope><name>detail::idle_guard</name></member>
+      <member refid="classfc_1_1task__base_1a3e7af3eff286dea559576b55f54e48cf" prot="protected" virt="non-virtual"><scope>fc::task_base</scope><name>detail::set_task_specific_data</name></member>
+      <member refid="classfc_1_1promise__base_1a169688ce87883c5483c5d6e0d7ae84d0" prot="public" virt="non-virtual"><scope>fc::task_base</scope><name>error</name></member>
+      <member refid="classfc_1_1promise__base_1ae2f98357966b2fbecbf35736ef904bea" prot="public" virt="non-virtual"><scope>fc::task_base</scope><name>get_desc</name></member>
+      <member refid="classfc_1_1promise__base_1adea93b6fbaa0f0e832d331bde7314bea" prot="protected" virt="non-virtual"><scope>fc::task_base</scope><name>promise_base</name></member>
+      <member refid="classfc_1_1promise__base_1a981f5f6eb5de005018991933ca06580d" prot="public" virt="non-virtual"><scope>fc::task_base</scope><name>ptr</name></member>
+      <member refid="classfc_1_1promise__base_1a6090bb47228cded5eb9319b7e81726b3" prot="public" virt="non-virtual"><scope>fc::task_base</scope><name>ready</name></member>
+      <member refid="classfc_1_1task__base_1a413bffca4b6ef32ba8190b5d25a39677" prot="public" virt="non-virtual"><scope>fc::task_base</scope><name>release</name></member>
+      <member refid="classfc_1_1task__base_1a393410abe6c551a9c5d6d2f8ec64fe18" prot="public" virt="non-virtual"><scope>fc::task_base</scope><name>retain</name></member>
+      <member refid="classfc_1_1task__base_1a139cba0f6e55189152a327559589ac35" prot="public" virt="non-virtual"><scope>fc::task_base</scope><name>run</name></member>
+      <member refid="classfc_1_1task__base_1a52d7729494a725f955ceeda38f28a597" prot="protected" virt="non-virtual"><scope>fc::task_base</scope><name>run_impl</name></member>
+      <member refid="classfc_1_1promise__base_1a3119bcaac019e31280151b19c3f6aa72" prot="public" virt="non-virtual"><scope>fc::task_base</scope><name>set_exception</name></member>
+      <member refid="classfc_1_1task__base_1a1f3e0b1e23f2dff5336cd16f701e345a" prot="protected" virt="non-virtual"><scope>fc::task_base</scope><name>task_base</name></member>
+      <member refid="classfc_1_1task__base_1adb314a48b19f4325e5e69e8a60091fce" prot="protected" virt="non-virtual"><scope>fc::task_base</scope><name>thread</name></member>
+      <member refid="classfc_1_1task__base_1adf6b3bf455e0a61e7d995a5fdd4b70fb" prot="protected" virt="non-virtual"><scope>fc::task_base</scope><name>thread_d</name></member>
+      <member refid="classfc_1_1promise__base_1ac9c941e4d650683268f8a12ec13edc86" prot="public" virt="virtual"><scope>fc::task_base</scope><name>~promise_base</name></member>
+      <member refid="classfc_1_1task__base_1ae579645ce7de6e1fd6fa64ffa4aad80f" prot="public" virt="virtual"><scope>fc::task_base</scope><name>~task_base</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

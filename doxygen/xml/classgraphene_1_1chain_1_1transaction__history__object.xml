@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="classgraphene_1_1chain_1_1transaction__history__object" kind="class" language="C++" prot="public">
     <compoundname>graphene::chain::transaction_history_object</compoundname>
-    <basecompoundref prot="public" virt="non-virtual">graphene::db::abstract_object&lt; transaction_history_object &gt;</basecompoundref>
+    <basecompoundref refid="classgraphene_1_1db_1_1abstract__object" prot="public" virt="non-virtual">graphene::db::abstract_object&lt; transaction_history_object &gt;</basecompoundref>
     <includes refid="transaction__history__object_8hpp" local="no">transaction_history_object.hpp</includes>
       <sectiondef kind="public-static-attrib">
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1transaction__history__object_1adef48270cb96b26c8aca4093d160fc9a" prot="public" static="yes" mutable="no">
@@ -64,7 +64,7 @@
       </sectiondef>
       <sectiondef kind="public-func">
       <memberdef kind="function" id="classgraphene_1_1chain_1_1transaction__history__object_1ac4ba965321b8c3e040cbd0de17a85b74" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type>time_point_sec</type>
+        <type><ref refid="classfc_1_1time__point__sec" kindref="compound">time_point_sec</ref></type>
         <definition>time_point_sec graphene::chain::transaction_history_object::get_expiration</definition>
         <argsstring>() const</argsstring>
         <name>get_expiration</name>
@@ -82,77 +82,116 @@
     <detaileddescription>
 <para>The purpose of this object is to enable the detection of duplicate transactions. When a transaction is included in a block a <ref refid="classgraphene_1_1chain_1_1transaction__history__object" kindref="compound">transaction_history_object</ref> is added. At the end of block processing all transaction_history_objects that have expired can be removed from the index. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="3321">
+      <node id="5286">
         <label>graphene::db::abstract_object&lt; transaction_history_object &gt;</label>
+        <link refid="classgraphene_1_1db_1_1abstract__object"/>
+        <childnode refid="5287" relation="public-inheritance">
+        </childnode>
       </node>
-      <node id="3320">
+      <node id="5285">
         <label>graphene::chain::transaction_history_object</label>
         <link refid="classgraphene_1_1chain_1_1transaction__history__object"/>
-        <childnode refid="3321" relation="public-inheritance">
+        <childnode refid="5286" relation="public-inheritance">
         </childnode>
+      </node>
+      <node id="5287">
+        <label>graphene::db::object</label>
+        <link refid="classgraphene_1_1db_1_1object"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="3323">
+      <node id="5289">
         <label>graphene::db::abstract_object&lt; transaction_history_object &gt;</label>
+        <link refid="classgraphene_1_1db_1_1abstract__object"/>
+        <childnode refid="5290" relation="public-inheritance">
+        </childnode>
       </node>
-      <node id="3327">
-        <label>time_point_sec</label>
+      <node id="5292">
+        <label>fc::ripemd160</label>
+        <link refid="classfc_1_1ripemd160"/>
       </node>
-      <node id="3326">
+      <node id="5295">
         <label>flat_set&lt; future_extensions &gt;</label>
       </node>
-      <node id="3329">
+      <node id="5298">
         <label>vector&lt; signature_type &gt;</label>
       </node>
-      <node id="3330">
+      <node id="5299">
         <label>flat_set&lt; graphene::protocol::public_key_type &gt;</label>
       </node>
-      <node id="3322">
+      <node id="5296">
+        <label>fc::time_point_sec</label>
+        <link refid="classfc_1_1time__point__sec"/>
+      </node>
+      <node id="5288">
         <label>graphene::chain::transaction_history_object</label>
         <link refid="classgraphene_1_1chain_1_1transaction__history__object"/>
-        <childnode refid="3323" relation="public-inheritance">
+        <childnode refid="5289" relation="public-inheritance">
         </childnode>
-        <childnode refid="3324" relation="usage">
+        <childnode refid="5292" relation="usage">
+          <edgelabel>trx_id</edgelabel>
+        </childnode>
+        <childnode refid="5293" relation="usage">
           <edgelabel>trx</edgelabel>
         </childnode>
       </node>
-      <node id="3328">
-        <label>vector&lt; operation &gt;</label>
+      <node id="5297">
+        <label>vector&lt; fc::static_variant &gt;</label>
       </node>
-      <node id="3324">
+      <node id="5291">
+        <label>graphene::db::object_id_type</label>
+        <link refid="structgraphene_1_1db_1_1object__id__type"/>
+      </node>
+      <node id="5290">
+        <label>graphene::db::object</label>
+        <link refid="classgraphene_1_1db_1_1object"/>
+        <childnode refid="5291" relation="usage">
+          <edgelabel>id</edgelabel>
+        </childnode>
+      </node>
+      <node id="5293">
         <label>graphene::protocol::signed_transaction</label>
         <link refid="classgraphene_1_1protocol_1_1signed__transaction"/>
-        <childnode refid="3325" relation="public-inheritance">
+        <childnode refid="5294" relation="public-inheritance">
         </childnode>
-        <childnode refid="3329" relation="usage">
+        <childnode refid="5298" relation="usage">
           <edgelabel>signatures</edgelabel>
         </childnode>
-        <childnode refid="3330" relation="usage">
+        <childnode refid="5299" relation="usage">
           <edgelabel>_signees</edgelabel>
         </childnode>
       </node>
-      <node id="3325">
+      <node id="5294">
         <label>graphene::protocol::transaction</label>
         <link refid="classgraphene_1_1protocol_1_1transaction"/>
-        <childnode refid="3326" relation="usage">
+        <childnode refid="5295" relation="usage">
           <edgelabel>extensions</edgelabel>
         </childnode>
-        <childnode refid="3327" relation="usage">
+        <childnode refid="5292" relation="usage">
+          <edgelabel>_tx_id_buffer</edgelabel>
+        </childnode>
+        <childnode refid="5296" relation="usage">
           <edgelabel>expiration</edgelabel>
         </childnode>
-        <childnode refid="3328" relation="usage">
+        <childnode refid="5297" relation="usage">
           <edgelabel>operations</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
     <location file="libraries/chain/include/graphene/chain/transaction_history_object.hpp" line="45" column="1" bodyfile="libraries/chain/include/graphene/chain/transaction_history_object.hpp" bodystart="44" bodyend="54"/>
     <listofallmembers>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1a189144fd7eef0317898bc83b30b143c6" prot="public" virt="virtual"><scope>graphene::chain::transaction_history_object</scope><name>clone</name></member>
       <member refid="classgraphene_1_1chain_1_1transaction__history__object_1ac4ba965321b8c3e040cbd0de17a85b74" prot="public" virt="non-virtual"><scope>graphene::chain::transaction_history_object</scope><name>get_expiration</name></member>
+      <member refid="classgraphene_1_1db_1_1object_1a2ce812569d565a45dda1420cfbdf79ad" prot="public" virt="non-virtual"><scope>graphene::chain::transaction_history_object</scope><name>id</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1ad7329292e8fa9035cf2596d72c4868b5" prot="public" virt="virtual"><scope>graphene::chain::transaction_history_object</scope><name>move_from</name></member>
+      <member refid="classgraphene_1_1db_1_1object_1a64864992a46d9d52836afe1a52a2e394" prot="public" virt="non-virtual"><scope>graphene::chain::transaction_history_object</scope><name>object</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1a792a9c05cfe1cf7628cb6f8c4a65b0f7" prot="public" virt="virtual"><scope>graphene::chain::transaction_history_object</scope><name>pack</name></member>
       <member refid="classgraphene_1_1chain_1_1transaction__history__object_1adef48270cb96b26c8aca4093d160fc9a" prot="public" virt="non-virtual"><scope>graphene::chain::transaction_history_object</scope><name>space_id</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1a6f0f2e9eb0399057ff3334bf328b5007" prot="public" virt="virtual"><scope>graphene::chain::transaction_history_object</scope><name>to_variant</name></member>
       <member refid="classgraphene_1_1chain_1_1transaction__history__object_1a91c339a1eadc6e3c212d9554625904ab" prot="public" virt="non-virtual"><scope>graphene::chain::transaction_history_object</scope><name>trx</name></member>
       <member refid="classgraphene_1_1chain_1_1transaction__history__object_1a560310e0f7d30895e76e3b026926e005" prot="public" virt="non-virtual"><scope>graphene::chain::transaction_history_object</scope><name>trx_id</name></member>
       <member refid="classgraphene_1_1chain_1_1transaction__history__object_1a289d5ebdd1211564eabf26c3e074eb00" prot="public" virt="non-virtual"><scope>graphene::chain::transaction_history_object</scope><name>type_id</name></member>
+      <member refid="classgraphene_1_1db_1_1object_1ac457a859418c22014c07a3bcdc67ed04" prot="public" virt="virtual"><scope>graphene::chain::transaction_history_object</scope><name>~object</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

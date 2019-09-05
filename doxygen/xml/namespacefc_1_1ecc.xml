@@ -2,10 +2,451 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="namespacefc_1_1ecc" kind="namespace" language="C++">
     <compoundname>fc::ecc</compoundname>
+    <innerclass refid="classfc_1_1ecc_1_1extended__private__key" prot="public">fc::ecc::extended_private_key</innerclass>
+    <innerclass refid="classfc_1_1ecc_1_1extended__public__key" prot="public">fc::ecc::extended_public_key</innerclass>
+    <innerclass refid="classfc_1_1ecc_1_1private__key" prot="public">fc::ecc::private_key</innerclass>
+    <innerclass refid="classfc_1_1ecc_1_1public__key" prot="public">fc::ecc::public_key</innerclass>
+    <innerclass refid="structfc_1_1ecc_1_1range__proof__info" prot="public">fc::ecc::range_proof_info</innerclass>
+    <innernamespace refid="namespacefc_1_1ecc_1_1detail">fc::ecc::detail</innernamespace>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespacefc_1_1ecc_1a3e4c1ecf3ceb1fb0d3aefa24532d0766" prot="public" static="no">
+        <type><ref refid="classfc_1_1sha256" kindref="compound">fc::sha256</ref></type>
+        <definition>typedef fc::sha256 fc::ecc::blind_factor_type</definition>
+        <argsstring></argsstring>
+        <name>blind_factor_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/crypto/elliptic.hpp" line="20" column="1" bodyfile="libraries/fc/include/fc/crypto/elliptic.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacefc_1_1ecc_1a2fe2b77a4b704ac1d7a71260be0211ff" prot="public" static="no">
+        <type>std::array&lt; unsigned char, 33 &gt;</type>
+        <definition>typedef std::array&lt;unsigned char,33&gt; fc::ecc::commitment_type</definition>
+        <argsstring></argsstring>
+        <name>commitment_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/crypto/elliptic.hpp" line="21" column="1" bodyfile="libraries/fc/include/fc/crypto/elliptic.hpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacefc_1_1ecc_1af1dc74a983548f8f8f167644826acced" prot="public" static="no">
+        <type>std::array&lt; unsigned char, 33 &gt;</type>
+        <definition>typedef std::array&lt;unsigned char,33&gt; fc::ecc::public_key_data</definition>
+        <argsstring></argsstring>
+        <name>public_key_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/crypto/elliptic.hpp" line="22" column="1" bodyfile="libraries/fc/include/fc/crypto/elliptic.hpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacefc_1_1ecc_1aac05b92a409a08d0d6b06ce2d07eb54b" prot="public" static="no">
+        <type><ref refid="classfc_1_1sha256" kindref="compound">fc::sha256</ref></type>
+        <definition>typedef fc::sha256 fc::ecc::private_key_secret</definition>
+        <argsstring></argsstring>
+        <name>private_key_secret</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/crypto/elliptic.hpp" line="23" column="1" bodyfile="libraries/fc/include/fc/crypto/elliptic.hpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacefc_1_1ecc_1aaa24efab885be0448294c8ac00d3b1ab" prot="public" static="no">
+        <type>std::array&lt; unsigned char, 65 &gt;</type>
+        <definition>typedef std::array&lt;unsigned char,65&gt; fc::ecc::public_key_point_data</definition>
+        <argsstring></argsstring>
+        <name>public_key_point_data</name>
+        <briefdescription>
+<para>the full non-compressed version of the ECC point </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/crypto/elliptic.hpp" line="24" column="1" bodyfile="libraries/fc/include/fc/crypto/elliptic.hpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacefc_1_1ecc_1a9c6eb3fdbac8cae41c060b767f751f94" prot="public" static="no">
+        <type>std::array&lt; unsigned char, 72 &gt;</type>
+        <definition>typedef std::array&lt;unsigned char,72&gt; fc::ecc::signature</definition>
+        <argsstring></argsstring>
+        <name>signature</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/crypto/elliptic.hpp" line="25" column="1" bodyfile="libraries/fc/include/fc/crypto/elliptic.hpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacefc_1_1ecc_1a38a548547320ad8e9bf07b7dbc875e9d" prot="public" static="no">
+        <type>std::array&lt; unsigned char, 65 &gt;</type>
+        <definition>typedef std::array&lt;unsigned char,65&gt; fc::ecc::compact_signature</definition>
+        <argsstring></argsstring>
+        <name>compact_signature</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/crypto/elliptic.hpp" line="26" column="1" bodyfile="libraries/fc/include/fc/crypto/elliptic.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacefc_1_1ecc_1a152a42e2f9ae6e3bc12a9a1a8f5a04e9" prot="public" static="no">
+        <type>std::vector&lt; char &gt;</type>
+        <definition>typedef std::vector&lt;char&gt; fc::ecc::range_proof_type</definition>
+        <argsstring></argsstring>
+        <name>range_proof_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/crypto/elliptic.hpp" line="27" column="1" bodyfile="libraries/fc/include/fc/crypto/elliptic.hpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacefc_1_1ecc_1a94ddee7d090a51ed7693309c04490243" prot="public" static="no">
+        <type>std::array&lt; unsigned char, 78 &gt;</type>
+        <definition>typedef std::array&lt;unsigned char,78&gt; fc::ecc::extended_key_data</definition>
+        <argsstring></argsstring>
+        <name>extended_key_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/crypto/elliptic.hpp" line="28" column="1" bodyfile="libraries/fc/include/fc/crypto/elliptic.hpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacefc_1_1ecc_1a3b92726996eb655b822c7bc994adffc2" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="namespacefc_1_1ecc_1aac05b92a409a08d0d6b06ce2d07eb54b" kindref="member">private_key_secret</ref></type>
+        <definition>const private_key_secret fc::ecc::empty_priv</definition>
+        <argsstring></argsstring>
+        <name>empty_priv</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/elliptic_impl_priv.cpp" line="30" column="1" bodyfile="libraries/fc/src/crypto/elliptic_impl_priv.cpp" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacefc_1_1ecc_1ad8292daf291a6af523e1cdfea9317626" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="namespacefc_1_1ecc_1af1dc74a983548f8f8f167644826acced" kindref="member">public_key_data</ref></type>
+        <definition>const public_key_data fc::ecc::empty_pub</definition>
+        <argsstring></argsstring>
+        <name>empty_pub</name>
+        <initializer>= <ref refid="classfc_1_1ecc_1_1detail_1_1public__key__impl" kindref="compound">detail::public_key_impl</ref>()._key</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/elliptic_secp256k1.cpp" line="65" column="1" bodyfile="libraries/fc/src/crypto/elliptic_secp256k1.cpp" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacefc_1_1ecc_1a3b92726996eb655b822c7bc994adffc2" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="namespacefc_1_1ecc_1aac05b92a409a08d0d6b06ce2d07eb54b" kindref="member">private_key_secret</ref></type>
+        <definition>const private_key_secret fc::ecc::empty_priv</definition>
+        <argsstring></argsstring>
+        <name>empty_priv</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/elliptic_secp256k1.cpp" line="66" column="1" bodyfile="libraries/fc/src/crypto/elliptic_secp256k1.cpp" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacefc_1_1ecc_1ac392a5d4ddb277706ac964a35a271086" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacefc_1_1ecc_1a2fe2b77a4b704ac1d7a71260be0211ff" kindref="member">commitment_type</ref></type>
+        <definition>commitment_type fc::ecc::blind</definition>
+        <argsstring>(const blind_factor_type &amp;blind, uint64_t value)</argsstring>
+        <name>blind</name>
+        <param>
+          <type>const <ref refid="namespacefc_1_1ecc_1a3e4c1ecf3ceb1fb0d3aefa24532d0766" kindref="member">blind_factor_type</ref> &amp;</type>
+          <declname>blind</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/crypto/elliptic.hpp" line="203" column="1" bodyfile="libraries/fc/src/crypto/elliptic_secp256k1.cpp" bodystart="210" bodyend="215"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1ecc_1a6a39110d5b9f9f40431fb4b16db26000" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacefc_1_1ecc_1a3e4c1ecf3ceb1fb0d3aefa24532d0766" kindref="member">blind_factor_type</ref></type>
+        <definition>blind_factor_type fc::ecc::blind_sum</definition>
+        <argsstring>(const std::vector&lt; blind_factor_type &gt; &amp;blinds, uint32_t non_neg)</argsstring>
+        <name>blind_sum</name>
+        <param>
+          <type>const std::vector&lt; <ref refid="namespacefc_1_1ecc_1a3e4c1ecf3ceb1fb0d3aefa24532d0766" kindref="member">blind_factor_type</ref> &gt; &amp;</type>
+          <declname>blinds</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>non_neg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/crypto/elliptic.hpp" line="204" column="1" bodyfile="libraries/fc/src/crypto/elliptic_secp256k1.cpp" bodystart="217" bodyend="224"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1ecc_1acbd6b56a966d572230b4a251814fde31" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool fc::ecc::verify_sum</definition>
+        <argsstring>(const std::vector&lt; commitment_type &gt; &amp;commits, const std::vector&lt; commitment_type &gt; &amp;neg_commits, int64_t excess)</argsstring>
+        <name>verify_sum</name>
+        <param>
+          <type>const std::vector&lt; <ref refid="namespacefc_1_1ecc_1a2fe2b77a4b704ac1d7a71260be0211ff" kindref="member">commitment_type</ref> &gt; &amp;</type>
+          <declname>commits</declname>
+          <defname>commits_in</defname>
+        </param>
+        <param>
+          <type>const std::vector&lt; <ref refid="namespacefc_1_1ecc_1a2fe2b77a4b704ac1d7a71260be0211ff" kindref="member">commitment_type</ref> &gt; &amp;</type>
+          <declname>neg_commits</declname>
+          <defname>neg_commits_in</defname>
+        </param>
+        <param>
+          <type>int64_t</type>
+          <declname>excess</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>verifies taht commnits + neg_commits + excess == 0 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/crypto/elliptic.hpp" line="206" column="1" bodyfile="libraries/fc/src/crypto/elliptic_secp256k1.cpp" bodystart="227" bodyend="235"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1ecc_1a6181208f57b968f46b3e409da77e634b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool fc::ecc::verify_range</definition>
+        <argsstring>(uint64_t &amp;min_val, uint64_t &amp;max_val, const commitment_type &amp;commit, const range_proof_type &amp;proof)</argsstring>
+        <name>verify_range</name>
+        <param>
+          <type>uint64_t &amp;</type>
+          <declname>min_val</declname>
+        </param>
+        <param>
+          <type>uint64_t &amp;</type>
+          <declname>max_val</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespacefc_1_1ecc_1a2fe2b77a4b704ac1d7a71260be0211ff" kindref="member">commitment_type</ref> &amp;</type>
+          <declname>commit</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespacefc_1_1ecc_1a152a42e2f9ae6e3bc12a9a1a8f5a04e9" kindref="member">range_proof_type</ref> &amp;</type>
+          <declname>proof</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/crypto/elliptic.hpp" line="207" column="1" bodyfile="libraries/fc/src/crypto/elliptic_secp256k1.cpp" bodystart="237" bodyend="240"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1ecc_1a767dc464df7331d0f363c50bbabe1ab3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacefc_1_1ecc_1a152a42e2f9ae6e3bc12a9a1a8f5a04e9" kindref="member">range_proof_type</ref></type>
+        <definition>std::vector&lt; char &gt; fc::ecc::range_proof_sign</definition>
+        <argsstring>(uint64_t min_value, const commitment_type &amp;commit, const blind_factor_type &amp;commit_blind, const blind_factor_type &amp;nonce, int8_t base10_exp, uint8_t min_bits, uint64_t actual_value)</argsstring>
+        <name>range_proof_sign</name>
+        <param>
+          <type>uint64_t</type>
+          <declname>min_value</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespacefc_1_1ecc_1a2fe2b77a4b704ac1d7a71260be0211ff" kindref="member">commitment_type</ref> &amp;</type>
+          <declname>commit</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespacefc_1_1ecc_1a3e4c1ecf3ceb1fb0d3aefa24532d0766" kindref="member">blind_factor_type</ref> &amp;</type>
+          <declname>commit_blind</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespacefc_1_1ecc_1a3e4c1ecf3ceb1fb0d3aefa24532d0766" kindref="member">blind_factor_type</ref> &amp;</type>
+          <declname>nonce</declname>
+        </param>
+        <param>
+          <type>int8_t</type>
+          <declname>base10_exp</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>min_bits</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>actual_value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/crypto/elliptic.hpp" line="209" column="1" bodyfile="libraries/fc/src/crypto/elliptic_secp256k1.cpp" bodystart="242" bodyend="263"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1ecc_1a327819482fe44d8b285c8886cb263f88" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool fc::ecc::verify_range_proof_rewind</definition>
+        <argsstring>(blind_factor_type &amp;blind_out, uint64_t &amp;value_out, string &amp;message_out, const blind_factor_type &amp;nonce, uint64_t &amp;min_val, uint64_t &amp;max_val, commitment_type commit, const range_proof_type &amp;proof)</argsstring>
+        <name>verify_range_proof_rewind</name>
+        <param>
+          <type><ref refid="namespacefc_1_1ecc_1a3e4c1ecf3ceb1fb0d3aefa24532d0766" kindref="member">blind_factor_type</ref> &amp;</type>
+          <declname>blind_out</declname>
+        </param>
+        <param>
+          <type>uint64_t &amp;</type>
+          <declname>value_out</declname>
+        </param>
+        <param>
+          <type>string &amp;</type>
+          <declname>message_out</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespacefc_1_1ecc_1a3e4c1ecf3ceb1fb0d3aefa24532d0766" kindref="member">blind_factor_type</ref> &amp;</type>
+          <declname>nonce</declname>
+        </param>
+        <param>
+          <type>uint64_t &amp;</type>
+          <declname>min_val</declname>
+        </param>
+        <param>
+          <type>uint64_t &amp;</type>
+          <declname>max_val</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacefc_1_1ecc_1a2fe2b77a4b704ac1d7a71260be0211ff" kindref="member">commitment_type</ref></type>
+          <declname>commit</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespacefc_1_1ecc_1a152a42e2f9ae6e3bc12a9a1a8f5a04e9" kindref="member">range_proof_type</ref> &amp;</type>
+          <declname>proof</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/crypto/elliptic.hpp" line="218" column="1" bodyfile="libraries/fc/src/crypto/elliptic_secp256k1.cpp" bodystart="266" bodyend="291"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1ecc_1a3f17a08d46c91d85db3944852782c7f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structfc_1_1ecc_1_1range__proof__info" kindref="compound">range_proof_info</ref></type>
+        <definition>range_proof_info fc::ecc::range_get_info</definition>
+        <argsstring>(const range_proof_type &amp;proof)</argsstring>
+        <name>range_get_info</name>
+        <param>
+          <type>const <ref refid="namespacefc_1_1ecc_1a152a42e2f9ae6e3bc12a9a1a8f5a04e9" kindref="member">range_proof_type</ref> &amp;</type>
+          <declname>proof</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/crypto/elliptic.hpp" line="226" column="1" bodyfile="libraries/fc/src/crypto/elliptic_secp256k1.cpp" bodystart="293" bodyend="305"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1ecc_1a601a9a41b41a29c212bd48096834528c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>static std::string fc::ecc::_to_base58</definition>
+        <argsstring>(const extended_key_data &amp;key)</argsstring>
+        <name>_to_base58</name>
+        <param>
+          <type>const <ref refid="namespacefc_1_1ecc_1a94ddee7d090a51ed7693309c04490243" kindref="member">extended_key_data</ref> &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/elliptic_common.cpp" line="232" column="1" bodyfile="libraries/fc/src/crypto/elliptic_common.cpp" bodystart="232" bodyend="240"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1ecc_1a08facf71dd9433b3792a00fb0962e6e1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void fc::ecc::_parse_extended_data</definition>
+        <argsstring>(unsigned char *buffer, std::string base58)</argsstring>
+        <name>_parse_extended_data</name>
+        <param>
+          <type>unsigned char *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>base58</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/elliptic_common.cpp" line="242" column="1" bodyfile="libraries/fc/src/crypto/elliptic_common.cpp" bodystart="242" bodyend="252"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1ecc_1ae23c0802f84f1aaee5f58455238db5de" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>static int fc::ecc::extended_nonce_function</definition>
+        <argsstring>(unsigned char *nonce32, const unsigned char *msg32, const unsigned char *key32, unsigned int attempt, const void *data)</argsstring>
+        <name>extended_nonce_function</name>
+        <param>
+          <type>unsigned char *</type>
+          <declname>nonce32</declname>
+        </param>
+        <param>
+          <type>const unsigned char *</type>
+          <declname>msg32</declname>
+        </param>
+        <param>
+          <type>const unsigned char *</type>
+          <declname>key32</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>attempt</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/elliptic_impl_priv.cpp" line="81" column="1" bodyfile="libraries/fc/src/crypto/elliptic_impl_priv.cpp" bodystart="81" bodyend="87"/>
+      </memberdef>
+      </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="libraries/protocol/include/graphene/protocol/pts_address.hpp" line="31" column="1"/>
+    <location file="libraries/protocol/include/graphene/protocol/pts_address.hpp" line="34" column="1"/>
   </compounddef>
 </doxygen>

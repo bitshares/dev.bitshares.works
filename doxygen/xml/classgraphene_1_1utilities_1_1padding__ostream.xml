@@ -1,0 +1,195 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classgraphene_1_1utilities_1_1padding__ostream" kind="class" language="C++" prot="public">
+    <compoundname>graphene::utilities::padding_ostream</compoundname>
+    <basecompoundref refid="classfc_1_1buffered__ostream" prot="public" virt="non-virtual">fc::buffered_ostream</basecompoundref>
+    <includes refid="padding__ostream_8hpp" local="no">padding_ostream.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>size_t</type>
+        <declname>BlockSize</declname>
+        <defname>BlockSize</defname>
+        <defval>16</defval>
+      </param>
+      <param>
+        <type>char</type>
+        <declname>PaddingChar</declname>
+        <defname>PaddingChar</defname>
+        <defval>&apos; &apos;</defval>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classgraphene_1_1utilities_1_1padding__ostream_1acab00854a1f3701839d7cf5539b8672e" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t graphene::utilities::padding_ostream&lt; BlockSize, PaddingChar &gt;::bytes_out</definition>
+        <argsstring></argsstring>
+        <name>bytes_out</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/utilities/include/graphene/utilities/padding_ostream.hpp" line="54" column="1" bodyfile="libraries/utilities/include/graphene/utilities/padding_ostream.hpp" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgraphene_1_1utilities_1_1padding__ostream_1acdbc9e61c13c8f235015b65d6ac60556" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>graphene::utilities::padding_ostream&lt; BlockSize, PaddingChar &gt;::padding_ostream</definition>
+        <argsstring>(fc::ostream_ptr o, size_t bufsize=4096)</argsstring>
+        <name>padding_ostream</name>
+        <param>
+          <type><ref refid="namespacefc_1a5ac0fab282e9b3eb115cf8204906f840" kindref="member">fc::ostream_ptr</ref></type>
+          <declname>o</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>bufsize</declname>
+          <defval>4096</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/utilities/include/graphene/utilities/padding_ostream.hpp" line="31" column="1" bodyfile="libraries/utilities/include/graphene/utilities/padding_ostream.hpp" bodystart="31" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1utilities_1_1padding__ostream_1ae65406d653746d65ea2a71b4fd0c86f0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual graphene::utilities::padding_ostream&lt; BlockSize, PaddingChar &gt;::~padding_ostream</definition>
+        <argsstring>()</argsstring>
+        <name>~padding_ostream</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/utilities/include/graphene/utilities/padding_ostream.hpp" line="32" column="1" bodyfile="libraries/utilities/include/graphene/utilities/padding_ostream.hpp" bodystart="32" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1utilities_1_1padding__ostream_1a052b11cef81679d6b22b863954f09092" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>size_t</type>
+        <definition>virtual size_t graphene::utilities::padding_ostream&lt; BlockSize, PaddingChar &gt;::writesome</definition>
+        <argsstring>(const char *buffer, size_t len)</argsstring>
+        <name>writesome</name>
+        <reimplements refid="classfc_1_1buffered__ostream_1a97aa6bcd47b0506a080779840fffd493">writesome</reimplements>
+        <param>
+          <type>const char *</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This method will return immediately unless the buffer is full, in which case it will flush which may block. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/utilities/include/graphene/utilities/padding_ostream.hpp" line="34" column="1" bodyfile="libraries/utilities/include/graphene/utilities/padding_ostream.hpp" bodystart="34" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1utilities_1_1padding__ostream_1a4a5402ba3f311a0ef8b053101c0fedcd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>size_t</type>
+        <definition>virtual size_t graphene::utilities::padding_ostream&lt; BlockSize, PaddingChar &gt;::writesome</definition>
+        <argsstring>(const std::shared_ptr&lt; const char &gt; &amp;buf, size_t len, size_t offset)</argsstring>
+        <name>writesome</name>
+        <reimplements refid="classfc_1_1buffered__ostream_1a5cb49f9fc76f6de2ff3014fc35c46d50">writesome</reimplements>
+        <param>
+          <type>const std::shared_ptr&lt; const char &gt; &amp;</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/utilities/include/graphene/utilities/padding_ostream.hpp" line="40" column="1" bodyfile="libraries/utilities/include/graphene/utilities/padding_ostream.hpp" bodystart="40" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1utilities_1_1padding__ostream_1a8ec609c449bda9feaf6cbf63e454358f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void graphene::utilities::padding_ostream&lt; BlockSize, PaddingChar &gt;::flush</definition>
+        <argsstring>()</argsstring>
+        <name>flush</name>
+        <reimplements refid="classfc_1_1buffered__ostream_1a2701105d24596d7990e73ec940b134ab">flush</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/utilities/include/graphene/utilities/padding_ostream.hpp" line="46" column="1" bodyfile="libraries/utilities/include/graphene/utilities/padding_ostream.hpp" bodystart="46" bodyend="51"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="4432">
+        <label>fc::buffered_ostream</label>
+        <link refid="classfc_1_1buffered__ostream"/>
+        <childnode refid="4433" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4431">
+        <label>graphene::utilities::padding_ostream&lt; BlockSize, PaddingChar &gt;</label>
+        <link refid="classgraphene_1_1utilities_1_1padding__ostream"/>
+        <childnode refid="4432" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4433">
+        <label>fc::ostream</label>
+        <link refid="classfc_1_1ostream"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="4435">
+        <label>fc::buffered_ostream</label>
+        <link refid="classfc_1_1buffered__ostream"/>
+        <childnode refid="4436" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4434">
+        <label>graphene::utilities::padding_ostream&lt; BlockSize, PaddingChar &gt;</label>
+        <link refid="classgraphene_1_1utilities_1_1padding__ostream"/>
+        <childnode refid="4435" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4436">
+        <label>fc::ostream</label>
+        <link refid="classfc_1_1ostream"/>
+      </node>
+    </collaborationgraph>
+    <location file="libraries/utilities/include/graphene/utilities/padding_ostream.hpp" line="29" column="1" bodyfile="libraries/utilities/include/graphene/utilities/padding_ostream.hpp" bodystart="29" bodyend="55"/>
+    <listofallmembers>
+      <member refid="classfc_1_1buffered__ostream_1a4367cbee8f5059b5e7e35a23b1304170" prot="public" virt="non-virtual"><scope>graphene::utilities::padding_ostream</scope><name>buffered_ostream</name></member>
+      <member refid="classfc_1_1buffered__ostream_1a14ece07d037569bcb5eccc00fcd2ad67" prot="public" virt="non-virtual"><scope>graphene::utilities::padding_ostream</scope><name>buffered_ostream</name></member>
+      <member refid="classgraphene_1_1utilities_1_1padding__ostream_1acab00854a1f3701839d7cf5539b8672e" prot="private" virt="non-virtual"><scope>graphene::utilities::padding_ostream</scope><name>bytes_out</name></member>
+      <member refid="classfc_1_1buffered__ostream_1a6eb86db89b1da6af7fd4cbe52c24a0ed" prot="public" virt="virtual"><scope>graphene::utilities::padding_ostream</scope><name>close</name></member>
+      <member refid="classgraphene_1_1utilities_1_1padding__ostream_1a8ec609c449bda9feaf6cbf63e454358f" prot="public" virt="virtual"><scope>graphene::utilities::padding_ostream</scope><name>flush</name></member>
+      <member refid="classfc_1_1buffered__ostream_1ac6b4fd3956ec31f976ad50da28bbef2b" prot="public" virt="non-virtual"><scope>graphene::utilities::padding_ostream</scope><name>operator=</name></member>
+      <member refid="classgraphene_1_1utilities_1_1padding__ostream_1acdbc9e61c13c8f235015b65d6ac60556" prot="public" virt="non-virtual"><scope>graphene::utilities::padding_ostream</scope><name>padding_ostream</name></member>
+      <member refid="classfc_1_1ostream_1a5eb546403297f3a0124af202d9544fc4" prot="public" virt="non-virtual"><scope>graphene::utilities::padding_ostream</scope><name>put</name></member>
+      <member refid="classfc_1_1ostream_1a8abbd25d7d136527d1bb36c1ca24427e" prot="public" virt="non-virtual"><scope>graphene::utilities::padding_ostream</scope><name>write</name></member>
+      <member refid="classfc_1_1ostream_1afa09d563e34c1e16aee4709d4a47483a" prot="public" virt="non-virtual"><scope>graphene::utilities::padding_ostream</scope><name>write</name></member>
+      <member refid="classgraphene_1_1utilities_1_1padding__ostream_1a052b11cef81679d6b22b863954f09092" prot="public" virt="virtual"><scope>graphene::utilities::padding_ostream</scope><name>writesome</name></member>
+      <member refid="classgraphene_1_1utilities_1_1padding__ostream_1a4a5402ba3f311a0ef8b053101c0fedcd" prot="public" virt="virtual"><scope>graphene::utilities::padding_ostream</scope><name>writesome</name></member>
+      <member refid="classfc_1_1buffered__ostream_1a16fb3f4b8780d6b83f08d603b7e5f350" prot="public" virt="non-virtual"><scope>graphene::utilities::padding_ostream</scope><name>~buffered_ostream</name></member>
+      <member refid="classfc_1_1ostream_1aa2ed925328be7251755abfb9ca5f01d2" prot="public" virt="virtual"><scope>graphene::utilities::padding_ostream</scope><name>~ostream</name></member>
+      <member refid="classgraphene_1_1utilities_1_1padding__ostream_1ae65406d653746d65ea2a71b4fd0c86f0" prot="public" virt="virtual"><scope>graphene::utilities::padding_ostream</scope><name>~padding_ostream</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

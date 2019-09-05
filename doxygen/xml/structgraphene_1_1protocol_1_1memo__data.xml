@@ -65,11 +65,11 @@
         <argsstring>(const fc::ecc::private_key &amp;priv, const fc::ecc::public_key &amp;pub, const string &amp;msg, uint64_t custom_nonce=0)</argsstring>
         <name>set_message</name>
         <param>
-          <type>const fc::ecc::private_key &amp;</type>
+          <type>const <ref refid="classfc_1_1ecc_1_1private__key" kindref="compound">fc::ecc::private_key</ref> &amp;</type>
           <declname>priv</declname>
         </param>
         <param>
-          <type>const fc::ecc::public_key &amp;</type>
+          <type>const <ref refid="classfc_1_1ecc_1_1public__key" kindref="compound">fc::ecc::public_key</ref> &amp;</type>
           <declname>pub</declname>
         </param>
         <param>
@@ -96,11 +96,11 @@
         <argsstring>(const fc::ecc::private_key &amp;priv, const fc::ecc::public_key &amp;pub) const</argsstring>
         <name>get_message</name>
         <param>
-          <type>const fc::ecc::private_key &amp;</type>
+          <type>const <ref refid="classfc_1_1ecc_1_1private__key" kindref="compound">fc::ecc::private_key</ref> &amp;</type>
           <declname>priv</declname>
         </param>
         <param>
-          <type>const fc::ecc::public_key &amp;</type>
+          <type>const <ref refid="classfc_1_1ecc_1_1public__key" kindref="compound">fc::ecc::public_key</ref> &amp;</type>
           <declname>pub</declname>
         </param>
         <briefdescription>
@@ -117,21 +117,21 @@
     <detaileddescription>
 <para>Because account authorities and keys can change at any time, each memo must capture the specific keys used to derive the shared secret. In order to read the cipher message you will need one of the two private keys.</para><para>If <ref refid="structgraphene_1_1protocol_1_1memo__data_1a7deb7ac268a1d0420d8d30d8279578c4" kindref="member">from</ref> == <ref refid="structgraphene_1_1protocol_1_1memo__data_1a76c4f0fb688d0933ada16ff214fc64bc" kindref="member">to</ref> and <ref refid="structgraphene_1_1protocol_1_1memo__data_1a7deb7ac268a1d0420d8d30d8279578c4" kindref="member">from</ref> == 0 then no encryption is used, the memo is public. If <ref refid="structgraphene_1_1protocol_1_1memo__data_1a7deb7ac268a1d0420d8d30d8279578c4" kindref="member">from</ref> == <ref refid="structgraphene_1_1protocol_1_1memo__data_1a76c4f0fb688d0933ada16ff214fc64bc" kindref="member">to</ref> and <ref refid="structgraphene_1_1protocol_1_1memo__data_1a7deb7ac268a1d0420d8d30d8279578c4" kindref="member">from</ref> != 0 then invalid memo data </para>    </detaileddescription>
     <collaborationgraph>
-      <node id="2783">
+      <node id="4005">
         <label>graphene::protocol::memo_data</label>
         <link refid="structgraphene_1_1protocol_1_1memo__data"/>
-        <childnode refid="2784" relation="usage">
+        <childnode refid="4006" relation="usage">
           <edgelabel>message</edgelabel>
         </childnode>
-        <childnode refid="2785" relation="usage">
+        <childnode refid="4007" relation="usage">
           <edgelabel>from</edgelabel>
           <edgelabel>to</edgelabel>
         </childnode>
       </node>
-      <node id="2784">
+      <node id="4006">
         <label>vector&lt; char &gt;</label>
       </node>
-      <node id="2785">
+      <node id="4007">
         <label>graphene::protocol::public_key_type</label>
         <link refid="structgraphene_1_1protocol_1_1public__key__type"/>
       </node>
