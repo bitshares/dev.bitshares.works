@@ -4,29 +4,27 @@
 How to Generate Key Pairs
 ==========================
 
-In this section, we will show how you can generate public and private key pairs in two different ways. First option is  a ``suggest_brain_key`` option, you can use it in cli_wallet. The second option is a ``get_dev_key`` option in the ``programs/genesis_util/``. You can use this with the corresponding network prefix("BTS", "TEST", "MY", etc).
-
+This section provides instructions for generating public and private key pairs. 
 
 .. contents:: Table of Contents
    :local:
    
 -------
 
-.. Attention:: In this section, we tested two options in the BitShares PUBLIC TESTNET environment. We downloaded the **testnet branch** and build the wetness_node and cli_wallet programs. Therefore, each public key starts "TEST...". If you try the same command lines in the Mainnet environment, you will get each private key starts "BTS...".  This will happen automatically, if you use the options by the programs from the correct branch.
+.. Note:: For generating example outputs, we used the BitShares Public Testnet environment (download **testnet branch** and build the ``wetness_node`` and ``cli_wallet`` programs). Therefore, each public key starts "TEST...". If you try the same command lines in the Mainnet environment, you will get each private key starts "BTS...".  This will happen automatically, if you use the options by the programs from the correct branch.
 
 |
 
 suggest_brain_key option
 ----------------------------------------------
 
+Use this option for production. 
+
 **Example**
 
 ::
 
-	locked >>> unlock yoursuperpwd
-	null
-	unlocked >>>
-	unlocked >>> suggest_brain_key
+	$ programs/cli_wallet/cli_wallet --suggest_brain_key
 	{
 	  "brain_priv_key": "AUTARKY BOUDOIR RESOAK IFE KEEPING SLA SERAIL UROSIS OUTWALK PIERCER WOKE MOHO YEAROCK APRAXIA UNREADY AMNIC",
 	  "wif_priv_key": "5JATtPJEFQXRqDwVeTWHBk1UuuRmfXDYTtUwfuerE6VncFT6HX8",
@@ -36,14 +34,17 @@ suggest_brain_key option
 	
 * wif_priv_key : private key
 * pub_key : public key	
-
 	
 |
+
+-----------------
+
 
 get_dev_key option
 ----------------------------------------------
 
-You can generate more than one key pairs at the same time in one command line. This ``get_dev_key`` option is simply combine the prefix with all given suffixes, compute a hash over each combination, and use that hash as a private key, from which the matching public key and address are generated.
+Use this option for testing purpose. 
+This ``get_dev_key`` option can generate more than one key pairs at the same time in one command line. The option is simply combine the prefix with all given suffixes, compute a hash over each combination, and use that hash as a private key, from which the matching public key and address are generated.
 
 
 ::

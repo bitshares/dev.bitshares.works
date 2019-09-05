@@ -18,8 +18,7 @@ If the wallet file does not exist, it will prompt ``new >>>`` to setup a passwor
 .. Note:: New features have been added to the commands ``set_password`` and ``unlock``.
 
           - These new features will prompt ``Enter password:`` and will **not** show the input. 
-          - These features work **on Linux and MacOS**.
-          - These features also work on Windows, however not MSVC build.
+          - These features work **on Linux and macOS**.
 
 
   
@@ -58,7 +57,7 @@ If the password  was saved successfully, it will show ``locked``. The Cli Wallet
 
 |
 	
-Use ``set_password`` without a parameter (**Linux and MacOS**)
+Use ``set_password`` without a parameter (**Linux and macOS**)
 -----------------------------------------------------------------------
 
 If cli_wallet starts without a wallet file, it will prompt ``new >>>`` to set up a password.
@@ -118,7 +117,7 @@ If successful, it will prompt ``unlocked``.  The Cli Wallet has been unlocked, i
 	
 |
 
-Use ``unlock`` without a parameter (**Linux and MacOS**)
+Use ``unlock`` without a parameter (**Linux and macOS**)
 ---------------------------------------------------------------
 
 Type ``unlock`` and hit [enter] 

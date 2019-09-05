@@ -23,11 +23,12 @@ For the use of private testnet, you must put an account into the genesis file wi
 |
 
 
-Sample private testnet genesis file
-------------------------------------
+Sample private testnet genesis file 
+------------------------------------------
 
-.. Important:: For the private testnet, each public key needs to be generated and set the values into the private testnet genesis file for ``active`` and ``owner`` keys of all the **initX** accounts and also to **nathan**. Then the public/private key pair is added into the blockchain config (config.ini).
+.. Important:: For the private testnet, each public key needs to be generated and set the values into the private testnet genesis file as ``active`` and ``owner`` keys of all **initX** accounts and also **nathan-test** account. Then, use the key to setup a configuration file (config.ini).
 
+**Must generate and fill each key to use**
 
 ::
 
@@ -312,9 +313,9 @@ Sample private testnet genesis file
 		  "active_key": "--- set a public key ---",
 		  "is_lifetime_member": true
 		},{
-		  "name": "nathan",
-		  "owner_key": "5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3",
-		  "active_key": "5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3",
+		  "name": "nathan-test",
+		  "owner_key": "--- set a public key ---",
+		  "active_key": "--- set a public key ---",
 		  "is_lifetime_member": false
 		}
 	  ],
