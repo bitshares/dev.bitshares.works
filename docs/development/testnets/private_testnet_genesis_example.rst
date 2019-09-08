@@ -15,18 +15,40 @@ For the use of private testnet, you must put an account into the genesis file wi
 
 
 .. tip:: If you want to generate new keys pairs, you can use 
-   - ``suggest_brain_key`` option in cli_wallet. Or  ``./get_dev_key`` option in the ``programs/genesis_util/`` by using the corresponding network prefix("BTS", "TEST", "MY", etc). 
+   - ``suggest_brain_key``  in cli_wallet. Or  ``./get_dev_key``  in the ``programs/genesis_util/`` by using the corresponding network prefix("BTS", "TEST", "MY", etc). 
 
 
 * :ref:`how-to-get-key-pairs`
   
 |
 
+-----
 
 Sample private testnet genesis file 
 ------------------------------------------
 
-.. Important:: For the private testnet, each public key needs to be generated and set the values into the private testnet genesis file as ``active`` and ``owner`` keys of all **initX** accounts and also **nathan-test** account. Then, use the key to setup a configuration file (config.ini).
+**Notes and Tips::**
+
+- For the private testnet, each public key (key pairs) should be generated. You use different keys to set up the private testnet genesis file ``active_key`` and ``owner_key`` for each **initX** account. You can use your own "name" settings.
+
+- "initial_accounts": The names "initx"..."initxx" can be chosen freely. **Note::** the "initial_witness_candidates"- ``owner_name`` and "initial_committee_candidates"- ``owner_name`` refer the the "initial_account" by ``name``.  
+
+- ``name``: There is no direct connection between the account ``name`` and keys, so you can change the name and insert keys from ``get_dev_key`` results. If you import the corresponding private keys into cli_wallet, then cli_wallet will recognize the accounts as its own.
+
+- The UI generates keys by hashing name, password and a key type suffix. Therefore, only if you want to use the UI, there is a connection between name, password and keys.
+
+- "max_care_supply" refers to **TEST** in testnet, and to **BTS** in mainnet.
+
+- "initial_balances": the ``owner`` is an **address** displayed by ``get_dev_key``; which is basically a shortened hash of a public key. These initial balances can be claimed into an account using the private key corresponding to the owner address. 
+
+- For example, if you create twelve ``name`` for ``initial_accounts``, you should generate 12 accounts * 2 different keys = 24 key pairs (owner_key and active_key) to set up the genesis file parameters. 
+
+- The memo key is always the same as the active key. The “active_key equals to the memo_key” applies to genesis accounts, it’s not a general rule.
+
+- "initial_witness_candidates": ``owner_name`` must refer to the initial_accounts. The ``block_signing_key`` can be different from owner or active key.
+
+- The ``block_signing_key`` is the one you must use with the ``--private-key`` of witness node, or in the configuration file.
+
 
 **Must generate and fill each key to use**
 
@@ -321,7 +343,7 @@ Sample private testnet genesis file
 	  ],
 	  "initial_assets": [],
 	  "initial_balances": [{
-		  "owner": "--- set a public key ---",
+		  "owner": "--- set an address key ---",
 		  "asset_symbol": "TEST",
 		  "amount": "1000000000000000"
 		}

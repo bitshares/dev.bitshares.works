@@ -15,10 +15,10 @@ This section provides instructions for generating public and private key pairs.
 
 |
 
-suggest_brain_key option
+suggest_brain_key 
 ----------------------------------------------
 
-Use this option for production. 
+Use this function for production. 
 
 **Example**
 
@@ -40,11 +40,11 @@ Use this option for production.
 -----------------
 
 
-get_dev_key option
+get_dev_key 
 ----------------------------------------------
 
-Use this option for testing purpose. 
-This ``get_dev_key`` option can generate more than one key pairs at the same time in one command line. The option is simply combine the prefix with all given suffixes, compute a hash over each combination, and use that hash as a private key, from which the matching public key and address are generated.
+Use this function for testing purpose. 
+This ``get_dev_key`` function can generate more than one key pairs at the same time in one command line. The function is simply combine the prefix with all given suffixes, compute a hash over each combination, and use that hash as a private key, from which the matching public key and address are generated.
 
 
 ::

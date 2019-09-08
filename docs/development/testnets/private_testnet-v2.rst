@@ -27,9 +27,9 @@ In this chapter, we define our base directory ``$HOME/`` and create two director
 	
 * Example files location for this section: /dev.bitshares.works/docs/development/testnets/
 
-  - prv_Get-Dev-Key-used-in-my-genesis.txt (get_dev_key) 
-  - prv_my-genesis-example-Private-testnet.json (my-genesis.json) 
-  - prv_config-ini-example.txt  (config.ini) 
+  - `prv_Get-Dev-Key-used-in-my-genesis.txt (get_dev_key) <https://github.com/bitshares/dev.bitshares.works/blob/master/docs/development/testnets/prv_Get-Dev-Key-used-in-my-genesis.txt>`_
+  - `prv_my-genesis-example-Private-testnet.json (my-genesis.json) <https://github.com/bitshares/dev.bitshares.works/blob/master/docs/development/testnets/prv_my-genesis-example-Private-testnet.json>`_ 
+  - `prv_config-ini-example.txt  (config.ini) <https://github.com/bitshares/dev.bitshares.works/blob/master/docs/development/testnets/prv_config-ini-example.txt>`_
   
  
 
@@ -66,7 +66,7 @@ This section includes instructions for the following:
 
 	
 	
-  C. Move to the ``$HOME/bitshares-testnet`` directory and ensure the source files in the directory.
+  C. Review the source files/folders in the ``$HOME/bitshares-testnet`` directory.
 
 |
 
@@ -118,13 +118,11 @@ This section provides instructions for preparing the genesis file for the Privat
 	- Assets and their initial distribution (including core asset)
 	- The initial values of chain parameters
 	- The account / signing keys of the init witnesses (or in fact any account at all).
-	- Here is more information about :ref:` a private testnet genesis <private-testnet-genesis-example>`
 
 	
 **Note:**
-	- The ``--create-example-genesis`` option was removed by Feature Release (201902). Read more: `#1536 Remove "create-genesis-json" startup option from witness_node <https://github.com/bitshares/bitshares-core/issues/1536>`_
 	- For a Private Testnet setup, a genesis-dev.json file can be used as a template. However, you must replace each key value for the private testnet. Each key starts with "TEST" prefix. 
-	- Testnet asset_symbol is "TEST". 
+	- The core token symbol in testnet is "TEST" (hardcoded in binaries, cannot be changed in genesis file). 
 
 |
 	
@@ -139,13 +137,13 @@ This section provides instructions for preparing the genesis file for the Privat
 
   ::
 
-	//For example: 
+	# For example: 
 	mkdir genesis
 
 
-  B. Create ``my-genesis.json`` file as a blank file and copy and paste a template file data.    
+  B. Create ``my-genesis.json`` file as a blank file    
 
-   - Move to the genesis directory  (i.e., $HOME/Testnet-Home/genesis/)
+   - Move to the genesis directory  (i.e., $HOME/bitshares-testnet/genesis/)
    - Create a file and name “my-genesis.json”  
 
 
@@ -153,11 +151,11 @@ This section provides instructions for preparing the genesis file for the Privat
 
    - Use the genesis-dev.json file as a guide to prepare genesis file parameter values. 
    - Each Private Testnet should prepare own ``my-genesis.json`` file to run.
-   - The genesis-dev.json locates ``$HOME/bitshares-testnet/libraries/egenesis/genesis-dev.json``.  Copy this file to the genesis directory that was created in step A.
+   - The genesis-dev.json locates ``$HOME/bitshares-testnet/libraries/egenesis/genesis-dev.json``.  Copy this file to the genesis directory (It was created in step A).
 
   ::
   
-	//For example:
+	# For example:
 
 	cp -p $HOME/bitshares-testnet/libraries/egenesis/genesis-dev.json  $HOME/bitshares-testnet/genesis/my-genesis.json
   
@@ -172,12 +170,12 @@ This section provides instructions for preparing the genesis file for the Privat
   A. View my-genesis.jon and familiar with parameters. 
 
    - Some parameters have default values (recommended).  
-   - Example – :ref:`Private Testnet Genesis File  <private-testnet-genesis-example>` 
+   - Example and Tips – :ref:`Private Testnet Genesis File  <private-testnet-genesis-example>` 
 
-  B. Generate private and public key pairs by ``get_dev_key`` option. The ``get_dev_key`` option can be used by using ``../programs/genesis_util/``.  
+  B. Generate private and public key pairs by ``get_dev_key`` function. The ``get_dev_key`` function can be used by using ``../programs/genesis_util/``.  
 
 	**Note:**
-	This ``get_dev_key`` option is simply combine the ``prefix`` with all given ``suffixes``, compute a hash over each combination, and use that hash as a private key, from which the matching public key and address are generated.
+	This ``get_dev_key`` function is simply combine the ``prefix`` with all given ``suffixes``, compute a hash over each combination, and use that hash as a private key, from which the matching public key and address are generated.
 
 	
    - Move to the ``$HOME/bitshares-testnet/programs`` directory
@@ -185,18 +183,14 @@ This section provides instructions for preparing the genesis file for the Privat
 
   ::
 	
-	//For example:
+	# For example:
 	./genesis_util/get_dev_key wxyz- testkey1 testkey2 testkey3
 
 	
 	
 See, :ref:`how-to-get-key-pairs` for more information 
 
-  C. Rebuild the programs 
 
-  ::
-  
-	make
 
 |
 
@@ -209,18 +203,18 @@ See, :ref:`how-to-get-key-pairs` for more information
 
 .. tip:: Embedding the genesis copies the entire content of genesis.json into the witness_node binary, and additionally copies the chain ID into the cli_wallet binary. Embedded genesis allows the following simplifications to the subsequent instructions:
 
-	- You do **not** need to specify the ``my-genesis.json`` file on the witness node command line, or in the witness node configuration file.
-	- You do **not** need to specify the **chain ID** on the ``cli_wallet`` command line when starting a new wallet.
+ - You do **not** need to specify the ``my-genesis.json`` file on the witness node command line, or in the witness node configuration file.
+ - You do **not** need to specify the **chain ID** on the ``cli_wallet`` command line when starting a new wallet.
 
-
+-----
    
   A. Make sure a current directory is ``$HOME/bitshares-testnet/`` 
-  B. Run the following command. Use the full path to the my-genesis.json
+  B. Run the following command. Use the **full path** to the my-genesis.json
 
   ::
   
-    //For example:
-	cmake -DGRAPHENE_EGENESIS_JSON="$HOME/Testnet-Home/genesis/my-genesis.json"
+    # For example:
+	cmake -DGRAPHENE_EGENESIS_JSON="$HOME/bitshares-testnet/genesis/my-genesis.json"
 
 	
   C. Rebuild the programs 
@@ -232,13 +226,14 @@ See, :ref:`how-to-get-key-pairs` for more information
 
 **Note:**  Embedded genesis is a feature designed to make life easier for consumers of pre-   compiled Binaries, in exchange for slight, optional complication of the process for producing binaries.
 
+------
 
 **INFORMATION:**
-If getting trouble to embed a genesis file. Clean the build and Cake cache variables for GRAPHENE_EGENESIS_JSON to take effect. 
+If getting trouble to embed a genesis file. Clean the build and Make cache variables for GRAPHENE_EGENESIS_JSON to take effect. 
 
   ::
   
-	//For example:
+	# For example:
 	make clean
 	find . -name "CMakeCache.txt" | xargs rm -f
 	find . -name "CMakeFiles" | xargs rm -Rf
@@ -272,7 +267,7 @@ This section includes instructions for the following:
 
   ::
 	  
-	//For example:
+	# For example:
 	mkdir Testnet-Home
 
 
@@ -305,7 +300,7 @@ If your genesis file has been embedded, you do not need to move the genesis file
 
   ::
   
-	//For example:
+	# For example:
 	mkdir genesis
 
 
@@ -357,7 +352,7 @@ This section provides instructions for preparing a blockchain data directory and
 
   ::
   
-	//For example:
+	# For example:
 	mkdir data-bts
 
 
@@ -394,7 +389,7 @@ This section provides instructions for preparing a blockchain data directory and
 
   ::
   
-	//For example: 
+	# For example: 
 	3501235ms th_a main.cpp:165 main] Started witness node on a chain with 0 blocks.
 	3501235ms th_a main.cpp:166 main] Chain ID is cf307110d029cb882d126bf0488dc4864772f68d9888d86b458d16e6c36aa74b
 		
@@ -408,14 +403,14 @@ This section provides instructions for preparing a blockchain data directory and
  
   ::
   
-	 //For example:
+	 # For example:
 	 cd data-bts/my-blocktestnet
 
   B. Review the output and ensure the blockchain data folder has been created successfully
 
   ::
   
-	//For example: 
+	# For example: 
 	my-blocktestnet/blockchain/
 	my-blocktestnet/logs/
 	my-blocktestnet/p2p/
@@ -492,6 +487,16 @@ This section provides instructions for preparing a blockchain data directory and
 
 	
 
+	
+	
+.. Tip::
+ - [private-key] options must match the witness ``block_signing_key`` in the genesis file.
+ - [witness-id] numbers refer to the initial witnesses from the genesis file, starting with "1.6.1" for the first witness.
+ - The witness-id is not given explicitly in the genesis file. The IDs are assigned sequentially starting from 1, i. e. the first listed witness will have "1.6.1", the second "1.6.2" and so on.
+ - The tuples for "private-key" must contain the public block signing key and the corresponding private key of a witness. The node will start generating blocks only if it has one or more "witness-id" options *and* the corresponding private-keys of these witnesses.  
+ 
+ 
+ 
 This authorizes the ``witness_node`` to produce blocks on behalf of the listed **witness-id's**, and specifies the private key needed to sign those blocks. Normally each witness would be on a different node, but for the purposes of this testnet, we will start out with all witnesses signing blocks on a single node.
 
 .. note:: It's important to activate a 2/3 majority of the witnesses defined in the genesis file.
@@ -522,7 +527,7 @@ This section provides instructions for starting a ``witness_node`` to produce bl
 
   ::
   
-	//For example:
+	# For example:
 
 	./witness_node --data-dir=data-bts/my-blocktestnet --enable-stale-production --seed-nodes "[]"
 
@@ -554,10 +559,13 @@ This section includes instructions for the following:
 * Setting a password and Unlock the cli wallet  
 
 
-.. Important:: Each wallet is specifically associated with a single chain, specified by its chain ID. This is to protect the user from (e.g., unintentionally) using a testnet wallet on the real chain. The Chain ID passed to the Cli_Wallet needs to match the Chain ID generated and used by the witness node.
+.. Important:: Each wallet ``wallet.json`` is specifically associated with a single chain, specified by its chain ID. This is to protect the user from (e.g., unintentionally) using a testnet wallet on the real chain. The Chain ID passed to the cli_wallet needs to match the Chain ID generated and used by the witness node.
 
 **Chain ID::**
 The chain ID is a hash of the genesis state. All transaction signatures are only valid for a single chain ID. So, editing the genesis file will change your chain ID, and make you unable to sync with all existing chains (unless one of them has exactly the same genesis file you do).
+
+**wallet.json::**
+Each wallet has a ``wallet.json`` file that is associated with a specific chain-id. (i.e., When connecting to a new or different test network you must also use a new or different wallet.json.)
 
 
 |
@@ -574,7 +582,7 @@ If you are not sure about the chain ID, it can be obtained by using the API to q
 
   ::
   
-	//For example:
+	# For example:
 	curl --data '{"jsonrpc": "2.0", "method": "get_chain_properties", "params": [], "id": 1}' http://127.0.0.1:11011/rpc && echo
 
 
@@ -596,12 +604,12 @@ This will connect a new wallet to your Private Testnet witness node. You must sp
 
   ::
   
-	//For example: 
+	# For example: 
 	./cli_wallet --wallet-file my-wallet.json
 			   --chain-id cf30711----USE-OWN-CHAIN-ID---68d9888d86b458d16e6c36aa74b
 			   --server-rpc-endpoint ws://127.0.0.1:11011 -u '' -p ''
 
-	//For example: (if a genesis file has been embedded)
+	# For example: (if a genesis file has been embedded)
 	./cli_wallet --wallet-file my-wallet.json 
 			   --server-rpc-endpoint ws://127.0.0.1:11011 -u '' -p ''
 			   
@@ -650,13 +658,17 @@ To process this step, we prepared initial accounts and initial balances informat
 
   A. Make sure your ``witness_node`` is running.
   B. Connect to your cli_wallet and ``unlock`` the wallet 
-  C. Import “private key” and “name“. (Importing ``init30-test`` ‘s private key of the owner key).
+  C. Import “private key” and “name“. (Importing ``init30-test`` ‘s private key of the active key).
 
     ::
   
-	//For example: 
-	import_key init30-test "5JU3yZnDy5Gf9gS4iQwSS1zDLzP3ECmRfWv6kx76WxnufTQRAqr"
+	# For example: 
+	import_key init30-test "5JG5thpLiuTG1ANiV9j4EyDHCXjvM67NRLtYSRGhusL5wg9CahY" # active_key
+	
+	import_key init30-test "5JU3yZnDy5Gf9gS4iQwSS1zDLzP3ECmRfWv6kx76WxnufTQRAqr"  # owner_key
 
+	
+.. Note:: The active key is equal to the memo key, which is required for transfers with a memo.
 
 |
 
@@ -668,7 +680,7 @@ We prepared the genesis file for this example. So, we know that the ``init30-tes
 
     ::
   
-	//For example: 
+	# For example: 
 	import_balance init30-test ["5JU3yZnDy5Gf9gS4iQwSS1zDLzP3ECmRfWv6kx76WxnufTQRAqr"] true
 
 
@@ -682,7 +694,7 @@ We imported one account information into the cli wallet. Review the account info
 
     ::
   
-	//For example: 
+	# For example: 
 	get_account init30-test
 
 
@@ -697,7 +709,7 @@ View the user account balance.
 
     ::
   
-	//For example: 
+	# For example: 
 	list_account_balances init30-test
 
 -------------------------------
@@ -729,7 +741,7 @@ This section provides instructions for creating new account. We will create new 
 
     ::
   
-	//For example: 
+	# For example: 
 	get_account init30-test
 
   B. Check ``membership_expiration_date``; you should see a future date (e.g., "membership_expiration_date": "2106-02-07T06:28:15"). If you get ``1970-01-01T00:00:00`` something is wrong, or the register does not have a lifetime membership yet. 
@@ -737,12 +749,12 @@ This section provides instructions for creating new account. We will create new 
 
     ::
   
-	//For example: 
+	# For example: 
 	upgrade_account init30-test true
 
 
 
-**Note:** The account to be upgraded must have funds to pay a lifetime membership fee. 
+**Note:** The account to be upgraded must have funds to pay a lifetime membership fee as specified in the genesis file. 
 
 
 |
@@ -758,7 +770,7 @@ We register new account ``alpha-test`` by using ``init30-test`` account as a reg
 
     ::
   
-	//For example: 
+	# For example: 
 	unlocked >>> suggest_brain_key
 	{
 	  "brain_priv_key": "MOCMAIN LYRIST AVIDLY GRUMBLE BAROI BRACHET UNDULY PLUMERY BORREL ROOIBOK HADJ DARST KOALA MISTER YTTRIC MORELLA",
@@ -771,7 +783,7 @@ We register new account ``alpha-test`` by using ``init30-test`` account as a reg
 
     ::
   
-	//For example: 
+	# For example: 
 	register_account alpha-test TEST721w2dfphe1uChWPdpotYqwxzPavzzoTf3dBdq8pahrd1rK1su TEST721w2dfphe1uChWPdpotYqwxzPavzzoTf3dBdq8pahrd1rK1su init30-test init30-test 0 true
 
 	 
@@ -779,7 +791,7 @@ We register new account ``alpha-test`` by using ``init30-test`` account as a reg
 
     ::
   
-	//For example: 
+	# For example: 
 	get_account alpha-test
 
 
@@ -793,7 +805,7 @@ We register new account ``alpha-test`` by using ``init30-test`` account as a reg
 
     ::
   
-	//For example: 
+	# For example: 
 	transfer init30-test alpha-test 30500 TEST "" true 
 
 	list_account_balances alpha-test
@@ -804,7 +816,7 @@ We register new account ``alpha-test`` by using ``init30-test`` account as a reg
 
     ::
   
-	//For example: 
+	# For example: 
 	import_key init30-test "5JG5thpLiuTG1ANiV9j4EyDHCXjvM67NRLtYSRGhusL5wg9CahY" 
 
 	
@@ -812,10 +824,12 @@ We register new account ``alpha-test`` by using ``init30-test`` account as a reg
 
     ::
   
-	//For example: 
+	# For example: 
 	transfer init30-test alpha-test 4000 TEST "Your memo here" true 
 	list_account_balances alpha-test
 
+
+**Note:** "active_key == memo_key" applies to genesis accounts, it's not a general rule.
 
 |
 
@@ -829,11 +843,11 @@ There is a function to find a private key from a public key.
 
     ::
   
-	//For example: 
+	# For example: 
 	get_private_key  TEST6G5BQQfPLRGzBjFUZ87BfSdYL8DgkWk3BLfHu6crznc94BfrJS 
 
-.. Note::
-You can try to make sure your ``suggest_brain_key`` outputs key pair. You should get the same key pairs.
+	
+.. tip:: This works only for private keys stored in your wallet, and ``get_private_key`` command is useful if you want to import the key into a different wallet (e.g., web wallet).
 
 
 |
@@ -844,21 +858,14 @@ You can try to make sure your ``suggest_brain_key`` outputs key pair. You should
 New account ``alpha-test`` has received enough funds to upgrade a membership from Basic to LifeTime. 
 
 
-  A. Use ``upgrade_account`` to give a LifeTime Membership. Run the command.
+  A. Try ``upgrade_account`` to give a LifeTime Membership and review the outputs.
 
     ::
   
-	//For example: 
+	# For example: 
 	upgrade_account alpha-test true 
 
-	
-  B. Review ``alpha-test`` account information. Check ``membership_expiration_date``.
-
-    ::
-  
-	//For example: 
 	get_account alpha-test 
-
 	list_account
 
 
@@ -875,7 +882,13 @@ This section provides instructions for creating committee members' account.
 * Creating a Committee Account 
 * Transfer funds
 * Upgrade a Membership
+* Registering as committee members
+* Voting for the committee accounts
 
+
+You would need the committee if you want to change some chain settings, like fees.
+
+- Read more about the `Committees roles in how.bitshares.works. <http://how.bitshares.works/en/latest/bts_holders/community_members.html#committees>`_
 
 |
 
@@ -886,7 +899,7 @@ This section provides instructions for creating committee members' account.
 
     ::
   
-	//For example: 
+	# For example: 
 	create_account_with_brain_key com0-test com0-test init2-test init2-test true
 	create_account_with_brain_key com1-test com1-test init2-test init2-test true
 	create_account_with_brain_key com2-test com2-test init2-test init2-test true
@@ -904,7 +917,7 @@ This section provides instructions for creating committee members' account.
 
     ::
   
-	//For example: 
+	# For example: 
 	transfer init2-test com0-test 21000 TEST "" true
 	transfer init2-test com1-test 21500 TEST "" true
 	transfer init2-test com2-test 30000 TEST "" true
@@ -912,22 +925,49 @@ This section provides instructions for creating committee members' account.
 
 |
 
-3.Upgeade a Membership
+3.Upgrade a Membership
 -------------------------------------------------------------------
 
   A. Transfer funds to set a lifetime membership.  
 
     ::
   
-	//For example: 
+	# For example: 
 	upgrade_account com0-test true
 	upgrade_account com1-test true
 	upgrade_account com2-test true
 
+ 
+|
+
+4.Registering as committee member
+-------------------------------------------------------------------
+
+  A. Create Committee Members
+
+    ::
+  
+	# For example: 
+	create_committee_member  com0-test "http://www.com0-test" true
+	create_committee_member  com1-test "http://www.com1-test" true
+	create_committee_member  com2-test "http://www.com2-test" true
 	
-Note: When upgrade_account, the account must have funds to pay a lifetime membership fee. 
+	
+	
+|
 
+5.Voting for the committee accounts
+-------------------------------------------------------------------
 
+  A. Vote for our own committee members. Elect them and wait for the maintenance interval, the votes become active.
+
+    ::
+  
+	# For example: 
+	vote_for_committee_member init2-test com0-test true true
+	vote_for_committee_member init2-test com1-test true true
+	vote_for_committee_member init2-test com2-test true true
+	
 
 |
 
@@ -962,9 +1002,13 @@ If you want to set up a second node (with the same genesis file) and connect it 
 		
 
 	
+.. important:: 
 
-	
+  - The config files should **not** contain the same witness ids and private keys. Otherwise, both nodes would produce blocks simultaneously, which means they would end up on different chain forks.
+  - Each node should use only a subset of the witnesses, so block production alternates between them.
+  - The log output of each node should show blocks received from the other node. (i.e., got_block....)
 
+  
 |
 
 
