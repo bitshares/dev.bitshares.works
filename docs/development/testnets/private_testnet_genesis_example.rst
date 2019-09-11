@@ -37,7 +37,7 @@ Sample private testnet genesis file
 
 - The UI generates keys by hashing name, password and a key type suffix. Therefore, only if you want to use the UI, there is a connection between name, password and keys.
 
-- "max_care_supply" refers to **TEST** in testnet, and to **BTS** in mainnet.
+- "max_core_supply" refers to **TEST** in testnet, and to **BTS** in mainnet.
 
 - "initial_balances": the ``owner`` is an **address** displayed by ``get_dev_key``; which is basically a shortened hash of a public key. These initial balances can be claimed into an account using the private key corresponding to the owner address. 
 
@@ -343,7 +343,7 @@ Sample private testnet genesis file
 	  ],
 	  "initial_assets": [],
 	  "initial_balances": [{
-		  "owner": "--- set an address key ---",
+		  "owner": "--- set an address ---",
 		  "asset_symbol": "TEST",
 		  "amount": "1000000000000000"
 		}

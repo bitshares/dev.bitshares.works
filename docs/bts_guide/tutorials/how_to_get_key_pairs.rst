@@ -50,16 +50,22 @@ This ``get_dev_key`` function can generate more than one key pairs at the same t
 ::
  
 	// checking Help -- ./get_dev_key --help
-	
-	 ../bitshars-testnet/programs/genesis_util# ./get_dev_key --help
-	2 --help
-	get_dev_key <prefix> <suffix> ...
 
-	example:
+	../bitshares-testnet/programs/genesis_util# ./get_dev_key --help
 
-	get_dev_key wxyz- owner-5 active-7 balance-9 wit-block-signing-3 wit-owner-5 wit-active-33
-	get_dev_key wxyz- wit-block-signing-0:101
+	This program generates keys with specified prefix and suffix(es) as seed(s).
 
+	Syntax:
+
+	  get_dev_key <prefix> <suffix> ...
+
+	Examples:
+
+	  get_dev_key nath an
+	  get_dev_key wxyz- owner-5 active-7 balance-9 wit-block-signing-3 wit-owner-5 wit-active-33
+	  get_dev_key wxyz- wit-block-signing-0:101
+
+  
 
 **Example**
 
@@ -67,7 +73,7 @@ This ``get_dev_key`` function can generate more than one key pairs at the same t
 	
 	// command line(1):  ./get_dev_key TEST testkey1 testkey2 testkey3 testkey4 testkey5
 	
-	.../bitshares-core-testnet/programs/genesis_util# ./get_dev_key TEST testkey1 testkey2 testkey3 testkey4 testkey5
+	.../bitshares-testnet/programs/genesis_util# ./get_dev_key TEST testkey1 testkey2 testkey3 testkey4 testkey5
 	[{"private_key":"5HtmkHtjSFmimjoFW96CWbdE12QWKYkqv1EDY5GSPKj7gaKgL1W","public_key":"TEST5wXFqFYzCsGLPagLbuh2e6kiUi91tGvyCfz76Q3aNJ63xMVza1","address":"TESTHZhCbRvo3rjEXMbL4JoKi49ThVpXpwp21"},
 	{"private_key":"5JUE1x9nbRSKAEr38GG7dKtsQGDSYMWAyZxtkydTCzooRRYyQTq","public_key":"TEST7pqhvduRogShfBwwtcD7trFaCbT5eHpNN2AYCAUHtbCVCB6yys","address":"TESTNELqgKWgbPpwwfszNeY4iY5dRvxra5Qji"},
 	{"private_key":"5KLrir6U8JbtC7u65fekaznfztJxR9zoTq3wgGmTQsr46HdMoLH","public_key":"TEST7bxKinMaZZH7Z6Bcs4yVMCasfVMJ3CGCNiKLvKcKGLFmGdoEUF","address":"TESTVaUZWAZiYBw52kJZ3KJnhPkeDGz9dy7M"},

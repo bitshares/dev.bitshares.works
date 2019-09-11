@@ -565,7 +565,7 @@ This section includes instructions for the following:
 The chain ID is a hash of the genesis state. All transaction signatures are only valid for a single chain ID. So, editing the genesis file will change your chain ID, and make you unable to sync with all existing chains (unless one of them has exactly the same genesis file you do).
 
 **wallet.json::**
-Each wallet has a ``wallet.json`` file that is associated with a specific chain-id. (i.e., When connecting to a new or different test network you must also use a new or different wallet.json.)
+Each wallet has a ``wallet.json`` (*this is a default wallet file name. It can be changed*) file that is associated with a specific chain-id. (i.e., When connecting to a new or different test network you must also use a new or different wallet.json.)
 
 
 |
@@ -668,7 +668,7 @@ To process this step, we prepared initial accounts and initial balances informat
 	import_key init30-test "5JU3yZnDy5Gf9gS4iQwSS1zDLzP3ECmRfWv6kx76WxnufTQRAqr"  # owner_key
 
 	
-.. Note:: The active key is equal to the memo key, which is required for transfers with a memo.
+.. Note:: In our example, the active key is equal to the memo key, which is required for transfers with a memo.  To review an account information, use ``get_account``. It will show each key value. 
 
 |
 
@@ -1004,7 +1004,7 @@ If you want to set up a second node (with the same genesis file) and connect it 
 	
 .. important:: 
 
-  - The config files should **not** contain the same witness ids and private keys. Otherwise, both nodes would produce blocks simultaneously, which means they would end up on different chain forks.
+  - The configuration files can use the same witness IDs but not the keys; use different keys in different nodes, which can be used to "hot-switch" among production nodes.
   - Each node should use only a subset of the witnesses, so block production alternates between them.
   - The log output of each node should show blocks received from the other node. (i.e., got_block....)
 
