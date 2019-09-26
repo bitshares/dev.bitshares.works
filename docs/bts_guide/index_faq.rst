@@ -12,6 +12,7 @@ General
 * :ref:`What is the maximum bitshares block size?  <protocol-chain-param>` - Configurable by chain parameters
 * :ref:`dev-faq1`
 * :ref:`dev-faq4`
+* `What is SPV? <https://github.com/bitshares/bitshares-core/wiki/SPV>`_
 * :ref:`dev-faq8`
 * :ref:`dev-faq13`
 * :ref:`dev-faq7`
@@ -28,6 +29,7 @@ General
 * :ref:`dev-faq2`
 * :ref:`dev-faq3`
 * :ref:`dev-faq11`
+* `BitShares - P2P Network Protocol <https://github.com/bitshares/bitshares-core/wiki/P2P-network-protocol>`_
 
 **Data Structures**
 
@@ -55,12 +57,16 @@ System Components
 * :ref:`Where can I find the Protocol information? <lib-protocols>`
 * :ref:`What types of Operations are available in BitShares-Core? <lib-operations>`
 * :ref:`What types of Objects and elements are available in BitShares-Core? <lib-objects>`
+* :ref:`api-core-faq-4`
 * configuration examples and support files
 
-  - :ref:`config.ini <bts-config-ini-eg>` (Node Configuration File )
-  - `apiConfig.js <https://github.com/bitshares/bitshares-ui/blob/staging/app/api/apiConfig.js>`_ (BitShares Public Node information)
-  - :ref:`api-access.json <api-access-json>` (API Access restriction)
-  - `saltpass.py <https://github.com/bitshares/bitshares-core/blob/master/programs/witness_node/saltpass.py>`_ (obtain hash and salt values from a password)
+   - :ref:`config.ini <bts-config-ini-eg>` (Node Configuration File )
+   - `apiConfig.js <https://github.com/bitshares/bitshares-ui/blob/staging/app/api/apiConfig.js>`_ (BitShares Public Node information)
+   - :ref:`api-access.json <api-access-json>` (API Access restriction)
+   - `saltpass.py <https://github.com/bitshares/bitshares-core/blob/master/programs/witness_node/saltpass.py>`_ (obtain hash and salt values from a password)
+
+
+  
   
 Accounts
 -------------------------------------------------------
@@ -87,7 +93,7 @@ Install options
 
 APIs
 ---------------------------------------------------------
-* :ref:`What's API Restrictions? How to use? <api-access-json>` - (rel:*api-access.json*)
+* :ref:`What's API Restrictions? How to use? <api-access-json>` - (Example: api-access.json )
 * :ref:`How to access the API via HTTP <api-access-via-http>`
 * :ref:`How to use Remote Procedure Calls (RPC) <rpc>`
 * :ref:`How to use Websocket Call <websocket-calls>`
@@ -96,7 +102,6 @@ APIs
 * :ref:`api-core-faq-1`
 * :ref:`api-core-faq-2`
 * :ref:`api-core-faq-3`
-* :ref:`api-core-faq-4`
 * :ref:`api-core-faq-5`
 * :ref:`api-core-faq-6`
 * `Where can I find a simple Python script saltpass.py to obtain hash and salt values from a password? <https://github.com/bitshares/bitshares-core/blob/master/programs/witness_node/saltpass.py>`_ - (rel: *saltpass.py*)
@@ -158,7 +163,7 @@ Witness Questions
 * :ref:`witness-faq-8`
 
 
-bitshares-core wiki (reference)
+Bitshares Core wiki (reference)
 --------------------------------------------------
 
 * :ref:`Wiki Legacy list <wiki-legacy-indx>`

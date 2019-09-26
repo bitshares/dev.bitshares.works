@@ -10,7 +10,7 @@ Supported Versions
 
 * Boost version: between 1.58 and 1.69
 
-Newer versions may work, but have not been tested. If your system came pre-installed with a version of Boost that you do not wish to use, you may manually build your preferred version and use it with BitShares by specifying it on the CMake command line. The following is an example::
+Versions of `Boost <http://www.boost.org/>`_ 1.58 through 1.69 are supported. Newer versions may work, but have not been tested. If your system came pre-installed with a version of Boost that you do not wish to use, you may manually build your preferred version and use it with BitShares by specifying it on the CMake command line. The following is an example::
 
     cmake -DBOOST_ROOT=/path/to/boost -DCMAKE_BUILD_TYPE=Release .
     make

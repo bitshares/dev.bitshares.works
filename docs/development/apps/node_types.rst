@@ -11,6 +11,11 @@ Type of Nodes
 * Seed Nodes 
 * Block Producing Nodes 
 
+
+**INFORMATION**
+
+* `BitShares - P2P Network Protocol <https://github.com/bitshares/bitshares-core/wiki/P2P-network-protocol>`_
+
  
 -------
 

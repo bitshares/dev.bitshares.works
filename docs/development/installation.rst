@@ -13,7 +13,8 @@ Getting Started
 Installation
 ========================
 
-.. Important::  
+.. Tip::  
+   - We recommend building on Ubuntu 16.04 LTS (64-bit)
    - BitShares requires a 64-bit operating system to build, and will not build on a 32-bit OS.
    - BitShares now supports Ubuntu 18.04 LTS
    - BitShares now supports OpenSSL 1.1.0
@@ -25,8 +26,8 @@ Releases
 -----------------------
 * BitShares-Core Release information
 
-  - `Latest Release and Notes <https://github.com/bitshares/bitshares-core/releases>`_ 
-  
+  - `Latest Release Notes <https://github.com/bitshares/bitshares-core/releases>`_ 
+  - :ref:`Release Notes Summery list <release-note-idx>` 
    
 |
 
@@ -81,6 +82,19 @@ Use Windows SubSystem for Linux
 		- BitShares requires a 64-bit operating system to build, and will not build on a 32-bit OS.
 		- BitShares now supports Ubuntu 18.04 LTS
 		- BitShares now supports OpenSSL 1.1.0
+
+|
+
+------------------------
+
+Support
+========================================
+
+* Technical support is available in the `BitSharesTalk technical support subforum. <https://bitsharestalk.org/index.php?board=45.0>`_ 
+* BitShares Core bugs can be reported directly to the `issue tracker. <https://github.com/bitshares/bitshares-core/issues>`_ 
+* BitShares UI bugs should be reported to the `UI issue tracker <https://github.com/bitshares/bitshares-ui/issues>`_ 
+* Up to date online Doxygen documentation can be found at `Doxygen <https://bitshares.org/doxygen/hierarchy.html>`_ 
+
 
 |
 
