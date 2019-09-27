@@ -434,8 +434,11 @@ Going forward
 
 The reader will need to learn more about elasticsearch and lucene query language in order to make more complex queries.
 
-All needed can be found at https://www.elastic.co/guide/en/elasticsearch/reference/6.2/index.html
-
+.. Note:: 
+  - All needed can be found at https://www.elastic.co/guide/en/elasticsearch/reference/6.2/index.html
+  - Install Elasticsearch with Debian Package:  https://www.elastic.co/guide/en/elasticsearch/reference/7.3/deb.html#deb
+  
+  
 By the same team of elasticsearch there is a front end named kibana (https://www.elastic.co/products/kibana). It is very easy to install and can do pretty good stuff like getting very detailed stats of the blockchain network.
 
 More visitor code = more indexed data = more filters to use

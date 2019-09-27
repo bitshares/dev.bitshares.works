@@ -22,6 +22,7 @@ Ubuntu 16.04 LTS (64-bit)
     sudo apt-get update
     sudo apt-get install autoconf cmake make automake libtool git libboost-all-dev libssl-dev g++ libcurl4-openssl-dev
 
+
 2. Build BitShares Core::
 
     git clone https://github.com/bitshares/bitshares-core.git

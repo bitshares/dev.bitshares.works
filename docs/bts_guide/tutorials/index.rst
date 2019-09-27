@@ -7,6 +7,9 @@ Developers Guide (Tutorials)
 
 This section intended to collect “How To” steps information to show some examples to perform a process.
 
+**INFORMATOPN**
+:: `BitShares Core Coding Style Guide (DRAFT)  <https://github.com/bitshares/bitshares-core/wiki/Style-Guide>`_ 
+
 -----------------
 
 Accounts
@@ -34,7 +37,7 @@ API
 * `How an Exchange can integrate their services to the BitShares UI Wallet - Gateway Integration Requirements <https://github.com/bitshares/bitshares-ui/wiki/Gateway-Integration-Requirements>`_ : from BitShares UI wiki
 * :ref:`How can I enable RPC Logging? <rpc-logging>`
 * :ref:`How to script Websockets by Python <websocket-script-support>`
-
+* `How to use BitShares-core behind HaProxy <https://github.com/bitshares/bitshares-core/wiki/HaProxy-and-BitShares>`_
   
 Assets
 ===========
@@ -102,6 +105,15 @@ Delegated Proof of Stake
 * Read" User Guide `(DPOS) <https://how.bitshares.works/en/latest/technology/dpos.html#>`_
 
 
+HTLC
+=========================
+* `TESTNET: User Guide for Hashed Time-Lock Contracts (HTLC) on BitShares <https://github.com/bitshares/bitshares-core/wiki/HTLC>`_
+* `TESTNET: User Guide for Hashed Time-Lock Contracts (HTLC) on BitShares (CN) <https://github.com/bitshares/bitshares-core/wiki/HTLC-(CN)>`_ 
+
+
+
+
+
 Keys
 =====================
 * :ref:`How can I import a GUI-wallet account into CLI-wallet? <howto-import-gui-wallet-account-cli>`
@@ -141,7 +153,10 @@ Node (Block Producer - Witness)
 * :ref:`How to Backup a server <witness-backup-server>`
 * :ref:`How witness Price Feeds work <witness-price-feeds>`
 * `BitShares Block Production Monitor <https://github.com/roelandp/Bitshares-Witness-Monitor>`_
-
+* `How use witness_node as a delayed_node <https://github.com/bitshares/bitshares-core/wiki/Delayed-Node>`_
+* `How to perform Node Initialization during application startup <https://github.com/bitshares/bitshares-core/wiki/Node-Initialization>`_ 
+* `BitShares - P2P Network Protocol <https://github.com/bitshares/bitshares-core/wiki/P2P-network-protocol>`_
+* `Threading in BitShares Core <https://github.com/bitshares/bitshares-core/wiki/Threading>`_
 
 
 Performance
@@ -172,6 +187,12 @@ Smart Contracts
 
 * :ref:`pre-graphene-smart-contract`
 
+Testing 
+====================
+
+* `Testing HF 1268: Market Fee Sharing <https://github.com/bitshares/bitshares-core/wiki/Testing-HF-1268:-Market-Fee-Sharing>`_
+* `Testing HF 1270: Effects of MCR Change on Call Price <https://github.com/bitshares/bitshares-core/wiki/Testing-HF-1270:-Effects-of-MCR-Change-on-Call-Price>`_
+
 
 Testnets
 ===================
@@ -197,6 +218,7 @@ Transfer / Transactions
 * :ref:`How to Crafting, Proposing, and Approving a Transaction <proposing-transaction>` - Proposed Transaction 
 * :ref:`How to use the CLI wallet to Perform Stealth Transfers in BitShares (wiki) <w-stealth-transfers>`  
 * :ref:`Proposed Transaction and  Multi-Signature <proposed-tran>`
+
 
 
 Use Cases
