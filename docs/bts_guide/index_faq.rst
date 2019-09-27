@@ -12,7 +12,6 @@ General
 * :ref:`What is the maximum bitshares block size?  <protocol-chain-param>` - Configurable by chain parameters
 * :ref:`dev-faq1`
 * :ref:`dev-faq4`
-* `What is SPV? <https://github.com/bitshares/bitshares-core/wiki/SPV>`_
 * :ref:`dev-faq8`
 * :ref:`dev-faq13`
 * :ref:`dev-faq7`
