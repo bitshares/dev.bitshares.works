@@ -34,6 +34,7 @@
 
     bts_guide/tutorials/index
     bts_guide/index_faq
+    knowledge_base/index_kb		
     references/githubrepo	
     references/tech_articles
 
@@ -48,7 +49,7 @@
     references/info_comunities
     references/info_bts_events
     knowledge_base/glossary
-    knowledge_base/index_kb
+
 
 
 

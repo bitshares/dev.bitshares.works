@@ -12,11 +12,6 @@ Type of Nodes
 * Block Producing Nodes 
 
 
-**INFORMATION**
-
-* `BitShares - P2P Network Protocol <https://github.com/bitshares/bitshares-core/wiki/P2P-network-protocol>`_
-
- 
 -------
 
 In the BitShares blockchain network, you might find the slightly different naming of **nodes**, such as a full node, witness node, or block producer.  All nodes keep updating an internal database by applying the transactions as they arrive in incoming blocks.  The difference between the node types lies in the amount of history they keep track of, and in the functionality they provide.

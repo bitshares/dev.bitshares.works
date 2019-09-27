@@ -5,7 +5,7 @@
 Wiki Legacy
 *****************************
 
-BitShares Core Wiki (html version)
+BitShares Core Wiki (searchable by this website)
 
 -----------------
 
