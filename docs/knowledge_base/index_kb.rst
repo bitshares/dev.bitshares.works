@@ -13,7 +13,6 @@ Node Internals
 ========================
 
 * `BitShares - P2P Network Protocol <https://github.com/bitshares/bitshares-core/wiki/P2P-network-protocol>`_
-* `Define Witness_node as a Delayed_node <https://github.com/bitshares/bitshares-core/wiki/Delayed-Node>`_
 * `Steps: Node Initialization during application startup <https://github.com/bitshares/bitshares-core/wiki/Node-Initialization>`_ 
 * `Threading in BitShares Core <https://github.com/bitshares/bitshares-core/wiki/Threading>`_
 

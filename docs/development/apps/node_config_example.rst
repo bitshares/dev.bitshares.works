@@ -1,15 +1,21 @@
 
 .. _bts-config-ini-eg:
 
-Configuration
+Configurations
 ************************
 
-This section shows the BitShres Blockchain configuration file ``config.ini`` parameter items. The configuration file locates in your data directory and the most parameter items are commented and contain the essential settings to adjust.
-
-.. note:: The below cinfig.ini output is an example (default values). You should modify ``private-key`` and ``debug-private-key`` and adjust other parameter values respectively. 
+This section provides the information about BitShres Blockchain configuration file ``config.ini`` parameter items. The configuration file locates in the data directory. 
 
 
-Examples
+.. contents:: Table of Contents
+   :local:
+   
+-------
+
+.. note:: The below config.ini output is an example (default values). You should modify ``private-key`` and ``debug-private-key`` and adjust other parameter values respectively. 
+
+
+Parameters
 ===========
 
 **Example - config.ini**
@@ -352,11 +358,23 @@ As a default, most parameters have been commented. You have to uncomment to set 
 
 |
 
-	
+
+Using Witness_node as a Delayed_node
+========================================
+
+The ``witness_node`` program can be used as a ``delayed node``. To see the steps, go to the below link page. 
+
+
+* `Define witness_node as a delayed_node <https://github.com/bitshares/bitshares-core/wiki/Delayed-Node>`_
+
+
+
+|
+
 Plugins
 **************
 
-You will find a list of Available BitShares Plugins. 
+To see available BitShares Plugins, go to the below link page.
 
 * `BitShares Plugins: Github ReadMe <https://github.com/bitshares/bitshares-core/blob/master/libraries/plugins/README.md>`_ 
   
