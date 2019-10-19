@@ -35,6 +35,12 @@ In contrast to many existing ecosystems, there is no centralized service that le
 
 -----------------
 
+.. Attention:: The ``delayed_node`` program is no longer supported after BitShares Core 4.0.0 is released. For the instruction, *How to configure a witness_node as a delayed_node*, check the following link:
+
+   * `How to configure a witness_node as a delayed_node <https://github.com/bitshares/bitshares-core/wiki/Delayed-Node>`_
+     
+   
+
 1.3. Interfacing with Graphene
 ------------------------------
 

@@ -24,6 +24,7 @@ The purpose of this site is to provide in-depth documentation about the BitShare
 - `BitShares Documentation - Users Guide <http://how.bitshares.works/en/latest/>`_
 - :ref:`BitShares Community <bitshares-communities>` 
 - `Awesome BitShares Blockchain <https://github.com/bitshares/awesome-bitshares>`_
+- `BitShares News <https://news.bitshares.org/>`_
 
 ----------------
 

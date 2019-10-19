@@ -10,6 +10,12 @@ Secure Network and Wallet Configuration
    
 -------
 
+.. Attention:: The ``delayed_node`` program is no longer supported after BitShares Core 4.0.0 is released. For the instruction, *How to configure a witness_node as a delayed_node*, check the following link:
+
+   * `How to configure a witness_node as a delayed_node <https://github.com/bitshares/bitshares-core/wiki/Delayed-Node>`_
+   
+   
+   
 For high security, we provide a so called **delayed** full node which accepts the parameter `trusted-node` for an RPC endpoint of a trusted validating node. The trusted-node is a regular full node directly connected to the P2P network that works as a proxy. The delayed node will delay blocks until they are **irreversible**. Depending on the block interval and the number of witnesses, this may lead to a few minutes of delay.
 
 Set up
@@ -56,6 +62,15 @@ The trusted full node is your entry point to the BitShares P2P network. It will 
 .. Note:: A _witness_ node is identical to a full node if no authorized block-signing private key is provided.
 
 
+------
+
+
+.. Attention:: The ``delayed_node`` program is no longer supported after BitShares Core 4.0.0 is released. To see the Instruction:How to configure a  ``witness_node`` as a ``delayed_node``, check a below link. 
+
+   * `How to configure a witness_node as a delayed_node <https://github.com/bitshares/bitshares-core/wiki/Delayed-Node>`_
+   
+   
+ 
 Delayed Full Node
 ------------------------
 
