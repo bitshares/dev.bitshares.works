@@ -359,15 +359,12 @@ As a default, most parameters have been commented. You have to uncomment to set 
 |
 
 
-Using Witness_node as a Delayed_node
-========================================
+Configure a Witness Node as a Delayed Node
+===========================================
 
-The ``witness_node`` program can be used as a ``delayed node``. To see the steps, go to the below link page. 
+The ``witness_node`` program can be used as a ``delayed_node``. For the instruction, *How to configure a  witness_node as a delayed_node*, check the following link:  
 
-
-* `Define witness_node as a delayed_node <https://github.com/bitshares/bitshares-core/wiki/Delayed-Node>`_
-
-
+* `How to configure a witness_node as a delayed_node <https://github.com/bitshares/bitshares-core/wiki/Delayed-Node>`_
 
 |
 

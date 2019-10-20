@@ -35,8 +35,6 @@ Since we have a delayed full node that we can fully trust, we will interface wit
 
 
 
-
-
 |
 
 |

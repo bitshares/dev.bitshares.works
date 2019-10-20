@@ -126,6 +126,7 @@ Node
 ==============================
 
 * :ref:`How can a Let's Encrypt certificate be used with an API node to provide a secure web socket (wss) connection <api-node-wss-con>`
+* `How to configure a witness_node as a delayed_node <https://github.com/bitshares/bitshares-core/wiki/Delayed-Node>`_
 * :ref:`How to connect to your own Full Node (GUI) <howto-connect-own-full-node-gui>`
 * :ref:`How to change the Signing Key of your Witness <change-witness-key>`
 * :ref:`What is System Requirements <system-requirements-node>` 

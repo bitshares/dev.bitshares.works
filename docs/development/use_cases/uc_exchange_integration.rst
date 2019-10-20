@@ -30,7 +30,7 @@ For exchanges we recommend to also read :ref:`what-is-different` and
    :local:
    
 ---------------
- 
+
 Step-By-Step Instructions for Exchanges
 ============================================
 
