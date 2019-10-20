@@ -35,13 +35,6 @@ Since we have a delayed full node that we can fully trust, we will interface wit
 
 
 
-.. Attention:: The ``delayed_node`` program is no longer supported after BitShares Core 4.0.0 is released. For the instruction, *How to configure a witness_node as a delayed_node*, check the following link:
-
-   * `How to configure a witness_node as a delayed_node <https://github.com/bitshares/bitshares-core/wiki/Delayed-Node>`_
-   
-   
-
-
 |
 
 |
