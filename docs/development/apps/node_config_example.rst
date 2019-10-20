@@ -366,9 +366,6 @@ The ``witness_node`` program can be used as a ``delayed_node``. For the instruct
 
 * `How to configure a witness_node as a delayed_node <https://github.com/bitshares/bitshares-core/wiki/Delayed-Node>`_
 
-
-.. Attention:: The delayed_node program is no longer supported after BitShares Core 4.0.0 is released.
-
 |
 
 Plugins
