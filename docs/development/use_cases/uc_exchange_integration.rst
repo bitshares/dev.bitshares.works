@@ -30,12 +30,7 @@ For exchanges we recommend to also read :ref:`what-is-different` and
    :local:
    
 ---------------
- 
-.. Attention:: The ``delayed_node`` program is no longer supported after BitShares Core 4.0.0 is released. For the instruction, *How to configure a witness_node as a delayed_node*, check the following link:
 
-   * `How to configure a witness_node as a delayed_node <https://github.com/bitshares/bitshares-core/wiki/Delayed-Node>`_
-    
- 
 Step-By-Step Instructions for Exchanges
 ============================================
 
