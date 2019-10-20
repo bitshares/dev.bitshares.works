@@ -64,13 +64,6 @@ The trusted full node is your entry point to the BitShares P2P network. It will 
 
 ------
 
-
-.. Attention:: The ``delayed_node`` program is no longer supported after BitShares Core 4.0.0 is released. To see the Instruction:How to configure a  ``witness_node`` as a ``delayed_node``, check a below link. 
-
-   * `How to configure a witness_node as a delayed_node <https://github.com/bitshares/bitshares-core/wiki/Delayed-Node>`_
-   
-   
- 
 Delayed Full Node
 ------------------------
 
