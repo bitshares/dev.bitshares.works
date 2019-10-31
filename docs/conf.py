@@ -66,7 +66,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'BItShares Developers Portal'
+project = u'BitShares Developers Portal'
 copyright = u'2019 BitShares Blockchain Foundation'
 
 # The version info for the project you're documenting, acts as replacement for
