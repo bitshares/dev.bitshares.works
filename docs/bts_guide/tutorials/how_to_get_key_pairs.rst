@@ -24,7 +24,7 @@ Use this function for production.
 
 ::
 
-	$ programs/cli_wallet/cli_wallet --suggest_brain_key
+	$ programs/cli_wallet/cli_wallet --suggest-brain-key
 	{
 	  "brain_priv_key": "AUTARKY BOUDOIR RESOAK IFE KEEPING SLA SERAIL UROSIS OUTWALK PIERCER WOKE MOHO YEAROCK APRAXIA UNREADY AMNIC",
 	  "wif_priv_key": "5JATtPJEFQXRqDwVeTWHBk1UuuRmfXDYTtUwfuerE6VncFT6HX8",
