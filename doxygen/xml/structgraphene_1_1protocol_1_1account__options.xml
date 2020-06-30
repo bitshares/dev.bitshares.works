@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
   <compounddef id="structgraphene_1_1protocol_1_1account__options" kind="struct" language="C++" prot="public">
     <compoundname>graphene::protocol::account_options</compoundname>
     <includes refid="account_8hpp" local="no">account.hpp</includes>
@@ -73,7 +73,7 @@
         <location file="libraries/protocol/include/graphene/protocol/account.hpp" line="58" column="1" bodyfile="libraries/protocol/include/graphene/protocol/account.hpp" bodystart="58" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1account__options_1a36e25634d8b3670116c0b0bb7b6b0542" prot="public" static="no" mutable="no">
-        <type><ref refid="group__operations_1ga10cfb9bd22260c851c06b3b33ac0c512" kindref="member">extensions_type</ref></type>
+        <type><ref refid="group__operations_1gabaddcaf5bde76414891b4c29031d9288" kindref="member">extensions_type</ref></type>
         <definition>extensions_type graphene::protocol::account_options::extensions</definition>
         <argsstring></argsstring>
         <name>extensions</name>
@@ -87,10 +87,10 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="structgraphene_1_1protocol_1_1account__options_1ad2818851004779adbf4b103f08b6128d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1account__options_1a23f220b9d1a8225a5e4ad05c4e9c2225" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
         <definition>bool graphene::protocol::account_options::is_voting</definition>
-        <argsstring>() const</argsstring>
+        <argsstring>() const </argsstring>
         <name>is_voting</name>
         <briefdescription>
 <para>Whether this account is voting. </para>        </briefdescription>
@@ -100,10 +100,23 @@
         </inbodydescription>
         <location file="libraries/protocol/include/graphene/protocol/account.hpp" line="62" column="1" bodyfile="libraries/protocol/include/graphene/protocol/account.hpp" bodystart="62" bodyend="65"/>
       </memberdef>
-      <memberdef kind="function" id="structgraphene_1_1protocol_1_1account__options_1af5cc1c805a9006fcf4e90b53403dc101" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1account__options_1a938581ee53cc9b71211989c25534e084" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t graphene::protocol::account_options::num_committee_voted</definition>
+        <argsstring>() const </argsstring>
+        <name>num_committee_voted</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/protocol/include/graphene/protocol/account.hpp" line="67" column="1" bodyfile="libraries/protocol/include/graphene/protocol/account.hpp" bodystart="67" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1account__options_1abcc13711cd4be15325743918b4e11d96" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void graphene::protocol::account_options::validate</definition>
-        <argsstring>() const</argsstring>
+        <argsstring>() const </argsstring>
         <name>validate</name>
         <briefdescription>
         </briefdescription>
@@ -111,7 +124,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/account.hpp" line="67" column="1" bodyfile="libraries/protocol/account.cpp" bodystart="152" bodyend="165"/>
+        <location file="libraries/protocol/include/graphene/protocol/account.hpp" line="75" column="1" bodyfile="libraries/protocol/account.cpp" bodystart="152" bodyend="165"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -119,38 +132,46 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="160">
+      <node id="167">
         <label>graphene::protocol::account_options</label>
         <link refid="structgraphene_1_1protocol_1_1account__options"/>
-        <childnode refid="161" relation="usage">
-          <edgelabel>extensions</edgelabel>
-        </childnode>
-        <childnode refid="162" relation="usage">
+        <childnode refid="168" relation="usage">
           <edgelabel>votes</edgelabel>
         </childnode>
-        <childnode refid="163" relation="usage">
+        <childnode refid="169" relation="usage">
+          <edgelabel>voting_account</edgelabel>
+        </childnode>
+        <childnode refid="170" relation="usage">
           <edgelabel>memo_key</edgelabel>
         </childnode>
       </node>
-      <node id="161">
-        <label>flat_set&lt; future_extensions &gt;</label>
+      <node id="169">
+        <label>account_id_type</label>
       </node>
-      <node id="163">
+      <node id="171">
+        <label>fc::zero_initialized_array&lt; unsigned char, 33 &gt;</label>
+        <link refid="classfc_1_1zero__initialized__array"/>
+      </node>
+      <node id="170">
         <label>graphene::protocol::public_key_type</label>
         <link refid="structgraphene_1_1protocol_1_1public__key__type"/>
+        <childnode refid="171" relation="usage">
+          <edgelabel>key_data</edgelabel>
+        </childnode>
       </node>
-      <node id="162">
+      <node id="168">
         <label>flat_set&lt; graphene::protocol::vote_id_type &gt;</label>
       </node>
     </collaborationgraph>
-    <location file="libraries/protocol/include/graphene/protocol/account.hpp" line="40" column="1" bodyfile="libraries/protocol/include/graphene/protocol/account.hpp" bodystart="39" bodyend="68"/>
+    <location file="libraries/protocol/include/graphene/protocol/account.hpp" line="40" column="1" bodyfile="libraries/protocol/include/graphene/protocol/account.hpp" bodystart="39" bodyend="76"/>
     <listofallmembers>
       <member refid="structgraphene_1_1protocol_1_1account__options_1a36e25634d8b3670116c0b0bb7b6b0542" prot="public" virt="non-virtual"><scope>graphene::protocol::account_options</scope><name>extensions</name></member>
-      <member refid="structgraphene_1_1protocol_1_1account__options_1ad2818851004779adbf4b103f08b6128d" prot="public" virt="non-virtual"><scope>graphene::protocol::account_options</scope><name>is_voting</name></member>
+      <member refid="structgraphene_1_1protocol_1_1account__options_1a23f220b9d1a8225a5e4ad05c4e9c2225" prot="public" virt="non-virtual"><scope>graphene::protocol::account_options</scope><name>is_voting</name></member>
       <member refid="structgraphene_1_1protocol_1_1account__options_1a242055a720cd8dccf281a9f0596ccf77" prot="public" virt="non-virtual"><scope>graphene::protocol::account_options</scope><name>memo_key</name></member>
       <member refid="structgraphene_1_1protocol_1_1account__options_1acf18ab0f2f5095d339a2c5001ef00f2e" prot="public" virt="non-virtual"><scope>graphene::protocol::account_options</scope><name>num_committee</name></member>
+      <member refid="structgraphene_1_1protocol_1_1account__options_1a938581ee53cc9b71211989c25534e084" prot="public" virt="non-virtual"><scope>graphene::protocol::account_options</scope><name>num_committee_voted</name></member>
       <member refid="structgraphene_1_1protocol_1_1account__options_1a69c5adde30faa231585f54e0ab46df3a" prot="public" virt="non-virtual"><scope>graphene::protocol::account_options</scope><name>num_witness</name></member>
-      <member refid="structgraphene_1_1protocol_1_1account__options_1af5cc1c805a9006fcf4e90b53403dc101" prot="public" virt="non-virtual"><scope>graphene::protocol::account_options</scope><name>validate</name></member>
+      <member refid="structgraphene_1_1protocol_1_1account__options_1abcc13711cd4be15325743918b4e11d96" prot="public" virt="non-virtual"><scope>graphene::protocol::account_options</scope><name>validate</name></member>
       <member refid="structgraphene_1_1protocol_1_1account__options_1abb04c930e531a26564dcac0fdd1c7f07" prot="public" virt="non-virtual"><scope>graphene::protocol::account_options</scope><name>votes</name></member>
       <member refid="structgraphene_1_1protocol_1_1account__options_1a6ac45c09dda1b78fe445ddc7a75de3bc" prot="public" virt="non-virtual"><scope>graphene::protocol::account_options</scope><name>voting_account</name></member>
     </listofallmembers>

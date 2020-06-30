@@ -1,11 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
   <compounddef id="structfc_1_1reflector" kind="struct" language="C++" prot="public">
     <compoundname>fc::reflector</compoundname>
     <includes refid="reflect_8hpp" local="no">reflect.hpp</includes>
     <templateparamlist>
       <param>
-        <type>typename T</type>
+        <type>typename</type>
+        <declname>T</declname>
+        <defname>T</defname>
       </param>
     </templateparamlist>
       <sectiondef kind="public-type">
@@ -20,7 +22,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/reflect/reflect.hpp" line="35" column="1" bodyfile="libraries/fc/include/fc/reflect/reflect.hpp" bodystart="35" bodyend="-1"/>
+        <location file="libraries/fc/include/fc/reflect/reflect.hpp" line="140" column="1" bodyfile="libraries/fc/include/fc/reflect/reflect.hpp" bodystart="140" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="structfc_1_1reflector_1ac22b0130328be101cc76c96592bc383a" prot="public" static="no">
         <type>std::false_type</type>
@@ -33,7 +35,59 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/reflect/reflect.hpp" line="36" column="1" bodyfile="libraries/fc/include/fc/reflect/reflect.hpp" bodystart="36" bodyend="-1"/>
+        <location file="libraries/fc/include/fc/reflect/reflect.hpp" line="141" column="1" bodyfile="libraries/fc/include/fc/reflect/reflect.hpp" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structfc_1_1reflector_1aeaa02287a42ee65195008693e1757fec" prot="public" static="no">
+        <type><ref refid="structfc_1_1typelist_1_1list" kindref="compound">typelist::list</ref>&lt;&gt;</type>
+        <definition>using fc::reflector&lt; T &gt;::native_members =  typelist::list&lt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>native_members</name>
+        <briefdescription>
+<para>A typelist with a <ref refid="structfc_1_1field__reflection" kindref="compound">field_reflection</ref> for each native member (non-inherited) of the struct. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/reflect/reflect.hpp" line="143" column="1" bodyfile="libraries/fc/include/fc/reflect/reflect.hpp" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structfc_1_1reflector_1acfc871aaae62d914323df5c740a4699e" prot="public" static="no">
+        <type><ref refid="structfc_1_1typelist_1_1list" kindref="compound">typelist::list</ref>&lt;&gt;</type>
+        <definition>using fc::reflector&lt; T &gt;::inherited_members =  typelist::list&lt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>inherited_members</name>
+        <briefdescription>
+<para>A typelist with a <ref refid="structfc_1_1field__reflection" kindref="compound">field_reflection</ref> for each inherited member of the struct. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/reflect/reflect.hpp" line="145" column="1" bodyfile="libraries/fc/include/fc/reflect/reflect.hpp" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structfc_1_1reflector_1aaab32f9b4e14a9c11595a2990334f7c6" prot="public" static="no">
+        <type><ref refid="structfc_1_1typelist_1_1list" kindref="compound">typelist::list</ref>&lt;&gt;</type>
+        <definition>using fc::reflector&lt; T &gt;::members =  typelist::list&lt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>members</name>
+        <briefdescription>
+<para>A typelist with a <ref refid="structfc_1_1field__reflection" kindref="compound">field_reflection</ref> for each member of the struct, starting with inherited members. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/reflect/reflect.hpp" line="147" column="1" bodyfile="libraries/fc/include/fc/reflect/reflect.hpp" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structfc_1_1reflector_1a60f595f71af9e03329d9c701d2f2993a" prot="public" static="no">
+        <type><ref refid="structfc_1_1typelist_1_1list" kindref="compound">typelist::list</ref>&lt;&gt;</type>
+        <definition>using fc::reflector&lt; T &gt;::base_classes =  typelist::list&lt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>base_classes</name>
+        <briefdescription>
+<para>A typelist of base classes for this type. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/reflect/reflect.hpp" line="149" column="1" bodyfile="libraries/fc/include/fc/reflect/reflect.hpp" bodystart="149" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -48,9 +102,13 @@
 </parameteritem>
 </parameterlist>
 The <ref refid="reflect_8hpp_1a2ace850e636b1ca0b18fe3177e413d99" kindref="member">FC_REFLECT(TYPE,MEMBERS)</ref> or FC_STATIC_REFLECT_DERIVED(TYPE,BASES,MEMBERS) macro is used to specialize this class for your type. </para>    </detaileddescription>
-    <location file="libraries/fc/include/fc/reflect/reflect.hpp" line="34" column="1" bodyfile="libraries/fc/include/fc/reflect/reflect.hpp" bodystart="34" bodyend="64"/>
+    <location file="libraries/fc/include/fc/reflect/reflect.hpp" line="25" column="1" bodyfile="libraries/fc/include/fc/reflect/reflect.hpp" bodystart="25" bodyend="-1"/>
     <listofallmembers>
+      <member refid="structfc_1_1reflector_1a60f595f71af9e03329d9c701d2f2993a" prot="public" virt="non-virtual"><scope>fc::reflector</scope><name>base_classes</name></member>
+      <member refid="structfc_1_1reflector_1acfc871aaae62d914323df5c740a4699e" prot="public" virt="non-virtual"><scope>fc::reflector</scope><name>inherited_members</name></member>
       <member refid="structfc_1_1reflector_1ac22b0130328be101cc76c96592bc383a" prot="public" virt="non-virtual"><scope>fc::reflector</scope><name>is_defined</name></member>
+      <member refid="structfc_1_1reflector_1aaab32f9b4e14a9c11595a2990334f7c6" prot="public" virt="non-virtual"><scope>fc::reflector</scope><name>members</name></member>
+      <member refid="structfc_1_1reflector_1aeaa02287a42ee65195008693e1757fec" prot="public" virt="non-virtual"><scope>fc::reflector</scope><name>native_members</name></member>
       <member refid="structfc_1_1reflector_1a5ce7f9fd0c0e55be9c7772905767c0c7" prot="public" virt="non-virtual"><scope>fc::reflector</scope><name>type</name></member>
     </listofallmembers>
   </compounddef>

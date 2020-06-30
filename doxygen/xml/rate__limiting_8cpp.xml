@@ -1,0 +1,622 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="rate__limiting_8cpp" kind="file" language="C++">
+    <compoundname>rate_limiting.cpp</compoundname>
+    <includes refid="rate__limiting_8hpp" local="no">fc/network/rate_limiting.hpp</includes>
+    <includes refid="tcp__socket__io__hooks_8hpp" local="no">fc/network/tcp_socket_io_hooks.hpp</includes>
+    <includes refid="tcp__socket_8hpp" local="no">fc/network/tcp_socket.hpp</includes>
+    <includes local="no">list</includes>
+    <includes local="no">algorithm</includes>
+    <includes refid="ip_8hpp" local="no">fc/network/ip.hpp</includes>
+    <includes refid="fwd__impl_8hpp" local="no">fc/fwd_impl.hpp</includes>
+    <includes refid="asio_8hpp" local="no">fc/asio.hpp</includes>
+    <includes refid="logger_8hpp" local="no">fc/log/logger.hpp</includes>
+    <includes refid="stdio_8hpp" local="no">fc/io/stdio.hpp</includes>
+    <includes refid="exception_8hpp" local="no">fc/exception/exception.hpp</includes>
+    <includes refid="thread_8hpp" local="no">fc/thread/thread.hpp</includes>
+    <incdepgraph>
+      <node id="42259">
+        <label>list</label>
+      </node>
+      <node id="42293">
+        <label>atomic</label>
+      </node>
+      <node id="42263">
+        <label>boost/endian/buffers.hpp</label>
+      </node>
+      <node id="42233">
+        <label>fc/fwd.hpp</label>
+        <link refid="fwd_8hpp"/>
+      </node>
+      <node id="42254">
+        <label>functional</label>
+      </node>
+      <node id="42238">
+        <label>boost/preprocessor/seq/seq.hpp</label>
+      </node>
+      <node id="42282">
+        <label>limits</label>
+      </node>
+      <node id="42222">
+        <label>libraries/fc/src/network/rate_limiting.cpp</label>
+        <link refid="rate_limiting.cpp"/>
+        <childnode refid="42223" relation="include">
+        </childnode>
+        <childnode refid="42255" relation="include">
+        </childnode>
+        <childnode refid="42257" relation="include">
+        </childnode>
+        <childnode refid="42259" relation="include">
+        </childnode>
+        <childnode refid="42260" relation="include">
+        </childnode>
+        <childnode refid="42261" relation="include">
+        </childnode>
+        <childnode refid="42285" relation="include">
+        </childnode>
+        <childnode refid="42288" relation="include">
+        </childnode>
+        <childnode refid="42269" relation="include">
+        </childnode>
+        <childnode refid="42294" relation="include">
+        </childnode>
+        <childnode refid="42268" relation="include">
+        </childnode>
+        <childnode refid="42295" relation="include">
+        </childnode>
+      </node>
+      <node id="42229">
+        <label>assert.h</label>
+      </node>
+      <node id="42248">
+        <label>fc/container/flat_fwd.hpp</label>
+        <link refid="flat__fwd_8hpp"/>
+        <childnode refid="42249" relation="include">
+        </childnode>
+        <childnode refid="42250" relation="include">
+        </childnode>
+        <childnode refid="42251" relation="include">
+        </childnode>
+        <childnode refid="42252" relation="include">
+        </childnode>
+      </node>
+      <node id="42264">
+        <label>fc/io/raw_fwd.hpp</label>
+        <link refid="raw__fwd_8hpp"/>
+        <childnode refid="42263" relation="include">
+        </childnode>
+        <childnode refid="42252" relation="include">
+        </childnode>
+        <childnode refid="42248" relation="include">
+        </childnode>
+        <childnode refid="42265" relation="include">
+        </childnode>
+        <childnode refid="42267" relation="include">
+        </childnode>
+        <childnode refid="42276" relation="include">
+        </childnode>
+        <childnode refid="42243" relation="include">
+        </childnode>
+        <childnode refid="42244" relation="include">
+        </childnode>
+        <childnode refid="42225" relation="include">
+        </childnode>
+        <childnode refid="42247" relation="include">
+        </childnode>
+        <childnode refid="42227" relation="include">
+        </childnode>
+        <childnode refid="42275" relation="include">
+        </childnode>
+        <childnode refid="42266" relation="include">
+        </childnode>
+        <childnode refid="42246" relation="include">
+        </childnode>
+      </node>
+      <node id="42234">
+        <label>boost/lexical_cast.hpp</label>
+      </node>
+      <node id="42286">
+        <label>cstdint</label>
+      </node>
+      <node id="42231">
+        <label>fc/reflect/reflect.hpp</label>
+        <link refid="reflect_8hpp"/>
+        <childnode refid="42232" relation="include">
+        </childnode>
+        <childnode refid="42234" relation="include">
+        </childnode>
+        <childnode refid="42235" relation="include">
+        </childnode>
+        <childnode refid="42236" relation="include">
+        </childnode>
+        <childnode refid="42237" relation="include">
+        </childnode>
+        <childnode refid="42238" relation="include">
+        </childnode>
+        <childnode refid="42239" relation="include">
+        </childnode>
+        <childnode refid="42224" relation="include">
+        </childnode>
+        <childnode refid="42240" relation="include">
+        </childnode>
+        <childnode refid="42241" relation="include">
+        </childnode>
+        <childnode refid="42242" relation="include">
+        </childnode>
+        <childnode refid="42253" relation="include">
+        </childnode>
+      </node>
+      <node id="42224">
+        <label>stdint.h</label>
+      </node>
+      <node id="42242">
+        <label>fc/reflect/typename.hpp</label>
+        <link refid="typename_8hpp"/>
+        <childnode refid="42243" relation="include">
+        </childnode>
+        <childnode refid="42244" relation="include">
+        </childnode>
+        <childnode refid="42245" relation="include">
+        </childnode>
+        <childnode refid="42246" relation="include">
+        </childnode>
+        <childnode refid="42227" relation="include">
+        </childnode>
+        <childnode refid="42247" relation="include">
+        </childnode>
+        <childnode refid="42228" relation="include">
+        </childnode>
+        <childnode refid="42232" relation="include">
+        </childnode>
+        <childnode refid="42248" relation="include">
+        </childnode>
+      </node>
+      <node id="42284">
+        <label>stdlib.h</label>
+      </node>
+      <node id="42267">
+        <label>fc/safe.hpp</label>
+        <link refid="safe_8hpp"/>
+        <childnode refid="42268" relation="include">
+        </childnode>
+        <childnode refid="42231" relation="include">
+        </childnode>
+        <childnode refid="42282" relation="include">
+        </childnode>
+      </node>
+      <node id="42292">
+        <label>fc/thread/spin_yield_lock.hpp</label>
+        <link refid="spin__yield__lock_8hpp"/>
+      </node>
+      <node id="42270">
+        <label>fc/log/appender.hpp</label>
+        <link refid="appender_8hpp"/>
+        <childnode refid="42225" relation="include">
+        </childnode>
+        <childnode refid="42227" relation="include">
+        </childnode>
+      </node>
+      <node id="42227">
+        <label>string</label>
+      </node>
+      <node id="42245">
+        <label>map</label>
+      </node>
+      <node id="42290">
+        <label>boost/thread.hpp</label>
+      </node>
+      <node id="42255">
+        <label>fc/network/tcp_socket_io_hooks.hpp</label>
+        <link refid="tcp__socket__io__hooks_8hpp"/>
+        <childnode refid="42256" relation="include">
+        </childnode>
+        <childnode refid="42225" relation="include">
+        </childnode>
+      </node>
+      <node id="42275">
+        <label>unordered_set</label>
+      </node>
+      <node id="42271">
+        <label>fc/log/log_message.hpp</label>
+        <link refid="log__message_8hpp"/>
+        <childnode refid="42252" relation="include">
+        </childnode>
+        <childnode refid="42226" relation="include">
+        </childnode>
+        <childnode refid="42272" relation="include">
+        </childnode>
+        <childnode refid="42225" relation="include">
+        </childnode>
+        <childnode refid="42227" relation="include">
+        </childnode>
+      </node>
+      <node id="42280">
+        <label>boost/preprocessor/punctuation/paren.hpp</label>
+      </node>
+      <node id="42281">
+        <label>exception</label>
+      </node>
+      <node id="42288">
+        <label>fc/asio.hpp</label>
+        <link refid="asio_8hpp"/>
+        <childnode refid="42256" relation="include">
+        </childnode>
+        <childnode refid="42289" relation="include">
+        </childnode>
+        <childnode refid="42290" relation="include">
+        </childnode>
+        <childnode refid="42247" relation="include">
+        </childnode>
+        <childnode refid="42291" relation="include">
+        </childnode>
+        <childnode refid="42258" relation="include">
+        </childnode>
+      </node>
+      <node id="42298">
+        <label>boost/atomic.hpp</label>
+      </node>
+      <node id="42296">
+        <label>fc/thread/task.hpp</label>
+        <link refid="task_8hpp"/>
+        <childnode refid="42291" relation="include">
+        </childnode>
+        <childnode refid="42297" relation="include">
+        </childnode>
+        <childnode refid="42233" relation="include">
+        </childnode>
+        <childnode refid="42241" relation="include">
+        </childnode>
+        <childnode refid="42298" relation="include">
+        </childnode>
+      </node>
+      <node id="42279">
+        <label>boost/multi_index_container_fwd.hpp</label>
+      </node>
+      <node id="42283">
+        <label>fc/crypto/city.hpp</label>
+        <link refid="city_8hpp"/>
+        <childnode refid="42276" relation="include">
+        </childnode>
+        <childnode refid="42284" relation="include">
+        </childnode>
+        <childnode refid="42224" relation="include">
+        </childnode>
+        <childnode refid="42230" relation="include">
+        </childnode>
+      </node>
+      <node id="42239">
+        <label>boost/preprocessor/stringize.hpp</label>
+      </node>
+      <node id="42261">
+        <label>fc/network/ip.hpp</label>
+        <link refid="ip_8hpp"/>
+        <childnode refid="42262" relation="include">
+        </childnode>
+        <childnode refid="42264" relation="include">
+        </childnode>
+        <childnode refid="42283" relation="include">
+        </childnode>
+        <childnode refid="42231" relation="include">
+        </childnode>
+      </node>
+      <node id="42237">
+        <label>boost/preprocessor/seq/size.hpp</label>
+      </node>
+      <node id="42256">
+        <label>boost/asio.hpp</label>
+      </node>
+      <node id="42251">
+        <label>boost/interprocess/containers/vector.hpp</label>
+      </node>
+      <node id="42294">
+        <label>fc/io/stdio.hpp</label>
+        <link refid="stdio_8hpp"/>
+        <childnode refid="42258" relation="include">
+        </childnode>
+      </node>
+      <node id="42285">
+        <label>fc/fwd_impl.hpp</label>
+        <link refid="fwd__impl_8hpp"/>
+        <childnode refid="42233" relation="include">
+        </childnode>
+        <childnode refid="42286" relation="include">
+        </childnode>
+        <childnode refid="42287" relation="include">
+        </childnode>
+        <childnode refid="42241" relation="include">
+        </childnode>
+        <childnode refid="42230" relation="include">
+        </childnode>
+      </node>
+      <node id="42240">
+        <label>string.h</label>
+      </node>
+      <node id="42250">
+        <label>boost/container/flat_set.hpp</label>
+      </node>
+      <node id="42258">
+        <label>fc/io/iostream.hpp</label>
+        <link refid="iostream_8hpp"/>
+        <childnode refid="42225" relation="include">
+        </childnode>
+        <childnode refid="42227" relation="include">
+        </childnode>
+      </node>
+      <node id="42247">
+        <label>vector</label>
+      </node>
+      <node id="42287">
+        <label>new</label>
+      </node>
+      <node id="42226">
+        <label>fc/time.hpp</label>
+        <link refid="time_8hpp"/>
+        <childnode refid="42224" relation="include">
+        </childnode>
+        <childnode refid="42227" relation="include">
+        </childnode>
+        <childnode refid="42228" relation="include">
+        </childnode>
+        <childnode refid="42231" relation="include">
+        </childnode>
+      </node>
+      <node id="42295">
+        <label>fc/thread/thread.hpp</label>
+        <link refid="thread_8hpp"/>
+        <childnode refid="42296" relation="include">
+        </childnode>
+      </node>
+      <node id="42253">
+        <label>fc/reflect/typelist.hpp</label>
+        <link refid="typelist_8hpp"/>
+        <childnode refid="42241" relation="include">
+        </childnode>
+        <childnode refid="42254" relation="include">
+        </childnode>
+      </node>
+      <node id="42273">
+        <label>fc/variant.hpp</label>
+        <link refid="variant_8hpp"/>
+        <childnode refid="42243" relation="include">
+        </childnode>
+        <childnode refid="42274" relation="include">
+        </childnode>
+        <childnode refid="42244" relation="include">
+        </childnode>
+        <childnode refid="42245" relation="include">
+        </childnode>
+        <childnode refid="42225" relation="include">
+        </childnode>
+        <childnode refid="42246" relation="include">
+        </childnode>
+        <childnode refid="42266" relation="include">
+        </childnode>
+        <childnode refid="42275" relation="include">
+        </childnode>
+        <childnode refid="42247" relation="include">
+        </childnode>
+        <childnode refid="42240" relation="include">
+        </childnode>
+        <childnode refid="42228" relation="include">
+        </childnode>
+        <childnode refid="42276" relation="include">
+        </childnode>
+        <childnode refid="42248" relation="include">
+        </childnode>
+        <childnode refid="42278" relation="include">
+        </childnode>
+        <childnode refid="42263" relation="include">
+        </childnode>
+        <childnode refid="42279" relation="include">
+        </childnode>
+        <childnode refid="42231" relation="include">
+        </childnode>
+      </node>
+      <node id="42230">
+        <label>utility</label>
+      </node>
+      <node id="42257">
+        <label>fc/network/tcp_socket.hpp</label>
+        <link refid="tcp__socket_8hpp"/>
+        <childnode refid="42233" relation="include">
+        </childnode>
+        <childnode refid="42258" relation="include">
+        </childnode>
+        <childnode refid="42226" relation="include">
+        </childnode>
+      </node>
+      <node id="42243">
+        <label>array</label>
+      </node>
+      <node id="42277">
+        <label>boost/multiprecision/integer.hpp</label>
+      </node>
+      <node id="42269">
+        <label>fc/log/logger.hpp</label>
+        <link refid="logger_8hpp"/>
+        <childnode refid="42252" relation="include">
+        </childnode>
+        <childnode refid="42226" relation="include">
+        </childnode>
+        <childnode refid="42270" relation="include">
+        </childnode>
+        <childnode refid="42271" relation="include">
+        </childnode>
+        <childnode refid="42274" relation="include">
+        </childnode>
+        <childnode refid="42225" relation="include">
+        </childnode>
+        <childnode refid="42235" relation="include">
+        </childnode>
+        <childnode refid="42236" relation="include">
+        </childnode>
+        <childnode refid="42237" relation="include">
+        </childnode>
+        <childnode refid="42238" relation="include">
+        </childnode>
+        <childnode refid="42239" relation="include">
+        </childnode>
+        <childnode refid="42280" relation="include">
+        </childnode>
+      </node>
+      <node id="42297">
+        <label>fc/thread/priority.hpp</label>
+        <link refid="priority_8hpp"/>
+      </node>
+      <node id="42223">
+        <label>fc/network/rate_limiting.hpp</label>
+        <link refid="rate__limiting_8hpp"/>
+        <childnode refid="42224" relation="include">
+        </childnode>
+        <childnode refid="42225" relation="include">
+        </childnode>
+        <childnode refid="42226" relation="include">
+        </childnode>
+      </node>
+      <node id="42232">
+        <label>fc/string.hpp</label>
+        <link refid="string_8hpp"/>
+        <childnode refid="42233" relation="include">
+        </childnode>
+        <childnode refid="42228" relation="include">
+        </childnode>
+        <childnode refid="42227" relation="include">
+        </childnode>
+      </node>
+      <node id="42274">
+        <label>cstddef</label>
+      </node>
+      <node id="42268">
+        <label>fc/exception/exception.hpp</label>
+        <link refid="exception_8hpp"/>
+        <childnode refid="42269" relation="include">
+        </childnode>
+        <childnode refid="42228" relation="include">
+        </childnode>
+        <childnode refid="42281" relation="include">
+        </childnode>
+        <childnode refid="42254" relation="include">
+        </childnode>
+        <childnode refid="42266" relation="include">
+        </childnode>
+      </node>
+      <node id="42244">
+        <label>deque</label>
+      </node>
+      <node id="42266">
+        <label>unordered_map</label>
+      </node>
+      <node id="42252">
+        <label>fc/config.hpp</label>
+        <link refid="fc_2include_2fc_2config_8hpp"/>
+      </node>
+      <node id="42236">
+        <label>boost/preprocessor/seq/enum.hpp</label>
+      </node>
+      <node id="42289">
+        <label>boost/bind.hpp</label>
+      </node>
+      <node id="42249">
+        <label>boost/container/flat_map.hpp</label>
+      </node>
+      <node id="42262">
+        <label>fc/crypto/sha1.hpp</label>
+        <link refid="sha1_8hpp"/>
+        <childnode refid="42263" relation="include">
+        </childnode>
+        <childnode refid="42233" relation="include">
+        </childnode>
+        <childnode refid="42254" relation="include">
+        </childnode>
+        <childnode refid="42227" relation="include">
+        </childnode>
+        <childnode refid="42231" relation="include">
+        </childnode>
+      </node>
+      <node id="42291">
+        <label>fc/thread/future.hpp</label>
+        <link refid="future_8hpp"/>
+        <childnode refid="42226" relation="include">
+        </childnode>
+        <childnode refid="42268" relation="include">
+        </childnode>
+        <childnode refid="42292" relation="include">
+        </childnode>
+        <childnode refid="42228" relation="include">
+        </childnode>
+        <childnode refid="42293" relation="include">
+        </childnode>
+        <childnode refid="42225" relation="include">
+        </childnode>
+      </node>
+      <node id="42241">
+        <label>type_traits</label>
+      </node>
+      <node id="42246">
+        <label>set</label>
+      </node>
+      <node id="42260">
+        <label>algorithm</label>
+      </node>
+      <node id="42228">
+        <label>fc/optional.hpp</label>
+        <link refid="optional_8hpp"/>
+        <childnode refid="42229" relation="include">
+        </childnode>
+        <childnode refid="42230" relation="include">
+        </childnode>
+      </node>
+      <node id="42272">
+        <label>fc/variant_object.hpp</label>
+        <link refid="variant__object_8hpp"/>
+        <childnode refid="42273" relation="include">
+        </childnode>
+        <childnode refid="42225" relation="include">
+        </childnode>
+      </node>
+      <node id="42276">
+        <label>fc/uint128.hpp</label>
+        <link refid="uint128_8hpp"/>
+        <childnode refid="42277" relation="include">
+        </childnode>
+      </node>
+      <node id="42265">
+        <label>fc/io/varint.hpp</label>
+        <link refid="varint_8hpp"/>
+        <childnode refid="42224" relation="include">
+        </childnode>
+        <childnode refid="42266" relation="include">
+        </childnode>
+      </node>
+      <node id="42225">
+        <label>memory</label>
+      </node>
+      <node id="42235">
+        <label>boost/preprocessor/seq/for_each.hpp</label>
+      </node>
+      <node id="42278">
+        <label>fc/crypto/hex.hpp</label>
+        <link refid="hex_8hpp"/>
+        <childnode refid="42224" relation="include">
+        </childnode>
+        <childnode refid="42227" relation="include">
+        </childnode>
+        <childnode refid="42247" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classfc_1_1detail_1_1rate__limited__operation" prot="public">fc::detail::rate_limited_operation</innerclass>
+    <innerclass refid="classfc_1_1detail_1_1rate__limited__tcp__write__operation" prot="public">fc::detail::rate_limited_tcp_write_operation</innerclass>
+    <innerclass refid="classfc_1_1detail_1_1rate__limited__tcp__read__operation" prot="public">fc::detail::rate_limited_tcp_read_operation</innerclass>
+    <innerclass refid="structfc_1_1detail_1_1is__operation__shorter" prot="public">fc::detail::is_operation_shorter</innerclass>
+    <innerclass refid="classfc_1_1detail_1_1average__rate__meter" prot="public">fc::detail::average_rate_meter</innerclass>
+    <innerclass refid="classfc_1_1detail_1_1rate__limiting__group__impl" prot="public">fc::detail::rate_limiting_group_impl</innerclass>
+    <innernamespace refid="namespacefc">fc</innernamespace>
+    <innernamespace refid="namespacefc_1_1detail">fc::detail</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="libraries/fc/src/network/rate_limiting.cpp"/>
+  </compounddef>
+</doxygen>

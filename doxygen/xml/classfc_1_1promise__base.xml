@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
   <compounddef id="classfc_1_1promise__base" kind="class" language="C++" prot="public">
     <compoundname>fc::promise_base</compoundname>
     <basecompoundref prot="public" virt="non-virtual">std::enable_shared_from_this&lt; promise_base &gt;</basecompoundref>
@@ -66,9 +66,9 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classfc_1_1promise__base_1a370b93d070630635330cf9de3fe5f18b" prot="private" static="no" mutable="no">
-        <type>bool</type>
-        <definition>bool fc::promise_base::_ready</definition>
+      <memberdef kind="variable" id="classfc_1_1promise__base_1a2cbefa65157624bca473edf16680f4fc" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; fc::promise_base::_ready</definition>
         <argsstring></argsstring>
         <name>_ready</name>
         <briefdescription>
@@ -79,22 +79,9 @@
         </inbodydescription>
         <location file="libraries/fc/include/fc/thread/future.hpp" line="93" column="1" bodyfile="libraries/fc/include/fc/thread/future.hpp" bodystart="93" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classfc_1_1promise__base_1a6be6bf5df66537f10d0467ba277d528e" prot="private" static="no" mutable="yes">
-        <type><ref refid="classfc_1_1spin__yield__lock" kindref="compound">spin_yield_lock</ref></type>
-        <definition>spin_yield_lock fc::promise_base::_spin_yield</definition>
-        <argsstring></argsstring>
-        <name>_spin_yield</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="libraries/fc/include/fc/thread/future.hpp" line="94" column="1" bodyfile="libraries/fc/include/fc/thread/future.hpp" bodystart="94" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classfc_1_1promise__base_1a9eb836168f962877e1bea0e09fb92aae" prot="private" static="no" mutable="no">
-        <type><ref refid="classfc_1_1thread" kindref="compound">thread</ref> *</type>
-        <definition>thread* fc::promise_base::_blocked_thread</definition>
+      <memberdef kind="variable" id="classfc_1_1promise__base_1aa09bca486c5ef93ddd907908a1d29748" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; <ref refid="classfc_1_1thread" kindref="compound">thread</ref> * &gt;</type>
+        <definition>std::atomic&lt;thread*&gt; fc::promise_base::_blocked_thread</definition>
         <argsstring></argsstring>
         <name>_blocked_thread</name>
         <briefdescription>
@@ -103,11 +90,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/thread/future.hpp" line="95" column="1" bodyfile="libraries/fc/include/fc/thread/future.hpp" bodystart="95" bodyend="-1"/>
+        <location file="libraries/fc/include/fc/thread/future.hpp" line="94" column="1" bodyfile="libraries/fc/include/fc/thread/future.hpp" bodystart="94" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classfc_1_1promise__base_1aaac69533c69bc871a7024534b01c9a34" prot="private" static="no" mutable="no">
-        <type>unsigned</type>
-        <definition>unsigned fc::promise_base::_blocked_fiber_count</definition>
+      <memberdef kind="variable" id="classfc_1_1promise__base_1aeb5111b3d36699b3e9a052efc4c7f102" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; int32_t &gt;</type>
+        <definition>std::atomic&lt;int32_t&gt; fc::promise_base::_blocked_fiber_count</definition>
         <argsstring></argsstring>
         <name>_blocked_fiber_count</name>
         <briefdescription>
@@ -116,7 +103,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/thread/future.hpp" line="96" column="1" bodyfile="libraries/fc/include/fc/thread/future.hpp" bodystart="96" bodyend="-1"/>
+        <location file="libraries/fc/include/fc/thread/future.hpp" line="95" column="1" bodyfile="libraries/fc/include/fc/thread/future.hpp" bodystart="95" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classfc_1_1promise__base_1ab8617efa9540d9604c53cac31348b0f8" prot="private" static="no" mutable="no">
         <type><ref refid="classfc_1_1time__point" kindref="compound">time_point</ref></type>
@@ -129,7 +116,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/thread/future.hpp" line="97" column="1" bodyfile="libraries/fc/include/fc/thread/future.hpp" bodystart="97" bodyend="-1"/>
+        <location file="libraries/fc/include/fc/thread/future.hpp" line="96" column="1" bodyfile="libraries/fc/include/fc/thread/future.hpp" bodystart="96" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classfc_1_1promise__base_1a0fa67835e16b1478d71d9920305ea9e7" prot="private" static="no" mutable="no">
         <type><ref refid="namespacefc_1a15170d1be1e682691dfe6ae09790edce" kindref="member">fc::exception_ptr</ref></type>
@@ -142,7 +129,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/thread/future.hpp" line="98" column="1" bodyfile="libraries/fc/include/fc/thread/future.hpp" bodystart="98" bodyend="-1"/>
+        <location file="libraries/fc/include/fc/thread/future.hpp" line="97" column="1" bodyfile="libraries/fc/include/fc/thread/future.hpp" bodystart="97" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classfc_1_1promise__base_1a7c67470dd410c96ceb16802c24db4d6b" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -155,7 +142,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/thread/future.hpp" line="99" column="1" bodyfile="libraries/fc/include/fc/thread/future.hpp" bodystart="99" bodyend="-1"/>
+        <location file="libraries/fc/include/fc/thread/future.hpp" line="98" column="1" bodyfile="libraries/fc/include/fc/thread/future.hpp" bodystart="98" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classfc_1_1promise__base_1a0daaf6eb8b263e481261520e6178fe7e" prot="private" static="no" mutable="no">
         <type>const char *</type>
@@ -168,11 +155,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/thread/future.hpp" line="105" column="1" bodyfile="libraries/fc/include/fc/thread/future.hpp" bodystart="105" bodyend="-1"/>
+        <location file="libraries/fc/include/fc/thread/future.hpp" line="104" column="1" bodyfile="libraries/fc/include/fc/thread/future.hpp" bodystart="104" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classfc_1_1promise__base_1a65d58cf27c66e11561481b296a33a8b5" prot="private" static="no" mutable="no">
-        <type><ref refid="classfc_1_1detail_1_1completion__handler" kindref="compound">detail::completion_handler</ref> *</type>
-        <definition>detail::completion_handler* fc::promise_base::_compl</definition>
+      <memberdef kind="variable" id="classfc_1_1promise__base_1ae2f8509e17c91f2d2043066649a658c6" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; <ref refid="classfc_1_1detail_1_1completion__handler" kindref="compound">detail::completion_handler</ref> * &gt;</type>
+        <definition>std::atomic&lt;detail::completion_handler*&gt; fc::promise_base::_compl</definition>
         <argsstring></argsstring>
         <name>_compl</name>
         <briefdescription>
@@ -181,7 +168,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/thread/future.hpp" line="106" column="1" bodyfile="libraries/fc/include/fc/thread/future.hpp" bodystart="106" bodyend="-1"/>
+        <location file="libraries/fc/include/fc/thread/future.hpp" line="105" column="1" bodyfile="libraries/fc/include/fc/thread/future.hpp" bodystart="105" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-attrib">
@@ -196,7 +183,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/thread/future.hpp" line="102" column="1" bodyfile="libraries/fc/include/fc/thread/future.hpp" bodystart="102" bodyend="-1"/>
+        <location file="libraries/fc/include/fc/thread/future.hpp" line="101" column="1" bodyfile="libraries/fc/include/fc/thread/future.hpp" bodystart="101" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -211,12 +198,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/thread/future.hpp" line="64" column="1" bodyfile="libraries/fc/src/thread/future.cpp" bodystart="128" bodyend="128"/>
+        <location file="libraries/fc/include/fc/thread/future.hpp" line="64" column="1" bodyfile="libraries/fc/src/thread/future.cpp" bodystart="24" bodyend="24"/>
       </memberdef>
-      <memberdef kind="function" id="classfc_1_1promise__base_1ae2f98357966b2fbecbf35736ef904bea" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classfc_1_1promise__base_1a3b988f099c6046a663fa34dfa9ea5957" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const char *</type>
         <definition>const char * fc::promise_base::get_desc</definition>
-        <argsstring>() const</argsstring>
+        <argsstring>() const </argsstring>
         <name>get_desc</name>
         <briefdescription>
         </briefdescription>
@@ -224,7 +211,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/thread/future.hpp" line="66" column="1" bodyfile="libraries/fc/src/thread/future.cpp" bodystart="25" bodyend="27"/>
+        <location file="libraries/fc/include/fc/thread/future.hpp" line="66" column="1" bodyfile="libraries/fc/src/thread/future.cpp" bodystart="26" bodyend="28"/>
       </memberdef>
       <memberdef kind="function" id="classfc_1_1promise__base_1a5d2719d4d2948d8e1e600ec88af91e91" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -244,12 +231,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/thread/future.hpp" line="68" column="1" bodyfile="libraries/fc/src/thread/future.cpp" bodystart="29" bodyend="35"/>
+        <location file="libraries/fc/include/fc/thread/future.hpp" line="68" column="1" bodyfile="libraries/fc/src/thread/future.cpp" bodystart="30" bodyend="36"/>
       </memberdef>
-      <memberdef kind="function" id="classfc_1_1promise__base_1aa2defa3c6bb9cf9a6f0a1e38b1b8a475" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classfc_1_1promise__base_1acd54c918c64c8169812af27f22cbb708" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
         <definition>bool fc::promise_base::canceled</definition>
-        <argsstring>() const</argsstring>
+        <argsstring>() const </argsstring>
         <name>canceled</name>
         <briefdescription>
         </briefdescription>
@@ -259,10 +246,10 @@
         </inbodydescription>
         <location file="libraries/fc/include/fc/thread/future.hpp" line="69" column="1" bodyfile="libraries/fc/include/fc/thread/future.hpp" bodystart="69" bodyend="69"/>
       </memberdef>
-      <memberdef kind="function" id="classfc_1_1promise__base_1a6090bb47228cded5eb9319b7e81726b3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classfc_1_1promise__base_1adec3ac53abef9827c7c589eb9d010279" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool fc::promise_base::ready</definition>
-        <argsstring>() const</argsstring>
+        <argsstring>() const </argsstring>
         <name>ready</name>
         <briefdescription>
         </briefdescription>
@@ -270,12 +257,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/thread/future.hpp" line="70" column="1" bodyfile="libraries/fc/src/thread/future.cpp" bodystart="36" bodyend="38"/>
+        <location file="libraries/fc/include/fc/thread/future.hpp" line="70" column="1" bodyfile="libraries/fc/src/thread/future.cpp" bodystart="37" bodyend="39"/>
       </memberdef>
-      <memberdef kind="function" id="classfc_1_1promise__base_1a169688ce87883c5483c5d6e0d7ae84d0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classfc_1_1promise__base_1a2b5a2e406c42975770e9916de029e126" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool fc::promise_base::error</definition>
-        <argsstring>() const</argsstring>
+        <argsstring>() const </argsstring>
         <name>error</name>
         <briefdescription>
         </briefdescription>
@@ -283,7 +270,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/thread/future.hpp" line="71" column="1" bodyfile="libraries/fc/src/thread/future.cpp" bodystart="39" bodyend="43"/>
+        <location file="libraries/fc/include/fc/thread/future.hpp" line="71" column="1" bodyfile="libraries/fc/src/thread/future.cpp" bodystart="40" bodyend="42"/>
       </memberdef>
       <memberdef kind="function" id="classfc_1_1promise__base_1a3119bcaac019e31280151b19c3f6aa72" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -300,7 +287,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/thread/future.hpp" line="73" column="1" bodyfile="libraries/fc/src/thread/future.cpp" bodystart="45" bodyend="48"/>
+        <location file="libraries/fc/include/fc/thread/future.hpp" line="73" column="1" bodyfile="libraries/fc/src/thread/future.cpp" bodystart="44" bodyend="47"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-func">
@@ -319,7 +306,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/thread/future.hpp" line="76" column="1" bodyfile="libraries/fc/src/thread/future.cpp" bodystart="12" bodyend="23"/>
+        <location file="libraries/fc/include/fc/thread/future.hpp" line="76" column="1" bodyfile="libraries/fc/src/thread/future.cpp" bodystart="11" bodyend="22"/>
       </memberdef>
       <memberdef kind="function" id="classfc_1_1promise__base_1a75479ef52e8d8e2a6770bef9b4b281dc" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -336,7 +323,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/thread/future.hpp" line="78" column="1" bodyfile="libraries/fc/src/thread/future.cpp" bodystart="50" bodyend="55"/>
+        <location file="libraries/fc/include/fc/thread/future.hpp" line="78" column="1" bodyfile="libraries/fc/src/thread/future.cpp" bodystart="49" bodyend="54"/>
       </memberdef>
       <memberdef kind="function" id="classfc_1_1promise__base_1a4a2aa31afeaf26faaff3d1799435f4d4" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -353,33 +340,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/thread/future.hpp" line="79" column="1" bodyfile="libraries/fc/src/thread/future.cpp" bodystart="56" bodyend="104"/>
-      </memberdef>
-      <memberdef kind="function" id="classfc_1_1promise__base_1a6a87975a31dd58f11e1b62ae28eb5f83" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void fc::promise_base::_enqueue_thread</definition>
-        <argsstring>()</argsstring>
-        <name>_enqueue_thread</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="libraries/fc/include/fc/thread/future.hpp" line="80" column="1" bodyfile="libraries/fc/src/thread/future.cpp" bodystart="105" bodyend="111"/>
-      </memberdef>
-      <memberdef kind="function" id="classfc_1_1promise__base_1a2db0a2f3139577fcb7f5f82dc85f8534" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void fc::promise_base::_dequeue_thread</definition>
-        <argsstring>()</argsstring>
-        <name>_dequeue_thread</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="libraries/fc/include/fc/thread/future.hpp" line="81" column="1" bodyfile="libraries/fc/src/thread/future.cpp" bodystart="112" bodyend="116"/>
+        <location file="libraries/fc/include/fc/thread/future.hpp" line="79" column="1" bodyfile="libraries/fc/src/thread/future.cpp" bodystart="55" bodyend="102"/>
       </memberdef>
       <memberdef kind="function" id="classfc_1_1promise__base_1a320d282323c9805b6387a7b7ea6dcd79" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -392,20 +353,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/thread/future.hpp" line="82" column="1" bodyfile="libraries/fc/src/thread/future.cpp" bodystart="117" bodyend="127"/>
-      </memberdef>
-      <memberdef kind="function" id="classfc_1_1promise__base_1a1c0586c58e083c299cfe212080e42212" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void fc::promise_base::_set_timeout</definition>
-        <argsstring>()</argsstring>
-        <name>_set_timeout</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="libraries/fc/include/fc/thread/future.hpp" line="83" column="1" bodyfile="libraries/fc/src/thread/future.cpp" bodystart="129" bodyend="133"/>
+        <location file="libraries/fc/include/fc/thread/future.hpp" line="80" column="1" bodyfile="libraries/fc/src/thread/future.cpp" bodystart="115" bodyend="122"/>
       </memberdef>
       <memberdef kind="function" id="classfc_1_1promise__base_1af1b26ac27dbdfe255b4d44c98ac0bde8" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -422,7 +370,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/thread/future.hpp" line="84" column="1" bodyfile="libraries/fc/src/thread/future.cpp" bodystart="134" bodyend="146"/>
+        <location file="libraries/fc/include/fc/thread/future.hpp" line="81" column="1" bodyfile="libraries/fc/src/thread/future.cpp" bodystart="124" bodyend="132"/>
       </memberdef>
       <memberdef kind="function" id="classfc_1_1promise__base_1ab0d96cf4e63f9ede926e779149c16d1e" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -439,7 +387,35 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/thread/future.hpp" line="86" column="1" bodyfile="libraries/fc/src/thread/future.cpp" bodystart="147" bodyend="152"/>
+        <location file="libraries/fc/include/fc/thread/future.hpp" line="83" column="1" bodyfile="libraries/fc/src/thread/future.cpp" bodystart="134" bodyend="138"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classfc_1_1promise__base_1a6a87975a31dd58f11e1b62ae28eb5f83" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::promise_base::_enqueue_thread</definition>
+        <argsstring>()</argsstring>
+        <name>_enqueue_thread</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/future.hpp" line="86" column="1" bodyfile="libraries/fc/src/thread/future.cpp" bodystart="103" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1promise__base_1a2db0a2f3139577fcb7f5f82dc85f8534" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::promise_base::_dequeue_thread</definition>
+        <argsstring>()</argsstring>
+        <name>_dequeue_thread</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/thread/future.hpp" line="87" column="1" bodyfile="libraries/fc/src/thread/future.cpp" bodystart="111" bodyend="114"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -447,101 +423,99 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="4599">
+      <node id="5261">
         <label>fc::promise&lt; void &gt;</label>
         <link refid="classfc_1_1promise_3_01void_01_4"/>
-        <childnode refid="4596" relation="public-inheritance">
+        <childnode refid="5258" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4603">
+      <node id="5265">
         <label>fc::promise&lt; R &gt;</label>
         <link refid="classfc_1_1promise"/>
-        <childnode refid="4596" relation="public-inheritance">
+        <childnode refid="5258" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4604">
+      <node id="5266">
         <label>fc::promise&lt; size_t &gt;</label>
         <link refid="classfc_1_1promise"/>
-        <childnode refid="4596" relation="public-inheritance">
+        <childnode refid="5258" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4600">
+      <node id="5262">
         <label>fc::task&lt; void, FunctorSize &gt;</label>
         <link refid="classfc_1_1task_3_01void_00_01_functor_size_01_4"/>
-        <childnode refid="4599" relation="public-inheritance">
+        <childnode refid="5261" relation="public-inheritance">
         </childnode>
-        <childnode refid="4601" relation="public-inheritance">
+        <childnode refid="5263" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4601">
+      <node id="5263">
         <label>fc::task_base</label>
         <link refid="classfc_1_1task__base"/>
-        <childnode refid="4596" relation="public-inheritance">
+        <childnode refid="5258" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4602">
+      <node id="5264">
         <label>fc::task&lt; R, FunctorSize &gt;</label>
         <link refid="classfc_1_1task"/>
-        <childnode refid="4601" relation="public-inheritance">
+        <childnode refid="5263" relation="public-inheritance">
         </childnode>
-        <childnode refid="4603" relation="public-inheritance">
+        <childnode refid="5265" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4597">
+      <node id="5259">
         <label>std::enable_shared_from_this&lt; promise_base &gt;</label>
       </node>
-      <node id="4598">
+      <node id="5260">
         <label>fc::promise&lt; T &gt;</label>
         <link refid="classfc_1_1promise"/>
-        <childnode refid="4596" relation="public-inheritance">
+        <childnode refid="5258" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4596">
+      <node id="5258">
         <label>fc::promise_base</label>
         <link refid="classfc_1_1promise__base"/>
-        <childnode refid="4597" relation="public-inheritance">
+        <childnode refid="5259" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="4606">
+      <node id="5268">
         <label>std::enable_shared_from_this&lt; promise_base &gt;</label>
       </node>
-      <node id="4605">
+      <node id="5267">
         <label>fc::promise_base</label>
         <link refid="classfc_1_1promise__base"/>
-        <childnode refid="4606" relation="public-inheritance">
+        <childnode refid="5268" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="libraries/fc/include/fc/thread/future.hpp" line="61" column="1" bodyfile="libraries/fc/include/fc/thread/future.hpp" bodystart="61" bodyend="107"/>
+    <location file="libraries/fc/include/fc/thread/future.hpp" line="61" column="1" bodyfile="libraries/fc/include/fc/thread/future.hpp" bodystart="61" bodyend="106"/>
     <listofallmembers>
-      <member refid="classfc_1_1promise__base_1aaac69533c69bc871a7024534b01c9a34" prot="private" virt="non-virtual"><scope>fc::promise_base</scope><name>_blocked_fiber_count</name></member>
-      <member refid="classfc_1_1promise__base_1a9eb836168f962877e1bea0e09fb92aae" prot="private" virt="non-virtual"><scope>fc::promise_base</scope><name>_blocked_thread</name></member>
+      <member refid="classfc_1_1promise__base_1aeb5111b3d36699b3e9a052efc4c7f102" prot="private" virt="non-virtual"><scope>fc::promise_base</scope><name>_blocked_fiber_count</name></member>
+      <member refid="classfc_1_1promise__base_1aa09bca486c5ef93ddd907908a1d29748" prot="private" virt="non-virtual"><scope>fc::promise_base</scope><name>_blocked_thread</name></member>
       <member refid="classfc_1_1promise__base_1a7c67470dd410c96ceb16802c24db4d6b" prot="private" virt="non-virtual"><scope>fc::promise_base</scope><name>_canceled</name></member>
       <member refid="classfc_1_1promise__base_1a11f63028c05408c07cd9281171af6001" prot="protected" virt="non-virtual"><scope>fc::promise_base</scope><name>_cancellation_reason</name></member>
-      <member refid="classfc_1_1promise__base_1a65d58cf27c66e11561481b296a33a8b5" prot="private" virt="non-virtual"><scope>fc::promise_base</scope><name>_compl</name></member>
-      <member refid="classfc_1_1promise__base_1a2db0a2f3139577fcb7f5f82dc85f8534" prot="protected" virt="non-virtual"><scope>fc::promise_base</scope><name>_dequeue_thread</name></member>
+      <member refid="classfc_1_1promise__base_1ae2f8509e17c91f2d2043066649a658c6" prot="private" virt="non-virtual"><scope>fc::promise_base</scope><name>_compl</name></member>
+      <member refid="classfc_1_1promise__base_1a2db0a2f3139577fcb7f5f82dc85f8534" prot="private" virt="non-virtual"><scope>fc::promise_base</scope><name>_dequeue_thread</name></member>
       <member refid="classfc_1_1promise__base_1a0daaf6eb8b263e481261520e6178fe7e" prot="private" virt="non-virtual"><scope>fc::promise_base</scope><name>_desc</name></member>
-      <member refid="classfc_1_1promise__base_1a6a87975a31dd58f11e1b62ae28eb5f83" prot="protected" virt="non-virtual"><scope>fc::promise_base</scope><name>_enqueue_thread</name></member>
+      <member refid="classfc_1_1promise__base_1a6a87975a31dd58f11e1b62ae28eb5f83" prot="private" virt="non-virtual"><scope>fc::promise_base</scope><name>_enqueue_thread</name></member>
       <member refid="classfc_1_1promise__base_1a0fa67835e16b1478d71d9920305ea9e7" prot="private" virt="non-virtual"><scope>fc::promise_base</scope><name>_exceptp</name></member>
       <member refid="classfc_1_1promise__base_1a320d282323c9805b6387a7b7ea6dcd79" prot="protected" virt="non-virtual"><scope>fc::promise_base</scope><name>_notify</name></member>
       <member refid="classfc_1_1promise__base_1ab0d96cf4e63f9ede926e779149c16d1e" prot="protected" virt="non-virtual"><scope>fc::promise_base</scope><name>_on_complete</name></member>
-      <member refid="classfc_1_1promise__base_1a370b93d070630635330cf9de3fe5f18b" prot="private" virt="non-virtual"><scope>fc::promise_base</scope><name>_ready</name></member>
-      <member refid="classfc_1_1promise__base_1a1c0586c58e083c299cfe212080e42212" prot="protected" virt="non-virtual"><scope>fc::promise_base</scope><name>_set_timeout</name></member>
+      <member refid="classfc_1_1promise__base_1a2cbefa65157624bca473edf16680f4fc" prot="private" virt="non-virtual"><scope>fc::promise_base</scope><name>_ready</name></member>
       <member refid="classfc_1_1promise__base_1af1b26ac27dbdfe255b4d44c98ac0bde8" prot="protected" virt="non-virtual"><scope>fc::promise_base</scope><name>_set_value</name></member>
-      <member refid="classfc_1_1promise__base_1a6be6bf5df66537f10d0467ba277d528e" prot="private" virt="non-virtual"><scope>fc::promise_base</scope><name>_spin_yield</name></member>
       <member refid="classfc_1_1promise__base_1ab8617efa9540d9604c53cac31348b0f8" prot="private" virt="non-virtual"><scope>fc::promise_base</scope><name>_timeout</name></member>
       <member refid="classfc_1_1promise__base_1a75479ef52e8d8e2a6770bef9b4b281dc" prot="protected" virt="non-virtual"><scope>fc::promise_base</scope><name>_wait</name></member>
       <member refid="classfc_1_1promise__base_1a4a2aa31afeaf26faaff3d1799435f4d4" prot="protected" virt="non-virtual"><scope>fc::promise_base</scope><name>_wait_until</name></member>
       <member refid="classfc_1_1promise__base_1a5d2719d4d2948d8e1e600ec88af91e91" prot="public" virt="virtual"><scope>fc::promise_base</scope><name>cancel</name></member>
-      <member refid="classfc_1_1promise__base_1aa2defa3c6bb9cf9a6f0a1e38b1b8a475" prot="public" virt="non-virtual"><scope>fc::promise_base</scope><name>canceled</name></member>
+      <member refid="classfc_1_1promise__base_1acd54c918c64c8169812af27f22cbb708" prot="public" virt="non-virtual"><scope>fc::promise_base</scope><name>canceled</name></member>
       <member refid="classfc_1_1promise__base_1a273663e2f972ed060b73a334b5005ab8" prot="private" virt="non-virtual"><scope>fc::promise_base</scope><name>context</name></member>
-      <member refid="classfc_1_1promise__base_1a169688ce87883c5483c5d6e0d7ae84d0" prot="public" virt="non-virtual"><scope>fc::promise_base</scope><name>error</name></member>
-      <member refid="classfc_1_1promise__base_1ae2f98357966b2fbecbf35736ef904bea" prot="public" virt="non-virtual"><scope>fc::promise_base</scope><name>get_desc</name></member>
+      <member refid="classfc_1_1promise__base_1a2b5a2e406c42975770e9916de029e126" prot="public" virt="non-virtual"><scope>fc::promise_base</scope><name>error</name></member>
+      <member refid="classfc_1_1promise__base_1a3b988f099c6046a663fa34dfa9ea5957" prot="public" virt="non-virtual"><scope>fc::promise_base</scope><name>get_desc</name></member>
       <member refid="classfc_1_1promise__base_1adea93b6fbaa0f0e832d331bde7314bea" prot="protected" virt="non-virtual"><scope>fc::promise_base</scope><name>promise_base</name></member>
       <member refid="classfc_1_1promise__base_1a981f5f6eb5de005018991933ca06580d" prot="public" virt="non-virtual"><scope>fc::promise_base</scope><name>ptr</name></member>
-      <member refid="classfc_1_1promise__base_1a6090bb47228cded5eb9319b7e81726b3" prot="public" virt="non-virtual"><scope>fc::promise_base</scope><name>ready</name></member>
+      <member refid="classfc_1_1promise__base_1adec3ac53abef9827c7c589eb9d010279" prot="public" virt="non-virtual"><scope>fc::promise_base</scope><name>ready</name></member>
       <member refid="classfc_1_1promise__base_1a3119bcaac019e31280151b19c3f6aa72" prot="public" virt="non-virtual"><scope>fc::promise_base</scope><name>set_exception</name></member>
       <member refid="classfc_1_1promise__base_1adb314a48b19f4325e5e69e8a60091fce" prot="private" virt="non-virtual"><scope>fc::promise_base</scope><name>thread</name></member>
       <member refid="classfc_1_1promise__base_1adf6b3bf455e0a61e7d995a5fdd4b70fb" prot="private" virt="non-virtual"><scope>fc::promise_base</scope><name>thread_d</name></member>

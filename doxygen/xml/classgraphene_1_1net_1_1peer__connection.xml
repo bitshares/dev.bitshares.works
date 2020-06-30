@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
   <compounddef id="classgraphene_1_1net_1_1peer__connection" kind="class" language="C++" prot="public">
     <compoundname>graphene::net::peer_connection</compoundname>
     <basecompoundref refid="classgraphene_1_1net_1_1message__oriented__connection__delegate" prot="public" virt="non-virtual">graphene::net::message_oriented_connection_delegate</basecompoundref>
@@ -42,6 +42,7 @@
         <definition>uint32_t graphene::net::peer_connection::core_protocol_version</definition>
         <argsstring></argsstring>
         <name>core_protocol_version</name>
+        <initializer>= 0</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -159,6 +160,7 @@
         <definition>uint16_t graphene::net::peer_connection::inbound_port</definition>
         <argsstring></argsstring>
         <name>inbound_port</name>
+        <initializer>= 0</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -172,6 +174,7 @@
         <definition>uint16_t graphene::net::peer_connection::outbound_port</definition>
         <argsstring></argsstring>
         <name>outbound_port</name>
+        <initializer>= 0</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -213,6 +216,7 @@
         <definition>uint32_t graphene::net::peer_connection::number_of_unfetched_item_ids</definition>
         <argsstring></argsstring>
         <name>number_of_unfetched_item_ids</name>
+        <initializer>= 0</initializer>
         <briefdescription>
 <para>list of all items this peer has offered use that we&apos;ve already handed to the client but the client hasn&apos;t finished processing </para>        </briefdescription>
         <detaileddescription>
@@ -226,6 +230,7 @@
         <definition>bool graphene::net::peer_connection::peer_needs_sync_items_from_us</definition>
         <argsstring></argsstring>
         <name>peer_needs_sync_items_from_us</name>
+        <initializer>= false</initializer>
         <briefdescription>
 <para>number of items in the blockchain that follow ids_of_items_to_get but the peer hasn&apos;t yet told us their ids </para>        </briefdescription>
         <detaileddescription>
@@ -239,6 +244,7 @@
         <definition>bool graphene::net::peer_connection::we_need_sync_items_from_peer</definition>
         <argsstring></argsstring>
         <name>we_need_sync_items_from_peer</name>
+        <initializer>= false</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -266,7 +272,7 @@
         <argsstring></argsstring>
         <name>last_sync_item_received_time</name>
         <briefdescription>
-<para>we check this to detect a timed-out request and in <ref refid="classgraphene_1_1net_1_1peer__connection_1ad5fa3495b64326d612adb120e7d4f5b0" kindref="member">busy()</ref> </para>        </briefdescription>
+<para>we check this to detect a timed-out request and in <ref refid="classgraphene_1_1net_1_1peer__connection_1a272d3356f8b1866cc36b042a9cc3aa92" kindref="member">busy()</ref> </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
@@ -317,6 +323,7 @@
         <definition>bool graphene::net::peer_connection::inhibit_fetching_sync_blocks</definition>
         <argsstring></argsstring>
         <name>inhibit_fetching_sync_blocks</name>
+        <initializer>= false</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -328,7 +335,7 @@
       </sectiondef>
       <sectiondef kind="user-defined">
       <memberdef kind="typedef" id="classgraphene_1_1net_1_1peer__connection_1a3c453ce025f0fcd97c4b4290d617f576" prot="public" static="no">
-        <type>boost::multi_index_container&lt; <ref refid="structgraphene_1_1net_1_1peer__connection_1_1timestamped__item__id" kindref="compound">timestamped_item_id</ref>, boost::multi_index::indexed_by&lt; boost::multi_index::hashed_unique&lt; boost::multi_index::member&lt; <ref refid="structgraphene_1_1net_1_1peer__connection_1_1timestamped__item__id" kindref="compound">timestamped_item_id</ref>, <ref refid="structgraphene_1_1net_1_1item__id" kindref="compound">item_id</ref>, &amp;<ref refid="structgraphene_1_1net_1_1peer__connection_1_1timestamped__item__id_1ac4a4a62b942bf54aa72a36c819605476" kindref="member">timestamped_item_id::item</ref> &gt;, std::hash&lt; <ref refid="structgraphene_1_1net_1_1item__id" kindref="compound">item_id</ref> &gt; &gt;, boost::multi_index::ordered_non_unique&lt; boost::multi_index::tag&lt; <ref refid="structgraphene_1_1net_1_1peer__connection_1_1timestamp__index" kindref="compound">timestamp_index</ref> &gt;, boost::multi_index::member&lt; <ref refid="structgraphene_1_1net_1_1peer__connection_1_1timestamped__item__id" kindref="compound">timestamped_item_id</ref>, <ref refid="classfc_1_1time__point__sec" kindref="compound">fc::time_point_sec</ref>, &amp;<ref refid="structgraphene_1_1net_1_1peer__connection_1_1timestamped__item__id_1a12d7dbe2948bc86b9149327ee4500f45" kindref="member">timestamped_item_id::timestamp</ref> &gt; &gt; &gt; &gt;</type>
+        <type>boost::multi_index_container&lt; <ref refid="structgraphene_1_1net_1_1peer__connection_1_1timestamped__item__id" kindref="compound">timestamped_item_id</ref>, boost::multi_index::indexed_by&lt; boost::multi_index::hashed_unique&lt; boost::multi_index::member&lt; <ref refid="structgraphene_1_1net_1_1peer__connection_1_1timestamped__item__id" kindref="compound">timestamped_item_id</ref>, <ref refid="structgraphene_1_1net_1_1item__id" kindref="compound">item_id</ref>,&amp;<ref refid="structgraphene_1_1net_1_1peer__connection_1_1timestamped__item__id_1ac4a4a62b942bf54aa72a36c819605476" kindref="member">timestamped_item_id::item</ref> &gt;, std::hash&lt; <ref refid="structgraphene_1_1net_1_1item__id" kindref="compound">item_id</ref> &gt; &gt;, boost::multi_index::ordered_non_unique&lt; boost::multi_index::tag&lt; <ref refid="structgraphene_1_1net_1_1peer__connection_1_1timestamp__index" kindref="compound">timestamp_index</ref> &gt;, boost::multi_index::member&lt; <ref refid="structgraphene_1_1net_1_1peer__connection_1_1timestamped__item__id" kindref="compound">timestamped_item_id</ref>, <ref refid="classfc_1_1time__point__sec" kindref="compound">fc::time_point_sec</ref>,&amp;<ref refid="structgraphene_1_1net_1_1peer__connection_1_1timestamped__item__id_1a12d7dbe2948bc86b9149327ee4500f45" kindref="member">timestamped_item_id::timestamp</ref> &gt; &gt; &gt; &gt;</type>
         <definition>typedef boost::multi_index_container&lt;timestamped_item_id, boost::multi_index::indexed_by&lt;boost::multi_index::hashed_unique&lt;boost::multi_index::member&lt;timestamped_item_id, item_id, &amp;timestamped_item_id::item&gt;, std::hash&lt;item_id&gt; &gt;, boost::multi_index::ordered_non_unique&lt;boost::multi_index::tag&lt;timestamp_index&gt;, boost::multi_index::member&lt;timestamped_item_id, fc::time_point_sec, &amp;timestamped_item_id::timestamp&gt; &gt; &gt; &gt; graphene::net::peer_connection::timestamped_items_set_type</definition>
         <argsstring></argsstring>
         <name>timestamped_items_set_type</name>
@@ -603,6 +610,7 @@
         <definition>size_t graphene::net::peer_connection::_total_queued_messages_size</definition>
         <argsstring></argsstring>
         <name>_total_queued_messages_size</name>
+        <initializer>= 0</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -642,6 +650,7 @@
         <definition>fc::thread* graphene::net::peer_connection::_thread</definition>
         <argsstring></argsstring>
         <name>_thread</name>
+        <initializer>= nullptr</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -655,6 +664,7 @@
         <definition>unsigned graphene::net::peer_connection::_send_message_queue_tasks_running</definition>
         <argsstring></argsstring>
         <name>_send_message_queue_tasks_running</name>
+        <initializer>= 0</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -668,6 +678,7 @@
         <definition>bool graphene::net::peer_connection::_currently_handling_message</definition>
         <argsstring></argsstring>
         <name>_currently_handling_message</name>
+        <initializer>= false</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -722,6 +733,7 @@
         <definition>peer_connection_direction graphene::net::peer_connection::direction</definition>
         <argsstring></argsstring>
         <name>direction</name>
+        <initializer>= <ref refid="namespacegraphene_1_1net_1ad0fa02c07eb80a168befc6c5931d6cccaad921d60486366258809553a3db49a4a" kindref="member">peer_connection_direction::unknown</ref></initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -735,6 +747,7 @@
         <definition>firewalled_state graphene::net::peer_connection::is_firewalled</definition>
         <argsstring></argsstring>
         <name>is_firewalled</name>
+        <initializer>= <ref refid="namespacegraphene_1_1net_1ad0fa02c07eb80a168befc6c5931d6cccaad921d60486366258809553a3db49a4a" kindref="member">firewalled_state::unknown</ref></initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -774,6 +787,7 @@
         <definition>our_connection_state graphene::net::peer_connection::our_state</definition>
         <argsstring></argsstring>
         <name>our_state</name>
+        <initializer>= <ref refid="classgraphene_1_1net_1_1peer__connection_1a91930a9842bffe62e6727f16d74c720ba3a561116f0c9675a3c83d21fa365050d" kindref="member">our_connection_state::disconnected</ref></initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -787,6 +801,7 @@
         <definition>bool graphene::net::peer_connection::they_have_requested_close</definition>
         <argsstring></argsstring>
         <name>they_have_requested_close</name>
+        <initializer>= false</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -800,6 +815,7 @@
         <definition>their_connection_state graphene::net::peer_connection::their_state</definition>
         <argsstring></argsstring>
         <name>their_state</name>
+        <initializer>= <ref refid="classgraphene_1_1net_1_1peer__connection_1af1fa5c4e1ef1bcad5f3e0c1743786effa3a561116f0c9675a3c83d21fa365050d" kindref="member">their_connection_state::disconnected</ref></initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -813,6 +829,7 @@
         <definition>bool graphene::net::peer_connection::we_have_requested_close</definition>
         <argsstring></argsstring>
         <name>we_have_requested_close</name>
+        <initializer>= false</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -826,6 +843,7 @@
         <definition>connection_negotiation_status graphene::net::peer_connection::negotiation_status</definition>
         <argsstring></argsstring>
         <name>negotiation_status</name>
+        <initializer>= <ref refid="classgraphene_1_1net_1_1peer__connection_1a1fc3e7d2bae4008c4c67164995f8c560a3a561116f0c9675a3c83d21fa365050d" kindref="member">connection_negotiation_status::disconnected</ref></initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -853,9 +871,9 @@
         <argsstring></argsstring>
         <name>transaction_fetching_inhibited_until</name>
         <briefdescription>
-<para>items we&apos;ve requested from this peer during normal operation. fetch from another peer if this peer disconnects </para>        </briefdescription>
+        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>items we&apos;ve requested from this peer during normal operation. fetch from another peer if this peer disconnects </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="259" column="1" bodyfile="libraries/net/include/graphene/net/peer_connection.hpp" bodystart="259" bodyend="-1"/>
@@ -865,6 +883,7 @@
         <definition>uint32_t graphene::net::peer_connection::last_known_fork_block_number</definition>
         <argsstring></argsstring>
         <name>last_known_fork_block_number</name>
+        <initializer>= 0</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -891,6 +910,7 @@
         <definition>firewall_check_state_data* graphene::net::peer_connection::firewall_check_state</definition>
         <argsstring></argsstring>
         <name>firewall_check_state</name>
+        <initializer>= nullptr</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -901,10 +921,10 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1afb2e0dc62da3a264459bdfb791445435" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a810d2547ae33d46a7c901707ac136437" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classfc_1_1time__point" kindref="compound">fc::time_point</ref></type>
         <definition>fc::time_point graphene::net::peer_connection::get_connection_time</definition>
-        <argsstring>() const</argsstring>
+        <argsstring>() const </argsstring>
         <name>get_connection_time</name>
         <briefdescription>
         </briefdescription>
@@ -914,10 +934,10 @@
         </inbodydescription>
         <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="188" column="1" bodyfile="libraries/net/include/graphene/net/peer_connection.hpp" bodystart="188" bodyend="188"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a83ea1b6fff6d03711990f937a788b2d9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1ab2e8ee0fbcc32249c52f1cf936b04b6e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classfc_1_1time__point" kindref="compound">fc::time_point</ref></type>
         <definition>fc::time_point graphene::net::peer_connection::get_connection_terminated_time</definition>
-        <argsstring>() const</argsstring>
+        <argsstring>() const </argsstring>
         <name>get_connection_terminated_time</name>
         <briefdescription>
         </briefdescription>
@@ -938,7 +958,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="277" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="176" bodyend="180"/>
+        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="276" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="176" bodyend="180"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1aa70184ea95d9ee7e2e1521bb0c250304" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classfc_1_1tcp__socket" kindref="compound">fc::tcp_socket</ref> &amp;</type>
@@ -951,7 +971,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="279" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="182" bodyend="186"/>
+        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="278" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="182" bodyend="186"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a9d5adaa64534ad04cdb80a17c47de28a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -964,7 +984,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="280" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="188" bodyend="223"/>
+        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="279" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="188" bodyend="223"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a4b8f6e10e54cfcc48c6acd7718435d08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -986,7 +1006,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="281" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="225" bodyend="266"/>
+        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="280" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="225" bodyend="266"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a8871e3e1d4a2fc425d232e1bd0956c29" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -1008,7 +1028,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="283" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="268" bodyend="276"/>
+        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="282" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="268" bodyend="276"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a2c13af90dc86a5940694c1a1197e7281" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -1026,7 +1046,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="284" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="278" bodyend="283"/>
+        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="283" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="278" bodyend="283"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a35f68aac36feecf9f96e0d9f89334b8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1043,12 +1063,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="286" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="341" bodyend="371"/>
+        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="285" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="341" bodyend="371"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1ae0c5cd45659c572be805f125d70e5e5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a257863cd4277ca8e89c5773b54384fe5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void graphene::net::peer_connection::send_message</definition>
-        <argsstring>(const message &amp;message_to_send, size_t message_send_time_field_offset=(size_t) -1)</argsstring>
+        <argsstring>(const message &amp;message_to_send, size_t message_send_time_field_offset=(size_t)-1)</argsstring>
         <name>send_message</name>
         <param>
           <type>const <ref refid="structgraphene_1_1net_1_1message" kindref="compound">message</ref> &amp;</type>
@@ -1057,7 +1077,7 @@
         <param>
           <type>size_t</type>
           <declname>message_send_time_field_offset</declname>
-          <defval>(size_t) -1</defval>
+          <defval>(size_t)-1</defval>
         </param>
         <briefdescription>
         </briefdescription>
@@ -1065,7 +1085,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="287" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="373" bodyend="380"/>
+        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="286" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="373" bodyend="380"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a4e133d3af48d11f1e03c728d95b1dea7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1082,7 +1102,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="288" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="382" bodyend="389"/>
+        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="287" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="382" bodyend="389"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a528eaf4d7a1aae25374faa3be3d9b8b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1095,7 +1115,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="289" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="391" bodyend="398"/>
+        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="288" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="391" bodyend="398"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1ad44c11c9cfb7b0976b68fe9002946fc8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1108,12 +1128,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="290" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="400" bodyend="405"/>
+        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="289" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="400" bodyend="405"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a3fec81daff2c3fa60ce57db27330b5c2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a977810b814f5929746da36424d9b3a39" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>uint64_t</type>
         <definition>uint64_t graphene::net::peer_connection::get_total_bytes_sent</definition>
-        <argsstring>() const</argsstring>
+        <argsstring>() const </argsstring>
         <name>get_total_bytes_sent</name>
         <briefdescription>
         </briefdescription>
@@ -1121,12 +1141,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="292" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="407" bodyend="411"/>
+        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="291" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="407" bodyend="411"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1af8a224b60f0ac58a3c915f759955ac67" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a40eebf1a997e123bd566817c1558c5e6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>uint64_t</type>
         <definition>uint64_t graphene::net::peer_connection::get_total_bytes_received</definition>
-        <argsstring>() const</argsstring>
+        <argsstring>() const </argsstring>
         <name>get_total_bytes_received</name>
         <briefdescription>
         </briefdescription>
@@ -1134,12 +1154,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="293" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="413" bodyend="417"/>
+        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="292" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="413" bodyend="417"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1ad7b20b455c09b7e16e7f90a624cf74ac" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a695bf437eb6ac25a7a51d7abc660ed1a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classfc_1_1time__point" kindref="compound">fc::time_point</ref></type>
         <definition>fc::time_point graphene::net::peer_connection::get_last_message_sent_time</definition>
-        <argsstring>() const</argsstring>
+        <argsstring>() const </argsstring>
         <name>get_last_message_sent_time</name>
         <briefdescription>
         </briefdescription>
@@ -1147,12 +1167,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="295" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="419" bodyend="423"/>
+        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="294" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="419" bodyend="423"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1aa1c8c167347a20d16c1e62744fe268b6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a298d2204f6096673e68c589f54067b61" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classfc_1_1time__point" kindref="compound">fc::time_point</ref></type>
         <definition>fc::time_point graphene::net::peer_connection::get_last_message_received_time</definition>
-        <argsstring>() const</argsstring>
+        <argsstring>() const </argsstring>
         <name>get_last_message_received_time</name>
         <briefdescription>
         </briefdescription>
@@ -1160,7 +1180,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="296" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="425" bodyend="429"/>
+        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="295" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="425" bodyend="429"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1ab61398cf17d6cf388622356026de9fcf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classfc_1_1optional" kindref="compound">fc::optional</ref>&lt; <ref refid="classfc_1_1ip_1_1endpoint" kindref="compound">fc::ip::endpoint</ref> &gt;</type>
@@ -1173,7 +1193,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="298" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="431" bodyend="435"/>
+        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="297" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="431" bodyend="435"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a8e1dfb1d2031eccac5fd4a469acb52cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classfc_1_1ip_1_1endpoint" kindref="compound">fc::ip::endpoint</ref></type>
@@ -1186,7 +1206,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="299" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="436" bodyend="440"/>
+        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="298" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="436" bodyend="440"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1abb1aa66fb27ab0e3be4a8cb6ddc475fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1203,12 +1223,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="300" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="442" bodyend="446"/>
+        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="299" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="442" bodyend="446"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1ad5fa3495b64326d612adb120e7d4f5b0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a272d3356f8b1866cc36b042a9cc3aa92" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool graphene::net::peer_connection::busy</definition>
-        <argsstring>() const</argsstring>
+        <argsstring>() const </argsstring>
         <name>busy</name>
         <briefdescription>
         </briefdescription>
@@ -1216,12 +1236,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="302" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="448" bodyend="452"/>
+        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="301" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="448" bodyend="452"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a354f91d0ba7478a7108b1612dc26705c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a1698fc9a0cf7f3dd6ee9dc5f620c447b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool graphene::net::peer_connection::idle</definition>
-        <argsstring>() const</argsstring>
+        <argsstring>() const </argsstring>
         <name>idle</name>
         <briefdescription>
         </briefdescription>
@@ -1229,12 +1249,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="303" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="454" bodyend="458"/>
+        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="302" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="454" bodyend="458"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1aad602bff9d9c82ceaef90bc30da272c9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a8ed1d2129de82e39204b44a4e3461392" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool graphene::net::peer_connection::is_currently_handling_message</definition>
-        <argsstring>() const</argsstring>
+        <argsstring>() const </argsstring>
         <name>is_currently_handling_message</name>
         <briefdescription>
         </briefdescription>
@@ -1242,12 +1262,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="304" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="460" bodyend="464"/>
+        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="303" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="460" bodyend="464"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1ac8284a7d8adfce259afbd5df79c4f59b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a954f07f42c9a8b959ccbd6630d99b599" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool graphene::net::peer_connection::is_transaction_fetching_inhibited</definition>
-        <argsstring>() const</argsstring>
+        <argsstring>() const </argsstring>
         <name>is_transaction_fetching_inhibited</name>
         <briefdescription>
         </briefdescription>
@@ -1255,12 +1275,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="306" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="466" bodyend="470"/>
+        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="305" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="466" bodyend="470"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1af47a18ef8d93a40f5f3cd010f6aadb4c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a6eb49442cb4dd196ef7f923390944ecf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classfc_1_1sha512" kindref="compound">fc::sha512</ref></type>
         <definition>fc::sha512 graphene::net::peer_connection::get_shared_secret</definition>
-        <argsstring>() const</argsstring>
+        <argsstring>() const </argsstring>
         <name>get_shared_secret</name>
         <briefdescription>
         </briefdescription>
@@ -1268,7 +1288,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="307" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="472" bodyend="476"/>
+        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="306" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="472" bodyend="476"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1add398515c263a899eeb1266c951f6628" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1281,12 +1301,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="308" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="478" bodyend="498"/>
+        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="307" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="478" bodyend="498"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a5976f205346898d279f97debf7c7181f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a5d382ef1090ab0e444a1626b328c3d2d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool graphene::net::peer_connection::is_inventory_advertised_to_us_list_full_for_transactions</definition>
-        <argsstring>() const</argsstring>
+        <argsstring>() const </argsstring>
         <name>is_inventory_advertised_to_us_list_full_for_transactions</name>
         <briefdescription>
         </briefdescription>
@@ -1294,12 +1314,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="309" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="501" bodyend="505"/>
+        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="308" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="501" bodyend="505"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a118f70b619af2102c78f3fc485efec9f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1aef2ad57f8209434011dca6b7a8364f52" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool graphene::net::peer_connection::is_inventory_advertised_to_us_list_full</definition>
-        <argsstring>() const</argsstring>
+        <argsstring>() const </argsstring>
         <name>is_inventory_advertised_to_us_list_full</name>
         <briefdescription>
         </briefdescription>
@@ -1307,12 +1327,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="310" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="507" bodyend="516"/>
+        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="309" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="507" bodyend="516"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1afcaed96cedc4e001c084593f17f2df7e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a20de52cf09a4450fa907cb8dea552cec" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool graphene::net::peer_connection::performing_firewall_check</definition>
-        <argsstring>() const</argsstring>
+        <argsstring>() const </argsstring>
         <name>performing_firewall_check</name>
         <briefdescription>
         </briefdescription>
@@ -1320,12 +1340,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="311" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="518" bodyend="521"/>
+        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="310" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="518" bodyend="521"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a7d341147c197f40a47509aff1707a959" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a53e23d53996912150c1be6252a9b9bdc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classfc_1_1optional" kindref="compound">fc::optional</ref>&lt; <ref refid="classfc_1_1ip_1_1endpoint" kindref="compound">fc::ip::endpoint</ref> &gt;</type>
         <definition>fc::optional&lt; fc::ip::endpoint &gt; graphene::net::peer_connection::get_endpoint_for_connecting</definition>
-        <argsstring>() const</argsstring>
+        <argsstring>() const </argsstring>
         <name>get_endpoint_for_connecting</name>
         <briefdescription>
         </briefdescription>
@@ -1333,7 +1353,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="312" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="523" bodyend="528"/>
+        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="311" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="523" bodyend="528"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -1352,7 +1372,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="273" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="74" bodyend="98"/>
+        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="272" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="74" bodyend="98"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a62baa52eacb5210fe8fa823b36604d20" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1365,7 +1385,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="274" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="114" bodyend="174"/>
+        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="273" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="114" bodyend="174"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a89e77bb73edd3115bf9fe50cd9033145" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1378,7 +1398,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="314" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="285" bodyend="339"/>
+        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="313" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="285" bodyend="339"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1aece18773b59c1b0d1c23c82b3aa0618b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1391,7 +1411,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="315" column="1"/>
+        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="314" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a78fd38e66c7ae1d65f2fd34ea3229c2a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1408,7 +1428,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="316" column="1"/>
+        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="315" column="1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -1427,7 +1447,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="276" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="100" bodyend="112"/>
+        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="275" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="100" bodyend="112"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -1435,128 +1455,140 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="4443">
+      <node id="4988">
         <label>std::enable_shared_from_this&lt; peer_connection &gt;</label>
       </node>
-      <node id="4442">
+      <node id="4987">
         <label>graphene::net::message_oriented_connection_delegate</label>
         <link refid="classgraphene_1_1net_1_1message__oriented__connection__delegate"/>
       </node>
-      <node id="4441">
+      <node id="4986">
         <label>graphene::net::peer_connection</label>
         <link refid="classgraphene_1_1net_1_1peer__connection"/>
-        <childnode refid="4442" relation="public-inheritance">
+        <childnode refid="4987" relation="public-inheritance">
         </childnode>
-        <childnode refid="4443" relation="public-inheritance">
+        <childnode refid="4988" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="4457">
+      <node id="5003">
         <label>graphene::net::firewall_check_state_data</label>
         <link refid="structgraphene_1_1net_1_1firewall__check__state__data"/>
-        <childnode refid="4458" relation="usage">
+        <childnode refid="5004" relation="usage">
           <edgelabel>endpoint_to_test</edgelabel>
         </childnode>
+        <childnode refid="4997" relation="usage">
+          <edgelabel>requesting_peer</edgelabel>
+          <edgelabel>expected_node_id</edgelabel>
+        </childnode>
       </node>
-      <node id="4448">
+      <node id="4993">
         <label>fc::ripemd160</label>
         <link refid="classfc_1_1ripemd160"/>
       </node>
-      <node id="4458">
+      <node id="5004">
         <label>fc::ip::endpoint</label>
         <link refid="classfc_1_1ip_1_1endpoint"/>
       </node>
-      <node id="4456">
+      <node id="5002">
         <label>fc::optional&lt; fc::time_point_sec &gt;</label>
         <link refid="classfc_1_1optional"/>
       </node>
-      <node id="4450">
+      <node id="4995">
         <label>fc::optional&lt; uint32_t &gt;</label>
         <link refid="classfc_1_1optional"/>
       </node>
-      <node id="4452">
+      <node id="4998">
         <label>fc::optional&lt; boost::tuple&lt; std::vector&lt; fc::ripemd160 &gt;, fc::time_point &gt; &gt;</label>
       </node>
-      <node id="4455">
+      <node id="5001">
         <label>string</label>
       </node>
-      <node id="4459">
+      <node id="5005">
         <label>fc::time_point</label>
         <link refid="classfc_1_1time__point"/>
       </node>
-      <node id="4453">
+      <node id="4999">
         <label>fc::microseconds</label>
         <link refid="classfc_1_1microseconds"/>
       </node>
-      <node id="4446">
+      <node id="4991">
         <label>std::enable_shared_from_this&lt; peer_connection &gt;</label>
       </node>
-      <node id="4447">
+      <node id="4992">
         <label>fc::future&lt; void &gt;</label>
         <link refid="classfc_1_1future_3_01void_01_4"/>
       </node>
-      <node id="4445">
+      <node id="4990">
         <label>graphene::net::message_oriented_connection_delegate</label>
         <link refid="classgraphene_1_1net_1_1message__oriented__connection__delegate"/>
       </node>
-      <node id="4454">
+      <node id="5000">
         <label>fc::optional&lt; std::string &gt;</label>
         <link refid="classfc_1_1optional"/>
       </node>
-      <node id="4451">
+      <node id="4996">
         <label>fc::time_point_sec</label>
         <link refid="classfc_1_1time__point__sec"/>
       </node>
-      <node id="4449">
+      <node id="4994">
         <label>fc::ip::address</label>
         <link refid="classfc_1_1ip_1_1address"/>
       </node>
-      <node id="4444">
+      <node id="4997">
+        <label>fc::zero_initialized_array&lt; T, N &gt;</label>
+        <link refid="classfc_1_1zero__initialized__array"/>
+      </node>
+      <node id="4989">
         <label>graphene::net::peer_connection</label>
         <link refid="classgraphene_1_1net_1_1peer__connection"/>
-        <childnode refid="4445" relation="public-inheritance">
+        <childnode refid="4990" relation="public-inheritance">
         </childnode>
-        <childnode refid="4446" relation="public-inheritance">
+        <childnode refid="4991" relation="public-inheritance">
         </childnode>
-        <childnode refid="4447" relation="usage">
+        <childnode refid="4992" relation="usage">
           <edgelabel>accept_or_connect_task_done</edgelabel>
         </childnode>
-        <childnode refid="4448" relation="usage">
+        <childnode refid="4993" relation="usage">
           <edgelabel>last_block_delegate_has_seen</edgelabel>
         </childnode>
-        <childnode refid="4449" relation="usage">
+        <childnode refid="4994" relation="usage">
           <edgelabel>inbound_address</edgelabel>
         </childnode>
-        <childnode refid="4450" relation="usage">
+        <childnode refid="4995" relation="usage">
           <edgelabel>bitness</edgelabel>
         </childnode>
-        <childnode refid="4451" relation="usage">
+        <childnode refid="4996" relation="usage">
           <edgelabel>last_block_time_delegate_has_seen</edgelabel>
         </childnode>
-        <childnode refid="4452" relation="usage">
+        <childnode refid="4997" relation="usage">
+          <edgelabel>node_id</edgelabel>
+          <edgelabel>node_public_key</edgelabel>
+        </childnode>
+        <childnode refid="4998" relation="usage">
           <edgelabel>item_ids_requested_from_peer</edgelabel>
         </childnode>
-        <childnode refid="4453" relation="usage">
+        <childnode refid="4999" relation="usage">
           <edgelabel>round_trip_delay</edgelabel>
           <edgelabel>clock_offset</edgelabel>
         </childnode>
-        <childnode refid="4454" relation="usage">
+        <childnode refid="5000" relation="usage">
           <edgelabel>platform</edgelabel>
           <edgelabel>fc_git_revision_sha</edgelabel>
           <edgelabel>graphene_git_revision_sha</edgelabel>
         </childnode>
-        <childnode refid="4455" relation="usage">
+        <childnode refid="5001" relation="usage">
           <edgelabel>user_agent</edgelabel>
         </childnode>
-        <childnode refid="4456" relation="usage">
+        <childnode refid="5002" relation="usage">
           <edgelabel>graphene_git_revision_unix_timestamp</edgelabel>
           <edgelabel>fc_git_revision_unix_timestamp</edgelabel>
         </childnode>
-        <childnode refid="4457" relation="usage">
+        <childnode refid="5003" relation="usage">
           <edgelabel>firewall_check_state</edgelabel>
         </childnode>
-        <childnode refid="4459" relation="usage">
+        <childnode refid="5005" relation="usage">
           <edgelabel>transaction_fetching_inhibited_until</edgelabel>
           <edgelabel>connection_closed_time</edgelabel>
           <edgelabel>connection_initiation_time</edgelabel>
@@ -1565,7 +1597,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="76" column="1" bodyfile="libraries/net/include/graphene/net/peer_connection.hpp" bodystart="74" bodyend="317"/>
+    <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="76" column="1" bodyfile="libraries/net/include/graphene/net/peer_connection.hpp" bodystart="74" bodyend="316"/>
     <listofallmembers>
       <member refid="classgraphene_1_1net_1_1peer__connection_1ac2c1f52c490e29af2812ba3f7a961a0f" prot="private" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>_currently_handling_message</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1a959cc588ef786b5b5b24e6c187fd21b0" prot="private" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>_message_connection</name></member>
@@ -1580,7 +1612,7 @@
       <member refid="classgraphene_1_1net_1_1peer__connection_1aece18773b59c1b0d1c23c82b3aa0618b" prot="private" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>accept_connection_task</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1ab3d11d38d80f9da30e9c8b8cd54b394e" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>accept_or_connect_task_done</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1ae1aceef078cdccf1255ead4085c4d6d0" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>bitness</name></member>
-      <member refid="classgraphene_1_1net_1_1peer__connection_1ad5fa3495b64326d612adb120e7d4f5b0" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>busy</name></member>
+      <member refid="classgraphene_1_1net_1_1peer__connection_1a272d3356f8b1866cc36b042a9cc3aa92" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>busy</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1add398515c263a899eeb1266c951f6628" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>clear_old_inventory</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1a95a50dfae5659c244c89deb246c62d17" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>clock_offset</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1a528eaf4d7a1aae25374faa3be3d9b8b6" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>close_connection</name></member>
@@ -1598,20 +1630,20 @@
       <member refid="classgraphene_1_1net_1_1peer__connection_1ae2bc0bc154d732c3c167567545df032e" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>fc_git_revision_sha</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1a68b127b9c3479048a6d157ca11530e20" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>fc_git_revision_unix_timestamp</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1a9d019cb640d7aee423ff0679192ae2ef" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>firewall_check_state</name></member>
-      <member refid="classgraphene_1_1net_1_1peer__connection_1a83ea1b6fff6d03711990f937a788b2d9" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>get_connection_terminated_time</name></member>
-      <member refid="classgraphene_1_1net_1_1peer__connection_1afb2e0dc62da3a264459bdfb791445435" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>get_connection_time</name></member>
-      <member refid="classgraphene_1_1net_1_1peer__connection_1a7d341147c197f40a47509aff1707a959" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>get_endpoint_for_connecting</name></member>
-      <member refid="classgraphene_1_1net_1_1peer__connection_1aa1c8c167347a20d16c1e62744fe268b6" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>get_last_message_received_time</name></member>
-      <member refid="classgraphene_1_1net_1_1peer__connection_1ad7b20b455c09b7e16e7f90a624cf74ac" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>get_last_message_sent_time</name></member>
+      <member refid="classgraphene_1_1net_1_1peer__connection_1ab2e8ee0fbcc32249c52f1cf936b04b6e" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>get_connection_terminated_time</name></member>
+      <member refid="classgraphene_1_1net_1_1peer__connection_1a810d2547ae33d46a7c901707ac136437" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>get_connection_time</name></member>
+      <member refid="classgraphene_1_1net_1_1peer__connection_1a53e23d53996912150c1be6252a9b9bdc" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>get_endpoint_for_connecting</name></member>
+      <member refid="classgraphene_1_1net_1_1peer__connection_1a298d2204f6096673e68c589f54067b61" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>get_last_message_received_time</name></member>
+      <member refid="classgraphene_1_1net_1_1peer__connection_1a695bf437eb6ac25a7a51d7abc660ed1a" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>get_last_message_sent_time</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1a8e1dfb1d2031eccac5fd4a469acb52cd" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>get_local_endpoint</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1ab61398cf17d6cf388622356026de9fcf" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>get_remote_endpoint</name></member>
-      <member refid="classgraphene_1_1net_1_1peer__connection_1af47a18ef8d93a40f5f3cd010f6aadb4c" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>get_shared_secret</name></member>
+      <member refid="classgraphene_1_1net_1_1peer__connection_1a6eb49442cb4dd196ef7f923390944ecf" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>get_shared_secret</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1aa70184ea95d9ee7e2e1521bb0c250304" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>get_socket</name></member>
-      <member refid="classgraphene_1_1net_1_1peer__connection_1af8a224b60f0ac58a3c915f759955ac67" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>get_total_bytes_received</name></member>
-      <member refid="classgraphene_1_1net_1_1peer__connection_1a3fec81daff2c3fa60ce57db27330b5c2" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>get_total_bytes_sent</name></member>
+      <member refid="classgraphene_1_1net_1_1peer__connection_1a40eebf1a997e123bd566817c1558c5e6" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>get_total_bytes_received</name></member>
+      <member refid="classgraphene_1_1net_1_1peer__connection_1a977810b814f5929746da36424d9b3a39" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>get_total_bytes_sent</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1ac8f4dce0b25b85c7a2ed6048153f8787" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>graphene_git_revision_sha</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1a192fda9217f2acc9b57ecd64e2985776" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>graphene_git_revision_unix_timestamp</name></member>
-      <member refid="classgraphene_1_1net_1_1peer__connection_1a354f91d0ba7478a7108b1612dc26705c" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>idle</name></member>
+      <member refid="classgraphene_1_1net_1_1peer__connection_1a1698fc9a0cf7f3dd6ee9dc5f620c447b" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>idle</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1aa6c35b1f3eae294d2d072c3600dd5131" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>ids_of_items_being_processed</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1a34dbf395eb7b5b7695944bb941891a36" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>ids_of_items_to_get</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1a3b55b821c4296b62200b770d4f2a2c31" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>inbound_address</name></member>
@@ -1619,11 +1651,11 @@
       <member refid="classgraphene_1_1net_1_1peer__connection_1a4f234861a14d26da41d9441b337cdbe2" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>inhibit_fetching_sync_blocks</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1a5900c7867a7e8687c65a25bdcb1604ff" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>inventory_advertised_to_peer</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1ac004cc3b646a35365075ec71c679e6d4" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>inventory_peer_advertised_to_us</name></member>
-      <member refid="classgraphene_1_1net_1_1peer__connection_1aad602bff9d9c82ceaef90bc30da272c9" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>is_currently_handling_message</name></member>
+      <member refid="classgraphene_1_1net_1_1peer__connection_1a8ed1d2129de82e39204b44a4e3461392" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>is_currently_handling_message</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1aea47877a167f7e02a932da3fa796eaae" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>is_firewalled</name></member>
-      <member refid="classgraphene_1_1net_1_1peer__connection_1a118f70b619af2102c78f3fc485efec9f" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>is_inventory_advertised_to_us_list_full</name></member>
-      <member refid="classgraphene_1_1net_1_1peer__connection_1a5976f205346898d279f97debf7c7181f" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>is_inventory_advertised_to_us_list_full_for_transactions</name></member>
-      <member refid="classgraphene_1_1net_1_1peer__connection_1ac8284a7d8adfce259afbd5df79c4f59b" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>is_transaction_fetching_inhibited</name></member>
+      <member refid="classgraphene_1_1net_1_1peer__connection_1aef2ad57f8209434011dca6b7a8364f52" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>is_inventory_advertised_to_us_list_full</name></member>
+      <member refid="classgraphene_1_1net_1_1peer__connection_1a5d382ef1090ab0e444a1626b328c3d2d" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>is_inventory_advertised_to_us_list_full_for_transactions</name></member>
+      <member refid="classgraphene_1_1net_1_1peer__connection_1a954f07f42c9a8b959ccbd6630d99b599" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>is_transaction_fetching_inhibited</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1a1db2486ae47972391f8d3b3689d027fa" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>item_ids_requested_from_peer</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1a749ac3cdd7a9185095f3af0b1449f379" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>item_to_time_map_type</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1a64a25e3df43e06723c9fa2c28b707e4a" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>items_requested_from_peer</name></member>
@@ -1643,11 +1675,11 @@
       <member refid="classgraphene_1_1net_1_1peer__connection_1a73652b2101e722f23587b84441e070f8" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>outbound_port</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1a9279ba8b94f89d4db5e5bbc934750a53" prot="private" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>peer_connection</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1a6017b9c24ba25ccdec3cfd8c995880f5" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>peer_needs_sync_items_from_us</name></member>
-      <member refid="classgraphene_1_1net_1_1peer__connection_1afcaed96cedc4e001c084593f17f2df7e" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>performing_firewall_check</name></member>
+      <member refid="classgraphene_1_1net_1_1peer__connection_1a20de52cf09a4450fa907cb8dea552cec" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>performing_firewall_check</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1a3e7c91ee86c09ec20fbf52338b053409" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>platform</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1aff1a611955fa9701e5a04d5b520753f7" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>round_trip_delay</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1a4e133d3af48d11f1e03c728d95b1dea7" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>send_item</name></member>
-      <member refid="classgraphene_1_1net_1_1peer__connection_1ae0c5cd45659c572be805f125d70e5e5a" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>send_message</name></member>
+      <member refid="classgraphene_1_1net_1_1peer__connection_1a257863cd4277ca8e89c5773b54384fe5" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>send_message</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1a35f68aac36feecf9f96e0d9f89334b8f" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>send_queueable_message</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1a89e77bb73edd3115bf9fe50cd9033145" prot="private" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>send_queued_messages_task</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1abb1aa66fb27ab0e3be4a8cb6ddc475fc" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>set_remote_endpoint</name></member>

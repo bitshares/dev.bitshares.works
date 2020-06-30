@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
   <compounddef id="structgraphene_1_1protocol_1_1blind__input" kind="struct" language="C++" prot="public">
     <compoundname>graphene::protocol::blind_input</compoundname>
     <includes refid="confidential_8hpp" local="no">confidential.hpp</includes>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1blind__input_1ab3717153c7ace026815542a267d98310" prot="public" static="no" mutable="no">
-        <type><ref refid="namespacefc_1_1ecc_1a2fe2b77a4b704ac1d7a71260be0211ff" kindref="member">fc::ecc::commitment_type</ref></type>
+        <type><ref refid="namespacefc_1_1ecc_1a582249fe15693cc9c040286a8ef296f8" kindref="member">fc::ecc::commitment_type</ref></type>
         <definition>fc::ecc::commitment_type graphene::protocol::blind_input::commitment</definition>
         <argsstring></argsstring>
         <name>commitment</name>
@@ -36,32 +36,39 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="1721">
+      <node id="1834">
         <label>flat_map&lt; graphene::protocol::address, weight_type &gt;</label>
       </node>
-      <node id="1719">
+      <node id="1832">
         <label>flat_map&lt; graphene::protocol::public_key_type, weight_type &gt;</label>
       </node>
-      <node id="1718">
+      <node id="1830">
+        <label>fc::zero_initialized_array&lt; unsigned char, 33 &gt;</label>
+        <link refid="classfc_1_1zero__initialized__array"/>
+      </node>
+      <node id="1831">
         <label>graphene::protocol::authority</label>
         <link refid="structgraphene_1_1protocol_1_1authority"/>
-        <childnode refid="1719" relation="usage">
+        <childnode refid="1832" relation="usage">
           <edgelabel>key_auths</edgelabel>
         </childnode>
-        <childnode refid="1720" relation="usage">
+        <childnode refid="1833" relation="usage">
           <edgelabel>account_auths</edgelabel>
         </childnode>
-        <childnode refid="1721" relation="usage">
+        <childnode refid="1834" relation="usage">
           <edgelabel>address_auths</edgelabel>
         </childnode>
       </node>
-      <node id="1720">
+      <node id="1833">
         <label>flat_map&lt; account_id_type, weight_type &gt;</label>
       </node>
-      <node id="1717">
+      <node id="1829">
         <label>graphene::protocol::blind_input</label>
         <link refid="structgraphene_1_1protocol_1_1blind__input"/>
-        <childnode refid="1718" relation="usage">
+        <childnode refid="1830" relation="usage">
+          <edgelabel>commitment</edgelabel>
+        </childnode>
+        <childnode refid="1831" relation="usage">
           <edgelabel>owner</edgelabel>
         </childnode>
       </node>

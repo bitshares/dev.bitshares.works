@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
   <compounddef id="namespacefc_1_1detail" kind="namespace" language="C++">
     <compoundname>fc::detail</compoundname>
     <innerclass refid="structfc_1_1detail_1_1add" prot="public">fc::detail::add</innerclass>
@@ -11,10 +11,13 @@
     <innerclass refid="classfc_1_1detail_1_1any__api" prot="public">fc::detail::any_api</innerclass>
     <innerclass refid="classfc_1_1detail_1_1appender__factory__impl" prot="public">fc::detail::appender_factory_impl</innerclass>
     <innerclass refid="classfc_1_1detail_1_1average__rate__meter" prot="public">fc::detail::average_rate_meter</innerclass>
+    <innerclass refid="classfc_1_1detail_1_1bignum__error" prot="public">fc::detail::bignum_error</innerclass>
     <innerclass refid="classfc_1_1detail_1_1buffered__istream__impl" prot="public">fc::detail::buffered_istream_impl</innerclass>
     <innerclass refid="classfc_1_1detail_1_1buffered__ostream__impl" prot="public">fc::detail::buffered_ostream_impl</innerclass>
     <innerclass refid="classfc_1_1detail_1_1callback__functor" prot="public">fc::detail::callback_functor</innerclass>
     <innerclass refid="classfc_1_1detail_1_1callback__functor_3_01void_07_args_8_8_8_08_4" prot="public">fc::detail::callback_functor&lt; void(Args...)&gt;</innerclass>
+    <innerclass refid="classfc_1_1detail_1_1_c_auto_b_n___c_t_x" prot="public">fc::detail::CAutoBN_CTX</innerclass>
+    <innerclass refid="classfc_1_1detail_1_1_c_big_num" prot="public">fc::detail::CBigNum</innerclass>
     <innerclass refid="classfc_1_1detail_1_1completion__handler" prot="public">fc::detail::completion_handler</innerclass>
     <innerclass refid="classfc_1_1detail_1_1completion__handler__impl" prot="public">fc::detail::completion_handler_impl</innerclass>
     <innerclass refid="classfc_1_1detail_1_1completion__handler__impl_3_01_functor_00_01void_01_4" prot="public">fc::detail::completion_handler_impl&lt; Functor, void &gt;</innerclass>
@@ -43,6 +46,20 @@
     <innerclass refid="structfc_1_1detail_1_1void__functor__run" prot="public">fc::detail::void_functor_run</innerclass>
     <innerclass refid="classfc_1_1detail_1_1worker__pool" prot="public">fc::detail::worker_pool</innerclass>
       <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacefc_1_1detail_1a44e5cbd2f3286497e3297b41145cd140" prot="public" static="yes" mutable="no">
+        <type>const char *</type>
+        <definition>const char* fc::detail::pszBase58</definition>
+        <argsstring></argsstring>
+        <name>pszBase58</name>
+        <initializer>= &quot;123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/base58.cpp" line="503" column="1" bodyfile="libraries/fc/src/crypto/base58.cpp" bodystart="503" bodyend="-1"/>
+      </memberdef>
       <memberdef kind="variable" id="namespacefc_1_1detail_1aba6c2652551f67c828453623be5336b5" prot="public" static="yes" mutable="no">
         <type>const size_t</type>
         <definition>const size_t fc::detail::minimum_read_size</definition>
@@ -69,7 +86,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/src/network/tcp_socket.cpp" line="18" column="1" bodyfile="libraries/fc/src/network/tcp_socket.cpp" bodystart="18" bodyend="-1"/>
+        <location file="libraries/fc/src/network/tcp_socket.cpp" line="25" column="1" bodyfile="libraries/fc/src/network/tcp_socket.cpp" bodystart="25" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacefc_1_1detail_1afc402b5331c5d04cc9cc5e93a684012a" prot="public" static="no" mutable="no">
         <type>boost::atomic&lt; unsigned &gt;</type>
@@ -120,7 +137,7 @@
             <type>typename Arg0</type>
           </param>
           <param>
-            <type>typename ...</type>
+            <type>typename...</type>
             <declname>Args</declname>
             <defname>Args</defname>
           </param>
@@ -189,7 +206,7 @@
             <type>typename Arg0</type>
           </param>
           <param>
-            <type>typename ...</type>
+            <type>typename...</type>
             <declname>Args</declname>
             <defname>Args</defname>
           </param>
@@ -228,7 +245,7 @@
             <type>typename R</type>
           </param>
           <param>
-            <type>typename ...</type>
+            <type>typename...</type>
             <declname>Args</declname>
             <defname>Args</defname>
           </param>
@@ -252,7 +269,7 @@
       <memberdef kind="function" id="namespacefc_1_1detail_1a5416b7bdd1371745bde5ad6cafa03fb5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type>typename ...</type>
+            <type>typename...</type>
             <declname>Args</declname>
             <defname>Args</defname>
           </param>
@@ -301,7 +318,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/thread/task.hpp" line="26" column="1" bodyfile="libraries/fc/src/thread/thread_specific.cpp" bodystart="41" bodyend="50"/>
+        <location file="libraries/fc/include/fc/thread/task.hpp" line="28" column="1" bodyfile="libraries/fc/src/thread/thread_specific.cpp" bodystart="41" bodyend="50"/>
       </memberdef>
       <memberdef kind="function" id="namespacefc_1_1detail_1a34696d4b92d9708a89ad9a2a2cdf954a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -326,7 +343,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/thread/task.hpp" line="27" column="1" bodyfile="libraries/fc/src/thread/thread_specific.cpp" bodystart="51" bodyend="63"/>
+        <location file="libraries/fc/include/fc/thread/task.hpp" line="29" column="1" bodyfile="libraries/fc/src/thread/thread_specific.cpp" bodystart="51" bodyend="63"/>
       </memberdef>
       <memberdef kind="function" id="namespacefc_1_1detail_1a495223a785cce68c490b01c4ce597302" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void *</type>
@@ -511,6 +528,376 @@
         <inbodydescription>
         </inbodydescription>
         <location file="libraries/fc/src/crypto/_digest_common.cpp" line="38" column="1" bodyfile="libraries/fc/src/crypto/_digest_common.cpp" bodystart="38" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1detail_1afb94d5e7a09a65d2968d8124eb3eaf7d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classfc_1_1detail_1_1_c_big_num" kindref="compound">CBigNum</ref></type>
+        <definition>const CBigNum fc::detail::operator+</definition>
+        <argsstring>(const CBigNum &amp;a, const CBigNum &amp;b)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>const <ref refid="classfc_1_1detail_1_1_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classfc_1_1detail_1_1_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/base58.cpp" line="430" column="1" bodyfile="libraries/fc/src/crypto/base58.cpp" bodystart="430" bodyend="436"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1detail_1ac85feac62023fbcca0ce96acf581eae6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classfc_1_1detail_1_1_c_big_num" kindref="compound">CBigNum</ref></type>
+        <definition>const CBigNum fc::detail::operator-</definition>
+        <argsstring>(const CBigNum &amp;a, const CBigNum &amp;b)</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>const <ref refid="classfc_1_1detail_1_1_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classfc_1_1detail_1_1_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/base58.cpp" line="438" column="1" bodyfile="libraries/fc/src/crypto/base58.cpp" bodystart="438" bodyend="444"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1detail_1a7b6c6a95e52cb5bca1e8e72126ee1eef" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classfc_1_1detail_1_1_c_big_num" kindref="compound">CBigNum</ref></type>
+        <definition>const CBigNum fc::detail::operator-</definition>
+        <argsstring>(const CBigNum &amp;a)</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>const <ref refid="classfc_1_1detail_1_1_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/base58.cpp" line="446" column="1" bodyfile="libraries/fc/src/crypto/base58.cpp" bodystart="446" bodyend="451"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1detail_1ad9f09993c6be5f1ed53dd39090d1bc5e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classfc_1_1detail_1_1_c_big_num" kindref="compound">CBigNum</ref></type>
+        <definition>const CBigNum fc::detail::operator*</definition>
+        <argsstring>(const CBigNum &amp;a, const CBigNum &amp;b)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="classfc_1_1detail_1_1_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classfc_1_1detail_1_1_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/base58.cpp" line="453" column="1" bodyfile="libraries/fc/src/crypto/base58.cpp" bodystart="453" bodyend="460"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1detail_1a9bd0460f6c199519d70ff7448d857acb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classfc_1_1detail_1_1_c_big_num" kindref="compound">CBigNum</ref></type>
+        <definition>const CBigNum fc::detail::operator/</definition>
+        <argsstring>(const CBigNum &amp;a, const CBigNum &amp;b)</argsstring>
+        <name>operator/</name>
+        <param>
+          <type>const <ref refid="classfc_1_1detail_1_1_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classfc_1_1detail_1_1_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/base58.cpp" line="462" column="1" bodyfile="libraries/fc/src/crypto/base58.cpp" bodystart="462" bodyend="469"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1detail_1a378c51b7ca7881d851b5802c27439a39" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classfc_1_1detail_1_1_c_big_num" kindref="compound">CBigNum</ref></type>
+        <definition>const CBigNum fc::detail::operator%</definition>
+        <argsstring>(const CBigNum &amp;a, const CBigNum &amp;b)</argsstring>
+        <name>operator%</name>
+        <param>
+          <type>const <ref refid="classfc_1_1detail_1_1_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classfc_1_1detail_1_1_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/base58.cpp" line="471" column="1" bodyfile="libraries/fc/src/crypto/base58.cpp" bodystart="471" bodyend="478"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1detail_1ad54503f485a45e3f7f6dbedb88799eca" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classfc_1_1detail_1_1_c_big_num" kindref="compound">CBigNum</ref></type>
+        <definition>const CBigNum fc::detail::operator&lt;&lt;</definition>
+        <argsstring>(const CBigNum &amp;a, unsigned int shift)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>const <ref refid="classfc_1_1detail_1_1_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>shift</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/base58.cpp" line="480" column="1" bodyfile="libraries/fc/src/crypto/base58.cpp" bodystart="480" bodyend="486"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1detail_1a5e0ad9fd34dcfcc6e00e00cc91fc496c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classfc_1_1detail_1_1_c_big_num" kindref="compound">CBigNum</ref></type>
+        <definition>const CBigNum fc::detail::operator&gt;&gt;</definition>
+        <argsstring>(const CBigNum &amp;a, unsigned int shift)</argsstring>
+        <name>operator&gt;&gt;</name>
+        <param>
+          <type>const <ref refid="classfc_1_1detail_1_1_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>shift</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/base58.cpp" line="488" column="1" bodyfile="libraries/fc/src/crypto/base58.cpp" bodystart="488" bodyend="493"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1detail_1adda9f92c3fbc811eed63313f929b27ad" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool fc::detail::operator==</definition>
+        <argsstring>(const CBigNum &amp;a, const CBigNum &amp;b)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classfc_1_1detail_1_1_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classfc_1_1detail_1_1_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/base58.cpp" line="495" column="1" bodyfile="libraries/fc/src/crypto/base58.cpp" bodystart="495" bodyend="495"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1detail_1aa420529703dcfa27f9aefd05fa1ce7ca" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool fc::detail::operator!=</definition>
+        <argsstring>(const CBigNum &amp;a, const CBigNum &amp;b)</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classfc_1_1detail_1_1_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classfc_1_1detail_1_1_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/base58.cpp" line="496" column="1" bodyfile="libraries/fc/src/crypto/base58.cpp" bodystart="496" bodyend="496"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1detail_1a893839afea28918edb8f3577588bc266" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool fc::detail::operator&lt;=</definition>
+        <argsstring>(const CBigNum &amp;a, const CBigNum &amp;b)</argsstring>
+        <name>operator&lt;=</name>
+        <param>
+          <type>const <ref refid="classfc_1_1detail_1_1_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classfc_1_1detail_1_1_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/base58.cpp" line="497" column="1" bodyfile="libraries/fc/src/crypto/base58.cpp" bodystart="497" bodyend="497"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1detail_1a6cfd085f8dbc607bb17b95032412628a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool fc::detail::operator&gt;=</definition>
+        <argsstring>(const CBigNum &amp;a, const CBigNum &amp;b)</argsstring>
+        <name>operator&gt;=</name>
+        <param>
+          <type>const <ref refid="classfc_1_1detail_1_1_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classfc_1_1detail_1_1_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/base58.cpp" line="498" column="1" bodyfile="libraries/fc/src/crypto/base58.cpp" bodystart="498" bodyend="498"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1detail_1a0ff0cfac68423fe384318a68b21bdec6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool fc::detail::operator&lt;</definition>
+        <argsstring>(const CBigNum &amp;a, const CBigNum &amp;b)</argsstring>
+        <name>operator&lt;</name>
+        <param>
+          <type>const <ref refid="classfc_1_1detail_1_1_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classfc_1_1detail_1_1_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/base58.cpp" line="499" column="1" bodyfile="libraries/fc/src/crypto/base58.cpp" bodystart="499" bodyend="499"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1detail_1aa9fa7abdc1b01df50fe2f1660900c894" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool fc::detail::operator&gt;</definition>
+        <argsstring>(const CBigNum &amp;a, const CBigNum &amp;b)</argsstring>
+        <name>operator&gt;</name>
+        <param>
+          <type>const <ref refid="classfc_1_1detail_1_1_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classfc_1_1detail_1_1_c_big_num" kindref="compound">CBigNum</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/base58.cpp" line="500" column="1" bodyfile="libraries/fc/src/crypto/base58.cpp" bodystart="500" bodyend="500"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1detail_1a94f9d821dedfe102ef9cb3eef00b1e29" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string fc::detail::EncodeBase58</definition>
+        <argsstring>(const unsigned char *pbegin, const unsigned char *pend)</argsstring>
+        <name>EncodeBase58</name>
+        <param>
+          <type>const unsigned char *</type>
+          <declname>pbegin</declname>
+        </param>
+        <param>
+          <type>const unsigned char *</type>
+          <declname>pend</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/base58.cpp" line="506" column="1" bodyfile="libraries/fc/src/crypto/base58.cpp" bodystart="506" bodyend="545"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1detail_1af512b3276e2cef863f8e715e62d81679" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string fc::detail::EncodeBase58</definition>
+        <argsstring>(const std::vector&lt; unsigned char &gt; &amp;vch)</argsstring>
+        <name>EncodeBase58</name>
+        <param>
+          <type>const std::vector&lt; unsigned char &gt; &amp;</type>
+          <declname>vch</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/base58.cpp" line="548" column="1" bodyfile="libraries/fc/src/crypto/base58.cpp" bodystart="548" bodyend="551"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1detail_1abf14c41dedf8b604f35f6d77901b82f5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool fc::detail::DecodeBase58</definition>
+        <argsstring>(const char *psz, std::vector&lt; unsigned char &gt; &amp;vchRet)</argsstring>
+        <name>DecodeBase58</name>
+        <param>
+          <type>const char *</type>
+          <declname>psz</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; unsigned char &gt; &amp;</type>
+          <declname>vchRet</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/base58.cpp" line="555" column="1" bodyfile="libraries/fc/src/crypto/base58.cpp" bodystart="555" bodyend="601"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1detail_1adba9034ba87ba7bb150b2c949b325215" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool fc::detail::DecodeBase58</definition>
+        <argsstring>(const std::string &amp;str, std::vector&lt; unsigned char &gt; &amp;vchRet)</argsstring>
+        <name>DecodeBase58</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; unsigned char &gt; &amp;</type>
+          <declname>vchRet</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/src/crypto/base58.cpp" line="605" column="1" bodyfile="libraries/fc/src/crypto/base58.cpp" bodystart="605" bodyend="608"/>
       </memberdef>
       <memberdef kind="function" id="namespacefc_1_1detail_1a34343f5ea2cf2fe195cf37578f0f5972" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void *</type>

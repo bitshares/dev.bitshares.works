@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
   <compounddef id="classgraphene_1_1protocol_1_1signed__block" kind="class" language="C++" prot="public">
     <compoundname>graphene::protocol::signed_block</compoundname>
     <basecompoundref refid="classgraphene_1_1protocol_1_1signed__block__header" prot="public" virt="non-virtual">graphene::protocol::signed_block_header</basecompoundref>
@@ -35,10 +35,10 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classgraphene_1_1protocol_1_1signed__block_1ae740ee9f95f52364898013c70a9a9f98" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1protocol_1_1signed__block_1a01b457de9b5ccbf939a9d49cad1066f3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="namespacegraphene_1_1protocol_1a3268cd3ebeb529ab0c0681d9564dab4a" kindref="member">checksum_type</ref> &amp;</type>
-        <definition>const checksum_type &amp; signed_block::calculate_merkle_root</definition>
-        <argsstring>() const</argsstring>
+        <definition>const checksum_type &amp; graphene::protocol::signed_block::calculate_merkle_root</definition>
+        <argsstring>() const </argsstring>
         <name>calculate_merkle_root</name>
         <briefdescription>
         </briefdescription>
@@ -54,79 +54,80 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="4966">
+      <node id="5650">
         <label>graphene::protocol::block_header</label>
         <link refid="classgraphene_1_1protocol_1_1block__header"/>
       </node>
-      <node id="4965">
+      <node id="5649">
         <label>graphene::protocol::signed_block_header</label>
         <link refid="classgraphene_1_1protocol_1_1signed__block__header"/>
-        <childnode refid="4966" relation="public-inheritance">
+        <childnode refid="5650" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4964">
+      <node id="5648">
         <label>graphene::protocol::signed_block</label>
         <link refid="classgraphene_1_1protocol_1_1signed__block"/>
-        <childnode refid="4965" relation="public-inheritance">
+        <childnode refid="5649" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="4971">
+      <node id="5654">
         <label>fc::ripemd160</label>
         <link refid="classfc_1_1ripemd160"/>
       </node>
-      <node id="4969">
+      <node id="5653">
         <label>graphene::protocol::block_header</label>
         <link refid="classgraphene_1_1protocol_1_1block__header"/>
-        <childnode refid="4970" relation="usage">
-          <edgelabel>extensions</edgelabel>
-        </childnode>
-        <childnode refid="4971" relation="usage">
+        <childnode refid="5654" relation="usage">
           <edgelabel>previous</edgelabel>
           <edgelabel>transaction_merkle_root</edgelabel>
         </childnode>
-        <childnode refid="4972" relation="usage">
+        <childnode refid="5655" relation="usage">
           <edgelabel>timestamp</edgelabel>
         </childnode>
       </node>
-      <node id="4970">
-        <label>flat_set&lt; future_extensions &gt;</label>
-      </node>
-      <node id="4973">
+      <node id="5657">
         <label>fc::ecc::public_key</label>
         <link refid="classfc_1_1ecc_1_1public__key"/>
       </node>
-      <node id="4974">
+      <node id="5658">
         <label>vector&lt; graphene::protocol::processed_transaction &gt;</label>
       </node>
-      <node id="4968">
+      <node id="5652">
         <label>graphene::protocol::signed_block_header</label>
         <link refid="classgraphene_1_1protocol_1_1signed__block__header"/>
-        <childnode refid="4969" relation="public-inheritance">
+        <childnode refid="5653" relation="public-inheritance">
         </childnode>
-        <childnode refid="4971" relation="usage">
+        <childnode refid="5654" relation="usage">
           <edgelabel>_block_id</edgelabel>
         </childnode>
-        <childnode refid="4973" relation="usage">
+        <childnode refid="5656" relation="usage">
+          <edgelabel>witness_signature</edgelabel>
+        </childnode>
+        <childnode refid="5657" relation="usage">
           <edgelabel>_signee</edgelabel>
         </childnode>
       </node>
-      <node id="4967">
+      <node id="5651">
         <label>graphene::protocol::signed_block</label>
         <link refid="classgraphene_1_1protocol_1_1signed__block"/>
-        <childnode refid="4968" relation="public-inheritance">
+        <childnode refid="5652" relation="public-inheritance">
         </childnode>
-        <childnode refid="4971" relation="usage">
+        <childnode refid="5654" relation="usage">
           <edgelabel>_calculated_merkle_root</edgelabel>
         </childnode>
-        <childnode refid="4974" relation="usage">
+        <childnode refid="5658" relation="usage">
           <edgelabel>transactions</edgelabel>
         </childnode>
       </node>
-      <node id="4972">
+      <node id="5655">
         <label>fc::time_point_sec</label>
         <link refid="classfc_1_1time__point__sec"/>
+      </node>
+      <node id="5656">
+        <label>fc::zero_initialized_array&lt; T, N &gt;</label>
+        <link refid="classfc_1_1zero__initialized__array"/>
       </node>
     </collaborationgraph>
     <location file="libraries/protocol/include/graphene/protocol/block.hpp" line="60" column="1" bodyfile="libraries/protocol/include/graphene/protocol/block.hpp" bodystart="59" bodyend="66"/>
@@ -134,19 +135,19 @@
       <member refid="classgraphene_1_1protocol_1_1signed__block__header_1a086619b190e38f4b7196ff49f9ccec38" prot="protected" virt="non-virtual"><scope>graphene::protocol::signed_block</scope><name>_block_id</name></member>
       <member refid="classgraphene_1_1protocol_1_1signed__block_1aec4265e5d0e1f623314343efaafe2441" prot="protected" virt="non-virtual"><scope>graphene::protocol::signed_block</scope><name>_calculated_merkle_root</name></member>
       <member refid="classgraphene_1_1protocol_1_1signed__block__header_1af71dc48a5299e3d680de65c71405d392" prot="protected" virt="non-virtual"><scope>graphene::protocol::signed_block</scope><name>_signee</name></member>
-      <member refid="classgraphene_1_1protocol_1_1block__header_1aeccef591a33b6e647839e6e524881e2b" prot="public" virt="non-virtual"><scope>graphene::protocol::signed_block</scope><name>block_num</name></member>
-      <member refid="classgraphene_1_1protocol_1_1signed__block_1ae740ee9f95f52364898013c70a9a9f98" prot="public" virt="non-virtual"><scope>graphene::protocol::signed_block</scope><name>calculate_merkle_root</name></member>
-      <member refid="classgraphene_1_1protocol_1_1block__header_1abe76b6ad13a4207508595e03fac9332f" prot="public" virt="non-virtual"><scope>graphene::protocol::signed_block</scope><name>digest</name></member>
+      <member refid="classgraphene_1_1protocol_1_1block__header_1a4b7ce826e0fc63d85c77e2c2d45d5627" prot="public" virt="non-virtual"><scope>graphene::protocol::signed_block</scope><name>block_num</name></member>
+      <member refid="classgraphene_1_1protocol_1_1signed__block_1a01b457de9b5ccbf939a9d49cad1066f3" prot="public" virt="non-virtual"><scope>graphene::protocol::signed_block</scope><name>calculate_merkle_root</name></member>
+      <member refid="classgraphene_1_1protocol_1_1block__header_1ac23f8b83e37317cc0550962b9b2f2129" prot="public" virt="non-virtual"><scope>graphene::protocol::signed_block</scope><name>digest</name></member>
       <member refid="classgraphene_1_1protocol_1_1block__header_1a0ff96f81938e2b3d445b5823ec563779" prot="public" virt="non-virtual"><scope>graphene::protocol::signed_block</scope><name>extensions</name></member>
-      <member refid="classgraphene_1_1protocol_1_1signed__block__header_1a3297c7408578d7118566475f0429fb55" prot="public" virt="non-virtual"><scope>graphene::protocol::signed_block</scope><name>id</name></member>
+      <member refid="classgraphene_1_1protocol_1_1signed__block__header_1ae43695b40ee3258eb1bda8d5502af087" prot="public" virt="non-virtual"><scope>graphene::protocol::signed_block</scope><name>id</name></member>
       <member refid="classgraphene_1_1protocol_1_1block__header_1a58d0846789ee12e31d3d769123244c62" prot="public" virt="non-virtual"><scope>graphene::protocol::signed_block</scope><name>num_from_id</name></member>
       <member refid="classgraphene_1_1protocol_1_1block__header_1a0dcf2b6f9c50755e3e3a8b94d13bbcaf" prot="public" virt="non-virtual"><scope>graphene::protocol::signed_block</scope><name>previous</name></member>
       <member refid="classgraphene_1_1protocol_1_1signed__block__header_1a780474c239fa160bb4804f7a30736086" prot="public" virt="non-virtual"><scope>graphene::protocol::signed_block</scope><name>sign</name></member>
-      <member refid="classgraphene_1_1protocol_1_1signed__block__header_1a31ee9ccad7f057b4183ecfc79d0cb940" prot="public" virt="non-virtual"><scope>graphene::protocol::signed_block</scope><name>signee</name></member>
+      <member refid="classgraphene_1_1protocol_1_1signed__block__header_1ae88a57a1ad181608f73a5e4fcce3864b" prot="public" virt="non-virtual"><scope>graphene::protocol::signed_block</scope><name>signee</name></member>
       <member refid="classgraphene_1_1protocol_1_1block__header_1af594b3fcdeae33103b6802b744174714" prot="public" virt="non-virtual"><scope>graphene::protocol::signed_block</scope><name>timestamp</name></member>
       <member refid="classgraphene_1_1protocol_1_1block__header_1aac22ca362585bd4c8ef7d206b19be229" prot="public" virt="non-virtual"><scope>graphene::protocol::signed_block</scope><name>transaction_merkle_root</name></member>
       <member refid="classgraphene_1_1protocol_1_1signed__block_1ab2abde521ce00143fb9565d2ca13aafa" prot="public" virt="non-virtual"><scope>graphene::protocol::signed_block</scope><name>transactions</name></member>
-      <member refid="classgraphene_1_1protocol_1_1signed__block__header_1ae3630f884f8269604be91c5fb0f6046e" prot="public" virt="non-virtual"><scope>graphene::protocol::signed_block</scope><name>validate_signee</name></member>
+      <member refid="classgraphene_1_1protocol_1_1signed__block__header_1ab546ed259e2561c74502d0e17ae66840" prot="public" virt="non-virtual"><scope>graphene::protocol::signed_block</scope><name>validate_signee</name></member>
       <member refid="classgraphene_1_1protocol_1_1block__header_1a1086bc96de1ee0d95cedaacf3f475cd5" prot="public" virt="non-virtual"><scope>graphene::protocol::signed_block</scope><name>witness</name></member>
       <member refid="classgraphene_1_1protocol_1_1signed__block__header_1a461eb13434f1ae9999e58abbfb96cf7f" prot="public" virt="non-virtual"><scope>graphene::protocol::signed_block</scope><name>witness_signature</name></member>
     </listofallmembers>

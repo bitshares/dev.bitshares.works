@@ -1,9 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
   <compounddef id="classfc_1_1static__variant" kind="class" language="C++" prot="public">
     <compoundname>fc::static_variant</compoundname>
     <includes refid="raw__fwd_8hpp" local="no">raw_fwd.hpp</includes>
+    <innerclass refid="structfc_1_1static__variant_1_1import__helper" prot="protected">fc::static_variant::import_helper</innerclass>
+    <innerclass refid="structfc_1_1static__variant_1_1import__helper_3_01_t_00_01type__in__typelist_3_01_t_01_4_01_4" prot="protected">fc::static_variant::import_helper&lt; T, type_in_typelist&lt; T &gt; &gt;</innerclass>
     <innerclass refid="structfc_1_1static__variant_1_1tag" prot="public">fc::static_variant::tag</innerclass>
+    <innerclass refid="structfc_1_1static__variant_1_1type__eq" prot="public">fc::static_variant::type_eq</innerclass>
+    <innerclass refid="structfc_1_1static__variant_1_1type__lt" prot="public">fc::static_variant::type_lt</innerclass>
     <templateparamlist>
       <param>
         <type>typename...</type>
@@ -23,13 +27,39 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/static_variant.hpp" line="252" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="252" bodyend="-1"/>
+        <location file="libraries/fc/include/fc/static_variant.hpp" line="46" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classfc_1_1static__variant_1a03ad0667ee25a15d94667b7d3c7604ed" prot="public" static="no">
+        <type><ref refid="structfc_1_1typelist_1_1list" kindref="compound">typelist::list</ref>&lt; Types... &gt;</type>
+        <definition>using fc::static_variant&lt; Types &gt;::list =  typelist::list&lt;Types...&gt;</definition>
+        <argsstring></argsstring>
+        <name>list</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/static_variant.hpp" line="47" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classfc_1_1static__variant_1af88f7f04dd15f07ade8335a911542561" prot="public" static="no">
+        <type>flat_set&lt; <ref refid="classfc_1_1static__variant" kindref="compound">static_variant</ref>, <ref refid="structfc_1_1static__variant_1_1type__lt" kindref="compound">type_lt</ref> &gt;</type>
+        <definition>using fc::static_variant&lt; Types &gt;::flat_set_type =  flat_set&lt;static_variant, type_lt&gt;</definition>
+        <argsstring></argsstring>
+        <name>flat_set_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/static_variant.hpp" line="130" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="130" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-type">
-      <memberdef kind="typedef" id="classfc_1_1static__variant_1a7cd70536ee7e05b71213f17b17e6d6c2" prot="protected" static="no">
-        <type>typename std::enable_if&lt; <ref refid="structfc_1_1impl_1_1position" kindref="compound">impl::position</ref>&lt; X, Types... &gt;::pos !=-1, X &gt;::type</type>
-        <definition>using fc::static_variant&lt; Types &gt;::type_in_typelist =  typename std::enable_if&lt;impl::position&lt;X, Types...&gt;::pos != -1, X&gt;::type</definition>
+      <memberdef kind="typedef" id="classfc_1_1static__variant_1a38b3a37de693251654e02a796402c37c" prot="protected" static="no">
+        <type>std::enable_if_t&lt; typelist::index_of&lt; <ref refid="classfc_1_1static__variant_1a03ad0667ee25a15d94667b7d3c7604ed" kindref="member">list</ref>, X &gt;()!=-1 &gt;</type>
+        <definition>using fc::static_variant&lt; Types &gt;::type_in_typelist =  std::enable_if_t&lt;typelist::index_of&lt;list, X&gt;() != -1&gt;</definition>
         <argsstring></argsstring>
         <name>type_in_typelist</name>
         <briefdescription>
@@ -38,7 +68,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/static_variant.hpp" line="259" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="259" bodyend="-1"/>
+        <location file="libraries/fc/include/fc/static_variant.hpp" line="56" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="56" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-attrib">
@@ -53,7 +83,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/static_variant.hpp" line="261" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="261" bodyend="-1"/>
+        <location file="libraries/fc/include/fc/static_variant.hpp" line="58" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="58" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classfc_1_1static__variant_1a48520140372c08b994d3ca27a683f9c9" prot="protected" static="no" mutable="no">
         <type><ref refid="classfc_1_1impl_1_1dynamic__storage" kindref="compound">impl::dynamic_storage</ref></type>
@@ -66,87 +96,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/static_variant.hpp" line="262" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="262" bodyend="-1"/>
-      </memberdef>
-      </sectiondef>
-      <sectiondef kind="friend">
-      <memberdef kind="friend" id="classfc_1_1static__variant_1a6010df8092a905016b6bf328ef0b2274" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>typename StaticVariant</type>
-          </param>
-        </templateparamlist>
-        <type>friend struct</type>
-        <definition>friend struct impl::copy_construct</definition>
-        <argsstring></argsstring>
-        <name>impl::copy_construct</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="libraries/fc/include/fc/static_variant.hpp" line="295" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="295" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="friend" id="classfc_1_1static__variant_1ae3385fa2f5b46bf5d07c0024550bdf75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>typename StaticVariant</type>
-          </param>
-        </templateparamlist>
-        <type>friend struct</type>
-        <definition>friend struct impl::move_construct</definition>
-        <argsstring></argsstring>
-        <name>impl::move_construct</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="libraries/fc/include/fc/static_variant.hpp" line="297" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="297" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="friend" id="classfc_1_1static__variant_1a4f8bf4c32a2bf2ce7c91a81a1fcd3b8c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>friend bool</type>
-        <definition>bool operator==</definition>
-        <argsstring>(const static_variant &amp;a, const static_variant &amp;b)</argsstring>
-        <name>operator==</name>
-        <param>
-          <type>const <ref refid="classfc_1_1static__variant" kindref="compound">static_variant</ref> &amp;</type>
-          <declname>a</declname>
-        </param>
-        <param>
-          <type>const <ref refid="classfc_1_1static__variant" kindref="compound">static_variant</ref> &amp;</type>
-          <declname>b</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="libraries/fc/include/fc/static_variant.hpp" line="355" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="355" bodyend="358"/>
-      </memberdef>
-      <memberdef kind="friend" id="classfc_1_1static__variant_1a7930994fcdde21ebc7429a20aff0ffb0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>friend bool</type>
-        <definition>bool operator&lt;</definition>
-        <argsstring>(const static_variant &amp;a, const static_variant &amp;b)</argsstring>
-        <name>operator&lt;</name>
-        <param>
-          <type>const <ref refid="classfc_1_1static__variant" kindref="compound">static_variant</ref> &amp;</type>
-          <declname>a</declname>
-        </param>
-        <param>
-          <type>const <ref refid="classfc_1_1static__variant" kindref="compound">static_variant</ref> &amp;</type>
-          <declname>b</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="libraries/fc/include/fc/static_variant.hpp" line="359" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="359" bodyend="362"/>
+        <location file="libraries/fc/include/fc/static_variant.hpp" line="59" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="59" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-func">
@@ -157,7 +107,7 @@
           </param>
           <param>
             <type>typename</type>
-            <defval><ref refid="classfc_1_1static__variant_1a7cd70536ee7e05b71213f17b17e6d6c2" kindref="member">type_in_typelist</ref>&lt;X&gt;</defval>
+            <defval><ref refid="classfc_1_1static__variant_1a38b3a37de693251654e02a796402c37c" kindref="member">type_in_typelist</ref>&lt;X&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -174,7 +124,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/static_variant.hpp" line="265" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="265" bodyend="269"/>
+        <location file="libraries/fc/include/fc/static_variant.hpp" line="62" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="62" bodyend="66"/>
       </memberdef>
       <memberdef kind="function" id="classfc_1_1static__variant_1a92f1fb0160ff6e8649a3da77ff4774a8" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -183,7 +133,7 @@
           </param>
           <param>
             <type>typename</type>
-            <defval><ref refid="classfc_1_1static__variant_1a7cd70536ee7e05b71213f17b17e6d6c2" kindref="member">type_in_typelist</ref>&lt;X&gt;</defval>
+            <defval><ref refid="classfc_1_1static__variant_1a38b3a37de693251654e02a796402c37c" kindref="member">type_in_typelist</ref>&lt;X&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -200,7 +150,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/static_variant.hpp" line="272" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="272" bodyend="276"/>
+        <location file="libraries/fc/include/fc/static_variant.hpp" line="69" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="69" bodyend="73"/>
       </memberdef>
       <memberdef kind="function" id="classfc_1_1static__variant_1a7e3fa4109db2099c03f2ab3b954b8660" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -217,7 +167,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/static_variant.hpp" line="278" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="278" bodyend="285"/>
+        <location file="libraries/fc/include/fc/static_variant.hpp" line="75" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="75" bodyend="85"/>
       </memberdef>
       <memberdef kind="function" id="classfc_1_1static__variant_1a53f125b737e8ea2c32e11b9614baebc5" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -230,24 +180,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/static_variant.hpp" line="287" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="287" bodyend="291"/>
+        <location file="libraries/fc/include/fc/static_variant.hpp" line="87" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="87" bodyend="94"/>
       </memberdef>
       </sectiondef>
-      <sectiondef kind="public-func">
-      <memberdef kind="function" id="classfc_1_1static__variant_1af150f40b5b3860e28be1ef0710dc9718" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type></type>
-        <definition>fc::static_variant&lt; Types &gt;::static_variant</definition>
-        <argsstring>()</argsstring>
-        <name>static_variant</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="libraries/fc/include/fc/static_variant.hpp" line="305" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="305" bodyend="308"/>
-      </memberdef>
-      <memberdef kind="function" id="classfc_1_1static__variant_1a2b4e0ec9f3fa4383f9030e92281388ff" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classfc_1_1static__variant_1a2f48c6f1af1627152cda7373180c8680" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename...</type>
@@ -255,337 +192,46 @@
             <defname>Other</defname>
           </param>
         </templateparamlist>
-        <type></type>
-        <definition>fc::static_variant&lt; Types &gt;::static_variant</definition>
-        <argsstring>(const static_variant&lt; Other... &gt; &amp;cpy)</argsstring>
-        <name>static_variant</name>
+        <type><ref refid="classfc_1_1static__variant" kindref="compound">static_variant</ref></type>
+        <definition>static static_variant fc::static_variant&lt; Types &gt;::import_from</definition>
+        <argsstring>(const static_variant&lt; Other... &gt; &amp;other)</argsstring>
+        <name>import_from</name>
         <param>
           <type>const <ref refid="classfc_1_1static__variant" kindref="compound">static_variant</ref>&lt; Other... &gt; &amp;</type>
-          <declname>cpy</declname>
+          <declname>other</declname>
         </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Import the value from a foreign <ref refid="classfc_1_1static__variant" kindref="compound">static_variant</ref> with types not in this one, and throw if the value is an incompatible type </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/static_variant.hpp" line="311" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="311" bodyend="314"/>
+        <location file="libraries/fc/include/fc/static_variant.hpp" line="135" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="135" bodyend="140"/>
       </memberdef>
-      <memberdef kind="function" id="classfc_1_1static__variant_1ad8841f15bfeead64a55d4cb01a6d93bc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type></type>
-        <definition>fc::static_variant&lt; Types &gt;::static_variant</definition>
-        <argsstring>(const static_variant &amp;cpy)</argsstring>
-        <name>static_variant</name>
-        <param>
-          <type>const <ref refid="classfc_1_1static__variant" kindref="compound">static_variant</ref> &amp;</type>
-          <declname>cpy</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="libraries/fc/include/fc/static_variant.hpp" line="316" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="316" bodyend="319"/>
-      </memberdef>
-      <memberdef kind="function" id="classfc_1_1static__variant_1a163c0efde242bed98389f8e47a95284c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type></type>
-        <definition>fc::static_variant&lt; Types &gt;::static_variant</definition>
-        <argsstring>(static_variant &amp;&amp;mv)</argsstring>
-        <name>static_variant</name>
-        <param>
-          <type><ref refid="classfc_1_1static__variant" kindref="compound">static_variant</ref> &amp;&amp;</type>
-          <declname>mv</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="libraries/fc/include/fc/static_variant.hpp" line="321" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="321" bodyend="324"/>
-      </memberdef>
-      <memberdef kind="function" id="classfc_1_1static__variant_1a38f834c72dfffa8f6f2b9cd75ab0a289" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classfc_1_1static__variant_1ac3c523426f6d203b8da7f64802f58275" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type>typename X</type>
-          </param>
-          <param>
-            <type>typename</type>
-            <defval><ref refid="classfc_1_1static__variant_1a7cd70536ee7e05b71213f17b17e6d6c2" kindref="member">type_in_typelist</ref>&lt;X&gt;</defval>
+            <type>typename...</type>
+            <declname>Other</declname>
+            <defname>Other</defname>
           </param>
         </templateparamlist>
-        <type></type>
-        <definition>fc::static_variant&lt; Types &gt;::static_variant</definition>
-        <argsstring>(const X &amp;v)</argsstring>
-        <name>static_variant</name>
+        <type><ref refid="classfc_1_1static__variant" kindref="compound">static_variant</ref></type>
+        <definition>static static_variant fc::static_variant&lt; Types &gt;::import_from</definition>
+        <argsstring>(static_variant&lt; Other... &gt; &amp;&amp;other)</argsstring>
+        <name>import_from</name>
         <param>
-          <type>const X &amp;</type>
-          <declname>v</declname>
+          <type><ref refid="classfc_1_1static__variant" kindref="compound">static_variant</ref>&lt; Other... &gt; &amp;&amp;</type>
+          <declname>other</declname>
         </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Import the value from a foreign <ref refid="classfc_1_1static__variant" kindref="compound">static_variant</ref> with types not in this one, and throw if the value is an incompatible type </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/static_variant.hpp" line="327" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="327" bodyend="329"/>
+        <location file="libraries/fc/include/fc/static_variant.hpp" line="144" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="144" bodyend="149"/>
       </memberdef>
-      <memberdef kind="function" id="classfc_1_1static__variant_1a5d668b4e7e178afd9d7c83fa2776b9b0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type></type>
-        <definition>fc::static_variant&lt; Types &gt;::~static_variant</definition>
-        <argsstring>()</argsstring>
-        <name>~static_variant</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="libraries/fc/include/fc/static_variant.hpp" line="331" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="331" bodyend="333"/>
-      </memberdef>
-      <memberdef kind="function" id="classfc_1_1static__variant_1a32f2b7544df5c070ac8d4c935fe9036c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>typename X</type>
-          </param>
-          <param>
-            <type>typename</type>
-            <defval><ref refid="classfc_1_1static__variant_1a7cd70536ee7e05b71213f17b17e6d6c2" kindref="member">type_in_typelist</ref>&lt;X&gt;</defval>
-          </param>
-        </templateparamlist>
-        <type><ref refid="classfc_1_1static__variant" kindref="compound">static_variant</ref> &amp;</type>
-        <definition>static_variant&amp; fc::static_variant&lt; Types &gt;::operator=</definition>
-        <argsstring>(const X &amp;v)</argsstring>
-        <name>operator=</name>
-        <param>
-          <type>const X &amp;</type>
-          <declname>v</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="libraries/fc/include/fc/static_variant.hpp" line="336" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="336" bodyend="340"/>
-      </memberdef>
-      <memberdef kind="function" id="classfc_1_1static__variant_1aba7bff21c84651e5c173e83970e89068" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classfc_1_1static__variant" kindref="compound">static_variant</ref> &amp;</type>
-        <definition>static_variant&amp; fc::static_variant&lt; Types &gt;::operator=</definition>
-        <argsstring>(const static_variant &amp;v)</argsstring>
-        <name>operator=</name>
-        <param>
-          <type>const <ref refid="classfc_1_1static__variant" kindref="compound">static_variant</ref> &amp;</type>
-          <declname>v</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="libraries/fc/include/fc/static_variant.hpp" line="341" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="341" bodyend="347"/>
-      </memberdef>
-      <memberdef kind="function" id="classfc_1_1static__variant_1abd8fecdd03a65f1045cdac2875eddd88" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classfc_1_1static__variant" kindref="compound">static_variant</ref> &amp;</type>
-        <definition>static_variant&amp; fc::static_variant&lt; Types &gt;::operator=</definition>
-        <argsstring>(static_variant &amp;&amp;v)</argsstring>
-        <name>operator=</name>
-        <param>
-          <type><ref refid="classfc_1_1static__variant" kindref="compound">static_variant</ref> &amp;&amp;</type>
-          <declname>v</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="libraries/fc/include/fc/static_variant.hpp" line="348" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="348" bodyend="354"/>
-      </memberdef>
-      <memberdef kind="function" id="classfc_1_1static__variant_1a9dc9edbccc8adc738c5f86dff8fdfc62" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>typename X</type>
-          </param>
-          <param>
-            <type>typename</type>
-            <defval><ref refid="classfc_1_1static__variant_1a7cd70536ee7e05b71213f17b17e6d6c2" kindref="member">type_in_typelist</ref>&lt;X&gt;</defval>
-          </param>
-        </templateparamlist>
-        <type>X &amp;</type>
-        <definition>X&amp; fc::static_variant&lt; Types &gt;::get</definition>
-        <argsstring>()</argsstring>
-        <name>get</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="libraries/fc/include/fc/static_variant.hpp" line="365" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="365" bodyend="371"/>
-      </memberdef>
-      <memberdef kind="function" id="classfc_1_1static__variant_1a483073cdc1ddcb54c05cb05685356be0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>typename X</type>
-          </param>
-          <param>
-            <type>typename</type>
-            <defval><ref refid="classfc_1_1static__variant_1a7cd70536ee7e05b71213f17b17e6d6c2" kindref="member">type_in_typelist</ref>&lt;X&gt;</defval>
-          </param>
-        </templateparamlist>
-        <type>const X &amp;</type>
-        <definition>const X&amp; fc::static_variant&lt; Types &gt;::get</definition>
-        <argsstring>() const</argsstring>
-        <name>get</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="libraries/fc/include/fc/static_variant.hpp" line="373" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="373" bodyend="379"/>
-      </memberdef>
-      <memberdef kind="function" id="classfc_1_1static__variant_1a925e65f1cb62cb92e017aa720b66697a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>typename visitor</type>
-          </param>
-        </templateparamlist>
-        <type>visitor::result_type</type>
-        <definition>visitor::result_type fc::static_variant&lt; Types &gt;::visit</definition>
-        <argsstring>(visitor &amp;v)</argsstring>
-        <name>visit</name>
-        <param>
-          <type>visitor &amp;</type>
-          <declname>v</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="libraries/fc/include/fc/static_variant.hpp" line="381" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="381" bodyend="383"/>
-      </memberdef>
-      <memberdef kind="function" id="classfc_1_1static__variant_1ada2479eb3f11e2067bb81766864faede" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>typename visitor</type>
-          </param>
-        </templateparamlist>
-        <type>visitor::result_type</type>
-        <definition>visitor::result_type fc::static_variant&lt; Types &gt;::visit</definition>
-        <argsstring>(const visitor &amp;v)</argsstring>
-        <name>visit</name>
-        <param>
-          <type>const visitor &amp;</type>
-          <declname>v</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="libraries/fc/include/fc/static_variant.hpp" line="386" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="386" bodyend="388"/>
-      </memberdef>
-      <memberdef kind="function" id="classfc_1_1static__variant_1ab55fdf4f0a8aa9959af125b8b857fd6d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>typename visitor</type>
-          </param>
-        </templateparamlist>
-        <type>visitor::result_type</type>
-        <definition>visitor::result_type fc::static_variant&lt; Types &gt;::visit</definition>
-        <argsstring>(visitor &amp;v) const</argsstring>
-        <name>visit</name>
-        <param>
-          <type>visitor &amp;</type>
-          <declname>v</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="libraries/fc/include/fc/static_variant.hpp" line="391" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="391" bodyend="393"/>
-      </memberdef>
-      <memberdef kind="function" id="classfc_1_1static__variant_1a1a26a7e9eea0491e7e4d8a0eaf049c31" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>typename visitor</type>
-          </param>
-        </templateparamlist>
-        <type>visitor::result_type</type>
-        <definition>visitor::result_type fc::static_variant&lt; Types &gt;::visit</definition>
-        <argsstring>(const visitor &amp;v) const</argsstring>
-        <name>visit</name>
-        <param>
-          <type>const visitor &amp;</type>
-          <declname>v</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="libraries/fc/include/fc/static_variant.hpp" line="396" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="396" bodyend="398"/>
-      </memberdef>
-      <memberdef kind="function" id="classfc_1_1static__variant_1ac6bbf0562854761c863161839b699155" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>void fc::static_variant&lt; Types &gt;::set_which</definition>
-        <argsstring>(tag_type w)</argsstring>
-        <name>set_which</name>
-        <param>
-          <type><ref refid="classfc_1_1static__variant_1aba87b38cb3bcf33da8b38323211fdcb7" kindref="member">tag_type</ref></type>
-          <declname>w</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="libraries/fc/include/fc/static_variant.hpp" line="433" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="433" bodyend="438"/>
-      </memberdef>
-      <memberdef kind="function" id="classfc_1_1static__variant_1a40403826f654825ed6081aff5c50624f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classfc_1_1static__variant_1aba87b38cb3bcf33da8b38323211fdcb7" kindref="member">tag_type</ref></type>
-        <definition>tag_type fc::static_variant&lt; Types &gt;::which</definition>
-        <argsstring>() const</argsstring>
-        <name>which</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="libraries/fc/include/fc/static_variant.hpp" line="440" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="440" bodyend="440"/>
-      </memberdef>
-      <memberdef kind="function" id="classfc_1_1static__variant_1a38c5425760ec21725f8fb9c2018b3cb7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>typename T</type>
-          </param>
-        </templateparamlist>
-        <type>bool</type>
-        <definition>bool fc::static_variant&lt; Types &gt;::is_type</definition>
-        <argsstring>() const</argsstring>
-        <name>is_type</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="libraries/fc/include/fc/static_variant.hpp" line="443" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="443" bodyend="443"/>
-      </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-static-func">
       <memberdef kind="function" id="classfc_1_1static__variant_1aea20045d8096843fb3680349e07ac93d" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
@@ -614,7 +260,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/static_variant.hpp" line="401" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="401" bodyend="406"/>
+        <location file="libraries/fc/include/fc/static_variant.hpp" line="270" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="270" bodyend="276"/>
       </memberdef>
       <memberdef kind="function" id="classfc_1_1static__variant_1adc071b36a163f5b7ac22e084d7724681" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -644,7 +290,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/static_variant.hpp" line="409" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="409" bodyend="414"/>
+        <location file="libraries/fc/include/fc/static_variant.hpp" line="279" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="279" bodyend="285"/>
       </memberdef>
       <memberdef kind="function" id="classfc_1_1static__variant_1a95ba0f5aed51c46206170e64eba38ec7" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -674,7 +320,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/static_variant.hpp" line="417" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="417" bodyend="422"/>
+        <location file="libraries/fc/include/fc/static_variant.hpp" line="288" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="288" bodyend="294"/>
       </memberdef>
       <memberdef kind="function" id="classfc_1_1static__variant_1a9c41da3c7d5aa4c09b46eaa7ead9a8c5" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -704,11 +350,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/static_variant.hpp" line="425" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="425" bodyend="430"/>
+        <location file="libraries/fc/include/fc/static_variant.hpp" line="297" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="297" bodyend="303"/>
       </memberdef>
-      <memberdef kind="function" id="classfc_1_1static__variant_1a6f26aa8783eaa45c7032ab03ba538da2" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>constexpr int</type>
-        <definition>static constexpr int fc::static_variant&lt; Types &gt;::count</definition>
+      <memberdef kind="function" id="classfc_1_1static__variant_1a4619c2fb92a1ee1b5ba992a2175e868b" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr size_t</type>
+        <definition>static constexpr size_t fc::static_variant&lt; Types &gt;::count</definition>
         <argsstring>()</argsstring>
         <name>count</name>
         <briefdescription>
@@ -717,7 +363,432 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/static_variant.hpp" line="432" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="432" bodyend="432"/>
+        <location file="libraries/fc/include/fc/static_variant.hpp" line="305" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="305" bodyend="305"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfc_1_1static__variant_1af150f40b5b3860e28be1ef0710dc9718" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>fc::static_variant&lt; Types &gt;::static_variant</definition>
+        <argsstring>()</argsstring>
+        <name>static_variant</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/static_variant.hpp" line="151" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="151" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1static__variant_1a2b4e0ec9f3fa4383f9030e92281388ff" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Other</declname>
+            <defname>Other</defname>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>fc::static_variant&lt; Types &gt;::static_variant</definition>
+        <argsstring>(const static_variant&lt; Other... &gt; &amp;cpy)</argsstring>
+        <name>static_variant</name>
+        <param>
+          <type>const <ref refid="classfc_1_1static__variant" kindref="compound">static_variant</ref>&lt; Other... &gt; &amp;</type>
+          <declname>cpy</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/static_variant.hpp" line="157" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="157" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1static__variant_1ad8841f15bfeead64a55d4cb01a6d93bc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>fc::static_variant&lt; Types &gt;::static_variant</definition>
+        <argsstring>(const static_variant &amp;cpy)</argsstring>
+        <name>static_variant</name>
+        <param>
+          <type>const <ref refid="classfc_1_1static__variant" kindref="compound">static_variant</ref> &amp;</type>
+          <declname>cpy</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/static_variant.hpp" line="164" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="164" bodyend="169"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1static__variant_1a163c0efde242bed98389f8e47a95284c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>fc::static_variant&lt; Types &gt;::static_variant</definition>
+        <argsstring>(static_variant &amp;&amp;mv)</argsstring>
+        <name>static_variant</name>
+        <param>
+          <type><ref refid="classfc_1_1static__variant" kindref="compound">static_variant</ref> &amp;&amp;</type>
+          <declname>mv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/static_variant.hpp" line="171" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="171" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1static__variant_1ad65568e7924085139d95809ebdbec439" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Other</declname>
+            <defname>Other</defname>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>fc::static_variant&lt; Types &gt;::static_variant</definition>
+        <argsstring>(static_variant&lt; Other... &gt; &amp;&amp;mv)</argsstring>
+        <name>static_variant</name>
+        <param>
+          <type><ref refid="classfc_1_1static__variant" kindref="compound">static_variant</ref>&lt; Other... &gt; &amp;&amp;</type>
+          <declname>mv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/static_variant.hpp" line="179" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="179" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1static__variant_1a38f834c72dfffa8f6f2b9cd75ab0a289" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename X</type>
+          </param>
+          <param>
+            <type>typename</type>
+            <defval><ref refid="classfc_1_1static__variant_1a38b3a37de693251654e02a796402c37c" kindref="member">type_in_typelist</ref>&lt;X&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>fc::static_variant&lt; Types &gt;::static_variant</definition>
+        <argsstring>(const X &amp;v)</argsstring>
+        <name>static_variant</name>
+        <param>
+          <type>const X &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/static_variant.hpp" line="187" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="187" bodyend="189"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1static__variant_1a385ffe0884ea09366796a92598a2bb38" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename X</type>
+          </param>
+          <param>
+            <type>typename</type>
+            <defval><ref refid="classfc_1_1static__variant_1a38b3a37de693251654e02a796402c37c" kindref="member">type_in_typelist</ref>&lt;X&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>fc::static_variant&lt; Types &gt;::static_variant</definition>
+        <argsstring>(X &amp;&amp;v)</argsstring>
+        <name>static_variant</name>
+        <param>
+          <type>X &amp;&amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/static_variant.hpp" line="191" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="191" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1static__variant_1a5d668b4e7e178afd9d7c83fa2776b9b0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>fc::static_variant&lt; Types &gt;::~static_variant</definition>
+        <argsstring>()</argsstring>
+        <name>~static_variant</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/static_variant.hpp" line="195" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="195" bodyend="197"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1static__variant_1a32f2b7544df5c070ac8d4c935fe9036c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename X</type>
+          </param>
+          <param>
+            <type>typename</type>
+            <defval><ref refid="classfc_1_1static__variant_1a38b3a37de693251654e02a796402c37c" kindref="member">type_in_typelist</ref>&lt;X&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classfc_1_1static__variant" kindref="compound">static_variant</ref> &amp;</type>
+        <definition>static_variant&amp; fc::static_variant&lt; Types &gt;::operator=</definition>
+        <argsstring>(const X &amp;v)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const X &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/static_variant.hpp" line="200" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="200" bodyend="204"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1static__variant_1aba7bff21c84651e5c173e83970e89068" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classfc_1_1static__variant" kindref="compound">static_variant</ref> &amp;</type>
+        <definition>static_variant&amp; fc::static_variant&lt; Types &gt;::operator=</definition>
+        <argsstring>(const static_variant &amp;v)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classfc_1_1static__variant" kindref="compound">static_variant</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/static_variant.hpp" line="205" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="205" bodyend="213"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1static__variant_1abd8fecdd03a65f1045cdac2875eddd88" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classfc_1_1static__variant" kindref="compound">static_variant</ref> &amp;</type>
+        <definition>static_variant&amp; fc::static_variant&lt; Types &gt;::operator=</definition>
+        <argsstring>(static_variant &amp;&amp;v)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type><ref refid="classfc_1_1static__variant" kindref="compound">static_variant</ref> &amp;&amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/static_variant.hpp" line="214" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="214" bodyend="222"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1static__variant_1a9dc9edbccc8adc738c5f86dff8fdfc62" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename X</type>
+          </param>
+          <param>
+            <type>typename</type>
+            <defval><ref refid="classfc_1_1static__variant_1a38b3a37de693251654e02a796402c37c" kindref="member">type_in_typelist</ref>&lt;X&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>X &amp;</type>
+        <definition>X&amp; fc::static_variant&lt; Types &gt;::get</definition>
+        <argsstring>()</argsstring>
+        <name>get</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/static_variant.hpp" line="234" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="234" bodyend="240"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1static__variant_1a98a4c50eeba590c4bb98db14beb9e891" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename X</type>
+          </param>
+          <param>
+            <type>typename</type>
+            <defval><ref refid="classfc_1_1static__variant_1a38b3a37de693251654e02a796402c37c" kindref="member">type_in_typelist</ref>&lt;X&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>const X &amp;</type>
+        <definition>const X&amp; fc::static_variant&lt; Types &gt;::get</definition>
+        <argsstring>() const </argsstring>
+        <name>get</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/static_variant.hpp" line="242" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="242" bodyend="248"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1static__variant_1a925e65f1cb62cb92e017aa720b66697a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename visitor</type>
+          </param>
+        </templateparamlist>
+        <type>visitor::result_type</type>
+        <definition>visitor::result_type fc::static_variant&lt; Types &gt;::visit</definition>
+        <argsstring>(visitor &amp;v)</argsstring>
+        <name>visit</name>
+        <param>
+          <type>visitor &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/static_variant.hpp" line="250" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="250" bodyend="252"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1static__variant_1ada2479eb3f11e2067bb81766864faede" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename visitor</type>
+          </param>
+        </templateparamlist>
+        <type>visitor::result_type</type>
+        <definition>visitor::result_type fc::static_variant&lt; Types &gt;::visit</definition>
+        <argsstring>(const visitor &amp;v)</argsstring>
+        <name>visit</name>
+        <param>
+          <type>const visitor &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/static_variant.hpp" line="255" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="255" bodyend="257"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1static__variant_1a788be57abf5a751d7c87c4a2168f85d8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename visitor</type>
+          </param>
+        </templateparamlist>
+        <type>visitor::result_type</type>
+        <definition>visitor::result_type fc::static_variant&lt; Types &gt;::visit</definition>
+        <argsstring>(visitor &amp;v) const </argsstring>
+        <name>visit</name>
+        <param>
+          <type>visitor &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/static_variant.hpp" line="260" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="260" bodyend="262"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1static__variant_1a02c37e4fb8c024f0c232c4dc3e5b0d0a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename visitor</type>
+          </param>
+        </templateparamlist>
+        <type>visitor::result_type</type>
+        <definition>visitor::result_type fc::static_variant&lt; Types &gt;::visit</definition>
+        <argsstring>(const visitor &amp;v) const </argsstring>
+        <name>visit</name>
+        <param>
+          <type>const visitor &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/static_variant.hpp" line="265" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="265" bodyend="267"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1static__variant_1a00a7b4405889f8c91024b884f47540fb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fc::static_variant&lt; Types &gt;::set_which</definition>
+        <argsstring>(tag_type tag)</argsstring>
+        <name>set_which</name>
+        <param>
+          <type><ref refid="classfc_1_1static__variant_1aba87b38cb3bcf33da8b38323211fdcb7" kindref="member">tag_type</ref></type>
+          <declname>tag</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/static_variant.hpp" line="306" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="306" bodyend="311"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1static__variant_1af59b89369198e290315d0277c275928a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classfc_1_1static__variant_1aba87b38cb3bcf33da8b38323211fdcb7" kindref="member">tag_type</ref></type>
+        <definition>tag_type fc::static_variant&lt; Types &gt;::which</definition>
+        <argsstring>() const </argsstring>
+        <name>which</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/static_variant.hpp" line="313" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="313" bodyend="313"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1static__variant_1ae1a46d4f7cd49863912bb57c014e240b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool fc::static_variant&lt; Types &gt;::is_type</definition>
+        <argsstring>() const </argsstring>
+        <name>is_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/static_variant.hpp" line="316" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="316" bodyend="316"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classfc_1_1static__variant_1a4f8bf4c32a2bf2ce7c91a81a1fcd3b8c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>friend bool</type>
+        <definition>bool operator==</definition>
+        <argsstring>(const static_variant &amp;a, const static_variant &amp;b)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classfc_1_1static__variant" kindref="compound">static_variant</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classfc_1_1static__variant" kindref="compound">static_variant</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/static_variant.hpp" line="224" column="1" bodyfile="libraries/fc/include/fc/static_variant.hpp" bodystart="224" bodyend="231"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -725,14 +796,14 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="5068">
+      <node id="5763">
         <label>fc::static_variant&lt; Types &gt;</label>
         <link refid="classfc_1_1static__variant"/>
-        <childnode refid="5069" relation="usage">
+        <childnode refid="5764" relation="usage">
           <edgelabel>storage</edgelabel>
         </childnode>
       </node>
-      <node id="5069">
+      <node id="5764">
         <label>fc::impl::dynamic_storage</label>
         <link refid="classfc_1_1impl_1_1dynamic__storage"/>
       </node>
@@ -741,38 +812,41 @@
     <listofallmembers>
       <member refid="classfc_1_1static__variant_1af7bccf217a452e1673051f613c6f844a" prot="protected" virt="non-virtual"><scope>fc::static_variant</scope><name>_tag</name></member>
       <member refid="classfc_1_1static__variant_1a53f125b737e8ea2c32e11b9614baebc5" prot="protected" virt="non-virtual"><scope>fc::static_variant</scope><name>clean</name></member>
-      <member refid="classfc_1_1static__variant_1a6f26aa8783eaa45c7032ab03ba538da2" prot="public" virt="non-virtual"><scope>fc::static_variant</scope><name>count</name></member>
+      <member refid="classfc_1_1static__variant_1a4619c2fb92a1ee1b5ba992a2175e868b" prot="public" virt="non-virtual"><scope>fc::static_variant</scope><name>count</name></member>
+      <member refid="classfc_1_1static__variant_1af88f7f04dd15f07ade8335a911542561" prot="public" virt="non-virtual"><scope>fc::static_variant</scope><name>flat_set_type</name></member>
       <member refid="classfc_1_1static__variant_1a9dc9edbccc8adc738c5f86dff8fdfc62" prot="public" virt="non-virtual"><scope>fc::static_variant</scope><name>get</name></member>
-      <member refid="classfc_1_1static__variant_1a483073cdc1ddcb54c05cb05685356be0" prot="public" virt="non-virtual"><scope>fc::static_variant</scope><name>get</name></member>
-      <member refid="classfc_1_1static__variant_1a6010df8092a905016b6bf328ef0b2274" prot="public" virt="non-virtual"><scope>fc::static_variant</scope><name>impl::copy_construct</name></member>
-      <member refid="classfc_1_1static__variant_1ae3385fa2f5b46bf5d07c0024550bdf75" prot="public" virt="non-virtual"><scope>fc::static_variant</scope><name>impl::move_construct</name></member>
+      <member refid="classfc_1_1static__variant_1a98a4c50eeba590c4bb98db14beb9e891" prot="public" virt="non-virtual"><scope>fc::static_variant</scope><name>get</name></member>
+      <member refid="classfc_1_1static__variant_1a2f48c6f1af1627152cda7373180c8680" prot="public" virt="non-virtual"><scope>fc::static_variant</scope><name>import_from</name></member>
+      <member refid="classfc_1_1static__variant_1ac3c523426f6d203b8da7f64802f58275" prot="public" virt="non-virtual"><scope>fc::static_variant</scope><name>import_from</name></member>
       <member refid="classfc_1_1static__variant_1abd3a3e46a8f4558e5b0893a662415bf7" prot="protected" virt="non-virtual"><scope>fc::static_variant</scope><name>init</name></member>
       <member refid="classfc_1_1static__variant_1a92f1fb0160ff6e8649a3da77ff4774a8" prot="protected" virt="non-virtual"><scope>fc::static_variant</scope><name>init</name></member>
       <member refid="classfc_1_1static__variant_1a7e3fa4109db2099c03f2ab3b954b8660" prot="protected" virt="non-virtual"><scope>fc::static_variant</scope><name>init_from_tag</name></member>
-      <member refid="classfc_1_1static__variant_1a38c5425760ec21725f8fb9c2018b3cb7" prot="public" virt="non-virtual"><scope>fc::static_variant</scope><name>is_type</name></member>
-      <member refid="classfc_1_1static__variant_1a7930994fcdde21ebc7429a20aff0ffb0" prot="public" virt="non-virtual"><scope>fc::static_variant</scope><name>operator&lt;</name></member>
+      <member refid="classfc_1_1static__variant_1ae1a46d4f7cd49863912bb57c014e240b" prot="public" virt="non-virtual"><scope>fc::static_variant</scope><name>is_type</name></member>
+      <member refid="classfc_1_1static__variant_1a03ad0667ee25a15d94667b7d3c7604ed" prot="public" virt="non-virtual"><scope>fc::static_variant</scope><name>list</name></member>
       <member refid="classfc_1_1static__variant_1a32f2b7544df5c070ac8d4c935fe9036c" prot="public" virt="non-virtual"><scope>fc::static_variant</scope><name>operator=</name></member>
       <member refid="classfc_1_1static__variant_1aba7bff21c84651e5c173e83970e89068" prot="public" virt="non-virtual"><scope>fc::static_variant</scope><name>operator=</name></member>
       <member refid="classfc_1_1static__variant_1abd8fecdd03a65f1045cdac2875eddd88" prot="public" virt="non-virtual"><scope>fc::static_variant</scope><name>operator=</name></member>
       <member refid="classfc_1_1static__variant_1a4f8bf4c32a2bf2ce7c91a81a1fcd3b8c" prot="public" virt="non-virtual"><scope>fc::static_variant</scope><name>operator==</name></member>
-      <member refid="classfc_1_1static__variant_1ac6bbf0562854761c863161839b699155" prot="public" virt="non-virtual"><scope>fc::static_variant</scope><name>set_which</name></member>
+      <member refid="classfc_1_1static__variant_1a00a7b4405889f8c91024b884f47540fb" prot="public" virt="non-virtual"><scope>fc::static_variant</scope><name>set_which</name></member>
       <member refid="classfc_1_1static__variant_1af150f40b5b3860e28be1ef0710dc9718" prot="public" virt="non-virtual"><scope>fc::static_variant</scope><name>static_variant</name></member>
       <member refid="classfc_1_1static__variant_1a2b4e0ec9f3fa4383f9030e92281388ff" prot="public" virt="non-virtual"><scope>fc::static_variant</scope><name>static_variant</name></member>
       <member refid="classfc_1_1static__variant_1ad8841f15bfeead64a55d4cb01a6d93bc" prot="public" virt="non-virtual"><scope>fc::static_variant</scope><name>static_variant</name></member>
       <member refid="classfc_1_1static__variant_1a163c0efde242bed98389f8e47a95284c" prot="public" virt="non-virtual"><scope>fc::static_variant</scope><name>static_variant</name></member>
+      <member refid="classfc_1_1static__variant_1ad65568e7924085139d95809ebdbec439" prot="public" virt="non-virtual"><scope>fc::static_variant</scope><name>static_variant</name></member>
       <member refid="classfc_1_1static__variant_1a38f834c72dfffa8f6f2b9cd75ab0a289" prot="public" virt="non-virtual"><scope>fc::static_variant</scope><name>static_variant</name></member>
+      <member refid="classfc_1_1static__variant_1a385ffe0884ea09366796a92598a2bb38" prot="public" virt="non-virtual"><scope>fc::static_variant</scope><name>static_variant</name></member>
       <member refid="classfc_1_1static__variant_1a48520140372c08b994d3ca27a683f9c9" prot="protected" virt="non-virtual"><scope>fc::static_variant</scope><name>storage</name></member>
       <member refid="classfc_1_1static__variant_1aba87b38cb3bcf33da8b38323211fdcb7" prot="public" virt="non-virtual"><scope>fc::static_variant</scope><name>tag_type</name></member>
-      <member refid="classfc_1_1static__variant_1a7cd70536ee7e05b71213f17b17e6d6c2" prot="protected" virt="non-virtual"><scope>fc::static_variant</scope><name>type_in_typelist</name></member>
+      <member refid="classfc_1_1static__variant_1a38b3a37de693251654e02a796402c37c" prot="protected" virt="non-virtual"><scope>fc::static_variant</scope><name>type_in_typelist</name></member>
       <member refid="classfc_1_1static__variant_1a925e65f1cb62cb92e017aa720b66697a" prot="public" virt="non-virtual"><scope>fc::static_variant</scope><name>visit</name></member>
       <member refid="classfc_1_1static__variant_1ada2479eb3f11e2067bb81766864faede" prot="public" virt="non-virtual"><scope>fc::static_variant</scope><name>visit</name></member>
-      <member refid="classfc_1_1static__variant_1ab55fdf4f0a8aa9959af125b8b857fd6d" prot="public" virt="non-virtual"><scope>fc::static_variant</scope><name>visit</name></member>
-      <member refid="classfc_1_1static__variant_1a1a26a7e9eea0491e7e4d8a0eaf049c31" prot="public" virt="non-virtual"><scope>fc::static_variant</scope><name>visit</name></member>
+      <member refid="classfc_1_1static__variant_1a788be57abf5a751d7c87c4a2168f85d8" prot="public" virt="non-virtual"><scope>fc::static_variant</scope><name>visit</name></member>
+      <member refid="classfc_1_1static__variant_1a02c37e4fb8c024f0c232c4dc3e5b0d0a" prot="public" virt="non-virtual"><scope>fc::static_variant</scope><name>visit</name></member>
       <member refid="classfc_1_1static__variant_1aea20045d8096843fb3680349e07ac93d" prot="public" virt="non-virtual"><scope>fc::static_variant</scope><name>visit</name></member>
       <member refid="classfc_1_1static__variant_1adc071b36a163f5b7ac22e084d7724681" prot="public" virt="non-virtual"><scope>fc::static_variant</scope><name>visit</name></member>
       <member refid="classfc_1_1static__variant_1a95ba0f5aed51c46206170e64eba38ec7" prot="public" virt="non-virtual"><scope>fc::static_variant</scope><name>visit</name></member>
       <member refid="classfc_1_1static__variant_1a9c41da3c7d5aa4c09b46eaa7ead9a8c5" prot="public" virt="non-virtual"><scope>fc::static_variant</scope><name>visit</name></member>
-      <member refid="classfc_1_1static__variant_1a40403826f654825ed6081aff5c50624f" prot="public" virt="non-virtual"><scope>fc::static_variant</scope><name>which</name></member>
+      <member refid="classfc_1_1static__variant_1af59b89369198e290315d0277c275928a" prot="public" virt="non-virtual"><scope>fc::static_variant</scope><name>which</name></member>
       <member refid="classfc_1_1static__variant_1a5d668b4e7e178afd9d7c83fa2776b9b0" prot="public" virt="non-virtual"><scope>fc::static_variant</scope><name>~static_variant</name></member>
     </listofallmembers>
   </compounddef>
