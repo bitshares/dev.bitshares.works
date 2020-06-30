@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
   <compounddef id="structgraphene_1_1protocol_1_1witness__create__operation" kind="struct" language="C++" prot="public">
     <compoundname>graphene::protocol::witness_create_operation</compoundname>
     <basecompoundref refid="structgraphene_1_1protocol_1_1base__operation" prot="public" virt="non-virtual">graphene::protocol::base_operation</basecompoundref>
@@ -60,10 +60,10 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="structgraphene_1_1protocol_1_1witness__create__operation_1ad33f874af326af746679eadc106f2fdb" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1witness__create__operation_1a2e28d5ba9c9d1b5ddf1714397aa9953b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>account_id_type</type>
         <definition>account_id_type graphene::protocol::witness_create_operation::fee_payer</definition>
-        <argsstring>() const</argsstring>
+        <argsstring>() const </argsstring>
         <name>fee_payer</name>
         <briefdescription>
         </briefdescription>
@@ -73,10 +73,10 @@
         </inbodydescription>
         <location file="libraries/protocol/include/graphene/protocol/witness.hpp" line="47" column="1" bodyfile="libraries/protocol/include/graphene/protocol/witness.hpp" bodystart="47" bodyend="47"/>
       </memberdef>
-      <memberdef kind="function" id="structgraphene_1_1protocol_1_1witness__create__operation_1a79fdc4e330a57fe9f247b1e77fd2af79" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1witness__create__operation_1a014201793fad7d96d2bfd14d15c5ec1f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void graphene::protocol::witness_create_operation::validate</definition>
-        <argsstring>() const</argsstring>
+        <argsstring>() const </argsstring>
         <name>validate</name>
         <briefdescription>
         </briefdescription>
@@ -92,52 +92,65 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="6142">
+      <node id="7028">
         <label>graphene::protocol::base_operation</label>
         <link refid="structgraphene_1_1protocol_1_1base__operation"/>
       </node>
-      <node id="6141">
+      <node id="7027">
         <label>graphene::protocol::witness_create_operation</label>
         <link refid="structgraphene_1_1protocol_1_1witness__create__operation"/>
-        <childnode refid="6142" relation="public-inheritance">
+        <childnode refid="7028" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="6148">
+      <node id="7036">
         <label>string</label>
       </node>
-      <node id="6146">
+      <node id="7033">
+        <label>account_id_type</label>
+      </node>
+      <node id="7032">
         <label>fc::safe&lt; int64_t &gt;</label>
         <link refid="structfc_1_1safe"/>
       </node>
-      <node id="6144">
+      <node id="7035">
+        <label>fc::zero_initialized_array&lt; unsigned char, 33 &gt;</label>
+        <link refid="classfc_1_1zero__initialized__array"/>
+      </node>
+      <node id="7030">
         <label>graphene::protocol::base_operation</label>
         <link refid="structgraphene_1_1protocol_1_1base__operation"/>
       </node>
-      <node id="6145">
+      <node id="7031">
         <label>graphene::protocol::asset</label>
         <link refid="structgraphene_1_1protocol_1_1asset"/>
-        <childnode refid="6146" relation="usage">
+        <childnode refid="7032" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
       </node>
-      <node id="6147">
+      <node id="7034">
         <label>graphene::protocol::public_key_type</label>
         <link refid="structgraphene_1_1protocol_1_1public__key__type"/>
+        <childnode refid="7035" relation="usage">
+          <edgelabel>key_data</edgelabel>
+        </childnode>
       </node>
-      <node id="6143">
+      <node id="7029">
         <label>graphene::protocol::witness_create_operation</label>
         <link refid="structgraphene_1_1protocol_1_1witness__create__operation"/>
-        <childnode refid="6144" relation="public-inheritance">
+        <childnode refid="7030" relation="public-inheritance">
         </childnode>
-        <childnode refid="6145" relation="usage">
+        <childnode refid="7031" relation="usage">
           <edgelabel>fee</edgelabel>
         </childnode>
-        <childnode refid="6147" relation="usage">
+        <childnode refid="7033" relation="usage">
+          <edgelabel>witness_account</edgelabel>
+        </childnode>
+        <childnode refid="7034" relation="usage">
           <edgelabel>block_signing_key</edgelabel>
         </childnode>
-        <childnode refid="6148" relation="usage">
+        <childnode refid="7036" relation="usage">
           <edgelabel>url</edgelabel>
         </childnode>
       </node>
@@ -146,15 +159,15 @@
     <listofallmembers>
       <member refid="structgraphene_1_1protocol_1_1witness__create__operation_1ad05e309d48618796d0920aca853e2347" prot="public" virt="non-virtual"><scope>graphene::protocol::witness_create_operation</scope><name>block_signing_key</name></member>
       <member refid="structgraphene_1_1protocol_1_1base__operation_1aaccb0fa71ee529cf62324baaa99988fe" prot="public" virt="non-virtual"><scope>graphene::protocol::witness_create_operation</scope><name>calculate_data_fee</name></member>
-      <member refid="structgraphene_1_1protocol_1_1base__operation_1a0be44badcee9a648413eb906dac1d3b3" prot="public" virt="non-virtual"><scope>graphene::protocol::witness_create_operation</scope><name>calculate_fee</name></member>
+      <member refid="structgraphene_1_1protocol_1_1base__operation_1afd01efa3e06367c572512e381b1106fb" prot="public" virt="non-virtual"><scope>graphene::protocol::witness_create_operation</scope><name>calculate_fee</name></member>
       <member refid="structgraphene_1_1protocol_1_1witness__create__operation_1a50302c495fc98f46d21c3958223dc70d" prot="public" virt="non-virtual"><scope>graphene::protocol::witness_create_operation</scope><name>fee</name></member>
-      <member refid="structgraphene_1_1protocol_1_1witness__create__operation_1ad33f874af326af746679eadc106f2fdb" prot="public" virt="non-virtual"><scope>graphene::protocol::witness_create_operation</scope><name>fee_payer</name></member>
-      <member refid="structgraphene_1_1protocol_1_1base__operation_1a4bde0a7317ece463a0c386315d303b35" prot="public" virt="non-virtual"><scope>graphene::protocol::witness_create_operation</scope><name>get_required_active_authorities</name></member>
-      <member refid="structgraphene_1_1protocol_1_1base__operation_1a720b8a8ac46c96ef92714110404f65de" prot="public" virt="non-virtual"><scope>graphene::protocol::witness_create_operation</scope><name>get_required_authorities</name></member>
-      <member refid="structgraphene_1_1protocol_1_1base__operation_1a1882c3b453e9c2021b41827e56005aac" prot="public" virt="non-virtual"><scope>graphene::protocol::witness_create_operation</scope><name>get_required_owner_authorities</name></member>
+      <member refid="structgraphene_1_1protocol_1_1witness__create__operation_1a2e28d5ba9c9d1b5ddf1714397aa9953b" prot="public" virt="non-virtual"><scope>graphene::protocol::witness_create_operation</scope><name>fee_payer</name></member>
+      <member refid="structgraphene_1_1protocol_1_1base__operation_1aded12887f115b2bfa54ecd59540fa242" prot="public" virt="non-virtual"><scope>graphene::protocol::witness_create_operation</scope><name>get_required_active_authorities</name></member>
+      <member refid="structgraphene_1_1protocol_1_1base__operation_1a6ea245f980406ab52fdb90283e687d1c" prot="public" virt="non-virtual"><scope>graphene::protocol::witness_create_operation</scope><name>get_required_authorities</name></member>
+      <member refid="structgraphene_1_1protocol_1_1base__operation_1a0742a4b91de875366ec466a5b67b2811" prot="public" virt="non-virtual"><scope>graphene::protocol::witness_create_operation</scope><name>get_required_owner_authorities</name></member>
       <member refid="structgraphene_1_1protocol_1_1witness__create__operation_1a9ba7e43d882fc4d4503bd4383f318d45" prot="public" virt="non-virtual"><scope>graphene::protocol::witness_create_operation</scope><name>url</name></member>
-      <member refid="structgraphene_1_1protocol_1_1witness__create__operation_1a79fdc4e330a57fe9f247b1e77fd2af79" prot="public" virt="non-virtual"><scope>graphene::protocol::witness_create_operation</scope><name>validate</name></member>
-      <member refid="structgraphene_1_1protocol_1_1base__operation_1a485f3d3b963ff4c081af85945cf27774" prot="public" virt="non-virtual"><scope>graphene::protocol::witness_create_operation</scope><name>validate_parallel</name></member>
+      <member refid="structgraphene_1_1protocol_1_1witness__create__operation_1a014201793fad7d96d2bfd14d15c5ec1f" prot="public" virt="non-virtual"><scope>graphene::protocol::witness_create_operation</scope><name>validate</name></member>
+      <member refid="structgraphene_1_1protocol_1_1base__operation_1a41d0a14a070ac634be11f30dbf559935" prot="public" virt="non-virtual"><scope>graphene::protocol::witness_create_operation</scope><name>validate_parallel</name></member>
       <member refid="structgraphene_1_1protocol_1_1witness__create__operation_1a242ad124ac2aa39f2e4d738079e43b67" prot="public" virt="non-virtual"><scope>graphene::protocol::witness_create_operation</scope><name>witness_account</name></member>
     </listofallmembers>
   </compounddef>

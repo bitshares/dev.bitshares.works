@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
   <compounddef id="classgraphene_1_1chain_1_1asset__dynamic__data__object" kind="class" language="C++" prot="public">
     <compoundname>graphene::chain::asset_dynamic_data_object</compoundname>
     <basecompoundref refid="classgraphene_1_1db_1_1abstract__object" prot="public" virt="non-virtual">graphene::db::abstract_object&lt; asset_dynamic_data_object &gt;</basecompoundref>
@@ -74,6 +74,19 @@
         </inbodydescription>
         <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="67" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="67" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="variable" id="classgraphene_1_1chain_1_1asset__dynamic__data__object_1af2032ebf6fc0a4307f30c32b934dafa1" prot="public" static="no" mutable="no">
+        <type><ref refid="namespacegraphene_1_1protocol_1a69b2104c1c11eed2d17bd29b86713347" kindref="member">share_type</ref></type>
+        <definition>share_type graphene::chain::asset_dynamic_data_object::accumulated_collateral_fees</definition>
+        <argsstring></argsstring>
+        <name>accumulated_collateral_fees</name>
+        <briefdescription>
+<para>accumulated collateral-denominated fees (for bitassets) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="68" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="68" bodyend="-1"/>
+      </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1asset__dynamic__data__object_1a724dd171541800a1ad822fb3eff9b8a3" prot="public" static="no" mutable="no">
         <type><ref refid="namespacegraphene_1_1protocol_1a69b2104c1c11eed2d17bd29b86713347" kindref="member">share_type</ref></type>
         <definition>share_type graphene::chain::asset_dynamic_data_object::fee_pool</definition>
@@ -85,7 +98,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="68" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="68" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="69" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="69" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -93,51 +106,52 @@
     <detaileddescription>
 <para>This object exists as an implementation detail and its ID should never be referenced by a blockchain operation. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="800">
+      <node id="848">
         <label>graphene::db::abstract_object&lt; asset_dynamic_data_object &gt;</label>
         <link refid="classgraphene_1_1db_1_1abstract__object"/>
-        <childnode refid="801" relation="public-inheritance">
+        <childnode refid="849" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="801">
+      <node id="849">
         <label>graphene::db::object</label>
         <link refid="classgraphene_1_1db_1_1object"/>
       </node>
-      <node id="799">
+      <node id="847">
         <label>graphene::chain::asset_dynamic_data_object</label>
         <link refid="classgraphene_1_1chain_1_1asset__dynamic__data__object"/>
-        <childnode refid="800" relation="public-inheritance">
+        <childnode refid="848" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="803">
+      <node id="851">
         <label>graphene::db::abstract_object&lt; asset_dynamic_data_object &gt;</label>
         <link refid="classgraphene_1_1db_1_1abstract__object"/>
-        <childnode refid="804" relation="public-inheritance">
+        <childnode refid="852" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="806">
+      <node id="854">
         <label>fc::safe&lt; int64_t &gt;</label>
         <link refid="structfc_1_1safe"/>
       </node>
-      <node id="805">
+      <node id="853">
         <label>graphene::db::object_id_type</label>
         <link refid="structgraphene_1_1db_1_1object__id__type"/>
       </node>
-      <node id="804">
+      <node id="852">
         <label>graphene::db::object</label>
         <link refid="classgraphene_1_1db_1_1object"/>
-        <childnode refid="805" relation="usage">
+        <childnode refid="853" relation="usage">
           <edgelabel>id</edgelabel>
         </childnode>
       </node>
-      <node id="802">
+      <node id="850">
         <label>graphene::chain::asset_dynamic_data_object</label>
         <link refid="classgraphene_1_1chain_1_1asset__dynamic__data__object"/>
-        <childnode refid="803" relation="public-inheritance">
+        <childnode refid="851" relation="public-inheritance">
         </childnode>
-        <childnode refid="806" relation="usage">
+        <childnode refid="854" relation="usage">
+          <edgelabel>accumulated_collateral_fees</edgelabel>
           <edgelabel>confidential_supply</edgelabel>
           <edgelabel>fee_pool</edgelabel>
           <edgelabel>current_supply</edgelabel>
@@ -145,19 +159,20 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="59" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="58" bodyend="69"/>
+    <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="59" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="58" bodyend="70"/>
     <listofallmembers>
+      <member refid="classgraphene_1_1chain_1_1asset__dynamic__data__object_1af2032ebf6fc0a4307f30c32b934dafa1" prot="public" virt="non-virtual"><scope>graphene::chain::asset_dynamic_data_object</scope><name>accumulated_collateral_fees</name></member>
       <member refid="classgraphene_1_1chain_1_1asset__dynamic__data__object_1a0ca39e6109a6dacda9390df582b7a9c5" prot="public" virt="non-virtual"><scope>graphene::chain::asset_dynamic_data_object</scope><name>accumulated_fees</name></member>
-      <member refid="classgraphene_1_1db_1_1abstract__object_1a189144fd7eef0317898bc83b30b143c6" prot="public" virt="virtual"><scope>graphene::chain::asset_dynamic_data_object</scope><name>clone</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1ac88be3ec7e745113b522a77fda236415" prot="public" virt="virtual"><scope>graphene::chain::asset_dynamic_data_object</scope><name>clone</name></member>
       <member refid="classgraphene_1_1chain_1_1asset__dynamic__data__object_1a7012a5128bd9858186cadd30ea2b111d" prot="public" virt="non-virtual"><scope>graphene::chain::asset_dynamic_data_object</scope><name>confidential_supply</name></member>
       <member refid="classgraphene_1_1chain_1_1asset__dynamic__data__object_1a56c347be9fbeade55f503038014a75c7" prot="public" virt="non-virtual"><scope>graphene::chain::asset_dynamic_data_object</scope><name>current_supply</name></member>
       <member refid="classgraphene_1_1chain_1_1asset__dynamic__data__object_1a724dd171541800a1ad822fb3eff9b8a3" prot="public" virt="non-virtual"><scope>graphene::chain::asset_dynamic_data_object</scope><name>fee_pool</name></member>
       <member refid="classgraphene_1_1db_1_1object_1a2ce812569d565a45dda1420cfbdf79ad" prot="public" virt="non-virtual"><scope>graphene::chain::asset_dynamic_data_object</scope><name>id</name></member>
       <member refid="classgraphene_1_1db_1_1abstract__object_1ad7329292e8fa9035cf2596d72c4868b5" prot="public" virt="virtual"><scope>graphene::chain::asset_dynamic_data_object</scope><name>move_from</name></member>
       <member refid="classgraphene_1_1db_1_1object_1a64864992a46d9d52836afe1a52a2e394" prot="public" virt="non-virtual"><scope>graphene::chain::asset_dynamic_data_object</scope><name>object</name></member>
-      <member refid="classgraphene_1_1db_1_1abstract__object_1a792a9c05cfe1cf7628cb6f8c4a65b0f7" prot="public" virt="virtual"><scope>graphene::chain::asset_dynamic_data_object</scope><name>pack</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1ac4ac2d1b3162ff0ce00d050fd4184433" prot="public" virt="virtual"><scope>graphene::chain::asset_dynamic_data_object</scope><name>pack</name></member>
       <member refid="classgraphene_1_1chain_1_1asset__dynamic__data__object_1a7d9e4a0bcc9775291b8b53fe6150bd68" prot="public" virt="non-virtual"><scope>graphene::chain::asset_dynamic_data_object</scope><name>space_id</name></member>
-      <member refid="classgraphene_1_1db_1_1abstract__object_1a6f0f2e9eb0399057ff3334bf328b5007" prot="public" virt="virtual"><scope>graphene::chain::asset_dynamic_data_object</scope><name>to_variant</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1a8c952ac795604b0d1da988e88b8bb0fb" prot="public" virt="virtual"><scope>graphene::chain::asset_dynamic_data_object</scope><name>to_variant</name></member>
       <member refid="classgraphene_1_1chain_1_1asset__dynamic__data__object_1a506194f7fa59619b2d57f0c0c24b2d4c" prot="public" virt="non-virtual"><scope>graphene::chain::asset_dynamic_data_object</scope><name>type_id</name></member>
       <member refid="classgraphene_1_1db_1_1object_1ac457a859418c22014c07a3bcdc67ed04" prot="public" virt="virtual"><scope>graphene::chain::asset_dynamic_data_object</scope><name>~object</name></member>
     </listofallmembers>

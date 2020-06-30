@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="namespacefc_1_1typelist_1_1runtime" kind="namespace" language="C++">
+    <compoundname>fc::typelist::runtime</compoundname>
+    <innerclass refid="structfc_1_1typelist_1_1runtime_1_1wrapper" prot="public">fc::typelist::runtime::wrapper</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacefc_1_1typelist_1_1runtime_1afd0713814f79da840d921eaf56dff588" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Types</declname>
+            <defname>Types</defname>
+          </param>
+          <param>
+            <type>typename Callable</type>
+          </param>
+          <param>
+            <type>typename</type>
+            <defval>std::enable_if_t&lt;impl::length&lt;Types...&gt;::value != 0&gt;</defval>
+          </param>
+          <param>
+            <type>typename Return</type>
+            <defval>decltype(std::declval&lt;Callable&gt;()(wrapper&lt;at&lt;list&lt;Types...&gt;, 0&gt;&gt;()))</defval>
+          </param>
+        </templateparamlist>
+        <type>Return</type>
+        <definition>Return fc::typelist::runtime::dispatch</definition>
+        <argsstring>(list&lt; Types... &gt;, std::size_t index, Callable c)</argsstring>
+        <name>dispatch</name>
+        <param>
+          <type><ref refid="structfc_1_1typelist_1_1list" kindref="compound">list</ref>&lt; Types... &gt;</type>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>Callable</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+<para>Index into the typelist for a type T, and invoke the callable with an argument wrapper&lt;T&gt;() </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index of the type in the typelist to invoke the callable with </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The callable to invoke </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The value returned by the callable </para></simplesect>
+<simplesect kind="note"><para>The callable return type must be the same for all list elements</para></simplesect>
+If index is out of bounds, throws std::out_of_range exception </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/reflect/typelist.hpp" line="243" column="1" bodyfile="libraries/fc/include/fc/reflect/typelist.hpp" bodystart="243" bodyend="248"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1typelist_1_1runtime_1aca79a67ae5aee12d1acd2eee61e27b56" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename List</type>
+          </param>
+          <param>
+            <type>typename Callable</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto fc::typelist::runtime::dispatch</definition>
+        <argsstring>(List l, int64_t index, Callable c)</argsstring>
+        <name>dispatch</name>
+        <param>
+          <type>List</type>
+          <declname>l</declname>
+        </param>
+        <param>
+          <type>int64_t</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>Callable</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/reflect/typelist.hpp" line="250" column="1" bodyfile="libraries/fc/include/fc/reflect/typelist.hpp" bodystart="250" bodyend="253"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefc_1_1typelist_1_1runtime_1a1f3e6de45dc6fa32f89694b4beece2b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Types</declname>
+            <defname>Types</defname>
+          </param>
+          <param>
+            <type>typename Callable</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void fc::typelist::runtime::for_each</definition>
+        <argsstring>(list&lt; Types... &gt;, Callable c)</argsstring>
+        <name>for_each</name>
+        <param>
+          <type><ref refid="structfc_1_1typelist_1_1list" kindref="compound">list</ref>&lt; Types... &gt;</type>
+        </param>
+        <param>
+          <type>Callable</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+<para>Invoke the provided callable with an argument wrapper&lt;Type&gt;() for each type in the list. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/reflect/typelist.hpp" line="257" column="1" bodyfile="libraries/fc/include/fc/reflect/typelist.hpp" bodystart="257" bodyend="260"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This namespace contains some utilities that provide runtime operations on typelists. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="libraries/fc/include/fc/reflect/typelist.hpp" line="228" column="1"/>
+  </compounddef>
+</doxygen>

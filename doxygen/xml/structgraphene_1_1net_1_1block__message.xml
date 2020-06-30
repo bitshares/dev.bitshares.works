@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
   <compounddef id="structgraphene_1_1net_1_1block__message" kind="struct" language="C++" prot="public">
     <compoundname>graphene::net::block_message</compoundname>
     <includes refid="core__messages_8hpp" local="no">core_messages.hpp</includes>
@@ -84,68 +84,75 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="1834">
+      <node id="1950">
         <label>fc::ripemd160</label>
         <link refid="classfc_1_1ripemd160"/>
       </node>
-      <node id="1829">
+      <node id="1945">
         <label>graphene::net::block_message</label>
         <link refid="structgraphene_1_1net_1_1block__message"/>
-        <childnode refid="1830" relation="usage">
+        <childnode refid="1946" relation="usage">
+          <edgelabel>block_id</edgelabel>
+        </childnode>
+        <childnode refid="1947" relation="usage">
           <edgelabel>block</edgelabel>
         </childnode>
       </node>
-      <node id="1832">
+      <node id="1946">
+        <label>block_id_type</label>
+      </node>
+      <node id="1949">
         <label>graphene::protocol::block_header</label>
         <link refid="classgraphene_1_1protocol_1_1block__header"/>
-        <childnode refid="1833" relation="usage">
-          <edgelabel>extensions</edgelabel>
-        </childnode>
-        <childnode refid="1834" relation="usage">
+        <childnode refid="1950" relation="usage">
           <edgelabel>previous</edgelabel>
           <edgelabel>transaction_merkle_root</edgelabel>
         </childnode>
-        <childnode refid="1835" relation="usage">
+        <childnode refid="1951" relation="usage">
           <edgelabel>timestamp</edgelabel>
         </childnode>
       </node>
-      <node id="1833">
-        <label>flat_set&lt; future_extensions &gt;</label>
-      </node>
-      <node id="1836">
+      <node id="1953">
         <label>fc::ecc::public_key</label>
         <link refid="classfc_1_1ecc_1_1public__key"/>
       </node>
-      <node id="1837">
+      <node id="1954">
         <label>vector&lt; graphene::protocol::processed_transaction &gt;</label>
       </node>
-      <node id="1831">
+      <node id="1948">
         <label>graphene::protocol::signed_block_header</label>
         <link refid="classgraphene_1_1protocol_1_1signed__block__header"/>
-        <childnode refid="1832" relation="public-inheritance">
+        <childnode refid="1949" relation="public-inheritance">
         </childnode>
-        <childnode refid="1834" relation="usage">
+        <childnode refid="1950" relation="usage">
           <edgelabel>_block_id</edgelabel>
         </childnode>
-        <childnode refid="1836" relation="usage">
+        <childnode refid="1952" relation="usage">
+          <edgelabel>witness_signature</edgelabel>
+        </childnode>
+        <childnode refid="1953" relation="usage">
           <edgelabel>_signee</edgelabel>
         </childnode>
       </node>
-      <node id="1830">
+      <node id="1947">
         <label>graphene::protocol::signed_block</label>
         <link refid="classgraphene_1_1protocol_1_1signed__block"/>
-        <childnode refid="1831" relation="public-inheritance">
+        <childnode refid="1948" relation="public-inheritance">
         </childnode>
-        <childnode refid="1834" relation="usage">
+        <childnode refid="1950" relation="usage">
           <edgelabel>_calculated_merkle_root</edgelabel>
         </childnode>
-        <childnode refid="1837" relation="usage">
+        <childnode refid="1954" relation="usage">
           <edgelabel>transactions</edgelabel>
         </childnode>
       </node>
-      <node id="1835">
+      <node id="1951">
         <label>fc::time_point_sec</label>
         <link refid="classfc_1_1time__point__sec"/>
+      </node>
+      <node id="1952">
+        <label>fc::zero_initialized_array&lt; T, N &gt;</label>
+        <link refid="classfc_1_1zero__initialized__array"/>
       </node>
     </collaborationgraph>
     <location file="libraries/net/include/graphene/net/core_messages.hpp" line="105" column="1" bodyfile="libraries/net/include/graphene/net/core_messages.hpp" bodystart="104" bodyend="115"/>
