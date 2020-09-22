@@ -5,9 +5,9 @@
     <basecompoundref refid="classgraphene_1_1db_1_1abstract__object" prot="public" virt="non-virtual">graphene::db::abstract_object&lt; account_transaction_history_object &gt;</basecompoundref>
     <includes refid="operation__history__object_8hpp" local="no">operation_history_object.hpp</includes>
       <sectiondef kind="public-static-attrib">
-      <memberdef kind="variable" id="classgraphene_1_1chain_1_1account__transaction__history__object_1a374a5017d1804024cd84641d871cbc1c" prot="public" static="yes" mutable="no">
-        <type>const uint8_t</type>
-        <definition>const uint8_t graphene::chain::account_transaction_history_object::space_id</definition>
+      <memberdef kind="variable" id="classgraphene_1_1chain_1_1account__transaction__history__object_1a471ffb292a5e6c7a9a450cdc6ce54e95" prot="public" static="yes" mutable="no">
+        <type>constexpr uint8_t</type>
+        <definition>constexpr uint8_t graphene::chain::account_transaction_history_object::space_id</definition>
         <argsstring></argsstring>
         <name>space_id</name>
         <initializer>= implementation_ids</initializer>
@@ -19,9 +19,9 @@
         </inbodydescription>
         <location file="libraries/chain/include/graphene/chain/operation_history_object.hpp" line="93" column="1" bodyfile="libraries/chain/include/graphene/chain/operation_history_object.hpp" bodystart="93" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classgraphene_1_1chain_1_1account__transaction__history__object_1ab7ba8676d40bf0688635fd4437d98813" prot="public" static="yes" mutable="no">
-        <type>const uint8_t</type>
-        <definition>const uint8_t graphene::chain::account_transaction_history_object::type_id</definition>
+      <memberdef kind="variable" id="classgraphene_1_1chain_1_1account__transaction__history__object_1ae29daaa59568992b71c4cfe356eb7add" prot="public" static="yes" mutable="no">
+        <type>constexpr uint8_t</type>
+        <definition>constexpr uint8_t graphene::chain::account_transaction_history_object::type_id</definition>
         <argsstring></argsstring>
         <name>type_id</name>
         <initializer>= impl_account_transaction_history_object_type</initializer>
@@ -94,50 +94,50 @@
     <detaileddescription>
 <para>This data is never accessed as part of chain validation and therefore can be kept on disk as a memory mapped file. Using a memory mapped file will help the operating system better manage / cache / page files and also accelerates load time.</para><para>When the transaction history for a particular account is requested the linked list can be traversed with relatively effecient disk access because of the use of a memory mapped stack. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="199">
+      <node id="200">
         <label>graphene::db::abstract_object&lt; account_transaction_history_object &gt;</label>
         <link refid="classgraphene_1_1db_1_1abstract__object"/>
+        <childnode refid="201" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="199">
+        <label>graphene::chain::account_transaction_history_object</label>
+        <link refid="classgraphene_1_1chain_1_1account__transaction__history__object"/>
         <childnode refid="200" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="198">
-        <label>graphene::chain::account_transaction_history_object</label>
-        <link refid="classgraphene_1_1chain_1_1account__transaction__history__object"/>
-        <childnode refid="199" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="200">
+      <node id="201">
         <label>graphene::db::object</label>
         <link refid="classgraphene_1_1db_1_1object"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="202">
+      <node id="203">
         <label>graphene::db::abstract_object&lt; account_transaction_history_object &gt;</label>
         <link refid="classgraphene_1_1db_1_1abstract__object"/>
-        <childnode refid="203" relation="public-inheritance">
+        <childnode refid="204" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="201">
+      <node id="202">
         <label>graphene::chain::account_transaction_history_object</label>
         <link refid="classgraphene_1_1chain_1_1account__transaction__history__object"/>
-        <childnode refid="202" relation="public-inheritance">
+        <childnode refid="203" relation="public-inheritance">
         </childnode>
-        <childnode refid="205" relation="usage">
+        <childnode refid="206" relation="usage">
           <edgelabel>account</edgelabel>
         </childnode>
       </node>
-      <node id="205">
+      <node id="206">
         <label>account_id_type</label>
       </node>
-      <node id="204">
+      <node id="205">
         <label>graphene::db::object_id_type</label>
         <link refid="structgraphene_1_1db_1_1object__id__type"/>
       </node>
-      <node id="203">
+      <node id="204">
         <label>graphene::db::object</label>
         <link refid="classgraphene_1_1db_1_1object"/>
-        <childnode refid="204" relation="usage">
+        <childnode refid="205" relation="usage">
           <edgelabel>id</edgelabel>
         </childnode>
       </node>
@@ -153,9 +153,9 @@
       <member refid="classgraphene_1_1chain_1_1account__transaction__history__object_1a1f7e9c887dc4348034d298cfa62e7210" prot="public" virt="non-virtual"><scope>graphene::chain::account_transaction_history_object</scope><name>operation_id</name></member>
       <member refid="classgraphene_1_1db_1_1abstract__object_1ac4ac2d1b3162ff0ce00d050fd4184433" prot="public" virt="virtual"><scope>graphene::chain::account_transaction_history_object</scope><name>pack</name></member>
       <member refid="classgraphene_1_1chain_1_1account__transaction__history__object_1a6422cf06a084ed2abfaf710c56247ed3" prot="public" virt="non-virtual"><scope>graphene::chain::account_transaction_history_object</scope><name>sequence</name></member>
-      <member refid="classgraphene_1_1chain_1_1account__transaction__history__object_1a374a5017d1804024cd84641d871cbc1c" prot="public" virt="non-virtual"><scope>graphene::chain::account_transaction_history_object</scope><name>space_id</name></member>
+      <member refid="classgraphene_1_1chain_1_1account__transaction__history__object_1a471ffb292a5e6c7a9a450cdc6ce54e95" prot="public" virt="non-virtual"><scope>graphene::chain::account_transaction_history_object</scope><name>space_id</name></member>
       <member refid="classgraphene_1_1db_1_1abstract__object_1a8c952ac795604b0d1da988e88b8bb0fb" prot="public" virt="virtual"><scope>graphene::chain::account_transaction_history_object</scope><name>to_variant</name></member>
-      <member refid="classgraphene_1_1chain_1_1account__transaction__history__object_1ab7ba8676d40bf0688635fd4437d98813" prot="public" virt="non-virtual"><scope>graphene::chain::account_transaction_history_object</scope><name>type_id</name></member>
+      <member refid="classgraphene_1_1chain_1_1account__transaction__history__object_1ae29daaa59568992b71c4cfe356eb7add" prot="public" virt="non-virtual"><scope>graphene::chain::account_transaction_history_object</scope><name>type_id</name></member>
       <member refid="classgraphene_1_1db_1_1object_1ac457a859418c22014c07a3bcdc67ed04" prot="public" virt="virtual"><scope>graphene::chain::account_transaction_history_object</scope><name>~object</name></member>
     </listofallmembers>
   </compounddef>

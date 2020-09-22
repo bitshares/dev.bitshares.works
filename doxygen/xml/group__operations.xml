@@ -21,6 +21,7 @@
     <innerclass refid="structgraphene_1_1protocol_1_1asset__update__issuer__operation" prot="public">graphene::protocol::asset_update_issuer_operation</innerclass>
     <innerclass refid="structgraphene_1_1protocol_1_1void__result" prot="public">graphene::protocol::void_result</innerclass>
     <innerclass refid="structgraphene_1_1protocol_1_1generic__operation__result" prot="public">graphene::protocol::generic_operation_result</innerclass>
+    <innerclass refid="structgraphene_1_1protocol_1_1generic__exchange__operation__result" prot="public">graphene::protocol::generic_exchange_operation_result</innerclass>
     <innerclass refid="structgraphene_1_1protocol_1_1base__operation" prot="public">graphene::protocol::base_operation</innerclass>
     <innerclass refid="structgraphene_1_1protocol_1_1committee__member__create__operation" prot="public">graphene::protocol::committee_member_create_operation</innerclass>
     <innerclass refid="structgraphene_1_1protocol_1_1committee__member__update__operation" prot="public">graphene::protocol::committee_member_update_operation</innerclass>
@@ -29,6 +30,11 @@
     <innerclass refid="structgraphene_1_1protocol_1_1custom__authority__create__operation" prot="public">graphene::protocol::custom_authority_create_operation</innerclass>
     <innerclass refid="structgraphene_1_1protocol_1_1custom__authority__update__operation" prot="public">graphene::protocol::custom_authority_update_operation</innerclass>
     <innerclass refid="structgraphene_1_1protocol_1_1custom__authority__delete__operation" prot="public">graphene::protocol::custom_authority_delete_operation</innerclass>
+    <innerclass refid="structgraphene_1_1protocol_1_1liquidity__pool__create__operation" prot="public">graphene::protocol::liquidity_pool_create_operation</innerclass>
+    <innerclass refid="structgraphene_1_1protocol_1_1liquidity__pool__delete__operation" prot="public">graphene::protocol::liquidity_pool_delete_operation</innerclass>
+    <innerclass refid="structgraphene_1_1protocol_1_1liquidity__pool__deposit__operation" prot="public">graphene::protocol::liquidity_pool_deposit_operation</innerclass>
+    <innerclass refid="structgraphene_1_1protocol_1_1liquidity__pool__withdraw__operation" prot="public">graphene::protocol::liquidity_pool_withdraw_operation</innerclass>
+    <innerclass refid="structgraphene_1_1protocol_1_1liquidity__pool__exchange__operation" prot="public">graphene::protocol::liquidity_pool_exchange_operation</innerclass>
     <innerclass refid="structgraphene_1_1protocol_1_1limit__order__cancel__operation" prot="public">graphene::protocol::limit_order_cancel_operation</innerclass>
     <innerclass refid="structgraphene_1_1protocol_1_1call__order__update__operation" prot="public">graphene::protocol::call_order_update_operation</innerclass>
     <innerclass refid="structgraphene_1_1protocol_1_1fill__order__operation" prot="public">graphene::protocol::fill_order_operation</innerclass>
@@ -54,9 +60,9 @@
     <innergroup refid="group__proposed__transactions">The BitShares Transaction Proposal Protocol</innergroup>
     <innergroup refid="group__workers">The Blockchain Worker System</innergroup>
       <sectiondef kind="typedef">
-      <memberdef kind="typedef" id="group__operations_1ga89a307152d9c1f5b69f80e3ebaf65c49" prot="public" static="no">
-        <type><ref refid="classfc_1_1static__variant" kindref="compound">fc::static_variant</ref>&lt; void_result, object_id_type, asset, generic_operation_result &gt;</type>
-        <definition>typedef fc::static_variant&lt;void_result,object_id_type,asset,generic_operation_result&gt; graphene::protocol::operation_result</definition>
+      <memberdef kind="typedef" id="group__operations_1ga19d13288b7f22d2f236878f4882d8789" prot="public" static="no">
+        <type><ref refid="classfc_1_1static__variant" kindref="compound">fc::static_variant</ref>&lt; void_result, object_id_type, asset, generic_operation_result, generic_exchange_operation_result &gt;</type>
+        <definition>typedef fc::static_variant&lt; void_result, object_id_type, asset, generic_operation_result, generic_exchange_operation_result &gt; graphene::protocol::operation_result</definition>
         <argsstring></argsstring>
         <name>operation_result</name>
         <briefdescription>
@@ -65,7 +71,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/base.hpp" line="95" column="1" bodyfile="libraries/protocol/include/graphene/protocol/base.hpp" bodystart="95" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/base.hpp" line="108" column="1" bodyfile="libraries/protocol/include/graphene/protocol/base.hpp" bodystart="108" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__operations_1gabfc2020c2b5e0ab3fd331fae4d936043" prot="public" static="no">
         <type>static_variant&lt; void_t &gt;</type>
@@ -78,7 +84,7 @@
 <para>For future expansion many structus include a single member of type extensions_type that can be changed when updating a protocol. You can always add new types to a static_variant without breaking backward compatibility. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/base.hpp" line="119" column="1" bodyfile="libraries/protocol/include/graphene/protocol/base.hpp" bodystart="119" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/base.hpp" line="132" column="1" bodyfile="libraries/protocol/include/graphene/protocol/base.hpp" bodystart="132" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__operations_1gabaddcaf5bde76414891b4c29031d9288" prot="public" static="no">
         <type>future_extensions::flat_set_type</type>
@@ -92,11 +98,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/base.hpp" line="128" column="1" bodyfile="libraries/protocol/include/graphene/protocol/base.hpp" bodystart="128" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/base.hpp" line="141" column="1" bodyfile="libraries/protocol/include/graphene/protocol/base.hpp" bodystart="141" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__operations_1ga8cd21c685484b07a3342347581bcc2ab" prot="public" static="no">
-        <type><ref refid="classfc_1_1static__variant" kindref="compound">fc::static_variant</ref>&lt; transfer_operation, limit_order_create_operation, limit_order_cancel_operation, call_order_update_operation, fill_order_operation, account_create_operation, account_update_operation, account_whitelist_operation, account_upgrade_operation, account_transfer_operation, asset_create_operation, asset_update_operation, asset_update_bitasset_operation, asset_update_feed_producers_operation, asset_issue_operation, asset_reserve_operation, asset_fund_fee_pool_operation, asset_settle_operation, asset_global_settle_operation, asset_publish_feed_operation, witness_create_operation, witness_update_operation, proposal_create_operation, proposal_update_operation, proposal_delete_operation, withdraw_permission_create_operation, withdraw_permission_update_operation, withdraw_permission_claim_operation, withdraw_permission_delete_operation, committee_member_create_operation, committee_member_update_operation, committee_member_update_global_parameters_operation, vesting_balance_create_operation, vesting_balance_withdraw_operation, worker_create_operation, custom_operation, assert_operation, balance_claim_operation, override_transfer_operation, transfer_to_blind_operation, blind_transfer_operation, transfer_from_blind_operation, asset_settle_cancel_operation, asset_claim_fees_operation, fba_distribute_operation, bid_collateral_operation, execute_bid_operation, asset_claim_pool_operation, asset_update_issuer_operation, htlc_create_operation, htlc_redeem_operation, htlc_redeemed_operation, htlc_extend_operation, htlc_refund_operation, custom_authority_create_operation, custom_authority_update_operation, custom_authority_delete_operation, ticket_create_operation, ticket_update_operation &gt;</type>
-        <definition>typedef fc::static_variant&lt; transfer_operation, limit_order_create_operation, limit_order_cancel_operation, call_order_update_operation, fill_order_operation, account_create_operation, account_update_operation, account_whitelist_operation, account_upgrade_operation, account_transfer_operation, asset_create_operation, asset_update_operation, asset_update_bitasset_operation, asset_update_feed_producers_operation, asset_issue_operation, asset_reserve_operation, asset_fund_fee_pool_operation, asset_settle_operation, asset_global_settle_operation, asset_publish_feed_operation, witness_create_operation, witness_update_operation, proposal_create_operation, proposal_update_operation, proposal_delete_operation, withdraw_permission_create_operation, withdraw_permission_update_operation, withdraw_permission_claim_operation, withdraw_permission_delete_operation, committee_member_create_operation, committee_member_update_operation, committee_member_update_global_parameters_operation, vesting_balance_create_operation, vesting_balance_withdraw_operation, worker_create_operation, custom_operation, assert_operation, balance_claim_operation, override_transfer_operation, transfer_to_blind_operation, blind_transfer_operation, transfer_from_blind_operation, asset_settle_cancel_operation, asset_claim_fees_operation, fba_distribute_operation, bid_collateral_operation, execute_bid_operation, asset_claim_pool_operation, asset_update_issuer_operation, htlc_create_operation, htlc_redeem_operation, htlc_redeemed_operation, htlc_extend_operation, htlc_refund_operation, custom_authority_create_operation, custom_authority_update_operation, custom_authority_delete_operation, ticket_create_operation, ticket_update_operation &gt; graphene::protocol::operation</definition>
+      <memberdef kind="typedef" id="group__operations_1gadd00b6b45ba587b94dba2c8ec1d129a0" prot="public" static="no">
+        <type><ref refid="classfc_1_1static__variant" kindref="compound">fc::static_variant</ref>&lt; transfer_operation, limit_order_create_operation, limit_order_cancel_operation, call_order_update_operation, fill_order_operation, account_create_operation, account_update_operation, account_whitelist_operation, account_upgrade_operation, account_transfer_operation, asset_create_operation, asset_update_operation, asset_update_bitasset_operation, asset_update_feed_producers_operation, asset_issue_operation, asset_reserve_operation, asset_fund_fee_pool_operation, asset_settle_operation, asset_global_settle_operation, asset_publish_feed_operation, witness_create_operation, witness_update_operation, proposal_create_operation, proposal_update_operation, proposal_delete_operation, withdraw_permission_create_operation, withdraw_permission_update_operation, withdraw_permission_claim_operation, withdraw_permission_delete_operation, committee_member_create_operation, committee_member_update_operation, committee_member_update_global_parameters_operation, vesting_balance_create_operation, vesting_balance_withdraw_operation, worker_create_operation, custom_operation, assert_operation, balance_claim_operation, override_transfer_operation, transfer_to_blind_operation, blind_transfer_operation, transfer_from_blind_operation, asset_settle_cancel_operation, asset_claim_fees_operation, fba_distribute_operation, bid_collateral_operation, execute_bid_operation, asset_claim_pool_operation, asset_update_issuer_operation, htlc_create_operation, htlc_redeem_operation, htlc_redeemed_operation, htlc_extend_operation, htlc_refund_operation, custom_authority_create_operation, custom_authority_update_operation, custom_authority_delete_operation, ticket_create_operation, ticket_update_operation, liquidity_pool_create_operation, liquidity_pool_delete_operation, liquidity_pool_deposit_operation, liquidity_pool_withdraw_operation, liquidity_pool_exchange_operation &gt;</type>
+        <definition>typedef fc::static_variant&lt; transfer_operation, limit_order_create_operation, limit_order_cancel_operation, call_order_update_operation, fill_order_operation, account_create_operation, account_update_operation, account_whitelist_operation, account_upgrade_operation, account_transfer_operation, asset_create_operation, asset_update_operation, asset_update_bitasset_operation, asset_update_feed_producers_operation, asset_issue_operation, asset_reserve_operation, asset_fund_fee_pool_operation, asset_settle_operation, asset_global_settle_operation, asset_publish_feed_operation, witness_create_operation, witness_update_operation, proposal_create_operation, proposal_update_operation, proposal_delete_operation, withdraw_permission_create_operation, withdraw_permission_update_operation, withdraw_permission_claim_operation, withdraw_permission_delete_operation, committee_member_create_operation, committee_member_update_operation, committee_member_update_global_parameters_operation, vesting_balance_create_operation, vesting_balance_withdraw_operation, worker_create_operation, custom_operation, assert_operation, balance_claim_operation, override_transfer_operation, transfer_to_blind_operation, blind_transfer_operation, transfer_from_blind_operation, asset_settle_cancel_operation, asset_claim_fees_operation, fba_distribute_operation, bid_collateral_operation, execute_bid_operation, asset_claim_pool_operation, asset_update_issuer_operation, htlc_create_operation, htlc_redeem_operation, htlc_redeemed_operation, htlc_extend_operation, htlc_refund_operation, custom_authority_create_operation, custom_authority_update_operation, custom_authority_delete_operation, ticket_create_operation, ticket_update_operation, liquidity_pool_create_operation, liquidity_pool_delete_operation, liquidity_pool_deposit_operation, liquidity_pool_withdraw_operation, liquidity_pool_exchange_operation &gt; graphene::protocol::operation</definition>
         <argsstring></argsstring>
         <name>operation</name>
         <briefdescription>
@@ -105,7 +111,7 @@
 <para>Defines the set of valid operations as a discriminated union type. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/operations.hpp" line="112" column="1" bodyfile="libraries/protocol/include/graphene/protocol/operations.hpp" bodystart="112" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/operations.hpp" line="118" column="1" bodyfile="libraries/protocol/include/graphene/protocol/operations.hpp" bodystart="118" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

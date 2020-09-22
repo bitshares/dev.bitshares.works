@@ -1,0 +1,348 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classgraphene_1_1net_1_1detail_1_1concurrent__unordered__set" kind="class" language="C++" prot="public">
+    <compoundname>graphene::net::detail::concurrent_unordered_set</compoundname>
+    <basecompoundref prot="private" virt="non-virtual">std::unordered_set&lt; Key, Hash, Pred &gt;</basecompoundref>
+    <includes refid="node__impl_8hxx" local="no">node_impl.hxx</includes>
+    <templateparamlist>
+      <param>
+        <type>class</type>
+        <declname>Key</declname>
+        <defname>Key</defname>
+      </param>
+      <param>
+        <type>class</type>
+        <declname>Hash</declname>
+        <defname>Hash</defname>
+        <defval>std::hash&lt;Key&gt;</defval>
+      </param>
+      <param>
+        <type>class</type>
+        <declname>Pred</declname>
+        <defname>Pred</defname>
+        <defval>std::equal_to&lt;Key&gt;</defval>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classgraphene_1_1net_1_1detail_1_1concurrent__unordered__set_1aa85547714531770f0a74e3834fce8374" prot="private" static="no" mutable="yes">
+        <type><ref refid="classfc_1_1mutex" kindref="compound">fc::mutex</ref></type>
+        <definition>fc::mutex graphene::net::detail::concurrent_unordered_set&lt; Key, Hash, Pred &gt;::mux</definition>
+        <argsstring></argsstring>
+        <name>mux</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/node_impl.hxx" line="22" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1concurrent__unordered__set_1a72d5d0fa13f7fd6f1ae49acd2e73a8d8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classfc_1_1mutex" kindref="compound">fc::mutex</ref> &amp;</type>
+        <definition>fc::mutex&amp; graphene::net::detail::concurrent_unordered_set&lt; Key, Hash, Pred &gt;::get_mutex</definition>
+        <argsstring>() const </argsstring>
+        <name>get_mutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/node_impl.hxx" line="26" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="26" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1concurrent__unordered__set_1a764661936b80e24649862738c39c0de0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::pair&lt; typename std::unordered_set&lt; Key, Hash, Pred &gt;::iterator, bool &gt;</type>
+        <definition>std::pair&lt; typename std::unordered_set&lt;Key, Hash, Pred&gt;::iterator, bool&gt; graphene::net::detail::concurrent_unordered_set&lt; Key, Hash, Pred &gt;::emplace</definition>
+        <argsstring>(Key key)</argsstring>
+        <name>emplace</name>
+        <param>
+          <type>Key</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/node_impl.hxx" line="29" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="29" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1concurrent__unordered__set_1a505b387d3d14c9d759b26c5246fc5a00" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::pair&lt; typename std::unordered_set&lt; Key, Hash, Pred &gt;::iterator, bool &gt;</type>
+        <definition>std::pair&lt; typename std::unordered_set&lt;Key, Hash, Pred&gt;::iterator, bool&gt; graphene::net::detail::concurrent_unordered_set&lt; Key, Hash, Pred &gt;::insert</definition>
+        <argsstring>(const Key &amp;val)</argsstring>
+        <name>insert</name>
+        <param>
+          <type>const Key &amp;</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/node_impl.hxx" line="34" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="34" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1concurrent__unordered__set_1a25b6b3b5d545344c45ac9b02a6b8b19f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t graphene::net::detail::concurrent_unordered_set&lt; Key, Hash, Pred &gt;::size</definition>
+        <argsstring>() const </argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/node_impl.hxx" line="40" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="40" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1concurrent__unordered__set_1ae1ca0b55b21d5994e184db6bea9a30a1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool graphene::net::detail::concurrent_unordered_set&lt; Key, Hash, Pred &gt;::empty</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>empty</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/node_impl.hxx" line="45" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="45" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1concurrent__unordered__set_1afa3ade3b60effcec2222e1ebbe0317e6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void graphene::net::detail::concurrent_unordered_set&lt; Key, Hash, Pred &gt;::clear</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>clear</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/node_impl.hxx" line="51" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="51" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1concurrent__unordered__set_1aeb6ef607525ea70e6fea08a131d01622" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::unordered_set&lt; Key, Hash, Pred &gt;::iterator</type>
+        <definition>std::unordered_set&lt;Key, Hash, Pred&gt;::iterator graphene::net::detail::concurrent_unordered_set&lt; Key, Hash, Pred &gt;::erase</definition>
+        <argsstring>(typename std::unordered_set&lt; Key, Hash, Pred &gt;::const_iterator itr)</argsstring>
+        <name>erase</name>
+        <param>
+          <type>typename std::unordered_set&lt; Key, Hash, Pred &gt;::const_iterator</type>
+          <declname>itr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/node_impl.hxx" line="56" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="56" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1concurrent__unordered__set_1a51e53473fda3fb57acc7927c332fdfb9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t graphene::net::detail::concurrent_unordered_set&lt; Key, Hash, Pred &gt;::erase</definition>
+        <argsstring>(const Key &amp;key)</argsstring>
+        <name>erase</name>
+        <param>
+          <type>const Key &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/node_impl.hxx" line="62" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="62" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1concurrent__unordered__set_1a1630ae81e3d1a6942544effb4c78fead" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::unordered_set&lt; Key, Hash, Pred &gt;::iterator</type>
+        <definition>std::unordered_set&lt;Key, Hash, Pred&gt;::iterator graphene::net::detail::concurrent_unordered_set&lt; Key, Hash, Pred &gt;::begin</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>begin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/node_impl.hxx" line="68" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="68" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1concurrent__unordered__set_1aa390cbb6e754286921189d0e6b799397" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::unordered_set&lt; Key, Hash, Pred &gt;::const_iterator</type>
+        <definition>std::unordered_set&lt;Key, Hash, Pred&gt;::const_iterator graphene::net::detail::concurrent_unordered_set&lt; Key, Hash, Pred &gt;::begin</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>begin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/node_impl.hxx" line="73" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="73" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1concurrent__unordered__set_1af47fd03f532a485a2b0ddd2b82877b73" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::unordered_set&lt; Key, Hash, Pred &gt;::local_iterator</type>
+        <definition>std::unordered_set&lt;Key, Hash, Pred&gt;::local_iterator graphene::net::detail::concurrent_unordered_set&lt; Key, Hash, Pred &gt;::begin</definition>
+        <argsstring>(size_t n)</argsstring>
+        <name>begin</name>
+        <param>
+          <type>size_t</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/node_impl.hxx" line="78" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="78" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1concurrent__unordered__set_1ac9755b1f7095604e892472a29a519555" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::unordered_set&lt; Key, Hash, Pred &gt;::const_local_iterator</type>
+        <definition>std::unordered_set&lt;Key, Hash, Pred&gt;::const_local_iterator graphene::net::detail::concurrent_unordered_set&lt; Key, Hash, Pred &gt;::begin</definition>
+        <argsstring>(size_t n) const </argsstring>
+        <name>begin</name>
+        <param>
+          <type>size_t</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/node_impl.hxx" line="83" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="83" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1concurrent__unordered__set_1aa91dc409366865c5bf97369eb3120f68" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::unordered_set&lt; Key, Hash, Pred &gt;::iterator</type>
+        <definition>std::unordered_set&lt;Key, Hash, Pred&gt;::iterator graphene::net::detail::concurrent_unordered_set&lt; Key, Hash, Pred &gt;::end</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>end</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/node_impl.hxx" line="88" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="88" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1concurrent__unordered__set_1a0a06da0c50e88c4269bb447db8a8ca81" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::unordered_set&lt; Key, Hash, Pred &gt;::const_iterator</type>
+        <definition>std::unordered_set&lt;Key, Hash, Pred&gt;::const_iterator graphene::net::detail::concurrent_unordered_set&lt; Key, Hash, Pred &gt;::end</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>end</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/node_impl.hxx" line="93" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="93" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1concurrent__unordered__set_1af4c5b1f54de3b8b65af5d6711ff8a143" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::unordered_set&lt; Key, Hash, Pred &gt;::local_iterator</type>
+        <definition>std::unordered_set&lt;Key, Hash, Pred&gt;::local_iterator graphene::net::detail::concurrent_unordered_set&lt; Key, Hash, Pred &gt;::end</definition>
+        <argsstring>(size_t n)</argsstring>
+        <name>end</name>
+        <param>
+          <type>size_t</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/node_impl.hxx" line="98" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="98" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1concurrent__unordered__set_1ab40cfa3a10cdb0b1668c7a5007300c64" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::unordered_set&lt; Key, Hash, Pred &gt;::const_local_iterator</type>
+        <definition>std::unordered_set&lt;Key, Hash, Pred&gt;::const_local_iterator graphene::net::detail::concurrent_unordered_set&lt; Key, Hash, Pred &gt;::end</definition>
+        <argsstring>(size_t n) const </argsstring>
+        <name>end</name>
+        <param>
+          <type>size_t</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/node_impl.hxx" line="103" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="103" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1concurrent__unordered__set_1a101ef4148815748060b51cdb5b5b4ae6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::unordered_set&lt; Key, Hash, Pred &gt;::const_iterator</type>
+        <definition>std::unordered_set&lt;Key, Hash, Pred&gt;::const_iterator graphene::net::detail::concurrent_unordered_set&lt; Key, Hash, Pred &gt;::find</definition>
+        <argsstring>(Key key)</argsstring>
+        <name>find</name>
+        <param>
+          <type>Key</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/node_impl.hxx" line="109" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="109" bodyend="113"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2485">
+        <label>std::unordered_set&lt; Key, Hash, Pred &gt;</label>
+      </node>
+      <node id="2484">
+        <label>graphene::net::detail::concurrent_unordered_set&lt; Key, Hash, Pred &gt;</label>
+        <link refid="classgraphene_1_1net_1_1detail_1_1concurrent__unordered__set"/>
+        <childnode refid="2485" relation="private-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2487">
+        <label>std::unordered_set&lt; Key, Hash, Pred &gt;</label>
+      </node>
+      <node id="2486">
+        <label>graphene::net::detail::concurrent_unordered_set&lt; Key, Hash, Pred &gt;</label>
+        <link refid="classgraphene_1_1net_1_1detail_1_1concurrent__unordered__set"/>
+        <childnode refid="2487" relation="private-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="libraries/net/node_impl.hxx" line="20" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="19" bodyend="114"/>
+    <listofallmembers>
+      <member refid="classgraphene_1_1net_1_1detail_1_1concurrent__unordered__set_1a1630ae81e3d1a6942544effb4c78fead" prot="public" virt="non-virtual"><scope>graphene::net::detail::concurrent_unordered_set</scope><name>begin</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1concurrent__unordered__set_1aa390cbb6e754286921189d0e6b799397" prot="public" virt="non-virtual"><scope>graphene::net::detail::concurrent_unordered_set</scope><name>begin</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1concurrent__unordered__set_1af47fd03f532a485a2b0ddd2b82877b73" prot="public" virt="non-virtual"><scope>graphene::net::detail::concurrent_unordered_set</scope><name>begin</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1concurrent__unordered__set_1ac9755b1f7095604e892472a29a519555" prot="public" virt="non-virtual"><scope>graphene::net::detail::concurrent_unordered_set</scope><name>begin</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1concurrent__unordered__set_1afa3ade3b60effcec2222e1ebbe0317e6" prot="public" virt="non-virtual"><scope>graphene::net::detail::concurrent_unordered_set</scope><name>clear</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1concurrent__unordered__set_1a764661936b80e24649862738c39c0de0" prot="public" virt="non-virtual"><scope>graphene::net::detail::concurrent_unordered_set</scope><name>emplace</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1concurrent__unordered__set_1ae1ca0b55b21d5994e184db6bea9a30a1" prot="public" virt="non-virtual"><scope>graphene::net::detail::concurrent_unordered_set</scope><name>empty</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1concurrent__unordered__set_1aa91dc409366865c5bf97369eb3120f68" prot="public" virt="non-virtual"><scope>graphene::net::detail::concurrent_unordered_set</scope><name>end</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1concurrent__unordered__set_1a0a06da0c50e88c4269bb447db8a8ca81" prot="public" virt="non-virtual"><scope>graphene::net::detail::concurrent_unordered_set</scope><name>end</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1concurrent__unordered__set_1af4c5b1f54de3b8b65af5d6711ff8a143" prot="public" virt="non-virtual"><scope>graphene::net::detail::concurrent_unordered_set</scope><name>end</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1concurrent__unordered__set_1ab40cfa3a10cdb0b1668c7a5007300c64" prot="public" virt="non-virtual"><scope>graphene::net::detail::concurrent_unordered_set</scope><name>end</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1concurrent__unordered__set_1aeb6ef607525ea70e6fea08a131d01622" prot="public" virt="non-virtual"><scope>graphene::net::detail::concurrent_unordered_set</scope><name>erase</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1concurrent__unordered__set_1a51e53473fda3fb57acc7927c332fdfb9" prot="public" virt="non-virtual"><scope>graphene::net::detail::concurrent_unordered_set</scope><name>erase</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1concurrent__unordered__set_1a101ef4148815748060b51cdb5b5b4ae6" prot="public" virt="non-virtual"><scope>graphene::net::detail::concurrent_unordered_set</scope><name>find</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1concurrent__unordered__set_1a72d5d0fa13f7fd6f1ae49acd2e73a8d8" prot="public" virt="non-virtual"><scope>graphene::net::detail::concurrent_unordered_set</scope><name>get_mutex</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1concurrent__unordered__set_1a505b387d3d14c9d759b26c5246fc5a00" prot="public" virt="non-virtual"><scope>graphene::net::detail::concurrent_unordered_set</scope><name>insert</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1concurrent__unordered__set_1aa85547714531770f0a74e3834fce8374" prot="private" virt="non-virtual"><scope>graphene::net::detail::concurrent_unordered_set</scope><name>mux</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1concurrent__unordered__set_1a25b6b3b5d545344c45ac9b02a6b8b19f" prot="public" virt="non-virtual"><scope>graphene::net::detail::concurrent_unordered_set</scope><name>size</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
