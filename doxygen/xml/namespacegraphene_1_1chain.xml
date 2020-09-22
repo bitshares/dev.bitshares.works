@@ -82,6 +82,12 @@
     <innerclass refid="classgraphene_1_1chain_1_1limit__order__create__evaluator" prot="public">graphene::chain::limit_order_create_evaluator</innerclass>
     <innerclass refid="classgraphene_1_1chain_1_1limit__order__object" prot="public">graphene::chain::limit_order_object</innerclass>
     <innerclass refid="structgraphene_1_1chain_1_1linear__vesting__policy" prot="public">graphene::chain::linear_vesting_policy</innerclass>
+    <innerclass refid="classgraphene_1_1chain_1_1liquidity__pool__create__evaluator" prot="public">graphene::chain::liquidity_pool_create_evaluator</innerclass>
+    <innerclass refid="classgraphene_1_1chain_1_1liquidity__pool__delete__evaluator" prot="public">graphene::chain::liquidity_pool_delete_evaluator</innerclass>
+    <innerclass refid="classgraphene_1_1chain_1_1liquidity__pool__deposit__evaluator" prot="public">graphene::chain::liquidity_pool_deposit_evaluator</innerclass>
+    <innerclass refid="classgraphene_1_1chain_1_1liquidity__pool__exchange__evaluator" prot="public">graphene::chain::liquidity_pool_exchange_evaluator</innerclass>
+    <innerclass refid="classgraphene_1_1chain_1_1liquidity__pool__object" prot="public">graphene::chain::liquidity_pool_object</innerclass>
+    <innerclass refid="classgraphene_1_1chain_1_1liquidity__pool__withdraw__evaluator" prot="public">graphene::chain::liquidity_pool_withdraw_evaluator</innerclass>
     <innerclass refid="classgraphene_1_1chain_1_1node__property__object" prot="public">graphene::chain::node_property_object</innerclass>
     <innerclass refid="classgraphene_1_1chain_1_1op__evaluator" prot="public">graphene::chain::op_evaluator</innerclass>
     <innerclass refid="classgraphene_1_1chain_1_1op__evaluator__impl" prot="public">graphene::chain::op_evaluator_impl</innerclass>
@@ -206,6 +212,32 @@
         </inbodydescription>
         <location file="libraries/chain/include/graphene/chain/ticket_object.hpp" line="42" column="1" bodyfile="libraries/chain/include/graphene/chain/ticket_object.hpp" bodystart="41" bodyend="47"/>
       </memberdef>
+      <memberdef kind="enum" id="namespacegraphene_1_1chain_1ac49190472e16bef0beceb9b63d326c96" prot="public" static="no">
+        <name>ticket_version</name>
+        <enumvalue id="namespacegraphene_1_1chain_1ac49190472e16bef0beceb9b63d326c96aef282041b006192ddeccf197d2a7e993" prot="public">
+          <name>ticket_v1</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacegraphene_1_1chain_1ac49190472e16bef0beceb9b63d326c96a39c83d0f29382704b191430adfac9627" prot="public">
+          <name>ticket_v2</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Version of a ticket. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/chain/include/graphene/chain/ticket_object.hpp" line="51" column="1" bodyfile="libraries/chain/include/graphene/chain/ticket_object.hpp" bodystart="50" bodyend="54"/>
+      </memberdef>
       <memberdef kind="enum" id="namespacegraphene_1_1chain_1a4efc4a0f6c3e0ba09fc0091955ed8bc7" prot="public" static="no">
         <name>vesting_balance_type</name>
         <enumvalue id="namespacegraphene_1_1chain_1a4efc4a0f6c3e0ba09fc0091955ed8bc7ad415f0e30c471dfdd9bc4f827329ef48" prot="public">
@@ -264,7 +296,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/account_object.hpp" line="397" column="1" bodyfile="libraries/chain/include/graphene/chain/account_object.hpp" bodystart="373" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/account_object.hpp" line="408" column="1" bodyfile="libraries/chain/include/graphene/chain/account_object.hpp" bodystart="384" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacegraphene_1_1chain_1a4c78c201450b21a1df4539d4fc3165c7" prot="public" static="no">
         <type><ref refid="classgraphene_1_1db_1_1generic__index" kindref="compound">generic_index</ref>&lt; <ref refid="classgraphene_1_1chain_1_1account__balance__object" kindref="compound">account_balance_object</ref>, <ref refid="namespacegraphene_1_1chain_1ae4b5486b79c95a308081e5b8f3cc309b" kindref="member">account_balance_object_multi_index_type</ref> &gt;</type>
@@ -277,7 +309,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/account_object.hpp" line="402" column="1" bodyfile="libraries/chain/include/graphene/chain/account_object.hpp" bodystart="402" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/account_object.hpp" line="413" column="1" bodyfile="libraries/chain/include/graphene/chain/account_object.hpp" bodystart="413" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacegraphene_1_1chain_1a2cb69664c48f3d41eb5ac8b6bc4847cc" prot="public" static="no">
         <type>multi_index_container&lt; <ref refid="classgraphene_1_1chain_1_1account__object" kindref="compound">account_object</ref>, indexed_by&lt; ordered_unique&lt; tag&lt; by_id &gt;, member&lt; <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref>, <ref refid="structgraphene_1_1db_1_1object__id__type" kindref="compound">object_id_type</ref>,&amp;<ref refid="classgraphene_1_1db_1_1object_1a2ce812569d565a45dda1420cfbdf79ad" kindref="member">object::id</ref> &gt; &gt;, ordered_unique&lt; tag&lt; by_name &gt;, member&lt; <ref refid="classgraphene_1_1chain_1_1account__object" kindref="compound">account_object</ref>, string,&amp;<ref refid="classgraphene_1_1chain_1_1account__object_1a9eeeba87995190284d93bd3d7fabc639" kindref="member">account_object::name</ref> &gt; &gt; &gt; &gt;</type>
@@ -290,7 +322,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/account_object.hpp" line="415" column="1" bodyfile="libraries/chain/include/graphene/chain/account_object.hpp" bodystart="404" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/account_object.hpp" line="426" column="1" bodyfile="libraries/chain/include/graphene/chain/account_object.hpp" bodystart="415" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacegraphene_1_1chain_1ad4a4b0840d255da34979146e37fcc15c" prot="public" static="no">
         <type><ref refid="classgraphene_1_1db_1_1generic__index" kindref="compound">generic_index</ref>&lt; <ref refid="classgraphene_1_1chain_1_1account__object" kindref="compound">account_object</ref>, <ref refid="namespacegraphene_1_1chain_1a2cb69664c48f3d41eb5ac8b6bc4847cc" kindref="member">account_multi_index_type</ref> &gt;</type>
@@ -303,11 +335,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/account_object.hpp" line="420" column="1" bodyfile="libraries/chain/include/graphene/chain/account_object.hpp" bodystart="420" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/account_object.hpp" line="431" column="1" bodyfile="libraries/chain/include/graphene/chain/account_object.hpp" bodystart="431" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="namespacegraphene_1_1chain_1a2adcf107f3fa11fc26efa92d722ea292" prot="public" static="no">
-        <type>multi_index_container&lt; <ref refid="classgraphene_1_1chain_1_1account__statistics__object" kindref="compound">account_statistics_object</ref>, indexed_by&lt; ordered_unique&lt; tag&lt; by_id &gt;, member&lt; <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref>, <ref refid="structgraphene_1_1db_1_1object__id__type" kindref="compound">object_id_type</ref>,&amp;<ref refid="classgraphene_1_1db_1_1object_1a2ce812569d565a45dda1420cfbdf79ad" kindref="member">object::id</ref> &gt; &gt;, ordered_unique&lt; tag&lt; by_maintenance_seq &gt;, composite_key&lt; <ref refid="classgraphene_1_1chain_1_1account__statistics__object" kindref="compound">account_statistics_object</ref>, const_mem_fun&lt; <ref refid="classgraphene_1_1chain_1_1account__statistics__object" kindref="compound">account_statistics_object</ref>, bool,&amp;<ref refid="classgraphene_1_1chain_1_1account__statistics__object_1a1ce64403eb97fabeb63d9fa77d920e4a" kindref="member">account_statistics_object::need_maintenance</ref> &gt;, member&lt; <ref refid="classgraphene_1_1chain_1_1account__statistics__object" kindref="compound">account_statistics_object</ref>, string,&amp;<ref refid="classgraphene_1_1chain_1_1account__statistics__object_1a8e180be3ea821af00a9da7729ed105dd" kindref="member">account_statistics_object::name</ref> &gt; &gt; &gt; &gt; &gt;</type>
-        <definition>typedef multi_index_container&lt; account_statistics_object, indexed_by&lt; ordered_unique&lt; tag&lt;by_id&gt;, member&lt; object, object_id_type, &amp;object::id &gt; &gt;, ordered_unique&lt; tag&lt;by_maintenance_seq&gt;, composite_key&lt; account_statistics_object, const_mem_fun&lt;account_statistics_object, bool, &amp;account_statistics_object::need_maintenance&gt;, member&lt;account_statistics_object, string, &amp;account_statistics_object::name&gt; &gt; &gt; &gt; &gt; graphene::chain::account_stats_multi_index_type</definition>
+      <memberdef kind="typedef" id="namespacegraphene_1_1chain_1a83b2bcbf4c5d9008a9241168d4d16c7b" prot="public" static="no">
+        <type>multi_index_container&lt; <ref refid="classgraphene_1_1chain_1_1account__statistics__object" kindref="compound">account_statistics_object</ref>, indexed_by&lt; ordered_unique&lt; tag&lt; by_id &gt;, member&lt; <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref>, <ref refid="structgraphene_1_1db_1_1object__id__type" kindref="compound">object_id_type</ref>,&amp;<ref refid="classgraphene_1_1db_1_1object_1a2ce812569d565a45dda1420cfbdf79ad" kindref="member">object::id</ref> &gt; &gt;, ordered_unique&lt; tag&lt; by_maintenance_seq &gt;, composite_key&lt; <ref refid="classgraphene_1_1chain_1_1account__statistics__object" kindref="compound">account_statistics_object</ref>, const_mem_fun&lt; <ref refid="classgraphene_1_1chain_1_1account__statistics__object" kindref="compound">account_statistics_object</ref>, bool,&amp;<ref refid="classgraphene_1_1chain_1_1account__statistics__object_1a1ce64403eb97fabeb63d9fa77d920e4a" kindref="member">account_statistics_object::need_maintenance</ref> &gt;, member&lt; <ref refid="classgraphene_1_1chain_1_1account__statistics__object" kindref="compound">account_statistics_object</ref>, string,&amp;<ref refid="classgraphene_1_1chain_1_1account__statistics__object_1a8e180be3ea821af00a9da7729ed105dd" kindref="member">account_statistics_object::name</ref> &gt; &gt; &gt;, ordered_non_unique&lt; tag&lt; by_voting_power_active &gt;, composite_key&lt; <ref refid="classgraphene_1_1chain_1_1account__statistics__object" kindref="compound">account_statistics_object</ref>, member&lt; <ref refid="classgraphene_1_1chain_1_1account__statistics__object" kindref="compound">account_statistics_object</ref>, <ref refid="classfc_1_1time__point__sec" kindref="compound">time_point_sec</ref>,&amp;<ref refid="classgraphene_1_1chain_1_1account__statistics__object_1ac941c0ffc81ff687e18234b82b619c2c" kindref="member">account_statistics_object::vote_tally_time</ref> &gt;, member&lt; <ref refid="classgraphene_1_1chain_1_1account__statistics__object" kindref="compound">account_statistics_object</ref>, uint64_t,&amp;<ref refid="classgraphene_1_1chain_1_1account__statistics__object_1a74b95db3df9125060131fe4210c17108" kindref="member">account_statistics_object::vp_active</ref> &gt; &gt;, composite_key_compare&lt; std::greater&lt; <ref refid="classfc_1_1time__point__sec" kindref="compound">time_point_sec</ref> &gt;, std::greater&lt; uint64_t &gt; &gt; &gt; &gt; &gt;</type>
+        <definition>typedef multi_index_container&lt; account_statistics_object, indexed_by&lt; ordered_unique&lt; tag&lt;by_id&gt;, member&lt; object, object_id_type, &amp;object::id &gt; &gt;, ordered_unique&lt; tag&lt;by_maintenance_seq&gt;, composite_key&lt; account_statistics_object, const_mem_fun&lt;account_statistics_object, bool, &amp;account_statistics_object::need_maintenance&gt;, member&lt;account_statistics_object, string, &amp;account_statistics_object::name&gt; &gt; &gt;, ordered_non_unique&lt; tag&lt;by_voting_power_active&gt;, composite_key&lt; account_statistics_object, member&lt;account_statistics_object, time_point_sec, &amp;account_statistics_object::vote_tally_time&gt;, member&lt;account_statistics_object, uint64_t, &amp;account_statistics_object::vp_active&gt; &gt;, composite_key_compare&lt; std::greater&lt; time_point_sec &gt;, std::greater&lt; uint64_t &gt; &gt; &gt; &gt; &gt; graphene::chain::account_stats_multi_index_type</definition>
         <argsstring></argsstring>
         <name>account_stats_multi_index_type</name>
         <briefdescription>
@@ -316,10 +348,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/account_object.hpp" line="439" column="1" bodyfile="libraries/chain/include/graphene/chain/account_object.hpp" bodystart="422" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/account_object.hpp" line="462" column="1" bodyfile="libraries/chain/include/graphene/chain/account_object.hpp" bodystart="434" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacegraphene_1_1chain_1ae8cf3ea848fa664d785e848949646384" prot="public" static="no">
-        <type><ref refid="classgraphene_1_1db_1_1generic__index" kindref="compound">generic_index</ref>&lt; <ref refid="classgraphene_1_1chain_1_1account__statistics__object" kindref="compound">account_statistics_object</ref>, <ref refid="namespacegraphene_1_1chain_1a2adcf107f3fa11fc26efa92d722ea292" kindref="member">account_stats_multi_index_type</ref> &gt;</type>
+        <type><ref refid="classgraphene_1_1db_1_1generic__index" kindref="compound">generic_index</ref>&lt; <ref refid="classgraphene_1_1chain_1_1account__statistics__object" kindref="compound">account_statistics_object</ref>, <ref refid="namespacegraphene_1_1chain_1a83b2bcbf4c5d9008a9241168d4d16c7b" kindref="member">account_stats_multi_index_type</ref> &gt;</type>
         <definition>typedef generic_index&lt;account_statistics_object, account_stats_multi_index_type&gt; graphene::chain::account_stats_index</definition>
         <argsstring></argsstring>
         <name>account_stats_index</name>
@@ -329,7 +361,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/account_object.hpp" line="444" column="1" bodyfile="libraries/chain/include/graphene/chain/account_object.hpp" bodystart="444" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/account_object.hpp" line="467" column="1" bodyfile="libraries/chain/include/graphene/chain/account_object.hpp" bodystart="467" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacegraphene_1_1chain_1af0e56b1725c516fa8fdb9a7000899616" prot="public" static="no">
         <type>multi_index_container&lt; <ref refid="classgraphene_1_1chain_1_1asset__bitasset__data__object" kindref="compound">asset_bitasset_data_object</ref>, indexed_by&lt; ordered_unique&lt; tag&lt; by_id &gt;, member&lt; <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref>, <ref refid="structgraphene_1_1db_1_1object__id__type" kindref="compound">object_id_type</ref>,&amp;<ref refid="classgraphene_1_1db_1_1object_1a2ce812569d565a45dda1420cfbdf79ad" kindref="member">object::id</ref> &gt; &gt;, ordered_non_unique&lt; tag&lt; by_short_backing_asset &gt;, <ref refid="structgraphene_1_1chain_1_1bitasset__short__backing__asset__extractor" kindref="compound">bitasset_short_backing_asset_extractor</ref> &gt;, ordered_unique&lt; tag&lt; by_feed_expiration &gt;, composite_key&lt; <ref refid="classgraphene_1_1chain_1_1asset__bitasset__data__object" kindref="compound">asset_bitasset_data_object</ref>, const_mem_fun&lt; <ref refid="classgraphene_1_1chain_1_1asset__bitasset__data__object" kindref="compound">asset_bitasset_data_object</ref>, <ref refid="classfc_1_1time__point__sec" kindref="compound">time_point_sec</ref>,&amp;<ref refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1aec74ced8e782926ac0fab998a480c7e1" kindref="member">asset_bitasset_data_object::feed_expiration_time</ref> &gt;, member&lt; <ref refid="classgraphene_1_1chain_1_1asset__bitasset__data__object" kindref="compound">asset_bitasset_data_object</ref>, asset_id_type,&amp;<ref refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a566fab695c27973fb55b8eec34575709" kindref="member">asset_bitasset_data_object::asset_id</ref> &gt; &gt; &gt;, ordered_non_unique&lt; tag&lt; by_cer_update &gt;, const_mem_fun&lt; <ref refid="classgraphene_1_1chain_1_1asset__bitasset__data__object" kindref="compound">asset_bitasset_data_object</ref>, bool,&amp;<ref refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a5d464619713b157bbd20791a1b484582" kindref="member">asset_bitasset_data_object::need_to_update_cer</ref> &gt; &gt; &gt; &gt;</type>
@@ -342,7 +374,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="378" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="361" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="383" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="366" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacegraphene_1_1chain_1a237c018a120acefc4a75f7473a413379" prot="public" static="no">
         <type><ref refid="classgraphene_1_1db_1_1generic__index" kindref="compound">generic_index</ref>&lt; <ref refid="classgraphene_1_1chain_1_1asset__bitasset__data__object" kindref="compound">asset_bitasset_data_object</ref>, <ref refid="namespacegraphene_1_1chain_1af0e56b1725c516fa8fdb9a7000899616" kindref="member">asset_bitasset_data_object_multi_index_type</ref> &gt;</type>
@@ -355,7 +387,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="379" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="379" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="384" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="384" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacegraphene_1_1chain_1af65497738764c2a6155af7cbf8cc421a" prot="public" static="no">
         <type>multi_index_container&lt; <ref refid="classgraphene_1_1chain_1_1asset__object" kindref="compound">asset_object</ref>, indexed_by&lt; ordered_unique&lt; tag&lt; by_id &gt;, member&lt; <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref>, <ref refid="structgraphene_1_1db_1_1object__id__type" kindref="compound">object_id_type</ref>,&amp;<ref refid="classgraphene_1_1db_1_1object_1a2ce812569d565a45dda1420cfbdf79ad" kindref="member">object::id</ref> &gt; &gt;, ordered_unique&lt; tag&lt; by_symbol &gt;, member&lt; <ref refid="classgraphene_1_1chain_1_1asset__object" kindref="compound">asset_object</ref>, string,&amp;<ref refid="classgraphene_1_1chain_1_1asset__object_1a089165870abab6b77345acea240937b6" kindref="member">asset_object::symbol</ref> &gt; &gt;, ordered_unique&lt; tag&lt; by_type &gt;, composite_key&lt; <ref refid="classgraphene_1_1chain_1_1asset__object" kindref="compound">asset_object</ref>, const_mem_fun&lt; <ref refid="classgraphene_1_1chain_1_1asset__object" kindref="compound">asset_object</ref>, bool,&amp;<ref refid="classgraphene_1_1chain_1_1asset__object_1adebdf0e788fbe2e33510ac7e32aa804e" kindref="member">asset_object::is_market_issued</ref> &gt;, member&lt; <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref>, <ref refid="structgraphene_1_1db_1_1object__id__type" kindref="compound">object_id_type</ref>,&amp;<ref refid="classgraphene_1_1db_1_1object_1a2ce812569d565a45dda1420cfbdf79ad" kindref="member">object::id</ref> &gt; &gt; &gt;, ordered_unique&lt; tag&lt; by_issuer &gt;, composite_key&lt; <ref refid="classgraphene_1_1chain_1_1asset__object" kindref="compound">asset_object</ref>, member&lt; <ref refid="classgraphene_1_1chain_1_1asset__object" kindref="compound">asset_object</ref>, account_id_type,&amp;<ref refid="classgraphene_1_1chain_1_1asset__object_1ad5274b71ad420b57da53c3ef80b95577" kindref="member">asset_object::issuer</ref> &gt;, member&lt; <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref>, <ref refid="structgraphene_1_1db_1_1object__id__type" kindref="compound">object_id_type</ref>,&amp;<ref refid="classgraphene_1_1db_1_1object_1a2ce812569d565a45dda1420cfbdf79ad" kindref="member">object::id</ref> &gt; &gt; &gt; &gt; &gt;</type>
@@ -368,7 +400,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="402" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="383" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="407" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="388" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacegraphene_1_1chain_1ac16131eb5f1afc10c20a6df72098ddf0" prot="public" static="no">
         <type><ref refid="classgraphene_1_1db_1_1generic__index" kindref="compound">generic_index</ref>&lt; <ref refid="classgraphene_1_1chain_1_1asset__object" kindref="compound">asset_object</ref>, <ref refid="namespacegraphene_1_1chain_1af65497738764c2a6155af7cbf8cc421a" kindref="member">asset_object_multi_index_type</ref> &gt;</type>
@@ -381,7 +413,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="403" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="403" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="408" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="408" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacegraphene_1_1chain_1a895071149391d0c169b33ae686f0ab3b" prot="public" static="no">
         <type>multi_index_container&lt; <ref refid="classgraphene_1_1chain_1_1balance__object" kindref="compound">balance_object</ref>, indexed_by&lt; ordered_unique&lt; tag&lt; by_id &gt;, member&lt; <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref>, <ref refid="structgraphene_1_1db_1_1object__id__type" kindref="compound">object_id_type</ref>,&amp;<ref refid="classgraphene_1_1db_1_1object_1a2ce812569d565a45dda1420cfbdf79ad" kindref="member">object::id</ref> &gt; &gt;, ordered_non_unique&lt; tag&lt; by_owner &gt;, composite_key&lt; <ref refid="classgraphene_1_1chain_1_1balance__object" kindref="compound">balance_object</ref>, member&lt; <ref refid="classgraphene_1_1chain_1_1balance__object" kindref="compound">balance_object</ref>, <ref refid="classgraphene_1_1protocol_1_1address" kindref="compound">address</ref>,&amp;<ref refid="classgraphene_1_1chain_1_1balance__object_1ab59c8def92ab5290ebfcfcbe2e1e763f" kindref="member">balance_object::owner</ref> &gt;, const_mem_fun&lt; <ref refid="classgraphene_1_1chain_1_1balance__object" kindref="compound">balance_object</ref>, asset_id_type,&amp;<ref refid="classgraphene_1_1chain_1_1balance__object_1a2528a3638f8952d4d6e5f4f2a8ec74ea" kindref="member">balance_object::asset_type</ref> &gt; &gt; &gt; &gt; &gt;</type>
@@ -551,6 +583,32 @@
         <inbodydescription>
         </inbodydescription>
         <location file="libraries/chain/include/graphene/chain/htlc_object.hpp" line="115" column="1" bodyfile="libraries/chain/include/graphene/chain/htlc_object.hpp" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacegraphene_1_1chain_1a2afe5dd8e137dee2c346b5b9f64e4cb2" prot="public" static="no">
+        <type>multi_index_container&lt; <ref refid="classgraphene_1_1chain_1_1liquidity__pool__object" kindref="compound">liquidity_pool_object</ref>, indexed_by&lt; ordered_unique&lt; tag&lt; by_id &gt;, member&lt; <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref>, <ref refid="structgraphene_1_1db_1_1object__id__type" kindref="compound">object_id_type</ref>,&amp;<ref refid="classgraphene_1_1db_1_1object_1a2ce812569d565a45dda1420cfbdf79ad" kindref="member">object::id</ref> &gt; &gt;, ordered_unique&lt; tag&lt; by_share_asset &gt;, member&lt; <ref refid="classgraphene_1_1chain_1_1liquidity__pool__object" kindref="compound">liquidity_pool_object</ref>, asset_id_type,&amp;<ref refid="classgraphene_1_1chain_1_1liquidity__pool__object_1a26db66f167d22c1614e1d2c99f7ac4d7" kindref="member">liquidity_pool_object::share_asset</ref> &gt; &gt;, ordered_unique&lt; tag&lt; by_asset_a &gt;, composite_key&lt; <ref refid="classgraphene_1_1chain_1_1liquidity__pool__object" kindref="compound">liquidity_pool_object</ref>, member&lt; <ref refid="classgraphene_1_1chain_1_1liquidity__pool__object" kindref="compound">liquidity_pool_object</ref>, asset_id_type,&amp;<ref refid="classgraphene_1_1chain_1_1liquidity__pool__object_1a69d7ba539a04cd7af4beef00a5745b0d" kindref="member">liquidity_pool_object::asset_a</ref> &gt;, member&lt; <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref>, <ref refid="structgraphene_1_1db_1_1object__id__type" kindref="compound">object_id_type</ref>,&amp;<ref refid="classgraphene_1_1db_1_1object_1a2ce812569d565a45dda1420cfbdf79ad" kindref="member">object::id</ref> &gt; &gt; &gt;, ordered_unique&lt; tag&lt; by_asset_b &gt;, composite_key&lt; <ref refid="classgraphene_1_1chain_1_1liquidity__pool__object" kindref="compound">liquidity_pool_object</ref>, member&lt; <ref refid="classgraphene_1_1chain_1_1liquidity__pool__object" kindref="compound">liquidity_pool_object</ref>, asset_id_type,&amp;<ref refid="classgraphene_1_1chain_1_1liquidity__pool__object_1a4d4fc058999c71f0d7b61caf6e396474" kindref="member">liquidity_pool_object::asset_b</ref> &gt;, member&lt; <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref>, <ref refid="structgraphene_1_1db_1_1object__id__type" kindref="compound">object_id_type</ref>,&amp;<ref refid="classgraphene_1_1db_1_1object_1a2ce812569d565a45dda1420cfbdf79ad" kindref="member">object::id</ref> &gt; &gt; &gt;, ordered_unique&lt; tag&lt; by_asset_ab &gt;, composite_key&lt; <ref refid="classgraphene_1_1chain_1_1liquidity__pool__object" kindref="compound">liquidity_pool_object</ref>, member&lt; <ref refid="classgraphene_1_1chain_1_1liquidity__pool__object" kindref="compound">liquidity_pool_object</ref>, asset_id_type,&amp;<ref refid="classgraphene_1_1chain_1_1liquidity__pool__object_1a69d7ba539a04cd7af4beef00a5745b0d" kindref="member">liquidity_pool_object::asset_a</ref> &gt;, member&lt; <ref refid="classgraphene_1_1chain_1_1liquidity__pool__object" kindref="compound">liquidity_pool_object</ref>, asset_id_type,&amp;<ref refid="classgraphene_1_1chain_1_1liquidity__pool__object_1a4d4fc058999c71f0d7b61caf6e396474" kindref="member">liquidity_pool_object::asset_b</ref> &gt;, member&lt; <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref>, <ref refid="structgraphene_1_1db_1_1object__id__type" kindref="compound">object_id_type</ref>,&amp;<ref refid="classgraphene_1_1db_1_1object_1a2ce812569d565a45dda1420cfbdf79ad" kindref="member">object::id</ref> &gt; &gt; &gt; &gt;&gt;</type>
+        <definition>typedef multi_index_container&lt; liquidity_pool_object, indexed_by&lt; ordered_unique&lt; tag&lt;by_id&gt;, member&lt; object, object_id_type, &amp;object::id &gt; &gt;, ordered_unique&lt; tag&lt;by_share_asset&gt;, member&lt; liquidity_pool_object, asset_id_type, &amp;liquidity_pool_object::share_asset &gt; &gt;, ordered_unique&lt; tag&lt;by_asset_a&gt;, composite_key&lt; liquidity_pool_object, member&lt; liquidity_pool_object, asset_id_type, &amp;liquidity_pool_object::asset_a &gt;, member&lt; object, object_id_type, &amp;object::id&gt; &gt; &gt;, ordered_unique&lt; tag&lt;by_asset_b&gt;, composite_key&lt; liquidity_pool_object, member&lt; liquidity_pool_object, asset_id_type, &amp;liquidity_pool_object::asset_b &gt;, member&lt; object, object_id_type, &amp;object::id&gt; &gt; &gt;, ordered_unique&lt; tag&lt;by_asset_ab&gt;, composite_key&lt; liquidity_pool_object, member&lt; liquidity_pool_object, asset_id_type, &amp;liquidity_pool_object::asset_a &gt;, member&lt; liquidity_pool_object, asset_id_type, &amp;liquidity_pool_object::asset_b &gt;, member&lt; object, object_id_type, &amp;object::id&gt; &gt; &gt; &gt;&gt; graphene::chain::liquidity_pool_multi_index_type</definition>
+        <argsstring></argsstring>
+        <name>liquidity_pool_multi_index_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/chain/include/graphene/chain/liquidity_pool_object.hpp" line="99" column="1" bodyfile="libraries/chain/include/graphene/chain/liquidity_pool_object.hpp" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacegraphene_1_1chain_1a25fbcb70706f265f5109cc12895f033b" prot="public" static="no">
+        <type><ref refid="classgraphene_1_1db_1_1generic__index" kindref="compound">generic_index</ref>&lt; <ref refid="classgraphene_1_1chain_1_1liquidity__pool__object" kindref="compound">liquidity_pool_object</ref>, <ref refid="namespacegraphene_1_1chain_1a2afe5dd8e137dee2c346b5b9f64e4cb2" kindref="member">liquidity_pool_multi_index_type</ref> &gt;</type>
+        <definition>typedef generic_index&lt;liquidity_pool_object, liquidity_pool_multi_index_type&gt; graphene::chain::liquidity_pool_index</definition>
+        <argsstring></argsstring>
+        <name>liquidity_pool_index</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/chain/include/graphene/chain/liquidity_pool_object.hpp" line="104" column="1" bodyfile="libraries/chain/include/graphene/chain/liquidity_pool_object.hpp" bodystart="104" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacegraphene_1_1chain_1a44d3a94cef4f5e41ab3a6a7769beb861" prot="public" static="no">
         <type>multi_index_container&lt; <ref refid="classgraphene_1_1chain_1_1limit__order__object" kindref="compound">limit_order_object</ref>, indexed_by&lt; ordered_unique&lt; tag&lt; by_id &gt;, member&lt; <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref>, <ref refid="structgraphene_1_1db_1_1object__id__type" kindref="compound">object_id_type</ref>,&amp;<ref refid="classgraphene_1_1db_1_1object_1a2ce812569d565a45dda1420cfbdf79ad" kindref="member">object::id</ref> &gt; &gt;, ordered_unique&lt; tag&lt; <ref refid="structgraphene_1_1chain_1_1by__expiration" kindref="compound">by_expiration</ref> &gt;, composite_key&lt; <ref refid="classgraphene_1_1chain_1_1limit__order__object" kindref="compound">limit_order_object</ref>, member&lt; <ref refid="classgraphene_1_1chain_1_1limit__order__object" kindref="compound">limit_order_object</ref>, <ref refid="classfc_1_1time__point__sec" kindref="compound">time_point_sec</ref>,&amp;<ref refid="classgraphene_1_1chain_1_1limit__order__object_1a5ba529f677c8917605db7f28dac8a05d" kindref="member">limit_order_object::expiration</ref> &gt;, member&lt; <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref>, <ref refid="structgraphene_1_1db_1_1object__id__type" kindref="compound">object_id_type</ref>,&amp;<ref refid="classgraphene_1_1db_1_1object_1a2ce812569d565a45dda1420cfbdf79ad" kindref="member">object::id</ref> &gt; &gt; &gt;, ordered_unique&lt; tag&lt; by_price &gt;, composite_key&lt; <ref refid="classgraphene_1_1chain_1_1limit__order__object" kindref="compound">limit_order_object</ref>, member&lt; <ref refid="classgraphene_1_1chain_1_1limit__order__object" kindref="compound">limit_order_object</ref>, <ref refid="structgraphene_1_1protocol_1_1price" kindref="compound">price</ref>,&amp;<ref refid="classgraphene_1_1chain_1_1limit__order__object_1ae0546fce0941e19f3128cbb31fb49199" kindref="member">limit_order_object::sell_price</ref> &gt;, member&lt; <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref>, <ref refid="structgraphene_1_1db_1_1object__id__type" kindref="compound">object_id_type</ref>,&amp;<ref refid="classgraphene_1_1db_1_1object_1a2ce812569d565a45dda1420cfbdf79ad" kindref="member">object::id</ref> &gt; &gt;, composite_key_compare&lt; std::greater&lt; <ref refid="structgraphene_1_1protocol_1_1price" kindref="compound">price</ref> &gt;, std::less&lt; <ref refid="structgraphene_1_1db_1_1object__id__type" kindref="compound">object_id_type</ref> &gt; &gt; &gt;, ordered_unique&lt; tag&lt; by_account &gt;, composite_key&lt; <ref refid="classgraphene_1_1chain_1_1limit__order__object" kindref="compound">limit_order_object</ref>, member&lt; <ref refid="classgraphene_1_1chain_1_1limit__order__object" kindref="compound">limit_order_object</ref>, account_id_type,&amp;<ref refid="classgraphene_1_1chain_1_1limit__order__object_1a409d8c97cfaef8aaa60286afd0ae9c26" kindref="member">limit_order_object::seller</ref> &gt;, member&lt; <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref>, <ref refid="structgraphene_1_1db_1_1object__id__type" kindref="compound">object_id_type</ref>,&amp;<ref refid="classgraphene_1_1db_1_1object_1a2ce812569d565a45dda1420cfbdf79ad" kindref="member">object::id</ref> &gt; &gt; &gt;, ordered_unique&lt; tag&lt; by_account_price &gt;, composite_key&lt; <ref refid="classgraphene_1_1chain_1_1limit__order__object" kindref="compound">limit_order_object</ref>, member&lt; <ref refid="classgraphene_1_1chain_1_1limit__order__object" kindref="compound">limit_order_object</ref>, account_id_type,&amp;<ref refid="classgraphene_1_1chain_1_1limit__order__object_1a409d8c97cfaef8aaa60286afd0ae9c26" kindref="member">limit_order_object::seller</ref> &gt;, member&lt; <ref refid="classgraphene_1_1chain_1_1limit__order__object" kindref="compound">limit_order_object</ref>, <ref refid="structgraphene_1_1protocol_1_1price" kindref="compound">price</ref>,&amp;<ref refid="classgraphene_1_1chain_1_1limit__order__object_1ae0546fce0941e19f3128cbb31fb49199" kindref="member">limit_order_object::sell_price</ref> &gt;, member&lt; <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref>, <ref refid="structgraphene_1_1db_1_1object__id__type" kindref="compound">object_id_type</ref>,&amp;<ref refid="classgraphene_1_1db_1_1object_1a2ce812569d565a45dda1420cfbdf79ad" kindref="member">object::id</ref> &gt; &gt;, composite_key_compare&lt; std::less&lt; account_id_type &gt;, std::greater&lt; <ref refid="structgraphene_1_1protocol_1_1price" kindref="compound">price</ref> &gt;, std::less&lt; <ref refid="structgraphene_1_1db_1_1object__id__type" kindref="compound">object_id_type</ref> &gt; &gt; &gt; &gt;&gt;</type>
@@ -771,7 +829,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/ticket_object.hpp" line="134" column="1" bodyfile="libraries/chain/include/graphene/chain/ticket_object.hpp" bodystart="111" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/ticket_object.hpp" line="143" column="1" bodyfile="libraries/chain/include/graphene/chain/ticket_object.hpp" bodystart="120" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacegraphene_1_1chain_1a2bcc2b76618541b11260aed7dd1a92ff" prot="public" static="no">
         <type><ref refid="classgraphene_1_1db_1_1generic__index" kindref="compound">generic_index</ref>&lt; <ref refid="classgraphene_1_1chain_1_1ticket__object" kindref="compound">ticket_object</ref>, <ref refid="namespacegraphene_1_1chain_1a0935beae3db69e16b7faeb66e45d14be" kindref="member">ticket_multi_index_type</ref> &gt;</type>
@@ -784,7 +842,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/ticket_object.hpp" line="139" column="1" bodyfile="libraries/chain/include/graphene/chain/ticket_object.hpp" bodystart="139" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/ticket_object.hpp" line="148" column="1" bodyfile="libraries/chain/include/graphene/chain/ticket_object.hpp" bodystart="148" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacegraphene_1_1chain_1a3b4961928bcc772143d60f32b4a87b35" prot="public" static="no">
         <type>multi_index_container&lt; <ref refid="classgraphene_1_1chain_1_1transaction__history__object" kindref="compound">transaction_history_object</ref>, indexed_by&lt; ordered_unique&lt; tag&lt; by_id &gt;, member&lt; <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref>, <ref refid="structgraphene_1_1db_1_1object__id__type" kindref="compound">object_id_type</ref>,&amp;<ref refid="classgraphene_1_1db_1_1object_1a2ce812569d565a45dda1420cfbdf79ad" kindref="member">object::id</ref> &gt; &gt;, hashed_unique&lt; tag&lt; by_trx_id &gt;, BOOST_MULTI_INDEX_MEMBER(<ref refid="classgraphene_1_1chain_1_1transaction__history__object" kindref="compound">transaction_history_object</ref>, <ref refid="namespacegraphene_1_1protocol_1a040f9f71bff896e89dc9ee3ff92bb076" kindref="member">transaction_id_type</ref>, trx_id), std::hash&lt; <ref refid="namespacegraphene_1_1protocol_1a040f9f71bff896e89dc9ee3ff92bb076" kindref="member">transaction_id_type</ref> &gt; &gt;, ordered_non_unique&lt; tag&lt; <ref refid="structgraphene_1_1chain_1_1by__expiration" kindref="compound">by_expiration</ref> &gt;, const_mem_fun&lt; <ref refid="classgraphene_1_1chain_1_1transaction__history__object" kindref="compound">transaction_history_object</ref>, <ref refid="classfc_1_1time__point__sec" kindref="compound">time_point_sec</ref>,&amp;<ref refid="classgraphene_1_1chain_1_1transaction__history__object_1ab8e6d7d1ee303e0766ec3b606464c994" kindref="member">transaction_history_object::get_expiration</ref> &gt; &gt; &gt; &gt;</type>
@@ -973,7 +1031,7 @@
         <location file="libraries/chain/exceptions.cpp" line="44" column="1" bodyfile="libraries/chain/exceptions.cpp" bodystart="44" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacegraphene_1_1chain_1a13ec502fb08134be3346f5d4db5ccfb5" prot="public" static="no" mutable="no">
-        <type>block validation exception <ref refid="group__operations_1ga8cd21c685484b07a3342347581bcc2ab" kindref="member">operation</ref> validation exception utility method exception</type>
+        <type>block validation exception <ref refid="group__operations_1gadd00b6b45ba587b94dba2c8ec1d129a0" kindref="member">operation</ref> validation exception utility method exception</type>
         <definition>block validation exception operation validation exception utility method exception graphene::chain::transaction_process_exception</definition>
         <argsstring></argsstring>
         <name>transaction_process_exception</name>
@@ -1099,7 +1157,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/asset_evaluator.cpp" line="369" column="1" bodyfile="libraries/chain/asset_evaluator.cpp" bodystart="369" bodyend="384"/>
+        <location file="libraries/chain/asset_evaluator.cpp" line="381" column="1" bodyfile="libraries/chain/asset_evaluator.cpp" bodystart="381" bodyend="396"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1chain_1a73f36aeffcde30d95155f6c6565f65a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1124,7 +1182,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/asset_evaluator.cpp" line="588" column="1" bodyfile="libraries/chain/asset_evaluator.cpp" bodystart="588" bodyend="613"/>
+        <location file="libraries/chain/asset_evaluator.cpp" line="600" column="1" bodyfile="libraries/chain/asset_evaluator.cpp" bodystart="600" bodyend="625"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1chain_1a2d2d7410afb91b3dce1821b14a44494b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -1153,7 +1211,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/asset_evaluator.cpp" line="766" column="1" bodyfile="libraries/chain/asset_evaluator.cpp" bodystart="766" bodyend="868"/>
+        <location file="libraries/chain/asset_evaluator.cpp" line="778" column="1" bodyfile="libraries/chain/asset_evaluator.cpp" bodystart="778" bodyend="880"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1chain_1af58d983afb0efae1eb384b67512499ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1221,7 +1279,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/db_maint.cpp" line="551" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="551" bodyend="567"/>
+        <location file="libraries/chain/db_maint.cpp" line="552" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="552" bodyend="568"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1chain_1aafe078504bd9675a005078b468843223" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1238,7 +1296,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/db_maint.cpp" line="569" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="569" bodyend="606"/>
+        <location file="libraries/chain/db_maint.cpp" line="570" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="570" bodyend="607"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1chain_1a1c463857736685f0a10fd056d2b4b85a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1271,7 +1329,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/db_maint.cpp" line="608" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="608" bodyend="685"/>
+        <location file="libraries/chain/db_maint.cpp" line="609" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="609" bodyend="686"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1chain_1a86127c6c883fd8cee0b6c9bc9911da82" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1288,7 +1346,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/db_maint.cpp" line="687" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="687" bodyend="692"/>
+        <location file="libraries/chain/db_maint.cpp" line="688" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="688" bodyend="693"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1chain_1a8708850467d84b28bded18bba06d2bca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1305,7 +1363,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/db_maint.cpp" line="694" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="694" bodyend="762"/>
+        <location file="libraries/chain/db_maint.cpp" line="695" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="695" bodyend="763"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1chain_1a519e1c11323acf5f5e2feb9b6b5f85eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1322,7 +1380,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/db_maint.cpp" line="764" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="764" bodyend="793"/>
+        <location file="libraries/chain/db_maint.cpp" line="765" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="765" bodyend="794"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1chain_1a81d9a77c7e843ae267732844937d5cfb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1339,7 +1397,7 @@
 <para>Reset call_price of all call orders according to their remaining collateral and debt. Do not update orders of prediction markets because we&apos;re sure they&apos;re up to date. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/db_maint.cpp" line="853" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="853" bodyend="875"/>
+        <location file="libraries/chain/db_maint.cpp" line="854" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="854" bodyend="876"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1chain_1ac6f80d49d04cbec788eeb3c55bed5d1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1356,7 +1414,7 @@
 <para>Reset call_price of all call orders to (1,1) since it won&apos;t be used in the future. Update PMs as well. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/db_maint.cpp" line="879" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="879" bodyend="889"/>
+        <location file="libraries/chain/db_maint.cpp" line="880" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="880" bodyend="890"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1chain_1adc23be0df6f5961c6f3699a5e13345f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1373,7 +1431,7 @@
         </detaileddescription>
         <inbodydescription>
 <para>market issued </para>        </inbodydescription>
-        <location file="libraries/chain/db_maint.cpp" line="892" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="892" bodyend="906"/>
+        <location file="libraries/chain/db_maint.cpp" line="893" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="893" bodyend="907"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1chain_1ac6b6bc83d0d75a636ca349bd6cf910d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1390,7 +1448,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/db_maint.cpp" line="952" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="952" bodyend="972"/>
+        <location file="libraries/chain/db_maint.cpp" line="953" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="953" bodyend="973"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1chain_1a585abb536697dd411b21d9e3b7fcf638" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1407,7 +1465,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/db_maint.cpp" line="977" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="977" bodyend="988"/>
+        <location file="libraries/chain/db_maint.cpp" line="978" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="978" bodyend="989"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1chain_1a5d66965ec60bed8abf45d9dc16dbef08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1424,7 +1482,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/db_maint.cpp" line="990" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="990" bodyend="1004"/>
+        <location file="libraries/chain/db_maint.cpp" line="991" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="991" bodyend="1005"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1chain_1afc4304b10c4172d10f36baad1f0244b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1445,7 +1503,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/db_maint.cpp" line="1024" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="1024" bodyend="1080"/>
+        <location file="libraries/chain/db_maint.cpp" line="1025" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="1025" bodyend="1081"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1chain_1a2283a9e80c557fd899f758791112692b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1470,7 +1528,24 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/db_maint.cpp" line="1087" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="1087" bodyend="1092"/>
+        <location file="libraries/chain/db_maint.cpp" line="1088" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="1088" bodyend="1093"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacegraphene_1_1chain_1af851b1b86654e2b28e2bc1c606fa16d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void graphene::chain::process_hf_2262</definition>
+        <argsstring>(database &amp;db)</argsstring>
+        <name>process_hf_2262</name>
+        <param>
+          <type><ref refid="classgraphene_1_1chain_1_1database" kindref="compound">database</ref> &amp;</type>
+          <declname>db</declname>
+        </param>
+        <briefdescription>
+<para>A one-time data process to set values of existing liquid tickets to zero. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/chain/db_maint.cpp" line="1096" column="1" bodyfile="libraries/chain/db_maint.cpp" bodystart="1096" bodyend="1109"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1chain_1a908cd1fa664baa7cdbf681f694342223" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -1499,7 +1574,7 @@
         <argsstring>(const operation &amp;op, flat_set&lt; account_id_type &gt; &amp;result, bool ignore_custom_operation_required_auths)</argsstring>
         <name>operation_get_impacted_accounts</name>
         <param>
-          <type>const <ref refid="group__operations_1ga8cd21c685484b07a3342347581bcc2ab" kindref="member">operation</ref> &amp;</type>
+          <type>const <ref refid="group__operations_1gadd00b6b45ba587b94dba2c8ec1d129a0" kindref="member">operation</ref> &amp;</type>
           <declname>op</declname>
         </param>
         <param>
@@ -1516,7 +1591,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/db_notify.cpp" line="321" column="1" bodyfile="libraries/chain/db_notify.cpp" bodystart="321" bodyend="327"/>
+        <location file="libraries/chain/db_notify.cpp" line="342" column="1" bodyfile="libraries/chain/db_notify.cpp" bodystart="342" bodyend="348"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1chain_1a64bca941b52b58d88df93fdc788a088e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1541,7 +1616,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/db_notify.cpp" line="329" column="1" bodyfile="libraries/chain/db_notify.cpp" bodystart="329" bodyend="334"/>
+        <location file="libraries/chain/db_notify.cpp" line="350" column="1" bodyfile="libraries/chain/db_notify.cpp" bodystart="350" bodyend="355"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1chain_1ae0b1619d4d10b511e2c52ff3284dbf6d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1566,7 +1641,7 @@
         </detaileddescription>
         <inbodydescription>
 <para>these are free from any accounts </para>        </inbodydescription>
-        <location file="libraries/chain/db_notify.cpp" line="336" column="1" bodyfile="libraries/chain/db_notify.cpp" bodystart="336" bodyend="493"/>
+        <location file="libraries/chain/db_notify.cpp" line="357" column="1" bodyfile="libraries/chain/db_notify.cpp" bodystart="357" bodyend="517"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1chain_1ab1583f4c0728b286dbcddf2ab6d4063f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -1619,7 +1694,7 @@
         <location file="libraries/chain/exceptions.cpp" line="46" column="1"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1chain_1ab329b0e2ca351b7d62ce73382071f63c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>block validation exception <ref refid="group__operations_1ga8cd21c685484b07a3342347581bcc2ab" kindref="member">operation</ref> validation exception</type>
+        <type>block validation exception <ref refid="group__operations_1gadd00b6b45ba587b94dba2c8ec1d129a0" kindref="member">operation</ref> validation exception</type>
         <definition>block validation exception operation validation exception graphene::chain::FC_IMPLEMENT_DERIVED_EXCEPTION</definition>
         <argsstring>(operation_evaluate_exception, chain_exception, 3050000,&quot;operation evaluation exception&quot;) FC_IMPLEMENT_DERIVED_EXCEPTION(utility_exception</argsstring>
         <name>FC_IMPLEMENT_DERIVED_EXCEPTION</name>
@@ -1644,7 +1719,7 @@
         <location file="libraries/chain/exceptions.cpp" line="50" column="1"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1chain_1a77fb6fbffbf6f59dfa7b3f3aefb0c895" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>block validation exception <ref refid="group__operations_1ga8cd21c685484b07a3342347581bcc2ab" kindref="member">operation</ref> validation exception utility method exception</type>
+        <type>block validation exception <ref refid="group__operations_1gadd00b6b45ba587b94dba2c8ec1d129a0" kindref="member">operation</ref> validation exception utility method exception</type>
         <definition>block validation exception operation validation exception utility method exception graphene::chain::FC_IMPLEMENT_DERIVED_EXCEPTION</definition>
         <argsstring>(undo_database_exception, chain_exception, 3070000,&quot;undo database exception&quot;) FC_IMPLEMENT_DERIVED_EXCEPTION(duplicate_transaction</argsstring>
         <name>FC_IMPLEMENT_DERIVED_EXCEPTION</name>
@@ -1669,7 +1744,7 @@
         <location file="libraries/chain/exceptions.cpp" line="54" column="1"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1chain_1a422a17861aee824a1501f3ef3eeb5047" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>block validation exception <ref refid="group__operations_1ga8cd21c685484b07a3342347581bcc2ab" kindref="member">operation</ref> validation exception utility method exception duplicate <ref refid="classgraphene_1_1protocol_1_1transaction" kindref="compound">transaction</ref></type>
+        <type>block validation exception <ref refid="group__operations_1gadd00b6b45ba587b94dba2c8ec1d129a0" kindref="member">operation</ref> validation exception utility method exception duplicate <ref refid="classgraphene_1_1protocol_1_1transaction" kindref="compound">transaction</ref></type>
         <definition>block validation exception operation validation exception utility method exception duplicate transaction graphene::chain::FC_IMPLEMENT_DERIVED_EXCEPTION</definition>
         <argsstring>(pop_empty_chain, undo_database_exception, 3070001,&quot;there are no blocks to pop&quot;) GRAPHENE_IMPLEMENT_OP_BASE_EXCEPTIONS(transfer)</argsstring>
         <name>FC_IMPLEMENT_DERIVED_EXCEPTION</name>
@@ -2208,7 +2283,7 @@
         <argsstring>(const graphene::chain::operation &amp;op, fc::flat_set&lt; graphene::chain::account_id_type &gt; &amp;result, bool ignore_custom_operation_required_auths)</argsstring>
         <name>operation_get_impacted_accounts</name>
         <param>
-          <type>const <ref refid="group__operations_1ga8cd21c685484b07a3342347581bcc2ab" kindref="member">graphene::chain::operation</ref> &amp;</type>
+          <type>const <ref refid="group__operations_1gadd00b6b45ba587b94dba2c8ec1d129a0" kindref="member">graphene::chain::operation</ref> &amp;</type>
           <declname>op</declname>
         </param>
         <param>
