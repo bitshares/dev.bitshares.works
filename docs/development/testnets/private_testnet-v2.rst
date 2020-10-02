@@ -62,7 +62,7 @@ This section includes instructions for the following:
 	git clone https://github.com/bitshares/bitshares-core.git bitshares-testnet
 	cd bitshares-testnet/
 	git checkout testnet
-	git submodule update --init -–recursive
+	git submodule update --init --recursive
 
 	
 	
