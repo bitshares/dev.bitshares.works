@@ -53,8 +53,6 @@ After you know which branch to download, your next step is the installation of B
   
 BitSharea has great communities to support others and have discussions. Check out the :ref:`BitShares communities <bitshares-communities>` and join to meet other BTS holders!     
   
-For security issues and bug bounty program, please visit `Hack the DEX <https://hackthedex.io/>`_ .
-  
 |
   
 ----------------   
