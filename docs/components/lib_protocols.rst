@@ -40,7 +40,7 @@ base
 
 - Operations
 - Transactions
-- A set of valid comands for mutating the globally shared state.
+- A set of valid commands for mutating the globally shared state.
 - An operation can be thought of like a function that will modify the global shared state of the blockchain.  The members of each struct are like function arguments and each operation can potentially generate a return value.
 - Operations can be grouped into transactions (@ref transaction) to ensure that they occur in a particular order and that all operations apply successfully or no operations apply.
 - Each operation is a fully defined state transition and can exist in a transaction on its own.
@@ -66,7 +66,7 @@ Each operation shall contain enough information to know which accounts must auth
 @subsection relevancy_principle Explicit Relevant Accounts
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Each operation contains enough information to enumerate all accounts for which the operation should apear in its account history.  This principle enables us to easily define and enforce the @balance_calculation. This is superset of the @ref defined_authority
+Each operation contains enough information to enumerate all accounts for which the operation should appear in its account history.  This principle enables us to easily define and enforce the @balance_calculation. This is superset of the @ref defined_authority
 
 .. code-block:: cpp 
 
@@ -358,7 +358,7 @@ chain_parameters
 		uint16_t                lifetime_referrer_percent_of_fee    = GRAPHENE_DEFAULT_LIFETIME_REFERRER_PERCENT_OF_FEE;
 		uint32_t                cashback_vesting_period_seconds     = GRAPHENE_DEFAULT_CASHBACK_VESTING_PERIOD_SEC; 
 		share_type              cashback_vesting_threshold          = GRAPHENE_DEFAULT_CASHBACK_VESTING_THRESHOLD; 
-		bool                    count_non_member_votes              = true; ///< set to false to restrict voting privlegages to member accounts
+		bool                    count_non_member_votes              = true; ///< set to false to restrict voting privileges to member accounts
 		bool                    allow_non_member_whitelists         = false; ///< true if non-member accounts may set whitelists and blacklists; false otherwise
 		share_type              witness_pay_per_block               = GRAPHENE_DEFAULT_WITNESS_PAY_PER_BLOCK; 
 		uint32_t                witness_pay_vesting_seconds         = GRAPHENE_DEFAULT_WITNESS_PAY_VESTING_SECONDS; 
@@ -382,13 +382,13 @@ chain_parameters
 :GRAPHENE_DEFAULT_MAINTENANCE_SKIP_SLOTS: number of block_intervals to skip at maintenance time 
 :GRAPHENE_DEFAULT_COMMITTEE_PROPOSAL_REVIEW_PERIOD_SEC: minimum time in seconds that a proposed transaction requiring committee authority may not be signed, prior to expiration 
 :GRAPHENE_DEFAULT_MAX_TRANSACTION_SIZE: maximum allowable size in bytes for a transaction
-:GRAPHENE_DEFAULT_MAX_BLOCK_SIZE: aximum allowable size in bytes for a block 
+:GRAPHENE_DEFAULT_MAX_BLOCK_SIZE: maximum allowable size in bytes for a block 
 :GRAPHENE_DEFAULT_MAX_TIME_UNTIL_EXPIRATION: maximum lifetime in seconds for transactions to be valid, before expiring 
 :GRAPHENE_DEFAULT_MAX_PROPOSAL_LIFETIME_SEC: maximum lifetime in seconds for proposed transactions to be kept, before expiring 
 :GRAPHENE_DEFAULT_MAX_ASSET_WHITELIST_AUTHORITIES: maximum number of accounts which an asset may list as authorities for its whitelist OR blacklist 
 :GRAPHENE_DEFAULT_MAX_ASSET_FEED_PUBLISHERS: the maximum number of feed publishers for a given asset 
 :GRAPHENE_DEFAULT_MAX_WITNESSES: maximum number of active witnesses 
-:GRAPHENE_DEFAULT_MAX_COMMITTEE: aximum number of active committee_members 
+:GRAPHENE_DEFAULT_MAX_COMMITTEE: maximum number of active committee_members 
 :GRAPHENE_DEFAULT_MAX_AUTHORITY_MEMBERSHIP: largest number of keys/accounts an authority can have 
 :GRAPHENE_DEFAULT_BURN_PERCENT_OF_FEE:   the percentage of the network's allocation of a fee that is taken out of circulation  
 :GRAPHENE_DEFAULT_NETWORK_PERCENT_OF_FEE: percent of transaction fees paid to network 
@@ -400,7 +400,7 @@ chain_parameters
 :GRAPHENE_DEFAULT_WORKER_BUDGET_PER_DAY: CORE to be allocated to workers (per day) 
 :GRAPHENE_DEFAULT_MAX_ASSERT_OPCODE: predicate_opcode must be less than this number 
 :GRAPHENE_DEFAULT_FEE_LIQUIDATION_THRESHOLD: value in CORE at which accumulated fees in blockchain-issued market assets should be liquidated 
-:GRAPHENE_DEFAULT_ACCOUNTS_PER_FEE_SCALE: number of accounts between fee scalings 
+:GRAPHENE_DEFAULT_ACCOUNTS_PER_FEE_SCALE: number of accounts between fee scaling 
 :GRAPHENE_DEFAULT_ACCOUNT_FEE_SCALE_BITSHIFTS: number of times to left bitshift account registration fee at each scaling 
 :GRAPHENE_MAX_SIG_CHECK_DEPTH:    
 
@@ -965,7 +965,7 @@ confidential
 
 - stealth Stealth Transfer
 - Operations related to stealth transfer of value
-- Stealth Transfers enable users to maintain their finanical privacy against even though all transactions are public.  Every account has three balances:
+- Stealth Transfers enable users to maintain their financial privacy against even though all transactions are public.  Every account has three balances:
 
   - 1. Public Balance - everyone can see the balance changes and the parties involved
   - 2. Blinded Balance - everyone can see who is transacting but not the amounts involved
@@ -974,7 +974,7 @@ confidential
 - Account owners may set a flag that allows their account to receive(or not) transfers of these kinds. Asset issuers can enable or disable the use of each of these types of accounts.  
 - Using the "temp account" which has no permissions required, users can transfer a stealth balance to the temp account and then use the temp account to register a new account.  In this way users can use stealth funds to create anonymous accounts with which they can perform other actions that are not compatible with blinded balances (such as market orders)
 
-section referral_program Referral Progam
+section referral_program Referral Program
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Stealth transfers that do not specify any account id cannot pay referral fees so 100% of the transaction fee is paid to the network.
@@ -982,7 +982,7 @@ Stealth transfers that do not specify any account id cannot pay referral fees so
 section transaction_fees Fees
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Stealth transfers can have an arbitrarylly large size and therefore the transaction fee for stealth transfers is based purley on the data size of the transaction.
+Stealth transfers can have an arbitrarily large size and therefore the transaction fee for stealth transfers is based purely on the data size of the transaction.
 
 blind_memo
 ^^^^^^^^^^^^^^^^^
@@ -1020,7 +1020,7 @@ blind_input
 stealth_confirmation
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 	
--  When sending a stealth tranfer we assume users are unable to scan the full blockchain; therefore, payments require confirmation data to be passed out of band.   We assume this out-of-band channel is not secure and therefore the contents of the confirmation must be encrypted
+-  When sending a stealth transfer we assume users are unable to scan the full blockchain; therefore, payments require confirmation data to be passed out of band.   We assume this out-of-band channel is not secure and therefore the contents of the confirmation must be encrypted
 
 .. code-block:: cpp
 
@@ -1416,7 +1416,7 @@ asset_ops
 :max_market_fee = GRAPHENE_MAX_SHARE_SUPPLY;:    Market fees calculated as @ref market_fee_percent of the traded volume are capped to this value 
 :issuer_permissions = UIA_ASSET_ISSUER_PERMISSION_MASK;:    The flags which the issuer has permission to update. See @ref asset_issuer_permission_flags 
 :flags = 0;:    The currently active flags on this permission. See @ref asset_issuer_permission_flags 
-:core_exchange_rate = price(asset(), asset(0, asset_id_type(1)));:    When a non-core asset is used to pay a fee, the blockchain must convert that asset to core asset in order to accept the fee. If this asset's fee pool is funded, the chain will automatically deposite fees in this asset to its accumulated fees, and withdraw from the fee pool the same amount as converted at the core exchange rate. 
+:core_exchange_rate = price(asset(), asset(0, asset_id_type(1)));:    When a non-core asset is used to pay a fee, the blockchain must convert that asset to core asset in order to accept the fee. If this asset's fee pool is funded, the chain will automatically deposit fees in this asset to its accumulated fees, and withdraw from the fee pool the same amount as converted at the core exchange rate. 
 :whitelist_authorities;:    A set of accounts which maintain whitelists to consult for this asset. If whitelist_authorities is non-empty, then only accounts in whitelist_authorities are allowed to hold, use, or transfer the asset. 
 :blacklist_authorities;:    A set of accounts which maintain blacklists to consult for this asset. If flags & white_list is set, an account may only send, receive, trade, etc. in this asset if none of these accounts appears in its account_object::blacklisting_accounts field. If the account is blacklisted, it may not transact in this asset even if it is also whitelisted. 
 :whitelist_markets;:     defines the assets that this asset may be traded against in the market 
