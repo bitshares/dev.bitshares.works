@@ -11,7 +11,7 @@ Join Us!
 * `Forum - BitSharesTalk`_ 
 * `Telegram - BitSharesDAC`_
 * `Telegram - BitShares Traders`_
-* `Discord - BitShares`_
+* `Discord - BitShares (to be updated)`_
 * `BitShares on Steemit`_
 * `Twitter`_
 * `Reddit`_	
@@ -22,21 +22,11 @@ Join Us!
 .. _Telegram - BitSharesDAC: https://t.me/BitSharesDAC
 .. _Telegram - BitSharesEXCHANGES: https://t.me/BitSharesEXCHANGES
 .. _Telegram - BitShares Traders: https://t.me/BitShares_Traders
-.. _Discord - BitShares: https://discord.gg/GsjQfAJ
 .. _BitShares on Steemit: https://steemit.com/trending/bitshares
 .. _Twitter: https://twitter.com/bitsharesorg
 .. _Reddit: https://www.reddit.com/r/BitShares/
 .. _BitSharesTalk.io: https://bitsharestalk.io/forums
 
-
-Beyond Bitcoin - Bitshares
-----------------------------
-
-
-- `BitShares Discord Hangouts <https://discord.gg/RPJEsGp>`_
-  - `BitShares Hangout: Discord Tips <https://steemit.com/bitshares/@ash/bitshares-hangout-discord-tips>`_
-
---------------------------
 
 |
 
