@@ -1097,7 +1097,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/worker.hpp" line="71" column="1" bodyfile="libraries/protocol/include/graphene/protocol/worker.hpp" bodystart="71" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/worker.hpp" line="72" column="1" bodyfile="libraries/protocol/include/graphene/protocol/worker.hpp" bodystart="72" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="var">
@@ -1434,14 +1434,25 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Names must comply with the following grammar (RFC 1035): &lt;domain&gt; ::= &lt;subdomain&gt; | &quot; &quot; &lt;subdomain&gt; ::= &lt;label&gt; | &lt;subdomain&gt; &quot;.&quot; &lt;label&gt; &lt;label&gt; ::= &lt;letter&gt; [ [ &lt;ldh-str&gt; ] &lt;let-dig&gt; ] &lt;ldh-str&gt; ::= &lt;let-dig-hyp&gt; | &lt;let-dig-hyp&gt; &lt;ldh-str&gt; &lt;let-dig-hyp&gt; ::= &lt;let-dig&gt; | &quot;-&quot; &lt;let-dig&gt; ::= &lt;letter&gt; | &lt;digit&gt;</para><para>Which is equivalent to the following:</para><para>&lt;domain&gt; ::= &lt;subdomain&gt; | &quot; &quot; &lt;subdomain&gt; ::= &lt;label&gt; (&quot;.&quot; &lt;label&gt;)* &lt;label&gt; ::= &lt;letter&gt; [ [ &lt;let-dig-hyp&gt;+ ] &lt;let-dig&gt; ] &lt;let-dig-hyp&gt; ::= &lt;let-dig&gt; | &quot;-&quot; &lt;let-dig&gt; ::= &lt;letter&gt; | &lt;digit&gt;</para><para>I.e. a valid name consists of a dot-separated sequence of one or more labels consisting of the following rules:</para><para><itemizedlist>
+<para>Names must comply with the following grammar (RFC 1035): <programlisting><codeline><highlight class="normal">&lt;domain&gt;<sp/>::=<sp/>&lt;subdomain&gt;<sp/>|<sp/>&quot;<sp/>&quot;</highlight></codeline>
+<codeline><highlight class="normal">&lt;subdomain&gt;<sp/>::=<sp/>&lt;label&gt;<sp/>|<sp/>&lt;subdomain&gt;<sp/>&quot;.&quot;<sp/>&lt;label&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;label&gt;<sp/>::=<sp/>&lt;letter&gt;<sp/>[<sp/>[<sp/>&lt;ldh-str&gt;<sp/>]<sp/>&lt;let-dig&gt;<sp/>]</highlight></codeline>
+<codeline><highlight class="normal">&lt;ldh-str&gt;<sp/>::=<sp/>&lt;let-dig-hyp&gt;<sp/>|<sp/>&lt;let-dig-hyp&gt;<sp/>&lt;ldh-str&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;let-dig-hyp&gt;<sp/>::=<sp/>&lt;let-dig&gt;<sp/>|<sp/>&quot;-&quot;</highlight></codeline>
+<codeline><highlight class="normal">&lt;let-dig&gt;<sp/>::=<sp/>&lt;letter&gt;<sp/>|<sp/>&lt;digit&gt;</highlight></codeline>
+</programlisting></para><para>Which is equivalent to the following:</para><para><programlisting><codeline><highlight class="normal">&lt;domain&gt;<sp/>::=<sp/>&lt;subdomain&gt;<sp/>|<sp/>&quot;<sp/>&quot;</highlight></codeline>
+<codeline><highlight class="normal">&lt;subdomain&gt;<sp/>::=<sp/>&lt;label&gt;<sp/>(&quot;.&quot;<sp/>&lt;label&gt;)*</highlight></codeline>
+<codeline><highlight class="normal">&lt;label&gt;<sp/>::=<sp/>&lt;letter&gt;<sp/>[<sp/>[<sp/>&lt;let-dig-hyp&gt;+<sp/>]<sp/>&lt;let-dig&gt;<sp/>]</highlight></codeline>
+<codeline><highlight class="normal">&lt;let-dig-hyp&gt;<sp/>::=<sp/>&lt;let-dig&gt;<sp/>|<sp/>&quot;-&quot;</highlight></codeline>
+<codeline><highlight class="normal">&lt;let-dig&gt;<sp/>::=<sp/>&lt;letter&gt;<sp/>|<sp/>&lt;digit&gt;</highlight></codeline>
+</programlisting></para><para>I.e. a valid name consists of a dot-separated sequence of one or more labels consisting of the following rules:</para><para><itemizedlist>
 <listitem><para>Each label is three characters or more</para></listitem><listitem><para>Each label begins with a letter</para></listitem><listitem><para>Each label ends with a letter or digit</para></listitem><listitem><para>Each label contains only letters, digits or hyphens</para></listitem></itemizedlist>
 </para><para>In addition we require the following:</para><para><itemizedlist>
 <listitem><para>All letters are lowercase</para></listitem><listitem><para>Length is between (inclusive) GRAPHENE_MIN_ACCOUNT_NAME_LENGTH and GRAPHENE_MAX_ACCOUNT_NAME_LENGTH </para></listitem></itemizedlist>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/account.cpp" line="60" column="1" bodyfile="libraries/protocol/account.cpp" bodystart="60" bodyend="127"/>
+        <location file="libraries/protocol/account.cpp" line="64" column="1" bodyfile="libraries/protocol/account.cpp" bodystart="64" bodyend="131"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1aa14f880973444987a8fa480cfc9f3f78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -1458,7 +1469,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/account.cpp" line="129" column="1" bodyfile="libraries/protocol/account.cpp" bodystart="129" bodyend="150"/>
+        <location file="libraries/protocol/account.cpp" line="133" column="1" bodyfile="libraries/protocol/account.cpp" bodystart="133" bodyend="154"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1a2babeb53917c92361abcf1e41a410506" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -2444,7 +2455,7 @@ A restriction specifies requirements about a field of an object. This struct shi
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Appends required authorites to the result vector. The authorities appended are not the same as those returned by get_required_auth</para><para><simplesect kind="return"><para>a set of required authorities for op </para></simplesect>
+<para>Appends required authorites to the result vector. The authorities appended are not the same as those returned by get_required_auth</para><para><simplesect kind="return"><para>a set of required authorities for <computeroutput>op</computeroutput> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -2547,10 +2558,10 @@ A restriction specifies requirements about a field of an object. This struct shi
         </inbodydescription>
         <location file="libraries/protocol/include/graphene/protocol/special_authority.hpp" line="43" column="1" bodyfile="libraries/protocol/special_authority.cpp" bodystart="43" bodyend="47"/>
       </memberdef>
-      <memberdef kind="function" id="group__transactions_1ga72d10fd2a137c7525904c9f89e8efeb2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__transactions_1ga8e37fc0fd4bd5f02a34b0e766f8bbad8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void graphene::protocol::verify_authority</definition>
-        <argsstring>(const vector&lt; operation &gt; &amp;ops, const flat_set&lt; public_key_type &gt; &amp;sigs, const std::function&lt; const authority *(account_id_type)&gt; &amp;get_active, const std::function&lt; const authority *(account_id_type)&gt; &amp;get_owner, const custom_authority_lookup &amp;get_custom, bool allow_non_immediate_owner, bool ignore_custom_operation_required_auths, uint32_t max_recursion=GRAPHENE_MAX_SIG_CHECK_DEPTH, bool allow_committee=false, const flat_set&lt; account_id_type &gt; &amp;active_aprovals=flat_set&lt; account_id_type &gt;(), const flat_set&lt; account_id_type &gt; &amp;owner_approvals=flat_set&lt; account_id_type &gt;())</argsstring>
+        <argsstring>(const vector&lt; operation &gt; &amp;ops, const flat_set&lt; public_key_type &gt; &amp;sigs, const std::function&lt; const authority *(account_id_type)&gt; &amp;get_active, const std::function&lt; const authority *(account_id_type)&gt; &amp;get_owner, const custom_authority_lookup &amp;get_custom, bool allow_non_immediate_owner, bool ignore_custom_operation_required_auths, uint32_t max_recursion=GRAPHENE_MAX_SIG_CHECK_DEPTH, bool allow_committee=false, const flat_set&lt; account_id_type &gt; &amp;active_approvals=flat_set&lt; account_id_type &gt;(), const flat_set&lt; account_id_type &gt; &amp;owner_approvals=flat_set&lt; account_id_type &gt;())</argsstring>
         <name>verify_authority</name>
         <param>
           <type>const vector&lt; <ref refid="group__operations_1gadd00b6b45ba587b94dba2c8ec1d129a0" kindref="member">operation</ref> &gt; &amp;</type>
@@ -2592,7 +2603,7 @@ A restriction specifies requirements about a field of an object. This struct shi
         </param>
         <param>
           <type>const flat_set&lt; account_id_type &gt; &amp;</type>
-          <declname>active_aprovals</declname>
+          <declname>active_approvals</declname>
           <defval>flat_set&lt; account_id_type &gt;()</defval>
         </param>
         <param>

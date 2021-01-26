@@ -62,10 +62,24 @@
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
+<parametername>blk_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the message which contains the block </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
 <parametername>sync_mode</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>true if the message was fetched through the sync process, false during normal operation </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>contained_transaction_message_ids</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>container for the transactions to write back into </para></parameterdescription>
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>true if this message caused the blockchain to switch forks, false if it did not</para></simplesect>
@@ -80,7 +94,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/node.hpp" line="80" column="1"/>
+        <location file="libraries/net/include/graphene/net/node.hpp" line="82" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1node__delegate_1a012e220463b248980525219ae44ee0a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
@@ -107,7 +121,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/node.hpp" line="89" column="1"/>
+        <location file="libraries/net/include/graphene/net/node.hpp" line="91" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1node__delegate_1a738c6181f8e461b147934d7b79e710f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
@@ -134,7 +148,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/node.hpp" line="99" column="1"/>
+        <location file="libraries/net/include/graphene/net/node.hpp" line="101" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1node__delegate_1a74b20c0bd09734e2e483809f0fb1d81a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>std::vector&lt; <ref refid="namespacegraphene_1_1net_1ae6a74bd458bbef0d6d21dd35c74c6235" kindref="member">item_hash_t</ref> &gt;</type>
@@ -161,7 +175,7 @@
 <para>Assuming all data elements are ordered in some way, this method should return up to limit ids that occur <emphasis>after</emphasis> from_id. On return, remaining_item_count will be set to the number of items in our blockchain after the last item returned in the result, or 0 if the result contains the last item in the blockchain </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/node.hpp" line="108" column="1"/>
+        <location file="libraries/net/include/graphene/net/node.hpp" line="110" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1node__delegate_1ad45df7b4d849fa221356a266f408b617" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="structgraphene_1_1net_1_1message" kindref="compound">message</ref></type>
@@ -180,7 +194,7 @@
 <para>Given the hash of the requested data, fetch the body. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/node.hpp" line="115" column="1"/>
+        <location file="libraries/net/include/graphene/net/node.hpp" line="117" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1node__delegate_1a6abb2ff8bf61ef04b31e1a3685dff950" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type>chain_id_type</type>
@@ -195,7 +209,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/node.hpp" line="117" column="1"/>
+        <location file="libraries/net/include/graphene/net/node.hpp" line="119" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1node__delegate_1a0f144d17fc3bd79ac59ef4f3372d406a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>std::vector&lt; <ref refid="namespacegraphene_1_1net_1ae6a74bd458bbef0d6d21dd35c74c6235" kindref="member">item_hash_t</ref> &gt;</type>
@@ -218,7 +232,7 @@
 <para>Returns a synopsis of the blockchain used for syncing. This consists of a list of selected item hashes from our current preferred blockchain, exponentially falling off into the past. Horrible explanation.</para><para>If the blockchain is empty, it will return the empty list. If the blockchain has one block, it will return a list containing just that block. If it contains more than one block: the first element in the list will be the hash of the highest numbered block that we cannot undo the second element will be the hash of an item at the half way point in the undoable segment of the blockchain the third will be ~3/4 of the way through the undoable segment of the block chain the fourth will be at ~7/8... &amp;c. the last item in the list will be the hash of the most recent block on our preferred chain </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/node.hpp" line="136" column="1"/>
+        <location file="libraries/net/include/graphene/net/node.hpp" line="138" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1node__delegate_1a0f6d68640e7fca4c2f7effbcddcdd9f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
@@ -256,7 +270,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/node.hpp" line="146" column="1"/>
+        <location file="libraries/net/include/graphene/net/node.hpp" line="148" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1node__delegate_1aeb54b89d68318b06a155f5eff640f2df" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
@@ -275,7 +289,7 @@
 <para>Call any time the number of connected peers changes. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/node.hpp" line="151" column="1"/>
+        <location file="libraries/net/include/graphene/net/node.hpp" line="153" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1node__delegate_1a8620fff6f74e76e5583f4046f7ca3b46" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>uint32_t</type>
@@ -294,7 +308,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/node.hpp" line="153" column="1"/>
+        <location file="libraries/net/include/graphene/net/node.hpp" line="155" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1node__delegate_1a4795a26af1b8ac700479e7e0fd293bd0" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="classfc_1_1time__point__sec" kindref="compound">fc::time_point_sec</ref></type>
@@ -313,7 +327,7 @@
 <para>Returns the time a block was produced (if block_id = 0, returns genesis time). If we don&apos;t know about the block, returns time_point_sec::min() </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/node.hpp" line="159" column="1"/>
+        <location file="libraries/net/include/graphene/net/node.hpp" line="161" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1node__delegate_1ae9da839865d1ac8902096b65c7e13502" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="namespacegraphene_1_1net_1ae6a74bd458bbef0d6d21dd35c74c6235" kindref="member">item_hash_t</ref></type>
@@ -328,7 +342,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/node.hpp" line="161" column="1"/>
+        <location file="libraries/net/include/graphene/net/node.hpp" line="163" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1node__delegate_1ac9075e9cdef0eb9d3757ef375efcdff1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type>uint32_t</type>
@@ -347,7 +361,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/node.hpp" line="163" column="1"/>
+        <location file="libraries/net/include/graphene/net/node.hpp" line="165" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1node__delegate_1a1e4d4a7ce301380c67d2908c4d8e8aeb" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
@@ -370,7 +384,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/node.hpp" line="165" column="1"/>
+        <location file="libraries/net/include/graphene/net/node.hpp" line="167" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1node__delegate_1a74351fae3daf10fcb9c5ae2505eeab19" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type>uint8_t</type>
@@ -385,7 +399,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/node.hpp" line="166" column="1"/>
+        <location file="libraries/net/include/graphene/net/node.hpp" line="168" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -393,24 +407,24 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="5016">
+      <node id="5053">
         <label>graphene::app::detail::application_impl</label>
         <link refid="classgraphene_1_1app_1_1detail_1_1application__impl"/>
-        <childnode refid="5015" relation="public-inheritance">
+        <childnode refid="5052" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5017">
+      <node id="5054">
         <label>graphene::net::detail::statistics_gathering_node_delegate_wrapper</label>
         <link refid="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper"/>
-        <childnode refid="5015" relation="public-inheritance">
+        <childnode refid="5052" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5015">
+      <node id="5052">
         <label>graphene::net::node_delegate</label>
         <link refid="classgraphene_1_1net_1_1node__delegate"/>
       </node>
     </inheritancegraph>
-    <location file="libraries/net/include/graphene/net/node.hpp" line="62" column="1" bodyfile="libraries/net/include/graphene/net/node.hpp" bodystart="61" bodyend="168"/>
+    <location file="libraries/net/include/graphene/net/node.hpp" line="62" column="1" bodyfile="libraries/net/include/graphene/net/node.hpp" bodystart="61" bodyend="170"/>
     <listofallmembers>
       <member refid="classgraphene_1_1net_1_1node__delegate_1aeb54b89d68318b06a155f5eff640f2df" prot="public" virt="pure-virtual"><scope>graphene::net::node_delegate</scope><name>connection_count_changed</name></member>
       <member refid="classgraphene_1_1net_1_1node__delegate_1a1e4d4a7ce301380c67d2908c4d8e8aeb" prot="public" virt="pure-virtual"><scope>graphene::net::node_delegate</scope><name>error_encountered</name></member>

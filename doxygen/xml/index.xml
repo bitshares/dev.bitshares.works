@@ -565,6 +565,7 @@
     <member refid="classgraphene_1_1app_1_1detail_1_1application__impl_1a0114e0492ec0e5fec249641d81505b95" kind="function"><name>~application_impl</name></member>
     <member refid="classgraphene_1_1app_1_1detail_1_1application__impl_1aa5352fa37b3d87da07ce9c2687e6da84" kind="function"><name>set_dbg_init_key</name></member>
     <member refid="classgraphene_1_1app_1_1detail_1_1application__impl_1a93839de48da01b3e3105e13321a1e8e9" kind="function"><name>set_api_limit</name></member>
+    <member refid="classgraphene_1_1app_1_1detail_1_1application__impl_1a613c7f4466765b723192f7490865e553" kind="function"><name>initialize</name></member>
     <member refid="classgraphene_1_1app_1_1detail_1_1application__impl_1a2367bb23a57aa6b4608e7176c63cd9f6" kind="function"><name>startup</name></member>
     <member refid="classgraphene_1_1app_1_1detail_1_1application__impl_1a7eea3d137996a3b8b29d45253378239b" kind="function"><name>get_api_access_info</name></member>
     <member refid="classgraphene_1_1app_1_1detail_1_1application__impl_1a87f3404e89bb5e4426986a7248ece785" kind="function"><name>set_api_access_info</name></member>
@@ -585,6 +586,7 @@
     <member refid="classgraphene_1_1app_1_1detail_1_1application__impl_1a6b0ee0db78442dc1b75de0acc634c12e" kind="function"><name>estimate_last_known_fork_from_git_revision_timestamp</name></member>
     <member refid="classgraphene_1_1app_1_1detail_1_1application__impl_1a2a0e962fe925e8e987208e3dc6c21863" kind="function"><name>error_encountered</name></member>
     <member refid="classgraphene_1_1app_1_1detail_1_1application__impl_1a5a16866ca1ed46f734043f473fad7735" kind="function"><name>get_current_block_interval_in_seconds</name></member>
+    <member refid="classgraphene_1_1app_1_1detail_1_1application__impl_1a76b5a2057870cc3431c3bca51fff783c" kind="function"><name>is_plugin_enabled</name></member>
   </compound>
   <compound refid="classgraphene_1_1app_1_1application__options" kind="class"><name>graphene::app::application_options</name>
     <member refid="classgraphene_1_1app_1_1application__options_1a6d0f973fa33e5e4fb7544b2437681f63" kind="variable"><name>enable_subscribe_to_all</name></member>
@@ -619,7 +621,9 @@
     <member refid="classgraphene_1_1app_1_1application__options_1aa7e6a9ee4f7ead11d34dbb68a56dc165" kind="variable"><name>api_limit_get_trade_history_by_sequence</name></member>
     <member refid="classgraphene_1_1app_1_1application__options_1a843bba7d09de60791fcaae99253ddf1d" kind="variable"><name>api_limit_get_withdraw_permissions_by_giver</name></member>
     <member refid="classgraphene_1_1app_1_1application__options_1ad79492e16cfb025c627a499e74ed8574" kind="variable"><name>api_limit_get_withdraw_permissions_by_recipient</name></member>
+    <member refid="classgraphene_1_1app_1_1application__options_1af239aa0c98202ece28caa1ee44c7834a" kind="variable"><name>api_limit_get_tickets</name></member>
     <member refid="classgraphene_1_1app_1_1application__options_1a276fbb7e84df8e619264a57185619738" kind="variable"><name>api_limit_get_liquidity_pools</name></member>
+    <member refid="classgraphene_1_1app_1_1application__options_1a204cfc899d69977b32abd05fbb90fc29" kind="variable"><name>api_limit_get_liquidity_pool_history</name></member>
   </compound>
   <compound refid="structfc_1_1typelist_1_1impl_1_1apply" kind="struct"><name>fc::typelist::impl::apply</name>
   </compound>
@@ -1488,16 +1492,18 @@
     <member refid="structgraphene_1_1market__history_1_1bucket__object_1af3975cdf37e296ddc1f2326f7d540d05" kind="function"><name>low</name></member>
   </compound>
   <compound refid="structgraphene_1_1chain_1_1budget__record" kind="struct"><name>graphene::chain::budget_record</name>
-    <member refid="structgraphene_1_1chain_1_1budget__record_1a0056f479434279bee44c151260af0dd0" kind="variable"><name>time_since_last_budget</name></member>
     <member refid="structgraphene_1_1chain_1_1budget__record_1ae42b70cdbe2b48eb140a820dcccc94cb" kind="variable"><name>from_initial_reserve</name></member>
     <member refid="structgraphene_1_1chain_1_1budget__record_1aeb3c69d93e4381a8a32c11cca094d197" kind="variable"><name>from_accumulated_fees</name></member>
     <member refid="structgraphene_1_1chain_1_1budget__record_1ab5534a71185a3bc456c43253a9d2303d" kind="variable"><name>from_unused_witness_budget</name></member>
-    <member refid="structgraphene_1_1chain_1_1budget__record_1a4664dac03b2d058d6b05a78d322e88eb" kind="variable"><name>requested_witness_budget</name></member>
-    <member refid="structgraphene_1_1chain_1_1budget__record_1a3ccaf452808ed83b84c3cd9e23206688" kind="variable"><name>total_budget</name></member>
     <member refid="structgraphene_1_1chain_1_1budget__record_1ac6f306529f5107da4ae0a7c49b1d7ea7" kind="variable"><name>witness_budget</name></member>
     <member refid="structgraphene_1_1chain_1_1budget__record_1a8dc99f9f8e376774c65df903cd25648b" kind="variable"><name>worker_budget</name></member>
+    <member refid="structgraphene_1_1chain_1_1budget__record_1a0056f479434279bee44c151260af0dd0" kind="variable"><name>time_since_last_budget</name></member>
+    <member refid="structgraphene_1_1chain_1_1budget__record_1a4664dac03b2d058d6b05a78d322e88eb" kind="variable"><name>requested_witness_budget</name></member>
+    <member refid="structgraphene_1_1chain_1_1budget__record_1a3ccaf452808ed83b84c3cd9e23206688" kind="variable"><name>total_budget</name></member>
     <member refid="structgraphene_1_1chain_1_1budget__record_1a7c2bb619a75be2b272eadcde3412c7ff" kind="variable"><name>leftover_worker_funds</name></member>
     <member refid="structgraphene_1_1chain_1_1budget__record_1ac3b9f19970f24f6fa92ee157ea52f485" kind="variable"><name>supply_delta</name></member>
+    <member refid="structgraphene_1_1chain_1_1budget__record_1af9f8bf0aca49b9d02a890b7d09fbab7e" kind="variable"><name>max_supply</name></member>
+    <member refid="structgraphene_1_1chain_1_1budget__record_1ad2b8fafae590ba7e65d8f8ba9f3399f8" kind="variable"><name>current_supply</name></member>
   </compound>
   <compound refid="classgraphene_1_1chain_1_1budget__record__object" kind="class"><name>graphene::chain::budget_record_object</name>
     <member refid="classgraphene_1_1chain_1_1budget__record__object_1ae9984a9147f7f36941a6fd6405116198" kind="variable"><name>space_id</name></member>
@@ -1511,7 +1517,7 @@
     <member refid="classfc_1_1buffered__istream_1a6af022ec9841657f60d00089ddd2de90" kind="function"><name>buffered_istream</name></member>
     <member refid="classfc_1_1buffered__istream_1aa312532164c62e95fc7ecb2927d15465" kind="function"><name>operator=</name></member>
     <member refid="classfc_1_1buffered__istream_1a263ef4eed4e11c939cfa7d97333c83f5" kind="function"><name>~buffered_istream</name></member>
-    <member refid="classfc_1_1buffered__istream_1aeadf77cad3bfaa31b52fe719f6b01fce" kind="function"><name>readsome</name></member>
+    <member refid="classfc_1_1buffered__istream_1a3e60752f783d05ba675b17562f08d011" kind="function"><name>readsome</name></member>
     <member refid="classfc_1_1buffered__istream_1a462190e5205b4aaad1ad0108f31dd7d4" kind="function"><name>readsome</name></member>
     <member refid="classfc_1_1buffered__istream_1a03792e0d056373465cbe47815cd0a99b" kind="function"><name>peek</name></member>
   </compound>
@@ -2232,7 +2238,7 @@
     <member refid="classgraphene_1_1app_1_1custom__operations__api_1a0d9c0b4a55e27dfa408a03b4757e2264" kind="variable"><name>_app</name></member>
     <member refid="classgraphene_1_1app_1_1custom__operations__api_1aafc7ec361fc5fdde7617e5d6d919b0b8" kind="variable"><name>database_api</name></member>
     <member refid="classgraphene_1_1app_1_1custom__operations__api_1a5700459ed2913c05f10ef9e4eacf2b1b" kind="function"><name>custom_operations_api</name></member>
-    <member refid="classgraphene_1_1app_1_1custom__operations__api_1a98756e33fabcab57bc2b4fa7298ed7ca" kind="function"><name>get_storage_info</name></member>
+    <member refid="classgraphene_1_1app_1_1custom__operations__api_1ad645335f0a55015839cec0808ef18bce" kind="function"><name>get_storage_info</name></member>
   </compound>
   <compound refid="classgraphene_1_1custom__operations_1_1custom__operations__plugin" kind="class"><name>graphene::custom_operations::custom_operations_plugin</name>
     <member refid="classgraphene_1_1custom__operations_1_1custom__operations__plugin_1ae6aabf16047807ed57db82017fb1e6f6" kind="friend"><name>detail::custom_operations_plugin_impl</name></member>
@@ -2490,10 +2496,13 @@
     <member refid="classgraphene_1_1app_1_1database__api_1aa4c11a1a4ed3913a2e47ea4d0a23105b" kind="function"><name>get_top_markets</name></member>
     <member refid="classgraphene_1_1app_1_1database__api_1a66871295a49393411fe6f4879d6b0725" kind="function"><name>get_trade_history</name></member>
     <member refid="classgraphene_1_1app_1_1database__api_1a1160ad6e9ce050fe8376dc1605be9cb9" kind="function"><name>get_trade_history_by_sequence</name></member>
-    <member refid="classgraphene_1_1app_1_1database__api_1a0980762c15cdaca9e0f29c504ad7888f" kind="function"><name>get_liquidity_pools_by_asset_a</name></member>
-    <member refid="classgraphene_1_1app_1_1database__api_1abedf3076e8263a26c8137db933af5871" kind="function"><name>get_liquidity_pools_by_asset_b</name></member>
-    <member refid="classgraphene_1_1app_1_1database__api_1a106396e944604d4a7c2bacc357d3f9f2" kind="function"><name>get_liquidity_pools_by_both_assets</name></member>
-    <member refid="classgraphene_1_1app_1_1database__api_1ab9f1cf010a79f220b6c520a0649ff339" kind="function"><name>get_liquidity_pools_by_share_asset</name></member>
+    <member refid="classgraphene_1_1app_1_1database__api_1a1ddaabb7d8db8c1dda398a40706278b2" kind="function"><name>list_liquidity_pools</name></member>
+    <member refid="classgraphene_1_1app_1_1database__api_1a5fd7237767f5492542e79fbee76768e8" kind="function"><name>get_liquidity_pools_by_asset_a</name></member>
+    <member refid="classgraphene_1_1app_1_1database__api_1a7247c81105c849b4f26b4e3de6945738" kind="function"><name>get_liquidity_pools_by_asset_b</name></member>
+    <member refid="classgraphene_1_1app_1_1database__api_1ad02b8b7a5d583406a4904efa7f73c4b2" kind="function"><name>get_liquidity_pools_by_both_assets</name></member>
+    <member refid="classgraphene_1_1app_1_1database__api_1a144bd2601a1240fd96a7277092890676" kind="function"><name>get_liquidity_pools</name></member>
+    <member refid="classgraphene_1_1app_1_1database__api_1a3c6d02b21791aacb0e378314dcb07d1f" kind="function"><name>get_liquidity_pools_by_share_asset</name></member>
+    <member refid="classgraphene_1_1app_1_1database__api_1a41dda6b51e7d10e17f20986e21a257f5" kind="function"><name>get_liquidity_pools_by_owner</name></member>
     <member refid="classgraphene_1_1app_1_1database__api_1a76e3dbaac5fef15d0933ef2223adf4a0" kind="function"><name>get_witnesses</name></member>
     <member refid="classgraphene_1_1app_1_1database__api_1a4f37b99e8170da70a2ca2d5b420a93b9" kind="function"><name>get_witness_by_account</name></member>
     <member refid="classgraphene_1_1app_1_1database__api_1a525c31ba5375695602476df1ad85a70a" kind="function"><name>lookup_witness_accounts</name></member>
@@ -2523,6 +2532,8 @@
     <member refid="classgraphene_1_1app_1_1database__api_1af9f708f35f1d84031fe114d66c9ee08b" kind="function"><name>get_htlc_by_from</name></member>
     <member refid="classgraphene_1_1app_1_1database__api_1ae903cd406f4b93ffdab5e680d406f3c4" kind="function"><name>get_htlc_by_to</name></member>
     <member refid="classgraphene_1_1app_1_1database__api_1addca1d13bdf03a9135b37fba1710631b" kind="function"><name>list_htlcs</name></member>
+    <member refid="classgraphene_1_1app_1_1database__api_1a1842993ad524a34f3deade2c50a16419" kind="function"><name>list_tickets</name></member>
+    <member refid="classgraphene_1_1app_1_1database__api_1a16068a457374996f55f2bb042b2cac75" kind="function"><name>get_tickets_by_account</name></member>
   </compound>
   <compound refid="classgraphene_1_1app_1_1database__api__impl" kind="class"><name>graphene::app::database_api_impl</name>
     <member refid="classgraphene_1_1app_1_1database__api__impl_1a44bb83df538540ec0d969c739f28c589" kind="variable"><name>_notify_remove_create</name></member>
@@ -2597,10 +2608,13 @@
     <member refid="classgraphene_1_1app_1_1database__api__impl_1a7443d8f6b3f645e670e3257159fb9d5b" kind="function"><name>get_top_markets</name></member>
     <member refid="classgraphene_1_1app_1_1database__api__impl_1a5a1dec96969a01f52afe2716480f5396" kind="function"><name>get_trade_history</name></member>
     <member refid="classgraphene_1_1app_1_1database__api__impl_1aa4f19478fbdfa54472942c2e9ca0a9f2" kind="function"><name>get_trade_history_by_sequence</name></member>
-    <member refid="classgraphene_1_1app_1_1database__api__impl_1a76239f98f427184a14986dd59c72300e" kind="function"><name>get_liquidity_pools_by_asset_a</name></member>
-    <member refid="classgraphene_1_1app_1_1database__api__impl_1a309dbacd0bccb92ee7f7b57f0da5442f" kind="function"><name>get_liquidity_pools_by_asset_b</name></member>
-    <member refid="classgraphene_1_1app_1_1database__api__impl_1afa2fe8a05b54e39a11dfeaa494ed373d" kind="function"><name>get_liquidity_pools_by_both_assets</name></member>
-    <member refid="classgraphene_1_1app_1_1database__api__impl_1a7990b22d9ed0ccdf882bbfd50980114a" kind="function"><name>get_liquidity_pools_by_share_asset</name></member>
+    <member refid="classgraphene_1_1app_1_1database__api__impl_1ab9b9c1e3bed0f34c9b3f0061688932c6" kind="function"><name>list_liquidity_pools</name></member>
+    <member refid="classgraphene_1_1app_1_1database__api__impl_1a5dfd63845c3aad6c28c9140d7089af8c" kind="function"><name>get_liquidity_pools_by_asset_a</name></member>
+    <member refid="classgraphene_1_1app_1_1database__api__impl_1ab97143e718a3a4f44c695774269928f1" kind="function"><name>get_liquidity_pools_by_asset_b</name></member>
+    <member refid="classgraphene_1_1app_1_1database__api__impl_1a779d3e038a9f514b7e29f57b6d99cad8" kind="function"><name>get_liquidity_pools_by_both_assets</name></member>
+    <member refid="classgraphene_1_1app_1_1database__api__impl_1ad14cd3092f4a09e26181e1870e4a99be" kind="function"><name>get_liquidity_pools</name></member>
+    <member refid="classgraphene_1_1app_1_1database__api__impl_1ac0921dcc3cfb47d614899e64f3925925" kind="function"><name>get_liquidity_pools_by_share_asset</name></member>
+    <member refid="classgraphene_1_1app_1_1database__api__impl_1a75195e7cebf8302e74b1f53f5cb3cdaa" kind="function"><name>get_liquidity_pools_by_owner</name></member>
     <member refid="classgraphene_1_1app_1_1database__api__impl_1a02a1cbebce0918634c7bac919d4485cc" kind="function"><name>get_witnesses</name></member>
     <member refid="classgraphene_1_1app_1_1database__api__impl_1a1e69b6bee0247c19feb0d0e5c0a56742" kind="function"><name>get_witness_by_account</name></member>
     <member refid="classgraphene_1_1app_1_1database__api__impl_1a8f5f1c58f52cd07b58c9c0e1dd72d57b" kind="function"><name>lookup_witness_accounts</name></member>
@@ -2630,12 +2644,15 @@
     <member refid="classgraphene_1_1app_1_1database__api__impl_1a1a4b9cebb410ca5decd42ba6d124eff1" kind="function"><name>get_htlc_by_from</name></member>
     <member refid="classgraphene_1_1app_1_1database__api__impl_1a52dbff18e73b4a29d5ae03c1041e65fe" kind="function"><name>get_htlc_by_to</name></member>
     <member refid="classgraphene_1_1app_1_1database__api__impl_1ab4e7d2b03b7f54a595c8c8c2496b8a01" kind="function"><name>list_htlcs</name></member>
+    <member refid="classgraphene_1_1app_1_1database__api__impl_1ae29fd39df8422ae93fda61f4d8fd9b36" kind="function"><name>list_tickets</name></member>
+    <member refid="classgraphene_1_1app_1_1database__api__impl_1a5c1cd36c6d899390b5a9a714d8d7bbc2" kind="function"><name>get_tickets_by_account</name></member>
     <member refid="classgraphene_1_1app_1_1database__api__impl_1af21ecb8db6145c300b0cb7c2e3eb459f" kind="function"><name>get_account_from_string</name></member>
     <member refid="classgraphene_1_1app_1_1database__api__impl_1a87fe3dde7eaca519823e4b72be211c0f" kind="function"><name>extend_asset</name></member>
     <member refid="classgraphene_1_1app_1_1database__api__impl_1afb38ce694c7f426fadee2d6fc24da7be" kind="function"><name>get_asset_from_string</name></member>
     <member refid="classgraphene_1_1app_1_1database__api__impl_1ae37ae8e6b54cbf59dc81a33e5584062f" kind="function"><name>get_assets</name></member>
     <member refid="classgraphene_1_1app_1_1database__api__impl_1a3d2d475d94b76c8fdf1b0087105cb5a6" kind="function"><name>get_limit_orders</name></member>
-    <member refid="classgraphene_1_1app_1_1database__api__impl_1a23876f2b2587a92452a935e90e8e6fae" kind="function"><name>get_liquidity_pools_by_asset_x</name></member>
+    <member refid="classgraphene_1_1app_1_1database__api__impl_1a58b0c1691bbe90006649a33ce0ef59db" kind="function"><name>extend_liquidity_pool</name></member>
+    <member refid="classgraphene_1_1app_1_1database__api__impl_1ae93d5c619a654adf2b700f9912945b51" kind="function"><name>get_liquidity_pools_by_asset_x</name></member>
     <member refid="classgraphene_1_1app_1_1database__api__impl_1a31f2506dfe8e4e9bac4d689cd8cef2b7" kind="function"><name>get_whether_to_subscribe</name></member>
     <member refid="classgraphene_1_1app_1_1database__api__impl_1a14570ed6210976669e9a63c67f34a620" kind="function"><name>get_subscription_key</name></member>
     <member refid="classgraphene_1_1app_1_1database__api__impl_1aa57048eb9af8413ef0e2e5726b07ab34" kind="function"><name>subscribe_to_item</name></member>
@@ -2891,15 +2908,6 @@
     <member refid="classgraphene_1_1elasticsearch_1_1detail_1_1elasticsearch__plugin__impl_1a9d1a161640e50f6e5d33aa3248856a7d" kind="function"><name>prepareBulk</name></member>
     <member refid="classgraphene_1_1elasticsearch_1_1detail_1_1elasticsearch__plugin__impl_1adb39634dfc8b003464c12a6a4defab26" kind="function"><name>populateESstruct</name></member>
   </compound>
-  <compound refid="classfc_1_1ripemd160_1_1encoder" kind="class"><name>fc::ripemd160::encoder</name>
-    <member refid="classfc_1_1ripemd160_1_1encoder_1ab2795f7b2b3f4f00d11ca4a924e0c0cc" kind="variable"><name>my</name></member>
-    <member refid="classfc_1_1ripemd160_1_1encoder_1a3391ad574e73a922e123202ab79686a5" kind="function"><name>encoder</name></member>
-    <member refid="classfc_1_1ripemd160_1_1encoder_1a8711a3ebfd6f12a942009514a1d41121" kind="function"><name>~encoder</name></member>
-    <member refid="classfc_1_1ripemd160_1_1encoder_1afee34a8345635e33de7815e88d44b8ea" kind="function"><name>write</name></member>
-    <member refid="classfc_1_1ripemd160_1_1encoder_1ab1497be30dbb12cf7f9b0d09b7222fdd" kind="function"><name>put</name></member>
-    <member refid="classfc_1_1ripemd160_1_1encoder_1abf2955a65ccd6a6bd943e5fe97c2ca2e" kind="function"><name>reset</name></member>
-    <member refid="classfc_1_1ripemd160_1_1encoder_1ae9d341abf0f58f68a58a2a00c15af411" kind="function"><name>result</name></member>
-  </compound>
   <compound refid="classfc_1_1sha1_1_1encoder" kind="class"><name>fc::sha1::encoder</name>
     <member refid="classfc_1_1sha1_1_1encoder_1af231ee00eb8095d56a6859ca3ab2ce59" kind="variable"><name>my</name></member>
     <member refid="classfc_1_1sha1_1_1encoder_1a674eb9f77fe5435b983d74042680a3f9" kind="function"><name>encoder</name></member>
@@ -2944,6 +2952,15 @@
     <member refid="classfc_1_1hash160_1_1encoder_1a53eb41497ba75be3aa6a54483f810657" kind="function"><name>put</name></member>
     <member refid="classfc_1_1hash160_1_1encoder_1a9015053a6433c2b8d5273334b2700c53" kind="function"><name>reset</name></member>
     <member refid="classfc_1_1hash160_1_1encoder_1aa37f4634c3d6c7295600c0b68f9da5df" kind="function"><name>result</name></member>
+  </compound>
+  <compound refid="classfc_1_1ripemd160_1_1encoder" kind="class"><name>fc::ripemd160::encoder</name>
+    <member refid="classfc_1_1ripemd160_1_1encoder_1ab2795f7b2b3f4f00d11ca4a924e0c0cc" kind="variable"><name>my</name></member>
+    <member refid="classfc_1_1ripemd160_1_1encoder_1a3391ad574e73a922e123202ab79686a5" kind="function"><name>encoder</name></member>
+    <member refid="classfc_1_1ripemd160_1_1encoder_1a8711a3ebfd6f12a942009514a1d41121" kind="function"><name>~encoder</name></member>
+    <member refid="classfc_1_1ripemd160_1_1encoder_1afee34a8345635e33de7815e88d44b8ea" kind="function"><name>write</name></member>
+    <member refid="classfc_1_1ripemd160_1_1encoder_1ab1497be30dbb12cf7f9b0d09b7222fdd" kind="function"><name>put</name></member>
+    <member refid="classfc_1_1ripemd160_1_1encoder_1abf2955a65ccd6a6bd943e5fe97c2ca2e" kind="function"><name>reset</name></member>
+    <member refid="classfc_1_1ripemd160_1_1encoder_1ae9d341abf0f58f68a58a2a00c15af411" kind="function"><name>result</name></member>
   </compound>
   <compound refid="classfc_1_1ip_1_1endpoint" kind="class"><name>fc::ip::endpoint</name>
     <member refid="classfc_1_1ip_1_1endpoint_1ac2909bc9f20a8abc19aedcb594d78dae" kind="variable"><name>_port</name></member>
@@ -3148,6 +3165,12 @@
     <member refid="structgraphene_1_1app_1_1extended__asset__object_1a664cea494a670e1917d1b7b8ea92bf69" kind="function"><name>extended_asset_object</name></member>
     <member refid="structgraphene_1_1app_1_1extended__asset__object_1acabf2d7408ff17922f678771af22d138" kind="function"><name>extended_asset_object</name></member>
     <member refid="structgraphene_1_1app_1_1extended__asset__object_1a1f5efd507ee51eed5fabfac4ba0b627c" kind="function"><name>extended_asset_object</name></member>
+  </compound>
+  <compound refid="structgraphene_1_1app_1_1extended__liquidity__pool__object" kind="struct"><name>graphene::app::extended_liquidity_pool_object</name>
+    <member refid="structgraphene_1_1app_1_1extended__liquidity__pool__object_1a79cc0a5d90bbb8affba23a324b62dd86" kind="variable"><name>statistics</name></member>
+    <member refid="structgraphene_1_1app_1_1extended__liquidity__pool__object_1aeec87444340cd94642edb968c04829c2" kind="function"><name>extended_liquidity_pool_object</name></member>
+    <member refid="structgraphene_1_1app_1_1extended__liquidity__pool__object_1a39c37535790ad67dab8b1c749c60f75e" kind="function"><name>extended_liquidity_pool_object</name></member>
+    <member refid="structgraphene_1_1app_1_1extended__liquidity__pool__object_1a47d64ec41bdad12f483a802c1feb5e41" kind="function"><name>extended_liquidity_pool_object</name></member>
   </compound>
   <compound refid="classfc_1_1ecc_1_1extended__private__key" kind="class"><name>fc::ecc::extended_private_key</name>
     <member refid="classfc_1_1ecc_1_1extended__private__key_1a5a1655c6895b993f3285aa77f15f47c9" kind="variable"><name>c</name></member>
@@ -3433,11 +3456,11 @@
     <member refid="structgraphene_1_1protocol_1_1withdraw__permission__claim__operation_1_1fee__parameters__type_1ad862f29acb0ed01137ed2e79e42f4c44" kind="variable"><name>fee</name></member>
     <member refid="structgraphene_1_1protocol_1_1withdraw__permission__claim__operation_1_1fee__parameters__type_1ac95a844eb2ababa1b062a62558875352" kind="variable"><name>price_per_kbyte</name></member>
   </compound>
-  <compound refid="structgraphene_1_1protocol_1_1witness__create__operation_1_1fee__parameters__type" kind="struct"><name>graphene::protocol::witness_create_operation::fee_parameters_type</name>
-    <member refid="structgraphene_1_1protocol_1_1witness__create__operation_1_1fee__parameters__type_1ad60cbe11672642c1499fd4e626938634" kind="variable"><name>fee</name></member>
-  </compound>
   <compound refid="structgraphene_1_1protocol_1_1withdraw__permission__delete__operation_1_1fee__parameters__type" kind="struct"><name>graphene::protocol::withdraw_permission_delete_operation::fee_parameters_type</name>
     <member refid="structgraphene_1_1protocol_1_1withdraw__permission__delete__operation_1_1fee__parameters__type_1a14a31100fcee51d5c997a5d620739518" kind="variable"><name>fee</name></member>
+  </compound>
+  <compound refid="structgraphene_1_1protocol_1_1witness__create__operation_1_1fee__parameters__type" kind="struct"><name>graphene::protocol::witness_create_operation::fee_parameters_type</name>
+    <member refid="structgraphene_1_1protocol_1_1witness__create__operation_1_1fee__parameters__type_1ad60cbe11672642c1499fd4e626938634" kind="variable"><name>fee</name></member>
   </compound>
   <compound refid="structgraphene_1_1protocol_1_1witness__update__operation_1_1fee__parameters__type" kind="struct"><name>graphene::protocol::witness_update_operation::fee_parameters_type</name>
     <member refid="structgraphene_1_1protocol_1_1witness__update__operation_1_1fee__parameters__type_1ae94d892e06aba0c547de248da7cd883c" kind="variable"><name>fee</name></member>
@@ -3706,10 +3729,6 @@
     <member refid="classfc_1_1gelf__appender_1a88d87ea70783e681ab6b2b1a24b81b2c" kind="function"><name>~gelf_appender</name></member>
     <member refid="classfc_1_1gelf__appender_1a2f41c751b1f98f809b5305df6d6a6ffc" kind="function"><name>log</name></member>
   </compound>
-  <compound refid="structgraphene_1_1chain_1_1detail_1_1gen__seq" kind="struct"><name>graphene::chain::detail::gen_seq</name>
-  </compound>
-  <compound refid="structgraphene_1_1chain_1_1detail_1_1gen__seq_3_010_00_01_is_8_8_8_01_4" kind="struct"><name>graphene::chain::detail::gen_seq&lt; 0, Is... &gt;</name>
-  </compound>
   <compound refid="classfc_1_1generic__api" kind="class"><name>fc::generic_api</name>
     <member refid="classfc_1_1generic__api_1aee07a455e00ba058e6dcd0da3779cb61" kind="friend"><name>api_visitor</name></member>
     <member refid="classfc_1_1generic__api_1ae4e359f279b43ac6d8e4e8a630253a13" kind="variable"><name>_api_connection</name></member>
@@ -3906,6 +3925,14 @@
     <member refid="structgraphene_1_1chain_1_1detail_1_1get__impacted__account__visitor_1a77c82bbf8baab4162ddc9b8b23037d07" kind="function"><name>operator()</name></member>
     <member refid="structgraphene_1_1chain_1_1detail_1_1get__impacted__account__visitor_1a463c4b6b8c8f71317711528cba18bffd" kind="function"><name>operator()</name></member>
     <member refid="structgraphene_1_1chain_1_1detail_1_1get__impacted__account__visitor_1a6d873dfe953e2fb394db4971a9cefd4f" kind="function"><name>operator()</name></member>
+  </compound>
+  <compound refid="structgraphene_1_1market__history_1_1detail_1_1get__liquidity__pool__id__visitor" kind="struct"><name>graphene::market_history::detail::get_liquidity_pool_id_visitor</name>
+    <member refid="structgraphene_1_1market__history_1_1detail_1_1get__liquidity__pool__id__visitor_1a05f5fc24d926e0376936e9c7abf84caa" kind="typedef"><name>result_type</name></member>
+    <member refid="structgraphene_1_1market__history_1_1detail_1_1get__liquidity__pool__id__visitor_1ab36e32d02f92605d40d8dcca36e0f962" kind="function"><name>operator()</name></member>
+    <member refid="structgraphene_1_1market__history_1_1detail_1_1get__liquidity__pool__id__visitor_1a79d25141a24a321755fbedf9d27e6056" kind="function"><name>operator()</name></member>
+    <member refid="structgraphene_1_1market__history_1_1detail_1_1get__liquidity__pool__id__visitor_1a463f3aacfdd2706079e1724b6bddd643" kind="function"><name>operator()</name></member>
+    <member refid="structgraphene_1_1market__history_1_1detail_1_1get__liquidity__pool__id__visitor_1addd00b3e5b336450d2534e80ffea6b63" kind="function"><name>operator()</name></member>
+    <member refid="structgraphene_1_1market__history_1_1detail_1_1get__liquidity__pool__id__visitor_1afbada6f93e36162035d9e0f0fa8e1c13" kind="function"><name>operator()</name></member>
   </compound>
   <compound refid="structgraphene_1_1app_1_1get__required__fees__helper" kind="struct"><name>graphene::app::get_required_fees_helper</name>
     <member refid="structgraphene_1_1app_1_1get__required__fees__helper_1a5bc988de7f812f1e17f07655f9321cb1" kind="variable"><name>current_fee_schedule</name></member>
@@ -4208,13 +4235,15 @@
     <member refid="classgraphene_1_1app_1_1history__api_1a59a2a38b1c81a9e5fed85ea79f25bc38" kind="variable"><name>_app</name></member>
     <member refid="classgraphene_1_1app_1_1history__api_1af5bed60211b4dbc03bd69cfee1448848" kind="variable"><name>database_api</name></member>
     <member refid="classgraphene_1_1app_1_1history__api_1ad034d3e3420e431ad72159b9f3bd807a" kind="function"><name>history_api</name></member>
-    <member refid="classgraphene_1_1app_1_1history__api_1a0a014a7206c460a3baa56efb399ce708" kind="function"><name>get_account_history</name></member>
-    <member refid="classgraphene_1_1app_1_1history__api_1a765487ad2bf17600a4aca7aaacba91b5" kind="function"><name>get_account_history_by_operations</name></member>
-    <member refid="classgraphene_1_1app_1_1history__api_1a86c8af5c6a28c2f114200e1623172e3a" kind="function"><name>get_account_history_operations</name></member>
-    <member refid="classgraphene_1_1app_1_1history__api_1a9fb8342e1abd15aa7e36392fd4139cb1" kind="function"><name>get_relative_account_history</name></member>
+    <member refid="classgraphene_1_1app_1_1history__api_1a4f8d7ab9b1bc5e5c9bf461bb75e9f1d9" kind="function"><name>get_account_history</name></member>
+    <member refid="classgraphene_1_1app_1_1history__api_1a25433bf9403a85cbdbde7451e8713410" kind="function"><name>get_account_history_by_operations</name></member>
+    <member refid="classgraphene_1_1app_1_1history__api_1aaf6cb8f416e909339e12e89ceaf4e0ce" kind="function"><name>get_account_history_operations</name></member>
+    <member refid="classgraphene_1_1app_1_1history__api_1a97e3717e6d21312bbb355ba947fa9b1b" kind="function"><name>get_relative_account_history</name></member>
     <member refid="classgraphene_1_1app_1_1history__api_1a5bc0fb814fec76314f98d10ede6301a1" kind="function"><name>get_fill_order_history</name></member>
     <member refid="classgraphene_1_1app_1_1history__api_1a4f1a0df34c9a7ee68e081dd8f5175b74" kind="function"><name>get_market_history</name></member>
     <member refid="classgraphene_1_1app_1_1history__api_1a3008b6fd21d8b14402a389eb9e8bf977" kind="function"><name>get_market_history_buckets</name></member>
+    <member refid="classgraphene_1_1app_1_1history__api_1aab557d590426e5398bea778dec608fae" kind="function"><name>get_liquidity_pool_history</name></member>
+    <member refid="classgraphene_1_1app_1_1history__api_1a53df722a9461f80c198a084bd7571e46" kind="function"><name>get_liquidity_pool_history_by_sequence</name></member>
   </compound>
   <compound refid="structgraphene_1_1market__history_1_1history__key" kind="struct"><name>graphene::market_history::history_key</name>
     <member refid="structgraphene_1_1market__history_1_1history__key_1a842c1de117075ad55be1c20cec2a429a" kind="variable"><name>base</name></member>
@@ -4456,15 +4485,23 @@
     <member refid="structgraphene_1_1chain_1_1immutable__chain__parameters_1a2875bd99d200b908c2d4ed65480c5e6a" kind="variable"><name>num_special_accounts</name></member>
     <member refid="structgraphene_1_1chain_1_1immutable__chain__parameters_1a62bc39f0767a9a610bc8dd545080d519" kind="variable"><name>num_special_assets</name></member>
   </compound>
-  <compound refid="classfc_1_1ofstream_1_1impl" kind="class"><name>fc::ofstream::impl</name>
-    <member refid="classfc_1_1ofstream_1_1impl_1ae7dd9c5f2fd240a9b28e164db0661df8" kind="variable"><name>ofs</name></member>
+  <compound refid="structfc_1_1hash160_1_1encoder_1_1impl" kind="struct"><name>fc::hash160::encoder::impl</name>
+    <member refid="structfc_1_1hash160_1_1encoder_1_1impl_1afec0f5797931a8c8b8c26109fefd6e18" kind="variable"><name>ctx</name></member>
   </compound>
-  <compound refid="classfc_1_1ripemd160_1_1encoder_1_1impl" kind="class"><name>fc::ripemd160::encoder::impl</name>
-    <member refid="classfc_1_1ripemd160_1_1encoder_1_1impl_1a4a4d4674fda8a3cbc0b2fcaa95a4d7bd" kind="variable"><name>ctx</name></member>
-    <member refid="classfc_1_1ripemd160_1_1encoder_1_1impl_1a4ca60ca682e1d47dd1b9860698574161" kind="function"><name>impl</name></member>
+  <compound refid="structfc_1_1sha1_1_1encoder_1_1impl" kind="struct"><name>fc::sha1::encoder::impl</name>
+    <member refid="structfc_1_1sha1_1_1encoder_1_1impl_1ab38d54c42316b3239ab8c6cced6f299c" kind="variable"><name>ctx</name></member>
   </compound>
   <compound refid="structfc_1_1sha256_1_1encoder_1_1impl" kind="struct"><name>fc::sha256::encoder::impl</name>
     <member refid="structfc_1_1sha256_1_1encoder_1_1impl_1aadce4384afc470d17eb3e764d08f6b78" kind="variable"><name>ctx</name></member>
+  </compound>
+  <compound refid="structfc_1_1sha512_1_1encoder_1_1impl" kind="struct"><name>fc::sha512::encoder::impl</name>
+    <member refid="structfc_1_1sha512_1_1encoder_1_1impl_1a1e56adb50bb113e8884d2166b950c022" kind="variable"><name>ctx</name></member>
+  </compound>
+  <compound refid="classfc_1_1ofstream_1_1impl" kind="class"><name>fc::ofstream::impl</name>
+    <member refid="classfc_1_1ofstream_1_1impl_1ae7dd9c5f2fd240a9b28e164db0661df8" kind="variable"><name>ofs</name></member>
+  </compound>
+  <compound refid="classfc_1_1ifstream_1_1impl" kind="class"><name>fc::ifstream::impl</name>
+    <member refid="classfc_1_1ifstream_1_1impl_1a82f3ad7def74e9bd140ba7a72b6e8ef9" kind="variable"><name>ifs</name></member>
   </compound>
   <compound refid="classfc_1_1stringstream_1_1impl" kind="class"><name>fc::stringstream::impl</name>
     <member refid="classfc_1_1stringstream_1_1impl_1a9605518d5160cc992dd260e494c867df" kind="variable"><name>ss</name></member>
@@ -4472,8 +4509,43 @@
     <member refid="classfc_1_1stringstream_1_1impl_1ac94a620ec8a1cd694470a661af595e25" kind="function"><name>impl</name></member>
     <member refid="classfc_1_1stringstream_1_1impl_1ab2058aca10e5c5b7fd20b0326ae590a5" kind="function"><name>impl</name></member>
   </compound>
-  <compound refid="structfc_1_1aes__decoder_1_1impl" kind="struct"><name>fc::aes_decoder::impl</name>
-    <member refid="structfc_1_1aes__decoder_1_1impl_1a286d2af08a0edbcd1c97b8ad357c1421" kind="variable"><name>ctx</name></member>
+  <compound refid="classfc_1_1gelf__appender_1_1impl" kind="class"><name>fc::gelf_appender::impl</name>
+    <member refid="classfc_1_1gelf__appender_1_1impl_1a7683f0beb1017eb880d31371cf782a12" kind="variable"><name>cfg</name></member>
+    <member refid="classfc_1_1gelf__appender_1_1impl_1a663289c28b591bd53a6315c73660a64e" kind="variable"><name>gelf_endpoint</name></member>
+    <member refid="classfc_1_1gelf__appender_1_1impl_1a5dab5ac04f505ecd7b9970df45111ef6" kind="variable"><name>gelf_socket</name></member>
+    <member refid="classfc_1_1gelf__appender_1_1impl_1afdd57661530f76c819bdeefdc3843ad3" kind="function"><name>impl</name></member>
+    <member refid="classfc_1_1gelf__appender_1_1impl_1a97852f27131d3a3623abd6cc820a34a5" kind="function"><name>~impl</name></member>
+  </compound>
+  <compound refid="classfc_1_1logger_1_1impl" kind="class"><name>fc::logger::impl</name>
+    <member refid="classfc_1_1logger_1_1impl_1ad4d304a7e009cba326b6e5c676691404" kind="variable"><name>_name</name></member>
+    <member refid="classfc_1_1logger_1_1impl_1ac5fbad0835e7f2c0f101b7526f760798" kind="variable"><name>_parent</name></member>
+    <member refid="classfc_1_1logger_1_1impl_1a35693d211bf5e51aa62891a6f80c8159" kind="variable"><name>_enabled</name></member>
+    <member refid="classfc_1_1logger_1_1impl_1a27de60fedcef6eafffaffb2eb0b1cd50" kind="variable"><name>_additivity</name></member>
+    <member refid="classfc_1_1logger_1_1impl_1a7723d5aa07e346a7dc5c72671d2ce71a" kind="variable"><name>_level</name></member>
+    <member refid="classfc_1_1logger_1_1impl_1af9819cacb4eb156252152968d9c68a99" kind="variable"><name>_appenders</name></member>
+    <member refid="classfc_1_1logger_1_1impl_1a4268b3a32d311f92e6db387cba0c52ce" kind="function"><name>impl</name></member>
+  </compound>
+  <compound refid="classfc_1_1tcp__socket_1_1impl" kind="class"><name>fc::tcp_socket::impl</name>
+    <member refid="classfc_1_1tcp__socket_1_1impl_1ae480e85abcf8662337325d2d69357ead" kind="variable"><name>_write_in_progress</name></member>
+    <member refid="classfc_1_1tcp__socket_1_1impl_1a8200466b8052db79d2bd88f8fa9fec49" kind="variable"><name>_read_in_progress</name></member>
+    <member refid="classfc_1_1tcp__socket_1_1impl_1ac4695f911178daec324a35c6ff0ac265" kind="variable"><name>_sock</name></member>
+    <member refid="classfc_1_1tcp__socket_1_1impl_1af5804ebfc87107a3e4a596d307a35158" kind="variable"><name>_io_hooks</name></member>
+    <member refid="classfc_1_1tcp__socket_1_1impl_1a58f9aa3ed7aa2159d17be5dccb47bca4" kind="function"><name>impl</name></member>
+    <member refid="classfc_1_1tcp__socket_1_1impl_1afd552d51b85a29c5b7b4115a45bcc389" kind="function"><name>~impl</name></member>
+    <member refid="classfc_1_1tcp__socket_1_1impl_1a227d73b46fe2857e60370ae8e6a8b281" kind="function"><name>readsome</name></member>
+    <member refid="classfc_1_1tcp__socket_1_1impl_1ab2755393e3ba9ee2de7db230d7f98e47" kind="function"><name>readsome</name></member>
+    <member refid="classfc_1_1tcp__socket_1_1impl_1af400365fe77a5d4bcf65f2c3b469ad7a" kind="function"><name>writesome</name></member>
+    <member refid="classfc_1_1tcp__socket_1_1impl_1adf212edc6d5e21ffde8524b47f8566a8" kind="function"><name>writesome</name></member>
+  </compound>
+  <compound refid="classfc_1_1udp__socket_1_1impl" kind="class"><name>fc::udp_socket::impl</name>
+    <member refid="classfc_1_1udp__socket_1_1impl_1a4e6da32ec04fbfdfcb9b3967de1e66d0" kind="variable"><name>_sock</name></member>
+    <member refid="classfc_1_1udp__socket_1_1impl_1a0e7c97142fec0b790564cd2f69e485b8" kind="function"><name>impl</name></member>
+    <member refid="classfc_1_1udp__socket_1_1impl_1a116b7e65ca5600cd5ea573f0d226d14e" kind="function"><name>~impl</name></member>
+  </compound>
+  <compound refid="classfc_1_1tcp__server_1_1impl" kind="class"><name>fc::tcp_server::impl</name>
+    <member refid="classfc_1_1tcp__server_1_1impl_1a71f4bd92295ab55da6d74fd89e0b3f97" kind="variable"><name>_accept</name></member>
+    <member refid="classfc_1_1tcp__server_1_1impl_1a73e6b42fc364a6b638262db5487f7fed" kind="function"><name>impl</name></member>
+    <member refid="classfc_1_1tcp__server_1_1impl_1a87c48948804c0883e6ffbf6bb246f5cb" kind="function"><name>~impl</name></member>
   </compound>
   <compound refid="classfc_1_1console__appender_1_1impl" kind="class"><name>fc::console_appender::impl</name>
     <member refid="classfc_1_1console__appender_1_1impl_1a2fc97c332cff29837eb16c2218704723" kind="variable"><name>cfg</name></member>
@@ -4492,56 +4564,12 @@
     <member refid="classfc_1_1file__appender_1_1impl_1a80c2b12a1b539e2449a24cb2abc1b856" kind="function"><name>rotate_files</name></member>
     <member refid="classfc_1_1file__appender_1_1impl_1a2c533797fca72c91b534e5e44cee3104" kind="function"><name>delete_files</name></member>
   </compound>
-  <compound refid="classfc_1_1gelf__appender_1_1impl" kind="class"><name>fc::gelf_appender::impl</name>
-    <member refid="classfc_1_1gelf__appender_1_1impl_1a7683f0beb1017eb880d31371cf782a12" kind="variable"><name>cfg</name></member>
-    <member refid="classfc_1_1gelf__appender_1_1impl_1a663289c28b591bd53a6315c73660a64e" kind="variable"><name>gelf_endpoint</name></member>
-    <member refid="classfc_1_1gelf__appender_1_1impl_1a5dab5ac04f505ecd7b9970df45111ef6" kind="variable"><name>gelf_socket</name></member>
-    <member refid="classfc_1_1gelf__appender_1_1impl_1afdd57661530f76c819bdeefdc3843ad3" kind="function"><name>impl</name></member>
-    <member refid="classfc_1_1gelf__appender_1_1impl_1a97852f27131d3a3623abd6cc820a34a5" kind="function"><name>~impl</name></member>
-  </compound>
-  <compound refid="classfc_1_1logger_1_1impl" kind="class"><name>fc::logger::impl</name>
-    <member refid="classfc_1_1logger_1_1impl_1ad4d304a7e009cba326b6e5c676691404" kind="variable"><name>_name</name></member>
-    <member refid="classfc_1_1logger_1_1impl_1ac5fbad0835e7f2c0f101b7526f760798" kind="variable"><name>_parent</name></member>
-    <member refid="classfc_1_1logger_1_1impl_1a35693d211bf5e51aa62891a6f80c8159" kind="variable"><name>_enabled</name></member>
-    <member refid="classfc_1_1logger_1_1impl_1a27de60fedcef6eafffaffb2eb0b1cd50" kind="variable"><name>_additivity</name></member>
-    <member refid="classfc_1_1logger_1_1impl_1a7723d5aa07e346a7dc5c72671d2ce71a" kind="variable"><name>_level</name></member>
-    <member refid="classfc_1_1logger_1_1impl_1af9819cacb4eb156252152968d9c68a99" kind="variable"><name>_appenders</name></member>
-    <member refid="classfc_1_1logger_1_1impl_1a4268b3a32d311f92e6db387cba0c52ce" kind="function"><name>impl</name></member>
+  <compound refid="classfc_1_1ripemd160_1_1encoder_1_1impl" kind="class"><name>fc::ripemd160::encoder::impl</name>
+    <member refid="classfc_1_1ripemd160_1_1encoder_1_1impl_1a4a4d4674fda8a3cbc0b2fcaa95a4d7bd" kind="variable"><name>ctx</name></member>
+    <member refid="classfc_1_1ripemd160_1_1encoder_1_1impl_1a4ca60ca682e1d47dd1b9860698574161" kind="function"><name>impl</name></member>
   </compound>
   <compound refid="structfc_1_1aes__encoder_1_1impl" kind="struct"><name>fc::aes_encoder::impl</name>
     <member refid="structfc_1_1aes__encoder_1_1impl_1ad7f1f31c3e3825b834a6c7418e584085" kind="variable"><name>ctx</name></member>
-  </compound>
-  <compound refid="classfc_1_1tcp__socket_1_1impl" kind="class"><name>fc::tcp_socket::impl</name>
-    <member refid="classfc_1_1tcp__socket_1_1impl_1ae480e85abcf8662337325d2d69357ead" kind="variable"><name>_write_in_progress</name></member>
-    <member refid="classfc_1_1tcp__socket_1_1impl_1a8200466b8052db79d2bd88f8fa9fec49" kind="variable"><name>_read_in_progress</name></member>
-    <member refid="classfc_1_1tcp__socket_1_1impl_1ac4695f911178daec324a35c6ff0ac265" kind="variable"><name>_sock</name></member>
-    <member refid="classfc_1_1tcp__socket_1_1impl_1af5804ebfc87107a3e4a596d307a35158" kind="variable"><name>_io_hooks</name></member>
-    <member refid="classfc_1_1tcp__socket_1_1impl_1a58f9aa3ed7aa2159d17be5dccb47bca4" kind="function"><name>impl</name></member>
-    <member refid="classfc_1_1tcp__socket_1_1impl_1afd552d51b85a29c5b7b4115a45bcc389" kind="function"><name>~impl</name></member>
-    <member refid="classfc_1_1tcp__socket_1_1impl_1a227d73b46fe2857e60370ae8e6a8b281" kind="function"><name>readsome</name></member>
-    <member refid="classfc_1_1tcp__socket_1_1impl_1ab2755393e3ba9ee2de7db230d7f98e47" kind="function"><name>readsome</name></member>
-    <member refid="classfc_1_1tcp__socket_1_1impl_1af400365fe77a5d4bcf65f2c3b469ad7a" kind="function"><name>writesome</name></member>
-    <member refid="classfc_1_1tcp__socket_1_1impl_1adf212edc6d5e21ffde8524b47f8566a8" kind="function"><name>writesome</name></member>
-  </compound>
-  <compound refid="structfc_1_1sha512_1_1encoder_1_1impl" kind="struct"><name>fc::sha512::encoder::impl</name>
-    <member refid="structfc_1_1sha512_1_1encoder_1_1impl_1a1e56adb50bb113e8884d2166b950c022" kind="variable"><name>ctx</name></member>
-  </compound>
-  <compound refid="classfc_1_1udp__socket_1_1impl" kind="class"><name>fc::udp_socket::impl</name>
-    <member refid="classfc_1_1udp__socket_1_1impl_1a4e6da32ec04fbfdfcb9b3967de1e66d0" kind="variable"><name>_sock</name></member>
-    <member refid="classfc_1_1udp__socket_1_1impl_1a0e7c97142fec0b790564cd2f69e485b8" kind="function"><name>impl</name></member>
-    <member refid="classfc_1_1udp__socket_1_1impl_1a116b7e65ca5600cd5ea573f0d226d14e" kind="function"><name>~impl</name></member>
-  </compound>
-  <compound refid="classfc_1_1ifstream_1_1impl" kind="class"><name>fc::ifstream::impl</name>
-    <member refid="classfc_1_1ifstream_1_1impl_1a82f3ad7def74e9bd140ba7a72b6e8ef9" kind="variable"><name>ifs</name></member>
-  </compound>
-  <compound refid="structfc_1_1hash160_1_1encoder_1_1impl" kind="struct"><name>fc::hash160::encoder::impl</name>
-    <member refid="structfc_1_1hash160_1_1encoder_1_1impl_1afec0f5797931a8c8b8c26109fefd6e18" kind="variable"><name>ctx</name></member>
-  </compound>
-  <compound refid="structfc_1_1sha1_1_1encoder_1_1impl" kind="struct"><name>fc::sha1::encoder::impl</name>
-    <member refid="structfc_1_1sha1_1_1encoder_1_1impl_1ab38d54c42316b3239ab8c6cced6f299c" kind="variable"><name>ctx</name></member>
-  </compound>
-  <compound refid="structfc_1_1sha224_1_1encoder_1_1impl" kind="struct"><name>fc::sha224::encoder::impl</name>
-    <member refid="structfc_1_1sha224_1_1encoder_1_1impl_1ad5853b3c8ee1dc6aa5b03ffe2d4e9f14" kind="variable"><name>ctx</name></member>
   </compound>
   <compound refid="classfc_1_1http_1_1connection_1_1impl" kind="class"><name>fc::http::connection::impl</name>
     <member refid="classfc_1_1http_1_1connection_1_1impl_1a082c4f4aa9ea45df59904c89fef293ab" kind="variable"><name>sock</name></member>
@@ -4550,10 +4578,11 @@
     <member refid="classfc_1_1http_1_1connection_1_1impl_1a9a29067f5bb82a37211ada5909f74907" kind="function"><name>read_until</name></member>
     <member refid="classfc_1_1http_1_1connection_1_1impl_1a9d6e4ec54cb9a15ab64372e5d288404e" kind="function"><name>parse_reply</name></member>
   </compound>
-  <compound refid="classfc_1_1tcp__server_1_1impl" kind="class"><name>fc::tcp_server::impl</name>
-    <member refid="classfc_1_1tcp__server_1_1impl_1a71f4bd92295ab55da6d74fd89e0b3f97" kind="variable"><name>_accept</name></member>
-    <member refid="classfc_1_1tcp__server_1_1impl_1a73e6b42fc364a6b638262db5487f7fed" kind="function"><name>impl</name></member>
-    <member refid="classfc_1_1tcp__server_1_1impl_1a87c48948804c0883e6ffbf6bb246f5cb" kind="function"><name>~impl</name></member>
+  <compound refid="structfc_1_1sha224_1_1encoder_1_1impl" kind="struct"><name>fc::sha224::encoder::impl</name>
+    <member refid="structfc_1_1sha224_1_1encoder_1_1impl_1ad5853b3c8ee1dc6aa5b03ffe2d4e9f14" kind="variable"><name>ctx</name></member>
+  </compound>
+  <compound refid="structfc_1_1aes__decoder_1_1impl" kind="struct"><name>fc::aes_decoder::impl</name>
+    <member refid="structfc_1_1aes__decoder_1_1impl_1a286d2af08a0edbcd1c97b8ad357c1421" kind="variable"><name>ctx</name></member>
   </compound>
   <compound refid="structfc_1_1static__variant_1_1import__helper" kind="struct"><name>fc::static_variant::import_helper</name>
     <member refid="structfc_1_1static__variant_1_1import__helper_1a9f56e4a9b31210b239e68bdeb276884e" kind="function"><name>construct</name></member>
@@ -4965,6 +4994,7 @@
     <member refid="classgraphene_1_1chain_1_1liquidity__pool__exchange__evaluator_1a4a78376836916e16fd30239d4f976f30" kind="variable"><name>_account_receives</name></member>
     <member refid="classgraphene_1_1chain_1_1liquidity__pool__exchange__evaluator_1a23bfc0c20994524d718797d196412c83" kind="variable"><name>_maker_market_fee</name></member>
     <member refid="classgraphene_1_1chain_1_1liquidity__pool__exchange__evaluator_1a204e63d9dee77f4800b2c7bf9288221e" kind="variable"><name>_taker_market_fee</name></member>
+    <member refid="classgraphene_1_1chain_1_1liquidity__pool__exchange__evaluator_1a1517c8cf1f2bab6a2ff648d90d450cd0" kind="variable"><name>_pool_taker_fee</name></member>
     <member refid="classgraphene_1_1chain_1_1liquidity__pool__exchange__evaluator_1a39cd7f62de9528e333d50a2f05effa0e" kind="function"><name>do_evaluate</name></member>
     <member refid="classgraphene_1_1chain_1_1liquidity__pool__exchange__evaluator_1a77e08973c0826072f035485201652722" kind="function"><name>do_apply</name></member>
   </compound>
@@ -4977,6 +5007,15 @@
     <member refid="structgraphene_1_1protocol_1_1liquidity__pool__exchange__operation_1ac78f4dc79b5efb26cdaacc57d300424a" kind="variable"><name>extensions</name></member>
     <member refid="structgraphene_1_1protocol_1_1liquidity__pool__exchange__operation_1a1e242c29429090d4f2a5888719552f85" kind="function"><name>fee_payer</name></member>
     <member refid="structgraphene_1_1protocol_1_1liquidity__pool__exchange__operation_1a3c655c9e43d20a296435fbe90066a3ce" kind="function"><name>validate</name></member>
+  </compound>
+  <compound refid="structgraphene_1_1market__history_1_1liquidity__pool__history__object" kind="struct"><name>graphene::market_history::liquidity_pool_history_object</name>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__history__object_1a68cc89a1bdd090026125409bef7cd339" kind="variable"><name>space_id</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__history__object_1a61fb7fdbce8abaa85d2dcc06307aef79" kind="variable"><name>type_id</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__history__object_1a201e2f0f6f89eba9886c287982686e4d" kind="variable"><name>pool</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__history__object_1a802432b014bee79a55b0293266be666d" kind="variable"><name>sequence</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__history__object_1a81d66c80e5e677bc695748ff676bb2e6" kind="variable"><name>time</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__history__object_1a4e34136875277907a63495890a2b4b84" kind="variable"><name>op_type</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__history__object_1abea60706c3777072c893dbe5672ccb68" kind="variable"><name>op</name></member>
   </compound>
   <compound refid="classgraphene_1_1chain_1_1liquidity__pool__object" kind="class"><name>graphene::chain::liquidity_pool_object</name>
     <member refid="classgraphene_1_1chain_1_1liquidity__pool__object_1ae90af2d1806a6452ec79bf41437dd70f" kind="variable"><name>space_id</name></member>
@@ -4991,12 +5030,62 @@
     <member refid="classgraphene_1_1chain_1_1liquidity__pool__object_1afcf73364f1102c26f6303936ff39998a" kind="variable"><name>virtual_value</name></member>
     <member refid="classgraphene_1_1chain_1_1liquidity__pool__object_1a592e5a1733d07da7abe0e8b5ea7679a3" kind="function"><name>update_virtual_value</name></member>
   </compound>
+  <compound refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__meta__object" kind="struct"><name>graphene::market_history::liquidity_pool_ticker_meta_object</name>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__meta__object_1a93385ab5c12f8682ad50caba4322c424" kind="variable"><name>space_id</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__meta__object_1abfb0c12cd39f556d6efb368e4405616f" kind="variable"><name>type_id</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__meta__object_1a26eb6c9619ea1027335e35f08e8d163d" kind="variable"><name>rolling_min_lp_his_id</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__meta__object_1acce99f89829a5d457c95081b570cd7ec" kind="variable"><name>skip_min_lp_his_id</name></member>
+  </compound>
+  <compound refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object" kind="struct"><name>graphene::market_history::liquidity_pool_ticker_object</name>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object_1ad3904ee004d55a5de7adc30eedbd8005" kind="variable"><name>space_id</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object_1a3ec6382b6ff07eafeb53ea945532ec55" kind="variable"><name>type_id</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object_1a583d90d5d56193f67169cf2766c1f0d5" kind="variable"><name>_24h_deposit_count</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object_1ab2d8a9e8c2b1ec3b442262e02aa97ba8" kind="variable"><name>_24h_deposit_amount_a</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object_1abb4483da9034ff1a0f02f1b7f732fd34" kind="variable"><name>_24h_deposit_amount_b</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object_1a1099b4874e4e9bb06174abe5cdcdffb1" kind="variable"><name>_24h_deposit_share_amount</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object_1ab0a5699b35311c2e3d3d15791380a0e8" kind="variable"><name>_24h_withdrawal_count</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object_1af2015d27dec566f8debaa846d576b7f0" kind="variable"><name>_24h_withdrawal_amount_a</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object_1aa56f86b3760a91113125755bc4dbaa95" kind="variable"><name>_24h_withdrawal_amount_b</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object_1a8a6071d5e604159aaed4e460ec3eb636" kind="variable"><name>_24h_withdrawal_share_amount</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object_1afcfbf07243ff0bf1e91fc0df8b8d441b" kind="variable"><name>_24h_withdrawal_fee_a</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object_1aa3dad41635b2692b43861c0f9dd1cfad" kind="variable"><name>_24h_withdrawal_fee_b</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object_1ac78ac4f008cae56ab679c2e76caa9130" kind="variable"><name>_24h_exchange_a2b_count</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object_1ae51b8f402ddb18ae7337ebaf499fe820" kind="variable"><name>_24h_exchange_a2b_amount_a</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object_1a9def496a91ee9a3205afebbca33ccde6" kind="variable"><name>_24h_exchange_a2b_amount_b</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object_1aafb63c7cad5aeab1146840036bb16836" kind="variable"><name>_24h_exchange_b2a_count</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object_1ad1f4037967e834d3091f8cdc24c6615a" kind="variable"><name>_24h_exchange_b2a_amount_a</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object_1a4641e921d4e2a02deaf4ccef60b40a12" kind="variable"><name>_24h_exchange_b2a_amount_b</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object_1a9ae12122200d0d42eea72b5507f6e23e" kind="variable"><name>_24h_exchange_fee_a</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object_1a6b34ee0c14a845b02e7f257e312cee65" kind="variable"><name>_24h_exchange_fee_b</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object_1a5656dec01dbba613b621c301e477f1c7" kind="variable"><name>_24h_balance_delta_a</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object_1a6648008550a81a705b97f8a4e307732f" kind="variable"><name>_24h_balance_delta_b</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object_1a405e7be9702afe2ab6634e1715895e21" kind="variable"><name>total_deposit_count</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object_1aafec8ca7e0c3470f5e7074e9c4877098" kind="variable"><name>total_deposit_amount_a</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object_1ad18e98ac65ca57d81f16a767e3702f32" kind="variable"><name>total_deposit_amount_b</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object_1a517a430d9b72b5e17bbd8fe95c095e1c" kind="variable"><name>total_deposit_share_amount</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object_1ac357dcbc87d61709a180f4401f139522" kind="variable"><name>total_withdrawal_count</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object_1ac6374901212b51cc2176193c48793e7c" kind="variable"><name>total_withdrawal_amount_a</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object_1a9a8e137168f8ac7c133146c3e44e3d6b" kind="variable"><name>total_withdrawal_amount_b</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object_1a25adc69bb79cfa5110c770cfea185a6e" kind="variable"><name>total_withdrawal_share_amount</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object_1ac36c663179dbe94dfcc82caf0d1f5a2d" kind="variable"><name>total_withdrawal_fee_a</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object_1a8d505d6335fc31d1714b666704f96f06" kind="variable"><name>total_withdrawal_fee_b</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object_1af57e188172682c41380afd36ff2d522f" kind="variable"><name>total_exchange_a2b_count</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object_1abbbc90fe63a3bd3327265df1b46ea814" kind="variable"><name>total_exchange_a2b_amount_a</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object_1a89b26ad12accbc0f9443c82d3adc9139" kind="variable"><name>total_exchange_a2b_amount_b</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object_1a932df4ca398a33ff7b8d60a91b122aa6" kind="variable"><name>total_exchange_b2a_count</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object_1a6754b99f27aadbd11b828f12c3332bcc" kind="variable"><name>total_exchange_b2a_amount_a</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object_1a11050ed66ed7ffb833585e36a1adfcf8" kind="variable"><name>total_exchange_b2a_amount_b</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object_1aab35cfbbdafdc6b24a4790b524ff83be" kind="variable"><name>total_exchange_fee_a</name></member>
+    <member refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object_1a24c57cdad4a2e52edc672ec0f22e8667" kind="variable"><name>total_exchange_fee_b</name></member>
+  </compound>
   <compound refid="classgraphene_1_1chain_1_1liquidity__pool__withdraw__evaluator" kind="class"><name>graphene::chain::liquidity_pool_withdraw_evaluator</name>
     <member refid="classgraphene_1_1chain_1_1liquidity__pool__withdraw__evaluator_1a682200f038b57c9cc08cfe69bd1f548a" kind="typedef"><name>operation_type</name></member>
     <member refid="classgraphene_1_1chain_1_1liquidity__pool__withdraw__evaluator_1a7b4b33b8347f1094b9597f027d17f398" kind="variable"><name>_pool</name></member>
     <member refid="classgraphene_1_1chain_1_1liquidity__pool__withdraw__evaluator_1afbd3ae657673988bc56c8d489d425bea" kind="variable"><name>_share_asset_dyn_data</name></member>
     <member refid="classgraphene_1_1chain_1_1liquidity__pool__withdraw__evaluator_1aea6c969c8eb049e560077f2d6a1c20cf" kind="variable"><name>_pool_pays_a</name></member>
     <member refid="classgraphene_1_1chain_1_1liquidity__pool__withdraw__evaluator_1a554541adc085de09ab24763419125694" kind="variable"><name>_pool_pays_b</name></member>
+    <member refid="classgraphene_1_1chain_1_1liquidity__pool__withdraw__evaluator_1a5b5283b675490fbb3c5d23611c36e548" kind="variable"><name>_fee_a</name></member>
+    <member refid="classgraphene_1_1chain_1_1liquidity__pool__withdraw__evaluator_1ac1dab87b679a21cbf304d0cd09ebe7c7" kind="variable"><name>_fee_b</name></member>
     <member refid="classgraphene_1_1chain_1_1liquidity__pool__withdraw__evaluator_1a199225a2004a98a72240c3196a1e20a2" kind="function"><name>do_evaluate</name></member>
     <member refid="classgraphene_1_1chain_1_1liquidity__pool__withdraw__evaluator_1a4f6e52872eb327a71374cf4ceda8ebdb" kind="function"><name>do_apply</name></member>
   </compound>
@@ -5195,6 +5284,7 @@
     <member refid="classgraphene_1_1market__history_1_1detail_1_1market__history__plugin__impl_1ab722c54996ac0b628017c8e9dce990c0" kind="function"><name>market_history_plugin_impl</name></member>
     <member refid="classgraphene_1_1market__history_1_1detail_1_1market__history__plugin__impl_1a6f076545a5a584af9b73eb3a4ef72562" kind="function"><name>~market_history_plugin_impl</name></member>
     <member refid="classgraphene_1_1market__history_1_1detail_1_1market__history__plugin__impl_1a19951cb626e2b93196197919d53bfb6d" kind="function"><name>update_market_histories</name></member>
+    <member refid="classgraphene_1_1market__history_1_1detail_1_1market__history__plugin__impl_1a97ca2f477523f55695c91ced400dce83" kind="function"><name>update_liquidity_pool_histories</name></member>
     <member refid="classgraphene_1_1market__history_1_1detail_1_1market__history__plugin__impl_1a266ff29be2eb0bae83abb88420ccdd6d" kind="function"><name>database</name></member>
   </compound>
   <compound refid="structgraphene_1_1app_1_1market__ticker" kind="struct"><name>graphene::app::market_ticker</name>
@@ -5257,6 +5347,13 @@
   <compound refid="structfc_1_1member__names_1_1member__name_3_01graphene_1_1db_1_1object__id_3_01_s_00_01_t_01_4_00_010_01_4" kind="struct"><name>fc::member_names::member_name&lt; graphene::db::object_id&lt; S, T &gt;, 0 &gt;</name>
     <member refid="structfc_1_1member__names_1_1member__name_3_01graphene_1_1db_1_1object__id_3_01_s_00_01_t_01_4_00_010_01_4_1a4e1d41fd3cfed2274c5c7f51fef91bf3" kind="variable"><name>value</name></member>
   </compound>
+  <compound refid="structgraphene_1_1protocol_1_1stealth__confirmation_1_1memo__data" kind="struct"><name>graphene::protocol::stealth_confirmation::memo_data</name>
+    <member refid="structgraphene_1_1protocol_1_1stealth__confirmation_1_1memo__data_1a47ec6717c771e3275bb27b92b1517cc7" kind="variable"><name>from</name></member>
+    <member refid="structgraphene_1_1protocol_1_1stealth__confirmation_1_1memo__data_1a0d3362c32ec093adce6dc4481c67d9b5" kind="variable"><name>amount</name></member>
+    <member refid="structgraphene_1_1protocol_1_1stealth__confirmation_1_1memo__data_1a05b3a975fdae1a026bd476faf1ba1918" kind="variable"><name>blinding_factor</name></member>
+    <member refid="structgraphene_1_1protocol_1_1stealth__confirmation_1_1memo__data_1a9c2883233438f968b066e917de2f41a1" kind="variable"><name>commitment</name></member>
+    <member refid="structgraphene_1_1protocol_1_1stealth__confirmation_1_1memo__data_1a96f047d0a240a6773f78f3f92952ddbe" kind="variable"><name>check</name></member>
+  </compound>
   <compound refid="structgraphene_1_1protocol_1_1memo__data" kind="struct"><name>graphene::protocol::memo_data</name>
     <member refid="structgraphene_1_1protocol_1_1memo__data_1a7deb7ac268a1d0420d8d30d8279578c4" kind="variable"><name>from</name></member>
     <member refid="structgraphene_1_1protocol_1_1memo__data_1a76c4f0fb688d0933ada16ff214fc64bc" kind="variable"><name>to</name></member>
@@ -5264,13 +5361,6 @@
     <member refid="structgraphene_1_1protocol_1_1memo__data_1ad2cc217d862bb9533f57cd7e665b0d7d" kind="variable"><name>message</name></member>
     <member refid="structgraphene_1_1protocol_1_1memo__data_1a2e9283dfad57a3826bf46f2a870c7940" kind="function"><name>set_message</name></member>
     <member refid="structgraphene_1_1protocol_1_1memo__data_1ac30f53cdb1503d64422cbb41adf234fb" kind="function"><name>get_message</name></member>
-  </compound>
-  <compound refid="structgraphene_1_1protocol_1_1stealth__confirmation_1_1memo__data" kind="struct"><name>graphene::protocol::stealth_confirmation::memo_data</name>
-    <member refid="structgraphene_1_1protocol_1_1stealth__confirmation_1_1memo__data_1a47ec6717c771e3275bb27b92b1517cc7" kind="variable"><name>from</name></member>
-    <member refid="structgraphene_1_1protocol_1_1stealth__confirmation_1_1memo__data_1a0d3362c32ec093adce6dc4481c67d9b5" kind="variable"><name>amount</name></member>
-    <member refid="structgraphene_1_1protocol_1_1stealth__confirmation_1_1memo__data_1a05b3a975fdae1a026bd476faf1ba1918" kind="variable"><name>blinding_factor</name></member>
-    <member refid="structgraphene_1_1protocol_1_1stealth__confirmation_1_1memo__data_1a9c2883233438f968b066e917de2f41a1" kind="variable"><name>commitment</name></member>
-    <member refid="structgraphene_1_1protocol_1_1stealth__confirmation_1_1memo__data_1a96f047d0a240a6773f78f3f92952ddbe" kind="variable"><name>check</name></member>
   </compound>
   <compound refid="structgraphene_1_1protocol_1_1memo__message" kind="struct"><name>graphene::protocol::memo_message</name>
     <member refid="structgraphene_1_1protocol_1_1memo__message_1ac3197a7c7b0285e00fed1202417cb0b7" kind="variable"><name>checksum</name></member>
@@ -5921,7 +6011,7 @@
     <member refid="structgraphene_1_1protocol_1_1op__wrapper_1a594264dc203efb2c902eb14e49d6dd9c" kind="function"><name>op_wrapper</name></member>
   </compound>
   <compound refid="structfc_1_1openssl__scope" kind="struct"><name>fc::openssl_scope</name>
-    <member refid="structfc_1_1openssl__scope_1a69bf64c2c9b2702535361382a83f98af" kind="variable"><name>_configurationFilePath</name></member>
+    <member refid="structfc_1_1openssl__scope_1a08ad9461a3ecff50a8a97aeb1b872458" kind="function"><name>_configurationFilePath</name></member>
     <member refid="structfc_1_1openssl__scope_1ace4e4b0fa9245c7b1e85bea455c4c20a" kind="function"><name>openssl_scope</name></member>
     <member refid="structfc_1_1openssl__scope_1a8654f92a964d6062539f4c28fbce45ee" kind="function"><name>~openssl_scope</name></member>
   </compound>
@@ -6048,7 +6138,6 @@
     <member refid="classfc_1_1optional_1aa756d67787488b1e2bba885ce4da6fe0" kind="friend"><name>optional</name></member>
     <member refid="classfc_1_1optional_1aed3aa0cd5eb4f7ef600b2e9ad295320f" kind="friend"><name>operator&lt;</name></member>
     <member refid="classfc_1_1optional_1a608be2170eb1ffcef97954156c7ebbd8" kind="friend"><name>operator==</name></member>
-    <member refid="classfc_1_1optional_1a23d722f63317e8591e5059ffe6f175d0" kind="variable"><name>_value</name></member>
     <member refid="classfc_1_1optional_1ac3f6daefb64c82088e90cb4239c36b32" kind="variable"><name>_valid</name></member>
     <member refid="classfc_1_1optional_1a8c6f2e7ef731d12d1a354dd134898842" kind="function"><name>optional</name></member>
     <member refid="classfc_1_1optional_1ae1bb6c6ab0c95c3b27910979b71555fe" kind="function"><name>~optional</name></member>
@@ -6079,6 +6168,7 @@
     <member refid="classfc_1_1optional_1ac5242fc692a6fffbcf3b577d4f9d4ea7" kind="function"><name>ref</name></member>
     <member refid="classfc_1_1optional_1a12aae4b704cb3332e39d7e7baddf920d" kind="function"><name>ptr</name></member>
     <member refid="classfc_1_1optional_1a6519a02dc77f4dd75c3a81649d59ee8b" kind="function"><name>ptr</name></member>
+    <member refid="classfc_1_1optional_1a67c5fd942f3979f2cc6c38f9e267f474" kind="function"><name>__attribute__</name></member>
   </compound>
   <compound refid="structfc_1_1detail_1_1optionals__callable" kind="struct"><name>fc::detail::optionals_callable</name>
     <member refid="structfc_1_1detail_1_1optionals__callable_1ad7d93e72470243f0d0da97d81bb5e114" kind="typedef"><name>pack_cutter_t</name></member>
@@ -6421,11 +6511,11 @@
     <member refid="structgraphene_1_1chain_1_1detail_1_1pending__transactions__restorer_1ad5f55f201ab5622951f421a4370384eb" kind="function"><name>pending_transactions_restorer</name></member>
     <member refid="structgraphene_1_1chain_1_1detail_1_1pending__transactions__restorer_1a4cda6ae279aaddfc8a5ee768b489c10c" kind="function"><name>~pending_transactions_restorer</name></member>
   </compound>
-  <compound refid="structfc_1_1http_1_1detail_1_1asio__tls__stub__log_1_1permessage__deflate__config" kind="struct"><name>fc::http::detail::asio_tls_stub_log::permessage_deflate_config</name>
-  </compound>
   <compound refid="structfc_1_1http_1_1detail_1_1asio__with__stub__log_1_1permessage__deflate__config" kind="struct"><name>fc::http::detail::asio_with_stub_log::permessage_deflate_config</name>
   </compound>
   <compound refid="structfc_1_1http_1_1detail_1_1asio__tls__with__stub__log_1_1permessage__deflate__config" kind="struct"><name>fc::http::detail::asio_tls_with_stub_log::permessage_deflate_config</name>
+  </compound>
+  <compound refid="structfc_1_1http_1_1detail_1_1asio__tls__stub__log_1_1permessage__deflate__config" kind="struct"><name>fc::http::detail::asio_tls_stub_log::permessage_deflate_config</name>
   </compound>
   <compound refid="structgraphene_1_1wallet_1_1plain__keys" kind="struct"><name>graphene::wallet::plain_keys</name>
     <member refid="structgraphene_1_1wallet_1_1plain__keys_1abc1a2d6e745cbfebd2e22b46e6538188" kind="variable"><name>keys</name></member>
@@ -7283,8 +7373,6 @@
     <member refid="classgraphene_1_1db_1_1secondary__index_1a7818dbe861f44645884766c3b125856d" kind="function"><name>about_to_modify</name></member>
     <member refid="classgraphene_1_1db_1_1secondary__index_1a3e21e2a429a0993b9c14052451c6d549" kind="function"><name>object_modified</name></member>
   </compound>
-  <compound refid="structgraphene_1_1chain_1_1detail_1_1seq" kind="struct"><name>graphene::chain::detail::seq</name>
-  </compound>
   <compound refid="classfc_1_1serial__valve" kind="class"><name>fc::serial_valve</name>
     <member refid="classfc_1_1serial__valve_1a26b305e8b316cb61af44d9e3cd802e99" kind="friend"><name>ticket_guard</name></member>
     <member refid="classfc_1_1serial__valve_1aa4c0cb2e88601fe2fd66e9168828abab" kind="variable"><name>latch</name></member>
@@ -7320,7 +7408,7 @@
     <member refid="classfc_1_1sha1_1a3d94d9bc3592b7a3b613f22730c8bdca" kind="function"><name>data</name></member>
     <member refid="classfc_1_1sha1_1a803a49ecfbbe03d959eeb328ca588a2f" kind="function"><name>data_size</name></member>
     <member refid="classfc_1_1sha1_1ae2b17c52fe5c1bb6a91325decc3b8f7c" kind="function"><name>hash</name></member>
-    <member refid="classfc_1_1sha1_1adf86011a247975df3787170567112dab" kind="function"><name>hash</name></member>
+    <member refid="classfc_1_1sha1_1abc31d554a5b1b33ef2eb34ce56a017ea" kind="function"><name>hash</name></member>
     <member refid="classfc_1_1sha1_1a8be36f5b5ea215d0a66915c0253cf4ae" kind="function"><name>hash</name></member>
     <member refid="classfc_1_1sha1_1ac685065417ff085f1017dc4467388e40" kind="friend"><name>operator&lt;&lt;</name></member>
     <member refid="classfc_1_1sha1_1a3d5b190f2ef8f6b5bad4f7337cbe67c8" kind="friend"><name>operator&gt;&gt;</name></member>
@@ -7386,7 +7474,7 @@
     <member refid="classfc_1_1sha512_1a804ede34a91996f0b4c4f4f17040c255" kind="function"><name>data</name></member>
     <member refid="classfc_1_1sha512_1ae86ac4c2873d35e4a20f7a0a0b3b34e3" kind="function"><name>data_size</name></member>
     <member refid="classfc_1_1sha512_1af99a155477c84590d4f05b6d0e429b8e" kind="function"><name>hash</name></member>
-    <member refid="classfc_1_1sha512_1adc25746d68bc854de407ea1bf3f8e19f" kind="function"><name>hash</name></member>
+    <member refid="classfc_1_1sha512_1afa2090a74c86296723201735fdc7aa23" kind="function"><name>hash</name></member>
     <member refid="classfc_1_1sha512_1a052b5fc57ca6dc3d626ef94a6bddcbd5" kind="function"><name>hash</name></member>
     <member refid="classfc_1_1sha512_1a4b462b1c5818c74c3d5359e4ad989235" kind="friend"><name>operator&lt;&lt;</name></member>
     <member refid="classfc_1_1sha512_1aa8bc9f467abf1546a02e21d69de7826c" kind="friend"><name>operator&gt;&gt;</name></member>
@@ -8135,9 +8223,9 @@
     <member refid="structgraphene_1_1chain_1_1htlc__object_1_1timelock__extractor_1a4b6e830847731e68fb46e2a2450abbfe" kind="typedef"><name>result_type</name></member>
     <member refid="structgraphene_1_1chain_1_1htlc__object_1_1timelock__extractor_1ae1e7387935207339f140ae382460fb08" kind="function"><name>operator()</name></member>
   </compound>
-  <compound refid="structgraphene_1_1net_1_1peer__connection_1_1timestamp__index" kind="struct"><name>graphene::net::peer_connection::timestamp_index</name>
-  </compound>
   <compound refid="structgraphene_1_1wallet_1_1detail_1_1wallet__api__impl_1_1timestamp__index" kind="struct"><name>graphene::wallet::detail::wallet_api_impl::timestamp_index</name>
+  </compound>
+  <compound refid="structgraphene_1_1net_1_1peer__connection_1_1timestamp__index" kind="struct"><name>graphene::net::peer_connection::timestamp_index</name>
   </compound>
   <compound refid="structgraphene_1_1net_1_1peer__connection_1_1timestamped__item__id" kind="struct"><name>graphene::net::peer_connection::timestamped_item_id</name>
     <member refid="structgraphene_1_1net_1_1peer__connection_1_1timestamped__item__id_1ac4a4a62b942bf54aa72a36c819605476" kind="variable"><name>item</name></member>
@@ -8274,10 +8362,10 @@
   </compound>
   <compound refid="structfc_1_1impl_1_1_derivation__reflection__transformer_1_1transform" kind="struct"><name>fc::impl::Derivation_reflection_transformer::transform</name>
   </compound>
+  <compound refid="structfc_1_1typelist_1_1impl_1_1transform" kind="struct"><name>fc::typelist::impl::transform</name>
+  </compound>
   <compound refid="structgraphene_1_1protocol_1_1make__flat__set_1_1transform" kind="struct"><name>graphene::protocol::make_flat_set::transform</name>
     <member refid="structgraphene_1_1protocol_1_1make__flat__set_1_1transform_1ab1dc82f80cf72b1543e330e35f06cd95" kind="typedef"><name>type</name></member>
-  </compound>
-  <compound refid="structfc_1_1typelist_1_1impl_1_1transform" kind="struct"><name>fc::typelist::impl::transform</name>
   </compound>
   <compound refid="structfc_1_1impl_1_1_derivation__reflection__transformer_1_1transform_3_01field__reflection_3_013ce9a11926eae4d9fe014aeccf30ee0f" kind="struct"><name>fc::impl::Derivation_reflection_transformer::transform&lt; field_reflection&lt; IndexInBase, BaseContainer, Member, field &gt; &gt;</name>
     <member refid="structfc_1_1impl_1_1_derivation__reflection__transformer_1_1transform_3_01field__reflection_3_013ce9a11926eae4d9fe014aeccf30ee0f_1a005f839f9b1e839fae70bf8e87d2ab72" kind="typedef"><name>type</name></member>
@@ -8293,13 +8381,13 @@
   <compound refid="structgraphene_1_1protocol_1_1transform__to__fee__parameters_3_01fc_1_1static__variant_3_01_t_8_8_8_01_4_01_4" kind="struct"><name>graphene::protocol::transform_to_fee_parameters&lt; fc::static_variant&lt; T... &gt; &gt;</name>
     <member refid="structgraphene_1_1protocol_1_1transform__to__fee__parameters_3_01fc_1_1static__variant_3_01_t_8_8_8_01_4_01_4_1a528e5cda404389f8fbb7964010487c86" kind="typedef"><name>type</name></member>
   </compound>
-  <compound refid="structfc_1_1http_1_1detail_1_1asio__with__stub__log_1_1transport__config" kind="struct"><name>fc::http::detail::asio_with_stub_log::transport_config</name>
-    <member refid="structfc_1_1http_1_1detail_1_1asio__with__stub__log_1_1transport__config_1a76b2e8c2ca69bb715f5eb1e4e6935eef" kind="typedef"><name>concurrency_type</name></member>
-    <member refid="structfc_1_1http_1_1detail_1_1asio__with__stub__log_1_1transport__config_1ad6a0e14beb9573c012122832cd065f8d" kind="typedef"><name>alog_type</name></member>
-    <member refid="structfc_1_1http_1_1detail_1_1asio__with__stub__log_1_1transport__config_1a83a40c233142f9d98d7e3e8b6d128347" kind="typedef"><name>elog_type</name></member>
-    <member refid="structfc_1_1http_1_1detail_1_1asio__with__stub__log_1_1transport__config_1a1c05fbe9e231de82ecc62c53f6dabed7" kind="typedef"><name>request_type</name></member>
-    <member refid="structfc_1_1http_1_1detail_1_1asio__with__stub__log_1_1transport__config_1a972244bd6afd404ad7236a65a5345396" kind="typedef"><name>response_type</name></member>
-    <member refid="structfc_1_1http_1_1detail_1_1asio__with__stub__log_1_1transport__config_1a0a8f4f1fa6acd33291ef557113ee6806" kind="typedef"><name>socket_type</name></member>
+  <compound refid="structfc_1_1http_1_1detail_1_1asio__tls__with__stub__log_1_1transport__config" kind="struct"><name>fc::http::detail::asio_tls_with_stub_log::transport_config</name>
+    <member refid="structfc_1_1http_1_1detail_1_1asio__tls__with__stub__log_1_1transport__config_1abc5b75dbe46831195e265621aaf82e7c" kind="typedef"><name>concurrency_type</name></member>
+    <member refid="structfc_1_1http_1_1detail_1_1asio__tls__with__stub__log_1_1transport__config_1a20c20ff7835bc794e3adeb3615899a2a" kind="typedef"><name>alog_type</name></member>
+    <member refid="structfc_1_1http_1_1detail_1_1asio__tls__with__stub__log_1_1transport__config_1aeca6830c56529f05e2da3a13fe1463b2" kind="typedef"><name>elog_type</name></member>
+    <member refid="structfc_1_1http_1_1detail_1_1asio__tls__with__stub__log_1_1transport__config_1a4080f3f6f1a3fbe415f3a7a102a62fc7" kind="typedef"><name>request_type</name></member>
+    <member refid="structfc_1_1http_1_1detail_1_1asio__tls__with__stub__log_1_1transport__config_1ab288034c279a673d310c79c94bda2474" kind="typedef"><name>response_type</name></member>
+    <member refid="structfc_1_1http_1_1detail_1_1asio__tls__with__stub__log_1_1transport__config_1aa949cbea45c52b0a0db014b2fc551355" kind="typedef"><name>socket_type</name></member>
   </compound>
   <compound refid="structfc_1_1http_1_1detail_1_1asio__tls__stub__log_1_1transport__config" kind="struct"><name>fc::http::detail::asio_tls_stub_log::transport_config</name>
     <member refid="structfc_1_1http_1_1detail_1_1asio__tls__stub__log_1_1transport__config_1aba57be961b8a7b342bd56046a2a26666" kind="typedef"><name>concurrency_type</name></member>
@@ -8309,13 +8397,13 @@
     <member refid="structfc_1_1http_1_1detail_1_1asio__tls__stub__log_1_1transport__config_1ab545ba32f3faa52def1377ef7f58ae83" kind="typedef"><name>response_type</name></member>
     <member refid="structfc_1_1http_1_1detail_1_1asio__tls__stub__log_1_1transport__config_1a03da1dc53ca36fddc5bf880b07d16b75" kind="typedef"><name>socket_type</name></member>
   </compound>
-  <compound refid="structfc_1_1http_1_1detail_1_1asio__tls__with__stub__log_1_1transport__config" kind="struct"><name>fc::http::detail::asio_tls_with_stub_log::transport_config</name>
-    <member refid="structfc_1_1http_1_1detail_1_1asio__tls__with__stub__log_1_1transport__config_1abc5b75dbe46831195e265621aaf82e7c" kind="typedef"><name>concurrency_type</name></member>
-    <member refid="structfc_1_1http_1_1detail_1_1asio__tls__with__stub__log_1_1transport__config_1a20c20ff7835bc794e3adeb3615899a2a" kind="typedef"><name>alog_type</name></member>
-    <member refid="structfc_1_1http_1_1detail_1_1asio__tls__with__stub__log_1_1transport__config_1aeca6830c56529f05e2da3a13fe1463b2" kind="typedef"><name>elog_type</name></member>
-    <member refid="structfc_1_1http_1_1detail_1_1asio__tls__with__stub__log_1_1transport__config_1a4080f3f6f1a3fbe415f3a7a102a62fc7" kind="typedef"><name>request_type</name></member>
-    <member refid="structfc_1_1http_1_1detail_1_1asio__tls__with__stub__log_1_1transport__config_1ab288034c279a673d310c79c94bda2474" kind="typedef"><name>response_type</name></member>
-    <member refid="structfc_1_1http_1_1detail_1_1asio__tls__with__stub__log_1_1transport__config_1aa949cbea45c52b0a0db014b2fc551355" kind="typedef"><name>socket_type</name></member>
+  <compound refid="structfc_1_1http_1_1detail_1_1asio__with__stub__log_1_1transport__config" kind="struct"><name>fc::http::detail::asio_with_stub_log::transport_config</name>
+    <member refid="structfc_1_1http_1_1detail_1_1asio__with__stub__log_1_1transport__config_1a76b2e8c2ca69bb715f5eb1e4e6935eef" kind="typedef"><name>concurrency_type</name></member>
+    <member refid="structfc_1_1http_1_1detail_1_1asio__with__stub__log_1_1transport__config_1ad6a0e14beb9573c012122832cd065f8d" kind="typedef"><name>alog_type</name></member>
+    <member refid="structfc_1_1http_1_1detail_1_1asio__with__stub__log_1_1transport__config_1a83a40c233142f9d98d7e3e8b6d128347" kind="typedef"><name>elog_type</name></member>
+    <member refid="structfc_1_1http_1_1detail_1_1asio__with__stub__log_1_1transport__config_1a1c05fbe9e231de82ecc62c53f6dabed7" kind="typedef"><name>request_type</name></member>
+    <member refid="structfc_1_1http_1_1detail_1_1asio__with__stub__log_1_1transport__config_1a972244bd6afd404ad7236a65a5345396" kind="typedef"><name>response_type</name></member>
+    <member refid="structfc_1_1http_1_1detail_1_1asio__with__stub__log_1_1transport__config_1a0a8f4f1fa6acd33291ef557113ee6806" kind="typedef"><name>socket_type</name></member>
   </compound>
   <compound refid="structgraphene_1_1net_1_1trx__message" kind="struct"><name>graphene::net::trx_message</name>
     <member refid="structgraphene_1_1net_1_1trx__message_1ac48675368a83df3f61459729ba325605" kind="variable"><name>type</name></member>
@@ -10341,7 +10429,7 @@
     <member refid="namespacegraphene_1_1chain_1a250f3b5333d70e37f1c421e87dfbaa3b" kind="typedef"><name>proposal_index</name></member>
     <member refid="namespacegraphene_1_1chain_1a8ba4f8afbe95a825f0c3cf2992c209de" kind="typedef"><name>special_authority_multi_index_type</name></member>
     <member refid="namespacegraphene_1_1chain_1adb4a7278fc672d4e6dab3163222aa92b" kind="typedef"><name>special_authority_index</name></member>
-    <member refid="namespacegraphene_1_1chain_1a0935beae3db69e16b7faeb66e45d14be" kind="typedef"><name>ticket_multi_index_type</name></member>
+    <member refid="namespacegraphene_1_1chain_1a1e97d81997833870f822d3a16212d9c1" kind="typedef"><name>ticket_multi_index_type</name></member>
     <member refid="namespacegraphene_1_1chain_1a2bcc2b76618541b11260aed7dd1a92ff" kind="typedef"><name>ticket_index</name></member>
     <member refid="namespacegraphene_1_1chain_1a3b4961928bcc772143d60f32b4a87b35" kind="typedef"><name>transaction_multi_index_type</name></member>
     <member refid="namespacegraphene_1_1chain_1a6735d1474fb46c8be23bffb0ea544f52" kind="typedef"><name>transaction_index</name></member>
@@ -10447,7 +10535,6 @@
     <member refid="namespacegraphene_1_1chain_1_1detail_1abee9ab90d1934ec993d2ae2ce4291ce8" kind="function"><name>calculate_percent</name></member>
     <member refid="namespacegraphene_1_1chain_1_1detail_1a03667a52b7be240e3b56fcf09b173aa0" kind="function"><name>check_htlc_create_hf_bsip64</name></member>
     <member refid="namespacegraphene_1_1chain_1_1detail_1adb689511d6cdc8f9d9b46aa9941005d6" kind="function"><name>check_htlc_redeem_hf_bsip64</name></member>
-    <member refid="namespacegraphene_1_1chain_1_1detail_1aca4a272b9680f8b5e6fffde26344e1fe" kind="function"><name>for_each</name></member>
     <member refid="namespacegraphene_1_1chain_1_1detail_1a0726a159449fff20472ad910c3a6ff8a" kind="function"><name>with_skip_flags</name></member>
     <member refid="namespacegraphene_1_1chain_1_1detail_1a70f0b14f841b7731fbd6e68d4b6f1ed5" kind="function"><name>without_pending_transactions</name></member>
     <member refid="namespacegraphene_1_1chain_1_1detail_1a7528055c48b6e603a8f4e15bc9654d57" kind="function"><name>_is_authorized_asset</name></member>
@@ -10506,12 +10593,20 @@
     <member refid="namespacegraphene_1_1market__history_1a62f3297bcfdbb5c9e46ef300d342a9d5acf7a66dad7ba2cfae0784e7251c63efb" kind="enumvalue"><name>bucket_object_type</name></member>
     <member refid="namespacegraphene_1_1market__history_1a62f3297bcfdbb5c9e46ef300d342a9d5a8a57f6aa685c38333895db7c4cc5fa50" kind="enumvalue"><name>market_ticker_object_type</name></member>
     <member refid="namespacegraphene_1_1market__history_1a62f3297bcfdbb5c9e46ef300d342a9d5abbe0b431c087bdd567a27a2a1ac083c6" kind="enumvalue"><name>market_ticker_meta_object_type</name></member>
+    <member refid="namespacegraphene_1_1market__history_1a62f3297bcfdbb5c9e46ef300d342a9d5a905b1e77355319e638d0da4155c1986b" kind="enumvalue"><name>liquidity_pool_history_object_type</name></member>
+    <member refid="namespacegraphene_1_1market__history_1a62f3297bcfdbb5c9e46ef300d342a9d5a0ebf433d981d07e1bb97ebd75fc0851a" kind="enumvalue"><name>liquidity_pool_ticker_meta_object_type</name></member>
+    <member refid="namespacegraphene_1_1market__history_1a62f3297bcfdbb5c9e46ef300d342a9d5a4c0e6970a6dd0bb7547a6f3e9048b210" kind="enumvalue"><name>liquidity_pool_ticker_object_type</name></member>
     <member refid="namespacegraphene_1_1market__history_1ad0d4faa2c033279daa86b624fde3c98b" kind="typedef"><name>bucket_object_multi_index_type</name></member>
     <member refid="namespacegraphene_1_1market__history_1a55f8c45c8c64e639d72dfac9215a43ec" kind="typedef"><name>order_history_multi_index_type</name></member>
     <member refid="namespacegraphene_1_1market__history_1addf8b0be90d4759ce9731a8431843326" kind="typedef"><name>market_ticker_object_multi_index_type</name></member>
     <member refid="namespacegraphene_1_1market__history_1aee7b407416d709ab1e4fd95b36eb2f42" kind="typedef"><name>bucket_index</name></member>
     <member refid="namespacegraphene_1_1market__history_1ae01f4a981703de4d049c92371ec64527" kind="typedef"><name>history_index</name></member>
     <member refid="namespacegraphene_1_1market__history_1ae9e1774fd22b755bce5327ba2c09a35e" kind="typedef"><name>market_ticker_index</name></member>
+    <member refid="namespacegraphene_1_1market__history_1a6a3f88994b210c4eeff12515c87bafa0" kind="typedef"><name>liquidity_pool_history_multi_index_type</name></member>
+    <member refid="namespacegraphene_1_1market__history_1a869b1c5234e51c122fbb323445cb15bc" kind="typedef"><name>liquidity_pool_history_index</name></member>
+    <member refid="namespacegraphene_1_1market__history_1a0874834274bbb5717af7f32180dfcfbb" kind="typedef"><name>liquidity_pool_ticker_id_type</name></member>
+    <member refid="namespacegraphene_1_1market__history_1a09d8fb08a6465e6ec3b4b88fb5ca4860" kind="typedef"><name>liquidity_pool_ticker_multi_index_type</name></member>
+    <member refid="namespacegraphene_1_1market__history_1aa1c0c86a9ab186babddea8ff61986114" kind="typedef"><name>liquidity_pool_ticker_index</name></member>
   </compound>
   <compound refid="namespacegraphene_1_1market__history_1_1detail" kind="namespace"><name>graphene::market_history::detail</name>
   </compound>
@@ -10728,7 +10823,7 @@
     <member refid="namespacegraphene_1_1protocol_1a3fa654568af6da7ab41a00f15f6749c3" kind="function"><name>operator!=</name></member>
     <member refid="namespacegraphene_1_1protocol_1a2e0a729c91726df732c789cc76207883" kind="function"><name>operator&lt;</name></member>
     <member refid="namespacegraphene_1_1protocol_1a39ae3b76548010be593199b1f101fe1c" kind="function"><name>validate_special_authority</name></member>
-    <member refid="group__transactions_1ga72d10fd2a137c7525904c9f89e8efeb2" kind="function"><name>verify_authority</name></member>
+    <member refid="group__transactions_1ga8e37fc0fd4bd5f02a34b0e766f8bbad8" kind="function"><name>verify_authority</name></member>
     <member refid="namespacegraphene_1_1protocol_1a7fa29913989b73d976f47c02d07db6c2" kind="function"><name>is_relative</name></member>
     <member refid="namespacegraphene_1_1protocol_1a232238c3cfe5fb68755a4ac6c9ea8605" kind="function"><name>FC_IMPLEMENT_DERIVED_EXCEPTION</name></member>
     <member refid="namespacegraphene_1_1protocol_1a260b247c0e4b165b177719e809cc7efe" kind="function"><name>FC_IMPLEMENT_DERIVED_EXCEPTION</name></member>
@@ -10845,11 +10940,6 @@
   <compound refid="api__access_8hpp" kind="file"><name>api_access.hpp</name>
   </compound>
   <compound refid="api__objects_8hpp" kind="file"><name>api_objects.hpp</name>
-    <member refid="api__objects_8hpp_1a075cbd9f1ab7f6dbb7919d28d64333e3" kind="function"><name>FC_REFLECT</name></member>
-    <member refid="api__objects_8hpp_1afaaeee6c5a9689816940b68b7a15f09c" kind="function"><name>FC_REFLECT</name></member>
-    <member refid="api__objects_8hpp_1aa7c083722916572cf3645b93c92ea4a9" kind="function"><name>FC_REFLECT</name></member>
-    <member refid="api__objects_8hpp_1a128c0d73dd5391f3b426d9d5716eff72" kind="function"><name>FC_REFLECT</name></member>
-    <member refid="api__objects_8hpp_1a035f8f4576a06fc775ac82079ce84cb6" kind="function"><name>FC_REFLECT_DERIVED</name></member>
   </compound>
   <compound refid="application_8hpp" kind="file"><name>application.hpp</name>
   </compound>
@@ -12100,7 +12190,7 @@
   <compound refid="group__proposed__transactions" kind="group"><name>proposed_transactions</name>
   </compound>
   <compound refid="group__transactions" kind="group"><name>transactions</name>
-    <member refid="group__transactions_1ga72d10fd2a137c7525904c9f89e8efeb2" kind="function"><name>verify_authority</name></member>
+    <member refid="group__transactions_1ga8e37fc0fd4bd5f02a34b0e766f8bbad8" kind="function"><name>verify_authority</name></member>
   </compound>
   <compound refid="group__workers" kind="group"><name>workers</name>
     <member refid="group__workers_1gacad8e9996ced0a2fc8e66f65210701d9" kind="typedef"><name>worker_initializer</name></member>
