@@ -125,7 +125,7 @@ This method populates its arguments with any command-line and configuration file
         <briefdescription>
 <para>Perform early startup routines and register plugin indexes, callbacks, etc. </para>        </briefdescription>
         <detaileddescription>
-<para>Plugins MUST supply a method initialize() which will be called early in the application startup. This method should contain early setup code such as initializing variables, adding indexes to the database, registering callback methods from the database, adding APIs, etc., as well as applying any options in the options map</para><para>This method is called BEFORE the database is open, therefore any routines which require any chain state MUST NOT be called by this method. These routines should be performed in startup() instead.</para><para><parameterlist kind="param"><parameteritem>
+<para>Plugins MUST supply a method initialize() which will be called early in the application startup. This method should contain early setup code such as initializing variables, adding indexes to the database, registering callback methods from the database, adding APIs, etc., as well as applying any options in the <computeroutput>options</computeroutput> map</para><para>This method is called BEFORE the database is open, therefore any routines which require any chain state MUST NOT be called by this method. These routines should be performed in startup() instead.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>options</parametername>
 </parameternamelist>
@@ -184,37 +184,37 @@ This method populates its arguments with any command-line and configuration file
     <detaileddescription>
 <para>The grouped orders plugin can be configured to track any number of price diff percentages via its configuration. Every time when there is a change on an order in object database, it will update internal state to reflect the change. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="3781">
+      <node id="3789">
         <label>graphene::app::plugin</label>
         <link refid="classgraphene_1_1app_1_1plugin"/>
-        <childnode refid="3782" relation="public-inheritance">
+        <childnode refid="3790" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="3780">
+      <node id="3788">
         <label>graphene::grouped_orders::grouped_orders_plugin</label>
         <link refid="classgraphene_1_1grouped__orders_1_1grouped__orders__plugin"/>
-        <childnode refid="3781" relation="public-inheritance">
+        <childnode refid="3789" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="3782">
+      <node id="3790">
         <label>graphene::app::abstract_plugin</label>
         <link refid="classgraphene_1_1app_1_1abstract__plugin"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="3784">
+      <node id="3792">
         <label>graphene::app::plugin</label>
         <link refid="classgraphene_1_1app_1_1plugin"/>
-        <childnode refid="3785" relation="public-inheritance">
+        <childnode refid="3793" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="3783">
+      <node id="3791">
         <label>graphene::grouped_orders::grouped_orders_plugin</label>
         <link refid="classgraphene_1_1grouped__orders_1_1grouped__orders__plugin"/>
-        <childnode refid="3784" relation="public-inheritance">
+        <childnode refid="3792" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="3785">
+      <node id="3793">
         <label>graphene::app::abstract_plugin</label>
         <link refid="classgraphene_1_1app_1_1abstract__plugin"/>
       </node>

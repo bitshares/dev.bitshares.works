@@ -5,6 +5,9 @@
     <innerclass refid="structgraphene_1_1market__history_1_1bucket__key" prot="public">graphene::market_history::bucket_key</innerclass>
     <innerclass refid="structgraphene_1_1market__history_1_1bucket__object" prot="public">graphene::market_history::bucket_object</innerclass>
     <innerclass refid="structgraphene_1_1market__history_1_1history__key" prot="public">graphene::market_history::history_key</innerclass>
+    <innerclass refid="structgraphene_1_1market__history_1_1liquidity__pool__history__object" prot="public">graphene::market_history::liquidity_pool_history_object</innerclass>
+    <innerclass refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__meta__object" prot="public">graphene::market_history::liquidity_pool_ticker_meta_object</innerclass>
+    <innerclass refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object" prot="public">graphene::market_history::liquidity_pool_ticker_object</innerclass>
     <innerclass refid="classgraphene_1_1market__history_1_1market__history__plugin" prot="public">graphene::market_history::market_history_plugin</innerclass>
     <innerclass refid="structgraphene_1_1market__history_1_1market__ticker__meta__object" prot="public">graphene::market_history::market_ticker_meta_object</innerclass>
     <innerclass refid="structgraphene_1_1market__history_1_1market__ticker__object" prot="public">graphene::market_history::market_ticker_object</innerclass>
@@ -48,13 +51,37 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
+        <enumvalue id="namespacegraphene_1_1market__history_1a62f3297bcfdbb5c9e46ef300d342a9d5a905b1e77355319e638d0da4155c1986b" prot="public">
+          <name>liquidity_pool_history_object_type</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacegraphene_1_1market__history_1a62f3297bcfdbb5c9e46ef300d342a9d5a0ebf433d981d07e1bb97ebd75fc0851a" prot="public">
+          <name>liquidity_pool_ticker_meta_object_type</name>
+          <initializer>= 5</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacegraphene_1_1market__history_1a62f3297bcfdbb5c9e46ef300d342a9d5a4c0e6970a6dd0bb7547a6f3e9048b210" prot="public">
+          <name>liquidity_pool_ticker_object_type</name>
+          <initializer>= 6</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp" line="52" column="1" bodyfile="libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp" bodystart="51" bodyend="57"/>
+        <location file="libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp" line="53" column="1" bodyfile="libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp" bodystart="52" bodyend="61"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
@@ -69,7 +96,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp" line="169" column="1" bodyfile="libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp" bodystart="162" bodyend="-1"/>
+        <location file="libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp" line="173" column="1" bodyfile="libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp" bodystart="166" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacegraphene_1_1market__history_1a55f8c45c8c64e639d72dfac9215a43ec" prot="public" static="no">
         <type>multi_index_container&lt; <ref refid="structgraphene_1_1market__history_1_1order__history__object" kindref="compound">order_history_object</ref>, indexed_by&lt; ordered_unique&lt; tag&lt; by_id &gt;, member&lt; <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref>, <ref refid="structgraphene_1_1db_1_1object__id__type" kindref="compound">object_id_type</ref>,&amp;<ref refid="classgraphene_1_1db_1_1object_1a2ce812569d565a45dda1420cfbdf79ad" kindref="member">object::id</ref> &gt; &gt;, ordered_unique&lt; tag&lt; by_key &gt;, member&lt; <ref refid="structgraphene_1_1market__history_1_1order__history__object" kindref="compound">order_history_object</ref>, <ref refid="structgraphene_1_1market__history_1_1history__key" kindref="compound">history_key</ref>,&amp;<ref refid="structgraphene_1_1market__history_1_1order__history__object_1a95c1462e4dff5beeca201d706bd3af97" kindref="member">order_history_object::key</ref> &gt; &gt;, ordered_unique&lt; tag&lt; by_market_time &gt;, composite_key&lt; <ref refid="structgraphene_1_1market__history_1_1order__history__object" kindref="compound">order_history_object</ref>, <ref refid="structgraphene_1_1market__history_1_1order__history__object__key__base__extractor" kindref="compound">order_history_object_key_base_extractor</ref>, <ref refid="structgraphene_1_1market__history_1_1order__history__object__key__quote__extractor" kindref="compound">order_history_object_key_quote_extractor</ref>, member&lt; <ref refid="structgraphene_1_1market__history_1_1order__history__object" kindref="compound">order_history_object</ref>, <ref refid="classfc_1_1time__point__sec" kindref="compound">time_point_sec</ref>,&amp;<ref refid="structgraphene_1_1market__history_1_1order__history__object_1a19e481bfd9b6477d745bc3024bc09c69" kindref="member">order_history_object::time</ref> &gt;, <ref refid="structgraphene_1_1market__history_1_1order__history__object__key__sequence__extractor" kindref="compound">order_history_object_key_sequence_extractor</ref> &gt;, composite_key_compare&lt; std::less&lt; asset_id_type &gt;, std::less&lt; asset_id_type &gt;, std::greater&lt; <ref refid="classfc_1_1time__point__sec" kindref="compound">time_point_sec</ref> &gt;, std::less&lt; int64_t &gt; &gt; &gt; &gt;&gt;</type>
@@ -82,7 +109,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp" line="194" column="1" bodyfile="libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp" bodystart="171" bodyend="-1"/>
+        <location file="libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp" line="198" column="1" bodyfile="libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp" bodystart="175" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacegraphene_1_1market__history_1addf8b0be90d4759ce9731a8431843326" prot="public" static="no">
         <type>multi_index_container&lt; <ref refid="structgraphene_1_1market__history_1_1market__ticker__object" kindref="compound">market_ticker_object</ref>, indexed_by&lt; ordered_unique&lt; tag&lt; by_id &gt;, member&lt; <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref>, <ref refid="structgraphene_1_1db_1_1object__id__type" kindref="compound">object_id_type</ref>,&amp;<ref refid="classgraphene_1_1db_1_1object_1a2ce812569d565a45dda1420cfbdf79ad" kindref="member">object::id</ref> &gt; &gt;, ordered_non_unique&lt; tag&lt; by_volume &gt;, member&lt; <ref refid="structgraphene_1_1market__history_1_1market__ticker__object" kindref="compound">market_ticker_object</ref>, fc::uint128_t,&amp;<ref refid="structgraphene_1_1market__history_1_1market__ticker__object_1a8f25af432482abcb17c7e73132dfa141" kindref="member">market_ticker_object::base_volume</ref> &gt; &gt;, ordered_unique&lt; tag&lt; by_market &gt;, composite_key&lt; <ref refid="structgraphene_1_1market__history_1_1market__ticker__object" kindref="compound">market_ticker_object</ref>, member&lt; <ref refid="structgraphene_1_1market__history_1_1market__ticker__object" kindref="compound">market_ticker_object</ref>, asset_id_type,&amp;<ref refid="structgraphene_1_1market__history_1_1market__ticker__object_1ae52ac2707a987953183fedd7a7c4a9b9" kindref="member">market_ticker_object::base</ref> &gt;, member&lt; <ref refid="structgraphene_1_1market__history_1_1market__ticker__object" kindref="compound">market_ticker_object</ref>, asset_id_type,&amp;<ref refid="structgraphene_1_1market__history_1_1market__ticker__object_1a8662dd0af58825fe74c47b376f5b1019" kindref="member">market_ticker_object::quote</ref> &gt; &gt; &gt; &gt;&gt;</type>
@@ -95,7 +122,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp" line="213" column="1" bodyfile="libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp" bodystart="197" bodyend="-1"/>
+        <location file="libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp" line="217" column="1" bodyfile="libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp" bodystart="201" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacegraphene_1_1market__history_1aee7b407416d709ab1e4fd95b36eb2f42" prot="public" static="no">
         <type><ref refid="classgraphene_1_1db_1_1generic__index" kindref="compound">generic_index</ref>&lt; <ref refid="structgraphene_1_1market__history_1_1bucket__object" kindref="compound">bucket_object</ref>, <ref refid="namespacegraphene_1_1market__history_1ad0d4faa2c033279daa86b624fde3c98b" kindref="member">bucket_object_multi_index_type</ref> &gt;</type>
@@ -108,7 +135,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp" line="215" column="1" bodyfile="libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp" bodystart="215" bodyend="-1"/>
+        <location file="libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp" line="219" column="1" bodyfile="libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp" bodystart="219" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacegraphene_1_1market__history_1ae01f4a981703de4d049c92371ec64527" prot="public" static="no">
         <type><ref refid="classgraphene_1_1db_1_1generic__index" kindref="compound">generic_index</ref>&lt; <ref refid="structgraphene_1_1market__history_1_1order__history__object" kindref="compound">order_history_object</ref>, <ref refid="namespacegraphene_1_1market__history_1a55f8c45c8c64e639d72dfac9215a43ec" kindref="member">order_history_multi_index_type</ref> &gt;</type>
@@ -121,7 +148,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp" line="216" column="1" bodyfile="libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp" bodystart="216" bodyend="-1"/>
+        <location file="libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp" line="220" column="1" bodyfile="libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp" bodystart="220" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacegraphene_1_1market__history_1ae9e1774fd22b755bce5327ba2c09a35e" prot="public" static="no">
         <type><ref refid="classgraphene_1_1db_1_1generic__index" kindref="compound">generic_index</ref>&lt; <ref refid="structgraphene_1_1market__history_1_1market__ticker__object" kindref="compound">market_ticker_object</ref>, <ref refid="namespacegraphene_1_1market__history_1addf8b0be90d4759ce9731a8431843326" kindref="member">market_ticker_object_multi_index_type</ref> &gt;</type>
@@ -134,13 +161,78 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp" line="217" column="1" bodyfile="libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp" bodystart="217" bodyend="-1"/>
+        <location file="libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp" line="221" column="1" bodyfile="libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp" bodystart="221" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacegraphene_1_1market__history_1a6a3f88994b210c4eeff12515c87bafa0" prot="public" static="no">
+        <type>multi_index_container&lt; <ref refid="structgraphene_1_1market__history_1_1liquidity__pool__history__object" kindref="compound">liquidity_pool_history_object</ref>, indexed_by&lt; ordered_unique&lt; tag&lt; by_id &gt;, member&lt; <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref>, <ref refid="structgraphene_1_1db_1_1object__id__type" kindref="compound">object_id_type</ref>,&amp;<ref refid="classgraphene_1_1db_1_1object_1a2ce812569d565a45dda1420cfbdf79ad" kindref="member">object::id</ref> &gt; &gt;, ordered_unique&lt; tag&lt; by_pool_seq &gt;, composite_key&lt; <ref refid="structgraphene_1_1market__history_1_1liquidity__pool__history__object" kindref="compound">liquidity_pool_history_object</ref>, member&lt; <ref refid="structgraphene_1_1market__history_1_1liquidity__pool__history__object" kindref="compound">liquidity_pool_history_object</ref>, liquidity_pool_id_type,&amp;<ref refid="structgraphene_1_1market__history_1_1liquidity__pool__history__object_1a201e2f0f6f89eba9886c287982686e4d" kindref="member">liquidity_pool_history_object::pool</ref> &gt;, member&lt; <ref refid="structgraphene_1_1market__history_1_1liquidity__pool__history__object" kindref="compound">liquidity_pool_history_object</ref>, uint64_t,&amp;<ref refid="structgraphene_1_1market__history_1_1liquidity__pool__history__object_1a802432b014bee79a55b0293266be666d" kindref="member">liquidity_pool_history_object::sequence</ref> &gt; &gt;, composite_key_compare&lt; std::less&lt; liquidity_pool_id_type &gt;, std::greater&lt; uint64_t &gt; &gt; &gt;, ordered_unique&lt; tag&lt; by_pool_time &gt;, composite_key&lt; <ref refid="structgraphene_1_1market__history_1_1liquidity__pool__history__object" kindref="compound">liquidity_pool_history_object</ref>, member&lt; <ref refid="structgraphene_1_1market__history_1_1liquidity__pool__history__object" kindref="compound">liquidity_pool_history_object</ref>, liquidity_pool_id_type,&amp;<ref refid="structgraphene_1_1market__history_1_1liquidity__pool__history__object_1a201e2f0f6f89eba9886c287982686e4d" kindref="member">liquidity_pool_history_object::pool</ref> &gt;, member&lt; <ref refid="structgraphene_1_1market__history_1_1liquidity__pool__history__object" kindref="compound">liquidity_pool_history_object</ref>, <ref refid="classfc_1_1time__point__sec" kindref="compound">time_point_sec</ref>,&amp;<ref refid="structgraphene_1_1market__history_1_1liquidity__pool__history__object_1a81d66c80e5e677bc695748ff676bb2e6" kindref="member">liquidity_pool_history_object::time</ref> &gt;, member&lt; <ref refid="structgraphene_1_1market__history_1_1liquidity__pool__history__object" kindref="compound">liquidity_pool_history_object</ref>, uint64_t,&amp;<ref refid="structgraphene_1_1market__history_1_1liquidity__pool__history__object_1a802432b014bee79a55b0293266be666d" kindref="member">liquidity_pool_history_object::sequence</ref> &gt; &gt;, composite_key_compare&lt; std::less&lt; liquidity_pool_id_type &gt;, std::greater&lt; <ref refid="classfc_1_1time__point__sec" kindref="compound">time_point_sec</ref> &gt;, std::greater&lt; uint64_t &gt; &gt; &gt;, ordered_unique&lt; tag&lt; by_pool_op_type_seq &gt;, composite_key&lt; <ref refid="structgraphene_1_1market__history_1_1liquidity__pool__history__object" kindref="compound">liquidity_pool_history_object</ref>, member&lt; <ref refid="structgraphene_1_1market__history_1_1liquidity__pool__history__object" kindref="compound">liquidity_pool_history_object</ref>, liquidity_pool_id_type,&amp;<ref refid="structgraphene_1_1market__history_1_1liquidity__pool__history__object_1a201e2f0f6f89eba9886c287982686e4d" kindref="member">liquidity_pool_history_object::pool</ref> &gt;, member&lt; <ref refid="structgraphene_1_1market__history_1_1liquidity__pool__history__object" kindref="compound">liquidity_pool_history_object</ref>, int64_t,&amp;<ref refid="structgraphene_1_1market__history_1_1liquidity__pool__history__object_1a4e34136875277907a63495890a2b4b84" kindref="member">liquidity_pool_history_object::op_type</ref> &gt;, member&lt; <ref refid="structgraphene_1_1market__history_1_1liquidity__pool__history__object" kindref="compound">liquidity_pool_history_object</ref>, uint64_t,&amp;<ref refid="structgraphene_1_1market__history_1_1liquidity__pool__history__object_1a802432b014bee79a55b0293266be666d" kindref="member">liquidity_pool_history_object::sequence</ref> &gt; &gt;, composite_key_compare&lt; std::less&lt; liquidity_pool_id_type &gt;, std::less&lt; int64_t &gt;, std::greater&lt; uint64_t &gt; &gt; &gt;, ordered_unique&lt; tag&lt; by_pool_op_type_time &gt;, composite_key&lt; <ref refid="structgraphene_1_1market__history_1_1liquidity__pool__history__object" kindref="compound">liquidity_pool_history_object</ref>, member&lt; <ref refid="structgraphene_1_1market__history_1_1liquidity__pool__history__object" kindref="compound">liquidity_pool_history_object</ref>, liquidity_pool_id_type,&amp;<ref refid="structgraphene_1_1market__history_1_1liquidity__pool__history__object_1a201e2f0f6f89eba9886c287982686e4d" kindref="member">liquidity_pool_history_object::pool</ref> &gt;, member&lt; <ref refid="structgraphene_1_1market__history_1_1liquidity__pool__history__object" kindref="compound">liquidity_pool_history_object</ref>, int64_t,&amp;<ref refid="structgraphene_1_1market__history_1_1liquidity__pool__history__object_1a4e34136875277907a63495890a2b4b84" kindref="member">liquidity_pool_history_object::op_type</ref> &gt;, member&lt; <ref refid="structgraphene_1_1market__history_1_1liquidity__pool__history__object" kindref="compound">liquidity_pool_history_object</ref>, <ref refid="classfc_1_1time__point__sec" kindref="compound">time_point_sec</ref>,&amp;<ref refid="structgraphene_1_1market__history_1_1liquidity__pool__history__object_1a81d66c80e5e677bc695748ff676bb2e6" kindref="member">liquidity_pool_history_object::time</ref> &gt;, member&lt; <ref refid="structgraphene_1_1market__history_1_1liquidity__pool__history__object" kindref="compound">liquidity_pool_history_object</ref>, uint64_t,&amp;<ref refid="structgraphene_1_1market__history_1_1liquidity__pool__history__object_1a802432b014bee79a55b0293266be666d" kindref="member">liquidity_pool_history_object::sequence</ref> &gt; &gt;, composite_key_compare&lt; std::less&lt; liquidity_pool_id_type &gt;, std::less&lt; int64_t &gt;, std::greater&lt; <ref refid="classfc_1_1time__point__sec" kindref="compound">time_point_sec</ref> &gt;, std::greater&lt; uint64_t &gt; &gt; &gt; &gt;&gt;</type>
+        <definition>typedef multi_index_container&lt; liquidity_pool_history_object, indexed_by&lt; ordered_unique&lt; tag&lt;by_id&gt;, member&lt; object, object_id_type, &amp;object::id &gt; &gt;, ordered_unique&lt; tag&lt;by_pool_seq&gt;, composite_key&lt; liquidity_pool_history_object, member&lt;liquidity_pool_history_object, liquidity_pool_id_type, &amp;liquidity_pool_history_object::pool&gt;, member&lt;liquidity_pool_history_object, uint64_t, &amp;liquidity_pool_history_object::sequence&gt; &gt;, composite_key_compare&lt; std::less&lt; liquidity_pool_id_type &gt;, std::greater&lt; uint64_t &gt; &gt; &gt;, ordered_unique&lt; tag&lt;by_pool_time&gt;, composite_key&lt; liquidity_pool_history_object, member&lt;liquidity_pool_history_object, liquidity_pool_id_type, &amp;liquidity_pool_history_object::pool&gt;, member&lt;liquidity_pool_history_object, time_point_sec, &amp;liquidity_pool_history_object::time&gt;, member&lt;liquidity_pool_history_object, uint64_t, &amp;liquidity_pool_history_object::sequence&gt; &gt;, composite_key_compare&lt; std::less&lt; liquidity_pool_id_type &gt;, std::greater&lt; time_point_sec &gt;, std::greater&lt; uint64_t &gt; &gt; &gt;, ordered_unique&lt; tag&lt;by_pool_op_type_seq&gt;, composite_key&lt; liquidity_pool_history_object, member&lt;liquidity_pool_history_object, liquidity_pool_id_type, &amp;liquidity_pool_history_object::pool&gt;, member&lt;liquidity_pool_history_object, int64_t, &amp;liquidity_pool_history_object::op_type&gt;, member&lt;liquidity_pool_history_object, uint64_t, &amp;liquidity_pool_history_object::sequence&gt; &gt;, composite_key_compare&lt; std::less&lt; liquidity_pool_id_type &gt;, std::less&lt; int64_t &gt;, std::greater&lt; uint64_t &gt; &gt; &gt;, ordered_unique&lt; tag&lt;by_pool_op_type_time&gt;, composite_key&lt; liquidity_pool_history_object, member&lt;liquidity_pool_history_object, liquidity_pool_id_type, &amp;liquidity_pool_history_object::pool&gt;, member&lt;liquidity_pool_history_object, int64_t, &amp;liquidity_pool_history_object::op_type&gt;, member&lt;liquidity_pool_history_object, time_point_sec, &amp;liquidity_pool_history_object::time&gt;, member&lt;liquidity_pool_history_object, uint64_t, &amp;liquidity_pool_history_object::sequence&gt; &gt;, composite_key_compare&lt; std::less&lt; liquidity_pool_id_type &gt;, std::less&lt; int64_t &gt;, std::greater&lt; time_point_sec &gt;, std::greater&lt; uint64_t &gt; &gt; &gt; &gt;&gt; graphene::market_history::liquidity_pool_history_multi_index_type</definition>
+        <argsstring></argsstring>
+        <name>liquidity_pool_history_multi_index_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp" line="295" column="1" bodyfile="libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp" bodystart="240" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacegraphene_1_1market__history_1a869b1c5234e51c122fbb323445cb15bc" prot="public" static="no">
+        <type><ref refid="classgraphene_1_1db_1_1generic__index" kindref="compound">generic_index</ref>&lt; <ref refid="structgraphene_1_1market__history_1_1liquidity__pool__history__object" kindref="compound">liquidity_pool_history_object</ref>, <ref refid="namespacegraphene_1_1market__history_1a6a3f88994b210c4eeff12515c87bafa0" kindref="member">liquidity_pool_history_multi_index_type</ref> &gt;</type>
+        <definition>typedef generic_index&lt; liquidity_pool_history_object, liquidity_pool_history_multi_index_type &gt; graphene::market_history::liquidity_pool_history_index</definition>
+        <argsstring></argsstring>
+        <name>liquidity_pool_history_index</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp" line="298" column="1" bodyfile="libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp" bodystart="298" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacegraphene_1_1market__history_1a0874834274bbb5717af7f32180dfcfbb" prot="public" static="no">
+        <type><ref refid="structgraphene_1_1db_1_1object__id" kindref="compound">object_id</ref>&lt; <ref refid="market__history__plugin_8hpp_1ab72345c5f89c0e0edd719d18a0772b15" kindref="member">MARKET_HISTORY_SPACE_ID</ref>, <ref refid="namespacegraphene_1_1market__history_1a62f3297bcfdbb5c9e46ef300d342a9d5a4c0e6970a6dd0bb7547a6f3e9048b210" kindref="member">liquidity_pool_ticker_object_type</ref> &gt;</type>
+        <definition>using graphene::market_history::liquidity_pool_ticker_id_type = typedef object_id&lt;MARKET_HISTORY_SPACE_ID, liquidity_pool_ticker_object_type&gt;</definition>
+        <argsstring></argsstring>
+        <name>liquidity_pool_ticker_id_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp" line="311" column="1" bodyfile="libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp" bodystart="311" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacegraphene_1_1market__history_1a09d8fb08a6465e6ec3b4b88fb5ca4860" prot="public" static="no">
+        <type>multi_index_container&lt; <ref refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object" kindref="compound">liquidity_pool_ticker_object</ref>, indexed_by&lt; ordered_unique&lt; tag&lt; by_id &gt;, member&lt; <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref>, <ref refid="structgraphene_1_1db_1_1object__id__type" kindref="compound">object_id_type</ref>,&amp;<ref refid="classgraphene_1_1db_1_1object_1a2ce812569d565a45dda1420cfbdf79ad" kindref="member">object::id</ref> &gt; &gt; &gt;&gt;</type>
+        <definition>typedef multi_index_container&lt; liquidity_pool_ticker_object, indexed_by&lt; ordered_unique&lt; tag&lt;by_id&gt;, member&lt; object, object_id_type, &amp;object::id &gt; &gt; &gt;&gt; graphene::market_history::liquidity_pool_ticker_multi_index_type</definition>
+        <argsstring></argsstring>
+        <name>liquidity_pool_ticker_multi_index_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp" line="364" column="1" bodyfile="libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp" bodystart="364" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacegraphene_1_1market__history_1aa1c0c86a9ab186babddea8ff61986114" prot="public" static="no">
+        <type><ref refid="classgraphene_1_1db_1_1generic__index" kindref="compound">generic_index</ref>&lt; <ref refid="structgraphene_1_1market__history_1_1liquidity__pool__ticker__object" kindref="compound">liquidity_pool_ticker_object</ref>, <ref refid="namespacegraphene_1_1market__history_1a09d8fb08a6465e6ec3b4b88fb5ca4860" kindref="member">liquidity_pool_ticker_multi_index_type</ref> &gt;</type>
+        <definition>typedef generic_index&lt; liquidity_pool_ticker_object, liquidity_pool_ticker_multi_index_type &gt; graphene::market_history::liquidity_pool_ticker_index</definition>
+        <argsstring></argsstring>
+        <name>liquidity_pool_ticker_index</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp" line="367" column="1" bodyfile="libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp" bodystart="367" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp" line="34" column="1"/>
+    <location file="libraries/plugins/market_history/include/graphene/market_history/market_history_plugin.hpp" line="35" column="1"/>
   </compounddef>
 </doxygen>

@@ -110,7 +110,7 @@ This method populates its arguments with any command-line and configuration file
         <briefdescription>
 <para>Perform early startup routines and register plugin indexes, callbacks, etc. </para>        </briefdescription>
         <detaileddescription>
-<para>Plugins MUST supply a method initialize() which will be called early in the application startup. This method should contain early setup code such as initializing variables, adding indexes to the database, registering callback methods from the database, adding APIs, etc., as well as applying any options in the options map</para><para>This method is called BEFORE the database is open, therefore any routines which require any chain state MUST NOT be called by this method. These routines should be performed in startup() instead.</para><para><parameterlist kind="param"><parameteritem>
+<para>Plugins MUST supply a method initialize() which will be called early in the application startup. This method should contain early setup code such as initializing variables, adding indexes to the database, registering callback methods from the database, adding APIs, etc., as well as applying any options in the <computeroutput>options</computeroutput> map</para><para>This method is called BEFORE the database is open, therefore any routines which require any chain state MUST NOT be called by this method. These routines should be performed in startup() instead.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>options</parametername>
 </parameternamelist>

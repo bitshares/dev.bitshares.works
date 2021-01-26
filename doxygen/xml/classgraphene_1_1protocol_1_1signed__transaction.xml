@@ -146,7 +146,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>The purpose of this method is to identify some subset of available_keys that will produce sufficient signatures for a transaction. The result is not always a minimal set of signatures, but any non-minimal result will still pass validation. </para>        </detaileddescription>
+<para>The purpose of this method is to identify some subset of <computeroutput>available_keys</computeroutput> that will produce sufficient signatures for a transaction. The result is not always a minimal set of signatures, but any non-minimal result will still pass validation. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="libraries/protocol/include/graphene/protocol/transaction.hpp" line="154" column="1" bodyfile="libraries/protocol/transaction.cpp" bodystart="366" bodyend="399"/>
@@ -311,7 +311,7 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>Public keys </para></simplesect>
-<simplesect kind="note"><para>If signees is empty, E.G. when it&apos;s the first time calling this function for the signed transaction, public keys will be extracted with given chain ID, and be stored into the mutable signees field, then signees will be returned; otherwise, the chain_id parameter will be ignored, and signees will be returned directly. </para></simplesect>
+<simplesect kind="note"><para>If <ref refid="classgraphene_1_1protocol_1_1signed__transaction_1aadfd54dd910b56c969cfbae3a09f4da9" kindref="member">_signees</ref> is empty, E.G. when it&apos;s the first time calling this function for the signed transaction, public keys will be extracted with given chain ID, and be stored into the mutable <ref refid="classgraphene_1_1protocol_1_1signed__transaction_1aadfd54dd910b56c969cfbae3a09f4da9" kindref="member">_signees</ref> field, then <ref refid="classgraphene_1_1protocol_1_1signed__transaction_1aadfd54dd910b56c969cfbae3a09f4da9" kindref="member">_signees</ref> will be returned; otherwise, the <computeroutput>chain_id</computeroutput> parameter will be ignored, and <ref refid="classgraphene_1_1protocol_1_1signed__transaction_1aadfd54dd910b56c969cfbae3a09f4da9" kindref="member">_signees</ref> will be returned directly. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -349,69 +349,69 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="6110">
+      <node id="6151">
         <label>graphene::protocol::precomputable_transaction</label>
         <link refid="classgraphene_1_1protocol_1_1precomputable__transaction"/>
-        <childnode refid="6108" relation="public-inheritance">
+        <childnode refid="6149" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6111">
+      <node id="6152">
         <label>graphene::protocol::processed_transaction</label>
         <link refid="structgraphene_1_1protocol_1_1processed__transaction"/>
-        <childnode refid="6110" relation="public-inheritance">
+        <childnode refid="6151" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6108">
+      <node id="6149">
         <label>graphene::protocol::signed_transaction</label>
         <link refid="classgraphene_1_1protocol_1_1signed__transaction"/>
-        <childnode refid="6109" relation="public-inheritance">
+        <childnode refid="6150" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6109">
+      <node id="6150">
         <label>graphene::protocol::transaction</label>
         <link refid="classgraphene_1_1protocol_1_1transaction"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="6114">
+      <node id="6155">
         <label>fc::ripemd160</label>
         <link refid="classfc_1_1ripemd160"/>
       </node>
-      <node id="6118">
+      <node id="6159">
         <label>flat_set&lt; graphene::protocol::public_key_type &gt;</label>
       </node>
-      <node id="6115">
+      <node id="6156">
         <label>fc::time_point_sec</label>
         <link refid="classfc_1_1time__point__sec"/>
       </node>
-      <node id="6116">
+      <node id="6157">
         <label>vector&lt; fc::static_variant &gt;</label>
       </node>
-      <node id="6117">
+      <node id="6158">
         <label>vector&lt; fc::zero_initialized_array &gt;</label>
       </node>
-      <node id="6112">
+      <node id="6153">
         <label>graphene::protocol::signed_transaction</label>
         <link refid="classgraphene_1_1protocol_1_1signed__transaction"/>
-        <childnode refid="6113" relation="public-inheritance">
+        <childnode refid="6154" relation="public-inheritance">
         </childnode>
-        <childnode refid="6117" relation="usage">
+        <childnode refid="6158" relation="usage">
           <edgelabel>signatures</edgelabel>
         </childnode>
-        <childnode refid="6118" relation="usage">
+        <childnode refid="6159" relation="usage">
           <edgelabel>_signees</edgelabel>
         </childnode>
       </node>
-      <node id="6113">
+      <node id="6154">
         <label>graphene::protocol::transaction</label>
         <link refid="classgraphene_1_1protocol_1_1transaction"/>
-        <childnode refid="6114" relation="usage">
+        <childnode refid="6155" relation="usage">
           <edgelabel>_tx_id_buffer</edgelabel>
         </childnode>
-        <childnode refid="6115" relation="usage">
+        <childnode refid="6156" relation="usage">
           <edgelabel>expiration</edgelabel>
         </childnode>
-        <childnode refid="6116" relation="usage">
+        <childnode refid="6157" relation="usage">
           <edgelabel>operations</edgelabel>
         </childnode>
       </node>
