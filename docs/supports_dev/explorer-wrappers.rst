@@ -49,6 +49,10 @@ If you are interested to have own BitShares Explorer API up and running for a pr
 |
 
 
-Contributor: Alfredo Garcia (https://github.com/oxarbitrage) and Stefan Schießl (https://github.com/sschiessl-bcp)
+Contributors:
+
+- Alfredo Garcia (https://github.com/oxarbitrage)
+
+- Stefan Schießl (https://github.com/sschiessl-bcp)
 
 
