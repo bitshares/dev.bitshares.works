@@ -21,7 +21,7 @@ BitShares Core
    :widths: 15 80
    :header-rows: 0
 
-   * - `Bitshares Core <https://github.com/bitshares/bitshares-core>`_ 
+   * - `BitShares Core <https://github.com/bitshares/bitshares-core>`_ 
      - BitShares Core is the BitShares blockchain implementation and command-line interface	 	 
    * - `Docker Container <https://github.com/bitshares/bitshares-core/blob/master/README-docker.md>`_ 
      - Built-in Dockerfile to support docker containers.    
@@ -35,7 +35,7 @@ BitShares Core C++ Library
    :widths: 15 80
    :header-rows: 0	 
 	 
-   * - `Bitshares FC <https://github.com/bitshares/bitshares-fc>`_ 
+   * - `BitShares FC <https://github.com/bitshares/bitshares-fc>`_ 
      - Fast-compiling C++ library  provides a set of utility libraries useful for the development of asynchronous libraries	 
    * - `Websocket pp <https://github.com/bitshares/websocketpp>`_  
      - C++ websocket client/server library 	
@@ -64,7 +64,7 @@ API Related
    :widths: 15 80
    :header-rows: 0	 
 	
-   * - `Bitshares Explorer API <https://github.com/bitshares/bitshares-explorer-api>`_  
+   * - `BitShares Explorer API <https://github.com/bitshares/bitshares-explorer-api>`_  
      - REST API for BitShares 	 
 
  
@@ -77,7 +77,7 @@ Python
    :widths: 15 80
    :header-rows: 0
 
-   * - `Python Bitshares <https://github.com/bitshares/python-bitshares>`_  
+   * - `Python BitShares <https://github.com/bitshares/python-bitshares>`_  
      - Fully featured client-side library for the BitShares Blockchain - written entirely in python.	 
    * - `uptick <https://github.com/bitshares/uptick>`_  
      - Python-based CLI tool set for BitShares blockchain	
@@ -94,10 +94,10 @@ JavaScript
    :widths: 15 80
    :header-rows: 0
 
-   * - `Bitshares JS <https://github.com/bitshares/bitsharesjs>`_  
+   * - `BitShares JS <https://github.com/bitshares/bitsharesjs>`_  
      - JavaScript tools for BitShares Encryption and Serialization. https://bitsharesjs.bitshares.org/
-   * - `Bitshares JS-WS <https://github.com/bitshares/bitsharesjs-ws>`_  
-     - JavaScript websocket interface for Bitshares
+   * - `BitShares JS-WS <https://github.com/bitshares/bitsharesjs-ws>`_  
+     - JavaScript websocket interface for BitShares
 
 |
 	 
@@ -108,10 +108,10 @@ BitShares UI
    :widths: 15 80
    :header-rows: 0	 		 
 	 
-   * - `Bitshares UI <https://github.com/bitshares/bitshares-ui>`_  
-     - Graphical User Interface for Bitshares
-   * - `Bitshares UI API <https://github.com/bitshares/bitshares-ui-api>`_  
-     - RESTful API server for Bitshares based on express-es6-rest-api	 
+   * - `BitShares UI <https://github.com/bitshares/bitshares-ui>`_  
+     - Graphical User Interface for BitShares
+   * - `BitShares UI API <https://github.com/bitshares/bitshares-ui-api>`_  
+     - RESTful API server for BitShares based on express-es6-rest-api	 
    * - `develop.bitshares.org <https://github.com/bitshares/develop.bitshares.org>`_  
      - Bleeding edge hosted wallet off the develop branch of bitshares-ui
    * - `reconnecting-websocket <https://github.com/bitshares/reconnecting-websocket>`_  
@@ -125,8 +125,8 @@ Mobile
    :widths: 15 80
    :header-rows: 0
  
-   * - `Bitshares Mobile App <https://github.com/bitshares/bitshares-mobile-app>`_  
-     - This is the mobile app for bitshares blockchain 	 	 
+   * - `BitShares Mobile App <https://github.com/bitshares/bitshares-mobile-app>`_  
+     - This is the mobile app for BitShares blockchain 	 	 
 
 |
 	 
@@ -138,7 +138,7 @@ Other Related Software
    :header-rows: 0
  
    * - `G-Wallet <https://github.com/bitshares/gwallet>`_  
-     - G-Wallet is a Bitshares desktop(Linux, Windows, MAC) wallet program written in C++ using wxWidgets.  	
+     - G-Wallet is a BitShares desktop(Linux, Windows, MAC) wallet program written in C++ using wxWidgets.  	
    * - `beet <https://github.com/bitshares/beet>`_  
      -  Beet is a stand-alone key/identity-manager and signing app for BitShares, heavily influenced by Scatter	 
    * - `faucet <https://github.com/bitshares/faucet>`_  
@@ -160,12 +160,10 @@ References
 BitShares Core
 --------------------
 
-* `Bitshares Core: Doxygen Document <https://open-explorer.io/doxygen/fc/>`_ 
+* `BitShares Core: Doxygen Document <https://doxygen.bitshares.org/>`_ 
 
-* `BSIPs <https://github.com/bitshares/bsips>`_  - BitShares Improvement Proposals and Protocols	 
+* `BSIPs <https://github.com/bitshares/bsips>`_  - BitShares Improvement Proposals and Protocols
 	
-* `Bitshares FC: Doxygen Document <https://open-explorer.io/doxygen/fc/>`_ 
-
 |
 
 API Related 
@@ -173,10 +171,10 @@ API Related
 
 * :ref:`explorer-wrappers`
 
-  - For Mainnet and Tesenet: ES Wrapper to query the Bitshares data. *Try it out!*
+  - For Mainnet and Tesenet: ES Wrapper to query the BitShares data. *Try it out!*
   - Check the BitShares blockchain health. 
 
-* `BitShares Explorer REST API - Installation Guide <https://github.com/oxarbitrage/bitshares-explorer-api#bitshares-explorer-rest-api>`_
+* `BitShares Explorer REST API - Installation Guide <https://github.com/bitshares/bitshares-explorer-api#bitshares-explorer-rest-api>`_
 
   - Step by step on everything needed to have your own BitShares Explorer API up and running for a production environment.
 	 
@@ -205,7 +203,7 @@ Testing Tool(s)
 Python
 ----------------------
      
-* `Python Bitshares Documentation <http://docs.pybitshares.com/en/latest/>`_ 
+* `Python BitShares Documentation <http://docs.pybitshares.com/en/latest/>`_ 
 
 * :ref:`how-to-setup-python-lib` (also, How to Create MPAs/UIAs with Python)
  
