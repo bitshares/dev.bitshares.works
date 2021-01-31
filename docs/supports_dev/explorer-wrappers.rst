@@ -2,7 +2,7 @@
 .. _explorer-wrappers:
 
 ******************************************************
-Bitshares Blockchain Explorer and the Wrappers 
+BitShares Blockchain Explorer and the Wrappers 
 ******************************************************
 
 BliShares Blockchain Explorer
