@@ -130,7 +130,7 @@ BitShares Explorer shows BitShares Blockchain information. You can observe BitSh
 If you would like to see more detailed information, the Open Explorer offers other information tabs (i.e., Operations, Proxies, Markets, SmartCoins, UIAs, and Holders) to view.
 
 - `Cryptofresh  <https://www.cryptofresh.com/>`_
-- `Open Explorer <http://open-explorer.io/>`_
+- `BlockSights <https://blocksights.info/>`_
 - `bts.ai <https://bts.ai/>`_
 
 
