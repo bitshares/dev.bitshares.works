@@ -107,9 +107,9 @@ With the above configuration, how to call `add_node` from the `network_node` API
 
 The full node offers a set of API(s), of which only the database calls are avaiable via RPC. Calls that are restricted by default (i.e. ``network_node_api``) or have been restricted by configuration are not accessible via RPC because a statefull protocol (websocket) is required for login.
 
-The `network_node API <https://bitshares.org/doxygen/classgraphene_1_1app_1_1network__node__api.html>`_ requires login, it is only accessible over the websocket RPC. 
+The `network_node API <https://doxygen.bitshares.org/classgraphene_1_1app_1_1network__node__api.html>`_ requires login, it is only accessible over the websocket RPC. 
 
-Please check. Our `doxygen <https://bitshares.org/doxygen/>`_ documentation contains the most up-to-date information about APIs.
+Please check. Our `doxygen <https://doxygen.bitshares.org/>`_ documentation contains the most up-to-date information about APIs.
 
 
 ------------------
@@ -147,7 +147,7 @@ The ``login_api`` class implements the bottom layer of the RPC API. All other AP
 .. doxygenclass:: graphene::app::login_api
    :members:
 
-.. _doxygen: http://bitshares.org/doxygen
+.. _doxygen: https://doxygen.bitshares.org/
 
 
 
