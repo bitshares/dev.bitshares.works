@@ -67,11 +67,11 @@ In the process, check a wallet_file existence and also check chain_database `cha
 **doxygen documentation**
 
 
-*graphene::chain::genesis_state_type graphene::app::detail::[`crete_example_genusis()`](https://bitshares.org/doxygen/namespacegraphene_1_1app_1_1detail.html#a6ffeeab5458989981d9dd2acb364904e)*
+*graphene::chain::genesis_state_type graphene::app::detail::[`crete_example_genusis()`](https://doxygen.bitshares.org/namespacegraphene_1_1app_1_1detail.html#a6ffeeab5458989981d9dd2acb364904e)*
 
-[` compute_chain_id()`](https://bitshares.org/doxygen/structgraphene_1_1chain_1_1genesis__state__type.html#a1212f7780e4dd0f749e59bcdf9149a96)
+[` compute_chain_id()`](https://doxygen.bitshares.org/structgraphene_1_1chain_1_1genesis__state__type.html#a3a3802fcae47bc232ba8728f65e94f89)
 
-[` initial_chain_id`](https://bitshares.org/doxygen/structgraphene_1_1chain_1_1genesis__state__type.html#acbf6798be37935a7c792b4fd7adba4c8)
+[` initial_chain_id`](https://doxygen.bitshares.org/structgraphene_1_1chain_1_1genesis__state__type.html#acbf6798be37935a7c792b4fd7adba4c8)
 
 **/libraries/egenesis/embed_genesis.cpp**
 
