@@ -96,7 +96,7 @@ APIs
 * :ref:`How to access the API via HTTP <api-access-via-http>`
 * :ref:`How to use Remote Procedure Calls (RPC) <rpc>`
 * :ref:`How to use Websocket Call <websocket-calls>`
-* `Where to find the doxygen documentation <https://bitshares.org/doxygen/index.html>`_
+* `Where to find the doxygen documentation <https://doxygen.bitshares.org/index.html>`_
 * :ref:`How define BitShares Objects and IDs <objects-ids>`
 * :ref:`api-core-faq-1`
 * :ref:`api-core-faq-2`

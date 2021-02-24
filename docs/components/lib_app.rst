@@ -15,10 +15,10 @@ libraries - app
 Directories and files
 ===========================
 
-For detail information, please check: `graphene::app Namespace Reference <https://bitshares.org/doxygen/namespacegraphene_1_1app.html>`_
+For detail information, please check: `graphene::app Namespace Reference <https://doxygen.bitshares.org/namespacegraphene_1_1app.html>`_
 
 
-For detail information: `graphene::app::plugin Class Reference <https://bitshares.org/doxygen/classgraphene_1_1app_1_1plugin.html>`_
+For detail information: `graphene::app::plugin Class Reference <https://doxygen.bitshares.org/classgraphene_1_1app_1_1plugin.html>`_
 
 
 * ../libraries/app/
@@ -139,7 +139,7 @@ limit_order_group
 class
 ---------------------------------
 
-For detail information, please check: `graphene::app Namespace Reference <https://bitshares.org/doxygen/namespacegraphene_1_1app.html>`_
+For detail information, please check: `graphene::app Namespace Reference <https://doxygen.bitshares.org/namespacegraphene_1_1app.html>`_
 
 * history_api
 * block_api
@@ -195,9 +195,9 @@ application.hpp
 class
 --------------------------
 
-For detail information, please check: `graphene::app Namespace Reference <https://bitshares.org/doxygen/namespacegraphene_1_1app.html>`_
+For detail information, please check: `graphene::app Namespace Reference <https://doxygen.bitshares.org/namespacegraphene_1_1app.html>`_
 
-For detail information: `graphene::app::plugin Class Reference <https://bitshares.org/doxygen/classgraphene_1_1app_1_1plugin.html>`_
+For detail information: `graphene::app::plugin Class Reference <https://doxygen.bitshares.org/classgraphene_1_1app_1_1plugin.html>`_
 
 
 
@@ -295,7 +295,7 @@ market_trade
 class
 --------------------------------
 
-For detail information, please check: `graphene::app Namespace Reference <https://bitshares.org/doxygen/namespacegraphene_1_1app.html>`_
+For detail information, please check: `graphene::app Namespace Reference <https://doxygen.bitshares.org/namespacegraphene_1_1app.html>`_
 
 * database_api
 
@@ -345,7 +345,7 @@ plugin.hpp
 class
 -----------------------------------
 
-For detail information: `graphene::app::plugin Class Reference <https://bitshares.org/doxygen/classgraphene_1_1app_1_1plugin.html>`_
+For detail information: `graphene::app::plugin Class Reference <https://doxygen.bitshares.org/classgraphene_1_1app_1_1plugin.html>`_
 
 * abstract_plugin
 * plugin

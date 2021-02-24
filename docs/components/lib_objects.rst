@@ -29,7 +29,7 @@ Account
 
 
 
-`account_balance_object <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1account__balance__object.html>`_
+`account_balance_object <https://doxygen.bitshares.org/classgraphene_1_1chain_1_1account__balance__object.html>`_
 -----------------------------
 - Tracks the balance of a single account/asset pair
 - This object is indexed on owner and asset_type so that black swan events in asset_type can be processed quickly
@@ -55,7 +55,7 @@ Account
 
 
 
-`account_object <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1account__object.html>`_ 
+`account_object <https://doxygen.bitshares.org/classgraphene_1_1chain_1_1account__object.html>`_ 
 -----------------------------------------------------
 - This class represents an account on the object graph
 - Accounts are the primary unit of authority on the graphene system. Users must have an account in order to use assets, trade in the markets, vote for committee_members, etc 
@@ -208,7 +208,7 @@ Account
    };
    
   
-`account_statistics_object <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1account__statistics__object.html>`_ 
+`account_statistics_object <https://doxygen.bitshares.org/classgraphene_1_1chain_1_1account__statistics__object.html>`_ 
 -----------------------------------------------------
 
 - This object contains regularly updated statistical data about an account. It is provided for the purpose of separating the account data that changes frequently from the account data that is mostly static, which will minimize the amount of data that must be backed up as part of the undo history everytime a transfer is made. 
@@ -446,7 +446,7 @@ typedef generic_index
    //(20181019)
    
 
-`withdraw_permission_object <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1withdraw__permission__object.html>`_ 
+`withdraw_permission_object <https://doxygen.bitshares.org/classgraphene_1_1chain_1_1withdraw__permission__object.html>`_ 
 -----------------------------------------------------
 - Grants another account authority to withdraw a limited amount of funds per interval	  
 - The primary purpose of this object is to enable recurring payments on the blockchain. An account which wishes to process a recurring payment may use a ``withdraw_permission_claim_operation`` to reference an object of this type and withdraw up to ``withdrawal_limit`` from ``withdraw_from_account``. Only ``authorized_account`` may do this. Any number of withdrawals may be made so long as the total amount withdrawn per period does not exceed the limit for any given period. 
@@ -499,7 +499,7 @@ typedef generic_index
 Authority 
 ================================
 
-`special_authority_object <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1special__authority__object.html>`_ 
+`special_authority_object <https://doxygen.bitshares.org/classgraphene_1_1chain_1_1special__authority__object.html>`_ 
 -----------------------------------------------------
 - ``special_authority_object`` only exists to help with a specific indexing problem. We want to be able to iterate over all accounts that contain a special authority. However, accounts which have a special_authority are very rare. So rather than indexing ``ccount_object`` by the special_authority fields (requiring additional bookkeeping for every account), we instead maintain a ``special_authority_object`` pointing to each account which has ``special_authority`` (requiring additional bookkeeping only for every account which has special_authority).
 - This class is an implementation detail.    	
@@ -521,7 +521,7 @@ Asset
 ================
 
  
-`asset_dynamic_data_object <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1asset__dynamic__data__object.html>`_ 
+`asset_dynamic_data_object <https://doxygen.bitshares.org/classgraphene_1_1chain_1_1asset__dynamic__data__object.html>`_ 
 -----------------------------------------------------
 - tracks the asset information that changes frequently
 - Because the ``asset_object`` is very large it doesn't make sense to save an undo state for all of the parameters that never change. This object factors out the parameters of an asset that change in almost every transaction that involves the asset.
@@ -544,7 +544,7 @@ Asset
    //(11/27/2018)
    
    
-`asset_object <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1asset__object.html>`_ 
+`asset_object <https://doxygen.bitshares.org/classgraphene_1_1chain_1_1asset__object.html>`_ 
 -----------------------------------------------------
 - tracks the parameters of an asset
 - All assets have a globally unique symbol name that controls how they are traded and an issuer who has authority over the parameters of the asset. 	 
@@ -645,7 +645,7 @@ Asset
 
 
    
-`budget_record_object <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1budget__record__object.html>`_ 
+`budget_record_object <https://doxygen.bitshares.org/classgraphene_1_1chain_1_1budget__record__object.html>`_ 
 -----------------------------------------------------
 -   
 
@@ -695,7 +695,7 @@ Asset
 
 	// (11/27/2018)
 	
-`buyback_object <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1buyback__object.html>`_ 
+`buyback_object <https://doxygen.bitshares.org/classgraphene_1_1chain_1_1buyback__object.html>`_ 
 -----------------------------------------------------
 - ``buyback_authority_object`` only exists to help with a specific indexing problem. We want to be able to iterate over all assets that have a buyback program. However, assets which have a buyback program are very rare. So rather than indexing ``asset_object`` by the buyback field (requiring additional bookkeeping for every asset), we instead maintain a ``buyback_object`` pointing to each asset which has buyback (requiring additional bookkeeping only for every asset which has buyback).
 - This class is an implementation detail.  
@@ -715,7 +715,7 @@ Asset
 BitAsset 
 ========================
 
-`asset_bitasset_data_object <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1asset__bitasset__data__object.html>`_ 
+`asset_bitasset_data_object <https://doxygen.bitshares.org/classgraphene_1_1chain_1_1asset__bitasset__data__object.html>`_ 
 -----------------------------------------------------
 - contains properties that only apply to bitassets (market issued assets) 	  
  
@@ -851,7 +851,7 @@ BitAsset
 Balance
 ==============
 
-`blinded_balance_object <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1blinded__balance__object.html>`_ 
+`blinded_balance_object <https://doxygen.bitshares.org/classgraphene_1_1chain_1_1blinded__balance__object.html>`_ 
 -----------------------------------------------------
 - tracks a blinded balance commitment	  
 
@@ -869,7 +869,7 @@ Balance
 	};
    
 
-`balance_object <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1balance__object.html>`_ 
+`balance_object <https://doxygen.bitshares.org/classgraphene_1_1chain_1_1balance__object.html>`_ 
 -----------------------------------------------------
 -   
 
@@ -900,7 +900,7 @@ Balance
 Block
 =================
 
-`block_summary_object <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1block__summary__object.html>`_ 
+`block_summary_object <https://doxygen.bitshares.org/classgraphene_1_1chain_1_1block__summary__object.html>`_ 
 -----------------------------------------------------
 - tracks minimal information about past blocks to implement TaPOS
 - When attempting to calculate the validity of a transaction we need to lookup a past block and check its block hash and the time it occurred so we can calculate whether the current transaction is valid and at what time it should expire. 
@@ -920,7 +920,7 @@ Block
 Chain
 ========================
 
-`chain_property_object <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1chain__property__object.html>`_ 
+`chain_property_object <https://doxygen.bitshares.org/classgraphene_1_1chain_1_1chain__property__object.html>`_ 
 -----------------------------------------------------
 - Contains invariants which are set at genesis and never changed. 	  
 
@@ -938,7 +938,7 @@ Chain
 
 
 
-`dynamic_global_property_object <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1dynamic__global__property__object.html>`_ 
+`dynamic_global_property_object <https://doxygen.bitshares.org/classgraphene_1_1chain_1_1dynamic__global__property__object.html>`_ 
 -----------------------------------------------------
 - Maintains global state information (committee_member list, current fees)
 - This is an implementation detail. The values here are calculated during normal chain operations and reflect the current values of global blockchain properties. 
@@ -1006,7 +1006,7 @@ Chain
    };
    
 
-`global_property_object <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1global__property__object.html>`_ 
+`global_property_object <https://doxygen.bitshares.org/classgraphene_1_1chain_1_1global__property__object.html>`_ 
 -----------------------------------------------------
 - Maintains global state information (committee_member list, current fees)
 - This is an implementation detail. The values here are set by committee_members to tune the blockchain parameters. 
@@ -1032,7 +1032,7 @@ Chain
 Committee 
 ========================
 
-`committee_member_object <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1committee__member__object.html>`_ 
+`committee_member_object <https://doxygen.bitshares.org/classgraphene_1_1chain_1_1committee__member__object.html>`_ 
 -----------------------------------------------------
 - tracks information about a committee_member account.
 - A committee_member is responsible for setting blockchain parameters and has dynamic multi-sig control over the committee account. The current set of active committee_members has control.
@@ -1055,7 +1055,7 @@ Committee
 FBA
 =============	 
 
-`fba_accumulator_object <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1fba__accumulator__object.html>`_ 
+`fba_accumulator_object <https://doxygen.bitshares.org/classgraphene_1_1chain_1_1fba__accumulator__object.html>`_ 
 -----------------------------------------------------
 - fba_accumulator_object accumulates fees to be paid out via buyback or other FBA mechanism.   
 
@@ -1088,7 +1088,7 @@ FBA
 History 
 =======================
 
-`operation_history_object <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1operation__history__object.html>`_ 
+`operation_history_object <https://doxygen.bitshares.org/classgraphene_1_1chain_1_1operation__history__object.html>`_ 
 -----------------------------------------------------
 - tracks the history of all logical operations on blockchain state
 - All operations and virtual operations result in the creation of an operation_history_object that is maintained on disk as a stack. Each real or virtual operation is assigned a unique ID / sequence number that it can be referenced by.
@@ -1120,7 +1120,7 @@ History
    };
    
    
-`account_transaction_history_object <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1account__transaction__history__object.html>`_ 
+`account_transaction_history_object <https://doxygen.bitshares.org/classgraphene_1_1chain_1_1account__transaction__history__object.html>`_ 
 -----------------------------------------------------
 - a node in a linked list of operation_history_objects
 - Account history is important for users and wallets even though it is not part of "core validation". Account history is maintained as a linked list stored on disk in a stack. Each account will point to the most recent account history object by ID. When a new operation relativent to that account is processed a new account history object is allocated at the end of the stack and initialized to point to the prior object.
@@ -1188,7 +1188,7 @@ History
 Order (*market*)
 =======================
 
-`call_order_object <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1call__order__object.html>`_ 
+`call_order_object <https://doxygen.bitshares.org/classgraphene_1_1chain_1_1call__order__object.html>`_ 
 -----------------------------------------------------
 - tracks debt and call price information
 - There should only be one call_order_object per asset pair per account and they will all have the same call price. 
@@ -1228,7 +1228,7 @@ Order (*market*)
 
 
 
-`collateral_bid_object <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1collateral__bid__object.html>`_ 
+`collateral_bid_object <https://doxygen.bitshares.org/classgraphene_1_1chain_1_1collateral__bid__object.html>`_ 
 -----------------------------------------------------
 - bids of collateral for debt after a black swan
 - There should only be one collateral_bid_object per asset per account, and only for smartcoin assets that have a global settlement_price. 
@@ -1250,7 +1250,7 @@ Order (*market*)
 	};
 
 
-`force_settlement_object <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1force__settlement__object.html>`_ 
+`force_settlement_object <https://doxygen.bitshares.org/classgraphene_1_1chain_1_1force__settlement__object.html>`_ 
 -----------------------------------------------------
 - tracks bitassets scheduled for force settlement at some point in the future.
 - On the settlement_date the balance will be converted to the collateral asset and paid to owner and then this object will be deleted. 
@@ -1272,7 +1272,7 @@ Order (*market*)
 	};
 
 
-`limit_order_object <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1limit__order__object.html>`_ 
+`limit_order_object <https://doxygen.bitshares.org/classgraphene_1_1chain_1_1limit__order__object.html>`_ 
 -----------------------------------------------------
 - an offer to sell a amount of a asset at a specified exchange rate by a certain time
 - This limit_order_objects are indexed by expiration and is automatically deleted on the first block after expiration
@@ -1310,7 +1310,7 @@ Order (*market*)
 Proposal 
 ==========================
 
-`proposal_object <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1proposal__object.html>`_ 
+`proposal_object <https://doxygen.bitshares.org/classgraphene_1_1chain_1_1proposal__object.html>`_ 
 -----------------------------------------------------
 - tracks the approval of a partially approved transaction 	  
 
@@ -1340,7 +1340,7 @@ Proposal
 Transaction 
 =============================
  
-`node_property_object <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1node__property__object.html>`_ 
+`node_property_object <https://doxygen.bitshares.org/classgraphene_1_1chain_1_1node__property__object.html>`_ 
 -----------------------------------------------------
 - Contains per-node database configuration.
 - Transactions are evaluated differently based on per-node state. Settings here may change based on whether the node is syncing or up-to-date. Or whether the node is a witness node. Or if we're processing a transaction in a witness-signed block vs. a fresh transaction from the p2p network. Or configuration-specified tradeoffs of performance/hardfork resilience vs. paranoia. 
@@ -1358,7 +1358,7 @@ Transaction
    };
    
 
-`transaction_object <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1transaction__object.html>`_ 
+`transaction_object <https://doxygen.bitshares.org/classgraphene_1_1chain_1_1transaction__object.html>`_ 
 -----------------------------------------------------
 - The purpose of this object is to enable the detection of duplicate transactions. When a transaction is included in a block a transaction_object is added. At the end of block processing all transaction_objects that have expired can be removed from the index.   
 
@@ -1404,7 +1404,7 @@ Transaction
 Vesting Balance 
 =============================
 
-`vesting_balance_object <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1vesting__balance__object.html>`_ 
+`vesting_balance_object <https://doxygen.bitshares.org/classgraphene_1_1chain_1_1vesting__balance__object.html>`_ 
 -----------------------------------------------------
 - Vesting balance object is a balance that is locked by the blockchain for a period of time.    
 
@@ -1458,7 +1458,7 @@ Vesting Balance
 Witness 
 =======================
 
-`witness_object <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1witness__object.html>`_ 
+`witness_object <https://doxygen.bitshares.org/classgraphene_1_1chain_1_1witness__object.html>`_ 
 -----------------------------------------------------
 -   
 
@@ -1483,7 +1483,7 @@ Witness
          witness_object() : vote_id(vote_id_type::witness) {}
    };
    
-`witness_schedule_object <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1witness__schedule__object.html>`_ 
+`witness_schedule_object <https://doxygen.bitshares.org/classgraphene_1_1chain_1_1witness__schedule__object.html>`_ 
 -----------------------------------------------------
 -   
 
@@ -1501,9 +1501,9 @@ Witness
 Worker 
 ==========================
 
-`worker_object <https://bitshares.org/doxygen/classgraphene_1_1chain_1_1worker__object.html>`_ 
+`worker_object <https://doxygen.bitshares.org/classgraphene_1_1chain_1_1worker__object.html>`_ 
 -----------------------------------------------------
-- Worker object contains the details of a blockchain worker. See `The Blockchain Worker System <https://bitshares.org/doxygen/group__workers.html>`_ for details.
+- Worker object contains the details of a blockchain worker. See `The Blockchain Worker System <https://doxygen.bitshares.org/group__workers.html>`_ for details.
 
 .. code-block:: cpp
 

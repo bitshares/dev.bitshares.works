@@ -22,8 +22,8 @@ passphrase. More detailed description about this can be found on the
 
 
 BitShares-Core API References - Doxygen Documentation *\<Quick links\>*
-   - `BitShares-Core Doxygen (Main)  <https://bitshares.org/doxygen/index.html>`_
-   - `Class Hierarchy order <https://bitshares.org/doxygen/hierarchy.html>`_
+   - `BitShares-Core Doxygen (Main)  <https://doxygen.bitshares.org/index.html>`_
+   - `Class Hierarchy order <https://doxygen.bitshares.org/hierarchy.html>`_
 
 
 ----------
