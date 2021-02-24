@@ -15,7 +15,7 @@ libraries - wallet
 Directories and files
 ===========================
 
-For more information: `graphene::wallet Namespace Reference <https://bitshares.org/doxygen/namespacegraphene_1_1wallet.html>`_
+For more information: `graphene::wallet Namespace Reference <https://doxygen.bitshares.org/namespacegraphene_1_1wallet.html>`_
 
 
 
@@ -437,7 +437,7 @@ wallet_api
 * This wallet assumes it is connected to the database server with a high-bandwidth, low-latency connection and performs minimal caching. This API could be provided locally to be used by a web interface.
 
 
-For detail information, please check: `graphene::wallet::wallet_api Class Reference <https://bitshares.org/doxygen/classgraphene_1_1wallet_1_1wallet__api.html>`_
+For detail information, please check: `graphene::wallet::wallet_api Class Reference <https://doxygen.bitshares.org/classgraphene_1_1wallet_1_1wallet__api.html>`_
 
 
 
