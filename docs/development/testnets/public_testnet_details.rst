@@ -47,6 +47,7 @@ To see more options: Go to :ref:`Installation Guide <installation-guide>`.
 	 git clone https://github.com/bitshares/bitshares-core.git bitshares-core-testnet
 	 cd bitshares-core-testnet    
 	 git checkout testnet
+	 git submodule update --init --recursive
 	 cmake .
 	 make
 
