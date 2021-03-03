@@ -75,9 +75,9 @@ As you know, each blockchain starts with a genesis block that definitions are in
 
 The BitShares Blockchain Data Configuration file exists in the blockchain data directory. And the data directory will be created by launching a witness_node. 
 
-At this point, we just want to create a :ref:`configuration file (cinfig.ini)  <bts-config-ini-eg-public-testnet>` to observe the parameters. If you want to use the Public Testnet, you can use the default configuration settings without changes.
+At this point, we just want to create a :ref:`configuration file (config.ini)  <bts-config-ini-eg-public-testnet>` to observe the parameters. If you want to use the Public Testnet, you can use the default configuration settings without changes.
 
-Run the following command and end the process. In Windows, you can use ``[ctl]+c`` to end the process.
+Run the following command and end the process. You can use ``[ctrl]+c`` to end the process.
 
 :: 
    
@@ -137,7 +137,7 @@ If you want to create own data directory, use ``--data-dir`` parameter and run t
 2-4. Observe the config.ini file
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Although you can use the default :ref:`cinfig.ini <bts-config-ini-eg-public-testnet>` file for the Public Testnet, it's worth to recognize the parameters. 
+Although you can use the default :ref:`config.ini <bts-config-ini-eg-public-testnet>` file for the Public Testnet, it's worth to recognize the parameters. 
 
 In BitShares, a seed node is a node that accept incoming P2P connection. Its address is hard coded in the program, so when a new node starts, it will connect to the seed nodes by default. Every node (including seed nodes) tells the connected nodes where other nodes are, so all nodes can connect to each other.
 
@@ -148,9 +148,9 @@ In BitShares, a seed node is a node that accept incoming P2P connection. Its add
    * - 
      - Seed Node Information
    * - testnet
-     - https://github.com/bitshares/bitshares-core/blob/testnet/libraries/app/application.cpp
+     - https://github.com/bitshares/bitshares-core/blob/testnet/libraries/egenesis/seed-nodes-testnet.txt
    * - production
-     - https://github.com/bitshares/bitshares-core/blob/master/libraries/app/application.cpp#L168-L187	 
+     - https://github.com/bitshares/bitshares-core/blob/master/libraries/egenesis/seed-nodes.txt
 
 |
 
@@ -193,9 +193,9 @@ If you want to use the ``cli_wallet``, you need to specify at least the rpc endp
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 (If you have your testnet accounts already, you can jump this section.)
 
-We want to use a BitShares Public UI wallet for testnet(http://testnet.bitshares.eu/) to register new testnet account. The public UI wallet has been set the faucet (https://faucet.testnet.bitshares.eu/) already. The faucet address is used to pay the registration fee for new users! (*To learn more details, please refer BitShares Users Guide.*)
+We want to use a BitShares Public UI wallet for testnet(https://test.xbts.io/) to register new testnet account. The public UI wallet has been set the faucet (https://testnet-faucet.xbts.io) already. The faucet address is used to pay the registration fee for new users! (*To learn more details, please refer BitShares Users Guide.*)
 
-  1) Go to the Public testnet UI wallet: (http://testnet.bitshares.eu/) to create new testnet account.
+  1) Go to the Public testnet UI wallet: (https://test.xbts.io/) to create new testnet account.
   2) If you see "Application initialization issues", try to select "Public Testnet Server (...)" from a FULL NODE API SERVER dropdown list. 
   3) Click a [CREATE ACCOUNT] button to register a new testnet account. 
   4) Save your password and Create an account.
@@ -230,13 +230,13 @@ The below table is Example Owner, Active, and Memo key pairs. Each authority has
      - TEST72uQ5-Test-ACTIVE-Public-key-6CKa3fpqrfye
    * -  
      - private key
-     - P5KN-Test-ACTIVE-Private-key-Pn3jNVZBh
+     - 5KN-Test-ACTIVE-Private-key-Pn3jNVZBh
    * - **Memo**
      - public key
      - TEST5jork-Test-MEMO-Public-key-A91aWDZztyMCaR6
    * -  
      - private key
-     - P5J3-Test-MEMO-Private-keyva7C9sYW6
+     - 5J3-Test-MEMO-Private-keyva7C9sYW6
 
 	 
 You might've noticed each public key start with **TEST**.  So, you know those private keys are for the testnet. If you create BitShares mainnet account, you will find **BTS** on the top of each private key.
@@ -294,8 +294,8 @@ In the following section, we use *ken-test01* as a testnet user account to expla
 
 We want to import two private keys. First one is **Active Private key** to transfer your fund.    The next one is **Memo Private key** to transfer your memo data.   
 
-      >>> import_key ken-test01 P5KN-Test-ACTIVE-Private-key-Pn3jNVZBh   // Active private key
-      >>> import_key ken-test01 P5J3-Test-MEMO-Private-keyva7C9sYW6      // Memo private key
+      >>> import_key ken-test01 5KN-Test-ACTIVE-Private-key-Pn3jNVZBh   // Active private key
+      >>> import_key ken-test01 5J3-Test-MEMO-Private-keyva7C9sYW6      // Memo private key
 
 	
 * ``import_key`` <name> "<wifkey>"
@@ -307,7 +307,7 @@ We want to import two private keys. First one is **Active Private key** to trans
 In BitShares Blockchain, balances are contained in accounts. Use the following as an example to import your testnet account balances. These balances can be claimed, with no fee.
 
 
-      >>> import_balance ken-test01 ["P5KN-Test-ACTIVE-Private-key-Pn3jNVZBh"] true
+      >>> import_balance ken-test01 ["5KN-Test-ACTIVE-Private-key-Pn3jNVZBh"] true
 
 * ``import_balance`` <name> ["*"] true
 
@@ -321,7 +321,7 @@ After you imported your public testnet account and balances, let's check if you 
 If you want to check the private key of the current cli_wallet, you can use a command ``get_private_key`` with the pair of the public key. 
 
 	>>> get_private_key  TEST72uQ5-Test-ACTIVE-Public-key-6CKa3fpqrfye	
-        P5KN-Test-ACTIVE-Private-key-Pn3jNVZBh
+        5KN-Test-ACTIVE-Private-key-Pn3jNVZBh
 	
 	
 	
