@@ -21,7 +21,7 @@ The following will explain about the installation and how to use the console wal
 ==================================
 
 - 1a) Build from source
-  - Please refer :ref:`installation`.
+  - Please refer :ref:`download-and-build`.
 
   To reduce compilation time, you can tell the compile infrastructure to only compile the cli wallet by running::
 
