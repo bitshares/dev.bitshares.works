@@ -41,7 +41,7 @@ After you download a testnet branch files in a ``bitshares-core-testnet`` direct
  ::
 
    cmake .
-    make
+   make
 
 You will find the compiled program files in the below folders. 
 
@@ -52,9 +52,9 @@ You will find the compiled program files in the below folders.
    * - program name
      - directory and folder
    * - witness_node 
-     - ../bitshares-core-testnet/programs/witness_node/
+     - ./programs/witness_node/
    * - cli_wallet 
-     - ../bitshares-core-testnet/programs/cli_wallet/
+     - ./programs/cli_wallet/
 
 	 
 
@@ -93,7 +93,7 @@ For example, if your current directory is ``bitshares-core-testnet`` and you run
 
 ::
 
-  ../bitshares-core-testnet/
+  bitshares-core-testnet/
       + /programs/
         + /witness_node/
         + /cli_wallet/
@@ -117,7 +117,7 @@ If you want to create own data directory, use ``--data-dir`` parameter and run t
 
 ::
 
-	../bitshares-core-testnet/
+	bitshares-core-testnet/
 		+ /programs/
 			+ /witness_node/
 			+ /cli_wallet/
