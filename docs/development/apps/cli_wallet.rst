@@ -17,23 +17,23 @@ The following will explain about the installation and how to use the console wal
 **Steps**
 
 
-1.Installation and build 
+1.Installation
 ==================================
 
-- 1a) Install and build it from BitShares-Core
-  - BitShares offers you to install BitShares-Core into different platforms; Ubuntu (x64), OSx, and Windows.  Please refer :ref:`installation-guide`.
+- 1a) Build from source
+  - Please refer :ref:`installation`.
 
-- 1b) Use the :ref:`CLI-Wallet tools for Windows (x64)`
-  - This option you do not need to install BitShates Core. To obtain the tool, go to a `BitShares release page <https://github.com/bitshares/bitshares-core/releases>`_ and download the BitShares-Core-\*-x64-cli-tools.zip. 
+  To reduce compilation time, you can tell the compile infrastructure to only compile the cli wallet by running::
 
+	$ make cli_wallet
 
-To reduce compilation time, you can tell the compile infrastructure to only compile the witness node by running.::
-
-	$ make cli-wallet
-
-instead of::
+  instead of::
 	
 	$ make
+
+- 1b) Use the prebuilt binaries
+  - Go to the `BitShares release page <https://github.com/bitshares/bitshares-core/releases>`_ and download the binaries.
+
 
 |
   
@@ -46,32 +46,31 @@ The cli_wallet creates a local wallet.json file that contains the encrypted priv
 
 	programs/cli_wallet/cli_wallet -s ws://127.0.0.1:8090
 
-Depending on the actual chain that you want to connect to your may need to specify –chain-id.
+Depending on the actual chain that you want to connect to your may need to specify --chain-id.
 
 Examples
 ^^^^^^^^^
 
-The below section shows two example patterns how to launch the cli_wallet. The first example, we use the public API server node to connect the cli_wallet and also open WebSocket RPC or RPC-HTTP ports. The cli_wallet opens an RPC port for Wallet operations (i.e., spend, buy, sell...). The second example, we use an IP address (localhost) and also open the port for HTTP-RPC.
+The below section shows two example patterns how to launch the cli_wallet. The first example, we use a public API server node to connect the cli_wallet and also open WebSocket RPC or RPC-HTTP ports. The cli_wallet opens an RPC port for Wallet operations (i.e., spend, buy, sell...). The second example, we use an IP address (localhost) and also open the port for HTTP-RPC.
 
 - \<Examples\> 
   
-  - 1.Connecting a Cli-Wallet by using the public API server node
+  - 1.Connecting a Cli-Wallet by using a public API server node
   - 2.Connecting a Cli-Wallet by an IP address (localhost)
 
 
-**\<Example 1\> Connecting a Cli-Wallet by using the public API server node**
+**\<Example 1\> Connecting a Cli-Wallet by using a public API server node**
 
-We use the public API node of OpenLedger ``wss://bitshares.openledger.info/ws`` and connect via secured WebSocket connection:
+We use the public API node of bts.mobi ``wss://api.bts.mobi/ws`` and connect via secured WebSocket connection:
 
 ::
 
-    ./programs/cli_wallet/cli_wallet -s wss://bitshares.openledger.info/ws 
-                                     -H 127.0.0.1:8092 
-                                     -r 127.0.0.1:8093
+    ./programs/cli_wallet/cli_wallet -s wss://api.bts.mobi/ws 
+                                     -H 127.0.0.1:8092
 
-This will open the cli-wallet and two RPC ports.  In order to allow RPC calls for wallet operations (spend, buy, sell, …), you need to specify the RPC port(s) and set a parameter to choose between WebSocket RPC ``-r``  or RPC-HTTP ``-H`` requests. 
+This will open the cli-wallet and a RPC port.  In order to allow RPC calls for wallet operations (spend, buy, sell, …), you need to specify the RPC port. 
 
-.. Note::  The cli-wallet can open a RPC port so that you can interface your application with it. You have the choices of **Websocket RPC** via the ``-r`` parameter, and **HTTP RPC** via the ``-H`` parameter
+.. Note::  The cli-wallet can open a RPC port so that you can interface your application with it. It accepts **Websocket RPC** and **HTTP RPC**.
 
 
 **\<Example 2\> Connecting a Cli-Wallet by an IP address (localhost)**
@@ -109,7 +108,7 @@ If you open the cli-wallet successfully, you will receive ``new >>>`` prompt (if
 4. Gain Access to Blockchain
 ==================================
 
-In Graphene, balances are contained in accounts. To claim an account that exists in the Graphene genesis, **imports the private key for an existing account**. The private key must match either an owner key or an active key for the named account.
+In BitShares, balances are contained in accounts. To claim an account that exists in the genesis, **imports the private key for an existing account**. The private key must match either an owner key or an active key for the named account.
 
 - ``import_key``
 
@@ -150,7 +149,7 @@ This command allows you to register an account using only a **public key**.
 
 ::
 
-    >>> register_account alpha GPH4zSJHx7D84T1j6HQ7keXWdtabBBWJxvfJw72XmEyqmgdoo1njF GPH4zSJHx7D84T1j6HQ7keXWdtabBBWJxvfJw72XmEyqmgdoo1njF faucet faucet 0 true
+    >>> register_account alpha BTS4zSJHx7D84T1j6HQ7keXWdtabBBWJxvfJw72XmEyqmgdoo1njF BTS4zSJHx7D84T1j6HQ7keXWdtabBBWJxvfJw72XmEyqmgdoo1njF faucet faucet 0 true
 
 	
 .. _transfering-funds-cli-wallet:	
@@ -189,12 +188,12 @@ The wallet will return the actually signed transaction.
 7. Obtain the private key
 ==================================
 
-The ``get_private_key`` command allows us to obtain the **private key** corresponding to the block signing key.::
+The ``get_private_key`` command allows us to obtain the **private key** corresponding to the public key.::
 
-    >>> get_private_key(<pubkey>) 
+    >>> get_private_key <pubkey>
    
 
-    >>> get_private_key GPH6viEhYCQr8xKP3Vj8wfHh6WfZeJK7H9uhLPDYWLGCRSj5kHQZM
+    >>> get_private_key BTS6viEhYCQr8xKP3Vj8wfHh6WfZeJK7H9uhLPDYWLGCRSj5kHQZM
 
 |
 
