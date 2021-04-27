@@ -56,8 +56,7 @@ In OS X 10.11 (El Capitan) and newer, you will be prompted to install developer 
     cmake .
     make
 
-	
-.. Notes:: As mentioned elsewhere, Bitshares depends on the third-party libraries "Boost" and "OpenSSL". These libraries need to be in certain version ranges. At the moment, Boost needs to be **between 1.58 and 1.74**. OpenSSL needs to be in the **1.0.x - 1.1.x range**.
+.. note:: As mentioned elsewhere, Bitshares depends on the third-party libraries "Boost" and "OpenSSL". These libraries need to be in certain version ranges. At the moment, Boost needs to be **between 1.58 and 1.74**. OpenSSL needs to be in the **1.0.x - 1.1.x range**.
 
 
 ------------
