@@ -36,7 +36,7 @@ General Calls
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Returns info such as client version, git version of graphene/fc, version of boost, openssl123. <simplesect kind="return"><para>compile time info and client and dependencies versions </para></simplesect>
+<para>Returns info such as client version, git version of graphene/fc, version of boost, openssl. <simplesect kind="return"><para>compile time info and client and dependencies versions </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
