@@ -62,7 +62,7 @@ Download Software and Tools
 
 * **OpenSSL**
 
- BitShares Core depends on OpenSSL version 1.0.1 or 1.0.2, and you must build this from source. This article uses 1.0.1u as an example. Cannot use OpenSSL 1.1.0.
+ BitShares Core depends on OpenSSL, and you must build this from source. This article uses 1.0.2u as an example.
 
  *References*::
 
@@ -77,28 +77,26 @@ Download Software and Tools
  - Download OpenSSL Source Code from;::
 
 	https://www.openssl.org/source/
-	https://www.openssl.org/source/openssl-1.0.2l.tar.gz
-	  or
-	https://www.openssl.org/source/old/1.0.1/openssl-1.0.1u.tar.gz
+	https://www.openssl.org/source/openssl-1.0.2u.tar.gz
 
- - Decompression to the base directory `C:\bts\`.
- - the source code directory is `C:\bts\openssl-1.0.1u` (do not have multiple nested directories)
+ - Extract (unzip) to the base directory `C:\\bts\\`.
+ - the source code directory is `C:\\bts\\openssl-1.0.2u` (do not have multiple nested directories)
 
 * **Boost**
 
- BitShares Core depends on the Boost libraries, only version 1.57 ~ 1.60. 1.57.0 is used here. ( 1.60 encountered a command line parameter parsing problem)
+ BitShares Core depends on the Boost libraries, only version 1.58 ~ 1.74. 1.58.0 is used here. ( 1.60 encountered a command line parameter parsing problem)
 
 
- - Download OpenSSL Source Code from;::
+ - Download Boost Source Code from::
 
-	http://www.boost.org/
-	https://sourceforge.net/projects/boost/files/boost/1.57.0/
-	https://sourceforge.net/projects/boost/files/boost/1.57.0/boost_1_57_0.zip/download
+	https://www.boost.org/
+	https://sourceforge.net/projects/boost/files/boost/1.58.0/
+	https://sourceforge.net/projects/boost/files/boost/1.58.0/boost_1_58_0.zip/download
 
  **Note:** The compiled library is also available for download on the Internet, but I have encountered problems in downloading and using it. Later, I solved it through my own compilation.
 
- - Extract (unzip) the source code to the base directory `C:\bts\`.
- - the source code directory is `C:\bts\boost_1_57_0` (do not have multiple nested directories)
+ - Extract (unzip) the source code to the base directory `C:\\bts\\`.
+ - the source code directory is `C:\\bts\\boost_1_58_0` (do not have multiple nested directories)
 
 * **CMake**
 
@@ -107,8 +105,8 @@ Download Software and Tools
 	https://cmake.org/download/
 	https://cmake.org/files/v3.9/cmake-3.9.4-win64-x64.zip
 
- - Extract (unzip) the source code to the base directory `C:\bts\`.
- - the source code directory is `C:\bts\cmake-3.9.4-win64-x64` (do not have multiple nested directories)
+ - Extract (unzip) the source code to the base directory `C:\\bts\\`.
+ - the source code directory is `C:\\bts\\cmake-3.9.4-win64-x64` (do not have multiple nested directories)
 
 
 Build the Library Dependencies
@@ -118,7 +116,7 @@ Build the Library Dependencies
 
  - Run **VS2015 x64 Native Tools Command Prompt**
 
- **Note:** It is actually a shortcut, here: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Visual Studio 2015\Visual Studio Tools\Windows Desktop Command Prompts.  Content is::
+ **Note:** It is actually a shortcut, here: C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Visual Studio 2015\\Visual Studio Tools\\Windows Desktop Command Prompts.  Content is::
     
     %comspec% /k ""C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat"" amd64
 
@@ -129,13 +127,13 @@ Build the Library Dependencies
     set PATH=C:\Program Files\NASM;%PATH%
 
     c:
-    cd C:\bts\openssl-1.0.1u
-    perl Configure VC-WIN64A --prefix=C:\bts\openssl-1.0.1u-x64-release-static
+    cd C:\bts\openssl-1.0.2u
+    perl Configure VC-WIN64A --prefix=C:\bts\openssl-1.0.2u-x64-release-static
     ms\do_win64a
     nmake -f ms\nt.mak
     nmake -f ms\nt.mak install
 
- - After the compilation is completed, a `C:\bts\openssl-1.0.1u-x64-release-static` directory will be generated, which is a compiled library file.
+ - After the compilation is completed, a `C:\\bts\\openssl-1.0.2u-x64-release-static` directory will be generated, which contains compiled library files.
 
  **Problems encountered and solutions:**
 
@@ -149,7 +147,7 @@ Build the Library Dependencies
  - Run **VS2015 x64 Native Tools Command Prompt** and execute the below commands::
 
 	c:
-	cd C:\bts\boost_1_57_0
+	cd C:\bts\boost_1_58_0
 	bootstrap
 	b2 architecture=x86 address-model=64 --build-type=complete --toolset=msvc-14.0 --threading=multi --variant=release release stage
 
@@ -163,7 +161,7 @@ Build the Library Dependencies
 	http://www.stack.nl/~dimitri/doxygen/download.html
 	http://ftp.stack.nl/pub/users/dimitri/doxygen-1.8.13.windows.x64.bin.zip
 
- - Extract it to `C:\bts\doxygen-1.8.13.windows.x64.bin` (do not have multiple nested directories)
+ - Extract it to `C:\\bts\\doxygen-1.8.13.windows.x64.bin` (do not have multiple nested directories)
 
 
 * **Git**
@@ -195,26 +193,26 @@ BitShares-Core
 
 	c:\bts
 	+- bitshares-core
-	+- boost_1_57_0
+	+- boost_1_58_0
 	+- cmake-3.9.4-win64-x64
-	+- openssl-1.0.1u
-	+- openssl-1.0.1u-x64-release-static
+	+- openssl-1.0.2u
+	+- openssl-1.0.2u-x64-release-static
 	+- doxygen-1.8.13.windows.x64.bin (if you downloaded)
 
 
 Set up the Environment for Build
 ----------------------------------------
 
-* **Create a File C:\bts\setenv_x64.bat**
+* **Create a File C:\\bts\\setenv_x64.bat**
 
  - Add the below lines and save it.::
 
 	@echo off
 	Set GRA_ROOT=C:\bts
-	Set OPENSSL_ROOT=%GRA_ROOT%\openssl-1.0.1u-x64-release-static
+	Set OPENSSL_ROOT=%GRA_ROOT%\openssl-1.0.2u-x64-release-static
 	Set OPENSSL_ROOT_DIR=%OPENSSL_ROOT%
 	Set OPENSSL_INCLUDE_DIR=%OPENSSL_ROOT%\include
-	Set BOOST_ROOT=%GRA_ROOT%\boost_1_57_0
+	Set BOOST_ROOT=%GRA_ROOT%\boost_1_58_0
 	Set CMAKE_ROOT=%GRA_ROOT%\cmake-3.9.4-win64-x64
 	
 	Set DOXYGEN_ROOT=%GRA_ROOT%\doxygen-1.8.13.windows.x64.bin
@@ -273,11 +271,9 @@ Others
 
  * The above-mentioned compiled `witness_node.exe` and `cli_wallet.exe` can be copied to other computers, but need to use both `msvcp140.dll` and `vcruntime140.dll`
 
-   Copy to the same directory, under `C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\redist\x64\Microsoft.VC140.CRT\`.
+   Copy to the same directory, under `C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\redist\\x64\\Microsoft.VC140.CRT\\`.
    It can also be solved by static linking or by installing redistributable. This article does not elaborate.
 
- * If you use `cli_wallet.exe` to connect to an API server that uses wss, you need to specify the PEM file that contains the server root certificate.
-   - Refer this page - [CLI-Wallet on Windows (x64)](../installation/windows_cli_tool.md#cli-wallet-on-windows-x64)
        
 --------
 
