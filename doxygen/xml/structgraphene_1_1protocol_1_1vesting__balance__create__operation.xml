@@ -106,61 +106,61 @@
 <para>Manual creation of vesting balances can be used by a stakeholder to publicly demonstrate that they are committed to the chain. It can also be used as a building block to create transactions that function like public debt. Finally, it is useful for testing vesting balance functionality.</para><para><simplesect kind="return"><para>ID of newly created vesting_balance_object </para></simplesect>
 </para>    </detaileddescription>
     <inheritancegraph>
+      <node id="6952">
+        <label>graphene::protocol::base_operation</label>
+        <link refid="structgraphene_1_1protocol_1_1base__operation"/>
+      </node>
+      <node id="6951">
+        <label>graphene::protocol::vesting_balance_create_operation</label>
+        <link refid="structgraphene_1_1protocol_1_1vesting__balance__create__operation"/>
+        <childnode refid="6952" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="6957">
+        <label>account_id_type</label>
+      </node>
+      <node id="6956">
+        <label>fc::safe&lt; int64_t &gt;</label>
+        <link refid="structfc_1_1safe"/>
+      </node>
       <node id="6954">
         <label>graphene::protocol::base_operation</label>
         <link refid="structgraphene_1_1protocol_1_1base__operation"/>
+      </node>
+      <node id="6958">
+        <label>fc::static_variant&lt; linear_vesting_policy_initializer, cdd_vesting_policy_initializer, instant_vesting_policy_initializer &gt;</label>
+        <link refid="classfc_1_1static__variant"/>
+        <childnode refid="6959" relation="usage">
+          <edgelabel>storage</edgelabel>
+        </childnode>
+      </node>
+      <node id="6955">
+        <label>graphene::protocol::asset</label>
+        <link refid="structgraphene_1_1protocol_1_1asset"/>
+        <childnode refid="6956" relation="usage">
+          <edgelabel>amount</edgelabel>
+        </childnode>
       </node>
       <node id="6953">
         <label>graphene::protocol::vesting_balance_create_operation</label>
         <link refid="structgraphene_1_1protocol_1_1vesting__balance__create__operation"/>
         <childnode refid="6954" relation="public-inheritance">
         </childnode>
-      </node>
-    </inheritancegraph>
-    <collaborationgraph>
-      <node id="6959">
-        <label>account_id_type</label>
-      </node>
-      <node id="6958">
-        <label>fc::safe&lt; int64_t &gt;</label>
-        <link refid="structfc_1_1safe"/>
-      </node>
-      <node id="6956">
-        <label>graphene::protocol::base_operation</label>
-        <link refid="structgraphene_1_1protocol_1_1base__operation"/>
-      </node>
-      <node id="6960">
-        <label>fc::static_variant&lt; linear_vesting_policy_initializer, cdd_vesting_policy_initializer, instant_vesting_policy_initializer &gt;</label>
-        <link refid="classfc_1_1static__variant"/>
-        <childnode refid="6961" relation="usage">
-          <edgelabel>storage</edgelabel>
-        </childnode>
-      </node>
-      <node id="6957">
-        <label>graphene::protocol::asset</label>
-        <link refid="structgraphene_1_1protocol_1_1asset"/>
-        <childnode refid="6958" relation="usage">
-          <edgelabel>amount</edgelabel>
-        </childnode>
-      </node>
-      <node id="6955">
-        <label>graphene::protocol::vesting_balance_create_operation</label>
-        <link refid="structgraphene_1_1protocol_1_1vesting__balance__create__operation"/>
-        <childnode refid="6956" relation="public-inheritance">
-        </childnode>
-        <childnode refid="6957" relation="usage">
+        <childnode refid="6955" relation="usage">
           <edgelabel>fee</edgelabel>
           <edgelabel>amount</edgelabel>
         </childnode>
-        <childnode refid="6959" relation="usage">
+        <childnode refid="6957" relation="usage">
           <edgelabel>creator</edgelabel>
           <edgelabel>owner</edgelabel>
         </childnode>
-        <childnode refid="6960" relation="usage">
+        <childnode refid="6958" relation="usage">
           <edgelabel>policy</edgelabel>
         </childnode>
       </node>
-      <node id="6961">
+      <node id="6959">
         <label>fc::impl::dynamic_storage</label>
         <link refid="classfc_1_1impl_1_1dynamic__storage"/>
       </node>

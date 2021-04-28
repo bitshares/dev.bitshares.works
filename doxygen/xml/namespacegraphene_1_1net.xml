@@ -36,7 +36,6 @@
     <innerclass refid="classgraphene_1_1net_1_1peer__database" prot="public">graphene::net::peer_database</innerclass>
     <innerclass refid="structgraphene_1_1net_1_1peer__status" prot="public">graphene::net::peer_status</innerclass>
     <innerclass refid="structgraphene_1_1net_1_1potential__peer__record" prot="public">graphene::net::potential_peer_record</innerclass>
-    <innerclass refid="classgraphene_1_1net_1_1simulated__network" prot="public">graphene::net::simulated_network</innerclass>
     <innerclass refid="classgraphene_1_1net_1_1stcp__socket" prot="public">graphene::net::stcp_socket</innerclass>
     <innerclass refid="structgraphene_1_1net_1_1trx__message" prot="public">graphene::net::trx_message</innerclass>
     <innernamespace refid="namespacegraphene_1_1net_1_1detail">graphene::net::detail</innernamespace>
@@ -451,9 +450,9 @@
         </inbodydescription>
         <location file="libraries/net/include/graphene/net/core_messages.hpp" line="48" column="1" bodyfile="libraries/net/include/graphene/net/core_messages.hpp" bodystart="48" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="namespacegraphene_1_1net_1a558c737515532a9589221a0eb9111aec" prot="public" static="no">
-        <type><ref refid="namespacefc_1a5d143859f1f34b560f2f2f13d9d078d4" kindref="member">fc::uint160_t</ref></type>
-        <definition>typedef fc::uint160_t graphene::net::message_hash_type</definition>
+      <memberdef kind="typedef" id="namespacegraphene_1_1net_1a117e4c633fce23eaae7824c20c947fd4" prot="public" static="no">
+        <type><ref refid="classfc_1_1ripemd160" kindref="compound">fc::ripemd160</ref></type>
+        <definition>using graphene::net::message_hash_type = typedef fc::ripemd160</definition>
         <argsstring></argsstring>
         <name>message_hash_type</name>
         <briefdescription>
@@ -477,9 +476,22 @@
         </inbodydescription>
         <location file="libraries/net/include/graphene/net/message_oriented_connection.hpp" line="67" column="1" bodyfile="libraries/net/include/graphene/net/message_oriented_connection.hpp" bodystart="67" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="namespacegraphene_1_1net_1ad97d72f1316982932a07e4b2df43aac5" prot="public" static="no">
+      <memberdef kind="typedef" id="namespacegraphene_1_1net_1a7b290bc6b0c3a9980345c3782507fbe5" prot="public" static="no">
+        <type>std::shared_ptr&lt; <ref refid="classgraphene_1_1net_1_1detail_1_1node__impl" kindref="compound">detail::node_impl</ref> &gt;</type>
+        <definition>using graphene::net::node_impl_ptr = typedef std::shared_ptr&lt;detail::node_impl&gt;</definition>
+        <argsstring></argsstring>
+        <name>node_impl_ptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/include/graphene/net/node.hpp" line="41" column="1" bodyfile="libraries/net/include/graphene/net/node.hpp" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacegraphene_1_1net_1ad094a2c7d7a7af4de90686134b89df03" prot="public" static="no">
         <type>std::shared_ptr&lt; <ref refid="classgraphene_1_1net_1_1node" kindref="compound">node</ref> &gt;</type>
-        <definition>typedef std::shared_ptr&lt;node&gt; graphene::net::node_ptr</definition>
+        <definition>using graphene::net::node_ptr = typedef std::shared_ptr&lt;node&gt;</definition>
         <argsstring></argsstring>
         <name>node_ptr</name>
         <briefdescription>
@@ -488,20 +500,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/node.hpp" line="347" column="1" bodyfile="libraries/net/include/graphene/net/node.hpp" bodystart="347" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="namespacegraphene_1_1net_1a889ad94dfc15dff048ba0746c8147906" prot="public" static="no">
-        <type>std::shared_ptr&lt; <ref refid="classgraphene_1_1net_1_1simulated__network" kindref="compound">simulated_network</ref> &gt;</type>
-        <definition>typedef std::shared_ptr&lt;simulated_network&gt; graphene::net::simulated_network_ptr</definition>
-        <argsstring></argsstring>
-        <name>simulated_network_ptr</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="libraries/net/include/graphene/net/node.hpp" line="348" column="1" bodyfile="libraries/net/include/graphene/net/node.hpp" bodystart="348" bodyend="-1"/>
+        <location file="libraries/net/include/graphene/net/node.hpp" line="319" column="1" bodyfile="libraries/net/include/graphene/net/node.hpp" bodystart="319" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacegraphene_1_1net_1a7c2063384e09cb0fc4191590fa004b89" prot="public" static="no">
         <type>std::shared_ptr&lt; <ref refid="classgraphene_1_1net_1_1peer__connection" kindref="compound">peer_connection</ref> &gt;</type>
@@ -514,7 +513,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="73" column="1" bodyfile="libraries/net/include/graphene/net/peer_connection.hpp" bodystart="72" bodyend="-1"/>
+        <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="72" column="1" bodyfile="libraries/net/include/graphene/net/peer_connection.hpp" bodystart="72" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacegraphene_1_1net_1a0c9ce0c439b115a40ee255c80406bc88" prot="public" static="no">
         <type>std::shared_ptr&lt; <ref refid="classgraphene_1_1net_1_1stcp__socket" kindref="compound">stcp_socket</ref> &gt;</type>

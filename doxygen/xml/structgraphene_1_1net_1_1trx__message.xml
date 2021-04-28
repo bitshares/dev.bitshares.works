@@ -35,10 +35,10 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="structgraphene_1_1net_1_1trx__message_1a32cbf96c05f31b992cad1c27548b1312" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structgraphene_1_1net_1_1trx__message_1affb394e004f5274c9588ef5ee8788907" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>graphene::net::trx_message::trx_message</definition>
-        <argsstring>()</argsstring>
+        <argsstring>()=default</argsstring>
         <name>trx_message</name>
         <briefdescription>
         </briefdescription>
@@ -46,16 +46,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/core_messages.hpp" line="98" column="1" bodyfile="libraries/net/include/graphene/net/core_messages.hpp" bodystart="98" bodyend="98"/>
+        <location file="libraries/net/include/graphene/net/core_messages.hpp" line="98" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="structgraphene_1_1net_1_1trx__message_1a70e00941d22af8ed25ec5c3abe814490" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structgraphene_1_1net_1_1trx__message_1ab7c424eebbfc3ef39f82b463b8a7e718" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
         <type></type>
         <definition>graphene::net::trx_message::trx_message</definition>
-        <argsstring>(graphene::protocol::signed_transaction transaction)</argsstring>
+        <argsstring>(const graphene::protocol::signed_transaction &amp;signed_trx)</argsstring>
         <name>trx_message</name>
         <param>
-          <type><ref refid="classgraphene_1_1protocol_1_1signed__transaction" kindref="compound">graphene::protocol::signed_transaction</ref></type>
-          <declname>transaction</declname>
+          <type>const <ref refid="classgraphene_1_1protocol_1_1signed__transaction" kindref="compound">graphene::protocol::signed_transaction</ref> &amp;</type>
+          <declname>signed_trx</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -71,58 +71,58 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="6827">
+      <node id="6825">
         <label>fc::ripemd160</label>
         <link refid="classfc_1_1ripemd160"/>
       </node>
-      <node id="6823">
+      <node id="6821">
         <label>graphene::net::trx_message</label>
         <link refid="structgraphene_1_1net_1_1trx__message"/>
-        <childnode refid="6824" relation="usage">
+        <childnode refid="6822" relation="usage">
           <edgelabel>trx</edgelabel>
         </childnode>
       </node>
-      <node id="6824">
+      <node id="6822">
         <label>graphene::protocol::precomputable_transaction</label>
         <link refid="classgraphene_1_1protocol_1_1precomputable__transaction"/>
-        <childnode refid="6825" relation="public-inheritance">
+        <childnode refid="6823" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6831">
+      <node id="6829">
         <label>flat_set&lt; graphene::protocol::public_key_type &gt;</label>
       </node>
-      <node id="6828">
+      <node id="6826">
         <label>fc::time_point_sec</label>
         <link refid="classfc_1_1time__point__sec"/>
       </node>
-      <node id="6829">
+      <node id="6827">
         <label>vector&lt; fc::static_variant &gt;</label>
       </node>
-      <node id="6830">
+      <node id="6828">
         <label>vector&lt; fc::zero_initialized_array &gt;</label>
       </node>
-      <node id="6825">
+      <node id="6823">
         <label>graphene::protocol::signed_transaction</label>
         <link refid="classgraphene_1_1protocol_1_1signed__transaction"/>
-        <childnode refid="6826" relation="public-inheritance">
+        <childnode refid="6824" relation="public-inheritance">
         </childnode>
-        <childnode refid="6830" relation="usage">
+        <childnode refid="6828" relation="usage">
           <edgelabel>signatures</edgelabel>
         </childnode>
-        <childnode refid="6831" relation="usage">
+        <childnode refid="6829" relation="usage">
           <edgelabel>_signees</edgelabel>
         </childnode>
       </node>
-      <node id="6826">
+      <node id="6824">
         <label>graphene::protocol::transaction</label>
         <link refid="classgraphene_1_1protocol_1_1transaction"/>
-        <childnode refid="6827" relation="usage">
+        <childnode refid="6825" relation="usage">
           <edgelabel>_tx_id_buffer</edgelabel>
         </childnode>
-        <childnode refid="6828" relation="usage">
+        <childnode refid="6826" relation="usage">
           <edgelabel>expiration</edgelabel>
         </childnode>
-        <childnode refid="6829" relation="usage">
+        <childnode refid="6827" relation="usage">
           <edgelabel>operations</edgelabel>
         </childnode>
       </node>
@@ -130,8 +130,8 @@
     <location file="libraries/net/include/graphene/net/core_messages.hpp" line="94" column="1" bodyfile="libraries/net/include/graphene/net/core_messages.hpp" bodystart="93" bodyend="102"/>
     <listofallmembers>
       <member refid="structgraphene_1_1net_1_1trx__message_1a25d6b496051266437d5e648956011dca" prot="public" virt="non-virtual"><scope>graphene::net::trx_message</scope><name>trx</name></member>
-      <member refid="structgraphene_1_1net_1_1trx__message_1a32cbf96c05f31b992cad1c27548b1312" prot="public" virt="non-virtual"><scope>graphene::net::trx_message</scope><name>trx_message</name></member>
-      <member refid="structgraphene_1_1net_1_1trx__message_1a70e00941d22af8ed25ec5c3abe814490" prot="public" virt="non-virtual"><scope>graphene::net::trx_message</scope><name>trx_message</name></member>
+      <member refid="structgraphene_1_1net_1_1trx__message_1affb394e004f5274c9588ef5ee8788907" prot="public" virt="non-virtual"><scope>graphene::net::trx_message</scope><name>trx_message</name></member>
+      <member refid="structgraphene_1_1net_1_1trx__message_1ab7c424eebbfc3ef39f82b463b8a7e718" prot="public" virt="non-virtual"><scope>graphene::net::trx_message</scope><name>trx_message</name></member>
       <member refid="structgraphene_1_1net_1_1trx__message_1ac48675368a83df3f61459729ba325605" prot="public" virt="non-virtual"><scope>graphene::net::trx_message</scope><name>type</name></member>
     </listofallmembers>
   </compounddef>
