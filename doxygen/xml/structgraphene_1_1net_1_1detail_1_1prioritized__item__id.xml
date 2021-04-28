@@ -15,11 +15,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/node_impl.hxx" line="120" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="120" bodyend="-1"/>
+        <location file="libraries/net/node_impl.hxx" line="212" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="212" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structgraphene_1_1net_1_1detail_1_1prioritized__item__id_1a035a50386a9bc9dca34c63a022d37e59" prot="public" static="no" mutable="no">
-        <type>unsigned</type>
-        <definition>unsigned graphene::net::detail::prioritized_item_id::sequence_number</definition>
+      <memberdef kind="variable" id="structgraphene_1_1net_1_1detail_1_1prioritized__item__id_1adaa3e703094352f018cf724d509288f6" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t graphene::net::detail::prioritized_item_id::sequence_number</definition>
         <argsstring></argsstring>
         <name>sequence_number</name>
         <briefdescription>
@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/node_impl.hxx" line="121" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="121" bodyend="-1"/>
+        <location file="libraries/net/node_impl.hxx" line="213" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="213" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1net_1_1detail_1_1prioritized__item__id_1ab2777095eee3474e706dad5e527c3afa" prot="public" static="no" mutable="no">
         <type><ref refid="classfc_1_1time__point" kindref="compound">fc::time_point</ref></type>
@@ -36,26 +36,26 @@
         <argsstring></argsstring>
         <name>timestamp</name>
         <briefdescription>
-        </briefdescription>
+<para>the time we last heard about this item in an inventory message </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/node_impl.hxx" line="122" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="122" bodyend="-1"/>
+        <location file="libraries/net/node_impl.hxx" line="214" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="214" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="structgraphene_1_1net_1_1detail_1_1prioritized__item__id_1af29cac6ed26dd696708184e842e545a2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structgraphene_1_1net_1_1detail_1_1prioritized__item__id_1af4480c557617374fc2456b1c1961d0f8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>graphene::net::detail::prioritized_item_id::prioritized_item_id</definition>
-        <argsstring>(const item_id &amp;item, unsigned sequence_number)</argsstring>
+        <argsstring>(const item_id &amp;item, size_t sequence_number)</argsstring>
         <name>prioritized_item_id</name>
         <param>
           <type>const <ref refid="structgraphene_1_1net_1_1item__id" kindref="compound">item_id</ref> &amp;</type>
           <declname>item</declname>
         </param>
         <param>
-          <type>unsigned</type>
+          <type>size_t</type>
           <declname>sequence_number</declname>
         </param>
         <briefdescription>
@@ -64,7 +64,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/node_impl.hxx" line="124" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="124" bodyend="128"/>
+        <location file="libraries/net/node_impl.hxx" line="216" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="216" bodyend="220"/>
       </memberdef>
       <memberdef kind="function" id="structgraphene_1_1net_1_1detail_1_1prioritized__item__id_1abadf752b037a93e78aed26b991f13aba" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -81,46 +81,52 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/node_impl.hxx" line="129" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="129" bodyend="136"/>
+        <location file="libraries/net/node_impl.hxx" line="221" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="221" bodyend="228"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-    </detaileddescription>
+<para>When requesting items from peers, we want to prioritize any blocks before transactions, but otherwise request items in the order we heard about them </para>    </detaileddescription>
     <collaborationgraph>
-      <node id="5686">
+      <node id="5690">
         <label>graphene::net::detail::prioritized_item_id</label>
         <link refid="structgraphene_1_1net_1_1detail_1_1prioritized__item__id"/>
-        <childnode refid="5687" relation="usage">
+        <childnode refid="5691" relation="usage">
           <edgelabel>item</edgelabel>
         </childnode>
-        <childnode refid="5689" relation="usage">
+        <childnode refid="5693" relation="usage">
+          <edgelabel>sequence_number</edgelabel>
+        </childnode>
+        <childnode refid="5694" relation="usage">
           <edgelabel>timestamp</edgelabel>
         </childnode>
       </node>
-      <node id="5688">
+      <node id="5693">
+        <label>size_t</label>
+      </node>
+      <node id="5692">
         <label>fc::ripemd160</label>
         <link refid="classfc_1_1ripemd160"/>
       </node>
-      <node id="5689">
+      <node id="5694">
         <label>fc::time_point</label>
         <link refid="classfc_1_1time__point"/>
       </node>
-      <node id="5687">
+      <node id="5691">
         <label>graphene::net::item_id</label>
         <link refid="structgraphene_1_1net_1_1item__id"/>
-        <childnode refid="5688" relation="usage">
+        <childnode refid="5692" relation="usage">
           <edgelabel>item_hash</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="libraries/net/node_impl.hxx" line="119" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="118" bodyend="137"/>
+    <location file="libraries/net/node_impl.hxx" line="211" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="210" bodyend="229"/>
     <listofallmembers>
       <member refid="structgraphene_1_1net_1_1detail_1_1prioritized__item__id_1a3451668a3006b9b82f7ce026558756b7" prot="public" virt="non-virtual"><scope>graphene::net::detail::prioritized_item_id</scope><name>item</name></member>
       <member refid="structgraphene_1_1net_1_1detail_1_1prioritized__item__id_1abadf752b037a93e78aed26b991f13aba" prot="public" virt="non-virtual"><scope>graphene::net::detail::prioritized_item_id</scope><name>operator&lt;</name></member>
-      <member refid="structgraphene_1_1net_1_1detail_1_1prioritized__item__id_1af29cac6ed26dd696708184e842e545a2" prot="public" virt="non-virtual"><scope>graphene::net::detail::prioritized_item_id</scope><name>prioritized_item_id</name></member>
-      <member refid="structgraphene_1_1net_1_1detail_1_1prioritized__item__id_1a035a50386a9bc9dca34c63a022d37e59" prot="public" virt="non-virtual"><scope>graphene::net::detail::prioritized_item_id</scope><name>sequence_number</name></member>
+      <member refid="structgraphene_1_1net_1_1detail_1_1prioritized__item__id_1af4480c557617374fc2456b1c1961d0f8" prot="public" virt="non-virtual"><scope>graphene::net::detail::prioritized_item_id</scope><name>prioritized_item_id</name></member>
+      <member refid="structgraphene_1_1net_1_1detail_1_1prioritized__item__id_1adaa3e703094352f018cf724d509288f6" prot="public" virt="non-virtual"><scope>graphene::net::detail::prioritized_item_id</scope><name>sequence_number</name></member>
       <member refid="structgraphene_1_1net_1_1detail_1_1prioritized__item__id_1ab2777095eee3474e706dad5e527c3afa" prot="public" virt="non-virtual"><scope>graphene::net::detail::prioritized_item_id</scope><name>timestamp</name></member>
     </listofallmembers>
   </compounddef>

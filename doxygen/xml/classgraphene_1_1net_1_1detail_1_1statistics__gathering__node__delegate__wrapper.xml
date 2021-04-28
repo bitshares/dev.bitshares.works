@@ -6,9 +6,9 @@
     <includes refid="node__impl_8hxx" local="no">node_impl.hxx</includes>
     <innerclass refid="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1_1call__statistics__collector" prot="private">graphene::net::detail::statistics_gathering_node_delegate_wrapper::call_statistics_collector</innerclass>
       <sectiondef kind="private-type">
-      <memberdef kind="typedef" id="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1af1e296bfe48308fd5f36e4efa263ddb6" prot="private" static="no">
+      <memberdef kind="typedef" id="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1a1624894149e76f131041cc1af9f85b7e" prot="private" static="no">
         <type>boost::accumulators::accumulator_set&lt; int64_t, boost::accumulators::stats&lt; boost::accumulators::tag::min, boost::accumulators::tag::rolling_mean, boost::accumulators::tag::max, boost::accumulators::tag::sum, boost::accumulators::tag::count &gt; &gt;</type>
-        <definition>typedef boost::accumulators::accumulator_set&lt;int64_t, boost::accumulators::stats&lt;boost::accumulators::tag::min, boost::accumulators::tag::rolling_mean, boost::accumulators::tag::max, boost::accumulators::tag::sum, boost::accumulators::tag::count&gt; &gt; graphene::net::detail::statistics_gathering_node_delegate_wrapper::call_stats_accumulator</definition>
+        <definition>using graphene::net::detail::statistics_gathering_node_delegate_wrapper::call_stats_accumulator =  boost::accumulators::accumulator_set&lt; int64_t, boost::accumulators::stats&lt; boost::accumulators::tag::min, boost::accumulators::tag::rolling_mean, boost::accumulators::tag::max, boost::accumulators::tag::sum, boost::accumulators::tag::count&gt; &gt;</definition>
         <argsstring></argsstring>
         <name>call_stats_accumulator</name>
         <briefdescription>
@@ -17,13 +17,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/node_impl.hxx" line="149" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="149" bodyend="-1"/>
+        <location file="libraries/net/node_impl.hxx" line="237" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="242" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1ab690b84bd51cfa8c293d6b7f04ceb029" prot="private" static="no" mutable="no">
-        <type><ref refid="classgraphene_1_1net_1_1node__delegate" kindref="compound">node_delegate</ref> *</type>
-        <definition>node_delegate* graphene::net::detail::statistics_gathering_node_delegate_wrapper::_node_delegate</definition>
+      <memberdef kind="variable" id="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1ac181724dfb60ed0944bde838e6a0a838" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classgraphene_1_1net_1_1node__delegate" kindref="compound">node_delegate</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;node_delegate&gt; graphene::net::detail::statistics_gathering_node_delegate_wrapper::_node_delegate</definition>
         <argsstring></argsstring>
         <name>_node_delegate</name>
         <briefdescription>
@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/node_impl.hxx" line="142" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="142" bodyend="-1"/>
+        <location file="libraries/net/node_impl.hxx" line="234" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="234" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1a8b3c25ae5b681ab943f48c8263a605d0" prot="private" static="no" mutable="no">
         <type><ref refid="classfc_1_1thread" kindref="compound">fc::thread</ref> *</type>
@@ -45,17 +45,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/node_impl.hxx" line="143" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="143" bodyend="-1"/>
+        <location file="libraries/net/node_impl.hxx" line="235" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="235" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1a5b75f2c217f0bf7b365e0a978e5607a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1af2063679a7be2f9f5c34fde9fe11df27" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>graphene::net::detail::statistics_gathering_node_delegate_wrapper::statistics_gathering_node_delegate_wrapper</definition>
-        <argsstring>(node_delegate *delegate, fc::thread *thread_for_delegate_calls)</argsstring>
+        <argsstring>(std::shared_ptr&lt; node_delegate &gt; delegate, fc::thread *thread_for_delegate_calls)</argsstring>
         <name>statistics_gathering_node_delegate_wrapper</name>
         <param>
-          <type><ref refid="classgraphene_1_1net_1_1node__delegate" kindref="compound">node_delegate</ref> *</type>
+          <type>std::shared_ptr&lt; <ref refid="classgraphene_1_1net_1_1node__delegate" kindref="compound">node_delegate</ref> &gt;</type>
           <declname>delegate</declname>
         </param>
         <param>
@@ -68,7 +68,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/node_impl.hxx" line="243" column="1" bodyfile="libraries/net/node.cpp" bodystart="5110" bodyend="5114"/>
+        <location file="libraries/net/node_impl.hxx" line="336" column="1" bodyfile="libraries/net/node.cpp" bodystart="4942" bodyend="4947"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1ab987dcd9e4000a1ef5c311aac7330048" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classfc_1_1variant__object" kindref="compound">fc::variant_object</ref></type>
@@ -81,7 +81,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/node_impl.hxx" line="245" column="1" bodyfile="libraries/net/node.cpp" bodystart="5117" bodyend="5145"/>
+        <location file="libraries/net/node_impl.hxx" line="339" column="1" bodyfile="libraries/net/node.cpp" bodystart="4950" bodyend="4978"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1a2380752b08d06a0ebc904cd5311c1b53" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -99,7 +99,7 @@
 <para>If delegate has the item, the network has no need to fetch it. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/node_impl.hxx" line="247" column="1" bodyfile="libraries/net/node.cpp" bodystart="5203" bodyend="5206"/>
+        <location file="libraries/net/node_impl.hxx" line="341" column="1" bodyfile="libraries/net/node.cpp" bodystart="5036" bodyend="5039"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1a825a59ae61898c188270c66f91803ae0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -125,14 +125,14 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/node_impl.hxx" line="248" column="1" bodyfile="libraries/net/node.cpp" bodystart="5208" bodyend="5211"/>
+        <location file="libraries/net/node_impl.hxx" line="342" column="1" bodyfile="libraries/net/node.cpp" bodystart="5041" bodyend="5044"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1aead47c9778299b782c4052ecd33dbff7" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1ab7f843bf1cc02857465130dd34999580" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
         <definition>bool graphene::net::detail::statistics_gathering_node_delegate_wrapper::handle_block</definition>
-        <argsstring>(const graphene::net::block_message &amp;block_message, bool sync_mode, std::vector&lt; fc::uint160_t &gt; &amp;contained_transaction_message_ids) override</argsstring>
+        <argsstring>(const graphene::net::block_message &amp;block_message, bool sync_mode, std::vector&lt; message_hash_type &gt; &amp;contained_transaction_msg_ids) override</argsstring>
         <name>handle_block</name>
-        <reimplements refid="classgraphene_1_1net_1_1node__delegate_1a45d5e096caa804db426c5ce092092b25">handle_block</reimplements>
+        <reimplements refid="classgraphene_1_1net_1_1node__delegate_1a8813881e942d58cb1fa424bbf331a983">handle_block</reimplements>
         <param>
           <type>const <ref refid="structgraphene_1_1net_1_1block__message" kindref="compound">graphene::net::block_message</ref> &amp;</type>
           <declname>blk_msg</declname>
@@ -142,8 +142,8 @@
           <declname>sync_mode</declname>
         </param>
         <param>
-          <type>std::vector&lt; <ref refid="namespacefc_1a5d143859f1f34b560f2f2f13d9d078d4" kindref="member">fc::uint160_t</ref> &gt; &amp;</type>
-          <declname>contained_transaction_message_ids</declname>
+          <type>std::vector&lt; <ref refid="namespacegraphene_1_1net_1a117e4c633fce23eaae7824c20c947fd4" kindref="member">message_hash_type</ref> &gt; &amp;</type>
+          <declname>contained_transaction_msg_ids</declname>
         </param>
         <briefdescription>
 <para>Called when a new block comes in from the network. </para>        </briefdescription>
@@ -164,7 +164,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>contained_transaction_message_ids</parametername>
+<parametername>contained_transaction_msg_ids</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>container for the transactions to write back into </para></parameterdescription>
@@ -182,7 +182,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/node_impl.hxx" line="249" column="1" bodyfile="libraries/net/node.cpp" bodystart="5213" bodyend="5216"/>
+        <location file="libraries/net/node_impl.hxx" line="343" column="1" bodyfile="libraries/net/node.cpp" bodystart="5046" bodyend="5050"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1a4f226499fd8a014448a21b8016a3cb86" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -208,7 +208,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/node_impl.hxx" line="250" column="1" bodyfile="libraries/net/node.cpp" bodystart="5218" bodyend="5221"/>
+        <location file="libraries/net/node_impl.hxx" line="345" column="1" bodyfile="libraries/net/node.cpp" bodystart="5052" bodyend="5055"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1a2929f37b4d1b3710dfced7cbcb628941" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>std::vector&lt; <ref refid="namespacegraphene_1_1net_1ae6a74bd458bbef0d6d21dd35c74c6235" kindref="member">item_hash_t</ref> &gt;</type>
@@ -235,7 +235,7 @@
 <para>Assuming all data elements are ordered in some way, this method should return up to limit ids that occur <emphasis>after</emphasis> from_id. On return, remaining_item_count will be set to the number of items in our blockchain after the last item returned in the result, or 0 if the result contains the last item in the blockchain </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/node_impl.hxx" line="251" column="1" bodyfile="libraries/net/node.cpp" bodystart="5223" bodyend="5228"/>
+        <location file="libraries/net/node_impl.hxx" line="346" column="1" bodyfile="libraries/net/node.cpp" bodystart="5057" bodyend="5062"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1a98c70bc00568dd0946526e73b6067d37" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="structgraphene_1_1net_1_1message" kindref="compound">message</ref></type>
@@ -253,7 +253,7 @@
 <para>Given the hash of the requested data, fetch the body. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/node_impl.hxx" line="254" column="1" bodyfile="libraries/net/node.cpp" bodystart="5230" bodyend="5233"/>
+        <location file="libraries/net/node_impl.hxx" line="349" column="1" bodyfile="libraries/net/node.cpp" bodystart="5064" bodyend="5067"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1a84050ceda8ee5729b2f8e21b7a8448ad" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="namespacegraphene_1_1protocol_1a56354f39ed89f6a0a13fe90ba8228809" kindref="member">graphene::protocol::chain_id_type</ref></type>
@@ -267,7 +267,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/node_impl.hxx" line="255" column="1" bodyfile="libraries/net/node.cpp" bodystart="5235" bodyend="5238"/>
+        <location file="libraries/net/node_impl.hxx" line="350" column="1" bodyfile="libraries/net/node.cpp" bodystart="5069" bodyend="5072"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1a8e3f17a7b8213696c5d034885eebcddb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>std::vector&lt; <ref refid="namespacegraphene_1_1net_1ae6a74bd458bbef0d6d21dd35c74c6235" kindref="member">item_hash_t</ref> &gt;</type>
@@ -289,7 +289,7 @@
 <para>Returns a synopsis of the blockchain used for syncing. This consists of a list of selected item hashes from our current preferred blockchain, exponentially falling off into the past. Horrible explanation.</para><para>If the blockchain is empty, it will return the empty list. If the blockchain has one block, it will return a list containing just that block. If it contains more than one block: the first element in the list will be the hash of the highest numbered block that we cannot undo the second element will be the hash of an item at the half way point in the undoable segment of the blockchain the third will be ~3/4 of the way through the undoable segment of the block chain the fourth will be at ~7/8... &amp;c. the last item in the list will be the hash of the most recent block on our preferred chain </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/node_impl.hxx" line="256" column="1" bodyfile="libraries/net/node.cpp" bodystart="5240" bodyend="5243"/>
+        <location file="libraries/net/node_impl.hxx" line="351" column="1" bodyfile="libraries/net/node.cpp" bodystart="5074" bodyend="5077"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1a9197651148a4e99fbca84e93217ffff8" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -326,7 +326,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/node_impl.hxx" line="258" column="1" bodyfile="libraries/net/node.cpp" bodystart="5245" bodyend="5248"/>
+        <location file="libraries/net/node_impl.hxx" line="353" column="1" bodyfile="libraries/net/node.cpp" bodystart="5079" bodyend="5082"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1afe1e00af0b540b4e7f943bb90484f340" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -344,7 +344,7 @@
 <para>Call any time the number of connected peers changes. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/node_impl.hxx" line="259" column="1" bodyfile="libraries/net/node.cpp" bodystart="5250" bodyend="5253"/>
+        <location file="libraries/net/node_impl.hxx" line="354" column="1" bodyfile="libraries/net/node.cpp" bodystart="5084" bodyend="5087"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1a757c799af3450172b429a9e30d8fd2a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>uint32_t</type>
@@ -362,7 +362,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/node_impl.hxx" line="260" column="1" bodyfile="libraries/net/node.cpp" bodystart="5255" bodyend="5260"/>
+        <location file="libraries/net/node_impl.hxx" line="355" column="1" bodyfile="libraries/net/node.cpp" bodystart="5089" bodyend="5094"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1a2a664b7a1494f7f4b8691300af01372d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classfc_1_1time__point__sec" kindref="compound">fc::time_point_sec</ref></type>
@@ -380,7 +380,7 @@
 <para>Returns the time a block was produced (if block_id = 0, returns genesis time). If we don&apos;t know about the block, returns time_point_sec::min() </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/node_impl.hxx" line="261" column="1" bodyfile="libraries/net/node.cpp" bodystart="5262" bodyend="5265"/>
+        <location file="libraries/net/node_impl.hxx" line="356" column="1" bodyfile="libraries/net/node.cpp" bodystart="5096" bodyend="5099"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1acbbbaf0262662158065a355113885b81" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="namespacegraphene_1_1net_1ae6a74bd458bbef0d6d21dd35c74c6235" kindref="member">item_hash_t</ref></type>
@@ -394,7 +394,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/node_impl.hxx" line="262" column="1" bodyfile="libraries/net/node.cpp" bodystart="5267" bodyend="5270"/>
+        <location file="libraries/net/node_impl.hxx" line="357" column="1" bodyfile="libraries/net/node.cpp" bodystart="5101" bodyend="5104"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1a1ddb874ef9e6b37f3f317ac128ab75e9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>uint32_t</type>
@@ -412,7 +412,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/node_impl.hxx" line="263" column="1" bodyfile="libraries/net/node.cpp" bodystart="5272" bodyend="5275"/>
+        <location file="libraries/net/node_impl.hxx" line="358" column="1" bodyfile="libraries/net/node.cpp" bodystart="5106" bodyend="5109"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1a792629477c7ab4cbedbd7e3bdbb28665" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -434,7 +434,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/node_impl.hxx" line="264" column="1" bodyfile="libraries/net/node.cpp" bodystart="5277" bodyend="5280"/>
+        <location file="libraries/net/node_impl.hxx" line="359" column="1" bodyfile="libraries/net/node.cpp" bodystart="5111" bodyend="5114"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1a2f7f2231d16ecbaaad38079559a3d0a8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>uint8_t</type>
@@ -448,7 +448,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/node_impl.hxx" line="265" column="1" bodyfile="libraries/net/node.cpp" bodystart="5282" bodyend="5285"/>
+        <location file="libraries/net/node_impl.hxx" line="360" column="1" bodyfile="libraries/net/node.cpp" bodystart="5116" bodyend="5119"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -456,34 +456,34 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="6246">
+      <node id="6247">
         <label>graphene::net::detail::statistics_gathering_node_delegate_wrapper</label>
         <link refid="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper"/>
-        <childnode refid="6247" relation="public-inheritance">
+        <childnode refid="6248" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6247">
+      <node id="6248">
         <label>graphene::net::node_delegate</label>
         <link refid="classgraphene_1_1net_1_1node__delegate"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="6248">
+      <node id="6249">
         <label>graphene::net::detail::statistics_gathering_node_delegate_wrapper</label>
         <link refid="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper"/>
-        <childnode refid="6249" relation="public-inheritance">
+        <childnode refid="6250" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6249">
+      <node id="6250">
         <label>graphene::net::node_delegate</label>
         <link refid="classgraphene_1_1net_1_1node__delegate"/>
       </node>
     </collaborationgraph>
-    <location file="libraries/net/node_impl.hxx" line="140" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="139" bodyend="266"/>
+    <location file="libraries/net/node_impl.hxx" line="232" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="231" bodyend="361"/>
     <listofallmembers>
-      <member refid="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1ab690b84bd51cfa8c293d6b7f04ceb029" prot="private" virt="non-virtual"><scope>graphene::net::detail::statistics_gathering_node_delegate_wrapper</scope><name>_node_delegate</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1ac181724dfb60ed0944bde838e6a0a838" prot="private" virt="non-virtual"><scope>graphene::net::detail::statistics_gathering_node_delegate_wrapper</scope><name>_node_delegate</name></member>
       <member refid="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1a8b3c25ae5b681ab943f48c8263a605d0" prot="private" virt="non-virtual"><scope>graphene::net::detail::statistics_gathering_node_delegate_wrapper</scope><name>_thread</name></member>
-      <member refid="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1af1e296bfe48308fd5f36e4efa263ddb6" prot="private" virt="non-virtual"><scope>graphene::net::detail::statistics_gathering_node_delegate_wrapper</scope><name>call_stats_accumulator</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1a1624894149e76f131041cc1af9f85b7e" prot="private" virt="non-virtual"><scope>graphene::net::detail::statistics_gathering_node_delegate_wrapper</scope><name>call_stats_accumulator</name></member>
       <member refid="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1afe1e00af0b540b4e7f943bb90484f340" prot="public" virt="virtual"><scope>graphene::net::detail::statistics_gathering_node_delegate_wrapper</scope><name>connection_count_changed</name></member>
       <member refid="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1a792629477c7ab4cbedbd7e3bdbb28665" prot="public" virt="virtual"><scope>graphene::net::detail::statistics_gathering_node_delegate_wrapper</scope><name>error_encountered</name></member>
       <member refid="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1a1ddb874ef9e6b37f3f317ac128ab75e9" prot="public" virt="virtual"><scope>graphene::net::detail::statistics_gathering_node_delegate_wrapper</scope><name>estimate_last_known_fork_from_git_revision_timestamp</name></member>
@@ -496,13 +496,13 @@
       <member refid="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1a2f7f2231d16ecbaaad38079559a3d0a8" prot="public" virt="virtual"><scope>graphene::net::detail::statistics_gathering_node_delegate_wrapper</scope><name>get_current_block_interval_in_seconds</name></member>
       <member refid="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1acbbbaf0262662158065a355113885b81" prot="public" virt="virtual"><scope>graphene::net::detail::statistics_gathering_node_delegate_wrapper</scope><name>get_head_block_id</name></member>
       <member refid="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1a98c70bc00568dd0946526e73b6067d37" prot="public" virt="virtual"><scope>graphene::net::detail::statistics_gathering_node_delegate_wrapper</scope><name>get_item</name></member>
-      <member refid="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1aead47c9778299b782c4052ecd33dbff7" prot="public" virt="virtual"><scope>graphene::net::detail::statistics_gathering_node_delegate_wrapper</scope><name>handle_block</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1ab7f843bf1cc02857465130dd34999580" prot="public" virt="virtual"><scope>graphene::net::detail::statistics_gathering_node_delegate_wrapper</scope><name>handle_block</name></member>
       <member refid="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1a825a59ae61898c188270c66f91803ae0" prot="public" virt="virtual"><scope>graphene::net::detail::statistics_gathering_node_delegate_wrapper</scope><name>handle_message</name></member>
       <member refid="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1a4f226499fd8a014448a21b8016a3cb86" prot="public" virt="virtual"><scope>graphene::net::detail::statistics_gathering_node_delegate_wrapper</scope><name>handle_transaction</name></member>
       <member refid="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1a2380752b08d06a0ebc904cd5311c1b53" prot="public" virt="virtual"><scope>graphene::net::detail::statistics_gathering_node_delegate_wrapper</scope><name>has_item</name></member>
-      <member refid="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1a5b75f2c217f0bf7b365e0a978e5607a2" prot="public" virt="non-virtual"><scope>graphene::net::detail::statistics_gathering_node_delegate_wrapper</scope><name>statistics_gathering_node_delegate_wrapper</name></member>
+      <member refid="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1af2063679a7be2f9f5c34fde9fe11df27" prot="public" virt="non-virtual"><scope>graphene::net::detail::statistics_gathering_node_delegate_wrapper</scope><name>statistics_gathering_node_delegate_wrapper</name></member>
       <member refid="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper_1a9197651148a4e99fbca84e93217ffff8" prot="public" virt="virtual"><scope>graphene::net::detail::statistics_gathering_node_delegate_wrapper</scope><name>sync_status</name></member>
-      <member refid="classgraphene_1_1net_1_1node__delegate_1a49a17956290635b42fb40f1a9fcc6392" prot="public" virt="virtual"><scope>graphene::net::detail::statistics_gathering_node_delegate_wrapper</scope><name>~node_delegate</name></member>
+      <member refid="classgraphene_1_1net_1_1node__delegate_1a9c17b7796f2f106c161e2cf0c9c6b66b" prot="public" virt="virtual"><scope>graphene::net::detail::statistics_gathering_node_delegate_wrapper</scope><name>~node_delegate</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>
