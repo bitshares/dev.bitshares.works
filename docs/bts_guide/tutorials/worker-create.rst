@@ -101,7 +101,7 @@ You can check the Worker Proposals by BitShares UI form. Go to *Voting* page. Th
 By using the command
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-You also can inspect all the objects 1.4.*::
+You also can inspect all the objects 1.14.*::
 
     >>> get_object 1.14.4
     get_object 1.14.4
