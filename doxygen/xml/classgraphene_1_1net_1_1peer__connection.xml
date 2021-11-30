@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="classgraphene_1_1net_1_1peer__connection" kind="class" language="C++" prot="public">
     <compoundname>graphene::net::peer_connection</compoundname>
     <basecompoundref refid="classgraphene_1_1net_1_1message__oriented__connection__delegate" prot="public" virt="non-virtual">graphene::net::message_oriented_connection_delegate</basecompoundref>
@@ -272,7 +272,7 @@
         <argsstring></argsstring>
         <name>last_sync_item_received_time</name>
         <briefdescription>
-<para>we check this to detect a timed-out request and in <ref refid="classgraphene_1_1net_1_1peer__connection_1a272d3356f8b1866cc36b042a9cc3aa92" kindref="member">busy()</ref> </para>        </briefdescription>
+<para>we check this to detect a timed-out request and in <ref refid="classgraphene_1_1net_1_1peer__connection_1ad5fa3495b64326d612adb120e7d4f5b0" kindref="member">busy()</ref> </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
@@ -335,7 +335,7 @@
       </sectiondef>
       <sectiondef kind="user-defined">
       <memberdef kind="typedef" id="classgraphene_1_1net_1_1peer__connection_1a3c453ce025f0fcd97c4b4290d617f576" prot="public" static="no">
-        <type>boost::multi_index_container&lt; <ref refid="structgraphene_1_1net_1_1peer__connection_1_1timestamped__item__id" kindref="compound">timestamped_item_id</ref>, boost::multi_index::indexed_by&lt; boost::multi_index::hashed_unique&lt; boost::multi_index::member&lt; <ref refid="structgraphene_1_1net_1_1peer__connection_1_1timestamped__item__id" kindref="compound">timestamped_item_id</ref>, <ref refid="structgraphene_1_1net_1_1item__id" kindref="compound">item_id</ref>,&amp;<ref refid="structgraphene_1_1net_1_1peer__connection_1_1timestamped__item__id_1ac4a4a62b942bf54aa72a36c819605476" kindref="member">timestamped_item_id::item</ref> &gt;, std::hash&lt; <ref refid="structgraphene_1_1net_1_1item__id" kindref="compound">item_id</ref> &gt; &gt;, boost::multi_index::ordered_non_unique&lt; boost::multi_index::tag&lt; <ref refid="structgraphene_1_1net_1_1peer__connection_1_1timestamp__index" kindref="compound">timestamp_index</ref> &gt;, boost::multi_index::member&lt; <ref refid="structgraphene_1_1net_1_1peer__connection_1_1timestamped__item__id" kindref="compound">timestamped_item_id</ref>, <ref refid="classfc_1_1time__point__sec" kindref="compound">fc::time_point_sec</ref>,&amp;<ref refid="structgraphene_1_1net_1_1peer__connection_1_1timestamped__item__id_1a12d7dbe2948bc86b9149327ee4500f45" kindref="member">timestamped_item_id::timestamp</ref> &gt; &gt; &gt; &gt;</type>
+        <type>boost::multi_index_container&lt; <ref refid="structgraphene_1_1net_1_1peer__connection_1_1timestamped__item__id" kindref="compound">timestamped_item_id</ref>, boost::multi_index::indexed_by&lt; boost::multi_index::hashed_unique&lt; boost::multi_index::member&lt; <ref refid="structgraphene_1_1net_1_1peer__connection_1_1timestamped__item__id" kindref="compound">timestamped_item_id</ref>, <ref refid="structgraphene_1_1net_1_1item__id" kindref="compound">item_id</ref>, &amp;<ref refid="structgraphene_1_1net_1_1peer__connection_1_1timestamped__item__id_1ac4a4a62b942bf54aa72a36c819605476" kindref="member">timestamped_item_id::item</ref> &gt;, std::hash&lt; <ref refid="structgraphene_1_1net_1_1item__id" kindref="compound">item_id</ref> &gt; &gt;, boost::multi_index::ordered_non_unique&lt; boost::multi_index::tag&lt; <ref refid="structgraphene_1_1net_1_1peer__connection_1_1timestamp__index" kindref="compound">timestamp_index</ref> &gt;, boost::multi_index::member&lt; <ref refid="structgraphene_1_1net_1_1peer__connection_1_1timestamped__item__id" kindref="compound">timestamped_item_id</ref>, <ref refid="classfc_1_1time__point__sec" kindref="compound">fc::time_point_sec</ref>, &amp;<ref refid="structgraphene_1_1net_1_1peer__connection_1_1timestamped__item__id_1a12d7dbe2948bc86b9149327ee4500f45" kindref="member">timestamped_item_id::timestamp</ref> &gt; &gt; &gt; &gt;</type>
         <definition>typedef boost::multi_index_container&lt;timestamped_item_id, boost::multi_index::indexed_by&lt;boost::multi_index::hashed_unique&lt;boost::multi_index::member&lt;timestamped_item_id, item_id, &amp;timestamped_item_id::item&gt;, std::hash&lt;item_id&gt; &gt;, boost::multi_index::ordered_non_unique&lt;boost::multi_index::tag&lt;timestamp_index&gt;, boost::multi_index::member&lt;timestamped_item_id, fc::time_point_sec, &amp;timestamped_item_id::timestamp&gt; &gt; &gt; &gt; graphene::net::peer_connection::timestamped_items_set_type</definition>
         <argsstring></argsstring>
         <name>timestamped_items_set_type</name>
@@ -871,9 +871,9 @@
         <argsstring></argsstring>
         <name>transaction_fetching_inhibited_until</name>
         <briefdescription>
-        </briefdescription>
+<para>items we&apos;ve requested from this peer during normal operation. fetch from another peer if this peer disconnects </para>        </briefdescription>
         <detaileddescription>
-<para>items we&apos;ve requested from this peer during normal operation. fetch from another peer if this peer disconnects </para>        </detaileddescription>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="258" column="1" bodyfile="libraries/net/include/graphene/net/peer_connection.hpp" bodystart="258" bodyend="-1"/>
@@ -921,10 +921,10 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a810d2547ae33d46a7c901707ac136437" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1afb2e0dc62da3a264459bdfb791445435" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classfc_1_1time__point" kindref="compound">fc::time_point</ref></type>
         <definition>fc::time_point graphene::net::peer_connection::get_connection_time</definition>
-        <argsstring>() const </argsstring>
+        <argsstring>() const</argsstring>
         <name>get_connection_time</name>
         <briefdescription>
         </briefdescription>
@@ -934,10 +934,10 @@
         </inbodydescription>
         <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="187" column="1" bodyfile="libraries/net/include/graphene/net/peer_connection.hpp" bodystart="187" bodyend="187"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1ab2e8ee0fbcc32249c52f1cf936b04b6e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a83ea1b6fff6d03711990f937a788b2d9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classfc_1_1time__point" kindref="compound">fc::time_point</ref></type>
         <definition>fc::time_point graphene::net::peer_connection::get_connection_terminated_time</definition>
-        <argsstring>() const </argsstring>
+        <argsstring>() const</argsstring>
         <name>get_connection_terminated_time</name>
         <briefdescription>
         </briefdescription>
@@ -1065,10 +1065,10 @@
         </inbodydescription>
         <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="284" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="347" bodyend="377"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a257863cd4277ca8e89c5773b54384fe5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1ae0c5cd45659c572be805f125d70e5e5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void graphene::net::peer_connection::send_message</definition>
-        <argsstring>(const message &amp;message_to_send, size_t message_send_time_field_offset=(size_t)-1)</argsstring>
+        <argsstring>(const message &amp;message_to_send, size_t message_send_time_field_offset=(size_t) -1)</argsstring>
         <name>send_message</name>
         <param>
           <type>const <ref refid="structgraphene_1_1net_1_1message" kindref="compound">message</ref> &amp;</type>
@@ -1077,7 +1077,7 @@
         <param>
           <type>size_t</type>
           <declname>message_send_time_field_offset</declname>
-          <defval>(size_t)-1</defval>
+          <defval>(size_t) -1</defval>
         </param>
         <briefdescription>
         </briefdescription>
@@ -1130,10 +1130,10 @@
         </inbodydescription>
         <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="288" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="407" bodyend="412"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a977810b814f5929746da36424d9b3a39" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a3fec81daff2c3fa60ce57db27330b5c2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>uint64_t</type>
         <definition>uint64_t graphene::net::peer_connection::get_total_bytes_sent</definition>
-        <argsstring>() const </argsstring>
+        <argsstring>() const</argsstring>
         <name>get_total_bytes_sent</name>
         <briefdescription>
         </briefdescription>
@@ -1143,10 +1143,10 @@
         </inbodydescription>
         <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="290" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="414" bodyend="418"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a40eebf1a997e123bd566817c1558c5e6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1af8a224b60f0ac58a3c915f759955ac67" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>uint64_t</type>
         <definition>uint64_t graphene::net::peer_connection::get_total_bytes_received</definition>
-        <argsstring>() const </argsstring>
+        <argsstring>() const</argsstring>
         <name>get_total_bytes_received</name>
         <briefdescription>
         </briefdescription>
@@ -1156,10 +1156,10 @@
         </inbodydescription>
         <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="291" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="420" bodyend="424"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a695bf437eb6ac25a7a51d7abc660ed1a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1ad7b20b455c09b7e16e7f90a624cf74ac" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classfc_1_1time__point" kindref="compound">fc::time_point</ref></type>
         <definition>fc::time_point graphene::net::peer_connection::get_last_message_sent_time</definition>
-        <argsstring>() const </argsstring>
+        <argsstring>() const</argsstring>
         <name>get_last_message_sent_time</name>
         <briefdescription>
         </briefdescription>
@@ -1169,10 +1169,10 @@
         </inbodydescription>
         <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="293" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="426" bodyend="430"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a298d2204f6096673e68c589f54067b61" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1aa1c8c167347a20d16c1e62744fe268b6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classfc_1_1time__point" kindref="compound">fc::time_point</ref></type>
         <definition>fc::time_point graphene::net::peer_connection::get_last_message_received_time</definition>
-        <argsstring>() const </argsstring>
+        <argsstring>() const</argsstring>
         <name>get_last_message_received_time</name>
         <briefdescription>
         </briefdescription>
@@ -1225,10 +1225,10 @@
         </inbodydescription>
         <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="298" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="449" bodyend="453"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a272d3356f8b1866cc36b042a9cc3aa92" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1ad5fa3495b64326d612adb120e7d4f5b0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool graphene::net::peer_connection::busy</definition>
-        <argsstring>() const </argsstring>
+        <argsstring>() const</argsstring>
         <name>busy</name>
         <briefdescription>
         </briefdescription>
@@ -1238,10 +1238,10 @@
         </inbodydescription>
         <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="300" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="455" bodyend="459"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a1698fc9a0cf7f3dd6ee9dc5f620c447b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a354f91d0ba7478a7108b1612dc26705c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool graphene::net::peer_connection::idle</definition>
-        <argsstring>() const </argsstring>
+        <argsstring>() const</argsstring>
         <name>idle</name>
         <briefdescription>
         </briefdescription>
@@ -1251,10 +1251,10 @@
         </inbodydescription>
         <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="301" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="461" bodyend="465"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a8ed1d2129de82e39204b44a4e3461392" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1aad602bff9d9c82ceaef90bc30da272c9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool graphene::net::peer_connection::is_currently_handling_message</definition>
-        <argsstring>() const </argsstring>
+        <argsstring>() const</argsstring>
         <name>is_currently_handling_message</name>
         <briefdescription>
         </briefdescription>
@@ -1264,10 +1264,10 @@
         </inbodydescription>
         <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="302" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="467" bodyend="471"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a954f07f42c9a8b959ccbd6630d99b599" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1ac8284a7d8adfce259afbd5df79c4f59b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool graphene::net::peer_connection::is_transaction_fetching_inhibited</definition>
-        <argsstring>() const </argsstring>
+        <argsstring>() const</argsstring>
         <name>is_transaction_fetching_inhibited</name>
         <briefdescription>
         </briefdescription>
@@ -1277,10 +1277,10 @@
         </inbodydescription>
         <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="304" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="473" bodyend="477"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a6eb49442cb4dd196ef7f923390944ecf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1af47a18ef8d93a40f5f3cd010f6aadb4c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classfc_1_1sha512" kindref="compound">fc::sha512</ref></type>
         <definition>fc::sha512 graphene::net::peer_connection::get_shared_secret</definition>
-        <argsstring>() const </argsstring>
+        <argsstring>() const</argsstring>
         <name>get_shared_secret</name>
         <briefdescription>
         </briefdescription>
@@ -1303,10 +1303,10 @@
         </inbodydescription>
         <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="306" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="485" bodyend="505"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a5d382ef1090ab0e444a1626b328c3d2d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a5976f205346898d279f97debf7c7181f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool graphene::net::peer_connection::is_inventory_advertised_to_us_list_full_for_transactions</definition>
-        <argsstring>() const </argsstring>
+        <argsstring>() const</argsstring>
         <name>is_inventory_advertised_to_us_list_full_for_transactions</name>
         <briefdescription>
         </briefdescription>
@@ -1316,10 +1316,10 @@
         </inbodydescription>
         <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="307" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="508" bodyend="512"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1aef2ad57f8209434011dca6b7a8364f52" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a118f70b619af2102c78f3fc485efec9f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool graphene::net::peer_connection::is_inventory_advertised_to_us_list_full</definition>
-        <argsstring>() const </argsstring>
+        <argsstring>() const</argsstring>
         <name>is_inventory_advertised_to_us_list_full</name>
         <briefdescription>
         </briefdescription>
@@ -1329,10 +1329,10 @@
         </inbodydescription>
         <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="308" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="514" bodyend="523"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a20de52cf09a4450fa907cb8dea552cec" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1afcaed96cedc4e001c084593f17f2df7e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool graphene::net::peer_connection::performing_firewall_check</definition>
-        <argsstring>() const </argsstring>
+        <argsstring>() const</argsstring>
         <name>performing_firewall_check</name>
         <briefdescription>
         </briefdescription>
@@ -1342,10 +1342,10 @@
         </inbodydescription>
         <location file="libraries/net/include/graphene/net/peer_connection.hpp" line="309" column="1" bodyfile="libraries/net/peer_connection.cpp" bodystart="525" bodyend="528"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a53e23d53996912150c1be6252a9b9bdc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1net_1_1peer__connection_1a7d341147c197f40a47509aff1707a959" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classfc_1_1optional" kindref="compound">fc::optional</ref>&lt; <ref refid="classfc_1_1ip_1_1endpoint" kindref="compound">fc::ip::endpoint</ref> &gt;</type>
         <definition>fc::optional&lt; fc::ip::endpoint &gt; graphene::net::peer_connection::get_endpoint_for_connecting</definition>
-        <argsstring>() const </argsstring>
+        <argsstring>() const</argsstring>
         <name>get_endpoint_for_connecting</name>
         <briefdescription>
         </briefdescription>
@@ -1455,140 +1455,140 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="5445">
+      <node id="5841">
         <label>std::enable_shared_from_this&lt; peer_connection &gt;</label>
       </node>
-      <node id="5444">
+      <node id="5840">
         <label>graphene::net::message_oriented_connection_delegate</label>
         <link refid="classgraphene_1_1net_1_1message__oriented__connection__delegate"/>
       </node>
-      <node id="5443">
+      <node id="5839">
         <label>graphene::net::peer_connection</label>
         <link refid="classgraphene_1_1net_1_1peer__connection"/>
-        <childnode refid="5444" relation="public-inheritance">
+        <childnode refid="5840" relation="public-inheritance">
         </childnode>
-        <childnode refid="5445" relation="public-inheritance">
+        <childnode refid="5841" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="5460">
+      <node id="5856">
         <label>graphene::net::firewall_check_state_data</label>
         <link refid="structgraphene_1_1net_1_1firewall__check__state__data"/>
-        <childnode refid="5461" relation="usage">
+        <childnode refid="5857" relation="usage">
           <edgelabel>endpoint_to_test</edgelabel>
         </childnode>
-        <childnode refid="5454" relation="usage">
+        <childnode refid="5850" relation="usage">
           <edgelabel>requesting_peer</edgelabel>
           <edgelabel>expected_node_id</edgelabel>
         </childnode>
       </node>
-      <node id="5450">
+      <node id="5846">
         <label>fc::ripemd160</label>
         <link refid="classfc_1_1ripemd160"/>
       </node>
-      <node id="5461">
+      <node id="5857">
         <label>fc::ip::endpoint</label>
         <link refid="classfc_1_1ip_1_1endpoint"/>
       </node>
-      <node id="5459">
+      <node id="5855">
         <label>fc::optional&lt; fc::time_point_sec &gt;</label>
         <link refid="classfc_1_1optional"/>
       </node>
-      <node id="5452">
+      <node id="5848">
         <label>fc::optional&lt; uint32_t &gt;</label>
         <link refid="classfc_1_1optional"/>
       </node>
-      <node id="5455">
+      <node id="5851">
         <label>fc::optional&lt; boost::tuple&lt; std::vector&lt; fc::ripemd160 &gt;, fc::time_point &gt; &gt;</label>
       </node>
-      <node id="5458">
+      <node id="5854">
         <label>string</label>
       </node>
-      <node id="5462">
+      <node id="5858">
         <label>fc::time_point</label>
         <link refid="classfc_1_1time__point"/>
       </node>
-      <node id="5456">
+      <node id="5852">
         <label>fc::microseconds</label>
         <link refid="classfc_1_1microseconds"/>
       </node>
-      <node id="5448">
+      <node id="5844">
         <label>std::enable_shared_from_this&lt; peer_connection &gt;</label>
       </node>
-      <node id="5449">
+      <node id="5845">
         <label>fc::future&lt; void &gt;</label>
         <link refid="classfc_1_1future_3_01void_01_4"/>
       </node>
-      <node id="5447">
+      <node id="5843">
         <label>graphene::net::message_oriented_connection_delegate</label>
         <link refid="classgraphene_1_1net_1_1message__oriented__connection__delegate"/>
       </node>
-      <node id="5457">
+      <node id="5853">
         <label>fc::optional&lt; std::string &gt;</label>
         <link refid="classfc_1_1optional"/>
       </node>
-      <node id="5453">
+      <node id="5849">
         <label>fc::time_point_sec</label>
         <link refid="classfc_1_1time__point__sec"/>
       </node>
-      <node id="5451">
+      <node id="5847">
         <label>fc::ip::address</label>
         <link refid="classfc_1_1ip_1_1address"/>
       </node>
-      <node id="5454">
+      <node id="5850">
         <label>fc::zero_initialized_array&lt; T, N &gt;</label>
         <link refid="classfc_1_1zero__initialized__array"/>
       </node>
-      <node id="5446">
+      <node id="5842">
         <label>graphene::net::peer_connection</label>
         <link refid="classgraphene_1_1net_1_1peer__connection"/>
-        <childnode refid="5447" relation="public-inheritance">
+        <childnode refid="5843" relation="public-inheritance">
         </childnode>
-        <childnode refid="5448" relation="public-inheritance">
+        <childnode refid="5844" relation="public-inheritance">
         </childnode>
-        <childnode refid="5449" relation="usage">
+        <childnode refid="5845" relation="usage">
           <edgelabel>accept_or_connect_task_done</edgelabel>
         </childnode>
-        <childnode refid="5450" relation="usage">
+        <childnode refid="5846" relation="usage">
           <edgelabel>last_block_delegate_has_seen</edgelabel>
         </childnode>
-        <childnode refid="5451" relation="usage">
+        <childnode refid="5847" relation="usage">
           <edgelabel>inbound_address</edgelabel>
         </childnode>
-        <childnode refid="5452" relation="usage">
+        <childnode refid="5848" relation="usage">
           <edgelabel>bitness</edgelabel>
         </childnode>
-        <childnode refid="5453" relation="usage">
+        <childnode refid="5849" relation="usage">
           <edgelabel>last_block_time_delegate_has_seen</edgelabel>
         </childnode>
-        <childnode refid="5454" relation="usage">
+        <childnode refid="5850" relation="usage">
           <edgelabel>node_id</edgelabel>
           <edgelabel>node_public_key</edgelabel>
         </childnode>
-        <childnode refid="5455" relation="usage">
+        <childnode refid="5851" relation="usage">
           <edgelabel>item_ids_requested_from_peer</edgelabel>
         </childnode>
-        <childnode refid="5456" relation="usage">
+        <childnode refid="5852" relation="usage">
           <edgelabel>round_trip_delay</edgelabel>
           <edgelabel>clock_offset</edgelabel>
         </childnode>
-        <childnode refid="5457" relation="usage">
+        <childnode refid="5853" relation="usage">
           <edgelabel>platform</edgelabel>
           <edgelabel>fc_git_revision_sha</edgelabel>
           <edgelabel>graphene_git_revision_sha</edgelabel>
         </childnode>
-        <childnode refid="5458" relation="usage">
+        <childnode refid="5854" relation="usage">
           <edgelabel>user_agent</edgelabel>
         </childnode>
-        <childnode refid="5459" relation="usage">
+        <childnode refid="5855" relation="usage">
           <edgelabel>graphene_git_revision_unix_timestamp</edgelabel>
           <edgelabel>fc_git_revision_unix_timestamp</edgelabel>
         </childnode>
-        <childnode refid="5460" relation="usage">
+        <childnode refid="5856" relation="usage">
           <edgelabel>firewall_check_state</edgelabel>
         </childnode>
-        <childnode refid="5462" relation="usage">
+        <childnode refid="5858" relation="usage">
           <edgelabel>transaction_fetching_inhibited_until</edgelabel>
           <edgelabel>connection_closed_time</edgelabel>
           <edgelabel>connection_initiation_time</edgelabel>
@@ -1612,7 +1612,7 @@
       <member refid="classgraphene_1_1net_1_1peer__connection_1aece18773b59c1b0d1c23c82b3aa0618b" prot="private" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>accept_connection_task</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1ab3d11d38d80f9da30e9c8b8cd54b394e" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>accept_or_connect_task_done</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1ae1aceef078cdccf1255ead4085c4d6d0" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>bitness</name></member>
-      <member refid="classgraphene_1_1net_1_1peer__connection_1a272d3356f8b1866cc36b042a9cc3aa92" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>busy</name></member>
+      <member refid="classgraphene_1_1net_1_1peer__connection_1ad5fa3495b64326d612adb120e7d4f5b0" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>busy</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1add398515c263a899eeb1266c951f6628" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>clear_old_inventory</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1a95a50dfae5659c244c89deb246c62d17" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>clock_offset</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1a528eaf4d7a1aae25374faa3be3d9b8b6" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>close_connection</name></member>
@@ -1630,20 +1630,20 @@
       <member refid="classgraphene_1_1net_1_1peer__connection_1ae2bc0bc154d732c3c167567545df032e" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>fc_git_revision_sha</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1a68b127b9c3479048a6d157ca11530e20" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>fc_git_revision_unix_timestamp</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1a9d019cb640d7aee423ff0679192ae2ef" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>firewall_check_state</name></member>
-      <member refid="classgraphene_1_1net_1_1peer__connection_1ab2e8ee0fbcc32249c52f1cf936b04b6e" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>get_connection_terminated_time</name></member>
-      <member refid="classgraphene_1_1net_1_1peer__connection_1a810d2547ae33d46a7c901707ac136437" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>get_connection_time</name></member>
-      <member refid="classgraphene_1_1net_1_1peer__connection_1a53e23d53996912150c1be6252a9b9bdc" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>get_endpoint_for_connecting</name></member>
-      <member refid="classgraphene_1_1net_1_1peer__connection_1a298d2204f6096673e68c589f54067b61" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>get_last_message_received_time</name></member>
-      <member refid="classgraphene_1_1net_1_1peer__connection_1a695bf437eb6ac25a7a51d7abc660ed1a" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>get_last_message_sent_time</name></member>
+      <member refid="classgraphene_1_1net_1_1peer__connection_1a83ea1b6fff6d03711990f937a788b2d9" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>get_connection_terminated_time</name></member>
+      <member refid="classgraphene_1_1net_1_1peer__connection_1afb2e0dc62da3a264459bdfb791445435" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>get_connection_time</name></member>
+      <member refid="classgraphene_1_1net_1_1peer__connection_1a7d341147c197f40a47509aff1707a959" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>get_endpoint_for_connecting</name></member>
+      <member refid="classgraphene_1_1net_1_1peer__connection_1aa1c8c167347a20d16c1e62744fe268b6" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>get_last_message_received_time</name></member>
+      <member refid="classgraphene_1_1net_1_1peer__connection_1ad7b20b455c09b7e16e7f90a624cf74ac" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>get_last_message_sent_time</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1a8e1dfb1d2031eccac5fd4a469acb52cd" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>get_local_endpoint</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1ab61398cf17d6cf388622356026de9fcf" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>get_remote_endpoint</name></member>
-      <member refid="classgraphene_1_1net_1_1peer__connection_1a6eb49442cb4dd196ef7f923390944ecf" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>get_shared_secret</name></member>
+      <member refid="classgraphene_1_1net_1_1peer__connection_1af47a18ef8d93a40f5f3cd010f6aadb4c" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>get_shared_secret</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1aa70184ea95d9ee7e2e1521bb0c250304" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>get_socket</name></member>
-      <member refid="classgraphene_1_1net_1_1peer__connection_1a40eebf1a997e123bd566817c1558c5e6" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>get_total_bytes_received</name></member>
-      <member refid="classgraphene_1_1net_1_1peer__connection_1a977810b814f5929746da36424d9b3a39" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>get_total_bytes_sent</name></member>
+      <member refid="classgraphene_1_1net_1_1peer__connection_1af8a224b60f0ac58a3c915f759955ac67" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>get_total_bytes_received</name></member>
+      <member refid="classgraphene_1_1net_1_1peer__connection_1a3fec81daff2c3fa60ce57db27330b5c2" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>get_total_bytes_sent</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1ac8f4dce0b25b85c7a2ed6048153f8787" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>graphene_git_revision_sha</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1a192fda9217f2acc9b57ecd64e2985776" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>graphene_git_revision_unix_timestamp</name></member>
-      <member refid="classgraphene_1_1net_1_1peer__connection_1a1698fc9a0cf7f3dd6ee9dc5f620c447b" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>idle</name></member>
+      <member refid="classgraphene_1_1net_1_1peer__connection_1a354f91d0ba7478a7108b1612dc26705c" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>idle</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1aa6c35b1f3eae294d2d072c3600dd5131" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>ids_of_items_being_processed</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1a34dbf395eb7b5b7695944bb941891a36" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>ids_of_items_to_get</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1a3b55b821c4296b62200b770d4f2a2c31" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>inbound_address</name></member>
@@ -1651,11 +1651,11 @@
       <member refid="classgraphene_1_1net_1_1peer__connection_1a4f234861a14d26da41d9441b337cdbe2" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>inhibit_fetching_sync_blocks</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1a5900c7867a7e8687c65a25bdcb1604ff" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>inventory_advertised_to_peer</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1ac004cc3b646a35365075ec71c679e6d4" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>inventory_peer_advertised_to_us</name></member>
-      <member refid="classgraphene_1_1net_1_1peer__connection_1a8ed1d2129de82e39204b44a4e3461392" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>is_currently_handling_message</name></member>
+      <member refid="classgraphene_1_1net_1_1peer__connection_1aad602bff9d9c82ceaef90bc30da272c9" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>is_currently_handling_message</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1aea47877a167f7e02a932da3fa796eaae" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>is_firewalled</name></member>
-      <member refid="classgraphene_1_1net_1_1peer__connection_1aef2ad57f8209434011dca6b7a8364f52" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>is_inventory_advertised_to_us_list_full</name></member>
-      <member refid="classgraphene_1_1net_1_1peer__connection_1a5d382ef1090ab0e444a1626b328c3d2d" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>is_inventory_advertised_to_us_list_full_for_transactions</name></member>
-      <member refid="classgraphene_1_1net_1_1peer__connection_1a954f07f42c9a8b959ccbd6630d99b599" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>is_transaction_fetching_inhibited</name></member>
+      <member refid="classgraphene_1_1net_1_1peer__connection_1a118f70b619af2102c78f3fc485efec9f" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>is_inventory_advertised_to_us_list_full</name></member>
+      <member refid="classgraphene_1_1net_1_1peer__connection_1a5976f205346898d279f97debf7c7181f" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>is_inventory_advertised_to_us_list_full_for_transactions</name></member>
+      <member refid="classgraphene_1_1net_1_1peer__connection_1ac8284a7d8adfce259afbd5df79c4f59b" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>is_transaction_fetching_inhibited</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1a1db2486ae47972391f8d3b3689d027fa" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>item_ids_requested_from_peer</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1a749ac3cdd7a9185095f3af0b1449f379" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>item_to_time_map_type</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1a64a25e3df43e06723c9fa2c28b707e4a" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>items_requested_from_peer</name></member>
@@ -1675,11 +1675,11 @@
       <member refid="classgraphene_1_1net_1_1peer__connection_1a73652b2101e722f23587b84441e070f8" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>outbound_port</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1a9279ba8b94f89d4db5e5bbc934750a53" prot="private" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>peer_connection</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1a6017b9c24ba25ccdec3cfd8c995880f5" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>peer_needs_sync_items_from_us</name></member>
-      <member refid="classgraphene_1_1net_1_1peer__connection_1a20de52cf09a4450fa907cb8dea552cec" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>performing_firewall_check</name></member>
+      <member refid="classgraphene_1_1net_1_1peer__connection_1afcaed96cedc4e001c084593f17f2df7e" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>performing_firewall_check</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1a3e7c91ee86c09ec20fbf52338b053409" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>platform</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1aff1a611955fa9701e5a04d5b520753f7" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>round_trip_delay</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1a4e133d3af48d11f1e03c728d95b1dea7" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>send_item</name></member>
-      <member refid="classgraphene_1_1net_1_1peer__connection_1a257863cd4277ca8e89c5773b54384fe5" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>send_message</name></member>
+      <member refid="classgraphene_1_1net_1_1peer__connection_1ae0c5cd45659c572be805f125d70e5e5a" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>send_message</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1a35f68aac36feecf9f96e0d9f89334b8f" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>send_queueable_message</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1a89e77bb73edd3115bf9fe50cd9033145" prot="private" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>send_queued_messages_task</name></member>
       <member refid="classgraphene_1_1net_1_1peer__connection_1abb1aa66fb27ab0e3be4a8cb6ddc475fc" prot="public" virt="non-virtual"><scope>graphene::net::peer_connection</scope><name>set_remote_endpoint</name></member>

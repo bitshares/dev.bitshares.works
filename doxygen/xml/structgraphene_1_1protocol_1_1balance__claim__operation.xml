@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="structgraphene_1_1protocol_1_1balance__claim__operation" kind="struct" language="C++" prot="public">
     <compoundname>graphene::protocol::balance_claim_operation</compoundname>
     <basecompoundref refid="structgraphene_1_1protocol_1_1base__operation" prot="public" virt="non-virtual">graphene::protocol::base_operation</basecompoundref>
@@ -73,10 +73,10 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="structgraphene_1_1protocol_1_1balance__claim__operation_1a202ecd4af30b16f4bb74aa529528881f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1balance__claim__operation_1a90cb7f9de6766dd03afb74b39d5c5c1a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>account_id_type</type>
         <definition>account_id_type graphene::protocol::balance_claim_operation::fee_payer</definition>
-        <argsstring>() const </argsstring>
+        <argsstring>() const</argsstring>
         <name>fee_payer</name>
         <briefdescription>
         </briefdescription>
@@ -86,10 +86,10 @@
         </inbodydescription>
         <location file="libraries/protocol/include/graphene/protocol/balance.hpp" line="50" column="1" bodyfile="libraries/protocol/include/graphene/protocol/balance.hpp" bodystart="50" bodyend="50"/>
       </memberdef>
-      <memberdef kind="function" id="structgraphene_1_1protocol_1_1balance__claim__operation_1ac236982ea6dbebf2d8cefb3ce68f9627" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1balance__claim__operation_1a6c784089000a331b4fb44a67899a2491" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="namespacegraphene_1_1protocol_1a69b2104c1c11eed2d17bd29b86713347" kindref="member">share_type</ref></type>
         <definition>share_type graphene::protocol::balance_claim_operation::calculate_fee</definition>
-        <argsstring>(const fee_parameters_type &amp;) const </argsstring>
+        <argsstring>(const fee_parameters_type &amp;) const</argsstring>
         <name>calculate_fee</name>
         <param>
           <type>const <ref refid="structgraphene_1_1protocol_1_1balance__claim__operation_1_1fee__parameters__type" kindref="compound">fee_parameters_type</ref> &amp;</type>
@@ -102,11 +102,12 @@
         </inbodydescription>
         <location file="libraries/protocol/include/graphene/protocol/balance.hpp" line="51" column="1" bodyfile="libraries/protocol/include/graphene/protocol/balance.hpp" bodystart="51" bodyend="51"/>
       </memberdef>
-      <memberdef kind="function" id="structgraphene_1_1protocol_1_1balance__claim__operation_1a77a6b86e99443a2b10caa89cd4e649b0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1balance__claim__operation_1a52afb70bc9ff786f890d41635127ab5a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
         <definition>void graphene::protocol::balance_claim_operation::validate</definition>
-        <argsstring>() const </argsstring>
+        <argsstring>() const</argsstring>
         <name>validate</name>
+        <reimplements refid="structgraphene_1_1protocol_1_1base__operation_1a23d617a6fa0921d3f5b51dd5167e7a29">validate</reimplements>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -115,11 +116,12 @@
         </inbodydescription>
         <location file="libraries/protocol/include/graphene/protocol/balance.hpp" line="52" column="1" bodyfile="libraries/protocol/operations.cpp" bodystart="46" bodyend="50"/>
       </memberdef>
-      <memberdef kind="function" id="structgraphene_1_1protocol_1_1balance__claim__operation_1abe40d1e197754c4331c81260772964a4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1balance__claim__operation_1a3e8aaed9890ff980a51403f560b3c80f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
         <definition>void graphene::protocol::balance_claim_operation::get_required_authorities</definition>
-        <argsstring>(vector&lt; authority &gt; &amp;a) const </argsstring>
+        <argsstring>(vector&lt; authority &gt; &amp;a) const</argsstring>
         <name>get_required_authorities</name>
+        <reimplements refid="structgraphene_1_1protocol_1_1base__operation_1aabc48ce97877c67ff560b94284a7c0bb">get_required_authorities</reimplements>
         <param>
           <type>vector&lt; <ref refid="structgraphene_1_1protocol_1_1authority" kindref="compound">authority</ref> &gt; &amp;</type>
           <declname>a</declname>
@@ -136,62 +138,62 @@
     <briefdescription>
 <para>Claim a balance in a <ref refid="classgraphene_1_1chain_1_1balance__object" kindref="compound">graphene::chain::balance_object</ref>. </para>    </briefdescription>
     <detaileddescription>
-<para>This operation is used to claim the balance in a given <ref refid="classgraphene_1_1chain_1_1balance__object" kindref="compound">graphene::chain::balance_object</ref>. If the balance object contains a vesting balance, <ref refid="structgraphene_1_1protocol_1_1balance__claim__operation_1a9f167cb7da9385a5095ae6e60ed1aeb6" kindref="member">total_claimed</ref> must not exceed <ref refid="classgraphene_1_1chain_1_1balance__object_1aff0534736df59a2201bd795346988d56" kindref="member">graphene::chain::balance_object::available</ref> at the time of evaluation. If the object contains a non-vesting balance, <ref refid="structgraphene_1_1protocol_1_1balance__claim__operation_1a9f167cb7da9385a5095ae6e60ed1aeb6" kindref="member">total_claimed</ref> must be the full balance of the object. </para>    </detaileddescription>
+<para>This operation is used to claim the balance in a given <ref refid="classgraphene_1_1chain_1_1balance__object" kindref="compound">graphene::chain::balance_object</ref>. If the balance object contains a vesting balance, <ref refid="structgraphene_1_1protocol_1_1balance__claim__operation_1a9f167cb7da9385a5095ae6e60ed1aeb6" kindref="member">total_claimed</ref> must not exceed <ref refid="classgraphene_1_1chain_1_1balance__object_1abc9aa8646d5952a3cd75b07a3ebdcf57" kindref="member">graphene::chain::balance_object::available</ref> at the time of evaluation. If the object contains a non-vesting balance, <ref refid="structgraphene_1_1protocol_1_1balance__claim__operation_1a9f167cb7da9385a5095ae6e60ed1aeb6" kindref="member">total_claimed</ref> must be the full balance of the object. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="1652">
+      <node id="1641">
         <label>graphene::protocol::balance_claim_operation</label>
         <link refid="structgraphene_1_1protocol_1_1balance__claim__operation"/>
-        <childnode refid="1653" relation="public-inheritance">
+        <childnode refid="1642" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="1653">
+      <node id="1642">
         <label>graphene::protocol::base_operation</label>
         <link refid="structgraphene_1_1protocol_1_1base__operation"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="1654">
+      <node id="1643">
         <label>graphene::protocol::balance_claim_operation</label>
         <link refid="structgraphene_1_1protocol_1_1balance__claim__operation"/>
-        <childnode refid="1655" relation="public-inheritance">
+        <childnode refid="1644" relation="public-inheritance">
         </childnode>
-        <childnode refid="1656" relation="usage">
+        <childnode refid="1645" relation="usage">
           <edgelabel>total_claimed</edgelabel>
           <edgelabel>fee</edgelabel>
         </childnode>
-        <childnode refid="1658" relation="usage">
+        <childnode refid="1647" relation="usage">
           <edgelabel>deposit_to_account</edgelabel>
         </childnode>
-        <childnode refid="1659" relation="usage">
+        <childnode refid="1648" relation="usage">
           <edgelabel>balance_owner_key</edgelabel>
         </childnode>
       </node>
-      <node id="1658">
+      <node id="1647">
         <label>account_id_type</label>
       </node>
-      <node id="1657">
+      <node id="1646">
         <label>fc::safe&lt; int64_t &gt;</label>
         <link refid="structfc_1_1safe"/>
       </node>
-      <node id="1660">
+      <node id="1649">
         <label>fc::zero_initialized_array&lt; unsigned char, 33 &gt;</label>
         <link refid="classfc_1_1zero__initialized__array"/>
       </node>
-      <node id="1655">
+      <node id="1644">
         <label>graphene::protocol::base_operation</label>
         <link refid="structgraphene_1_1protocol_1_1base__operation"/>
       </node>
-      <node id="1656">
+      <node id="1645">
         <label>graphene::protocol::asset</label>
         <link refid="structgraphene_1_1protocol_1_1asset"/>
-        <childnode refid="1657" relation="usage">
+        <childnode refid="1646" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
       </node>
-      <node id="1659">
+      <node id="1648">
         <label>graphene::protocol::public_key_type</label>
         <link refid="structgraphene_1_1protocol_1_1public__key__type"/>
-        <childnode refid="1660" relation="usage">
+        <childnode refid="1649" relation="usage">
           <edgelabel>key_data</edgelabel>
         </childnode>
       </node>
@@ -201,17 +203,17 @@
       <member refid="structgraphene_1_1protocol_1_1balance__claim__operation_1af398acbf11d5d567e8db94c704c43fba" prot="public" virt="non-virtual"><scope>graphene::protocol::balance_claim_operation</scope><name>balance_owner_key</name></member>
       <member refid="structgraphene_1_1protocol_1_1balance__claim__operation_1ac0eab2b3a032d2ed1d730af5bb07b6d5" prot="public" virt="non-virtual"><scope>graphene::protocol::balance_claim_operation</scope><name>balance_to_claim</name></member>
       <member refid="structgraphene_1_1protocol_1_1base__operation_1aaccb0fa71ee529cf62324baaa99988fe" prot="public" virt="non-virtual"><scope>graphene::protocol::balance_claim_operation</scope><name>calculate_data_fee</name></member>
-      <member refid="structgraphene_1_1protocol_1_1balance__claim__operation_1ac236982ea6dbebf2d8cefb3ce68f9627" prot="public" virt="non-virtual"><scope>graphene::protocol::balance_claim_operation</scope><name>calculate_fee</name></member>
-      <member refid="structgraphene_1_1protocol_1_1base__operation_1afd01efa3e06367c572512e381b1106fb" prot="public" virt="non-virtual" ambiguityscope="graphene::protocol::base_operation::"><scope>graphene::protocol::balance_claim_operation</scope><name>calculate_fee</name></member>
+      <member refid="structgraphene_1_1protocol_1_1balance__claim__operation_1a6c784089000a331b4fb44a67899a2491" prot="public" virt="non-virtual"><scope>graphene::protocol::balance_claim_operation</scope><name>calculate_fee</name></member>
+      <member refid="structgraphene_1_1protocol_1_1base__operation_1a0be44badcee9a648413eb906dac1d3b3" prot="public" virt="non-virtual" ambiguityscope="graphene::protocol::base_operation::"><scope>graphene::protocol::balance_claim_operation</scope><name>calculate_fee</name></member>
       <member refid="structgraphene_1_1protocol_1_1balance__claim__operation_1a61b704eb128bf7635ef003f688d2694c" prot="public" virt="non-virtual"><scope>graphene::protocol::balance_claim_operation</scope><name>deposit_to_account</name></member>
       <member refid="structgraphene_1_1protocol_1_1balance__claim__operation_1a799e5f1ea5232c3d9d2bde3e2d8032ef" prot="public" virt="non-virtual"><scope>graphene::protocol::balance_claim_operation</scope><name>fee</name></member>
-      <member refid="structgraphene_1_1protocol_1_1balance__claim__operation_1a202ecd4af30b16f4bb74aa529528881f" prot="public" virt="non-virtual"><scope>graphene::protocol::balance_claim_operation</scope><name>fee_payer</name></member>
-      <member refid="structgraphene_1_1protocol_1_1base__operation_1aded12887f115b2bfa54ecd59540fa242" prot="public" virt="non-virtual"><scope>graphene::protocol::balance_claim_operation</scope><name>get_required_active_authorities</name></member>
-      <member refid="structgraphene_1_1protocol_1_1balance__claim__operation_1abe40d1e197754c4331c81260772964a4" prot="public" virt="non-virtual"><scope>graphene::protocol::balance_claim_operation</scope><name>get_required_authorities</name></member>
-      <member refid="structgraphene_1_1protocol_1_1base__operation_1a0742a4b91de875366ec466a5b67b2811" prot="public" virt="non-virtual"><scope>graphene::protocol::balance_claim_operation</scope><name>get_required_owner_authorities</name></member>
+      <member refid="structgraphene_1_1protocol_1_1balance__claim__operation_1a90cb7f9de6766dd03afb74b39d5c5c1a" prot="public" virt="non-virtual"><scope>graphene::protocol::balance_claim_operation</scope><name>fee_payer</name></member>
+      <member refid="structgraphene_1_1protocol_1_1base__operation_1a89ed7c6e7da93cd99bb41bc8d7e2627b" prot="public" virt="virtual"><scope>graphene::protocol::balance_claim_operation</scope><name>get_required_active_authorities</name></member>
+      <member refid="structgraphene_1_1protocol_1_1balance__claim__operation_1a3e8aaed9890ff980a51403f560b3c80f" prot="public" virt="virtual"><scope>graphene::protocol::balance_claim_operation</scope><name>get_required_authorities</name></member>
+      <member refid="structgraphene_1_1protocol_1_1base__operation_1a3251978e7bd0bb2f2fa23bcea5dee95c" prot="public" virt="virtual"><scope>graphene::protocol::balance_claim_operation</scope><name>get_required_owner_authorities</name></member>
       <member refid="structgraphene_1_1protocol_1_1balance__claim__operation_1a9f167cb7da9385a5095ae6e60ed1aeb6" prot="public" virt="non-virtual"><scope>graphene::protocol::balance_claim_operation</scope><name>total_claimed</name></member>
-      <member refid="structgraphene_1_1protocol_1_1balance__claim__operation_1a77a6b86e99443a2b10caa89cd4e649b0" prot="public" virt="non-virtual"><scope>graphene::protocol::balance_claim_operation</scope><name>validate</name></member>
-      <member refid="structgraphene_1_1protocol_1_1base__operation_1a41d0a14a070ac634be11f30dbf559935" prot="public" virt="non-virtual"><scope>graphene::protocol::balance_claim_operation</scope><name>validate_parallel</name></member>
+      <member refid="structgraphene_1_1protocol_1_1balance__claim__operation_1a52afb70bc9ff786f890d41635127ab5a" prot="public" virt="virtual"><scope>graphene::protocol::balance_claim_operation</scope><name>validate</name></member>
+      <member refid="structgraphene_1_1protocol_1_1base__operation_1a485f3d3b963ff4c081af85945cf27774" prot="public" virt="non-virtual"><scope>graphene::protocol::balance_claim_operation</scope><name>validate_parallel</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

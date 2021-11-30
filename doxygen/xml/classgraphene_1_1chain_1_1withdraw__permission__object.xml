@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="classgraphene_1_1chain_1_1withdraw__permission__object" kind="class" language="C++" prot="public">
     <compoundname>graphene::chain::withdraw_permission_object</compoundname>
     <basecompoundref refid="classgraphene_1_1db_1_1abstract__object" prot="public" virt="non-virtual">graphene::db::abstract_object&lt; withdraw_permission_object &gt;</basecompoundref>
@@ -129,10 +129,10 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classgraphene_1_1chain_1_1withdraw__permission__object_1a306d0b35bad89255dc5359dd90c81fcc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1chain_1_1withdraw__permission__object_1aa70296c7cc6e7acf0d6f3b7dbe299081" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structgraphene_1_1protocol_1_1asset" kindref="compound">asset</ref></type>
         <definition>asset graphene::chain::withdraw_permission_object::available_this_period</definition>
-        <argsstring>(fc::time_point_sec current_time) const </argsstring>
+        <argsstring>(fc::time_point_sec current_time) const</argsstring>
         <name>available_this_period</name>
         <param>
           <type><ref refid="classfc_1_1time__point__sec" kindref="compound">fc::time_point_sec</ref></type>
@@ -152,68 +152,68 @@
     <detaileddescription>
 <para>The primary purpose of this object is to enable recurring payments on the blockchain. An account which wishes to process a recurring payment may use a <ref refid="structgraphene_1_1protocol_1_1withdraw__permission__claim__operation" kindref="compound">graphene::protocol::withdraw_permission_claim_operation</ref> to reference an object of this type and withdraw up to <ref refid="classgraphene_1_1chain_1_1withdraw__permission__object_1a913df749570eb66da566c0ba830356a7" kindref="member">withdrawal_limit</ref> from <ref refid="classgraphene_1_1chain_1_1withdraw__permission__object_1ad0625fbe1d350edecf66799080675dc6" kindref="member">withdraw_from_account</ref>. Only <ref refid="classgraphene_1_1chain_1_1withdraw__permission__object_1a08e2473a992ea8090180c8a9705abd95" kindref="member">authorized_account</ref> may do this. Any number of withdrawals may be made so long as the total amount withdrawn per period does not exceed the limit for any given period. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="7385">
+      <node id="8103">
         <label>graphene::db::abstract_object&lt; withdraw_permission_object &gt;</label>
         <link refid="classgraphene_1_1db_1_1abstract__object"/>
-        <childnode refid="7386" relation="public-inheritance">
+        <childnode refid="8104" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="7384">
+      <node id="8102">
         <label>graphene::chain::withdraw_permission_object</label>
         <link refid="classgraphene_1_1chain_1_1withdraw__permission__object"/>
-        <childnode refid="7385" relation="public-inheritance">
+        <childnode refid="8103" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="7386">
+      <node id="8104">
         <label>graphene::db::object</label>
         <link refid="classgraphene_1_1db_1_1object"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="7388">
+      <node id="8106">
         <label>graphene::db::abstract_object&lt; withdraw_permission_object &gt;</label>
         <link refid="classgraphene_1_1db_1_1abstract__object"/>
-        <childnode refid="7389" relation="public-inheritance">
+        <childnode refid="8107" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="7393">
+      <node id="8111">
         <label>account_id_type</label>
       </node>
-      <node id="7387">
+      <node id="8105">
         <label>graphene::chain::withdraw_permission_object</label>
         <link refid="classgraphene_1_1chain_1_1withdraw__permission__object"/>
-        <childnode refid="7388" relation="public-inheritance">
+        <childnode refid="8106" relation="public-inheritance">
         </childnode>
-        <childnode refid="7391" relation="usage">
+        <childnode refid="8109" relation="usage">
           <edgelabel>withdrawal_limit</edgelabel>
         </childnode>
-        <childnode refid="7393" relation="usage">
+        <childnode refid="8111" relation="usage">
           <edgelabel>authorized_account</edgelabel>
           <edgelabel>withdraw_from_account</edgelabel>
         </childnode>
-        <childnode refid="7392" relation="usage">
+        <childnode refid="8110" relation="usage">
           <edgelabel>claimed_this_period</edgelabel>
         </childnode>
       </node>
-      <node id="7392">
+      <node id="8110">
         <label>fc::safe&lt; int64_t &gt;</label>
         <link refid="structfc_1_1safe"/>
       </node>
-      <node id="7391">
+      <node id="8109">
         <label>graphene::protocol::asset</label>
         <link refid="structgraphene_1_1protocol_1_1asset"/>
-        <childnode refid="7392" relation="usage">
+        <childnode refid="8110" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
       </node>
-      <node id="7390">
+      <node id="8108">
         <label>graphene::db::object_id_type</label>
         <link refid="structgraphene_1_1db_1_1object__id__type"/>
       </node>
-      <node id="7389">
+      <node id="8107">
         <label>graphene::db::object</label>
         <link refid="classgraphene_1_1db_1_1object"/>
-        <childnode refid="7390" relation="usage">
+        <childnode refid="8108" relation="usage">
           <edgelabel>id</edgelabel>
         </childnode>
       </node>
@@ -221,17 +221,17 @@
     <location file="libraries/chain/include/graphene/chain/withdraw_permission_object.hpp" line="46" column="1" bodyfile="libraries/chain/include/graphene/chain/withdraw_permission_object.hpp" bodystart="45" bodyend="85"/>
     <listofallmembers>
       <member refid="classgraphene_1_1chain_1_1withdraw__permission__object_1a08e2473a992ea8090180c8a9705abd95" prot="public" virt="non-virtual"><scope>graphene::chain::withdraw_permission_object</scope><name>authorized_account</name></member>
-      <member refid="classgraphene_1_1chain_1_1withdraw__permission__object_1a306d0b35bad89255dc5359dd90c81fcc" prot="public" virt="non-virtual"><scope>graphene::chain::withdraw_permission_object</scope><name>available_this_period</name></member>
+      <member refid="classgraphene_1_1chain_1_1withdraw__permission__object_1aa70296c7cc6e7acf0d6f3b7dbe299081" prot="public" virt="non-virtual"><scope>graphene::chain::withdraw_permission_object</scope><name>available_this_period</name></member>
       <member refid="classgraphene_1_1chain_1_1withdraw__permission__object_1ab3e615c1854f48684c2988c1b0ad2971" prot="public" virt="non-virtual"><scope>graphene::chain::withdraw_permission_object</scope><name>claimed_this_period</name></member>
-      <member refid="classgraphene_1_1db_1_1abstract__object_1ac88be3ec7e745113b522a77fda236415" prot="public" virt="virtual"><scope>graphene::chain::withdraw_permission_object</scope><name>clone</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1a189144fd7eef0317898bc83b30b143c6" prot="public" virt="virtual"><scope>graphene::chain::withdraw_permission_object</scope><name>clone</name></member>
       <member refid="classgraphene_1_1chain_1_1withdraw__permission__object_1aee496512e5274d67e09bb0071c001a82" prot="public" virt="non-virtual"><scope>graphene::chain::withdraw_permission_object</scope><name>expiration</name></member>
       <member refid="classgraphene_1_1db_1_1object_1a2ce812569d565a45dda1420cfbdf79ad" prot="public" virt="non-virtual"><scope>graphene::chain::withdraw_permission_object</scope><name>id</name></member>
       <member refid="classgraphene_1_1db_1_1abstract__object_1ad7329292e8fa9035cf2596d72c4868b5" prot="public" virt="virtual"><scope>graphene::chain::withdraw_permission_object</scope><name>move_from</name></member>
       <member refid="classgraphene_1_1db_1_1object_1a64864992a46d9d52836afe1a52a2e394" prot="public" virt="non-virtual"><scope>graphene::chain::withdraw_permission_object</scope><name>object</name></member>
-      <member refid="classgraphene_1_1db_1_1abstract__object_1ac4ac2d1b3162ff0ce00d050fd4184433" prot="public" virt="virtual"><scope>graphene::chain::withdraw_permission_object</scope><name>pack</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1a792a9c05cfe1cf7628cb6f8c4a65b0f7" prot="public" virt="virtual"><scope>graphene::chain::withdraw_permission_object</scope><name>pack</name></member>
       <member refid="classgraphene_1_1chain_1_1withdraw__permission__object_1aedb247706c383a90c0122a25a0d54930" prot="public" virt="non-virtual"><scope>graphene::chain::withdraw_permission_object</scope><name>period_start_time</name></member>
       <member refid="classgraphene_1_1chain_1_1withdraw__permission__object_1aed6abab5b122abaf8068c3d8858d2afb" prot="public" virt="non-virtual"><scope>graphene::chain::withdraw_permission_object</scope><name>space_id</name></member>
-      <member refid="classgraphene_1_1db_1_1abstract__object_1a8c952ac795604b0d1da988e88b8bb0fb" prot="public" virt="virtual"><scope>graphene::chain::withdraw_permission_object</scope><name>to_variant</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1a6f0f2e9eb0399057ff3334bf328b5007" prot="public" virt="virtual"><scope>graphene::chain::withdraw_permission_object</scope><name>to_variant</name></member>
       <member refid="classgraphene_1_1chain_1_1withdraw__permission__object_1a81d4767aa60254b87ff1f3978d95d997" prot="public" virt="non-virtual"><scope>graphene::chain::withdraw_permission_object</scope><name>type_id</name></member>
       <member refid="classgraphene_1_1chain_1_1withdraw__permission__object_1ad0625fbe1d350edecf66799080675dc6" prot="public" virt="non-virtual"><scope>graphene::chain::withdraw_permission_object</scope><name>withdraw_from_account</name></member>
       <member refid="classgraphene_1_1chain_1_1withdraw__permission__object_1a913df749570eb66da566c0ba830356a7" prot="public" virt="non-virtual"><scope>graphene::chain::withdraw_permission_object</scope><name>withdrawal_limit</name></member>

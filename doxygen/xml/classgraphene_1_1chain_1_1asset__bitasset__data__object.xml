@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="classgraphene_1_1chain_1_1asset__bitasset__data__object" kind="class" language="C++" prot="public">
     <compoundname>graphene::chain::asset_bitasset_data_object</compoundname>
     <basecompoundref refid="classgraphene_1_1db_1_1abstract__object" prot="public" virt="non-virtual">graphene::db::abstract_object&lt; asset_bitasset_data_object &gt;</basecompoundref>
@@ -13,10 +13,10 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>In the event of a black swan, the swan price is saved in the settlement price, and all margin positions are settled at the same price with the siezed collateral being moved into the settlement fund. From this point on no further updates to the asset are permitted (no feeds, etc) and forced settlement occurs immediately when requested, using the settlement price and fund. Price at which force settlements of a black swanned asset will occur </para>        </detaileddescription>
+<para>In the event of global settlement, all margin positions are settled with the siezed collateral being moved into the settlement fund. From this point on forced settlement occurs immediately when requested, using the settlement price and fund. Price at which force settlements of a globally settled asset will occur </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="309" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="309" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="313" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="313" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a55c343f6d6333ec3687b13c93577ee39" prot="public" static="no" mutable="no">
         <type><ref refid="namespacegraphene_1_1protocol_1a69b2104c1c11eed2d17bd29b86713347" kindref="member">share_type</ref></type>
@@ -24,12 +24,40 @@
         <argsstring></argsstring>
         <name>settlement_fund</name>
         <briefdescription>
-<para>Amount of collateral which is available for force settlement. </para>        </briefdescription>
+<para>Amount of collateral which is available for force settlement due to global settlement. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="311" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="311" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="315" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="315" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <memberdef kind="variable" id="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a07a5298f604a619cc63c75283982b1ac" prot="public" static="no" mutable="no">
+        <type><ref refid="namespacegraphene_1_1protocol_1a69b2104c1c11eed2d17bd29b86713347" kindref="member">share_type</ref></type>
+        <definition>share_type graphene::chain::asset_bitasset_data_object::individual_settlement_debt</definition>
+        <argsstring></argsstring>
+        <name>individual_settlement_debt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The individual settlement pool. In the event of individual settlements to fund, debt and collateral of the margin positions which got settled are moved here.</para><para>Amount of debt due to individual settlements </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="323" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="323" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgraphene_1_1chain_1_1asset__bitasset__data__object_1af584909d33443343a8b0789ad5c5e6be" prot="public" static="no" mutable="no">
+        <type><ref refid="namespacegraphene_1_1protocol_1a69b2104c1c11eed2d17bd29b86713347" kindref="member">share_type</ref></type>
+        <definition>share_type graphene::chain::asset_bitasset_data_object::individual_settlement_fund</definition>
+        <argsstring></argsstring>
+        <name>individual_settlement_fund</name>
+        <briefdescription>
+<para>Amount of collateral which is available for force settlement due to individual settlements. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="325" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="325" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-attrib">
@@ -45,7 +73,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="257" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="257" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="261" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="261" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1asset__bitasset__data__object_1afb998196255588bbc29c40b41a7cac6a" prot="public" static="yes" mutable="no">
         <type>constexpr uint8_t</type>
@@ -59,7 +87,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="258" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="258" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="262" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="262" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-attrib">
@@ -74,7 +102,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="261" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="261" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="265" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="265" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1asset__bitasset__data__object_1ab630e94f98a44dfd1211b0b21bb0d58a" prot="public" static="no" mutable="no">
         <type><ref refid="structgraphene_1_1protocol_1_1bitasset__options" kindref="compound">bitasset_options</ref></type>
@@ -87,20 +115,33 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="264" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="264" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="268" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="268" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a39b2bbd562e9f2acd5e6246629b6d5e9" prot="public" static="no" mutable="no">
-        <type>flat_map&lt; account_id_type, pair&lt; <ref refid="classfc_1_1time__point__sec" kindref="compound">time_point_sec</ref>, <ref refid="structgraphene_1_1chain_1_1price__feed__with__icr" kindref="compound">price_feed_with_icr</ref> &gt; &gt;</type>
+        <type>flat_map&lt; account_id_type, pair&lt; time_point_sec, <ref refid="structgraphene_1_1chain_1_1price__feed__with__icr" kindref="compound">price_feed_with_icr</ref> &gt; &gt;</type>
         <definition>flat_map&lt;account_id_type, pair&lt;time_point_sec,price_feed_with_icr&gt; &gt; graphene::chain::asset_bitasset_data_object::feeds</definition>
         <argsstring></argsstring>
         <name>feeds</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Feeds published for this asset. If issuer is not committee, the keys in this map are the feed publishing accounts; otherwise, the feed publishers are the currently active committee_members and witnesses and this map should be treated as an implementation detail. The timestamp on each feed is the time it was published. </para>        </detaileddescription>
+<para>Feeds published for this asset. The keys in this map are the feed publishing accounts. The timestamp on each feed is the time it was published. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="269" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="269" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="273" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="273" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a06fa836f4412ec1ca52e881d84bcb78c" prot="public" static="no" mutable="no">
+        <type><ref refid="structgraphene_1_1chain_1_1price__feed__with__icr" kindref="compound">price_feed_with_icr</ref></type>
+        <definition>price_feed_with_icr graphene::chain::asset_bitasset_data_object::median_feed</definition>
+        <argsstring></argsstring>
+        <name>median_feed</name>
+        <briefdescription>
+<para>This is the median of values from the currently active feeds. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="275" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="275" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a16c8791b8387ccf5d9e4d69906e04d79" prot="public" static="no" mutable="no">
         <type><ref refid="structgraphene_1_1chain_1_1price__feed__with__icr" kindref="compound">price_feed_with_icr</ref></type>
@@ -108,15 +149,15 @@
         <argsstring></argsstring>
         <name>current_feed</name>
         <briefdescription>
-        </briefdescription>
+<para>This is the currently active price feed, calculated from <ref refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a06fa836f4412ec1ca52e881d84bcb78c" kindref="member">median_feed</ref> and other parameters. </para>        </briefdescription>
         <detaileddescription>
-<para>This is the currently active price feed, calculated as the median of values from the currently active feeds. </para>        </detaileddescription>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="272" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="272" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="277" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="277" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a8ff500d4aad42067bdcefa153d3d863f" prot="public" static="no" mutable="no">
-        <type><ref refid="classfc_1_1time__point__sec" kindref="compound">time_point_sec</ref></type>
+        <type>time_point_sec</type>
         <definition>time_point_sec graphene::chain::asset_bitasset_data_object::current_feed_publication_time</definition>
         <argsstring></argsstring>
         <name>current_feed_publication_time</name>
@@ -126,7 +167,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="274" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="274" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="279" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="279" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a3541067035a7b76c760db8b06c0447a5" prot="public" static="no" mutable="no">
         <type><ref refid="structgraphene_1_1protocol_1_1price" kindref="compound">price</ref></type>
@@ -139,7 +180,7 @@
 <para>Call orders with collateralization (aka collateral/debt) not greater than this value are in margin call territory. This value is derived from <ref refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a16c8791b8387ccf5d9e4d69906e04d79" kindref="member">current_feed</ref> for better performance and should be kept consistent. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="279" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="279" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="288" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="288" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1asset__bitasset__data__object_1ad69a68d567d0e41c3273f8b000f6297e" prot="public" static="no" mutable="no">
         <type><ref refid="structgraphene_1_1protocol_1_1price" kindref="compound">price</ref></type>
@@ -152,7 +193,7 @@
 <para>After BSIP77, when creating a new debt position or updating an existing position, the position will be checked against the <computeroutput>initial_collateral_ratio</computeroutput> (ICR) parameter in the bitasset options. This value is derived from <ref refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a16c8791b8387ccf5d9e4d69906e04d79" kindref="member">current_feed</ref> (which includes <computeroutput>ICR</computeroutput>) for better performance and should be kept consistent. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="284" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="284" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="293" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="293" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1asset__bitasset__data__object_1af28db7bb58ddf850416f7346697e3b7c" prot="public" static="no" mutable="no">
         <type>bool</type>
@@ -166,7 +207,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="291" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="291" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="296" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="296" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a7150f03a6553d183c46191d2b718ba40" prot="public" static="no" mutable="no">
         <type><ref refid="namespacegraphene_1_1protocol_1a69b2104c1c11eed2d17bd29b86713347" kindref="member">share_type</ref></type>
@@ -179,7 +220,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="294" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="294" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="299" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="299" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a5f91410db5c681ba6f2a81d769d8738a" prot="public" static="no" mutable="no">
         <type>bool</type>
@@ -193,7 +234,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="315" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="315" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="363" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="363" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a1c0b61c9b2566a0dc71245469a1f6e27" prot="public" static="no" mutable="no">
         <type>bool</type>
@@ -207,27 +248,28 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="318" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="318" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="366" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="366" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a46901a41015e057715d5ee21ae84745f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void asset_bitasset_data_object::refresh_cache</definition>
-        <argsstring>()</argsstring>
-        <name>refresh_cache</name>
+      <memberdef kind="function" id="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a8286f0dda49b62b8e29669ce0ccd2416" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool graphene::chain::asset_bitasset_data_object::is_current_feed_price_capped</definition>
+        <argsstring>() const</argsstring>
+        <name>is_current_feed_price_capped</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Derive <ref refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a3541067035a7b76c760db8b06c0447a5" kindref="member">current_maintenance_collateralization</ref> and <ref refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1ad69a68d567d0e41c3273f8b000f6297e" kindref="member">current_initial_collateralization</ref> from other member variables. </para>        </detaileddescription>
+<para><simplesect kind="return"><para>whether <ref refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a16c8791b8387ccf5d9e4d69906e04d79" kindref="member">current_feed</ref> is different from <ref refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a06fa836f4412ec1ca52e881d84bcb78c" kindref="member">median_feed</ref> </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="288" column="1" bodyfile="libraries/chain/asset_object.cpp" bodystart="134" bodyend="141"/>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="282" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="282" bodyend="283"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1chain_1_1asset__bitasset__data__object_1aef2077f78f8925a29857b8e89d4b9733" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1chain_1_1asset__bitasset__data__object_1ae61fd1c0a87776a45c707c07b9e098f2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="namespacegraphene_1_1protocol_1a69b2104c1c11eed2d17bd29b86713347" kindref="member">share_type</ref></type>
-        <definition>share_type asset_bitasset_data_object::max_force_settlement_volume</definition>
-        <argsstring>(share_type current_supply) const </argsstring>
+        <definition>share_type graphene::chain::asset_bitasset_data_object::max_force_settlement_volume</definition>
+        <argsstring>(share_type current_supply) const</argsstring>
         <name>max_force_settlement_volume</name>
         <param>
           <type><ref refid="namespacegraphene_1_1protocol_1a69b2104c1c11eed2d17bd29b86713347" kindref="member">share_type</ref></type>
@@ -239,25 +281,105 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="296" column="1" bodyfile="libraries/chain/asset_object.cpp" bodystart="33" bodyend="45"/>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="301" column="1" bodyfile="libraries/chain/asset_object.cpp" bodystart="33" bodyend="45"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a556cb4413ab04ccfc6f0539b9a461dc3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a906bc8ea2b54055d98213b84e27ebd2a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
         <definition>bool graphene::chain::asset_bitasset_data_object::has_settlement</definition>
-        <argsstring>() const </argsstring>
+        <argsstring>() const</argsstring>
         <name>has_settlement</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>return true if there has been a black swan, false otherwise </para>        </detaileddescription>
+<para><simplesect kind="return"><para>true if the bitasset has been globally settled, false otherwise </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="299" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="299" bodyend="299"/>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="304" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="304" bodyend="304"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a5d464619713b157bbd20791a1b484582" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1chain_1_1asset__bitasset__data__object_1ab18f5699ffe97a71793d718f4123e7ba" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool graphene::chain::asset_bitasset_data_object::has_individual_settlement</definition>
+        <argsstring>() const</argsstring>
+        <name>has_individual_settlement</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if the individual settlement pool is not empty, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="329" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="329" bodyend="329"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1chain_1_1asset__bitasset__data__object_1aa5188244d3131bedd0690f784efc1196" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structgraphene_1_1protocol_1_1price" kindref="compound">price</ref></type>
+        <definition>price graphene::chain::asset_bitasset_data_object::get_individual_settlement_price</definition>
+        <argsstring>() const</argsstring>
+        <name>get_individual_settlement_price</name>
+        <briefdescription>
+<para>Get the price of the individual settlement pool. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="332" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="332" bodyend="336"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a235ec7cc368e035f1268bd1c268b14a6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structgraphene_1_1protocol_1_1bitasset__options_1a86d8df815d5ff26c11c9894fefe202be" kindref="member">bitasset_options::black_swan_response_type</ref></type>
+        <definition>bitasset_options::black_swan_response_type graphene::chain::asset_bitasset_data_object::get_black_swan_response_method</definition>
+        <argsstring>() const</argsstring>
+        <name>get_black_swan_response_method</name>
+        <briefdescription>
+<para>Get the effective black swan response method of this bitasset. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="339" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="339" bodyend="342"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1chain_1_1asset__bitasset__data__object_1aaf0ba735a024c9af5ce2e7ce43c55e06" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structgraphene_1_1protocol_1_1price" kindref="compound">price</ref></type>
+        <definition>price graphene::chain::asset_bitasset_data_object::get_margin_call_order_price</definition>
+        <argsstring>() const</argsstring>
+        <name>get_margin_call_order_price</name>
+        <briefdescription>
+<para>Get margin call order price (MCOP) of this bitasset. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="345" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="345" bodyend="348"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a3e315b446085e6148b1979225350a70f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacegraphene_1_1protocol_1a54851df9ea21bef79e7cdb2da2e3e3cc" kindref="member">ratio_type</ref></type>
+        <definition>ratio_type graphene::chain::asset_bitasset_data_object::get_margin_call_order_ratio</definition>
+        <argsstring>() const</argsstring>
+        <name>get_margin_call_order_ratio</name>
+        <briefdescription>
+<para>Get margin call order ratio (MCOR) of this bitasset. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="351" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="351" bodyend="354"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1chain_1_1asset__bitasset__data__object_1afb85dbb59fb010aef5d3dd6ed2aa9938" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacegraphene_1_1protocol_1a54851df9ea21bef79e7cdb2da2e3e3cc" kindref="member">ratio_type</ref></type>
+        <definition>ratio_type graphene::chain::asset_bitasset_data_object::get_margin_call_pays_ratio</definition>
+        <argsstring>() const</argsstring>
+        <name>get_margin_call_pays_ratio</name>
+        <briefdescription>
+<para>Get margin call pays ratio (MCPR) of this bitasset. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="357" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="357" bodyend="360"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1chain_1_1asset__bitasset__data__object_1ab94b9dad7f202a38716609dc3ce05bcc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
         <definition>bool graphene::chain::asset_bitasset_data_object::need_to_update_cer</definition>
-        <argsstring>() const </argsstring>
+        <argsstring>() const</argsstring>
         <name>need_to_update_cer</name>
         <briefdescription>
 <para>Whether need to update core_exchange_rate in <ref refid="classgraphene_1_1chain_1_1asset__object" kindref="compound">asset_object</ref>. </para>        </briefdescription>
@@ -265,12 +387,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="321" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="321" bodyend="324"/>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="369" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="369" bodyend="372"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1chain_1_1asset__bitasset__data__object_1aec74ced8e782926ac0fab998a480c7e1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classfc_1_1time__point__sec" kindref="compound">time_point_sec</ref></type>
+      <memberdef kind="function" id="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a376e0082aaf4e3fd5c5dff81b806bd10" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>time_point_sec</type>
         <definition>time_point_sec graphene::chain::asset_bitasset_data_object::feed_expiration_time</definition>
-        <argsstring>() const </argsstring>
+        <argsstring>() const</argsstring>
         <name>feed_expiration_time</name>
         <briefdescription>
 <para>The time when <ref refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a16c8791b8387ccf5d9e4d69906e04d79" kindref="member">current_feed</ref> would expire. </para>        </briefdescription>
@@ -278,41 +400,42 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="327" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="327" bodyend="334"/>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="375" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="375" bodyend="382"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a6b72e8bcb5fb1666e68cdaf55c0b7bd6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1chain_1_1asset__bitasset__data__object_1ac3d5e7405d319c95e1b29736a9602538" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
-        <definition>bool graphene::chain::asset_bitasset_data_object::feed_is_expired_before_hardfork_615</definition>
-        <argsstring>(time_point_sec current_time) const </argsstring>
-        <name>feed_is_expired_before_hardfork_615</name>
+        <definition>bool graphene::chain::asset_bitasset_data_object::feed_is_expired_before_hf_615</definition>
+        <argsstring>(time_point_sec current_time) const</argsstring>
+        <name>feed_is_expired_before_hf_615</name>
         <param>
-          <type><ref refid="classfc_1_1time__point__sec" kindref="compound">time_point_sec</ref></type>
+          <type>time_point_sec</type>
           <declname>current_time</declname>
         </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>The old and buggy implementation of <ref refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a90a163ff94d31c49ca86dda5e3b1895c" kindref="member">feed_is_expired</ref> before the No. 615 hardfork. See <ulink url="https://github.com/cryptonomex/graphene/issues/615">https://github.com/cryptonomex/graphene/issues/615</ulink> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="335" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="335" bodyend="336"/>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="385" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="385" bodyend="386"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a89c8158d68fef5c9762cee227aff8450" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a90a163ff94d31c49ca86dda5e3b1895c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
         <definition>bool graphene::chain::asset_bitasset_data_object::feed_is_expired</definition>
-        <argsstring>(time_point_sec current_time) const </argsstring>
+        <argsstring>(time_point_sec current_time) const</argsstring>
         <name>feed_is_expired</name>
         <param>
-          <type><ref refid="classfc_1_1time__point__sec" kindref="compound">time_point_sec</ref></type>
+          <type>time_point_sec</type>
           <declname>current_time</declname>
         </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><simplesect kind="return"><para>whether <ref refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a16c8791b8387ccf5d9e4d69906e04d79" kindref="member">current_feed</ref> has expired </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="337" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="337" bodyend="338"/>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="388" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="388" bodyend="389"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a8a463d9f2ac83fffe60c97534e992094" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -333,7 +456,22 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="351" column="1" bodyfile="libraries/chain/asset_object.cpp" bodystart="47" bodyend="132"/>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="405" column="1" bodyfile="libraries/chain/asset_object.cpp" bodystart="47" bodyend="134"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classgraphene_1_1chain_1_1asset__bitasset__data__object_1af121fdfdf52730f20d6d7115bdeb698b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void graphene::chain::asset_bitasset_data_object::refresh_cache</definition>
+        <argsstring>()</argsstring>
+        <name>refresh_cache</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Derive <ref refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a3541067035a7b76c760db8b06c0447a5" kindref="member">current_maintenance_collateralization</ref> and <ref refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1ad69a68d567d0e41c3273f8b000f6297e" kindref="member">current_initial_collateralization</ref> from other member variables. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="409" column="1" bodyfile="libraries/chain/asset_object.cpp" bodystart="136" bodyend="143"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -359,6 +497,10 @@
       </node>
     </inheritancegraph>
     <collaborationgraph>
+      <node id="640">
+        <label>fc::optional&lt; uint8_t &gt;</label>
+        <link refid="classfc_1_1optional"/>
+      </node>
       <node id="636">
         <label>graphene::protocol::bitasset_options</label>
         <link refid="structgraphene_1_1protocol_1_1bitasset__options"/>
@@ -376,6 +518,9 @@
           <edgelabel>force_settle_fee_percent</edgelabel>
           <edgelabel>maintenance_collateral_ratio</edgelabel>
         </childnode>
+        <childnode refid="640" relation="usage">
+          <edgelabel>black_swan_response_method</edgelabel>
+        </childnode>
       </node>
       <node id="632">
         <label>graphene::chain::asset_bitasset_data_object</label>
@@ -385,43 +530,46 @@
         <childnode refid="636" relation="usage">
           <edgelabel>options</edgelabel>
         </childnode>
-        <childnode refid="640" relation="usage">
+        <childnode refid="641" relation="usage">
+          <edgelabel>individual_settlement_debt</edgelabel>
+          <edgelabel>individual_settlement_fund</edgelabel>
           <edgelabel>settlement_fund</edgelabel>
           <edgelabel>force_settled_volume</edgelabel>
         </childnode>
-        <childnode refid="641" relation="usage">
+        <childnode refid="642" relation="usage">
           <edgelabel>current_feed</edgelabel>
+          <edgelabel>median_feed</edgelabel>
         </childnode>
-        <childnode refid="643" relation="usage">
+        <childnode refid="644" relation="usage">
           <edgelabel>current_maintenance_collateralization</edgelabel>
           <edgelabel>settlement_price</edgelabel>
           <edgelabel>current_initial_collateralization</edgelabel>
         </childnode>
       </node>
-      <node id="643">
+      <node id="644">
         <label>graphene::protocol::price</label>
         <link refid="structgraphene_1_1protocol_1_1price"/>
-        <childnode refid="644" relation="usage">
+        <childnode refid="645" relation="usage">
           <edgelabel>base</edgelabel>
           <edgelabel>quote</edgelabel>
         </childnode>
       </node>
-      <node id="640">
+      <node id="641">
         <label>fc::safe&lt; int64_t &gt;</label>
         <link refid="structfc_1_1safe"/>
       </node>
-      <node id="642">
+      <node id="643">
         <label>graphene::protocol::price_feed</label>
         <link refid="structgraphene_1_1protocol_1_1price__feed"/>
-        <childnode refid="643" relation="usage">
+        <childnode refid="644" relation="usage">
           <edgelabel>core_exchange_rate</edgelabel>
           <edgelabel>settlement_price</edgelabel>
         </childnode>
       </node>
-      <node id="644">
+      <node id="645">
         <label>graphene::protocol::asset</label>
         <link refid="structgraphene_1_1protocol_1_1asset"/>
-        <childnode refid="640" relation="usage">
+        <childnode refid="641" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
       </node>
@@ -429,10 +577,10 @@
         <label>graphene::db::object_id_type</label>
         <link refid="structgraphene_1_1db_1_1object__id__type"/>
       </node>
-      <node id="641">
+      <node id="642">
         <label>graphene::chain::price_feed_with_icr</label>
         <link refid="structgraphene_1_1chain_1_1price__feed__with__icr"/>
-        <childnode refid="642" relation="public-inheritance">
+        <childnode refid="643" relation="public-inheritance">
         </childnode>
       </node>
       <node id="634">
@@ -460,35 +608,45 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="255" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="254" bodyend="352"/>
+    <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="259" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="258" bodyend="410"/>
     <listofallmembers>
       <member refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a5f91410db5c681ba6f2a81d769d8738a" prot="public" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>asset_cer_updated</name></member>
       <member refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a566fab695c27973fb55b8eec34575709" prot="public" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>asset_id</name></member>
-      <member refid="classgraphene_1_1db_1_1abstract__object_1ac88be3ec7e745113b522a77fda236415" prot="public" virt="virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>clone</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1a189144fd7eef0317898bc83b30b143c6" prot="public" virt="virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>clone</name></member>
       <member refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a16c8791b8387ccf5d9e4d69906e04d79" prot="public" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>current_feed</name></member>
       <member refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a8ff500d4aad42067bdcefa153d3d863f" prot="public" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>current_feed_publication_time</name></member>
       <member refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1ad69a68d567d0e41c3273f8b000f6297e" prot="public" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>current_initial_collateralization</name></member>
       <member refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a3541067035a7b76c760db8b06c0447a5" prot="public" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>current_maintenance_collateralization</name></member>
       <member refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a1c0b61c9b2566a0dc71245469a1f6e27" prot="public" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>feed_cer_updated</name></member>
-      <member refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1aec74ced8e782926ac0fab998a480c7e1" prot="public" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>feed_expiration_time</name></member>
-      <member refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a89c8158d68fef5c9762cee227aff8450" prot="public" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>feed_is_expired</name></member>
-      <member refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a6b72e8bcb5fb1666e68cdaf55c0b7bd6" prot="public" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>feed_is_expired_before_hardfork_615</name></member>
+      <member refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a376e0082aaf4e3fd5c5dff81b806bd10" prot="public" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>feed_expiration_time</name></member>
+      <member refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a90a163ff94d31c49ca86dda5e3b1895c" prot="public" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>feed_is_expired</name></member>
+      <member refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1ac3d5e7405d319c95e1b29736a9602538" prot="public" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>feed_is_expired_before_hf_615</name></member>
       <member refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a39b2bbd562e9f2acd5e6246629b6d5e9" prot="public" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>feeds</name></member>
       <member refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a7150f03a6553d183c46191d2b718ba40" prot="public" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>force_settled_volume</name></member>
-      <member refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a556cb4413ab04ccfc6f0539b9a461dc3" prot="public" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>has_settlement</name></member>
+      <member refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a235ec7cc368e035f1268bd1c268b14a6" prot="public" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>get_black_swan_response_method</name></member>
+      <member refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1aa5188244d3131bedd0690f784efc1196" prot="public" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>get_individual_settlement_price</name></member>
+      <member refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1aaf0ba735a024c9af5ce2e7ce43c55e06" prot="public" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>get_margin_call_order_price</name></member>
+      <member refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a3e315b446085e6148b1979225350a70f" prot="public" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>get_margin_call_order_ratio</name></member>
+      <member refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1afb85dbb59fb010aef5d3dd6ed2aa9938" prot="public" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>get_margin_call_pays_ratio</name></member>
+      <member refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1ab18f5699ffe97a71793d718f4123e7ba" prot="public" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>has_individual_settlement</name></member>
+      <member refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a906bc8ea2b54055d98213b84e27ebd2a" prot="public" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>has_settlement</name></member>
       <member refid="classgraphene_1_1db_1_1object_1a2ce812569d565a45dda1420cfbdf79ad" prot="public" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>id</name></member>
+      <member refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a07a5298f604a619cc63c75283982b1ac" prot="public" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>individual_settlement_debt</name></member>
+      <member refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1af584909d33443343a8b0789ad5c5e6be" prot="public" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>individual_settlement_fund</name></member>
+      <member refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a8286f0dda49b62b8e29669ce0ccd2416" prot="public" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>is_current_feed_price_capped</name></member>
       <member refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1af28db7bb58ddf850416f7346697e3b7c" prot="public" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>is_prediction_market</name></member>
-      <member refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1aef2077f78f8925a29857b8e89d4b9733" prot="public" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>max_force_settlement_volume</name></member>
+      <member refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1ae61fd1c0a87776a45c707c07b9e098f2" prot="public" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>max_force_settlement_volume</name></member>
+      <member refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a06fa836f4412ec1ca52e881d84bcb78c" prot="public" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>median_feed</name></member>
       <member refid="classgraphene_1_1db_1_1abstract__object_1ad7329292e8fa9035cf2596d72c4868b5" prot="public" virt="virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>move_from</name></member>
-      <member refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a5d464619713b157bbd20791a1b484582" prot="public" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>need_to_update_cer</name></member>
+      <member refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1ab94b9dad7f202a38716609dc3ce05bcc" prot="public" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>need_to_update_cer</name></member>
       <member refid="classgraphene_1_1db_1_1object_1a64864992a46d9d52836afe1a52a2e394" prot="public" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>object</name></member>
       <member refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1ab630e94f98a44dfd1211b0b21bb0d58a" prot="public" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>options</name></member>
-      <member refid="classgraphene_1_1db_1_1abstract__object_1ac4ac2d1b3162ff0ce00d050fd4184433" prot="public" virt="virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>pack</name></member>
-      <member refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a46901a41015e057715d5ee21ae84745f" prot="public" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>refresh_cache</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1a792a9c05cfe1cf7628cb6f8c4a65b0f7" prot="public" virt="virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>pack</name></member>
+      <member refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1af121fdfdf52730f20d6d7115bdeb698b" prot="private" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>refresh_cache</name></member>
       <member refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a55c343f6d6333ec3687b13c93577ee39" prot="public" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>settlement_fund</name></member>
       <member refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a20e77723968f0bbafe4192946fd8fd38" prot="public" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>settlement_price</name></member>
       <member refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a3875e60e02988146faaeb6a6810f6937" prot="public" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>space_id</name></member>
-      <member refid="classgraphene_1_1db_1_1abstract__object_1a8c952ac795604b0d1da988e88b8bb0fb" prot="public" virt="virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>to_variant</name></member>
+      <member refid="classgraphene_1_1db_1_1abstract__object_1a6f0f2e9eb0399057ff3334bf328b5007" prot="public" virt="virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>to_variant</name></member>
       <member refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1afb998196255588bbc29c40b41a7cac6a" prot="public" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>type_id</name></member>
       <member refid="classgraphene_1_1chain_1_1asset__bitasset__data__object_1a8a463d9f2ac83fffe60c97534e992094" prot="public" virt="non-virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>update_median_feeds</name></member>
       <member refid="classgraphene_1_1db_1_1object_1ac457a859418c22014c07a3bcdc67ed04" prot="public" virt="virtual"><scope>graphene::chain::asset_bitasset_data_object</scope><name>~object</name></member>
