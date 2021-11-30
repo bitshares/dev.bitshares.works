@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="classgraphene_1_1db_1_1index" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>graphene::db::index</compoundname>
-    <derivedcompoundref refid="classgraphene_1_1db_1_1generic__index" prot="public" virt="non-virtual">graphene::db::generic_index&lt; T, boost::multi_index_container&lt; T, indexed_by&lt; ordered_unique&lt; tag&lt; by_id &gt;, member&lt; object, object_id_type,&amp;object::id &gt; &gt; &gt; &gt; &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classgraphene_1_1db_1_1generic__index" prot="public" virt="non-virtual">graphene::db::generic_index&lt; T, boost::multi_index_container&lt; T, indexed_by&lt; ordered_unique&lt; tag&lt; by_id &gt;, member&lt; object, object_id_type, &amp;object::id &gt; &gt; &gt; &gt; &gt;</derivedcompoundref>
     <derivedcompoundref refid="classgraphene_1_1db_1_1generic__index" prot="public" virt="non-virtual">graphene::db::generic_index&lt; ObjectType, MultiIndexType &gt;</derivedcompoundref>
     <derivedcompoundref refid="classgraphene_1_1db_1_1simple__index" prot="public" virt="non-virtual">graphene::db::simple_index&lt; T &gt;</derivedcompoundref>
     <includes refid="index_8hpp" local="no">index.hpp</includes>
@@ -212,10 +212,10 @@
         </inbodydescription>
         <location file="libraries/db/include/graphene/db/index.hpp" line="105" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1db_1_1index_1a7f383cf95ed471b4027d623212f0f578" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1db_1_1index_1a8afdd2aacd7a52c3c807be58340625a0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>const <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref> &amp;</type>
         <definition>const object&amp; graphene::db::index::get</definition>
-        <argsstring>(object_id_type id) const </argsstring>
+        <argsstring>(object_id_type id) const</argsstring>
         <name>get</name>
         <param>
           <type><ref refid="structgraphene_1_1db_1_1object__id__type" kindref="compound">object_id_type</ref></type>
@@ -391,36 +391,36 @@
     <detaileddescription>
 <para>All indexes assume that there exists an object ID space that will grow forever in a seqential manner. These IDs are used to identify the index, type, and instance of the object.</para><para>Items in an index can only be modified via a call to modify and all references to objects outside of that callback are const references.</para><para>Most implementations will probably be some form of boost::multi_index_container which means that they can covnert a reference to an object to an iterator. When at all possible save a pointer/reference to your objects rather than constantly looking them up by ID. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="4220">
+      <node id="4614">
         <label>graphene::db::primary_index&lt; graphene::db::generic_index &gt;</label>
         <link refid="classgraphene_1_1db_1_1primary__index"/>
-        <childnode refid="4219" relation="public-inheritance">
+        <childnode refid="4613" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4221">
+      <node id="4615">
         <label>graphene::db::simple_index&lt; T &gt;</label>
         <link refid="classgraphene_1_1db_1_1simple__index"/>
-        <childnode refid="4216" relation="public-inheritance">
+        <childnode refid="4610" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4217">
-        <label>graphene::db::generic_index&lt; T, boost::multi_index_container&lt; T, indexed_by&lt; ordered_unique&lt; tag&lt; by_id &gt;, member&lt; object, object_id_type,&amp;object::id &gt; &gt; &gt; &gt; &gt;</label>
-        <childnode refid="4216" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="4218">
+      <node id="4612">
         <label>graphene::db::sparse_index&lt; T &gt;</label>
         <link refid="structgraphene_1_1db_1_1sparse__index"/>
-        <childnode refid="4217" relation="public-inheritance">
+        <childnode refid="4611" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4219">
+      <node id="4611">
+        <label>graphene::db::generic_index&lt; T, boost::multi_index_container&lt; T, indexed_by&lt; ordered_unique&lt; tag&lt; by_id &gt;, member&lt; object, object_id_type, &amp;object::id &gt; &gt; &gt; &gt; &gt;</label>
+        <childnode refid="4610" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4613">
         <label>graphene::db::generic_index&lt; ObjectType, MultiIndexType &gt;</label>
         <link refid="classgraphene_1_1db_1_1generic__index"/>
-        <childnode refid="4216" relation="public-inheritance">
+        <childnode refid="4610" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4216">
+      <node id="4610">
         <label>graphene::db::index</label>
         <link refid="classgraphene_1_1db_1_1index"/>
       </node>
@@ -430,7 +430,7 @@
       <member refid="classgraphene_1_1db_1_1index_1a11118a11ceeb9853975f3e254038daa5" prot="public" virt="pure-virtual"><scope>graphene::db::index</scope><name>add_observer</name></member>
       <member refid="classgraphene_1_1db_1_1index_1a5498269afc8b822043d4d1e0b7b5a75e" prot="public" virt="pure-virtual"><scope>graphene::db::index</scope><name>create</name></member>
       <member refid="classgraphene_1_1db_1_1index_1a9649d19814aa188652d6a643bfe134b7" prot="public" virt="pure-virtual"><scope>graphene::db::index</scope><name>find</name></member>
-      <member refid="classgraphene_1_1db_1_1index_1a7f383cf95ed471b4027d623212f0f578" prot="public" virt="non-virtual"><scope>graphene::db::index</scope><name>get</name></member>
+      <member refid="classgraphene_1_1db_1_1index_1a8afdd2aacd7a52c3c807be58340625a0" prot="public" virt="non-virtual"><scope>graphene::db::index</scope><name>get</name></member>
       <member refid="classgraphene_1_1db_1_1index_1ab1bda1803d712322418bce3ca44d97b5" prot="public" virt="pure-virtual"><scope>graphene::db::index</scope><name>get_next_id</name></member>
       <member refid="classgraphene_1_1db_1_1index_1a51be62de2c4ca916d3b14c39499e13e4" prot="public" virt="pure-virtual"><scope>graphene::db::index</scope><name>insert</name></member>
       <member refid="classgraphene_1_1db_1_1index_1a0d3d4f6b5fbc219f20ba40da9ad1e70c" prot="public" virt="pure-virtual"><scope>graphene::db::index</scope><name>inspect_all_objects</name></member>

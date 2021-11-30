@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="structgraphene_1_1chain_1_1price__feed__with__icr" kind="struct" language="C++" prot="public">
     <compoundname>graphene::chain::price_feed_with_icr</compoundname>
     <basecompoundref refid="structgraphene_1_1protocol_1_1price__feed" prot="public" virt="non-virtual">graphene::protocol::price_feed</basecompoundref>
@@ -17,7 +17,7 @@
 <para>After BSIP77, when creating a new debt position or updating an existing position, the position will be checked against this parameter. Fixed point between 1.000 and 10.000, implied fixed point denominator is GRAPHENE_COLLATERAL_RATIO_DENOM </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="233" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="233" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="237" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="237" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="235" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="235" bodyend="237"/>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="239" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="239" bodyend="241"/>
       </memberdef>
       <memberdef kind="function" id="structgraphene_1_1chain_1_1price__feed__with__icr_1ab7b2f4e6a03a42379efe71a83506e735" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -54,20 +54,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="239" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="239" bodyend="241"/>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="243" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="243" bodyend="245"/>
       </memberdef>
-      <memberdef kind="function" id="structgraphene_1_1chain_1_1price__feed__with__icr_1a8739008b85bb58a3aeebbb5dab0fb6ab" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structgraphene_1_1chain_1_1price__feed__with__icr_1ad479a7da0c7305515d50fef021d265da" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structgraphene_1_1protocol_1_1price" kindref="compound">price</ref></type>
-        <definition>price price_feed_with_icr::calculate_initial_collateralization</definition>
-        <argsstring>() const </argsstring>
-        <name>calculate_initial_collateralization</name>
+        <definition>price graphene::chain::price_feed_with_icr::get_initial_collateralization</definition>
+        <argsstring>() const</argsstring>
+        <name>get_initial_collateralization</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
 <para>The result will be used to check new debt positions and position updates. Calculation: ~settlement_price * initial_collateral_ratio / GRAPHENE_COLLATERAL_RATIO_DENOM </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="245" column="1" bodyfile="libraries/chain/asset_object.cpp" bodystart="143" bodyend="148"/>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="249" column="1" bodyfile="libraries/chain/asset_object.cpp" bodystart="145" bodyend="150"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -75,70 +75,71 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="5675">
+      <node id="6071">
         <label>graphene::protocol::price_feed</label>
         <link refid="structgraphene_1_1protocol_1_1price__feed"/>
       </node>
-      <node id="5674">
+      <node id="6070">
         <label>graphene::chain::price_feed_with_icr</label>
         <link refid="structgraphene_1_1chain_1_1price__feed__with__icr"/>
-        <childnode refid="5675" relation="public-inheritance">
+        <childnode refid="6071" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="5678">
+      <node id="6074">
         <label>graphene::protocol::price</label>
         <link refid="structgraphene_1_1protocol_1_1price"/>
-        <childnode refid="5679" relation="usage">
+        <childnode refid="6075" relation="usage">
           <edgelabel>base</edgelabel>
           <edgelabel>quote</edgelabel>
         </childnode>
       </node>
-      <node id="5680">
+      <node id="6076">
         <label>fc::safe&lt; int64_t &gt;</label>
         <link refid="structfc_1_1safe"/>
       </node>
-      <node id="5677">
+      <node id="6073">
         <label>graphene::protocol::price_feed</label>
         <link refid="structgraphene_1_1protocol_1_1price__feed"/>
-        <childnode refid="5678" relation="usage">
+        <childnode refid="6074" relation="usage">
           <edgelabel>core_exchange_rate</edgelabel>
           <edgelabel>settlement_price</edgelabel>
         </childnode>
       </node>
-      <node id="5679">
+      <node id="6075">
         <label>graphene::protocol::asset</label>
         <link refid="structgraphene_1_1protocol_1_1asset"/>
-        <childnode refid="5680" relation="usage">
+        <childnode refid="6076" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
       </node>
-      <node id="5676">
+      <node id="6072">
         <label>graphene::chain::price_feed_with_icr</label>
         <link refid="structgraphene_1_1chain_1_1price__feed__with__icr"/>
-        <childnode refid="5677" relation="public-inheritance">
+        <childnode refid="6073" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="229" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="228" bodyend="246"/>
+    <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="233" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="232" bodyend="250"/>
     <listofallmembers>
-      <member refid="structgraphene_1_1chain_1_1price__feed__with__icr_1a8739008b85bb58a3aeebbb5dab0fb6ab" prot="public" virt="non-virtual"><scope>graphene::chain::price_feed_with_icr</scope><name>calculate_initial_collateralization</name></member>
       <member refid="structgraphene_1_1protocol_1_1price__feed_1ae6bf318a90269e2e638df9b3cb89504e" prot="public" virt="non-virtual"><scope>graphene::chain::price_feed_with_icr</scope><name>core_exchange_rate</name></member>
+      <member refid="structgraphene_1_1chain_1_1price__feed__with__icr_1ad479a7da0c7305515d50fef021d265da" prot="public" virt="non-virtual"><scope>graphene::chain::price_feed_with_icr</scope><name>get_initial_collateralization</name></member>
       <member refid="structgraphene_1_1chain_1_1price__feed__with__icr_1af99bb9515168ac49ba66b5a9b222c1fc" prot="public" virt="non-virtual"><scope>graphene::chain::price_feed_with_icr</scope><name>initial_collateral_ratio</name></member>
-      <member refid="structgraphene_1_1protocol_1_1price__feed_1a3744ea0549728d46de853ccca1a6b2ed" prot="public" virt="non-virtual"><scope>graphene::chain::price_feed_with_icr</scope><name>is_for</name></member>
+      <member refid="structgraphene_1_1protocol_1_1price__feed_1ac9864f61729920e739c9272b89719273" prot="public" virt="non-virtual"><scope>graphene::chain::price_feed_with_icr</scope><name>is_for</name></member>
       <member refid="structgraphene_1_1protocol_1_1price__feed_1a81a886eed9c27f296d4631a885b97c8a" prot="public" virt="non-virtual"><scope>graphene::chain::price_feed_with_icr</scope><name>maintenance_collateral_ratio</name></member>
-      <member refid="structgraphene_1_1protocol_1_1price__feed_1adacaebc74ffb2ff890d2ad1e846724d3" prot="public" virt="non-virtual"><scope>graphene::chain::price_feed_with_icr</scope><name>maintenance_collateralization</name></member>
-      <member refid="structgraphene_1_1protocol_1_1price__feed_1a23f849cee0395b24f3658f0d5d70011b" prot="public" virt="non-virtual"><scope>graphene::chain::price_feed_with_icr</scope><name>margin_call_order_price</name></member>
-      <member refid="structgraphene_1_1protocol_1_1price__feed_1a2ff1f8fd1cefb4e471b65e076f6d57e8" prot="public" virt="non-virtual"><scope>graphene::chain::price_feed_with_icr</scope><name>margin_call_params_equal</name></member>
-      <member refid="structgraphene_1_1protocol_1_1price__feed_1a6256358fc69d3f8ba50cb467909d21af" prot="public" virt="non-virtual"><scope>graphene::chain::price_feed_with_icr</scope><name>margin_call_pays_ratio</name></member>
-      <member refid="structgraphene_1_1protocol_1_1price__feed_1a5a52d5e379456e44dcbda5237f7722ea" prot="public" virt="non-virtual"><scope>graphene::chain::price_feed_with_icr</scope><name>max_short_squeeze_price</name></member>
-      <member refid="structgraphene_1_1protocol_1_1price__feed_1a3ce8bcddff068f160f85d8bb6dc61013" prot="public" virt="non-virtual"><scope>graphene::chain::price_feed_with_icr</scope><name>max_short_squeeze_price_before_hf_1270</name></member>
+      <member refid="structgraphene_1_1protocol_1_1price__feed_1a30f1e1b7f21c0e198dfae800c4d11273" prot="public" virt="non-virtual"><scope>graphene::chain::price_feed_with_icr</scope><name>maintenance_collateralization</name></member>
+      <member refid="structgraphene_1_1protocol_1_1price__feed_1aea09f66a8c1a41cd77b41e376c8760da" prot="public" virt="non-virtual"><scope>graphene::chain::price_feed_with_icr</scope><name>margin_call_order_price</name></member>
+      <member refid="structgraphene_1_1protocol_1_1price__feed_1a91e6fc8c402647bab588133ce172d3b3" prot="public" virt="non-virtual"><scope>graphene::chain::price_feed_with_icr</scope><name>margin_call_order_ratio</name></member>
+      <member refid="structgraphene_1_1protocol_1_1price__feed_1a0bdb5d3b180dd7df1ecf147966329a37" prot="public" virt="non-virtual"><scope>graphene::chain::price_feed_with_icr</scope><name>margin_call_params_equal</name></member>
+      <member refid="structgraphene_1_1protocol_1_1price__feed_1abdf72aeccadb7c3a61165f557d7b5b6c" prot="public" virt="non-virtual"><scope>graphene::chain::price_feed_with_icr</scope><name>margin_call_pays_ratio</name></member>
+      <member refid="structgraphene_1_1protocol_1_1price__feed_1af018fd5a315703a5afcd20fdf287a464" prot="public" virt="non-virtual"><scope>graphene::chain::price_feed_with_icr</scope><name>max_short_squeeze_price</name></member>
+      <member refid="structgraphene_1_1protocol_1_1price__feed_1a98463272d7cab66ef4201b261eca5c43" prot="public" virt="non-virtual"><scope>graphene::chain::price_feed_with_icr</scope><name>max_short_squeeze_price_before_hf_1270</name></member>
       <member refid="structgraphene_1_1protocol_1_1price__feed_1afef11ed5832c728c7dec984b0d75e6da" prot="public" virt="non-virtual"><scope>graphene::chain::price_feed_with_icr</scope><name>maximum_short_squeeze_ratio</name></member>
       <member refid="structgraphene_1_1chain_1_1price__feed__with__icr_1a9856148571a8321a27b732902c136b73" prot="public" virt="non-virtual"><scope>graphene::chain::price_feed_with_icr</scope><name>price_feed_with_icr</name></member>
       <member refid="structgraphene_1_1chain_1_1price__feed__with__icr_1ab7b2f4e6a03a42379efe71a83506e735" prot="public" virt="non-virtual"><scope>graphene::chain::price_feed_with_icr</scope><name>price_feed_with_icr</name></member>
       <member refid="structgraphene_1_1protocol_1_1price__feed_1a6252428604466bc644f3e56ce8353c02" prot="public" virt="non-virtual"><scope>graphene::chain::price_feed_with_icr</scope><name>settlement_price</name></member>
-      <member refid="structgraphene_1_1protocol_1_1price__feed_1a5aa77bc0baa0b6360420894bcf5453e2" prot="public" virt="non-virtual"><scope>graphene::chain::price_feed_with_icr</scope><name>validate</name></member>
+      <member refid="structgraphene_1_1protocol_1_1price__feed_1affca92dc941ee449f0a2a1c99a3e1473" prot="public" virt="non-virtual"><scope>graphene::chain::price_feed_with_icr</scope><name>validate</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

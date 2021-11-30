@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="structgraphene_1_1protocol_1_1set__fee__visitor" kind="struct" language="C++" prot="public">
     <compoundname>graphene::protocol::set_fee_visitor</compoundname>
       <sectiondef kind="public-type">
-      <memberdef kind="typedef" id="structgraphene_1_1protocol_1_1set__fee__visitor_1ac22031e5b72fc31e1f1591bf7fdae7f5" prot="public" static="no">
+      <memberdef kind="typedef" id="structgraphene_1_1protocol_1_1set__fee__visitor_1a1a76d208f75a053b9330f3a94eeca9a8" prot="public" static="no">
         <type>void</type>
-        <definition>typedef void graphene::protocol::set_fee_visitor::result_type</definition>
+        <definition>using graphene::protocol::set_fee_visitor::result_type =  void</definition>
         <argsstring></argsstring>
         <name>result_type</name>
         <briefdescription>
@@ -14,7 +14,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/fee_schedule.cpp" line="50" column="1" bodyfile="libraries/protocol/fee_schedule.cpp" bodystart="50" bodyend="-1"/>
+        <location file="libraries/protocol/fee_schedule_set_fee.cpp" line="30" column="1" bodyfile="libraries/protocol/fee_schedule_set_fee.cpp" bodystart="30" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-attrib">
@@ -29,17 +29,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/fee_schedule.cpp" line="51" column="1" bodyfile="libraries/protocol/fee_schedule.cpp" bodystart="51" bodyend="-1"/>
+        <location file="libraries/protocol/fee_schedule_set_fee.cpp" line="32" column="1" bodyfile="libraries/protocol/fee_schedule_set_fee.cpp" bodystart="32" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="structgraphene_1_1protocol_1_1set__fee__visitor_1a8c73d2a3d1591445515c5714d0c795c3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1set__fee__visitor_1ae720f417b96002b938c838661d9ab6df" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
         <type></type>
         <definition>graphene::protocol::set_fee_visitor::set_fee_visitor</definition>
-        <argsstring>(asset f)</argsstring>
+        <argsstring>(const asset &amp;f)</argsstring>
         <name>set_fee_visitor</name>
         <param>
-          <type><ref refid="structgraphene_1_1protocol_1_1asset" kindref="compound">asset</ref></type>
+          <type>const <ref refid="structgraphene_1_1protocol_1_1asset" kindref="compound">asset</ref> &amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -48,9 +48,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/fee_schedule.cpp" line="53" column="1" bodyfile="libraries/protocol/fee_schedule.cpp" bodystart="53" bodyend="53"/>
+        <location file="libraries/protocol/fee_schedule_set_fee.cpp" line="34" column="1" bodyfile="libraries/protocol/fee_schedule_set_fee.cpp" bodystart="34" bodyend="34"/>
       </memberdef>
-      <memberdef kind="function" id="structgraphene_1_1protocol_1_1set__fee__visitor_1ac0c322f282ca016e34eca9b9a86701fe" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1set__fee__visitor_1a851431cbd99ce3c51349e394fd0f95f0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename OpType</type>
@@ -58,7 +58,7 @@
         </templateparamlist>
         <type>void</type>
         <definition>void graphene::protocol::set_fee_visitor::operator()</definition>
-        <argsstring>(OpType &amp;op) const </argsstring>
+        <argsstring>(OpType &amp;op) const</argsstring>
         <name>operator()</name>
         <param>
           <type>OpType &amp;</type>
@@ -70,7 +70,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/fee_schedule.cpp" line="56" column="1" bodyfile="libraries/protocol/fee_schedule.cpp" bodystart="56" bodyend="59"/>
+        <location file="libraries/protocol/fee_schedule_set_fee.cpp" line="37" column="1" bodyfile="libraries/protocol/fee_schedule_set_fee.cpp" bodystart="37" bodyend="40"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -78,31 +78,31 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="6104">
+      <node id="6828">
         <label>fc::safe&lt; int64_t &gt;</label>
         <link refid="structfc_1_1safe"/>
       </node>
-      <node id="6103">
+      <node id="6827">
         <label>graphene::protocol::asset</label>
         <link refid="structgraphene_1_1protocol_1_1asset"/>
-        <childnode refid="6104" relation="usage">
+        <childnode refid="6828" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
       </node>
-      <node id="6102">
+      <node id="6826">
         <label>graphene::protocol::set_fee_visitor</label>
         <link refid="structgraphene_1_1protocol_1_1set__fee__visitor"/>
-        <childnode refid="6103" relation="usage">
+        <childnode refid="6827" relation="usage">
           <edgelabel>_fee</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="libraries/protocol/fee_schedule.cpp" line="49" column="1" bodyfile="libraries/protocol/fee_schedule.cpp" bodystart="48" bodyend="60"/>
+    <location file="libraries/protocol/fee_schedule_set_fee.cpp" line="29" column="1" bodyfile="libraries/protocol/fee_schedule_set_fee.cpp" bodystart="28" bodyend="41"/>
     <listofallmembers>
       <member refid="structgraphene_1_1protocol_1_1set__fee__visitor_1a148e9c25514b2c5fdee87bd5b3ab4402" prot="public" virt="non-virtual"><scope>graphene::protocol::set_fee_visitor</scope><name>_fee</name></member>
-      <member refid="structgraphene_1_1protocol_1_1set__fee__visitor_1ac0c322f282ca016e34eca9b9a86701fe" prot="public" virt="non-virtual"><scope>graphene::protocol::set_fee_visitor</scope><name>operator()</name></member>
-      <member refid="structgraphene_1_1protocol_1_1set__fee__visitor_1ac22031e5b72fc31e1f1591bf7fdae7f5" prot="public" virt="non-virtual"><scope>graphene::protocol::set_fee_visitor</scope><name>result_type</name></member>
-      <member refid="structgraphene_1_1protocol_1_1set__fee__visitor_1a8c73d2a3d1591445515c5714d0c795c3" prot="public" virt="non-virtual"><scope>graphene::protocol::set_fee_visitor</scope><name>set_fee_visitor</name></member>
+      <member refid="structgraphene_1_1protocol_1_1set__fee__visitor_1a851431cbd99ce3c51349e394fd0f95f0" prot="public" virt="non-virtual"><scope>graphene::protocol::set_fee_visitor</scope><name>operator()</name></member>
+      <member refid="structgraphene_1_1protocol_1_1set__fee__visitor_1a1a76d208f75a053b9330f3a94eeca9a8" prot="public" virt="non-virtual"><scope>graphene::protocol::set_fee_visitor</scope><name>result_type</name></member>
+      <member refid="structgraphene_1_1protocol_1_1set__fee__visitor_1ae720f417b96002b938c838661d9ab6df" prot="public" virt="non-virtual"><scope>graphene::protocol::set_fee_visitor</scope><name>set_fee_visitor</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

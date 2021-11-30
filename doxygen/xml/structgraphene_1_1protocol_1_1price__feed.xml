@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="structgraphene_1_1protocol_1_1price__feed" kind="class" language="C++" prot="public">
     <compoundname>graphene::protocol::price_feed</compoundname>
     <derivedcompoundref refid="structgraphene_1_1chain_1_1price__feed__with__icr" prot="public" virt="non-virtual">graphene::chain::price_feed_with_icr</derivedcompoundref>
@@ -16,7 +16,7 @@
 <para>Required maintenance collateral is defined as a fixed point number with a maximum value of 10.000 and a minimum value of 1.000. (denominated in GRAPHENE_COLLATERAL_RATIO_DENOM)</para><para>A black swan event occurs when value_of_collateral equals value_of_debt * MSSR. To avoid a black swan a margin call is executed when value_of_debt * required_maintenance_collateral equals value_of_collateral using rate.</para><para>Default requirement is $1.75 of collateral per $1 of debt</para><para>BlackSwan <mdash/>&gt; SQR <mdash/>&gt; MCR -<mdash/>&gt; SP Forced settlements will evaluate using this price, defined as BITASSET / COLLATERAL </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="184" column="1" bodyfile="libraries/protocol/include/graphene/protocol/asset.hpp" bodystart="184" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="180" column="1" bodyfile="libraries/protocol/include/graphene/protocol/asset.hpp" bodystart="180" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1price__feed_1ae6bf318a90269e2e638df9b3cb89504e" prot="public" static="no" mutable="no">
         <type><ref refid="structgraphene_1_1protocol_1_1price" kindref="compound">price</ref></type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="187" column="1" bodyfile="libraries/protocol/include/graphene/protocol/asset.hpp" bodystart="187" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="183" column="1" bodyfile="libraries/protocol/include/graphene/protocol/asset.hpp" bodystart="183" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1price__feed_1a81a886eed9c27f296d4631a885b97c8a" prot="public" static="no" mutable="no">
         <type>uint16_t</type>
@@ -43,7 +43,7 @@
 <para>Fixed point between 1.000 and 10.000, implied fixed point denominator is GRAPHENE_COLLATERAL_RATIO_DENOM </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="190" column="1" bodyfile="libraries/protocol/include/graphene/protocol/asset.hpp" bodystart="190" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="186" column="1" bodyfile="libraries/protocol/include/graphene/protocol/asset.hpp" bodystart="186" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1price__feed_1afef11ed5832c728c7dec984b0d75e6da" prot="public" static="no" mutable="no">
         <type>uint16_t</type>
@@ -57,85 +57,103 @@
 <para>Fixed point between 1.000 and 10.000, implied fixed point denominator is GRAPHENE_COLLATERAL_RATIO_DENOM </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="193" column="1" bodyfile="libraries/protocol/include/graphene/protocol/asset.hpp" bodystart="193" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="189" column="1" bodyfile="libraries/protocol/include/graphene/protocol/asset.hpp" bodystart="189" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="function" id="structgraphene_1_1protocol_1_1price__feed_1a5a52d5e379456e44dcbda5237f7722ea" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1price__feed_1af018fd5a315703a5afcd20fdf287a464" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structgraphene_1_1protocol_1_1price" kindref="compound">price</ref></type>
         <definition>price graphene::protocol::price_feed::max_short_squeeze_price</definition>
-        <argsstring>() const </argsstring>
+        <argsstring>() const</argsstring>
         <name>max_short_squeeze_price</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
 <para>This is the price at which a call order will relinquish COLLATERAL when margin called. It is also the price that establishes the minimum amount of collateral per debt that call orders must maintain to avoid possibility of black swan. A call order maintaining less collateral per debt than this price is unable to meet the combined obligation to sell collateral at the Margin Call Offer Price (MCOP) <emphasis>AND</emphasis> to pay the margin call fee. The MSSP is related to the MCOP, but the MSSP accounts for the need to reserve extra collateral to pay the margin call fee, whereas the MCOP only accounts for the collateral to be traded to the call buyer. Prior to the introduction of the Margin Call Fee Ratio (MCFR) with BSIP-74, the two prices (MSSP and MCOP) were identical, and MSSP could be thought of as &quot;the price at which you are forced to sell
-collateral if margin called,&quot; but this latter concept is now embodied by the MCOP.</para><para>The Maximum Short Squeeze Price is computed as follows, in units of DEBT per COLLATERAL:</para><para>MSSP = settlement_price / MSSR;</para><para><simplesect kind="return"><para>The MSSP in units of DEBT per COLLATERAL. </para></simplesect>
+collateral if margin called,&quot; but this latter concept is now embodied by the MCOP.</para><para>The Maximum Short Squeeze Price is computed as follows, in units of DEBT per COLLATERAL:</para><para>MSSP = settlement_price / MSSR</para><para><simplesect kind="return"><para>The MSSP in units of DEBT per COLLATERAL. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="213" column="1" bodyfile="libraries/protocol/asset.cpp" bodystart="287" bodyend="291"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="209" column="1" bodyfile="libraries/protocol/asset.cpp" bodystart="300" bodyend="304"/>
       </memberdef>
-      <memberdef kind="function" id="structgraphene_1_1protocol_1_1price__feed_1a3ce8bcddff068f160f85d8bb6dc61013" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1price__feed_1a98463272d7cab66ef4201b261eca5c43" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structgraphene_1_1protocol_1_1price" kindref="compound">price</ref></type>
         <definition>price graphene::protocol::price_feed::max_short_squeeze_price_before_hf_1270</definition>
-        <argsstring>() const </argsstring>
+        <argsstring>() const</argsstring>
         <name>max_short_squeeze_price_before_hf_1270</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Older implementation of <ref refid="structgraphene_1_1protocol_1_1price__feed_1a5a52d5e379456e44dcbda5237f7722ea" kindref="member">max_short_squeeze_price()</ref> due to hardfork changes. It came with the following commentary:</para><para>When selling collateral to pay off debt, the least amount of debt to receive should be min_usd = <ref refid="structgraphene_1_1protocol_1_1price__feed_1a5a52d5e379456e44dcbda5237f7722ea" kindref="member">max_short_squeeze_price()</ref> * collateral</para><para>This is provided to ensure that a black swan cannot be trigged due to poor liquidity alone, it must be confirmed by having the <ref refid="structgraphene_1_1protocol_1_1price__feed_1a5a52d5e379456e44dcbda5237f7722ea" kindref="member">max_short_squeeze_price()</ref> move below the black swan price. <simplesect kind="return"><para>the Maximum Short Squeeze price for this asset </para></simplesect>
+<para>Older implementation of <ref refid="structgraphene_1_1protocol_1_1price__feed_1af018fd5a315703a5afcd20fdf287a464" kindref="member">max_short_squeeze_price()</ref> due to hardfork changes. It came with the following commentary:</para><para>When selling collateral to pay off debt, the least amount of debt to receive should be min_usd = <ref refid="structgraphene_1_1protocol_1_1price__feed_1af018fd5a315703a5afcd20fdf287a464" kindref="member">max_short_squeeze_price()</ref> * collateral</para><para>This is provided to ensure that a black swan cannot be trigged due to poor liquidity alone, it must be confirmed by having the <ref refid="structgraphene_1_1protocol_1_1price__feed_1af018fd5a315703a5afcd20fdf287a464" kindref="member">max_short_squeeze_price()</ref> move below the black swan price. <simplesect kind="return"><para>the Maximum Short Squeeze price for this asset </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="225" column="1" bodyfile="libraries/protocol/asset.cpp" bodystart="269" bodyend="282"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="221" column="1" bodyfile="libraries/protocol/asset.cpp" bodystart="282" bodyend="295"/>
       </memberdef>
-      <memberdef kind="function" id="structgraphene_1_1protocol_1_1price__feed_1a23f849cee0395b24f3658f0d5d70011b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1price__feed_1aea09f66a8c1a41cd77b41e376c8760da" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structgraphene_1_1protocol_1_1price" kindref="compound">price</ref></type>
         <definition>price graphene::protocol::price_feed::margin_call_order_price</definition>
-        <argsstring>(const fc::optional&lt; uint16_t &gt; margin_call_fee_ratio) const </argsstring>
+        <argsstring>(const fc::optional&lt; uint16_t &gt; &amp;margin_call_fee_ratio) const</argsstring>
         <name>margin_call_order_price</name>
         <param>
-          <type>const <ref refid="classfc_1_1optional" kindref="compound">fc::optional</ref>&lt; uint16_t &gt;</type>
+          <type>const <ref refid="classfc_1_1optional" kindref="compound">fc::optional</ref>&lt; uint16_t &gt; &amp;</type>
           <declname>margin_call_fee_ratio</declname>
         </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Compute price at which margin calls offer to sell collateral.</para><para>Margin calls offer a greater amount of COLLATERAL asset to the market to buy back DEBT asset than would otherwise be required in a fair exchange at the settlement_price. (I.e. they sell collateral &quot;cheaper&quot; than its price feed value.) This is done to attract a quick buyer of the call in order to preserve healthy collateralization of the DEBT asset overall. The price at which the call is offered, in comparison to the settlement price, is determined by the Maximum Short Squeeze Ratio (MSSR) and the Margin Call Fee Ratio (MCFR) as follows, in units of DEBT per COLLATERAL:</para><para>MCOP = settlement_price / (MSSR - MCFR);</para><para>Compare with Maximum Short Squeeze Price (MSSP), which is computed as follows:</para><para>MSSP = settlement_price / MSSR;</para><para>Since BSIP-74, we distinguish between Maximum Short Squeeze Price (MSSP) and Margin Call Order Price (MCOP). Margin calls previously offered collateral at the MSSP, but now they offer slightly less collateral per debt if Margin Call Fee Ratio (MCFR) is set, because the call order must reserve some collateral to pay the fee. We must still retain the concept of MSSP, as it communicates the minimum collateralization before black swan may be triggered, but we add this new method to calculate MCOP.</para><para>Note that when we calculate the MCOP, we enact a price floor to ensure the margin call never offers LESS collateral than the DEBT is worth. As such, it&apos;s important to calculate the realized fee, when trading at the offer price, as a delta between total relinquished collateral (DEBT*MSSP) and collateral sold to the buyer (DEBT*MCOP). If you instead try to calculate the fee by direct multiplication of MCFR, you will get the wrong answer if the price was floored. (Fee is truncated when price is floored.)</para><para><parameterlist kind="param"><parameteritem>
+<para>Compute price at which margin calls offer to sell collateral.</para><para>Margin calls offer a greater amount of COLLATERAL asset to the market to buy back DEBT asset than would otherwise be required in a fair exchange at the settlement_price. (I.e. they sell collateral &quot;cheaper&quot; than its price feed value.) This is done to attract a quick buyer of the call in order to preserve healthy collateralization of the DEBT asset overall. The price at which the call is offered, in comparison to the settlement price, is determined by the Maximum Short Squeeze Ratio (MSSR) and the Margin Call Fee Ratio (MCFR) as follows, in units of DEBT per COLLATERAL:</para><para>MCOP = settlement_price / (MSSR - MCFR)</para><para>Compare with Maximum Short Squeeze Price (MSSP), which is computed as follows:</para><para>MSSP = settlement_price / MSSR</para><para>Since BSIP-74, we distinguish between Maximum Short Squeeze Price (MSSP) and Margin Call Order Price (MCOP). Margin calls previously offered collateral at the MSSP, but now they offer slightly less collateral per debt if Margin Call Fee Ratio (MCFR) is set, because the call order must reserve some collateral to pay the fee. We must still retain the concept of MSSP, as it communicates the minimum collateralization before black swan may be triggered, but we add this new method to calculate MCOP.</para><para>Note that when we calculate the MCOP, we enact a price floor to ensure the margin call never offers LESS collateral than the DEBT is worth. As such, it&apos;s important to calculate the realized fee, when trading at the offer price, as a delta between total relinquished collateral (DEBT*MSSP) and collateral sold to the buyer (DEBT*MCOP). If you instead try to calculate the fee by direct multiplication of MCFR, you will get the wrong answer if the price was floored. (Fee is truncated when price is floored.)</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>margin_call_fee_ratio</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>MCFR value currently in effect. If zero or unset, returns same result as <ref refid="structgraphene_1_1protocol_1_1price__feed_1a5a52d5e379456e44dcbda5237f7722ea" kindref="member">max_short_squeeze_price()</ref>.</para></parameterdescription>
+<para>MCFR value currently in effect. If zero or unset, returns same result as <ref refid="structgraphene_1_1protocol_1_1price__feed_1af018fd5a315703a5afcd20fdf287a464" kindref="member">max_short_squeeze_price()</ref>.</para></parameterdescription>
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>The MCOP in units of DEBT per COLLATERAL. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="263" column="1" bodyfile="libraries/protocol/asset.cpp" bodystart="295" bodyend="303"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="259" column="1" bodyfile="libraries/protocol/asset.cpp" bodystart="308" bodyend="311"/>
       </memberdef>
-      <memberdef kind="function" id="structgraphene_1_1protocol_1_1price__feed_1a6256358fc69d3f8ba50cb467909d21af" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1price__feed_1a91e6fc8c402647bab588133ce172d3b3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="namespacegraphene_1_1protocol_1a54851df9ea21bef79e7cdb2da2e3e3cc" kindref="member">ratio_type</ref></type>
-        <definition>ratio_type graphene::protocol::price_feed::margin_call_pays_ratio</definition>
-        <argsstring>(const fc::optional&lt; uint16_t &gt; margin_call_fee_ratio) const </argsstring>
-        <name>margin_call_pays_ratio</name>
+        <definition>ratio_type graphene::protocol::price_feed::margin_call_order_ratio</definition>
+        <argsstring>(const fc::optional&lt; uint16_t &gt; &amp;margin_call_fee_ratio) const</argsstring>
+        <name>margin_call_order_ratio</name>
         <param>
-          <type>const <ref refid="classfc_1_1optional" kindref="compound">fc::optional</ref>&lt; uint16_t &gt;</type>
+          <type>const <ref refid="classfc_1_1optional" kindref="compound">fc::optional</ref>&lt; uint16_t &gt; &amp;</type>
           <declname>margin_call_fee_ratio</declname>
         </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Ratio between max_short_squeeze_price and margin_call_order_price.</para><para>This ratio, if it multiplied margin_call_order_price (expressed in DEBT/COLLATERAL), would yield the max_short_squeeze_price, apart perhaps for truncation (rounding) error.</para><para>When a margin call is taker, matching an existing order on the books, it is possible the call gets a better realized price than the order price that it offered at. In this case, the margin call fee is proportionaly reduced. This ratio is used to calculate the price at which the call relinquishes collateral (to meet both trade and fee obligations) based on actual realized match price.</para><para>This function enacts the same flooring as <ref refid="structgraphene_1_1protocol_1_1price__feed_1a23f849cee0395b24f3658f0d5d70011b" kindref="member">margin_call_order_price()</ref> (MSSR - MCFR is floored at 1.00). This ensures we apply the same fee truncation in the taker case as the maker case.</para><para><simplesect kind="return"><para>(MSSR - MCFR) / MSSR </para></simplesect>
+<para>Compute the MCOR, the ratio between margin_call_order_price and feed price <simplesect kind="return"><para>MSSR - MCFR </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="282" column="1" bodyfile="libraries/protocol/asset.cpp" bodystart="307" bodyend="319"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="263" column="1" bodyfile="libraries/protocol/asset.cpp" bodystart="326" bodyend="330"/>
       </memberdef>
-      <memberdef kind="function" id="structgraphene_1_1protocol_1_1price__feed_1adacaebc74ffb2ff890d2ad1e846724d3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1price__feed_1abdf72aeccadb7c3a61165f557d7b5b6c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacegraphene_1_1protocol_1a54851df9ea21bef79e7cdb2da2e3e3cc" kindref="member">ratio_type</ref></type>
+        <definition>ratio_type graphene::protocol::price_feed::margin_call_pays_ratio</definition>
+        <argsstring>(const fc::optional&lt; uint16_t &gt; &amp;margin_call_fee_ratio) const</argsstring>
+        <name>margin_call_pays_ratio</name>
+        <param>
+          <type>const <ref refid="classfc_1_1optional" kindref="compound">fc::optional</ref>&lt; uint16_t &gt; &amp;</type>
+          <declname>margin_call_fee_ratio</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Ratio between max_short_squeeze_price and margin_call_order_price.</para><para>This ratio, if it multiplied margin_call_order_price (expressed in DEBT/COLLATERAL), would yield the max_short_squeeze_price, apart perhaps for truncation (rounding) error.</para><para>When a margin call is taker, matching an existing order on the books, it is possible the call gets a better realized price than the order price that it offered at. In this case, the margin call fee is proportionaly reduced. This ratio is used to calculate the price at which the call relinquishes collateral (to meet both trade and fee obligations) based on actual realized match price.</para><para>This function enacts the same flooring as <ref refid="structgraphene_1_1protocol_1_1price__feed_1aea09f66a8c1a41cd77b41e376c8760da" kindref="member">margin_call_order_price()</ref> (MSSR - MCFR is floored at 1.00). This ensures we apply the same fee truncation in the taker case as the maker case.</para><para><simplesect kind="return"><para>(MSSR - MCFR) / MSSR </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="282" column="1" bodyfile="libraries/protocol/asset.cpp" bodystart="334" bodyend="340"/>
+      </memberdef>
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1price__feed_1a30f1e1b7f21c0e198dfae800c4d11273" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structgraphene_1_1protocol_1_1price" kindref="compound">price</ref></type>
         <definition>price graphene::protocol::price_feed::maintenance_collateralization</definition>
-        <argsstring>() const </argsstring>
+        <argsstring>() const</argsstring>
         <name>maintenance_collateralization</name>
         <briefdescription>
         </briefdescription>
@@ -143,12 +161,12 @@ collateral if margin called,&quot; but this latter concept is now embodied by th
 <para>Call orders with collateralization (aka collateral/debt) not greater than this value are in margin call territory. Calculation: ~settlement_price * maintenance_collateral_ratio / GRAPHENE_COLLATERAL_RATIO_DENOM </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="287" column="1" bodyfile="libraries/protocol/asset.cpp" bodystart="321" bodyend="326"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="287" column="1" bodyfile="libraries/protocol/asset.cpp" bodystart="342" bodyend="347"/>
       </memberdef>
-      <memberdef kind="function" id="structgraphene_1_1protocol_1_1price__feed_1a2ff1f8fd1cefb4e471b65e076f6d57e8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1price__feed_1a0bdb5d3b180dd7df1ecf147966329a37" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
         <definition>bool graphene::protocol::price_feed::margin_call_params_equal</definition>
-        <argsstring>(const price_feed &amp;b) const </argsstring>
+        <argsstring>(const price_feed &amp;b) const</argsstring>
         <name>margin_call_params_equal</name>
         <param>
           <type>const <ref refid="structgraphene_1_1protocol_1_1price__feed" kindref="compound">price_feed</ref> &amp;</type>
@@ -164,10 +182,10 @@ collateral if margin called,&quot; but this latter concept is now embodied by th
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="structgraphene_1_1protocol_1_1price__feed_1a5aa77bc0baa0b6360420894bcf5453e2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1price__feed_1affca92dc941ee449f0a2a1c99a3e1473" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void graphene::protocol::price_feed::validate</definition>
-        <argsstring>() const </argsstring>
+        <argsstring>() const</argsstring>
         <name>validate</name>
         <briefdescription>
         </briefdescription>
@@ -175,12 +193,12 @@ collateral if margin called,&quot; but this latter concept is now embodied by th
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="300" column="1" bodyfile="libraries/protocol/asset.cpp" bodystart="238" bodyend="251"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="300" column="1" bodyfile="libraries/protocol/asset.cpp" bodystart="251" bodyend="264"/>
       </memberdef>
-      <memberdef kind="function" id="structgraphene_1_1protocol_1_1price__feed_1a3744ea0549728d46de853ccca1a6b2ed" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1price__feed_1ac9864f61729920e739c9272b89719273" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool graphene::protocol::price_feed::is_for</definition>
-        <argsstring>(asset_id_type asset_id) const </argsstring>
+        <argsstring>(asset_id_type asset_id) const</argsstring>
         <name>is_for</name>
         <param>
           <type>asset_id_type</type>
@@ -192,7 +210,26 @@ collateral if margin called,&quot; but this latter concept is now embodied by th
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="301" column="1" bodyfile="libraries/protocol/asset.cpp" bodystart="253" bodyend="265"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="301" column="1" bodyfile="libraries/protocol/asset.cpp" bodystart="266" bodyend="278"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1price__feed_1a2b245b183838e059e5d7aecc4bdb6354" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t graphene::protocol::price_feed::get_margin_call_price_numerator</definition>
+        <argsstring>(const fc::optional&lt; uint16_t &gt; &amp;margin_call_fee_ratio) const</argsstring>
+        <name>get_margin_call_price_numerator</name>
+        <param>
+          <type>const <ref refid="classfc_1_1optional" kindref="compound">fc::optional</ref>&lt; uint16_t &gt; &amp;</type>
+          <declname>margin_call_fee_ratio</declname>
+        </param>
+        <briefdescription>
+<para>Helper function for other functions e.g. <ref refid="structgraphene_1_1protocol_1_1price__feed_1aea09f66a8c1a41cd77b41e376c8760da" kindref="member">margin_call_order_price</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="304" column="1" bodyfile="libraries/protocol/asset.cpp" bodystart="314" bodyend="322"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -200,60 +237,62 @@ collateral if margin called,&quot; but this latter concept is now embodied by th
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="5668">
+      <node id="6064">
         <label>graphene::protocol::price_feed</label>
         <link refid="structgraphene_1_1protocol_1_1price__feed"/>
       </node>
-      <node id="5669">
+      <node id="6065">
         <label>graphene::chain::price_feed_with_icr</label>
         <link refid="structgraphene_1_1chain_1_1price__feed__with__icr"/>
-        <childnode refid="5668" relation="public-inheritance">
+        <childnode refid="6064" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="5671">
+      <node id="6067">
         <label>graphene::protocol::price</label>
         <link refid="structgraphene_1_1protocol_1_1price"/>
-        <childnode refid="5672" relation="usage">
+        <childnode refid="6068" relation="usage">
           <edgelabel>base</edgelabel>
           <edgelabel>quote</edgelabel>
         </childnode>
       </node>
-      <node id="5673">
+      <node id="6069">
         <label>fc::safe&lt; int64_t &gt;</label>
         <link refid="structfc_1_1safe"/>
       </node>
-      <node id="5670">
+      <node id="6066">
         <label>graphene::protocol::price_feed</label>
         <link refid="structgraphene_1_1protocol_1_1price__feed"/>
-        <childnode refid="5671" relation="usage">
+        <childnode refid="6067" relation="usage">
           <edgelabel>core_exchange_rate</edgelabel>
           <edgelabel>settlement_price</edgelabel>
         </childnode>
       </node>
-      <node id="5672">
+      <node id="6068">
         <label>graphene::protocol::asset</label>
         <link refid="structgraphene_1_1protocol_1_1asset"/>
-        <childnode refid="5673" relation="usage">
+        <childnode refid="6069" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="165" column="1" bodyfile="libraries/protocol/include/graphene/protocol/asset.hpp" bodystart="164" bodyend="302"/>
+    <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="161" column="1" bodyfile="libraries/protocol/include/graphene/protocol/asset.hpp" bodystart="160" bodyend="305"/>
     <listofallmembers>
       <member refid="structgraphene_1_1protocol_1_1price__feed_1ae6bf318a90269e2e638df9b3cb89504e" prot="public" virt="non-virtual"><scope>graphene::protocol::price_feed</scope><name>core_exchange_rate</name></member>
-      <member refid="structgraphene_1_1protocol_1_1price__feed_1a3744ea0549728d46de853ccca1a6b2ed" prot="public" virt="non-virtual"><scope>graphene::protocol::price_feed</scope><name>is_for</name></member>
+      <member refid="structgraphene_1_1protocol_1_1price__feed_1a2b245b183838e059e5d7aecc4bdb6354" prot="private" virt="non-virtual"><scope>graphene::protocol::price_feed</scope><name>get_margin_call_price_numerator</name></member>
+      <member refid="structgraphene_1_1protocol_1_1price__feed_1ac9864f61729920e739c9272b89719273" prot="public" virt="non-virtual"><scope>graphene::protocol::price_feed</scope><name>is_for</name></member>
       <member refid="structgraphene_1_1protocol_1_1price__feed_1a81a886eed9c27f296d4631a885b97c8a" prot="public" virt="non-virtual"><scope>graphene::protocol::price_feed</scope><name>maintenance_collateral_ratio</name></member>
-      <member refid="structgraphene_1_1protocol_1_1price__feed_1adacaebc74ffb2ff890d2ad1e846724d3" prot="public" virt="non-virtual"><scope>graphene::protocol::price_feed</scope><name>maintenance_collateralization</name></member>
-      <member refid="structgraphene_1_1protocol_1_1price__feed_1a23f849cee0395b24f3658f0d5d70011b" prot="public" virt="non-virtual"><scope>graphene::protocol::price_feed</scope><name>margin_call_order_price</name></member>
-      <member refid="structgraphene_1_1protocol_1_1price__feed_1a2ff1f8fd1cefb4e471b65e076f6d57e8" prot="public" virt="non-virtual"><scope>graphene::protocol::price_feed</scope><name>margin_call_params_equal</name></member>
-      <member refid="structgraphene_1_1protocol_1_1price__feed_1a6256358fc69d3f8ba50cb467909d21af" prot="public" virt="non-virtual"><scope>graphene::protocol::price_feed</scope><name>margin_call_pays_ratio</name></member>
-      <member refid="structgraphene_1_1protocol_1_1price__feed_1a5a52d5e379456e44dcbda5237f7722ea" prot="public" virt="non-virtual"><scope>graphene::protocol::price_feed</scope><name>max_short_squeeze_price</name></member>
-      <member refid="structgraphene_1_1protocol_1_1price__feed_1a3ce8bcddff068f160f85d8bb6dc61013" prot="public" virt="non-virtual"><scope>graphene::protocol::price_feed</scope><name>max_short_squeeze_price_before_hf_1270</name></member>
+      <member refid="structgraphene_1_1protocol_1_1price__feed_1a30f1e1b7f21c0e198dfae800c4d11273" prot="public" virt="non-virtual"><scope>graphene::protocol::price_feed</scope><name>maintenance_collateralization</name></member>
+      <member refid="structgraphene_1_1protocol_1_1price__feed_1aea09f66a8c1a41cd77b41e376c8760da" prot="public" virt="non-virtual"><scope>graphene::protocol::price_feed</scope><name>margin_call_order_price</name></member>
+      <member refid="structgraphene_1_1protocol_1_1price__feed_1a91e6fc8c402647bab588133ce172d3b3" prot="public" virt="non-virtual"><scope>graphene::protocol::price_feed</scope><name>margin_call_order_ratio</name></member>
+      <member refid="structgraphene_1_1protocol_1_1price__feed_1a0bdb5d3b180dd7df1ecf147966329a37" prot="public" virt="non-virtual"><scope>graphene::protocol::price_feed</scope><name>margin_call_params_equal</name></member>
+      <member refid="structgraphene_1_1protocol_1_1price__feed_1abdf72aeccadb7c3a61165f557d7b5b6c" prot="public" virt="non-virtual"><scope>graphene::protocol::price_feed</scope><name>margin_call_pays_ratio</name></member>
+      <member refid="structgraphene_1_1protocol_1_1price__feed_1af018fd5a315703a5afcd20fdf287a464" prot="public" virt="non-virtual"><scope>graphene::protocol::price_feed</scope><name>max_short_squeeze_price</name></member>
+      <member refid="structgraphene_1_1protocol_1_1price__feed_1a98463272d7cab66ef4201b261eca5c43" prot="public" virt="non-virtual"><scope>graphene::protocol::price_feed</scope><name>max_short_squeeze_price_before_hf_1270</name></member>
       <member refid="structgraphene_1_1protocol_1_1price__feed_1afef11ed5832c728c7dec984b0d75e6da" prot="public" virt="non-virtual"><scope>graphene::protocol::price_feed</scope><name>maximum_short_squeeze_ratio</name></member>
       <member refid="structgraphene_1_1protocol_1_1price__feed_1a6252428604466bc644f3e56ce8353c02" prot="public" virt="non-virtual"><scope>graphene::protocol::price_feed</scope><name>settlement_price</name></member>
-      <member refid="structgraphene_1_1protocol_1_1price__feed_1a5aa77bc0baa0b6360420894bcf5453e2" prot="public" virt="non-virtual"><scope>graphene::protocol::price_feed</scope><name>validate</name></member>
+      <member refid="structgraphene_1_1protocol_1_1price__feed_1affca92dc941ee449f0a2a1c99a3e1473" prot="public" virt="non-virtual"><scope>graphene::protocol::price_feed</scope><name>validate</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

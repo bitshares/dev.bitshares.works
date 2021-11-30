@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="structgraphene_1_1protocol_1_1transfer__from__blind__operation" kind="struct" language="C++" prot="public">
     <compoundname>graphene::protocol::transfer_from_blind_operation</compoundname>
     <basecompoundref refid="structgraphene_1_1protocol_1_1base__operation" prot="public" virt="non-virtual">graphene::protocol::base_operation</basecompoundref>
@@ -73,10 +73,10 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="structgraphene_1_1protocol_1_1transfer__from__blind__operation_1a77623eadd7b25e7bab2f0bfcd1f48946" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1transfer__from__blind__operation_1a583081b8ace66f955b0592f0e9b51604" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>account_id_type</type>
         <definition>account_id_type graphene::protocol::transfer_from_blind_operation::fee_payer</definition>
-        <argsstring>() const </argsstring>
+        <argsstring>() const</argsstring>
         <name>fee_payer</name>
         <briefdescription>
         </briefdescription>
@@ -86,11 +86,12 @@
         </inbodydescription>
         <location file="libraries/protocol/include/graphene/protocol/confidential.hpp" line="185" column="1" bodyfile="libraries/protocol/include/graphene/protocol/confidential.hpp" bodystart="185" bodyend="185"/>
       </memberdef>
-      <memberdef kind="function" id="structgraphene_1_1protocol_1_1transfer__from__blind__operation_1a87ca1435b4db306ccd3c4bc0a76d5674" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1transfer__from__blind__operation_1a68e923dfc7c3f3e2375c966ca0842001" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
         <definition>void graphene::protocol::transfer_from_blind_operation::validate</definition>
-        <argsstring>() const </argsstring>
+        <argsstring>() const</argsstring>
         <name>validate</name>
+        <reimplements refid="structgraphene_1_1protocol_1_1base__operation_1a23d617a6fa0921d3f5b51dd5167e7a29">validate</reimplements>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -99,11 +100,12 @@
 <para>by requiring all inputs to be sorted we also prevent duplicate commitments on the input </para>        </inbodydescription>
         <location file="libraries/protocol/include/graphene/protocol/confidential.hpp" line="186" column="1" bodyfile="libraries/protocol/confidential.cpp" bodystart="70" bodyend="90"/>
       </memberdef>
-      <memberdef kind="function" id="structgraphene_1_1protocol_1_1transfer__from__blind__operation_1a4f0bdd9b15820e815f77499ba67508af" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1transfer__from__blind__operation_1ae0ee909960ce7b25c837b22d7e3d42ea" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
         <definition>void graphene::protocol::transfer_from_blind_operation::get_required_authorities</definition>
-        <argsstring>(vector&lt; authority &gt; &amp;a) const </argsstring>
+        <argsstring>(vector&lt; authority &gt; &amp;a) const</argsstring>
         <name>get_required_authorities</name>
+        <reimplements refid="structgraphene_1_1protocol_1_1base__operation_1aabc48ce97877c67ff560b94284a7c0bb">get_required_authorities</reimplements>
         <param>
           <type>vector&lt; <ref refid="structgraphene_1_1protocol_1_1authority" kindref="compound">authority</ref> &gt; &amp;</type>
           <declname>a</declname>
@@ -122,58 +124,52 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="6704">
+      <node id="7426">
         <label>graphene::protocol::base_operation</label>
         <link refid="structgraphene_1_1protocol_1_1base__operation"/>
       </node>
-      <node id="6703">
+      <node id="7425">
         <label>graphene::protocol::transfer_from_blind_operation</label>
         <link refid="structgraphene_1_1protocol_1_1transfer__from__blind__operation"/>
-        <childnode refid="6704" relation="public-inheritance">
+        <childnode refid="7426" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="6711">
+      <node id="7432">
         <label>vector&lt; graphene::protocol::blind_input &gt;</label>
       </node>
-      <node id="6710">
-        <label>blind_factor_type</label>
-      </node>
-      <node id="6709">
+      <node id="7431">
         <label>account_id_type</label>
       </node>
-      <node id="6708">
+      <node id="7430">
         <label>fc::safe&lt; int64_t &gt;</label>
         <link refid="structfc_1_1safe"/>
       </node>
-      <node id="6706">
+      <node id="7428">
         <label>graphene::protocol::base_operation</label>
         <link refid="structgraphene_1_1protocol_1_1base__operation"/>
       </node>
-      <node id="6707">
+      <node id="7429">
         <label>graphene::protocol::asset</label>
         <link refid="structgraphene_1_1protocol_1_1asset"/>
-        <childnode refid="6708" relation="usage">
+        <childnode refid="7430" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
       </node>
-      <node id="6705">
+      <node id="7427">
         <label>graphene::protocol::transfer_from_blind_operation</label>
         <link refid="structgraphene_1_1protocol_1_1transfer__from__blind__operation"/>
-        <childnode refid="6706" relation="public-inheritance">
+        <childnode refid="7428" relation="public-inheritance">
         </childnode>
-        <childnode refid="6707" relation="usage">
+        <childnode refid="7429" relation="usage">
           <edgelabel>fee</edgelabel>
           <edgelabel>amount</edgelabel>
         </childnode>
-        <childnode refid="6709" relation="usage">
+        <childnode refid="7431" relation="usage">
           <edgelabel>to</edgelabel>
         </childnode>
-        <childnode refid="6710" relation="usage">
-          <edgelabel>blinding_factor</edgelabel>
-        </childnode>
-        <childnode refid="6711" relation="usage">
+        <childnode refid="7432" relation="usage">
           <edgelabel>inputs</edgelabel>
         </childnode>
       </node>
@@ -183,16 +179,16 @@
       <member refid="structgraphene_1_1protocol_1_1transfer__from__blind__operation_1a9f27765d39c0342175c152df03edbb91" prot="public" virt="non-virtual"><scope>graphene::protocol::transfer_from_blind_operation</scope><name>amount</name></member>
       <member refid="structgraphene_1_1protocol_1_1transfer__from__blind__operation_1a078d9ea4bb8aeb6faa830d729c60f28f" prot="public" virt="non-virtual"><scope>graphene::protocol::transfer_from_blind_operation</scope><name>blinding_factor</name></member>
       <member refid="structgraphene_1_1protocol_1_1base__operation_1aaccb0fa71ee529cf62324baaa99988fe" prot="public" virt="non-virtual"><scope>graphene::protocol::transfer_from_blind_operation</scope><name>calculate_data_fee</name></member>
-      <member refid="structgraphene_1_1protocol_1_1base__operation_1afd01efa3e06367c572512e381b1106fb" prot="public" virt="non-virtual"><scope>graphene::protocol::transfer_from_blind_operation</scope><name>calculate_fee</name></member>
+      <member refid="structgraphene_1_1protocol_1_1base__operation_1a0be44badcee9a648413eb906dac1d3b3" prot="public" virt="non-virtual"><scope>graphene::protocol::transfer_from_blind_operation</scope><name>calculate_fee</name></member>
       <member refid="structgraphene_1_1protocol_1_1transfer__from__blind__operation_1a8edab702415eeb900c7c8915a6b2720b" prot="public" virt="non-virtual"><scope>graphene::protocol::transfer_from_blind_operation</scope><name>fee</name></member>
-      <member refid="structgraphene_1_1protocol_1_1transfer__from__blind__operation_1a77623eadd7b25e7bab2f0bfcd1f48946" prot="public" virt="non-virtual"><scope>graphene::protocol::transfer_from_blind_operation</scope><name>fee_payer</name></member>
-      <member refid="structgraphene_1_1protocol_1_1base__operation_1aded12887f115b2bfa54ecd59540fa242" prot="public" virt="non-virtual"><scope>graphene::protocol::transfer_from_blind_operation</scope><name>get_required_active_authorities</name></member>
-      <member refid="structgraphene_1_1protocol_1_1transfer__from__blind__operation_1a4f0bdd9b15820e815f77499ba67508af" prot="public" virt="non-virtual"><scope>graphene::protocol::transfer_from_blind_operation</scope><name>get_required_authorities</name></member>
-      <member refid="structgraphene_1_1protocol_1_1base__operation_1a0742a4b91de875366ec466a5b67b2811" prot="public" virt="non-virtual"><scope>graphene::protocol::transfer_from_blind_operation</scope><name>get_required_owner_authorities</name></member>
+      <member refid="structgraphene_1_1protocol_1_1transfer__from__blind__operation_1a583081b8ace66f955b0592f0e9b51604" prot="public" virt="non-virtual"><scope>graphene::protocol::transfer_from_blind_operation</scope><name>fee_payer</name></member>
+      <member refid="structgraphene_1_1protocol_1_1base__operation_1a89ed7c6e7da93cd99bb41bc8d7e2627b" prot="public" virt="virtual"><scope>graphene::protocol::transfer_from_blind_operation</scope><name>get_required_active_authorities</name></member>
+      <member refid="structgraphene_1_1protocol_1_1transfer__from__blind__operation_1ae0ee909960ce7b25c837b22d7e3d42ea" prot="public" virt="virtual"><scope>graphene::protocol::transfer_from_blind_operation</scope><name>get_required_authorities</name></member>
+      <member refid="structgraphene_1_1protocol_1_1base__operation_1a3251978e7bd0bb2f2fa23bcea5dee95c" prot="public" virt="virtual"><scope>graphene::protocol::transfer_from_blind_operation</scope><name>get_required_owner_authorities</name></member>
       <member refid="structgraphene_1_1protocol_1_1transfer__from__blind__operation_1adc6177f40dd19b055c7a073385f21b5b" prot="public" virt="non-virtual"><scope>graphene::protocol::transfer_from_blind_operation</scope><name>inputs</name></member>
       <member refid="structgraphene_1_1protocol_1_1transfer__from__blind__operation_1a6e14ef42d7fe570bdcb1986e269dd412" prot="public" virt="non-virtual"><scope>graphene::protocol::transfer_from_blind_operation</scope><name>to</name></member>
-      <member refid="structgraphene_1_1protocol_1_1transfer__from__blind__operation_1a87ca1435b4db306ccd3c4bc0a76d5674" prot="public" virt="non-virtual"><scope>graphene::protocol::transfer_from_blind_operation</scope><name>validate</name></member>
-      <member refid="structgraphene_1_1protocol_1_1base__operation_1a41d0a14a070ac634be11f30dbf559935" prot="public" virt="non-virtual"><scope>graphene::protocol::transfer_from_blind_operation</scope><name>validate_parallel</name></member>
+      <member refid="structgraphene_1_1protocol_1_1transfer__from__blind__operation_1a68e923dfc7c3f3e2375c966ca0842001" prot="public" virt="virtual"><scope>graphene::protocol::transfer_from_blind_operation</scope><name>validate</name></member>
+      <member refid="structgraphene_1_1protocol_1_1base__operation_1a485f3d3b963ff4c081af85945cf27774" prot="public" virt="non-virtual"><scope>graphene::protocol::transfer_from_blind_operation</scope><name>validate_parallel</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

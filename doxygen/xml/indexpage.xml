@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="indexpage" kind="page">
     <compoundname>index</compoundname>
     <title>BitShares Core</title>
@@ -109,7 +109,7 @@ $ wscat -c ws://127.0.0.1:8090
 </verbatim></para><para>The definition of all node API&apos;s is available in the source code files including <ulink url="https://github.com/bitshares/bitshares-core/blob/master/libraries/app/include/graphene/app/database_api.hpp">database_api.hpp</ulink> and <ulink url="https://github.com/bitshares/bitshares-core/blob/master/libraries/app/include/graphene/app/api.hpp">api.hpp</ulink>. Corresponding documentation can be found in Doxygen:<itemizedlist>
 <listitem><para><ulink url="https://doxygen.bitshares.org/classgraphene_1_1app_1_1database__api.html">database API</ulink></para></listitem><listitem><para><ulink url="https://doxygen.bitshares.org/namespacegraphene_1_1app.html">other API&apos;s</ulink></para></listitem></itemizedlist>
 </para><para><heading level="3">Wallet API</heading>
-</para><para>The <computeroutput>cli_wallet</computeroutput> program can also be configured to serve <bold>all of its commands</bold> as API&apos;s, known as <emphasis>wallet API</emphasis>.</para><para>Start <computeroutput>cli_wallet</computeroutput> with RPC connection enabled: <verbatim>$ ./programs/cli_wallet/cli_wallet --rpc-endpoint=127.0.0.8091
+</para><para>The <computeroutput>cli_wallet</computeroutput> program can also be configured to serve <bold>all of its commands</bold> as API&apos;s, known as <emphasis>wallet API</emphasis>.</para><para>Start <computeroutput>cli_wallet</computeroutput> with RPC connection enabled: <verbatim>$ ./programs/cli_wallet/cli_wallet --rpc-endpoint=127.0.0.1:8091
 </verbatim></para><para>Access the wallet API using an HTTP client: <verbatim>$ curl --data &apos;{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;method&quot;: &quot;info&quot;, &quot;params&quot;: [], &quot;id&quot;: 1}&apos; http://127.0.0.1:8091/rpc
 $ curl --data &apos;{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;method&quot;: &quot;get_account&quot;, &quot;params&quot;: [&quot;1.2.0&quot;], &quot;id&quot;: 1}&apos; http://127.0.0.1:8091/rpc
 </verbatim></para><para>Note: The syntax to access wallet API is a bit different than accessing node API.</para><para><bold>Important:</bold><itemizedlist>

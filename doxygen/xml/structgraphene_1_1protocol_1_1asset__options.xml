@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="structgraphene_1_1protocol_1_1asset__options" kind="struct" language="C++" prot="public">
     <compoundname>graphene::protocol::asset_options</compoundname>
     <includes refid="asset__ops_8hpp" local="no">asset_ops.hpp</includes>
@@ -9,7 +9,7 @@
         <definition>share_type graphene::protocol::asset_options::max_supply</definition>
         <argsstring></argsstring>
         <name>max_supply</name>
-        <initializer>= <ref refid="protocol_2include_2graphene_2protocol_2config_8hpp_1a0097d4b8dab3cb6d7c7f275b054c2380" kindref="member">GRAPHENE_MAX_SHARE_SUPPLY</ref></initializer>
+        <initializer>= <ref refid="protocol_2include_2graphene_2protocol_2config_8hpp_1a7d4d451243112ac14dc916ddba5fe156" kindref="member">GRAPHENE_MAX_SHARE_SUPPLY</ref></initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -37,7 +37,7 @@
         <definition>share_type graphene::protocol::asset_options::max_market_fee</definition>
         <argsstring></argsstring>
         <name>max_market_fee</name>
-        <initializer>= <ref refid="protocol_2include_2graphene_2protocol_2config_8hpp_1a0097d4b8dab3cb6d7c7f275b054c2380" kindref="member">GRAPHENE_MAX_SHARE_SUPPLY</ref></initializer>
+        <initializer>= <ref refid="protocol_2include_2graphene_2protocol_2config_8hpp_1a7d4d451243112ac14dc916ddba5fe156" kindref="member">GRAPHENE_MAX_SHARE_SUPPLY</ref></initializer>
         <briefdescription>
 <para>Market fees calculated as <ref refid="structgraphene_1_1protocol_1_1asset__options_1abe898425c59cb881bede857ec89ab599" kindref="member">market_fee_percent</ref> of the traded volume are capped to this value. </para>        </briefdescription>
         <detaileddescription>
@@ -168,10 +168,10 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="structgraphene_1_1protocol_1_1asset__options_1a148c9c546d2e6c2050e490a45b75e11a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1asset__options_1a4df71f561573282732d5e299197f4986" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>uint16_t</type>
         <definition>uint16_t graphene::protocol::asset_options::get_enabled_issuer_permissions_mask</definition>
-        <argsstring>() const </argsstring>
+        <argsstring>() const</argsstring>
         <name>get_enabled_issuer_permissions_mask</name>
         <briefdescription>
         </briefdescription>
@@ -180,12 +180,12 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="66" column="1" bodyfile="libraries/protocol/asset_ops.cpp" bodystart="319" bodyend="323"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="66" column="1" bodyfile="libraries/protocol/asset_ops.cpp" bodystart="336" bodyend="340"/>
       </memberdef>
-      <memberdef kind="function" id="structgraphene_1_1protocol_1_1asset__options_1af1b96f10abef3082c6d8d477e65940b8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1asset__options_1a4bdc7854fcc27b9fcfe398e5a4e6f111" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void graphene::protocol::asset_options::validate</definition>
-        <argsstring>() const </argsstring>
+        <argsstring>() const</argsstring>
         <name>validate</name>
         <briefdescription>
         </briefdescription>
@@ -201,16 +201,21 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="97" column="1" bodyfile="libraries/protocol/asset_ops.cpp" bodystart="263" bodyend="299"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="97" column="1" bodyfile="libraries/protocol/asset_ops.cpp" bodystart="273" bodyend="309"/>
       </memberdef>
-      <memberdef kind="function" id="structgraphene_1_1protocol_1_1asset__options_1af053dc9a98097b6a192521d70b3762e7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1asset__options_1a028d101fd08e05f8c7865a6691100d10" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void graphene::protocol::asset_options::validate_flags</definition>
-        <argsstring>(bool is_market_issued) const </argsstring>
+        <argsstring>(bool is_market_issued, bool allow_disable_collateral_bid=true) const</argsstring>
         <name>validate_flags</name>
         <param>
           <type>bool</type>
           <declname>is_market_issued</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>allow_disable_collateral_bid</declname>
+          <defval>true</defval>
         </param>
         <briefdescription>
         </briefdescription>
@@ -226,7 +231,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="101" column="1" bodyfile="libraries/protocol/asset_ops.cpp" bodystart="301" bodyend="317"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="101" column="1" bodyfile="libraries/protocol/asset_ops.cpp" bodystart="312" bodyend="334"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -235,82 +240,82 @@
 <para><simplesect kind="note"><para>Changes to this struct will break protocol compatibility </para></simplesect>
 </para>    </detaileddescription>
     <collaborationgraph>
-      <node id="1075">
+      <node id="1076">
         <label>flat_set&lt; asset_id_type &gt;</label>
       </node>
-      <node id="1077">
+      <node id="1078">
         <label>string</label>
       </node>
-      <node id="1078">
+      <node id="1079">
         <label>graphene::protocol::price</label>
         <link refid="structgraphene_1_1protocol_1_1price"/>
-        <childnode refid="1079" relation="usage">
+        <childnode refid="1080" relation="usage">
           <edgelabel>base</edgelabel>
           <edgelabel>quote</edgelabel>
         </childnode>
       </node>
-      <node id="1072">
+      <node id="1073">
         <label>graphene::protocol::additional_asset_options</label>
         <link refid="structgraphene_1_1protocol_1_1additional__asset__options"/>
-        <childnode refid="1073" relation="usage">
+        <childnode refid="1074" relation="usage">
           <edgelabel>taker_fee_percent</edgelabel>
           <edgelabel>reward_percent</edgelabel>
         </childnode>
-        <childnode refid="1074" relation="usage">
+        <childnode refid="1075" relation="usage">
           <edgelabel>whitelist_market_fee_sharing</edgelabel>
         </childnode>
       </node>
-      <node id="1074">
+      <node id="1075">
         <label>fc::optional&lt; flat_set&lt; account_id_type &gt; &gt;</label>
         <link refid="classfc_1_1optional"/>
       </node>
-      <node id="1080">
+      <node id="1081">
         <label>flat_set&lt; account_id_type &gt;</label>
       </node>
-      <node id="1076">
+      <node id="1077">
         <label>fc::safe&lt; int64_t &gt;</label>
         <link refid="structfc_1_1safe"/>
       </node>
-      <node id="1070">
+      <node id="1071">
         <label>graphene::protocol::asset_options</label>
         <link refid="structgraphene_1_1protocol_1_1asset__options"/>
-        <childnode refid="1071" relation="usage">
+        <childnode refid="1072" relation="usage">
           <edgelabel>extensions</edgelabel>
         </childnode>
-        <childnode refid="1075" relation="usage">
+        <childnode refid="1076" relation="usage">
           <edgelabel>whitelist_markets</edgelabel>
           <edgelabel>blacklist_markets</edgelabel>
         </childnode>
-        <childnode refid="1076" relation="usage">
+        <childnode refid="1077" relation="usage">
           <edgelabel>max_market_fee</edgelabel>
           <edgelabel>max_supply</edgelabel>
         </childnode>
-        <childnode refid="1077" relation="usage">
+        <childnode refid="1078" relation="usage">
           <edgelabel>description</edgelabel>
         </childnode>
-        <childnode refid="1078" relation="usage">
+        <childnode refid="1079" relation="usage">
           <edgelabel>core_exchange_rate</edgelabel>
         </childnode>
-        <childnode refid="1080" relation="usage">
+        <childnode refid="1081" relation="usage">
           <edgelabel>whitelist_authorities</edgelabel>
           <edgelabel>blacklist_authorities</edgelabel>
         </childnode>
       </node>
-      <node id="1079">
+      <node id="1080">
         <label>graphene::protocol::asset</label>
         <link refid="structgraphene_1_1protocol_1_1asset"/>
-        <childnode refid="1076" relation="usage">
+        <childnode refid="1077" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
       </node>
-      <node id="1071">
+      <node id="1072">
         <label>graphene::protocol::extension&lt; additional_asset_options &gt;</label>
         <link refid="structgraphene_1_1protocol_1_1extension"/>
-        <childnode refid="1072" relation="usage">
+        <childnode refid="1073" relation="usage">
           <edgelabel>value</edgelabel>
         </childnode>
       </node>
-      <node id="1073">
+      <node id="1074">
         <label>fc::optional&lt; uint16_t &gt;</label>
         <link refid="classfc_1_1optional"/>
       </node>
@@ -323,13 +328,13 @@
       <member refid="structgraphene_1_1protocol_1_1asset__options_1a7be2b19e283c4aca404f2683e8534fd3" prot="public" virt="non-virtual"><scope>graphene::protocol::asset_options</scope><name>description</name></member>
       <member refid="structgraphene_1_1protocol_1_1asset__options_1a461c14cf2529d2bf320cccf213d8ed81" prot="public" virt="non-virtual"><scope>graphene::protocol::asset_options</scope><name>extensions</name></member>
       <member refid="structgraphene_1_1protocol_1_1asset__options_1a74c282e91696d3026273eec02d0a8e4a" prot="public" virt="non-virtual"><scope>graphene::protocol::asset_options</scope><name>flags</name></member>
-      <member refid="structgraphene_1_1protocol_1_1asset__options_1a148c9c546d2e6c2050e490a45b75e11a" prot="public" virt="non-virtual"><scope>graphene::protocol::asset_options</scope><name>get_enabled_issuer_permissions_mask</name></member>
+      <member refid="structgraphene_1_1protocol_1_1asset__options_1a4df71f561573282732d5e299197f4986" prot="public" virt="non-virtual"><scope>graphene::protocol::asset_options</scope><name>get_enabled_issuer_permissions_mask</name></member>
       <member refid="structgraphene_1_1protocol_1_1asset__options_1aa7eeee6df8b5c680a023073a84528d2c" prot="public" virt="non-virtual"><scope>graphene::protocol::asset_options</scope><name>issuer_permissions</name></member>
       <member refid="structgraphene_1_1protocol_1_1asset__options_1abe898425c59cb881bede857ec89ab599" prot="public" virt="non-virtual"><scope>graphene::protocol::asset_options</scope><name>market_fee_percent</name></member>
       <member refid="structgraphene_1_1protocol_1_1asset__options_1a12335bef1b9c33b9df5eeee1e6815d57" prot="public" virt="non-virtual"><scope>graphene::protocol::asset_options</scope><name>max_market_fee</name></member>
       <member refid="structgraphene_1_1protocol_1_1asset__options_1ac94e394a228896487d50876b1d66bfbf" prot="public" virt="non-virtual"><scope>graphene::protocol::asset_options</scope><name>max_supply</name></member>
-      <member refid="structgraphene_1_1protocol_1_1asset__options_1af1b96f10abef3082c6d8d477e65940b8" prot="public" virt="non-virtual"><scope>graphene::protocol::asset_options</scope><name>validate</name></member>
-      <member refid="structgraphene_1_1protocol_1_1asset__options_1af053dc9a98097b6a192521d70b3762e7" prot="public" virt="non-virtual"><scope>graphene::protocol::asset_options</scope><name>validate_flags</name></member>
+      <member refid="structgraphene_1_1protocol_1_1asset__options_1a4bdc7854fcc27b9fcfe398e5a4e6f111" prot="public" virt="non-virtual"><scope>graphene::protocol::asset_options</scope><name>validate</name></member>
+      <member refid="structgraphene_1_1protocol_1_1asset__options_1a028d101fd08e05f8c7865a6691100d10" prot="public" virt="non-virtual"><scope>graphene::protocol::asset_options</scope><name>validate_flags</name></member>
       <member refid="structgraphene_1_1protocol_1_1asset__options_1af6594e3bfce4ff7062f7150725c9eb71" prot="public" virt="non-virtual"><scope>graphene::protocol::asset_options</scope><name>whitelist_authorities</name></member>
       <member refid="structgraphene_1_1protocol_1_1asset__options_1a9c29d13ef622de8d5c039f469d3ddbc3" prot="public" virt="non-virtual"><scope>graphene::protocol::asset_options</scope><name>whitelist_markets</name></member>
     </listofallmembers>
