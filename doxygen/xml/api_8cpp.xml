@@ -5,18 +5,8 @@
     <includes local="no">cctype</includes>
     <includes refid="app_2include_2graphene_2app_2api_8hpp" local="no">graphene/app/api.hpp</includes>
     <includes refid="api__access_8hpp" local="no">graphene/app/api_access.hpp</includes>
-    <includes refid="application_8hpp" local="no">graphene/app/application.hpp</includes>
-    <includes refid="database_8hpp" local="no">graphene/chain/database.hpp</includes>
-    <includes refid="get__config_8hpp" local="no">graphene/chain/get_config.hpp</includes>
-    <includes refid="key__conversion_8hpp" local="no">graphene/utilities/key_conversion.hpp</includes>
-    <includes refid="fee__schedule_8hpp" local="no">graphene/protocol/fee_schedule.hpp</includes>
-    <includes refid="confidential__object_8hpp" local="no">graphene/chain/confidential_object.hpp</includes>
-    <includes refid="market__object_8hpp" local="no">graphene/chain/market_object.hpp</includes>
-    <includes refid="transaction__history__object_8hpp" local="no">graphene/chain/transaction_history_object.hpp</includes>
-    <includes refid="withdraw__permission__object_8hpp" local="no">graphene/chain/withdraw_permission_object.hpp</includes>
-    <includes refid="worker__object_8hpp" local="no">graphene/chain/worker_object.hpp</includes>
+    <includes refid="database__api__helper_8hxx" local="yes">database_api_helper.hxx</includes>
     <includes refid="base64_8hpp" local="no">fc/crypto/base64.hpp</includes>
-    <includes refid="hex_8hpp" local="no">fc/crypto/hex.hpp</includes>
     <includes refid="api__connection_8hpp" local="no">fc/rpc/api_connection.hpp</includes>
     <includes refid="future_8hpp" local="no">fc/thread/future.hpp</includes>
     <incdepgraph>
@@ -67,6 +57,8 @@
         <label>graphene/app/api_access.hpp</label>
         <link refid="api__access_8hpp"/>
         <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
         </childnode>
         <childnode refid="43" relation="include">
         </childnode>
@@ -353,8 +345,6 @@
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="139" relation="include">
-        </childnode>
         <childnode refid="195" relation="include">
         </childnode>
         <childnode refid="214" relation="include">
@@ -432,11 +422,7 @@
         </childnode>
         <childnode refid="167" relation="include">
         </childnode>
-        <childnode refid="47" relation="include">
-        </childnode>
         <childnode refid="66" relation="include">
-        </childnode>
-        <childnode refid="41" relation="include">
         </childnode>
       </node>
       <node id="126">
@@ -769,24 +755,6 @@
       <node id="43">
         <label>map</label>
       </node>
-      <node id="225">
-        <label>graphene/chain/transaction_history_object.hpp</label>
-        <link refid="transaction__history__object_8hpp"/>
-        <childnode refid="133" relation="include">
-        </childnode>
-        <childnode refid="94" relation="include">
-        </childnode>
-        <childnode refid="108" relation="include">
-        </childnode>
-        <childnode refid="109" relation="include">
-        </childnode>
-        <childnode refid="110" relation="include">
-        </childnode>
-        <childnode refid="129" relation="include">
-        </childnode>
-        <childnode refid="111" relation="include">
-        </childnode>
-      </node>
       <node id="197">
         <label>graphene/chain/balance_object.hpp</label>
         <link refid="balance__object_8hpp"/>
@@ -817,8 +785,6 @@
         <childnode refid="50" relation="include">
         </childnode>
         <childnode refid="24" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
         </childnode>
       </node>
       <node id="58">
@@ -1188,8 +1154,6 @@
         <childnode refid="9" relation="include">
         </childnode>
         <childnode refid="221" relation="include">
-        </childnode>
-        <childnode refid="52" relation="include">
         </childnode>
         <childnode refid="55" relation="include">
         </childnode>
@@ -1578,16 +1542,6 @@
         <childnode refid="68" relation="include">
         </childnode>
       </node>
-      <node id="224">
-        <label>graphene/utilities/key_conversion.hpp</label>
-        <link refid="key__conversion_8hpp"/>
-        <childnode refid="34" relation="include">
-        </childnode>
-        <childnode refid="71" relation="include">
-        </childnode>
-        <childnode refid="31" relation="include">
-        </childnode>
-      </node>
       <node id="78">
         <label>openssl/evp.h</label>
       </node>
@@ -1679,31 +1633,11 @@
         </childnode>
         <childnode refid="162" relation="include">
         </childnode>
-        <childnode refid="161" relation="include">
-        </childnode>
-        <childnode refid="172" relation="include">
-        </childnode>
         <childnode refid="223" relation="include">
         </childnode>
         <childnode refid="224" relation="include">
         </childnode>
-        <childnode refid="173" relation="include">
-        </childnode>
-        <childnode refid="200" relation="include">
-        </childnode>
-        <childnode refid="131" relation="include">
-        </childnode>
         <childnode refid="225" relation="include">
-        </childnode>
-        <childnode refid="156" relation="include">
-        </childnode>
-        <childnode refid="204" relation="include">
-        </childnode>
-        <childnode refid="226" relation="include">
-        </childnode>
-        <childnode refid="61" relation="include">
-        </childnode>
-        <childnode refid="227" relation="include">
         </childnode>
         <childnode refid="115" relation="include">
         </childnode>
@@ -1766,7 +1700,7 @@
       <node id="57">
         <label>cstddef</label>
       </node>
-      <node id="226">
+      <node id="224">
         <label>fc/crypto/base64.hpp</label>
         <link refid="base64_8hpp"/>
         <childnode refid="34" relation="include">
@@ -1973,7 +1907,7 @@
         <childnode refid="94" relation="include">
         </childnode>
       </node>
-      <node id="227">
+      <node id="225">
         <label>fc/rpc/api_connection.hpp</label>
         <link refid="api__connection_8hpp"/>
         <childnode refid="56" relation="include">
@@ -2133,12 +2067,6 @@
         <childnode refid="50" relation="include">
         </childnode>
       </node>
-      <node id="223">
-        <label>graphene/chain/get_config.hpp</label>
-        <link refid="get__config_8hpp"/>
-        <childnode refid="55" relation="include">
-        </childnode>
-      </node>
       <node id="209">
         <label>boost/preprocessor/repeat.hpp</label>
       </node>
@@ -2176,6 +2104,10 @@
         </childnode>
         <childnode refid="124" relation="include">
         </childnode>
+      </node>
+      <node id="223">
+        <label>database_api_helper.hxx</label>
+        <link refid="database__api__helper_8hxx"/>
       </node>
       <node id="125">
         <label>graphene/chain/asset_object.hpp</label>

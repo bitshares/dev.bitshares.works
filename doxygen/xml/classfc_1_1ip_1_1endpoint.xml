@@ -9,13 +9,14 @@
         <definition>uint32_t fc::ip::endpoint::_port</definition>
         <argsstring></argsstring>
         <name>_port</name>
+        <initializer>= 0</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
 <para>The compiler pads endpoint to a full 8 bytes, so while a port number is limited in range to 16 bits, we specify a full 32 bits so that memcmp can be used with sizeof(), otherwise 2 bytes will be &apos;random&apos; and you do not know where they are stored. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/network/ip.hpp" line="69" column="1" bodyfile="libraries/fc/include/fc/network/ip.hpp" bodystart="69" bodyend="-1"/>
+        <location file="libraries/fc/include/fc/network/ip.hpp" line="92" column="1" bodyfile="libraries/fc/include/fc/network/ip.hpp" bodystart="92" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classfc_1_1ip_1_1endpoint_1a0b3d34e5da0af9c3025ed5deca747c0f" prot="private" static="no" mutable="no">
         <type><ref refid="classfc_1_1ip_1_1address" kindref="compound">address</ref></type>
@@ -28,14 +29,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/network/ip.hpp" line="70" column="1" bodyfile="libraries/fc/include/fc/network/ip.hpp" bodystart="70" bodyend="-1"/>
+        <location file="libraries/fc/include/fc/network/ip.hpp" line="93" column="1" bodyfile="libraries/fc/include/fc/network/ip.hpp" bodystart="93" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classfc_1_1ip_1_1endpoint_1ad3a1ad38684ecd7c145ab3d4142645f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classfc_1_1ip_1_1endpoint_1a805e156a93f316f9e1e24095afd6f821" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>fc::ip::endpoint::endpoint</definition>
-        <argsstring>()</argsstring>
+        <argsstring>()=default</argsstring>
         <name>endpoint</name>
         <briefdescription>
         </briefdescription>
@@ -43,9 +44,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/network/ip.hpp" line="45" column="1" bodyfile="libraries/fc/src/network/ip.cpp" bodystart="52" bodyend="53"/>
+        <location file="libraries/fc/include/fc/network/ip.hpp" line="67" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="classfc_1_1ip_1_1endpoint_1a5105c2971d5a5d76a2ce87422d855233" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classfc_1_1ip_1_1endpoint_1a5105c2971d5a5d76a2ce87422d855233" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>fc::ip::endpoint::endpoint</definition>
         <argsstring>(const address &amp;i, uint16_t p=0)</argsstring>
@@ -65,9 +66,31 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/network/ip.hpp" line="46" column="1" bodyfile="libraries/fc/src/network/ip.cpp" bodystart="54" bodyend="55"/>
+        <location file="libraries/fc/include/fc/network/ip.hpp" line="68" column="1" bodyfile="libraries/fc/src/network/ip.cpp" bodystart="58" bodyend="59"/>
       </memberdef>
-      <memberdef kind="function" id="classfc_1_1ip_1_1endpoint_1a8a44fd8cffdec158ae2a548db5d64a56" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classfc_1_1ip_1_1endpoint_1ad63d3fd84c992a7347c990bdbe26c78b" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fc::ip::endpoint::endpoint</definition>
+        <argsstring>(uint32_t i, uint16_t p=0)</argsstring>
+        <name>endpoint</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>p</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/network/ip.hpp" line="69" column="1" bodyfile="libraries/fc/src/network/ip.cpp" bodystart="61" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1ip_1_1endpoint_1a8a44fd8cffdec158ae2a548db5d64a56" prot="public" static="no" const="yes" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>fc::ip::endpoint::operator string</definition>
         <argsstring>() const</argsstring>
@@ -78,7 +101,7 @@
 <para>returns &quot;IP:PORT&quot; </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/network/ip.hpp" line="51" column="1" bodyfile="libraries/fc/src/network/ip.cpp" bodystart="87" bodyend="94"/>
+        <location file="libraries/fc/include/fc/network/ip.hpp" line="74" column="1" bodyfile="libraries/fc/src/network/ip.cpp" bodystart="94" bodyend="101"/>
       </memberdef>
       <memberdef kind="function" id="classfc_1_1ip_1_1endpoint_1a3ec532f0d1fb4b815372fabdc19056f6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -95,7 +118,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/network/ip.hpp" line="53" column="1" bodyfile="libraries/fc/include/fc/network/ip.hpp" bodystart="53" bodyend="53"/>
+        <location file="libraries/fc/include/fc/network/ip.hpp" line="76" column="1" bodyfile="libraries/fc/include/fc/network/ip.hpp" bodystart="76" bodyend="76"/>
       </memberdef>
       <memberdef kind="function" id="classfc_1_1ip_1_1endpoint_1ab243ed508cf8f9d34a32b2ece708466b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>uint16_t</type>
@@ -108,7 +131,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/network/ip.hpp" line="54" column="1" bodyfile="libraries/fc/src/network/ip.cpp" bodystart="71" bodyend="71"/>
+        <location file="libraries/fc/include/fc/network/ip.hpp" line="77" column="1" bodyfile="libraries/fc/src/network/ip.cpp" bodystart="78" bodyend="78"/>
       </memberdef>
       <memberdef kind="function" id="classfc_1_1ip_1_1endpoint_1a61b2902b0e0e02172a60f3a17469f780" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classfc_1_1ip_1_1address" kindref="compound">address</ref> &amp;</type>
@@ -121,7 +144,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/network/ip.hpp" line="55" column="1" bodyfile="libraries/fc/src/network/ip.cpp" bodystart="72" bodyend="72"/>
+        <location file="libraries/fc/include/fc/network/ip.hpp" line="78" column="1" bodyfile="libraries/fc/src/network/ip.cpp" bodystart="79" bodyend="79"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -140,7 +163,7 @@
 <para>Converts &quot;IP:PORT&quot; to an endpoint </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/network/ip.hpp" line="49" column="1" bodyfile="libraries/fc/src/network/ip.cpp" bodystart="74" bodyend="85"/>
+        <location file="libraries/fc/include/fc/network/ip.hpp" line="72" column="1" bodyfile="libraries/fc/src/network/ip.cpp" bodystart="81" bodyend="92"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="friend">
@@ -163,7 +186,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/network/ip.hpp" line="57" column="1" bodyfile="libraries/fc/src/network/ip.cpp" bodystart="57" bodyend="59"/>
+        <location file="libraries/fc/include/fc/network/ip.hpp" line="80" column="1" bodyfile="libraries/fc/src/network/ip.cpp" bodystart="64" bodyend="66"/>
       </memberdef>
       <memberdef kind="friend" id="classfc_1_1ip_1_1endpoint_1a0cdcb0047f3ae66889d3a8d2d01a1a9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>friend bool</type>
@@ -184,7 +207,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/network/ip.hpp" line="58" column="1" bodyfile="libraries/fc/src/network/ip.cpp" bodystart="60" bodyend="62"/>
+        <location file="libraries/fc/include/fc/network/ip.hpp" line="81" column="1" bodyfile="libraries/fc/src/network/ip.cpp" bodystart="67" bodyend="69"/>
       </memberdef>
       <memberdef kind="friend" id="classfc_1_1ip_1_1endpoint_1aa0defbdcb5d502ecbdfb035009e24f75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>friend bool</type>
@@ -205,19 +228,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/network/ip.hpp" line="59" column="1" bodyfile="libraries/fc/src/network/ip.cpp" bodystart="64" bodyend="69"/>
+        <location file="libraries/fc/include/fc/network/ip.hpp" line="82" column="1" bodyfile="libraries/fc/src/network/ip.cpp" bodystart="71" bodyend="76"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="libraries/fc/include/fc/network/ip.hpp" line="43" column="1" bodyfile="libraries/fc/include/fc/network/ip.hpp" bodystart="43" bodyend="71"/>
+    <location file="libraries/fc/include/fc/network/ip.hpp" line="65" column="1" bodyfile="libraries/fc/include/fc/network/ip.hpp" bodystart="65" bodyend="94"/>
     <listofallmembers>
       <member refid="classfc_1_1ip_1_1endpoint_1a0b3d34e5da0af9c3025ed5deca747c0f" prot="private" virt="non-virtual"><scope>fc::ip::endpoint</scope><name>_ip</name></member>
       <member refid="classfc_1_1ip_1_1endpoint_1ac2909bc9f20a8abc19aedcb594d78dae" prot="private" virt="non-virtual"><scope>fc::ip::endpoint</scope><name>_port</name></member>
-      <member refid="classfc_1_1ip_1_1endpoint_1ad3a1ad38684ecd7c145ab3d4142645f6" prot="public" virt="non-virtual"><scope>fc::ip::endpoint</scope><name>endpoint</name></member>
+      <member refid="classfc_1_1ip_1_1endpoint_1a805e156a93f316f9e1e24095afd6f821" prot="public" virt="non-virtual"><scope>fc::ip::endpoint</scope><name>endpoint</name></member>
       <member refid="classfc_1_1ip_1_1endpoint_1a5105c2971d5a5d76a2ce87422d855233" prot="public" virt="non-virtual"><scope>fc::ip::endpoint</scope><name>endpoint</name></member>
+      <member refid="classfc_1_1ip_1_1endpoint_1ad63d3fd84c992a7347c990bdbe26c78b" prot="public" virt="non-virtual"><scope>fc::ip::endpoint</scope><name>endpoint</name></member>
       <member refid="classfc_1_1ip_1_1endpoint_1a80c154405619b208c9d057d2c91958c9" prot="public" virt="non-virtual"><scope>fc::ip::endpoint</scope><name>from_string</name></member>
       <member refid="classfc_1_1ip_1_1endpoint_1a61b2902b0e0e02172a60f3a17469f780" prot="public" virt="non-virtual"><scope>fc::ip::endpoint</scope><name>get_address</name></member>
       <member refid="classfc_1_1ip_1_1endpoint_1a8a44fd8cffdec158ae2a548db5d64a56" prot="public" virt="non-virtual"><scope>fc::ip::endpoint</scope><name>operator string</name></member>

@@ -3,12 +3,13 @@
   <compounddef id="namespacegraphene_1_1account__history" kind="namespace" language="C++">
     <compoundname>graphene::account_history</compoundname>
     <innerclass refid="classgraphene_1_1account__history_1_1account__history__plugin" prot="public">graphene::account_history::account_history_plugin</innerclass>
+    <innerclass refid="structgraphene_1_1account__history_1_1exceeded__account__object" prot="public">graphene::account_history::exceeded_account_object</innerclass>
     <innernamespace refid="namespacegraphene_1_1account__history_1_1detail">graphene::account_history::detail</innernamespace>
       <sectiondef kind="enum">
       <memberdef kind="enum" id="namespacegraphene_1_1account__history_1ab45e882d887d1f28eb4a10c8a48c9fa7" prot="public" static="no">
         <name>account_history_object_type</name>
-        <enumvalue id="namespacegraphene_1_1account__history_1ab45e882d887d1f28eb4a10c8a48c9fa7aaf748086896e114bc7c428b1a6ce2aca" prot="public">
-          <name>key_account_object_type</name>
+        <enumvalue id="namespacegraphene_1_1account__history_1ab45e882d887d1f28eb4a10c8a48c9fa7acc4f714d1a1d1de96e8a6b49ae4603f9" prot="public">
+          <name>exceeded_account_object_type</name>
           <initializer>= 0</initializer>
           <briefdescription>
           </briefdescription>
@@ -21,13 +22,41 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/plugins/account_history/include/graphene/account_history/account_history_plugin.hpp" line="54" column="1" bodyfile="libraries/plugins/account_history/include/graphene/account_history/account_history_plugin.hpp" bodystart="53" bodyend="56"/>
+        <location file="libraries/plugins/account_history/include/graphene/account_history/account_history_plugin.hpp" line="48" column="1" bodyfile="libraries/plugins/account_history/include/graphene/account_history/account_history_plugin.hpp" bodystart="47" bodyend="50"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespacegraphene_1_1account__history_1a66443d6a8577d0e88d26747685ced0c6" prot="public" static="no">
+        <type>multi_index_container&lt; <ref refid="structgraphene_1_1account__history_1_1exceeded__account__object" kindref="compound">exceeded_account_object</ref>, indexed_by&lt; ordered_unique&lt; tag&lt; by_id &gt;, member&lt; <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref>, <ref refid="structgraphene_1_1db_1_1object__id__type" kindref="compound">object_id_type</ref>, &amp;<ref refid="classgraphene_1_1db_1_1object_1a2ce812569d565a45dda1420cfbdf79ad" kindref="member">object::id</ref> &gt; &gt;, ordered_unique&lt; tag&lt; by_account &gt;, member&lt; <ref refid="structgraphene_1_1account__history_1_1exceeded__account__object" kindref="compound">exceeded_account_object</ref>, account_id_type, &amp;<ref refid="structgraphene_1_1account__history_1_1exceeded__account__object_1ad3bc59a9baab65db4902d084473209e3" kindref="member">exceeded_account_object::account_id</ref> &gt; &gt;, ordered_unique&lt; tag&lt; by_block_num &gt;, composite_key&lt; <ref refid="structgraphene_1_1account__history_1_1exceeded__account__object" kindref="compound">exceeded_account_object</ref>, member&lt; <ref refid="structgraphene_1_1account__history_1_1exceeded__account__object" kindref="compound">exceeded_account_object</ref>, uint32_t, &amp;<ref refid="structgraphene_1_1account__history_1_1exceeded__account__object_1ab51a8626b37365069670e4fd460987c9" kindref="member">exceeded_account_object::block_num</ref> &gt;, member&lt; <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref>, <ref refid="structgraphene_1_1db_1_1object__id__type" kindref="compound">object_id_type</ref>, &amp;<ref refid="classgraphene_1_1db_1_1object_1a2ce812569d565a45dda1420cfbdf79ad" kindref="member">object::id</ref> &gt; &gt; &gt; &gt; &gt;</type>
+        <definition>using graphene::account_history::exceeded_account_multi_idx_type = typedef multi_index_container&lt; exceeded_account_object, indexed_by&lt; ordered_unique&lt; tag&lt;by_id&gt;, member&lt; object, object_id_type, &amp;object::id &gt; &gt;, ordered_unique&lt; tag&lt;by_account&gt;, member&lt; exceeded_account_object, account_id_type, &amp;exceeded_account_object::account_id &gt; &gt;, ordered_unique&lt; tag&lt;by_block_num&gt;, composite_key&lt; exceeded_account_object, member&lt; exceeded_account_object, uint32_t, &amp;exceeded_account_object::block_num &gt;, member&lt; object, object_id_type, &amp;object::id &gt; &gt; &gt; &gt; &gt;</definition>
+        <argsstring></argsstring>
+        <name>exceeded_account_multi_idx_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/plugins/account_history/include/graphene/account_history/account_history_plugin.hpp" line="64" column="1" bodyfile="libraries/plugins/account_history/include/graphene/account_history/account_history_plugin.hpp" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacegraphene_1_1account__history_1ab32a180f815483b59766add468028a13" prot="public" static="no">
+        <type><ref refid="classgraphene_1_1db_1_1generic__index" kindref="compound">generic_index</ref>&lt; <ref refid="structgraphene_1_1account__history_1_1exceeded__account__object" kindref="compound">exceeded_account_object</ref>, <ref refid="namespacegraphene_1_1account__history_1a66443d6a8577d0e88d26747685ced0c6" kindref="member">exceeded_account_multi_idx_type</ref> &gt;</type>
+        <definition>using graphene::account_history::exceeded_account_index = typedef generic_index&lt; exceeded_account_object, exceeded_account_multi_idx_type &gt;</definition>
+        <argsstring></argsstring>
+        <name>exceeded_account_index</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/plugins/account_history/include/graphene/account_history/account_history_plugin.hpp" line="80" column="1" bodyfile="libraries/plugins/account_history/include/graphene/account_history/account_history_plugin.hpp" bodystart="80" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="libraries/plugins/account_history/account_history_plugin.cpp" line="40" column="1"/>
+    <location file="libraries/plugins/account_history/account_history_plugin.cpp" line="42" column="1"/>
   </compounddef>
 </doxygen>

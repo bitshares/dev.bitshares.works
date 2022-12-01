@@ -61,6 +61,7 @@
         <definition>uint32_t graphene::net::potential_peer_record::number_of_successful_connection_attempts</definition>
         <argsstring></argsstring>
         <name>number_of_successful_connection_attempts</name>
+        <initializer>= 0</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -74,6 +75,7 @@
         <definition>uint32_t graphene::net::potential_peer_record::number_of_failed_connection_attempts</definition>
         <argsstring></argsstring>
         <name>number_of_failed_connection_attempts</name>
+        <initializer>= 0</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -97,10 +99,10 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="structgraphene_1_1net_1_1potential__peer__record_1a34febec2c0709d54afafe14b4630760b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structgraphene_1_1net_1_1potential__peer__record_1a02e5382b17dcb19684edd17fd4556a38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>graphene::net::potential_peer_record::potential_peer_record</definition>
-        <argsstring>()</argsstring>
+        <argsstring>()=default</argsstring>
         <name>potential_peer_record</name>
         <briefdescription>
         </briefdescription>
@@ -108,19 +110,19 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/peer_database.hpp" line="57" column="1" bodyfile="libraries/net/include/graphene/net/peer_database.hpp" bodystart="57" bodyend="59"/>
+        <location file="libraries/net/include/graphene/net/peer_database.hpp" line="57" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="structgraphene_1_1net_1_1potential__peer__record_1a34088f6321e640c9e10a9f2b29a148eb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structgraphene_1_1net_1_1potential__peer__record_1a56b88fe75a86f543544cb39b23d55af1" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
         <type></type>
         <definition>graphene::net::potential_peer_record::potential_peer_record</definition>
-        <argsstring>(fc::ip::endpoint endpoint, fc::time_point_sec last_seen_time=fc::time_point_sec(), potential_peer_last_connection_disposition last_connection_disposition=never_attempted_to_connect)</argsstring>
+        <argsstring>(const fc::ip::endpoint &amp;endpoint, const fc::time_point_sec &amp;last_seen_time=fc::time_point_sec(), potential_peer_last_connection_disposition last_connection_disposition=never_attempted_to_connect)</argsstring>
         <name>potential_peer_record</name>
         <param>
-          <type><ref refid="classfc_1_1ip_1_1endpoint" kindref="compound">fc::ip::endpoint</ref></type>
+          <type>const <ref refid="classfc_1_1ip_1_1endpoint" kindref="compound">fc::ip::endpoint</ref> &amp;</type>
           <declname>endpoint</declname>
         </param>
         <param>
-          <type><ref refid="classfc_1_1time__point__sec" kindref="compound">fc::time_point_sec</ref></type>
+          <type>const <ref refid="classfc_1_1time__point__sec" kindref="compound">fc::time_point_sec</ref> &amp;</type>
           <declname>last_seen_time</declname>
           <defval><ref refid="classfc_1_1time__point__sec" kindref="compound">fc::time_point_sec</ref>()</defval>
         </param>
@@ -135,7 +137,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/include/graphene/net/peer_database.hpp" line="61" column="1" bodyfile="libraries/net/include/graphene/net/peer_database.hpp" bodystart="61" bodyend="69"/>
+        <location file="libraries/net/include/graphene/net/peer_database.hpp" line="59" column="1" bodyfile="libraries/net/include/graphene/net/peer_database.hpp" bodystart="59" bodyend="66"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -143,41 +145,41 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="5920">
+      <node id="6318">
         <label>fc::ip::endpoint</label>
         <link refid="classfc_1_1ip_1_1endpoint"/>
       </node>
-      <node id="5923">
+      <node id="6321">
         <label>fc::enum_type&lt; uint8_t, potential_peer_last_connection_disposition &gt;</label>
         <link refid="classfc_1_1enum__type"/>
       </node>
-      <node id="5919">
+      <node id="6317">
         <label>graphene::net::potential_peer_record</label>
         <link refid="structgraphene_1_1net_1_1potential__peer__record"/>
-        <childnode refid="5920" relation="usage">
+        <childnode refid="6318" relation="usage">
           <edgelabel>endpoint</edgelabel>
         </childnode>
-        <childnode refid="5921" relation="usage">
+        <childnode refid="6319" relation="usage">
           <edgelabel>last_seen_time</edgelabel>
           <edgelabel>last_connection_attempt_time</edgelabel>
         </childnode>
-        <childnode refid="5922" relation="usage">
+        <childnode refid="6320" relation="usage">
           <edgelabel>last_error</edgelabel>
         </childnode>
-        <childnode refid="5923" relation="usage">
+        <childnode refid="6321" relation="usage">
           <edgelabel>last_connection_disposition</edgelabel>
         </childnode>
       </node>
-      <node id="5921">
+      <node id="6319">
         <label>fc::time_point_sec</label>
         <link refid="classfc_1_1time__point__sec"/>
       </node>
-      <node id="5922">
+      <node id="6320">
         <label>fc::optional&lt; fc::exception &gt;</label>
         <link refid="classfc_1_1optional"/>
       </node>
     </collaborationgraph>
-    <location file="libraries/net/include/graphene/net/peer_database.hpp" line="48" column="1" bodyfile="libraries/net/include/graphene/net/peer_database.hpp" bodystart="47" bodyend="70"/>
+    <location file="libraries/net/include/graphene/net/peer_database.hpp" line="48" column="1" bodyfile="libraries/net/include/graphene/net/peer_database.hpp" bodystart="47" bodyend="67"/>
     <listofallmembers>
       <member refid="structgraphene_1_1net_1_1potential__peer__record_1a0a28087c2b741b243ef6d2fb9490d71c" prot="public" virt="non-virtual"><scope>graphene::net::potential_peer_record</scope><name>endpoint</name></member>
       <member refid="structgraphene_1_1net_1_1potential__peer__record_1a59173718c9e9ac2f8edd74b35c1997bb" prot="public" virt="non-virtual"><scope>graphene::net::potential_peer_record</scope><name>last_connection_attempt_time</name></member>
@@ -186,8 +188,8 @@
       <member refid="structgraphene_1_1net_1_1potential__peer__record_1a63bb5d5a5225755fb291d08788f1a91f" prot="public" virt="non-virtual"><scope>graphene::net::potential_peer_record</scope><name>last_seen_time</name></member>
       <member refid="structgraphene_1_1net_1_1potential__peer__record_1a16856ae2364b22330e4f7d4e2257f017" prot="public" virt="non-virtual"><scope>graphene::net::potential_peer_record</scope><name>number_of_failed_connection_attempts</name></member>
       <member refid="structgraphene_1_1net_1_1potential__peer__record_1a6e1b4c955f1569a423ef5bc2a3a79309" prot="public" virt="non-virtual"><scope>graphene::net::potential_peer_record</scope><name>number_of_successful_connection_attempts</name></member>
-      <member refid="structgraphene_1_1net_1_1potential__peer__record_1a34febec2c0709d54afafe14b4630760b" prot="public" virt="non-virtual"><scope>graphene::net::potential_peer_record</scope><name>potential_peer_record</name></member>
-      <member refid="structgraphene_1_1net_1_1potential__peer__record_1a34088f6321e640c9e10a9f2b29a148eb" prot="public" virt="non-virtual"><scope>graphene::net::potential_peer_record</scope><name>potential_peer_record</name></member>
+      <member refid="structgraphene_1_1net_1_1potential__peer__record_1a02e5382b17dcb19684edd17fd4556a38" prot="public" virt="non-virtual"><scope>graphene::net::potential_peer_record</scope><name>potential_peer_record</name></member>
+      <member refid="structgraphene_1_1net_1_1potential__peer__record_1a56b88fe75a86f543544cb39b23d55af1" prot="public" virt="non-virtual"><scope>graphene::net::potential_peer_record</scope><name>potential_peer_record</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

@@ -2,8 +2,12 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="namespacegraphene_1_1net_1_1detail" kind="namespace" language="C++">
     <compoundname>graphene::net::detail</compoundname>
+    <innerclass refid="classgraphene_1_1net_1_1detail_1_1all__address__builder" prot="public">graphene::net::detail::all_address_builder</innerclass>
     <innerclass refid="classgraphene_1_1net_1_1detail_1_1blockchain__tied__message__cache" prot="public">graphene::net::detail::blockchain_tied_message_cache</innerclass>
     <innerclass refid="classgraphene_1_1net_1_1detail_1_1concurrent__unordered__set" prot="public">graphene::net::detail::concurrent_unordered_set</innerclass>
+    <innerclass refid="classgraphene_1_1net_1_1detail_1_1exclude__address__builder" prot="public">graphene::net::detail::exclude_address_builder</innerclass>
+    <innerclass refid="classgraphene_1_1net_1_1detail_1_1generic__list__address__builder" prot="public">graphene::net::detail::generic_list_address_builder</innerclass>
+    <innerclass refid="classgraphene_1_1net_1_1detail_1_1list__address__builder" prot="public">graphene::net::detail::list_address_builder</innerclass>
     <innerclass refid="classgraphene_1_1net_1_1detail_1_1message__oriented__connection__impl" prot="public">graphene::net::detail::message_oriented_connection_impl</innerclass>
     <innerclass refid="classgraphene_1_1net_1_1detail_1_1no__parallel__execution__guard" prot="public">graphene::net::detail::no_parallel_execution_guard</innerclass>
     <innerclass refid="structgraphene_1_1net_1_1detail_1_1node__configuration" prot="public">graphene::net::detail::node_configuration</innerclass>
@@ -14,6 +18,118 @@
     <innerclass refid="classgraphene_1_1net_1_1detail_1_1peer__database__iterator__impl" prot="public">graphene::net::detail::peer_database_iterator_impl</innerclass>
     <innerclass refid="structgraphene_1_1net_1_1detail_1_1prioritized__item__id" prot="public">graphene::net::detail::prioritized_item_id</innerclass>
     <innerclass refid="classgraphene_1_1net_1_1detail_1_1statistics__gathering__node__delegate__wrapper" prot="public">graphene::net::detail::statistics_gathering_node_delegate_wrapper</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacegraphene_1_1net_1_1detail_1a3e09d784677e3805676faa2de8833e79" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void graphene::net::detail::greatly_delay_next_conn_to</definition>
+        <argsstring>(node_impl *impl, const fc::ip::endpoint &amp;ep)</argsstring>
+        <name>greatly_delay_next_conn_to</name>
+        <param>
+          <type><ref refid="classgraphene_1_1net_1_1detail_1_1node__impl" kindref="compound">node_impl</ref> *</type>
+          <declname>impl</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classfc_1_1ip_1_1endpoint" kindref="compound">fc::ip::endpoint</ref> &amp;</type>
+          <declname>ep</declname>
+        </param>
+        <briefdescription>
+<para>Greatly delays the next connection to the endpoint. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/node.cpp" line="156" column="1" bodyfile="libraries/net/node.cpp" bodystart="156" bodyend="169"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacegraphene_1_1net_1_1detail_1a8f6c247457cd06ab267390e6b9f39ea3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void graphene::net::detail::save_successful_address</definition>
+        <argsstring>(node_impl *impl, const fc::ip::endpoint &amp;ep)</argsstring>
+        <name>save_successful_address</name>
+        <param>
+          <type><ref refid="classgraphene_1_1net_1_1detail_1_1node__impl" kindref="compound">node_impl</ref> *</type>
+          <declname>impl</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classfc_1_1ip_1_1endpoint" kindref="compound">fc::ip::endpoint</ref> &amp;</type>
+          <declname>ep</declname>
+        </param>
+        <briefdescription>
+<para>Saves a successfully connected endpoint to the peer database. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/node.cpp" line="171" column="1" bodyfile="libraries/net/node.cpp" bodystart="171" bodyend="182"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacegraphene_1_1net_1_1detail_1adb9ad4cbc34b50aa24f9a4f35785579c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void graphene::net::detail::update_address_seen_time</definition>
+        <argsstring>(node_impl *impl, const peer_connection *active_peer)</argsstring>
+        <name>update_address_seen_time</name>
+        <param>
+          <type><ref refid="classgraphene_1_1net_1_1detail_1_1node__impl" kindref="compound">node_impl</ref> *</type>
+          <declname>impl</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classgraphene_1_1net_1_1peer__connection" kindref="compound">peer_connection</ref> *</type>
+          <declname>active_peer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/node.cpp" line="183" column="1" bodyfile="libraries/net/node.cpp" bodystart="183" bodyend="196"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacegraphene_1_1net_1_1detail_1a1edb41820a1b3cae3066f8b3a4c511ba" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void graphene::net::detail::update_address_seen_time</definition>
+        <argsstring>(node_impl *impl, const peer_connection_ptr &amp;active_peer)</argsstring>
+        <name>update_address_seen_time</name>
+        <param>
+          <type><ref refid="classgraphene_1_1net_1_1detail_1_1node__impl" kindref="compound">node_impl</ref> *</type>
+          <declname>impl</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespacegraphene_1_1net_1a7c2063384e09cb0fc4191590fa004b89" kindref="member">peer_connection_ptr</ref> &amp;</type>
+          <declname>active_peer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/node.cpp" line="197" column="1" bodyfile="libraries/net/node.cpp" bodystart="197" bodyend="200"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacegraphene_1_1net_1_1detail_1a8b4e4c373967192a2539fb76daf6aae6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="classfc_1_1ip_1_1endpoint" kindref="compound">fc::ip::endpoint</ref> &gt;</type>
+        <definition>static std::vector&lt;fc::ip::endpoint&gt; graphene::net::detail::resolve_string_to_ip_endpoints</definition>
+        <argsstring>(const std::string &amp;in)</argsstring>
+        <name>resolve_string_to_ip_endpoints</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>in</declname>
+        </param>
+        <briefdescription>
+<para>Helper to convert a string to a collection of endpoints. </para>        </briefdescription>
+        <detaileddescription>
+<para>This converts a string (i.e. &quot;bitshares.eu:665535&quot;) to a collection of endpoints. NOTE: Throws an exception if not in correct format or was unable to resolve URL.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the incoming string </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a vector of endpoints </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/node.cpp" line="4451" column="1" bodyfile="libraries/net/node.cpp" bodystart="4451" bodyend="4478"/>
+      </memberdef>
+      </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

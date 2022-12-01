@@ -3,6 +3,7 @@
   <compounddef id="classgraphene_1_1app_1_1orders__api" kind="class" language="C++" prot="public">
     <compoundname>graphene::app::orders_api</compoundname>
     <includes refid="app_2include_2graphene_2app_2api_8hpp" local="no">api.hpp</includes>
+    <innerclass refid="structgraphene_1_1app_1_1orders__api_1_1limit__order__group" prot="public">graphene::app::orders_api::limit_order_group</innerclass>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classgraphene_1_1app_1_1orders__api_1a6c967505a58b0d56ea6ac2ee28328d7f" prot="private" static="no" mutable="no">
         <type><ref refid="classgraphene_1_1app_1_1application" kindref="compound">application</ref> &amp;</type>
@@ -15,24 +16,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="579" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="579" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classgraphene_1_1app_1_1orders__api_1ab503d20bfa95180ee6046feeda757b77" prot="private" static="no" mutable="no">
-        <type><ref refid="classgraphene_1_1app_1_1database__api" kindref="compound">graphene::app::database_api</ref></type>
-        <definition>graphene::app::database_api graphene::app::orders_api::database_api</definition>
-        <argsstring></argsstring>
-        <name>database_api</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="580" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="580" bodyend="-1"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="643" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="643" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classgraphene_1_1app_1_1orders__api_1a1c1a0920781506af3b59128c6f8912aa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1app_1_1orders__api_1a1c1a0920781506af3b59128c6f8912aa" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>graphene::app::orders_api::orders_api</definition>
         <argsstring>(application &amp;app)</argsstring>
@@ -47,7 +35,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="552" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="552" bodyend="553"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="600" column="1" bodyfile="libraries/app/api.cpp" bodystart="970" bodyend="973"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1orders__api_1ac03c7b822ceec55577ff9470b6a4ce3c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>flat_set&lt; uint16_t &gt;</type>
@@ -61,19 +49,19 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="560" column="1" bodyfile="libraries/app/api.cpp" bodystart="824" bodyend="829"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="623" column="1" bodyfile="libraries/app/api.cpp" bodystart="975" bodyend="980"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1app_1_1orders__api_1a4a1a90a159a7e7dd1b697c88eb3417b9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>vector&lt; <ref refid="structgraphene_1_1app_1_1limit__order__group" kindref="compound">limit_order_group</ref> &gt;</type>
-        <definition>vector&lt; limit_order_group &gt; graphene::app::orders_api::get_grouped_limit_orders</definition>
-        <argsstring>(std::string base_asset, std::string quote_asset, uint16_t group, optional&lt; price &gt; start, uint32_t limit) const</argsstring>
+      <memberdef kind="function" id="classgraphene_1_1app_1_1orders__api_1a14e9779eb1f492cd20e506b0e9e19004" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>vector&lt; <ref refid="structgraphene_1_1app_1_1orders__api_1_1limit__order__group" kindref="compound">limit_order_group</ref> &gt;</type>
+        <definition>vector&lt; orders_api::limit_order_group &gt; graphene::app::orders_api::get_grouped_limit_orders</definition>
+        <argsstring>(const std::string &amp;base_asset, const std::string &amp;quote_asset, uint16_t group, const optional&lt; price &gt; &amp;start, uint32_t limit) const</argsstring>
         <name>get_grouped_limit_orders</name>
         <param>
-          <type>std::string</type>
+          <type>const std::string &amp;</type>
           <declname>base_asset</declname>
         </param>
         <param>
-          <type>std::string</type>
+          <type>const std::string &amp;</type>
           <declname>quote_asset</declname>
         </param>
         <param>
@@ -81,7 +69,7 @@
           <declname>group</declname>
         </param>
         <param>
-          <type>optional&lt; price &gt;</type>
+          <type>const optional&lt; price &gt; &amp;</type>
           <declname>start</declname>
         </param>
         <param>
@@ -124,25 +112,24 @@
 <parametername>limit</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Maximum number of order groups to retrieve (must not exceed 101) </para></parameterdescription>
+<para>Maximum number of order groups to retrieve, must not exceed the configured value of <emphasis>api_limit_get_grouped_limit_orders</emphasis> </para></parameterdescription>
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>The grouped limit orders, ordered from best offered price to worst </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="572" column="1" bodyfile="libraries/app/api.cpp" bodystart="831" bodyend="864"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="636" column="1" bodyfile="libraries/app/api.cpp" bodystart="982" bodyend="1016"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>the <ref refid="classgraphene_1_1app_1_1orders__api" kindref="compound">orders_api</ref> class exposes access to data processed with grouped orders plugin. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="libraries/app/include/graphene/app/api.hpp" line="550" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="549" bodyend="581"/>
+    <location file="libraries/app/include/graphene/app/api.hpp" line="598" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="597" bodyend="644"/>
     <listofallmembers>
       <member refid="classgraphene_1_1app_1_1orders__api_1a6c967505a58b0d56ea6ac2ee28328d7f" prot="private" virt="non-virtual"><scope>graphene::app::orders_api</scope><name>_app</name></member>
-      <member refid="classgraphene_1_1app_1_1orders__api_1ab503d20bfa95180ee6046feeda757b77" prot="private" virt="non-virtual"><scope>graphene::app::orders_api</scope><name>database_api</name></member>
-      <member refid="classgraphene_1_1app_1_1orders__api_1a4a1a90a159a7e7dd1b697c88eb3417b9" prot="public" virt="non-virtual"><scope>graphene::app::orders_api</scope><name>get_grouped_limit_orders</name></member>
+      <member refid="classgraphene_1_1app_1_1orders__api_1a14e9779eb1f492cd20e506b0e9e19004" prot="public" virt="non-virtual"><scope>graphene::app::orders_api</scope><name>get_grouped_limit_orders</name></member>
       <member refid="classgraphene_1_1app_1_1orders__api_1ac03c7b822ceec55577ff9470b6a4ce3c" prot="public" virt="non-virtual"><scope>graphene::app::orders_api</scope><name>get_tracked_groups</name></member>
       <member refid="classgraphene_1_1app_1_1orders__api_1a1c1a0920781506af3b59128c6f8912aa" prot="public" virt="non-virtual"><scope>graphene::app::orders_api</scope><name>orders_api</name></member>
     </listofallmembers>

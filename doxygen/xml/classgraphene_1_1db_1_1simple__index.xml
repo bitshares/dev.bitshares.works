@@ -11,9 +11,9 @@
       </param>
     </templateparamlist>
       <sectiondef kind="public-type">
-      <memberdef kind="typedef" id="classgraphene_1_1db_1_1simple__index_1a6e0f6654e0c80f678e104299ce329977" prot="public" static="no">
+      <memberdef kind="typedef" id="classgraphene_1_1db_1_1simple__index_1ae81c157928b113d0b0411588b454d1ce" prot="public" static="no">
         <type>T</type>
-        <definition>typedef T graphene::db::simple_index&lt; T &gt;::object_type</definition>
+        <definition>using graphene::db::simple_index&lt; T &gt;::object_type =  T</definition>
         <argsstring></argsstring>
         <name>object_type</name>
         <briefdescription>
@@ -26,9 +26,9 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classgraphene_1_1db_1_1simple__index_1a3b361f37f989184aca35b886e7f9086c" prot="private" static="no" mutable="no">
-        <type>vector&lt; unique_ptr&lt; <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref> &gt; &gt;</type>
-        <definition>vector&lt; unique_ptr&lt;object&gt; &gt; graphene::db::simple_index&lt; T &gt;::_objects</definition>
+      <memberdef kind="variable" id="classgraphene_1_1db_1_1simple__index_1aa4884a0dce75cec138c0fa744f759c8b" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::unique_ptr&lt; <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref> &gt; &gt;</type>
+        <definition>std::vector&lt; std::unique_ptr&lt;object&gt; &gt; graphene::db::simple_index&lt; T &gt;::_objects</definition>
         <argsstring></argsstring>
         <name>_objects</name>
         <briefdescription>
@@ -199,33 +199,33 @@
     <detaileddescription>
 <para>This index is preferred in situations where the data will never be removed from main memory and when access by ID is the only kind of access that is necessary. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="6889">
+      <node id="7329">
         <label>graphene::db::simple_index&lt; T &gt;</label>
         <link refid="classgraphene_1_1db_1_1simple__index"/>
-        <childnode refid="6890" relation="public-inheritance">
+        <childnode refid="7330" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6890">
+      <node id="7330">
         <label>graphene::db::index</label>
         <link refid="classgraphene_1_1db_1_1index"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="6891">
+      <node id="7331">
         <label>graphene::db::simple_index&lt; T &gt;</label>
         <link refid="classgraphene_1_1db_1_1simple__index"/>
-        <childnode refid="6892" relation="public-inheritance">
+        <childnode refid="7332" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6892">
+      <node id="7332">
         <label>graphene::db::index</label>
         <link refid="classgraphene_1_1db_1_1index"/>
       </node>
     </collaborationgraph>
     <location file="libraries/db/include/graphene/db/simple_index.hpp" line="39" column="1" bodyfile="libraries/db/include/graphene/db/simple_index.hpp" bodystart="38" bodyend="140"/>
     <listofallmembers>
-      <member refid="classgraphene_1_1db_1_1simple__index_1a3b361f37f989184aca35b886e7f9086c" prot="private" virt="non-virtual"><scope>graphene::db::simple_index</scope><name>_objects</name></member>
-      <member refid="classgraphene_1_1db_1_1index_1a11118a11ceeb9853975f3e254038daa5" prot="public" virt="pure-virtual"><scope>graphene::db::simple_index</scope><name>add_observer</name></member>
+      <member refid="classgraphene_1_1db_1_1simple__index_1aa4884a0dce75cec138c0fa744f759c8b" prot="private" virt="non-virtual"><scope>graphene::db::simple_index</scope><name>_objects</name></member>
+      <member refid="classgraphene_1_1db_1_1index_1afc4131ce3902af88a5c53cf0ab3d2cab" prot="public" virt="pure-virtual"><scope>graphene::db::simple_index</scope><name>add_observer</name></member>
       <member refid="classgraphene_1_1db_1_1simple__index_1ae7fa291b5ca7f8e66498efdd16e1389d" prot="public" virt="non-virtual"><scope>graphene::db::simple_index</scope><name>begin</name></member>
       <member refid="classgraphene_1_1db_1_1simple__index_1aa25decba8c3502467dfe170fcbe9a590" prot="public" virt="virtual"><scope>graphene::db::simple_index</scope><name>create</name></member>
       <member refid="classgraphene_1_1db_1_1simple__index_1ad75ebd28fad0e41b5830fc2528321003" prot="public" virt="non-virtual"><scope>graphene::db::simple_index</scope><name>end</name></member>
@@ -240,7 +240,7 @@
       <member refid="classgraphene_1_1db_1_1index_1aefb954473263f0736d5ba394f5437ec1" prot="public" virt="pure-virtual"><scope>graphene::db::simple_index</scope><name>object_default</name></member>
       <member refid="classgraphene_1_1db_1_1index_1aaebd5c0ba3eb4e6ca9d0a82061e61793" prot="public" virt="pure-virtual"><scope>graphene::db::simple_index</scope><name>object_from_variant</name></member>
       <member refid="classgraphene_1_1db_1_1index_1a94bbe39fc8bba240fb1b6687036aa64a" prot="public" virt="pure-virtual"><scope>graphene::db::simple_index</scope><name>object_space_id</name></member>
-      <member refid="classgraphene_1_1db_1_1simple__index_1a6e0f6654e0c80f678e104299ce329977" prot="public" virt="non-virtual"><scope>graphene::db::simple_index</scope><name>object_type</name></member>
+      <member refid="classgraphene_1_1db_1_1simple__index_1ae81c157928b113d0b0411588b454d1ce" prot="public" virt="non-virtual"><scope>graphene::db::simple_index</scope><name>object_type</name></member>
       <member refid="classgraphene_1_1db_1_1index_1a8f4f84338efa7f8eac43c8df3c456634" prot="public" virt="pure-virtual"><scope>graphene::db::simple_index</scope><name>object_type_id</name></member>
       <member refid="classgraphene_1_1db_1_1index_1ab8aa118aac8da723cfd556078b498bec" prot="public" virt="pure-virtual"><scope>graphene::db::simple_index</scope><name>open</name></member>
       <member refid="classgraphene_1_1db_1_1simple__index_1a36d967926e4273ff93a59dd3f4160e3d" prot="public" virt="virtual"><scope>graphene::db::simple_index</scope><name>remove</name></member>
@@ -248,7 +248,7 @@
       <member refid="classgraphene_1_1db_1_1index_1a09516872ec406c93645ed71c24884dc7" prot="public" virt="pure-virtual"><scope>graphene::db::simple_index</scope><name>set_next_id</name></member>
       <member refid="classgraphene_1_1db_1_1simple__index_1ae3c7f0fc2b4941ba0d60e53b0c39b1b7" prot="public" virt="non-virtual"><scope>graphene::db::simple_index</scope><name>size</name></member>
       <member refid="classgraphene_1_1db_1_1index_1a5e874427eaf74f45dbf23d148f2dc708" prot="public" virt="pure-virtual"><scope>graphene::db::simple_index</scope><name>use_next_id</name></member>
-      <member refid="classgraphene_1_1db_1_1index_1a0f198d6faca558c749b833ede04116b3" prot="public" virt="virtual"><scope>graphene::db::simple_index</scope><name>~index</name></member>
+      <member refid="classgraphene_1_1db_1_1index_1af4ee3fd06ff2ebdaf0137f67c8820015" prot="public" virt="virtual"><scope>graphene::db::simple_index</scope><name>~index</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

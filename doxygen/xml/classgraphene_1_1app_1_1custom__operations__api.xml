@@ -15,24 +15,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="604" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="604" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classgraphene_1_1app_1_1custom__operations__api_1aafc7ec361fc5fdde7617e5d6d919b0b8" prot="private" static="no" mutable="no">
-        <type><ref refid="classgraphene_1_1app_1_1database__api" kindref="compound">graphene::app::database_api</ref></type>
-        <definition>graphene::app::database_api graphene::app::custom_operations_api::database_api</definition>
-        <argsstring></argsstring>
-        <name>database_api</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="605" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="605" bodyend="-1"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="691" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="691" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classgraphene_1_1app_1_1custom__operations__api_1a5700459ed2913c05f10ef9e4eacf2b1b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1app_1_1custom__operations__api_1a5700459ed2913c05f10ef9e4eacf2b1b" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>graphene::app::custom_operations_api::custom_operations_api</definition>
         <argsstring>(application &amp;app)</argsstring>
@@ -47,56 +34,96 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="590" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="590" bodyend="591"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="653" column="1" bodyfile="libraries/app/api.cpp" bodystart="1019" bodyend="1022"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1app_1_1custom__operations__api_1a4fb4920009e24f663cbf107018e6f3ea" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1app_1_1custom__operations__api_1a655e79f3314c9e28029e05b3c1d1b050" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>vector&lt; <ref refid="structgraphene_1_1custom__operations_1_1account__storage__object" kindref="compound">account_storage_object</ref> &gt;</type>
         <definition>vector&lt; account_storage_object &gt; graphene::app::custom_operations_api::get_storage_info</definition>
-        <argsstring>(std::string account_name_or_id, std::string catalog) const</argsstring>
+        <argsstring>(const optional&lt; std::string &gt; &amp;account_name_or_id=optional&lt; std::string &gt;(), const optional&lt; std::string &gt; &amp;catalog=optional&lt; std::string &gt;(), const optional&lt; std::string &gt; &amp;key=optional&lt; std::string &gt;(), const optional&lt; uint32_t &gt; &amp;limit=optional&lt; uint32_t &gt;(), const optional&lt; account_storage_id_type &gt; &amp;start_id=optional&lt; account_storage_id_type &gt;()) const</argsstring>
         <name>get_storage_info</name>
         <param>
-          <type>std::string</type>
+          <type>const optional&lt; std::string &gt; &amp;</type>
           <declname>account_name_or_id</declname>
+          <defval>optional&lt; std::string &gt;()</defval>
         </param>
         <param>
-          <type>std::string</type>
+          <type>const optional&lt; std::string &gt; &amp;</type>
           <declname>catalog</declname>
+          <defval>optional&lt; std::string &gt;()</defval>
+        </param>
+        <param>
+          <type>const optional&lt; std::string &gt; &amp;</type>
+          <declname>key</declname>
+          <defval>optional&lt; std::string &gt;()</defval>
+        </param>
+        <param>
+          <type>const optional&lt; uint32_t &gt; &amp;</type>
+          <declname>limit</declname>
+          <defval>optional&lt; uint32_t &gt;()</defval>
+        </param>
+        <param>
+          <type>const optional&lt; <ref refid="namespacegraphene_1_1custom__operations_1ae5f07713b15ad24ba9defe67dd8f3b3e" kindref="member">account_storage_id_type</ref> &gt; &amp;</type>
+          <declname>start_id</declname>
+          <defval>optional&lt; <ref refid="namespacegraphene_1_1custom__operations_1ae5f07713b15ad24ba9defe67dd8f3b3e" kindref="member">account_storage_id_type</ref> &gt;()</defval>
         </param>
         <briefdescription>
-<para>Get all stored objects of an account in a particular catalog. </para>        </briefdescription>
+<para>Get stored objects. </para>        </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>account_name_or_id</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The account name or ID to get info from </para></parameterdescription>
+<para>The account name or ID to get info from. Optional. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>catalog</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Category classification. Each account can store multiple catalogs.</para></parameterdescription>
+<para>The catalog to get info from. Each account can store data in multiple catalogs. Optional. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key to get info from. Each catalog can contain multiple keys. Optional. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>limit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The limitation of items each query can fetch, not greater than the configured value of <emphasis>api_limit_get_storage_info</emphasis>. Optional. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>start_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Start ID of stored object, fetch objects whose IDs are greater than or equal to this ID </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>The vector of objects of the account or empty </para></simplesect>
+<simplesect kind="return"><para>The stored objects found, sorted by their ID</para></simplesect>
+<simplesect kind="note"><para><orderedlist>
+<listitem><para>By passing <emphasis>null</emphasis> to various optional parameters, or omitting where applicable, this API can be used to query stored objects by a) account, catalog and key, or b) account and catalog, or c) account, or d) catalog and key, or e) catalog, or f) unconditionally. Queries with keys without a catalog are not allowed.</para></listitem><listitem><para>If <computeroutput>account_name_or_id</computeroutput> is specified but cannot be tied to an account, an error will be returned.</para></listitem><listitem><para><computeroutput>limit</computeroutput> can be omitted or be <emphasis>null</emphasis>, if so the configured value of <emphasis>api_limit_get_storage_info</emphasis> will be used.</para></listitem><listitem><para><computeroutput>start_id</computeroutput> can be omitted or be <emphasis>null</emphasis>, if so the API will return the &quot;first page&quot; of objects.</para></listitem><listitem><para>One or more optional parameters can be omitted from the end of the parameter list, and the optional parameters in the middle cannot be omitted (but can be <emphasis>null</emphasis>). </para></listitem></orderedlist>
+</para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="601" column="1" bodyfile="libraries/app/api.cpp" bodystart="867" bodyend="881"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="683" column="1" bodyfile="libraries/app/api.cpp" bodystart="1024" bodyend="1091"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>The <ref refid="classgraphene_1_1app_1_1custom__operations__api" kindref="compound">custom_operations_api</ref> class exposes access to standard custom objects parsed by the custom_operations_plugin. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="libraries/app/include/graphene/app/api.hpp" line="588" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="587" bodyend="606"/>
+    <location file="libraries/app/include/graphene/app/api.hpp" line="651" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="650" bodyend="692"/>
     <listofallmembers>
       <member refid="classgraphene_1_1app_1_1custom__operations__api_1a0d9c0b4a55e27dfa408a03b4757e2264" prot="private" virt="non-virtual"><scope>graphene::app::custom_operations_api</scope><name>_app</name></member>
       <member refid="classgraphene_1_1app_1_1custom__operations__api_1a5700459ed2913c05f10ef9e4eacf2b1b" prot="public" virt="non-virtual"><scope>graphene::app::custom_operations_api</scope><name>custom_operations_api</name></member>
-      <member refid="classgraphene_1_1app_1_1custom__operations__api_1aafc7ec361fc5fdde7617e5d6d919b0b8" prot="private" virt="non-virtual"><scope>graphene::app::custom_operations_api</scope><name>database_api</name></member>
-      <member refid="classgraphene_1_1app_1_1custom__operations__api_1a4fb4920009e24f663cbf107018e6f3ea" prot="public" virt="non-virtual"><scope>graphene::app::custom_operations_api</scope><name>get_storage_info</name></member>
+      <member refid="classgraphene_1_1app_1_1custom__operations__api_1a655e79f3314c9e28029e05b3c1d1b050" prot="public" virt="non-virtual"><scope>graphene::app::custom_operations_api</scope><name>get_storage_info</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

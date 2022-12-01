@@ -15,18 +15,18 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/network/ip.hpp" line="40" column="1" bodyfile="libraries/fc/include/fc/network/ip.hpp" bodystart="40" bodyend="-1"/>
+        <location file="libraries/fc/include/fc/network/ip.hpp" line="62" column="1" bodyfile="libraries/fc/include/fc/network/ip.hpp" bodystart="62" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classfc_1_1ip_1_1address_1aebc2d2f9bc831e6ad04399c9bd8406db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classfc_1_1ip_1_1address_1a38111626a45521019ddcd024752b6550" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>fc::ip::address::address</definition>
-        <argsstring>(uint32_t _ip=0)</argsstring>
+        <argsstring>(uint32_t ip=0)</argsstring>
         <name>address</name>
         <param>
           <type>uint32_t</type>
-          <declname>_ip</declname>
+          <declname>ip</declname>
           <defval>0</defval>
         </param>
         <briefdescription>
@@ -37,7 +37,7 @@
         </inbodydescription>
         <location file="libraries/fc/include/fc/network/ip.hpp" line="12" column="1" bodyfile="libraries/fc/src/network/ip.cpp" bodystart="10" bodyend="11"/>
       </memberdef>
-      <memberdef kind="function" id="classfc_1_1ip_1_1address_1a67719952ff11c422be011eb0d7b762a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classfc_1_1ip_1_1address_1a67719952ff11c422be011eb0d7b762a4" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>fc::ip::address::address</definition>
         <argsstring>(const std::string &amp;s)</argsstring>
@@ -71,7 +71,24 @@
         </inbodydescription>
         <location file="libraries/fc/include/fc/network/ip.hpp" line="15" column="1" bodyfile="libraries/fc/src/network/ip.cpp" bodystart="29" bodyend="37"/>
       </memberdef>
-      <memberdef kind="function" id="classfc_1_1ip_1_1address_1ac3699fa4f12c5a8aefb3c8d3d58a442f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classfc_1_1ip_1_1address_1a1aade44ac63de47454ba669076616123" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classfc_1_1ip_1_1address" kindref="compound">address</ref> &amp;</type>
+        <definition>address &amp; fc::ip::address::operator=</definition>
+        <argsstring>(uint32_t ip)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>ip</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/network/ip.hpp" line="16" column="1" bodyfile="libraries/fc/src/network/ip.cpp" bodystart="39" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1ip_1_1address_1ac3699fa4f12c5a8aefb3c8d3d58a442f" prot="public" static="no" const="yes" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>fc::ip::address::operator std::string</definition>
         <argsstring>() const</argsstring>
@@ -82,7 +99,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/network/ip.hpp" line="16" column="1" bodyfile="libraries/fc/src/network/ip.cpp" bodystart="39" bodyend="46"/>
+        <location file="libraries/fc/include/fc/network/ip.hpp" line="17" column="1" bodyfile="libraries/fc/src/network/ip.cpp" bodystart="45" bodyend="52"/>
       </memberdef>
       <memberdef kind="function" id="classfc_1_1ip_1_1address_1a705d307a09a6f079579933fa1cf54cdb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -95,7 +112,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/network/ip.hpp" line="17" column="1" bodyfile="libraries/fc/src/network/ip.cpp" bodystart="47" bodyend="49"/>
+        <location file="libraries/fc/include/fc/network/ip.hpp" line="19" column="1" bodyfile="libraries/fc/src/network/ip.cpp" bodystart="53" bodyend="55"/>
       </memberdef>
       <memberdef kind="function" id="classfc_1_1ip_1_1address_1a0fd7da64e9de2fc54b5dc537dad7aee2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -106,10 +123,12 @@
         </briefdescription>
         <detaileddescription>
 <para><simplesect kind="return"><para>true if the ip is in the following ranges:</para></simplesect>
-10.0.0.0 to 10.255.255.255 172.16.0.0 to 172.31.255.255 192.168.0.0 to 192.168.255.255 169.254.0.0 to 169.254.255.255 </para>        </detaileddescription>
+<itemizedlist>
+<listitem><para>10.0.0.0 to 10.255.255.255</para></listitem><listitem><para>172.16.0.0 to 172.31.255.255</para></listitem><listitem><para>192.168.0.0 to 192.168.255.255</para></listitem><listitem><para>169.254.0.0 to 169.254.255.255 </para></listitem></itemizedlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/network/ip.hpp" line="31" column="1" bodyfile="libraries/fc/src/network/ip.cpp" bodystart="105" bodyend="120"/>
+        <location file="libraries/fc/include/fc/network/ip.hpp" line="33" column="1" bodyfile="libraries/fc/src/network/ip.cpp" bodystart="112" bodyend="127"/>
       </memberdef>
       <memberdef kind="function" id="classfc_1_1ip_1_1address_1a7365faef59d2df42310b3d68f62f61e4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -122,7 +141,20 @@
 <para>224.0.0.0 to 239.255.255.255 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/network/ip.hpp" line="35" column="1" bodyfile="libraries/fc/src/network/ip.cpp" bodystart="125" bodyend="130"/>
+        <location file="libraries/fc/include/fc/network/ip.hpp" line="37" column="1" bodyfile="libraries/fc/src/network/ip.cpp" bodystart="132" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="classfc_1_1ip_1_1address_1af22e6ff11be527e0991db1aaeeb12a40" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool fc::ip::address::is_loopback_address</definition>
+        <argsstring>() const</argsstring>
+        <name>is_loopback_address</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>127.0.0.0 to 127.255.255.255 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/fc/include/fc/network/ip.hpp" line="41" column="1" bodyfile="libraries/fc/src/network/ip.cpp" bodystart="142" bodyend="147"/>
       </memberdef>
       <memberdef kind="function" id="classfc_1_1ip_1_1address_1a1481a21df38961dfc3c7eea41b1f79a7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -132,10 +164,13 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>!private &amp; !multicast </para>        </detaileddescription>
+<para>not private, not loopback, and not multicast</para><para><simplesect kind="note"><para>technically there are some addresses that are reserved but not public (see <ulink url="https://en.wikipedia.org/wiki/Reserved_IP_addresses">https://en.wikipedia.org/wiki/Reserved_IP_addresses</ulink>), but so far we haven&apos;t distinguished them.<itemizedlist>
+<listitem><para>0.0.0.0–0.255.255.255</para></listitem><listitem><para>100.64.0.0–100.127.255.255</para></listitem><listitem><para>192.0.0.0–192.0.0.255</para></listitem><listitem><para>192.0.2.0–192.0.2.255</para></listitem><listitem><para>192.88.99.0–192.88.99.255</para></listitem><listitem><para>198.18.0.0–198.19.255.255</para></listitem><listitem><para>198.51.100.0–198.51.100.255</para></listitem><listitem><para>203.0.113.0–203.0.113.255</para></listitem><listitem><para>233.252.0.0-233.252.0.255 (within the range 224.0.0.0–239.255.255.255)</para></listitem><listitem><para>240.0.0.0–255.255.255.254</para></listitem><listitem><para>255.255.255.255 </para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/network/ip.hpp" line="38" column="1" bodyfile="libraries/fc/src/network/ip.cpp" bodystart="133" bodyend="136"/>
+        <location file="libraries/fc/include/fc/network/ip.hpp" line="60" column="1" bodyfile="libraries/fc/src/network/ip.cpp" bodystart="150" bodyend="153"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="friend">
@@ -158,7 +193,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/network/ip.hpp" line="19" column="1" bodyfile="libraries/fc/src/network/ip.cpp" bodystart="22" bodyend="24"/>
+        <location file="libraries/fc/include/fc/network/ip.hpp" line="21" column="1" bodyfile="libraries/fc/src/network/ip.cpp" bodystart="22" bodyend="24"/>
       </memberdef>
       <memberdef kind="friend" id="classfc_1_1ip_1_1address_1a259e8078e0b2dc8015bf497b96c2a1a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>friend bool</type>
@@ -179,18 +214,19 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/network/ip.hpp" line="20" column="1" bodyfile="libraries/fc/src/network/ip.cpp" bodystart="25" bodyend="27"/>
+        <location file="libraries/fc/include/fc/network/ip.hpp" line="22" column="1" bodyfile="libraries/fc/src/network/ip.cpp" bodystart="25" bodyend="27"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="libraries/fc/include/fc/network/ip.hpp" line="10" column="1" bodyfile="libraries/fc/include/fc/network/ip.hpp" bodystart="10" bodyend="41"/>
+    <location file="libraries/fc/include/fc/network/ip.hpp" line="10" column="1" bodyfile="libraries/fc/include/fc/network/ip.hpp" bodystart="10" bodyend="63"/>
     <listofallmembers>
       <member refid="classfc_1_1ip_1_1address_1a8b962b1461e2ed185919b0205aaec1dd" prot="private" virt="non-virtual"><scope>fc::ip::address</scope><name>_ip</name></member>
-      <member refid="classfc_1_1ip_1_1address_1aebc2d2f9bc831e6ad04399c9bd8406db" prot="public" virt="non-virtual"><scope>fc::ip::address</scope><name>address</name></member>
+      <member refid="classfc_1_1ip_1_1address_1a38111626a45521019ddcd024752b6550" prot="public" virt="non-virtual"><scope>fc::ip::address</scope><name>address</name></member>
       <member refid="classfc_1_1ip_1_1address_1a67719952ff11c422be011eb0d7b762a4" prot="public" virt="non-virtual"><scope>fc::ip::address</scope><name>address</name></member>
+      <member refid="classfc_1_1ip_1_1address_1af22e6ff11be527e0991db1aaeeb12a40" prot="public" virt="non-virtual"><scope>fc::ip::address</scope><name>is_loopback_address</name></member>
       <member refid="classfc_1_1ip_1_1address_1a7365faef59d2df42310b3d68f62f61e4" prot="public" virt="non-virtual"><scope>fc::ip::address</scope><name>is_multicast_address</name></member>
       <member refid="classfc_1_1ip_1_1address_1a0fd7da64e9de2fc54b5dc537dad7aee2" prot="public" virt="non-virtual"><scope>fc::ip::address</scope><name>is_private_address</name></member>
       <member refid="classfc_1_1ip_1_1address_1a1481a21df38961dfc3c7eea41b1f79a7" prot="public" virt="non-virtual"><scope>fc::ip::address</scope><name>is_public_address</name></member>
@@ -198,6 +234,7 @@
       <member refid="classfc_1_1ip_1_1address_1a705d307a09a6f079579933fa1cf54cdb" prot="public" virt="non-virtual"><scope>fc::ip::address</scope><name>operator uint32_t</name></member>
       <member refid="classfc_1_1ip_1_1address_1a259e8078e0b2dc8015bf497b96c2a1a2" prot="public" virt="non-virtual"><scope>fc::ip::address</scope><name>operator!=</name></member>
       <member refid="classfc_1_1ip_1_1address_1a6d4bf277281f2a36130ac492a26b6939" prot="public" virt="non-virtual"><scope>fc::ip::address</scope><name>operator=</name></member>
+      <member refid="classfc_1_1ip_1_1address_1a1aade44ac63de47454ba669076616123" prot="public" virt="non-virtual"><scope>fc::ip::address</scope><name>operator=</name></member>
       <member refid="classfc_1_1ip_1_1address_1aa0feacee1993c1338d13ea41f236d660" prot="public" virt="non-virtual"><scope>fc::ip::address</scope><name>operator==</name></member>
     </listofallmembers>
   </compounddef>

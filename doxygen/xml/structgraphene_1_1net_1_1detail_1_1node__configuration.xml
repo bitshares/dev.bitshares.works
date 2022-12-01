@@ -15,7 +15,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/node_impl.hxx" line="368" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="368" bodyend="-1"/>
+        <location file="libraries/net/node_impl.hxx" line="396" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="396" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgraphene_1_1net_1_1detail_1_1node__configuration_1af701a647829816c6e4bd5e85161b98f7" prot="public" static="no" mutable="no">
+        <type><ref refid="classfc_1_1optional" kindref="compound">fc::optional</ref>&lt; <ref refid="classfc_1_1ip_1_1endpoint" kindref="compound">fc::ip::endpoint</ref> &gt;</type>
+        <definition>fc::optional&lt;fc::ip::endpoint&gt; graphene::net::detail::node_configuration::inbound_endpoint</definition>
+        <argsstring></argsstring>
+        <name>inbound_endpoint</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/node_impl.hxx" line="397" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="397" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1net_1_1detail_1_1node__configuration_1ae0ec9b2a79b7e8ff0f50c028eacf89f0" prot="public" static="no" mutable="no">
         <type>bool</type>
@@ -29,13 +42,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/node_impl.hxx" line="369" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="369" bodyend="-1"/>
+        <location file="libraries/net/node_impl.hxx" line="398" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="398" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structgraphene_1_1net_1_1detail_1_1node__configuration_1a908d2ed64d9b68ba7ea76224f32ad7be" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structgraphene_1_1net_1_1detail_1_1node__configuration_1a864fc9f040da35f65b0db69762d3bd2c" prot="public" static="no" mutable="no">
         <type>bool</type>
-        <definition>bool graphene::net::detail::node_configuration::wait_if_endpoint_is_busy</definition>
+        <definition>bool graphene::net::detail::node_configuration::connect_to_new_peers</definition>
         <argsstring></argsstring>
-        <name>wait_if_endpoint_is_busy</name>
+        <name>connect_to_new_peers</name>
         <initializer>= true</initializer>
         <briefdescription>
         </briefdescription>
@@ -43,7 +56,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/node_impl.hxx" line="370" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="370" bodyend="-1"/>
+        <location file="libraries/net/node_impl.hxx" line="399" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="399" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgraphene_1_1net_1_1detail_1_1node__configuration_1a908d2ed64d9b68ba7ea76224f32ad7be" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool graphene::net::detail::node_configuration::wait_if_endpoint_is_busy</definition>
+        <argsstring></argsstring>
+        <name>wait_if_endpoint_is_busy</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/net/node_impl.hxx" line="400" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="400" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1net_1_1detail_1_1node__configuration_1adfb549f1df4eebd5b7b6d174313ed2a2" prot="public" static="no" mutable="no">
         <type><ref refid="classfc_1_1ecc_1_1private__key" kindref="compound">fc::ecc::private_key</ref></type>
@@ -56,7 +83,7 @@
 <para>Originally, our p2p code just had a &apos;node-id&apos; that was a random number identifying this node on the network. This is now a private key/public key pair, where the public key is used in place of the old random node-id. The private part is unused, but might be used in the future to support some notion of trusted peers. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/net/node_impl.hxx" line="377" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="377" bodyend="-1"/>
+        <location file="libraries/net/node_impl.hxx" line="407" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="407" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -64,28 +91,37 @@
     <detaileddescription>
 <para>This specifies configuration info for the local node. It&apos;s stored as JSON in the configuration directory (application data directory) </para>    </detaileddescription>
     <collaborationgraph>
-      <node id="5440">
+      <node id="5765">
         <label>graphene::net::detail::node_configuration</label>
         <link refid="structgraphene_1_1net_1_1detail_1_1node__configuration"/>
-        <childnode refid="5441" relation="usage">
+        <childnode refid="5766" relation="usage">
           <edgelabel>listen_endpoint</edgelabel>
         </childnode>
-        <childnode refid="5442" relation="usage">
+        <childnode refid="5767" relation="usage">
           <edgelabel>private_key</edgelabel>
         </childnode>
+        <childnode refid="5768" relation="usage">
+          <edgelabel>inbound_endpoint</edgelabel>
+        </childnode>
       </node>
-      <node id="5441">
+      <node id="5766">
         <label>fc::ip::endpoint</label>
         <link refid="classfc_1_1ip_1_1endpoint"/>
       </node>
-      <node id="5442">
+      <node id="5767">
         <label>fc::ecc::private_key</label>
         <link refid="classfc_1_1ecc_1_1private__key"/>
       </node>
+      <node id="5768">
+        <label>fc::optional&lt; fc::ip::endpoint &gt;</label>
+        <link refid="classfc_1_1optional"/>
+      </node>
     </collaborationgraph>
-    <location file="libraries/net/node_impl.hxx" line="367" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="366" bodyend="378"/>
+    <location file="libraries/net/node_impl.hxx" line="395" column="1" bodyfile="libraries/net/node_impl.hxx" bodystart="394" bodyend="408"/>
     <listofallmembers>
       <member refid="structgraphene_1_1net_1_1detail_1_1node__configuration_1ae0ec9b2a79b7e8ff0f50c028eacf89f0" prot="public" virt="non-virtual"><scope>graphene::net::detail::node_configuration</scope><name>accept_incoming_connections</name></member>
+      <member refid="structgraphene_1_1net_1_1detail_1_1node__configuration_1a864fc9f040da35f65b0db69762d3bd2c" prot="public" virt="non-virtual"><scope>graphene::net::detail::node_configuration</scope><name>connect_to_new_peers</name></member>
+      <member refid="structgraphene_1_1net_1_1detail_1_1node__configuration_1af701a647829816c6e4bd5e85161b98f7" prot="public" virt="non-virtual"><scope>graphene::net::detail::node_configuration</scope><name>inbound_endpoint</name></member>
       <member refid="structgraphene_1_1net_1_1detail_1_1node__configuration_1a449677799f680e5acb42c1da3441d75e" prot="public" virt="non-virtual"><scope>graphene::net::detail::node_configuration</scope><name>listen_endpoint</name></member>
       <member refid="structgraphene_1_1net_1_1detail_1_1node__configuration_1adfb549f1df4eebd5b7b6d174313ed2a2" prot="public" virt="non-virtual"><scope>graphene::net::detail::node_configuration</scope><name>private_key</name></member>
       <member refid="structgraphene_1_1net_1_1detail_1_1node__configuration_1a908d2ed64d9b68ba7ea76224f32ad7be" prot="public" virt="non-virtual"><scope>graphene::net::detail::node_configuration</scope><name>wait_if_endpoint_is_busy</name></member>

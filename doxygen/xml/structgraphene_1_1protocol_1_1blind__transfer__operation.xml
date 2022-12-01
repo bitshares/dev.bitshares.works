@@ -117,51 +117,51 @@
 <listitem><para>account to account with amount kept secret</para></listitem><listitem><para>stealth transfers with amount sender/receiver kept secret</para></listitem></orderedlist>
 </para><para>When doing account to account transfers, everyone with access to the memo key can see the amounts, but they will not have access to the funds.</para><para>When using stealth transfers the same key is used for control and reading the memo.</para><para>This operation is more expensive than a normal transfer and has a fee proportional to the size of the operation.</para><para>All assets in a blind transfer must be of the same type: fee.asset_id The fee_payer is the temp account and can be funded from the blinded values.</para><para>Using this operation you can transfer from an account and/or blinded balances to an account and/or blinded balances.</para><para>Stealth Transfers:</para><para>Assuming Receiver has key pair R,r and has shared public key R with Sender Assuming Sender has key pair S,s Generate one time key pair O,o as s.child(nonce) where nonce can be inferred from transaction Calculate secret V = o*R blinding_factor = sha256(V) memo is encrypted via aes of V owner = R.child(sha256(blinding_factor))</para><para>Sender gives Receiver output ID to complete the payment.</para><para>This process can also be used to send money to a cold wallet without having to pre-register any accounts.</para><para>Outputs are assigned the same IDs as the inputs until no more input IDs are available, in which case a the return value will be the <emphasis>first</emphasis> ID allocated for an output. Additional output IDs are allocated sequentially thereafter. If there are fewer outputs than inputs then the input IDs are freed and never used again. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="1919">
+      <node id="2034">
         <label>graphene::protocol::blind_transfer_operation</label>
         <link refid="structgraphene_1_1protocol_1_1blind__transfer__operation"/>
-        <childnode refid="1920" relation="public-inheritance">
+        <childnode refid="2035" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="1920">
+      <node id="2035">
         <label>graphene::protocol::base_operation</label>
         <link refid="structgraphene_1_1protocol_1_1base__operation"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="1926">
+      <node id="2041">
         <label>vector&lt; graphene::protocol::blind_input &gt;</label>
       </node>
-      <node id="1925">
+      <node id="2040">
         <label>vector&lt; graphene::protocol::blind_output &gt;</label>
       </node>
-      <node id="1921">
+      <node id="2036">
         <label>graphene::protocol::blind_transfer_operation</label>
         <link refid="structgraphene_1_1protocol_1_1blind__transfer__operation"/>
-        <childnode refid="1922" relation="public-inheritance">
+        <childnode refid="2037" relation="public-inheritance">
         </childnode>
-        <childnode refid="1923" relation="usage">
+        <childnode refid="2038" relation="usage">
           <edgelabel>fee</edgelabel>
         </childnode>
-        <childnode refid="1925" relation="usage">
+        <childnode refid="2040" relation="usage">
           <edgelabel>outputs</edgelabel>
         </childnode>
-        <childnode refid="1926" relation="usage">
+        <childnode refid="2041" relation="usage">
           <edgelabel>inputs</edgelabel>
         </childnode>
       </node>
-      <node id="1924">
+      <node id="2039">
         <label>fc::safe&lt; int64_t &gt;</label>
         <link refid="structfc_1_1safe"/>
       </node>
-      <node id="1922">
+      <node id="2037">
         <label>graphene::protocol::base_operation</label>
         <link refid="structgraphene_1_1protocol_1_1base__operation"/>
       </node>
-      <node id="1923">
+      <node id="2038">
         <label>graphene::protocol::asset</label>
         <link refid="structgraphene_1_1protocol_1_1asset"/>
-        <childnode refid="1924" relation="usage">
+        <childnode refid="2039" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
       </node>
@@ -180,6 +180,7 @@
       <member refid="structgraphene_1_1protocol_1_1blind__transfer__operation_1a95cb900d8f3c8186a6782b02fa2fd669" prot="public" virt="non-virtual"><scope>graphene::protocol::blind_transfer_operation</scope><name>outputs</name></member>
       <member refid="structgraphene_1_1protocol_1_1blind__transfer__operation_1a2b0a0c1ddc8cf2e3f3ba067935f4aefb" prot="public" virt="virtual"><scope>graphene::protocol::blind_transfer_operation</scope><name>validate</name></member>
       <member refid="structgraphene_1_1protocol_1_1base__operation_1a485f3d3b963ff4c081af85945cf27774" prot="public" virt="non-virtual"><scope>graphene::protocol::blind_transfer_operation</scope><name>validate_parallel</name></member>
+      <member refid="structgraphene_1_1protocol_1_1base__operation_1a04ac6688e2df1d511514e4fc1983b828" prot="public" virt="virtual"><scope>graphene::protocol::blind_transfer_operation</scope><name>~base_operation</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

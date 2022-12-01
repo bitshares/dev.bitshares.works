@@ -3,6 +3,7 @@
   <compounddef id="classgraphene_1_1app_1_1history__api" kind="class" language="C++" prot="public">
     <compoundname>graphene::app::history_api</compoundname>
     <includes refid="app_2include_2graphene_2app_2api_8hpp" local="no">api.hpp</includes>
+    <innerclass refid="structgraphene_1_1app_1_1history__api_1_1history__operation__detail" prot="public">graphene::app::history_api::history_operation_detail</innerclass>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classgraphene_1_1app_1_1history__api_1a59a2a38b1c81a9e5fed85ea79f25bc38" prot="private" static="no" mutable="no">
         <type><ref refid="classgraphene_1_1app_1_1application" kindref="compound">application</ref> &amp;</type>
@@ -15,24 +16,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="283" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="283" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classgraphene_1_1app_1_1history__api_1af5bed60211b4dbc03bd69cfee1448848" prot="private" static="no" mutable="no">
-        <type><ref refid="classgraphene_1_1app_1_1database__api" kindref="compound">graphene::app::database_api</ref></type>
-        <definition>graphene::app::database_api graphene::app::history_api::database_api</definition>
-        <argsstring></argsstring>
-        <name>database_api</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="284" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="284" bodyend="-1"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="303" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="303" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classgraphene_1_1app_1_1history__api_1ad034d3e3420e431ad72159b9f3bd807a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1app_1_1history__api_1ad034d3e3420e431ad72159b9f3bd807a" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>graphene::app::history_api::history_api</definition>
         <argsstring>(application &amp;app)</argsstring>
@@ -47,15 +35,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="125" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="125" bodyend="126"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="72" column="1" bodyfile="libraries/app/api.cpp" bodystart="371" bodyend="374"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1app_1_1history__api_1a06500e973c7d8ba47d647d4483d76342" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1app_1_1history__api_1a9385b3987c15da48efd61a4824035593" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>vector&lt; <ref refid="classgraphene_1_1chain_1_1operation__history__object" kindref="compound">operation_history_object</ref> &gt;</type>
         <definition>vector&lt; operation_history_object &gt; graphene::app::history_api::get_account_history</definition>
-        <argsstring>(const std::string account_name_or_id, operation_history_id_type stop=operation_history_id_type(), uint32_t limit=100, operation_history_id_type start=operation_history_id_type()) const</argsstring>
+        <argsstring>(const std::string &amp;account_name_or_id, operation_history_id_type stop=operation_history_id_type(), uint32_t limit=application_options::get_default().api_limit_get_account_history, operation_history_id_type start=operation_history_id_type()) const</argsstring>
         <name>get_account_history</name>
         <param>
-          <type>const std::string</type>
+          <type>const std::string &amp;</type>
           <declname>account_name_or_id</declname>
         </param>
         <param>
@@ -66,7 +54,7 @@
         <param>
           <type>uint32_t</type>
           <declname>limit</declname>
-          <defval>100</defval>
+          <defval><ref refid="classgraphene_1_1app_1_1application__options_1a81caf0c8ace863de19903484f0166e0b" kindref="member">application_options::get_default</ref>().api_limit_get_account_history</defval>
         </param>
         <param>
           <type>operation_history_id_type</type>
@@ -74,7 +62,7 @@
           <defval>operation_history_id_type()</defval>
         </param>
         <briefdescription>
-<para>Get operations relevant to the specificed account. </para>        </briefdescription>
+<para>Get the history of operations related to the specified account. </para>        </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
@@ -95,7 +83,7 @@
 <parametername>limit</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Maximum number of operations to retrieve (must not exceed 100) </para></parameterdescription>
+<para>Maximum number of operations to retrieve, must not exceed the configured value of <emphasis>api_limit_get_account_history</emphasis> </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -105,23 +93,76 @@
 <para>ID of the most recent operation to retrieve </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A list of operations performed by account, ordered from most recent to oldest. </para></simplesect>
+<simplesect kind="return"><para>A list of operations related to the specified account, ordered from most recent to oldest. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="136" column="1" bodyfile="libraries/app/api.cpp" bodystart="349" bodyend="399"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="89" column="1" bodyfile="libraries/app/api.cpp" bodystart="406" bodyend="462"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1app_1_1history__api_1a5706144be8247d76293c514c3fce08a3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="structgraphene_1_1app_1_1history__operation__detail" kindref="compound">history_operation_detail</ref></type>
-        <definition>history_operation_detail graphene::app::history_api::get_account_history_by_operations</definition>
-        <argsstring>(const std::string account_name_or_id, flat_set&lt; uint16_t &gt; operation_types, uint32_t start, uint32_t limit) const</argsstring>
-        <name>get_account_history_by_operations</name>
+      <memberdef kind="function" id="classgraphene_1_1app_1_1history__api_1a47d87c487f188127186c625db79d0040" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>vector&lt; <ref refid="classgraphene_1_1chain_1_1operation__history__object" kindref="compound">operation_history_object</ref> &gt;</type>
+        <definition>vector&lt; operation_history_object &gt; graphene::app::history_api::get_account_history_by_time</definition>
+        <argsstring>(const std::string &amp;account_name_or_id, const optional&lt; uint32_t &gt; &amp;limit=optional&lt; uint32_t &gt;(), const optional&lt; fc::time_point_sec &gt; &amp;start=optional&lt; fc::time_point_sec &gt;()) const</argsstring>
+        <name>get_account_history_by_time</name>
         <param>
-          <type>const std::string</type>
+          <type>const std::string &amp;</type>
           <declname>account_name_or_id</declname>
         </param>
         <param>
-          <type>flat_set&lt; uint16_t &gt;</type>
+          <type>const optional&lt; uint32_t &gt; &amp;</type>
+          <declname>limit</declname>
+          <defval>optional&lt; uint32_t &gt;()</defval>
+        </param>
+        <param>
+          <type>const optional&lt; <ref refid="classfc_1_1time__point__sec" kindref="compound">fc::time_point_sec</ref> &gt; &amp;</type>
+          <declname>start</declname>
+          <defval>optional&lt; <ref refid="classfc_1_1time__point__sec" kindref="compound">fc::time_point_sec</ref> &gt;()</defval>
+        </param>
+        <briefdescription>
+<para>Get the history of operations related to the specified account no later than the specified time. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>account_name_or_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The account name or ID whose history should be queried </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>limit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maximum number of operations to retrieve, must not exceed the configured value of <emphasis>api_limit_get_account_history</emphasis> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the time point to start looping back through history </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A list of operations related to the specified account, ordered from most recent to oldest.</para></simplesect>
+<simplesect kind="note"><para><orderedlist>
+<listitem><para>If <computeroutput>account_name_or_id</computeroutput> cannot be tied to an account, an empty list will be returned</para></listitem><listitem><para><computeroutput>limit</computeroutput> can be omitted or be <emphasis>null</emphasis>, if so the configured value of <emphasis>api_limit_get_account_history</emphasis> will be used</para></listitem><listitem><para><computeroutput>start</computeroutput> can be omitted or be <emphasis>null</emphasis>, if so the api will return the &quot;first page&quot; of the history</para></listitem><listitem><para>One or more optional parameters can be omitted from the end of the parameter list, and the optional parameters in the middle cannot be omitted (but can be <emphasis>null</emphasis>). </para></listitem></orderedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="112" column="1" bodyfile="libraries/app/api.cpp" bodystart="464" bodyend="503"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1app_1_1history__api_1a9c01a9ef22ece76442ee3f88074fcf9a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structgraphene_1_1app_1_1history__api_1_1history__operation__detail" kindref="compound">history_operation_detail</ref></type>
+        <definition>history_api::history_operation_detail graphene::app::history_api::get_account_history_by_operations</definition>
+        <argsstring>(const std::string &amp;account_name_or_id, const flat_set&lt; uint16_t &gt; &amp;operation_types, uint32_t start, uint32_t limit) const</argsstring>
+        <name>get_account_history_by_operations</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>account_name_or_id</declname>
+        </param>
+        <param>
+          <type>const flat_set&lt; uint16_t &gt; &amp;</type>
           <declname>operation_types</declname>
         </param>
         <param>
@@ -133,7 +174,7 @@
           <declname>limit</declname>
         </param>
         <briefdescription>
-<para>Get operations relevant to the specified account filtering by operation type. </para>        </briefdescription>
+<para>Get the history of operations related to the specified account filtering by operation types. </para>        </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
@@ -154,29 +195,29 @@
 <parametername>start</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>the sequence number where to start looping back throw the history </para></parameterdescription>
+<para>the sequence number where to start looping back through the history </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>limit</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>the max number of entries to return (from start number) </para></parameterdescription>
+<para>the max number of entries to return (from start number), must not exceed the configured value of <emphasis>api_limit_get_account_history_by_operations</emphasis> </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para><ref refid="structgraphene_1_1app_1_1history__operation__detail" kindref="compound">history_operation_detail</ref> </para></simplesect>
+<simplesect kind="return"><para><ref refid="structgraphene_1_1app_1_1history__api_1_1history__operation__detail" kindref="compound">history_operation_detail</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="152" column="1" bodyfile="libraries/app/api.cpp" bodystart="495" bodyend="522"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="128" column="1" bodyfile="libraries/app/api.cpp" bodystart="635" bodyend="663"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1app_1_1history__api_1afd41ea09cea95ce79cdee31e316f0120" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1app_1_1history__api_1a88f73c6db6e54b158950a788a3e80ac7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>vector&lt; <ref refid="classgraphene_1_1chain_1_1operation__history__object" kindref="compound">operation_history_object</ref> &gt;</type>
         <definition>vector&lt; operation_history_object &gt; graphene::app::history_api::get_account_history_operations</definition>
-        <argsstring>(const std::string account_name_or_id, int64_t operation_type, operation_history_id_type start=operation_history_id_type(), operation_history_id_type stop=operation_history_id_type(), uint32_t limit=100) const</argsstring>
+        <argsstring>(const std::string &amp;account_name_or_id, int64_t operation_type, operation_history_id_type start=operation_history_id_type(), operation_history_id_type stop=operation_history_id_type(), uint32_t limit=application_options::get_default().api_limit_get_account_history_operations) const</argsstring>
         <name>get_account_history_operations</name>
         <param>
-          <type>const std::string</type>
+          <type>const std::string &amp;</type>
           <declname>account_name_or_id</declname>
         </param>
         <param>
@@ -196,10 +237,10 @@
         <param>
           <type>uint32_t</type>
           <declname>limit</declname>
-          <defval>100</defval>
+          <defval><ref refid="classgraphene_1_1app_1_1application__options_1a81caf0c8ace863de19903484f0166e0b" kindref="member">application_options::get_default</ref>().api_limit_get_account_history_operations</defval>
         </param>
         <briefdescription>
-<para>Get only asked operations relevant to the specified account. </para>        </briefdescription>
+<para>Get the history of operations related to the specified account filtering by operation type. </para>        </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
@@ -227,7 +268,7 @@
 <parametername>limit</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Maximum number of operations to retrieve (must not exceed 100) </para></parameterdescription>
+<para>Maximum number of operations to retrieve, must not exceed the configured value of <emphasis>api_limit_get_account_history_operations</emphasis> </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -237,19 +278,19 @@
 <para>ID of the most recent operation to retrieve </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A list of operations performed by account, ordered from most recent to oldest. </para></simplesect>
+<simplesect kind="return"><para>A list of operations related to the specified account, ordered from most recent to oldest. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="169" column="1" bodyfile="libraries/app/api.cpp" bodystart="401" bodyend="443"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="146" column="1" bodyfile="libraries/app/api.cpp" bodystart="505" bodyend="549"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1app_1_1history__api_1ac773463dc5738ba7237c0c9acce6f867" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1app_1_1history__api_1aad3ed31e28253766e2e17d3e30474de7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>vector&lt; <ref refid="classgraphene_1_1chain_1_1operation__history__object" kindref="compound">operation_history_object</ref> &gt;</type>
         <definition>vector&lt; operation_history_object &gt; graphene::app::history_api::get_relative_account_history</definition>
-        <argsstring>(const std::string account_name_or_id, uint64_t stop=0, uint32_t limit=100, uint64_t start=0) const</argsstring>
+        <argsstring>(const std::string &amp;account_name_or_id, uint64_t stop=0, uint32_t limit=application_options::get_default().api_limit_get_relative_account_history, uint64_t start=0) const</argsstring>
         <name>get_relative_account_history</name>
         <param>
-          <type>const std::string</type>
+          <type>const std::string &amp;</type>
           <declname>account_name_or_id</declname>
         </param>
         <param>
@@ -260,7 +301,7 @@
         <param>
           <type>uint32_t</type>
           <declname>limit</declname>
-          <defval>100</defval>
+          <defval><ref refid="classgraphene_1_1app_1_1application__options_1a81caf0c8ace863de19903484f0166e0b" kindref="member">application_options::get_default</ref>().api_limit_get_relative_account_history</defval>
         </param>
         <param>
           <type>uint64_t</type>
@@ -268,7 +309,7 @@
           <defval>0</defval>
         </param>
         <briefdescription>
-<para>Get operations relevant to the specified account referenced by an event numbering specific to the account. The current number of operations for the account can be found in the account statistics (or use 0 for start). </para>        </briefdescription>
+<para>Get the history of operations related to the specified account referenced by an event numbering specific to the account. The current number of operations for the account can be found in the account statistics (or use 0 for start). </para>        </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
@@ -289,7 +330,7 @@
 <parametername>limit</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Maximum number of operations to retrieve (must not exceed 100) </para></parameterdescription>
+<para>Maximum number of operations to retrieve, must not exceed the configured value of <emphasis>api_limit_get_relative_account_history</emphasis> </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -299,23 +340,90 @@
 <para>Sequence number of the most recent operation to retrieve. 0 is default, which will start querying from the most recent operation. </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A list of operations performed by account, ordered from most recent to oldest. </para></simplesect>
+<simplesect kind="return"><para>A list of operations related to the specified account, ordered from most recent to oldest. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="189" column="1" bodyfile="libraries/app/api.cpp" bodystart="446" bodyend="486"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="167" column="1" bodyfile="libraries/app/api.cpp" bodystart="552" bodyend="593"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1app_1_1history__api_1a3207e2d3f44030f5b4b82223005f15bd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1app_1_1history__api_1afe54e04813ddf665c6362711d257d684" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>vector&lt; <ref refid="classgraphene_1_1chain_1_1operation__history__object" kindref="compound">operation_history_object</ref> &gt;</type>
+        <definition>vector&lt; operation_history_object &gt; graphene::app::history_api::get_block_operation_history</definition>
+        <argsstring>(uint32_t block_num, const optional&lt; uint16_t &gt; &amp;trx_in_block={}) const</argsstring>
+        <name>get_block_operation_history</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>block_num</declname>
+        </param>
+        <param>
+          <type>const optional&lt; uint16_t &gt; &amp;</type>
+          <declname>trx_in_block</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+<para>Get all operations within a block or a transaction, including virtual operations. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>block_num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the number (height) of the block to fetch </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>trx_in_block</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the sequence of a transaction in the block, starts from <emphasis>0</emphasis>, optional. If specified, will return only operations of that transaction. If omitted, will return all operations in the specified block. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a list of <emphasis>operation_history</emphasis> objects ordered by ID</para></simplesect>
+<simplesect kind="note"><para>the data is fetched from the <emphasis><ref refid="namespacegraphene_1_1account__history" kindref="compound">account_history</ref></emphasis> plugin, so results may be incomplete due to the <emphasis>partial-operations</emphasis> option configured in the API node. To get complete data, it is recommended to query from ElasticSearch where the data is maintained by the <emphasis>elastic_search</emphasis> plugin. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="186" column="1" bodyfile="libraries/app/api.cpp" bodystart="595" bodyend="607"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1app_1_1history__api_1ac66fc8a1ec9ac114682d9e4aa8430fae" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>vector&lt; <ref refid="classgraphene_1_1chain_1_1operation__history__object" kindref="compound">operation_history_object</ref> &gt;</type>
+        <definition>vector&lt; operation_history_object &gt; graphene::app::history_api::get_block_operations_by_time</definition>
+        <argsstring>(const optional&lt; fc::time_point_sec &gt; &amp;start=optional&lt; fc::time_point_sec &gt;()) const</argsstring>
+        <name>get_block_operations_by_time</name>
+        <param>
+          <type>const optional&lt; <ref refid="classfc_1_1time__point__sec" kindref="compound">fc::time_point_sec</ref> &gt; &amp;</type>
+          <declname>start</declname>
+          <defval>optional&lt; <ref refid="classfc_1_1time__point__sec" kindref="compound">fc::time_point_sec</ref> &gt;()</defval>
+        </param>
+        <briefdescription>
+<para>Get all operations, including virtual operations, within the most recent block (no later than the specified time) containing at least one operation. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>time point, optional, if omitted, the data of the latest block containing at least one operation will be returned </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a list of <emphasis>operation_history</emphasis> objects ordered by ID in descending order</para></simplesect>
+<simplesect kind="note"><para>the data is fetched from the <emphasis><ref refid="namespacegraphene_1_1account__history" kindref="compound">account_history</ref></emphasis> plugin, so results may be incomplete or incorrect due to the <emphasis>partial-operations</emphasis> option configured in the API node. To get complete data, it is recommended to query from ElasticSearch where the data is maintained by the <emphasis>elastic_search</emphasis> plugin. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="202" column="1" bodyfile="libraries/app/api.cpp" bodystart="609" bodyend="626"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1app_1_1history__api_1ab241c88ce831f93d4e06396e401b21ff" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>vector&lt; <ref refid="structgraphene_1_1market__history_1_1order__history__object" kindref="compound">order_history_object</ref> &gt;</type>
         <definition>vector&lt; order_history_object &gt; graphene::app::history_api::get_fill_order_history</definition>
-        <argsstring>(std::string a, std::string b, uint32_t limit) const</argsstring>
+        <argsstring>(const std::string &amp;a, const std::string &amp;b, uint32_t limit) const</argsstring>
         <name>get_fill_order_history</name>
         <param>
-          <type>std::string</type>
+          <type>const std::string &amp;</type>
           <declname>a</declname>
         </param>
         <param>
-          <type>std::string</type>
+          <type>const std::string &amp;</type>
           <declname>b</declname>
         </param>
         <param>
@@ -351,19 +459,19 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="201" column="1" bodyfile="libraries/app/api.cpp" bodystart="319" bodyend="347"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="212" column="1" bodyfile="libraries/app/api.cpp" bodystart="376" bodyend="404"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1app_1_1history__api_1aa53f0db49a63cd2277ac94dbfc0d10c9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1app_1_1history__api_1acbe8cdadbaef9dfe1e5219ec497f856c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>vector&lt; <ref refid="structgraphene_1_1market__history_1_1bucket__object" kindref="compound">bucket_object</ref> &gt;</type>
         <definition>vector&lt; bucket_object &gt; graphene::app::history_api::get_market_history</definition>
-        <argsstring>(std::string a, std::string b, uint32_t bucket_seconds, fc::time_point_sec start, fc::time_point_sec end) const</argsstring>
+        <argsstring>(const std::string &amp;a, const std::string &amp;b, uint32_t bucket_seconds, const fc::time_point_sec &amp;start, const fc::time_point_sec &amp;end) const</argsstring>
         <name>get_market_history</name>
         <param>
-          <type>std::string</type>
+          <type>const std::string &amp;</type>
           <declname>a</declname>
         </param>
         <param>
-          <type>std::string</type>
+          <type>const std::string &amp;</type>
           <declname>b</declname>
         </param>
         <param>
@@ -371,11 +479,11 @@
           <declname>bucket_seconds</declname>
         </param>
         <param>
-          <type><ref refid="classfc_1_1time__point__sec" kindref="compound">fc::time_point_sec</ref></type>
+          <type>const <ref refid="classfc_1_1time__point__sec" kindref="compound">fc::time_point_sec</ref> &amp;</type>
           <declname>start</declname>
         </param>
         <param>
-          <type><ref refid="classfc_1_1time__point__sec" kindref="compound">fc::time_point_sec</ref></type>
+          <type>const <ref refid="classfc_1_1time__point__sec" kindref="compound">fc::time_point_sec</ref> &amp;</type>
           <declname>end</declname>
         </param>
         <briefdescription>
@@ -417,11 +525,11 @@
 <para>The end of the time range </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A list of OHLCV data, in &quot;least recent first&quot; order. If there are more than 200 records in the specified time range, the first 200 records will be returned. </para></simplesect>
+<simplesect kind="return"><para>A list of OHLCV data, in &quot;least recent first&quot; order. If there are more records in the specified time range than the configured value of <emphasis>api_limit_get_market_history</emphasis>, only the first records will be returned. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="214" column="1" bodyfile="libraries/app/api.cpp" bodystart="524" bodyend="555"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="229" column="1" bodyfile="libraries/app/api.cpp" bodystart="665" bodyend="699"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1history__api_1a3cb82a7bb879b9f967665d69fd90c67d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>flat_set&lt; uint32_t &gt;</type>
@@ -435,34 +543,34 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="222" column="1" bodyfile="libraries/app/api.cpp" bodystart="488" bodyend="493"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="239" column="1" bodyfile="libraries/app/api.cpp" bodystart="628" bodyend="633"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1app_1_1history__api_1a61fe41bda5829f173982bf010973724d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1app_1_1history__api_1a46123e816625c3a4fc7bd7d2098d25cc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>vector&lt; <ref refid="structgraphene_1_1market__history_1_1liquidity__pool__history__object" kindref="compound">liquidity_pool_history_object</ref> &gt;</type>
         <definition>vector&lt; liquidity_pool_history_object &gt; graphene::app::history_api::get_liquidity_pool_history</definition>
-        <argsstring>(liquidity_pool_id_type pool_id, optional&lt; fc::time_point_sec &gt; start=optional&lt; fc::time_point_sec &gt;(), optional&lt; fc::time_point_sec &gt; stop=optional&lt; fc::time_point_sec &gt;(), optional&lt; uint32_t &gt; limit=101, optional&lt; int64_t &gt; operation_type=optional&lt; int64_t &gt;()) const</argsstring>
+        <argsstring>(liquidity_pool_id_type pool_id, const optional&lt; fc::time_point_sec &gt; &amp;start=optional&lt; fc::time_point_sec &gt;(), const optional&lt; fc::time_point_sec &gt; &amp;stop=optional&lt; fc::time_point_sec &gt;(), const optional&lt; uint32_t &gt; &amp;limit=optional&lt; uint32_t &gt;(), const optional&lt; int64_t &gt; &amp;operation_type=optional&lt; int64_t &gt;()) const</argsstring>
         <name>get_liquidity_pool_history</name>
         <param>
           <type>liquidity_pool_id_type</type>
           <declname>pool_id</declname>
         </param>
         <param>
-          <type>optional&lt; <ref refid="classfc_1_1time__point__sec" kindref="compound">fc::time_point_sec</ref> &gt;</type>
+          <type>const optional&lt; <ref refid="classfc_1_1time__point__sec" kindref="compound">fc::time_point_sec</ref> &gt; &amp;</type>
           <declname>start</declname>
           <defval>optional&lt; <ref refid="classfc_1_1time__point__sec" kindref="compound">fc::time_point_sec</ref> &gt;()</defval>
         </param>
         <param>
-          <type>optional&lt; <ref refid="classfc_1_1time__point__sec" kindref="compound">fc::time_point_sec</ref> &gt;</type>
+          <type>const optional&lt; <ref refid="classfc_1_1time__point__sec" kindref="compound">fc::time_point_sec</ref> &gt; &amp;</type>
           <declname>stop</declname>
           <defval>optional&lt; <ref refid="classfc_1_1time__point__sec" kindref="compound">fc::time_point_sec</ref> &gt;()</defval>
         </param>
         <param>
-          <type>optional&lt; uint32_t &gt;</type>
+          <type>const optional&lt; uint32_t &gt; &amp;</type>
           <declname>limit</declname>
-          <defval>101</defval>
+          <defval>optional&lt; uint32_t &gt;()</defval>
         </param>
         <param>
-          <type>optional&lt; int64_t &gt;</type>
+          <type>const optional&lt; int64_t &gt; &amp;</type>
           <declname>operation_type</declname>
           <defval>optional&lt; int64_t &gt;()</defval>
         </param>
@@ -495,7 +603,7 @@
 <parametername>limit</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Maximum quantity of operations in the history to retrieve. Optional. If not specified, at most 101 records will be returned. </para></parameterdescription>
+<para>Maximum quantity of operations in the history to retrieve. Optional. If not specified, the configured value of <emphasis>api_limit_get_liquidity_pool_history</emphasis> will be used. If specified, it must not exceed the configured value of <emphasis>api_limit_get_liquidity_pool_history</emphasis>. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -507,39 +615,39 @@
 </parameterlist>
 <simplesect kind="return"><para>operation history of the liquidity pool, ordered by time, most recent first.</para></simplesect>
 <simplesect kind="note"><para><orderedlist>
-<listitem><para>The time must be UTC. The range is (stop, start].</para></listitem><listitem><para>In case when there are more than 100 operations occurred in the same second, this API only returns the most recent records, the rest records can be retrieved with the <ref refid="classgraphene_1_1app_1_1history__api_1a9e8008561e1ba5640947e7b91b9ab7f3" kindref="member">get_liquidity_pool_history_by_sequence</ref> API.</para></listitem><listitem><para>List of operation type code: 59-creation, 60-deletion, 61-deposit, 62-withdrawal, 63-exchange.</para></listitem><listitem><para>Can only omit one or more arguments in the end of the list, but not one or more in the middle. If need to not specify an individual argument, can specify <computeroutput>null</computeroutput> in the place. </para></listitem></orderedlist>
+<listitem><para>The time must be UTC. The range is (stop, start].</para></listitem><listitem><para>In case when there are more operations than <computeroutput>limit</computeroutput> occurred in the same second, this API only returns the most recent records, the rest records can be retrieved with the <ref refid="classgraphene_1_1app_1_1history__api_1a4d91e648d5c9efe7c62004d1987ccab7" kindref="member">get_liquidity_pool_history_by_sequence</ref> API.</para></listitem><listitem><para>List of operation type code: 59-creation, 60-deletion, 61-deposit, 62-withdrawal, 63-exchange.</para></listitem><listitem><para>One or more optional parameters can be omitted from the end of the parameter list, and the optional parameters in the middle cannot be omitted (but can be <emphasis>null</emphasis>). </para></listitem></orderedlist>
 </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="246" column="1" bodyfile="libraries/app/api.cpp" bodystart="557" bodyend="613"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="266" column="1" bodyfile="libraries/app/api.cpp" bodystart="716" bodyend="763"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1app_1_1history__api_1a9e8008561e1ba5640947e7b91b9ab7f3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgraphene_1_1app_1_1history__api_1a4d91e648d5c9efe7c62004d1987ccab7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>vector&lt; <ref refid="structgraphene_1_1market__history_1_1liquidity__pool__history__object" kindref="compound">liquidity_pool_history_object</ref> &gt;</type>
         <definition>vector&lt; liquidity_pool_history_object &gt; graphene::app::history_api::get_liquidity_pool_history_by_sequence</definition>
-        <argsstring>(liquidity_pool_id_type pool_id, optional&lt; uint64_t &gt; start=optional&lt; uint64_t &gt;(), optional&lt; fc::time_point_sec &gt; stop=optional&lt; fc::time_point_sec &gt;(), optional&lt; uint32_t &gt; limit=101, optional&lt; int64_t &gt; operation_type=optional&lt; int64_t &gt;()) const</argsstring>
+        <argsstring>(liquidity_pool_id_type pool_id, const optional&lt; uint64_t &gt; &amp;start=optional&lt; uint64_t &gt;(), const optional&lt; fc::time_point_sec &gt; &amp;stop=optional&lt; fc::time_point_sec &gt;(), const optional&lt; uint32_t &gt; &amp;limit=optional&lt; uint32_t &gt;(), const optional&lt; int64_t &gt; &amp;operation_type=optional&lt; int64_t &gt;()) const</argsstring>
         <name>get_liquidity_pool_history_by_sequence</name>
         <param>
           <type>liquidity_pool_id_type</type>
           <declname>pool_id</declname>
         </param>
         <param>
-          <type>optional&lt; uint64_t &gt;</type>
+          <type>const optional&lt; uint64_t &gt; &amp;</type>
           <declname>start</declname>
           <defval>optional&lt; uint64_t &gt;()</defval>
         </param>
         <param>
-          <type>optional&lt; <ref refid="classfc_1_1time__point__sec" kindref="compound">fc::time_point_sec</ref> &gt;</type>
+          <type>const optional&lt; <ref refid="classfc_1_1time__point__sec" kindref="compound">fc::time_point_sec</ref> &gt; &amp;</type>
           <declname>stop</declname>
           <defval>optional&lt; <ref refid="classfc_1_1time__point__sec" kindref="compound">fc::time_point_sec</ref> &gt;()</defval>
         </param>
         <param>
-          <type>optional&lt; uint32_t &gt;</type>
+          <type>const optional&lt; uint32_t &gt; &amp;</type>
           <declname>limit</declname>
-          <defval>101</defval>
+          <defval>optional&lt; uint32_t &gt;()</defval>
         </param>
         <param>
-          <type>optional&lt; int64_t &gt;</type>
+          <type>const optional&lt; int64_t &gt; &amp;</type>
           <declname>operation_type</declname>
           <defval>optional&lt; int64_t &gt;()</defval>
         </param>
@@ -572,7 +680,7 @@
 <parametername>limit</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Maximum quantity of operations in the history to retrieve. Optional. If not specified, at most 101 records will be returned. </para></parameterdescription>
+<para>Maximum quantity of operations in the history to retrieve. Optional. If not specified, the configured value of <emphasis>api_limit_get_liquidity_pool_history</emphasis> will be used. If specified, it must not exceed the configured value of <emphasis>api_limit_get_liquidity_pool_history</emphasis>. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -584,31 +692,33 @@
 </parameterlist>
 <simplesect kind="return"><para>operation history of the liquidity pool, ordered by time, most recent first.</para></simplesect>
 <simplesect kind="note"><para><orderedlist>
-<listitem><para>The time must be UTC. The range is (stop, start].</para></listitem><listitem><para>In case when there are more than 100 operations occurred in the same second, this API only returns the most recent records, the rest records can be retrieved with the <ref refid="classgraphene_1_1app_1_1history__api_1a9e8008561e1ba5640947e7b91b9ab7f3" kindref="member">get_liquidity_pool_history_by_sequence</ref> API.</para></listitem><listitem><para>List of operation type code: 59-creation, 60-deletion, 61-deposit, 62-withdrawal, 63-exchange.</para></listitem><listitem><para>Can only omit one or more arguments in the end of the list, but not one or more in the middle. If need to not specify an individual argument, can specify <computeroutput>null</computeroutput> in the place. </para></listitem></orderedlist>
+<listitem><para>The time must be UTC. The range is (stop, start].</para></listitem><listitem><para>List of operation type code: 59-creation, 60-deletion, 61-deposit, 62-withdrawal, 63-exchange.</para></listitem><listitem><para>One or more optional parameters can be omitted from the end of the parameter list, and the optional parameters in the middle cannot be omitted (but can be <emphasis>null</emphasis>). </para></listitem></orderedlist>
 </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="275" column="1" bodyfile="libraries/app/api.cpp" bodystart="615" bodyend="683"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="295" column="1" bodyfile="libraries/app/api.cpp" bodystart="765" bodyend="824"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>The <ref refid="classgraphene_1_1app_1_1history__api" kindref="compound">history_api</ref> class implements the RPC API for account history. </para>    </briefdescription>
     <detaileddescription>
 <para>This API contains methods to access account histories </para>    </detaileddescription>
-    <location file="libraries/app/include/graphene/app/api.hpp" line="123" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="122" bodyend="285"/>
+    <location file="libraries/app/include/graphene/app/api.hpp" line="70" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="69" bodyend="304"/>
     <listofallmembers>
       <member refid="classgraphene_1_1app_1_1history__api_1a59a2a38b1c81a9e5fed85ea79f25bc38" prot="private" virt="non-virtual"><scope>graphene::app::history_api</scope><name>_app</name></member>
-      <member refid="classgraphene_1_1app_1_1history__api_1af5bed60211b4dbc03bd69cfee1448848" prot="private" virt="non-virtual"><scope>graphene::app::history_api</scope><name>database_api</name></member>
-      <member refid="classgraphene_1_1app_1_1history__api_1a06500e973c7d8ba47d647d4483d76342" prot="public" virt="non-virtual"><scope>graphene::app::history_api</scope><name>get_account_history</name></member>
-      <member refid="classgraphene_1_1app_1_1history__api_1a5706144be8247d76293c514c3fce08a3" prot="public" virt="non-virtual"><scope>graphene::app::history_api</scope><name>get_account_history_by_operations</name></member>
-      <member refid="classgraphene_1_1app_1_1history__api_1afd41ea09cea95ce79cdee31e316f0120" prot="public" virt="non-virtual"><scope>graphene::app::history_api</scope><name>get_account_history_operations</name></member>
-      <member refid="classgraphene_1_1app_1_1history__api_1a3207e2d3f44030f5b4b82223005f15bd" prot="public" virt="non-virtual"><scope>graphene::app::history_api</scope><name>get_fill_order_history</name></member>
-      <member refid="classgraphene_1_1app_1_1history__api_1a61fe41bda5829f173982bf010973724d" prot="public" virt="non-virtual"><scope>graphene::app::history_api</scope><name>get_liquidity_pool_history</name></member>
-      <member refid="classgraphene_1_1app_1_1history__api_1a9e8008561e1ba5640947e7b91b9ab7f3" prot="public" virt="non-virtual"><scope>graphene::app::history_api</scope><name>get_liquidity_pool_history_by_sequence</name></member>
-      <member refid="classgraphene_1_1app_1_1history__api_1aa53f0db49a63cd2277ac94dbfc0d10c9" prot="public" virt="non-virtual"><scope>graphene::app::history_api</scope><name>get_market_history</name></member>
+      <member refid="classgraphene_1_1app_1_1history__api_1a9385b3987c15da48efd61a4824035593" prot="public" virt="non-virtual"><scope>graphene::app::history_api</scope><name>get_account_history</name></member>
+      <member refid="classgraphene_1_1app_1_1history__api_1a9c01a9ef22ece76442ee3f88074fcf9a" prot="public" virt="non-virtual"><scope>graphene::app::history_api</scope><name>get_account_history_by_operations</name></member>
+      <member refid="classgraphene_1_1app_1_1history__api_1a47d87c487f188127186c625db79d0040" prot="public" virt="non-virtual"><scope>graphene::app::history_api</scope><name>get_account_history_by_time</name></member>
+      <member refid="classgraphene_1_1app_1_1history__api_1a88f73c6db6e54b158950a788a3e80ac7" prot="public" virt="non-virtual"><scope>graphene::app::history_api</scope><name>get_account_history_operations</name></member>
+      <member refid="classgraphene_1_1app_1_1history__api_1afe54e04813ddf665c6362711d257d684" prot="public" virt="non-virtual"><scope>graphene::app::history_api</scope><name>get_block_operation_history</name></member>
+      <member refid="classgraphene_1_1app_1_1history__api_1ac66fc8a1ec9ac114682d9e4aa8430fae" prot="public" virt="non-virtual"><scope>graphene::app::history_api</scope><name>get_block_operations_by_time</name></member>
+      <member refid="classgraphene_1_1app_1_1history__api_1ab241c88ce831f93d4e06396e401b21ff" prot="public" virt="non-virtual"><scope>graphene::app::history_api</scope><name>get_fill_order_history</name></member>
+      <member refid="classgraphene_1_1app_1_1history__api_1a46123e816625c3a4fc7bd7d2098d25cc" prot="public" virt="non-virtual"><scope>graphene::app::history_api</scope><name>get_liquidity_pool_history</name></member>
+      <member refid="classgraphene_1_1app_1_1history__api_1a4d91e648d5c9efe7c62004d1987ccab7" prot="public" virt="non-virtual"><scope>graphene::app::history_api</scope><name>get_liquidity_pool_history_by_sequence</name></member>
+      <member refid="classgraphene_1_1app_1_1history__api_1acbe8cdadbaef9dfe1e5219ec497f856c" prot="public" virt="non-virtual"><scope>graphene::app::history_api</scope><name>get_market_history</name></member>
       <member refid="classgraphene_1_1app_1_1history__api_1a3cb82a7bb879b9f967665d69fd90c67d" prot="public" virt="non-virtual"><scope>graphene::app::history_api</scope><name>get_market_history_buckets</name></member>
-      <member refid="classgraphene_1_1app_1_1history__api_1ac773463dc5738ba7237c0c9acce6f867" prot="public" virt="non-virtual"><scope>graphene::app::history_api</scope><name>get_relative_account_history</name></member>
+      <member refid="classgraphene_1_1app_1_1history__api_1aad3ed31e28253766e2e17d3e30474de7" prot="public" virt="non-virtual"><scope>graphene::app::history_api</scope><name>get_relative_account_history</name></member>
       <member refid="classgraphene_1_1app_1_1history__api_1ad034d3e3420e431ad72159b9f3bd807a" prot="public" virt="non-virtual"><scope>graphene::app::history_api</scope><name>history_api</name></member>
     </listofallmembers>
   </compounddef>
