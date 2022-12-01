@@ -2,8 +2,9 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="namespacegraphene_1_1utilities" kind="namespace" language="C++">
     <compoundname>graphene::utilities</compoundname>
-    <innerclass refid="classgraphene_1_1utilities_1_1_curl_request" prot="public">graphene::utilities::CurlRequest</innerclass>
-    <innerclass refid="classgraphene_1_1utilities_1_1_e_s" prot="public">graphene::utilities::ES</innerclass>
+    <innerclass refid="classgraphene_1_1utilities_1_1curl__wrapper" prot="public">graphene::utilities::curl_wrapper</innerclass>
+    <innerclass refid="classgraphene_1_1utilities_1_1es__client" prot="public">graphene::utilities::es_client</innerclass>
+    <innerclass refid="structgraphene_1_1utilities_1_1es__data__adaptor" prot="public">graphene::utilities::es_data_adaptor</innerclass>
     <innerclass refid="classgraphene_1_1utilities_1_1padding__ostream" prot="public">graphene::utilities::padding_ostream</innerclass>
       <sectiondef kind="var">
       <memberdef kind="variable" id="namespacegraphene_1_1utilities_1a4da7b598aa6b523b3cb9545bd51159c6" prot="public" static="no" mutable="no">
@@ -47,103 +48,18 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
-      <memberdef kind="function" id="namespacegraphene_1_1utilities_1a344fd9252a509bfe40d5279595174660" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacegraphene_1_1utilities_1ad1cdca5c6b54f39c98d6e9bd8cd2137d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
-        <definition>bool graphene::utilities::checkES</definition>
-        <argsstring>(ES &amp;es)</argsstring>
-        <name>checkES</name>
+        <definition>static bool graphene::utilities::handle_bulk_response</definition>
+        <argsstring>(uint16_t http_code, const std::string &amp;curl_read_buffer)</argsstring>
+        <name>handle_bulk_response</name>
         <param>
-          <type><ref refid="classgraphene_1_1utilities_1_1_e_s" kindref="compound">ES</ref> &amp;</type>
-          <declname>es</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="libraries/utilities/elasticsearch.cpp" line="39" column="1" bodyfile="libraries/utilities/elasticsearch.cpp" bodystart="39" bodyend="51"/>
-      </memberdef>
-      <memberdef kind="function" id="namespacegraphene_1_1utilities_1ab52d6a4cd60cbe22dc55148f28941ae9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>const std::string</type>
-        <definition>const std::string graphene::utilities::simpleQuery</definition>
-        <argsstring>(ES &amp;es)</argsstring>
-        <name>simpleQuery</name>
-        <param>
-          <type><ref refid="classgraphene_1_1utilities_1_1_e_s" kindref="compound">ES</ref> &amp;</type>
-          <declname>es</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="libraries/utilities/elasticsearch.cpp" line="52" column="1" bodyfile="libraries/utilities/elasticsearch.cpp" bodystart="52" bodyend="62"/>
-      </memberdef>
-      <memberdef kind="function" id="namespacegraphene_1_1utilities_1ad979680c6278d161e1273f0ade452551" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>bool</type>
-        <definition>bool graphene::utilities::SendBulk</definition>
-        <argsstring>(ES &amp;&amp;es)</argsstring>
-        <name>SendBulk</name>
-        <param>
-          <type><ref refid="classgraphene_1_1utilities_1_1_e_s" kindref="compound">ES</ref> &amp;&amp;</type>
-          <declname>es</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="libraries/utilities/elasticsearch.cpp" line="64" column="1" bodyfile="libraries/utilities/elasticsearch.cpp" bodystart="64" bodyend="80"/>
-      </memberdef>
-      <memberdef kind="function" id="namespacegraphene_1_1utilities_1ac351ff97ae9fa3896b62edf737efda13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>const std::string</type>
-        <definition>const std::string graphene::utilities::joinBulkLines</definition>
-        <argsstring>(const std::vector&lt; std::string &gt; &amp;bulk)</argsstring>
-        <name>joinBulkLines</name>
-        <param>
-          <type>const std::vector&lt; std::string &gt; &amp;</type>
-          <declname>bulk</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="libraries/utilities/elasticsearch.cpp" line="82" column="1" bodyfile="libraries/utilities/elasticsearch.cpp" bodystart="82" bodyend="88"/>
-      </memberdef>
-      <memberdef kind="function" id="namespacegraphene_1_1utilities_1a1a4654603153b4d5898a32c1debab131" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>long</type>
-        <definition>long graphene::utilities::getResponseCode</definition>
-        <argsstring>(CURL *handler)</argsstring>
-        <name>getResponseCode</name>
-        <param>
-          <type>CURL *</type>
-          <declname>handler</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="libraries/utilities/elasticsearch.cpp" line="89" column="1" bodyfile="libraries/utilities/elasticsearch.cpp" bodystart="89" bodyend="94"/>
-      </memberdef>
-      <memberdef kind="function" id="namespacegraphene_1_1utilities_1ac1e0a5db1e9d97647d405d272f9ba015" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>bool</type>
-        <definition>bool graphene::utilities::handleBulkResponse</definition>
-        <argsstring>(long http_code, const std::string &amp;CurlReadBuffer)</argsstring>
-        <name>handleBulkResponse</name>
-        <param>
-          <type>long</type>
+          <type>uint16_t</type>
           <declname>http_code</declname>
         </param>
         <param>
           <type>const std::string &amp;</type>
-          <declname>CurlReadBuffer</declname>
+          <declname>curl_read_buffer</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -151,11 +67,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/utilities/elasticsearch.cpp" line="96" column="1" bodyfile="libraries/utilities/elasticsearch.cpp" bodystart="96" bodyend="120"/>
+        <location file="libraries/utilities/elasticsearch.cpp" line="39" column="1" bodyfile="libraries/utilities/elasticsearch.cpp" bodystart="39" bodyend="67"/>
       </memberdef>
-      <memberdef kind="function" id="namespacegraphene_1_1utilities_1afaa7ede46f3e4e7293c94bea00121ed9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>const std::vector&lt; std::string &gt;</type>
-        <definition>const std::vector&lt; std::string &gt; graphene::utilities::createBulk</definition>
+      <memberdef kind="function" id="namespacegraphene_1_1utilities_1adbb8c9cf86f637a5b99e7a19a764b2a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; std::string &gt; graphene::utilities::createBulk</definition>
         <argsstring>(const fc::mutable_variant_object &amp;bulk_header, std::string &amp;&amp;data)</argsstring>
         <name>createBulk</name>
         <param>
@@ -172,71 +88,29 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/utilities/elasticsearch.cpp" line="122" column="1" bodyfile="libraries/utilities/elasticsearch.cpp" bodystart="122" bodyend="131"/>
+        <location file="libraries/utilities/elasticsearch.cpp" line="69" column="1" bodyfile="libraries/utilities/elasticsearch.cpp" bodystart="69" bodyend="78"/>
       </memberdef>
-      <memberdef kind="function" id="namespacegraphene_1_1utilities_1a8838f6e46f53ced3a25bad077df72146" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>bool</type>
-        <definition>bool graphene::utilities::deleteAll</definition>
-        <argsstring>(ES &amp;es)</argsstring>
-        <name>deleteAll</name>
+      <memberdef kind="function" id="namespacegraphene_1_1utilities_1ac124673ffe94cef23f313045010aeacb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void graphene::utilities::get_program_option</definition>
+        <argsstring>(const boost::program_options::variables_map &amp;from, const std::string &amp;key, T &amp;to)</argsstring>
+        <name>get_program_option</name>
         <param>
-          <type><ref refid="classgraphene_1_1utilities_1_1_e_s" kindref="compound">ES</ref> &amp;</type>
-          <declname>es</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="libraries/utilities/elasticsearch.cpp" line="133" column="1" bodyfile="libraries/utilities/elasticsearch.cpp" bodystart="133" bodyend="146"/>
-      </memberdef>
-      <memberdef kind="function" id="namespacegraphene_1_1utilities_1a5df9c27edc8f6f4a42ed57d9740eb24c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>const std::string</type>
-        <definition>const std::string graphene::utilities::getEndPoint</definition>
-        <argsstring>(ES &amp;es)</argsstring>
-        <name>getEndPoint</name>
-        <param>
-          <type><ref refid="classgraphene_1_1utilities_1_1_e_s" kindref="compound">ES</ref> &amp;</type>
-          <declname>es</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="libraries/utilities/elasticsearch.cpp" line="147" column="1" bodyfile="libraries/utilities/elasticsearch.cpp" bodystart="147" bodyend="156"/>
-      </memberdef>
-      <memberdef kind="function" id="namespacegraphene_1_1utilities_1a21890442aceec251bb81143af7d13385" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>const std::string</type>
-        <definition>const std::string graphene::utilities::generateIndexName</definition>
-        <argsstring>(const fc::time_point_sec &amp;block_date, const std::string &amp;_elasticsearch_index_prefix)</argsstring>
-        <name>generateIndexName</name>
-        <param>
-          <type>const <ref refid="classfc_1_1time__point__sec" kindref="compound">fc::time_point_sec</ref> &amp;</type>
-          <declname>block_date</declname>
+          <type>const boost::program_options::variables_map &amp;</type>
+          <declname>from</declname>
         </param>
         <param>
           <type>const std::string &amp;</type>
-          <declname>_elasticsearch_index_prefix</declname>
+          <declname>key</declname>
         </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="libraries/utilities/elasticsearch.cpp" line="158" column="1" bodyfile="libraries/utilities/elasticsearch.cpp" bodystart="158" bodyend="165"/>
-      </memberdef>
-      <memberdef kind="function" id="namespacegraphene_1_1utilities_1a2c2bf8b3151c59bccb60621d753d86a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>const std::string</type>
-        <definition>const std::string graphene::utilities::doCurl</definition>
-        <argsstring>(CurlRequest &amp;curl)</argsstring>
-        <name>doCurl</name>
         <param>
-          <type><ref refid="classgraphene_1_1utilities_1_1_curl_request" kindref="compound">CurlRequest</ref> &amp;</type>
-          <declname>curl</declname>
+          <type>T &amp;</type>
+          <declname>to</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -244,7 +118,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/utilities/elasticsearch.cpp" line="167" column="1" bodyfile="libraries/utilities/elasticsearch.cpp" bodystart="167" bodyend="198"/>
+        <location file="libraries/utilities/include/graphene/utilities/boost_program_options.hpp" line="30" column="1" bodyfile="libraries/utilities/include/graphene/utilities/boost_program_options.hpp" bodystart="30" bodyend="36"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1utilities_1a33f09d0c0f741c8375082b6932bcdc58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::string</type>

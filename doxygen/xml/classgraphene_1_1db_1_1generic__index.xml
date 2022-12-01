@@ -18,9 +18,9 @@
       </param>
     </templateparamlist>
       <sectiondef kind="public-type">
-      <memberdef kind="typedef" id="classgraphene_1_1db_1_1generic__index_1ae0f77878d56e1ffba2009ab6610a7f0d" prot="public" static="no">
+      <memberdef kind="typedef" id="classgraphene_1_1db_1_1generic__index_1a3163c3494402ee91dba2f1ee3552cf9a" prot="public" static="no">
         <type>MultiIndexType</type>
-        <definition>typedef MultiIndexType graphene::db::generic_index&lt; ObjectType, MultiIndexType &gt;::index_type</definition>
+        <definition>using graphene::db::generic_index&lt; ObjectType, MultiIndexType &gt;::index_type =  MultiIndexType</definition>
         <argsstring></argsstring>
         <name>index_type</name>
         <briefdescription>
@@ -31,9 +31,9 @@
         </inbodydescription>
         <location file="libraries/db/include/graphene/db/generic_index.hpp" line="46" column="1" bodyfile="libraries/db/include/graphene/db/generic_index.hpp" bodystart="46" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="classgraphene_1_1db_1_1generic__index_1af23c147d76dff4741d27fa6d6296c97c" prot="public" static="no">
+      <memberdef kind="typedef" id="classgraphene_1_1db_1_1generic__index_1a24bee31741b19877c37122bcd3ff5f25" prot="public" static="no">
         <type>ObjectType</type>
-        <definition>typedef ObjectType graphene::db::generic_index&lt; ObjectType, MultiIndexType &gt;::object_type</definition>
+        <definition>using graphene::db::generic_index&lt; ObjectType, MultiIndexType &gt;::object_type =  ObjectType</definition>
         <argsstring></argsstring>
         <name>object_type</name>
         <briefdescription>
@@ -47,7 +47,7 @@
       </sectiondef>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classgraphene_1_1db_1_1generic__index_1a7957ce8a2301887c4f4c5a4f664e1cd2" prot="private" static="no" mutable="no">
-        <type><ref refid="classgraphene_1_1db_1_1generic__index_1ae0f77878d56e1ffba2009ab6610a7f0d" kindref="member">index_type</ref></type>
+        <type><ref refid="classgraphene_1_1db_1_1generic__index_1a3163c3494402ee91dba2f1ee3552cf9a" kindref="member">index_type</ref></type>
         <definition>index_type graphene::db::generic_index&lt; ObjectType, MultiIndexType &gt;::_indices</definition>
         <argsstring></argsstring>
         <name>_indices</name>
@@ -57,17 +57,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/db/include/graphene/db/generic_index.hpp" line="116" column="1" bodyfile="libraries/db/include/graphene/db/generic_index.hpp" bodystart="116" bodyend="-1"/>
+        <location file="libraries/db/include/graphene/db/generic_index.hpp" line="118" column="1" bodyfile="libraries/db/include/graphene/db/generic_index.hpp" bodystart="118" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classgraphene_1_1db_1_1generic__index_1ad41c7adc007eb1064065c4ee56017c5d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+      <memberdef kind="function" id="classgraphene_1_1db_1_1generic__index_1ac0f4c4e40066b8775d82aa57fbf92b7f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>const <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref> &amp;</type>
-        <definition>virtual const object&amp; graphene::db::generic_index&lt; ObjectType, MultiIndexType &gt;::insert</definition>
+        <definition>const object&amp; graphene::db::generic_index&lt; ObjectType, MultiIndexType &gt;::insert</definition>
         <argsstring>(object &amp;&amp;obj) override</argsstring>
         <name>insert</name>
         <reimplements refid="classgraphene_1_1db_1_1index_1a51be62de2c4ca916d3b14c39499e13e4">insert</reimplements>
-        <reimplementedby refid="classgraphene_1_1db_1_1primary__index_1a6b9efacf15249bbe5650a179a14de3fc">insert</reimplementedby>
+        <reimplementedby refid="classgraphene_1_1db_1_1primary__index_1af935f5d79721abc5886441caac1620d5">insert</reimplementedby>
         <param>
           <type><ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref> &amp;&amp;</type>
           <declname>obj</declname>
@@ -78,15 +78,15 @@
 <para>Polymorphically insert by moving an object into the index. this should throw if the object is already in the database. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/db/include/graphene/db/generic_index.hpp" line="49" column="1" bodyfile="libraries/db/include/graphene/db/generic_index.hpp" bodystart="49" bodyend="55"/>
+        <location file="libraries/db/include/graphene/db/generic_index.hpp" line="49" column="1" bodyfile="libraries/db/include/graphene/db/generic_index.hpp" bodystart="49" bodyend="56"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1db_1_1generic__index_1a980c6c1e00630ff783bdd5d3e2ca11a1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+      <memberdef kind="function" id="classgraphene_1_1db_1_1generic__index_1ac98e457427a6cdf8f0451cb70efbb092" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>const <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref> &amp;</type>
-        <definition>virtual const object&amp; graphene::db::generic_index&lt; ObjectType, MultiIndexType &gt;::create</definition>
+        <definition>const object&amp; graphene::db::generic_index&lt; ObjectType, MultiIndexType &gt;::create</definition>
         <argsstring>(const std::function&lt; void(object &amp;)&gt; &amp;constructor) override</argsstring>
         <name>create</name>
         <reimplements refid="classgraphene_1_1db_1_1index_1a5498269afc8b822043d4d1e0b7b5a75e">create</reimplements>
-        <reimplementedby refid="classgraphene_1_1db_1_1primary__index_1a2a92435bc15bd2c4e160e5a56a321caf">create</reimplementedby>
+        <reimplementedby refid="classgraphene_1_1db_1_1primary__index_1a79d8e7f65089a24bdd7cf0cbd364dd45">create</reimplementedby>
         <param>
           <type>const std::function&lt; void(<ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref> &amp;)&gt; &amp;</type>
           <declname>constructor</declname>
@@ -97,15 +97,15 @@
 <para>Builds a new object and assigns it the next available ID and then initializes it with constructor and lastly inserts it into the index. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/db/include/graphene/db/generic_index.hpp" line="57" column="1" bodyfile="libraries/db/include/graphene/db/generic_index.hpp" bodystart="57" bodyend="66"/>
+        <location file="libraries/db/include/graphene/db/generic_index.hpp" line="58" column="1" bodyfile="libraries/db/include/graphene/db/generic_index.hpp" bodystart="58" bodyend="68"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1db_1_1generic__index_1ab9a4fceebfed811e16d58c48f5827ae4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+      <memberdef kind="function" id="classgraphene_1_1db_1_1generic__index_1aa388bede6e7ae0e58df5bed7fdb3abaa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
-        <definition>virtual void graphene::db::generic_index&lt; ObjectType, MultiIndexType &gt;::modify</definition>
+        <definition>void graphene::db::generic_index&lt; ObjectType, MultiIndexType &gt;::modify</definition>
         <argsstring>(const object &amp;obj, const std::function&lt; void(object &amp;)&gt; &amp;m) override</argsstring>
         <name>modify</name>
         <reimplements refid="classgraphene_1_1db_1_1index_1a0c254d24ade94e0b586ba59c0bb2a764">modify</reimplements>
-        <reimplementedby refid="classgraphene_1_1db_1_1primary__index_1a3cb107388bbe893f692aea4817ad263b">modify</reimplementedby>
+        <reimplementedby refid="classgraphene_1_1db_1_1primary__index_1a4ad117c48ee64123d103d5c2d88a4ccd">modify</reimplementedby>
         <param>
           <type>const <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref> &amp;</type>
           <declname>obj</declname>
@@ -120,15 +120,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/db/include/graphene/db/generic_index.hpp" line="68" column="1" bodyfile="libraries/db/include/graphene/db/generic_index.hpp" bodystart="68" bodyend="89"/>
+        <location file="libraries/db/include/graphene/db/generic_index.hpp" line="70" column="1" bodyfile="libraries/db/include/graphene/db/generic_index.hpp" bodystart="70" bodyend="91"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1db_1_1generic__index_1a20c1b60d4e22bac082a385574802d8c4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+      <memberdef kind="function" id="classgraphene_1_1db_1_1generic__index_1a8124dccf3481a119a28e793119ae11d6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
-        <definition>virtual void graphene::db::generic_index&lt; ObjectType, MultiIndexType &gt;::remove</definition>
+        <definition>void graphene::db::generic_index&lt; ObjectType, MultiIndexType &gt;::remove</definition>
         <argsstring>(const object &amp;obj) override</argsstring>
         <name>remove</name>
         <reimplements refid="classgraphene_1_1db_1_1index_1a2c7bf27727205871ac7bdc9ff4598b1a">remove</reimplements>
-        <reimplementedby refid="classgraphene_1_1db_1_1primary__index_1a42390d3be1f04919991aa5051c337d93">remove</reimplementedby>
+        <reimplementedby refid="classgraphene_1_1db_1_1primary__index_1aec897aa9453788a7dfd2590a9a105dd9">remove</reimplementedby>
         <param>
           <type>const <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref> &amp;</type>
           <declname>obj</declname>
@@ -139,15 +139,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/db/include/graphene/db/generic_index.hpp" line="91" column="1" bodyfile="libraries/db/include/graphene/db/generic_index.hpp" bodystart="91" bodyend="94"/>
+        <location file="libraries/db/include/graphene/db/generic_index.hpp" line="93" column="1" bodyfile="libraries/db/include/graphene/db/generic_index.hpp" bodystart="93" bodyend="96"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1db_1_1generic__index_1a6f8e4f495a8b0555383ce4ba93892ce6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+      <memberdef kind="function" id="classgraphene_1_1db_1_1generic__index_1aa6dcbfd6bdc30012c7da0b04a75ebfb1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
         <type>const <ref refid="classgraphene_1_1db_1_1object" kindref="compound">object</ref> *</type>
-        <definition>virtual const object* graphene::db::generic_index&lt; ObjectType, MultiIndexType &gt;::find</definition>
+        <definition>const object* graphene::db::generic_index&lt; ObjectType, MultiIndexType &gt;::find</definition>
         <argsstring>(object_id_type id) const override</argsstring>
         <name>find</name>
         <reimplements refid="classgraphene_1_1db_1_1index_1a9649d19814aa188652d6a643bfe134b7">find</reimplements>
-        <reimplementedby refid="classgraphene_1_1db_1_1primary__index_1a9905efcbf28d8288ddc35c7de26149c5">find</reimplementedby>
+        <reimplementedby refid="classgraphene_1_1db_1_1primary__index_1a2bf0dc211d6f130bd6a6c1232a0e5c33">find</reimplementedby>
         <param>
           <type><ref refid="structgraphene_1_1db_1_1object__id__type" kindref="compound">object_id_type</ref></type>
           <declname>id</declname>
@@ -159,11 +159,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/db/include/graphene/db/generic_index.hpp" line="96" column="1" bodyfile="libraries/db/include/graphene/db/generic_index.hpp" bodystart="96" bodyend="103"/>
+        <location file="libraries/db/include/graphene/db/generic_index.hpp" line="98" column="1" bodyfile="libraries/db/include/graphene/db/generic_index.hpp" bodystart="98" bodyend="105"/>
       </memberdef>
-      <memberdef kind="function" id="classgraphene_1_1db_1_1generic__index_1a0f264abe12a00a53e174447244f7a22b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+      <memberdef kind="function" id="classgraphene_1_1db_1_1generic__index_1a09aa775528de7f866cea8bfe90f1adaa" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
-        <definition>virtual void graphene::db::generic_index&lt; ObjectType, MultiIndexType &gt;::inspect_all_objects</definition>
+        <definition>void graphene::db::generic_index&lt; ObjectType, MultiIndexType &gt;::inspect_all_objects</definition>
         <argsstring>(std::function&lt; void(const object &amp;)&gt; inspector) const override</argsstring>
         <name>inspect_all_objects</name>
         <reimplements refid="classgraphene_1_1db_1_1index_1a0d3d4f6b5fbc219f20ba40da9ad1e70c">inspect_all_objects</reimplements>
@@ -177,10 +177,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/db/include/graphene/db/generic_index.hpp" line="105" column="1" bodyfile="libraries/db/include/graphene/db/generic_index.hpp" bodystart="105" bodyend="111"/>
+        <location file="libraries/db/include/graphene/db/generic_index.hpp" line="107" column="1" bodyfile="libraries/db/include/graphene/db/generic_index.hpp" bodystart="107" bodyend="113"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1db_1_1generic__index_1a36ee7d4655b063deb23d4268b27e9028" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type>const <ref refid="classgraphene_1_1db_1_1generic__index_1ae0f77878d56e1ffba2009ab6610a7f0d" kindref="member">index_type</ref> &amp;</type>
+        <type>const <ref refid="classgraphene_1_1db_1_1generic__index_1a3163c3494402ee91dba2f1ee3552cf9a" kindref="member">index_type</ref> &amp;</type>
         <definition>const index_type&amp; graphene::db::generic_index&lt; ObjectType, MultiIndexType &gt;::indices</definition>
         <argsstring>() const</argsstring>
         <name>indices</name>
@@ -190,7 +190,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/db/include/graphene/db/generic_index.hpp" line="113" column="1" bodyfile="libraries/db/include/graphene/db/generic_index.hpp" bodystart="113" bodyend="113"/>
+        <location file="libraries/db/include/graphene/db/generic_index.hpp" line="115" column="1" bodyfile="libraries/db/include/graphene/db/generic_index.hpp" bodystart="115" bodyend="115"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -198,61 +198,61 @@
     <detaileddescription>
 <para>Almost all objects can be tracked and managed via a boost::multi_index container that uses an unordered_unique key on the object ID. This template class adapts the generic index interface to work with arbitrary boost multi_index containers on the same type. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="4018">
+      <node id="4246">
         <label>graphene::db::primary_index&lt; graphene::db::generic_index &gt;</label>
         <link refid="classgraphene_1_1db_1_1primary__index"/>
-        <childnode refid="4016" relation="public-inheritance">
+        <childnode refid="4244" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4016">
+      <node id="4244">
         <label>graphene::db::generic_index&lt; ObjectType, MultiIndexType &gt;</label>
         <link refid="classgraphene_1_1db_1_1generic__index"/>
-        <childnode refid="4017" relation="public-inheritance">
+        <childnode refid="4245" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4017">
+      <node id="4245">
         <label>graphene::db::index</label>
         <link refid="classgraphene_1_1db_1_1index"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="4019">
+      <node id="4247">
         <label>graphene::db::generic_index&lt; ObjectType, MultiIndexType &gt;</label>
         <link refid="classgraphene_1_1db_1_1generic__index"/>
-        <childnode refid="4020" relation="public-inheritance">
+        <childnode refid="4248" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4020">
+      <node id="4248">
         <label>graphene::db::index</label>
         <link refid="classgraphene_1_1db_1_1index"/>
       </node>
     </collaborationgraph>
-    <location file="libraries/db/include/graphene/db/generic_index.hpp" line="44" column="1" bodyfile="libraries/db/include/graphene/db/generic_index.hpp" bodystart="43" bodyend="117"/>
+    <location file="libraries/db/include/graphene/db/generic_index.hpp" line="44" column="1" bodyfile="libraries/db/include/graphene/db/generic_index.hpp" bodystart="43" bodyend="119"/>
     <listofallmembers>
       <member refid="classgraphene_1_1db_1_1generic__index_1a7957ce8a2301887c4f4c5a4f664e1cd2" prot="private" virt="non-virtual"><scope>graphene::db::generic_index</scope><name>_indices</name></member>
-      <member refid="classgraphene_1_1db_1_1index_1a11118a11ceeb9853975f3e254038daa5" prot="public" virt="pure-virtual"><scope>graphene::db::generic_index</scope><name>add_observer</name></member>
-      <member refid="classgraphene_1_1db_1_1generic__index_1a980c6c1e00630ff783bdd5d3e2ca11a1" prot="public" virt="virtual"><scope>graphene::db::generic_index</scope><name>create</name></member>
-      <member refid="classgraphene_1_1db_1_1generic__index_1a6f8e4f495a8b0555383ce4ba93892ce6" prot="public" virt="virtual"><scope>graphene::db::generic_index</scope><name>find</name></member>
+      <member refid="classgraphene_1_1db_1_1index_1afc4131ce3902af88a5c53cf0ab3d2cab" prot="public" virt="pure-virtual"><scope>graphene::db::generic_index</scope><name>add_observer</name></member>
+      <member refid="classgraphene_1_1db_1_1generic__index_1ac98e457427a6cdf8f0451cb70efbb092" prot="public" virt="virtual"><scope>graphene::db::generic_index</scope><name>create</name></member>
+      <member refid="classgraphene_1_1db_1_1generic__index_1aa6dcbfd6bdc30012c7da0b04a75ebfb1" prot="public" virt="virtual"><scope>graphene::db::generic_index</scope><name>find</name></member>
       <member refid="classgraphene_1_1db_1_1index_1a8afdd2aacd7a52c3c807be58340625a0" prot="public" virt="non-virtual"><scope>graphene::db::generic_index</scope><name>get</name></member>
       <member refid="classgraphene_1_1db_1_1index_1ab1bda1803d712322418bce3ca44d97b5" prot="public" virt="pure-virtual"><scope>graphene::db::generic_index</scope><name>get_next_id</name></member>
-      <member refid="classgraphene_1_1db_1_1generic__index_1ae0f77878d56e1ffba2009ab6610a7f0d" prot="public" virt="non-virtual"><scope>graphene::db::generic_index</scope><name>index_type</name></member>
+      <member refid="classgraphene_1_1db_1_1generic__index_1a3163c3494402ee91dba2f1ee3552cf9a" prot="public" virt="non-virtual"><scope>graphene::db::generic_index</scope><name>index_type</name></member>
       <member refid="classgraphene_1_1db_1_1generic__index_1a36ee7d4655b063deb23d4268b27e9028" prot="public" virt="non-virtual"><scope>graphene::db::generic_index</scope><name>indices</name></member>
-      <member refid="classgraphene_1_1db_1_1generic__index_1ad41c7adc007eb1064065c4ee56017c5d" prot="public" virt="virtual"><scope>graphene::db::generic_index</scope><name>insert</name></member>
-      <member refid="classgraphene_1_1db_1_1generic__index_1a0f264abe12a00a53e174447244f7a22b" prot="public" virt="virtual"><scope>graphene::db::generic_index</scope><name>inspect_all_objects</name></member>
+      <member refid="classgraphene_1_1db_1_1generic__index_1ac0f4c4e40066b8775d82aa57fbf92b7f" prot="public" virt="virtual"><scope>graphene::db::generic_index</scope><name>insert</name></member>
+      <member refid="classgraphene_1_1db_1_1generic__index_1a09aa775528de7f866cea8bfe90f1adaa" prot="public" virt="virtual"><scope>graphene::db::generic_index</scope><name>inspect_all_objects</name></member>
       <member refid="classgraphene_1_1db_1_1index_1a49bcbb20b44362f169bea6cdc336d319" prot="public" virt="pure-virtual"><scope>graphene::db::generic_index</scope><name>load</name></member>
-      <member refid="classgraphene_1_1db_1_1generic__index_1ab9a4fceebfed811e16d58c48f5827ae4" prot="public" virt="virtual"><scope>graphene::db::generic_index</scope><name>modify</name></member>
+      <member refid="classgraphene_1_1db_1_1generic__index_1aa388bede6e7ae0e58df5bed7fdb3abaa" prot="public" virt="virtual"><scope>graphene::db::generic_index</scope><name>modify</name></member>
       <member refid="classgraphene_1_1db_1_1index_1a72af3b03d9e5f04f1e5ccfd519071d50" prot="public" virt="non-virtual" ambiguityscope="graphene::db::index::"><scope>graphene::db::generic_index</scope><name>modify</name></member>
       <member refid="classgraphene_1_1db_1_1index_1aefb954473263f0736d5ba394f5437ec1" prot="public" virt="pure-virtual"><scope>graphene::db::generic_index</scope><name>object_default</name></member>
       <member refid="classgraphene_1_1db_1_1index_1aaebd5c0ba3eb4e6ca9d0a82061e61793" prot="public" virt="pure-virtual"><scope>graphene::db::generic_index</scope><name>object_from_variant</name></member>
       <member refid="classgraphene_1_1db_1_1index_1a94bbe39fc8bba240fb1b6687036aa64a" prot="public" virt="pure-virtual"><scope>graphene::db::generic_index</scope><name>object_space_id</name></member>
-      <member refid="classgraphene_1_1db_1_1generic__index_1af23c147d76dff4741d27fa6d6296c97c" prot="public" virt="non-virtual"><scope>graphene::db::generic_index</scope><name>object_type</name></member>
+      <member refid="classgraphene_1_1db_1_1generic__index_1a24bee31741b19877c37122bcd3ff5f25" prot="public" virt="non-virtual"><scope>graphene::db::generic_index</scope><name>object_type</name></member>
       <member refid="classgraphene_1_1db_1_1index_1a8f4f84338efa7f8eac43c8df3c456634" prot="public" virt="pure-virtual"><scope>graphene::db::generic_index</scope><name>object_type_id</name></member>
       <member refid="classgraphene_1_1db_1_1index_1ab8aa118aac8da723cfd556078b498bec" prot="public" virt="pure-virtual"><scope>graphene::db::generic_index</scope><name>open</name></member>
-      <member refid="classgraphene_1_1db_1_1generic__index_1a20c1b60d4e22bac082a385574802d8c4" prot="public" virt="virtual"><scope>graphene::db::generic_index</scope><name>remove</name></member>
+      <member refid="classgraphene_1_1db_1_1generic__index_1a8124dccf3481a119a28e793119ae11d6" prot="public" virt="virtual"><scope>graphene::db::generic_index</scope><name>remove</name></member>
       <member refid="classgraphene_1_1db_1_1index_1aa67673bbad161259895135b897a562e0" prot="public" virt="pure-virtual"><scope>graphene::db::generic_index</scope><name>save</name></member>
       <member refid="classgraphene_1_1db_1_1index_1a09516872ec406c93645ed71c24884dc7" prot="public" virt="pure-virtual"><scope>graphene::db::generic_index</scope><name>set_next_id</name></member>
       <member refid="classgraphene_1_1db_1_1index_1a5e874427eaf74f45dbf23d148f2dc708" prot="public" virt="pure-virtual"><scope>graphene::db::generic_index</scope><name>use_next_id</name></member>
-      <member refid="classgraphene_1_1db_1_1index_1a0f198d6faca558c749b833ede04116b3" prot="public" virt="virtual"><scope>graphene::db::generic_index</scope><name>~index</name></member>
+      <member refid="classgraphene_1_1db_1_1index_1af4ee3fd06ff2ebdaf0137f67c8820015" prot="public" virt="virtual"><scope>graphene::db::generic_index</scope><name>~index</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

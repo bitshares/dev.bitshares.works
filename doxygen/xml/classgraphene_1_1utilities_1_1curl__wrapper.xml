@@ -1,0 +1,291 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classgraphene_1_1utilities_1_1curl__wrapper" kind="class" language="C++" prot="public">
+    <compoundname>graphene::utilities::curl_wrapper</compoundname>
+    <includes refid="elasticsearch_8hpp" local="no">elasticsearch.hpp</includes>
+    <innerclass refid="structgraphene_1_1utilities_1_1curl__wrapper_1_1curl__deleter" prot="private">graphene::utilities::curl_wrapper::curl_deleter</innerclass>
+    <innerclass refid="structgraphene_1_1utilities_1_1curl__wrapper_1_1curl__slist__deleter" prot="private">graphene::utilities::curl_wrapper::curl_slist_deleter</innerclass>
+    <innerclass refid="structgraphene_1_1utilities_1_1curl__wrapper_1_1http__response" prot="public">graphene::utilities::curl_wrapper::http_response</innerclass>
+    <innerclass refid="structgraphene_1_1utilities_1_1curl__wrapper_1_1http__response__code" prot="public">graphene::utilities::curl_wrapper::http_response_code</innerclass>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classgraphene_1_1utilities_1_1curl__wrapper_1aa69ad0865fce50f9c4dc29a564c2e562" prot="public" static="no">
+        <name>http_request_method</name>
+        <enumvalue id="classgraphene_1_1utilities_1_1curl__wrapper_1aa69ad0865fce50f9c4dc29a564c2e562a90a9b84d456f88378c6b9bebc45918f1" prot="public">
+          <name>HTTP_GET</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classgraphene_1_1utilities_1_1curl__wrapper_1aa69ad0865fce50f9c4dc29a564c2e562a1635345aae18e1204bb847f4c78a11e2" prot="public">
+          <name>HTTP_POST</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classgraphene_1_1utilities_1_1curl__wrapper_1aa69ad0865fce50f9c4dc29a564c2e562ad397752026568e4770340e6208a4bc01" prot="public">
+          <name>HTTP_HEAD</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classgraphene_1_1utilities_1_1curl__wrapper_1aa69ad0865fce50f9c4dc29a564c2e562ab48b1d2c4afbba8502f2cdb2bd481072" prot="public">
+          <name>HTTP_PUT</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classgraphene_1_1utilities_1_1curl__wrapper_1aa69ad0865fce50f9c4dc29a564c2e562a12e304c13d7c0ac8e8ee4a636ffedb08" prot="public">
+          <name>HTTP_DELETE</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classgraphene_1_1utilities_1_1curl__wrapper_1aa69ad0865fce50f9c4dc29a564c2e562a58ec7c4df34d16181f524b9ec645659c" prot="public">
+          <name>HTTP_PATCH</name>
+          <initializer>= 5</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classgraphene_1_1utilities_1_1curl__wrapper_1aa69ad0865fce50f9c4dc29a564c2e562a304d975a7e3523d8469c080d59ac53c9" prot="public">
+          <name>HTTP_OPTIONS</name>
+          <initializer>= 6</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/utilities/include/graphene/utilities/elasticsearch.hpp" line="42" column="1" bodyfile="libraries/utilities/include/graphene/utilities/elasticsearch.hpp" bodystart="41" bodyend="50"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classgraphene_1_1utilities_1_1curl__wrapper_1a5baede5780779d5007e4e50f80145afc" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; CURL, curl_deleter &gt;</type>
+        <definition>std::unique_ptr&lt;CURL, curl_deleter&gt; graphene::utilities::curl_wrapper::curl</definition>
+        <argsstring></argsstring>
+        <name>curl</name>
+        <initializer>{ init_curl() }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/utilities/include/graphene/utilities/elasticsearch.hpp" line="91" column="1" bodyfile="libraries/utilities/include/graphene/utilities/elasticsearch.hpp" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgraphene_1_1utilities_1_1curl__wrapper_1aef5fcd22a8f8ce934065d877f1ada71b" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; curl_slist, curl_slist_deleter &gt;</type>
+        <definition>std::unique_ptr&lt;curl_slist, curl_slist_deleter&gt; graphene::utilities::curl_wrapper::request_headers</definition>
+        <argsstring></argsstring>
+        <name>request_headers</name>
+        <initializer>{ init_request_headers() }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/utilities/include/graphene/utilities/elasticsearch.hpp" line="92" column="1" bodyfile="libraries/utilities/include/graphene/utilities/elasticsearch.hpp" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgraphene_1_1utilities_1_1curl__wrapper_1a05eba178af9e6f1860020a2a2e0828c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>graphene::utilities::curl_wrapper::curl_wrapper</definition>
+        <argsstring>()</argsstring>
+        <name>curl_wrapper</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/utilities/include/graphene/utilities/elasticsearch.hpp" line="38" column="1" bodyfile="libraries/utilities/elasticsearch.cpp" bodystart="103" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1utilities_1_1curl__wrapper_1acd2fa3516d714b38dc18252c784b7854" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structgraphene_1_1utilities_1_1curl__wrapper_1_1http__response" kindref="compound">http_response</ref></type>
+        <definition>curl_wrapper::http_response graphene::utilities::curl_wrapper::request</definition>
+        <argsstring>(http_request_method method, const std::string &amp;url, const std::string &amp;auth, const std::string &amp;query) const</argsstring>
+        <name>request</name>
+        <param>
+          <type><ref refid="classgraphene_1_1utilities_1_1curl__wrapper_1aa69ad0865fce50f9c4dc29a564c2e562" kindref="member">http_request_method</ref></type>
+          <declname>method</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>url</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>query</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/utilities/include/graphene/utilities/elasticsearch.hpp" line="66" column="1" bodyfile="libraries/utilities/elasticsearch.cpp" bodystart="121" bodyend="173"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1utilities_1_1curl__wrapper_1afc91a28118300a4181500eac31289f76" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structgraphene_1_1utilities_1_1curl__wrapper_1_1http__response" kindref="compound">http_response</ref></type>
+        <definition>curl_wrapper::http_response graphene::utilities::curl_wrapper::get</definition>
+        <argsstring>(const std::string &amp;url, const std::string &amp;auth) const</argsstring>
+        <name>get</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>url</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>auth</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/utilities/include/graphene/utilities/elasticsearch.hpp" line="71" column="1" bodyfile="libraries/utilities/elasticsearch.cpp" bodystart="175" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1utilities_1_1curl__wrapper_1acc1a51db81dacb359fe4701024377732" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structgraphene_1_1utilities_1_1curl__wrapper_1_1http__response" kindref="compound">http_response</ref></type>
+        <definition>curl_wrapper::http_response graphene::utilities::curl_wrapper::del</definition>
+        <argsstring>(const std::string &amp;url, const std::string &amp;auth) const</argsstring>
+        <name>del</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>url</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>auth</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/utilities/include/graphene/utilities/elasticsearch.hpp" line="72" column="1" bodyfile="libraries/utilities/elasticsearch.cpp" bodystart="180" bodyend="183"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1utilities_1_1curl__wrapper_1adc87e5d48deb0d6948c7cfff63790724" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structgraphene_1_1utilities_1_1curl__wrapper_1_1http__response" kindref="compound">http_response</ref></type>
+        <definition>curl_wrapper::http_response graphene::utilities::curl_wrapper::post</definition>
+        <argsstring>(const std::string &amp;url, const std::string &amp;auth, const std::string &amp;query) const</argsstring>
+        <name>post</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>url</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>query</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/utilities/include/graphene/utilities/elasticsearch.hpp" line="73" column="1" bodyfile="libraries/utilities/elasticsearch.cpp" bodystart="185" bodyend="189"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1utilities_1_1curl__wrapper_1a660971530e4830d03f1ac3a59ca052df" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structgraphene_1_1utilities_1_1curl__wrapper_1_1http__response" kindref="compound">http_response</ref></type>
+        <definition>curl_wrapper::http_response graphene::utilities::curl_wrapper::put</definition>
+        <argsstring>(const std::string &amp;url, const std::string &amp;auth, const std::string &amp;query) const</argsstring>
+        <name>put</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>url</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>auth</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>query</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/utilities/include/graphene/utilities/elasticsearch.hpp" line="74" column="1" bodyfile="libraries/utilities/elasticsearch.cpp" bodystart="191" bodyend="195"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classgraphene_1_1utilities_1_1curl__wrapper_1a238956844c2204560d109f948bb6260a" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>CURL *</type>
+        <definition>CURL * graphene::utilities::curl_wrapper::init_curl</definition>
+        <argsstring>()</argsstring>
+        <name>init_curl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/utilities/include/graphene/utilities/elasticsearch.hpp" line="78" column="1" bodyfile="libraries/utilities/elasticsearch.cpp" bodystart="85" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1utilities_1_1curl__wrapper_1ac2158ed19122ebb9e1e0e9535d2e5394" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>curl_slist *</type>
+        <definition>curl_slist * graphene::utilities::curl_wrapper::init_request_headers</definition>
+        <argsstring>()</argsstring>
+        <name>init_request_headers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/utilities/include/graphene/utilities/elasticsearch.hpp" line="79" column="1" bodyfile="libraries/utilities/elasticsearch.cpp" bodystart="96" bodyend="101"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="libraries/utilities/include/graphene/utilities/elasticsearch.hpp" line="36" column="1" bodyfile="libraries/utilities/include/graphene/utilities/elasticsearch.hpp" bodystart="35" bodyend="93"/>
+    <listofallmembers>
+      <member refid="classgraphene_1_1utilities_1_1curl__wrapper_1a5baede5780779d5007e4e50f80145afc" prot="private" virt="non-virtual"><scope>graphene::utilities::curl_wrapper</scope><name>curl</name></member>
+      <member refid="classgraphene_1_1utilities_1_1curl__wrapper_1a05eba178af9e6f1860020a2a2e0828c0" prot="public" virt="non-virtual"><scope>graphene::utilities::curl_wrapper</scope><name>curl_wrapper</name></member>
+      <member refid="classgraphene_1_1utilities_1_1curl__wrapper_1acc1a51db81dacb359fe4701024377732" prot="public" virt="non-virtual"><scope>graphene::utilities::curl_wrapper</scope><name>del</name></member>
+      <member refid="classgraphene_1_1utilities_1_1curl__wrapper_1afc91a28118300a4181500eac31289f76" prot="public" virt="non-virtual"><scope>graphene::utilities::curl_wrapper</scope><name>get</name></member>
+      <member refid="classgraphene_1_1utilities_1_1curl__wrapper_1aa69ad0865fce50f9c4dc29a564c2e562" prot="public" virt="non-virtual"><scope>graphene::utilities::curl_wrapper</scope><name>http_request_method</name></member>
+      <member refid="classgraphene_1_1utilities_1_1curl__wrapper_1a238956844c2204560d109f948bb6260a" prot="private" virt="non-virtual"><scope>graphene::utilities::curl_wrapper</scope><name>init_curl</name></member>
+      <member refid="classgraphene_1_1utilities_1_1curl__wrapper_1ac2158ed19122ebb9e1e0e9535d2e5394" prot="private" virt="non-virtual"><scope>graphene::utilities::curl_wrapper</scope><name>init_request_headers</name></member>
+      <member refid="classgraphene_1_1utilities_1_1curl__wrapper_1adc87e5d48deb0d6948c7cfff63790724" prot="public" virt="non-virtual"><scope>graphene::utilities::curl_wrapper</scope><name>post</name></member>
+      <member refid="classgraphene_1_1utilities_1_1curl__wrapper_1a660971530e4830d03f1ac3a59ca052df" prot="public" virt="non-virtual"><scope>graphene::utilities::curl_wrapper</scope><name>put</name></member>
+      <member refid="classgraphene_1_1utilities_1_1curl__wrapper_1acd2fa3516d714b38dc18252c784b7854" prot="public" virt="non-virtual"><scope>graphene::utilities::curl_wrapper</scope><name>request</name></member>
+      <member refid="classgraphene_1_1utilities_1_1curl__wrapper_1aef5fcd22a8f8ce934065d877f1ada71b" prot="private" virt="non-virtual"><scope>graphene::utilities::curl_wrapper</scope><name>request_headers</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

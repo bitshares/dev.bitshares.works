@@ -2,6 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="classgraphene_1_1protocol_1_1block__header" kind="class" language="C++" prot="public">
     <compoundname>graphene::protocol::block_header</compoundname>
+    <derivedcompoundref refid="structgraphene_1_1app_1_1maybe__signed__block__header" prot="public" virt="non-virtual">graphene::app::maybe_signed_block_header</derivedcompoundref>
     <derivedcompoundref refid="classgraphene_1_1protocol_1_1signed__block__header" prot="public" virt="non-virtual">graphene::protocol::signed_block_header</derivedcompoundref>
     <includes refid="block_8hpp" local="no">block.hpp</includes>
       <sectiondef kind="public-attrib">
@@ -98,6 +99,19 @@
         </inbodydescription>
         <location file="libraries/protocol/include/graphene/protocol/block.hpp" line="34" column="1" bodyfile="libraries/protocol/include/graphene/protocol/block.hpp" bodystart="34" bodyend="34"/>
       </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1protocol_1_1block__header_1a434c734b33ebc82e15c340e998a05336" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual graphene::protocol::block_header::~block_header</definition>
+        <argsstring>()=default</argsstring>
+        <name>~block_header</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/protocol/include/graphene/protocol/block.hpp" line="42" column="1"/>
+      </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
       <memberdef kind="function" id="classgraphene_1_1protocol_1_1block__header_1a58d0846789ee12e31d3d769123244c62" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -115,7 +129,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/block.hpp" line="42" column="1" bodyfile="libraries/protocol/block.cpp" bodystart="36" bodyend="39"/>
+        <location file="libraries/protocol/include/graphene/protocol/block.hpp" line="44" column="1" bodyfile="libraries/protocol/block.cpp" bodystart="36" bodyend="39"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -123,45 +137,51 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="1947">
+      <node id="2064">
         <label>graphene::protocol::block_header</label>
         <link refid="classgraphene_1_1protocol_1_1block__header"/>
       </node>
-      <node id="1948">
+      <node id="2066">
         <label>graphene::protocol::signed_block_header</label>
         <link refid="classgraphene_1_1protocol_1_1signed__block__header"/>
-        <childnode refid="1947" relation="public-inheritance">
+        <childnode refid="2064" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="1949">
+      <node id="2067">
         <label>graphene::protocol::signed_block</label>
         <link refid="classgraphene_1_1protocol_1_1signed__block"/>
-        <childnode refid="1948" relation="public-inheritance">
+        <childnode refid="2066" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2065">
+        <label>graphene::app::maybe_signed_block_header</label>
+        <link refid="structgraphene_1_1app_1_1maybe__signed__block__header"/>
+        <childnode refid="2064" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="1951">
+      <node id="2069">
         <label>fc::ripemd160</label>
         <link refid="classfc_1_1ripemd160"/>
       </node>
-      <node id="1950">
+      <node id="2068">
         <label>graphene::protocol::block_header</label>
         <link refid="classgraphene_1_1protocol_1_1block__header"/>
-        <childnode refid="1951" relation="usage">
+        <childnode refid="2069" relation="usage">
           <edgelabel>previous</edgelabel>
           <edgelabel>transaction_merkle_root</edgelabel>
         </childnode>
-        <childnode refid="1952" relation="usage">
+        <childnode refid="2070" relation="usage">
           <edgelabel>timestamp</edgelabel>
         </childnode>
       </node>
-      <node id="1952">
+      <node id="2070">
         <label>fc::time_point_sec</label>
         <link refid="classfc_1_1time__point__sec"/>
       </node>
     </collaborationgraph>
-    <location file="libraries/protocol/include/graphene/protocol/block.hpp" line="30" column="1" bodyfile="libraries/protocol/include/graphene/protocol/block.hpp" bodystart="29" bodyend="43"/>
+    <location file="libraries/protocol/include/graphene/protocol/block.hpp" line="30" column="1" bodyfile="libraries/protocol/include/graphene/protocol/block.hpp" bodystart="29" bodyend="45"/>
     <listofallmembers>
       <member refid="classgraphene_1_1protocol_1_1block__header_1aeccef591a33b6e647839e6e524881e2b" prot="public" virt="non-virtual"><scope>graphene::protocol::block_header</scope><name>block_num</name></member>
       <member refid="classgraphene_1_1protocol_1_1block__header_1abe76b6ad13a4207508595e03fac9332f" prot="public" virt="non-virtual"><scope>graphene::protocol::block_header</scope><name>digest</name></member>
@@ -171,6 +191,7 @@
       <member refid="classgraphene_1_1protocol_1_1block__header_1af594b3fcdeae33103b6802b744174714" prot="public" virt="non-virtual"><scope>graphene::protocol::block_header</scope><name>timestamp</name></member>
       <member refid="classgraphene_1_1protocol_1_1block__header_1aac22ca362585bd4c8ef7d206b19be229" prot="public" virt="non-virtual"><scope>graphene::protocol::block_header</scope><name>transaction_merkle_root</name></member>
       <member refid="classgraphene_1_1protocol_1_1block__header_1a1086bc96de1ee0d95cedaacf3f475cd5" prot="public" virt="non-virtual"><scope>graphene::protocol::block_header</scope><name>witness</name></member>
+      <member refid="classgraphene_1_1protocol_1_1block__header_1a434c734b33ebc82e15c340e998a05336" prot="public" virt="virtual"><scope>graphene::protocol::block_header</scope><name>~block_header</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

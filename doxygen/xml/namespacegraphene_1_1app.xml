@@ -3,29 +3,28 @@
   <compounddef id="namespacegraphene_1_1app" kind="namespace" language="C++">
     <compoundname>graphene::app</compoundname>
     <innerclass refid="classgraphene_1_1app_1_1abstract__plugin" prot="public">graphene::app::abstract_plugin</innerclass>
-    <innerclass refid="structgraphene_1_1app_1_1account__asset__balance" prot="public">graphene::app::account_asset_balance</innerclass>
     <innerclass refid="structgraphene_1_1app_1_1api__access" prot="public">graphene::app::api_access</innerclass>
     <innerclass refid="structgraphene_1_1app_1_1api__access__info" prot="public">graphene::app::api_access_info</innerclass>
     <innerclass refid="classgraphene_1_1app_1_1application" prot="public">graphene::app::application</innerclass>
     <innerclass refid="classgraphene_1_1app_1_1application__options" prot="public">graphene::app::application_options</innerclass>
     <innerclass refid="classgraphene_1_1app_1_1asset__api" prot="public">graphene::app::asset_api</innerclass>
-    <innerclass refid="structgraphene_1_1app_1_1asset__holders" prot="public">graphene::app::asset_holders</innerclass>
     <innerclass refid="classgraphene_1_1app_1_1block__api" prot="public">graphene::app::block_api</innerclass>
     <innerclass refid="classgraphene_1_1app_1_1crypto__api" prot="public">graphene::app::crypto_api</innerclass>
     <innerclass refid="classgraphene_1_1app_1_1custom__operations__api" prot="public">graphene::app::custom_operations_api</innerclass>
     <innerclass refid="classgraphene_1_1app_1_1database__api" prot="public">graphene::app::database_api</innerclass>
+    <innerclass refid="classgraphene_1_1app_1_1database__api__helper" prot="public">graphene::app::database_api_helper</innerclass>
     <innerclass refid="classgraphene_1_1app_1_1database__api__impl" prot="public">graphene::app::database_api_impl</innerclass>
+    <innerclass refid="structgraphene_1_1app_1_1dummy__api" prot="public">graphene::app::dummy_api</innerclass>
     <innerclass refid="structgraphene_1_1app_1_1extended__asset__object" prot="public">graphene::app::extended_asset_object</innerclass>
     <innerclass refid="structgraphene_1_1app_1_1extended__liquidity__pool__object" prot="public">graphene::app::extended_liquidity_pool_object</innerclass>
     <innerclass refid="structgraphene_1_1app_1_1full__account" prot="public">graphene::app::full_account</innerclass>
     <innerclass refid="structgraphene_1_1app_1_1get__required__fees__helper" prot="public">graphene::app::get_required_fees_helper</innerclass>
     <innerclass refid="classgraphene_1_1app_1_1history__api" prot="public">graphene::app::history_api</innerclass>
-    <innerclass refid="structgraphene_1_1app_1_1history__operation__detail" prot="public">graphene::app::history_operation_detail</innerclass>
-    <innerclass refid="structgraphene_1_1app_1_1limit__order__group" prot="public">graphene::app::limit_order_group</innerclass>
     <innerclass refid="classgraphene_1_1app_1_1login__api" prot="public">graphene::app::login_api</innerclass>
     <innerclass refid="structgraphene_1_1app_1_1market__ticker" prot="public">graphene::app::market_ticker</innerclass>
     <innerclass refid="structgraphene_1_1app_1_1market__trade" prot="public">graphene::app::market_trade</innerclass>
     <innerclass refid="structgraphene_1_1app_1_1market__volume" prot="public">graphene::app::market_volume</innerclass>
+    <innerclass refid="structgraphene_1_1app_1_1maybe__signed__block__header" prot="public">graphene::app::maybe_signed_block_header</innerclass>
     <innerclass refid="structgraphene_1_1app_1_1more__data" prot="public">graphene::app::more_data</innerclass>
     <innerclass refid="classgraphene_1_1app_1_1network__broadcast__api" prot="public">graphene::app::network_broadcast_api</innerclass>
     <innerclass refid="classgraphene_1_1app_1_1network__node__api" prot="public">graphene::app::network_node_api</innerclass>
@@ -33,8 +32,6 @@
     <innerclass refid="structgraphene_1_1app_1_1order__book" prot="public">graphene::app::order_book</innerclass>
     <innerclass refid="classgraphene_1_1app_1_1orders__api" prot="public">graphene::app::orders_api</innerclass>
     <innerclass refid="classgraphene_1_1app_1_1plugin" prot="public">graphene::app::plugin</innerclass>
-    <innerclass refid="structgraphene_1_1app_1_1verify__range__proof__rewind__result" prot="public">graphene::app::verify_range_proof_rewind_result</innerclass>
-    <innerclass refid="structgraphene_1_1app_1_1verify__range__result" prot="public">graphene::app::verify_range_result</innerclass>
     <innernamespace refid="namespacegraphene_1_1app_1_1detail">graphene::app::detail</innernamespace>
     <innernamespace refid="namespacegraphene_1_1app_1_1impl">graphene::app::impl</innernamespace>
       <sectiondef kind="user-defined">
@@ -66,9 +63,9 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
-      <memberdef kind="typedef" id="namespacegraphene_1_1app_1a26804ee36d39c9a57ef54ba85f3ca894" prot="public" static="no">
+      <memberdef kind="typedef" id="namespacegraphene_1_1app_1a2cf28592987d2d9365802435969eb2f6" prot="public" static="no">
         <type>std::map&lt; std::pair&lt; graphene::chain::asset_id_type, graphene::chain::asset_id_type &gt;, std::vector&lt; <ref refid="classfc_1_1variant" kindref="compound">fc::variant</ref> &gt; &gt;</type>
-        <definition>typedef std::map&lt; std::pair&lt;graphene::chain::asset_id_type, graphene::chain::asset_id_type&gt;, std::vector&lt;fc::variant&gt; &gt; graphene::app::market_queue_type</definition>
+        <definition>using graphene::app::market_queue_type = typedef std::map&lt; std::pair&lt;graphene::chain::asset_id_type, graphene::chain::asset_id_type&gt;, std::vector&lt;fc::variant&gt; &gt;</definition>
         <argsstring></argsstring>
         <name>market_queue_type</name>
         <briefdescription>
@@ -77,10 +74,31 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/database_api_impl.hxx" line="34" column="1" bodyfile="libraries/app/database_api_impl.hxx" bodystart="34" bodyend="-1"/>
+        <location file="libraries/app/database_api_impl.hxx" line="33" column="1" bodyfile="libraries/app/database_api_impl.hxx" bodystart="34" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
+      <memberdef kind="function" id="namespacegraphene_1_1app_1aa81b868f263cb80a190a0a372fc8853c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>static uint32_t graphene::app::validate_get_lp_history_params</definition>
+        <argsstring>(const application &amp;_app, const optional&lt; uint32_t &gt; &amp;olimit)</argsstring>
+        <name>validate_get_lp_history_params</name>
+        <param>
+          <type>const <ref refid="classgraphene_1_1app_1_1application" kindref="compound">application</ref> &amp;</type>
+          <declname>_app</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classfc_1_1optional" kindref="compound">optional</ref>&lt; uint32_t &gt; &amp;</type>
+          <declname>olimit</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/app/api.cpp" line="701" column="1" bodyfile="libraries/app/api.cpp" bodystart="701" bodyend="714"/>
+      </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1app_1acff79f90fbb15c501c462c2621c052b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void graphene::app::load_configuration_options</definition>
@@ -245,6 +263,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="libraries/app/api.cpp" line="56" column="1"/>
+    <location file="libraries/app/api.cpp" line="48" column="1"/>
   </compounddef>
 </doxygen>
