@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classgraphene_1_1app_1_1crypto__api" kind="class" language="C++" prot="public">
     <compoundname>graphene::app::crypto_api</compoundname>
     <includes refid="app_2include_2graphene_2app_2api_8hpp" local="no">api.hpp</includes>
@@ -20,28 +20,33 @@
           <declname>value</declname>
         </param>
         <briefdescription>
-<para>Generates a pedersen commitment: *commit = blind * G + value * G2. The commitment is 33 bytes, the blinding factor is 32 bytes. For more information about pederson commitment check url <ulink url="https://en.wikipedia.org/wiki/Commitment_scheme">https://en.wikipedia.org/wiki/Commitment_scheme</ulink>. </para>        </briefdescription>
+<para>Generates a pedersen commitment: *commit = blind * G + value * G2. The commitment is 33 bytes, the blinding factor is 32 bytes. For more information about pederson commitment check url <ulink url="https://en.wikipedia.org/wiki/Commitment_scheme">https://en.wikipedia.org/wiki/Commitment_scheme</ulink>. </para>
+        </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>blind</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Sha-256 blind factor type </para></parameterdescription>
+<para>Sha-256 blind factor type </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>value</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Positive 64-bit integer value </para></parameterdescription>
+<para>Positive 64-bit integer value </para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A 33-byte pedersen commitment: *commit = blind * G + value * G2 </para></simplesect>
-</para>        </detaileddescription>
+<simplesect kind="return"><para>A 33-byte pedersen commitment: *commit = blind * G + value * G2 </para>
+</simplesect>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="468" column="1" bodyfile="libraries/app/api.cpp" bodystart="827" bodyend="830"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="468" column="35" bodyfile="libraries/app/api.cpp" bodystart="825" bodyend="828"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1crypto__api_1aff6b31fc94ea3b174a911cdcc1aa470a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="namespacefc_1_1ecc_1a3e4c1ecf3ceb1fb0d3aefa24532d0766" kindref="member">fc::ecc::blind_factor_type</ref></type>
@@ -57,28 +62,33 @@
           <declname>non_neg</declname>
         </param>
         <briefdescription>
-<para>Get sha-256 blind factor type. </para>        </briefdescription>
+<para>Get sha-256 blind factor type. </para>
+        </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>blinds_in</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>List of sha-256 blind factor types </para></parameterdescription>
+<para>List of sha-256 blind factor types </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>non_neg</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>32-bit integer value </para></parameterdescription>
+<para>32-bit integer value </para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A blind factor type </para></simplesect>
-</para>        </detaileddescription>
+<simplesect kind="return"><para>A blind factor type </para>
+</simplesect>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="476" column="1" bodyfile="libraries/app/api.cpp" bodystart="832" bodyend="836"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="476" column="37" bodyfile="libraries/app/api.cpp" bodystart="830" bodyend="834"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1crypto__api_1af9b57a4284d35fc3811f3d76994a9e6b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -98,35 +108,41 @@
           <declname>excess</declname>
         </param>
         <briefdescription>
-<para>Verifies that commits + neg_commits + excess == 0. </para>        </briefdescription>
+<para>Verifies that commits + neg_commits + excess == 0. </para>
+        </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>commits_in</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>List of 33-byte pedersen commitments </para></parameterdescription>
+<para>List of 33-byte pedersen commitments </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>neg_commits_in</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>List of 33-byte pedersen commitments </para></parameterdescription>
+<para>List of 33-byte pedersen commitments </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>excess</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Sum of two list of 33-byte pedersen commitments where sums the first set and subtracts the second </para></parameterdescription>
+<para>Sum of two list of 33-byte pedersen commitments where sums the first set and subtracts the second </para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>Boolean - true in event of commits + neg_commits + excess == 0, otherwise false </para></simplesect>
-</para>        </detaileddescription>
+<simplesect kind="return"><para>Boolean - true in event of commits + neg_commits + excess == 0, otherwise false </para>
+</simplesect>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="487" column="1" bodyfile="libraries/app/api.cpp" bodystart="838" bodyend="843"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="487" column="15" bodyfile="libraries/app/api.cpp" bodystart="836" bodyend="841"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1crypto__api_1a54002c662a92a35f926907e9a2985acf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structgraphene_1_1app_1_1crypto__api_1_1verify__range__result" kindref="compound">verify_range_result</ref></type>
@@ -142,28 +158,33 @@
           <declname>proof</declname>
         </param>
         <briefdescription>
-<para>Verifies range proof for 33-byte pedersen commitment. </para>        </briefdescription>
+<para>Verifies range proof for 33-byte pedersen commitment. </para>
+        </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>commit</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>33-byte pedersen commitment </para></parameterdescription>
+<para>33-byte pedersen commitment </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>proof</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>List of characters </para></parameterdescription>
+<para>List of characters </para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A structure with success, min and max values </para></simplesect>
-</para>        </detaileddescription>
+<simplesect kind="return"><para>A structure with success, min and max values </para>
+</simplesect>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="499" column="1" bodyfile="libraries/app/api.cpp" bodystart="845" bodyend="851"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="499" column="30" bodyfile="libraries/app/api.cpp" bodystart="843" bodyend="849"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1crypto__api_1a54f718cd40432903de6821284efda0ca" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>std::vector&lt; char &gt;</type>
@@ -199,63 +220,73 @@
           <declname>actual_value</declname>
         </param>
         <briefdescription>
-<para>Proves with respect to min_value the range for pedersen commitment which has the provided blinding factor and value. </para>        </briefdescription>
+<para>Proves with respect to min_value the range for pedersen commitment which has the provided blinding factor and value. </para>
+        </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>min_value</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Positive 64-bit integer value </para></parameterdescription>
+<para>Positive 64-bit integer value </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>commit</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>33-byte pedersen commitment </para></parameterdescription>
+<para>33-byte pedersen commitment </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>commit_blind</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Sha-256 blind factor type for the correct digits </para></parameterdescription>
+<para>Sha-256 blind factor type for the correct digits </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>nonce</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Sha-256 blind factor type for our non-forged signatures </para></parameterdescription>
+<para>Sha-256 blind factor type for our non-forged signatures </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>base10_exp</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Exponents base 10 in range [-1 ; 18] inclusively </para></parameterdescription>
+<para>Exponents base 10 in range [-1 ; 18] inclusively </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>min_bits</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>8-bit positive integer, must be in range [0 ; 64] inclusively </para></parameterdescription>
+<para>8-bit positive integer, must be in range [0 ; 64] inclusively </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>actual_value</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>64-bit positive integer, must be greater or equal min_value </para></parameterdescription>
+<para>64-bit positive integer, must be greater or equal min_value </para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A list of characters as proof in proof </para></simplesect>
-</para>        </detaileddescription>
+<simplesect kind="return"><para>A list of characters as proof in proof </para>
+</simplesect>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="514" column="1" bodyfile="libraries/app/api.cpp" bodystart="853" bodyend="862"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="514" column="22" bodyfile="libraries/app/api.cpp" bodystart="851" bodyend="860"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1crypto__api_1a1abdb9bc01dd37a28a10441cdc0d30cb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structgraphene_1_1app_1_1crypto__api_1_1verify__range__proof__rewind__result" kindref="compound">verify_range_proof_rewind_result</ref></type>
@@ -275,35 +306,41 @@
           <declname>proof</declname>
         </param>
         <briefdescription>
-<para>Verifies range proof rewind for 33-byte pedersen commitment. </para>        </briefdescription>
+<para>Verifies range proof rewind for 33-byte pedersen commitment. </para>
+        </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>nonce</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Sha-256 blind refactor type </para></parameterdescription>
+<para>Sha-256 blind refactor type </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>commit</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>33-byte pedersen commitment </para></parameterdescription>
+<para>33-byte pedersen commitment </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>proof</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>List of characters </para></parameterdescription>
+<para>List of characters </para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A structure with success, min, max, value_out, blind_out and message_out values </para></simplesect>
-</para>        </detaileddescription>
+<simplesect kind="return"><para>A structure with success, min, max, value_out, blind_out and message_out values </para>
+</simplesect>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="529" column="1" bodyfile="libraries/app/api.cpp" bodystart="864" bodyend="879"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="529" column="43" bodyfile="libraries/app/api.cpp" bodystart="862" bodyend="877"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1crypto__api_1a189ed35efdd7c4a0d94c0c9a8eaeda9f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structfc_1_1ecc_1_1range__proof__info" kindref="compound">fc::ecc::range_proof_info</ref></type>
@@ -315,25 +352,30 @@
           <declname>proof</declname>
         </param>
         <briefdescription>
-<para>Gets &quot;range proof&quot; info. The cli_wallet includes functionality for sending blind transfers in which the values of the input and outputs amounts are “blinded.” In the case where a transaction produces two or more outputs, (e.g. an amount to the intended recipient plus “change” back to the sender), a &quot;range proof&quot; must be supplied to prove that none of the outputs commit to a negative value. </para>        </briefdescription>
+<para>Gets &quot;range proof&quot; info. The cli_wallet includes functionality for sending blind transfers in which the values of the input and outputs amounts are “blinded.” In the case where a transaction produces two or more outputs, (e.g. an amount to the intended recipient plus “change” back to the sender), a &quot;range proof&quot; must be supplied to prove that none of the outputs commit to a negative value. </para>
+        </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>proof</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>List of proof&apos;s characters </para></parameterdescription>
+<para>List of proof&apos;s characters </para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A range proof info structure with exponent, mantissa, min and max values </para></simplesect>
-</para>        </detaileddescription>
+<simplesect kind="return"><para>A range proof info structure with exponent, mantissa, min and max values </para>
+</simplesect>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/api.hpp" line="542" column="1" bodyfile="libraries/app/api.cpp" bodystart="881" bodyend="884"/>
+        <location file="libraries/app/include/graphene/app/api.hpp" line="542" column="36" bodyfile="libraries/app/api.cpp" bodystart="879" bodyend="882"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>The <ref refid="classgraphene_1_1app_1_1crypto__api" kindref="compound">crypto_api</ref> class allows computations related to blinded transfers. </para>    </briefdescription>
+<para>The <ref refid="classgraphene_1_1app_1_1crypto__api" kindref="compound">crypto_api</ref> class allows computations related to blinded transfers. </para>
+    </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <location file="libraries/app/include/graphene/app/api.hpp" line="440" column="1" bodyfile="libraries/app/include/graphene/app/api.hpp" bodystart="439" bodyend="543"/>

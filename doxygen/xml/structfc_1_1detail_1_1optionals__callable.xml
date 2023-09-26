@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="structfc_1_1detail_1_1optionals__callable" kind="struct" language="C++" prot="public">
     <compoundname>fc::detail::optionals_callable</compoundname>
     <basecompoundref prot="public" virt="non-virtual">std::function&lt; R(Parameters...)&gt;</basecompoundref>
@@ -7,7 +7,7 @@
     <innerclass refid="structfc_1_1detail_1_1optionals__callable_1_1pack__cutter" prot="public">fc::detail::optionals_callable::pack_cutter</innerclass>
     <innerclass refid="structfc_1_1detail_1_1optionals__callable_1_1pack__cutter__impl" prot="public">fc::detail::optionals_callable::pack_cutter_impl</innerclass>
     <innerclass refid="structfc_1_1detail_1_1optionals__callable_1_1pack__cutter__impl_3_010_00_01void_00_01_types_8_8_8_01_4" prot="public">fc::detail::optionals_callable::pack_cutter_impl&lt; 0, void, Types... &gt;</innerclass>
-    <innerclass refid="structfc_1_1detail_1_1optionals__callable_1_1pack__cutter__impl_3_01_remove_count_00_01std_1_1en7edeec08e2f07aa6b1257c3602faf8a7" prot="public">fc::detail::optionals_callable::pack_cutter_impl&lt; RemoveCount, std::enable_if_t&lt; RemoveCount !=0 &gt;, T, Types... &gt;</innerclass>
+    <innerclass refid="structfc_1_1detail_1_1optionals__callable_1_1pack__cutter__impl_3_01_remove_count_00_01std_1_1en451a04908a867b1fff51911ef71704b7" prot="public">fc::detail::optionals_callable::pack_cutter_impl&lt; RemoveCount, std::enable_if_t&lt; RemoveCount !=0 &gt;, T, Types... &gt;</innerclass>
     <innerclass refid="structfc_1_1detail_1_1optionals__callable_1_1short__pack" prot="public">fc::detail::optionals_callable::short_pack</innerclass>
     <templateparamlist>
       <param>
@@ -21,6 +21,18 @@
     </templateparamlist>
       <sectiondef kind="public-type">
       <memberdef kind="typedef" id="structfc_1_1detail_1_1optionals__callable_1ad7d93e72470243f0d0da97d81bb5e114" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>unsigned</type>
+            <declname>RemoveCount</declname>
+            <defname>RemoveCount</defname>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Types</declname>
+            <defname>Types</defname>
+          </param>
+        </templateparamlist>
         <type>typename <ref refid="structfc_1_1detail_1_1optionals__callable_1_1pack__cutter" kindref="compound">pack_cutter</ref>&lt; RemoveCount, Types... &gt;::type</type>
         <definition>using fc::detail::optionals_callable&lt; R, Parameters &gt;::pack_cutter_t =  typename pack_cutter&lt;RemoveCount, Types...&gt;::type</definition>
         <argsstring></argsstring>
@@ -31,7 +43,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/api.hpp" line="59" column="1" bodyfile="libraries/fc/include/fc/api.hpp" bodystart="59" bodyend="-1"/>
+        <location file="libraries/fc/include/fc/api.hpp" line="59" column="8" bodyfile="libraries/fc/include/fc/api.hpp" bodystart="59" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -63,36 +75,38 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/api.hpp" line="62" column="1" bodyfile="libraries/fc/include/fc/api.hpp" bodystart="62" bodyend="64"/>
+        <location file="libraries/fc/include/fc/api.hpp" line="62" column="10" bodyfile="libraries/fc/include/fc/api.hpp" bodystart="62" bodyend="64"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-<para>A wrapper of std::function allowing callers to omit the last several arguments if those arguments are <ref refid="classfc_1_1optional" kindref="compound">fc::optional</ref> types. i.e. given a function taking (int, double, bool, fc::optional&lt;string&gt;, fc::optional&lt;char&gt;), whereas normally the last two arguments must be provided, this template allows them to be omitted. Note that this only applies to trailing optional arguments, i.e. given a callable taking (fc::optional&lt;int&gt;, int, fc::optional&lt;int&gt;), only the last argument can be omitted.</para><para>A discussion of how exactly this works is available here: <ulink url="https://github.com/bitshares/bitshares-fc/pull/126#issuecomment-490566060">https://github.com/bitshares/bitshares-fc/pull/126#issuecomment-490566060</ulink> </para>    </detaileddescription>
+<para>A wrapper of std::function allowing callers to omit the last several arguments if those arguments are <ref refid="classfc_1_1optional" kindref="compound">fc::optional</ref> types. i.e. given a function taking (int, double, bool, fc::optional&lt;string&gt;, fc::optional&lt;char&gt;), whereas normally the last two arguments must be provided, this template allows them to be omitted. Note that this only applies to trailing optional arguments, i.e. given a callable taking (fc::optional&lt;int&gt;, int, fc::optional&lt;int&gt;), only the last argument can be omitted.</para>
+<para>A discussion of how exactly this works is available here: <ulink url="https://github.com/bitshares/bitshares-fc/pull/126#issuecomment-490566060">https://github.com/bitshares/bitshares-fc/pull/126#issuecomment-490566060</ulink> </para>
+    </detaileddescription>
     <inheritancegraph>
-      <node id="6081">
+      <node id="2">
         <label>std::function&lt; R(Parameters...)&gt;</label>
       </node>
-      <node id="6080">
+      <node id="1">
         <label>fc::detail::optionals_callable&lt; R, Parameters &gt;</label>
         <link refid="structfc_1_1detail_1_1optionals__callable"/>
-        <childnode refid="6081" relation="public-inheritance">
+        <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="6083">
+      <node id="2">
         <label>std::function&lt; R(Parameters...)&gt;</label>
       </node>
-      <node id="6082">
+      <node id="1">
         <label>fc::detail::optionals_callable&lt; R, Parameters &gt;</label>
         <link refid="structfc_1_1detail_1_1optionals__callable"/>
-        <childnode refid="6083" relation="public-inheritance">
+        <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="libraries/fc/include/fc/api.hpp" line="35" column="1" bodyfile="libraries/fc/include/fc/api.hpp" bodystart="35" bodyend="80"/>
+    <location file="libraries/fc/include/fc/api.hpp" line="35" column="51" bodyfile="libraries/fc/include/fc/api.hpp" bodystart="35" bodyend="80"/>
     <listofallmembers>
       <member refid="structfc_1_1detail_1_1optionals__callable_1abaaab69e269421ac4edde50c43f49bc2" prot="public" virt="non-virtual"><scope>fc::detail::optionals_callable</scope><name>call_function</name></member>
       <member refid="structfc_1_1detail_1_1optionals__callable_1ad7d93e72470243f0d0da97d81bb5e114" prot="public" virt="non-virtual"><scope>fc::detail::optionals_callable</scope><name>pack_cutter_t</name></member>

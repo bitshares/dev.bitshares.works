@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="namespacegraphene_1_1protocol" kind="namespace" language="C++">
     <compoundname>graphene::protocol</compoundname>
     <innerclass refid="structgraphene_1_1protocol_1_1account__create__operation" prot="public">graphene::protocol::account_create_operation</innerclass>
@@ -53,8 +53,10 @@
     <innerclass refid="structgraphene_1_1protocol_1_1committee__member__create__operation" prot="public">graphene::protocol::committee_member_create_operation</innerclass>
     <innerclass refid="structgraphene_1_1protocol_1_1committee__member__update__global__parameters__operation" prot="public">graphene::protocol::committee_member_update_global_parameters_operation</innerclass>
     <innerclass refid="structgraphene_1_1protocol_1_1committee__member__update__operation" prot="public">graphene::protocol::committee_member_update_operation</innerclass>
+    <innerclass refid="structgraphene_1_1protocol_1_1create__take__profit__order__action" prot="public">graphene::protocol::create_take_profit_order_action</innerclass>
     <innerclass refid="structgraphene_1_1protocol_1_1credit__deal__expired__operation" prot="public">graphene::protocol::credit_deal_expired_operation</innerclass>
     <innerclass refid="structgraphene_1_1protocol_1_1credit__deal__repay__operation" prot="public">graphene::protocol::credit_deal_repay_operation</innerclass>
+    <innerclass refid="structgraphene_1_1protocol_1_1credit__deal__update__operation" prot="public">graphene::protocol::credit_deal_update_operation</innerclass>
     <innerclass refid="structgraphene_1_1protocol_1_1credit__offer__accept__operation" prot="public">graphene::protocol::credit_offer_accept_operation</innerclass>
     <innerclass refid="structgraphene_1_1protocol_1_1credit__offer__create__operation" prot="public">graphene::protocol::credit_offer_create_operation</innerclass>
     <innerclass refid="structgraphene_1_1protocol_1_1credit__offer__delete__operation" prot="public">graphene::protocol::credit_offer_delete_operation</innerclass>
@@ -98,12 +100,15 @@
     <innerclass refid="structgraphene_1_1protocol_1_1is__flat__set__impl_3_01flat__set_3_01_t_01_4_01_4" prot="public">graphene::protocol::is_flat_set_impl&lt; flat_set&lt; T &gt; &gt;</innerclass>
     <innerclass refid="structgraphene_1_1protocol_1_1limit__order__cancel__operation" prot="public">graphene::protocol::limit_order_cancel_operation</innerclass>
     <innerclass refid="structgraphene_1_1protocol_1_1limit__order__create__operation" prot="public">graphene::protocol::limit_order_create_operation</innerclass>
+    <innerclass refid="structgraphene_1_1protocol_1_1limit__order__update__operation" prot="public">graphene::protocol::limit_order_update_operation</innerclass>
     <innerclass refid="structgraphene_1_1protocol_1_1linear__vesting__policy__initializer" prot="public">graphene::protocol::linear_vesting_policy_initializer</innerclass>
     <innerclass refid="structgraphene_1_1protocol_1_1liquidity__pool__create__operation" prot="public">graphene::protocol::liquidity_pool_create_operation</innerclass>
     <innerclass refid="structgraphene_1_1protocol_1_1liquidity__pool__delete__operation" prot="public">graphene::protocol::liquidity_pool_delete_operation</innerclass>
     <innerclass refid="structgraphene_1_1protocol_1_1liquidity__pool__deposit__operation" prot="public">graphene::protocol::liquidity_pool_deposit_operation</innerclass>
     <innerclass refid="structgraphene_1_1protocol_1_1liquidity__pool__exchange__operation" prot="public">graphene::protocol::liquidity_pool_exchange_operation</innerclass>
+    <innerclass refid="structgraphene_1_1protocol_1_1liquidity__pool__update__operation" prot="public">graphene::protocol::liquidity_pool_update_operation</innerclass>
     <innerclass refid="structgraphene_1_1protocol_1_1liquidity__pool__withdraw__operation" prot="public">graphene::protocol::liquidity_pool_withdraw_operation</innerclass>
+    <innerclass refid="structgraphene_1_1protocol_1_1lo__action__validate__visitor" prot="public">graphene::protocol::lo_action_validate_visitor</innerclass>
     <innerclass refid="structgraphene_1_1protocol_1_1make__flat__set" prot="public">graphene::protocol::make_flat_set</innerclass>
     <innerclass refid="structgraphene_1_1protocol_1_1memo__data" prot="public">graphene::protocol::memo_data</innerclass>
     <innerclass refid="structgraphene_1_1protocol_1_1memo__message" prot="public">graphene::protocol::memo_message</innerclass>
@@ -198,7 +203,56 @@
     <innerclass refid="structgraphene_1_1protocol_1_1worker__create__operation" prot="public">graphene::protocol::worker_create_operation</innerclass>
     <innerclass refid="structgraphene_1_1protocol_1_1zero__fee__visitor" prot="public">graphene::protocol::zero_fee_visitor</innerclass>
       <sectiondef kind="enum">
-      <memberdef kind="enum" id="namespacegraphene_1_1protocol_1af90f1034c9ac27d8290e0fa8120c8269" prot="public" static="no">
+      <memberdef kind="enum" id="namespacegraphene_1_1protocol_1ae23160dc2c3df56a8ab54b16a4b17a4a" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>credit_deal_auto_repayment_type</name>
+        <enumvalue id="namespacegraphene_1_1protocol_1ae23160dc2c3df56a8ab54b16a4b17a4aa0eb91ff957d476a9006a2e3b44712ebf" prot="public">
+          <name>no_auto_repayment</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Do not repay automatically. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacegraphene_1_1protocol_1ae23160dc2c3df56a8ab54b16a4b17a4aa85c2eed23986f37ebe6e371c663bf869" prot="public">
+          <name>only_full_repayment</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>Automatically repay fully when and only when the account balance is sufficient. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacegraphene_1_1protocol_1ae23160dc2c3df56a8ab54b16a4b17a4aaf31557ab911b3f162aff6b986a273265" prot="public">
+          <name>allow_partial_repayment</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+<para>Automatically repay as much as possible using available account balance. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacegraphene_1_1protocol_1ae23160dc2c3df56a8ab54b16a4b17a4aa0e617eee8e778ca798aa1a3323fde6d9" prot="public">
+          <name>CDAR_TYPE_COUNT</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+<para>Total number of available automatic repayment types. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Defines automatic repayment types. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/protocol/include/graphene/protocol/credit_offer.hpp" line="120" column="1" bodyfile="libraries/protocol/include/graphene/protocol/credit_offer.hpp" bodystart="119" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespacegraphene_1_1protocol_1af90f1034c9ac27d8290e0fa8120c8269" prot="public" static="no" strong="no">
+        <type></type>
         <name>ticket_type</name>
         <enumvalue id="namespacegraphene_1_1protocol_1af90f1034c9ac27d8290e0fa8120c8269af07a1ddd5123b39916b093bb50945eeb" prot="public">
           <name>liquid</name>
@@ -249,20 +303,23 @@
           </detaileddescription>
         </enumvalue>
         <briefdescription>
-<para>Type of a ticket. </para>        </briefdescription>
+<para>Type of a ticket. </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="libraries/protocol/include/graphene/protocol/ticket.hpp" line="34" column="1" bodyfile="libraries/protocol/include/graphene/protocol/ticket.hpp" bodystart="33" bodyend="41"/>
       </memberdef>
-      <memberdef kind="enum" id="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7" prot="public" static="no">
+      <memberdef kind="enum" id="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7" prot="public" static="no" strong="no">
+        <type></type>
         <name>asset_issuer_permission_flags</name>
         <enumvalue id="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7ac0be53c416c0f365980a14e5d6a83a60" prot="public">
           <name>charge_market_fee</name>
           <initializer>= 0x01</initializer>
           <briefdescription>
-<para>market trades in this asset may be charged </para>          </briefdescription>
+<para>market trades in this asset may be charged </para>
+          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
@@ -270,7 +327,8 @@
           <name>white_list</name>
           <initializer>= 0x02</initializer>
           <briefdescription>
-<para>accounts must be whitelisted in order to hold or transact this asset </para>          </briefdescription>
+<para>accounts must be whitelisted in order to hold or transact this asset </para>
+          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
@@ -278,7 +336,8 @@
           <name>override_authority</name>
           <initializer>= 0x04</initializer>
           <briefdescription>
-<para>issuer may transfer asset back to himself </para>          </briefdescription>
+<para>issuer may transfer asset back to himself </para>
+          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
@@ -286,7 +345,8 @@
           <name>transfer_restricted</name>
           <initializer>= 0x08</initializer>
           <briefdescription>
-<para>require the issuer to be one party to every transfer </para>          </briefdescription>
+<para>require the issuer to be one party to every transfer </para>
+          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
@@ -294,7 +354,8 @@
           <name>disable_force_settle</name>
           <initializer>= 0x10</initializer>
           <briefdescription>
-<para>disable force settling </para>          </briefdescription>
+<para>disable force settling </para>
+          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
@@ -302,7 +363,8 @@
           <name>global_settle</name>
           <initializer>= 0x20</initializer>
           <briefdescription>
-<para>allow the bitasset owner to force a global settlement, permission only </para>          </briefdescription>
+<para>allow the bitasset owner to force a global settlement, permission only </para>
+          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
@@ -310,7 +372,8 @@
           <name>disable_confidential</name>
           <initializer>= 0x40</initializer>
           <briefdescription>
-<para>disallow the asset to be used with confidential transactions </para>          </briefdescription>
+<para>disallow the asset to be used with confidential transactions </para>
+          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
@@ -318,7 +381,8 @@
           <name>witness_fed_asset</name>
           <initializer>= 0x80</initializer>
           <briefdescription>
-<para>the bitasset is to be fed by witnesses </para>          </briefdescription>
+<para>the bitasset is to be fed by witnesses </para>
+          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
@@ -326,7 +390,8 @@
           <name>committee_fed_asset</name>
           <initializer>= 0x100</initializer>
           <briefdescription>
-<para>the bitasset is to be fed by the committee </para>          </briefdescription>
+<para>the bitasset is to be fed by the committee </para>
+          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
@@ -334,7 +399,8 @@
           <name>lock_max_supply</name>
           <initializer>= 0x200</initializer>
           <briefdescription>
-<para>the max supply of the asset can not be updated </para>          </briefdescription>
+<para>the max supply of the asset can not be updated </para>
+          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
@@ -342,7 +408,8 @@
           <name>disable_new_supply</name>
           <initializer>= 0x400</initializer>
           <briefdescription>
-<para>unable to create new supply for the asset </para>          </briefdescription>
+<para>unable to create new supply for the asset </para>
+          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
@@ -350,7 +417,8 @@
           <name>disable_mcr_update</name>
           <initializer>= 0x800</initializer>
           <briefdescription>
-<para>the bitasset owner can not update MCR, permission only </para>          </briefdescription>
+<para>the bitasset owner can not update MCR, permission only </para>
+          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
@@ -358,7 +426,8 @@
           <name>disable_icr_update</name>
           <initializer>= 0x1000</initializer>
           <briefdescription>
-<para>the bitasset owner can not update ICR, permission only </para>          </briefdescription>
+<para>the bitasset owner can not update ICR, permission only </para>
+          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
@@ -366,7 +435,8 @@
           <name>disable_mssr_update</name>
           <initializer>= 0x2000</initializer>
           <briefdescription>
-<para>the bitasset owner can not update MSSR, permission only </para>          </briefdescription>
+<para>the bitasset owner can not update MSSR, permission only </para>
+          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
@@ -374,7 +444,8 @@
           <name>disable_bsrm_update</name>
           <initializer>= 0x4000</initializer>
           <briefdescription>
-<para>the bitasset owner can not update BSRM, permission only </para>          </briefdescription>
+<para>the bitasset owner can not update BSRM, permission only </para>
+          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
@@ -382,7 +453,8 @@
           <name>disable_collateral_bidding</name>
           <initializer>= 0x8000</initializer>
           <briefdescription>
-<para>Can not bid collateral after a global settlement. </para>          </briefdescription>
+<para>Can not bid collateral after a global settlement. </para>
+          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
@@ -390,20 +462,43 @@
         </briefdescription>
         <detaileddescription>
 <para><simplesect kind="note"><para>If one of the following bits is set in asset issuer permissions, it means the asset issuer (or owner for bitassets) has the permission to update the corresponding flag, parameters or perform certain actions.<itemizedlist>
-<listitem><para><ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7ac0be53c416c0f365980a14e5d6a83a60" kindref="member">charge_market_fee</ref></para></listitem><listitem><para><ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7a925268cf7f7e511d2858eee66ef82cbf" kindref="member">white_list</ref></para></listitem><listitem><para><ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7a63b60eb3d6e25d669d8b93cb45ac6bc4" kindref="member">override_authority</ref></para></listitem><listitem><para><ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7aaec73585631ebefcce567035b27c252c" kindref="member">transfer_restricted</ref></para></listitem><listitem><para><ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7aedc04b6ab421f7f2363f3dc9d113b73d" kindref="member">disable_force_settle</ref></para></listitem><listitem><para><ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7afa951fce8754e6fb747e13854615eeb9" kindref="member">global_settle</ref></para></listitem><listitem><para><ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7a5a96fe025ec33ffe4b103458846d08b3" kindref="member">disable_confidential</ref></para></listitem><listitem><para><ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7a4ec6c6bd50bc48052bd7783d8b08d70a" kindref="member">witness_fed_asset</ref></para></listitem><listitem><para><ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7ad19c5dd00f90497696a850af9c8bd26c" kindref="member">committee_fed_asset</ref></para></listitem></itemizedlist>
-</para></simplesect>
+<listitem><para><ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7ac0be53c416c0f365980a14e5d6a83a60" kindref="member">charge_market_fee</ref></para>
+</listitem><listitem><para><ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7a925268cf7f7e511d2858eee66ef82cbf" kindref="member">white_list</ref></para>
+</listitem><listitem><para><ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7a63b60eb3d6e25d669d8b93cb45ac6bc4" kindref="member">override_authority</ref></para>
+</listitem><listitem><para><ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7aaec73585631ebefcce567035b27c252c" kindref="member">transfer_restricted</ref></para>
+</listitem><listitem><para><ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7aedc04b6ab421f7f2363f3dc9d113b73d" kindref="member">disable_force_settle</ref></para>
+</listitem><listitem><para><ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7afa951fce8754e6fb747e13854615eeb9" kindref="member">global_settle</ref></para>
+</listitem><listitem><para><ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7a5a96fe025ec33ffe4b103458846d08b3" kindref="member">disable_confidential</ref></para>
+</listitem><listitem><para><ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7a4ec6c6bd50bc48052bd7783d8b08d70a" kindref="member">witness_fed_asset</ref></para>
+</listitem><listitem><para><ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7ad19c5dd00f90497696a850af9c8bd26c" kindref="member">committee_fed_asset</ref></para>
+</listitem></itemizedlist>
+</para>
+</simplesect>
 <simplesect kind="note"><para>If one of the following bits is set in asset issuer permissions, it means the asset issuer (or owner for bitassets) does NOT have the permission to update the corresponding flag, parameters or perform certain actions. This is to be compatible with old client software.<itemizedlist>
-<listitem><para><ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7aecdf0e2eaaf02379a4e59b3a480ee79a" kindref="member">lock_max_supply</ref></para></listitem><listitem><para><ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7a143eda9f4527f81fdef4c1cfe22965de" kindref="member">disable_new_supply</ref></para></listitem><listitem><para><ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7a00ba1631057f985e077c7e7b2e318266" kindref="member">disable_mcr_update</ref></para></listitem><listitem><para><ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7aff93381986b4c574d1b2365120274364" kindref="member">disable_icr_update</ref></para></listitem><listitem><para><ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7a6d6c06210cdf7cb26dba5263e1d18d23" kindref="member">disable_mssr_update</ref></para></listitem><listitem><para><ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7a549e875509c1f788fd14e8570dad07d1" kindref="member">disable_bsrm_update</ref></para></listitem><listitem><para><ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7a91387a1c4b272a590ac37cf88b8ba491" kindref="member">disable_collateral_bidding</ref></para></listitem></itemizedlist>
-</para></simplesect>
+<listitem><para><ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7aecdf0e2eaaf02379a4e59b3a480ee79a" kindref="member">lock_max_supply</ref></para>
+</listitem><listitem><para><ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7a143eda9f4527f81fdef4c1cfe22965de" kindref="member">disable_new_supply</ref></para>
+</listitem><listitem><para><ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7a00ba1631057f985e077c7e7b2e318266" kindref="member">disable_mcr_update</ref></para>
+</listitem><listitem><para><ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7aff93381986b4c574d1b2365120274364" kindref="member">disable_icr_update</ref></para>
+</listitem><listitem><para><ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7a6d6c06210cdf7cb26dba5263e1d18d23" kindref="member">disable_mssr_update</ref></para>
+</listitem><listitem><para><ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7a549e875509c1f788fd14e8570dad07d1" kindref="member">disable_bsrm_update</ref></para>
+</listitem><listitem><para><ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7a91387a1c4b272a590ac37cf88b8ba491" kindref="member">disable_collateral_bidding</ref></para>
+</listitem></itemizedlist>
+</para>
+</simplesect>
 <simplesect kind="note"><para>For <ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7a00ba1631057f985e077c7e7b2e318266" kindref="member">disable_mcr_update</ref>, <ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7aff93381986b4c574d1b2365120274364" kindref="member">disable_icr_update</ref> and <ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7a6d6c06210cdf7cb26dba5263e1d18d23" kindref="member">disable_mssr_update</ref>, if one of these is set in asset issuer permissions, and<itemizedlist>
-<listitem><para>if the bitasset owner has set a value for the corresponding parameter, the value can not be updated,</para></listitem><listitem><para>if the bitasset owner has not set a value for the corresponding parameter, the parameter can still be updated by the price feed producers. </para></listitem></itemizedlist>
-</para></simplesect>
-</para>        </detaileddescription>
+<listitem><para>if the bitasset owner has set a value for the corresponding parameter, the value can not be updated,</para>
+</listitem><listitem><para>if the bitasset owner has not set a value for the corresponding parameter, the parameter can still be updated by the price feed producers. </para>
+</listitem></itemizedlist>
+</para>
+</simplesect>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/types.hpp" line="188" column="1" bodyfile="libraries/protocol/include/graphene/protocol/types.hpp" bodystart="188" bodyend="225"/>
+        <location file="libraries/protocol/include/graphene/protocol/types.hpp" line="188" column="35" bodyfile="libraries/protocol/include/graphene/protocol/types.hpp" bodystart="188" bodyend="225"/>
       </memberdef>
-      <memberdef kind="enum" id="namespacegraphene_1_1protocol_1a7fe50b12d88be67656c1550cbfd52d68" prot="public" static="no">
+      <memberdef kind="enum" id="namespacegraphene_1_1protocol_1a7fe50b12d88be67656c1550cbfd52d68" prot="public" static="no" strong="no">
+        <type></type>
         <name>reserved_spaces</name>
         <enumvalue id="namespacegraphene_1_1protocol_1a7fe50b12d88be67656c1550cbfd52d68a0fb9ea39eb1dbd8203e9770991fb858e" prot="public">
           <name>relative_protocol_ids</name>
@@ -435,12 +530,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/types.hpp" line="296" column="1" bodyfile="libraries/protocol/include/graphene/protocol/types.hpp" bodystart="296" bodyend="300"/>
+        <location file="libraries/protocol/include/graphene/protocol/types.hpp" line="296" column="21" bodyfile="libraries/protocol/include/graphene/protocol/types.hpp" bodystart="296" bodyend="300"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
       <memberdef kind="typedef" id="namespacegraphene_1_1protocol_1a3c1d4080710cedea70727ba0b347e8d8" prot="public" static="no">
-        <type><ref refid="namespacegraphene_1_1protocol_1a7253c01693b853bacbc927c3430c9c5f" kindref="member">object_restriction_predicate</ref>&lt; <ref refid="group__operations_1ga9aa13b4d89e9b8b56d1074b715de6568" kindref="member">operation</ref> &gt;</type>
+        <type><ref refid="namespacegraphene_1_1protocol_1a7253c01693b853bacbc927c3430c9c5f" kindref="member">object_restriction_predicate</ref>&lt; <ref refid="group__operations_1gad4674c1a800a9c624a13e1243dcbe967" kindref="member">operation</ref> &gt;</type>
         <definition>typedef object_restriction_predicate&lt; operation &gt; graphene::protocol::result_type</definition>
         <argsstring></argsstring>
         <name>result_type</name>
@@ -479,6 +574,11 @@
         <location file="libraries/protocol/custom_authorities/restriction_predicate.hxx" line="36" column="1" bodyfile="libraries/protocol/custom_authorities/restriction_predicate.hxx" bodystart="36" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacegraphene_1_1protocol_1a62bf297969e25bf342e2b3b82d050ca2" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+          </param>
+        </templateparamlist>
         <type>void</type>
         <definition>using graphene::protocol::make_void = typedef void</definition>
         <argsstring></argsstring>
@@ -489,9 +589,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/custom_authorities/restriction_predicate.hxx" line="39" column="1" bodyfile="libraries/protocol/custom_authorities/restriction_predicate.hxx" bodystart="39" bodyend="-1"/>
+        <location file="libraries/protocol/custom_authorities/restriction_predicate.hxx" line="39" column="11" bodyfile="libraries/protocol/custom_authorities/restriction_predicate.hxx" bodystart="39" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacegraphene_1_1protocol_1a7253c01693b853bacbc927c3430c9c5f" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>typename Field</type>
+          </param>
+        </templateparamlist>
         <type>std::function&lt; <ref refid="structgraphene_1_1protocol_1_1predicate__result" kindref="compound">predicate_result</ref>(const Field &amp;)&gt;</type>
         <definition>using graphene::protocol::object_restriction_predicate = typedef std::function&lt;predicate_result(const Field&amp;)&gt;</definition>
         <argsstring></argsstring>
@@ -694,10 +799,11 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>When defining predicates do not make the protocol dependent upon implementation details. </para>        </detaileddescription>
+<para>When defining predicates do not make the protocol dependent upon implementation details. </para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/assert.hpp" line="83" column="1" bodyfile="libraries/protocol/include/graphene/protocol/assert.hpp" bodystart="83" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/assert.hpp" line="83" column="2" bodyfile="libraries/protocol/include/graphene/protocol/assert.hpp" bodystart="83" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacegraphene_1_1protocol_1a5d54f0af0b886cba542137f450bb6388" prot="public" static="no">
         <type><ref refid="structgraphene_1_1protocol_1_1extension" kindref="compound">extension</ref>&lt; <ref refid="structgraphene_1_1protocol_1_1additional__asset__options" kindref="compound">additional_asset_options</ref> &gt;</type>
@@ -710,7 +816,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="38" column="1" bodyfile="libraries/protocol/include/graphene/protocol/asset_ops.hpp" bodystart="38" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="38" column="22" bodyfile="libraries/protocol/include/graphene/protocol/asset_ops.hpp" bodystart="38" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__operations_1ga8d0cc3fd7fdc83761fcf4420cc828631" prot="public" static="no">
         <type><ref refid="structgraphene_1_1protocol_1_1extension" kindref="compound">extension</ref>&lt; <ref refid="structgraphene_1_1protocol_1_1extendable__operation__result__dtl" kindref="compound">extendable_operation_result_dtl</ref> &gt;</type>
@@ -723,7 +829,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/base.hpp" line="113" column="1" bodyfile="libraries/protocol/include/graphene/protocol/base.hpp" bodystart="113" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/base.hpp" line="113" column="4" bodyfile="libraries/protocol/include/graphene/protocol/base.hpp" bodystart="113" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__operations_1gaa71296d574534eaf5315415023d64eeb" prot="public" static="no">
         <type><ref refid="classfc_1_1static__variant" kindref="compound">fc::static_variant</ref>&lt; <ref refid="structgraphene_1_1protocol_1_1void__result" kindref="compound">void_result</ref>, <ref refid="structgraphene_1_1db_1_1object__id__type" kindref="compound">object_id_type</ref>, <ref refid="structgraphene_1_1protocol_1_1asset" kindref="compound">asset</ref>, <ref refid="structgraphene_1_1protocol_1_1generic__operation__result" kindref="compound">generic_operation_result</ref>, <ref refid="structgraphene_1_1protocol_1_1generic__exchange__operation__result" kindref="compound">generic_exchange_operation_result</ref>, <ref refid="group__operations_1ga8d0cc3fd7fdc83761fcf4420cc828631" kindref="member">extendable_operation_result</ref> &gt;</type>
@@ -736,7 +842,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/base.hpp" line="115" column="1" bodyfile="libraries/protocol/include/graphene/protocol/base.hpp" bodystart="122" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/base.hpp" line="115" column="4" bodyfile="libraries/protocol/include/graphene/protocol/base.hpp" bodystart="122" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__operations_1gadd193c7a45f34f889d78acfcdd4d7b2e" prot="public" static="no">
         <type><ref refid="classfc_1_1static__variant" kindref="compound">static_variant</ref>&lt; <ref refid="structgraphene_1_1protocol_1_1void__t" kindref="compound">void_t</ref> &gt;</type>
@@ -746,10 +852,11 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>For future expansion many structus include a single member of type extensions_type that can be changed when updating a protocol. You can always add new types to a static_variant without breaking backward compatibility. </para>        </detaileddescription>
+<para>For future expansion many structus include a single member of type extensions_type that can be changed when updating a protocol. You can always add new types to a static_variant without breaking backward compatibility. </para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/base.hpp" line="147" column="1" bodyfile="libraries/protocol/include/graphene/protocol/base.hpp" bodystart="147" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/base.hpp" line="147" column="4" bodyfile="libraries/protocol/include/graphene/protocol/base.hpp" bodystart="147" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__operations_1gabaddcaf5bde76414891b4c29031d9288" prot="public" static="no">
         <type><ref refid="classfc_1_1static__variant_1af88f7f04dd15f07ade8335a911542561" kindref="member">future_extensions::flat_set_type</ref></type>
@@ -759,14 +866,17 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>A flat_set is used to make sure that only one extension of each type is added and that they are added in order.</para><para><simplesect kind="note"><para>static_variant compares only the type tag and not the content. </para></simplesect>
-</para>        </detaileddescription>
+<para>A flat_set is used to make sure that only one extension of each type is added and that they are added in order.</para>
+<para><simplesect kind="note"><para>static_variant compares only the type tag and not the content. </para>
+</simplesect>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/base.hpp" line="156" column="1" bodyfile="libraries/protocol/include/graphene/protocol/base.hpp" bodystart="156" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/base.hpp" line="156" column="4" bodyfile="libraries/protocol/include/graphene/protocol/base.hpp" bodystart="156" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacegraphene_1_1protocol_1a6f5fc4218bbc2c67f49927f99f533e84" prot="public" static="no">
-        <type><ref refid="structgraphene_1_1protocol_1_1transform__to__fee__parameters" kindref="compound">transform_to_fee_parameters</ref>&lt; <ref refid="group__operations_1ga9aa13b4d89e9b8b56d1074b715de6568" kindref="member">operation</ref> &gt;::type</type>
+        <type><ref refid="structgraphene_1_1protocol_1_1transform__to__fee__parameters" kindref="compound">transform_to_fee_parameters</ref>&lt; <ref refid="group__operations_1gad4674c1a800a9c624a13e1243dcbe967" kindref="member">operation</ref> &gt;::type</type>
         <definition>using graphene::protocol::fee_parameters = typedef transform_to_fee_parameters&lt;operation&gt;::type</definition>
         <argsstring></argsstring>
         <name>fee_parameters</name>
@@ -776,7 +886,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/fee_schedule.hpp" line="35" column="1" bodyfile="libraries/protocol/include/graphene/protocol/fee_schedule.hpp" bodystart="35" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/fee_schedule.hpp" line="35" column="4" bodyfile="libraries/protocol/include/graphene/protocol/fee_schedule.hpp" bodystart="35" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacegraphene_1_1protocol_1afba6ca8ebc72dff107b62bb5a21f2e47" prot="public" static="no">
         <type><ref refid="structgraphene_1_1protocol_1_1fee__schedule" kindref="compound">fee_schedule</ref></type>
@@ -789,7 +899,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/fee_schedule.hpp" line="226" column="1" bodyfile="libraries/protocol/include/graphene/protocol/fee_schedule.hpp" bodystart="226" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/fee_schedule.hpp" line="226" column="4" bodyfile="libraries/protocol/include/graphene/protocol/fee_schedule.hpp" bodystart="226" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacegraphene_1_1protocol_1a1bae001b47b8d864a79406219d67b832" prot="public" static="no">
         <type><ref refid="classfc_1_1ripemd160" kindref="compound">fc::ripemd160</ref></type>
@@ -802,7 +912,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/htlc.hpp" line="33" column="1" bodyfile="libraries/protocol/include/graphene/protocol/htlc.hpp" bodystart="33" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/htlc.hpp" line="33" column="32" bodyfile="libraries/protocol/include/graphene/protocol/htlc.hpp" bodystart="33" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacegraphene_1_1protocol_1ac7a995704f215556cbfd73295621d059" prot="public" static="no">
         <type><ref refid="classfc_1_1sha1" kindref="compound">fc::sha1</ref></type>
@@ -815,7 +925,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/htlc.hpp" line="34" column="1" bodyfile="libraries/protocol/include/graphene/protocol/htlc.hpp" bodystart="34" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/htlc.hpp" line="34" column="32" bodyfile="libraries/protocol/include/graphene/protocol/htlc.hpp" bodystart="34" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacegraphene_1_1protocol_1a5938be26ca395e77538fb8632c71d8a5" prot="public" static="no">
         <type><ref refid="classfc_1_1sha256" kindref="compound">fc::sha256</ref></type>
@@ -828,7 +938,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/htlc.hpp" line="35" column="1" bodyfile="libraries/protocol/include/graphene/protocol/htlc.hpp" bodystart="35" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/htlc.hpp" line="35" column="32" bodyfile="libraries/protocol/include/graphene/protocol/htlc.hpp" bodystart="35" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacegraphene_1_1protocol_1a55f7c41be40665a6c521bd6a25c24112" prot="public" static="no">
         <type><ref refid="classfc_1_1hash160" kindref="compound">fc::hash160</ref></type>
@@ -841,7 +951,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/htlc.hpp" line="36" column="1" bodyfile="libraries/protocol/include/graphene/protocol/htlc.hpp" bodystart="36" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/htlc.hpp" line="36" column="32" bodyfile="libraries/protocol/include/graphene/protocol/htlc.hpp" bodystart="36" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacegraphene_1_1protocol_1a8edbef4035c72a541a106ad51d004606" prot="public" static="no">
         <type><ref refid="classfc_1_1static__variant" kindref="compound">fc::static_variant</ref>&lt; <ref refid="namespacegraphene_1_1protocol_1a1bae001b47b8d864a79406219d67b832" kindref="member">htlc_algo_ripemd160</ref>, <ref refid="namespacegraphene_1_1protocol_1ac7a995704f215556cbfd73295621d059" kindref="member">htlc_algo_sha1</ref>, <ref refid="namespacegraphene_1_1protocol_1a5938be26ca395e77538fb8632c71d8a5" kindref="member">htlc_algo_sha256</ref>, <ref refid="namespacegraphene_1_1protocol_1a55f7c41be40665a6c521bd6a25c24112" kindref="member">htlc_algo_hash160</ref> &gt;</type>
@@ -854,28 +964,44 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/htlc.hpp" line="43" column="1" bodyfile="libraries/protocol/include/graphene/protocol/htlc.hpp" bodystart="43" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/htlc.hpp" line="43" column="2" bodyfile="libraries/protocol/include/graphene/protocol/htlc.hpp" bodystart="43" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__operations_1ga9aa13b4d89e9b8b56d1074b715de6568" prot="public" static="no">
-        <type><ref refid="classfc_1_1static__variant" kindref="compound">fc::static_variant</ref>&lt; <ref refid="structgraphene_1_1protocol_1_1transfer__operation" kindref="compound">transfer_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1limit__order__create__operation" kindref="compound">limit_order_create_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1limit__order__cancel__operation" kindref="compound">limit_order_cancel_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1call__order__update__operation" kindref="compound">call_order_update_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1fill__order__operation" kindref="compound">fill_order_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1account__create__operation" kindref="compound">account_create_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1account__update__operation" kindref="compound">account_update_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1account__whitelist__operation" kindref="compound">account_whitelist_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1account__upgrade__operation" kindref="compound">account_upgrade_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1account__transfer__operation" kindref="compound">account_transfer_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1asset__create__operation" kindref="compound">asset_create_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1asset__update__operation" kindref="compound">asset_update_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1asset__update__bitasset__operation" kindref="compound">asset_update_bitasset_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1asset__update__feed__producers__operation" kindref="compound">asset_update_feed_producers_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1asset__issue__operation" kindref="compound">asset_issue_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1asset__reserve__operation" kindref="compound">asset_reserve_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1asset__fund__fee__pool__operation" kindref="compound">asset_fund_fee_pool_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1asset__settle__operation" kindref="compound">asset_settle_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1asset__global__settle__operation" kindref="compound">asset_global_settle_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1asset__publish__feed__operation" kindref="compound">asset_publish_feed_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1witness__create__operation" kindref="compound">witness_create_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1witness__update__operation" kindref="compound">witness_update_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1proposal__create__operation" kindref="compound">proposal_create_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1proposal__update__operation" kindref="compound">proposal_update_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1proposal__delete__operation" kindref="compound">proposal_delete_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1withdraw__permission__create__operation" kindref="compound">withdraw_permission_create_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1withdraw__permission__update__operation" kindref="compound">withdraw_permission_update_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1withdraw__permission__claim__operation" kindref="compound">withdraw_permission_claim_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1withdraw__permission__delete__operation" kindref="compound">withdraw_permission_delete_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1committee__member__create__operation" kindref="compound">committee_member_create_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1committee__member__update__operation" kindref="compound">committee_member_update_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1committee__member__update__global__parameters__operation" kindref="compound">committee_member_update_global_parameters_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1vesting__balance__create__operation" kindref="compound">vesting_balance_create_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1vesting__balance__withdraw__operation" kindref="compound">vesting_balance_withdraw_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1worker__create__operation" kindref="compound">worker_create_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1custom__operation" kindref="compound">custom_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1assert__operation" kindref="compound">assert_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1balance__claim__operation" kindref="compound">balance_claim_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1override__transfer__operation" kindref="compound">override_transfer_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1transfer__to__blind__operation" kindref="compound">transfer_to_blind_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1blind__transfer__operation" kindref="compound">blind_transfer_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1transfer__from__blind__operation" kindref="compound">transfer_from_blind_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1asset__settle__cancel__operation" kindref="compound">asset_settle_cancel_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1asset__claim__fees__operation" kindref="compound">asset_claim_fees_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1fba__distribute__operation" kindref="compound">fba_distribute_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1bid__collateral__operation" kindref="compound">bid_collateral_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1execute__bid__operation" kindref="compound">execute_bid_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1asset__claim__pool__operation" kindref="compound">asset_claim_pool_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1asset__update__issuer__operation" kindref="compound">asset_update_issuer_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1htlc__create__operation" kindref="compound">htlc_create_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1htlc__redeem__operation" kindref="compound">htlc_redeem_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1htlc__redeemed__operation" kindref="compound">htlc_redeemed_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1htlc__extend__operation" kindref="compound">htlc_extend_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1htlc__refund__operation" kindref="compound">htlc_refund_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1custom__authority__create__operation" kindref="compound">custom_authority_create_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1custom__authority__update__operation" kindref="compound">custom_authority_update_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1custom__authority__delete__operation" kindref="compound">custom_authority_delete_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1ticket__create__operation" kindref="compound">ticket_create_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1ticket__update__operation" kindref="compound">ticket_update_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1liquidity__pool__create__operation" kindref="compound">liquidity_pool_create_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1liquidity__pool__delete__operation" kindref="compound">liquidity_pool_delete_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1liquidity__pool__deposit__operation" kindref="compound">liquidity_pool_deposit_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1liquidity__pool__withdraw__operation" kindref="compound">liquidity_pool_withdraw_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1liquidity__pool__exchange__operation" kindref="compound">liquidity_pool_exchange_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1samet__fund__create__operation" kindref="compound">samet_fund_create_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1samet__fund__delete__operation" kindref="compound">samet_fund_delete_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1samet__fund__update__operation" kindref="compound">samet_fund_update_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1samet__fund__borrow__operation" kindref="compound">samet_fund_borrow_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1samet__fund__repay__operation" kindref="compound">samet_fund_repay_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1credit__offer__create__operation" kindref="compound">credit_offer_create_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1credit__offer__delete__operation" kindref="compound">credit_offer_delete_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1credit__offer__update__operation" kindref="compound">credit_offer_update_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1credit__offer__accept__operation" kindref="compound">credit_offer_accept_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1credit__deal__repay__operation" kindref="compound">credit_deal_repay_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1credit__deal__expired__operation" kindref="compound">credit_deal_expired_operation</ref> &gt;</type>
-        <definition>using graphene::protocol::operation = typedef fc::static_variant&lt; transfer_operation, limit_order_create_operation, limit_order_cancel_operation, call_order_update_operation, fill_order_operation, account_create_operation, account_update_operation, account_whitelist_operation, account_upgrade_operation, account_transfer_operation, asset_create_operation, asset_update_operation, asset_update_bitasset_operation, asset_update_feed_producers_operation, asset_issue_operation, asset_reserve_operation, asset_fund_fee_pool_operation, asset_settle_operation, asset_global_settle_operation, asset_publish_feed_operation, witness_create_operation, witness_update_operation, proposal_create_operation, proposal_update_operation, proposal_delete_operation, withdraw_permission_create_operation, withdraw_permission_update_operation, withdraw_permission_claim_operation, withdraw_permission_delete_operation, committee_member_create_operation, committee_member_update_operation, committee_member_update_global_parameters_operation, vesting_balance_create_operation, vesting_balance_withdraw_operation, worker_create_operation, custom_operation, assert_operation, balance_claim_operation, override_transfer_operation, transfer_to_blind_operation, blind_transfer_operation, transfer_from_blind_operation, asset_settle_cancel_operation, asset_claim_fees_operation, fba_distribute_operation, bid_collateral_operation, execute_bid_operation, asset_claim_pool_operation, asset_update_issuer_operation, htlc_create_operation, htlc_redeem_operation, htlc_redeemed_operation, htlc_extend_operation, htlc_refund_operation, custom_authority_create_operation, custom_authority_update_operation, custom_authority_delete_operation, ticket_create_operation, ticket_update_operation, liquidity_pool_create_operation, liquidity_pool_delete_operation, liquidity_pool_deposit_operation, liquidity_pool_withdraw_operation, liquidity_pool_exchange_operation, samet_fund_create_operation, samet_fund_delete_operation, samet_fund_update_operation, samet_fund_borrow_operation, samet_fund_repay_operation, credit_offer_create_operation, credit_offer_delete_operation, credit_offer_update_operation, credit_offer_accept_operation, credit_deal_repay_operation, credit_deal_expired_operation &gt;</definition>
+      <memberdef kind="typedef" id="namespacegraphene_1_1protocol_1aa3fcffd4cf857807b327ef747be699a4" prot="public" static="no">
+        <type><ref refid="classfc_1_1static__variant" kindref="compound">static_variant</ref>&lt; <ref refid="structgraphene_1_1protocol_1_1create__take__profit__order__action" kindref="compound">create_take_profit_order_action</ref> &gt;</type>
+        <definition>using graphene::protocol::limit_order_auto_action = typedef static_variant&lt; create_take_profit_order_action &gt;</definition>
+        <argsstring></argsstring>
+        <name>limit_order_auto_action</name>
+        <briefdescription>
+<para>Automatic actions for limit orders. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/protocol/include/graphene/protocol/market.hpp" line="52" column="4" bodyfile="libraries/protocol/include/graphene/protocol/market.hpp" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__operations_1gad4674c1a800a9c624a13e1243dcbe967" prot="public" static="no">
+        <type><ref refid="classfc_1_1static__variant" kindref="compound">fc::static_variant</ref>&lt; <ref refid="structgraphene_1_1protocol_1_1transfer__operation" kindref="compound">transfer_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1limit__order__create__operation" kindref="compound">limit_order_create_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1limit__order__cancel__operation" kindref="compound">limit_order_cancel_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1call__order__update__operation" kindref="compound">call_order_update_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1fill__order__operation" kindref="compound">fill_order_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1account__create__operation" kindref="compound">account_create_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1account__update__operation" kindref="compound">account_update_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1account__whitelist__operation" kindref="compound">account_whitelist_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1account__upgrade__operation" kindref="compound">account_upgrade_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1account__transfer__operation" kindref="compound">account_transfer_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1asset__create__operation" kindref="compound">asset_create_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1asset__update__operation" kindref="compound">asset_update_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1asset__update__bitasset__operation" kindref="compound">asset_update_bitasset_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1asset__update__feed__producers__operation" kindref="compound">asset_update_feed_producers_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1asset__issue__operation" kindref="compound">asset_issue_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1asset__reserve__operation" kindref="compound">asset_reserve_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1asset__fund__fee__pool__operation" kindref="compound">asset_fund_fee_pool_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1asset__settle__operation" kindref="compound">asset_settle_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1asset__global__settle__operation" kindref="compound">asset_global_settle_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1asset__publish__feed__operation" kindref="compound">asset_publish_feed_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1witness__create__operation" kindref="compound">witness_create_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1witness__update__operation" kindref="compound">witness_update_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1proposal__create__operation" kindref="compound">proposal_create_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1proposal__update__operation" kindref="compound">proposal_update_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1proposal__delete__operation" kindref="compound">proposal_delete_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1withdraw__permission__create__operation" kindref="compound">withdraw_permission_create_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1withdraw__permission__update__operation" kindref="compound">withdraw_permission_update_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1withdraw__permission__claim__operation" kindref="compound">withdraw_permission_claim_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1withdraw__permission__delete__operation" kindref="compound">withdraw_permission_delete_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1committee__member__create__operation" kindref="compound">committee_member_create_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1committee__member__update__operation" kindref="compound">committee_member_update_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1committee__member__update__global__parameters__operation" kindref="compound">committee_member_update_global_parameters_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1vesting__balance__create__operation" kindref="compound">vesting_balance_create_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1vesting__balance__withdraw__operation" kindref="compound">vesting_balance_withdraw_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1worker__create__operation" kindref="compound">worker_create_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1custom__operation" kindref="compound">custom_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1assert__operation" kindref="compound">assert_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1balance__claim__operation" kindref="compound">balance_claim_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1override__transfer__operation" kindref="compound">override_transfer_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1transfer__to__blind__operation" kindref="compound">transfer_to_blind_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1blind__transfer__operation" kindref="compound">blind_transfer_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1transfer__from__blind__operation" kindref="compound">transfer_from_blind_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1asset__settle__cancel__operation" kindref="compound">asset_settle_cancel_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1asset__claim__fees__operation" kindref="compound">asset_claim_fees_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1fba__distribute__operation" kindref="compound">fba_distribute_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1bid__collateral__operation" kindref="compound">bid_collateral_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1execute__bid__operation" kindref="compound">execute_bid_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1asset__claim__pool__operation" kindref="compound">asset_claim_pool_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1asset__update__issuer__operation" kindref="compound">asset_update_issuer_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1htlc__create__operation" kindref="compound">htlc_create_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1htlc__redeem__operation" kindref="compound">htlc_redeem_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1htlc__redeemed__operation" kindref="compound">htlc_redeemed_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1htlc__extend__operation" kindref="compound">htlc_extend_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1htlc__refund__operation" kindref="compound">htlc_refund_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1custom__authority__create__operation" kindref="compound">custom_authority_create_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1custom__authority__update__operation" kindref="compound">custom_authority_update_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1custom__authority__delete__operation" kindref="compound">custom_authority_delete_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1ticket__create__operation" kindref="compound">ticket_create_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1ticket__update__operation" kindref="compound">ticket_update_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1liquidity__pool__create__operation" kindref="compound">liquidity_pool_create_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1liquidity__pool__delete__operation" kindref="compound">liquidity_pool_delete_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1liquidity__pool__deposit__operation" kindref="compound">liquidity_pool_deposit_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1liquidity__pool__withdraw__operation" kindref="compound">liquidity_pool_withdraw_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1liquidity__pool__exchange__operation" kindref="compound">liquidity_pool_exchange_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1samet__fund__create__operation" kindref="compound">samet_fund_create_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1samet__fund__delete__operation" kindref="compound">samet_fund_delete_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1samet__fund__update__operation" kindref="compound">samet_fund_update_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1samet__fund__borrow__operation" kindref="compound">samet_fund_borrow_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1samet__fund__repay__operation" kindref="compound">samet_fund_repay_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1credit__offer__create__operation" kindref="compound">credit_offer_create_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1credit__offer__delete__operation" kindref="compound">credit_offer_delete_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1credit__offer__update__operation" kindref="compound">credit_offer_update_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1credit__offer__accept__operation" kindref="compound">credit_offer_accept_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1credit__deal__repay__operation" kindref="compound">credit_deal_repay_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1credit__deal__expired__operation" kindref="compound">credit_deal_expired_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1liquidity__pool__update__operation" kindref="compound">liquidity_pool_update_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1credit__deal__update__operation" kindref="compound">credit_deal_update_operation</ref>, <ref refid="structgraphene_1_1protocol_1_1limit__order__update__operation" kindref="compound">limit_order_update_operation</ref> &gt;</type>
+        <definition>using graphene::protocol::operation = typedef fc::static_variant&lt; transfer_operation, limit_order_create_operation, limit_order_cancel_operation, call_order_update_operation, fill_order_operation, account_create_operation, account_update_operation, account_whitelist_operation, account_upgrade_operation, account_transfer_operation, asset_create_operation, asset_update_operation, asset_update_bitasset_operation, asset_update_feed_producers_operation, asset_issue_operation, asset_reserve_operation, asset_fund_fee_pool_operation, asset_settle_operation, asset_global_settle_operation, asset_publish_feed_operation, witness_create_operation, witness_update_operation, proposal_create_operation, proposal_update_operation, proposal_delete_operation, withdraw_permission_create_operation, withdraw_permission_update_operation, withdraw_permission_claim_operation, withdraw_permission_delete_operation, committee_member_create_operation, committee_member_update_operation, committee_member_update_global_parameters_operation, vesting_balance_create_operation, vesting_balance_withdraw_operation, worker_create_operation, custom_operation, assert_operation, balance_claim_operation, override_transfer_operation, transfer_to_blind_operation, blind_transfer_operation, transfer_from_blind_operation, asset_settle_cancel_operation, asset_claim_fees_operation, fba_distribute_operation, bid_collateral_operation, execute_bid_operation, asset_claim_pool_operation, asset_update_issuer_operation, htlc_create_operation, htlc_redeem_operation, htlc_redeemed_operation, htlc_extend_operation, htlc_refund_operation, custom_authority_create_operation, custom_authority_update_operation, custom_authority_delete_operation, ticket_create_operation, ticket_update_operation, liquidity_pool_create_operation, liquidity_pool_delete_operation, liquidity_pool_deposit_operation, liquidity_pool_withdraw_operation, liquidity_pool_exchange_operation, samet_fund_create_operation, samet_fund_delete_operation, samet_fund_update_operation, samet_fund_borrow_operation, samet_fund_repay_operation, credit_offer_create_operation, credit_offer_delete_operation, credit_offer_update_operation, credit_offer_accept_operation, credit_deal_repay_operation, credit_deal_expired_operation, liquidity_pool_update_operation, credit_deal_update_operation, limit_order_update_operation &gt;</definition>
         <argsstring></argsstring>
         <name>operation</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Defines the set of valid operations as a discriminated union type. </para>        </detaileddescription>
+<para>Defines the set of valid operations as a discriminated union type. </para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/operations.hpp" line="55" column="1" bodyfile="libraries/protocol/include/graphene/protocol/operations.hpp" bodystart="131" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/operations.hpp" line="55" column="4" bodyfile="libraries/protocol/include/graphene/protocol/operations.hpp" bodystart="134" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacegraphene_1_1protocol_1ab01bcc65fd718934c7dc300dda464228" prot="public" static="no">
-        <type>std::function&lt; <ref refid="structgraphene_1_1protocol_1_1predicate__result" kindref="compound">predicate_result</ref>(const <ref refid="group__operations_1ga9aa13b4d89e9b8b56d1074b715de6568" kindref="member">operation</ref> &amp;)&gt;</type>
+        <type>std::function&lt; <ref refid="structgraphene_1_1protocol_1_1predicate__result" kindref="compound">predicate_result</ref>(const <ref refid="group__operations_1gad4674c1a800a9c624a13e1243dcbe967" kindref="member">operation</ref> &amp;)&gt;</type>
         <definition>using graphene::protocol::restriction_predicate_function = typedef std::function&lt;predicate_result(const operation&amp;)&gt;</definition>
         <argsstring></argsstring>
         <name>restriction_predicate_function</name>
         <briefdescription>
-<para>A restriction predicate is a function accepting an operation and returning a <ref refid="structgraphene_1_1protocol_1_1predicate__result" kindref="compound">predicate_result</ref>. </para>        </briefdescription>
+<para>A restriction predicate is a function accepting an operation and returning a <ref refid="structgraphene_1_1protocol_1_1predicate__result" kindref="compound">predicate_result</ref>. </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
@@ -893,7 +1019,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/special_authority.hpp" line="41" column="1" bodyfile="libraries/protocol/include/graphene/protocol/special_authority.hpp" bodystart="41" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/special_authority.hpp" line="41" column="2" bodyfile="libraries/protocol/include/graphene/protocol/special_authority.hpp" bodystart="41" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacegraphene_1_1protocol_1a087add7d52a3bc3d90dfe941e7dfd40e" prot="public" static="no">
         <type><ref refid="classfc_1_1static__variant" kindref="compound">static_variant</ref>&lt; <ref refid="structgraphene_1_1protocol_1_1predicate__result" kindref="compound">predicate_result</ref>, <ref refid="classfc_1_1exception" kindref="compound">fc::exception</ref> &gt;</type>
@@ -906,7 +1032,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/transaction.hpp" line="30" column="1" bodyfile="libraries/protocol/include/graphene/protocol/transaction.hpp" bodystart="30" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/transaction.hpp" line="30" column="4" bodyfile="libraries/protocol/include/graphene/protocol/transaction.hpp" bodystart="30" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacegraphene_1_1protocol_1af8005c97798e625be4f50584c35fa824" prot="public" static="no">
         <type>map&lt; custom_authority_id_type, <ref refid="namespacegraphene_1_1protocol_1a087add7d52a3bc3d90dfe941e7dfd40e" kindref="member">rejected_predicate</ref> &gt;</type>
@@ -919,10 +1045,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/transaction.hpp" line="31" column="1" bodyfile="libraries/protocol/include/graphene/protocol/transaction.hpp" bodystart="31" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/transaction.hpp" line="31" column="4" bodyfile="libraries/protocol/include/graphene/protocol/transaction.hpp" bodystart="31" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacegraphene_1_1protocol_1a7af627fb15181383dae4695633a3a7d6" prot="public" static="no">
-        <type>std::function&lt; vector&lt; <ref refid="structgraphene_1_1protocol_1_1authority" kindref="compound">authority</ref> &gt;(account_id_type, const <ref refid="group__operations_1ga9aa13b4d89e9b8b56d1074b715de6568" kindref="member">operation</ref> &amp;, <ref refid="namespacegraphene_1_1protocol_1af8005c97798e625be4f50584c35fa824" kindref="member">rejected_predicate_map</ref> *)&gt;</type>
+        <type>std::function&lt; vector&lt; <ref refid="structgraphene_1_1protocol_1_1authority" kindref="compound">authority</ref> &gt;(account_id_type, const <ref refid="group__operations_1gad4674c1a800a9c624a13e1243dcbe967" kindref="member">operation</ref> &amp;, <ref refid="namespacegraphene_1_1protocol_1af8005c97798e625be4f50584c35fa824" kindref="member">rejected_predicate_map</ref> *)&gt;</type>
         <definition>using graphene::protocol::custom_authority_lookup = typedef std::function&lt;vector&lt;authority&gt;(account_id_type, const operation&amp;, rejected_predicate_map*)&gt;</definition>
         <argsstring></argsstring>
         <name>custom_authority_lookup</name>
@@ -932,7 +1058,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/transaction.hpp" line="32" column="1" bodyfile="libraries/protocol/include/graphene/protocol/transaction.hpp" bodystart="33" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/transaction.hpp" line="32" column="4" bodyfile="libraries/protocol/include/graphene/protocol/transaction.hpp" bodystart="33" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacegraphene_1_1protocol_1a73d07cdf7c96887580ecfab2909ae548" prot="public" static="no">
         <type><ref refid="classfc_1_1ecc_1_1private__key" kindref="compound">fc::ecc::private_key</ref></type>
@@ -1075,7 +1201,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/vesting.hpp" line="54" column="1" bodyfile="libraries/protocol/include/graphene/protocol/vesting.hpp" bodystart="54" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/vesting.hpp" line="54" column="2" bodyfile="libraries/protocol/include/graphene/protocol/vesting.hpp" bodystart="54" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__workers_1gacad8e9996ced0a2fc8e66f65210701d9" prot="public" static="no">
         <type><ref refid="classfc_1_1static__variant" kindref="compound">static_variant</ref>&lt; <ref refid="structgraphene_1_1protocol_1_1refund__worker__initializer" kindref="compound">refund_worker_initializer</ref>, <ref refid="structgraphene_1_1protocol_1_1vesting__balance__worker__initializer" kindref="compound">vesting_balance_worker_initializer</ref>, <ref refid="structgraphene_1_1protocol_1_1burn__worker__initializer" kindref="compound">burn_worker_initializer</ref> &gt;</type>
@@ -1088,18 +1214,18 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/worker.hpp" line="72" column="1" bodyfile="libraries/protocol/include/graphene/protocol/worker.hpp" bodystart="72" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/worker.hpp" line="72" column="2" bodyfile="libraries/protocol/include/graphene/protocol/worker.hpp" bodystart="72" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="var">
-      <memberdef kind="variable" id="namespacegraphene_1_1protocol_1ae2683dc9cb7f263a77bdcad5da823edc" prot="public" static="yes" mutable="no">
+      <memberdef kind="variable" id="namespacegraphene_1_1protocol_1a06a2343f5754211a9c5e71bf2b8da845" prot="public" static="yes" constexpr="yes" mutable="no">
         <templateparamlist>
           <param>
             <type>typename</type>
           </param>
         </templateparamlist>
-        <type>constexpr bool</type>
-        <definition>static constexpr bool graphene::protocol::is_safe&lt; fc::safe&lt; I &gt; &gt;</definition>
+        <type>constexpr static bool</type>
+        <definition>constexpr static bool graphene::protocol::is_safe&lt; fc::safe&lt; I &gt; &gt;</definition>
         <argsstring></argsstring>
         <name>is_safe</name>
         <initializer>= false</initializer>
@@ -1109,16 +1235,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/custom_authorities/restriction_predicate.hxx" line="42" column="1" bodyfile="libraries/protocol/custom_authorities/restriction_predicate.hxx" bodystart="42" bodyend="-1"/>
+        <location file="libraries/protocol/custom_authorities/restriction_predicate.hxx" line="42" column="33" bodyfile="libraries/protocol/custom_authorities/restriction_predicate.hxx" bodystart="42" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespacegraphene_1_1protocol_1afbcad5f82fffb9b6c66e58fb6fd6735d" prot="public" static="yes" mutable="no">
+      <memberdef kind="variable" id="namespacegraphene_1_1protocol_1a34344e6773b172f9af91bcbc7dd0e9fd" prot="public" static="yes" constexpr="yes" mutable="no">
         <templateparamlist>
           <param>
             <type>typename T</type>
           </param>
         </templateparamlist>
-        <type>constexpr bool</type>
-        <definition>constexpr bool graphene::protocol::is_flat_set</definition>
+        <type>constexpr static bool</type>
+        <definition>constexpr static bool graphene::protocol::is_flat_set</definition>
         <argsstring></argsstring>
         <name>is_flat_set</name>
         <initializer>= <ref refid="structgraphene_1_1protocol_1_1is__flat__set__impl" kindref="compound">is_flat_set_impl</ref>&lt;T&gt;::value</initializer>
@@ -1128,16 +1254,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/custom_authorities/restriction_predicate.hxx" line="48" column="1" bodyfile="libraries/protocol/custom_authorities/restriction_predicate.hxx" bodystart="48" bodyend="-1"/>
+        <location file="libraries/protocol/custom_authorities/restriction_predicate.hxx" line="48" column="34" bodyfile="libraries/protocol/custom_authorities/restriction_predicate.hxx" bodystart="48" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespacegraphene_1_1protocol_1a17432cb358c84397417959259682d09b" prot="public" static="yes" mutable="no">
+      <memberdef kind="variable" id="namespacegraphene_1_1protocol_1a9800e7415ad19ecd557c875cf8a94748" prot="public" static="yes" constexpr="yes" mutable="no">
         <templateparamlist>
           <param>
             <type>typename T</type>
           </param>
         </templateparamlist>
-        <type>constexpr bool</type>
-        <definition>constexpr bool graphene::protocol::is_integral</definition>
+        <type>constexpr static bool</type>
+        <definition>constexpr static bool graphene::protocol::is_integral</definition>
         <argsstring></argsstring>
         <name>is_integral</name>
         <initializer>= !std::is_same&lt;T, bool&gt;::value &amp;&amp;
@@ -1149,9 +1275,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/custom_authorities/restriction_predicate.hxx" line="51" column="1" bodyfile="libraries/protocol/custom_authorities/restriction_predicate.hxx" bodystart="51" bodyend="-1"/>
+        <location file="libraries/protocol/custom_authorities/restriction_predicate.hxx" line="51" column="34" bodyfile="libraries/protocol/custom_authorities/restriction_predicate.hxx" bodystart="51" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespacegraphene_1_1protocol_1aacc65186fc4086220f726a536343bc53" prot="public" static="yes" mutable="no">
+      <memberdef kind="variable" id="namespacegraphene_1_1protocol_1a6d44a5871263c9a481cb2c29b5f448df" prot="public" static="yes" constexpr="yes" mutable="no">
         <templateparamlist>
           <param>
             <type>typename T</type>
@@ -1160,8 +1286,8 @@
             <type>typename U</type>
           </param>
         </templateparamlist>
-        <type>constexpr bool</type>
-        <definition>constexpr bool graphene::protocol::comparable_types</definition>
+        <type>constexpr static bool</type>
+        <definition>constexpr static bool graphene::protocol::comparable_types</definition>
         <argsstring></argsstring>
         <name>comparable_types</name>
         <initializer>= !std::is_same&lt;T, <ref refid="structgraphene_1_1protocol_1_1void__t" kindref="compound">void_t</ref>&gt;::value &amp;&amp;
@@ -1172,16 +1298,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/custom_authorities/restriction_predicate.hxx" line="57" column="1" bodyfile="libraries/protocol/custom_authorities/restriction_predicate.hxx" bodystart="57" bodyend="-1"/>
+        <location file="libraries/protocol/custom_authorities/restriction_predicate.hxx" line="57" column="23" bodyfile="libraries/protocol/custom_authorities/restriction_predicate.hxx" bodystart="57" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespacegraphene_1_1protocol_1aae8dbe8fa4d21cc026549277e2f6f956" prot="public" static="yes" mutable="no">
+      <memberdef kind="variable" id="namespacegraphene_1_1protocol_1a02f3bd8a9eaf075a89f1e9e4b6e3d5eb" prot="public" static="yes" constexpr="yes" mutable="no">
         <templateparamlist>
           <param>
             <type>typename T</type>
           </param>
         </templateparamlist>
-        <type>constexpr bool</type>
-        <definition>constexpr bool graphene::protocol::is_container</definition>
+        <type>constexpr static bool</type>
+        <definition>constexpr static bool graphene::protocol::is_container</definition>
         <argsstring></argsstring>
         <name>is_container</name>
         <initializer>= <ref refid="structgraphene_1_1protocol_1_1is__container__impl" kindref="compound">is_container_impl</ref>&lt;T&gt;::value</initializer>
@@ -1191,11 +1317,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/custom_authorities/restriction_predicate.hxx" line="65" column="1" bodyfile="libraries/protocol/custom_authorities/restriction_predicate.hxx" bodystart="65" bodyend="-1"/>
+        <location file="libraries/protocol/custom_authorities/restriction_predicate.hxx" line="65" column="34" bodyfile="libraries/protocol/custom_authorities/restriction_predicate.hxx" bodystart="65" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespacegraphene_1_1protocol_1a0eb5c017bffe464bf93c19274807b85c" prot="public" static="yes" mutable="no">
-        <type>const uint16_t</type>
-        <definition>const uint16_t graphene::protocol::ASSET_ISSUER_PERMISSION_MASK</definition>
+      <memberdef kind="variable" id="namespacegraphene_1_1protocol_1ab476c7179388f9561bd7eaf5a124cb1c" prot="public" static="yes" mutable="no">
+        <type>const static uint16_t</type>
+        <definition>const static uint16_t graphene::protocol::ASSET_ISSUER_PERMISSION_MASK</definition>
         <argsstring></argsstring>
         <name>ASSET_ISSUER_PERMISSION_MASK</name>
         <initializer>=
@@ -1216,16 +1342,17 @@
         | <ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7a549e875509c1f788fd14e8570dad07d1" kindref="member">disable_bsrm_update</ref>
         | <ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7a91387a1c4b272a590ac37cf88b8ba491" kindref="member">disable_collateral_bidding</ref></initializer>
         <briefdescription>
-<para>The bits that can be used in asset issuer permissions for non-UIA assets. </para>        </briefdescription>
+<para>The bits that can be used in asset issuer permissions for non-UIA assets. </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/types.hpp" line="228" column="1" bodyfile="libraries/protocol/include/graphene/protocol/types.hpp" bodystart="228" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/types.hpp" line="228" column="23" bodyfile="libraries/protocol/include/graphene/protocol/types.hpp" bodystart="228" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespacegraphene_1_1protocol_1a8fe7d97154b3052e35192b35b3ea0e29" prot="public" static="yes" mutable="no">
-        <type>const uint16_t</type>
-        <definition>const uint16_t graphene::protocol::ASSET_ISSUER_PERMISSION_ENABLE_BITS_MASK</definition>
+      <memberdef kind="variable" id="namespacegraphene_1_1protocol_1a22bbce6914c468ad14a7aec6a5d3e144" prot="public" static="yes" mutable="no">
+        <type>const static uint16_t</type>
+        <definition>const static uint16_t graphene::protocol::ASSET_ISSUER_PERMISSION_ENABLE_BITS_MASK</definition>
         <argsstring></argsstring>
         <name>ASSET_ISSUER_PERMISSION_ENABLE_BITS_MASK</name>
         <initializer>=
@@ -1239,16 +1366,17 @@
         | <ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7a4ec6c6bd50bc48052bd7783d8b08d70a" kindref="member">witness_fed_asset</ref>
         | <ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7ad19c5dd00f90497696a850af9c8bd26c" kindref="member">committee_fed_asset</ref></initializer>
         <briefdescription>
-<para>The &quot;enable&quot; bits for non-UIA assets. </para>        </briefdescription>
+<para>The &quot;enable&quot; bits for non-UIA assets. </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/types.hpp" line="246" column="1" bodyfile="libraries/protocol/include/graphene/protocol/types.hpp" bodystart="246" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/types.hpp" line="246" column="23" bodyfile="libraries/protocol/include/graphene/protocol/types.hpp" bodystart="246" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespacegraphene_1_1protocol_1a433aa86a54646b67173e7ec0a4f915c9" prot="public" static="yes" mutable="no">
-        <type>const uint16_t</type>
-        <definition>const uint16_t graphene::protocol::ASSET_ISSUER_PERMISSION_DISABLE_BITS_MASK</definition>
+      <memberdef kind="variable" id="namespacegraphene_1_1protocol_1a49af8f67ed08e5543c8b7d75863ea6c7" prot="public" static="yes" mutable="no">
+        <type>const static uint16_t</type>
+        <definition>const static uint16_t graphene::protocol::ASSET_ISSUER_PERMISSION_DISABLE_BITS_MASK</definition>
         <argsstring></argsstring>
         <name>ASSET_ISSUER_PERMISSION_DISABLE_BITS_MASK</name>
         <initializer>=
@@ -1260,16 +1388,17 @@
         | <ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7a549e875509c1f788fd14e8570dad07d1" kindref="member">disable_bsrm_update</ref>
         | <ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7a91387a1c4b272a590ac37cf88b8ba491" kindref="member">disable_collateral_bidding</ref></initializer>
         <briefdescription>
-<para>The &quot;disable&quot; bits for non-UIA assets. </para>        </briefdescription>
+<para>The &quot;disable&quot; bits for non-UIA assets. </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/types.hpp" line="257" column="1" bodyfile="libraries/protocol/include/graphene/protocol/types.hpp" bodystart="257" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/types.hpp" line="257" column="23" bodyfile="libraries/protocol/include/graphene/protocol/types.hpp" bodystart="257" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespacegraphene_1_1protocol_1a8244e9677c0d3a39e1475127840a2ab3" prot="public" static="yes" mutable="no">
-        <type>const uint16_t</type>
-        <definition>const uint16_t graphene::protocol::UIA_ASSET_ISSUER_PERMISSION_MASK</definition>
+      <memberdef kind="variable" id="namespacegraphene_1_1protocol_1adf23d9554f0f99f072455747bfa6fe9e" prot="public" static="yes" mutable="no">
+        <type>const static uint16_t</type>
+        <definition>const static uint16_t graphene::protocol::UIA_ASSET_ISSUER_PERMISSION_MASK</definition>
         <argsstring></argsstring>
         <name>UIA_ASSET_ISSUER_PERMISSION_MASK</name>
         <initializer>=
@@ -1281,16 +1410,17 @@
         | <ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7aecdf0e2eaaf02379a4e59b3a480ee79a" kindref="member">lock_max_supply</ref>
         | <ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7a143eda9f4527f81fdef4c1cfe22965de" kindref="member">disable_new_supply</ref></initializer>
         <briefdescription>
-<para>The bits that can be used in asset issuer permissions for UIA assets. </para>        </briefdescription>
+<para>The bits that can be used in asset issuer permissions for UIA assets. </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/types.hpp" line="266" column="1" bodyfile="libraries/protocol/include/graphene/protocol/types.hpp" bodystart="266" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/types.hpp" line="266" column="23" bodyfile="libraries/protocol/include/graphene/protocol/types.hpp" bodystart="266" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespacegraphene_1_1protocol_1ab7b7bc20530a11d4f3b234ff5467e006" prot="public" static="yes" mutable="no">
-        <type>const uint16_t</type>
-        <definition>const uint16_t graphene::protocol::DEFAULT_UIA_ASSET_ISSUER_PERMISSION</definition>
+      <memberdef kind="variable" id="namespacegraphene_1_1protocol_1ab16d7c39b55afabfbba6a50bdc756cfc" prot="public" static="yes" mutable="no">
+        <type>const static uint16_t</type>
+        <definition>const static uint16_t graphene::protocol::DEFAULT_UIA_ASSET_ISSUER_PERMISSION</definition>
         <argsstring></argsstring>
         <name>DEFAULT_UIA_ASSET_ISSUER_PERMISSION</name>
         <initializer>=
@@ -1300,31 +1430,33 @@
         | <ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7aaec73585631ebefcce567035b27c252c" kindref="member">transfer_restricted</ref>
         | <ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7a5a96fe025ec33ffe4b103458846d08b3" kindref="member">disable_confidential</ref></initializer>
         <briefdescription>
-<para>The bits that can be used in asset issuer permissions for UIA assets before hf48/75. </para>        </briefdescription>
+<para>The bits that can be used in asset issuer permissions for UIA assets before hf48/75. </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/types.hpp" line="275" column="1" bodyfile="libraries/protocol/include/graphene/protocol/types.hpp" bodystart="275" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/types.hpp" line="275" column="23" bodyfile="libraries/protocol/include/graphene/protocol/types.hpp" bodystart="275" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespacegraphene_1_1protocol_1a907e9d027ce0372a809c22e097959ffe" prot="public" static="yes" mutable="no">
-        <type>const uint16_t</type>
-        <definition>const uint16_t graphene::protocol::NON_UIA_ONLY_ISSUER_PERMISSION_MASK</definition>
+      <memberdef kind="variable" id="namespacegraphene_1_1protocol_1a2f94725a7f8a88fafde1dbc5f589c67b" prot="public" static="yes" mutable="no">
+        <type>const static uint16_t</type>
+        <definition>const static uint16_t graphene::protocol::NON_UIA_ONLY_ISSUER_PERMISSION_MASK</definition>
         <argsstring></argsstring>
         <name>NON_UIA_ONLY_ISSUER_PERMISSION_MASK</name>
         <initializer>=
         ASSET_ISSUER_PERMISSION_MASK ^ UIA_ASSET_ISSUER_PERMISSION_MASK</initializer>
         <briefdescription>
-<para>The bits that can be used in asset issuer permissions for non-UIA assets but not for UIA assets. </para>        </briefdescription>
+<para>The bits that can be used in asset issuer permissions for non-UIA assets but not for UIA assets. </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/types.hpp" line="282" column="1" bodyfile="libraries/protocol/include/graphene/protocol/types.hpp" bodystart="282" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/types.hpp" line="282" column="23" bodyfile="libraries/protocol/include/graphene/protocol/types.hpp" bodystart="282" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespacegraphene_1_1protocol_1a267fff9cc345aef4491acfc545e3b0d6" prot="public" static="yes" mutable="no">
-        <type>const uint16_t</type>
-        <definition>const uint16_t graphene::protocol::PERMISSION_ONLY_MASK</definition>
+      <memberdef kind="variable" id="namespacegraphene_1_1protocol_1a9a69b47ffcf17d21bbe58e9817079876" prot="public" static="yes" mutable="no">
+        <type>const static uint16_t</type>
+        <definition>const static uint16_t graphene::protocol::PERMISSION_ONLY_MASK</definition>
         <argsstring></argsstring>
         <name>PERMISSION_ONLY_MASK</name>
         <initializer>=
@@ -1334,40 +1466,43 @@
         | <ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7a6d6c06210cdf7cb26dba5263e1d18d23" kindref="member">disable_mssr_update</ref>
         | <ref refid="namespacegraphene_1_1protocol_1a31f22f43ceabd14325d69281eda006d7a549e875509c1f788fd14e8570dad07d1" kindref="member">disable_bsrm_update</ref></initializer>
         <briefdescription>
-<para>The bits that can be used in asset issuer permissions but can not be used in flags. </para>        </briefdescription>
+<para>The bits that can be used in asset issuer permissions but can not be used in flags. </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/types.hpp" line="285" column="1" bodyfile="libraries/protocol/include/graphene/protocol/types.hpp" bodystart="285" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/types.hpp" line="285" column="23" bodyfile="libraries/protocol/include/graphene/protocol/types.hpp" bodystart="285" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespacegraphene_1_1protocol_1aecde169c42ed43656fd92c51e2abe857" prot="public" static="yes" mutable="no">
-        <type>const uint16_t</type>
-        <definition>const uint16_t graphene::protocol::VALID_FLAGS_MASK</definition>
+      <memberdef kind="variable" id="namespacegraphene_1_1protocol_1a3bd733a582005ad96367e3b6c3dbd1e9" prot="public" static="yes" mutable="no">
+        <type>const static uint16_t</type>
+        <definition>const static uint16_t graphene::protocol::VALID_FLAGS_MASK</definition>
         <argsstring></argsstring>
         <name>VALID_FLAGS_MASK</name>
         <initializer>= ASSET_ISSUER_PERMISSION_MASK &amp; (uint16_t)(~PERMISSION_ONLY_MASK)</initializer>
         <briefdescription>
-<para>The bits that can be used in flags for non-UIA assets. </para>        </briefdescription>
+<para>The bits that can be used in flags for non-UIA assets. </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/types.hpp" line="292" column="1" bodyfile="libraries/protocol/include/graphene/protocol/types.hpp" bodystart="292" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/types.hpp" line="292" column="23" bodyfile="libraries/protocol/include/graphene/protocol/types.hpp" bodystart="292" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespacegraphene_1_1protocol_1aa321252c49a5375abe25b61f62f038d5" prot="public" static="yes" mutable="no">
-        <type>const uint16_t</type>
-        <definition>const uint16_t graphene::protocol::UIA_VALID_FLAGS_MASK</definition>
+      <memberdef kind="variable" id="namespacegraphene_1_1protocol_1a78629bcffdbe863fcf845af620e026e0" prot="public" static="yes" mutable="no">
+        <type>const static uint16_t</type>
+        <definition>const static uint16_t graphene::protocol::UIA_VALID_FLAGS_MASK</definition>
         <argsstring></argsstring>
         <name>UIA_VALID_FLAGS_MASK</name>
         <initializer>= UIA_ASSET_ISSUER_PERMISSION_MASK</initializer>
         <briefdescription>
-<para>the bits that can be used in flags for UIA assets </para>        </briefdescription>
+<para>the bits that can be used in flags for UIA assets </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/types.hpp" line="294" column="1" bodyfile="libraries/protocol/include/graphene/protocol/types.hpp" bodystart="294" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/types.hpp" line="294" column="23" bodyfile="libraries/protocol/include/graphene/protocol/types.hpp" bodystart="294" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacegraphene_1_1protocol_1a59cd8474d34d9ea95bc8630340de313e" prot="public" static="no" mutable="no">
         <type></type>
@@ -1380,7 +1515,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/small_ops.cpp" line="40" column="1" bodyfile="libraries/protocol/small_ops.cpp" bodystart="40" bodyend="-1"/>
+        <location file="libraries/protocol/small_ops.cpp" line="40" column="7" bodyfile="libraries/protocol/small_ops.cpp" bodystart="40" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacegraphene_1_1protocol_1a03369f3ca9f5b7877e32928d1bace3c5" prot="public" static="no" mutable="no">
         <type>const flat_set&lt; <ref refid="structgraphene_1_1protocol_1_1public__key__type" kindref="compound">public_key_type</ref> &gt;</type>
@@ -1393,7 +1528,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/transaction.cpp" line="115" column="1" bodyfile="libraries/protocol/transaction.cpp" bodystart="115" bodyend="-1"/>
+        <location file="libraries/protocol/transaction.cpp" line="115" column="16" bodyfile="libraries/protocol/transaction.cpp" bodystart="115" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -1415,19 +1550,32 @@
 <codeline><highlight class="normal">&lt;ldh-str&gt;<sp/>::=<sp/>&lt;let-dig-hyp&gt;<sp/>|<sp/>&lt;let-dig-hyp&gt;<sp/>&lt;ldh-str&gt;</highlight></codeline>
 <codeline><highlight class="normal">&lt;let-dig-hyp&gt;<sp/>::=<sp/>&lt;let-dig&gt;<sp/>|<sp/>&quot;-&quot;</highlight></codeline>
 <codeline><highlight class="normal">&lt;let-dig&gt;<sp/>::=<sp/>&lt;letter&gt;<sp/>|<sp/>&lt;digit&gt;</highlight></codeline>
-</programlisting></para><para>Which is equivalent to the following:</para><para><programlisting><codeline><highlight class="normal">&lt;domain&gt;<sp/>::=<sp/>&lt;subdomain&gt;<sp/>|<sp/>&quot;<sp/>&quot;</highlight></codeline>
+</programlisting></para>
+<para>Which is equivalent to the following:</para>
+<para><programlisting><codeline><highlight class="normal">&lt;domain&gt;<sp/>::=<sp/>&lt;subdomain&gt;<sp/>|<sp/>&quot;<sp/>&quot;</highlight></codeline>
 <codeline><highlight class="normal">&lt;subdomain&gt;<sp/>::=<sp/>&lt;label&gt;<sp/>(&quot;.&quot;<sp/>&lt;label&gt;)*</highlight></codeline>
 <codeline><highlight class="normal">&lt;label&gt;<sp/>::=<sp/>&lt;letter&gt;<sp/>[<sp/>[<sp/>&lt;let-dig-hyp&gt;+<sp/>]<sp/>&lt;let-dig&gt;<sp/>]</highlight></codeline>
 <codeline><highlight class="normal">&lt;let-dig-hyp&gt;<sp/>::=<sp/>&lt;let-dig&gt;<sp/>|<sp/>&quot;-&quot;</highlight></codeline>
 <codeline><highlight class="normal">&lt;let-dig&gt;<sp/>::=<sp/>&lt;letter&gt;<sp/>|<sp/>&lt;digit&gt;</highlight></codeline>
-</programlisting></para><para>I.e. a valid name consists of a dot-separated sequence of one or more labels consisting of the following rules:</para><para><itemizedlist>
-<listitem><para>Each label is three characters or more</para></listitem><listitem><para>Each label begins with a letter</para></listitem><listitem><para>Each label ends with a letter or digit</para></listitem><listitem><para>Each label contains only letters, digits or hyphens</para></listitem></itemizedlist>
-</para><para>In addition we require the following:</para><para><itemizedlist>
-<listitem><para>All letters are lowercase</para></listitem><listitem><para>Length is between (inclusive) GRAPHENE_MIN_ACCOUNT_NAME_LENGTH and GRAPHENE_MAX_ACCOUNT_NAME_LENGTH </para></listitem></itemizedlist>
-</para>        </detaileddescription>
+</programlisting></para>
+<para>I.e. a valid name consists of a dot-separated sequence of one or more labels consisting of the following rules:</para>
+<para><itemizedlist>
+<listitem><para>Each label is three characters or more</para>
+</listitem><listitem><para>Each label begins with a letter</para>
+</listitem><listitem><para>Each label ends with a letter or digit</para>
+</listitem><listitem><para>Each label contains only letters, digits or hyphens</para>
+</listitem></itemizedlist>
+</para>
+<para>In addition we require the following:</para>
+<para><itemizedlist>
+<listitem><para>All letters are lowercase</para>
+</listitem><listitem><para>Length is between (inclusive) GRAPHENE_MIN_ACCOUNT_NAME_LENGTH and GRAPHENE_MAX_ACCOUNT_NAME_LENGTH </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/account.cpp" line="64" column="1" bodyfile="libraries/protocol/account.cpp" bodystart="64" bodyend="131"/>
+        <location file="libraries/protocol/account.cpp" line="64" column="6" bodyfile="libraries/protocol/account.cpp" bodystart="64" bodyend="131" declfile="libraries/protocol/include/graphene/protocol/account.hpp" declline="35" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1aa14f880973444987a8fa480cfc9f3f78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -1444,7 +1592,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/account.cpp" line="133" column="1" bodyfile="libraries/protocol/account.cpp" bodystart="133" bodyend="154"/>
+        <location file="libraries/protocol/account.cpp" line="133" column="6" bodyfile="libraries/protocol/account.cpp" bodystart="133" bodyend="154" declfile="libraries/protocol/include/graphene/protocol/account.hpp" declline="36" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1a2babeb53917c92361abcf1e41a410506" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -1465,7 +1613,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/asset.cpp" line="34" column="1" bodyfile="libraries/protocol/asset.cpp" bodystart="34" bodyend="43"/>
+        <location file="libraries/protocol/asset.cpp" line="34" column="12" bodyfile="libraries/protocol/asset.cpp" bodystart="34" bodyend="43" declfile="libraries/protocol/include/graphene/protocol/asset.hpp" declline="139" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1a6887697dfd803d25a5ede42ee5582e1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -1486,7 +1634,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/asset.cpp" line="45" column="1" bodyfile="libraries/protocol/asset.cpp" bodystart="45" bodyend="56"/>
+        <location file="libraries/protocol/asset.cpp" line="45" column="7" bodyfile="libraries/protocol/asset.cpp" bodystart="45" bodyend="56" declfile="libraries/protocol/include/graphene/protocol/asset.hpp" declline="138" declcolumn="4"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1ad729df32a31402a8a97954c081809816" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structgraphene_1_1protocol_1_1asset" kindref="compound">asset</ref></type>
@@ -1502,12 +1650,13 @@
           <declname>b</declname>
         </param>
         <briefdescription>
-<para>Multiply and round down. </para>        </briefdescription>
+<para>Multiply and round down. </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/asset.cpp" line="58" column="1" bodyfile="libraries/protocol/asset.cpp" bodystart="58" bodyend="75"/>
+        <location file="libraries/protocol/asset.cpp" line="58" column="13" bodyfile="libraries/protocol/asset.cpp" bodystart="58" bodyend="75" declfile="libraries/protocol/include/graphene/protocol/asset.hpp" declline="146" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1ab0740fdafe73c553696363b97480785d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structgraphene_1_1protocol_1_1price" kindref="compound">price</ref></type>
@@ -1528,7 +1677,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/asset.cpp" line="100" column="1" bodyfile="libraries/protocol/asset.cpp" bodystart="100" bodyend="104"/>
+        <location file="libraries/protocol/asset.cpp" line="100" column="13" bodyfile="libraries/protocol/asset.cpp" bodystart="100" bodyend="104" declfile="libraries/protocol/include/graphene/protocol/asset.hpp" declline="135" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1a0b645b95359baf95da9978f570eedc5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structgraphene_1_1protocol_1_1price" kindref="compound">price</ref></type>
@@ -1549,7 +1698,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/asset.cpp" line="112" column="1" bodyfile="libraries/protocol/asset.cpp" bodystart="112" bodyend="191"/>
+        <location file="libraries/protocol/asset.cpp" line="112" column="13" bodyfile="libraries/protocol/asset.cpp" bodystart="112" bodyend="191" declfile="libraries/protocol/include/graphene/protocol/asset.hpp" declline="148" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1ad637106d775104ae7753d3cda321076f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structgraphene_1_1protocol_1_1price" kindref="compound">price</ref></type>
@@ -1570,7 +1719,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/asset.cpp" line="193" column="1" bodyfile="libraries/protocol/asset.cpp" bodystart="193" bodyend="196"/>
+        <location file="libraries/protocol/asset.cpp" line="193" column="13" bodyfile="libraries/protocol/asset.cpp" bodystart="193" bodyend="196" declfile="libraries/protocol/include/graphene/protocol/asset.hpp" declline="149" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1a30b50b9c985f8029039fd640b476e582" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -1584,10 +1733,11 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Valid symbols can contain [A-Z0-9], and &apos;.&apos; They must start with [A, Z] They must end with [A, Z] before HF_620 or [A-Z0-9] after it They can contain a maximum of one &apos;.&apos; </para>        </detaileddescription>
+<para>Valid symbols can contain [A-Z0-9], and &apos;.&apos; They must start with [A, Z] They must end with [A, Z] before HF_620 or [A-Z0-9] after it They can contain a maximum of one &apos;.&apos; </para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/asset_ops.cpp" line="38" column="1" bodyfile="libraries/protocol/asset_ops.cpp" bodystart="38" bodyend="75"/>
+        <location file="libraries/protocol/asset_ops.cpp" line="38" column="6" bodyfile="libraries/protocol/asset_ops.cpp" bodystart="38" bodyend="75" declfile="libraries/protocol/include/graphene/protocol/asset_ops.hpp" declline="40" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1a0e80310f8374ca441b6b1dfd28e9401d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1605,10 +1755,11 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Add all account members of the given authority to the given flat_set. </para>        </detaileddescription>
+<para>Add all account members of the given authority to the given flat_set. </para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/authority.cpp" line="31" column="1" bodyfile="libraries/protocol/authority.cpp" bodystart="31" bodyend="38"/>
+        <location file="libraries/protocol/authority.cpp" line="31" column="6" bodyfile="libraries/protocol/authority.cpp" bodystart="31" bodyend="38" declfile="libraries/protocol/include/graphene/protocol/authority.hpp" declline="129" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1a2edda670d782a42d1505bce57e262c1f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1630,7 +1781,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/credit_offer.cpp" line="30" column="1" bodyfile="libraries/protocol/credit_offer.cpp" bodystart="30" bodyend="48"/>
+        <location file="libraries/protocol/credit_offer.cpp" line="30" column="13" bodyfile="libraries/protocol/credit_offer.cpp" bodystart="30" bodyend="48"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1a4eddb1d4806ef43e41e193feb85ebad6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1647,7 +1798,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/credit_offer.cpp" line="50" column="1" bodyfile="libraries/protocol/credit_offer.cpp" bodystart="50" bodyend="61"/>
+        <location file="libraries/protocol/credit_offer.cpp" line="50" column="13" bodyfile="libraries/protocol/credit_offer.cpp" bodystart="50" bodyend="61"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1a0b61b1de4094d36075aded3531ddfffa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>template <ref refid="namespacegraphene_1_1protocol_1a7253c01693b853bacbc927c3430c9c5f" kindref="member">object_restriction_predicate</ref>&lt; <ref refid="namespacegraphene_1_1protocol_1a69b2104c1c11eed2d17bd29b86713347" kindref="member">share_type</ref> &gt;</type>
@@ -1668,7 +1819,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/custom_authorities/create_predicate_fwd_1.cpp" line="43" column="1" bodyfile="libraries/protocol/custom_authorities/restriction_predicate.hxx" bodystart="469" bodyend="511"/>
+        <location file="libraries/protocol/custom_authorities/restriction_predicate.hxx" line="469" column="30" bodyfile="libraries/protocol/custom_authorities/restriction_predicate.hxx" bodystart="469" bodyend="511" declfile="libraries/protocol/custom_authorities/create_predicate_fwd_1.cpp" declline="43" declcolumn="30"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1ad11815bc29d3d028fab9aec4dd084423" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="namespacegraphene_1_1protocol_1a3c1d4080710cedea70727ba0b347e8d8" kindref="member">result_type</ref></type>
@@ -1689,7 +1840,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/custom_authorities/list_1.cpp" line="31" column="1" bodyfile="libraries/protocol/custom_authorities/list_1.cpp" bodystart="31" bodyend="41"/>
+        <location file="libraries/protocol/custom_authorities/list_1.cpp" line="31" column="13" bodyfile="libraries/protocol/custom_authorities/list_1.cpp" bodystart="31" bodyend="41" declfile="libraries/protocol/custom_authorities/sliced_lists.hxx" declline="116" declcolumn="30"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1ac15228ea27a5e95a1120003429597de9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="namespacegraphene_1_1protocol_1a3c1d4080710cedea70727ba0b347e8d8" kindref="member">result_type</ref></type>
@@ -1710,7 +1861,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/custom_authorities/list_10.cpp" line="31" column="1" bodyfile="libraries/protocol/custom_authorities/list_10.cpp" bodystart="31" bodyend="41"/>
+        <location file="libraries/protocol/custom_authorities/list_10.cpp" line="31" column="13" bodyfile="libraries/protocol/custom_authorities/list_10.cpp" bodystart="31" bodyend="41" declfile="libraries/protocol/custom_authorities/sliced_lists.hxx" declline="122" declcolumn="30"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1ad402dab3dd4732938f6f1ef91c9b9e55" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="namespacegraphene_1_1protocol_1a3c1d4080710cedea70727ba0b347e8d8" kindref="member">result_type</ref></type>
@@ -1731,7 +1882,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/custom_authorities/list_11.cpp" line="31" column="1" bodyfile="libraries/protocol/custom_authorities/list_11.cpp" bodystart="31" bodyend="41"/>
+        <location file="libraries/protocol/custom_authorities/list_11.cpp" line="31" column="13" bodyfile="libraries/protocol/custom_authorities/list_11.cpp" bodystart="31" bodyend="41" declfile="libraries/protocol/custom_authorities/sliced_lists.hxx" declline="123" declcolumn="30"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1a597c53374d94d06f723542f109bcad83" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="namespacegraphene_1_1protocol_1a3c1d4080710cedea70727ba0b347e8d8" kindref="member">result_type</ref></type>
@@ -1752,7 +1903,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/custom_authorities/list_2.cpp" line="32" column="1" bodyfile="libraries/protocol/custom_authorities/list_2.cpp" bodystart="32" bodyend="42"/>
+        <location file="libraries/protocol/custom_authorities/list_2.cpp" line="32" column="13" bodyfile="libraries/protocol/custom_authorities/list_2.cpp" bodystart="32" bodyend="42" declfile="libraries/protocol/custom_authorities/sliced_lists.hxx" declline="117" declcolumn="30"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1a95268a54ca5b20ab57d9e4df6ef5739b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="namespacegraphene_1_1protocol_1a3c1d4080710cedea70727ba0b347e8d8" kindref="member">result_type</ref></type>
@@ -1773,7 +1924,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/custom_authorities/list_3.cpp" line="32" column="1" bodyfile="libraries/protocol/custom_authorities/list_3.cpp" bodystart="32" bodyend="42"/>
+        <location file="libraries/protocol/custom_authorities/list_3.cpp" line="32" column="13" bodyfile="libraries/protocol/custom_authorities/list_3.cpp" bodystart="32" bodyend="42" declfile="libraries/protocol/custom_authorities/sliced_lists.hxx" declline="118" declcolumn="30"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1a193efd75c1018cec7f4347f6b94d6f46" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="namespacegraphene_1_1protocol_1a3c1d4080710cedea70727ba0b347e8d8" kindref="member">result_type</ref></type>
@@ -1794,7 +1945,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/custom_authorities/list_5.cpp" line="32" column="1" bodyfile="libraries/protocol/custom_authorities/list_5.cpp" bodystart="32" bodyend="42"/>
+        <location file="libraries/protocol/custom_authorities/list_5.cpp" line="32" column="13" bodyfile="libraries/protocol/custom_authorities/list_5.cpp" bodystart="32" bodyend="42" declfile="libraries/protocol/custom_authorities/sliced_lists.hxx" declline="119" declcolumn="30"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1a5900672c4d8af6d5a922ac985cf6180e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="namespacegraphene_1_1protocol_1a3c1d4080710cedea70727ba0b347e8d8" kindref="member">result_type</ref></type>
@@ -1815,7 +1966,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/custom_authorities/list_6.cpp" line="32" column="1" bodyfile="libraries/protocol/custom_authorities/list_6.cpp" bodystart="32" bodyend="42"/>
+        <location file="libraries/protocol/custom_authorities/list_6.cpp" line="32" column="13" bodyfile="libraries/protocol/custom_authorities/list_6.cpp" bodystart="32" bodyend="42" declfile="libraries/protocol/custom_authorities/sliced_lists.hxx" declline="120" declcolumn="30"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1af3c4befa4175b29970a81e6d2df7c7a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="namespacegraphene_1_1protocol_1a3c1d4080710cedea70727ba0b347e8d8" kindref="member">result_type</ref></type>
@@ -1836,7 +1987,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/custom_authorities/list_9.cpp" line="32" column="1" bodyfile="libraries/protocol/custom_authorities/list_9.cpp" bodystart="32" bodyend="42"/>
+        <location file="libraries/protocol/custom_authorities/list_9.cpp" line="32" column="13" bodyfile="libraries/protocol/custom_authorities/list_9.cpp" bodystart="32" bodyend="42" declfile="libraries/protocol/custom_authorities/sliced_lists.hxx" declline="121" declcolumn="30"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1a747da9ad2c8e44a5369658cabdb72fed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="namespacegraphene_1_1protocol_1ab01bcc65fd718934c7dc300dda464228" kindref="member">restriction_predicate_function</ref></type>
@@ -1852,28 +2003,33 @@
           <declname>op_type</declname>
         </param>
         <briefdescription>
-<para>get_restriction_predicate Get a predicate function for the supplied restriction </para>        </briefdescription>
+<para>get_restriction_predicate Get a predicate function for the supplied restriction </para>
+        </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>rs</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The restrictions to evaluate operations against </para></parameterdescription>
+<para>The restrictions to evaluate operations against </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>op_type</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The tag specifying which operation type the restrictions apply to </para></parameterdescription>
+<para>The tag specifying which operation type the restrictions apply to </para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A predicate function which evaluates an operation to determine whether it complies with the restriction </para></simplesect>
-</para>        </detaileddescription>
+<simplesect kind="return"><para>A predicate function which evaluates an operation to determine whether it complies with the restriction </para>
+</simplesect>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/custom_authorities/restriction_predicate.cpp" line="32" column="1" bodyfile="libraries/protocol/custom_authorities/restriction_predicate.cpp" bodystart="32" bodyend="70"/>
+        <location file="libraries/protocol/custom_authorities/restriction_predicate.cpp" line="32" column="32" bodyfile="libraries/protocol/custom_authorities/restriction_predicate.cpp" bodystart="32" bodyend="70" declfile="libraries/protocol/include/graphene/protocol/restriction_predicate.hpp" declline="70" declcolumn="32"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1a895a8fdeb15525b40447501a441fec4b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1899,7 +2055,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/custom_authorities/restriction_predicate.hxx" line="73" column="1" bodyfile="libraries/protocol/custom_authorities/restriction_predicate.hxx" bodystart="73" bodyend="73"/>
+        <location file="libraries/protocol/custom_authorities/restriction_predicate.hxx" line="73" column="12" bodyfile="libraries/protocol/custom_authorities/restriction_predicate.hxx" bodystart="73" bodyend="73"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1a52970e15d26e4955a34a24d82f6370df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1921,7 +2077,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/custom_authorities/restriction_predicate.hxx" line="75" column="1" bodyfile="libraries/protocol/custom_authorities/restriction_predicate.hxx" bodystart="75" bodyend="75"/>
+        <location file="libraries/protocol/custom_authorities/restriction_predicate.hxx" line="75" column="12" bodyfile="libraries/protocol/custom_authorities/restriction_predicate.hxx" bodystart="75" bodyend="75"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1aafa8483afa9b8b60a39c791b654e057e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>auto</type>
@@ -1938,7 +2094,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/custom_authorities/restriction_predicate.hxx" line="76" column="1" bodyfile="libraries/protocol/custom_authorities/restriction_predicate.hxx" bodystart="76" bodyend="76"/>
+        <location file="libraries/protocol/custom_authorities/restriction_predicate.hxx" line="76" column="13" bodyfile="libraries/protocol/custom_authorities/restriction_predicate.hxx" bodystart="76" bodyend="76"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1a843163fb60c8fcaa50a7dd59d414b3c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1964,7 +2120,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/custom_authorities/restriction_predicate.hxx" line="375" column="1" bodyfile="libraries/protocol/custom_authorities/restriction_predicate.hxx" bodystart="568" bodyend="593"/>
+        <location file="libraries/protocol/custom_authorities/restriction_predicate.hxx" line="568" column="30" bodyfile="libraries/protocol/custom_authorities/restriction_predicate.hxx" bodystart="568" bodyend="593" declfile="libraries/protocol/custom_authorities/restriction_predicate.hxx" declline="375" declcolumn="41"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1a556c327b716f4ced58b3413510ccdd35" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -2003,7 +2159,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/custom_authorities/restriction_predicate.hxx" line="447" column="1" bodyfile="libraries/protocol/custom_authorities/restriction_predicate.hxx" bodystart="447" bodyend="452"/>
+        <location file="libraries/protocol/custom_authorities/restriction_predicate.hxx" line="447" column="30" bodyfile="libraries/protocol/custom_authorities/restriction_predicate.hxx" bodystart="447" bodyend="452"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1a6bc18453c54f77772de113b2e9cce7d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -2036,7 +2192,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/custom_authorities/restriction_predicate.hxx" line="454" column="1" bodyfile="libraries/protocol/custom_authorities/restriction_predicate.hxx" bodystart="454" bodyend="456"/>
+        <location file="libraries/protocol/custom_authorities/restriction_predicate.hxx" line="454" column="30" bodyfile="libraries/protocol/custom_authorities/restriction_predicate.hxx" bodystart="454" bodyend="456"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1ad525e080498378247f773ba4178a89ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -2066,7 +2222,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/custom_authorities/restriction_predicate.hxx" line="460" column="1" bodyfile="libraries/protocol/custom_authorities/restriction_predicate.hxx" bodystart="460" bodyend="466"/>
+        <location file="libraries/protocol/custom_authorities/restriction_predicate.hxx" line="460" column="30" bodyfile="libraries/protocol/custom_authorities/restriction_predicate.hxx" bodystart="460" bodyend="466"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1a89d0ce69c5bca9e610e9f16ea56e963c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -2090,20 +2246,23 @@
           <type>short</type>
         </param>
         <briefdescription>
-<para>Create a predicate asserting on the field of the object a restriction is referencing. </para>        </briefdescription>
+<para>Create a predicate asserting on the field of the object a restriction is referencing. </para>
+        </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Object</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The type the restriction restricts</para></parameterdescription>
+<para>The type the restriction restricts</para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-A restriction specifies requirements about a field of an object. This struct shifts the focus from the object type the restriction references to the particular field type, creates a predicate on that field, and wraps that predicate to accept the object type and invoke the inner predicate on the specified field. </para>        </detaileddescription>
+A restriction specifies requirements about a field of an object. This struct shifts the focus from the object type the restriction references to the particular field type, creates a predicate on that field, and wraps that predicate to accept the object type and invoke the inner predicate on the specified field. </para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/custom_authorities/restriction_predicate.hxx" line="526" column="1" bodyfile="libraries/protocol/custom_authorities/restriction_predicate.hxx" bodystart="526" bodyend="538"/>
+        <location file="libraries/protocol/custom_authorities/restriction_predicate.hxx" line="526" column="30" bodyfile="libraries/protocol/custom_authorities/restriction_predicate.hxx" bodystart="526" bodyend="538"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1afd0018b233e65e0d22aac3cac393b509" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -2127,7 +2286,7 @@ A restriction specifies requirements about a field of an object. This struct shi
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/custom_authorities/restriction_predicate.hxx" line="540" column="1" bodyfile="libraries/protocol/custom_authorities/restriction_predicate.hxx" bodystart="540" bodyend="543"/>
+        <location file="libraries/protocol/custom_authorities/restriction_predicate.hxx" line="540" column="30" bodyfile="libraries/protocol/custom_authorities/restriction_predicate.hxx" bodystart="540" bodyend="543"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1a0de7ef4d52b3b573925e37f734087bc3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -2149,7 +2308,7 @@ A restriction specifies requirements about a field of an object. This struct shi
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/custom_authorities/restriction_predicate.hxx" line="546" column="1" bodyfile="libraries/protocol/custom_authorities/restriction_predicate.hxx" bodystart="546" bodyend="565"/>
+        <location file="libraries/protocol/custom_authorities/restriction_predicate.hxx" line="546" column="30" bodyfile="libraries/protocol/custom_authorities/restriction_predicate.hxx" bodystart="546" bodyend="565"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1a5129f8fcdb820acd03067f782b1e7f6f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -2170,7 +2329,7 @@ A restriction specifies requirements about a field of an object. This struct shi
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/address.hpp" line="60" column="1" bodyfile="libraries/protocol/include/graphene/protocol/address.hpp" bodystart="60" bodyend="60"/>
+        <location file="libraries/protocol/include/graphene/protocol/address.hpp" line="60" column="16" bodyfile="libraries/protocol/include/graphene/protocol/address.hpp" bodystart="60" bodyend="60"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1ae0ea32cd151c5f57a2b47f4527e9e5d5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -2191,7 +2350,7 @@ A restriction specifies requirements about a field of an object. This struct shi
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/address.hpp" line="61" column="1" bodyfile="libraries/protocol/include/graphene/protocol/address.hpp" bodystart="61" bodyend="61"/>
+        <location file="libraries/protocol/include/graphene/protocol/address.hpp" line="61" column="16" bodyfile="libraries/protocol/include/graphene/protocol/address.hpp" bodystart="61" bodyend="61"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1ac278db20c5fbf361341c28c1c9a02e74" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -2212,7 +2371,7 @@ A restriction specifies requirements about a field of an object. This struct shi
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/address.hpp" line="62" column="1" bodyfile="libraries/protocol/include/graphene/protocol/address.hpp" bodystart="62" bodyend="62"/>
+        <location file="libraries/protocol/include/graphene/protocol/address.hpp" line="62" column="11" bodyfile="libraries/protocol/include/graphene/protocol/address.hpp" bodystart="62" bodyend="62"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1affc03c7456b3cf5acde80d14fe5e77bb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -2233,7 +2392,7 @@ A restriction specifies requirements about a field of an object. This struct shi
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/address.hpp" line="64" column="1" bodyfile="libraries/protocol/include/graphene/protocol/address.hpp" bodystart="64" bodyend="64"/>
+        <location file="libraries/protocol/include/graphene/protocol/address.hpp" line="64" column="16" bodyfile="libraries/protocol/include/graphene/protocol/address.hpp" bodystart="64" bodyend="64"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1a5b2edc3d10d7b5ef9f1fc3e7e3be9f8c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -2254,7 +2413,7 @@ A restriction specifies requirements about a field of an object. This struct shi
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/address.hpp" line="65" column="1" bodyfile="libraries/protocol/include/graphene/protocol/address.hpp" bodystart="65" bodyend="65"/>
+        <location file="libraries/protocol/include/graphene/protocol/address.hpp" line="65" column="16" bodyfile="libraries/protocol/include/graphene/protocol/address.hpp" bodystart="65" bodyend="65"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1ad4b82c0d660691a65518af5154365cb2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -2275,7 +2434,7 @@ A restriction specifies requirements about a field of an object. This struct shi
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/address.hpp" line="67" column="1" bodyfile="libraries/protocol/include/graphene/protocol/address.hpp" bodystart="67" bodyend="67"/>
+        <location file="libraries/protocol/include/graphene/protocol/address.hpp" line="67" column="16" bodyfile="libraries/protocol/include/graphene/protocol/address.hpp" bodystart="67" bodyend="67"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1a1d99dceb945aabb86a064cc9176f6920" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -2296,7 +2455,7 @@ A restriction specifies requirements about a field of an object. This struct shi
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/address.hpp" line="68" column="1" bodyfile="libraries/protocol/include/graphene/protocol/address.hpp" bodystart="68" bodyend="68"/>
+        <location file="libraries/protocol/include/graphene/protocol/address.hpp" line="68" column="16" bodyfile="libraries/protocol/include/graphene/protocol/address.hpp" bodystart="68" bodyend="68"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1a3531b7a2b006abb3be3f000870ca2c9e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structgraphene_1_1protocol_1_1price" kindref="compound">price</ref></type>
@@ -2313,7 +2472,7 @@ A restriction specifies requirements about a field of an object. This struct shi
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="136" column="1" bodyfile="libraries/protocol/include/graphene/protocol/asset.hpp" bodystart="136" bodyend="136"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="136" column="17" bodyfile="libraries/protocol/include/graphene/protocol/asset.hpp" bodystart="136" bodyend="136"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1a55d88d3f291827b0aa3c83d32e767149" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -2334,7 +2493,7 @@ A restriction specifies requirements about a field of an object. This struct shi
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="141" column="1" bodyfile="libraries/protocol/include/graphene/protocol/asset.hpp" bodystart="141" bodyend="141"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="141" column="17" bodyfile="libraries/protocol/include/graphene/protocol/asset.hpp" bodystart="141" bodyend="141"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1a29193b1353e306637073b84f8b0c56a9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -2355,7 +2514,7 @@ A restriction specifies requirements about a field of an object. This struct shi
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="142" column="1" bodyfile="libraries/protocol/include/graphene/protocol/asset.hpp" bodystart="142" bodyend="142"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="142" column="11" bodyfile="libraries/protocol/include/graphene/protocol/asset.hpp" bodystart="142" bodyend="142"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1ac1905ef4e43009f8d733b3b189ada00f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -2376,7 +2535,7 @@ A restriction specifies requirements about a field of an object. This struct shi
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="143" column="1" bodyfile="libraries/protocol/include/graphene/protocol/asset.hpp" bodystart="143" bodyend="143"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="143" column="17" bodyfile="libraries/protocol/include/graphene/protocol/asset.hpp" bodystart="143" bodyend="143"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1ad8dba204b979060841eaf0dc094c4bb4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -2397,7 +2556,7 @@ A restriction specifies requirements about a field of an object. This struct shi
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="144" column="1" bodyfile="libraries/protocol/include/graphene/protocol/asset.hpp" bodystart="144" bodyend="144"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="144" column="17" bodyfile="libraries/protocol/include/graphene/protocol/asset.hpp" bodystart="144" bodyend="144"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1a985fca1eeec6fe264a4538e960dcec92" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structgraphene_1_1protocol_1_1price" kindref="compound">price</ref> &amp;</type>
@@ -2418,7 +2577,7 @@ A restriction specifies requirements about a field of an object. This struct shi
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="151" column="1" bodyfile="libraries/protocol/include/graphene/protocol/asset.hpp" bodystart="151" bodyend="152"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="151" column="17" bodyfile="libraries/protocol/include/graphene/protocol/asset.hpp" bodystart="151" bodyend="152"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1a7e00cb0dd96f904bcc25b0bdc38cf216" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structgraphene_1_1protocol_1_1price" kindref="compound">price</ref> &amp;</type>
@@ -2439,7 +2598,7 @@ A restriction specifies requirements about a field of an object. This struct shi
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="153" column="1" bodyfile="libraries/protocol/include/graphene/protocol/asset.hpp" bodystart="153" bodyend="154"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset.hpp" line="153" column="17" bodyfile="libraries/protocol/include/graphene/protocol/asset.hpp" bodystart="153" bodyend="154"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1ad91fceb5f8ea452e98b3504800447832" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2447,7 +2606,7 @@ A restriction specifies requirements about a field of an object. This struct shi
         <argsstring>(const operation &amp;op, flat_set&lt; account_id_type &gt; &amp;active, flat_set&lt; account_id_type &gt; &amp;owner, vector&lt; authority &gt; &amp;other, bool ignore_custom_operation_required_auths)</argsstring>
         <name>operation_get_required_authorities</name>
         <param>
-          <type>const <ref refid="group__operations_1ga9aa13b4d89e9b8b56d1074b715de6568" kindref="member">operation</ref> &amp;</type>
+          <type>const <ref refid="group__operations_1gad4674c1a800a9c624a13e1243dcbe967" kindref="member">operation</ref> &amp;</type>
           <declname>op</declname>
         </param>
         <param>
@@ -2469,11 +2628,14 @@ A restriction specifies requirements about a field of an object. This struct shi
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Appends required authorites to the result vector. The authorities appended are not the same as those returned by get_required_auth</para><para><simplesect kind="return"><para>a set of required authorities for <computeroutput>op</computeroutput> </para></simplesect>
-</para>        </detaileddescription>
+<para>Appends required authorites to the result vector. The authorities appended are not the same as those returned by get_required_auth</para>
+<para><simplesect kind="return"><para>a set of required authorities for <computeroutput>op</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/operations.hpp" line="141" column="1" bodyfile="libraries/protocol/operations.cpp" bodystart="103" bodyend="110"/>
+        <location file="libraries/protocol/operations.cpp" line="103" column="6" bodyfile="libraries/protocol/operations.cpp" bodystart="103" bodyend="110" declfile="libraries/protocol/include/graphene/protocol/operations.hpp" declline="142" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1ab4eaf3cdd7c2b540bd2180fbec4c4c8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2481,7 +2643,7 @@ A restriction specifies requirements about a field of an object. This struct shi
         <argsstring>(const operation &amp;op)</argsstring>
         <name>operation_validate</name>
         <param>
-          <type>const <ref refid="group__operations_1ga9aa13b4d89e9b8b56d1074b715de6568" kindref="member">operation</ref> &amp;</type>
+          <type>const <ref refid="group__operations_1gad4674c1a800a9c624a13e1243dcbe967" kindref="member">operation</ref> &amp;</type>
           <declname>op</declname>
         </param>
         <briefdescription>
@@ -2490,7 +2652,7 @@ A restriction specifies requirements about a field of an object. This struct shi
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/operations.hpp" line="147" column="1" bodyfile="libraries/protocol/operations.cpp" bodystart="98" bodyend="101"/>
+        <location file="libraries/protocol/operations.cpp" line="98" column="6" bodyfile="libraries/protocol/operations.cpp" bodystart="98" bodyend="101" declfile="libraries/protocol/include/graphene/protocol/operations.hpp" declline="148" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1aed5ab34bcf5755f500482c60ce25eab0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -2511,7 +2673,7 @@ A restriction specifies requirements about a field of an object. This struct shi
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/pts_address.hpp" line="60" column="1" bodyfile="libraries/protocol/include/graphene/protocol/pts_address.hpp" bodystart="60" bodyend="60"/>
+        <location file="libraries/protocol/include/graphene/protocol/pts_address.hpp" line="60" column="16" bodyfile="libraries/protocol/include/graphene/protocol/pts_address.hpp" bodystart="60" bodyend="60"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1a3fa654568af6da7ab41a00f15f6749c3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -2532,7 +2694,7 @@ A restriction specifies requirements about a field of an object. This struct shi
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/pts_address.hpp" line="61" column="1" bodyfile="libraries/protocol/include/graphene/protocol/pts_address.hpp" bodystart="61" bodyend="61"/>
+        <location file="libraries/protocol/include/graphene/protocol/pts_address.hpp" line="61" column="16" bodyfile="libraries/protocol/include/graphene/protocol/pts_address.hpp" bodystart="61" bodyend="61"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1a2e0a729c91726df732c789cc76207883" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -2553,7 +2715,7 @@ A restriction specifies requirements about a field of an object. This struct shi
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/pts_address.hpp" line="62" column="1" bodyfile="libraries/protocol/include/graphene/protocol/pts_address.hpp" bodystart="62" bodyend="62"/>
+        <location file="libraries/protocol/include/graphene/protocol/pts_address.hpp" line="62" column="11" bodyfile="libraries/protocol/include/graphene/protocol/pts_address.hpp" bodystart="62" bodyend="62"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1a39ae3b76548010be593199b1f101fe1c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2570,7 +2732,7 @@ A restriction specifies requirements about a field of an object. This struct shi
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/special_authority.hpp" line="43" column="1" bodyfile="libraries/protocol/special_authority.cpp" bodystart="43" bodyend="47"/>
+        <location file="libraries/protocol/special_authority.cpp" line="43" column="6" bodyfile="libraries/protocol/special_authority.cpp" bodystart="43" bodyend="47" declfile="libraries/protocol/include/graphene/protocol/special_authority.hpp" declline="43" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="group__transactions_1ga8e37fc0fd4bd5f02a34b0e766f8bbad8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2578,7 +2740,7 @@ A restriction specifies requirements about a field of an object. This struct shi
         <argsstring>(const vector&lt; operation &gt; &amp;ops, const flat_set&lt; public_key_type &gt; &amp;sigs, const std::function&lt; const authority *(account_id_type)&gt; &amp;get_active, const std::function&lt; const authority *(account_id_type)&gt; &amp;get_owner, const custom_authority_lookup &amp;get_custom, bool allow_non_immediate_owner, bool ignore_custom_operation_required_auths, uint32_t max_recursion=GRAPHENE_MAX_SIG_CHECK_DEPTH, bool allow_committee=false, const flat_set&lt; account_id_type &gt; &amp;active_approvals=flat_set&lt; account_id_type &gt;(), const flat_set&lt; account_id_type &gt; &amp;owner_approvals=flat_set&lt; account_id_type &gt;())</argsstring>
         <name>verify_authority</name>
         <param>
-          <type>const vector&lt; <ref refid="group__operations_1ga9aa13b4d89e9b8b56d1074b715de6568" kindref="member">operation</ref> &gt; &amp;</type>
+          <type>const vector&lt; <ref refid="group__operations_1gad4674c1a800a9c624a13e1243dcbe967" kindref="member">operation</ref> &gt; &amp;</type>
           <declname>ops</declname>
         </param>
         <param>
@@ -2628,88 +2790,101 @@ A restriction specifies requirements about a field of an object. This struct shi
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Checks whether given public keys and approvals are sufficient to authorize given operations. Throws an exception when failed.</para><para><parameterlist kind="param"><parameteritem>
+<para>Checks whether given public keys and approvals are sufficient to authorize given operations. Throws an exception when failed.</para>
+<para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>ops</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>a vector of operations </para></parameterdescription>
+<para>a vector of operations </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>sigs</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>a set of public keys </para></parameterdescription>
+<para>a set of public keys </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>get_active</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>callback function to retrieve active authorities of a given account </para></parameterdescription>
+<para>callback function to retrieve active authorities of a given account </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>get_owner</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>callback function to retrieve owner authorities of a given account </para></parameterdescription>
+<para>callback function to retrieve owner authorities of a given account </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>get_custom</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>callback function to retrieve viable custom authorities for a given account and operation </para></parameterdescription>
+<para>callback function to retrieve viable custom authorities for a given account and operation </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>allow_non_immediate_owner</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>whether to allow owner authority of non-immediately required accounts to authorize operations </para></parameterdescription>
+<para>whether to allow owner authority of non-immediately required accounts to authorize operations </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>ignore_custom_operation_required_auths</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>See issue #210; whether to ignore the required_auths field of <ref refid="structgraphene_1_1protocol_1_1custom__operation" kindref="compound">custom_operation</ref> or not </para></parameterdescription>
+<para>See issue #210; whether to ignore the required_auths field of <ref refid="structgraphene_1_1protocol_1_1custom__operation" kindref="compound">custom_operation</ref> or not </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>max_recursion</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>maximum level of recursion when verifying, since an account can have another account in active authorities and/or owner authorities </para></parameterdescription>
+<para>maximum level of recursion when verifying, since an account can have another account in active authorities and/or owner authorities </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>allow_committee</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>whether to allow the special &quot;committee account&quot; to authorize the operations </para></parameterdescription>
+<para>whether to allow the special &quot;committee account&quot; to authorize the operations </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>active_approvals</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>accounts that approved the operations with their active authories </para></parameterdescription>
+<para>accounts that approved the operations with their active authories </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>owner_approvals</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>accounts that approved the operations with their owner authories </para></parameterdescription>
+<para>accounts that approved the operations with their owner authories </para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-</para>        </detaileddescription>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/transaction.hpp" line="268" column="1" bodyfile="libraries/protocol/transaction.cpp" bodystart="269" bodyend="347"/>
+        <location file="libraries/protocol/transaction.cpp" line="269" column="6" bodyfile="libraries/protocol/transaction.cpp" bodystart="269" bodyend="347" declfile="libraries/protocol/include/graphene/protocol/transaction.hpp" declline="268" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1a7fa29913989b73d976f47c02d07db6c2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -2726,7 +2901,7 @@ A restriction specifies requirements about a field of an object. This struct shi
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/types.hpp" line="302" column="1" bodyfile="libraries/protocol/include/graphene/protocol/types.hpp" bodystart="302" bodyend="302"/>
+        <location file="libraries/protocol/include/graphene/protocol/types.hpp" line="302" column="13" bodyfile="libraries/protocol/include/graphene/protocol/types.hpp" bodystart="302" bodyend="302"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1a16c54c83a62fa622b6593b5cf7f142b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -2822,7 +2997,7 @@ A restriction specifies requirements about a field of an object. This struct shi
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/types.cpp" line="76" column="1" bodyfile="libraries/protocol/types.cpp" bodystart="76" bodyend="79"/>
+        <location file="libraries/protocol/types.cpp" line="76" column="10" bodyfile="libraries/protocol/types.cpp" bodystart="76" bodyend="79"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1a2ba82e45361a4ea39926919b8f5ac013" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -2843,7 +3018,7 @@ A restriction specifies requirements about a field of an object. This struct shi
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/types.cpp" line="81" column="1" bodyfile="libraries/protocol/types.cpp" bodystart="81" bodyend="84"/>
+        <location file="libraries/protocol/types.cpp" line="81" column="10" bodyfile="libraries/protocol/types.cpp" bodystart="81" bodyend="84"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1aac81ba4c9ea6ae042873ec67c152a4a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -2864,7 +3039,7 @@ A restriction specifies requirements about a field of an object. This struct shi
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/types.cpp" line="86" column="1" bodyfile="libraries/protocol/types.cpp" bodystart="86" bodyend="89"/>
+        <location file="libraries/protocol/types.cpp" line="86" column="10" bodyfile="libraries/protocol/types.cpp" bodystart="86" bodyend="89"/>
       </memberdef>
       <memberdef kind="function" id="namespacegraphene_1_1protocol_1a907c295ff568f5d11ffbfd44c047f1ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -2885,13 +3060,13 @@ A restriction specifies requirements about a field of an object. This struct shi
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/types.cpp" line="91" column="1" bodyfile="libraries/protocol/types.cpp" bodystart="91" bodyend="94"/>
+        <location file="libraries/protocol/types.cpp" line="91" column="5" bodyfile="libraries/protocol/types.cpp" bodystart="91" bodyend="94"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="libraries/app/include/graphene/app/util.hpp" line="29" column="1"/>
+    <location file="libraries/app/include/graphene/app/util.hpp" line="29" column="18"/>
   </compounddef>
 </doxygen>
