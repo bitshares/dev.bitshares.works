@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="structgraphene_1_1protocol_1_1asset__claim__fees__operation" kind="struct" language="C++" prot="public">
     <compoundname>graphene::protocol::asset_claim_fees_operation</compoundname>
     <basecompoundref refid="structgraphene_1_1protocol_1_1base__operation" prot="public" virt="non-virtual">graphene::protocol::base_operation</basecompoundref>
     <includes refid="asset__ops_8hpp" local="no">asset_ops.hpp</includes>
     <innerclass refid="structgraphene_1_1protocol_1_1asset__claim__fees__operation_1_1additional__options__type" prot="public">graphene::protocol::asset_claim_fees_operation::additional_options_type</innerclass>
-    <innerclass refid="structgraphene_1_1protocol_1_1asset__claim__fees__operation_1_1fee__parameters__type" prot="public">graphene::protocol::asset_claim_fees_operation::fee_parameters_type</innerclass>
+    <innerclass refid="structgraphene_1_1protocol_1_1asset__claim__fees__operation_1_1fee__params__t" prot="public">graphene::protocol::asset_claim_fees_operation::fee_params_t</innerclass>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1asset__claim__fees__operation_1a0b0a7476675c5bef3ae9ce03b2e534df" prot="public" static="no" mutable="no">
         <type><ref refid="structgraphene_1_1protocol_1_1asset" kindref="compound">asset</ref></type>
@@ -18,7 +18,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="545" column="1" bodyfile="libraries/protocol/include/graphene/protocol/asset_ops.hpp" bodystart="545" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="545" column="23" bodyfile="libraries/protocol/include/graphene/protocol/asset_ops.hpp" bodystart="545" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1asset__claim__fees__operation_1a759c03c3b931615793e298f7b9aa5178" prot="public" static="no" mutable="no">
         <type>account_id_type</type>
@@ -26,12 +26,13 @@
         <argsstring></argsstring>
         <name>issuer</name>
         <briefdescription>
-<para>must match issuer of asset from which we claim fees </para>        </briefdescription>
+<para>must match issuer of asset from which we claim fees </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="546" column="1" bodyfile="libraries/protocol/include/graphene/protocol/asset_ops.hpp" bodystart="546" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="546" column="23" bodyfile="libraries/protocol/include/graphene/protocol/asset_ops.hpp" bodystart="546" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1asset__claim__fees__operation_1a21837b356e6cea569a22ee7958951429" prot="public" static="no" mutable="no">
         <type><ref refid="structgraphene_1_1protocol_1_1asset" kindref="compound">asset</ref></type>
@@ -44,7 +45,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="547" column="1" bodyfile="libraries/protocol/include/graphene/protocol/asset_ops.hpp" bodystart="547" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="547" column="23" bodyfile="libraries/protocol/include/graphene/protocol/asset_ops.hpp" bodystart="547" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1asset__claim__fees__operation_1a463357820b5fad45cd773002fa2761f1" prot="public" static="no" mutable="no">
         <type><ref refid="structgraphene_1_1protocol_1_1extension" kindref="compound">extension</ref>&lt; <ref refid="structgraphene_1_1protocol_1_1asset__claim__fees__operation_1_1additional__options__type" kindref="compound">additional_options_type</ref> &gt;</type>
@@ -57,7 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="549" column="1" bodyfile="libraries/protocol/include/graphene/protocol/asset_ops.hpp" bodystart="549" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="549" column="17" bodyfile="libraries/protocol/include/graphene/protocol/asset_ops.hpp" bodystart="549" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -72,7 +73,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="551" column="1" bodyfile="libraries/protocol/include/graphene/protocol/asset_ops.hpp" bodystart="551" bodyend="551"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="551" column="23" bodyfile="libraries/protocol/include/graphene/protocol/asset_ops.hpp" bodystart="551" bodyend="551"/>
       </memberdef>
       <memberdef kind="function" id="structgraphene_1_1protocol_1_1asset__claim__fees__operation_1a083e7d479e7855f810447b8ec347f589" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -86,75 +87,82 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="552" column="1" bodyfile="libraries/protocol/asset_ops.cpp" bodystart="342" bodyend="347"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="552" column="23" bodyfile="libraries/protocol/asset_ops.cpp" bodystart="342" bodyend="347"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>used to transfer accumulated fees back to the issuer&apos;s balance. </para>    </briefdescription>
+<para>used to transfer accumulated fees back to the issuer&apos;s balance. </para>
+    </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="744">
+      <node id="2">
         <label>graphene::protocol::base_operation</label>
         <link refid="structgraphene_1_1protocol_1_1base__operation"/>
       </node>
-      <node id="743">
+      <node id="1">
         <label>graphene::protocol::asset_claim_fees_operation</label>
         <link refid="structgraphene_1_1protocol_1_1asset__claim__fees__operation"/>
-        <childnode refid="744" relation="public-inheritance">
+        <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="752">
+      <node id="9">
         <label>fc::optional&lt; asset_id_type &gt;</label>
         <link refid="classfc_1_1optional"/>
       </node>
-      <node id="751">
+      <node id="5">
+        <label>fc::safe_base&lt; int64_t &gt;</label>
+        <link refid="structfc_1_1safe__base"/>
+      </node>
+      <node id="8">
         <label>graphene::protocol::asset_claim_fees_operation::additional_options_type</label>
         <link refid="structgraphene_1_1protocol_1_1asset__claim__fees__operation_1_1additional__options__type"/>
-        <childnode refid="752" relation="usage">
+        <childnode refid="9" relation="usage">
           <edgelabel>claim_from_asset_id</edgelabel>
         </childnode>
       </node>
-      <node id="749">
+      <node id="6">
         <label>account_id_type</label>
       </node>
-      <node id="748">
+      <node id="4">
         <label>fc::safe&lt; int64_t &gt;</label>
         <link refid="structfc_1_1safe"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
       </node>
-      <node id="750">
+      <node id="7">
         <label>graphene::protocol::extension&lt; graphene::protocol::asset_claim_fees_operation::additional_options_type &gt;</label>
         <link refid="structgraphene_1_1protocol_1_1extension"/>
-        <childnode refid="751" relation="usage">
+        <childnode refid="8" relation="usage">
           <edgelabel>value</edgelabel>
         </childnode>
       </node>
-      <node id="746">
+      <node id="2">
         <label>graphene::protocol::base_operation</label>
         <link refid="structgraphene_1_1protocol_1_1base__operation"/>
       </node>
-      <node id="747">
+      <node id="3">
         <label>graphene::protocol::asset</label>
         <link refid="structgraphene_1_1protocol_1_1asset"/>
-        <childnode refid="748" relation="usage">
+        <childnode refid="4" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
       </node>
-      <node id="745">
+      <node id="1">
         <label>graphene::protocol::asset_claim_fees_operation</label>
         <link refid="structgraphene_1_1protocol_1_1asset__claim__fees__operation"/>
-        <childnode refid="746" relation="public-inheritance">
+        <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="747" relation="usage">
+        <childnode refid="3" relation="usage">
           <edgelabel>fee</edgelabel>
           <edgelabel>amount_to_claim</edgelabel>
         </childnode>
-        <childnode refid="749" relation="usage">
+        <childnode refid="6" relation="usage">
           <edgelabel>issuer</edgelabel>
         </childnode>
-        <childnode refid="750" relation="usage">
+        <childnode refid="7" relation="usage">
           <edgelabel>extensions</edgelabel>
         </childnode>
       </node>

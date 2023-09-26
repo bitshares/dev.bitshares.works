@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classgraphene_1_1app_1_1plugin" kind="class" language="C++" prot="public">
     <compoundname>graphene::app::plugin</compoundname>
     <basecompoundref refid="classgraphene_1_1app_1_1abstract__plugin" prot="public" virt="non-virtual">graphene::app::abstract_plugin</basecompoundref>
@@ -36,12 +36,13 @@
         <reimplementedby refid="classgraphene_1_1api__helper__indexes_1_1api__helper__indexes_1ab76d22cb4a64ad9ff9664575c91ffcd3">plugin_name</reimplementedby>
         <reimplementedby refid="classgraphene_1_1market__history_1_1market__history__plugin_1a50fcacc05c0e06246cf2b7090520635f">plugin_name</reimplementedby>
         <briefdescription>
-<para>Get the name of the plugin. </para>        </briefdescription>
+<para>Get the name of the plugin. </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/plugin.hpp" line="105" column="1" bodyfile="libraries/app/plugin.cpp" bodystart="30" bodyend="33"/>
+        <location file="libraries/app/include/graphene/app/plugin.hpp" line="105" column="19" bodyfile="libraries/app/plugin.cpp" bodystart="30" bodyend="33"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1plugin_1acab8aae448b09ec9b904a4e2c6fcfc12" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>std::string</type>
@@ -56,12 +57,13 @@
         <reimplementedby refid="classgraphene_1_1elasticsearch_1_1elasticsearch__plugin_1a7e54a8f6c5c91ea41bbe2a13d015b06d">plugin_description</reimplementedby>
         <reimplementedby refid="classgraphene_1_1api__helper__indexes_1_1api__helper__indexes_1a7bcd21c792db5084cb48c3bcd316922c">plugin_description</reimplementedby>
         <briefdescription>
-<para>Get the description of the plugin. </para>        </briefdescription>
+<para>Get the description of the plugin. </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/plugin.hpp" line="106" column="1" bodyfile="libraries/app/plugin.cpp" bodystart="35" bodyend="38"/>
+        <location file="libraries/app/include/graphene/app/plugin.hpp" line="106" column="19" bodyfile="libraries/app/plugin.cpp" bodystart="35" bodyend="38"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1plugin_1a55f3edacaa70b31121533c946c80f756" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -86,20 +88,25 @@
           <declname>options</declname>
         </param>
         <briefdescription>
-<para>Perform early startup routines and register plugin indexes, callbacks, etc. </para>        </briefdescription>
+<para>Perform early startup routines and register plugin indexes, callbacks, etc. </para>
+        </briefdescription>
         <detaileddescription>
-<para>Plugins MUST supply a method initialize() which will be called early in the application startup. This method should contain early setup code such as initializing variables, adding indexes to the database, registering callback methods from the database, adding APIs, etc., as well as applying any options in the <computeroutput>options</computeroutput> map</para><para>This method is called BEFORE the database is open, therefore any routines which require any chain state MUST NOT be called by this method. These routines should be performed in startup() instead.</para><para><parameterlist kind="param"><parameteritem>
+<para>Plugins MUST supply a method initialize() which will be called early in the application startup. This method should contain early setup code such as initializing variables, adding indexes to the database, registering callback methods from the database, adding APIs, etc., as well as applying any options in the <computeroutput>options</computeroutput> map</para>
+<para>This method is called BEFORE the database is open, therefore any routines which require any chain state MUST NOT be called by this method. These routines should be performed in startup() instead.</para>
+<para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>options</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The options passed to the application, via configuration files or command line </para></parameterdescription>
+<para>The options passed to the application, via configuration files or command line </para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-</para>        </detaileddescription>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/plugin.hpp" line="107" column="1" bodyfile="libraries/app/plugin.cpp" bodystart="40" bodyend="43"/>
+        <location file="libraries/app/include/graphene/app/plugin.hpp" line="107" column="12" bodyfile="libraries/app/plugin.cpp" bodystart="40" bodyend="43"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1plugin_1a6dc55708298e55234f7e2e8e5781854f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -119,12 +126,14 @@
         <reimplementedby refid="classgraphene_1_1api__helper__indexes_1_1api__helper__indexes_1ab8b602471cc6466dd852c139963b486a">plugin_startup</reimplementedby>
         <reimplementedby refid="classgraphene_1_1market__history_1_1market__history__plugin_1a10d0ada6c29107c97f425751100ecbf6">plugin_startup</reimplementedby>
         <briefdescription>
-<para>Begin normal runtime operations. </para>        </briefdescription>
+<para>Begin normal runtime operations. </para>
+        </briefdescription>
         <detaileddescription>
-<para>Plugins MUST supply a method startup() which will be called at the end of application startup. This method should contain code which schedules any tasks, or requires chain state. </para>        </detaileddescription>
+<para>Plugins MUST supply a method startup() which will be called at the end of application startup. This method should contain code which schedules any tasks, or requires chain state. </para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/plugin.hpp" line="108" column="1" bodyfile="libraries/app/plugin.cpp" bodystart="45" bodyend="48"/>
+        <location file="libraries/app/include/graphene/app/plugin.hpp" line="108" column="12" bodyfile="libraries/app/plugin.cpp" bodystart="45" bodyend="48"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1plugin_1abe7030a505bb7fef8fc3d37f5b33e015" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -137,12 +146,14 @@
         <reimplementedby refid="classgraphene_1_1template__plugin_1_1template__plugin_1a1304df6bcef0f5a25315d8976e687547">plugin_shutdown</reimplementedby>
         <reimplementedby refid="classgraphene_1_1witness__plugin_1_1witness__plugin_1a0ad96ebe27330782eaa48cfad5939769">plugin_shutdown</reimplementedby>
         <briefdescription>
-<para>Cleanly shut down the plugin. </para>        </briefdescription>
+<para>Cleanly shut down the plugin. </para>
+        </briefdescription>
         <detaileddescription>
-<para>This is called to request a clean shutdown (e.g. due to SIGINT or SIGTERM). </para>        </detaileddescription>
+<para>This is called to request a clean shutdown (e.g. due to SIGINT or SIGTERM). </para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/plugin.hpp" line="109" column="1" bodyfile="libraries/app/plugin.cpp" bodystart="50" bodyend="53"/>
+        <location file="libraries/app/include/graphene/app/plugin.hpp" line="109" column="12" bodyfile="libraries/app/plugin.cpp" bodystart="50" bodyend="53"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1plugin_1a99ffee727e0f7bd6e88e8201fc84f93f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -151,17 +162,17 @@
         <name>plugin_set_program_options</name>
         <reimplements refid="classgraphene_1_1app_1_1abstract__plugin_1a0eb927bd566fb09db77ebd838f99bba3">plugin_set_program_options</reimplements>
         <reimplementedby refid="classgraphene_1_1delayed__node_1_1delayed__node__plugin_1a2ef589eb70afa1b9ea3d719ff9e5d1ed">plugin_set_program_options</reimplementedby>
-        <reimplementedby refid="classgraphene_1_1snapshot__plugin_1_1snapshot__plugin_1a7f2fd1215869ec9261ac51f0d3040176">plugin_set_program_options</reimplementedby>
-        <reimplementedby refid="classgraphene_1_1debug__witness__plugin_1_1debug__witness__plugin_1a86652d99382b36262c6aa1d050679617">plugin_set_program_options</reimplementedby>
         <reimplementedby refid="classgraphene_1_1es__objects_1_1es__objects__plugin_1a4cff6a996eb12aa4d5255d383f27ed4e">plugin_set_program_options</reimplementedby>
         <reimplementedby refid="classgraphene_1_1custom__operations_1_1custom__operations__plugin_1a481a414a3e7ae1858af27203ca43788d">plugin_set_program_options</reimplementedby>
-        <reimplementedby refid="classgraphene_1_1witness__plugin_1_1witness__plugin_1a00ff7756f3b429f18ea47addfa8894bc">plugin_set_program_options</reimplementedby>
         <reimplementedby refid="classgraphene_1_1template__plugin_1_1template__plugin_1a3f0b7f41a134a1def337086052abe88b">plugin_set_program_options</reimplementedby>
         <reimplementedby refid="classgraphene_1_1elasticsearch_1_1elasticsearch__plugin_1ac24957441ee996ddd398a1d873b28390">plugin_set_program_options</reimplementedby>
         <reimplementedby refid="classgraphene_1_1grouped__orders_1_1grouped__orders__plugin_1ab6a037e9d349eb783baebb6b8fed1e60">plugin_set_program_options</reimplementedby>
         <reimplementedby refid="classgraphene_1_1account__history_1_1account__history__plugin_1a651daa8914bd7ab49364908170dfc77a">plugin_set_program_options</reimplementedby>
         <reimplementedby refid="classgraphene_1_1api__helper__indexes_1_1api__helper__indexes_1a2d082265300b6ae25d47086b51acb55f">plugin_set_program_options</reimplementedby>
         <reimplementedby refid="classgraphene_1_1market__history_1_1market__history__plugin_1a2ed8d67c6e69102ab21d521972c13039">plugin_set_program_options</reimplementedby>
+        <reimplementedby refid="classgraphene_1_1snapshot__plugin_1_1snapshot__plugin_1a7f2fd1215869ec9261ac51f0d3040176">plugin_set_program_options</reimplementedby>
+        <reimplementedby refid="classgraphene_1_1debug__witness__plugin_1_1debug__witness__plugin_1a86652d99382b36262c6aa1d050679617">plugin_set_program_options</reimplementedby>
+        <reimplementedby refid="classgraphene_1_1witness__plugin_1_1witness__plugin_1a00ff7756f3b429f18ea47addfa8894bc">plugin_set_program_options</reimplementedby>
         <param>
           <type>boost::program_options::options_description &amp;</type>
           <declname>command_line_options</declname>
@@ -171,27 +182,31 @@
           <declname>config_file_options</declname>
         </param>
         <briefdescription>
-<para>Fill in command line parameters used by the plugin. </para>        </briefdescription>
+<para>Fill in command line parameters used by the plugin. </para>
+        </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>command_line_options</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>All options this plugin supports taking on the command-line </para></parameterdescription>
+<para>All options this plugin supports taking on the command-line </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>config_file_options</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>All options this plugin supports storing in a configuration file</para></parameterdescription>
+<para>All options this plugin supports storing in a configuration file</para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-This method populates its arguments with any command-line and configuration file options the plugin supports. If a plugin does not need these options, it may simply provide an empty implementation of this method. </para>        </detaileddescription>
+This method populates its arguments with any command-line and configuration file options the plugin supports. If a plugin does not need these options, it may simply provide an empty implementation of this method. </para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/plugin.hpp" line="110" column="1" bodyfile="libraries/app/plugin.cpp" bodystart="55" bodyend="61"/>
+        <location file="libraries/app/include/graphene/app/plugin.hpp" line="110" column="12" bodyfile="libraries/app/plugin.cpp" bodystart="55" bodyend="61"/>
       </memberdef>
       <memberdef kind="function" id="classgraphene_1_1app_1_1plugin_1a4e387fd1543b949aba7f64d68a14b9e1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classgraphene_1_1chain_1_1database" kindref="compound">chain::database</ref> &amp;</type>
@@ -204,7 +219,24 @@ This method populates its arguments with any command-line and configuration file
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/plugin.hpp" line="115" column="1" bodyfile="libraries/app/include/graphene/app/plugin.hpp" bodystart="115" bodyend="115"/>
+        <location file="libraries/app/include/graphene/app/plugin.hpp" line="115" column="23" bodyfile="libraries/app/include/graphene/app/plugin.hpp" bodystart="115" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraphene_1_1app_1_1plugin_1aaf2afbb94cb0b6aa35ec487280386a3f" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>graphene::app::abstract_plugin::abstract_plugin</definition>
+        <argsstring>(application &amp;a)</argsstring>
+        <name>abstract_plugin</name>
+        <param>
+          <type><ref refid="classgraphene_1_1app_1_1application" kindref="compound">application</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libraries/app/include/graphene/app/plugin.hpp" line="103" column="7" bodyfile="libraries/app/include/graphene/app/plugin.hpp" bodystart="36" bodyend="36"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-func">
@@ -219,112 +251,113 @@ This method populates its arguments with any command-line and configuration file
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/app/include/graphene/app/plugin.hpp" line="117" column="1" bodyfile="libraries/app/include/graphene/app/plugin.hpp" bodystart="117" bodyend="117"/>
+        <location file="libraries/app/include/graphene/app/plugin.hpp" line="117" column="21" bodyfile="libraries/app/include/graphene/app/plugin.hpp" bodystart="117" bodyend="117"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-<para>Provides basic default implementations of <ref refid="classgraphene_1_1app_1_1abstract__plugin" kindref="compound">abstract_plugin</ref> functions. </para>    </detaileddescription>
+<para>Provides basic default implementations of <ref refid="classgraphene_1_1app_1_1abstract__plugin" kindref="compound">abstract_plugin</ref> functions. </para>
+    </detaileddescription>
     <inheritancegraph>
-      <node id="6295">
+      <node id="14">
         <label>graphene::witness_plugin::witness_plugin</label>
         <link refid="classgraphene_1_1witness__plugin_1_1witness__plugin"/>
-        <childnode refid="6282" relation="public-inheritance">
+        <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6292">
+      <node id="11">
         <label>graphene::market_history::market_history_plugin</label>
         <link refid="classgraphene_1_1market__history_1_1market__history__plugin"/>
-        <childnode refid="6282" relation="public-inheritance">
+        <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6282">
+      <node id="1">
         <label>graphene::app::plugin</label>
         <link refid="classgraphene_1_1app_1_1plugin"/>
-        <childnode refid="6283" relation="public-inheritance">
+        <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6290">
+      <node id="9">
         <label>graphene::es_objects::es_objects_plugin</label>
         <link refid="classgraphene_1_1es__objects_1_1es__objects__plugin"/>
-        <childnode refid="6282" relation="public-inheritance">
+        <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6287">
+      <node id="6">
         <label>graphene::debug_witness_plugin::debug_witness_plugin</label>
         <link refid="classgraphene_1_1debug__witness__plugin_1_1debug__witness__plugin"/>
-        <childnode refid="6282" relation="public-inheritance">
+        <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6288">
+      <node id="7">
         <label>graphene::delayed_node::delayed_node_plugin</label>
         <link refid="classgraphene_1_1delayed__node_1_1delayed__node__plugin"/>
-        <childnode refid="6282" relation="public-inheritance">
+        <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6286">
+      <node id="5">
         <label>graphene::custom_operations::custom_operations_plugin</label>
         <link refid="classgraphene_1_1custom__operations_1_1custom__operations__plugin"/>
-        <childnode refid="6282" relation="public-inheritance">
+        <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6291">
+      <node id="10">
         <label>graphene::grouped_orders::grouped_orders_plugin</label>
         <link refid="classgraphene_1_1grouped__orders_1_1grouped__orders__plugin"/>
-        <childnode refid="6282" relation="public-inheritance">
+        <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6289">
+      <node id="8">
         <label>graphene::elasticsearch::elasticsearch_plugin</label>
         <link refid="classgraphene_1_1elasticsearch_1_1elasticsearch__plugin"/>
-        <childnode refid="6282" relation="public-inheritance">
+        <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6285">
+      <node id="4">
         <label>graphene::api_helper_indexes::api_helper_indexes</label>
         <link refid="classgraphene_1_1api__helper__indexes_1_1api__helper__indexes"/>
-        <childnode refid="6282" relation="public-inheritance">
+        <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6293">
+      <node id="12">
         <label>graphene::snapshot_plugin::snapshot_plugin</label>
         <link refid="classgraphene_1_1snapshot__plugin_1_1snapshot__plugin"/>
-        <childnode refid="6282" relation="public-inheritance">
+        <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6284">
+      <node id="3">
         <label>graphene::account_history::account_history_plugin</label>
         <link refid="classgraphene_1_1account__history_1_1account__history__plugin"/>
-        <childnode refid="6282" relation="public-inheritance">
+        <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6294">
+      <node id="13">
         <label>graphene::template_plugin::template_plugin</label>
         <link refid="classgraphene_1_1template__plugin_1_1template__plugin"/>
-        <childnode refid="6282" relation="public-inheritance">
+        <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6283">
+      <node id="2">
         <label>graphene::app::abstract_plugin</label>
         <link refid="classgraphene_1_1app_1_1abstract__plugin"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="6296">
+      <node id="1">
         <label>graphene::app::plugin</label>
         <link refid="classgraphene_1_1app_1_1plugin"/>
-        <childnode refid="6297" relation="public-inheritance">
+        <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6298">
+      <node id="3">
         <label>graphene::app::application</label>
         <link refid="classgraphene_1_1app_1_1application"/>
       </node>
-      <node id="6297">
+      <node id="2">
         <label>graphene::app::abstract_plugin</label>
         <link refid="classgraphene_1_1app_1_1abstract__plugin"/>
-        <childnode refid="6298" relation="usage">
+        <childnode refid="3" relation="usage">
           <edgelabel>_app</edgelabel>
         </childnode>
       </node>
@@ -332,7 +365,8 @@ This method populates its arguments with any command-line and configuration file
     <location file="libraries/app/include/graphene/app/plugin.hpp" line="101" column="1" bodyfile="libraries/app/include/graphene/app/plugin.hpp" bodystart="100" bodyend="118"/>
     <listofallmembers>
       <member refid="classgraphene_1_1app_1_1abstract__plugin_1aa9ab00af2288ed8d6f2e5a4b5b0cedf5" prot="protected" virt="non-virtual"><scope>graphene::app::plugin</scope><name>_app</name></member>
-      <member refid="classgraphene_1_1app_1_1abstract__plugin_1aaf2afbb94cb0b6aa35ec487280386a3f" prot="public" virt="non-virtual"><scope>graphene::app::plugin</scope><name>abstract_plugin</name></member>
+      <member refid="classgraphene_1_1app_1_1plugin_1aaf2afbb94cb0b6aa35ec487280386a3f" prot="public" virt="non-virtual"><scope>graphene::app::plugin</scope><name>abstract_plugin</name></member>
+      <member refid="classgraphene_1_1app_1_1abstract__plugin_1aaf2afbb94cb0b6aa35ec487280386a3f" prot="public" virt="non-virtual" ambiguityscope="graphene::app::abstract_plugin::"><scope>graphene::app::plugin</scope><name>abstract_plugin</name></member>
       <member refid="classgraphene_1_1app_1_1abstract__plugin_1af51087b05377f24da7be8379f426589f" prot="public" virt="non-virtual"><scope>graphene::app::plugin</scope><name>app</name></member>
       <member refid="classgraphene_1_1app_1_1plugin_1a4e387fd1543b949aba7f64d68a14b9e1" prot="public" virt="non-virtual"><scope>graphene::app::plugin</scope><name>database</name></member>
       <member refid="classgraphene_1_1app_1_1plugin_1ab47c3981acab8ee256889d9347e72cd3" prot="protected" virt="non-virtual"><scope>graphene::app::plugin</scope><name>p2p_node</name></member>

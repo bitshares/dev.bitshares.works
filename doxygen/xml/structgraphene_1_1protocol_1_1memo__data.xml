@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="structgraphene_1_1protocol_1_1memo__data" kind="struct" language="C++" prot="public">
     <compoundname>graphene::protocol::memo_data</compoundname>
     <includes refid="memo_8hpp" local="no">memo.hpp</includes>
@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/memo.hpp" line="42" column="1" bodyfile="libraries/protocol/include/graphene/protocol/memo.hpp" bodystart="42" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/memo.hpp" line="42" column="23" bodyfile="libraries/protocol/include/graphene/protocol/memo.hpp" bodystart="42" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1memo__data_1a76c4f0fb688d0933ada16ff214fc64bc" prot="public" static="no" mutable="no">
         <type><ref refid="structgraphene_1_1protocol_1_1public__key__type" kindref="compound">public_key_type</ref></type>
@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/memo.hpp" line="43" column="1" bodyfile="libraries/protocol/include/graphene/protocol/memo.hpp" bodystart="43" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/memo.hpp" line="43" column="23" bodyfile="libraries/protocol/include/graphene/protocol/memo.hpp" bodystart="43" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1memo__data_1adc6e14b6acb6ae7e861306625f7e15ca" prot="public" static="no" mutable="no">
         <type>uint64_t</type>
@@ -39,10 +39,12 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>64 bit nonce format: [ 8 bits | 56 bits ] [ entropy | timestamp ] Timestamp is number of microseconds since the epoch Entropy is a byte taken from the hash of a new private key</para><para>This format is not mandated or verified; it is chosen to ensure uniqueness of key-IV pairs only. This should be unique with high probability as long as the generating host has a high-resolution clock OR a strong source of entropy for generating private keys. </para>        </detaileddescription>
+<para>64 bit nonce format: [ 8 bits | 56 bits ] [ entropy | timestamp ] Timestamp is number of microseconds since the epoch Entropy is a byte taken from the hash of a new private key</para>
+<para>This format is not mandated or verified; it is chosen to ensure uniqueness of key-IV pairs only. This should be unique with high probability as long as the generating host has a high-resolution clock OR a strong source of entropy for generating private keys. </para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/memo.hpp" line="55" column="1" bodyfile="libraries/protocol/include/graphene/protocol/memo.hpp" bodystart="55" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/memo.hpp" line="55" column="16" bodyfile="libraries/protocol/include/graphene/protocol/memo.hpp" bodystart="55" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1memo__data_1ad2cc217d862bb9533f57cd7e665b0d7d" prot="public" static="no" mutable="no">
         <type>vector&lt; char &gt;</type>
@@ -52,10 +54,11 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>This field contains the AES encrypted packed <ref refid="structgraphene_1_1protocol_1_1memo__message" kindref="compound">memo_message</ref> </para>        </detaileddescription>
+<para>This field contains the AES encrypted packed <ref refid="structgraphene_1_1protocol_1_1memo__message" kindref="compound">memo_message</ref> </para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/memo.hpp" line="59" column="1" bodyfile="libraries/protocol/include/graphene/protocol/memo.hpp" bodystart="59" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/memo.hpp" line="59" column="14" bodyfile="libraries/protocol/include/graphene/protocol/memo.hpp" bodystart="59" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -84,11 +87,13 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="note"><para>custom_nonce is for debugging only; do not set to a nonzero value in production </para></simplesect>
-</para>        </detaileddescription>
+<para><simplesect kind="note"><para>custom_nonce is for debugging only; do not set to a nonzero value in production </para>
+</simplesect>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/memo.hpp" line="62" column="1" bodyfile="libraries/protocol/memo.cpp" bodystart="31" bodyend="59"/>
+        <location file="libraries/protocol/include/graphene/protocol/memo.hpp" line="62" column="19" bodyfile="libraries/protocol/memo.cpp" bodystart="31" bodyend="59"/>
       </memberdef>
       <memberdef kind="function" id="structgraphene_1_1protocol_1_1memo__data_1a832a2e8f4249b4930f16471cc03ca80b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>std::string</type>
@@ -109,36 +114,39 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/memo.hpp" line="65" column="1" bodyfile="libraries/protocol/memo.cpp" bodystart="61" bodyend="77"/>
+        <location file="libraries/protocol/include/graphene/protocol/memo.hpp" line="65" column="19" bodyfile="libraries/protocol/memo.cpp" bodystart="61" bodyend="77"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>defines the keys used to derive the shared secret </para>    </briefdescription>
+<para>defines the keys used to derive the shared secret </para>
+    </briefdescription>
     <detaileddescription>
-<para>Because account authorities and keys can change at any time, each memo must capture the specific keys used to derive the shared secret. In order to read the cipher message you will need one of the two private keys.</para><para>If <ref refid="structgraphene_1_1protocol_1_1memo__data_1a7deb7ac268a1d0420d8d30d8279578c4" kindref="member">from</ref> == <ref refid="structgraphene_1_1protocol_1_1memo__data_1a76c4f0fb688d0933ada16ff214fc64bc" kindref="member">to</ref> and <ref refid="structgraphene_1_1protocol_1_1memo__data_1a7deb7ac268a1d0420d8d30d8279578c4" kindref="member">from</ref> == 0 then no encryption is used, the memo is public. If <ref refid="structgraphene_1_1protocol_1_1memo__data_1a7deb7ac268a1d0420d8d30d8279578c4" kindref="member">from</ref> == <ref refid="structgraphene_1_1protocol_1_1memo__data_1a76c4f0fb688d0933ada16ff214fc64bc" kindref="member">to</ref> and <ref refid="structgraphene_1_1protocol_1_1memo__data_1a7deb7ac268a1d0420d8d30d8279578c4" kindref="member">from</ref> != 0 then invalid memo data </para>    </detaileddescription>
+<para>Because account authorities and keys can change at any time, each memo must capture the specific keys used to derive the shared secret. In order to read the cipher message you will need one of the two private keys.</para>
+<para>If <ref refid="structgraphene_1_1protocol_1_1memo__data_1a7deb7ac268a1d0420d8d30d8279578c4" kindref="member">from</ref> == <ref refid="structgraphene_1_1protocol_1_1memo__data_1a76c4f0fb688d0933ada16ff214fc64bc" kindref="member">to</ref> and <ref refid="structgraphene_1_1protocol_1_1memo__data_1a7deb7ac268a1d0420d8d30d8279578c4" kindref="member">from</ref> == 0 then no encryption is used, the memo is public. If <ref refid="structgraphene_1_1protocol_1_1memo__data_1a7deb7ac268a1d0420d8d30d8279578c4" kindref="member">from</ref> == <ref refid="structgraphene_1_1protocol_1_1memo__data_1a76c4f0fb688d0933ada16ff214fc64bc" kindref="member">to</ref> and <ref refid="structgraphene_1_1protocol_1_1memo__data_1a7deb7ac268a1d0420d8d30d8279578c4" kindref="member">from</ref> != 0 then invalid memo data </para>
+    </detaileddescription>
     <collaborationgraph>
-      <node id="5688">
+      <node id="1">
         <label>graphene::protocol::memo_data</label>
         <link refid="structgraphene_1_1protocol_1_1memo__data"/>
-        <childnode refid="5689" relation="usage">
+        <childnode refid="2" relation="usage">
           <edgelabel>message</edgelabel>
         </childnode>
-        <childnode refid="5690" relation="usage">
+        <childnode refid="3" relation="usage">
           <edgelabel>from</edgelabel>
           <edgelabel>to</edgelabel>
         </childnode>
       </node>
-      <node id="5689">
+      <node id="2">
         <label>vector&lt; char &gt;</label>
       </node>
-      <node id="5691">
+      <node id="4">
         <label>fc::zero_initialized_array&lt; unsigned char, 33 &gt;</label>
         <link refid="classfc_1_1zero__initialized__array"/>
       </node>
-      <node id="5690">
+      <node id="3">
         <label>graphene::protocol::public_key_type</label>
         <link refid="structgraphene_1_1protocol_1_1public__key__type"/>
-        <childnode refid="5691" relation="usage">
+        <childnode refid="4" relation="usage">
           <edgelabel>key_data</edgelabel>
         </childnode>
       </node>

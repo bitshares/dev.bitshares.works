@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="structgraphene_1_1protocol_1_1blind__transfer__operation" kind="struct" language="C++" prot="public">
     <compoundname>graphene::protocol::blind_transfer_operation</compoundname>
     <basecompoundref refid="structgraphene_1_1protocol_1_1base__operation" prot="public" virt="non-virtual">graphene::protocol::base_operation</basecompoundref>
     <includes refid="confidential_8hpp" local="no">confidential.hpp</includes>
-    <innerclass refid="structgraphene_1_1protocol_1_1blind__transfer__operation_1_1fee__parameters__type" prot="public">graphene::protocol::blind_transfer_operation::fee_parameters_type</innerclass>
+    <innerclass refid="structgraphene_1_1protocol_1_1blind__transfer__operation_1_1fee__params__t" prot="public">graphene::protocol::blind_transfer_operation::fee_params_t</innerclass>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1blind__transfer__operation_1a45305c7443b1b84d5182a54b7cd1dca8" prot="public" static="no" mutable="no">
         <type><ref refid="structgraphene_1_1protocol_1_1asset" kindref="compound">asset</ref></type>
@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/confidential.hpp" line="245" column="1" bodyfile="libraries/protocol/include/graphene/protocol/confidential.hpp" bodystart="245" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/confidential.hpp" line="245" column="26" bodyfile="libraries/protocol/include/graphene/protocol/confidential.hpp" bodystart="245" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1blind__transfer__operation_1a80c972baaec23a4100df0abfafc1ac3f" prot="public" static="no" mutable="no">
         <type>vector&lt; <ref refid="structgraphene_1_1protocol_1_1blind__input" kindref="compound">blind_input</ref> &gt;</type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/confidential.hpp" line="246" column="1" bodyfile="libraries/protocol/include/graphene/protocol/confidential.hpp" bodystart="246" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/confidential.hpp" line="246" column="13" bodyfile="libraries/protocol/include/graphene/protocol/confidential.hpp" bodystart="246" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1blind__transfer__operation_1a95cb900d8f3c8186a6782b02fa2fd669" prot="public" static="no" mutable="no">
         <type>vector&lt; <ref refid="structgraphene_1_1protocol_1_1blind__output" kindref="compound">blind_output</ref> &gt;</type>
@@ -43,7 +43,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/confidential.hpp" line="247" column="1" bodyfile="libraries/protocol/include/graphene/protocol/confidential.hpp" bodystart="247" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/confidential.hpp" line="247" column="12" bodyfile="libraries/protocol/include/graphene/protocol/confidential.hpp" bodystart="247" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -55,10 +55,12 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>graphene TEMP account</para><para>If fee_payer = temp_account_id, then the fee is paid by the surplus balance of inputs-outputs and 100% of the fee goes to the network. </para>        </detaileddescription>
+<para>graphene TEMP account</para>
+<para>If fee_payer = temp_account_id, then the fee is paid by the surplus balance of inputs-outputs and 100% of the fee goes to the network. </para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/confidential.hpp" line="250" column="1" bodyfile="libraries/protocol/confidential.cpp" bodystart="97" bodyend="100"/>
+        <location file="libraries/protocol/include/graphene/protocol/confidential.hpp" line="250" column="20" bodyfile="libraries/protocol/confidential.cpp" bodystart="97" bodyend="100"/>
       </memberdef>
       <memberdef kind="function" id="structgraphene_1_1protocol_1_1blind__transfer__operation_1a2b0a0c1ddc8cf2e3f3ba067935f4aefb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -69,18 +71,20 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>This method can be computationally intensive because it verifies that input commitments - output commitments add up to 0 </para>        </detaileddescription>
+<para>This method can be computationally intensive because it verifies that input commitments - output commitments add up to 0 </para>
+        </detaileddescription>
         <inbodydescription>
-<para>by requiring all inputs to be sorted we also prevent duplicate commitments on the input </para>        </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/confidential.hpp" line="251" column="1" bodyfile="libraries/protocol/confidential.cpp" bodystart="106" bodyend="135"/>
+<para>by requiring all inputs to be sorted we also prevent duplicate commitments on the input</para>
+        </inbodydescription>
+        <location file="libraries/protocol/include/graphene/protocol/confidential.hpp" line="251" column="20" bodyfile="libraries/protocol/confidential.cpp" bodystart="106" bodyend="135"/>
       </memberdef>
-      <memberdef kind="function" id="structgraphene_1_1protocol_1_1blind__transfer__operation_1a4945ba7f74d13568758d356d06dd85e3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structgraphene_1_1protocol_1_1blind__transfer__operation_1aa157f51c2e3765eb8f060f47046b541d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="namespacegraphene_1_1protocol_1a69b2104c1c11eed2d17bd29b86713347" kindref="member">share_type</ref></type>
         <definition>share_type graphene::protocol::blind_transfer_operation::calculate_fee</definition>
-        <argsstring>(const fee_parameters_type &amp;k) const</argsstring>
+        <argsstring>(const fee_params_t &amp;k) const</argsstring>
         <name>calculate_fee</name>
         <param>
-          <type>const <ref refid="structgraphene_1_1protocol_1_1blind__transfer__operation_1_1fee__parameters__type" kindref="compound">fee_parameters_type</ref> &amp;</type>
+          <type>const <ref refid="structgraphene_1_1protocol_1_1blind__transfer__operation_1_1fee__params__t" kindref="compound">fee_params_t</ref> &amp;</type>
           <declname>k</declname>
         </param>
         <briefdescription>
@@ -89,7 +93,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/confidential.hpp" line="252" column="1" bodyfile="libraries/protocol/confidential.cpp" bodystart="137" bodyend="140"/>
+        <location file="libraries/protocol/include/graphene/protocol/confidential.hpp" line="252" column="20" bodyfile="libraries/protocol/confidential.cpp" bodystart="137" bodyend="140"/>
       </memberdef>
       <memberdef kind="function" id="structgraphene_1_1protocol_1_1blind__transfer__operation_1aa6a25339e7012c124c4dd2cb43c67870" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
@@ -107,61 +111,81 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/confidential.hpp" line="254" column="1" bodyfile="libraries/protocol/include/graphene/protocol/confidential.hpp" bodystart="254" bodyend="258"/>
+        <location file="libraries/protocol/include/graphene/protocol/confidential.hpp" line="254" column="20" bodyfile="libraries/protocol/include/graphene/protocol/confidential.hpp" bodystart="254" bodyend="258"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>Transfers from blind to blind. </para>    </briefdescription>
+<para>Transfers from blind to blind. </para>
+    </briefdescription>
     <detaileddescription>
 <para>There are two ways to transfer value while maintaining privacy:<orderedlist>
-<listitem><para>account to account with amount kept secret</para></listitem><listitem><para>stealth transfers with amount sender/receiver kept secret</para></listitem></orderedlist>
-</para><para>When doing account to account transfers, everyone with access to the memo key can see the amounts, but they will not have access to the funds.</para><para>When using stealth transfers the same key is used for control and reading the memo.</para><para>This operation is more expensive than a normal transfer and has a fee proportional to the size of the operation.</para><para>All assets in a blind transfer must be of the same type: fee.asset_id The fee_payer is the temp account and can be funded from the blinded values.</para><para>Using this operation you can transfer from an account and/or blinded balances to an account and/or blinded balances.</para><para>Stealth Transfers:</para><para>Assuming Receiver has key pair R,r and has shared public key R with Sender Assuming Sender has key pair S,s Generate one time key pair O,o as s.child(nonce) where nonce can be inferred from transaction Calculate secret V = o*R blinding_factor = sha256(V) memo is encrypted via aes of V owner = R.child(sha256(blinding_factor))</para><para>Sender gives Receiver output ID to complete the payment.</para><para>This process can also be used to send money to a cold wallet without having to pre-register any accounts.</para><para>Outputs are assigned the same IDs as the inputs until no more input IDs are available, in which case a the return value will be the <emphasis>first</emphasis> ID allocated for an output. Additional output IDs are allocated sequentially thereafter. If there are fewer outputs than inputs then the input IDs are freed and never used again. </para>    </detaileddescription>
+<listitem><para>account to account with amount kept secret</para>
+</listitem><listitem><para>stealth transfers with amount sender/receiver kept secret</para>
+</listitem></orderedlist>
+</para>
+<para>When doing account to account transfers, everyone with access to the memo key can see the amounts, but they will not have access to the funds.</para>
+<para>When using stealth transfers the same key is used for control and reading the memo.</para>
+<para>This operation is more expensive than a normal transfer and has a fee proportional to the size of the operation.</para>
+<para>All assets in a blind transfer must be of the same type: fee.asset_id The fee_payer is the temp account and can be funded from the blinded values.</para>
+<para>Using this operation you can transfer from an account and/or blinded balances to an account and/or blinded balances.</para>
+<para>Stealth Transfers:</para>
+<para>Assuming Receiver has key pair R,r and has shared public key R with Sender Assuming Sender has key pair S,s Generate one time key pair O,o as s.child(nonce) where nonce can be inferred from transaction Calculate secret V = o*R blinding_factor = sha256(V) memo is encrypted via aes of V owner = R.child(sha256(blinding_factor))</para>
+<para>Sender gives Receiver output ID to complete the payment.</para>
+<para>This process can also be used to send money to a cold wallet without having to pre-register any accounts.</para>
+<para>Outputs are assigned the same IDs as the inputs until no more input IDs are available, in which case a the return value will be the <emphasis>first</emphasis> ID allocated for an output. Additional output IDs are allocated sequentially thereafter. If there are fewer outputs than inputs then the input IDs are freed and never used again. </para>
+    </detaileddescription>
     <inheritancegraph>
-      <node id="2034">
+      <node id="1">
         <label>graphene::protocol::blind_transfer_operation</label>
         <link refid="structgraphene_1_1protocol_1_1blind__transfer__operation"/>
-        <childnode refid="2035" relation="public-inheritance">
+        <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="2035">
+      <node id="2">
         <label>graphene::protocol::base_operation</label>
         <link refid="structgraphene_1_1protocol_1_1base__operation"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="2041">
+      <node id="7">
         <label>vector&lt; graphene::protocol::blind_input &gt;</label>
       </node>
-      <node id="2040">
+      <node id="6">
         <label>vector&lt; graphene::protocol::blind_output &gt;</label>
       </node>
-      <node id="2036">
+      <node id="5">
+        <label>fc::safe_base&lt; int64_t &gt;</label>
+        <link refid="structfc_1_1safe__base"/>
+      </node>
+      <node id="1">
         <label>graphene::protocol::blind_transfer_operation</label>
         <link refid="structgraphene_1_1protocol_1_1blind__transfer__operation"/>
-        <childnode refid="2037" relation="public-inheritance">
+        <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="2038" relation="usage">
+        <childnode refid="3" relation="usage">
           <edgelabel>fee</edgelabel>
         </childnode>
-        <childnode refid="2040" relation="usage">
+        <childnode refid="6" relation="usage">
           <edgelabel>outputs</edgelabel>
         </childnode>
-        <childnode refid="2041" relation="usage">
+        <childnode refid="7" relation="usage">
           <edgelabel>inputs</edgelabel>
         </childnode>
       </node>
-      <node id="2039">
+      <node id="4">
         <label>fc::safe&lt; int64_t &gt;</label>
         <link refid="structfc_1_1safe"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
       </node>
-      <node id="2037">
+      <node id="2">
         <label>graphene::protocol::base_operation</label>
         <link refid="structgraphene_1_1protocol_1_1base__operation"/>
       </node>
-      <node id="2038">
+      <node id="3">
         <label>graphene::protocol::asset</label>
         <link refid="structgraphene_1_1protocol_1_1asset"/>
-        <childnode refid="2039" relation="usage">
+        <childnode refid="4" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
       </node>
@@ -169,7 +193,7 @@
     <location file="libraries/protocol/include/graphene/protocol/confidential.hpp" line="239" column="1" bodyfile="libraries/protocol/include/graphene/protocol/confidential.hpp" bodystart="238" bodyend="259"/>
     <listofallmembers>
       <member refid="structgraphene_1_1protocol_1_1base__operation_1aaccb0fa71ee529cf62324baaa99988fe" prot="public" virt="non-virtual"><scope>graphene::protocol::blind_transfer_operation</scope><name>calculate_data_fee</name></member>
-      <member refid="structgraphene_1_1protocol_1_1blind__transfer__operation_1a4945ba7f74d13568758d356d06dd85e3" prot="public" virt="non-virtual"><scope>graphene::protocol::blind_transfer_operation</scope><name>calculate_fee</name></member>
+      <member refid="structgraphene_1_1protocol_1_1blind__transfer__operation_1aa157f51c2e3765eb8f060f47046b541d" prot="public" virt="non-virtual"><scope>graphene::protocol::blind_transfer_operation</scope><name>calculate_fee</name></member>
       <member refid="structgraphene_1_1protocol_1_1base__operation_1a0be44badcee9a648413eb906dac1d3b3" prot="public" virt="non-virtual" ambiguityscope="graphene::protocol::base_operation::"><scope>graphene::protocol::blind_transfer_operation</scope><name>calculate_fee</name></member>
       <member refid="structgraphene_1_1protocol_1_1blind__transfer__operation_1a45305c7443b1b84d5182a54b7cd1dca8" prot="public" virt="non-virtual"><scope>graphene::protocol::blind_transfer_operation</scope><name>fee</name></member>
       <member refid="structgraphene_1_1protocol_1_1blind__transfer__operation_1a674c869bf9ac4a666ad5a22da88446ce" prot="public" virt="non-virtual"><scope>graphene::protocol::blind_transfer_operation</scope><name>fee_payer</name></member>

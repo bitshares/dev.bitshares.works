@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="structgraphene_1_1protocol_1_1account__transfer__operation" kind="struct" language="C++" prot="public">
     <compoundname>graphene::protocol::account_transfer_operation</compoundname>
     <basecompoundref refid="structgraphene_1_1protocol_1_1base__operation" prot="public" virt="non-virtual">graphene::protocol::base_operation</basecompoundref>
     <includes refid="account_8hpp" local="no">account.hpp</includes>
-    <innerclass refid="structgraphene_1_1protocol_1_1account__transfer__operation_1_1fee__parameters__type" prot="public">graphene::protocol::account_transfer_operation::fee_parameters_type</innerclass>
+    <innerclass refid="structgraphene_1_1protocol_1_1account__transfer__operation_1_1fee__params__t" prot="public">graphene::protocol::account_transfer_operation::fee_params_t</innerclass>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1account__transfer__operation_1a2df10f43cbced0bbed3853362fbc5d23" prot="public" static="no" mutable="no">
         <type><ref refid="structgraphene_1_1protocol_1_1asset" kindref="compound">asset</ref></type>
@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/account.hpp" line="271" column="1" bodyfile="libraries/protocol/include/graphene/protocol/account.hpp" bodystart="271" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/account.hpp" line="271" column="23" bodyfile="libraries/protocol/include/graphene/protocol/account.hpp" bodystart="271" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1account__transfer__operation_1a12802b9db4bc35c77bffb0a6b90bb547" prot="public" static="no" mutable="no">
         <type>account_id_type</type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/account.hpp" line="272" column="1" bodyfile="libraries/protocol/include/graphene/protocol/account.hpp" bodystart="272" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/account.hpp" line="272" column="23" bodyfile="libraries/protocol/include/graphene/protocol/account.hpp" bodystart="272" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1account__transfer__operation_1a6ee9559b38c2452b09da53aceaef55e0" prot="public" static="no" mutable="no">
         <type>account_id_type</type>
@@ -43,7 +43,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/account.hpp" line="273" column="1" bodyfile="libraries/protocol/include/graphene/protocol/account.hpp" bodystart="273" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/account.hpp" line="273" column="23" bodyfile="libraries/protocol/include/graphene/protocol/account.hpp" bodystart="273" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1account__transfer__operation_1a7998663278a073a2c05538f31cc0800b" prot="public" static="no" mutable="no">
         <type><ref refid="group__operations_1gabaddcaf5bde76414891b4c29031d9288" kindref="member">extensions_type</ref></type>
@@ -56,7 +56,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/account.hpp" line="274" column="1" bodyfile="libraries/protocol/include/graphene/protocol/account.hpp" bodystart="274" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/account.hpp" line="274" column="23" bodyfile="libraries/protocol/include/graphene/protocol/account.hpp" bodystart="274" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -71,7 +71,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/account.hpp" line="276" column="1" bodyfile="libraries/protocol/include/graphene/protocol/account.hpp" bodystart="276" bodyend="276"/>
+        <location file="libraries/protocol/include/graphene/protocol/account.hpp" line="276" column="23" bodyfile="libraries/protocol/include/graphene/protocol/account.hpp" bodystart="276" bodyend="276"/>
       </memberdef>
       <memberdef kind="function" id="structgraphene_1_1protocol_1_1account__transfer__operation_1a4f3709a292dc3e9cd6b5945075df3ffc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -85,53 +85,63 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/account.hpp" line="277" column="1" bodyfile="libraries/protocol/account.cpp" bodystart="275" bodyend="278"/>
+        <location file="libraries/protocol/include/graphene/protocol/account.hpp" line="277" column="19" bodyfile="libraries/protocol/account.cpp" bodystart="275" bodyend="278"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>transfers the account to another account while clearing the white list</para><para>In theory an account can be transferred by simply updating the authorities, but that kind of transfer lacks semantic meaning and is more often done to rotate keys without transferring ownership. This operation is used to indicate the legal transfer of title to this account and a break in the operation history. </para>    </briefdescription>
+<para>transfers the account to another account while clearing the white list </para>
+    </briefdescription>
     <detaileddescription>
-<para>The account_id&apos;s owner/active/voting/memo authority should be set to new_owner</para><para>This operation will clear the account&apos;s whitelist statuses, but not the blacklist statuses. </para>    </detaileddescription>
+<para>In theory an account can be transferred by simply updating the authorities, but that kind of transfer lacks semantic meaning and is more often done to rotate keys without transferring ownership. This operation is used to indicate the legal transfer of title to this account and a break in the operation history.</para>
+<para>The account_id&apos;s owner/active/voting/memo authority should be set to new_owner</para>
+<para>This operation will clear the account&apos;s whitelist statuses, but not the blacklist statuses. </para>
+    </detaileddescription>
     <inheritancegraph>
-      <node id="215">
+      <node id="2">
         <label>graphene::protocol::base_operation</label>
         <link refid="structgraphene_1_1protocol_1_1base__operation"/>
       </node>
-      <node id="214">
+      <node id="1">
         <label>graphene::protocol::account_transfer_operation</label>
         <link refid="structgraphene_1_1protocol_1_1account__transfer__operation"/>
-        <childnode refid="215" relation="public-inheritance">
+        <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="220">
+      <node id="5">
+        <label>fc::safe_base&lt; int64_t &gt;</label>
+        <link refid="structfc_1_1safe__base"/>
+      </node>
+      <node id="6">
         <label>account_id_type</label>
       </node>
-      <node id="219">
+      <node id="4">
         <label>fc::safe&lt; int64_t &gt;</label>
         <link refid="structfc_1_1safe"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
       </node>
-      <node id="217">
+      <node id="2">
         <label>graphene::protocol::base_operation</label>
         <link refid="structgraphene_1_1protocol_1_1base__operation"/>
       </node>
-      <node id="218">
+      <node id="3">
         <label>graphene::protocol::asset</label>
         <link refid="structgraphene_1_1protocol_1_1asset"/>
-        <childnode refid="219" relation="usage">
+        <childnode refid="4" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
       </node>
-      <node id="216">
+      <node id="1">
         <label>graphene::protocol::account_transfer_operation</label>
         <link refid="structgraphene_1_1protocol_1_1account__transfer__operation"/>
-        <childnode refid="217" relation="public-inheritance">
+        <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="218" relation="usage">
+        <childnode refid="3" relation="usage">
           <edgelabel>fee</edgelabel>
         </childnode>
-        <childnode refid="220" relation="usage">
+        <childnode refid="6" relation="usage">
           <edgelabel>new_owner</edgelabel>
           <edgelabel>account_id</edgelabel>
         </childnode>

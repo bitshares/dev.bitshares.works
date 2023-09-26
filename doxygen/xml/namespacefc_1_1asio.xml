@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="namespacefc_1_1asio" kind="namespace" language="C++">
     <compoundname>fc::asio</compoundname>
     <innerclass refid="classfc_1_1asio_1_1default__io__service__scope" prot="public">fc::asio::default_io_service_scope</innerclass>
@@ -17,11 +17,13 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="return"><para>the default boost::asio::io_service for use with <ref refid="namespacefc_1_1asio" kindref="compound">fc::asio</ref></para></simplesect>
-This IO service is automatically running in its own thread to service asynchronous requests without blocking any other threads. </para>        </detaileddescription>
+<para><simplesect kind="return"><para>the default boost::asio::io_service for use with <ref refid="namespacefc_1_1asio" kindref="compound">fc::asio</ref></para>
+</simplesect>
+This IO service is automatically running in its own thread to service asynchronous requests without blocking any other threads. </para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/asio.hpp" line="95" column="1" bodyfile="libraries/fc/src/asio.cpp" bodystart="182" bodyend="185"/>
+        <location file="libraries/fc/src/asio.cpp" line="190" column="29" bodyfile="libraries/fc/src/asio.cpp" bodystart="190" bodyend="193" declfile="libraries/fc/include/fc/asio.hpp" declline="95" declcolumn="29"/>
       </memberdef>
       <memberdef kind="function" id="namespacefc_1_1asio_1a4ef121489bdee40f68b44fbce0c4a012" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -45,14 +47,18 @@ This IO service is automatically running in its own thread to service asynchrono
           <declname>buf</declname>
         </param>
         <briefdescription>
-<para>wraps boost::asio::async_read </para>        </briefdescription>
+<para>wraps boost::asio::async_read </para>
+        </briefdescription>
         <detaileddescription>
-<para><simplesect kind="pre"><para>s.non_blocking() == true </para></simplesect>
-<simplesect kind="return"><para>the number of bytes read. </para></simplesect>
-</para>        </detaileddescription>
+<para><simplesect kind="pre"><para>s.non_blocking() == true </para>
+</simplesect>
+<simplesect kind="return"><para>the number of bytes read. </para>
+</simplesect>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/asio.hpp" line="103" column="1" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="103" bodyend="107"/>
+        <location file="libraries/fc/include/fc/asio.hpp" line="103" column="12" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="103" bodyend="107"/>
       </memberdef>
       <memberdef kind="function" id="namespacefc_1_1asio_1aebe137701d4d69e5896882575791cb9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -78,11 +84,16 @@ This IO service is automatically running in its own thread to service asynchrono
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>This method will read at least 1 byte from the stream and will cooperatively block until that byte is available or an error occurs.</para><para>If the stream is not in &apos;non-blocking&apos; mode it will be put in &apos;non-blocking&apos; mode it the stream supports s.non_blocking() and s.non_blocking(bool).</para><para>If in non blocking mode, the call will be synchronous avoiding heap allocs and context switching. If the sync call returns &apos;would block&apos; then an promise is created and an async read is generated.</para><para><simplesect kind="return"><para>the number of bytes read. </para></simplesect>
-</para>        </detaileddescription>
+<para>This method will read at least 1 byte from the stream and will cooperatively block until that byte is available or an error occurs.</para>
+<para>If the stream is not in &apos;non-blocking&apos; mode it will be put in &apos;non-blocking&apos; mode it the stream supports s.non_blocking() and s.non_blocking(bool).</para>
+<para>If in non blocking mode, the call will be synchronous avoiding heap allocs and context switching. If the sync call returns &apos;would block&apos; then an promise is created and an async read is generated.</para>
+<para><simplesect kind="return"><para>the number of bytes read. </para>
+</simplesect>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/asio.hpp" line="122" column="1" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="122" bodyend="127"/>
+        <location file="libraries/fc/include/fc/asio.hpp" line="122" column="12" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="122" bodyend="127"/>
       </memberdef>
       <memberdef kind="function" id="namespacefc_1_1asio_1a94ca4a2337ac514fa496b796ad24a8fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -117,7 +128,7 @@ This IO service is automatically running in its own thread to service asynchrono
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/asio.hpp" line="130" column="1" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="130" bodyend="136"/>
+        <location file="libraries/fc/include/fc/asio.hpp" line="130" column="12" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="130" bodyend="136"/>
       </memberdef>
       <memberdef kind="function" id="namespacefc_1_1asio_1a2c20b1570e884b68abce55d077cff007" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -151,7 +162,7 @@ This IO service is automatically running in its own thread to service asynchrono
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/asio.hpp" line="139" column="1" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="139" bodyend="145"/>
+        <location file="libraries/fc/include/fc/asio.hpp" line="139" column="12" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="139" bodyend="145"/>
       </memberdef>
       <memberdef kind="function" id="namespacefc_1_1asio_1a6b515a0b3e6bd32e252eabceab3e7c7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -184,7 +195,7 @@ This IO service is automatically running in its own thread to service asynchrono
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/asio.hpp" line="148" column="1" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="148" bodyend="151"/>
+        <location file="libraries/fc/include/fc/asio.hpp" line="148" column="10" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="148" bodyend="151"/>
       </memberdef>
       <memberdef kind="function" id="namespacefc_1_1asio_1a398e725cb9b95ca07540eeb130b05197" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -218,7 +229,7 @@ This IO service is automatically running in its own thread to service asynchrono
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/asio.hpp" line="154" column="1" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="154" bodyend="158"/>
+        <location file="libraries/fc/include/fc/asio.hpp" line="154" column="10" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="154" bodyend="158"/>
       </memberdef>
       <memberdef kind="function" id="namespacefc_1_1asio_1a8e94f925defc40ac80274de784fe2828" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -256,7 +267,7 @@ This IO service is automatically running in its own thread to service asynchrono
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/asio.hpp" line="161" column="1" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="161" bodyend="165"/>
+        <location file="libraries/fc/include/fc/asio.hpp" line="161" column="10" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="161" bodyend="165"/>
       </memberdef>
       <memberdef kind="function" id="namespacefc_1_1asio_1a216235541dbfab69fc452bac7b785ffa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -282,7 +293,7 @@ This IO service is automatically running in its own thread to service asynchrono
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/asio.hpp" line="168" column="1" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="168" bodyend="174"/>
+        <location file="libraries/fc/include/fc/asio.hpp" line="168" column="12" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="168" bodyend="174"/>
       </memberdef>
       <memberdef kind="function" id="namespacefc_1_1asio_1a5a7c601acc24570e6f43bafea3b2baa3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -306,13 +317,16 @@ This IO service is automatically running in its own thread to service asynchrono
           <declname>buf</declname>
         </param>
         <briefdescription>
-<para>wraps boost::asio::async_write </para>        </briefdescription>
+<para>wraps boost::asio::async_write </para>
+        </briefdescription>
         <detaileddescription>
-<para><simplesect kind="return"><para>the number of bytes written </para></simplesect>
-</para>        </detaileddescription>
+<para><simplesect kind="return"><para>the number of bytes written </para>
+</simplesect>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/asio.hpp" line="180" column="1" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="180" bodyend="184"/>
+        <location file="libraries/fc/include/fc/asio.hpp" line="180" column="12" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="180" bodyend="184"/>
       </memberdef>
       <memberdef kind="function" id="namespacefc_1_1asio_1a4343b53ca01ef5c71c49d80d1861cd0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -336,14 +350,18 @@ This IO service is automatically running in its own thread to service asynchrono
           <declname>buf</declname>
         </param>
         <briefdescription>
-<para>wraps boost::asio::async_write_some </para>        </briefdescription>
+<para>wraps boost::asio::async_write_some </para>
+        </briefdescription>
         <detaileddescription>
-<para><simplesect kind="pre"><para>s.non_blocking() == true </para></simplesect>
-<simplesect kind="return"><para>the number of bytes written </para></simplesect>
-</para>        </detaileddescription>
+<para><simplesect kind="pre"><para>s.non_blocking() == true </para>
+</simplesect>
+<simplesect kind="return"><para>the number of bytes written </para>
+</simplesect>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/asio.hpp" line="192" column="1" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="192" bodyend="196"/>
+        <location file="libraries/fc/include/fc/asio.hpp" line="192" column="12" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="192" bodyend="196"/>
       </memberdef>
       <memberdef kind="function" id="namespacefc_1_1asio_1acb0c69f6ef665be667cfba8ba73978e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -378,7 +396,7 @@ This IO service is automatically running in its own thread to service asynchrono
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/asio.hpp" line="199" column="1" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="199" bodyend="204"/>
+        <location file="libraries/fc/include/fc/asio.hpp" line="199" column="12" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="199" bodyend="204"/>
       </memberdef>
       <memberdef kind="function" id="namespacefc_1_1asio_1a99ea0588c232f80a5381b65ef77a69a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -412,7 +430,7 @@ This IO service is automatically running in its own thread to service asynchrono
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/asio.hpp" line="207" column="1" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="207" bodyend="212"/>
+        <location file="libraries/fc/include/fc/asio.hpp" line="207" column="12" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="207" bodyend="212"/>
       </memberdef>
       <memberdef kind="function" id="namespacefc_1_1asio_1a5f3631b82c359db03a93ef4f6b7b25b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -440,14 +458,18 @@ This IO service is automatically running in its own thread to service asynchrono
           <declname>completion_promise</declname>
         </param>
         <briefdescription>
-<para>wraps boost::asio::async_write_some </para>        </briefdescription>
+<para>wraps boost::asio::async_write_some </para>
+        </briefdescription>
         <detaileddescription>
-<para><simplesect kind="pre"><para>s.non_blocking() == true </para></simplesect>
-<simplesect kind="return"><para>the number of bytes written </para></simplesect>
-</para>        </detaileddescription>
+<para><simplesect kind="pre"><para>s.non_blocking() == true </para>
+</simplesect>
+<simplesect kind="return"><para>the number of bytes written </para>
+</simplesect>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/asio.hpp" line="220" column="1" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="220" bodyend="222"/>
+        <location file="libraries/fc/include/fc/asio.hpp" line="220" column="10" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="220" bodyend="222"/>
       </memberdef>
       <memberdef kind="function" id="namespacefc_1_1asio_1a324a298de0793bf6a320aeda1d7602d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -481,7 +503,7 @@ This IO service is automatically running in its own thread to service asynchrono
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/asio.hpp" line="225" column="1" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="225" bodyend="229"/>
+        <location file="libraries/fc/include/fc/asio.hpp" line="225" column="10" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="225" bodyend="229"/>
       </memberdef>
       <memberdef kind="function" id="namespacefc_1_1asio_1a9645ab9824d9b4b9b3cd6e8ce751c063" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -519,13 +541,14 @@ This IO service is automatically running in its own thread to service asynchrono
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/asio.hpp" line="232" column="1" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="232" bodyend="236"/>
+        <location file="libraries/fc/include/fc/asio.hpp" line="232" column="10" bodyfile="libraries/fc/include/fc/asio.hpp" bodystart="232" bodyend="236"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>defines fc wrappers for boost::asio functions. </para>    </briefdescription>
+<para>defines fc wrappers for boost::asio functions. </para>
+    </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="libraries/fc/include/fc/asio.hpp" line="16" column="1"/>
+    <location file="libraries/fc/include/fc/asio.hpp" line="16" column="14"/>
   </compounddef>
 </doxygen>

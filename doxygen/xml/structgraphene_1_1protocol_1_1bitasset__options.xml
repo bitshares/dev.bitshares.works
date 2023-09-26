@@ -1,11 +1,12 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="structgraphene_1_1protocol_1_1bitasset__options" kind="struct" language="C++" prot="public">
     <compoundname>graphene::protocol::bitasset_options</compoundname>
     <includes refid="asset__ops_8hpp" local="no">asset_ops.hpp</includes>
     <innerclass refid="structgraphene_1_1protocol_1_1bitasset__options_1_1ext" prot="public">graphene::protocol::bitasset_options::ext</innerclass>
       <sectiondef kind="public-type">
-      <memberdef kind="enum" id="structgraphene_1_1protocol_1_1bitasset__options_1a86d8df815d5ff26c11c9894fefe202be" prot="public" static="no">
+      <memberdef kind="enum" id="structgraphene_1_1protocol_1_1bitasset__options_1a86d8df815d5ff26c11c9894fefe202be" prot="public" static="no" strong="yes">
+        <type></type>
         <name>black_swan_response_type</name>
         <enumvalue id="structgraphene_1_1protocol_1_1bitasset__options_1a86d8df815d5ff26c11c9894fefe202bea9db5fba03f5e62e804849cb6fcc263c4" prot="public">
           <name>global_settlement</name>
@@ -13,7 +14,8 @@
           <briefdescription>
           </briefdescription>
           <detaileddescription>
-<para>All debt positions are closed, all or some collateral is moved to a global-settlement fund. Debt asset holders can claim collateral via force-settlement. It is not allowed to create new debt positions when the fund is not empty. </para>          </detaileddescription>
+<para>All debt positions are closed, all or some collateral is moved to a global-settlement fund. Debt asset holders can claim collateral via force-settlement. It is not allowed to create new debt positions when the fund is not empty. </para>
+          </detaileddescription>
         </enumvalue>
         <enumvalue id="structgraphene_1_1protocol_1_1bitasset__options_1a86d8df815d5ff26c11c9894fefe202bea3503b014eaa565ab0619d2b445a90cde" prot="public">
           <name>no_settlement</name>
@@ -21,7 +23,8 @@
           <briefdescription>
           </briefdescription>
           <detaileddescription>
-<para>No debt position is closed, and the derived settlement price is dynamically capped at the collateral ratio of the debt position with the least collateral ratio so that all debt positions are able to pay off their debt when being margin called or force-settled. It is allowed to create new debt positions and update existing debt positions. Also known as &quot;Global Settlement Protection&quot;. </para>          </detaileddescription>
+<para>No debt position is closed, and the derived settlement price is dynamically capped at the collateral ratio of the debt position with the least collateral ratio so that all debt positions are able to pay off their debt when being margin called or force-settled. It is allowed to create new debt positions and update existing debt positions. Also known as &quot;Global Settlement Protection&quot;. </para>
+          </detaileddescription>
         </enumvalue>
         <enumvalue id="structgraphene_1_1protocol_1_1bitasset__options_1a86d8df815d5ff26c11c9894fefe202beabe74d76a86bbc996fef7529e3b58c666" prot="public">
           <name>individual_settlement_to_fund</name>
@@ -29,7 +32,8 @@
           <briefdescription>
           </briefdescription>
           <detaileddescription>
-<para>Only the undercollateralized debt positions are closed and their collateral is moved to a fund which can be claimed via force-settlement. The derived settlement price is capped at the fund&apos;s collateral ratio so that remaining debt positions will not be margin called or force-settled at a worse price when the fund is not empty. It is allowed to create new debt positions and update existing debt positions. </para>          </detaileddescription>
+<para>Only the undercollateralized debt positions are closed and their collateral is moved to a fund which can be claimed via force-settlement. The derived settlement price is capped at the fund&apos;s collateral ratio so that remaining debt positions will not be margin called or force-settled at a worse price when the fund is not empty. It is allowed to create new debt positions and update existing debt positions. </para>
+          </detaileddescription>
         </enumvalue>
         <enumvalue id="structgraphene_1_1protocol_1_1bitasset__options_1a86d8df815d5ff26c11c9894fefe202bea7e5d494b7fe4aba8a7e12f1f8601f63f" prot="public">
           <name>individual_settlement_to_order</name>
@@ -37,18 +41,21 @@
           <briefdescription>
           </briefdescription>
           <detaileddescription>
-<para>Only the undercollateralized debt positions are closed and their collateral is moved to a limit order on the order book which can be bought. The derived settlement price is NOT capped, which means remaining debt positions could be margin called at a worse price. It is allowed to create new debt positions and update existing debt positions. </para>          </detaileddescription>
+<para>Only the undercollateralized debt positions are closed and their collateral is moved to a limit order on the order book which can be bought. The derived settlement price is NOT capped, which means remaining debt positions could be margin called at a worse price. It is allowed to create new debt positions and update existing debt positions. </para>
+          </detaileddescription>
         </enumvalue>
         <enumvalue id="structgraphene_1_1protocol_1_1bitasset__options_1a86d8df815d5ff26c11c9894fefe202bea81f47efb94a2515969c2a6e7ed313799" prot="public">
           <name>BSRM_TYPE_COUNT</name>
           <initializer>= 4</initializer>
           <briefdescription>
-<para>Total number of available black swan response methods. </para>          </briefdescription>
+<para>Total number of available black swan response methods. </para>
+          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
         <briefdescription>
-<para>Defines how a BitAsset would respond to black swan events. </para>        </briefdescription>
+<para>Defines how a BitAsset would respond to black swan events. </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
@@ -64,12 +71,13 @@
         <name>feed_lifetime_sec</name>
         <initializer>= <ref refid="protocol_2include_2graphene_2protocol_2config_8hpp_1a0ce06f10a711677251107caa0ac33dc6" kindref="member">GRAPHENE_DEFAULT_PRICE_FEED_LIFETIME</ref></initializer>
         <briefdescription>
-<para>Time before a price feed expires. </para>        </briefdescription>
+<para>Time before a price feed expires. </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="156" column="1" bodyfile="libraries/protocol/include/graphene/protocol/asset_ops.hpp" bodystart="156" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="156" column="16" bodyfile="libraries/protocol/include/graphene/protocol/asset_ops.hpp" bodystart="156" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1bitasset__options_1a7ab5de34e4e61645c5c2bee142146b2c" prot="public" static="no" mutable="no">
         <type>uint8_t</type>
@@ -78,12 +86,13 @@
         <name>minimum_feeds</name>
         <initializer>= 1</initializer>
         <briefdescription>
-<para>Minimum number of unexpired feeds required to extract a median feed from. </para>        </briefdescription>
+<para>Minimum number of unexpired feeds required to extract a median feed from. </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="158" column="1" bodyfile="libraries/protocol/include/graphene/protocol/asset_ops.hpp" bodystart="158" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="158" column="15" bodyfile="libraries/protocol/include/graphene/protocol/asset_ops.hpp" bodystart="158" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1bitasset__options_1a7bbe267228c39b9614f311daad0ac06e" prot="public" static="no" mutable="no">
         <type>uint32_t</type>
@@ -92,12 +101,13 @@
         <name>force_settlement_delay_sec</name>
         <initializer>= <ref refid="protocol_2include_2graphene_2protocol_2config_8hpp_1a664f0f3802f2770f9c6268f50bb69ebc" kindref="member">GRAPHENE_DEFAULT_FORCE_SETTLEMENT_DELAY</ref></initializer>
         <briefdescription>
-<para>This is the delay between the time a long requests settlement and the chain evaluates the settlement. </para>        </briefdescription>
+<para>This is the delay between the time a long requests settlement and the chain evaluates the settlement. </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="160" column="1" bodyfile="libraries/protocol/include/graphene/protocol/asset_ops.hpp" bodystart="160" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="160" column="16" bodyfile="libraries/protocol/include/graphene/protocol/asset_ops.hpp" bodystart="160" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1bitasset__options_1a802bf9906028158da2abcf3d5f0b05e0" prot="public" static="no" mutable="no">
         <type>uint16_t</type>
@@ -106,12 +116,13 @@
         <name>force_settlement_offset_percent</name>
         <initializer>= <ref refid="protocol_2include_2graphene_2protocol_2config_8hpp_1a8d59c575193fad3e084e5f4d0c9e1db4" kindref="member">GRAPHENE_DEFAULT_FORCE_SETTLEMENT_OFFSET</ref></initializer>
         <briefdescription>
-<para>This is the percent to adjust the feed price in the short&apos;s favor in the event of a forced settlement. </para>        </briefdescription>
+<para>This is the percent to adjust the feed price in the short&apos;s favor in the event of a forced settlement. </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="162" column="1" bodyfile="libraries/protocol/include/graphene/protocol/asset_ops.hpp" bodystart="162" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="162" column="16" bodyfile="libraries/protocol/include/graphene/protocol/asset_ops.hpp" bodystart="162" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1bitasset__options_1aac3a51ee4416a416b655264c9c78f6dc" prot="public" static="no" mutable="no">
         <type>uint16_t</type>
@@ -122,10 +133,11 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Force settlement volume can be limited such that only a certain percentage of the total existing supply of the asset may be force-settled within any given chain maintenance interval. This field stores the percentage of the current supply which may be force settled within the current maintenance interval. If force settlements come due in an interval in which the maximum volume has already been settled, the new settlements will be enqueued and processed at the beginning of the next maintenance interval. </para>        </detaileddescription>
+<para>Force settlement volume can be limited such that only a certain percentage of the total existing supply of the asset may be force-settled within any given chain maintenance interval. This field stores the percentage of the current supply which may be force settled within the current maintenance interval. If force settlements come due in an interval in which the maximum volume has already been settled, the new settlements will be enqueued and processed at the beginning of the next maintenance interval. </para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="168" column="1" bodyfile="libraries/protocol/include/graphene/protocol/asset_ops.hpp" bodystart="168" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="168" column="16" bodyfile="libraries/protocol/include/graphene/protocol/asset_ops.hpp" bodystart="168" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1bitasset__options_1a66af73cb931cabfdc7047e2865853027" prot="public" static="no" mutable="no">
         <type>asset_id_type</type>
@@ -135,10 +147,11 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>This speicifies which asset type is used to collateralize short sales This field may only be updated if the current supply of the asset is zero. </para>        </detaileddescription>
+<para>This speicifies which asset type is used to collateralize short sales This field may only be updated if the current supply of the asset is zero. </para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="171" column="1" bodyfile="libraries/protocol/include/graphene/protocol/asset_ops.hpp" bodystart="171" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="171" column="21" bodyfile="libraries/protocol/include/graphene/protocol/asset_ops.hpp" bodystart="171" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1bitasset__options_1aad45480ce89015098c5fb48f9c276faa" prot="public" static="no" mutable="no">
         <type><ref refid="structgraphene_1_1protocol_1_1extension" kindref="compound">extension</ref>&lt; <ref refid="structgraphene_1_1protocol_1_1bitasset__options_1_1ext" kindref="compound">ext</ref> &gt;</type>
@@ -151,7 +164,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="173" column="1" bodyfile="libraries/protocol/include/graphene/protocol/asset_ops.hpp" bodystart="173" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="173" column="17" bodyfile="libraries/protocol/include/graphene/protocol/asset_ops.hpp" bodystart="173" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -168,13 +181,15 @@
 <parametername><ref refid="classfc_1_1exception" kindref="compound">fc::exception</ref></parametername>
 </parameternamelist>
 <parameterdescription>
-<para>if any check fails </para></parameterdescription>
+<para>if any check fails </para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-</para>        </detaileddescription>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="177" column="1" bodyfile="libraries/protocol/asset_ops.cpp" bodystart="237" bodyend="271"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="177" column="12" bodyfile="libraries/protocol/asset_ops.cpp" bodystart="237" bodyend="271"/>
       </memberdef>
       <memberdef kind="function" id="structgraphene_1_1protocol_1_1bitasset__options_1a0f96902137573d34a9a30db4b28ad1b3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structgraphene_1_1protocol_1_1bitasset__options_1a86d8df815d5ff26c11c9894fefe202be" kindref="member">black_swan_response_type</ref></type>
@@ -182,58 +197,62 @@
         <argsstring>() const</argsstring>
         <name>get_black_swan_response_method</name>
         <briefdescription>
-<para>Get the effective black swan response method. </para>        </briefdescription>
+<para>Get the effective black swan response method. </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="180" column="1" bodyfile="libraries/protocol/include/graphene/protocol/asset_ops.hpp" bodystart="180" bodyend="185"/>
+        <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="180" column="32" bodyfile="libraries/protocol/include/graphene/protocol/asset_ops.hpp" bodystart="180" bodyend="185"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>The <ref refid="structgraphene_1_1protocol_1_1bitasset__options" kindref="compound">bitasset_options</ref> struct contains configurable options available only to BitAssets. </para>    </briefdescription>
+<para>The <ref refid="structgraphene_1_1protocol_1_1bitasset__options" kindref="compound">bitasset_options</ref> struct contains configurable options available only to BitAssets. </para>
+    </briefdescription>
     <detaileddescription>
-<para><simplesect kind="note"><para>Changes to this struct will break protocol compatibility </para></simplesect>
-</para>    </detaileddescription>
+<para><simplesect kind="note"><para>Changes to this struct will break protocol compatibility </para>
+</simplesect>
+</para>
+    </detaileddescription>
     <collaborationgraph>
-      <node id="1942">
+      <node id="5">
         <label>fc::optional&lt; uint8_t &gt;</label>
         <link refid="classfc_1_1optional"/>
       </node>
-      <node id="1938">
+      <node id="1">
         <label>graphene::protocol::bitasset_options</label>
         <link refid="structgraphene_1_1protocol_1_1bitasset__options"/>
-        <childnode refid="1939" relation="usage">
+        <childnode refid="2" relation="usage">
           <edgelabel>extensions</edgelabel>
         </childnode>
       </node>
-      <node id="1940">
+      <node id="3">
         <label>graphene::protocol::bitasset_options::ext</label>
         <link refid="structgraphene_1_1protocol_1_1bitasset__options_1_1ext"/>
-        <childnode refid="1941" relation="usage">
+        <childnode refid="4" relation="usage">
           <edgelabel>maximum_short_squeeze_ratio</edgelabel>
           <edgelabel>initial_collateral_ratio</edgelabel>
           <edgelabel>margin_call_fee_ratio</edgelabel>
           <edgelabel>force_settle_fee_percent</edgelabel>
           <edgelabel>maintenance_collateral_ratio</edgelabel>
         </childnode>
-        <childnode refid="1942" relation="usage">
+        <childnode refid="5" relation="usage">
           <edgelabel>black_swan_response_method</edgelabel>
         </childnode>
       </node>
-      <node id="1941">
+      <node id="4">
         <label>fc::optional&lt; uint16_t &gt;</label>
         <link refid="classfc_1_1optional"/>
       </node>
-      <node id="1939">
+      <node id="2">
         <label>graphene::protocol::extension&lt; graphene::protocol::bitasset_options::ext &gt;</label>
         <link refid="structgraphene_1_1protocol_1_1extension"/>
-        <childnode refid="1940" relation="usage">
+        <childnode refid="3" relation="usage">
           <edgelabel>value</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="109" column="1" bodyfile="libraries/protocol/include/graphene/protocol/asset_ops.hpp" bodystart="109" bodyend="186"/>
+    <location file="libraries/protocol/include/graphene/protocol/asset_ops.hpp" line="109" column="26" bodyfile="libraries/protocol/include/graphene/protocol/asset_ops.hpp" bodystart="109" bodyend="186"/>
     <listofallmembers>
       <member refid="structgraphene_1_1protocol_1_1bitasset__options_1a86d8df815d5ff26c11c9894fefe202be" prot="public" virt="non-virtual"><scope>graphene::protocol::bitasset_options</scope><name>black_swan_response_type</name></member>
       <member refid="structgraphene_1_1protocol_1_1bitasset__options_1aad45480ce89015098c5fb48f9c276faa" prot="public" virt="non-virtual"><scope>graphene::protocol::bitasset_options</scope><name>extensions</name></member>

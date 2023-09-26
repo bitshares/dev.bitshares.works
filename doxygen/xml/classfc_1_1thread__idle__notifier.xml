@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classfc_1_1thread__idle__notifier" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>fc::thread_idle_notifier</compoundname>
     <derivedcompoundref refid="classfc_1_1detail_1_1idle__notifier__impl" prot="public" virt="non-virtual">fc::detail::idle_notifier_impl</derivedcompoundref>
@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/thread/thread.hpp" line="26" column="1" bodyfile="libraries/fc/include/fc/thread/thread.hpp" bodystart="26" bodyend="26"/>
+        <location file="libraries/fc/include/fc/thread/thread.hpp" line="26" column="15" bodyfile="libraries/fc/include/fc/thread/thread.hpp" bodystart="26" bodyend="26"/>
       </memberdef>
       <memberdef kind="function" id="classfc_1_1thread__idle__notifier_1aad95de1538a16983b455f23a7ddb73dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="classfc_1_1task__base" kindref="compound">task_base</ref> *</type>
@@ -27,11 +27,13 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>This method is called when the thread is idle. If it returns a <ref refid="classfc_1_1task__base" kindref="compound">task_base</ref> it will be queued and executed immediately. <simplesect kind="return"><para>a task to execute, or nullptr </para></simplesect>
-</para>        </detaileddescription>
+<para>This method is called when the thread is idle. If it returns a <ref refid="classfc_1_1task__base" kindref="compound">task_base</ref> it will be queued and executed immediately. <simplesect kind="return"><para>a task to execute, or nullptr </para>
+</simplesect>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/thread/thread.hpp" line="32" column="1"/>
+        <location file="libraries/fc/include/fc/thread/thread.hpp" line="32" column="25"/>
       </memberdef>
       <memberdef kind="function" id="classfc_1_1thread__idle__notifier_1aac3dc857608ab4c80b3d0675bfc52d52" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
@@ -42,29 +44,31 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>This method is called when the thread is no longer idle, e. g. after it has woken up due to a timer or signal. </para>        </detaileddescription>
+<para>This method is called when the thread is no longer idle, e. g. after it has woken up due to a timer or signal. </para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/thread/thread.hpp" line="36" column="1"/>
+        <location file="libraries/fc/include/fc/thread/thread.hpp" line="36" column="20"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-<para>Instances of this class can be used to get notifications when a thread is (or is no longer) idle. </para>    </detaileddescription>
+<para>Instances of this class can be used to get notifications when a thread is (or is no longer) idle. </para>
+    </detaileddescription>
     <inheritancegraph>
-      <node id="7549">
+      <node id="1">
         <label>fc::thread_idle_notifier</label>
         <link refid="classfc_1_1thread__idle__notifier"/>
       </node>
-      <node id="7550">
+      <node id="2">
         <label>fc::detail::idle_notifier_impl</label>
         <link refid="classfc_1_1detail_1_1idle__notifier__impl"/>
-        <childnode refid="7549" relation="public-inheritance">
+        <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="libraries/fc/include/fc/thread/thread.hpp" line="24" column="1" bodyfile="libraries/fc/include/fc/thread/thread.hpp" bodystart="24" bodyend="37"/>
+    <location file="libraries/fc/include/fc/thread/thread.hpp" line="24" column="30" bodyfile="libraries/fc/include/fc/thread/thread.hpp" bodystart="24" bodyend="37"/>
     <listofallmembers>
       <member refid="classfc_1_1thread__idle__notifier_1aac3dc857608ab4c80b3d0675bfc52d52" prot="public" virt="pure-virtual"><scope>fc::thread_idle_notifier</scope><name>busy</name></member>
       <member refid="classfc_1_1thread__idle__notifier_1aad95de1538a16983b455f23a7ddb73dd" prot="public" virt="pure-virtual"><scope>fc::thread_idle_notifier</scope><name>idle</name></member>

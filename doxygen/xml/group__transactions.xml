@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="group__transactions" kind="group">
     <compoundname>transactions</compoundname>
     <title>Transactions</title>
@@ -65,94 +65,114 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Checks whether given public keys and approvals are sufficient to authorize given operations. Throws an exception when failed.</para><para><parameterlist kind="param"><parameteritem>
+<para>Checks whether given public keys and approvals are sufficient to authorize given operations. Throws an exception when failed.</para>
+<para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>ops</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>a vector of operations </para></parameterdescription>
+<para>a vector of operations </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>sigs</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>a set of public keys </para></parameterdescription>
+<para>a set of public keys </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>get_active</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>callback function to retrieve active authorities of a given account </para></parameterdescription>
+<para>callback function to retrieve active authorities of a given account </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>get_owner</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>callback function to retrieve owner authorities of a given account </para></parameterdescription>
+<para>callback function to retrieve owner authorities of a given account </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>get_custom</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>callback function to retrieve viable custom authorities for a given account and operation </para></parameterdescription>
+<para>callback function to retrieve viable custom authorities for a given account and operation </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>allow_non_immediate_owner</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>whether to allow owner authority of non-immediately required accounts to authorize operations </para></parameterdescription>
+<para>whether to allow owner authority of non-immediately required accounts to authorize operations </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>ignore_custom_operation_required_auths</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>See issue #210; whether to ignore the required_auths field of <ref refid="structgraphene_1_1protocol_1_1custom__operation" kindref="compound">custom_operation</ref> or not </para></parameterdescription>
+<para>See issue #210; whether to ignore the required_auths field of <ref refid="structgraphene_1_1protocol_1_1custom__operation" kindref="compound">custom_operation</ref> or not </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>max_recursion</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>maximum level of recursion when verifying, since an account can have another account in active authorities and/or owner authorities </para></parameterdescription>
+<para>maximum level of recursion when verifying, since an account can have another account in active authorities and/or owner authorities </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>allow_committee</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>whether to allow the special &quot;committee account&quot; to authorize the operations </para></parameterdescription>
+<para>whether to allow the special &quot;committee account&quot; to authorize the operations </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>active_approvals</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>accounts that approved the operations with their active authories </para></parameterdescription>
+<para>accounts that approved the operations with their active authories </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>owner_approvals</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>accounts that approved the operations with their owner authories </para></parameterdescription>
+<para>accounts that approved the operations with their owner authories </para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-</para>        </detaileddescription>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/transaction.hpp" line="268" column="1" bodyfile="libraries/protocol/transaction.cpp" bodystart="269" bodyend="347"/>
+        <location file="libraries/protocol/transaction.cpp" line="269" column="6" bodyfile="libraries/protocol/transaction.cpp" bodystart="269" bodyend="347" declfile="libraries/protocol/include/graphene/protocol/transaction.hpp" declline="268" declcolumn="9"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
+<para>All transactions are sets of operations that must be applied atomically. Transactions must refer to a recent block that defines the context of the operation so that they assert a known binding to the object id&apos;s referenced in the transaction. </para>
     </briefdescription>
     <detaileddescription>
-<para>All transactions are sets of operations that must be applied atomically. Transactions must refer to a recent block that defines the context of the operation so that they assert a known binding to the object id&apos;s referenced in the transaction.</para><para>Rather than specify a full block number, we only specify the lower 16 bits of the block number which means you can reference any block within the last 65,536 blocks which is 3.5 days with a 5 second block interval or 18 hours with a 1 second interval.</para><para>All transactions must expire so that the network does not have to maintain a permanent record of all transactions ever published. A transaction may not have an expiration date too far in the future because this would require keeping too much transaction history in memory.</para><para>The block prefix is the first 4 bytes of the block hash of the reference block number, which is the second 4 bytes of the <ref refid="namespacegraphene_1_1protocol_1a32e784a8edceba5506db2c130ed9cb9c" kindref="member">block_id_type</ref> (the first 4 bytes of the block ID are the block number)</para><para>Note: A transaction which selects a reference block cannot be migrated between forks outside the period of ref_block_num.time to (ref_block_num.time + rel_exp * interval). This fact can be used to protect market orders which should specify a relatively short re-org window of perhaps less than 1 minute. Normal payments should probably have a longer re-org window to ensure their transaction can still go through in the event of a momentary disruption in service.</para><para><simplesect kind="note"><para>It is not recommended to set the <ref refid="classgraphene_1_1protocol_1_1transaction_1a409ead8644ff5fcb2dc3527910afa0f8" kindref="member">transaction::ref_block_num</ref>, <ref refid="classgraphene_1_1protocol_1_1transaction_1a8b2ed9c30bc7d04c96e6ed1e4652dcbe" kindref="member">transaction::ref_block_prefix</ref>, and <ref refid="classgraphene_1_1protocol_1_1transaction_1a303447df940705d8ab860d2d52317e80" kindref="member">transaction::expiration</ref> fields manually. Call the appropriate overload of <ref refid="classgraphene_1_1protocol_1_1transaction_1a083a44dddfc1c36adb8806262aee25d5" kindref="member">transaction::set_expiration</ref> instead. </para></simplesect>
-</para>    </detaileddescription>
+<para>Rather than specify a full block number, we only specify the lower 16 bits of the block number which means you can reference any block within the last 65,536 blocks which is 3.5 days with a 5 second block interval or 18 hours with a 1 second interval.</para>
+<para>All transactions must expire so that the network does not have to maintain a permanent record of all transactions ever published. A transaction may not have an expiration date too far in the future because this would require keeping too much transaction history in memory.</para>
+<para>The block prefix is the first 4 bytes of the block hash of the reference block number, which is the second 4 bytes of the <ref refid="namespacegraphene_1_1protocol_1a32e784a8edceba5506db2c130ed9cb9c" kindref="member">block_id_type</ref> (the first 4 bytes of the block ID are the block number)</para>
+<para>Note: A transaction which selects a reference block cannot be migrated between forks outside the period of ref_block_num.time to (ref_block_num.time + rel_exp * interval). This fact can be used to protect market orders which should specify a relatively short re-org window of perhaps less than 1 minute. Normal payments should probably have a longer re-org window to ensure their transaction can still go through in the event of a momentary disruption in service.</para>
+<para><simplesect kind="note"><para>It is not recommended to set the <ref refid="classgraphene_1_1protocol_1_1transaction_1a409ead8644ff5fcb2dc3527910afa0f8" kindref="member">transaction::ref_block_num</ref>, <ref refid="classgraphene_1_1protocol_1_1transaction_1a8b2ed9c30bc7d04c96e6ed1e4652dcbe" kindref="member">transaction::ref_block_prefix</ref>, and <ref refid="classgraphene_1_1protocol_1_1transaction_1a303447df940705d8ab860d2d52317e80" kindref="member">transaction::expiration</ref> fields manually. Call the appropriate overload of <ref refid="classgraphene_1_1protocol_1_1transaction_1a083a44dddfc1c36adb8806262aee25d5" kindref="member">transaction::set_expiration</ref> instead. </para>
+</simplesect>
+</para>
+    </detaileddescription>
   </compounddef>
 </doxygen>

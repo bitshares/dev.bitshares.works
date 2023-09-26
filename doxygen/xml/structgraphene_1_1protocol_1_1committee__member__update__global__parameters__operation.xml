@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="structgraphene_1_1protocol_1_1committee__member__update__global__parameters__operation" kind="struct" language="C++" prot="public">
     <compoundname>graphene::protocol::committee_member_update_global_parameters_operation</compoundname>
     <basecompoundref refid="structgraphene_1_1protocol_1_1base__operation" prot="public" virt="non-virtual">graphene::protocol::base_operation</basecompoundref>
     <includes refid="committee__member_8hpp" local="no">committee_member.hpp</includes>
-    <innerclass refid="structgraphene_1_1protocol_1_1committee__member__update__global__parameters__operation_1_1fee__parameters__type" prot="public">graphene::protocol::committee_member_update_global_parameters_operation::fee_parameters_type</innerclass>
+    <innerclass refid="structgraphene_1_1protocol_1_1committee__member__update__global__parameters__operation_1_1fee__params__t" prot="public">graphene::protocol::committee_member_update_global_parameters_operation::fee_params_t</innerclass>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1committee__member__update__global__parameters__operation_1ad094245ce3662cf3ff0036e48f55871d" prot="public" static="no" mutable="no">
         <type><ref refid="structgraphene_1_1protocol_1_1asset" kindref="compound">asset</ref></type>
@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/committee_member.hpp" line="88" column="1" bodyfile="libraries/protocol/include/graphene/protocol/committee_member.hpp" bodystart="88" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/committee_member.hpp" line="88" column="25" bodyfile="libraries/protocol/include/graphene/protocol/committee_member.hpp" bodystart="88" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1committee__member__update__global__parameters__operation_1af5407dc0b4872164cfc619f7718dcf4e" prot="public" static="no" mutable="no">
         <type><ref refid="structgraphene_1_1protocol_1_1chain__parameters" kindref="compound">chain_parameters</ref></type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/committee_member.hpp" line="89" column="1" bodyfile="libraries/protocol/include/graphene/protocol/committee_member.hpp" bodystart="89" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/committee_member.hpp" line="89" column="25" bodyfile="libraries/protocol/include/graphene/protocol/committee_member.hpp" bodystart="89" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -45,7 +45,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/committee_member.hpp" line="91" column="1" bodyfile="libraries/protocol/include/graphene/protocol/committee_member.hpp" bodystart="91" bodyend="91"/>
+        <location file="libraries/protocol/include/graphene/protocol/committee_member.hpp" line="91" column="23" bodyfile="libraries/protocol/include/graphene/protocol/committee_member.hpp" bodystart="91" bodyend="91"/>
       </memberdef>
       <memberdef kind="function" id="structgraphene_1_1protocol_1_1committee__member__update__global__parameters__operation_1a40cc0c399a1035ff536a2171e7bf2326" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -59,96 +59,105 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/committee_member.hpp" line="92" column="1" bodyfile="libraries/protocol/committee_member.cpp" bodystart="44" bodyend="48"/>
+        <location file="libraries/protocol/include/graphene/protocol/committee_member.hpp" line="92" column="23" bodyfile="libraries/protocol/committee_member.cpp" bodystart="44" bodyend="48"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>Used by committee_members to update the global parameters of the blockchain.</para><para>This operation allows the committee_members to update the global parameters on the blockchain. These control various tunable aspects of the chain, including block and maintenance intervals, maximum data sizes, the fees charged by the network, etc. </para>    </briefdescription>
+<para>Used by committee_members to update the global parameters of the blockchain. </para>
+    </briefdescription>
     <detaileddescription>
-<para>This operation may only be used in a proposed transaction, and a proposed transaction which contains this operation must have a review period specified in the current global parameters before it may be accepted. </para>    </detaileddescription>
+<para>This operation allows the committee_members to update the global parameters on the blockchain. These control various tunable aspects of the chain, including block and maintenance intervals, maximum data sizes, the fees charged by the network, etc.</para>
+<para>This operation may only be used in a proposed transaction, and a proposed transaction which contains this operation must have a review period specified in the current global parameters before it may be accepted. </para>
+    </detaileddescription>
     <inheritancegraph>
-      <node id="2560">
+      <node id="1">
         <label>graphene::protocol::committee_member_update_global_parameters_operation</label>
         <link refid="structgraphene_1_1protocol_1_1committee__member__update__global__parameters__operation"/>
-        <childnode refid="2561" relation="public-inheritance">
+        <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="2561">
+      <node id="2">
         <label>graphene::protocol::base_operation</label>
         <link refid="structgraphene_1_1protocol_1_1base__operation"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="2566">
+      <node id="6">
         <label>graphene::protocol::chain_parameters</label>
         <link refid="structgraphene_1_1protocol_1_1chain__parameters"/>
-        <childnode refid="2565" relation="usage">
+        <childnode refid="4" relation="usage">
           <edgelabel>cashback_vesting_threshold</edgelabel>
           <edgelabel>worker_budget_per_day</edgelabel>
           <edgelabel>fee_liquidation_threshold</edgelabel>
           <edgelabel>witness_pay_per_block</edgelabel>
         </childnode>
-        <childnode refid="2567" relation="usage">
+        <childnode refid="7" relation="usage">
           <edgelabel>extensions</edgelabel>
         </childnode>
       </node>
-      <node id="2571">
+      <node id="11">
         <label>fc::optional&lt; graphene::protocol::custom_authority_options_type &gt;</label>
         <link refid="classfc_1_1optional"/>
       </node>
-      <node id="2562">
+      <node id="1">
         <label>graphene::protocol::committee_member_update_global_parameters_operation</label>
         <link refid="structgraphene_1_1protocol_1_1committee__member__update__global__parameters__operation"/>
-        <childnode refid="2563" relation="public-inheritance">
+        <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="2564" relation="usage">
+        <childnode refid="3" relation="usage">
           <edgelabel>fee</edgelabel>
         </childnode>
-        <childnode refid="2566" relation="usage">
+        <childnode refid="6" relation="usage">
           <edgelabel>new_parameters</edgelabel>
         </childnode>
       </node>
-      <node id="2570">
+      <node id="10">
         <label>fc::optional&lt; graphene::protocol::htlc_options &gt;</label>
         <link refid="classfc_1_1optional"/>
       </node>
-      <node id="2567">
+      <node id="5">
+        <label>fc::safe_base&lt; int64_t &gt;</label>
+        <link refid="structfc_1_1safe__base"/>
+      </node>
+      <node id="7">
         <label>graphene::protocol::extension&lt; graphene::protocol::chain_parameters::ext &gt;</label>
         <link refid="structgraphene_1_1protocol_1_1extension"/>
-        <childnode refid="2568" relation="usage">
+        <childnode refid="8" relation="usage">
           <edgelabel>value</edgelabel>
         </childnode>
       </node>
-      <node id="2565">
+      <node id="4">
         <label>fc::safe&lt; int64_t &gt;</label>
         <link refid="structfc_1_1safe"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
       </node>
-      <node id="2563">
+      <node id="2">
         <label>graphene::protocol::base_operation</label>
         <link refid="structgraphene_1_1protocol_1_1base__operation"/>
       </node>
-      <node id="2564">
+      <node id="3">
         <label>graphene::protocol::asset</label>
         <link refid="structgraphene_1_1protocol_1_1asset"/>
-        <childnode refid="2565" relation="usage">
+        <childnode refid="4" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
       </node>
-      <node id="2568">
+      <node id="8">
         <label>graphene::protocol::chain_parameters::ext</label>
         <link refid="structgraphene_1_1protocol_1_1chain__parameters_1_1ext"/>
-        <childnode refid="2569" relation="usage">
+        <childnode refid="9" relation="usage">
           <edgelabel>market_fee_network_percent</edgelabel>
           <edgelabel>maker_fee_discount_percent</edgelabel>
         </childnode>
-        <childnode refid="2570" relation="usage">
+        <childnode refid="10" relation="usage">
           <edgelabel>updatable_htlc_options</edgelabel>
         </childnode>
-        <childnode refid="2571" relation="usage">
+        <childnode refid="11" relation="usage">
           <edgelabel>custom_authority_options</edgelabel>
         </childnode>
       </node>
-      <node id="2569">
+      <node id="9">
         <label>fc::optional&lt; uint16_t &gt;</label>
         <link refid="classfc_1_1optional"/>
       </node>

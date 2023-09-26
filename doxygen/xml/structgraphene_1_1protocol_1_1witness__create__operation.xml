@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="structgraphene_1_1protocol_1_1witness__create__operation" kind="struct" language="C++" prot="public">
     <compoundname>graphene::protocol::witness_create_operation</compoundname>
     <basecompoundref refid="structgraphene_1_1protocol_1_1base__operation" prot="public" virt="non-virtual">graphene::protocol::base_operation</basecompoundref>
     <includes refid="protocol_2include_2graphene_2protocol_2witness_8hpp" local="no">witness.hpp</includes>
-    <innerclass refid="structgraphene_1_1protocol_1_1witness__create__operation_1_1fee__parameters__type" prot="public">graphene::protocol::witness_create_operation::fee_parameters_type</innerclass>
+    <innerclass refid="structgraphene_1_1protocol_1_1witness__create__operation_1_1fee__params__t" prot="public">graphene::protocol::witness_create_operation::fee_params_t</innerclass>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1witness__create__operation_1a50302c495fc98f46d21c3958223dc70d" prot="public" static="no" mutable="no">
         <type><ref refid="structgraphene_1_1protocol_1_1asset" kindref="compound">asset</ref></type>
@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/witness.hpp" line="41" column="1" bodyfile="libraries/protocol/include/graphene/protocol/witness.hpp" bodystart="41" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/witness.hpp" line="41" column="25" bodyfile="libraries/protocol/include/graphene/protocol/witness.hpp" bodystart="41" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1witness__create__operation_1a242ad124ac2aa39f2e4d738079e43b67" prot="public" static="no" mutable="no">
         <type>account_id_type</type>
@@ -25,12 +25,13 @@
         <argsstring></argsstring>
         <name>witness_account</name>
         <briefdescription>
-<para>The account which owns the witness. This account pays the fee for this operation. </para>        </briefdescription>
+<para>The account which owns the witness. This account pays the fee for this operation. </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/witness.hpp" line="43" column="1" bodyfile="libraries/protocol/include/graphene/protocol/witness.hpp" bodystart="43" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/witness.hpp" line="43" column="25" bodyfile="libraries/protocol/include/graphene/protocol/witness.hpp" bodystart="43" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1witness__create__operation_1a9ba7e43d882fc4d4503bd4383f318d45" prot="public" static="no" mutable="no">
         <type>string</type>
@@ -43,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/witness.hpp" line="44" column="1" bodyfile="libraries/protocol/include/graphene/protocol/witness.hpp" bodystart="44" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/witness.hpp" line="44" column="25" bodyfile="libraries/protocol/include/graphene/protocol/witness.hpp" bodystart="44" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structgraphene_1_1protocol_1_1witness__create__operation_1ad05e309d48618796d0920aca853e2347" prot="public" static="no" mutable="no">
         <type><ref refid="structgraphene_1_1protocol_1_1public__key__type" kindref="compound">public_key_type</ref></type>
@@ -56,7 +57,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/witness.hpp" line="45" column="1" bodyfile="libraries/protocol/include/graphene/protocol/witness.hpp" bodystart="45" bodyend="-1"/>
+        <location file="libraries/protocol/include/graphene/protocol/witness.hpp" line="45" column="25" bodyfile="libraries/protocol/include/graphene/protocol/witness.hpp" bodystart="45" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -71,7 +72,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/witness.hpp" line="47" column="1" bodyfile="libraries/protocol/include/graphene/protocol/witness.hpp" bodystart="47" bodyend="47"/>
+        <location file="libraries/protocol/include/graphene/protocol/witness.hpp" line="47" column="23" bodyfile="libraries/protocol/include/graphene/protocol/witness.hpp" bodystart="47" bodyend="47"/>
       </memberdef>
       <memberdef kind="function" id="structgraphene_1_1protocol_1_1witness__create__operation_1a79fdc4e330a57fe9f247b1e77fd2af79" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -85,73 +86,81 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/protocol/include/graphene/protocol/witness.hpp" line="48" column="1" bodyfile="libraries/protocol/witness.cpp" bodystart="30" bodyend="34"/>
+        <location file="libraries/protocol/include/graphene/protocol/witness.hpp" line="48" column="23" bodyfile="libraries/protocol/witness.cpp" bodystart="30" bodyend="34"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>Create a witness object, as a bid to hold a witness position on the network.</para><para>Accounts which wish to become witnesses may use this operation to create a witness object which stakeholders may vote on to approve its position as a witness. </para>    </briefdescription>
+<para>Create a witness object, as a bid to hold a witness position on the network. </para>
+    </briefdescription>
     <detaileddescription>
+<para>Accounts which wish to become witnesses may use this operation to create a witness object which stakeholders may vote on to approve its position as a witness. </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="8731">
+      <node id="2">
         <label>graphene::protocol::base_operation</label>
         <link refid="structgraphene_1_1protocol_1_1base__operation"/>
       </node>
-      <node id="8730">
+      <node id="1">
         <label>graphene::protocol::witness_create_operation</label>
         <link refid="structgraphene_1_1protocol_1_1witness__create__operation"/>
-        <childnode refid="8731" relation="public-inheritance">
+        <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="8739">
+      <node id="5">
+        <label>fc::safe_base&lt; int64_t &gt;</label>
+        <link refid="structfc_1_1safe__base"/>
+      </node>
+      <node id="9">
         <label>string</label>
       </node>
-      <node id="8736">
+      <node id="6">
         <label>account_id_type</label>
       </node>
-      <node id="8735">
+      <node id="4">
         <label>fc::safe&lt; int64_t &gt;</label>
         <link refid="structfc_1_1safe"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
       </node>
-      <node id="8738">
+      <node id="8">
         <label>fc::zero_initialized_array&lt; unsigned char, 33 &gt;</label>
         <link refid="classfc_1_1zero__initialized__array"/>
       </node>
-      <node id="8733">
+      <node id="2">
         <label>graphene::protocol::base_operation</label>
         <link refid="structgraphene_1_1protocol_1_1base__operation"/>
       </node>
-      <node id="8734">
+      <node id="3">
         <label>graphene::protocol::asset</label>
         <link refid="structgraphene_1_1protocol_1_1asset"/>
-        <childnode refid="8735" relation="usage">
+        <childnode refid="4" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
       </node>
-      <node id="8737">
+      <node id="7">
         <label>graphene::protocol::public_key_type</label>
         <link refid="structgraphene_1_1protocol_1_1public__key__type"/>
-        <childnode refid="8738" relation="usage">
+        <childnode refid="8" relation="usage">
           <edgelabel>key_data</edgelabel>
         </childnode>
       </node>
-      <node id="8732">
+      <node id="1">
         <label>graphene::protocol::witness_create_operation</label>
         <link refid="structgraphene_1_1protocol_1_1witness__create__operation"/>
-        <childnode refid="8733" relation="public-inheritance">
+        <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="8734" relation="usage">
+        <childnode refid="3" relation="usage">
           <edgelabel>fee</edgelabel>
         </childnode>
-        <childnode refid="8736" relation="usage">
+        <childnode refid="6" relation="usage">
           <edgelabel>witness_account</edgelabel>
         </childnode>
-        <childnode refid="8737" relation="usage">
+        <childnode refid="7" relation="usage">
           <edgelabel>block_signing_key</edgelabel>
         </childnode>
-        <childnode refid="8739" relation="usage">
+        <childnode refid="9" relation="usage">
           <edgelabel>url</edgelabel>
         </childnode>
       </node>

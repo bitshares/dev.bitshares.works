@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="structgraphene_1_1chain_1_1price__feed__with__icr" kind="struct" language="C++" prot="public">
     <compoundname>graphene::chain::price_feed_with_icr</compoundname>
     <basecompoundref refid="structgraphene_1_1protocol_1_1price__feed" prot="public" virt="non-virtual">graphene::protocol::price_feed</basecompoundref>
@@ -14,10 +14,11 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>After BSIP77, when creating a new debt position or updating an existing position, the position will be checked against this parameter. Fixed point between 1.000 and 10.000, implied fixed point denominator is GRAPHENE_COLLATERAL_RATIO_DENOM </para>        </detaileddescription>
+<para>After BSIP77, when creating a new debt position or updating an existing position, the position will be checked against this parameter. Fixed point between 1.000 and 10.000, implied fixed point denominator is GRAPHENE_COLLATERAL_RATIO_DENOM </para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="234" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="234" bodyend="-1"/>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="234" column="16" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="234" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -32,7 +33,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="236" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="236" bodyend="238"/>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="236" column="7" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="236" bodyend="238"/>
       </memberdef>
       <memberdef kind="function" id="structgraphene_1_1chain_1_1price__feed__with__icr_1ab7b2f4e6a03a42379efe71a83506e735" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -54,7 +55,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="240" column="1" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="240" bodyend="242"/>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="240" column="7" bodyfile="libraries/chain/include/graphene/chain/asset_object.hpp" bodystart="240" bodyend="242"/>
       </memberdef>
       <memberdef kind="function" id="structgraphene_1_1chain_1_1price__feed__with__icr_1ad479a7da0c7305515d50fef021d265da" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structgraphene_1_1protocol_1_1price" kindref="compound">price</ref></type>
@@ -64,60 +65,68 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>The result will be used to check new debt positions and position updates. Calculation: ~settlement_price * initial_collateral_ratio / GRAPHENE_COLLATERAL_RATIO_DENOM </para>        </detaileddescription>
+<para>The result will be used to check new debt positions and position updates. Calculation: ~settlement_price * initial_collateral_ratio / GRAPHENE_COLLATERAL_RATIO_DENOM </para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="246" column="1" bodyfile="libraries/chain/asset_object.cpp" bodystart="145" bodyend="150"/>
+        <location file="libraries/chain/include/graphene/chain/asset_object.hpp" line="246" column="13" bodyfile="libraries/chain/asset_object.cpp" bodystart="145" bodyend="150"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>defines market parameters for margin positions, extended with an initial_collateral_ratio field </para>    </briefdescription>
+<para>defines market parameters for margin positions, extended with an initial_collateral_ratio field </para>
+    </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="6470">
+      <node id="2">
         <label>graphene::protocol::price_feed</label>
         <link refid="structgraphene_1_1protocol_1_1price__feed"/>
       </node>
-      <node id="6469">
+      <node id="1">
         <label>graphene::chain::price_feed_with_icr</label>
         <link refid="structgraphene_1_1chain_1_1price__feed__with__icr"/>
-        <childnode refid="6470" relation="public-inheritance">
+        <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="6473">
+      <node id="6">
+        <label>fc::safe_base&lt; int64_t &gt;</label>
+        <link refid="structfc_1_1safe__base"/>
+      </node>
+      <node id="3">
         <label>graphene::protocol::price</label>
         <link refid="structgraphene_1_1protocol_1_1price"/>
-        <childnode refid="6474" relation="usage">
+        <childnode refid="4" relation="usage">
           <edgelabel>base</edgelabel>
           <edgelabel>quote</edgelabel>
         </childnode>
       </node>
-      <node id="6475">
+      <node id="5">
         <label>fc::safe&lt; int64_t &gt;</label>
         <link refid="structfc_1_1safe"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
       </node>
-      <node id="6472">
+      <node id="2">
         <label>graphene::protocol::price_feed</label>
         <link refid="structgraphene_1_1protocol_1_1price__feed"/>
-        <childnode refid="6473" relation="usage">
+        <childnode refid="3" relation="usage">
           <edgelabel>core_exchange_rate</edgelabel>
           <edgelabel>settlement_price</edgelabel>
         </childnode>
       </node>
-      <node id="6474">
+      <node id="4">
         <label>graphene::protocol::asset</label>
         <link refid="structgraphene_1_1protocol_1_1asset"/>
-        <childnode refid="6475" relation="usage">
+        <childnode refid="5" relation="usage">
           <edgelabel>amount</edgelabel>
         </childnode>
       </node>
-      <node id="6471">
+      <node id="1">
         <label>graphene::chain::price_feed_with_icr</label>
         <link refid="structgraphene_1_1chain_1_1price__feed__with__icr"/>
-        <childnode refid="6472" relation="public-inheritance">
+        <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

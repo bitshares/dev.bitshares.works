@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classfc_1_1detail_1_1any__api" kind="class" language="C++" prot="public">
     <compoundname>fc::detail::any_api</compoundname>
     <basecompoundref refid="classfc_1_1api__base" prot="public" virt="non-virtual">fc::api_base</basecompoundref>
@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/rpc/api_connection.hpp" line="103" column="1" bodyfile="libraries/fc/include/fc/rpc/api_connection.hpp" bodystart="103" bodyend="-1"/>
+        <location file="libraries/fc/include/fc/rpc/api_connection.hpp" line="103" column="49" bodyfile="libraries/fc/include/fc/rpc/api_connection.hpp" bodystart="103" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classfc_1_1detail_1_1any__api_1aae058b58c4a7d62908df6de21ad6a73a" prot="public" static="no" mutable="no">
         <type>std::weak_ptr&lt; <ref refid="classfc_1_1api__connection" kindref="compound">fc::api_connection</ref> &gt;</type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/rpc/api_connection.hpp" line="104" column="1" bodyfile="libraries/fc/include/fc/rpc/api_connection.hpp" bodystart="104" bodyend="-1"/>
+        <location file="libraries/fc/include/fc/rpc/api_connection.hpp" line="104" column="29" bodyfile="libraries/fc/include/fc/rpc/api_connection.hpp" bodystart="104" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -52,7 +52,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/rpc/api_connection.hpp" line="94" column="1" bodyfile="libraries/fc/include/fc/rpc/api_connection.hpp" bodystart="94" bodyend="95"/>
+        <location file="libraries/fc/include/fc/rpc/api_connection.hpp" line="94" column="13" bodyfile="libraries/fc/include/fc/rpc/api_connection.hpp" bodystart="94" bodyend="95"/>
       </memberdef>
       <memberdef kind="function" id="classfc_1_1detail_1_1any__api_1a7b5ec2a4fdd53f29b311528c1576aa89" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
         <type>uint64_t</type>
@@ -66,7 +66,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/rpc/api_connection.hpp" line="97" column="1" bodyfile="libraries/fc/include/fc/rpc/api_connection.hpp" bodystart="97" bodyend="98"/>
+        <location file="libraries/fc/include/fc/rpc/api_connection.hpp" line="97" column="30" bodyfile="libraries/fc/include/fc/rpc/api_connection.hpp" bodystart="97" bodyend="98"/>
       </memberdef>
       <memberdef kind="function" id="classfc_1_1detail_1_1any__api_1a57544c4d7f1dbb7aba824f4a9f618dd4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
         <type><ref refid="namespacefc_1a18e9e0bd9c0a52896425ae1172bc4e2b" kindref="member">api_id_type</ref></type>
@@ -84,33 +84,36 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="libraries/fc/include/fc/rpc/api_connection.hpp" line="100" column="1" bodyfile="libraries/fc/include/fc/rpc/api_connection.hpp" bodystart="100" bodyend="101"/>
+        <location file="libraries/fc/include/fc/rpc/api_connection.hpp" line="100" column="33" bodyfile="libraries/fc/include/fc/rpc/api_connection.hpp" bodystart="100" bodyend="101"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-<para>If api&lt;T&gt; is returned from a remote method, the API is eagerly bound to api&lt;T&gt; of the correct type in <ref refid="namespacefc_1a7fad1781925faf69eca1fc23228158cf" kindref="member">api_visitor::from_variant()</ref>. This binding [1] needs a reference to the <ref refid="classfc_1_1api__connection" kindref="compound">api_connection</ref>, which is made available to <ref refid="namespacefc_1a7fad1781925faf69eca1fc23228158cf" kindref="member">from_variant()</ref> as a parameter.</para><para>However, in the case of a remote method which returns <ref refid="classfc_1_1api__base" kindref="compound">api_base</ref> which can subsequently be cast by the caller with as&lt;T&gt;, we need to keep track of the connection because the binding is done later (when the client code actually calls as&lt;T&gt;).</para><para>[1] The binding actually happens in get_remote_api(). </para>    </detaileddescription>
+<para>If api&lt;T&gt; is returned from a remote method, the API is eagerly bound to api&lt;T&gt; of the correct type in <ref refid="namespacefc_1a7fad1781925faf69eca1fc23228158cf" kindref="member">api_visitor::from_variant()</ref>. This binding [1] needs a reference to the <ref refid="classfc_1_1api__connection" kindref="compound">api_connection</ref>, which is made available to <ref refid="namespacefc_1a7fad1781925faf69eca1fc23228158cf" kindref="member">from_variant()</ref> as a parameter.</para>
+<para>However, in the case of a remote method which returns <ref refid="classfc_1_1api__base" kindref="compound">api_base</ref> which can subsequently be cast by the caller with as&lt;T&gt;, we need to keep track of the connection because the binding is done later (when the client code actually calls as&lt;T&gt;).</para>
+<para>[1] The binding actually happens in get_remote_api(). </para>
+    </detaileddescription>
     <inheritancegraph>
-      <node id="500">
+      <node id="1">
         <label>fc::detail::any_api</label>
         <link refid="classfc_1_1detail_1_1any__api"/>
-        <childnode refid="501" relation="public-inheritance">
+        <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="501">
+      <node id="2">
         <label>fc::api_base</label>
         <link refid="classfc_1_1api__base"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="502">
+      <node id="1">
         <label>fc::detail::any_api</label>
         <link refid="classfc_1_1detail_1_1any__api"/>
-        <childnode refid="503" relation="public-inheritance">
+        <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="503">
+      <node id="2">
         <label>fc::api_base</label>
         <link refid="classfc_1_1api__base"/>
       </node>
