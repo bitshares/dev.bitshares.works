@@ -12,7 +12,7 @@ Operations
 
 This document purpose: to describe BitShares available operations details and the object structures. Learning BitShares-Core Available Operations! 
 
-You can find Operations and OperationIDs pairs `here. <https://github.com/abitmore/bitshares-core/blob/170523826b82ba754eeae8706a891797b4b37ee8/libraries/chain/include/graphene/chain/protocol/operations.hpp#L50>`_
+You can find Operations and OperationIDs pairs `here. <https://github.com/bitshares/bitshares-core/blob/master/libraries/protocol/include/graphene/protocol/operations.hpp#L55>`_
 
 -------------
 
