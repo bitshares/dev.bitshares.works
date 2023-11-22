@@ -41,7 +41,7 @@ The ``opId`` and the JSON structure of the ``operation`` can be obtained with:
 The operation types available are:
 
 * :ref:`Operations List and the elements <lib-operations>`
-* Learning BitShares-Core Available Operations! You can find Operations and OperationIDs pair `here. <https://github.com/abitmore/bitshares-core/blob/170523826b82ba754eeae8706a891797b4b37ee8/libraries/chain/include/graphene/chain/protocol/operations.hpp#L50>`_
+* Learning BitShares-Core Available Operations! You can find Operations and OperationIDs pair `here. <https://github.com/bitshares/bitshares-core/blob/master/libraries/protocol/include/graphene/protocol/operations.hpp#L55>`_
 
 3. Add the required amount of fees
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
