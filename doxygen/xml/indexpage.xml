@@ -185,7 +185,7 @@ unlocked &gt;&gt;&gt;
 </verbatim></para>
 <para>Use <computeroutput>gethelp &lt;COMMAND&gt;</computeroutput> to see more info about individual commands. E.G. <verbatim>&gt;&gt;&gt; gethelp get_order_book
 </verbatim></para>
-<para>The definition of all commands is available in the <ulink url="https://github.com/bitshares/bitshares-core/blob/master/libraries/wallet/include/graphene/wallet/wallet.hpp">wallet.hpp</ulink> souce code file. Corresponding documentation can be found in the <ulink url="https://doxygen.bitshares.org/classgraphene_1_1wallet_1_1wallet__api.html">Doxygen documentation</ulink>.</para>
+<para>The definition of all commands is available in the <ulink url="https://github.com/bitshares/bitshares-core/blob/master/libraries/wallet/include/graphene/wallet/wallet.hpp">wallet.hpp</ulink> source code file. Corresponding documentation can be found in the <ulink url="https://bitshares.github.io/doxygen/classgraphene_1_1wallet_1_1wallet__api.html">Doxygen documentation</ulink>.</para>
 <para>You can run the program with <computeroutput>--help</computeroutput> parameter to see more info: <verbatim>./programs/cli_wallet/cli_wallet --help
 </verbatim></para>
 <para>There is also some info in the <ulink url="https://github.com/bitshares/bitshares-core/wiki/CLI-Wallet-Cookbook">Wiki</ulink>.</para>
@@ -197,7 +197,7 @@ unlocked &gt;&gt;&gt;
 <para>BitShares Core bugs can be reported directly to the <ulink url="https://github.com/bitshares/bitshares-core/issues">issue tracker</ulink>.</para>
 <para>Questions can be posted in <ulink url="https://github.com/bitshares/bitshares-core/discussions">Github Discussions</ulink>.</para>
 <para>BitShares UI bugs should be reported to the <ulink url="https://github.com/bitshares/bitshares-ui/issues">UI issue tracker</ulink>.</para>
-<para>Up to date online Doxygen documentation can be found at <ulink url="https://doxygen.bitshares.org/hierarchy.html">Doxygen.BitShares.org</ulink>.</para>
+<para>Up to date online Doxygen documentation can be found at <ulink url="https://bitshares.github.io/doxygen/hierarchy.html">https://bitshares.github.io/doxygen</ulink>.</para>
 </sect1>
 <sect1 id="index_1autotoc_md5">
 <title>Using Built-In APIs</title>
@@ -220,8 +220,8 @@ $ wscat -c ws://127.0.0.1:8090
 <para>When using an HTTP client, the API set ID can be replaced by the API set name, E.G. <verbatim>$ curl --data &apos;{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;method&quot;: &quot;call&quot;, &quot;params&quot;: [&quot;database&quot;, &quot;get_accounts&quot;, [[&quot;1.2.0&quot;]]], &quot;id&quot;: 1}&apos; http://127.0.0.1:8090/
 </verbatim></para>
 <para>The definition of all node APIs is available in the source code files including <ulink url="https://github.com/bitshares/bitshares-core/blob/master/libraries/app/include/graphene/app/database_api.hpp">database_api.hpp</ulink> and <ulink url="https://github.com/bitshares/bitshares-core/blob/master/libraries/app/include/graphene/app/api.hpp">api.hpp</ulink>. Corresponding documentation can be found in Doxygen:<itemizedlist>
-<listitem><para><ulink url="https://doxygen.bitshares.org/classgraphene_1_1app_1_1database__api.html">database API</ulink></para>
-</listitem><listitem><para><ulink url="https://doxygen.bitshares.org/namespacegraphene_1_1app.html">other APIs</ulink></para>
+<listitem><para><ulink url="https://bitshares.github.io/doxygen/classgraphene_1_1app_1_1database__api.html">database API</ulink></para>
+</listitem><listitem><para><ulink url="https://bitshares.github.io/doxygen/namespacegraphene_1_1app.html">other APIs</ulink></para>
 </listitem></itemizedlist>
 </para>
 </sect2>
@@ -266,7 +266,7 @@ $ curl --data &apos;{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;method&quot;: &
 }
 </verbatim></para>
 <para>Note: the <computeroutput>login</computeroutput> API set is always accessible.</para>
-<para>Passwords are stored in <computeroutput>base64</computeroutput> as salted <computeroutput>sha256</computeroutput> hashes. A simple Python script, <ulink url="https://github.com/bitshares/bitshares-core/blob/master/programs/witness_node/saltpass.py"><computeroutput>saltpass.py</computeroutput></ulink> is avaliable to obtain hash and salt values from a password. A single asterisk <computeroutput>&quot;*&quot;</computeroutput> may be specified as username or password hash to accept any value.</para>
+<para>Passwords are stored in <computeroutput>base64</computeroutput> as salted <computeroutput>sha256</computeroutput> hashes. A simple Python script, <ulink url="https://github.com/bitshares/bitshares-core/blob/master/programs/witness_node/saltpass.py"><computeroutput>saltpass.py</computeroutput></ulink> is available to obtain hash and salt values from a password. A single asterisk <computeroutput>&quot;*&quot;</computeroutput> may be specified as username or password hash to accept any value.</para>
 <para>With the above configuration, here is an example of how to call the <computeroutput>add_node</computeroutput> API from the <computeroutput>network_node</computeroutput> API set: <verbatim>{&quot;id&quot;:1, &quot;method&quot;:&quot;call&quot;, &quot;params&quot;:[1,&quot;login&quot;,[&quot;bytemaster&quot;, &quot;supersecret&quot;]]}
 {&quot;id&quot;:2, &quot;method&quot;:&quot;call&quot;, &quot;params&quot;:[1,&quot;network_node&quot;,[]]}
 {&quot;id&quot;:3, &quot;method&quot;:&quot;call&quot;, &quot;params&quot;:[2,&quot;add_node&quot;,[&quot;127.0.0.1:9090&quot;]]}
@@ -274,7 +274,7 @@ $ curl --data &apos;{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;method&quot;: &
 <para>Note, the call to <computeroutput>network_node</computeroutput> is necessary to obtain the correct API set ID for the <computeroutput>network_node</computeroutput> API set. It is not guaranteed that the API set ID for the <computeroutput>network_node</computeroutput> API set will always be <computeroutput>2</computeroutput>.</para>
 <para>The restricted API sets are accessible via HTTP too using <emphasis>basic access authentication</emphasis>. E.G. <verbatim>$ curl --data &apos;{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;method&quot;: &quot;call&quot;, &quot;params&quot;: [&quot;network_node&quot;, &quot;add_node&quot;, [&quot;127.0.0.1:9090&quot;]], &quot;id&quot;: 1}&apos; http://bytemaster:supersecret@127.0.0.1:8090/
 </verbatim></para>
-<para>Our <computeroutput>doxygen</computeroutput> documentation contains the most up-to-date information about APIs for the <ulink url="https://doxygen.bitshares.org/namespacegraphene_1_1app.html">node</ulink> and the <ulink url="https://doxygen.bitshares.org/classgraphene_1_1wallet_1_1wallet__api.html">wallet</ulink>.</para>
+<para>Our <computeroutput>doxygen</computeroutput> documentation contains the most up-to-date information about APIs for the <ulink url="https://bitshares.github.io/doxygen/namespacegraphene_1_1app.html">node</ulink> and the <ulink url="https://bitshares.github.io/doxygen/classgraphene_1_1wallet_1_1wallet__api.html">wallet</ulink>.</para>
 </sect1>
 <sect1 id="index_1autotoc_md9">
 <title>FAQ</title>
