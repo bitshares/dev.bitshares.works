@@ -9,7 +9,7 @@ Configuration for Private Testnets
    
 -------
 
-This section shows the BitShres Blockchain configuration file ``config.ini`` parameter items. The configuration file locates in your data directory and the most parameter items are commented and contain the essential settings to adjust.
+This section shows the BitShares Blockchain configuration file ``config.ini`` parameter items. The configuration file locates in your data directory and the most parameter items are commented and contain the essential settings to adjust.
 
 
 .. WARNING:: For a Private testnet, you must add a seed node of your own, you should not connect to the mainnet nor the public testnet.
