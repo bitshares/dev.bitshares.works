@@ -379,7 +379,7 @@ This section provides instructions for preparing a blockchain data directory and
 
   **Known issue:** Missing = (equal sign) between input parameter and value. --> This is due to a bug of a boost 1.60. If you compile with boost 1.58, the = (equal sign) can be omitted.
 
-  .. Note:: If my-genesis.json file has been embedded, you do not need to specify the path ro the genesis file. Omit, ``--genesis-json genesis/my-genesis.json``
+  .. Note:: If my-genesis.json file has been embedded, you do not need to specify the path to the genesis file. Omit, ``--genesis-json genesis/my-genesis.json``
   
   
   C. Stop the ``witness_node``.  Use ``CTRL + C``. 
