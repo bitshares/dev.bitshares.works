@@ -11,7 +11,7 @@ This section provides instructions for generating public and private key pairs.
    
 -------
 
-.. Note:: For generating example outputs, we used the BitShares Public Testnet environment (download **testnet branch** and build the ``wetness_node`` and ``cli_wallet`` programs). Therefore, each public key starts "TEST...". If you try the same command lines in the Mainnet environment, you will get each private key starts "BTS...".  This will happen automatically, if you use the options by the programs from the correct branch.
+.. Note:: For generating example outputs, we used the BitShares Public Testnet environment (download **testnet branch** and build the ``witness_node`` and ``cli_wallet`` programs). Therefore, each public key starts "TEST...". If you try the same command lines in the Mainnet environment, you will get each private key starts "BTS...".  This will happen automatically, if you use the options by the programs from the correct branch.
 
 |
 
