@@ -92,7 +92,7 @@ BitShares can be made to function as a software, a network, a ledger, a bank, an
   - How to profit (i.e.,Fee pools)
 	 
 * BitAsset - bitUSD, bitEUR, bitCNY, and others.       
-* **Delegated Proof of State Consensus (DPOS)** 
+* **Delegated Proof of Stake Consensus (DPOS)** 
   
   - Under DPOS, BTS Holder has influence.
   - A robust and flexible consensus protocol.  
