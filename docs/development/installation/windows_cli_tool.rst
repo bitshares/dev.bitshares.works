@@ -56,7 +56,7 @@ If you open the cli-wallet successfully, you will see similar messages and recei
 
 - ``set_password``
 
-(e.g.) we used `superaecret123` as a password.::
+(e.g.) we use `supersecret123` as a password.::
 
     new >>> set_password supersecret123
     set_password supersecret123
